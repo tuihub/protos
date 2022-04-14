@@ -1,0 +1,14 @@
+syntax = "proto3";
+package sentinel_report;
+
+service Greeter {
+    rpc Report (ReportReq) returns (ReportResp);
+}
+
+message ReportReq {
+    string token = 1;
+}
+
+message ReportResp {
+    bool status = 1;
+}
