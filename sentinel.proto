@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sentinel_report;
+package sentinel;
 
 service Greeter {
     rpc Report (ReportReq) returns (ReportResp);
