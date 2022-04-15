@@ -1,5 +1,6 @@
 syntax = "proto3";
 package sentinel;
+option go_package = "tuihub.com/librarian/v2";
 
 service Greeter {
     rpc Report (ReportReq) returns (ReportResp);
