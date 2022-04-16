@@ -1,0 +1,12 @@
+syntax = "proto3";
+package librarian;
+option go_package = "github.com/tuihub/librarian";
+
+message CreateAppReq {}
+message CreateAppResp {}
+message UpdateAppReq {}
+message UpdateAppResp {}
+message ListAppReq {}
+message ListAppResp {}
+message DeleteAppReq {}
+message DeleteAppResp {}

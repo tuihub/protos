@@ -1,0 +1,29 @@
+syntax = "proto3";
+package librarian;
+option go_package = "github.com/tuihub/librarian";
+
+import "librarian/user.proto";
+import "librarian/app.proto";
+import "librarian/sentinel.proto";
+
+service LibrarianService {
+    rpc Ping (PingReq) returns (PingResp);
+
+    rpc CreateUser (CreateUserReq) returns (CreateUserResp);
+    rpc UpdateUser (UpdateUserReq) returns (UpdateUserResp);
+    rpc ListUser (ListUserReq) returns (ListUserResp);
+    rpc DeleteUser (DeleteUserReq) returns (DeleteUserResp);
+
+    rpc CreateApp (CreateAppReq) returns (CreateAppResp);
+    rpc UpdateApp (UpdateAppReq) returns (UpdateAppResp);
+    rpc ListApp (ListAppReq) returns (ListAppResp);
+    rpc DeleteApp (DeleteAppReq) returns (DeleteAppResp);
+
+    rpc CreateSentinel (CreateSentinelReq) returns (CreateSentinelResp);
+    rpc UpdateSentinel (UpdateSentinelReq) returns (UpdateSentinelResp);
+    rpc ListSentinel (ListSentinelReq) returns (ListSentinelResp);
+    rpc DeleteSentinel (DeleteSentinelReq) returns (DeleteSentinelResp);
+}
+
+message PingReq {}
+message PingResp {}

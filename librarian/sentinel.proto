@@ -1,0 +1,12 @@
+syntax = "proto3";
+package librarian;
+option go_package = "github.com/tuihub/librarian";
+
+message CreateSentinelReq {}
+message CreateSentinelResp {}
+message UpdateSentinelReq {}
+message UpdateSentinelResp {}
+message ListSentinelReq {}
+message ListSentinelResp {}
+message DeleteSentinelReq {}
+message DeleteSentinelResp {}

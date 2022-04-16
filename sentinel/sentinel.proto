@@ -1,6 +1,6 @@
 syntax = "proto3";
 package sentinel;
-option go_package = "github.com/tuihub";
+option go_package = "github.com/tuihub/sentinel";
 
 service SentinelService {
     rpc Report (ReportReq) returns (ReportResp);
@@ -8,9 +8,14 @@ service SentinelService {
 
 message ReportReq {
     string token = 1;
-    repeated string list = 2;
+    repeated ReportInfo infos = 2;
 }
 
 message ReportResp {
     bool status = 1;
+}
+
+message ReportInfo {
+    string file_name = 1;
+    int64 file_size =2;
 }
