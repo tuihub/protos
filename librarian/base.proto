@@ -2,9 +2,7 @@ syntax = "proto3";
 package librarian;
 option go_package = "github.com/tuihub/librarian";
 
-message BaseReq {
-  optional string Token = 1;
-}
+message BaseReq {}
 
 message BaseResp {
   optional int32 StatusCode = 1;

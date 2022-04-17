@@ -7,8 +7,7 @@ service SentinelService {
 }
 
 message ReportReq {
-    string token = 1;
-    repeated ReportInfo infos = 2;
+    repeated ReportInfo infos = 1;
 }
 
 message ReportResp {
@@ -16,6 +15,6 @@ message ReportResp {
 }
 
 message ReportInfo {
-    string file_name = 1;
-    optional int64 file_size =2;
+    string FileName = 1;
+    optional int64 FileSize =2;
 }
