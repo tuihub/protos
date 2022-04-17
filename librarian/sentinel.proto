@@ -56,8 +56,9 @@ message DeleteSentinelResp {
 }
 
 message SentinelInfo {
-  string Token = 1;
-  string Comment = 2;
-  string Status = 3;
+  int64 Id = 1;
+  string Token = 2;
+  string Comment = 3;
+  string Status = 4;
 }
 
