@@ -30,6 +30,9 @@ message UpdateAppResp {
 message ListAppReq {
   repeated string Name = 1;
 
+  optional int32 PageNum = 101;
+  optional int32 PageSize = 102;
+
   BaseReq Base = 2047;
 }
 message ListAppResp {
