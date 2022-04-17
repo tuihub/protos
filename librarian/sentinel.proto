@@ -2,11 +2,62 @@ syntax = "proto3";
 package librarian;
 option go_package = "github.com/tuihub/librarian";
 
-message CreateSentinelReq {}
-message CreateSentinelResp {}
-message UpdateSentinelReq {}
-message UpdateSentinelResp {}
-message ListSentinelReq {}
-message ListSentinelResp {}
-message DeleteSentinelReq {}
-message DeleteSentinelResp {}
+import "librarian/base.proto";
+
+message CreateSentinelReq {
+  optional string Comment = 1;
+
+  BaseReq Base = 2047;
+}
+message CreateSentinelResp {
+  optional SentinelInfo Info = 1;
+
+  BaseResp Base = 2047;
+}
+
+message UpdateSentinelReq {
+  string Token = 1;
+  string Comment = 2;
+  int32 Status = 3;
+
+  BaseReq Base = 2047;
+}
+message UpdateSentinelResp {
+  optional SentinelInfo Info = 1;
+
+  BaseResp Base = 2047;
+}
+
+message ListSentinelReq {
+  repeated string Token = 1;
+  repeated string Comment = 2;
+  repeated int32 Status = 3;
+
+  optional int32 PageNum = 10;
+  optional int32 PageSize = 11;
+
+  BaseReq Base = 2047;
+}
+message ListSentinelResp {
+  repeated SentinelInfo Infos = 1;
+
+  int32 Total = 10;
+
+  BaseResp Base = 2047;
+}
+
+message DeleteSentinelReq {
+  string Token = 1;
+
+  BaseReq Base = 2047;
+}
+message DeleteSentinelResp {
+  BaseResp Base = 2047;
+}
+
+message SentinelInfo {
+  string Token = 1;
+  string Comment = 2;
+  string Status = 3;
+}
+

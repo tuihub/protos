@@ -1,0 +1,19 @@
+syntax = "proto3";
+package librarian;
+option go_package = "github.com/tuihub/librarian";
+
+message BaseReq {
+  optional string Token = 1;
+}
+
+message BaseResp {
+  optional int32 StatusCode = 1;
+  optional string StatusMsg = 2;
+}
+
+enum Status {
+  Reserved_Unexpected = 0;
+  Delete = 1;
+  Active = 2;
+  Disable = 3;
+}

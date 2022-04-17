@@ -5,9 +5,11 @@ option go_package = "github.com/tuihub/librarian";
 import "librarian/user.proto";
 import "librarian/app.proto";
 import "librarian/sentinel.proto";
+import "librarian/base.proto";
 
 service LibrarianService {
     rpc Ping (PingReq) returns (PingResp);
+    rpc GetToken (GetTokenReq) returns (GetTokenResp);
 
     rpc CreateUser (CreateUserReq) returns (CreateUserResp);
     rpc UpdateUser (UpdateUserReq) returns (UpdateUserResp);
@@ -27,3 +29,16 @@ service LibrarianService {
 
 message PingReq {}
 message PingResp {}
+
+message GetTokenReq {
+    string Username = 1;
+    string Password = 2;
+
+    BaseReq Base = 2047;
+}
+
+message GetTokenResp {
+    string Token = 1;
+
+    BaseResp Base = 2047;
+}
