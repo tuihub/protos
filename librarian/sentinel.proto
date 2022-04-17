@@ -16,7 +16,7 @@ message CreateSentinelResp {
 }
 
 message UpdateSentinelReq {
-  string Token = 1;
+  int64 Id = 1;
   string Comment = 2;
   int32 Status = 3;
 
@@ -30,7 +30,7 @@ message UpdateSentinelResp {
 
 message ListSentinelReq {
   repeated string Token = 1;
-  repeated string Comment = 2;
+  optional string Comment = 2;
   repeated int32 Status = 3;
 
   optional int32 PageNum = 10;
@@ -47,7 +47,7 @@ message ListSentinelResp {
 }
 
 message DeleteSentinelReq {
-  string Token = 1;
+  int64 Id = 1;
 
   BaseReq Base = 2047;
 }
@@ -59,6 +59,6 @@ message SentinelInfo {
   int64 Id = 1;
   string Token = 2;
   string Comment = 3;
-  string Status = 4;
+  int32 Status = 4;
 }
 
