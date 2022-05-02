@@ -83,7 +83,8 @@ message ListSentinelReportResp {
 
 message SentinelReportInfo {
   int64 Id = 1;
-  string FileName = 2;
-  optional int64 FileSize = 3;
-  int32 Status = 4;
+  int64 SentinelId = 2;
+  string FileName = 3;
+  optional int64 FileSize = 4;
+  int32 Status = 5;
 }
