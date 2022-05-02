@@ -38,7 +38,7 @@ message ListAppReq {
 message ListAppResp {
   repeated AppInfo Infos = 1;
 
-  int32 Total = 10;
+  int64 Total = 10;
 
   BaseResp Base = 2047;
 }

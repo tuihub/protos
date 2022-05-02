@@ -6,6 +6,7 @@ import "librarian/user.proto";
 import "librarian/app.proto";
 import "librarian/sentinel.proto";
 import "librarian/base.proto";
+import "librarian/app_bind.proto";
 
 service LibrarianService {
     rpc Ping (PingReq) returns (PingResp);
@@ -25,6 +26,11 @@ service LibrarianService {
     rpc UpdateSentinel (UpdateSentinelReq) returns (UpdateSentinelResp);
     rpc ListSentinel (ListSentinelReq) returns (ListSentinelResp);
     rpc DeleteSentinel (DeleteSentinelReq) returns (DeleteSentinelResp);
+    rpc ListSentinelReport (ListSentinelReportReq) returns (ListSentinelReportResp);
+
+    rpc AddAppBind (AddAppBindReq) returns (AddAppBindResp);
+    rpc RemoveAppBind (RemoveAppBindReq) returns (RemoveAppBindResp);
+    rpc ListAppBind (ListAppBindReq) returns (ListAppBindResp);
 }
 
 message PingReq {}

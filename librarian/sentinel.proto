@@ -41,7 +41,7 @@ message ListSentinelReq {
 message ListSentinelResp {
   repeated SentinelInfo Infos = 1;
 
-  int32 Total = 10;
+  int64 Total = 10;
 
   BaseResp Base = 2047;
 }
@@ -62,3 +62,28 @@ message SentinelInfo {
   int32 Status = 4;
 }
 
+message ListSentinelReportReq {
+  repeated int64 SentinelId = 1;
+  repeated string FileName = 2;
+  repeated int32 Status = 3;
+
+  optional int32 PageNum = 10;
+  optional int32 PageSize = 11;
+
+  BaseReq Base = 2047;
+}
+
+message ListSentinelReportResp {
+  repeated SentinelReportInfo Infos = 1;
+
+  int64 Total = 10;
+
+  BaseResp Base = 2047;
+}
+
+message SentinelReportInfo {
+  int64 Id = 1;
+  string FileName = 2;
+  optional int64 FileSize = 3;
+  int32 Status = 4;
+}

@@ -1,0 +1,45 @@
+syntax = "proto3";
+package librarian;
+option go_package = "github.com/tuihub/librarian";
+
+import "librarian/base.proto";
+
+message AddAppBindReq {
+  int64 AppId = 1;
+  int64 SentinelReportId = 2;
+
+  BaseReq Base = 2047;
+}
+message AddAppBindResp {
+  BaseResp Base = 2047;
+}
+
+message RemoveAppBindReq {
+  int64 AppId = 1;
+  int64 SentinelReportId = 2;
+
+  BaseReq Base = 2047;
+}
+message RemoveAppBindResp {
+  BaseResp Base = 2047;
+}
+
+message ListAppBindReq {
+  repeated int64 AppId = 1;
+  repeated int64 SentinelReportId = 2;
+
+  BaseReq Base = 2047;
+}
+
+message ListAppBindResp {
+  repeated AppBindInfo Infos = 1;
+
+  int64 Total = 10;
+
+  BaseResp Base = 2047;
+}
+
+message AppBindInfo {
+  int64 AppId = 1;
+  int64 SentinelReportId = 2;
+}
