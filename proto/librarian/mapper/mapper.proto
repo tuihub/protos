@@ -3,23 +3,32 @@ package librarian.mapper.v1;
 
 option go_package = "github.com/tuihub/librarian/mapper;v1";
 
+/*
+ * The main role of Mapper is to encapsulate graph operations.
+ * In Mapper's model:
+ * 1. Each vertex is uniquely determined by `vid` and can only have one `vertex_type`
+ * 2. Each edge is uniquely determined by `src_vid`, `dst_vid` and `edge_type`.
+ *    In other words, all edges are directed and edges can be repeated by type difference
+ * 3. Mapper knows the rules for each type of edge and
+ *    will prevent illegal edges from being created
+ * 4. Mapper is not good at handling delete operations, try to avoid delete operations
+ */
 service LibrarianMapperService {
-    // manage vertex
     rpc InsertVertex (InsertVertexReq) returns (InsertVertexRes);
     rpc DeleteVertex (DeleteVertexReq) returns (DeleteVertexRes);
     rpc UpdateVertex (UpdateVertexReq) returns (UpdateVertexRes);
 
-    // manage edge
     rpc InsertEdge (InsertEdgeReq) returns (InsertEdgeRes);
     rpc DeleteEdge (DeleteEdgeReq) returns (DeleteEdgeRes);
     rpc UpdateEdge (UpdateEdgeReq) returns (UpdateEdgeRes);
 
-    // search vertex
+    // Search vertexs from a given start vertex
     rpc GoFromVertex (GoFromVertexReq) returns (GoFromVertexRes);
+    // Get vertexs in the connected subgraph of the `Equal` type edge where the given vertex is located
     rpc FetchEqualVertex (FetchEqualVertexReq) returns (FetchEqualVertexRes);
+    // Get vertexs connected to the connected subgraph of the `Equal` type edge where the given vertex is located
     rpc FetchEqualVertexNeighbor (FetchEqualVertexNeighborReq) returns (FetchEqualVertexNeighborRes);
-
-    // search edge
+    // Find path between two given vertexs
     rpc FindPath (FindPathReq) returns (FindPathRes);
 }
 
@@ -102,7 +111,8 @@ message FindPathReq {
 
 message FindPathRes {
     message SinglePath {
-        // path from edge_list[0].src_vid to edge_list[-1].dst_vid
+        // Path from edge_list[0].src_vid to edge_list[-1].dst_vid
+        // If reverse edge is allowed, begin vid may not be src_vid but dst_vid, the end vid is the same
         repeated Edge edge_list = 3;
     }
     repeated SinglePath path_list = 1;
