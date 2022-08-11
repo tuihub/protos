@@ -22,17 +22,24 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: pseudomuto/protoc-gen-doc
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build documents
-        run: make docs
-
+      - name: Setup Go environment
+        uses: actions/setup-go@v3.2.1
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.4.1
-        
+
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v1
+      - name: Install Protoc-gen-doc
+        run: go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+
+      - name: Build docs
+        run: make docs
+
       - name: generate docsify
         run: |
           npm i docsify-cli -g &&
@@ -40,12 +47,10 @@ jobs:
           
       - name: Setup Pages
         uses: actions/configure-pages@v1
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: '.'
-          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
