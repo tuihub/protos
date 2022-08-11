@@ -1,0 +1,6 @@
+version: v1
+plugins:
+  - name: doc
+    out: docs
+    opt:
+      - docs/markdown.tmpl,README.md

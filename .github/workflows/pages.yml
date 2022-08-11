@@ -29,21 +29,23 @@ jobs:
 
       - name: Setup Go environment
         uses: actions/setup-go@v3.2.1
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.4.1
 
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
+
       - name: Install Protoc-gen-doc
         run: go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
 
-      - name: Build docs
-        run: make docs
+      - name: Setup bufbuild  
+        uses: bufbuild/buf-setup-action@v1.7.0
 
-      - name: generate docsify
+      - name: Build
         run: |
-          npm i docsify-cli -g &&
-          docsify g .
+          buf lint
+          buf generate
           
       - name: Setup Pages
         uses: actions/configure-pages@v1
