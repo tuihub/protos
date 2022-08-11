@@ -1,0 +1,171 @@
+syntax = "proto3";
+package librarian.mapper.v1;
+
+option go_package = "github.com/tuihub/librarian/mapper;v1";
+
+service LibrarianMapperService {
+    // manage vertex
+    rpc InsertVertex (InsertVertexReq) returns (InsertVertexRes);
+    rpc DeleteVertex (DeleteVertexReq) returns (DeleteVertexRes);
+    rpc UpdateVertex (UpdateVertexReq) returns (UpdateVertexRes);
+
+    // manage edge
+    rpc InsertEdge (InsertEdgeReq) returns (InsertEdgeRes);
+    rpc DeleteEdge (DeleteEdgeReq) returns (DeleteEdgeRes);
+    rpc UpdateEdge (UpdateEdgeReq) returns (UpdateEdgeRes);
+
+    // search vertex
+    rpc GoFromVertex (GoFromVertexReq) returns (GoFromVertexRes);
+    rpc FetchEqualVertex (FetchEqualVertexReq) returns (FetchEqualVertexRes);
+    rpc FetchEqualVertexNeighbor (FetchEqualVertexNeighborReq) returns (FetchEqualVertexNeighborRes);
+
+    // search edge
+    rpc FindPath (FindPathReq) returns (FindPathRes);
+}
+
+message InsertVertexReq {
+    repeated Vertex vertex_list = 1;
+}
+
+message InsertVertexRes {}
+
+message DeleteVertexReq {
+    repeated int64 vid_list = 1;
+}
+
+message DeleteVertexRes {}
+
+message UpdateVertexReq {
+    repeated Vertex vertex_list = 1;
+}
+
+message UpdateVertexRes {}
+
+message InsertEdgeReq {
+    repeated Edge edge_list = 1;
+}
+
+message InsertEdgeRes {}
+
+message DeleteEdgeReq {
+    repeated Edge edge_list = 2;
+}
+
+message DeleteEdgeRes {}
+
+message UpdateEdgeReq {
+    repeated Edge edge_list = 3;
+}
+
+message UpdateEdgeRes {}
+
+message GoFromVertexReq {
+    int64 src_vid = 1;
+    repeated EdgeType edge_type_filter = 2;
+    EdgeDirection edge_direction = 3;
+    int64 min_step = 4;
+    int64 max_step = 5;
+
+    int64 limit = 14;
+    int64 offset = 15;
+}
+
+message GoFromVertexRes {
+    repeated Vertex vertex_list = 1;
+}
+
+message FetchEqualVertexReq {
+    int64 src_vid = 1;
+}
+
+message FetchEqualVertexRes {
+    repeated Vertex vertex_list = 1;
+}
+
+message FetchEqualVertexNeighborReq {
+    int64 src_vid = 1;
+    repeated EdgeType edge_type_filter = 2;
+    EdgeDirection edge_direction = 3;
+}
+
+message FetchEqualVertexNeighborRes {
+    repeated Edge edge_list = 1;
+}
+
+message FindPathReq {
+    repeated int64 src_vid = 1;
+    repeated int64 dst_vid = 2;
+    repeated EdgeType edge_type_filter = 3;
+    EdgeDirection edge_direction = 4;
+    int64 max_step = 5;
+}
+
+message FindPathRes {
+    message SinglePath {
+        // path from edge_list[0].src_vid to edge_list[-1].dst_vid
+        repeated Edge edge_list = 3;
+    }
+    repeated SinglePath path_list = 1;
+}
+
+message Vertex {
+    int64 vid = 1;
+    VertexType type = 2;
+    optional VertexProp prop = 3;
+}
+
+message VertexProp {
+    VertexCommonProp common = 1;
+    map<string, int64> additional = 2;
+}
+
+message VertexCommonProp {
+    optional int64 occur_time = 1;
+    optional int64 create_time = 2;
+    optional int64 update_time = 3;
+}
+
+message Edge {
+    int64 src_vid = 1;
+    int64 dst_vid = 2;
+    EdgeType type = 3;
+    optional EdgeProp prop = 4;
+}
+
+message EdgeProp {
+    EdgeCommonProp common = 1;
+    map<string, int64> additional = 2;
+}
+
+message EdgeCommonProp {
+    optional int64 occur_time = 1;
+    optional int64 create_time = 2;
+    optional int64 update_time = 3;
+    optional int64 rank = 4;
+}
+
+enum VertexType {
+    VERTEX_UNKOWN = 0;
+    VERTEX_ABSTRACT = 1;
+    VERTEX_ENTITY = 2;
+    VERTEX_MESSAGE = 3;
+    VERTEX_OBJECT = 4;
+}
+
+enum EdgeType {
+    EDGE_UNKOWN = 0;
+    EDGE_GENERAL = 1;
+    EDGE_EQUAL = 2;
+    EDGE_CREATE = 3;
+    EDGE_ENJOY = 4;
+    EDGE_MENTION = 5;
+    EDGE_DERIVE = 6;
+    EDGE_CONTROL = 7;
+    EDGE_FOLLOW = 8;
+}
+
+enum EdgeDirection {
+    EDGE_OUT = 0;
+    EDGE_IN = 1;
+    EDGE_BOTH = 2;
+}
