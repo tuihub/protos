@@ -4,3 +4,11 @@ plugins:
     out: docs
     opt:
       - docs/markdown.tmpl,README.md
+  - name: gofast
+    out: pkg
+    opt: paths=source_relative
+  - name: go-grpc
+    out: pkg
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false

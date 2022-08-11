@@ -37,22 +37,22 @@ jobs:
         uses: arduino/setup-protoc@v1
 
       - name: Install Protoc-gen-doc
-        run: go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+        run: |
+          GO111MODULE=off go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+          GO111MODULE=off go get github.com/gogo/protobuf/protoc-gen-gofast
 
       - name: Setup bufbuild  
         uses: bufbuild/buf-setup-action@v1.7.0
 
       - name: Build
-        run: |
-          buf lint
-          buf generate
+        run: make generate
           
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.'
+          path: 'docs'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
