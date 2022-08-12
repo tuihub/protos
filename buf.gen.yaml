@@ -4,6 +4,7 @@ plugins:
   - name: doc
     out: docs
     opt: docs/markdown.tmpl,README.md
+    strategy: all
 
   #Go
   - name: gofast

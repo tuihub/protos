@@ -2,11 +2,11 @@ syntax = "proto3";
 package librarian;
 option go_package = "github.com/tuihub/librarian";
 
-import "librarian/user.proto";
-import "librarian/app.proto";
-import "librarian/sentinel.proto";
-import "librarian/base.proto";
-import "librarian/app_bind.proto";
+import "librarian/v0/user.proto";
+import "librarian/v0/app.proto";
+import "librarian/v0/sentinel.proto";
+import "librarian/v0/base.proto";
+import "librarian/v0/app_bind.proto";
 
 service LibrarianService {
     rpc Ping (PingReq) returns (PingResp);
