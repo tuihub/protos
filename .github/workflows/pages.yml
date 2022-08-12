@@ -32,17 +32,17 @@ jobs:
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.4.1
+      
+      - name: Setup Rust environment
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
 
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
 
       - name: Install Protoc Plugins
-        run: |
-          GO111MODULE=off go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
-          GO111MODULE=off go get github.com/gogo/protobuf/protoc-gen-gofast
-          go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-          npm install
+        run: make install-plugins
 
       - name: Setup bufbuild  
         uses: bufbuild/buf-setup-action@v1.7.0

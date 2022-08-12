@@ -32,3 +32,24 @@ plugins:
     path: node_modules/.bin/protoc-gen-ts
     opt: grpc_js
     out: node
+
+  #Rust
+  - remote: buf.build/prost/plugins/prost:v0.2.0-2
+    out: src
+    opt:
+      - bytes=.
+      - compile_well_known_types
+      - extern_path=.google.protobuf=::pbjson_types
+      - file_descriptor_set
+  - remote: buf.build/prost/plugins/serde:v0.2.0-2
+    out: src
+  - remote: buf.build/prost/plugins/tonic:v0.2.0-2
+    out: src
+    opt:
+      - compile_well_known_types
+      - extern_path=.google.protobuf=::pbjson_types
+  - name: prost-crate
+    out: .
+    strategy: all
+    opt:
+      - gen_crate=Cargo.toml

@@ -1,6 +1,14 @@
 default:
 
-generate: buf go
+install-plugins:
+	GO111MODULE=off go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+	GO111MODULE=off go get github.com/gogo/protobuf/protoc-gen-gofast
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+	npm install
+	cargo install protoc-gen-prost-crate
+
+generate: buf go rust
 
 buf:
 	buf generate
@@ -8,3 +16,6 @@ buf:
 go:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go build ./pkg/...
+
+rust:
+	cargo check --features proto_full
