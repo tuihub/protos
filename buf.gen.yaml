@@ -1,4 +1,6 @@
 version: v1
+managed:
+  enabled: true
 plugins:
   #Document
   - name: doc
@@ -53,3 +55,10 @@ plugins:
     strategy: all
     opt:
       - gen_crate=Cargo.toml
+
+  #CSharp
+  - name: csharp
+    out: Assets/src
+    opt: base_namespace=
+  - remote: buf.build/grpc/plugins/csharp:v1.48.0-1
+    out: Assets/src
