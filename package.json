@@ -1,0 +1,21 @@
+{
+  "name": "protos",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TuiHub/Protos.git"
+  },
+  "author": "TuiHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TuiHub/Protos/issues"
+  },
+  "homepage": "https://github.com/TuiHub/Protos#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.6.9",
+    "google-protobuf": "^3.21.0",
+    "grpc-tools": "^1.11.2",
+    "ts-protoc-gen": "^0.15.0"
+  }
+}

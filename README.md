@@ -22,17 +22,19 @@ Check [https://tuihub.github.io/Protos](https://tuihub.github.io/Protos)
 - [protoc](https://github.com/protocolbuffers/protobuf#protocol-compiler-installation)
 
 **language plugins**
-- C++: Built-in
-- Java: Built-in
+- Document: [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc)
+```bash
+GO111MODULE=off go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+```
 - Go: 
 ```bash
 GO111MODULE=off go get github.com/gogo/protobuf/protoc-gen-gofast
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
-- Document: [protoc-gen-doc](https://github.com/pseudomuto/protoc-gen-doc)
+- Js/Ts:
 ```bash
-GO111MODULE=off go get github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+npm i
 ```
 
 ### Build
