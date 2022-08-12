@@ -7,10 +7,10 @@ plugins:
 
   #Go
   - name: gofast
-    out: pkg
+    out: go
     opt: paths=source_relative
   - name: go-grpc
-    out: pkg
+    out: go
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
