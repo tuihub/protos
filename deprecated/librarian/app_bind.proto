@@ -2,7 +2,7 @@ syntax = "proto3";
 package librarian;
 option go_package = "github.com/tuihub/librarian";
 
-import "librarian/v0/base.proto";
+import "librarian/base.proto";
 
 message AddAppBindReq {
   int64 AppId = 1;

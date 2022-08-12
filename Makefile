@@ -8,14 +8,20 @@ install-plugins:
 	npm install
 	cargo install protoc-gen-prost-crate
 
-generate: buf go rust
+generate: clean buf go rust
 
 buf:
 	buf generate
 
 go:
 	GO111MODULE=on go mod tidy
-	GO111MODULE=on go build ./pkg/...
 
 rust:
 	cargo check --features proto_full
+
+clean:
+	-rm -r Assets/src
+	-rm docs/README.md
+	-rm -r go
+	-rm -r node
+	-rm -r src
