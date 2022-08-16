@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Librarian.Mapper.V1 {
+namespace TuiHub.Protos.Librarian.Mapper.V1 {
   /// <summary>
   ///
   /// The main role of Mapper is to encapsulate graph operations.
@@ -57,48 +57,48 @@ namespace Librarian.Mapper.V1 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.InsertVertexRequest> __Marshaller_librarian_mapper_v1_InsertVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.InsertVertexRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest> __Marshaller_librarian_mapper_v1_InsertVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.InsertVertexResponse> __Marshaller_librarian_mapper_v1_InsertVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.InsertVertexResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse> __Marshaller_librarian_mapper_v1_InsertVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.DeleteVertexRequest> __Marshaller_librarian_mapper_v1_DeleteVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.DeleteVertexRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest> __Marshaller_librarian_mapper_v1_DeleteVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.DeleteVertexResponse> __Marshaller_librarian_mapper_v1_DeleteVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.DeleteVertexResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse> __Marshaller_librarian_mapper_v1_DeleteVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.UpdateVertexRequest> __Marshaller_librarian_mapper_v1_UpdateVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.UpdateVertexRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest> __Marshaller_librarian_mapper_v1_UpdateVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.UpdateVertexResponse> __Marshaller_librarian_mapper_v1_UpdateVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.UpdateVertexResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse> __Marshaller_librarian_mapper_v1_UpdateVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.InsertEdgeRequest> __Marshaller_librarian_mapper_v1_InsertEdgeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.InsertEdgeRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest> __Marshaller_librarian_mapper_v1_InsertEdgeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.InsertEdgeResponse> __Marshaller_librarian_mapper_v1_InsertEdgeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.InsertEdgeResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse> __Marshaller_librarian_mapper_v1_InsertEdgeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.DeleteEdgeRequest> __Marshaller_librarian_mapper_v1_DeleteEdgeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.DeleteEdgeRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest> __Marshaller_librarian_mapper_v1_DeleteEdgeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.DeleteEdgeResponse> __Marshaller_librarian_mapper_v1_DeleteEdgeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.DeleteEdgeResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse> __Marshaller_librarian_mapper_v1_DeleteEdgeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.UpdateEdgeRequest> __Marshaller_librarian_mapper_v1_UpdateEdgeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.UpdateEdgeRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest> __Marshaller_librarian_mapper_v1_UpdateEdgeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.UpdateEdgeResponse> __Marshaller_librarian_mapper_v1_UpdateEdgeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.UpdateEdgeResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse> __Marshaller_librarian_mapper_v1_UpdateEdgeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.GoFromVertexRequest> __Marshaller_librarian_mapper_v1_GoFromVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.GoFromVertexRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest> __Marshaller_librarian_mapper_v1_GoFromVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.GoFromVertexResponse> __Marshaller_librarian_mapper_v1_GoFromVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.GoFromVertexResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse> __Marshaller_librarian_mapper_v1_GoFromVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.FetchEqualVertexRequest> __Marshaller_librarian_mapper_v1_FetchEqualVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.FetchEqualVertexRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest> __Marshaller_librarian_mapper_v1_FetchEqualVertexRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.FetchEqualVertexResponse> __Marshaller_librarian_mapper_v1_FetchEqualVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.FetchEqualVertexResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse> __Marshaller_librarian_mapper_v1_FetchEqualVertexResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest> __Marshaller_librarian_mapper_v1_FetchEqualVertexNeighborRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest> __Marshaller_librarian_mapper_v1_FetchEqualVertexNeighborRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> __Marshaller_librarian_mapper_v1_FetchEqualVertexNeighborResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> __Marshaller_librarian_mapper_v1_FetchEqualVertexNeighborResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.FindPathRequest> __Marshaller_librarian_mapper_v1_FindPathRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.FindPathRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest> __Marshaller_librarian_mapper_v1_FindPathRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Mapper.V1.FindPathResponse> __Marshaller_librarian_mapper_v1_FindPathResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Mapper.V1.FindPathResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse> __Marshaller_librarian_mapper_v1_FindPathResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.InsertVertexRequest, global::Librarian.Mapper.V1.InsertVertexResponse> __Method_InsertVertex = new grpc::Method<global::Librarian.Mapper.V1.InsertVertexRequest, global::Librarian.Mapper.V1.InsertVertexResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse> __Method_InsertVertex = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "InsertVertex",
@@ -106,7 +106,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_InsertVertexResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.DeleteVertexRequest, global::Librarian.Mapper.V1.DeleteVertexResponse> __Method_DeleteVertex = new grpc::Method<global::Librarian.Mapper.V1.DeleteVertexRequest, global::Librarian.Mapper.V1.DeleteVertexResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse> __Method_DeleteVertex = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteVertex",
@@ -114,7 +114,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_DeleteVertexResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.UpdateVertexRequest, global::Librarian.Mapper.V1.UpdateVertexResponse> __Method_UpdateVertex = new grpc::Method<global::Librarian.Mapper.V1.UpdateVertexRequest, global::Librarian.Mapper.V1.UpdateVertexResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse> __Method_UpdateVertex = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateVertex",
@@ -122,7 +122,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_UpdateVertexResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.InsertEdgeRequest, global::Librarian.Mapper.V1.InsertEdgeResponse> __Method_InsertEdge = new grpc::Method<global::Librarian.Mapper.V1.InsertEdgeRequest, global::Librarian.Mapper.V1.InsertEdgeResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse> __Method_InsertEdge = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "InsertEdge",
@@ -130,7 +130,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_InsertEdgeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.DeleteEdgeRequest, global::Librarian.Mapper.V1.DeleteEdgeResponse> __Method_DeleteEdge = new grpc::Method<global::Librarian.Mapper.V1.DeleteEdgeRequest, global::Librarian.Mapper.V1.DeleteEdgeResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse> __Method_DeleteEdge = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteEdge",
@@ -138,7 +138,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_DeleteEdgeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.UpdateEdgeRequest, global::Librarian.Mapper.V1.UpdateEdgeResponse> __Method_UpdateEdge = new grpc::Method<global::Librarian.Mapper.V1.UpdateEdgeRequest, global::Librarian.Mapper.V1.UpdateEdgeResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse> __Method_UpdateEdge = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateEdge",
@@ -146,7 +146,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_UpdateEdgeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.GoFromVertexRequest, global::Librarian.Mapper.V1.GoFromVertexResponse> __Method_GoFromVertex = new grpc::Method<global::Librarian.Mapper.V1.GoFromVertexRequest, global::Librarian.Mapper.V1.GoFromVertexResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse> __Method_GoFromVertex = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GoFromVertex",
@@ -154,7 +154,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_GoFromVertexResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.FetchEqualVertexRequest, global::Librarian.Mapper.V1.FetchEqualVertexResponse> __Method_FetchEqualVertex = new grpc::Method<global::Librarian.Mapper.V1.FetchEqualVertexRequest, global::Librarian.Mapper.V1.FetchEqualVertexResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse> __Method_FetchEqualVertex = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "FetchEqualVertex",
@@ -162,7 +162,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_FetchEqualVertexResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest, global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> __Method_FetchEqualVertexNeighbor = new grpc::Method<global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest, global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> __Method_FetchEqualVertexNeighbor = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "FetchEqualVertexNeighbor",
@@ -170,7 +170,7 @@ namespace Librarian.Mapper.V1 {
         __Marshaller_librarian_mapper_v1_FetchEqualVertexNeighborResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Mapper.V1.FindPathRequest, global::Librarian.Mapper.V1.FindPathResponse> __Method_FindPath = new grpc::Method<global::Librarian.Mapper.V1.FindPathRequest, global::Librarian.Mapper.V1.FindPathResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse> __Method_FindPath = new grpc::Method<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "FindPath",
@@ -180,7 +180,7 @@ namespace Librarian.Mapper.V1 {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Librarian.Mapper.V1.MapperReflection.Descriptor.Services[0]; }
+      get { return global::TuiHub.Protos.Librarian.Mapper.V1.MapperReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of LibrarianMapperService</summary>
@@ -188,37 +188,37 @@ namespace Librarian.Mapper.V1 {
     public abstract partial class LibrarianMapperServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.InsertVertexResponse> InsertVertex(global::Librarian.Mapper.V1.InsertVertexRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse> InsertVertex(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.DeleteVertexResponse> DeleteVertex(global::Librarian.Mapper.V1.DeleteVertexRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse> DeleteVertex(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.UpdateVertexResponse> UpdateVertex(global::Librarian.Mapper.V1.UpdateVertexRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse> UpdateVertex(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.InsertEdgeResponse> InsertEdge(global::Librarian.Mapper.V1.InsertEdgeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse> InsertEdge(global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.DeleteEdgeResponse> DeleteEdge(global::Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse> DeleteEdge(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.UpdateEdgeResponse> UpdateEdge(global::Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse> UpdateEdge(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -230,7 +230,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.GoFromVertexResponse> GoFromVertex(global::Librarian.Mapper.V1.GoFromVertexRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse> GoFromVertex(global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -242,7 +242,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.FetchEqualVertexResponse> FetchEqualVertex(global::Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse> FetchEqualVertex(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -254,7 +254,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> FetchEqualVertexNeighbor(global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> FetchEqualVertexNeighbor(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -266,7 +266,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Mapper.V1.FindPathResponse> FindPath(global::Librarian.Mapper.V1.FindPathRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse> FindPath(global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -301,122 +301,122 @@ namespace Librarian.Mapper.V1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.InsertVertexResponse InsertVertex(global::Librarian.Mapper.V1.InsertVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse InsertVertex(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return InsertVertex(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.InsertVertexResponse InsertVertex(global::Librarian.Mapper.V1.InsertVertexRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse InsertVertex(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_InsertVertex, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.InsertVertexResponse> InsertVertexAsync(global::Librarian.Mapper.V1.InsertVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse> InsertVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return InsertVertexAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.InsertVertexResponse> InsertVertexAsync(global::Librarian.Mapper.V1.InsertVertexRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse> InsertVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_InsertVertex, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.DeleteVertexResponse DeleteVertex(global::Librarian.Mapper.V1.DeleteVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse DeleteVertex(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DeleteVertex(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.DeleteVertexResponse DeleteVertex(global::Librarian.Mapper.V1.DeleteVertexRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse DeleteVertex(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteVertex, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.DeleteVertexResponse> DeleteVertexAsync(global::Librarian.Mapper.V1.DeleteVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse> DeleteVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DeleteVertexAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.DeleteVertexResponse> DeleteVertexAsync(global::Librarian.Mapper.V1.DeleteVertexRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse> DeleteVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteVertex, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.UpdateVertexResponse UpdateVertex(global::Librarian.Mapper.V1.UpdateVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse UpdateVertex(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateVertex(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.UpdateVertexResponse UpdateVertex(global::Librarian.Mapper.V1.UpdateVertexRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse UpdateVertex(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateVertex, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.UpdateVertexResponse> UpdateVertexAsync(global::Librarian.Mapper.V1.UpdateVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse> UpdateVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateVertexAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.UpdateVertexResponse> UpdateVertexAsync(global::Librarian.Mapper.V1.UpdateVertexRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse> UpdateVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateVertex, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.InsertEdgeResponse InsertEdge(global::Librarian.Mapper.V1.InsertEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse InsertEdge(global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return InsertEdge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.InsertEdgeResponse InsertEdge(global::Librarian.Mapper.V1.InsertEdgeRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse InsertEdge(global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_InsertEdge, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.InsertEdgeResponse> InsertEdgeAsync(global::Librarian.Mapper.V1.InsertEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse> InsertEdgeAsync(global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return InsertEdgeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.InsertEdgeResponse> InsertEdgeAsync(global::Librarian.Mapper.V1.InsertEdgeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse> InsertEdgeAsync(global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_InsertEdge, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.DeleteEdgeResponse DeleteEdge(global::Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse DeleteEdge(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DeleteEdge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.DeleteEdgeResponse DeleteEdge(global::Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse DeleteEdge(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteEdge, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.DeleteEdgeResponse> DeleteEdgeAsync(global::Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse> DeleteEdgeAsync(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DeleteEdgeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.DeleteEdgeResponse> DeleteEdgeAsync(global::Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse> DeleteEdgeAsync(global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteEdge, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.UpdateEdgeResponse UpdateEdge(global::Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse UpdateEdge(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateEdge(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.UpdateEdgeResponse UpdateEdge(global::Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse UpdateEdge(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateEdge, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.UpdateEdgeResponse> UpdateEdgeAsync(global::Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse> UpdateEdgeAsync(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateEdgeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.UpdateEdgeResponse> UpdateEdgeAsync(global::Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse> UpdateEdgeAsync(global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateEdge, null, options, request);
       }
@@ -429,7 +429,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.GoFromVertexResponse GoFromVertex(global::Librarian.Mapper.V1.GoFromVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse GoFromVertex(global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GoFromVertex(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -440,7 +440,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.GoFromVertexResponse GoFromVertex(global::Librarian.Mapper.V1.GoFromVertexRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse GoFromVertex(global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GoFromVertex, null, options, request);
       }
@@ -453,7 +453,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.GoFromVertexResponse> GoFromVertexAsync(global::Librarian.Mapper.V1.GoFromVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse> GoFromVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GoFromVertexAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -464,7 +464,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.GoFromVertexResponse> GoFromVertexAsync(global::Librarian.Mapper.V1.GoFromVertexRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse> GoFromVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GoFromVertex, null, options, request);
       }
@@ -477,7 +477,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.FetchEqualVertexResponse FetchEqualVertex(global::Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse FetchEqualVertex(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FetchEqualVertex(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -488,7 +488,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.FetchEqualVertexResponse FetchEqualVertex(global::Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse FetchEqualVertex(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_FetchEqualVertex, null, options, request);
       }
@@ -501,7 +501,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.FetchEqualVertexResponse> FetchEqualVertexAsync(global::Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse> FetchEqualVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FetchEqualVertexAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -512,7 +512,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.FetchEqualVertexResponse> FetchEqualVertexAsync(global::Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse> FetchEqualVertexAsync(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_FetchEqualVertex, null, options, request);
       }
@@ -525,7 +525,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse FetchEqualVertexNeighbor(global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse FetchEqualVertexNeighbor(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FetchEqualVertexNeighbor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -536,7 +536,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse FetchEqualVertexNeighbor(global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse FetchEqualVertexNeighbor(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_FetchEqualVertexNeighbor, null, options, request);
       }
@@ -549,7 +549,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> FetchEqualVertexNeighborAsync(global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> FetchEqualVertexNeighborAsync(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FetchEqualVertexNeighborAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -560,7 +560,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> FetchEqualVertexNeighborAsync(global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse> FetchEqualVertexNeighborAsync(global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_FetchEqualVertexNeighbor, null, options, request);
       }
@@ -573,7 +573,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.FindPathResponse FindPath(global::Librarian.Mapper.V1.FindPathRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse FindPath(global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FindPath(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -584,7 +584,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Mapper.V1.FindPathResponse FindPath(global::Librarian.Mapper.V1.FindPathRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse FindPath(global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_FindPath, null, options, request);
       }
@@ -597,7 +597,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.FindPathResponse> FindPathAsync(global::Librarian.Mapper.V1.FindPathRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse> FindPathAsync(global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return FindPathAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -608,7 +608,7 @@ namespace Librarian.Mapper.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Mapper.V1.FindPathResponse> FindPathAsync(global::Librarian.Mapper.V1.FindPathRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse> FindPathAsync(global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_FindPath, null, options, request);
       }
@@ -645,16 +645,16 @@ namespace Librarian.Mapper.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianMapperServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_InsertVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.InsertVertexRequest, global::Librarian.Mapper.V1.InsertVertexResponse>(serviceImpl.InsertVertex));
-      serviceBinder.AddMethod(__Method_DeleteVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.DeleteVertexRequest, global::Librarian.Mapper.V1.DeleteVertexResponse>(serviceImpl.DeleteVertex));
-      serviceBinder.AddMethod(__Method_UpdateVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.UpdateVertexRequest, global::Librarian.Mapper.V1.UpdateVertexResponse>(serviceImpl.UpdateVertex));
-      serviceBinder.AddMethod(__Method_InsertEdge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.InsertEdgeRequest, global::Librarian.Mapper.V1.InsertEdgeResponse>(serviceImpl.InsertEdge));
-      serviceBinder.AddMethod(__Method_DeleteEdge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.DeleteEdgeRequest, global::Librarian.Mapper.V1.DeleteEdgeResponse>(serviceImpl.DeleteEdge));
-      serviceBinder.AddMethod(__Method_UpdateEdge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.UpdateEdgeRequest, global::Librarian.Mapper.V1.UpdateEdgeResponse>(serviceImpl.UpdateEdge));
-      serviceBinder.AddMethod(__Method_GoFromVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.GoFromVertexRequest, global::Librarian.Mapper.V1.GoFromVertexResponse>(serviceImpl.GoFromVertex));
-      serviceBinder.AddMethod(__Method_FetchEqualVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.FetchEqualVertexRequest, global::Librarian.Mapper.V1.FetchEqualVertexResponse>(serviceImpl.FetchEqualVertex));
-      serviceBinder.AddMethod(__Method_FetchEqualVertexNeighbor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.FetchEqualVertexNeighborRequest, global::Librarian.Mapper.V1.FetchEqualVertexNeighborResponse>(serviceImpl.FetchEqualVertexNeighbor));
-      serviceBinder.AddMethod(__Method_FindPath, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Mapper.V1.FindPathRequest, global::Librarian.Mapper.V1.FindPathResponse>(serviceImpl.FindPath));
+      serviceBinder.AddMethod(__Method_InsertVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse>(serviceImpl.InsertVertex));
+      serviceBinder.AddMethod(__Method_DeleteVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteVertexResponse>(serviceImpl.DeleteVertex));
+      serviceBinder.AddMethod(__Method_UpdateVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateVertexResponse>(serviceImpl.UpdateVertex));
+      serviceBinder.AddMethod(__Method_InsertEdge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.InsertEdgeResponse>(serviceImpl.InsertEdge));
+      serviceBinder.AddMethod(__Method_DeleteEdge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.DeleteEdgeResponse>(serviceImpl.DeleteEdge));
+      serviceBinder.AddMethod(__Method_UpdateEdge, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeRequest, global::TuiHub.Protos.Librarian.Mapper.V1.UpdateEdgeResponse>(serviceImpl.UpdateEdge));
+      serviceBinder.AddMethod(__Method_GoFromVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.GoFromVertexResponse>(serviceImpl.GoFromVertex));
+      serviceBinder.AddMethod(__Method_FetchEqualVertex, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexResponse>(serviceImpl.FetchEqualVertex));
+      serviceBinder.AddMethod(__Method_FetchEqualVertexNeighbor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FetchEqualVertexNeighborResponse>(serviceImpl.FetchEqualVertexNeighbor));
+      serviceBinder.AddMethod(__Method_FindPath, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Mapper.V1.FindPathRequest, global::TuiHub.Protos.Librarian.Mapper.V1.FindPathResponse>(serviceImpl.FindPath));
     }
 
   }

@@ -3,6 +3,7 @@ syntax = "proto3";
 package librarian.mapper.v1;
 
 option go_package = "github.com/tuihub/librarian/mapper;v1";
+option csharp_namespace = "TuiHub.Protos.Librarian.Mapper.V1";
 
 /*
  * The main role of Mapper is to encapsulate graph operations.

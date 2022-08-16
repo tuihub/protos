@@ -21,6 +21,12 @@ npm install https://github.com/TuiHub/Protos
 yarn add https://github.com/TuiHub/Protos
 ```
 
+### Rust
+
+```bash
+cargo add --git https://github.com/TuiHub/Protos
+```
+
 ## Build Locally
 
 **Not Recommended**. You can focus on proto files and just use `buf lint` to make sure proto files are correct. Action Bot will deal with the rest.

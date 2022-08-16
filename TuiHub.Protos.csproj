@@ -15,8 +15,8 @@
     <DevelopmentDependency>true</DevelopmentDependency>
 
     <Version>0.1.0-alpha</Version>
-    <Authors>tuihub</Authors>
-    <Company>tuihub</Company>
+    <Authors>TuiHub</Authors>
+    <Company>TuiHub</Company>
   </PropertyGroup>
   
   <Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">

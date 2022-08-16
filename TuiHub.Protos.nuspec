@@ -14,8 +14,9 @@
     <tags></tags>
   </metadata>
   <files>
+      <file src="TuiHub.Protos.csproj" target="" />
       <file src="README.md" target="" />
-
+      
       <file src="Assets\**\*.*" target="" />
   </files>
 </package>

@@ -33,6 +33,14 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.4.1
       
+      - name: Setup .NET environment
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0.x'
+          source-url: https://nuget.pkg.github.com/tuihub/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Setup Rust environment
         uses: actions-rs/toolchain@v1
         with:
@@ -60,6 +68,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@main
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Apply Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Apply automatic changes
+
+      - name: Create .NET source package
+        run: dotnet nuget pack TuiHub.Protos.nuspec
+      - name: Publish .NET package to GPR
+        run: dotnet nuget push *.nupkg

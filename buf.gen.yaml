@@ -1,6 +1,4 @@
 version: v1
-managed:
-  enabled: true
 plugins:
   #Document
   - name: doc
@@ -10,10 +8,10 @@ plugins:
 
   #Go
   - name: gofast
-    out: go
+    out: pkg
     opt: paths=source_relative
   - name: go-grpc
-    out: go
+    out: pkg
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
