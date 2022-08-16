@@ -1174,6 +1174,7 @@ type Vertex struct {
 	Vid  int64      `protobuf:"varint,1,opt,name=vid,proto3" json:"vid,omitempty"`
 	Type VertexType `protobuf:"varint,2,opt,name=type,proto3,enum=librarian.mapper.v1.VertexType" json:"type,omitempty"`
 	// Types that are valid to be assigned to XProp:
+	//
 	//	*Vertex_Prop
 	XProp                isVertex_XProp `protobuf_oneof:"_prop"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
@@ -1318,12 +1319,15 @@ func (m *VertexProp) GetAdditional() map[string]int64 {
 
 type VertexCommonProp struct {
 	// Types that are valid to be assigned to XOccurTime:
+	//
 	//	*VertexCommonProp_OccurTime
 	XOccurTime isVertexCommonProp_XOccurTime `protobuf_oneof:"_occur_time"`
 	// Types that are valid to be assigned to XCreateTime:
+	//
 	//	*VertexCommonProp_CreateTime
 	XCreateTime isVertexCommonProp_XCreateTime `protobuf_oneof:"_create_time"`
 	// Types that are valid to be assigned to XUpdateTime:
+	//
 	//	*VertexCommonProp_UpdateTime
 	XUpdateTime          isVertexCommonProp_XUpdateTime `protobuf_oneof:"_update_time"`
 	XXX_NoUnkeyedLiteral struct{}                       `json:"-"`
@@ -1448,6 +1452,7 @@ type Edge struct {
 	DstVid int64    `protobuf:"varint,2,opt,name=dst_vid,json=dstVid,proto3" json:"dst_vid,omitempty"`
 	Type   EdgeType `protobuf:"varint,3,opt,name=type,proto3,enum=librarian.mapper.v1.EdgeType" json:"type,omitempty"`
 	// Types that are valid to be assigned to XProp:
+	//
 	//	*Edge_Prop
 	XProp                isEdge_XProp `protobuf_oneof:"_prop"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
@@ -1599,15 +1604,19 @@ func (m *EdgeProp) GetAdditional() map[string]int64 {
 
 type EdgeCommonProp struct {
 	// Types that are valid to be assigned to XOccurTime:
+	//
 	//	*EdgeCommonProp_OccurTime
 	XOccurTime isEdgeCommonProp_XOccurTime `protobuf_oneof:"_occur_time"`
 	// Types that are valid to be assigned to XCreateTime:
+	//
 	//	*EdgeCommonProp_CreateTime
 	XCreateTime isEdgeCommonProp_XCreateTime `protobuf_oneof:"_create_time"`
 	// Types that are valid to be assigned to XUpdateTime:
+	//
 	//	*EdgeCommonProp_UpdateTime
 	XUpdateTime isEdgeCommonProp_XUpdateTime `protobuf_oneof:"_update_time"`
 	// Types that are valid to be assigned to XRank:
+	//
 	//	*EdgeCommonProp_Rank
 	XRank                isEdgeCommonProp_XRank `protobuf_oneof:"_rank"`
 	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
