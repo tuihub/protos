@@ -14,7 +14,7 @@
     <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
     <DevelopmentDependency>true</DevelopmentDependency>
 
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.0</Version>
     <Authors>TuiHub</Authors>
     <Company>TuiHub</Company>
     <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>

@@ -27,6 +27,17 @@ yarn add https://github.com/TuiHub/Protos
 cargo add --git https://github.com/TuiHub/Protos
 ```
 
+### CSharp
+
+- Check [Package](https://github.com/orgs/TuiHub/packages?repo_name=Protos) page for pre-packed file
+- Or pack locally
+
+```bash
+git clone https://github.com/TuiHub/Protos && cd Protos
+# How to install `nuget`: https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools
+nuget pack TuiHub.Protos.nuspec
+```
+
 ## Build Locally
 
 **Not Recommended**. You can focus on proto files and just use `buf lint` to make sure proto files are correct. Action Bot will deal with the rest.
@@ -60,8 +71,5 @@ npm i
 ### Build
 
 ```bash
-buf --help
-
-# build all target
-buf generate
+make generate
 ```

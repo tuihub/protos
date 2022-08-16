@@ -11,6 +11,8 @@ install-plugins:
 generate: clean buf go rust
 
 buf:
+	buf format -w
+	buf lint
 	buf generate
 
 go:

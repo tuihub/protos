@@ -79,4 +79,4 @@ jobs:
       - name: Create .NET source package
         run: nuget pack TuiHub.Protos.nuspec
       - name: Publish .NET package to GPR
-        run: dotnet nuget push *.nupkg
+        run: dotnet nuget push *.nupkg --skip-duplicate
