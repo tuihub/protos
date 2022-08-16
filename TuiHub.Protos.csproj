@@ -18,6 +18,7 @@
     <Authors>TuiHub</Authors>
     <Company>TuiHub</Company>
     <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   
   <Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">

@@ -8,6 +8,7 @@
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/TuiHub/Protos</projectUrl>
+    <repository type="git" url="https://github.com/TuiHub/Protos" />
     <description>protobuf protocol files for TuiHub</description>
     <releaseNotes></releaseNotes>
     <copyright></copyright>
