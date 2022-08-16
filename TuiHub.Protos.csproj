@@ -17,6 +17,7 @@
     <Version>0.1.0-alpha</Version>
     <Authors>TuiHub</Authors>
     <Company>TuiHub</Company>
+    <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
   </PropertyGroup>
   
   <Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
