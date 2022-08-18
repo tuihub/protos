@@ -33,7 +33,7 @@ message ListAppRequest {
 }
 
 message ListAppResponse {
-  oneof app_list {
+  oneof content {
     AppList without_bind = 1;
     AppListList with_bind = 2;
   }

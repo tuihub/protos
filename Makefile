@@ -13,7 +13,7 @@ generate: clean buf go rust
 buf:
 	buf format -w
 	buf lint
-	buf generate
+	buf generate --include-imports
 
 go:
 	GO111MODULE=on go mod tidy
