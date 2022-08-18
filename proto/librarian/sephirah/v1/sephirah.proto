@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+import "librarian/sephirah/v1/binah.proto";
+import "librarian/sephirah/v1/gebura.proto";
+import "librarian/sephirah/v1/tiphereth.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/librarian/sephirah;v1";
+
+/*
+ * Sephirah contains the core logic and currently divided into the following modules:
+ * 1. `Tiphereth` handles account data and provides permission verification
+ * 2. `Gebura` handles application data
+ * 3. `Binah` handles file transfer
+ */
+service LibrarianSephirahService {
+  // `Tiphereth` `Normal` Login via password and get two token
+  rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
+  // `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+  // `Tiphereth` `Admin` Generate token for given user
+  rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
+
+  // `Tiphereth` `Admin`
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  // `Tiphereth` `Admin`
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+  // `Tiphereth` `Normal`
+  rpc ListUser(ListUserRequest) returns (ListUserResponse);
+
+  // `Tiphereth` `Normal` Bind third-party account to current user.
+  // Create (account)<-[Equal]->(current user)
+  rpc LinkAccount(LinkAccountRequest) returns (LinkAccountResponse);
+  // `Tiphereth` `Normal` Unbind third-party account from current user.
+  // Delete (account)<-[Equal]->(current user)
+  rpc UnLinkAccount(UnLinkAccountRequest) returns (UnLinkAccountResponse);
+  // `Tiphereth` `Normal` List third-party account binded to current user.
+  // Match ()<-[Equal]->(current user)
+  rpc ListLinkAccount(ListLinkAccountRequest) returns (ListLinkAccountResponse);
+
+  // `Binah` `upload_token`
+  rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
+  // `Binah` `download_token`
+  rpc DownloadFile(stream DownloadFileRequest) returns (stream DownloadFileResponse);
+  // `Binah` `upload_token`
+  rpc SimpleUploadFile(stream SimpleUploadFileRequest) returns (stream SimpleUploadFileResponse);
+  // `Binah` `download_token`
+  rpc SimpleDownloadFile(stream SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
+
+  // `Gebura` `Admin`
+  rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);
+  // `Gebura` `Admin`
+  rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
+  // `Gebura` `Normal`
+  rpc ListApp(ListAppRequest) returns (ListAppResponse);
+
+  // `Gebura` `Admin` Bind two app
+  // Create (src_id)<-[Equal]->(dst_id)
+  rpc BindApp(BindAppRequest) returns (BindAppResponse);
+  // `Gebura` `Admin` Unbind two app
+  // Delete (src_id)<-[Equal]->(dst_id)
+  rpc UnBindApp(UnBindAppRequest) returns (UnBindAppResponse);
+  // `Gebura` `Admin` Submit an asynchronous update request
+  rpc RefreshApp(RefreshAppRequest) returns (RefreshAppResponse);
+
+  // `Gebura` `Normal`
+  rpc UploadArtifacts(UploadArtifactsRequest) returns (UploadArtifactsResponse);
+  // `Gebura` `Normal`
+  rpc DownloadArtifacts(DownloadArtifactsRequest) returns (DownloadArtifactsResponse);
+  // `Gebura` `Normal`
+  rpc ListArtifacts(ListArtifactsRequest) returns (ListArtifactsResponse);
+}

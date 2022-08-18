@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package librarian.mapper.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option csharp_namespace = "TuiHub.Protos.Librarian.Mapper.V1";
 option go_package = "github.com/tuihub/librarian/mapper;v1";
 
@@ -132,9 +134,9 @@ message VertexProp {
 }
 
 message VertexCommonProp {
-  optional int64 occur_time = 1;
-  optional int64 create_time = 2;
-  optional int64 update_time = 3;
+  optional google.protobuf.Timestamp occur_time = 1;
+  optional google.protobuf.Timestamp create_time = 2;
+  optional google.protobuf.Timestamp update_time = 3;
 }
 
 message Edge {
@@ -150,9 +152,9 @@ message EdgeProp {
 }
 
 message EdgeCommonProp {
-  optional int64 occur_time = 1;
-  optional int64 create_time = 2;
-  optional int64 update_time = 3;
+  optional google.protobuf.Timestamp occur_time = 1;
+  optional google.protobuf.Timestamp create_time = 2;
+  optional google.protobuf.Timestamp update_time = 3;
   optional int64 rank = 4;
 }
 

@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/librarian/sephirah;v1";
+
+message UploadFileRequest {
+  oneof content {
+    FileChunk file_chunk = 1;
+    bool require_file_status = 2;
+  }
+}
+message UploadFileResponse {
+  oneof content {
+    ChunkStatus chunk_status = 1;
+    FileStatus file_status = 2;
+  }
+
+  message ChunkStatus {
+    int64 chunk_number = 1;
+    ChunkTransferStatus status = 2;
+  }
+
+  message FileStatus {
+    repeated int64 missing_chunk_list = 1;
+    FileTransferStatus status = 2;
+  }
+}
+message DownloadFileRequest {
+  int64 start_chunk_number = 1;
+  optional int64 end_chunk_number = 2;
+}
+message DownloadFileResponse {
+  FileChunk file_chunk = 1;
+}
+
+message SimpleUploadFileRequest {
+  bytes data = 1;
+}
+
+message SimpleUploadFileResponse {
+  FileTransferStatus status = 1;
+}
+message SimpleDownloadFileRequest {}
+message SimpleDownloadFileResponse {
+  bytes data = 1;
+}
+
+message FileChunk {
+  int64 chunk_number = 1;
+  bytes data = 2;
+}
+
+enum ChunkTransferStatus {
+  CHUNK_TRANSFER_STATUS_UNSPECIFIED = 0;
+  CHUNK_TRANSFER_STATUS_PENDING = 1;
+  CHUNK_TRANSFER_STATUS_IN_PROGRESS = 2;
+  CHUNK_TRANSFER_STATUS_SUCCESS = 3;
+  CHUNK_TRANSFER_STATUS_FAILED = 4;
+}
+
+enum FileTransferStatus {
+  FILE_TRANSFER_STATUS_UNSPECIFIED = 0;
+  FILE_TRANSFER_STATUS_PENDING = 1;
+  FILE_TRANSFER_STATUS_IN_PROGRESS = 2;
+  FILE_TRANSFER_STATUS_SUCCESS = 3;
+  FILE_TRANSFER_STATUS_FAILED = 4;
+}

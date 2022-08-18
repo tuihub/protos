@@ -31,7 +31,9 @@
 ## {{.Name}}
 {{.Description}}
 
+{{if .Services}}
 ### Services
+{{end}}
 {{range .Services}}
 <a name="{{.FullName | anchor}}" id="{{.FullName | anchor}}"></a>
 
@@ -45,8 +47,9 @@
 {{end}}
 {{end}} <!-- end services -->
 
+{{if .Messages}}
 ### Messages
-
+{{end}}
 {{range .Messages}}
 <a name="{{.FullName | anchor}}" id="{{.FullName | anchor}}"></a>
 
@@ -71,8 +74,9 @@
 
 {{end}} <!-- end messages -->
 
+{{if .Enums}}
 ### Enums
-
+{{end}}
 {{range .Enums}}
 <a name="{{.FullName | anchor}}" id="{{.FullName | anchor}}"></a>
 
