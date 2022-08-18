@@ -25,111 +25,116 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBsaWJyYXJpYW4vbWFwcGVyL3YxL21hcHBlci5wcm90bxITbGlicmFyaWFu",
-            "Lm1hcHBlci52MSJTChNJbnNlcnRWZXJ0ZXhSZXF1ZXN0EjwKC3ZlcnRleF9s",
-            "aXN0GAEgAygLMhsubGlicmFyaWFuLm1hcHBlci52MS5WZXJ0ZXhSCnZlcnRl",
-            "eExpc3QiFgoUSW5zZXJ0VmVydGV4UmVzcG9uc2UiMAoTRGVsZXRlVmVydGV4",
-            "UmVxdWVzdBIZCgh2aWRfbGlzdBgBIAMoA1IHdmlkTGlzdCIWChREZWxldGVW",
-            "ZXJ0ZXhSZXNwb25zZSJTChNVcGRhdGVWZXJ0ZXhSZXF1ZXN0EjwKC3ZlcnRl",
-            "eF9saXN0GAEgAygLMhsubGlicmFyaWFuLm1hcHBlci52MS5WZXJ0ZXhSCnZl",
-            "cnRleExpc3QiFgoUVXBkYXRlVmVydGV4UmVzcG9uc2UiSwoRSW5zZXJ0RWRn",
-            "ZVJlcXVlc3QSNgoJZWRnZV9saXN0GAEgAygLMhkubGlicmFyaWFuLm1hcHBl",
-            "ci52MS5FZGdlUghlZGdlTGlzdCIUChJJbnNlcnRFZGdlUmVzcG9uc2UiSwoR",
-            "RGVsZXRlRWRnZVJlcXVlc3QSNgoJZWRnZV9saXN0GAIgAygLMhkubGlicmFy",
-            "aWFuLm1hcHBlci52MS5FZGdlUghlZGdlTGlzdCIUChJEZWxldGVFZGdlUmVz",
-            "cG9uc2UiSwoRVXBkYXRlRWRnZVJlcXVlc3QSNgoJZWRnZV9saXN0GAMgAygL",
-            "MhkubGlicmFyaWFuLm1hcHBlci52MS5FZGdlUghlZGdlTGlzdCIUChJVcGRh",
-            "dGVFZGdlUmVzcG9uc2UipgIKE0dvRnJvbVZlcnRleFJlcXVlc3QSFwoHc3Jj",
-            "X3ZpZBgBIAEoA1IGc3JjVmlkEkcKEGVkZ2VfdHlwZV9maWx0ZXIYAiADKA4y",
-            "HS5saWJyYXJpYW4ubWFwcGVyLnYxLkVkZ2VUeXBlUg5lZGdlVHlwZUZpbHRl",
-            "chJJCg5lZGdlX2RpcmVjdGlvbhgDIAEoDjIiLmxpYnJhcmlhbi5tYXBwZXIu",
-            "djEuRWRnZURpcmVjdGlvblINZWRnZURpcmVjdGlvbhIZCghtaW5fc3RlcBgE",
-            "IAEoA1IHbWluU3RlcBIZCghtYXhfc3RlcBgFIAEoA1IHbWF4U3RlcBIUCgVs",
-            "aW1pdBgOIAEoA1IFbGltaXQSFgoGb2Zmc2V0GA8gASgDUgZvZmZzZXQiVAoU",
-            "R29Gcm9tVmVydGV4UmVzcG9uc2USPAoLdmVydGV4X2xpc3QYASADKAsyGy5s",
-            "aWJyYXJpYW4ubWFwcGVyLnYxLlZlcnRleFIKdmVydGV4TGlzdCIyChdGZXRj",
-            "aEVxdWFsVmVydGV4UmVxdWVzdBIXCgdzcmNfdmlkGAEgASgDUgZzcmNWaWQi",
-            "WAoYRmV0Y2hFcXVhbFZlcnRleFJlc3BvbnNlEjwKC3ZlcnRleF9saXN0GAEg",
-            "AygLMhsubGlicmFyaWFuLm1hcHBlci52MS5WZXJ0ZXhSCnZlcnRleExpc3Qi",
-            "zgEKH0ZldGNoRXF1YWxWZXJ0ZXhOZWlnaGJvclJlcXVlc3QSFwoHc3JjX3Zp",
-            "ZBgBIAEoA1IGc3JjVmlkEkcKEGVkZ2VfdHlwZV9maWx0ZXIYAiADKA4yHS5s",
-            "aWJyYXJpYW4ubWFwcGVyLnYxLkVkZ2VUeXBlUg5lZGdlVHlwZUZpbHRlchJJ",
-            "Cg5lZGdlX2RpcmVjdGlvbhgDIAEoDjIiLmxpYnJhcmlhbi5tYXBwZXIudjEu",
-            "RWRnZURpcmVjdGlvblINZWRnZURpcmVjdGlvbiJaCiBGZXRjaEVxdWFsVmVy",
-            "dGV4TmVpZ2hib3JSZXNwb25zZRI2CgllZGdlX2xpc3QYASADKAsyGS5saWJy",
-            "YXJpYW4ubWFwcGVyLnYxLkVkZ2VSCGVkZ2VMaXN0IvIBCg9GaW5kUGF0aFJl",
-            "cXVlc3QSFwoHc3JjX3ZpZBgBIAMoA1IGc3JjVmlkEhcKB2RzdF92aWQYAiAD",
-            "KANSBmRzdFZpZBJHChBlZGdlX3R5cGVfZmlsdGVyGAMgAygOMh0ubGlicmFy",
-            "aWFuLm1hcHBlci52MS5FZGdlVHlwZVIOZWRnZVR5cGVGaWx0ZXISSQoOZWRn",
-            "ZV9kaXJlY3Rpb24YBCABKA4yIi5saWJyYXJpYW4ubWFwcGVyLnYxLkVkZ2VE",
-            "aXJlY3Rpb25SDWVkZ2VEaXJlY3Rpb24SGQoIbWF4X3N0ZXAYBSABKANSB21h",
-            "eFN0ZXAipwEKEEZpbmRQYXRoUmVzcG9uc2USTQoJcGF0aF9saXN0GAEgAygL",
-            "MjAubGlicmFyaWFuLm1hcHBlci52MS5GaW5kUGF0aFJlc3BvbnNlLlNpbmds",
-            "ZVBhdGhSCHBhdGhMaXN0GkQKClNpbmdsZVBhdGgSNgoJZWRnZV9saXN0GAMg",
-            "AygLMhkubGlicmFyaWFuLm1hcHBlci52MS5FZGdlUghlZGdlTGlzdCKSAQoG",
-            "VmVydGV4EhAKA3ZpZBgBIAEoA1IDdmlkEjMKBHR5cGUYAiABKA4yHy5saWJy",
-            "YXJpYW4ubWFwcGVyLnYxLlZlcnRleFR5cGVSBHR5cGUSOAoEcHJvcBgDIAEo",
-            "CzIfLmxpYnJhcmlhbi5tYXBwZXIudjEuVmVydGV4UHJvcEgAUgRwcm9wiAEB",
-            "QgcKBV9wcm9wItsBCgpWZXJ0ZXhQcm9wEj0KBmNvbW1vbhgBIAEoCzIlLmxp",
-            "YnJhcmlhbi5tYXBwZXIudjEuVmVydGV4Q29tbW9uUHJvcFIGY29tbW9uEk8K",
-            "CmFkZGl0aW9uYWwYAiADKAsyLy5saWJyYXJpYW4ubWFwcGVyLnYxLlZlcnRl",
-            "eFByb3AuQWRkaXRpb25hbEVudHJ5UgphZGRpdGlvbmFsGj0KD0FkZGl0aW9u",
-            "YWxFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoA1IFdmFs",
-            "dWU6AjgBIrEBChBWZXJ0ZXhDb21tb25Qcm9wEiIKCm9jY3VyX3RpbWUYASAB",
-            "KANIAFIJb2NjdXJUaW1liAEBEiQKC2NyZWF0ZV90aW1lGAIgASgDSAFSCmNy",
-            "ZWF0ZVRpbWWIAQESJAoLdXBkYXRlX3RpbWUYAyABKANIAlIKdXBkYXRlVGlt",
-            "ZYgBAUINCgtfb2NjdXJfdGltZUIOCgxfY3JlYXRlX3RpbWVCDgoMX3VwZGF0",
-            "ZV90aW1lIqwBCgRFZGdlEhcKB3NyY192aWQYASABKANSBnNyY1ZpZBIXCgdk",
-            "c3RfdmlkGAIgASgDUgZkc3RWaWQSMQoEdHlwZRgDIAEoDjIdLmxpYnJhcmlh",
-            "bi5tYXBwZXIudjEuRWRnZVR5cGVSBHR5cGUSNgoEcHJvcBgEIAEoCzIdLmxp",
-            "YnJhcmlhbi5tYXBwZXIudjEuRWRnZVByb3BIAFIEcHJvcIgBAUIHCgVfcHJv",
-            "cCLVAQoIRWRnZVByb3ASOwoGY29tbW9uGAEgASgLMiMubGlicmFyaWFuLm1h",
-            "cHBlci52MS5FZGdlQ29tbW9uUHJvcFIGY29tbW9uEk0KCmFkZGl0aW9uYWwY",
-            "AiADKAsyLS5saWJyYXJpYW4ubWFwcGVyLnYxLkVkZ2VQcm9wLkFkZGl0aW9u",
-            "YWxFbnRyeVIKYWRkaXRpb25hbBo9Cg9BZGRpdGlvbmFsRW50cnkSEAoDa2V5",
-            "GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKANSBXZhbHVlOgI4ASLRAQoORWRn",
-            "ZUNvbW1vblByb3ASIgoKb2NjdXJfdGltZRgBIAEoA0gAUglvY2N1clRpbWWI",
-            "AQESJAoLY3JlYXRlX3RpbWUYAiABKANIAVIKY3JlYXRlVGltZYgBARIkCgt1",
-            "cGRhdGVfdGltZRgDIAEoA0gCUgp1cGRhdGVUaW1liAEBEhcKBHJhbmsYBCAB",
-            "KANIA1IEcmFua4gBAUINCgtfb2NjdXJfdGltZUIOCgxfY3JlYXRlX3RpbWVC",
-            "DgoMX3VwZGF0ZV90aW1lQgcKBV9yYW5rKowBCgpWZXJ0ZXhUeXBlEhsKF1ZF",
-            "UlRFWF9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUVkVSVEVYX1RZUEVfQUJTVFJB",
-            "Q1QQARIWChJWRVJURVhfVFlQRV9FTlRJVFkQAhIXChNWRVJURVhfVFlQRV9N",
-            "RVNTQUdFEAMSFgoSVkVSVEVYX1RZUEVfT0JKRUNUEAQq1gEKCEVkZ2VUeXBl",
-            "EhkKFUVER0VfVFlQRV9VTlNQRUNJRklFRBAAEhUKEUVER0VfVFlQRV9HRU5F",
-            "UkFMEAESEwoPRURHRV9UWVBFX0VRVUFMEAISFAoQRURHRV9UWVBFX0NSRUFU",
-            "RRADEhMKD0VER0VfVFlQRV9FTkpPWRAEEhUKEUVER0VfVFlQRV9NRU5USU9O",
-            "EAUSFAoQRURHRV9UWVBFX0RFUklWRRAGEhUKEUVER0VfVFlQRV9DT05UUk9M",
-            "EAcSFAoQRURHRV9UWVBFX0ZPTExPVxAIKncKDUVkZ2VEaXJlY3Rpb24SHgoa",
-            "RURHRV9ESVJFQ1RJT05fVU5TUEVDSUZJRUQQABIWChJFREdFX0RJUkVDVElP",
-            "Tl9PVVQQARIVChFFREdFX0RJUkVDVElPTl9JThACEhcKE0VER0VfRElSRUNU",
-            "SU9OX0JPVEgQAzKdCAoWTGlicmFyaWFuTWFwcGVyU2VydmljZRJjCgxJbnNl",
-            "cnRWZXJ0ZXgSKC5saWJyYXJpYW4ubWFwcGVyLnYxLkluc2VydFZlcnRleFJl",
-            "cXVlc3QaKS5saWJyYXJpYW4ubWFwcGVyLnYxLkluc2VydFZlcnRleFJlc3Bv",
-            "bnNlEmMKDERlbGV0ZVZlcnRleBIoLmxpYnJhcmlhbi5tYXBwZXIudjEuRGVs",
-            "ZXRlVmVydGV4UmVxdWVzdBopLmxpYnJhcmlhbi5tYXBwZXIudjEuRGVsZXRl",
-            "VmVydGV4UmVzcG9uc2USYwoMVXBkYXRlVmVydGV4EigubGlicmFyaWFuLm1h",
-            "cHBlci52MS5VcGRhdGVWZXJ0ZXhSZXF1ZXN0GikubGlicmFyaWFuLm1hcHBl",
-            "ci52MS5VcGRhdGVWZXJ0ZXhSZXNwb25zZRJdCgpJbnNlcnRFZGdlEiYubGli",
-            "cmFyaWFuLm1hcHBlci52MS5JbnNlcnRFZGdlUmVxdWVzdBonLmxpYnJhcmlh",
-            "bi5tYXBwZXIudjEuSW5zZXJ0RWRnZVJlc3BvbnNlEl0KCkRlbGV0ZUVkZ2US",
-            "Ji5saWJyYXJpYW4ubWFwcGVyLnYxLkRlbGV0ZUVkZ2VSZXF1ZXN0GicubGli",
-            "cmFyaWFuLm1hcHBlci52MS5EZWxldGVFZGdlUmVzcG9uc2USXQoKVXBkYXRl",
-            "RWRnZRImLmxpYnJhcmlhbi5tYXBwZXIudjEuVXBkYXRlRWRnZVJlcXVlc3Qa",
-            "Jy5saWJyYXJpYW4ubWFwcGVyLnYxLlVwZGF0ZUVkZ2VSZXNwb25zZRJjCgxH",
-            "b0Zyb21WZXJ0ZXgSKC5saWJyYXJpYW4ubWFwcGVyLnYxLkdvRnJvbVZlcnRl",
-            "eFJlcXVlc3QaKS5saWJyYXJpYW4ubWFwcGVyLnYxLkdvRnJvbVZlcnRleFJl",
-            "c3BvbnNlEm8KEEZldGNoRXF1YWxWZXJ0ZXgSLC5saWJyYXJpYW4ubWFwcGVy",
-            "LnYxLkZldGNoRXF1YWxWZXJ0ZXhSZXF1ZXN0Gi0ubGlicmFyaWFuLm1hcHBl",
-            "ci52MS5GZXRjaEVxdWFsVmVydGV4UmVzcG9uc2UShwEKGEZldGNoRXF1YWxW",
-            "ZXJ0ZXhOZWlnaGJvchI0LmxpYnJhcmlhbi5tYXBwZXIudjEuRmV0Y2hFcXVh",
-            "bFZlcnRleE5laWdoYm9yUmVxdWVzdBo1LmxpYnJhcmlhbi5tYXBwZXIudjEu",
-            "RmV0Y2hFcXVhbFZlcnRleE5laWdoYm9yUmVzcG9uc2USVwoIRmluZFBhdGgS",
-            "JC5saWJyYXJpYW4ubWFwcGVyLnYxLkZpbmRQYXRoUmVxdWVzdBolLmxpYnJh",
-            "cmlhbi5tYXBwZXIudjEuRmluZFBhdGhSZXNwb25zZUJLWiVnaXRodWIuY29t",
-            "L3R1aWh1Yi9saWJyYXJpYW4vbWFwcGVyO3YxqgIhVHVpSHViLlByb3Rvcy5M",
-            "aWJyYXJpYW4uTWFwcGVyLlYxYgZwcm90bzM="));
+            "Lm1hcHBlci52MRofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90byJT",
+            "ChNJbnNlcnRWZXJ0ZXhSZXF1ZXN0EjwKC3ZlcnRleF9saXN0GAEgAygLMhsu",
+            "bGlicmFyaWFuLm1hcHBlci52MS5WZXJ0ZXhSCnZlcnRleExpc3QiFgoUSW5z",
+            "ZXJ0VmVydGV4UmVzcG9uc2UiMAoTRGVsZXRlVmVydGV4UmVxdWVzdBIZCgh2",
+            "aWRfbGlzdBgBIAMoA1IHdmlkTGlzdCIWChREZWxldGVWZXJ0ZXhSZXNwb25z",
+            "ZSJTChNVcGRhdGVWZXJ0ZXhSZXF1ZXN0EjwKC3ZlcnRleF9saXN0GAEgAygL",
+            "MhsubGlicmFyaWFuLm1hcHBlci52MS5WZXJ0ZXhSCnZlcnRleExpc3QiFgoU",
+            "VXBkYXRlVmVydGV4UmVzcG9uc2UiSwoRSW5zZXJ0RWRnZVJlcXVlc3QSNgoJ",
+            "ZWRnZV9saXN0GAEgAygLMhkubGlicmFyaWFuLm1hcHBlci52MS5FZGdlUghl",
+            "ZGdlTGlzdCIUChJJbnNlcnRFZGdlUmVzcG9uc2UiSwoRRGVsZXRlRWRnZVJl",
+            "cXVlc3QSNgoJZWRnZV9saXN0GAIgAygLMhkubGlicmFyaWFuLm1hcHBlci52",
+            "MS5FZGdlUghlZGdlTGlzdCIUChJEZWxldGVFZGdlUmVzcG9uc2UiSwoRVXBk",
+            "YXRlRWRnZVJlcXVlc3QSNgoJZWRnZV9saXN0GAMgAygLMhkubGlicmFyaWFu",
+            "Lm1hcHBlci52MS5FZGdlUghlZGdlTGlzdCIUChJVcGRhdGVFZGdlUmVzcG9u",
+            "c2UipgIKE0dvRnJvbVZlcnRleFJlcXVlc3QSFwoHc3JjX3ZpZBgBIAEoA1IG",
+            "c3JjVmlkEkcKEGVkZ2VfdHlwZV9maWx0ZXIYAiADKA4yHS5saWJyYXJpYW4u",
+            "bWFwcGVyLnYxLkVkZ2VUeXBlUg5lZGdlVHlwZUZpbHRlchJJCg5lZGdlX2Rp",
+            "cmVjdGlvbhgDIAEoDjIiLmxpYnJhcmlhbi5tYXBwZXIudjEuRWRnZURpcmVj",
+            "dGlvblINZWRnZURpcmVjdGlvbhIZCghtaW5fc3RlcBgEIAEoA1IHbWluU3Rl",
+            "cBIZCghtYXhfc3RlcBgFIAEoA1IHbWF4U3RlcBIUCgVsaW1pdBgOIAEoA1IF",
+            "bGltaXQSFgoGb2Zmc2V0GA8gASgDUgZvZmZzZXQiVAoUR29Gcm9tVmVydGV4",
+            "UmVzcG9uc2USPAoLdmVydGV4X2xpc3QYASADKAsyGy5saWJyYXJpYW4ubWFw",
+            "cGVyLnYxLlZlcnRleFIKdmVydGV4TGlzdCIyChdGZXRjaEVxdWFsVmVydGV4",
+            "UmVxdWVzdBIXCgdzcmNfdmlkGAEgASgDUgZzcmNWaWQiWAoYRmV0Y2hFcXVh",
+            "bFZlcnRleFJlc3BvbnNlEjwKC3ZlcnRleF9saXN0GAEgAygLMhsubGlicmFy",
+            "aWFuLm1hcHBlci52MS5WZXJ0ZXhSCnZlcnRleExpc3QizgEKH0ZldGNoRXF1",
+            "YWxWZXJ0ZXhOZWlnaGJvclJlcXVlc3QSFwoHc3JjX3ZpZBgBIAEoA1IGc3Jj",
+            "VmlkEkcKEGVkZ2VfdHlwZV9maWx0ZXIYAiADKA4yHS5saWJyYXJpYW4ubWFw",
+            "cGVyLnYxLkVkZ2VUeXBlUg5lZGdlVHlwZUZpbHRlchJJCg5lZGdlX2RpcmVj",
+            "dGlvbhgDIAEoDjIiLmxpYnJhcmlhbi5tYXBwZXIudjEuRWRnZURpcmVjdGlv",
+            "blINZWRnZURpcmVjdGlvbiJaCiBGZXRjaEVxdWFsVmVydGV4TmVpZ2hib3JS",
+            "ZXNwb25zZRI2CgllZGdlX2xpc3QYASADKAsyGS5saWJyYXJpYW4ubWFwcGVy",
+            "LnYxLkVkZ2VSCGVkZ2VMaXN0IvIBCg9GaW5kUGF0aFJlcXVlc3QSFwoHc3Jj",
+            "X3ZpZBgBIAMoA1IGc3JjVmlkEhcKB2RzdF92aWQYAiADKANSBmRzdFZpZBJH",
+            "ChBlZGdlX3R5cGVfZmlsdGVyGAMgAygOMh0ubGlicmFyaWFuLm1hcHBlci52",
+            "MS5FZGdlVHlwZVIOZWRnZVR5cGVGaWx0ZXISSQoOZWRnZV9kaXJlY3Rpb24Y",
+            "BCABKA4yIi5saWJyYXJpYW4ubWFwcGVyLnYxLkVkZ2VEaXJlY3Rpb25SDWVk",
+            "Z2VEaXJlY3Rpb24SGQoIbWF4X3N0ZXAYBSABKANSB21heFN0ZXAipwEKEEZp",
+            "bmRQYXRoUmVzcG9uc2USTQoJcGF0aF9saXN0GAEgAygLMjAubGlicmFyaWFu",
+            "Lm1hcHBlci52MS5GaW5kUGF0aFJlc3BvbnNlLlNpbmdsZVBhdGhSCHBhdGhM",
+            "aXN0GkQKClNpbmdsZVBhdGgSNgoJZWRnZV9saXN0GAMgAygLMhkubGlicmFy",
+            "aWFuLm1hcHBlci52MS5FZGdlUghlZGdlTGlzdCKSAQoGVmVydGV4EhAKA3Zp",
+            "ZBgBIAEoA1IDdmlkEjMKBHR5cGUYAiABKA4yHy5saWJyYXJpYW4ubWFwcGVy",
+            "LnYxLlZlcnRleFR5cGVSBHR5cGUSOAoEcHJvcBgDIAEoCzIfLmxpYnJhcmlh",
+            "bi5tYXBwZXIudjEuVmVydGV4UHJvcEgAUgRwcm9wiAEBQgcKBV9wcm9wItsB",
+            "CgpWZXJ0ZXhQcm9wEj0KBmNvbW1vbhgBIAEoCzIlLmxpYnJhcmlhbi5tYXBw",
+            "ZXIudjEuVmVydGV4Q29tbW9uUHJvcFIGY29tbW9uEk8KCmFkZGl0aW9uYWwY",
+            "AiADKAsyLy5saWJyYXJpYW4ubWFwcGVyLnYxLlZlcnRleFByb3AuQWRkaXRp",
+            "b25hbEVudHJ5UgphZGRpdGlvbmFsGj0KD0FkZGl0aW9uYWxFbnRyeRIQCgNr",
+            "ZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoA1IFdmFsdWU6AjgBIoUCChBW",
+            "ZXJ0ZXhDb21tb25Qcm9wEj4KCm9jY3VyX3RpbWUYASABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wSABSCW9jY3VyVGltZYgBARJACgtjcmVhdGVf",
+            "dGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAVIKY3Jl",
+            "YXRlVGltZYgBARJACgt1cGRhdGVfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXBIAlIKdXBkYXRlVGltZYgBAUINCgtfb2NjdXJfdGlt",
+            "ZUIOCgxfY3JlYXRlX3RpbWVCDgoMX3VwZGF0ZV90aW1lIqwBCgRFZGdlEhcK",
+            "B3NyY192aWQYASABKANSBnNyY1ZpZBIXCgdkc3RfdmlkGAIgASgDUgZkc3RW",
+            "aWQSMQoEdHlwZRgDIAEoDjIdLmxpYnJhcmlhbi5tYXBwZXIudjEuRWRnZVR5",
+            "cGVSBHR5cGUSNgoEcHJvcBgEIAEoCzIdLmxpYnJhcmlhbi5tYXBwZXIudjEu",
+            "RWRnZVByb3BIAFIEcHJvcIgBAUIHCgVfcHJvcCLVAQoIRWRnZVByb3ASOwoG",
+            "Y29tbW9uGAEgASgLMiMubGlicmFyaWFuLm1hcHBlci52MS5FZGdlQ29tbW9u",
+            "UHJvcFIGY29tbW9uEk0KCmFkZGl0aW9uYWwYAiADKAsyLS5saWJyYXJpYW4u",
+            "bWFwcGVyLnYxLkVkZ2VQcm9wLkFkZGl0aW9uYWxFbnRyeVIKYWRkaXRpb25h",
+            "bBo9Cg9BZGRpdGlvbmFsRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFs",
+            "dWUYAiABKANSBXZhbHVlOgI4ASKlAgoORWRnZUNvbW1vblByb3ASPgoKb2Nj",
+            "dXJfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAFIJ",
+            "b2NjdXJUaW1liAEBEkAKC2NyZWF0ZV90aW1lGAIgASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcEgBUgpjcmVhdGVUaW1liAEBEkAKC3VwZGF0ZV90",
+            "aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgCUgp1cGRh",
+            "dGVUaW1liAEBEhcKBHJhbmsYBCABKANIA1IEcmFua4gBAUINCgtfb2NjdXJf",
+            "dGltZUIOCgxfY3JlYXRlX3RpbWVCDgoMX3VwZGF0ZV90aW1lQgcKBV9yYW5r",
+            "KowBCgpWZXJ0ZXhUeXBlEhsKF1ZFUlRFWF9UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "GAoUVkVSVEVYX1RZUEVfQUJTVFJBQ1QQARIWChJWRVJURVhfVFlQRV9FTlRJ",
+            "VFkQAhIXChNWRVJURVhfVFlQRV9NRVNTQUdFEAMSFgoSVkVSVEVYX1RZUEVf",
+            "T0JKRUNUEAQq1gEKCEVkZ2VUeXBlEhkKFUVER0VfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEhUKEUVER0VfVFlQRV9HRU5FUkFMEAESEwoPRURHRV9UWVBFX0VRVUFM",
+            "EAISFAoQRURHRV9UWVBFX0NSRUFURRADEhMKD0VER0VfVFlQRV9FTkpPWRAE",
+            "EhUKEUVER0VfVFlQRV9NRU5USU9OEAUSFAoQRURHRV9UWVBFX0RFUklWRRAG",
+            "EhUKEUVER0VfVFlQRV9DT05UUk9MEAcSFAoQRURHRV9UWVBFX0ZPTExPVxAI",
+            "KncKDUVkZ2VEaXJlY3Rpb24SHgoaRURHRV9ESVJFQ1RJT05fVU5TUEVDSUZJ",
+            "RUQQABIWChJFREdFX0RJUkVDVElPTl9PVVQQARIVChFFREdFX0RJUkVDVElP",
+            "Tl9JThACEhcKE0VER0VfRElSRUNUSU9OX0JPVEgQAzKdCAoWTGlicmFyaWFu",
+            "TWFwcGVyU2VydmljZRJjCgxJbnNlcnRWZXJ0ZXgSKC5saWJyYXJpYW4ubWFw",
+            "cGVyLnYxLkluc2VydFZlcnRleFJlcXVlc3QaKS5saWJyYXJpYW4ubWFwcGVy",
+            "LnYxLkluc2VydFZlcnRleFJlc3BvbnNlEmMKDERlbGV0ZVZlcnRleBIoLmxp",
+            "YnJhcmlhbi5tYXBwZXIudjEuRGVsZXRlVmVydGV4UmVxdWVzdBopLmxpYnJh",
+            "cmlhbi5tYXBwZXIudjEuRGVsZXRlVmVydGV4UmVzcG9uc2USYwoMVXBkYXRl",
+            "VmVydGV4EigubGlicmFyaWFuLm1hcHBlci52MS5VcGRhdGVWZXJ0ZXhSZXF1",
+            "ZXN0GikubGlicmFyaWFuLm1hcHBlci52MS5VcGRhdGVWZXJ0ZXhSZXNwb25z",
+            "ZRJdCgpJbnNlcnRFZGdlEiYubGlicmFyaWFuLm1hcHBlci52MS5JbnNlcnRF",
+            "ZGdlUmVxdWVzdBonLmxpYnJhcmlhbi5tYXBwZXIudjEuSW5zZXJ0RWRnZVJl",
+            "c3BvbnNlEl0KCkRlbGV0ZUVkZ2USJi5saWJyYXJpYW4ubWFwcGVyLnYxLkRl",
+            "bGV0ZUVkZ2VSZXF1ZXN0GicubGlicmFyaWFuLm1hcHBlci52MS5EZWxldGVF",
+            "ZGdlUmVzcG9uc2USXQoKVXBkYXRlRWRnZRImLmxpYnJhcmlhbi5tYXBwZXIu",
+            "djEuVXBkYXRlRWRnZVJlcXVlc3QaJy5saWJyYXJpYW4ubWFwcGVyLnYxLlVw",
+            "ZGF0ZUVkZ2VSZXNwb25zZRJjCgxHb0Zyb21WZXJ0ZXgSKC5saWJyYXJpYW4u",
+            "bWFwcGVyLnYxLkdvRnJvbVZlcnRleFJlcXVlc3QaKS5saWJyYXJpYW4ubWFw",
+            "cGVyLnYxLkdvRnJvbVZlcnRleFJlc3BvbnNlEm8KEEZldGNoRXF1YWxWZXJ0",
+            "ZXgSLC5saWJyYXJpYW4ubWFwcGVyLnYxLkZldGNoRXF1YWxWZXJ0ZXhSZXF1",
+            "ZXN0Gi0ubGlicmFyaWFuLm1hcHBlci52MS5GZXRjaEVxdWFsVmVydGV4UmVz",
+            "cG9uc2UShwEKGEZldGNoRXF1YWxWZXJ0ZXhOZWlnaGJvchI0LmxpYnJhcmlh",
+            "bi5tYXBwZXIudjEuRmV0Y2hFcXVhbFZlcnRleE5laWdoYm9yUmVxdWVzdBo1",
+            "LmxpYnJhcmlhbi5tYXBwZXIudjEuRmV0Y2hFcXVhbFZlcnRleE5laWdoYm9y",
+            "UmVzcG9uc2USVwoIRmluZFBhdGgSJC5saWJyYXJpYW4ubWFwcGVyLnYxLkZp",
+            "bmRQYXRoUmVxdWVzdBolLmxpYnJhcmlhbi5tYXBwZXIudjEuRmluZFBhdGhS",
+            "ZXNwb25zZUJLWiVnaXRodWIuY29tL3R1aWh1Yi9saWJyYXJpYW4vbWFwcGVy",
+            "O3YxqgIhVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uTWFwcGVyLlYxYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Mapper.V1.VertexType), typeof(global::TuiHub.Protos.Librarian.Mapper.V1.EdgeType), typeof(global::TuiHub.Protos.Librarian.Mapper.V1.EdgeDirection), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest), global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexRequest.Parser, new[]{ "VertexList" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse), global::TuiHub.Protos.Librarian.Mapper.V1.InsertVertexResponse.Parser, null, null, null, null, null),
@@ -4735,7 +4740,6 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
   {
     private static readonly pb::MessageParser<VertexCommonProp> _parser = new pb::MessageParser<VertexCommonProp>(() => new VertexCommonProp());
     private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<VertexCommonProp> Parser { get { return _parser; } }
@@ -4763,10 +4767,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VertexCommonProp(VertexCommonProp other) : this() {
-      _hasBits0 = other._hasBits0;
-      occurTime_ = other.occurTime_;
-      createTime_ = other.createTime_;
-      updateTime_ = other.updateTime_;
+      occurTime_ = other.occurTime_ != null ? other.occurTime_.Clone() : null;
+      createTime_ = other.createTime_ != null ? other.createTime_.Clone() : null;
+      updateTime_ = other.updateTime_ != null ? other.updateTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4778,77 +4781,38 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
 
     /// <summary>Field number for the "occur_time" field.</summary>
     public const int OccurTimeFieldNumber = 1;
-    private long occurTime_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp occurTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long OccurTime {
-      get { if ((_hasBits0 & 1) != 0) { return occurTime_; } else { return 0L; } }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp OccurTime {
+      get { return occurTime_; }
       set {
-        _hasBits0 |= 1;
         occurTime_ = value;
       }
-    }
-    /// <summary>Gets whether the "occur_time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasOccurTime {
-      get { return (_hasBits0 & 1) != 0; }
-    }
-    /// <summary>Clears the value of the "occur_time" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearOccurTime() {
-      _hasBits0 &= ~1;
     }
 
     /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 2;
-    private long createTime_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CreateTime {
-      get { if ((_hasBits0 & 2) != 0) { return createTime_; } else { return 0L; } }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
+      get { return createTime_; }
       set {
-        _hasBits0 |= 2;
         createTime_ = value;
       }
-    }
-    /// <summary>Gets whether the "create_time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasCreateTime {
-      get { return (_hasBits0 & 2) != 0; }
-    }
-    /// <summary>Clears the value of the "create_time" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearCreateTime() {
-      _hasBits0 &= ~2;
     }
 
     /// <summary>Field number for the "update_time" field.</summary>
     public const int UpdateTimeFieldNumber = 3;
-    private long updateTime_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp updateTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long UpdateTime {
-      get { if ((_hasBits0 & 4) != 0) { return updateTime_; } else { return 0L; } }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp UpdateTime {
+      get { return updateTime_; }
       set {
-        _hasBits0 |= 4;
         updateTime_ = value;
       }
-    }
-    /// <summary>Gets whether the "update_time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasUpdateTime {
-      get { return (_hasBits0 & 4) != 0; }
-    }
-    /// <summary>Clears the value of the "update_time" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearUpdateTime() {
-      _hasBits0 &= ~4;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4866,9 +4830,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OccurTime != other.OccurTime) return false;
-      if (CreateTime != other.CreateTime) return false;
-      if (UpdateTime != other.UpdateTime) return false;
+      if (!object.Equals(OccurTime, other.OccurTime)) return false;
+      if (!object.Equals(CreateTime, other.CreateTime)) return false;
+      if (!object.Equals(UpdateTime, other.UpdateTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4876,9 +4840,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasOccurTime) hash ^= OccurTime.GetHashCode();
-      if (HasCreateTime) hash ^= CreateTime.GetHashCode();
-      if (HasUpdateTime) hash ^= UpdateTime.GetHashCode();
+      if (occurTime_ != null) hash ^= OccurTime.GetHashCode();
+      if (createTime_ != null) hash ^= CreateTime.GetHashCode();
+      if (updateTime_ != null) hash ^= UpdateTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4897,17 +4861,17 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasOccurTime) {
-        output.WriteRawTag(8);
-        output.WriteInt64(OccurTime);
+      if (occurTime_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(OccurTime);
       }
-      if (HasCreateTime) {
-        output.WriteRawTag(16);
-        output.WriteInt64(CreateTime);
+      if (createTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CreateTime);
       }
-      if (HasUpdateTime) {
-        output.WriteRawTag(24);
-        output.WriteInt64(UpdateTime);
+      if (updateTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4919,17 +4883,17 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasOccurTime) {
-        output.WriteRawTag(8);
-        output.WriteInt64(OccurTime);
+      if (occurTime_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(OccurTime);
       }
-      if (HasCreateTime) {
-        output.WriteRawTag(16);
-        output.WriteInt64(CreateTime);
+      if (createTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CreateTime);
       }
-      if (HasUpdateTime) {
-        output.WriteRawTag(24);
-        output.WriteInt64(UpdateTime);
+      if (updateTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -4941,14 +4905,14 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HasOccurTime) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(OccurTime);
+      if (occurTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OccurTime);
       }
-      if (HasCreateTime) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreateTime);
+      if (createTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateTime);
       }
-      if (HasUpdateTime) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UpdateTime);
+      if (updateTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdateTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4962,14 +4926,23 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
       if (other == null) {
         return;
       }
-      if (other.HasOccurTime) {
-        OccurTime = other.OccurTime;
+      if (other.occurTime_ != null) {
+        if (occurTime_ == null) {
+          OccurTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        OccurTime.MergeFrom(other.OccurTime);
       }
-      if (other.HasCreateTime) {
-        CreateTime = other.CreateTime;
+      if (other.createTime_ != null) {
+        if (createTime_ == null) {
+          CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CreateTime.MergeFrom(other.CreateTime);
       }
-      if (other.HasUpdateTime) {
-        UpdateTime = other.UpdateTime;
+      if (other.updateTime_ != null) {
+        if (updateTime_ == null) {
+          UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        UpdateTime.MergeFrom(other.UpdateTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4986,16 +4959,25 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            OccurTime = input.ReadInt64();
+          case 10: {
+            if (occurTime_ == null) {
+              OccurTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(OccurTime);
             break;
           }
-          case 16: {
-            CreateTime = input.ReadInt64();
+          case 18: {
+            if (createTime_ == null) {
+              CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreateTime);
             break;
           }
-          case 24: {
-            UpdateTime = input.ReadInt64();
+          case 26: {
+            if (updateTime_ == null) {
+              UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdateTime);
             break;
           }
         }
@@ -5013,16 +4995,25 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            OccurTime = input.ReadInt64();
+          case 10: {
+            if (occurTime_ == null) {
+              OccurTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(OccurTime);
             break;
           }
-          case 16: {
-            CreateTime = input.ReadInt64();
+          case 18: {
+            if (createTime_ == null) {
+              CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreateTime);
             break;
           }
-          case 24: {
-            UpdateTime = input.ReadInt64();
+          case 26: {
+            if (updateTime_ == null) {
+              UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdateTime);
             break;
           }
         }
@@ -5601,9 +5592,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EdgeCommonProp(EdgeCommonProp other) : this() {
       _hasBits0 = other._hasBits0;
-      occurTime_ = other.occurTime_;
-      createTime_ = other.createTime_;
-      updateTime_ = other.updateTime_;
+      occurTime_ = other.occurTime_ != null ? other.occurTime_.Clone() : null;
+      createTime_ = other.createTime_ != null ? other.createTime_.Clone() : null;
+      updateTime_ = other.updateTime_ != null ? other.updateTime_.Clone() : null;
       rank_ = other.rank_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -5616,77 +5607,38 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
 
     /// <summary>Field number for the "occur_time" field.</summary>
     public const int OccurTimeFieldNumber = 1;
-    private long occurTime_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp occurTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long OccurTime {
-      get { if ((_hasBits0 & 1) != 0) { return occurTime_; } else { return 0L; } }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp OccurTime {
+      get { return occurTime_; }
       set {
-        _hasBits0 |= 1;
         occurTime_ = value;
       }
-    }
-    /// <summary>Gets whether the "occur_time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasOccurTime {
-      get { return (_hasBits0 & 1) != 0; }
-    }
-    /// <summary>Clears the value of the "occur_time" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearOccurTime() {
-      _hasBits0 &= ~1;
     }
 
     /// <summary>Field number for the "create_time" field.</summary>
     public const int CreateTimeFieldNumber = 2;
-    private long createTime_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp createTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long CreateTime {
-      get { if ((_hasBits0 & 2) != 0) { return createTime_; } else { return 0L; } }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
+      get { return createTime_; }
       set {
-        _hasBits0 |= 2;
         createTime_ = value;
       }
-    }
-    /// <summary>Gets whether the "create_time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasCreateTime {
-      get { return (_hasBits0 & 2) != 0; }
-    }
-    /// <summary>Clears the value of the "create_time" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearCreateTime() {
-      _hasBits0 &= ~2;
     }
 
     /// <summary>Field number for the "update_time" field.</summary>
     public const int UpdateTimeFieldNumber = 3;
-    private long updateTime_;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp updateTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long UpdateTime {
-      get { if ((_hasBits0 & 4) != 0) { return updateTime_; } else { return 0L; } }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp UpdateTime {
+      get { return updateTime_; }
       set {
-        _hasBits0 |= 4;
         updateTime_ = value;
       }
-    }
-    /// <summary>Gets whether the "update_time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasUpdateTime {
-      get { return (_hasBits0 & 4) != 0; }
-    }
-    /// <summary>Clears the value of the "update_time" field</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearUpdateTime() {
-      _hasBits0 &= ~4;
     }
 
     /// <summary>Field number for the "rank" field.</summary>
@@ -5695,9 +5647,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Rank {
-      get { if ((_hasBits0 & 8) != 0) { return rank_; } else { return 0L; } }
+      get { if ((_hasBits0 & 1) != 0) { return rank_; } else { return 0L; } }
       set {
-        _hasBits0 |= 8;
+        _hasBits0 |= 1;
         rank_ = value;
       }
     }
@@ -5705,13 +5657,13 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasRank {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return (_hasBits0 & 1) != 0; }
     }
     /// <summary>Clears the value of the "rank" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearRank() {
-      _hasBits0 &= ~8;
+      _hasBits0 &= ~1;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5729,9 +5681,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OccurTime != other.OccurTime) return false;
-      if (CreateTime != other.CreateTime) return false;
-      if (UpdateTime != other.UpdateTime) return false;
+      if (!object.Equals(OccurTime, other.OccurTime)) return false;
+      if (!object.Equals(CreateTime, other.CreateTime)) return false;
+      if (!object.Equals(UpdateTime, other.UpdateTime)) return false;
       if (Rank != other.Rank) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -5740,9 +5692,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasOccurTime) hash ^= OccurTime.GetHashCode();
-      if (HasCreateTime) hash ^= CreateTime.GetHashCode();
-      if (HasUpdateTime) hash ^= UpdateTime.GetHashCode();
+      if (occurTime_ != null) hash ^= OccurTime.GetHashCode();
+      if (createTime_ != null) hash ^= CreateTime.GetHashCode();
+      if (updateTime_ != null) hash ^= UpdateTime.GetHashCode();
       if (HasRank) hash ^= Rank.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -5762,17 +5714,17 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasOccurTime) {
-        output.WriteRawTag(8);
-        output.WriteInt64(OccurTime);
+      if (occurTime_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(OccurTime);
       }
-      if (HasCreateTime) {
-        output.WriteRawTag(16);
-        output.WriteInt64(CreateTime);
+      if (createTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CreateTime);
       }
-      if (HasUpdateTime) {
-        output.WriteRawTag(24);
-        output.WriteInt64(UpdateTime);
+      if (updateTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UpdateTime);
       }
       if (HasRank) {
         output.WriteRawTag(32);
@@ -5788,17 +5740,17 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasOccurTime) {
-        output.WriteRawTag(8);
-        output.WriteInt64(OccurTime);
+      if (occurTime_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(OccurTime);
       }
-      if (HasCreateTime) {
-        output.WriteRawTag(16);
-        output.WriteInt64(CreateTime);
+      if (createTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CreateTime);
       }
-      if (HasUpdateTime) {
-        output.WriteRawTag(24);
-        output.WriteInt64(UpdateTime);
+      if (updateTime_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UpdateTime);
       }
       if (HasRank) {
         output.WriteRawTag(32);
@@ -5814,14 +5766,14 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HasOccurTime) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(OccurTime);
+      if (occurTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OccurTime);
       }
-      if (HasCreateTime) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CreateTime);
+      if (createTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateTime);
       }
-      if (HasUpdateTime) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(UpdateTime);
+      if (updateTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdateTime);
       }
       if (HasRank) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Rank);
@@ -5838,14 +5790,23 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
       if (other == null) {
         return;
       }
-      if (other.HasOccurTime) {
-        OccurTime = other.OccurTime;
+      if (other.occurTime_ != null) {
+        if (occurTime_ == null) {
+          OccurTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        OccurTime.MergeFrom(other.OccurTime);
       }
-      if (other.HasCreateTime) {
-        CreateTime = other.CreateTime;
+      if (other.createTime_ != null) {
+        if (createTime_ == null) {
+          CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CreateTime.MergeFrom(other.CreateTime);
       }
-      if (other.HasUpdateTime) {
-        UpdateTime = other.UpdateTime;
+      if (other.updateTime_ != null) {
+        if (updateTime_ == null) {
+          UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        UpdateTime.MergeFrom(other.UpdateTime);
       }
       if (other.HasRank) {
         Rank = other.Rank;
@@ -5865,16 +5826,25 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            OccurTime = input.ReadInt64();
+          case 10: {
+            if (occurTime_ == null) {
+              OccurTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(OccurTime);
             break;
           }
-          case 16: {
-            CreateTime = input.ReadInt64();
+          case 18: {
+            if (createTime_ == null) {
+              CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreateTime);
             break;
           }
-          case 24: {
-            UpdateTime = input.ReadInt64();
+          case 26: {
+            if (updateTime_ == null) {
+              UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdateTime);
             break;
           }
           case 32: {
@@ -5896,16 +5866,25 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            OccurTime = input.ReadInt64();
+          case 10: {
+            if (occurTime_ == null) {
+              OccurTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(OccurTime);
             break;
           }
-          case 16: {
-            CreateTime = input.ReadInt64();
+          case 18: {
+            if (createTime_ == null) {
+              CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreateTime);
             break;
           }
-          case 24: {
-            UpdateTime = input.ReadInt64();
+          case 26: {
+            if (updateTime_ == null) {
+              UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdateTime);
             break;
           }
           case 32: {

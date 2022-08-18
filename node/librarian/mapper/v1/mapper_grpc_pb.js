@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var librarian_mapper_v1_mapper_pb = require('../../../librarian/mapper/v1/mapper_pb.js');
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 
 function serialize_librarian_mapper_v1_DeleteEdgeRequest(arg) {
   if (!(arg instanceof librarian_mapper_v1_mapper_pb.DeleteEdgeRequest)) {

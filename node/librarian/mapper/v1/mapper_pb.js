@@ -21,6 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.librarian.mapper.v1.DeleteEdgeRequest', null, global);
 goog.exportSymbol('proto.librarian.mapper.v1.DeleteEdgeResponse', null, global);
 goog.exportSymbol('proto.librarian.mapper.v1.DeleteVertexRequest', null, global);
@@ -4415,9 +4417,9 @@ proto.librarian.mapper.v1.VertexCommonProp.prototype.toObject = function(opt_inc
  */
 proto.librarian.mapper.v1.VertexCommonProp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    occurTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    createTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    updateTime: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4455,15 +4457,18 @@ proto.librarian.mapper.v1.VertexCommonProp.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setOccurTime(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
       break;
     default:
@@ -4495,54 +4500,58 @@ proto.librarian.mapper.v1.VertexCommonProp.prototype.serializeBinary = function(
  */
 proto.librarian.mapper.v1.VertexCommonProp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = message.getOccurTime();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       1,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getCreateTime();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       2,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = message.getUpdateTime();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       3,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional int64 occur_time = 1;
- * @return {number}
+ * optional google.protobuf.Timestamp occur_time = 1;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.mapper.v1.VertexCommonProp.prototype.getOccurTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.mapper.v1.VertexCommonProp} returns this
- */
+*/
 proto.librarian.mapper.v1.VertexCommonProp.prototype.setOccurTime = function(value) {
-  return jspb.Message.setField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.mapper.v1.VertexCommonProp} returns this
  */
 proto.librarian.mapper.v1.VertexCommonProp.prototype.clearOccurTime = function() {
-  return jspb.Message.setField(this, 1, undefined);
+  return this.setOccurTime(undefined);
 };
 
 
@@ -4556,29 +4565,30 @@ proto.librarian.mapper.v1.VertexCommonProp.prototype.hasOccurTime = function() {
 
 
 /**
- * optional int64 create_time = 2;
- * @return {number}
+ * optional google.protobuf.Timestamp create_time = 2;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.mapper.v1.VertexCommonProp.prototype.getCreateTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.mapper.v1.VertexCommonProp} returns this
- */
+*/
 proto.librarian.mapper.v1.VertexCommonProp.prototype.setCreateTime = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.mapper.v1.VertexCommonProp} returns this
  */
 proto.librarian.mapper.v1.VertexCommonProp.prototype.clearCreateTime = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -4592,29 +4602,30 @@ proto.librarian.mapper.v1.VertexCommonProp.prototype.hasCreateTime = function() 
 
 
 /**
- * optional int64 update_time = 3;
- * @return {number}
+ * optional google.protobuf.Timestamp update_time = 3;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.mapper.v1.VertexCommonProp.prototype.getUpdateTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.mapper.v1.VertexCommonProp} returns this
- */
+*/
 proto.librarian.mapper.v1.VertexCommonProp.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.mapper.v1.VertexCommonProp} returns this
  */
 proto.librarian.mapper.v1.VertexCommonProp.prototype.clearUpdateTime = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return this.setUpdateTime(undefined);
 };
 
 
@@ -5084,9 +5095,9 @@ proto.librarian.mapper.v1.EdgeCommonProp.prototype.toObject = function(opt_inclu
  */
 proto.librarian.mapper.v1.EdgeCommonProp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    occurTime: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    createTime: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    updateTime: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     rank: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
@@ -5125,15 +5136,18 @@ proto.librarian.mapper.v1.EdgeCommonProp.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setOccurTime(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdateTime(value);
       break;
     case 4:
@@ -5169,25 +5183,28 @@ proto.librarian.mapper.v1.EdgeCommonProp.prototype.serializeBinary = function() 
  */
 proto.librarian.mapper.v1.EdgeCommonProp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = message.getOccurTime();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       1,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getCreateTime();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       2,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = message.getUpdateTime();
   if (f != null) {
-    writer.writeInt64(
+    writer.writeMessage(
       3,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
@@ -5201,29 +5218,30 @@ proto.librarian.mapper.v1.EdgeCommonProp.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional int64 occur_time = 1;
- * @return {number}
+ * optional google.protobuf.Timestamp occur_time = 1;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.getOccurTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.mapper.v1.EdgeCommonProp} returns this
- */
+*/
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.setOccurTime = function(value) {
-  return jspb.Message.setField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.mapper.v1.EdgeCommonProp} returns this
  */
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.clearOccurTime = function() {
-  return jspb.Message.setField(this, 1, undefined);
+  return this.setOccurTime(undefined);
 };
 
 
@@ -5237,29 +5255,30 @@ proto.librarian.mapper.v1.EdgeCommonProp.prototype.hasOccurTime = function() {
 
 
 /**
- * optional int64 create_time = 2;
- * @return {number}
+ * optional google.protobuf.Timestamp create_time = 2;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.getCreateTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 2));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.mapper.v1.EdgeCommonProp} returns this
- */
+*/
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.setCreateTime = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.mapper.v1.EdgeCommonProp} returns this
  */
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.clearCreateTime = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return this.setCreateTime(undefined);
 };
 
 
@@ -5273,29 +5292,30 @@ proto.librarian.mapper.v1.EdgeCommonProp.prototype.hasCreateTime = function() {
 
 
 /**
- * optional int64 update_time = 3;
- * @return {number}
+ * optional google.protobuf.Timestamp update_time = 3;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.getUpdateTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.mapper.v1.EdgeCommonProp} returns this
- */
+*/
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.setUpdateTime = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.mapper.v1.EdgeCommonProp} returns this
  */
 proto.librarian.mapper.v1.EdgeCommonProp.prototype.clearUpdateTime = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return this.setUpdateTime(undefined);
 };
 
 

@@ -496,13 +496,13 @@ impl serde::Serialize for EdgeCommonProp {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.EdgeCommonProp", len)?;
         if let Some(v) = self.occur_time.as_ref() {
-            struct_ser.serialize_field("occurTime", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("occurTime", v)?;
         }
         if let Some(v) = self.create_time.as_ref() {
-            struct_ser.serialize_field("createTime", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("createTime", v)?;
         }
         if let Some(v) = self.update_time.as_ref() {
-            struct_ser.serialize_field("updateTime", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("updateTime", v)?;
         }
         if let Some(v) = self.rank.as_ref() {
             struct_ser.serialize_field("rank", ToString::to_string(&v).as_str())?;
@@ -583,25 +583,19 @@ impl<'de> serde::Deserialize<'de> for EdgeCommonProp {
                             if occur_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("occurTime"));
                             }
-                            occur_time__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            occur_time__ = Some(map.next_value()?);
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            create_time__ = Some(map.next_value()?);
                         }
                         GeneratedField::UpdateTime => {
                             if update_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updateTime"));
                             }
-                            update_time__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            update_time__ = Some(map.next_value()?);
                         }
                         GeneratedField::Rank => {
                             if rank__.is_some() {
@@ -2769,13 +2763,13 @@ impl serde::Serialize for VertexCommonProp {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.VertexCommonProp", len)?;
         if let Some(v) = self.occur_time.as_ref() {
-            struct_ser.serialize_field("occurTime", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("occurTime", v)?;
         }
         if let Some(v) = self.create_time.as_ref() {
-            struct_ser.serialize_field("createTime", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("createTime", v)?;
         }
         if let Some(v) = self.update_time.as_ref() {
-            struct_ser.serialize_field("updateTime", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("updateTime", v)?;
         }
         struct_ser.end()
     }
@@ -2849,25 +2843,19 @@ impl<'de> serde::Deserialize<'de> for VertexCommonProp {
                             if occur_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("occurTime"));
                             }
-                            occur_time__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            occur_time__ = Some(map.next_value()?);
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            create_time__ = Some(map.next_value()?);
                         }
                         GeneratedField::UpdateTime => {
                             if update_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updateTime"));
                             }
-                            update_time__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            update_time__ = Some(map.next_value()?);
                         }
                     }
                 }

@@ -2,6 +2,7 @@
 // file: librarian/mapper/v1/mapper.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class InsertVertexRequest extends jspb.Message {
   clearVertexListList(): void;
@@ -537,18 +538,18 @@ export namespace VertexProp {
 export class VertexCommonProp extends jspb.Message {
   hasOccurTime(): boolean;
   clearOccurTime(): void;
-  getOccurTime(): number;
-  setOccurTime(value: number): void;
+  getOccurTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setOccurTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasCreateTime(): boolean;
   clearCreateTime(): void;
-  getCreateTime(): number;
-  setCreateTime(value: number): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasUpdateTime(): boolean;
   clearUpdateTime(): void;
-  getUpdateTime(): number;
-  setUpdateTime(value: number): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VertexCommonProp.AsObject;
@@ -562,9 +563,9 @@ export class VertexCommonProp extends jspb.Message {
 
 export namespace VertexCommonProp {
   export type AsObject = {
-    occurTime: number,
-    createTime: number,
-    updateTime: number,
+    occurTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -630,18 +631,18 @@ export namespace EdgeProp {
 export class EdgeCommonProp extends jspb.Message {
   hasOccurTime(): boolean;
   clearOccurTime(): void;
-  getOccurTime(): number;
-  setOccurTime(value: number): void;
+  getOccurTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setOccurTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasCreateTime(): boolean;
   clearCreateTime(): void;
-  getCreateTime(): number;
-  setCreateTime(value: number): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasUpdateTime(): boolean;
   clearUpdateTime(): void;
-  getUpdateTime(): number;
-  setUpdateTime(value: number): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasRank(): boolean;
   clearRank(): void;
@@ -660,9 +661,9 @@ export class EdgeCommonProp extends jspb.Message {
 
 export namespace EdgeCommonProp {
   export type AsObject = {
-    occurTime: number,
-    createTime: number,
-    updateTime: number,
+    occurTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     rank: number,
   }
 }

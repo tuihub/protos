@@ -8,4 +8,28 @@ pub mod librarian {
             // @@protoc_insertion_point(librarian.mapper.v1)
         }
     }
+    pub mod porter {
+        #[cfg(feature = "librarian-porter-v1")]
+        // @@protoc_insertion_point(attribute:librarian.porter.v1)
+        pub mod v1 {
+            include!("librarian.porter.v1.rs");
+            // @@protoc_insertion_point(librarian.porter.v1)
+        }
+    }
+    pub mod searcher {
+        #[cfg(feature = "librarian-searcher-v1")]
+        // @@protoc_insertion_point(attribute:librarian.searcher.v1)
+        pub mod v1 {
+            include!("librarian.searcher.v1.rs");
+            // @@protoc_insertion_point(librarian.searcher.v1)
+        }
+    }
+    pub mod sephirah {
+        #[cfg(feature = "librarian-sephirah-v1")]
+        // @@protoc_insertion_point(attribute:librarian.sephirah.v1)
+        pub mod v1 {
+            include!("librarian.sephirah.v1.rs");
+            // @@protoc_insertion_point(librarian.sephirah.v1)
+        }
+    }
 }
