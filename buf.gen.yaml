@@ -9,7 +9,13 @@ plugins:
   #Go
   - name: gofast
     out: pkg
-    opt: paths=source_relative
+    opt: 
+      - paths=source_relative
+      - Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types
+      - Mgoogle/protobuf/duration.proto=github.com/gogo/protobuf/types
+      - Mgoogle/protobuf/struct.proto=github.com/gogo/protobuf/types
+      - Mgoogle/protobuf/timestamp.proto=github.com/gogo/protobuf/types
+      - Mgoogle/protobuf/wrappers.proto=github.com/gogo/protobuf/types
   - name: go-grpc
     out: pkg
     opt:
