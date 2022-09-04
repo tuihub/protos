@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.mapper.v1;
 
+import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Mapper.V1";
@@ -134,9 +135,9 @@ message VertexProp {
 }
 
 message VertexCommonProp {
-  optional google.protobuf.Timestamp occur_time = 1;
-  optional google.protobuf.Timestamp create_time = 2;
-  optional google.protobuf.Timestamp update_time = 3;
+  optional google.protobuf.Timestamp occur_time = 1 [(gogoproto.stdtime) = true];
+  optional google.protobuf.Timestamp create_time = 2 [(gogoproto.stdtime) = true];
+  optional google.protobuf.Timestamp update_time = 3 [(gogoproto.stdtime) = true];
 }
 
 message Edge {
@@ -152,9 +153,9 @@ message EdgeProp {
 }
 
 message EdgeCommonProp {
-  optional google.protobuf.Timestamp occur_time = 1;
-  optional google.protobuf.Timestamp create_time = 2;
-  optional google.protobuf.Timestamp update_time = 3;
+  optional google.protobuf.Timestamp occur_time = 1 [(gogoproto.stdtime) = true];
+  optional google.protobuf.Timestamp create_time = 2 [(gogoproto.stdtime) = true];
+  optional google.protobuf.Timestamp update_time = 3 [(gogoproto.stdtime) = true];
   optional int64 rank = 4;
 }
 

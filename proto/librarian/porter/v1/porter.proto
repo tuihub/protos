@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.porter.v1;
 
+import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
@@ -80,7 +81,7 @@ message Feed {
     optional string author = 2;
     optional string category = 3;
     string description = 4;
-    optional google.protobuf.Timestamp pub_date = 5;
+    optional google.protobuf.Timestamp pub_date = 5 [(gogoproto.stdtime) = true];
     optional string guid = 6;
     string link = 7;
 

@@ -14,7 +14,6 @@ plugins:
     out: pkg
     opt:
       - paths=source_relative
-      - require_unimplemented_servers=false
 
   #JS
   - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1
