@@ -5,8 +5,8 @@ package v1
 
 import (
 	fmt "fmt"
+	types "github.com/gogo/protobuf/types"
 	proto "github.com/golang/protobuf/proto"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -997,7 +997,7 @@ type Feed_FeedItem_Category struct {
 	Category string `protobuf:"bytes,3,opt,name=category,proto3,oneof" json:"category,omitempty"`
 }
 type Feed_FeedItem_PubDate struct {
-	PubDate *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=pub_date,json=pubDate,proto3,oneof" json:"pub_date,omitempty"`
+	PubDate *types.Timestamp `protobuf:"bytes,5,opt,name=pub_date,json=pubDate,proto3,oneof" json:"pub_date,omitempty"`
 }
 type Feed_FeedItem_Guid struct {
 	Guid string `protobuf:"bytes,6,opt,name=guid,proto3,oneof" json:"guid,omitempty"`
@@ -1141,7 +1141,7 @@ func (m *Feed_FeedItem) GetDescription() string {
 	return ""
 }
 
-func (m *Feed_FeedItem) GetPubDate() *timestamppb.Timestamp {
+func (m *Feed_FeedItem) GetPubDate() *types.Timestamp {
 	if x, ok := m.GetXPubDate().(*Feed_FeedItem_PubDate); ok {
 		return x.PubDate
 	}
@@ -4206,7 +4206,7 @@ func (m *Feed_FeedItem) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}

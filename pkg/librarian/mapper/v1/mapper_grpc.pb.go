@@ -137,7 +137,7 @@ func (c *librarianMapperServiceClient) FindPath(ctx context.Context, in *FindPat
 }
 
 // LibrarianMapperServiceServer is the server API for LibrarianMapperService service.
-// All implementations should embed UnimplementedLibrarianMapperServiceServer
+// All implementations must embed UnimplementedLibrarianMapperServiceServer
 // for forward compatibility
 type LibrarianMapperServiceServer interface {
 	InsertVertex(context.Context, *InsertVertexRequest) (*InsertVertexResponse, error)
@@ -154,9 +154,10 @@ type LibrarianMapperServiceServer interface {
 	FetchEqualVertexNeighbor(context.Context, *FetchEqualVertexNeighborRequest) (*FetchEqualVertexNeighborResponse, error)
 	// Find path between two given vertexs
 	FindPath(context.Context, *FindPathRequest) (*FindPathResponse, error)
+	mustEmbedUnimplementedLibrarianMapperServiceServer()
 }
 
-// UnimplementedLibrarianMapperServiceServer should be embedded to have forward compatible implementations.
+// UnimplementedLibrarianMapperServiceServer must be embedded to have forward compatible implementations.
 type UnimplementedLibrarianMapperServiceServer struct {
 }
 
@@ -189,6 +190,8 @@ func (UnimplementedLibrarianMapperServiceServer) FetchEqualVertexNeighbor(contex
 }
 func (UnimplementedLibrarianMapperServiceServer) FindPath(context.Context, *FindPathRequest) (*FindPathResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindPath not implemented")
+}
+func (UnimplementedLibrarianMapperServiceServer) mustEmbedUnimplementedLibrarianMapperServiceServer() {
 }
 
 // UnsafeLibrarianMapperServiceServer may be embedded to opt out of forward compatibility for this service.

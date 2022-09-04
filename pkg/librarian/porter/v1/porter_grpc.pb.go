@@ -131,7 +131,7 @@ func (x *librarianPorterServicePushDataClient) CloseAndRecv() (*PushDataResponse
 }
 
 // LibrarianPorterServiceServer is the server API for LibrarianPorterService service.
-// All implementations should embed UnimplementedLibrarianPorterServiceServer
+// All implementations must embed UnimplementedLibrarianPorterServiceServer
 // for forward compatibility
 type LibrarianPorterServiceServer interface {
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
@@ -139,9 +139,10 @@ type LibrarianPorterServiceServer interface {
 	PullWiki(context.Context, *PullWikiRequest) (*PullWikiResponse, error)
 	PullData(*PullDataRequest, LibrarianPorterService_PullDataServer) error
 	PushData(LibrarianPorterService_PushDataServer) error
+	mustEmbedUnimplementedLibrarianPorterServiceServer()
 }
 
-// UnimplementedLibrarianPorterServiceServer should be embedded to have forward compatible implementations.
+// UnimplementedLibrarianPorterServiceServer must be embedded to have forward compatible implementations.
 type UnimplementedLibrarianPorterServiceServer struct {
 }
 
@@ -159,6 +160,8 @@ func (UnimplementedLibrarianPorterServiceServer) PullData(*PullDataRequest, Libr
 }
 func (UnimplementedLibrarianPorterServiceServer) PushData(LibrarianPorterService_PushDataServer) error {
 	return status.Errorf(codes.Unimplemented, "method PushData not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) mustEmbedUnimplementedLibrarianPorterServiceServer() {
 }
 
 // UnsafeLibrarianPorterServiceServer may be embedded to opt out of forward compatibility for this service.

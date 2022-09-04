@@ -5,8 +5,8 @@ package v1
 
 import (
 	fmt "fmt"
+	types "github.com/gogo/protobuf/types"
 	proto "github.com/golang/protobuf/proto"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -1386,13 +1386,13 @@ type isVertexCommonProp_XUpdateTime interface {
 }
 
 type VertexCommonProp_OccurTime struct {
-	OccurTime *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=occur_time,json=occurTime,proto3,oneof" json:"occur_time,omitempty"`
+	OccurTime *types.Timestamp `protobuf:"bytes,1,opt,name=occur_time,json=occurTime,proto3,oneof" json:"occur_time,omitempty"`
 }
 type VertexCommonProp_CreateTime struct {
-	CreateTime *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=create_time,json=createTime,proto3,oneof" json:"create_time,omitempty"`
+	CreateTime *types.Timestamp `protobuf:"bytes,2,opt,name=create_time,json=createTime,proto3,oneof" json:"create_time,omitempty"`
 }
 type VertexCommonProp_UpdateTime struct {
-	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=update_time,json=updateTime,proto3,oneof" json:"update_time,omitempty"`
+	UpdateTime *types.Timestamp `protobuf:"bytes,3,opt,name=update_time,json=updateTime,proto3,oneof" json:"update_time,omitempty"`
 }
 
 func (*VertexCommonProp_OccurTime) isVertexCommonProp_XOccurTime()   {}
@@ -1418,21 +1418,21 @@ func (m *VertexCommonProp) GetXUpdateTime() isVertexCommonProp_XUpdateTime {
 	return nil
 }
 
-func (m *VertexCommonProp) GetOccurTime() *timestamppb.Timestamp {
+func (m *VertexCommonProp) GetOccurTime() *types.Timestamp {
 	if x, ok := m.GetXOccurTime().(*VertexCommonProp_OccurTime); ok {
 		return x.OccurTime
 	}
 	return nil
 }
 
-func (m *VertexCommonProp) GetCreateTime() *timestamppb.Timestamp {
+func (m *VertexCommonProp) GetCreateTime() *types.Timestamp {
 	if x, ok := m.GetXCreateTime().(*VertexCommonProp_CreateTime); ok {
 		return x.CreateTime
 	}
 	return nil
 }
 
-func (m *VertexCommonProp) GetUpdateTime() *timestamppb.Timestamp {
+func (m *VertexCommonProp) GetUpdateTime() *types.Timestamp {
 	if x, ok := m.GetXUpdateTime().(*VertexCommonProp_UpdateTime); ok {
 		return x.UpdateTime
 	}
@@ -1680,13 +1680,13 @@ type isEdgeCommonProp_XRank interface {
 }
 
 type EdgeCommonProp_OccurTime struct {
-	OccurTime *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=occur_time,json=occurTime,proto3,oneof" json:"occur_time,omitempty"`
+	OccurTime *types.Timestamp `protobuf:"bytes,1,opt,name=occur_time,json=occurTime,proto3,oneof" json:"occur_time,omitempty"`
 }
 type EdgeCommonProp_CreateTime struct {
-	CreateTime *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=create_time,json=createTime,proto3,oneof" json:"create_time,omitempty"`
+	CreateTime *types.Timestamp `protobuf:"bytes,2,opt,name=create_time,json=createTime,proto3,oneof" json:"create_time,omitempty"`
 }
 type EdgeCommonProp_UpdateTime struct {
-	UpdateTime *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=update_time,json=updateTime,proto3,oneof" json:"update_time,omitempty"`
+	UpdateTime *types.Timestamp `protobuf:"bytes,3,opt,name=update_time,json=updateTime,proto3,oneof" json:"update_time,omitempty"`
 }
 type EdgeCommonProp_Rank struct {
 	Rank int64 `protobuf:"varint,4,opt,name=rank,proto3,oneof" json:"rank,omitempty"`
@@ -1722,21 +1722,21 @@ func (m *EdgeCommonProp) GetXRank() isEdgeCommonProp_XRank {
 	return nil
 }
 
-func (m *EdgeCommonProp) GetOccurTime() *timestamppb.Timestamp {
+func (m *EdgeCommonProp) GetOccurTime() *types.Timestamp {
 	if x, ok := m.GetXOccurTime().(*EdgeCommonProp_OccurTime); ok {
 		return x.OccurTime
 	}
 	return nil
 }
 
-func (m *EdgeCommonProp) GetCreateTime() *timestamppb.Timestamp {
+func (m *EdgeCommonProp) GetCreateTime() *types.Timestamp {
 	if x, ok := m.GetXCreateTime().(*EdgeCommonProp_CreateTime); ok {
 		return x.CreateTime
 	}
 	return nil
 }
 
-func (m *EdgeCommonProp) GetUpdateTime() *timestamppb.Timestamp {
+func (m *EdgeCommonProp) GetUpdateTime() *types.Timestamp {
 	if x, ok := m.GetXUpdateTime().(*EdgeCommonProp_UpdateTime); ok {
 		return x.UpdateTime
 	}
@@ -6352,7 +6352,7 @@ func (m *VertexCommonProp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -6387,7 +6387,7 @@ func (m *VertexCommonProp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -6422,7 +6422,7 @@ func (m *VertexCommonProp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -6851,7 +6851,7 @@ func (m *EdgeCommonProp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -6886,7 +6886,7 @@ func (m *EdgeCommonProp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -6921,7 +6921,7 @@ func (m *EdgeCommonProp) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			v := &timestamppb.Timestamp{}
+			v := &types.Timestamp{}
 			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}

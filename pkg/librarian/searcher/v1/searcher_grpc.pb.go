@@ -63,15 +63,16 @@ func (c *librarianSearcherServiceClient) SearchID(ctx context.Context, in *Searc
 }
 
 // LibrarianSearcherServiceServer is the server API for LibrarianSearcherService service.
-// All implementations should embed UnimplementedLibrarianSearcherServiceServer
+// All implementations must embed UnimplementedLibrarianSearcherServiceServer
 // for forward compatibility
 type LibrarianSearcherServiceServer interface {
 	NewID(context.Context, *NewIDRequest) (*NewIDResponse, error)
 	DescribeID(context.Context, *DescribeIDRequest) (*DescribeIDResponse, error)
 	SearchID(context.Context, *SearchIDRequest) (*SearchIDResponse, error)
+	mustEmbedUnimplementedLibrarianSearcherServiceServer()
 }
 
-// UnimplementedLibrarianSearcherServiceServer should be embedded to have forward compatible implementations.
+// UnimplementedLibrarianSearcherServiceServer must be embedded to have forward compatible implementations.
 type UnimplementedLibrarianSearcherServiceServer struct {
 }
 
@@ -83,6 +84,8 @@ func (UnimplementedLibrarianSearcherServiceServer) DescribeID(context.Context, *
 }
 func (UnimplementedLibrarianSearcherServiceServer) SearchID(context.Context, *SearchIDRequest) (*SearchIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchID not implemented")
+}
+func (UnimplementedLibrarianSearcherServiceServer) mustEmbedUnimplementedLibrarianSearcherServiceServer() {
 }
 
 // UnsafeLibrarianSearcherServiceServer may be embedded to opt out of forward compatibility for this service.

@@ -368,7 +368,7 @@ func (c *librarianSephirahServiceClient) ListArtifacts(ctx context.Context, in *
 }
 
 // LibrarianSephirahServiceServer is the server API for LibrarianSephirahService service.
-// All implementations should embed UnimplementedLibrarianSephirahServiceServer
+// All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
 type LibrarianSephirahServiceServer interface {
 	// `Tiphereth` `Normal` Login via password and get two token
@@ -420,9 +420,10 @@ type LibrarianSephirahServiceServer interface {
 	DownloadArtifacts(context.Context, *DownloadArtifactsRequest) (*DownloadArtifactsResponse, error)
 	// `Gebura` `Normal`
 	ListArtifacts(context.Context, *ListArtifactsRequest) (*ListArtifactsResponse, error)
+	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
-// UnimplementedLibrarianSephirahServiceServer should be embedded to have forward compatible implementations.
+// UnimplementedLibrarianSephirahServiceServer must be embedded to have forward compatible implementations.
 type UnimplementedLibrarianSephirahServiceServer struct {
 }
 
@@ -491,6 +492,8 @@ func (UnimplementedLibrarianSephirahServiceServer) DownloadArtifacts(context.Con
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListArtifacts(context.Context, *ListArtifactsRequest) (*ListArtifactsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListArtifacts not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
 
 // UnsafeLibrarianSephirahServiceServer may be embedded to opt out of forward compatibility for this service.
