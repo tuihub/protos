@@ -6,7 +6,7 @@
     ":timezone(Asia/Singapore)",
     ":dependencyDashboard"
   ],
-  "postUpdateOptions": ["gomodTidy"],
+  "postUpdateOptions": ["gomodTidy", "npmDedupe"],
   "labels": ["renovate"],
   "prBodyNotes": [
     "{{#if isMajor}}:warning: MAJOR MAJOR MAJOR :warning:{{/if}}"
@@ -23,7 +23,8 @@
       "matchUpdateTypes": [
         "minor",
         "patch",
-        "digest"
+        "digest",
+        "pin"
       ],
       "stabilityDays": 7,
       "groupName": "all non-major dependencies",
