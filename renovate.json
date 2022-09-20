@@ -14,6 +14,7 @@
   "major": {
     "dependencyDashboardApproval": true
   },
+  "rangeStrategy": "bump",
   "packageRules": [
     {
       "description": "Automatically group and merge minor and patch-level updates",
@@ -23,8 +24,7 @@
       "matchUpdateTypes": [
         "minor",
         "patch",
-        "digest",
-        "pin"
+        "digest"
       ],
       "stabilityDays": 7,
       "groupName": "all non-major dependencies",
