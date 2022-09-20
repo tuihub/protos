@@ -21,6 +21,10 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.48.0" />
+  </ItemGroup>
+
   <Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
     <ItemGroup>
       <None Include="Assets\build\Package.props" Pack="True" PackagePath="build\$(PackageId).props" />

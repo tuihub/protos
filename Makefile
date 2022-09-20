@@ -10,9 +10,13 @@ install-plugins:
 
 generate: clean buf go rust
 
-buf:
+buf: buf-lint buf-generate
+
+buf-lint:
 	buf format -w
 	buf lint
+
+buf-generate:
 	buf generate --include-imports
 
 go:

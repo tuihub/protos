@@ -1,9 +1,7 @@
-name: generate-and-check
+name: build-and-deploy
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
     branches: [ "master" ]
 
   workflow_dispatch:
@@ -15,7 +13,7 @@ permissions:
   packages: write
   
 concurrency:
-  group: "pages"
+  group: "build"
   cancel-in-progress: true
 
 jobs:
