@@ -74,7 +74,9 @@ jobs:
         with:
           commit_message: Apply automatic changes
 
-      - name: Create .NET source package
-        run: nuget pack TuiHub.Protos.nuspec
+      - name: Build .NET project
+        run: nuget pack
+      - name: Create nuget package
+        run: nuget pack
       - name: Publish .NET package to GPR
         run: dotnet nuget push *.nupkg --skip-duplicate
