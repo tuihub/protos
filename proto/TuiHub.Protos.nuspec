@@ -12,7 +12,6 @@
     <repository type="git" url="https://github.com/TuiHub/Protos" />
     <description>$description$</description>
     <tags>protobuf TuiHub</tags>
-
     <!--<dependencies>
       <group targetFramework="net6.0"></group>
     </dependencies>-->
