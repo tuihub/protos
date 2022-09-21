@@ -75,7 +75,7 @@ jobs:
           commit_message: Apply automatic changes
 
       - name: Build C# project
-        run: dotnet build --configuration Release
+        run: dotnet build proto/TuiHub.Protos.csproj --configuration Release
       - name: Create nuget package
         run: nuget pack proto/TuiHub.Protos.csproj -Prop Configuration=Release -IncludeReferencedProjects
       - name: Publish nuget package to GPR
