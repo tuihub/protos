@@ -79,4 +79,4 @@ jobs:
       - name: Create nuget package
         run: nuget pack proto/TuiHub.Protos.csproj
       - name: Publish .NET package to GPR
-        run: dotnet nuget push proto/*.nupkg --skip-duplicate
+        run: dotnet nuget push *.nupkg --skip-duplicate

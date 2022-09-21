@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$authors$</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/TuiHub/Protos</projectUrl>
+    <repository type="git" url="https://github.com/TuiHub/Protos" />
+    <description>$description$</description>
+    <tags>protobuf TuiHub</tags>
+
+    <!--<dependencies>
+      <group targetFramework="net6.0"></group>
+    </dependencies>-->
+  </metadata>
+</package>

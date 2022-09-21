@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>TuiHub.Protos</AssemblyName>
+    <AssemblyTitle>TuiHub.Protos</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <PackageProjectUrl>https://github.com/TuiHub/Protos</PackageProjectUrl>
@@ -14,6 +15,9 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Authors>TuiHub</Authors>
+    <Company>TuiHub</Company>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Description>protobuf protocol files for TuiHub</Description>
   </PropertyGroup>
 
   <ItemGroup>
