@@ -26,6 +26,7 @@ rust:
 	cargo check --features proto_full
 
 clean:
+	-rm -r Assets/src
 	-rm docs/README.md
 	-rm -r pkg
 	-rm -r node
