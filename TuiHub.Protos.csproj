@@ -16,21 +16,25 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Authors>TuiHub</Authors>
     <Company>TuiHub</Company>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSource>True</IncludeSource>
+    <IsTool>True</IsTool>
     <Description>protobuf protocol files for TuiHub</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.21.6" />
     <PackageReference Include="Grpc.Core" Version="2.46.3" />
-    <PackageReference Include="Grpc.Tools" Version="2.48.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
+  
+  <Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
+    <ItemGroup>
+      <None Include="Assets\build\Package.props" Pack="True" PackagePath="build\$(PackageId).props" />
+      <None Include="Assets\build\Package.targets" Pack="True" PackagePath="build\$(PackageId).targets" />
 
-  <ItemGroup>
-    <Protobuf Include="**\*.proto" />
-  </ItemGroup>
+      <None Include="Assets\src\**" Pack="True" PackagePath="src" />
+
+    </ItemGroup>
+  </Target>
 
 </Project>

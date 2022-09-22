@@ -1,0 +1,26 @@
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <Target Name="_TuiHubProtosEvaluateProperties">
+    <PropertyGroup>
+      <_TuiHubProtosRoot>$(MSBuildThisFileDirectory)..\</_TuiHubProtosRoot>
+      <_TuiHubProtosSourceFolder>$(MSBuildThisFileDirectory)..\src\</_TuiHubProtosSourceFolder>
+    </PropertyGroup>
+    <Message Text="1. 初始化源代码包的编译属性" />
+  </Target>
+
+  <Target Name="_TuiHubProtosIncludeSourceFiles"
+          BeforeTargets="CoreCompile"
+          DependsOnTargets="_TuiHubProtosEvaluateProperties">
+    <ItemGroup>
+      <_TuiHubProtosCompile Include="$(_TuiHubProtosSourceFolder)**\*.cs" />
+      <_TuiHubProtosAllCompile Include="@(_TuiHubProtosCompile)" />
+      <Compile Include="@(_TuiHubProtosCompile)" />
+    </ItemGroup>
+    <Message Text="2.1 引入源代码包中的所有源代码：@(_TuiHubProtosCompile)" />
+  </Target>
+
+</Project>
