@@ -7,7 +7,7 @@
     <AssemblyName>TuiHub.Protos</AssemblyName>
     <AssemblyTitle>TuiHub.Protos</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <VersionSuffix>alpha3</VersionSuffix>
+    <VersionSuffix>alpha4</VersionSuffix>
     <PackageProjectUrl>https://github.com/TuiHub/Protos</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -16,9 +16,7 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <Authors>TuiHub</Authors>
     <Company>TuiHub</Company>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <IncludeSource>True</IncludeSource>
-    <IsTool>True</IsTool>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>protobuf protocol files for TuiHub</Description>
   </PropertyGroup>
 
@@ -27,14 +25,13 @@
     <PackageReference Include="Grpc.Core" Version="2.46.3" />
   </ItemGroup>
   
-  <Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
+  <!--Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
     <ItemGroup>
       <None Include="Assets\build\Package.props" Pack="True" PackagePath="build\$(PackageId).props" />
       <None Include="Assets\build\Package.targets" Pack="True" PackagePath="build\$(PackageId).targets" />
 
       <None Include="Assets\src\**" Pack="True" PackagePath="src" />
-
     </ItemGroup>
-  </Target>
+  </Target-->
 
 </Project>

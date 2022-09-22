@@ -76,5 +76,7 @@ jobs:
 
       - name: Build C# project
         run: dotnet build TuiHub.Protos.csproj --configuration Release
+      - name: Create nuget package
+        run: nuget pack TuiHub.Protos.csproj -Prop Configuration=Release -IncludeReferencedProjects
       - name: Publish nuget package to GPR
-        run: dotnet nuget push bin/Release/*.nupkg --skip-duplicate
+        run: dotnet nuget push *.nupkg --skip-duplicate
