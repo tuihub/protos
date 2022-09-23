@@ -12,11 +12,11 @@
     <repository type="git" url="https://github.com/TuiHub/Protos" />
     <description>$description$</description>
     <tags>protobuf TuiHub</tags>
-    <dependencies>
+    <!-- <dependencies>
       <group targetFramework="net6.0">
         <dependency id="Google.Protobuf" version="3.21.6" exclude="Build,Analyzers" />
         <dependency id="Grpc.Core" version="2.46.3" exclude="Build,Analyzers" />
       </group>
-    </dependencies>
+    </dependencies> -->
   </metadata>
 </package>
