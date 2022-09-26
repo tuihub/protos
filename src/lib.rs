@@ -1,4 +1,10 @@
 // @generated
+#[cfg(feature = "errors")]
+// @@protoc_insertion_point(attribute:errors)
+pub mod errors {
+    include!("errors.rs");
+    // @@protoc_insertion_point(errors)
+}
 pub mod librarian {
     pub mod mapper {
         #[cfg(feature = "librarian-mapper-v1")]

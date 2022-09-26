@@ -354,7 +354,6 @@ func (m *ListAppRequest) GetWithBind() bool {
 
 type ListAppResponse struct {
 	// Types that are valid to be assigned to Content:
-	//
 	//	*ListAppResponse_WithoutBind
 	//	*ListAppResponse_WithBind
 	Content              isListAppResponse_Content `protobuf_oneof:"content"`
@@ -1127,11 +1126,9 @@ type App struct {
 	Id     *InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Source AppSource   `protobuf:"varint,2,opt,name=source,proto3,enum=librarian.sephirah.v1.AppSource" json:"source,omitempty"`
 	// Types that are valid to be assigned to XSourceAppId:
-	//
 	//	*App_SourceAppId
 	XSourceAppId isApp_XSourceAppId `protobuf_oneof:"_source_app_id"`
 	// Types that are valid to be assigned to XSourceUrl:
-	//
 	//	*App_SourceUrl
 	XSourceUrl       isApp_XSourceUrl `protobuf_oneof:"_source_url"`
 	Name             string           `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
@@ -1139,7 +1136,6 @@ type App struct {
 	ShortDescription string           `protobuf:"bytes,8,opt,name=short_description,json=shortDescription,proto3" json:"short_description,omitempty"`
 	ImageUrl         string           `protobuf:"bytes,9,opt,name=image_url,json=imageUrl,proto3" json:"image_url,omitempty"`
 	// Types that are valid to be assigned to XDetails:
-	//
 	//	*App_Details
 	XDetails             isApp_XDetails `protobuf_oneof:"_details"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
