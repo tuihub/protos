@@ -20,6 +20,10 @@ plugins:
     out: pkg
     opt:
       - paths=source_relative
+  - name: go-errors
+    out: pkg
+    opt:
+      - paths=source_relative
 
   #JS
   - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1

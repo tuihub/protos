@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+import "errors/errors.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/librarian/sephirah;v1";
+
+enum ErrorReason {
+  option (errors.default_code) = 500;
+
+  ERROR_REASON_UNSPECIFIED = 0 [(errors.code) = 500];
+
+  ERROR_REASON_BAD_REQUEST = 1 [(errors.code) = 400];
+  ERROR_REASON_UNAUTHORIZED = 2 [(errors.code) = 401];
+  ERROR_REASON_FORBIDDEN = 3 [(errors.code) = 403];
+  ERROR_REASON_NOT_FOUND = 4 [(errors.code) = 404];
+  ERROR_REASON_METHOD_NOT_ALLOWED = 5 [(errors.code) = 405];
+  ERROR_REASON_NOT_IMPLEMENTED = 6 [(errors.code) = 501];
+  ERROR_REASON_BAD_GATEWAY = 7 [(errors.code) = 502];
+}

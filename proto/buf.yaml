@@ -5,3 +5,6 @@ breaking:
 lint:
   use:
     - DEFAULT
+  ignore_only:
+    PACKAGE_VERSION_SUFFIX:
+      - errors/errors.proto
