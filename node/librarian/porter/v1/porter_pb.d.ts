@@ -227,6 +227,98 @@ export namespace PullAccountResponse {
   }
 }
 
+export class PullAppRequest extends jspb.Message {
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): librarian_v1_common_pb.AppID | undefined;
+  setAppId(value?: librarian_v1_common_pb.AppID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PullAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PullAppRequest): PullAppRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PullAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PullAppRequest;
+  static deserializeBinaryFromReader(message: PullAppRequest, reader: jspb.BinaryReader): PullAppRequest;
+}
+
+export namespace PullAppRequest {
+  export type AsObject = {
+    appId?: librarian_v1_common_pb.AppID.AsObject,
+  }
+}
+
+export class PullAppResponse extends jspb.Message {
+  hasApp(): boolean;
+  clearApp(): void;
+  getApp(): librarian_v1_common_pb.App | undefined;
+  setApp(value?: librarian_v1_common_pb.App): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PullAppResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PullAppResponse): PullAppResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PullAppResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PullAppResponse;
+  static deserializeBinaryFromReader(message: PullAppResponse, reader: jspb.BinaryReader): PullAppResponse;
+}
+
+export namespace PullAppResponse {
+  export type AsObject = {
+    app?: librarian_v1_common_pb.App.AsObject,
+  }
+}
+
+export class PullAccountAppRelationRequest extends jspb.Message {
+  getRelationType(): AccountAppRelationTypeMap[keyof AccountAppRelationTypeMap];
+  setRelationType(value: AccountAppRelationTypeMap[keyof AccountAppRelationTypeMap]): void;
+
+  hasAccountId(): boolean;
+  clearAccountId(): void;
+  getAccountId(): librarian_v1_common_pb.AccountID | undefined;
+  setAccountId(value?: librarian_v1_common_pb.AccountID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PullAccountAppRelationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PullAccountAppRelationRequest): PullAccountAppRelationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PullAccountAppRelationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PullAccountAppRelationRequest;
+  static deserializeBinaryFromReader(message: PullAccountAppRelationRequest, reader: jspb.BinaryReader): PullAccountAppRelationRequest;
+}
+
+export namespace PullAccountAppRelationRequest {
+  export type AsObject = {
+    relationType: AccountAppRelationTypeMap[keyof AccountAppRelationTypeMap],
+    accountId?: librarian_v1_common_pb.AccountID.AsObject,
+  }
+}
+
+export class PullAccountAppRelationResponse extends jspb.Message {
+  clearAppListList(): void;
+  getAppListList(): Array<librarian_v1_common_pb.App>;
+  setAppListList(value: Array<librarian_v1_common_pb.App>): void;
+  addAppList(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PullAccountAppRelationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PullAccountAppRelationResponse): PullAccountAppRelationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PullAccountAppRelationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PullAccountAppRelationResponse;
+  static deserializeBinaryFromReader(message: PullAccountAppRelationResponse, reader: jspb.BinaryReader): PullAccountAppRelationResponse;
+}
+
+export namespace PullAccountAppRelationResponse {
+  export type AsObject = {
+    appListList: Array<librarian_v1_common_pb.App.AsObject>,
+  }
+}
+
 export class PushDataRequest extends jspb.Message {
   getSource(): DataSourceMap[keyof DataSourceMap];
   setSource(value: DataSourceMap[keyof DataSourceMap]): void;
@@ -272,6 +364,13 @@ export namespace PushDataResponse {
   export type AsObject = {
   }
 }
+
+export interface AccountAppRelationTypeMap {
+  ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED: 0;
+  ACCOUNT_APP_RELATION_TYPE_OWN: 1;
+}
+
+export const AccountAppRelationType: AccountAppRelationTypeMap;
 
 export interface FeedSourceMap {
   FEED_SOURCE_UNSPECIFIED: 0;

@@ -149,6 +149,66 @@ pub mod librarian_porter_service_client {
             );
             self.inner.server_streaming(request.into_request(), path, codec).await
         }
+        pub async fn pull_account(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PullAccountRequest>,
+        ) -> Result<tonic::Response<super::PullAccountResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/PullAccount",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        pub async fn pull_app(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PullAppRequest>,
+        ) -> Result<tonic::Response<super::PullAppResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/PullApp",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        pub async fn pull_account_app_relation(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PullAccountAppRelationRequest>,
+        ) -> Result<
+            tonic::Response<super::PullAccountAppRelationResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
         pub async fn push_data(
             &mut self,
             request: impl tonic::IntoStreamingRequest<Message = super::PushDataRequest>,
@@ -201,6 +261,21 @@ pub mod librarian_porter_service_server {
             &self,
             request: tonic::Request<super::PullDataRequest>,
         ) -> Result<tonic::Response<Self::PullDataStream>, tonic::Status>;
+        async fn pull_account(
+            &self,
+            request: tonic::Request<super::PullAccountRequest>,
+        ) -> Result<tonic::Response<super::PullAccountResponse>, tonic::Status>;
+        async fn pull_app(
+            &self,
+            request: tonic::Request<super::PullAppRequest>,
+        ) -> Result<tonic::Response<super::PullAppResponse>, tonic::Status>;
+        async fn pull_account_app_relation(
+            &self,
+            request: tonic::Request<super::PullAccountAppRelationRequest>,
+        ) -> Result<
+            tonic::Response<super::PullAccountAppRelationResponse>,
+            tonic::Status,
+        >;
         async fn push_data(
             &self,
             request: tonic::Request<tonic::Streaming<super::PushDataRequest>>,
@@ -415,6 +490,126 @@ pub mod librarian_porter_service_server {
                                 send_compression_encodings,
                             );
                         let res = grpc.server_streaming(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/PullAccount" => {
+                    #[allow(non_camel_case_types)]
+                    struct PullAccountSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::PullAccountRequest>
+                    for PullAccountSvc<T> {
+                        type Response = super::PullAccountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PullAccountRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).pull_account(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PullAccountSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/PullApp" => {
+                    #[allow(non_camel_case_types)]
+                    struct PullAppSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::PullAppRequest>
+                    for PullAppSvc<T> {
+                        type Response = super::PullAppResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PullAppRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move { (*inner).pull_app(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PullAppSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation" => {
+                    #[allow(non_camel_case_types)]
+                    struct PullAccountAppRelationSvc<T: LibrarianPorterService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::PullAccountAppRelationRequest>
+                    for PullAccountAppRelationSvc<T> {
+                        type Response = super::PullAccountAppRelationResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PullAccountAppRelationRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).pull_account_app_relation(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PullAccountAppRelationSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)
