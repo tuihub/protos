@@ -7,7 +7,7 @@ import "librarian/sephirah/v1/gebura.proto";
 import "librarian/sephirah/v1/tiphereth.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
-option go_package = "github.com/tuihub/librarian/sephirah;v1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 /*
  * Sephirah contains the core logic and currently divided into the following modules:

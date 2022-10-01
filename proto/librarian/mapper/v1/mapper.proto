@@ -5,7 +5,7 @@ package librarian.mapper.v1;
 import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Mapper.V1";
-option go_package = "github.com/tuihub/librarian/mapper;v1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/mapper/v1;v1";
 
 /*
  * The main role of Mapper is to encapsulate graph operations.

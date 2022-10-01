@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package librarian.porter.v1;
 
-import "google/protobuf/timestamp.proto";
+import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
-option go_package = "github.com/tuihub/librarian/porter;v1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
 /*
  * The main role of Porter is to encapsulate input&output operations.
@@ -31,7 +31,7 @@ message PullFeedRequest {
 }
 
 message PullFeedResponse {
-  optional Feed data = 1;
+  optional librarian.v1.Feed data = 1;
 }
 
 message PullDBRequest {
@@ -58,43 +58,20 @@ message PullDataResponse {
   bytes data = 1;
 }
 
+message PullAccountRequest {
+  librarian.v1.AccountID account_id = 1;
+}
+
+message PullAccountResponse {
+  librarian.v1.Account account = 1;
+}
+
 message PushDataRequest {
   DataSource source = 1;
   string content_id = 2;
   bytes data = 3;
 }
 message PushDataResponse {}
-
-message Feed {
-  string title = 1;
-  string link = 2;
-  string description = 3;
-  optional string language = 4;
-  repeated FeedItem item = 5;
-  optional string image = 6;
-  optional string itunes_author = 7;
-  optional string itunes_category = 8;
-
-  message FeedItem {
-    string title = 1;
-    optional string author = 2;
-    optional string category = 3;
-    string description = 4;
-    optional google.protobuf.Timestamp pub_date = 5;
-    optional string guid = 6;
-    string link = 7;
-
-    optional string enclosure_url = 11;
-    optional string enclosure_length = 12;
-    optional string enclosure_type = 13;
-    optional string itunes_item_image = 14;
-    optional string itunes_duration = 15;
-
-    optional int64 upvotes = 16;
-    optional int64 downvotes = 17;
-    optional int64 comments = 18;
-  }
-}
 
 enum FeedSource {
   FEED_SOURCE_UNSPECIFIED = 0;

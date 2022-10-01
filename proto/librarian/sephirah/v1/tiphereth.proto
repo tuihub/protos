@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
-import "librarian/sephirah/v1/base.proto";
+import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
-option go_package = "github.com/tuihub/librarian/sephirah;v1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 message GetTokenRequest {
   string username = 1;
@@ -17,9 +17,7 @@ message GetTokenResponse {
   string refresh_token = 2;
 }
 
-message RefreshTokenRequest {
-  string refresh_token = 1;
-}
+message RefreshTokenRequest {}
 
 message RefreshTokenResponse {
   string access_token = 1;
@@ -27,7 +25,7 @@ message RefreshTokenResponse {
 }
 
 message GenerateTokenRequest {
-  InternalID id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message GenerateTokenResponse {
@@ -35,19 +33,14 @@ message GenerateTokenResponse {
 }
 
 message CreateUserRequest {
-  string username = 1;
-  string password = 2;
-  UserType type = 3;
+  User user = 1;
 }
 message CreateUserResponse {
-  InternalID id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message UpdateUserRequest {
-  InternalID id = 1;
-  string username = 2;
-  optional string password = 3;
-  UserStatus status = 4;
+  User user = 1;
 }
 message UpdateUserResponse {}
 
@@ -59,32 +52,32 @@ message ListUserRequest {
 }
 message ListUserResponse {
   repeated User user_list = 1;
-
-  message User {
-    InternalID id = 1;
-    string username = 2;
-    UserType type = 3;
-    UserStatus status = 4;
-  }
 }
 
 message LinkAccountRequest {
-  Account account = 1;
+  librarian.v1.AccountID account_id = 1;
 }
-message LinkAccountResponse {}
+message LinkAccountResponse {
+  librarian.v1.InternalID account_id = 1;
+}
 message UnLinkAccountRequest {
-  AccountType account_type = 1;
+  librarian.v1.AccountID account_id = 1;
 }
 message UnLinkAccountResponse {}
 
-message ListLinkAccountRequest {}
+message ListLinkAccountRequest {
+  optional librarian.v1.InternalID user_id = 1;
+}
 message ListLinkAccountResponse {
-  repeated Account account_list = 1;
+  repeated librarian.v1.Account account_list = 1;
 }
 
-message Account {
-  AccountType account_type = 1;
-  string account_id = 2;
+message User {
+  librarian.v1.InternalID id = 1;
+  string username = 2;
+  string password = 3;
+  UserType type = 4;
+  UserStatus status = 5;
 }
 
 enum UserType {
@@ -98,9 +91,4 @@ enum UserStatus {
   USER_STATUS_UNSPECIFIED = 0;
   USER_STATUS_ACTIVE = 1;
   USER_STATUS_BLOCKED = 2;
-}
-
-enum AccountType {
-  ACCOUNT_TYPE_UNSPECIFIED = 0;
-  ACCOUNT_TYPE_STEAM = 1;
 }

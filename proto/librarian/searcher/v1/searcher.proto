@@ -3,7 +3,7 @@ syntax = "proto3";
 package librarian.searcher.v1;
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Searcher.V1";
-option go_package = "github.com/tuihub/librarian/searcher;v1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/searcher/v1;v1";
 
 /*
  * The main role of Searcher is to encapsulate id generate and search operations.

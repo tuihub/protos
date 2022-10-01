@@ -3,21 +3,22 @@ syntax = "proto3";
 package librarian.sephirah.v1;
 
 import "librarian/sephirah/v1/base.proto";
+import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
-option go_package = "github.com/tuihub/librarian/sephirah;v1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 message CreateAppRequest {
   // `id` can be anything, `source` must be APP_SOURCE_INTERNAL
-  App app = 1;
+  librarian.v1.App app = 1;
 }
 message CreateAppResponse {
-  InternalID id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message UpdateAppRequest {
   // source must be APP_SOURCE_INTERNAL
-  App app = 1;
+  librarian.v1.App app = 1;
 }
 
 message UpdateAppResponse {}
@@ -25,8 +26,8 @@ message UpdateAppResponse {}
 message ListAppRequest {
   int64 page_num = 1;
   int64 page_size = 2;
-  repeated AppSource source_filter = 3;
-  repeated AppType type_filter = 4;
+  repeated librarian.v1.AppSource source_filter = 3;
+  repeated librarian.v1.AppType type_filter = 4;
   repeated int64 id_filter = 5;
   bool contain_details = 6;
   bool with_bind = 7;
@@ -39,7 +40,7 @@ message ListAppResponse {
   }
 
   message AppList {
-    repeated App app_list = 1;
+    repeated librarian.v1.App app_list = 1;
   }
   message AppListList {
     repeated AppList app_list_list = 1;
@@ -47,28 +48,30 @@ message ListAppResponse {
 }
 
 message BindAppRequest {
-  InternalID src_id = 1;
-  InternalID dst_id = 2;
+  librarian.v1.InternalID internal_app_id = 1;
+  librarian.v1.AppID bind_app_id = 2;
 }
 
-message BindAppResponse {}
+message BindAppResponse {
+  librarian.v1.InternalID bind_app_id = 1;
+}
 
 message UnBindAppRequest {
-  InternalID src_id = 1;
-  InternalID dst_id = 2;
+  librarian.v1.InternalID internal_app_id = 1;
+  librarian.v1.InternalID bind_app_id = 2;
 }
 
 message UnBindAppResponse {}
 
 message RefreshAppRequest {
-  InternalID id = 1;
+  librarian.v1.InternalID app_id = 1;
 }
 
 message RefreshAppResponse {}
 
 message UploadArtifactsRequest {
   FileMetadata file_metadata = 1;
-  InternalID app_id = 2;
+  librarian.v1.InternalID app_id = 2;
 }
 
 message UploadArtifactsResponse {
@@ -76,7 +79,7 @@ message UploadArtifactsResponse {
 }
 
 message DownloadArtifactsRequest {
-  InternalID id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message DownloadArtifactsResponse {
@@ -87,41 +90,10 @@ message ListArtifactsRequest {
   int64 page_num = 1;
   int64 page_size = 2;
 
-  InternalID app_id = 3;
+  librarian.v1.InternalID app_id = 3;
   bool with_bind_app = 4;
 }
 
 message ListArtifactsResponse {
   repeated FileMetadata file_list = 1;
-}
-
-message App {
-  InternalID id = 1;
-  AppSource source = 2;
-  optional string source_app_id = 3;
-  optional string source_url = 4;
-
-  string name = 6;
-  AppType type = 7;
-  string short_description = 8;
-  string image_url = 9;
-  optional AppDetails details = 10;
-}
-
-message AppDetails {
-  string description = 1;
-  string release_date = 2;
-  string developer = 3;
-  string publisher = 4;
-}
-
-enum AppType {
-  APP_TYPE_UNSPECIFIED = 0;
-  APP_TYPE_GAME = 1;
-}
-
-enum AppSource {
-  APP_SOURCE_UNSPECIFIED = 0;
-  APP_SOURCE_INTERNAL = 1;
-  APP_SOURCE_STEAM = 2;
 }
