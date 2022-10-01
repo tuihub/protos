@@ -22,6 +22,9 @@ service LibrarianPorterService {
   rpc PullDB(PullDBRequest) returns (PullDBResponse);
   rpc PullWiki(PullWikiRequest) returns (PullWikiResponse);
   rpc PullData(PullDataRequest) returns (stream PullDataResponse);
+  rpc PullAccount(PullAccountRequest) returns (PullAccountResponse);
+  rpc PullApp(PullAppRequest) returns (PullAppResponse);
+  rpc PullAccountAppRelation(PullAccountAppRelationRequest) returns (PullAccountAppRelationResponse);
   rpc PushData(stream PushDataRequest) returns (PushDataResponse);
 }
 
@@ -66,12 +69,34 @@ message PullAccountResponse {
   librarian.v1.Account account = 1;
 }
 
+message PullAppRequest {
+  librarian.v1.AppID app_id = 1;
+}
+
+message PullAppResponse {
+  librarian.v1.App app = 1;
+}
+
+message PullAccountAppRelationRequest {
+  AccountAppRelationType relation_type = 1;
+  librarian.v1.AccountID account_id = 2;
+}
+
+message PullAccountAppRelationResponse {
+  repeated librarian.v1.App app_list = 1;
+}
+
 message PushDataRequest {
   DataSource source = 1;
   string content_id = 2;
   bytes data = 3;
 }
 message PushDataResponse {}
+
+enum AccountAppRelationType {
+  ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = 0;
+  ACCOUNT_APP_RELATION_TYPE_OWN = 1;
+}
 
 enum FeedSource {
   FEED_SOURCE_UNSPECIFIED = 0;
