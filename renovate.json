@@ -26,7 +26,7 @@
         "patch",
         "digest"
       ],
-      "stabilityDays": 7,
+      "stabilityDays": 1,
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
       "automerge": true
