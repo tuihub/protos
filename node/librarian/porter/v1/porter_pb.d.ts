@@ -2,7 +2,7 @@
 // file: librarian/porter/v1/porter.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class PullFeedRequest extends jspb.Message {
   getSource(): FeedSourceMap[keyof FeedSourceMap];
@@ -31,8 +31,8 @@ export namespace PullFeedRequest {
 export class PullFeedResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): void;
-  getData(): Feed | undefined;
-  setData(value?: Feed): void;
+  getData(): librarian_v1_common_pb.Feed | undefined;
+  setData(value?: librarian_v1_common_pb.Feed): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PullFeedResponse.AsObject;
@@ -46,7 +46,7 @@ export class PullFeedResponse extends jspb.Message {
 
 export namespace PullFeedResponse {
   export type AsObject = {
-    data?: Feed.AsObject,
+    data?: librarian_v1_common_pb.Feed.AsObject,
   }
 }
 
@@ -183,6 +183,50 @@ export namespace PullDataResponse {
   }
 }
 
+export class PullAccountRequest extends jspb.Message {
+  hasAccountId(): boolean;
+  clearAccountId(): void;
+  getAccountId(): librarian_v1_common_pb.AccountID | undefined;
+  setAccountId(value?: librarian_v1_common_pb.AccountID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PullAccountRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PullAccountRequest): PullAccountRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PullAccountRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PullAccountRequest;
+  static deserializeBinaryFromReader(message: PullAccountRequest, reader: jspb.BinaryReader): PullAccountRequest;
+}
+
+export namespace PullAccountRequest {
+  export type AsObject = {
+    accountId?: librarian_v1_common_pb.AccountID.AsObject,
+  }
+}
+
+export class PullAccountResponse extends jspb.Message {
+  hasAccount(): boolean;
+  clearAccount(): void;
+  getAccount(): librarian_v1_common_pb.Account | undefined;
+  setAccount(value?: librarian_v1_common_pb.Account): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PullAccountResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PullAccountResponse): PullAccountResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PullAccountResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PullAccountResponse;
+  static deserializeBinaryFromReader(message: PullAccountResponse, reader: jspb.BinaryReader): PullAccountResponse;
+}
+
+export namespace PullAccountResponse {
+  export type AsObject = {
+    account?: librarian_v1_common_pb.Account.AsObject,
+  }
+}
+
 export class PushDataRequest extends jspb.Message {
   getSource(): DataSourceMap[keyof DataSourceMap];
   setSource(value: DataSourceMap[keyof DataSourceMap]): void;
@@ -226,164 +270,6 @@ export class PushDataResponse extends jspb.Message {
 
 export namespace PushDataResponse {
   export type AsObject = {
-  }
-}
-
-export class Feed extends jspb.Message {
-  getTitle(): string;
-  setTitle(value: string): void;
-
-  getLink(): string;
-  setLink(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  hasLanguage(): boolean;
-  clearLanguage(): void;
-  getLanguage(): string;
-  setLanguage(value: string): void;
-
-  clearItemList(): void;
-  getItemList(): Array<Feed.FeedItem>;
-  setItemList(value: Array<Feed.FeedItem>): void;
-  addItem(value?: Feed.FeedItem, index?: number): Feed.FeedItem;
-
-  hasImage(): boolean;
-  clearImage(): void;
-  getImage(): string;
-  setImage(value: string): void;
-
-  hasItunesAuthor(): boolean;
-  clearItunesAuthor(): void;
-  getItunesAuthor(): string;
-  setItunesAuthor(value: string): void;
-
-  hasItunesCategory(): boolean;
-  clearItunesCategory(): void;
-  getItunesCategory(): string;
-  setItunesCategory(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Feed.AsObject;
-  static toObject(includeInstance: boolean, msg: Feed): Feed.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Feed, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Feed;
-  static deserializeBinaryFromReader(message: Feed, reader: jspb.BinaryReader): Feed;
-}
-
-export namespace Feed {
-  export type AsObject = {
-    title: string,
-    link: string,
-    description: string,
-    language: string,
-    itemList: Array<Feed.FeedItem.AsObject>,
-    image: string,
-    itunesAuthor: string,
-    itunesCategory: string,
-  }
-
-  export class FeedItem extends jspb.Message {
-    getTitle(): string;
-    setTitle(value: string): void;
-
-    hasAuthor(): boolean;
-    clearAuthor(): void;
-    getAuthor(): string;
-    setAuthor(value: string): void;
-
-    hasCategory(): boolean;
-    clearCategory(): void;
-    getCategory(): string;
-    setCategory(value: string): void;
-
-    getDescription(): string;
-    setDescription(value: string): void;
-
-    hasPubDate(): boolean;
-    clearPubDate(): void;
-    getPubDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setPubDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
-    hasGuid(): boolean;
-    clearGuid(): void;
-    getGuid(): string;
-    setGuid(value: string): void;
-
-    getLink(): string;
-    setLink(value: string): void;
-
-    hasEnclosureUrl(): boolean;
-    clearEnclosureUrl(): void;
-    getEnclosureUrl(): string;
-    setEnclosureUrl(value: string): void;
-
-    hasEnclosureLength(): boolean;
-    clearEnclosureLength(): void;
-    getEnclosureLength(): string;
-    setEnclosureLength(value: string): void;
-
-    hasEnclosureType(): boolean;
-    clearEnclosureType(): void;
-    getEnclosureType(): string;
-    setEnclosureType(value: string): void;
-
-    hasItunesItemImage(): boolean;
-    clearItunesItemImage(): void;
-    getItunesItemImage(): string;
-    setItunesItemImage(value: string): void;
-
-    hasItunesDuration(): boolean;
-    clearItunesDuration(): void;
-    getItunesDuration(): string;
-    setItunesDuration(value: string): void;
-
-    hasUpvotes(): boolean;
-    clearUpvotes(): void;
-    getUpvotes(): number;
-    setUpvotes(value: number): void;
-
-    hasDownvotes(): boolean;
-    clearDownvotes(): void;
-    getDownvotes(): number;
-    setDownvotes(value: number): void;
-
-    hasComments(): boolean;
-    clearComments(): void;
-    getComments(): number;
-    setComments(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): FeedItem.AsObject;
-    static toObject(includeInstance: boolean, msg: FeedItem): FeedItem.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: FeedItem, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): FeedItem;
-    static deserializeBinaryFromReader(message: FeedItem, reader: jspb.BinaryReader): FeedItem;
-  }
-
-  export namespace FeedItem {
-    export type AsObject = {
-      title: string,
-      author: string,
-      category: string,
-      description: string,
-      pubDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      guid: string,
-      link: string,
-      enclosureUrl: string,
-      enclosureLength: string,
-      enclosureType: string,
-      itunesItemImage: string,
-      itunesDuration: string,
-      upvotes: number,
-      downvotes: number,
-      comments: number,
-    }
   }
 }
 

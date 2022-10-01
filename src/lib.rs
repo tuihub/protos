@@ -38,4 +38,10 @@ pub mod librarian {
             // @@protoc_insertion_point(librarian.sephirah.v1)
         }
     }
+    #[cfg(feature = "librarian-v1")]
+    // @@protoc_insertion_point(attribute:librarian.v1)
+    pub mod v1 {
+        include!("librarian.v1.rs");
+        // @@protoc_insertion_point(librarian.v1)
+    }
 }

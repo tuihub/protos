@@ -3,12 +3,13 @@
 
 import * as jspb from "google-protobuf";
 import * as librarian_sephirah_v1_base_pb from "../../../librarian/sephirah/v1/base_pb";
+import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class CreateAppRequest extends jspb.Message {
   hasApp(): boolean;
   clearApp(): void;
-  getApp(): App | undefined;
-  setApp(value?: App): void;
+  getApp(): librarian_v1_common_pb.App | undefined;
+  setApp(value?: librarian_v1_common_pb.App): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAppRequest.AsObject;
@@ -22,15 +23,15 @@ export class CreateAppRequest extends jspb.Message {
 
 export namespace CreateAppRequest {
   export type AsObject = {
-    app?: App.AsObject,
+    app?: librarian_v1_common_pb.App.AsObject,
   }
 }
 
 export class CreateAppResponse extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAppResponse.AsObject;
@@ -44,15 +45,15 @@ export class CreateAppResponse extends jspb.Message {
 
 export namespace CreateAppResponse {
   export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class UpdateAppRequest extends jspb.Message {
   hasApp(): boolean;
   clearApp(): void;
-  getApp(): App | undefined;
-  setApp(value?: App): void;
+  getApp(): librarian_v1_common_pb.App | undefined;
+  setApp(value?: librarian_v1_common_pb.App): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateAppRequest.AsObject;
@@ -66,7 +67,7 @@ export class UpdateAppRequest extends jspb.Message {
 
 export namespace UpdateAppRequest {
   export type AsObject = {
-    app?: App.AsObject,
+    app?: librarian_v1_common_pb.App.AsObject,
   }
 }
 
@@ -94,14 +95,14 @@ export class ListAppRequest extends jspb.Message {
   setPageSize(value: number): void;
 
   clearSourceFilterList(): void;
-  getSourceFilterList(): Array<AppSourceMap[keyof AppSourceMap]>;
-  setSourceFilterList(value: Array<AppSourceMap[keyof AppSourceMap]>): void;
-  addSourceFilter(value: AppSourceMap[keyof AppSourceMap], index?: number): AppSourceMap[keyof AppSourceMap];
+  getSourceFilterList(): Array<librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]>;
+  setSourceFilterList(value: Array<librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]>): void;
+  addSourceFilter(value: librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap], index?: number): librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap];
 
   clearTypeFilterList(): void;
-  getTypeFilterList(): Array<AppTypeMap[keyof AppTypeMap]>;
-  setTypeFilterList(value: Array<AppTypeMap[keyof AppTypeMap]>): void;
-  addTypeFilter(value: AppTypeMap[keyof AppTypeMap], index?: number): AppTypeMap[keyof AppTypeMap];
+  getTypeFilterList(): Array<librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap]>;
+  setTypeFilterList(value: Array<librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap]>): void;
+  addTypeFilter(value: librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap], index?: number): librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap];
 
   clearIdFilterList(): void;
   getIdFilterList(): Array<number>;
@@ -128,8 +129,8 @@ export namespace ListAppRequest {
   export type AsObject = {
     pageNum: number,
     pageSize: number,
-    sourceFilterList: Array<AppSourceMap[keyof AppSourceMap]>,
-    typeFilterList: Array<AppTypeMap[keyof AppTypeMap]>,
+    sourceFilterList: Array<librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]>,
+    typeFilterList: Array<librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap]>,
     idFilterList: Array<number>,
     containDetails: boolean,
     withBind: boolean,
@@ -166,9 +167,9 @@ export namespace ListAppResponse {
 
   export class AppList extends jspb.Message {
     clearAppListList(): void;
-    getAppListList(): Array<App>;
-    setAppListList(value: Array<App>): void;
-    addAppList(value?: App, index?: number): App;
+    getAppListList(): Array<librarian_v1_common_pb.App>;
+    setAppListList(value: Array<librarian_v1_common_pb.App>): void;
+    addAppList(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AppList.AsObject;
@@ -182,7 +183,7 @@ export namespace ListAppResponse {
 
   export namespace AppList {
     export type AsObject = {
-      appListList: Array<App.AsObject>,
+      appListList: Array<librarian_v1_common_pb.App.AsObject>,
     }
   }
 
@@ -216,15 +217,15 @@ export namespace ListAppResponse {
 }
 
 export class BindAppRequest extends jspb.Message {
-  hasSrcId(): boolean;
-  clearSrcId(): void;
-  getSrcId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setSrcId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  hasInternalAppId(): boolean;
+  clearInternalAppId(): void;
+  getInternalAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setInternalAppId(value?: librarian_v1_common_pb.InternalID): void;
 
-  hasDstId(): boolean;
-  clearDstId(): void;
-  getDstId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setDstId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  hasBindAppId(): boolean;
+  clearBindAppId(): void;
+  getBindAppId(): librarian_v1_common_pb.AppID | undefined;
+  setBindAppId(value?: librarian_v1_common_pb.AppID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BindAppRequest.AsObject;
@@ -238,12 +239,17 @@ export class BindAppRequest extends jspb.Message {
 
 export namespace BindAppRequest {
   export type AsObject = {
-    srcId?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
-    dstId?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    internalAppId?: librarian_v1_common_pb.InternalID.AsObject,
+    bindAppId?: librarian_v1_common_pb.AppID.AsObject,
   }
 }
 
 export class BindAppResponse extends jspb.Message {
+  hasBindAppId(): boolean;
+  clearBindAppId(): void;
+  getBindAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setBindAppId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BindAppResponse.AsObject;
   static toObject(includeInstance: boolean, msg: BindAppResponse): BindAppResponse.AsObject;
@@ -256,19 +262,20 @@ export class BindAppResponse extends jspb.Message {
 
 export namespace BindAppResponse {
   export type AsObject = {
+    bindAppId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class UnBindAppRequest extends jspb.Message {
-  hasSrcId(): boolean;
-  clearSrcId(): void;
-  getSrcId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setSrcId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  hasInternalAppId(): boolean;
+  clearInternalAppId(): void;
+  getInternalAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setInternalAppId(value?: librarian_v1_common_pb.InternalID): void;
 
-  hasDstId(): boolean;
-  clearDstId(): void;
-  getDstId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setDstId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  hasBindAppId(): boolean;
+  clearBindAppId(): void;
+  getBindAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setBindAppId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnBindAppRequest.AsObject;
@@ -282,8 +289,8 @@ export class UnBindAppRequest extends jspb.Message {
 
 export namespace UnBindAppRequest {
   export type AsObject = {
-    srcId?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
-    dstId?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    internalAppId?: librarian_v1_common_pb.InternalID.AsObject,
+    bindAppId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -304,10 +311,10 @@ export namespace UnBindAppResponse {
 }
 
 export class RefreshAppRequest extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RefreshAppRequest.AsObject;
@@ -321,7 +328,7 @@ export class RefreshAppRequest extends jspb.Message {
 
 export namespace RefreshAppRequest {
   export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -349,8 +356,8 @@ export class UploadArtifactsRequest extends jspb.Message {
 
   hasAppId(): boolean;
   clearAppId(): void;
-  getAppId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setAppId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadArtifactsRequest.AsObject;
@@ -365,7 +372,7 @@ export class UploadArtifactsRequest extends jspb.Message {
 export namespace UploadArtifactsRequest {
   export type AsObject = {
     fileMetadata?: librarian_sephirah_v1_base_pb.FileMetadata.AsObject,
-    appId?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -392,8 +399,8 @@ export namespace UploadArtifactsResponse {
 export class DownloadArtifactsRequest extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadArtifactsRequest.AsObject;
@@ -407,7 +414,7 @@ export class DownloadArtifactsRequest extends jspb.Message {
 
 export namespace DownloadArtifactsRequest {
   export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -440,8 +447,8 @@ export class ListArtifactsRequest extends jspb.Message {
 
   hasAppId(): boolean;
   clearAppId(): void;
-  getAppId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setAppId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
 
   getWithBindApp(): boolean;
   setWithBindApp(value: boolean): void;
@@ -460,7 +467,7 @@ export namespace ListArtifactsRequest {
   export type AsObject = {
     pageNum: number,
     pageSize: number,
-    appId?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
     withBindApp: boolean,
   }
 }
@@ -486,111 +493,4 @@ export namespace ListArtifactsResponse {
     fileListList: Array<librarian_sephirah_v1_base_pb.FileMetadata.AsObject>,
   }
 }
-
-export class App extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
-
-  getSource(): AppSourceMap[keyof AppSourceMap];
-  setSource(value: AppSourceMap[keyof AppSourceMap]): void;
-
-  hasSourceAppId(): boolean;
-  clearSourceAppId(): void;
-  getSourceAppId(): string;
-  setSourceAppId(value: string): void;
-
-  hasSourceUrl(): boolean;
-  clearSourceUrl(): void;
-  getSourceUrl(): string;
-  setSourceUrl(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getType(): AppTypeMap[keyof AppTypeMap];
-  setType(value: AppTypeMap[keyof AppTypeMap]): void;
-
-  getShortDescription(): string;
-  setShortDescription(value: string): void;
-
-  getImageUrl(): string;
-  setImageUrl(value: string): void;
-
-  hasDetails(): boolean;
-  clearDetails(): void;
-  getDetails(): AppDetails | undefined;
-  setDetails(value?: AppDetails): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): App.AsObject;
-  static toObject(includeInstance: boolean, msg: App): App.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: App, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): App;
-  static deserializeBinaryFromReader(message: App, reader: jspb.BinaryReader): App;
-}
-
-export namespace App {
-  export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
-    source: AppSourceMap[keyof AppSourceMap],
-    sourceAppId: string,
-    sourceUrl: string,
-    name: string,
-    type: AppTypeMap[keyof AppTypeMap],
-    shortDescription: string,
-    imageUrl: string,
-    details?: AppDetails.AsObject,
-  }
-}
-
-export class AppDetails extends jspb.Message {
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  getReleaseDate(): string;
-  setReleaseDate(value: string): void;
-
-  getDeveloper(): string;
-  setDeveloper(value: string): void;
-
-  getPublisher(): string;
-  setPublisher(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: AppDetails): AppDetails.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppDetails;
-  static deserializeBinaryFromReader(message: AppDetails, reader: jspb.BinaryReader): AppDetails;
-}
-
-export namespace AppDetails {
-  export type AsObject = {
-    description: string,
-    releaseDate: string,
-    developer: string,
-    publisher: string,
-  }
-}
-
-export interface AppTypeMap {
-  APP_TYPE_UNSPECIFIED: 0;
-  APP_TYPE_GAME: 1;
-}
-
-export const AppType: AppTypeMap;
-
-export interface AppSourceMap {
-  APP_SOURCE_UNSPECIFIED: 0;
-  APP_SOURCE_INTERNAL: 1;
-  APP_SOURCE_STEAM: 2;
-}
-
-export const AppSource: AppSourceMap;
 

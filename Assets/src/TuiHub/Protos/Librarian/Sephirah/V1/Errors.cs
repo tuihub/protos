@@ -32,9 +32,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "QklEREVOEAMaBKhFkwMSIAoWRVJST1JfUkVBU09OX05PVF9GT1VORBAEGgSo",
             "RZQDEikKH0VSUk9SX1JFQVNPTl9NRVRIT0RfTk9UX0FMTE9XRUQQBRoEqEWV",
             "AxImChxFUlJPUl9SRUFTT05fTk9UX0lNUExFTUVOVEVEEAYaBKhF9QMSIgoY",
-            "RVJST1JfUkVBU09OX0JBRF9HQVRFV0FZEAcaBKhF9gMaBKBF9ANCT1onZ2l0",
-            "aHViLmNvbS90dWlodWIvbGlicmFyaWFuL3NlcGhpcmFoO3YxqgIjVHVpSHVi",
-            "LlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "RVJST1JfUkVBU09OX0JBRF9HQVRFV0FZEAcaBKhF9gMaBKBF9ANCXVo1Z2l0",
+            "aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgv",
+            "djE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Errors.ErrorsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ErrorReason), }, null, null));

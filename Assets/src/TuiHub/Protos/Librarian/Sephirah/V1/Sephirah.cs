@@ -79,9 +79,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "cmlhbi5zZXBoaXJhaC52MS5Eb3dubG9hZEFydGlmYWN0c1Jlc3BvbnNlEmoK",
             "DUxpc3RBcnRpZmFjdHMSKy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEFy",
             "dGlmYWN0c1JlcXVlc3QaLC5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEFy",
-            "dGlmYWN0c1Jlc3BvbnNlQk9aJ2dpdGh1Yi5jb20vdHVpaHViL2xpYnJhcmlh",
-            "bi9zZXBoaXJhaDt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhp",
-            "cmFoLlYxYgZwcm90bzM="));
+            "dGlmYWN0c1Jlc3BvbnNlQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9w",
+            "a2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5M",
+            "aWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.TipherethReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, null));

@@ -43,9 +43,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             "cmliZUlEUmVxdWVzdBopLmxpYnJhcmlhbi5zZWFyY2hlci52MS5EZXNjcmli",
             "ZUlEUmVzcG9uc2USWwoIU2VhcmNoSUQSJi5saWJyYXJpYW4uc2VhcmNoZXIu",
             "djEuU2VhcmNoSURSZXF1ZXN0GicubGlicmFyaWFuLnNlYXJjaGVyLnYxLlNl",
-            "YXJjaElEUmVzcG9uc2VCT1onZ2l0aHViLmNvbS90dWlodWIvbGlicmFyaWFu",
-            "L3NlYXJjaGVyO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VhcmNo",
-            "ZXIuVjFiBnByb3RvMw=="));
+            "YXJjaElEUmVzcG9uc2VCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3Br",
+            "Zy9saWJyYXJpYW4vc2VhcmNoZXIvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxp",
+            "YnJhcmlhbi5TZWFyY2hlci5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

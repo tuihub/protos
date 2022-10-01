@@ -3,7 +3,7 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var librarian_porter_v1_porter_pb = require('../../../librarian/porter/v1/porter_pb.js');
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 
 function serialize_librarian_porter_v1_PullDBRequest(arg) {
   if (!(arg instanceof librarian_porter_v1_porter_pb.PullDBRequest)) {

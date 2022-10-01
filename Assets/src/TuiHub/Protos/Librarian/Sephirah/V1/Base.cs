@@ -31,9 +31,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "EhIKBHNpemUYAyABKANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1",
             "bmtTaXplEjAKA3RhZxgFIAMoDjIeLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5G",
             "aWxlVGFnUgN0YWdCBQoDX2lkKj0KB0ZpbGVUYWcSGAoURklMRV9UQUdfVU5T",
-            "UEVDSUZJRUQQABIYChRGSUxFX1RBR19HRUJVUkFfU0FWRRABQk9aJ2dpdGh1",
-            "Yi5jb20vdHVpaHViL2xpYnJhcmlhbi9zZXBoaXJhaDt2MaoCI1R1aUh1Yi5Q",
-            "cm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "UEVDSUZJRUQQABIYChRGSUxFX1RBR19HRUJVUkFfU0FWRRABQl1aNWdpdGh1",
+            "Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3Yx",
+            "O3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag), }, null, new pbr::GeneratedClrTypeInfo[] {

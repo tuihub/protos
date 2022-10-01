@@ -2,7 +2,7 @@
 // file: librarian/sephirah/v1/tiphereth.proto
 
 import * as jspb from "google-protobuf";
-import * as librarian_sephirah_v1_base_pb from "../../../librarian/sephirah/v1/base_pb";
+import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class GetTokenRequest extends jspb.Message {
   getUsername(): string;
@@ -53,9 +53,6 @@ export namespace GetTokenResponse {
 }
 
 export class RefreshTokenRequest extends jspb.Message {
-  getRefreshToken(): string;
-  setRefreshToken(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RefreshTokenRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RefreshTokenRequest): RefreshTokenRequest.AsObject;
@@ -68,7 +65,6 @@ export class RefreshTokenRequest extends jspb.Message {
 
 export namespace RefreshTokenRequest {
   export type AsObject = {
-    refreshToken: string,
   }
 }
 
@@ -99,8 +95,8 @@ export namespace RefreshTokenResponse {
 export class GenerateTokenRequest extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateTokenRequest.AsObject;
@@ -114,7 +110,7 @@ export class GenerateTokenRequest extends jspb.Message {
 
 export namespace GenerateTokenRequest {
   export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -139,14 +135,10 @@ export namespace GenerateTokenResponse {
 }
 
 export class CreateUserRequest extends jspb.Message {
-  getUsername(): string;
-  setUsername(value: string): void;
-
-  getPassword(): string;
-  setPassword(value: string): void;
-
-  getType(): UserTypeMap[keyof UserTypeMap];
-  setType(value: UserTypeMap[keyof UserTypeMap]): void;
+  hasUser(): boolean;
+  clearUser(): void;
+  getUser(): User | undefined;
+  setUser(value?: User): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserRequest.AsObject;
@@ -160,17 +152,15 @@ export class CreateUserRequest extends jspb.Message {
 
 export namespace CreateUserRequest {
   export type AsObject = {
-    username: string,
-    password: string,
-    type: UserTypeMap[keyof UserTypeMap],
+    user?: User.AsObject,
   }
 }
 
 export class CreateUserResponse extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUserResponse.AsObject;
@@ -184,26 +174,15 @@ export class CreateUserResponse extends jspb.Message {
 
 export namespace CreateUserResponse {
   export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class UpdateUserRequest extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-  setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
-
-  getUsername(): string;
-  setUsername(value: string): void;
-
-  hasPassword(): boolean;
-  clearPassword(): void;
-  getPassword(): string;
-  setPassword(value: string): void;
-
-  getStatus(): UserStatusMap[keyof UserStatusMap];
-  setStatus(value: UserStatusMap[keyof UserStatusMap]): void;
+  hasUser(): boolean;
+  clearUser(): void;
+  getUser(): User | undefined;
+  setUser(value?: User): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateUserRequest.AsObject;
@@ -217,10 +196,7 @@ export class UpdateUserRequest extends jspb.Message {
 
 export namespace UpdateUserRequest {
   export type AsObject = {
-    id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
-    username: string,
-    password: string,
-    status: UserStatusMap[keyof UserStatusMap],
+    user?: User.AsObject,
   }
 }
 
@@ -278,9 +254,9 @@ export namespace ListUserRequest {
 
 export class ListUserResponse extends jspb.Message {
   clearUserListList(): void;
-  getUserListList(): Array<ListUserResponse.User>;
-  setUserListList(value: Array<ListUserResponse.User>): void;
-  addUserList(value?: ListUserResponse.User, index?: number): ListUserResponse.User;
+  getUserListList(): Array<User>;
+  setUserListList(value: Array<User>): void;
+  addUserList(value?: User, index?: number): User;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserResponse.AsObject;
@@ -294,49 +270,15 @@ export class ListUserResponse extends jspb.Message {
 
 export namespace ListUserResponse {
   export type AsObject = {
-    userListList: Array<ListUserResponse.User.AsObject>,
-  }
-
-  export class User extends jspb.Message {
-    hasId(): boolean;
-    clearId(): void;
-    getId(): librarian_sephirah_v1_base_pb.InternalID | undefined;
-    setId(value?: librarian_sephirah_v1_base_pb.InternalID): void;
-
-    getUsername(): string;
-    setUsername(value: string): void;
-
-    getType(): UserTypeMap[keyof UserTypeMap];
-    setType(value: UserTypeMap[keyof UserTypeMap]): void;
-
-    getStatus(): UserStatusMap[keyof UserStatusMap];
-    setStatus(value: UserStatusMap[keyof UserStatusMap]): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): User.AsObject;
-    static toObject(includeInstance: boolean, msg: User): User.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: User, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): User;
-    static deserializeBinaryFromReader(message: User, reader: jspb.BinaryReader): User;
-  }
-
-  export namespace User {
-    export type AsObject = {
-      id?: librarian_sephirah_v1_base_pb.InternalID.AsObject,
-      username: string,
-      type: UserTypeMap[keyof UserTypeMap],
-      status: UserStatusMap[keyof UserStatusMap],
-    }
+    userListList: Array<User.AsObject>,
   }
 }
 
 export class LinkAccountRequest extends jspb.Message {
-  hasAccount(): boolean;
-  clearAccount(): void;
-  getAccount(): Account | undefined;
-  setAccount(value?: Account): void;
+  hasAccountId(): boolean;
+  clearAccountId(): void;
+  getAccountId(): librarian_v1_common_pb.AccountID | undefined;
+  setAccountId(value?: librarian_v1_common_pb.AccountID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LinkAccountRequest.AsObject;
@@ -350,11 +292,16 @@ export class LinkAccountRequest extends jspb.Message {
 
 export namespace LinkAccountRequest {
   export type AsObject = {
-    account?: Account.AsObject,
+    accountId?: librarian_v1_common_pb.AccountID.AsObject,
   }
 }
 
 export class LinkAccountResponse extends jspb.Message {
+  hasAccountId(): boolean;
+  clearAccountId(): void;
+  getAccountId(): librarian_v1_common_pb.InternalID | undefined;
+  setAccountId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LinkAccountResponse.AsObject;
   static toObject(includeInstance: boolean, msg: LinkAccountResponse): LinkAccountResponse.AsObject;
@@ -367,12 +314,15 @@ export class LinkAccountResponse extends jspb.Message {
 
 export namespace LinkAccountResponse {
   export type AsObject = {
+    accountId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class UnLinkAccountRequest extends jspb.Message {
-  getAccountType(): AccountTypeMap[keyof AccountTypeMap];
-  setAccountType(value: AccountTypeMap[keyof AccountTypeMap]): void;
+  hasAccountId(): boolean;
+  clearAccountId(): void;
+  getAccountId(): librarian_v1_common_pb.AccountID | undefined;
+  setAccountId(value?: librarian_v1_common_pb.AccountID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnLinkAccountRequest.AsObject;
@@ -386,7 +336,7 @@ export class UnLinkAccountRequest extends jspb.Message {
 
 export namespace UnLinkAccountRequest {
   export type AsObject = {
-    accountType: AccountTypeMap[keyof AccountTypeMap],
+    accountId?: librarian_v1_common_pb.AccountID.AsObject,
   }
 }
 
@@ -407,6 +357,11 @@ export namespace UnLinkAccountResponse {
 }
 
 export class ListLinkAccountRequest extends jspb.Message {
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): librarian_v1_common_pb.InternalID | undefined;
+  setUserId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLinkAccountRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListLinkAccountRequest): ListLinkAccountRequest.AsObject;
@@ -419,14 +374,15 @@ export class ListLinkAccountRequest extends jspb.Message {
 
 export namespace ListLinkAccountRequest {
   export type AsObject = {
+    userId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class ListLinkAccountResponse extends jspb.Message {
   clearAccountListList(): void;
-  getAccountListList(): Array<Account>;
-  setAccountListList(value: Array<Account>): void;
-  addAccountList(value?: Account, index?: number): Account;
+  getAccountListList(): Array<librarian_v1_common_pb.Account>;
+  setAccountListList(value: Array<librarian_v1_common_pb.Account>): void;
+  addAccountList(value?: librarian_v1_common_pb.Account, index?: number): librarian_v1_common_pb.Account;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLinkAccountResponse.AsObject;
@@ -440,31 +396,45 @@ export class ListLinkAccountResponse extends jspb.Message {
 
 export namespace ListLinkAccountResponse {
   export type AsObject = {
-    accountListList: Array<Account.AsObject>,
+    accountListList: Array<librarian_v1_common_pb.Account.AsObject>,
   }
 }
 
-export class Account extends jspb.Message {
-  getAccountType(): AccountTypeMap[keyof AccountTypeMap];
-  setAccountType(value: AccountTypeMap[keyof AccountTypeMap]): void;
+export class User extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
-  getAccountId(): string;
-  setAccountId(value: string): void;
+  getUsername(): string;
+  setUsername(value: string): void;
+
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  getType(): UserTypeMap[keyof UserTypeMap];
+  setType(value: UserTypeMap[keyof UserTypeMap]): void;
+
+  getStatus(): UserStatusMap[keyof UserStatusMap];
+  setStatus(value: UserStatusMap[keyof UserStatusMap]): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Account.AsObject;
-  static toObject(includeInstance: boolean, msg: Account): Account.AsObject;
+  toObject(includeInstance?: boolean): User.AsObject;
+  static toObject(includeInstance: boolean, msg: User): User.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: Account, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Account;
-  static deserializeBinaryFromReader(message: Account, reader: jspb.BinaryReader): Account;
+  static serializeBinaryToWriter(message: User, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): User;
+  static deserializeBinaryFromReader(message: User, reader: jspb.BinaryReader): User;
 }
 
-export namespace Account {
+export namespace User {
   export type AsObject = {
-    accountType: AccountTypeMap[keyof AccountTypeMap],
-    accountId: string,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    username: string,
+    password: string,
+    type: UserTypeMap[keyof UserTypeMap],
+    status: UserStatusMap[keyof UserStatusMap],
   }
 }
 
@@ -484,11 +454,4 @@ export interface UserStatusMap {
 }
 
 export const UserStatus: UserStatusMap;
-
-export interface AccountTypeMap {
-  ACCOUNT_TYPE_UNSPECIFIED: 0;
-  ACCOUNT_TYPE_STEAM: 1;
-}
-
-export const AccountType: AccountTypeMap;
 

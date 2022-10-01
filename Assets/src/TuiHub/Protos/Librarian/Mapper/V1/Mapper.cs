@@ -130,9 +130,9 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
             "LmxpYnJhcmlhbi5tYXBwZXIudjEuRmV0Y2hFcXVhbFZlcnRleE5laWdoYm9y",
             "UmVzcG9uc2USVwoIRmluZFBhdGgSJC5saWJyYXJpYW4ubWFwcGVyLnYxLkZp",
             "bmRQYXRoUmVxdWVzdBolLmxpYnJhcmlhbi5tYXBwZXIudjEuRmluZFBhdGhS",
-            "ZXNwb25zZUJLWiVnaXRodWIuY29tL3R1aWh1Yi9saWJyYXJpYW4vbWFwcGVy",
-            "O3YxqgIhVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uTWFwcGVyLlYxYgZwcm90",
-            "bzM="));
+            "ZXNwb25zZUJZWjNnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJh",
+            "cmlhbi9tYXBwZXIvdjE7djGqAiFUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5N",
+            "YXBwZXIuVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Mapper.V1.VertexType), typeof(global::TuiHub.Protos.Librarian.Mapper.V1.EdgeType), typeof(global::TuiHub.Protos.Librarian.Mapper.V1.EdgeDirection), }, null, new pbr::GeneratedClrTypeInfo[] {
