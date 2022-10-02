@@ -185,6 +185,9 @@ export class AppDetails extends jspb.Message {
   getPublisher(): string;
   setPublisher(value: string): void;
 
+  getVersion(): string;
+  setVersion(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AppDetails): AppDetails.AsObject;
@@ -201,6 +204,7 @@ export namespace AppDetails {
     releaseDate: string,
     developer: string,
     publisher: string,
+    version: string,
   }
 }
 

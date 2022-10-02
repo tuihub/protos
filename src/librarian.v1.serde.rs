@@ -611,6 +611,9 @@ impl serde::Serialize for AppDetails {
         if !self.publisher.is_empty() {
             len += 1;
         }
+        if !self.version.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppDetails", len)?;
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
@@ -623,6 +626,9 @@ impl serde::Serialize for AppDetails {
         }
         if !self.publisher.is_empty() {
             struct_ser.serialize_field("publisher", &self.publisher)?;
+        }
+        if !self.version.is_empty() {
+            struct_ser.serialize_field("version", &self.version)?;
         }
         struct_ser.end()
     }
@@ -638,6 +644,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
             "releaseDate",
             "developer",
             "publisher",
+            "version",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -646,6 +653,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
             ReleaseDate,
             Developer,
             Publisher,
+            Version,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -671,6 +679,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                             "releaseDate" => Ok(GeneratedField::ReleaseDate),
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
+                            "version" => Ok(GeneratedField::Version),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -694,6 +703,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                 let mut release_date__ = None;
                 let mut developer__ = None;
                 let mut publisher__ = None;
+                let mut version__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Description => {
@@ -720,6 +730,12 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                             }
                             publisher__ = Some(map.next_value()?);
                         }
+                        GeneratedField::Version => {
+                            if version__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("version"));
+                            }
+                            version__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(AppDetails {
@@ -727,6 +743,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                     release_date: release_date__.unwrap_or_default(),
                     developer: developer__.unwrap_or_default(),
                     publisher: publisher__.unwrap_or_default(),
+                    version: version__.unwrap_or_default(),
                 })
             }
         }

@@ -1418,7 +1418,8 @@ proto.librarian.v1.AppDetails.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 1, ""),
     releaseDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
     developer: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    publisher: jspb.Message.getFieldWithDefault(msg, 4, "")
+    publisher: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1470,6 +1471,10 @@ proto.librarian.v1.AppDetails.deserializeBinaryFromReader = function(msg, reader
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPublisher(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVersion(value);
       break;
     default:
       reader.skipField();
@@ -1525,6 +1530,13 @@ proto.librarian.v1.AppDetails.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getVersion();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -1600,6 +1612,24 @@ proto.librarian.v1.AppDetails.prototype.getPublisher = function() {
  */
 proto.librarian.v1.AppDetails.prototype.setPublisher = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string version = 5;
+ * @return {string}
+ */
+proto.librarian.v1.AppDetails.prototype.getVersion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.v1.AppDetails} returns this
+ */
+proto.librarian.v1.AppDetails.prototype.setVersion = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
