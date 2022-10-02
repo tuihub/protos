@@ -7,7 +7,7 @@
     <AssemblyName>TuiHub.Protos</AssemblyName>
     <AssemblyTitle>TuiHub.Protos</AssemblyTitle>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <VersionSuffix>alpha6</VersionSuffix>
+    <VersionSuffix>alpha7</VersionSuffix>
     <PackageProjectUrl>https://github.com/TuiHub/Protos</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

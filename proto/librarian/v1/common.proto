@@ -54,6 +54,7 @@ message AppDetails {
   string release_date = 2;
   string developer = 3;
   string publisher = 4;
+  string version = 5;
 }
 
 enum AppType {
