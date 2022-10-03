@@ -34,7 +34,9 @@ plugins:
   #TS
   - name: ts
     path: node_modules/.bin/protoc-gen-ts
-    opt: grpc_js
+    opt: 
+      - mode=grpc-js
+      - service=grpc-node
     out: node
 
   #Rust
