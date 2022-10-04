@@ -826,6 +826,7 @@ impl serde::Serialize for EdgeType {
             Self::Derive => "EDGE_TYPE_DERIVE",
             Self::Control => "EDGE_TYPE_CONTROL",
             Self::Follow => "EDGE_TYPE_FOLLOW",
+            Self::Describe => "EDGE_TYPE_DESCRIBE",
         };
         serializer.serialize_str(variant)
     }
@@ -846,6 +847,7 @@ impl<'de> serde::Deserialize<'de> for EdgeType {
             "EDGE_TYPE_DERIVE",
             "EDGE_TYPE_CONTROL",
             "EDGE_TYPE_FOLLOW",
+            "EDGE_TYPE_DESCRIBE",
         ];
 
         struct GeneratedVisitor;
@@ -897,6 +899,7 @@ impl<'de> serde::Deserialize<'de> for EdgeType {
                     "EDGE_TYPE_DERIVE" => Ok(EdgeType::Derive),
                     "EDGE_TYPE_CONTROL" => Ok(EdgeType::Control),
                     "EDGE_TYPE_FOLLOW" => Ok(EdgeType::Follow),
+                    "EDGE_TYPE_DESCRIBE" => Ok(EdgeType::Describe),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
@@ -2994,6 +2997,7 @@ impl serde::Serialize for VertexType {
             Self::Entity => "VERTEX_TYPE_ENTITY",
             Self::Message => "VERTEX_TYPE_MESSAGE",
             Self::Object => "VERTEX_TYPE_OBJECT",
+            Self::Metadata => "VERTEX_TYPE_METADATA",
         };
         serializer.serialize_str(variant)
     }
@@ -3010,6 +3014,7 @@ impl<'de> serde::Deserialize<'de> for VertexType {
             "VERTEX_TYPE_ENTITY",
             "VERTEX_TYPE_MESSAGE",
             "VERTEX_TYPE_OBJECT",
+            "VERTEX_TYPE_METADATA",
         ];
 
         struct GeneratedVisitor;
@@ -3057,6 +3062,7 @@ impl<'de> serde::Deserialize<'de> for VertexType {
                     "VERTEX_TYPE_ENTITY" => Ok(VertexType::Entity),
                     "VERTEX_TYPE_MESSAGE" => Ok(VertexType::Message),
                     "VERTEX_TYPE_OBJECT" => Ok(VertexType::Object),
+                    "VERTEX_TYPE_METADATA" => Ok(VertexType::Metadata),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

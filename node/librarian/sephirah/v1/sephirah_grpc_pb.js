@@ -6,6 +6,28 @@ var librarian_sephirah_v1_binah_pb = require('../../../librarian/sephirah/v1/bin
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
 
+function serialize_librarian_sephirah_v1_BindAppPackageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.BindAppPackageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.BindAppPackageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_BindAppPackageRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.BindAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_BindAppPackageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.BindAppPackageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.BindAppPackageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_BindAppPackageResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.BindAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_BindAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.BindAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.BindAppRequest');
@@ -26,6 +48,28 @@ function serialize_librarian_sephirah_v1_BindAppResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_BindAppResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.BindAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateAppPackageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateAppPackageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateAppPackageRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateAppPackageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateAppPackageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateAppPackageResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_CreateAppRequest(arg) {
@@ -72,28 +116,6 @@ function deserialize_librarian_sephirah_v1_CreateUserResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.CreateUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_DownloadArtifactsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DownloadArtifactsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.DownloadArtifactsRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_DownloadArtifactsRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.DownloadArtifactsRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_DownloadArtifactsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DownloadArtifactsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.DownloadArtifactsResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_DownloadArtifactsResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.DownloadArtifactsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_DownloadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.DownloadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.DownloadFileRequest');
@@ -114,6 +136,28 @@ function serialize_librarian_sephirah_v1_DownloadFileResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_DownloadFileResponse(buffer_arg) {
   return librarian_sephirah_v1_binah_pb.DownloadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_DownloadGameSaveFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DownloadGameSaveFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DownloadGameSaveFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_DownloadGameSaveFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DownloadGameSaveFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DownloadGameSaveFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GenerateTokenRequest(arg) {
@@ -182,6 +226,28 @@ function deserialize_librarian_sephirah_v1_LinkAccountResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListAppPackageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppPackageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppPackageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListAppPackageRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListAppPackageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppPackageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppPackageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListAppPackageResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListAppRequest');
@@ -204,26 +270,26 @@ function deserialize_librarian_sephirah_v1_ListAppResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListArtifactsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListArtifactsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListArtifactsRequest');
+function serialize_librarian_sephirah_v1_ListGameSaveFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListGameSaveFileRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListArtifactsRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListArtifactsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListGameSaveFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListArtifactsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListArtifactsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListArtifactsResponse');
+function serialize_librarian_sephirah_v1_ListGameSaveFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListGameSaveFileResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListArtifactsResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListArtifactsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListGameSaveFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListLinkAccountRequest(arg) {
@@ -358,6 +424,28 @@ function deserialize_librarian_sephirah_v1_SimpleUploadFileResponse(buffer_arg) 
   return librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_UnBindAppPackageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UnBindAppPackageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UnBindAppPackageRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UnBindAppPackageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UnBindAppPackageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UnBindAppPackageResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_UnBindAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnBindAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.UnBindAppRequest');
@@ -400,6 +488,28 @@ function serialize_librarian_sephirah_v1_UnLinkAccountResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UnLinkAccountResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateAppPackageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UpdateAppPackageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateAppPackageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateAppPackageRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UpdateAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateAppPackageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UpdateAppPackageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateAppPackageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateAppPackageResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UpdateAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UpdateAppRequest(arg) {
@@ -446,28 +556,6 @@ function deserialize_librarian_sephirah_v1_UpdateUserResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_UploadArtifactsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UploadArtifactsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UploadArtifactsRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_UploadArtifactsRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.UploadArtifactsRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_UploadArtifactsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UploadArtifactsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UploadArtifactsResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_UploadArtifactsResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.UploadArtifactsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_UploadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.UploadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.UploadFileRequest');
@@ -488,6 +576,28 @@ function serialize_librarian_sephirah_v1_UploadFileResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UploadFileResponse(buffer_arg) {
   return librarian_sephirah_v1_binah_pb.UploadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UploadGameSaveFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UploadGameSaveFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UploadGameSaveFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UploadGameSaveFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UploadGameSaveFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UploadGameSaveFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -730,41 +840,101 @@ refreshApp: {
     responseSerialize: serialize_librarian_sephirah_v1_RefreshAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RefreshAppResponse,
   },
-  // `Gebura` `Normal`
-uploadArtifacts: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/UploadArtifacts',
+  // `Gebura` `Admin`
+createAppPackage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.UploadArtifactsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.UploadArtifactsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_UploadArtifactsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_UploadArtifactsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_UploadArtifactsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_UploadArtifactsResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_CreateAppPackageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_CreateAppPackageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_CreateAppPackageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_CreateAppPackageResponse,
+  },
+  // `Gebura` `Admin`
+updateAppPackage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.UpdateAppPackageRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.UpdateAppPackageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdateAppPackageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateAppPackageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdateAppPackageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateAppPackageResponse,
   },
   // `Gebura` `Normal`
-downloadArtifacts: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadArtifacts',
+listAppPackage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackage',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.DownloadArtifactsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.DownloadArtifactsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_DownloadArtifactsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_DownloadArtifactsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_DownloadArtifactsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_DownloadArtifactsResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.ListAppPackageRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ListAppPackageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListAppPackageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListAppPackageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListAppPackageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListAppPackageResponse,
+  },
+  // `Gebura` `Admin`
+bindAppPackage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/BindAppPackage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.BindAppPackageRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.BindAppPackageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_BindAppPackageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_BindAppPackageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_BindAppPackageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_BindAppPackageResponse,
+  },
+  // `Gebura` `Admin`
+unBindAppPackage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UnBindAppPackage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UnBindAppPackageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UnBindAppPackageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UnBindAppPackageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UnBindAppPackageResponse,
   },
   // `Gebura` `Normal`
-listArtifacts: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListArtifacts',
+uploadGameSaveFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.ListArtifactsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.ListArtifactsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListArtifactsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListArtifactsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListArtifactsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListArtifactsResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UploadGameSaveFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UploadGameSaveFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UploadGameSaveFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UploadGameSaveFileResponse,
+  },
+  // `Gebura` `Normal`
+downloadGameSaveFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_DownloadGameSaveFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_DownloadGameSaveFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_DownloadGameSaveFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_DownloadGameSaveFileResponse,
+  },
+  // `Gebura` `Normal`
+listGameSaveFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListGameSaveFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListGameSaveFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFileResponse,
   },
 };
 

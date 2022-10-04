@@ -232,9 +232,26 @@ function deserialize_librarian_mapper_v1_UpdateVertexResponse(buffer_arg) {
 // 1. Each vertex is uniquely determined by `vid` and can only have one `VERTEX_TYPE_type`
 // 2. Each edge is uniquely determined by `src_vid`, `dst_vid` and `EDGE_TYPE_type`.
 //    In other words, all edges are directed and edges can be repeated by type difference
-// 3. Mapper knows the rules for each type of edge and
+// 3. Mapper is not good at handling delete operations, try to avoid delete operations
+// 4. Mapper knows the rules for each type of edge and
 //    will prevent illegal edges from being created
-// 4. Mapper is not good at handling delete operations, try to avoid delete operations
+//
+// Vertex Rules:
+// - ABSTRACT is an undetermined type
+//   - If no EQUAL edge linked to ABSTRACT, no need to check any edge rules on it
+//   - If an EQUAL edge is on creating, must check exist edges as the equaled vertex type
+//   - After first EUQAL edge creation, ABSTRACT follow edge rules as the equaled vertex type
+//
+// Edge Rules:
+// - EQUAL must link vertex with same type
+// - EQUAL is the only undirected edge type, Any changes on EQUAL will affect the reverse direction
+// - CREATE must start at ENTITY
+// - ENJOY must start at ENTITY
+// - MENTION must start at MESSAGE or OBJECT
+// - DERIVE must start at OBJECT
+// - CONTROL must start at ENTITY and end at ENTITY
+// - FOLLOW must start at ENTITY and end at ENTITY
+// - DESCRIBE must start at METADATA 
 var LibrarianMapperServiceService = exports.LibrarianMapperServiceService = {
   insertVertex: {
     path: '/librarian.mapper.v1.LibrarianMapperService/InsertVertex',

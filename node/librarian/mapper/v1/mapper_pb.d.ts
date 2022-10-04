@@ -674,6 +674,7 @@ export interface VertexTypeMap {
   VERTEX_TYPE_ENTITY: 2;
   VERTEX_TYPE_MESSAGE: 3;
   VERTEX_TYPE_OBJECT: 4;
+  VERTEX_TYPE_METADATA: 5;
 }
 
 export const VertexType: VertexTypeMap;
@@ -688,6 +689,7 @@ export interface EdgeTypeMap {
   EDGE_TYPE_DERIVE: 6;
   EDGE_TYPE_CONTROL: 7;
   EDGE_TYPE_FOLLOW: 8;
+  EDGE_TYPE_DESCRIBE: 9;
 }
 
 export const EdgeType: EdgeTypeMap;

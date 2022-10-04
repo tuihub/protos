@@ -208,6 +208,86 @@ export namespace AppDetails {
   }
 }
 
+export class AppPackage extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): InternalID | undefined;
+  setId(value?: InternalID): void;
+
+  getSource(): AppPackageSourceMap[keyof AppPackageSourceMap];
+  setSource(value: AppPackageSourceMap[keyof AppPackageSourceMap]): void;
+
+  getSourcePackageId(): string;
+  setSourcePackageId(value: string): void;
+
+  getSourceAppName(): string;
+  setSourceAppName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasBinary(): boolean;
+  clearBinary(): void;
+  getBinary(): AppPackageBinary | undefined;
+  setBinary(value?: AppPackageBinary): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppPackage.AsObject;
+  static toObject(includeInstance: boolean, msg: AppPackage): AppPackage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppPackage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppPackage;
+  static deserializeBinaryFromReader(message: AppPackage, reader: jspb.BinaryReader): AppPackage;
+}
+
+export namespace AppPackage {
+  export type AsObject = {
+    id?: InternalID.AsObject,
+    source: AppPackageSourceMap[keyof AppPackageSourceMap],
+    sourcePackageId: string,
+    sourceAppName: string,
+    description: string,
+    binary?: AppPackageBinary.AsObject,
+  }
+}
+
+export class AppPackageBinary extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getSize(): string;
+  setSize(value: string): void;
+
+  getPublicUrl(): string;
+  setPublicUrl(value: string): void;
+
+  getMd5Digest(): string;
+  setMd5Digest(value: string): void;
+
+  getSha256Digest(): string;
+  setSha256Digest(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppPackageBinary.AsObject;
+  static toObject(includeInstance: boolean, msg: AppPackageBinary): AppPackageBinary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppPackageBinary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppPackageBinary;
+  static deserializeBinaryFromReader(message: AppPackageBinary, reader: jspb.BinaryReader): AppPackageBinary;
+}
+
+export namespace AppPackageBinary {
+  export type AsObject = {
+    name: string,
+    size: string,
+    publicUrl: string,
+    md5Digest: string,
+    sha256Digest: string,
+  }
+}
+
 export class Feed extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
@@ -387,4 +467,12 @@ export interface AppSourceMap {
 }
 
 export const AppSource: AppSourceMap;
+
+export interface AppPackageSourceMap {
+  APP_PACKAGE_SOURCE_UNSPECIFIED: 0;
+  APP_PACKAGE_SOURCE_MANUAL: 1;
+  APP_PACKAGE_SOURCE_SENTINEL: 2;
+}
+
+export const AppPackageSource: AppPackageSourceMap;
 

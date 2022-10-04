@@ -65,12 +65,22 @@ type LibrarianSephirahServiceClient interface {
 	UnBindApp(ctx context.Context, in *UnBindAppRequest, opts ...grpc.CallOption) (*UnBindAppResponse, error)
 	// `Gebura` `Admin` Submit an asynchronous update request
 	RefreshApp(ctx context.Context, in *RefreshAppRequest, opts ...grpc.CallOption) (*RefreshAppResponse, error)
+	// `Gebura` `Admin`
+	CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error)
+	// `Gebura` `Admin`
+	UpdateAppPackage(ctx context.Context, in *UpdateAppPackageRequest, opts ...grpc.CallOption) (*UpdateAppPackageResponse, error)
 	// `Gebura` `Normal`
-	UploadArtifacts(ctx context.Context, in *UploadArtifactsRequest, opts ...grpc.CallOption) (*UploadArtifactsResponse, error)
+	ListAppPackage(ctx context.Context, in *ListAppPackageRequest, opts ...grpc.CallOption) (*ListAppPackageResponse, error)
+	// `Gebura` `Admin`
+	BindAppPackage(ctx context.Context, in *BindAppPackageRequest, opts ...grpc.CallOption) (*BindAppPackageResponse, error)
+	// `Gebura` `Admin`
+	UnBindAppPackage(ctx context.Context, in *UnBindAppPackageRequest, opts ...grpc.CallOption) (*UnBindAppPackageResponse, error)
 	// `Gebura` `Normal`
-	DownloadArtifacts(ctx context.Context, in *DownloadArtifactsRequest, opts ...grpc.CallOption) (*DownloadArtifactsResponse, error)
+	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListArtifacts(ctx context.Context, in *ListArtifactsRequest, opts ...grpc.CallOption) (*ListArtifactsResponse, error)
+	DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error)
+	// `Gebura` `Normal`
+	ListGameSaveFile(ctx context.Context, in *ListGameSaveFileRequest, opts ...grpc.CallOption) (*ListGameSaveFileResponse, error)
 }
 
 type librarianSephirahServiceClient struct {
@@ -340,27 +350,72 @@ func (c *librarianSephirahServiceClient) RefreshApp(ctx context.Context, in *Ref
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) UploadArtifacts(ctx context.Context, in *UploadArtifactsRequest, opts ...grpc.CallOption) (*UploadArtifactsResponse, error) {
-	out := new(UploadArtifactsResponse)
-	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UploadArtifacts", in, out, opts...)
+func (c *librarianSephirahServiceClient) CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error) {
+	out := new(CreateAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) DownloadArtifacts(ctx context.Context, in *DownloadArtifactsRequest, opts ...grpc.CallOption) (*DownloadArtifactsResponse, error) {
-	out := new(DownloadArtifactsResponse)
-	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/DownloadArtifacts", in, out, opts...)
+func (c *librarianSephirahServiceClient) UpdateAppPackage(ctx context.Context, in *UpdateAppPackageRequest, opts ...grpc.CallOption) (*UpdateAppPackageResponse, error) {
+	out := new(UpdateAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ListArtifacts(ctx context.Context, in *ListArtifactsRequest, opts ...grpc.CallOption) (*ListArtifactsResponse, error) {
-	out := new(ListArtifactsResponse)
-	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ListArtifacts", in, out, opts...)
+func (c *librarianSephirahServiceClient) ListAppPackage(ctx context.Context, in *ListAppPackageRequest, opts ...grpc.CallOption) (*ListAppPackageResponse, error) {
+	out := new(ListAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) BindAppPackage(ctx context.Context, in *BindAppPackageRequest, opts ...grpc.CallOption) (*BindAppPackageResponse, error) {
+	out := new(BindAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/BindAppPackage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UnBindAppPackage(ctx context.Context, in *UnBindAppPackageRequest, opts ...grpc.CallOption) (*UnBindAppPackageResponse, error) {
+	out := new(UnBindAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UnBindAppPackage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error) {
+	out := new(UploadGameSaveFileResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error) {
+	out := new(DownloadGameSaveFileResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListGameSaveFile(ctx context.Context, in *ListGameSaveFileRequest, opts ...grpc.CallOption) (*ListGameSaveFileResponse, error) {
+	out := new(ListGameSaveFileResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -414,12 +469,22 @@ type LibrarianSephirahServiceServer interface {
 	UnBindApp(context.Context, *UnBindAppRequest) (*UnBindAppResponse, error)
 	// `Gebura` `Admin` Submit an asynchronous update request
 	RefreshApp(context.Context, *RefreshAppRequest) (*RefreshAppResponse, error)
+	// `Gebura` `Admin`
+	CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error)
+	// `Gebura` `Admin`
+	UpdateAppPackage(context.Context, *UpdateAppPackageRequest) (*UpdateAppPackageResponse, error)
 	// `Gebura` `Normal`
-	UploadArtifacts(context.Context, *UploadArtifactsRequest) (*UploadArtifactsResponse, error)
+	ListAppPackage(context.Context, *ListAppPackageRequest) (*ListAppPackageResponse, error)
+	// `Gebura` `Admin`
+	BindAppPackage(context.Context, *BindAppPackageRequest) (*BindAppPackageResponse, error)
+	// `Gebura` `Admin`
+	UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error)
 	// `Gebura` `Normal`
-	DownloadArtifacts(context.Context, *DownloadArtifactsRequest) (*DownloadArtifactsResponse, error)
+	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListArtifacts(context.Context, *ListArtifactsRequest) (*ListArtifactsResponse, error)
+	DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error)
+	// `Gebura` `Normal`
+	ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error)
 	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
@@ -484,14 +549,29 @@ func (UnimplementedLibrarianSephirahServiceServer) UnBindApp(context.Context, *U
 func (UnimplementedLibrarianSephirahServiceServer) RefreshApp(context.Context, *RefreshAppRequest) (*RefreshAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshApp not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) UploadArtifacts(context.Context, *UploadArtifactsRequest) (*UploadArtifactsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UploadArtifacts not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPackage not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) DownloadArtifacts(context.Context, *DownloadArtifactsRequest) (*DownloadArtifactsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DownloadArtifacts not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UpdateAppPackage(context.Context, *UpdateAppPackageRequest) (*UpdateAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppPackage not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ListArtifacts(context.Context, *ListArtifactsRequest) (*ListArtifactsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListArtifacts not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListAppPackage(context.Context, *ListAppPackageRequest) (*ListAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAppPackage not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) BindAppPackage(context.Context, *BindAppPackageRequest) (*BindAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BindAppPackage not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnBindAppPackage not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListGameSaveFile not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
@@ -881,56 +961,146 @@ func _LibrarianSephirahService_RefreshApp_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_UploadArtifacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UploadArtifactsRequest)
+func _LibrarianSephirahService_CreateAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppPackageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UploadArtifacts(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).CreateAppPackage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UploadArtifacts",
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UploadArtifacts(ctx, req.(*UploadArtifactsRequest))
+		return srv.(LibrarianSephirahServiceServer).CreateAppPackage(ctx, req.(*CreateAppPackageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_DownloadArtifacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DownloadArtifactsRequest)
+func _LibrarianSephirahService_UpdateAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppPackageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).DownloadArtifacts(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UpdateAppPackage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/DownloadArtifacts",
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).DownloadArtifacts(ctx, req.(*DownloadArtifactsRequest))
+		return srv.(LibrarianSephirahServiceServer).UpdateAppPackage(ctx, req.(*UpdateAppPackageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ListArtifacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListArtifactsRequest)
+func _LibrarianSephirahService_ListAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAppPackageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListArtifacts(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListAppPackage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ListArtifacts",
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListArtifacts(ctx, req.(*ListArtifactsRequest))
+		return srv.(LibrarianSephirahServiceServer).ListAppPackage(ctx, req.(*ListAppPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_BindAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BindAppPackageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).BindAppPackage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/BindAppPackage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).BindAppPackage(ctx, req.(*BindAppPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UnBindAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnBindAppPackageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UnBindAppPackage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UnBindAppPackage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UnBindAppPackage(ctx, req.(*UnBindAppPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UploadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadGameSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UploadGameSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UploadGameSaveFile(ctx, req.(*UploadGameSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_DownloadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadGameSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).DownloadGameSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).DownloadGameSaveFile(ctx, req.(*DownloadGameSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListGameSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListGameSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListGameSaveFile(ctx, req.(*ListGameSaveFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1003,16 +1173,36 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_RefreshApp_Handler,
 		},
 		{
-			MethodName: "UploadArtifacts",
-			Handler:    _LibrarianSephirahService_UploadArtifacts_Handler,
+			MethodName: "CreateAppPackage",
+			Handler:    _LibrarianSephirahService_CreateAppPackage_Handler,
 		},
 		{
-			MethodName: "DownloadArtifacts",
-			Handler:    _LibrarianSephirahService_DownloadArtifacts_Handler,
+			MethodName: "UpdateAppPackage",
+			Handler:    _LibrarianSephirahService_UpdateAppPackage_Handler,
 		},
 		{
-			MethodName: "ListArtifacts",
-			Handler:    _LibrarianSephirahService_ListArtifacts_Handler,
+			MethodName: "ListAppPackage",
+			Handler:    _LibrarianSephirahService_ListAppPackage_Handler,
+		},
+		{
+			MethodName: "BindAppPackage",
+			Handler:    _LibrarianSephirahService_BindAppPackage_Handler,
+		},
+		{
+			MethodName: "UnBindAppPackage",
+			Handler:    _LibrarianSephirahService_UnBindAppPackage_Handler,
+		},
+		{
+			MethodName: "UploadGameSaveFile",
+			Handler:    _LibrarianSephirahService_UploadGameSaveFile_Handler,
+		},
+		{
+			MethodName: "DownloadGameSaveFile",
+			Handler:    _LibrarianSephirahService_DownloadGameSaveFile_Handler,
+		},
+		{
+			MethodName: "ListGameSaveFile",
+			Handler:    _LibrarianSephirahService_ListGameSaveFile_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
