@@ -65,10 +65,21 @@ service LibrarianSephirahService {
   // `Gebura` `Admin` Submit an asynchronous update request
   rpc RefreshApp(RefreshAppRequest) returns (RefreshAppResponse);
 
+  // `Gebura` `Admin`
+  rpc CreateAppPackage(CreateAppPackageRequest) returns (CreateAppPackageResponse);
+  // `Gebura` `Admin`
+  rpc UpdateAppPackage(UpdateAppPackageRequest) returns (UpdateAppPackageResponse);
   // `Gebura` `Normal`
-  rpc UploadArtifacts(UploadArtifactsRequest) returns (UploadArtifactsResponse);
+  rpc ListAppPackage(ListAppPackageRequest) returns (ListAppPackageResponse);
+  // `Gebura` `Admin`
+  rpc BindAppPackage(BindAppPackageRequest) returns (BindAppPackageResponse);
+  // `Gebura` `Admin`
+  rpc UnBindAppPackage(UnBindAppPackageRequest) returns (UnBindAppPackageResponse);
+
   // `Gebura` `Normal`
-  rpc DownloadArtifacts(DownloadArtifactsRequest) returns (DownloadArtifactsResponse);
+  rpc UploadGameSaveFile(UploadGameSaveFileRequest) returns (UploadGameSaveFileResponse);
   // `Gebura` `Normal`
-  rpc ListArtifacts(ListArtifactsRequest) returns (ListArtifactsResponse);
+  rpc DownloadGameSaveFile(DownloadGameSaveFileRequest) returns (DownloadGameSaveFileResponse);
+  // `Gebura` `Normal`
+  rpc ListGameSaveFile(ListGameSaveFileRequest) returns (ListGameSaveFileResponse);
 }

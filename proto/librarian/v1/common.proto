@@ -68,6 +68,29 @@ enum AppSource {
   APP_SOURCE_STEAM = 2;
 }
 
+message AppPackage {
+  InternalID id = 1;
+  AppPackageSource source = 2;
+  string source_package_id = 3;
+  string source_app_name = 4;
+  string description = 5;
+  AppPackageBinary binary = 6;
+}
+
+enum AppPackageSource {
+  APP_PACKAGE_SOURCE_UNSPECIFIED = 0;
+  APP_PACKAGE_SOURCE_MANUAL = 1;
+  APP_PACKAGE_SOURCE_SENTINEL = 2;
+}
+
+message AppPackageBinary {
+  string name = 1;
+  string size = 2;
+  string public_url = 3;
+  string md5_digest = 4;
+  string sha256_digest = 5;
+}
+
 message Feed {
   string title = 1;
   string link = 2;

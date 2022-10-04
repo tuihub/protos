@@ -69,31 +69,69 @@ message RefreshAppRequest {
 
 message RefreshAppResponse {}
 
-message UploadArtifactsRequest {
-  FileMetadata file_metadata = 1;
-  librarian.v1.InternalID app_id = 2;
+message CreateAppPackageRequest {
+  librarian.v1.AppPackage app_package = 1;
 }
 
-message UploadArtifactsResponse {
-  string upload_token = 1;
-}
-
-message DownloadArtifactsRequest {
+message CreateAppPackageResponse {
   librarian.v1.InternalID id = 1;
 }
 
-message DownloadArtifactsResponse {
+message UpdateAppPackageRequest {
+  librarian.v1.AppPackage app_package = 1;
+}
+
+message UpdateAppPackageResponse {}
+
+message ListAppPackageRequest {
+  int64 page_num = 1;
+  int64 page_size = 2;
+  repeated librarian.v1.AppPackageSource source_filter = 3;
+  repeated int64 id_filter = 4;
+  repeated int64 bind_app_id_filter = 5;
+}
+
+message ListAppPackageResponse {
+  repeated librarian.v1.AppPackage app_package_list = 1;
+}
+
+message BindAppPackageRequest {
+  librarian.v1.InternalID app_id = 1;
+  librarian.v1.InternalID app_package_id = 2;
+}
+
+message BindAppPackageResponse {}
+
+message UnBindAppPackageRequest {
+  librarian.v1.InternalID app_package_id = 1;
+}
+
+message UnBindAppPackageResponse {}
+
+message UploadGameSaveFileRequest {
+  FileMetadata file_metadata = 1;
+  librarian.v1.InternalID app_package_id = 2;
+}
+
+message UploadGameSaveFileResponse {
+  string upload_token = 1;
+}
+
+message DownloadGameSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DownloadGameSaveFileResponse {
   string download_token = 2;
 }
 
-message ListArtifactsRequest {
+message ListGameSaveFileRequest {
   int64 page_num = 1;
   int64 page_size = 2;
 
-  librarian.v1.InternalID app_id = 3;
-  bool with_bind_app = 4;
+  librarian.v1.InternalID app_package_id = 3;
 }
 
-message ListArtifactsResponse {
+message ListGameSaveFileResponse {
   repeated FileMetadata file_list = 1;
 }
