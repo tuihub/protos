@@ -1,7 +1,9 @@
 {
     "release-type": "rust",
     "packages": {
-        ".": {}
+        ".": {
+            "package-name": ""
+        }
     },
     "extra-files": [
         {
