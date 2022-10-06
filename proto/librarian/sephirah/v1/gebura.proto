@@ -24,16 +24,16 @@ message UpdateAppRequest {
 message UpdateAppResponse {}
 
 message ListAppRequest {
-  int64 page_num = 1;
-  int64 page_size = 2;
-  repeated librarian.v1.AppSource source_filter = 3;
-  repeated librarian.v1.AppType type_filter = 4;
-  repeated int64 id_filter = 5;
-  bool contain_details = 6;
-  bool with_bind = 7;
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.AppSource source_filter = 2;
+  repeated librarian.v1.AppType type_filter = 3;
+  repeated librarian.v1.InternalID id_filter = 4;
+  bool contain_details = 5;
+  bool with_bind = 6;
 }
 
 message ListAppResponse {
+  librarian.v1.PagingResponse paging = 3;
   oneof content {
     AppList without_bind = 1;
     AppListList with_bind = 2;
@@ -84,16 +84,22 @@ message UpdateAppPackageRequest {
 message UpdateAppPackageResponse {}
 
 message ListAppPackageRequest {
-  int64 page_num = 1;
-  int64 page_size = 2;
-  repeated librarian.v1.AppPackageSource source_filter = 3;
-  repeated int64 id_filter = 4;
-  repeated int64 bind_app_id_filter = 5;
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.AppPackageSource source_filter = 2;
+  repeated librarian.v1.InternalID id_filter = 3;
+  repeated librarian.v1.InternalID bind_app_id_filter = 4;
 }
 
 message ListAppPackageResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.AppPackage app_package_list = 2;
+}
+
+message ReportAppPackageRequest {
   repeated librarian.v1.AppPackage app_package_list = 1;
 }
+
+message ReportAppPackageResponse {}
 
 message BindAppPackageRequest {
   librarian.v1.InternalID app_id = 1;
@@ -126,12 +132,11 @@ message DownloadGameSaveFileResponse {
 }
 
 message ListGameSaveFileRequest {
-  int64 page_num = 1;
-  int64 page_size = 2;
-
-  librarian.v1.InternalID app_package_id = 3;
+  librarian.v1.PagingRequest paging = 1;
+  librarian.v1.InternalID app_package_id = 2;
 }
 
 message ListGameSaveFileResponse {
-  repeated FileMetadata file_list = 1;
+  librarian.v1.PagingResponse paging = 1;
+  repeated FileMetadata file_list = 2;
 }

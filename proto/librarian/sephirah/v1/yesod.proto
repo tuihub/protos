@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+import "google/protobuf/timestamp.proto";
+import "librarian/v1/common.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+
+message CreateFeedConfigRequest {
+  FeedConfig config = 1;
+}
+message CreateFeedConfigResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateFeedConfigRequest {
+  FeedConfig config = 1;
+}
+message UpdateFeedConfigResponse {}
+
+message ListFeedRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+  repeated librarian.v1.InternalID author_filter = 3;
+  repeated FeedConfigPublisher publisher_filter = 4;
+}
+
+message ListFeedResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated FeedWithConfig feed_list = 2;
+  message FeedWithConfig {
+    librarian.v1.Feed feed = 1;
+    FeedConfig config = 2;
+  }
+}
+
+message ListFeedItemRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+  repeated librarian.v1.InternalID author_filter = 3;
+  repeated FeedConfigPublisher publisher_filter = 4;
+}
+
+message ListFeedItemResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated FeedItemWithFeedID item_list = 2;
+  message FeedItemWithFeedID {
+    librarian.v1.InternalID feed_id = 1;
+    librarian.v1.FeedItem item = 2;
+  }
+}
+
+message FeedConfig {
+  librarian.v1.InternalID id = 1;
+  string feed_url = 2;
+  librarian.v1.InternalID author_account = 3;
+  FeedConfigPublisher publisher = 4;
+  FeedConfigStatus status = 5;
+  google.protobuf.Timestamp update_interval = 6;
+  librarian.v1.Feed feed = 7;
+}
+
+enum FeedConfigStatus {
+  FEED_CONFIG_STATUS_UNSPECIFIED = 0;
+  FEED_CONFIG_STATUS_ACTIVE = 1;
+  FEED_CONFIG_STATUS_SUSPEND = 2;
+}
+
+enum FeedConfigPublisher {
+  FEED_CONFIG_PUBLISHER_UNSPECIFIED = 0;
+}

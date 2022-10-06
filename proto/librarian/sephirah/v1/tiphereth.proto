@@ -45,13 +45,13 @@ message UpdateUserRequest {
 message UpdateUserResponse {}
 
 message ListUserRequest {
-  int64 page_num = 1;
-  int64 page_size = 2;
-  repeated UserType type_filter = 3;
-  repeated UserStatus status_filter = 4;
+  librarian.v1.PagingRequest paging = 1;
+  repeated UserType type_filter = 2;
+  repeated UserStatus status_filter = 3;
 }
 message ListUserResponse {
-  repeated User user_list = 1;
+  librarian.v1.PagingRequest paging = 1;
+  repeated User user_list = 2;
 }
 
 message LinkAccountRequest {
