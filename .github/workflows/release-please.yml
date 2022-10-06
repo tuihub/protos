@@ -11,5 +11,6 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: release-please
         with:
-          command: manifest
+          command: manifest-pr
           release-type: rust
+          versioning-strategy: always-bump-patch
