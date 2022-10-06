@@ -30,7 +30,7 @@ type LibrarianSephirahServiceClient interface {
 	GenerateToken(ctx context.Context, in *GenerateTokenRequest, opts ...grpc.CallOption) (*GenerateTokenResponse, error)
 	// `Tiphereth` `Admin`
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
-	// `Tiphereth` `Admin`
+	// `Tiphereth` `Admin` `Normal`
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
 	// `Tiphereth` `Normal`
 	ListUser(ctx context.Context, in *ListUserRequest, opts ...grpc.CallOption) (*ListUserResponse, error)
@@ -75,12 +75,22 @@ type LibrarianSephirahServiceClient interface {
 	BindAppPackage(ctx context.Context, in *BindAppPackageRequest, opts ...grpc.CallOption) (*BindAppPackageResponse, error)
 	// `Gebura` `Admin`
 	UnBindAppPackage(ctx context.Context, in *UnBindAppPackageRequest, opts ...grpc.CallOption) (*UnBindAppPackageResponse, error)
+	// `Gebura` `Sentinel`
+	ReportAppPackage(ctx context.Context, in *ReportAppPackageRequest, opts ...grpc.CallOption) (*ReportAppPackageResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	ListGameSaveFile(ctx context.Context, in *ListGameSaveFileRequest, opts ...grpc.CallOption) (*ListGameSaveFileResponse, error)
+	// `Yesod` `Normal`
+	CreateFeedConfig(ctx context.Context, in *CreateFeedConfigRequest, opts ...grpc.CallOption) (*CreateFeedConfigResponse, error)
+	// `Yesod` `Normal`
+	UpdateFeedConfig(ctx context.Context, in *UpdateFeedConfigRequest, opts ...grpc.CallOption) (*UpdateFeedConfigResponse, error)
+	// `Yesod` `Normal`
+	ListFeed(ctx context.Context, in *ListFeedRequest, opts ...grpc.CallOption) (*ListFeedResponse, error)
+	// `Yesod` `Normal`
+	ListFeedItem(ctx context.Context, in *ListFeedItemRequest, opts ...grpc.CallOption) (*ListFeedItemResponse, error)
 }
 
 type librarianSephirahServiceClient struct {
@@ -395,6 +405,15 @@ func (c *librarianSephirahServiceClient) UnBindAppPackage(ctx context.Context, i
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) ReportAppPackage(ctx context.Context, in *ReportAppPackageRequest, opts ...grpc.CallOption) (*ReportAppPackageResponse, error) {
+	out := new(ReportAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error) {
 	out := new(UploadGameSaveFileResponse)
 	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile", in, out, opts...)
@@ -422,6 +441,42 @@ func (c *librarianSephirahServiceClient) ListGameSaveFile(ctx context.Context, i
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateFeedConfig(ctx context.Context, in *CreateFeedConfigRequest, opts ...grpc.CallOption) (*CreateFeedConfigResponse, error) {
+	out := new(CreateFeedConfigResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateFeedConfig(ctx context.Context, in *UpdateFeedConfigRequest, opts ...grpc.CallOption) (*UpdateFeedConfigResponse, error) {
+	out := new(UpdateFeedConfigResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListFeed(ctx context.Context, in *ListFeedRequest, opts ...grpc.CallOption) (*ListFeedResponse, error) {
+	out := new(ListFeedResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ListFeed", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListFeedItem(ctx context.Context, in *ListFeedItemRequest, opts ...grpc.CallOption) (*ListFeedItemResponse, error) {
+	out := new(ListFeedItemResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItem", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianSephirahServiceServer is the server API for LibrarianSephirahService service.
 // All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
@@ -434,7 +489,7 @@ type LibrarianSephirahServiceServer interface {
 	GenerateToken(context.Context, *GenerateTokenRequest) (*GenerateTokenResponse, error)
 	// `Tiphereth` `Admin`
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
-	// `Tiphereth` `Admin`
+	// `Tiphereth` `Admin` `Normal`
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
 	// `Tiphereth` `Normal`
 	ListUser(context.Context, *ListUserRequest) (*ListUserResponse, error)
@@ -479,12 +534,22 @@ type LibrarianSephirahServiceServer interface {
 	BindAppPackage(context.Context, *BindAppPackageRequest) (*BindAppPackageResponse, error)
 	// `Gebura` `Admin`
 	UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error)
+	// `Gebura` `Sentinel`
+	ReportAppPackage(context.Context, *ReportAppPackageRequest) (*ReportAppPackageResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error)
+	// `Yesod` `Normal`
+	CreateFeedConfig(context.Context, *CreateFeedConfigRequest) (*CreateFeedConfigResponse, error)
+	// `Yesod` `Normal`
+	UpdateFeedConfig(context.Context, *UpdateFeedConfigRequest) (*UpdateFeedConfigResponse, error)
+	// `Yesod` `Normal`
+	ListFeed(context.Context, *ListFeedRequest) (*ListFeedResponse, error)
+	// `Yesod` `Normal`
+	ListFeedItem(context.Context, *ListFeedItemRequest) (*ListFeedItemResponse, error)
 	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
@@ -564,6 +629,9 @@ func (UnimplementedLibrarianSephirahServiceServer) BindAppPackage(context.Contex
 func (UnimplementedLibrarianSephirahServiceServer) UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnBindAppPackage not implemented")
 }
+func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackage(context.Context, *ReportAppPackageRequest) (*ReportAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReportAppPackage not implemented")
+}
 func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadGameSaveFile not implemented")
 }
@@ -572,6 +640,18 @@ func (UnimplementedLibrarianSephirahServiceServer) DownloadGameSaveFile(context.
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateFeedConfig(context.Context, *CreateFeedConfigRequest) (*CreateFeedConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFeedConfig not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateFeedConfig(context.Context, *UpdateFeedConfigRequest) (*UpdateFeedConfigResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeedConfig not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListFeed(context.Context, *ListFeedRequest) (*ListFeedResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeed not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListFeedItem(context.Context, *ListFeedItemRequest) (*ListFeedItemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeedItem not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
@@ -1051,6 +1131,24 @@ func _LibrarianSephirahService_UnBindAppPackage_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_ReportAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportAppPackageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ReportAppPackage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ReportAppPackage(ctx, req.(*ReportAppPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_UploadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UploadGameSaveFileRequest)
 	if err := dec(in); err != nil {
@@ -1101,6 +1199,78 @@ func _LibrarianSephirahService_ListGameSaveFile_Handler(srv interface{}, ctx con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).ListGameSaveFile(ctx, req.(*ListGameSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_CreateFeedConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFeedConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateFeedConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateFeedConfig(ctx, req.(*CreateFeedConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateFeedConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFeedConfigRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateFeedConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateFeedConfig(ctx, req.(*UpdateFeedConfigRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListFeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ListFeed",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListFeed(ctx, req.(*ListFeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListFeedItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeedItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListFeedItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItem",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListFeedItem(ctx, req.(*ListFeedItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1193,6 +1363,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_UnBindAppPackage_Handler,
 		},
 		{
+			MethodName: "ReportAppPackage",
+			Handler:    _LibrarianSephirahService_ReportAppPackage_Handler,
+		},
+		{
 			MethodName: "UploadGameSaveFile",
 			Handler:    _LibrarianSephirahService_UploadGameSaveFile_Handler,
 		},
@@ -1203,6 +1377,22 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListGameSaveFile",
 			Handler:    _LibrarianSephirahService_ListGameSaveFile_Handler,
+		},
+		{
+			MethodName: "CreateFeedConfig",
+			Handler:    _LibrarianSephirahService_CreateFeedConfig_Handler,
+		},
+		{
+			MethodName: "UpdateFeedConfig",
+			Handler:    _LibrarianSephirahService_UpdateFeedConfig_Handler,
+		},
+		{
+			MethodName: "ListFeed",
+			Handler:    _LibrarianSephirahService_ListFeed_Handler,
+		},
+		{
+			MethodName: "ListFeedItem",
+			Handler:    _LibrarianSephirahService_ListFeedItem_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

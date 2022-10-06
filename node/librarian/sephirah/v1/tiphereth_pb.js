@@ -1865,7 +1865,7 @@ proto.librarian.sephirah.v1.UpdateUserResponse.serializeBinaryToWriter = functio
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListUserRequest.repeatedFields_ = [3,4];
+proto.librarian.sephirah.v1.ListUserRequest.repeatedFields_ = [2,3];
 
 
 
@@ -1898,10 +1898,9 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.ListUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pageNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    statusFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    statusFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1939,20 +1938,17 @@ proto.librarian.sephirah.v1.ListUserRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setPageNum(value);
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setPageSize(value);
-      break;
-    case 3:
       var values = /** @type {!Array<!proto.librarian.sephirah.v1.UserType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTypeFilter(values[i]);
       }
       break;
-    case 4:
+    case 3:
       var values = /** @type {!Array<!proto.librarian.sephirah.v1.UserStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addStatusFilter(values[i]);
@@ -1987,31 +1983,25 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.serializeBinary = function
  */
 proto.librarian.sephirah.v1.ListUserRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPageNum();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getPageSize();
-  if (f !== 0) {
-    writer.writeInt64(
-      2,
-      f
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
     );
   }
   f = message.getTypeFilterList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      3,
+      2,
       f
     );
   }
   f = message.getStatusFilterList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      4,
+      3,
       f
     );
   }
@@ -2019,47 +2009,48 @@ proto.librarian.sephirah.v1.ListUserRequest.serializeBinaryToWriter = function(m
 
 
 /**
- * optional int64 page_num = 1;
- * @return {number}
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
  */
-proto.librarian.sephirah.v1.ListUserRequest.prototype.getPageNum = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.librarian.sephirah.v1.ListUserRequest.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListUserRequest.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
  */
-proto.librarian.sephirah.v1.ListUserRequest.prototype.setPageNum = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+proto.librarian.sephirah.v1.ListUserRequest.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
 };
 
 
 /**
- * optional int64 page_size = 2;
- * @return {number}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.librarian.sephirah.v1.ListUserRequest.prototype.getPageSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.librarian.sephirah.v1.ListUserRequest.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * @param {number} value
- * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
- */
-proto.librarian.sephirah.v1.ListUserRequest.prototype.setPageSize = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * repeated UserType type_filter = 3;
+ * repeated UserType type_filter = 2;
  * @return {!Array<!proto.librarian.sephirah.v1.UserType>}
  */
 proto.librarian.sephirah.v1.ListUserRequest.prototype.getTypeFilterList = function() {
-  return /** @type {!Array<!proto.librarian.sephirah.v1.UserType>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<!proto.librarian.sephirah.v1.UserType>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
@@ -2068,7 +2059,7 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.getTypeFilterList = functi
  * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
  */
 proto.librarian.sephirah.v1.ListUserRequest.prototype.setTypeFilterList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -2078,7 +2069,7 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.setTypeFilterList = functi
  * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
  */
 proto.librarian.sephirah.v1.ListUserRequest.prototype.addTypeFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -2092,11 +2083,11 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.clearTypeFilterList = func
 
 
 /**
- * repeated UserStatus status_filter = 4;
+ * repeated UserStatus status_filter = 3;
  * @return {!Array<!proto.librarian.sephirah.v1.UserStatus>}
  */
 proto.librarian.sephirah.v1.ListUserRequest.prototype.getStatusFilterList = function() {
-  return /** @type {!Array<!proto.librarian.sephirah.v1.UserStatus>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<!proto.librarian.sephirah.v1.UserStatus>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
@@ -2105,7 +2096,7 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.getStatusFilterList = func
  * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
  */
 proto.librarian.sephirah.v1.ListUserRequest.prototype.setStatusFilterList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -2115,7 +2106,7 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.setStatusFilterList = func
  * @return {!proto.librarian.sephirah.v1.ListUserRequest} returns this
  */
 proto.librarian.sephirah.v1.ListUserRequest.prototype.addStatusFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
@@ -2134,7 +2125,7 @@ proto.librarian.sephirah.v1.ListUserRequest.prototype.clearStatusFilterList = fu
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListUserResponse.repeatedFields_ = [1];
+proto.librarian.sephirah.v1.ListUserResponse.repeatedFields_ = [2];
 
 
 
@@ -2167,6 +2158,7 @@ proto.librarian.sephirah.v1.ListUserResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.ListUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     userListList: jspb.Message.toObjectList(msg.getUserListList(),
     proto.librarian.sephirah.v1.User.toObject, includeInstance)
   };
@@ -2206,6 +2198,11 @@ proto.librarian.sephirah.v1.ListUserResponse.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
       var value = new proto.librarian.sephirah.v1.User;
       reader.readMessage(value,proto.librarian.sephirah.v1.User.deserializeBinaryFromReader);
       msg.addUserList(value);
@@ -2239,10 +2236,18 @@ proto.librarian.sephirah.v1.ListUserResponse.prototype.serializeBinary = functio
  */
 proto.librarian.sephirah.v1.ListUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
   f = message.getUserListList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.librarian.sephirah.v1.User.serializeBinaryToWriter
     );
@@ -2251,12 +2256,49 @@ proto.librarian.sephirah.v1.ListUserResponse.serializeBinaryToWriter = function(
 
 
 /**
- * repeated User user_list = 1;
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
+ */
+proto.librarian.sephirah.v1.ListUserResponse.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListUserResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListUserResponse.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListUserResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListUserResponse.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListUserResponse.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated User user_list = 2;
  * @return {!Array<!proto.librarian.sephirah.v1.User>}
  */
 proto.librarian.sephirah.v1.ListUserResponse.prototype.getUserListList = function() {
   return /** @type{!Array<!proto.librarian.sephirah.v1.User>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.User, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.User, 2));
 };
 
 
@@ -2265,7 +2307,7 @@ proto.librarian.sephirah.v1.ListUserResponse.prototype.getUserListList = functio
  * @return {!proto.librarian.sephirah.v1.ListUserResponse} returns this
 */
 proto.librarian.sephirah.v1.ListUserResponse.prototype.setUserListList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -2275,7 +2317,7 @@ proto.librarian.sephirah.v1.ListUserResponse.prototype.setUserListList = functio
  * @return {!proto.librarian.sephirah.v1.User}
  */
 proto.librarian.sephirah.v1.ListUserResponse.prototype.addUserList = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.sephirah.v1.User, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.User, opt_index);
 };
 
 

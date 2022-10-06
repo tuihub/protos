@@ -217,11 +217,10 @@ export namespace UpdateUserResponse {
 }
 
 export class ListUserRequest extends jspb.Message {
-  getPageNum(): number;
-  setPageNum(value: number): void;
-
-  getPageSize(): number;
-  setPageSize(value: number): void;
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
   clearTypeFilterList(): void;
   getTypeFilterList(): Array<UserTypeMap[keyof UserTypeMap]>;
@@ -245,14 +244,18 @@ export class ListUserRequest extends jspb.Message {
 
 export namespace ListUserRequest {
   export type AsObject = {
-    pageNum: number,
-    pageSize: number,
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     typeFilterList: Array<UserTypeMap[keyof UserTypeMap]>,
     statusFilterList: Array<UserStatusMap[keyof UserStatusMap]>,
   }
 }
 
 export class ListUserResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
   clearUserListList(): void;
   getUserListList(): Array<User>;
   setUserListList(value: Array<User>): void;
@@ -270,6 +273,7 @@ export class ListUserResponse extends jspb.Message {
 
 export namespace ListUserResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     userListList: Array<User.AsObject>,
   }
 }

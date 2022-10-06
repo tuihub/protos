@@ -4,6 +4,50 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
+export class PagingRequest extends jspb.Message {
+  getPageNum(): number;
+  setPageNum(value: number): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PagingRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PagingRequest): PagingRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PagingRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PagingRequest;
+  static deserializeBinaryFromReader(message: PagingRequest, reader: jspb.BinaryReader): PagingRequest;
+}
+
+export namespace PagingRequest {
+  export type AsObject = {
+    pageNum: number,
+    pageSize: number,
+  }
+}
+
+export class PagingResponse extends jspb.Message {
+  getTotal(): number;
+  setTotal(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PagingResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PagingResponse): PagingResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PagingResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PagingResponse;
+  static deserializeBinaryFromReader(message: PagingResponse, reader: jspb.BinaryReader): PagingResponse;
+}
+
+export namespace PagingResponse {
+  export type AsObject = {
+    total: number,
+  }
+}
+
 export class InternalID extends jspb.Message {
   getId(): number;
   setId(value: number): void;
@@ -25,10 +69,10 @@ export namespace InternalID {
 }
 
 export class Account extends jspb.Message {
-  hasInternalId(): boolean;
-  clearInternalId(): void;
-  getInternalId(): InternalID | undefined;
-  setInternalId(value?: InternalID): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): InternalID | undefined;
+  setId(value?: InternalID): void;
 
   getPlatform(): AccountPlatformMap[keyof AccountPlatformMap];
   setPlatform(value: AccountPlatformMap[keyof AccountPlatformMap]): void;
@@ -57,7 +101,7 @@ export class Account extends jspb.Message {
 
 export namespace Account {
   export type AsObject = {
-    internalId?: InternalID.AsObject,
+    id?: InternalID.AsObject,
     platform: AccountPlatformMap[keyof AccountPlatformMap],
     platformAccountId: string,
     name: string,
@@ -217,11 +261,13 @@ export class AppPackage extends jspb.Message {
   getSource(): AppPackageSourceMap[keyof AppPackageSourceMap];
   setSource(value: AppPackageSourceMap[keyof AppPackageSourceMap]): void;
 
+  hasSourceId(): boolean;
+  clearSourceId(): void;
+  getSourceId(): InternalID | undefined;
+  setSourceId(value?: InternalID): void;
+
   getSourcePackageId(): string;
   setSourcePackageId(value: string): void;
-
-  getSourceAppName(): string;
-  setSourceAppName(value: string): void;
 
   getDescription(): string;
   setDescription(value: string): void;
@@ -230,6 +276,11 @@ export class AppPackage extends jspb.Message {
   clearBinary(): void;
   getBinary(): AppPackageBinary | undefined;
   setBinary(value?: AppPackageBinary): void;
+
+  hasSourceBindApp(): boolean;
+  clearSourceBindApp(): void;
+  getSourceBindApp(): App | undefined;
+  setSourceBindApp(value?: App): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppPackage.AsObject;
@@ -245,10 +296,11 @@ export namespace AppPackage {
   export type AsObject = {
     id?: InternalID.AsObject,
     source: AppPackageSourceMap[keyof AppPackageSourceMap],
+    sourceId?: InternalID.AsObject,
     sourcePackageId: string,
-    sourceAppName: string,
     description: string,
     binary?: AppPackageBinary.AsObject,
+    sourceBindApp?: App.AsObject,
   }
 }
 
@@ -298,30 +350,25 @@ export class Feed extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  clearItemList(): void;
+  getItemList(): Array<FeedItem>;
+  setItemList(value: Array<FeedItem>): void;
+  addItem(value?: FeedItem, index?: number): FeedItem;
+
   hasLanguage(): boolean;
   clearLanguage(): void;
   getLanguage(): string;
   setLanguage(value: string): void;
 
-  clearItemList(): void;
-  getItemList(): Array<Feed.FeedItem>;
-  setItemList(value: Array<Feed.FeedItem>): void;
-  addItem(value?: Feed.FeedItem, index?: number): Feed.FeedItem;
+  hasImageUrl(): boolean;
+  clearImageUrl(): void;
+  getImageUrl(): string;
+  setImageUrl(value: string): void;
 
-  hasImage(): boolean;
-  clearImage(): void;
-  getImage(): string;
-  setImage(value: string): void;
-
-  hasItunesAuthor(): boolean;
-  clearItunesAuthor(): void;
-  getItunesAuthor(): string;
-  setItunesAuthor(value: string): void;
-
-  hasItunesCategory(): boolean;
-  clearItunesCategory(): void;
-  getItunesCategory(): string;
-  setItunesCategory(value: string): void;
+  hasAuthor(): boolean;
+  clearAuthor(): void;
+  getAuthor(): string;
+  setAuthor(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Feed.AsObject;
@@ -338,111 +385,98 @@ export namespace Feed {
     title: string,
     link: string,
     description: string,
+    itemList: Array<FeedItem.AsObject>,
     language: string,
-    itemList: Array<Feed.FeedItem.AsObject>,
-    image: string,
-    itunesAuthor: string,
-    itunesCategory: string,
+    imageUrl: string,
+    author: string,
   }
+}
 
-  export class FeedItem extends jspb.Message {
-    getTitle(): string;
-    setTitle(value: string): void;
+export class FeedItem extends jspb.Message {
+  getTitle(): string;
+  setTitle(value: string): void;
 
-    hasAuthor(): boolean;
-    clearAuthor(): void;
-    getAuthor(): string;
-    setAuthor(value: string): void;
+  getAuthor(): string;
+  setAuthor(value: string): void;
 
-    hasCategory(): boolean;
-    clearCategory(): void;
-    getCategory(): string;
-    setCategory(value: string): void;
+  getDescription(): string;
+  setDescription(value: string): void;
 
-    getDescription(): string;
-    setDescription(value: string): void;
+  getContent(): string;
+  setContent(value: string): void;
 
-    hasPubDate(): boolean;
-    clearPubDate(): void;
-    getPubDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setPubDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  getGuid(): string;
+  setGuid(value: string): void;
 
-    hasGuid(): boolean;
-    clearGuid(): void;
-    getGuid(): string;
-    setGuid(value: string): void;
+  getLink(): string;
+  setLink(value: string): void;
 
-    getLink(): string;
-    setLink(value: string): void;
+  getImageUrl(): string;
+  setImageUrl(value: string): void;
 
-    hasEnclosureUrl(): boolean;
-    clearEnclosureUrl(): void;
-    getEnclosureUrl(): string;
-    setEnclosureUrl(value: string): void;
+  getPublishDate(): string;
+  setPublishDate(value: string): void;
 
-    hasEnclosureLength(): boolean;
-    clearEnclosureLength(): void;
-    getEnclosureLength(): string;
-    setEnclosureLength(value: string): void;
+  hasPublishDateParsed(): boolean;
+  clearPublishDateParsed(): void;
+  getPublishDateParsed(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishDateParsed(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-    hasEnclosureType(): boolean;
-    clearEnclosureType(): void;
-    getEnclosureType(): string;
-    setEnclosureType(value: string): void;
+  hasEnclosure(): boolean;
+  clearEnclosure(): void;
+  getEnclosure(): FeedEnclosure | undefined;
+  setEnclosure(value?: FeedEnclosure): void;
 
-    hasItunesItemImage(): boolean;
-    clearItunesItemImage(): void;
-    getItunesItemImage(): string;
-    setItunesItemImage(value: string): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedItem.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedItem): FeedItem.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeedItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedItem;
+  static deserializeBinaryFromReader(message: FeedItem, reader: jspb.BinaryReader): FeedItem;
+}
 
-    hasItunesDuration(): boolean;
-    clearItunesDuration(): void;
-    getItunesDuration(): string;
-    setItunesDuration(value: string): void;
-
-    hasUpvotes(): boolean;
-    clearUpvotes(): void;
-    getUpvotes(): number;
-    setUpvotes(value: number): void;
-
-    hasDownvotes(): boolean;
-    clearDownvotes(): void;
-    getDownvotes(): number;
-    setDownvotes(value: number): void;
-
-    hasComments(): boolean;
-    clearComments(): void;
-    getComments(): number;
-    setComments(value: number): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): FeedItem.AsObject;
-    static toObject(includeInstance: boolean, msg: FeedItem): FeedItem.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: FeedItem, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): FeedItem;
-    static deserializeBinaryFromReader(message: FeedItem, reader: jspb.BinaryReader): FeedItem;
+export namespace FeedItem {
+  export type AsObject = {
+    title: string,
+    author: string,
+    description: string,
+    content: string,
+    guid: string,
+    link: string,
+    imageUrl: string,
+    publishDate: string,
+    publishDateParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    enclosure?: FeedEnclosure.AsObject,
   }
+}
 
-  export namespace FeedItem {
-    export type AsObject = {
-      title: string,
-      author: string,
-      category: string,
-      description: string,
-      pubDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-      guid: string,
-      link: string,
-      enclosureUrl: string,
-      enclosureLength: string,
-      enclosureType: string,
-      itunesItemImage: string,
-      itunesDuration: string,
-      upvotes: number,
-      downvotes: number,
-      comments: number,
-    }
+export class FeedEnclosure extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getLength(): string;
+  setLength(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedEnclosure.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedEnclosure): FeedEnclosure.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeedEnclosure, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedEnclosure;
+  static deserializeBinaryFromReader(message: FeedEnclosure, reader: jspb.BinaryReader): FeedEnclosure;
+}
+
+export namespace FeedEnclosure {
+  export type AsObject = {
+    url: string,
+    length: string,
+    type: string,
   }
 }
 

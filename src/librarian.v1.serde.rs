@@ -7,7 +7,7 @@ impl serde::Serialize for Account {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.internal_id.is_some() {
+        if self.id.is_some() {
             len += 1;
         }
         if self.platform != 0 {
@@ -26,8 +26,8 @@ impl serde::Serialize for Account {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.Account", len)?;
-        if let Some(v) = self.internal_id.as_ref() {
-            struct_ser.serialize_field("internalId", v)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         if self.platform != 0 {
             let v = AccountPlatform::from_i32(self.platform)
@@ -56,7 +56,7 @@ impl<'de> serde::Deserialize<'de> for Account {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "internalId",
+            "id",
             "platform",
             "platformAccountId",
             "name",
@@ -66,7 +66,7 @@ impl<'de> serde::Deserialize<'de> for Account {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            InternalId,
+            Id,
             Platform,
             PlatformAccountId,
             Name,
@@ -93,7 +93,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                         E: serde::de::Error,
                     {
                         match value {
-                            "internalId" => Ok(GeneratedField::InternalId),
+                            "id" => Ok(GeneratedField::Id),
                             "platform" => Ok(GeneratedField::Platform),
                             "platformAccountId" => Ok(GeneratedField::PlatformAccountId),
                             "name" => Ok(GeneratedField::Name),
@@ -118,7 +118,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut internal_id__ = None;
+                let mut id__ = None;
                 let mut platform__ = None;
                 let mut platform_account_id__ = None;
                 let mut name__ = None;
@@ -126,11 +126,11 @@ impl<'de> serde::Deserialize<'de> for Account {
                 let mut avatar_url__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::InternalId => {
-                            if internal_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("internalId"));
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            internal_id__ = Some(map.next_value()?);
+                            id__ = Some(map.next_value()?);
                         }
                         GeneratedField::Platform => {
                             if platform__.is_some() {
@@ -165,7 +165,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                     }
                 }
                 Ok(Account {
-                    internal_id: internal_id__,
+                    id: id__,
                     platform: platform__.unwrap_or_default(),
                     platform_account_id: platform_account_id__.unwrap_or_default(),
                     name: name__.unwrap_or_default(),
@@ -874,16 +874,19 @@ impl serde::Serialize for AppPackage {
         if self.source != 0 {
             len += 1;
         }
-        if !self.source_package_id.is_empty() {
+        if self.source_id.is_some() {
             len += 1;
         }
-        if !self.source_app_name.is_empty() {
+        if !self.source_package_id.is_empty() {
             len += 1;
         }
         if !self.description.is_empty() {
             len += 1;
         }
         if self.binary.is_some() {
+            len += 1;
+        }
+        if self.source_bind_app.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppPackage", len)?;
@@ -895,17 +898,20 @@ impl serde::Serialize for AppPackage {
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.source)))?;
             struct_ser.serialize_field("source", &v)?;
         }
+        if let Some(v) = self.source_id.as_ref() {
+            struct_ser.serialize_field("sourceId", v)?;
+        }
         if !self.source_package_id.is_empty() {
             struct_ser.serialize_field("sourcePackageId", &self.source_package_id)?;
-        }
-        if !self.source_app_name.is_empty() {
-            struct_ser.serialize_field("sourceAppName", &self.source_app_name)?;
         }
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
         if let Some(v) = self.binary.as_ref() {
             struct_ser.serialize_field("binary", v)?;
+        }
+        if let Some(v) = self.source_bind_app.as_ref() {
+            struct_ser.serialize_field("sourceBindApp", v)?;
         }
         struct_ser.end()
     }
@@ -919,20 +925,22 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
         const FIELDS: &[&str] = &[
             "id",
             "source",
+            "sourceId",
             "sourcePackageId",
-            "sourceAppName",
             "description",
             "binary",
+            "sourceBindApp",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
             Source,
+            SourceId,
             SourcePackageId,
-            SourceAppName,
             Description,
             Binary,
+            SourceBindApp,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -956,10 +964,11 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "source" => Ok(GeneratedField::Source),
+                            "sourceId" => Ok(GeneratedField::SourceId),
                             "sourcePackageId" => Ok(GeneratedField::SourcePackageId),
-                            "sourceAppName" => Ok(GeneratedField::SourceAppName),
                             "description" => Ok(GeneratedField::Description),
                             "binary" => Ok(GeneratedField::Binary),
+                            "sourceBindApp" => Ok(GeneratedField::SourceBindApp),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -981,10 +990,11 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             {
                 let mut id__ = None;
                 let mut source__ = None;
+                let mut source_id__ = None;
                 let mut source_package_id__ = None;
-                let mut source_app_name__ = None;
                 let mut description__ = None;
                 let mut binary__ = None;
+                let mut source_bind_app__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -999,17 +1009,17 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             }
                             source__ = Some(map.next_value::<AppPackageSource>()? as i32);
                         }
+                        GeneratedField::SourceId => {
+                            if source_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceId"));
+                            }
+                            source_id__ = Some(map.next_value()?);
+                        }
                         GeneratedField::SourcePackageId => {
                             if source_package_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sourcePackageId"));
                             }
                             source_package_id__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::SourceAppName => {
-                            if source_app_name__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sourceAppName"));
-                            }
-                            source_app_name__ = Some(map.next_value()?);
                         }
                         GeneratedField::Description => {
                             if description__.is_some() {
@@ -1023,15 +1033,22 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             }
                             binary__ = Some(map.next_value()?);
                         }
+                        GeneratedField::SourceBindApp => {
+                            if source_bind_app__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceBindApp"));
+                            }
+                            source_bind_app__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(AppPackage {
                     id: id__,
                     source: source__.unwrap_or_default(),
+                    source_id: source_id__,
                     source_package_id: source_package_id__.unwrap_or_default(),
-                    source_app_name: source_app_name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     binary: binary__,
+                    source_bind_app: source_bind_app__,
                 })
             }
         }
@@ -1439,19 +1456,16 @@ impl serde::Serialize for Feed {
         if !self.description.is_empty() {
             len += 1;
         }
-        if self.language.is_some() {
-            len += 1;
-        }
         if !self.item.is_empty() {
             len += 1;
         }
-        if self.image.is_some() {
+        if self.language.is_some() {
             len += 1;
         }
-        if self.itunes_author.is_some() {
+        if self.image_url.is_some() {
             len += 1;
         }
-        if self.itunes_category.is_some() {
+        if self.author.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.Feed", len)?;
@@ -1464,20 +1478,17 @@ impl serde::Serialize for Feed {
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
-        if let Some(v) = self.language.as_ref() {
-            struct_ser.serialize_field("language", v)?;
-        }
         if !self.item.is_empty() {
             struct_ser.serialize_field("item", &self.item)?;
         }
-        if let Some(v) = self.image.as_ref() {
-            struct_ser.serialize_field("image", v)?;
+        if let Some(v) = self.language.as_ref() {
+            struct_ser.serialize_field("language", v)?;
         }
-        if let Some(v) = self.itunes_author.as_ref() {
-            struct_ser.serialize_field("itunesAuthor", v)?;
+        if let Some(v) = self.image_url.as_ref() {
+            struct_ser.serialize_field("imageUrl", v)?;
         }
-        if let Some(v) = self.itunes_category.as_ref() {
-            struct_ser.serialize_field("itunesCategory", v)?;
+        if let Some(v) = self.author.as_ref() {
+            struct_ser.serialize_field("author", v)?;
         }
         struct_ser.end()
     }
@@ -1492,11 +1503,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
             "title",
             "link",
             "description",
-            "language",
             "item",
-            "image",
-            "itunesAuthor",
-            "itunesCategory",
+            "language",
+            "imageUrl",
+            "author",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1504,11 +1514,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
             Title,
             Link,
             Description,
-            Language,
             Item,
-            Image,
-            ItunesAuthor,
-            ItunesCategory,
+            Language,
+            ImageUrl,
+            Author,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1533,11 +1542,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             "title" => Ok(GeneratedField::Title),
                             "link" => Ok(GeneratedField::Link),
                             "description" => Ok(GeneratedField::Description),
-                            "language" => Ok(GeneratedField::Language),
                             "item" => Ok(GeneratedField::Item),
-                            "image" => Ok(GeneratedField::Image),
-                            "itunesAuthor" => Ok(GeneratedField::ItunesAuthor),
-                            "itunesCategory" => Ok(GeneratedField::ItunesCategory),
+                            "language" => Ok(GeneratedField::Language),
+                            "imageUrl" => Ok(GeneratedField::ImageUrl),
+                            "author" => Ok(GeneratedField::Author),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1560,11 +1568,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
                 let mut title__ = None;
                 let mut link__ = None;
                 let mut description__ = None;
-                let mut language__ = None;
                 let mut item__ = None;
-                let mut image__ = None;
-                let mut itunes_author__ = None;
-                let mut itunes_category__ = None;
+                let mut language__ = None;
+                let mut image_url__ = None;
+                let mut author__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Title => {
@@ -1585,35 +1592,29 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             }
                             description__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Language => {
-                            if language__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("language"));
-                            }
-                            language__ = Some(map.next_value()?);
-                        }
                         GeneratedField::Item => {
                             if item__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("item"));
                             }
                             item__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Image => {
-                            if image__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("image"));
+                        GeneratedField::Language => {
+                            if language__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("language"));
                             }
-                            image__ = Some(map.next_value()?);
+                            language__ = Some(map.next_value()?);
                         }
-                        GeneratedField::ItunesAuthor => {
-                            if itunes_author__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("itunesAuthor"));
+                        GeneratedField::ImageUrl => {
+                            if image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("imageUrl"));
                             }
-                            itunes_author__ = Some(map.next_value()?);
+                            image_url__ = Some(map.next_value()?);
                         }
-                        GeneratedField::ItunesCategory => {
-                            if itunes_category__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("itunesCategory"));
+                        GeneratedField::Author => {
+                            if author__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("author"));
                             }
-                            itunes_category__ = Some(map.next_value()?);
+                            author__ = Some(map.next_value()?);
                         }
                     }
                 }
@@ -1621,18 +1622,142 @@ impl<'de> serde::Deserialize<'de> for Feed {
                     title: title__.unwrap_or_default(),
                     link: link__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
-                    language: language__,
                     item: item__.unwrap_or_default(),
-                    image: image__,
-                    itunes_author: itunes_author__,
-                    itunes_category: itunes_category__,
+                    language: language__,
+                    image_url: image_url__,
+                    author: author__,
                 })
             }
         }
         deserializer.deserialize_struct("librarian.v1.Feed", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for feed::FeedItem {
+impl serde::Serialize for FeedEnclosure {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.url.is_empty() {
+            len += 1;
+        }
+        if !self.length.is_empty() {
+            len += 1;
+        }
+        if !self.r#type.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedEnclosure", len)?;
+        if !self.url.is_empty() {
+            struct_ser.serialize_field("url", &self.url)?;
+        }
+        if !self.length.is_empty() {
+            struct_ser.serialize_field("length", &self.length)?;
+        }
+        if !self.r#type.is_empty() {
+            struct_ser.serialize_field("type", &self.r#type)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeedEnclosure {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "url",
+            "length",
+            "type",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Url,
+            Length,
+            Type,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "url" => Ok(GeneratedField::Url),
+                            "length" => Ok(GeneratedField::Length),
+                            "type" => Ok(GeneratedField::Type),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeedEnclosure;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.FeedEnclosure")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeedEnclosure, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut url__ = None;
+                let mut length__ = None;
+                let mut r#type__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Url => {
+                            if url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("url"));
+                            }
+                            url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Length => {
+                            if length__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("length"));
+                            }
+                            length__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Type => {
+                            if r#type__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("type"));
+                            }
+                            r#type__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(FeedEnclosure {
+                    url: url__.unwrap_or_default(),
+                    length: length__.unwrap_or_default(),
+                    r#type: r#type__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.FeedEnclosure", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for FeedItem {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -1643,98 +1768,68 @@ impl serde::Serialize for feed::FeedItem {
         if !self.title.is_empty() {
             len += 1;
         }
-        if self.author.is_some() {
-            len += 1;
-        }
-        if self.category.is_some() {
+        if !self.author.is_empty() {
             len += 1;
         }
         if !self.description.is_empty() {
             len += 1;
         }
-        if self.pub_date.is_some() {
+        if !self.content.is_empty() {
             len += 1;
         }
-        if self.guid.is_some() {
+        if !self.guid.is_empty() {
             len += 1;
         }
         if !self.link.is_empty() {
             len += 1;
         }
-        if self.enclosure_url.is_some() {
+        if !self.image_url.is_empty() {
             len += 1;
         }
-        if self.enclosure_length.is_some() {
+        if !self.publish_date.is_empty() {
             len += 1;
         }
-        if self.enclosure_type.is_some() {
+        if self.publish_date_parsed.is_some() {
             len += 1;
         }
-        if self.itunes_item_image.is_some() {
+        if self.enclosure.is_some() {
             len += 1;
         }
-        if self.itunes_duration.is_some() {
-            len += 1;
-        }
-        if self.upvotes.is_some() {
-            len += 1;
-        }
-        if self.downvotes.is_some() {
-            len += 1;
-        }
-        if self.comments.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.v1.Feed.FeedItem", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
         if !self.title.is_empty() {
             struct_ser.serialize_field("title", &self.title)?;
         }
-        if let Some(v) = self.author.as_ref() {
-            struct_ser.serialize_field("author", v)?;
-        }
-        if let Some(v) = self.category.as_ref() {
-            struct_ser.serialize_field("category", v)?;
+        if !self.author.is_empty() {
+            struct_ser.serialize_field("author", &self.author)?;
         }
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
-        if let Some(v) = self.pub_date.as_ref() {
-            struct_ser.serialize_field("pubDate", v)?;
+        if !self.content.is_empty() {
+            struct_ser.serialize_field("content", &self.content)?;
         }
-        if let Some(v) = self.guid.as_ref() {
-            struct_ser.serialize_field("guid", v)?;
+        if !self.guid.is_empty() {
+            struct_ser.serialize_field("guid", &self.guid)?;
         }
         if !self.link.is_empty() {
             struct_ser.serialize_field("link", &self.link)?;
         }
-        if let Some(v) = self.enclosure_url.as_ref() {
-            struct_ser.serialize_field("enclosureUrl", v)?;
+        if !self.image_url.is_empty() {
+            struct_ser.serialize_field("imageUrl", &self.image_url)?;
         }
-        if let Some(v) = self.enclosure_length.as_ref() {
-            struct_ser.serialize_field("enclosureLength", v)?;
+        if !self.publish_date.is_empty() {
+            struct_ser.serialize_field("publishDate", &self.publish_date)?;
         }
-        if let Some(v) = self.enclosure_type.as_ref() {
-            struct_ser.serialize_field("enclosureType", v)?;
+        if let Some(v) = self.publish_date_parsed.as_ref() {
+            struct_ser.serialize_field("publishDateParsed", v)?;
         }
-        if let Some(v) = self.itunes_item_image.as_ref() {
-            struct_ser.serialize_field("itunesItemImage", v)?;
-        }
-        if let Some(v) = self.itunes_duration.as_ref() {
-            struct_ser.serialize_field("itunesDuration", v)?;
-        }
-        if let Some(v) = self.upvotes.as_ref() {
-            struct_ser.serialize_field("upvotes", ToString::to_string(&v).as_str())?;
-        }
-        if let Some(v) = self.downvotes.as_ref() {
-            struct_ser.serialize_field("downvotes", ToString::to_string(&v).as_str())?;
-        }
-        if let Some(v) = self.comments.as_ref() {
-            struct_ser.serialize_field("comments", ToString::to_string(&v).as_str())?;
+        if let Some(v) = self.enclosure.as_ref() {
+            struct_ser.serialize_field("enclosure", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for feed::FeedItem {
+impl<'de> serde::Deserialize<'de> for FeedItem {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -1743,38 +1838,28 @@ impl<'de> serde::Deserialize<'de> for feed::FeedItem {
         const FIELDS: &[&str] = &[
             "title",
             "author",
-            "category",
             "description",
-            "pubDate",
+            "content",
             "guid",
             "link",
-            "enclosureUrl",
-            "enclosureLength",
-            "enclosureType",
-            "itunesItemImage",
-            "itunesDuration",
-            "upvotes",
-            "downvotes",
-            "comments",
+            "imageUrl",
+            "publishDate",
+            "publishDateParsed",
+            "enclosure",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Title,
             Author,
-            Category,
             Description,
-            PubDate,
+            Content,
             Guid,
             Link,
-            EnclosureUrl,
-            EnclosureLength,
-            EnclosureType,
-            ItunesItemImage,
-            ItunesDuration,
-            Upvotes,
-            Downvotes,
-            Comments,
+            ImageUrl,
+            PublishDate,
+            PublishDateParsed,
+            Enclosure,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1798,19 +1883,14 @@ impl<'de> serde::Deserialize<'de> for feed::FeedItem {
                         match value {
                             "title" => Ok(GeneratedField::Title),
                             "author" => Ok(GeneratedField::Author),
-                            "category" => Ok(GeneratedField::Category),
                             "description" => Ok(GeneratedField::Description),
-                            "pubDate" => Ok(GeneratedField::PubDate),
+                            "content" => Ok(GeneratedField::Content),
                             "guid" => Ok(GeneratedField::Guid),
                             "link" => Ok(GeneratedField::Link),
-                            "enclosureUrl" => Ok(GeneratedField::EnclosureUrl),
-                            "enclosureLength" => Ok(GeneratedField::EnclosureLength),
-                            "enclosureType" => Ok(GeneratedField::EnclosureType),
-                            "itunesItemImage" => Ok(GeneratedField::ItunesItemImage),
-                            "itunesDuration" => Ok(GeneratedField::ItunesDuration),
-                            "upvotes" => Ok(GeneratedField::Upvotes),
-                            "downvotes" => Ok(GeneratedField::Downvotes),
-                            "comments" => Ok(GeneratedField::Comments),
+                            "imageUrl" => Ok(GeneratedField::ImageUrl),
+                            "publishDate" => Ok(GeneratedField::PublishDate),
+                            "publishDateParsed" => Ok(GeneratedField::PublishDateParsed),
+                            "enclosure" => Ok(GeneratedField::Enclosure),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1820,31 +1900,26 @@ impl<'de> serde::Deserialize<'de> for feed::FeedItem {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = feed::FeedItem;
+            type Value = FeedItem;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.v1.Feed.FeedItem")
+                formatter.write_str("struct librarian.v1.FeedItem")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<feed::FeedItem, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeedItem, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut title__ = None;
                 let mut author__ = None;
-                let mut category__ = None;
                 let mut description__ = None;
-                let mut pub_date__ = None;
+                let mut content__ = None;
                 let mut guid__ = None;
                 let mut link__ = None;
-                let mut enclosure_url__ = None;
-                let mut enclosure_length__ = None;
-                let mut enclosure_type__ = None;
-                let mut itunes_item_image__ = None;
-                let mut itunes_duration__ = None;
-                let mut upvotes__ = None;
-                let mut downvotes__ = None;
-                let mut comments__ = None;
+                let mut image_url__ = None;
+                let mut publish_date__ = None;
+                let mut publish_date_parsed__ = None;
+                let mut enclosure__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Title => {
@@ -1859,23 +1934,17 @@ impl<'de> serde::Deserialize<'de> for feed::FeedItem {
                             }
                             author__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Category => {
-                            if category__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("category"));
-                            }
-                            category__ = Some(map.next_value()?);
-                        }
                         GeneratedField::Description => {
                             if description__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("description"));
                             }
                             description__ = Some(map.next_value()?);
                         }
-                        GeneratedField::PubDate => {
-                            if pub_date__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("pubDate"));
+                        GeneratedField::Content => {
+                            if content__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("content"));
                             }
-                            pub_date__ = Some(map.next_value()?);
+                            content__ = Some(map.next_value()?);
                         }
                         GeneratedField::Guid => {
                             if guid__.is_some() {
@@ -1889,82 +1958,47 @@ impl<'de> serde::Deserialize<'de> for feed::FeedItem {
                             }
                             link__ = Some(map.next_value()?);
                         }
-                        GeneratedField::EnclosureUrl => {
-                            if enclosure_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("enclosureUrl"));
+                        GeneratedField::ImageUrl => {
+                            if image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("imageUrl"));
                             }
-                            enclosure_url__ = Some(map.next_value()?);
+                            image_url__ = Some(map.next_value()?);
                         }
-                        GeneratedField::EnclosureLength => {
-                            if enclosure_length__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("enclosureLength"));
+                        GeneratedField::PublishDate => {
+                            if publish_date__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publishDate"));
                             }
-                            enclosure_length__ = Some(map.next_value()?);
+                            publish_date__ = Some(map.next_value()?);
                         }
-                        GeneratedField::EnclosureType => {
-                            if enclosure_type__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("enclosureType"));
+                        GeneratedField::PublishDateParsed => {
+                            if publish_date_parsed__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publishDateParsed"));
                             }
-                            enclosure_type__ = Some(map.next_value()?);
+                            publish_date_parsed__ = Some(map.next_value()?);
                         }
-                        GeneratedField::ItunesItemImage => {
-                            if itunes_item_image__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("itunesItemImage"));
+                        GeneratedField::Enclosure => {
+                            if enclosure__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("enclosure"));
                             }
-                            itunes_item_image__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::ItunesDuration => {
-                            if itunes_duration__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("itunesDuration"));
-                            }
-                            itunes_duration__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::Upvotes => {
-                            if upvotes__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("upvotes"));
-                            }
-                            upvotes__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
-                        }
-                        GeneratedField::Downvotes => {
-                            if downvotes__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("downvotes"));
-                            }
-                            downvotes__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
-                        }
-                        GeneratedField::Comments => {
-                            if comments__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("comments"));
-                            }
-                            comments__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            enclosure__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(feed::FeedItem {
+                Ok(FeedItem {
                     title: title__.unwrap_or_default(),
-                    author: author__,
-                    category: category__,
+                    author: author__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
-                    pub_date: pub_date__,
-                    guid: guid__,
+                    content: content__.unwrap_or_default(),
+                    guid: guid__.unwrap_or_default(),
                     link: link__.unwrap_or_default(),
-                    enclosure_url: enclosure_url__,
-                    enclosure_length: enclosure_length__,
-                    enclosure_type: enclosure_type__,
-                    itunes_item_image: itunes_item_image__,
-                    itunes_duration: itunes_duration__,
-                    upvotes: upvotes__,
-                    downvotes: downvotes__,
-                    comments: comments__,
+                    image_url: image_url__.unwrap_or_default(),
+                    publish_date: publish_date__.unwrap_or_default(),
+                    publish_date_parsed: publish_date_parsed__,
+                    enclosure: enclosure__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.v1.Feed.FeedItem", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.v1.FeedItem", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for InternalId {
@@ -2058,5 +2092,210 @@ impl<'de> serde::Deserialize<'de> for InternalId {
             }
         }
         deserializer.deserialize_struct("librarian.v1.InternalID", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PagingRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.page_num != 0 {
+            len += 1;
+        }
+        if self.page_size != 0 {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.PagingRequest", len)?;
+        if self.page_num != 0 {
+            struct_ser.serialize_field("pageNum", &self.page_num)?;
+        }
+        if self.page_size != 0 {
+            struct_ser.serialize_field("pageSize", &self.page_size)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PagingRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "pageNum",
+            "pageSize",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            PageNum,
+            PageSize,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "pageNum" => Ok(GeneratedField::PageNum),
+                            "pageSize" => Ok(GeneratedField::PageSize),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PagingRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.PagingRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PagingRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut page_num__ = None;
+                let mut page_size__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::PageNum => {
+                            if page_num__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("pageNum"));
+                            }
+                            page_num__ = Some(
+                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
+                            );
+                        }
+                        GeneratedField::PageSize => {
+                            if page_size__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("pageSize"));
+                            }
+                            page_size__ = Some(
+                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
+                            );
+                        }
+                    }
+                }
+                Ok(PagingRequest {
+                    page_num: page_num__.unwrap_or_default(),
+                    page_size: page_size__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.PagingRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PagingResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.total != 0 {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.PagingResponse", len)?;
+        if self.total != 0 {
+            struct_ser.serialize_field("total", ToString::to_string(&self.total).as_str())?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PagingResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "total",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Total,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "total" => Ok(GeneratedField::Total),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PagingResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.PagingResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PagingResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut total__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Total => {
+                            if total__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("total"));
+                            }
+                            total__ = Some(
+                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
+                            );
+                        }
+                    }
+                }
+                Ok(PagingResponse {
+                    total: total__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.PagingResponse", FIELDS, GeneratedVisitor)
     }
 }

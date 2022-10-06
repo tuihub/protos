@@ -27,3 +27,5 @@ var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/ge
 goog.object.extend(proto, librarian_sephirah_v1_gebura_pb);
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_tiphereth_pb);
+var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
+goog.object.extend(proto, librarian_sephirah_v1_yesod_pb);

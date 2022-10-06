@@ -88,11 +88,10 @@ export namespace UpdateAppResponse {
 }
 
 export class ListAppRequest extends jspb.Message {
-  getPageNum(): number;
-  setPageNum(value: number): void;
-
-  getPageSize(): number;
-  setPageSize(value: number): void;
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
   clearSourceFilterList(): void;
   getSourceFilterList(): Array<librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]>;
@@ -105,9 +104,9 @@ export class ListAppRequest extends jspb.Message {
   addTypeFilter(value: librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap], index?: number): librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap];
 
   clearIdFilterList(): void;
-  getIdFilterList(): Array<number>;
-  setIdFilterList(value: Array<number>): void;
-  addIdFilter(value: number, index?: number): number;
+  getIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   getContainDetails(): boolean;
   setContainDetails(value: boolean): void;
@@ -127,17 +126,21 @@ export class ListAppRequest extends jspb.Message {
 
 export namespace ListAppRequest {
   export type AsObject = {
-    pageNum: number,
-    pageSize: number,
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     sourceFilterList: Array<librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]>,
     typeFilterList: Array<librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap]>,
-    idFilterList: Array<number>,
+    idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     containDetails: boolean,
     withBind: boolean,
   }
 }
 
 export class ListAppResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
   hasWithoutBind(): boolean;
   clearWithoutBind(): void;
   getWithoutBind(): ListAppResponse.AppList | undefined;
@@ -161,6 +164,7 @@ export class ListAppResponse extends jspb.Message {
 
 export namespace ListAppResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     withoutBind?: ListAppResponse.AppList.AsObject,
     withBind?: ListAppResponse.AppListList.AsObject,
   }
@@ -431,11 +435,10 @@ export namespace UpdateAppPackageResponse {
 }
 
 export class ListAppPackageRequest extends jspb.Message {
-  getPageNum(): number;
-  setPageNum(value: number): void;
-
-  getPageSize(): number;
-  setPageSize(value: number): void;
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
   clearSourceFilterList(): void;
   getSourceFilterList(): Array<librarian_v1_common_pb.AppPackageSourceMap[keyof librarian_v1_common_pb.AppPackageSourceMap]>;
@@ -443,14 +446,14 @@ export class ListAppPackageRequest extends jspb.Message {
   addSourceFilter(value: librarian_v1_common_pb.AppPackageSourceMap[keyof librarian_v1_common_pb.AppPackageSourceMap], index?: number): librarian_v1_common_pb.AppPackageSourceMap[keyof librarian_v1_common_pb.AppPackageSourceMap];
 
   clearIdFilterList(): void;
-  getIdFilterList(): Array<number>;
-  setIdFilterList(value: Array<number>): void;
-  addIdFilter(value: number, index?: number): number;
+  getIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   clearBindAppIdFilterList(): void;
-  getBindAppIdFilterList(): Array<number>;
-  setBindAppIdFilterList(value: Array<number>): void;
-  addBindAppIdFilter(value: number, index?: number): number;
+  getBindAppIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setBindAppIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addBindAppIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppPackageRequest.AsObject;
@@ -464,15 +467,19 @@ export class ListAppPackageRequest extends jspb.Message {
 
 export namespace ListAppPackageRequest {
   export type AsObject = {
-    pageNum: number,
-    pageSize: number,
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     sourceFilterList: Array<librarian_v1_common_pb.AppPackageSourceMap[keyof librarian_v1_common_pb.AppPackageSourceMap]>,
-    idFilterList: Array<number>,
-    bindAppIdFilterList: Array<number>,
+    idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    bindAppIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 
 export class ListAppPackageResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
   clearAppPackageListList(): void;
   getAppPackageListList(): Array<librarian_v1_common_pb.AppPackage>;
   setAppPackageListList(value: Array<librarian_v1_common_pb.AppPackage>): void;
@@ -490,7 +497,46 @@ export class ListAppPackageResponse extends jspb.Message {
 
 export namespace ListAppPackageResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     appPackageListList: Array<librarian_v1_common_pb.AppPackage.AsObject>,
+  }
+}
+
+export class ReportAppPackageRequest extends jspb.Message {
+  clearAppPackageListList(): void;
+  getAppPackageListList(): Array<librarian_v1_common_pb.AppPackage>;
+  setAppPackageListList(value: Array<librarian_v1_common_pb.AppPackage>): void;
+  addAppPackageList(value?: librarian_v1_common_pb.AppPackage, index?: number): librarian_v1_common_pb.AppPackage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportAppPackageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportAppPackageRequest): ReportAppPackageRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReportAppPackageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportAppPackageRequest;
+  static deserializeBinaryFromReader(message: ReportAppPackageRequest, reader: jspb.BinaryReader): ReportAppPackageRequest;
+}
+
+export namespace ReportAppPackageRequest {
+  export type AsObject = {
+    appPackageListList: Array<librarian_v1_common_pb.AppPackage.AsObject>,
+  }
+}
+
+export class ReportAppPackageResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReportAppPackageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportAppPackageResponse): ReportAppPackageResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReportAppPackageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportAppPackageResponse;
+  static deserializeBinaryFromReader(message: ReportAppPackageResponse, reader: jspb.BinaryReader): ReportAppPackageResponse;
+}
+
+export namespace ReportAppPackageResponse {
+  export type AsObject = {
   }
 }
 
@@ -667,11 +713,10 @@ export namespace DownloadGameSaveFileResponse {
 }
 
 export class ListGameSaveFileRequest extends jspb.Message {
-  getPageNum(): number;
-  setPageNum(value: number): void;
-
-  getPageSize(): number;
-  setPageSize(value: number): void;
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
   hasAppPackageId(): boolean;
   clearAppPackageId(): void;
@@ -690,13 +735,17 @@ export class ListGameSaveFileRequest extends jspb.Message {
 
 export namespace ListGameSaveFileRequest {
   export type AsObject = {
-    pageNum: number,
-    pageSize: number,
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class ListGameSaveFileResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
   clearFileListList(): void;
   getFileListList(): Array<librarian_sephirah_v1_base_pb.FileMetadata>;
   setFileListList(value: Array<librarian_sephirah_v1_base_pb.FileMetadata>): void;
@@ -714,6 +763,7 @@ export class ListGameSaveFileResponse extends jspb.Message {
 
 export namespace ListGameSaveFileResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     fileListList: Array<librarian_sephirah_v1_base_pb.FileMetadata.AsObject>,
   }
 }
