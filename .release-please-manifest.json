@@ -1,0 +1,14 @@
+{
+    "extra-files": [
+        {
+            "type": "json",
+            "path": "package.json",
+            "jsonpath": "$.version"
+        },
+        {
+            "type": "xml",
+            "path": "TuiHub.Protos.csproj",
+            "xpath": "//VersionPrefix"
+        }
+    ]
+}
