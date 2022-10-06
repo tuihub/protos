@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>TuiHub.Protos</AssemblyName>
     <AssemblyTitle>TuiHub.Protos</AssemblyTitle>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.1.1</VersionPrefix>
     <PackageProjectUrl>https://github.com/TuiHub/Protos</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -20,8 +20,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.21.7" />
-    <PackageReference Include="Grpc.Core" Version="2.46.5" />
+    <PackageReference Include="Google.Protobuf" Version="3.21.7"/>
+    <PackageReference Include="Grpc.Core" Version="2.46.5"/>
   </ItemGroup>
   
   <!--Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
