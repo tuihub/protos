@@ -13,4 +13,3 @@ jobs:
         with:
           command: manifest
           release-type: rust
-          versioning-strategy: always-bump-patch
