@@ -251,7 +251,7 @@ function deserialize_librarian_mapper_v1_UpdateVertexResponse(buffer_arg) {
 // - DERIVE must start at OBJECT
 // - CONTROL must start at ENTITY and end at ENTITY
 // - FOLLOW must start at ENTITY and end at ENTITY
-// - DESCRIBE must start at METADATA 
+// - DESCRIBE must start at METADATA
 var LibrarianMapperServiceService = exports.LibrarianMapperServiceService = {
   insertVertex: {
     path: '/librarian.mapper.v1.LibrarianMapperService/InsertVertex',

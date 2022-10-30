@@ -13,7 +13,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
   /// The main role of Searcher is to encapsulate id generate and search operations.
   /// In Searcher's model:
   /// 1. Each id is unique throughout the system
-  /// 2. Id can be described by custom content, only the submitted description 
+  /// 2. Id can be described by custom content, only the submitted description
   /// be included in the search scope
   /// 3. When searching, search for the closest id by keyword
   /// </summary>

@@ -11,12 +11,12 @@ option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 /*
- * Sephirah contains the core logic and currently divided into the following modules:
- * 1. `Tiphereth` handles account data and provides permission verification
- * 2. `Gebura` handles application data
- * 3. `Binah` handles file transfer
- * 4. `Yesod` handles feed data
- */
+   * Sephirah contains the core logic and currently divided into the following modules:
+   * 1. `Tiphereth` handles account data and provides permission verification
+   * 2. `Gebura` handles application data
+   * 3. `Binah` handles file transfer
+   * 4. `Yesod` handles feed data
+*/
 service LibrarianSephirahService {
   // `Tiphereth` `Normal` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);

@@ -34,7 +34,7 @@ namespace TuiHub.Protos.Librarian.Mapper.V1 {
   /// - DERIVE must start at OBJECT
   /// - CONTROL must start at ENTITY and end at ENTITY
   /// - FOLLOW must start at ENTITY and end at ENTITY
-  /// - DESCRIBE must start at METADATA 
+  /// - DESCRIBE must start at METADATA
   /// </summary>
   public static partial class LibrarianMapperService
   {
