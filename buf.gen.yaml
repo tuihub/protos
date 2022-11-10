@@ -3,7 +3,7 @@ plugins:
   #Document
   - name: doc
     out: docs
-    opt: docs/markdown.tmpl,README.md
+    opt: docs/markdown.tmpl,protos.md
     strategy: all
 
   #Go

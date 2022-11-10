@@ -8,6 +8,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/mermaid/dist/mermaid.min.css" />
 </head>
 
 <body>
@@ -18,20 +19,43 @@
       repo: 'https://github.com/TuiHub/Protos',
       auto2top: true,
       maxLevel: 3,
+      loadSidebar: true,
+      subMaxLevel: 3,
       plugins: [
         function (hook, vm) {
           hook.beforeEach(function (html) {
-            return html.replace(/<a[^>]+>/g, function(match) {
+            return html.replace(/<a[^>]+>/g, function (match) {
               return match.toLowerCase()
             })
           });
+        },
+        function (hook, vm) {
+          hook.ready(function () {
+            mermaid.initialize({ startOnLoad: false });
+          });
+          hook.doneEach(function () {
+            mermaid.init(undefined, '.mermaid');
+          });
         }
-      ]
+      ],
+      markdown: {
+        renderer: {
+          code: function (code, lang) {
+            var html = '';
+            if (code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)) {
+              html = '<div class="mermaid">' + code + '</div>';
+            }
+            var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup);
+            return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>';
+          }
+        }
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script type="text/javascript" src="//unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </body>
 
 </html>
