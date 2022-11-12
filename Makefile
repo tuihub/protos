@@ -27,7 +27,7 @@ rust:
 
 clean:
 	-rm -r Assets/src
-	-rm docs/README.md
+	-rm docs/protos.md
 	-rm -r pkg
 	-rm -r node
 	-rm -r src
