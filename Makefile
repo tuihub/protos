@@ -31,3 +31,4 @@ clean:
 	-rm -r pkg
 	-rm -r node
 	-rm -r src
+	-cd lib && find . -maxdepth 1 ! -name 'google' -exec rm -r {} +

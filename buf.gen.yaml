@@ -66,3 +66,7 @@ plugins:
     opt: base_namespace=
   - remote: buf.build/grpc/plugins/csharp:v1.48.0-1
     out: Assets/src
+
+  #Dart
+  - remote: buf.build/protocolbuffers/plugins/dart:v20.0.1-1
+    out: lib

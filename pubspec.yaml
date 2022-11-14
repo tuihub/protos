@@ -1,0 +1,12 @@
+name: tuihub_protos
+description: protobuf protocol files for TuiHub
+version: 0.0.1
+homepage: https://github.com/TuiHub/Protos
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  grpc: ^3.1.0
+  protobuf: ^2.1.0
+  fixnum: ^1.0.0
