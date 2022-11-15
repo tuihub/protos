@@ -68,5 +68,6 @@ plugins:
     out: Assets/src
 
   #Dart
-  - remote: buf.build/protocolbuffers/plugins/dart:v20.0.1-1
+  - name: dart
     out: lib
+    opt: grpc

@@ -38,6 +38,17 @@ git clone https://github.com/TuiHub/Protos && cd Protos
 nuget pack TuiHub.Protos.nuspec
 ```
 
+### Dart
+
+```yaml
+# pubspec.yaml
+dependencies:
+  ...
+  # Add following lines
+  tuihub_protos:
+    git: https://github.com/TuiHub/Protos.git
+```
+
 ## Build Locally
 
 **Not Recommended**. You can focus on proto files and just use `buf lint` to make sure proto files are correct. Action Bot will deal with the rest.

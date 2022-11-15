@@ -7,8 +7,9 @@ install-plugins:
 	go install github.com/go-kratos/kratos/cmd/protoc-gen-go-errors/v2@latest
 	npm install
 	cargo install protoc-gen-prost-crate
+	dart pub global activate protoc_plugin
 
-generate: clean buf go rust
+generate: clean buf go rust dart
 
 buf: buf-lint buf-generate
 
@@ -17,13 +18,16 @@ buf-lint:
 	buf lint
 
 buf-generate:
-	buf generate --include-imports
+	PATH="${PATH}:${HOME}/.pub-cache/bin" buf generate --include-imports
 
 go:
 	GO111MODULE=on go mod tidy
 
 rust:
 	cargo check --features proto_full
+
+dart:
+	dart analyze
 
 clean:
 	-rm -r Assets/src
