@@ -5,7 +5,6 @@
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -342,23 +341,5 @@ class SearchIDResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<SearchIDResponse_Result> get result => $_getList(0);
-}
-
-class LibrarianSearcherServiceApi {
-  $pb.RpcClient _client;
-  LibrarianSearcherServiceApi(this._client);
-
-  $async.Future<NewIDResponse> newID($pb.ClientContext? ctx, NewIDRequest request) {
-    var emptyResponse = NewIDResponse();
-    return _client.invoke<NewIDResponse>(ctx, 'LibrarianSearcherService', 'NewID', request, emptyResponse);
-  }
-  $async.Future<DescribeIDResponse> describeID($pb.ClientContext? ctx, DescribeIDRequest request) {
-    var emptyResponse = DescribeIDResponse();
-    return _client.invoke<DescribeIDResponse>(ctx, 'LibrarianSearcherService', 'DescribeID', request, emptyResponse);
-  }
-  $async.Future<SearchIDResponse> searchID($pb.ClientContext? ctx, SearchIDRequest request) {
-    var emptyResponse = SearchIDResponse();
-    return _client.invoke<SearchIDResponse>(ctx, 'LibrarianSearcherService', 'SearchID', request, emptyResponse);
-  }
 }
 

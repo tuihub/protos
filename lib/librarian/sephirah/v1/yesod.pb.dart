@@ -9,8 +9,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $2;
-import '../../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../v1/common.pb.dart' as $4;
+import '../../../google/protobuf/timestamp.pb.dart' as $6;
 
 import 'yesod.pbenum.dart';
 
@@ -67,13 +67,13 @@ class CreateFeedConfigRequest extends $pb.GeneratedMessage {
 
 class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateFeedConfigResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $2.InternalID.create)
+    ..aOM<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
   CreateFeedConfigResponse._() : super();
   factory CreateFeedConfigResponse({
-    $2.InternalID? id,
+    $4.InternalID? id,
   }) {
     final _result = create();
     if (id != null) {
@@ -103,15 +103,15 @@ class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   static CreateFeedConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.InternalID get id => $_getN(0);
+  $4.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($2.InternalID v) { setField(1, v); }
+  set id($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $2.InternalID ensureId() => $_ensure(0);
+  $4.InternalID ensureId() => $_ensure(0);
 }
 
 class UpdateFeedConfigRequest extends $pb.GeneratedMessage {
@@ -194,18 +194,18 @@ class UpdateFeedConfigResponse extends $pb.GeneratedMessage {
 
 class ListFeedRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $2.PagingRequest.create)
-    ..pc<$2.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $2.InternalID.create)
-    ..pc<$2.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorFilter', $pb.PbFieldType.PM, subBuilder: $2.InternalID.create)
+    ..aOM<$4.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingRequest.create)
+    ..pc<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pc<FeedConfigPublisher>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publisherFilter', $pb.PbFieldType.KE, valueOf: FeedConfigPublisher.valueOf, enumValues: FeedConfigPublisher.values, defaultEnumValue: FeedConfigPublisher.FEED_CONFIG_PUBLISHER_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
   ListFeedRequest._() : super();
   factory ListFeedRequest({
-    $2.PagingRequest? paging,
-    $core.Iterable<$2.InternalID>? idFilter,
-    $core.Iterable<$2.InternalID>? authorFilter,
+    $4.PagingRequest? paging,
+    $core.Iterable<$4.InternalID>? idFilter,
+    $core.Iterable<$4.InternalID>? authorFilter,
     $core.Iterable<FeedConfigPublisher>? publisherFilter,
   }) {
     final _result = create();
@@ -245,21 +245,21 @@ class ListFeedRequest extends $pb.GeneratedMessage {
   static ListFeedRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.PagingRequest get paging => $_getN(0);
+  $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($2.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $2.PagingRequest ensurePaging() => $_ensure(0);
+  $4.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$2.InternalID> get idFilter => $_getList(1);
+  $core.List<$4.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$2.InternalID> get authorFilter => $_getList(2);
+  $core.List<$4.InternalID> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<FeedConfigPublisher> get publisherFilter => $_getList(3);
@@ -267,14 +267,14 @@ class ListFeedRequest extends $pb.GeneratedMessage {
 
 class ListFeedResponse_FeedWithConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedResponse.FeedWithConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.Feed>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feed', subBuilder: $2.Feed.create)
+    ..aOM<$4.Feed>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feed', subBuilder: $4.Feed.create)
     ..aOM<FeedConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: FeedConfig.create)
     ..hasRequiredFields = false
   ;
 
   ListFeedResponse_FeedWithConfig._() : super();
   factory ListFeedResponse_FeedWithConfig({
-    $2.Feed? feed,
+    $4.Feed? feed,
     FeedConfig? config,
   }) {
     final _result = create();
@@ -308,15 +308,15 @@ class ListFeedResponse_FeedWithConfig extends $pb.GeneratedMessage {
   static ListFeedResponse_FeedWithConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Feed get feed => $_getN(0);
+  $4.Feed get feed => $_getN(0);
   @$pb.TagNumber(1)
-  set feed($2.Feed v) { setField(1, v); }
+  set feed($4.Feed v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeed() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeed() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Feed ensureFeed() => $_ensure(0);
+  $4.Feed ensureFeed() => $_ensure(0);
 
   @$pb.TagNumber(2)
   FeedConfig get config => $_getN(1);
@@ -332,14 +332,14 @@ class ListFeedResponse_FeedWithConfig extends $pb.GeneratedMessage {
 
 class ListFeedResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $2.PagingResponse.create)
+    ..aOM<$4.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingResponse.create)
     ..pc<ListFeedResponse_FeedWithConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedList', $pb.PbFieldType.PM, subBuilder: ListFeedResponse_FeedWithConfig.create)
     ..hasRequiredFields = false
   ;
 
   ListFeedResponse._() : super();
   factory ListFeedResponse({
-    $2.PagingResponse? paging,
+    $4.PagingResponse? paging,
     $core.Iterable<ListFeedResponse_FeedWithConfig>? feedList,
   }) {
     final _result = create();
@@ -373,15 +373,15 @@ class ListFeedResponse extends $pb.GeneratedMessage {
   static ListFeedResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.PagingResponse get paging => $_getN(0);
+  $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($2.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $2.PagingResponse ensurePaging() => $_ensure(0);
+  $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ListFeedResponse_FeedWithConfig> get feedList => $_getList(1);
@@ -389,18 +389,18 @@ class ListFeedResponse extends $pb.GeneratedMessage {
 
 class ListFeedItemRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $2.PagingRequest.create)
-    ..pc<$2.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $2.InternalID.create)
-    ..pc<$2.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorFilter', $pb.PbFieldType.PM, subBuilder: $2.InternalID.create)
+    ..aOM<$4.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingRequest.create)
+    ..pc<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pc<FeedConfigPublisher>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publisherFilter', $pb.PbFieldType.KE, valueOf: FeedConfigPublisher.valueOf, enumValues: FeedConfigPublisher.values, defaultEnumValue: FeedConfigPublisher.FEED_CONFIG_PUBLISHER_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
   ListFeedItemRequest._() : super();
   factory ListFeedItemRequest({
-    $2.PagingRequest? paging,
-    $core.Iterable<$2.InternalID>? idFilter,
-    $core.Iterable<$2.InternalID>? authorFilter,
+    $4.PagingRequest? paging,
+    $core.Iterable<$4.InternalID>? idFilter,
+    $core.Iterable<$4.InternalID>? authorFilter,
     $core.Iterable<FeedConfigPublisher>? publisherFilter,
   }) {
     final _result = create();
@@ -440,21 +440,21 @@ class ListFeedItemRequest extends $pb.GeneratedMessage {
   static ListFeedItemRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.PagingRequest get paging => $_getN(0);
+  $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($2.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $2.PagingRequest ensurePaging() => $_ensure(0);
+  $4.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$2.InternalID> get idFilter => $_getList(1);
+  $core.List<$4.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$2.InternalID> get authorFilter => $_getList(2);
+  $core.List<$4.InternalID> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<FeedConfigPublisher> get publisherFilter => $_getList(3);
@@ -462,15 +462,15 @@ class ListFeedItemRequest extends $pb.GeneratedMessage {
 
 class ListFeedItemResponse_FeedItemWithFeedID extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemResponse.FeedItemWithFeedID', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedId', subBuilder: $2.InternalID.create)
-    ..aOM<$2.FeedItem>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'item', subBuilder: $2.FeedItem.create)
+    ..aOM<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedId', subBuilder: $4.InternalID.create)
+    ..aOM<$4.FeedItem>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'item', subBuilder: $4.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
   ListFeedItemResponse_FeedItemWithFeedID._() : super();
   factory ListFeedItemResponse_FeedItemWithFeedID({
-    $2.InternalID? feedId,
-    $2.FeedItem? item,
+    $4.InternalID? feedId,
+    $4.FeedItem? item,
   }) {
     final _result = create();
     if (feedId != null) {
@@ -503,38 +503,38 @@ class ListFeedItemResponse_FeedItemWithFeedID extends $pb.GeneratedMessage {
   static ListFeedItemResponse_FeedItemWithFeedID? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.InternalID get feedId => $_getN(0);
+  $4.InternalID get feedId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedId($2.InternalID v) { setField(1, v); }
+  set feedId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeedId() => clearField(1);
   @$pb.TagNumber(1)
-  $2.InternalID ensureFeedId() => $_ensure(0);
+  $4.InternalID ensureFeedId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $2.FeedItem get item => $_getN(1);
+  $4.FeedItem get item => $_getN(1);
   @$pb.TagNumber(2)
-  set item($2.FeedItem v) { setField(2, v); }
+  set item($4.FeedItem v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasItem() => $_has(1);
   @$pb.TagNumber(2)
   void clearItem() => clearField(2);
   @$pb.TagNumber(2)
-  $2.FeedItem ensureItem() => $_ensure(1);
+  $4.FeedItem ensureItem() => $_ensure(1);
 }
 
 class ListFeedItemResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $2.PagingResponse.create)
+    ..aOM<$4.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingResponse.create)
     ..pc<ListFeedItemResponse_FeedItemWithFeedID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemList', $pb.PbFieldType.PM, subBuilder: ListFeedItemResponse_FeedItemWithFeedID.create)
     ..hasRequiredFields = false
   ;
 
   ListFeedItemResponse._() : super();
   factory ListFeedItemResponse({
-    $2.PagingResponse? paging,
+    $4.PagingResponse? paging,
     $core.Iterable<ListFeedItemResponse_FeedItemWithFeedID>? itemList,
   }) {
     final _result = create();
@@ -568,15 +568,15 @@ class ListFeedItemResponse extends $pb.GeneratedMessage {
   static ListFeedItemResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.PagingResponse get paging => $_getN(0);
+  $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($2.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $2.PagingResponse ensurePaging() => $_ensure(0);
+  $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ListFeedItemResponse_FeedItemWithFeedID> get itemList => $_getList(1);
@@ -584,25 +584,25 @@ class ListFeedItemResponse extends $pb.GeneratedMessage {
 
 class FeedConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$2.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $2.InternalID.create)
+    ..aOM<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $4.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedUrl')
-    ..aOM<$2.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorAccount', subBuilder: $2.InternalID.create)
+    ..aOM<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorAccount', subBuilder: $4.InternalID.create)
     ..e<FeedConfigPublisher>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publisher', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigPublisher.FEED_CONFIG_PUBLISHER_UNSPECIFIED, valueOf: FeedConfigPublisher.valueOf, enumValues: FeedConfigPublisher.values)
     ..e<FeedConfigStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
-    ..aOM<$0.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateInterval', subBuilder: $0.Timestamp.create)
-    ..aOM<$2.Feed>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feed', subBuilder: $2.Feed.create)
+    ..aOM<$6.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateInterval', subBuilder: $6.Timestamp.create)
+    ..aOM<$4.Feed>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feed', subBuilder: $4.Feed.create)
     ..hasRequiredFields = false
   ;
 
   FeedConfig._() : super();
   factory FeedConfig({
-    $2.InternalID? id,
+    $4.InternalID? id,
     $core.String? feedUrl,
-    $2.InternalID? authorAccount,
+    $4.InternalID? authorAccount,
     FeedConfigPublisher? publisher,
     FeedConfigStatus? status,
-    $0.Timestamp? updateInterval,
-    $2.Feed? feed,
+    $6.Timestamp? updateInterval,
+    $4.Feed? feed,
   }) {
     final _result = create();
     if (id != null) {
@@ -650,15 +650,15 @@ class FeedConfig extends $pb.GeneratedMessage {
   static FeedConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.InternalID get id => $_getN(0);
+  $4.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($2.InternalID v) { setField(1, v); }
+  set id($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $2.InternalID ensureId() => $_ensure(0);
+  $4.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get feedUrl => $_getSZ(1);
@@ -670,15 +670,15 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearFeedUrl() => clearField(2);
 
   @$pb.TagNumber(3)
-  $2.InternalID get authorAccount => $_getN(2);
+  $4.InternalID get authorAccount => $_getN(2);
   @$pb.TagNumber(3)
-  set authorAccount($2.InternalID v) { setField(3, v); }
+  set authorAccount($4.InternalID v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAuthorAccount() => $_has(2);
   @$pb.TagNumber(3)
   void clearAuthorAccount() => clearField(3);
   @$pb.TagNumber(3)
-  $2.InternalID ensureAuthorAccount() => $_ensure(2);
+  $4.InternalID ensureAuthorAccount() => $_ensure(2);
 
   @$pb.TagNumber(4)
   FeedConfigPublisher get publisher => $_getN(3);
@@ -699,25 +699,25 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearStatus() => clearField(5);
 
   @$pb.TagNumber(6)
-  $0.Timestamp get updateInterval => $_getN(5);
+  $6.Timestamp get updateInterval => $_getN(5);
   @$pb.TagNumber(6)
-  set updateInterval($0.Timestamp v) { setField(6, v); }
+  set updateInterval($6.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasUpdateInterval() => $_has(5);
   @$pb.TagNumber(6)
   void clearUpdateInterval() => clearField(6);
   @$pb.TagNumber(6)
-  $0.Timestamp ensureUpdateInterval() => $_ensure(5);
+  $6.Timestamp ensureUpdateInterval() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $2.Feed get feed => $_getN(6);
+  $4.Feed get feed => $_getN(6);
   @$pb.TagNumber(7)
-  set feed($2.Feed v) { setField(7, v); }
+  set feed($4.Feed v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasFeed() => $_has(6);
   @$pb.TagNumber(7)
   void clearFeed() => clearField(7);
   @$pb.TagNumber(7)
-  $2.Feed ensureFeed() => $_ensure(6);
+  $4.Feed ensureFeed() => $_ensure(6);
 }
 

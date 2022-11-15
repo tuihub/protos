@@ -8,8 +8,6 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-import '../../../google/protobuf/timestamp.pbjson.dart' as $0;
-
 @$core.Deprecated('Use vertexTypeDescriptor instead')
 const VertexType$json = const {
   '1': 'VertexType',
@@ -371,55 +369,3 @@ const EdgeCommonProp$json = const {
 
 /// Descriptor for `EdgeCommonProp`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List edgeCommonPropDescriptor = $convert.base64Decode('Cg5FZGdlQ29tbW9uUHJvcBI+CgpvY2N1cl90aW1lGAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUglvY2N1clRpbWWIAQESQAoLY3JlYXRlX3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAFSCmNyZWF0ZVRpbWWIAQESQAoLdXBkYXRlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAJSCnVwZGF0ZVRpbWWIAQESFwoEcmFuaxgEIAEoA0gDUgRyYW5riAEBQg0KC19vY2N1cl90aW1lQg4KDF9jcmVhdGVfdGltZUIOCgxfdXBkYXRlX3RpbWVCBwoFX3Jhbms=');
-const $core.Map<$core.String, $core.dynamic> LibrarianMapperServiceBase$json = const {
-  '1': 'LibrarianMapperService',
-  '2': const [
-    const {'1': 'InsertVertex', '2': '.librarian.mapper.v1.InsertVertexRequest', '3': '.librarian.mapper.v1.InsertVertexResponse'},
-    const {'1': 'DeleteVertex', '2': '.librarian.mapper.v1.DeleteVertexRequest', '3': '.librarian.mapper.v1.DeleteVertexResponse'},
-    const {'1': 'UpdateVertex', '2': '.librarian.mapper.v1.UpdateVertexRequest', '3': '.librarian.mapper.v1.UpdateVertexResponse'},
-    const {'1': 'InsertEdge', '2': '.librarian.mapper.v1.InsertEdgeRequest', '3': '.librarian.mapper.v1.InsertEdgeResponse'},
-    const {'1': 'DeleteEdge', '2': '.librarian.mapper.v1.DeleteEdgeRequest', '3': '.librarian.mapper.v1.DeleteEdgeResponse'},
-    const {'1': 'UpdateEdge', '2': '.librarian.mapper.v1.UpdateEdgeRequest', '3': '.librarian.mapper.v1.UpdateEdgeResponse'},
-    const {'1': 'GoFromVertex', '2': '.librarian.mapper.v1.GoFromVertexRequest', '3': '.librarian.mapper.v1.GoFromVertexResponse'},
-    const {'1': 'FetchEqualVertex', '2': '.librarian.mapper.v1.FetchEqualVertexRequest', '3': '.librarian.mapper.v1.FetchEqualVertexResponse'},
-    const {'1': 'FetchEqualVertexNeighbor', '2': '.librarian.mapper.v1.FetchEqualVertexNeighborRequest', '3': '.librarian.mapper.v1.FetchEqualVertexNeighborResponse'},
-    const {'1': 'FindPath', '2': '.librarian.mapper.v1.FindPathRequest', '3': '.librarian.mapper.v1.FindPathResponse'},
-  ],
-};
-
-@$core.Deprecated('Use librarianMapperServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> LibrarianMapperServiceBase$messageJson = const {
-  '.librarian.mapper.v1.InsertVertexRequest': InsertVertexRequest$json,
-  '.librarian.mapper.v1.Vertex': Vertex$json,
-  '.librarian.mapper.v1.VertexProp': VertexProp$json,
-  '.librarian.mapper.v1.VertexCommonProp': VertexCommonProp$json,
-  '.google.protobuf.Timestamp': $0.Timestamp$json,
-  '.librarian.mapper.v1.VertexProp.AdditionalEntry': VertexProp_AdditionalEntry$json,
-  '.librarian.mapper.v1.InsertVertexResponse': InsertVertexResponse$json,
-  '.librarian.mapper.v1.DeleteVertexRequest': DeleteVertexRequest$json,
-  '.librarian.mapper.v1.DeleteVertexResponse': DeleteVertexResponse$json,
-  '.librarian.mapper.v1.UpdateVertexRequest': UpdateVertexRequest$json,
-  '.librarian.mapper.v1.UpdateVertexResponse': UpdateVertexResponse$json,
-  '.librarian.mapper.v1.InsertEdgeRequest': InsertEdgeRequest$json,
-  '.librarian.mapper.v1.Edge': Edge$json,
-  '.librarian.mapper.v1.EdgeProp': EdgeProp$json,
-  '.librarian.mapper.v1.EdgeCommonProp': EdgeCommonProp$json,
-  '.librarian.mapper.v1.EdgeProp.AdditionalEntry': EdgeProp_AdditionalEntry$json,
-  '.librarian.mapper.v1.InsertEdgeResponse': InsertEdgeResponse$json,
-  '.librarian.mapper.v1.DeleteEdgeRequest': DeleteEdgeRequest$json,
-  '.librarian.mapper.v1.DeleteEdgeResponse': DeleteEdgeResponse$json,
-  '.librarian.mapper.v1.UpdateEdgeRequest': UpdateEdgeRequest$json,
-  '.librarian.mapper.v1.UpdateEdgeResponse': UpdateEdgeResponse$json,
-  '.librarian.mapper.v1.GoFromVertexRequest': GoFromVertexRequest$json,
-  '.librarian.mapper.v1.GoFromVertexResponse': GoFromVertexResponse$json,
-  '.librarian.mapper.v1.FetchEqualVertexRequest': FetchEqualVertexRequest$json,
-  '.librarian.mapper.v1.FetchEqualVertexResponse': FetchEqualVertexResponse$json,
-  '.librarian.mapper.v1.FetchEqualVertexNeighborRequest': FetchEqualVertexNeighborRequest$json,
-  '.librarian.mapper.v1.FetchEqualVertexNeighborResponse': FetchEqualVertexNeighborResponse$json,
-  '.librarian.mapper.v1.FindPathRequest': FindPathRequest$json,
-  '.librarian.mapper.v1.FindPathResponse': FindPathResponse$json,
-  '.librarian.mapper.v1.FindPathResponse.SinglePath': FindPathResponse_SinglePath$json,
-};
-
-/// Descriptor for `LibrarianMapperService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List librarianMapperServiceDescriptor = $convert.base64Decode('ChZMaWJyYXJpYW5NYXBwZXJTZXJ2aWNlEmMKDEluc2VydFZlcnRleBIoLmxpYnJhcmlhbi5tYXBwZXIudjEuSW5zZXJ0VmVydGV4UmVxdWVzdBopLmxpYnJhcmlhbi5tYXBwZXIudjEuSW5zZXJ0VmVydGV4UmVzcG9uc2USYwoMRGVsZXRlVmVydGV4EigubGlicmFyaWFuLm1hcHBlci52MS5EZWxldGVWZXJ0ZXhSZXF1ZXN0GikubGlicmFyaWFuLm1hcHBlci52MS5EZWxldGVWZXJ0ZXhSZXNwb25zZRJjCgxVcGRhdGVWZXJ0ZXgSKC5saWJyYXJpYW4ubWFwcGVyLnYxLlVwZGF0ZVZlcnRleFJlcXVlc3QaKS5saWJyYXJpYW4ubWFwcGVyLnYxLlVwZGF0ZVZlcnRleFJlc3BvbnNlEl0KCkluc2VydEVkZ2USJi5saWJyYXJpYW4ubWFwcGVyLnYxLkluc2VydEVkZ2VSZXF1ZXN0GicubGlicmFyaWFuLm1hcHBlci52MS5JbnNlcnRFZGdlUmVzcG9uc2USXQoKRGVsZXRlRWRnZRImLmxpYnJhcmlhbi5tYXBwZXIudjEuRGVsZXRlRWRnZVJlcXVlc3QaJy5saWJyYXJpYW4ubWFwcGVyLnYxLkRlbGV0ZUVkZ2VSZXNwb25zZRJdCgpVcGRhdGVFZGdlEiYubGlicmFyaWFuLm1hcHBlci52MS5VcGRhdGVFZGdlUmVxdWVzdBonLmxpYnJhcmlhbi5tYXBwZXIudjEuVXBkYXRlRWRnZVJlc3BvbnNlEmMKDEdvRnJvbVZlcnRleBIoLmxpYnJhcmlhbi5tYXBwZXIudjEuR29Gcm9tVmVydGV4UmVxdWVzdBopLmxpYnJhcmlhbi5tYXBwZXIudjEuR29Gcm9tVmVydGV4UmVzcG9uc2USbwoQRmV0Y2hFcXVhbFZlcnRleBIsLmxpYnJhcmlhbi5tYXBwZXIudjEuRmV0Y2hFcXVhbFZlcnRleFJlcXVlc3QaLS5saWJyYXJpYW4ubWFwcGVyLnYxLkZldGNoRXF1YWxWZXJ0ZXhSZXNwb25zZRKHAQoYRmV0Y2hFcXVhbFZlcnRleE5laWdoYm9yEjQubGlicmFyaWFuLm1hcHBlci52MS5GZXRjaEVxdWFsVmVydGV4TmVpZ2hib3JSZXF1ZXN0GjUubGlicmFyaWFuLm1hcHBlci52MS5GZXRjaEVxdWFsVmVydGV4TmVpZ2hib3JSZXNwb25zZRJXCghGaW5kUGF0aBIkLmxpYnJhcmlhbi5tYXBwZXIudjEuRmluZFBhdGhSZXF1ZXN0GiUubGlicmFyaWFuLm1hcHBlci52MS5GaW5kUGF0aFJlc3BvbnNl');

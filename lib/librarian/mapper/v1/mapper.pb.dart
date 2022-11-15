@@ -5,13 +5,12 @@
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../../google/protobuf/timestamp.pb.dart' as $1;
 
 import 'mapper.pbenum.dart';
 
@@ -1104,17 +1103,17 @@ class VertexProp extends $pb.GeneratedMessage {
 
 class VertexCommonProp extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'VertexCommonProp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aOM<$0.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'occurTime', subBuilder: $0.Timestamp.create)
-    ..aOM<$0.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $0.Timestamp.create)
-    ..aOM<$0.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'occurTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
   VertexCommonProp._() : super();
   factory VertexCommonProp({
-    $0.Timestamp? occurTime,
-    $0.Timestamp? createTime,
-    $0.Timestamp? updateTime,
+    $1.Timestamp? occurTime,
+    $1.Timestamp? createTime,
+    $1.Timestamp? updateTime,
   }) {
     final _result = create();
     if (occurTime != null) {
@@ -1150,37 +1149,37 @@ class VertexCommonProp extends $pb.GeneratedMessage {
   static VertexCommonProp? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.Timestamp get occurTime => $_getN(0);
+  $1.Timestamp get occurTime => $_getN(0);
   @$pb.TagNumber(1)
-  set occurTime($0.Timestamp v) { setField(1, v); }
+  set occurTime($1.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasOccurTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearOccurTime() => clearField(1);
   @$pb.TagNumber(1)
-  $0.Timestamp ensureOccurTime() => $_ensure(0);
+  $1.Timestamp ensureOccurTime() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $0.Timestamp get createTime => $_getN(1);
+  $1.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($0.Timestamp v) { setField(2, v); }
+  set createTime($1.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $0.Timestamp ensureCreateTime() => $_ensure(1);
+  $1.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $0.Timestamp get updateTime => $_getN(2);
+  $1.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($0.Timestamp v) { setField(3, v); }
+  set updateTime($1.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $0.Timestamp ensureUpdateTime() => $_ensure(2);
+  $1.Timestamp ensureUpdateTime() => $_ensure(2);
 }
 
 class Edge extends $pb.GeneratedMessage {
@@ -1333,18 +1332,18 @@ class EdgeProp extends $pb.GeneratedMessage {
 
 class EdgeCommonProp extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EdgeCommonProp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aOM<$0.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'occurTime', subBuilder: $0.Timestamp.create)
-    ..aOM<$0.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $0.Timestamp.create)
-    ..aOM<$0.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'occurTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $1.Timestamp.create)
     ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rank')
     ..hasRequiredFields = false
   ;
 
   EdgeCommonProp._() : super();
   factory EdgeCommonProp({
-    $0.Timestamp? occurTime,
-    $0.Timestamp? createTime,
-    $0.Timestamp? updateTime,
+    $1.Timestamp? occurTime,
+    $1.Timestamp? createTime,
+    $1.Timestamp? updateTime,
     $fixnum.Int64? rank,
   }) {
     final _result = create();
@@ -1384,37 +1383,37 @@ class EdgeCommonProp extends $pb.GeneratedMessage {
   static EdgeCommonProp? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.Timestamp get occurTime => $_getN(0);
+  $1.Timestamp get occurTime => $_getN(0);
   @$pb.TagNumber(1)
-  set occurTime($0.Timestamp v) { setField(1, v); }
+  set occurTime($1.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasOccurTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearOccurTime() => clearField(1);
   @$pb.TagNumber(1)
-  $0.Timestamp ensureOccurTime() => $_ensure(0);
+  $1.Timestamp ensureOccurTime() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $0.Timestamp get createTime => $_getN(1);
+  $1.Timestamp get createTime => $_getN(1);
   @$pb.TagNumber(2)
-  set createTime($0.Timestamp v) { setField(2, v); }
+  set createTime($1.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCreateTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearCreateTime() => clearField(2);
   @$pb.TagNumber(2)
-  $0.Timestamp ensureCreateTime() => $_ensure(1);
+  $1.Timestamp ensureCreateTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $0.Timestamp get updateTime => $_getN(2);
+  $1.Timestamp get updateTime => $_getN(2);
   @$pb.TagNumber(3)
-  set updateTime($0.Timestamp v) { setField(3, v); }
+  set updateTime($1.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasUpdateTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearUpdateTime() => clearField(3);
   @$pb.TagNumber(3)
-  $0.Timestamp ensureUpdateTime() => $_ensure(2);
+  $1.Timestamp ensureUpdateTime() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $fixnum.Int64 get rank => $_getI64(3);
@@ -1424,51 +1423,5 @@ class EdgeCommonProp extends $pb.GeneratedMessage {
   $core.bool hasRank() => $_has(3);
   @$pb.TagNumber(4)
   void clearRank() => clearField(4);
-}
-
-class LibrarianMapperServiceApi {
-  $pb.RpcClient _client;
-  LibrarianMapperServiceApi(this._client);
-
-  $async.Future<InsertVertexResponse> insertVertex($pb.ClientContext? ctx, InsertVertexRequest request) {
-    var emptyResponse = InsertVertexResponse();
-    return _client.invoke<InsertVertexResponse>(ctx, 'LibrarianMapperService', 'InsertVertex', request, emptyResponse);
-  }
-  $async.Future<DeleteVertexResponse> deleteVertex($pb.ClientContext? ctx, DeleteVertexRequest request) {
-    var emptyResponse = DeleteVertexResponse();
-    return _client.invoke<DeleteVertexResponse>(ctx, 'LibrarianMapperService', 'DeleteVertex', request, emptyResponse);
-  }
-  $async.Future<UpdateVertexResponse> updateVertex($pb.ClientContext? ctx, UpdateVertexRequest request) {
-    var emptyResponse = UpdateVertexResponse();
-    return _client.invoke<UpdateVertexResponse>(ctx, 'LibrarianMapperService', 'UpdateVertex', request, emptyResponse);
-  }
-  $async.Future<InsertEdgeResponse> insertEdge($pb.ClientContext? ctx, InsertEdgeRequest request) {
-    var emptyResponse = InsertEdgeResponse();
-    return _client.invoke<InsertEdgeResponse>(ctx, 'LibrarianMapperService', 'InsertEdge', request, emptyResponse);
-  }
-  $async.Future<DeleteEdgeResponse> deleteEdge($pb.ClientContext? ctx, DeleteEdgeRequest request) {
-    var emptyResponse = DeleteEdgeResponse();
-    return _client.invoke<DeleteEdgeResponse>(ctx, 'LibrarianMapperService', 'DeleteEdge', request, emptyResponse);
-  }
-  $async.Future<UpdateEdgeResponse> updateEdge($pb.ClientContext? ctx, UpdateEdgeRequest request) {
-    var emptyResponse = UpdateEdgeResponse();
-    return _client.invoke<UpdateEdgeResponse>(ctx, 'LibrarianMapperService', 'UpdateEdge', request, emptyResponse);
-  }
-  $async.Future<GoFromVertexResponse> goFromVertex($pb.ClientContext? ctx, GoFromVertexRequest request) {
-    var emptyResponse = GoFromVertexResponse();
-    return _client.invoke<GoFromVertexResponse>(ctx, 'LibrarianMapperService', 'GoFromVertex', request, emptyResponse);
-  }
-  $async.Future<FetchEqualVertexResponse> fetchEqualVertex($pb.ClientContext? ctx, FetchEqualVertexRequest request) {
-    var emptyResponse = FetchEqualVertexResponse();
-    return _client.invoke<FetchEqualVertexResponse>(ctx, 'LibrarianMapperService', 'FetchEqualVertex', request, emptyResponse);
-  }
-  $async.Future<FetchEqualVertexNeighborResponse> fetchEqualVertexNeighbor($pb.ClientContext? ctx, FetchEqualVertexNeighborRequest request) {
-    var emptyResponse = FetchEqualVertexNeighborResponse();
-    return _client.invoke<FetchEqualVertexNeighborResponse>(ctx, 'LibrarianMapperService', 'FetchEqualVertexNeighbor', request, emptyResponse);
-  }
-  $async.Future<FindPathResponse> findPath($pb.ClientContext? ctx, FindPathRequest request) {
-    var emptyResponse = FindPathResponse();
-    return _client.invoke<FindPathResponse>(ctx, 'LibrarianMapperService', 'FindPath', request, emptyResponse);
-  }
 }
 

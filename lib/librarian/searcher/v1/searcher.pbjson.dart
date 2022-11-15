@@ -85,25 +85,3 @@ const SearchIDResponse_Result$json = const {
 
 /// Descriptor for `SearchIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchIDResponseDescriptor = $convert.base64Decode('ChBTZWFyY2hJRFJlc3BvbnNlEkYKBnJlc3VsdBgBIAMoCzIuLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlLlJlc3VsdFIGcmVzdWx0GiwKBlJlc3VsdBIOCgJpZBgBIAEoA1ICaWQSEgoEcmFuaxgCIAEoA1IEcmFuaw==');
-const $core.Map<$core.String, $core.dynamic> LibrarianSearcherServiceBase$json = const {
-  '1': 'LibrarianSearcherService',
-  '2': const [
-    const {'1': 'NewID', '2': '.librarian.searcher.v1.NewIDRequest', '3': '.librarian.searcher.v1.NewIDResponse'},
-    const {'1': 'DescribeID', '2': '.librarian.searcher.v1.DescribeIDRequest', '3': '.librarian.searcher.v1.DescribeIDResponse'},
-    const {'1': 'SearchID', '2': '.librarian.searcher.v1.SearchIDRequest', '3': '.librarian.searcher.v1.SearchIDResponse'},
-  ],
-};
-
-@$core.Deprecated('Use librarianSearcherServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> LibrarianSearcherServiceBase$messageJson = const {
-  '.librarian.searcher.v1.NewIDRequest': NewIDRequest$json,
-  '.librarian.searcher.v1.NewIDResponse': NewIDResponse$json,
-  '.librarian.searcher.v1.DescribeIDRequest': DescribeIDRequest$json,
-  '.librarian.searcher.v1.DescribeIDResponse': DescribeIDResponse$json,
-  '.librarian.searcher.v1.SearchIDRequest': SearchIDRequest$json,
-  '.librarian.searcher.v1.SearchIDResponse': SearchIDResponse$json,
-  '.librarian.searcher.v1.SearchIDResponse.Result': SearchIDResponse_Result$json,
-};
-
-/// Descriptor for `LibrarianSearcherService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List librarianSearcherServiceDescriptor = $convert.base64Decode('ChhMaWJyYXJpYW5TZWFyY2hlclNlcnZpY2USUgoFTmV3SUQSIy5saWJyYXJpYW4uc2VhcmNoZXIudjEuTmV3SURSZXF1ZXN0GiQubGlicmFyaWFuLnNlYXJjaGVyLnYxLk5ld0lEUmVzcG9uc2USYQoKRGVzY3JpYmVJRBIoLmxpYnJhcmlhbi5zZWFyY2hlci52MS5EZXNjcmliZUlEUmVxdWVzdBopLmxpYnJhcmlhbi5zZWFyY2hlci52MS5EZXNjcmliZUlEUmVzcG9uc2USWwoIU2VhcmNoSUQSJi5saWJyYXJpYW4uc2VhcmNoZXIudjEuU2VhcmNoSURSZXF1ZXN0GicubGlicmFyaWFuLnNlYXJjaGVyLnYxLlNlYXJjaElEUmVzcG9uc2U=');

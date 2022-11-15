@@ -8,9 +8,6 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-import '../../v1/common.pbjson.dart' as $2;
-import '../../../google/protobuf/timestamp.pbjson.dart' as $0;
-
 @$core.Deprecated('Use accountAppRelationTypeDescriptor instead')
 const AccountAppRelationType$json = const {
   '1': 'AccountAppRelationType',
@@ -240,50 +237,3 @@ const PushDataResponse$json = const {
 
 /// Descriptor for `PushDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pushDataResponseDescriptor = $convert.base64Decode('ChBQdXNoRGF0YVJlc3BvbnNl');
-const $core.Map<$core.String, $core.dynamic> LibrarianPorterServiceBase$json = const {
-  '1': 'LibrarianPorterService',
-  '2': const [
-    const {'1': 'PullFeed', '2': '.librarian.porter.v1.PullFeedRequest', '3': '.librarian.porter.v1.PullFeedResponse'},
-    const {'1': 'PullDB', '2': '.librarian.porter.v1.PullDBRequest', '3': '.librarian.porter.v1.PullDBResponse'},
-    const {'1': 'PullWiki', '2': '.librarian.porter.v1.PullWikiRequest', '3': '.librarian.porter.v1.PullWikiResponse'},
-    const {'1': 'PullData', '2': '.librarian.porter.v1.PullDataRequest', '3': '.librarian.porter.v1.PullDataResponse', '6': true},
-    const {'1': 'PullAccount', '2': '.librarian.porter.v1.PullAccountRequest', '3': '.librarian.porter.v1.PullAccountResponse'},
-    const {'1': 'PullApp', '2': '.librarian.porter.v1.PullAppRequest', '3': '.librarian.porter.v1.PullAppResponse'},
-    const {'1': 'PullAccountAppRelation', '2': '.librarian.porter.v1.PullAccountAppRelationRequest', '3': '.librarian.porter.v1.PullAccountAppRelationResponse'},
-    const {'1': 'PushData', '2': '.librarian.porter.v1.PushDataRequest', '3': '.librarian.porter.v1.PushDataResponse', '5': true},
-  ],
-};
-
-@$core.Deprecated('Use librarianPorterServiceDescriptor instead')
-const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> LibrarianPorterServiceBase$messageJson = const {
-  '.librarian.porter.v1.PullFeedRequest': PullFeedRequest$json,
-  '.librarian.porter.v1.PullFeedResponse': PullFeedResponse$json,
-  '.librarian.v1.Feed': $2.Feed$json,
-  '.librarian.v1.FeedItem': $2.FeedItem$json,
-  '.google.protobuf.Timestamp': $0.Timestamp$json,
-  '.librarian.v1.FeedEnclosure': $2.FeedEnclosure$json,
-  '.librarian.porter.v1.PullDBRequest': PullDBRequest$json,
-  '.librarian.porter.v1.PullDBResponse': PullDBResponse$json,
-  '.librarian.porter.v1.PullDBResponse.DataEntry': PullDBResponse_DataEntry$json,
-  '.librarian.porter.v1.PullWikiRequest': PullWikiRequest$json,
-  '.librarian.porter.v1.PullWikiResponse': PullWikiResponse$json,
-  '.librarian.porter.v1.PullDataRequest': PullDataRequest$json,
-  '.librarian.porter.v1.PullDataResponse': PullDataResponse$json,
-  '.librarian.porter.v1.PullAccountRequest': PullAccountRequest$json,
-  '.librarian.v1.AccountID': $2.AccountID$json,
-  '.librarian.porter.v1.PullAccountResponse': PullAccountResponse$json,
-  '.librarian.v1.Account': $2.Account$json,
-  '.librarian.v1.InternalID': $2.InternalID$json,
-  '.librarian.porter.v1.PullAppRequest': PullAppRequest$json,
-  '.librarian.v1.AppID': $2.AppID$json,
-  '.librarian.porter.v1.PullAppResponse': PullAppResponse$json,
-  '.librarian.v1.App': $2.App$json,
-  '.librarian.v1.AppDetails': $2.AppDetails$json,
-  '.librarian.porter.v1.PullAccountAppRelationRequest': PullAccountAppRelationRequest$json,
-  '.librarian.porter.v1.PullAccountAppRelationResponse': PullAccountAppRelationResponse$json,
-  '.librarian.porter.v1.PushDataRequest': PushDataRequest$json,
-  '.librarian.porter.v1.PushDataResponse': PushDataResponse$json,
-};
-
-/// Descriptor for `LibrarianPorterService`. Decode as a `google.protobuf.ServiceDescriptorProto`.
-final $typed_data.Uint8List librarianPorterServiceDescriptor = $convert.base64Decode('ChZMaWJyYXJpYW5Qb3J0ZXJTZXJ2aWNlElcKCFB1bGxGZWVkEiQubGlicmFyaWFuLnBvcnRlci52MS5QdWxsRmVlZFJlcXVlc3QaJS5saWJyYXJpYW4ucG9ydGVyLnYxLlB1bGxGZWVkUmVzcG9uc2USUQoGUHVsbERCEiIubGlicmFyaWFuLnBvcnRlci52MS5QdWxsREJSZXF1ZXN0GiMubGlicmFyaWFuLnBvcnRlci52MS5QdWxsREJSZXNwb25zZRJXCghQdWxsV2lraRIkLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVsbFdpa2lSZXF1ZXN0GiUubGlicmFyaWFuLnBvcnRlci52MS5QdWxsV2lraVJlc3BvbnNlElkKCFB1bGxEYXRhEiQubGlicmFyaWFuLnBvcnRlci52MS5QdWxsRGF0YVJlcXVlc3QaJS5saWJyYXJpYW4ucG9ydGVyLnYxLlB1bGxEYXRhUmVzcG9uc2UwARJgCgtQdWxsQWNjb3VudBInLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVsbEFjY291bnRSZXF1ZXN0GigubGlicmFyaWFuLnBvcnRlci52MS5QdWxsQWNjb3VudFJlc3BvbnNlElQKB1B1bGxBcHASIy5saWJyYXJpYW4ucG9ydGVyLnYxLlB1bGxBcHBSZXF1ZXN0GiQubGlicmFyaWFuLnBvcnRlci52MS5QdWxsQXBwUmVzcG9uc2USgQEKFlB1bGxBY2NvdW50QXBwUmVsYXRpb24SMi5saWJyYXJpYW4ucG9ydGVyLnYxLlB1bGxBY2NvdW50QXBwUmVsYXRpb25SZXF1ZXN0GjMubGlicmFyaWFuLnBvcnRlci52MS5QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVzcG9uc2USWQoIUHVzaERhdGESJC5saWJyYXJpYW4ucG9ydGVyLnYxLlB1c2hEYXRhUmVxdWVzdBolLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVzaERhdGFSZXNwb25zZSgB');

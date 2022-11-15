@@ -5,12 +5,11 @@
 // @dart = 2.12
 // ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $2;
+import '../../v1/common.pb.dart' as $1;
 
 import 'porter.pbenum.dart';
 
@@ -79,13 +78,13 @@ class PullFeedRequest extends $pb.GeneratedMessage {
 
 class PullFeedResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullFeedResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$2.Feed>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', subBuilder: $2.Feed.create)
+    ..aOM<$1.Feed>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', subBuilder: $1.Feed.create)
     ..hasRequiredFields = false
   ;
 
   PullFeedResponse._() : super();
   factory PullFeedResponse({
-    $2.Feed? data,
+    $1.Feed? data,
   }) {
     final _result = create();
     if (data != null) {
@@ -115,15 +114,15 @@ class PullFeedResponse extends $pb.GeneratedMessage {
   static PullFeedResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Feed get data => $_getN(0);
+  $1.Feed get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($2.Feed v) { setField(1, v); }
+  set data($1.Feed v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Feed ensureData() => $_ensure(0);
+  $1.Feed ensureData() => $_ensure(0);
 }
 
 class PullDBRequest extends $pb.GeneratedMessage {
@@ -446,13 +445,13 @@ class PullDataResponse extends $pb.GeneratedMessage {
 
 class PullAccountRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullAccountRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$2.AccountID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId', subBuilder: $2.AccountID.create)
+    ..aOM<$1.AccountID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId', subBuilder: $1.AccountID.create)
     ..hasRequiredFields = false
   ;
 
   PullAccountRequest._() : super();
   factory PullAccountRequest({
-    $2.AccountID? accountId,
+    $1.AccountID? accountId,
   }) {
     final _result = create();
     if (accountId != null) {
@@ -482,26 +481,26 @@ class PullAccountRequest extends $pb.GeneratedMessage {
   static PullAccountRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.AccountID get accountId => $_getN(0);
+  $1.AccountID get accountId => $_getN(0);
   @$pb.TagNumber(1)
-  set accountId($2.AccountID v) { setField(1, v); }
+  set accountId($1.AccountID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(1)
   void clearAccountId() => clearField(1);
   @$pb.TagNumber(1)
-  $2.AccountID ensureAccountId() => $_ensure(0);
+  $1.AccountID ensureAccountId() => $_ensure(0);
 }
 
 class PullAccountResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullAccountResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$2.Account>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'account', subBuilder: $2.Account.create)
+    ..aOM<$1.Account>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'account', subBuilder: $1.Account.create)
     ..hasRequiredFields = false
   ;
 
   PullAccountResponse._() : super();
   factory PullAccountResponse({
-    $2.Account? account,
+    $1.Account? account,
   }) {
     final _result = create();
     if (account != null) {
@@ -531,26 +530,26 @@ class PullAccountResponse extends $pb.GeneratedMessage {
   static PullAccountResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Account get account => $_getN(0);
+  $1.Account get account => $_getN(0);
   @$pb.TagNumber(1)
-  set account($2.Account v) { setField(1, v); }
+  set account($1.Account v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAccount() => $_has(0);
   @$pb.TagNumber(1)
   void clearAccount() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Account ensureAccount() => $_ensure(0);
+  $1.Account ensureAccount() => $_ensure(0);
 }
 
 class PullAppRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullAppRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$2.AppID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appId', subBuilder: $2.AppID.create)
+    ..aOM<$1.AppID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appId', subBuilder: $1.AppID.create)
     ..hasRequiredFields = false
   ;
 
   PullAppRequest._() : super();
   factory PullAppRequest({
-    $2.AppID? appId,
+    $1.AppID? appId,
   }) {
     final _result = create();
     if (appId != null) {
@@ -580,26 +579,26 @@ class PullAppRequest extends $pb.GeneratedMessage {
   static PullAppRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.AppID get appId => $_getN(0);
+  $1.AppID get appId => $_getN(0);
   @$pb.TagNumber(1)
-  set appId($2.AppID v) { setField(1, v); }
+  set appId($1.AppID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppId() => $_has(0);
   @$pb.TagNumber(1)
   void clearAppId() => clearField(1);
   @$pb.TagNumber(1)
-  $2.AppID ensureAppId() => $_ensure(0);
+  $1.AppID ensureAppId() => $_ensure(0);
 }
 
 class PullAppResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullAppResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$2.App>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'app', subBuilder: $2.App.create)
+    ..aOM<$1.App>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'app', subBuilder: $1.App.create)
     ..hasRequiredFields = false
   ;
 
   PullAppResponse._() : super();
   factory PullAppResponse({
-    $2.App? app,
+    $1.App? app,
   }) {
     final _result = create();
     if (app != null) {
@@ -629,28 +628,28 @@ class PullAppResponse extends $pb.GeneratedMessage {
   static PullAppResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.App get app => $_getN(0);
+  $1.App get app => $_getN(0);
   @$pb.TagNumber(1)
-  set app($2.App v) { setField(1, v); }
+  set app($1.App v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasApp() => $_has(0);
   @$pb.TagNumber(1)
   void clearApp() => clearField(1);
   @$pb.TagNumber(1)
-  $2.App ensureApp() => $_ensure(0);
+  $1.App ensureApp() => $_ensure(0);
 }
 
 class PullAccountAppRelationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullAccountAppRelationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..e<AccountAppRelationType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'relationType', $pb.PbFieldType.OE, defaultOrMaker: AccountAppRelationType.ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED, valueOf: AccountAppRelationType.valueOf, enumValues: AccountAppRelationType.values)
-    ..aOM<$2.AccountID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId', subBuilder: $2.AccountID.create)
+    ..aOM<$1.AccountID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId', subBuilder: $1.AccountID.create)
     ..hasRequiredFields = false
   ;
 
   PullAccountAppRelationRequest._() : super();
   factory PullAccountAppRelationRequest({
     AccountAppRelationType? relationType,
-    $2.AccountID? accountId,
+    $1.AccountID? accountId,
   }) {
     final _result = create();
     if (relationType != null) {
@@ -692,26 +691,26 @@ class PullAccountAppRelationRequest extends $pb.GeneratedMessage {
   void clearRelationType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $2.AccountID get accountId => $_getN(1);
+  $1.AccountID get accountId => $_getN(1);
   @$pb.TagNumber(2)
-  set accountId($2.AccountID v) { setField(2, v); }
+  set accountId($1.AccountID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAccountId() => $_has(1);
   @$pb.TagNumber(2)
   void clearAccountId() => clearField(2);
   @$pb.TagNumber(2)
-  $2.AccountID ensureAccountId() => $_ensure(1);
+  $1.AccountID ensureAccountId() => $_ensure(1);
 }
 
 class PullAccountAppRelationResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullAccountAppRelationResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$2.App>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $2.App.create)
+    ..pc<$1.App>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $1.App.create)
     ..hasRequiredFields = false
   ;
 
   PullAccountAppRelationResponse._() : super();
   factory PullAccountAppRelationResponse({
-    $core.Iterable<$2.App>? appList,
+    $core.Iterable<$1.App>? appList,
   }) {
     final _result = create();
     if (appList != null) {
@@ -741,7 +740,7 @@ class PullAccountAppRelationResponse extends $pb.GeneratedMessage {
   static PullAccountAppRelationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$2.App> get appList => $_getList(0);
+  $core.List<$1.App> get appList => $_getList(0);
 }
 
 class PushDataRequest extends $pb.GeneratedMessage {
@@ -846,43 +845,5 @@ class PushDataResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static PushDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushDataResponse>(create);
   static PushDataResponse? _defaultInstance;
-}
-
-class LibrarianPorterServiceApi {
-  $pb.RpcClient _client;
-  LibrarianPorterServiceApi(this._client);
-
-  $async.Future<PullFeedResponse> pullFeed($pb.ClientContext? ctx, PullFeedRequest request) {
-    var emptyResponse = PullFeedResponse();
-    return _client.invoke<PullFeedResponse>(ctx, 'LibrarianPorterService', 'PullFeed', request, emptyResponse);
-  }
-  $async.Future<PullDBResponse> pullDB($pb.ClientContext? ctx, PullDBRequest request) {
-    var emptyResponse = PullDBResponse();
-    return _client.invoke<PullDBResponse>(ctx, 'LibrarianPorterService', 'PullDB', request, emptyResponse);
-  }
-  $async.Future<PullWikiResponse> pullWiki($pb.ClientContext? ctx, PullWikiRequest request) {
-    var emptyResponse = PullWikiResponse();
-    return _client.invoke<PullWikiResponse>(ctx, 'LibrarianPorterService', 'PullWiki', request, emptyResponse);
-  }
-  $async.Future<PullDataResponse> pullData($pb.ClientContext? ctx, PullDataRequest request) {
-    var emptyResponse = PullDataResponse();
-    return _client.invoke<PullDataResponse>(ctx, 'LibrarianPorterService', 'PullData', request, emptyResponse);
-  }
-  $async.Future<PullAccountResponse> pullAccount($pb.ClientContext? ctx, PullAccountRequest request) {
-    var emptyResponse = PullAccountResponse();
-    return _client.invoke<PullAccountResponse>(ctx, 'LibrarianPorterService', 'PullAccount', request, emptyResponse);
-  }
-  $async.Future<PullAppResponse> pullApp($pb.ClientContext? ctx, PullAppRequest request) {
-    var emptyResponse = PullAppResponse();
-    return _client.invoke<PullAppResponse>(ctx, 'LibrarianPorterService', 'PullApp', request, emptyResponse);
-  }
-  $async.Future<PullAccountAppRelationResponse> pullAccountAppRelation($pb.ClientContext? ctx, PullAccountAppRelationRequest request) {
-    var emptyResponse = PullAccountAppRelationResponse();
-    return _client.invoke<PullAccountAppRelationResponse>(ctx, 'LibrarianPorterService', 'PullAccountAppRelation', request, emptyResponse);
-  }
-  $async.Future<PushDataResponse> pushData($pb.ClientContext? ctx, PushDataRequest request) {
-    var emptyResponse = PushDataResponse();
-    return _client.invoke<PushDataResponse>(ctx, 'LibrarianPorterService', 'PushData', request, emptyResponse);
-  }
 }
 
