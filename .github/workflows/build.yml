@@ -47,6 +47,9 @@ jobs:
         with:
           toolchain: stable
 
+      - name: Setup Dart environment
+        uses: dart-lang/setup-dart@v1.3
+
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
 

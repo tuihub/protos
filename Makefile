@@ -27,6 +27,7 @@ rust:
 	cargo check --features proto_full
 
 dart:
+	dart pub get
 	dart analyze
 
 clean:
