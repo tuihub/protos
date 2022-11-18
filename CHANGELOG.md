@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/TuiHub/Protos/compare/v0.2.0...v0.2.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* revert change of ListAppRequest ([67ce6eb](https://github.com/TuiHub/Protos/commit/67ce6eb59eb98f859e7aae11a18ebc5eff5872ac))
+
 ## [0.2.0](https://github.com/TuiHub/Protos/compare/v0.1.1...v0.2.0) (2022-11-18)
 
 
