@@ -65,6 +65,8 @@ type LibrarianSephirahServiceClient interface {
 	UnBindApp(ctx context.Context, in *UnBindAppRequest, opts ...grpc.CallOption) (*UnBindAppResponse, error)
 	// `Gebura` `Admin` Submit an asynchronous update request
 	RefreshApp(ctx context.Context, in *RefreshAppRequest, opts ...grpc.CallOption) (*RefreshAppResponse, error)
+	// `Gebura` `Normal` List bind app
+	ListBindApp(ctx context.Context, in *ListBindAppRequest, opts ...grpc.CallOption) (*ListBindAppResponse, error)
 	// `Gebura` `Admin`
 	CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error)
 	// `Gebura` `Admin`
@@ -360,6 +362,15 @@ func (c *librarianSephirahServiceClient) RefreshApp(ctx context.Context, in *Ref
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) ListBindApp(ctx context.Context, in *ListBindAppRequest, opts ...grpc.CallOption) (*ListBindAppResponse, error) {
+	out := new(ListBindAppResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error) {
 	out := new(CreateAppPackageResponse)
 	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage", in, out, opts...)
@@ -524,6 +535,8 @@ type LibrarianSephirahServiceServer interface {
 	UnBindApp(context.Context, *UnBindAppRequest) (*UnBindAppResponse, error)
 	// `Gebura` `Admin` Submit an asynchronous update request
 	RefreshApp(context.Context, *RefreshAppRequest) (*RefreshAppResponse, error)
+	// `Gebura` `Normal` List bind app
+	ListBindApp(context.Context, *ListBindAppRequest) (*ListBindAppResponse, error)
 	// `Gebura` `Admin`
 	CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error)
 	// `Gebura` `Admin`
@@ -613,6 +626,9 @@ func (UnimplementedLibrarianSephirahServiceServer) UnBindApp(context.Context, *U
 }
 func (UnimplementedLibrarianSephirahServiceServer) RefreshApp(context.Context, *RefreshAppRequest) (*RefreshAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshApp not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListBindApp(context.Context, *ListBindAppRequest) (*ListBindAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBindApp not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPackage not implemented")
@@ -1041,6 +1057,24 @@ func _LibrarianSephirahService_RefreshApp_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_ListBindApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBindAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListBindApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListBindApp(ctx, req.(*ListBindAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_CreateAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppPackageRequest)
 	if err := dec(in); err != nil {
@@ -1341,6 +1375,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RefreshApp",
 			Handler:    _LibrarianSephirahService_RefreshApp_Handler,
+		},
+		{
+			MethodName: "ListBindApp",
+			Handler:    _LibrarianSephirahService_ListBindApp_Handler,
 		},
 		{
 			MethodName: "CreateAppPackage",

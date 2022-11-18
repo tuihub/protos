@@ -488,6 +488,27 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** `Gebura` `Normal` List bind app
+*/
+        pub async fn list_bind_app(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListBindAppRequest>,
+        ) -> Result<tonic::Response<super::ListBindAppResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
         /** `Gebura` `Admin`
 */
         pub async fn create_app_package(
@@ -912,6 +933,12 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::RefreshAppRequest>,
         ) -> Result<tonic::Response<super::RefreshAppResponse>, tonic::Status>;
+        /** `Gebura` `Normal` List bind app
+*/
+        async fn list_bind_app(
+            &self,
+            request: tonic::Request<super::ListBindAppRequest>,
+        ) -> Result<tonic::Response<super::ListBindAppResponse>, tonic::Status>;
         /** `Gebura` `Admin`
 */
         async fn create_app_package(
@@ -1792,6 +1819,46 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = RefreshAppSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListBindAppSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListBindAppRequest>
+                    for ListBindAppSvc<T> {
+                        type Response = super::ListBindAppResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListBindAppRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_bind_app(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListBindAppSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

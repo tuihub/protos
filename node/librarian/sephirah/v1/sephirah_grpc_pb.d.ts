@@ -30,6 +30,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   bindApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.BindAppRequest, librarian_sephirah_v1_gebura_pb.BindAppResponse>;
   unBindApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.UnBindAppRequest, librarian_sephirah_v1_gebura_pb.UnBindAppResponse>;
   refreshApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.RefreshAppRequest, librarian_sephirah_v1_gebura_pb.RefreshAppResponse>;
+  listBindApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ListBindAppRequest, librarian_sephirah_v1_gebura_pb.ListBindAppResponse>;
   createAppPackage: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest, librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse>;
   updateAppPackage: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.UpdateAppPackageRequest, librarian_sephirah_v1_gebura_pb.UpdateAppPackageResponse>;
   listAppPackage: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ListAppPackageRequest, librarian_sephirah_v1_gebura_pb.ListAppPackageResponse>;
@@ -67,6 +68,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   bindApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.BindAppRequest, librarian_sephirah_v1_gebura_pb.BindAppResponse>;
   unBindApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UnBindAppRequest, librarian_sephirah_v1_gebura_pb.UnBindAppResponse>;
   refreshApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.RefreshAppRequest, librarian_sephirah_v1_gebura_pb.RefreshAppResponse>;
+  listBindApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListBindAppRequest, librarian_sephirah_v1_gebura_pb.ListBindAppResponse>;
   createAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest, librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse>;
   updateAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UpdateAppPackageRequest, librarian_sephirah_v1_gebura_pb.UpdateAppPackageResponse>;
   listAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListAppPackageRequest, librarian_sephirah_v1_gebura_pb.ListAppPackageResponse>;
@@ -137,6 +139,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   refreshApp(argument: librarian_sephirah_v1_gebura_pb.RefreshAppRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.RefreshAppResponse>): grpc.ClientUnaryCall;
   refreshApp(argument: librarian_sephirah_v1_gebura_pb.RefreshAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.RefreshAppResponse>): grpc.ClientUnaryCall;
   refreshApp(argument: librarian_sephirah_v1_gebura_pb.RefreshAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.RefreshAppResponse>): grpc.ClientUnaryCall;
+  listBindApp(argument: librarian_sephirah_v1_gebura_pb.ListBindAppRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ListBindAppResponse>): grpc.ClientUnaryCall;
+  listBindApp(argument: librarian_sephirah_v1_gebura_pb.ListBindAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ListBindAppResponse>): grpc.ClientUnaryCall;
+  listBindApp(argument: librarian_sephirah_v1_gebura_pb.ListBindAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ListBindAppResponse>): grpc.ClientUnaryCall;
   createAppPackage(argument: librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse>): grpc.ClientUnaryCall;
   createAppPackage(argument: librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse>): grpc.ClientUnaryCall;
   createAppPackage(argument: librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.CreateAppPackageResponse>): grpc.ClientUnaryCall;

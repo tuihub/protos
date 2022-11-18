@@ -130,6 +130,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppResponse> __Marshaller_librarian_sephirah_v1_RefreshAppResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest> __Marshaller_librarian_sephirah_v1_ListBindAppRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse> __Marshaller_librarian_sephirah_v1_ListBindAppResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest> __Marshaller_librarian_sephirah_v1_CreateAppPackageRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse> __Marshaller_librarian_sephirah_v1_CreateAppPackageResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse.Parser));
@@ -333,6 +337,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "RefreshApp",
         __Marshaller_librarian_sephirah_v1_RefreshAppRequest,
         __Marshaller_librarian_sephirah_v1_RefreshAppResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse> __Method_ListBindApp = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListBindApp",
+        __Marshaller_librarian_sephirah_v1_ListBindAppRequest,
+        __Marshaller_librarian_sephirah_v1_ListBindAppResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse> __Method_CreateAppPackage = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse>(
@@ -681,6 +693,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppResponse> RefreshApp(global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Normal` List bind app
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse> ListBindApp(global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -1699,6 +1723,54 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RefreshApp, null, options, request);
       }
       /// <summary>
+      /// `Gebura` `Normal` List bind app
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse ListBindApp(global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListBindApp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal` List bind app
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse ListBindApp(global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListBindApp, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal` List bind app
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse> ListBindAppAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListBindAppAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal` List bind app
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse> ListBindAppAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListBindApp, null, options, request);
+      }
+      /// <summary>
       /// `Gebura` `Admin`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -2355,6 +2427,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_BindApp, serviceImpl.BindApp)
           .AddMethod(__Method_UnBindApp, serviceImpl.UnBindApp)
           .AddMethod(__Method_RefreshApp, serviceImpl.RefreshApp)
+          .AddMethod(__Method_ListBindApp, serviceImpl.ListBindApp)
           .AddMethod(__Method_CreateAppPackage, serviceImpl.CreateAppPackage)
           .AddMethod(__Method_UpdateAppPackage, serviceImpl.UpdateAppPackage)
           .AddMethod(__Method_ListAppPackage, serviceImpl.ListAppPackage)
@@ -2396,6 +2469,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_BindApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppResponse>(serviceImpl.BindApp));
       serviceBinder.AddMethod(__Method_UnBindApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UnBindAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UnBindAppResponse>(serviceImpl.UnBindApp));
       serviceBinder.AddMethod(__Method_RefreshApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppResponse>(serviceImpl.RefreshApp));
+      serviceBinder.AddMethod(__Method_ListBindApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListBindAppResponse>(serviceImpl.ListBindApp));
       serviceBinder.AddMethod(__Method_CreateAppPackage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse>(serviceImpl.CreateAppPackage));
       serviceBinder.AddMethod(__Method_UpdateAppPackage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppPackageResponse>(serviceImpl.UpdateAppPackage));
       serviceBinder.AddMethod(__Method_ListAppPackage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackageResponse>(serviceImpl.ListAppPackage));

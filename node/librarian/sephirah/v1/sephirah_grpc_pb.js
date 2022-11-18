@@ -293,6 +293,28 @@ function deserialize_librarian_sephirah_v1_ListAppResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListBindAppRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListBindAppRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListBindAppRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListBindAppRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListBindAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListBindAppResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListBindAppResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListBindAppResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListBindAppResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListBindAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListFeedItemRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemRequest');
@@ -951,6 +973,18 @@ refreshApp: {
     requestDeserialize: deserialize_librarian_sephirah_v1_RefreshAppRequest,
     responseSerialize: serialize_librarian_sephirah_v1_RefreshAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RefreshAppResponse,
+  },
+  // `Gebura` `Normal` List bind app
+listBindApp: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.ListBindAppRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ListBindAppResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListBindAppRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListBindAppRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListBindAppResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListBindAppResponse,
   },
   // `Gebura` `Admin`
 createAppPackage: {

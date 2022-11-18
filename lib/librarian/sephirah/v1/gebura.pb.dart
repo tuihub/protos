@@ -194,10 +194,8 @@ class ListAppRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAppRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingRequest.create)
     ..pc<$4.AppSource>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: $4.AppSource.valueOf, enumValues: $4.AppSource.values, defaultEnumValue: $4.AppSource.APP_SOURCE_UNSPECIFIED)
-    ..pc<$4.AppType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $4.AppType.valueOf, enumValues: $4.AppType.values, defaultEnumValue: $4.AppType.APP_TYPE_UNSPECIFIED)
-    ..pc<$4.InternalID>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containDetails')
-    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withBind')
+    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containDetails')
     ..hasRequiredFields = false
   ;
 
@@ -205,10 +203,8 @@ class ListAppRequest extends $pb.GeneratedMessage {
   factory ListAppRequest({
     $4.PagingRequest? paging,
     $core.Iterable<$4.AppSource>? sourceFilter,
-    $core.Iterable<$4.AppType>? typeFilter,
     $core.Iterable<$4.InternalID>? idFilter,
     $core.bool? containDetails,
-    $core.bool? withBind,
   }) {
     final _result = create();
     if (paging != null) {
@@ -217,17 +213,11 @@ class ListAppRequest extends $pb.GeneratedMessage {
     if (sourceFilter != null) {
       _result.sourceFilter.addAll(sourceFilter);
     }
-    if (typeFilter != null) {
-      _result.typeFilter.addAll(typeFilter);
-    }
     if (idFilter != null) {
       _result.idFilter.addAll(idFilter);
     }
     if (containDetails != null) {
       _result.containDetails = containDetails;
-    }
-    if (withBind != null) {
-      _result.withBind = withBind;
     }
     return _result;
   }
@@ -267,147 +257,36 @@ class ListAppRequest extends $pb.GeneratedMessage {
   $core.List<$4.AppSource> get sourceFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.AppType> get typeFilter => $_getList(2);
+  $core.List<$4.InternalID> get idFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$4.InternalID> get idFilter => $_getList(3);
-
-  @$pb.TagNumber(5)
-  $core.bool get containDetails => $_getBF(4);
-  @$pb.TagNumber(5)
-  set containDetails($core.bool v) { $_setBool(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasContainDetails() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearContainDetails() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.bool get withBind => $_getBF(5);
-  @$pb.TagNumber(6)
-  set withBind($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasWithBind() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearWithBind() => clearField(6);
-}
-
-class ListAppResponse_AppList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAppResponse.AppList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$4.App>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $4.App.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListAppResponse_AppList._() : super();
-  factory ListAppResponse_AppList({
-    $core.Iterable<$4.App>? appList,
-  }) {
-    final _result = create();
-    if (appList != null) {
-      _result.appList.addAll(appList);
-    }
-    return _result;
-  }
-  factory ListAppResponse_AppList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListAppResponse_AppList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ListAppResponse_AppList clone() => ListAppResponse_AppList()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListAppResponse_AppList copyWith(void Function(ListAppResponse_AppList) updates) => super.copyWith((message) => updates(message as ListAppResponse_AppList)) as ListAppResponse_AppList; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ListAppResponse_AppList create() => ListAppResponse_AppList._();
-  ListAppResponse_AppList createEmptyInstance() => create();
-  static $pb.PbList<ListAppResponse_AppList> createRepeated() => $pb.PbList<ListAppResponse_AppList>();
-  @$core.pragma('dart2js:noInline')
-  static ListAppResponse_AppList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAppResponse_AppList>(create);
-  static ListAppResponse_AppList? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$4.App> get appList => $_getList(0);
-}
-
-class ListAppResponse_AppListList extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAppResponse.AppListList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<ListAppResponse_AppList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appListList', $pb.PbFieldType.PM, subBuilder: ListAppResponse_AppList.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListAppResponse_AppListList._() : super();
-  factory ListAppResponse_AppListList({
-    $core.Iterable<ListAppResponse_AppList>? appListList,
-  }) {
-    final _result = create();
-    if (appListList != null) {
-      _result.appListList.addAll(appListList);
-    }
-    return _result;
-  }
-  factory ListAppResponse_AppListList.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListAppResponse_AppListList.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ListAppResponse_AppListList clone() => ListAppResponse_AppListList()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListAppResponse_AppListList copyWith(void Function(ListAppResponse_AppListList) updates) => super.copyWith((message) => updates(message as ListAppResponse_AppListList)) as ListAppResponse_AppListList; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ListAppResponse_AppListList create() => ListAppResponse_AppListList._();
-  ListAppResponse_AppListList createEmptyInstance() => create();
-  static $pb.PbList<ListAppResponse_AppListList> createRepeated() => $pb.PbList<ListAppResponse_AppListList>();
-  @$core.pragma('dart2js:noInline')
-  static ListAppResponse_AppListList getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAppResponse_AppListList>(create);
-  static ListAppResponse_AppListList? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<ListAppResponse_AppList> get appListList => $_getList(0);
-}
-
-enum ListAppResponse_Content {
-  withoutBind, 
-  withBind, 
-  notSet
+  $core.bool get containDetails => $_getBF(3);
+  @$pb.TagNumber(4)
+  set containDetails($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasContainDetails() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContainDetails() => clearField(4);
 }
 
 class ListAppResponse extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, ListAppResponse_Content> _ListAppResponse_ContentByTag = {
-    1 : ListAppResponse_Content.withoutBind,
-    2 : ListAppResponse_Content.withBind,
-    0 : ListAppResponse_Content.notSet
-  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAppResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2])
-    ..aOM<ListAppResponse_AppList>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withoutBind', subBuilder: ListAppResponse_AppList.create)
-    ..aOM<ListAppResponse_AppListList>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withBind', subBuilder: ListAppResponse_AppListList.create)
-    ..aOM<$4.PagingResponse>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingResponse.create)
+    ..aOM<$4.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingResponse.create)
+    ..pc<$4.App>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $4.App.create)
     ..hasRequiredFields = false
   ;
 
   ListAppResponse._() : super();
   factory ListAppResponse({
-    ListAppResponse_AppList? withoutBind,
-    ListAppResponse_AppListList? withBind,
     $4.PagingResponse? paging,
+    $core.Iterable<$4.App>? appList,
   }) {
     final _result = create();
-    if (withoutBind != null) {
-      _result.withoutBind = withoutBind;
-    }
-    if (withBind != null) {
-      _result.withBind = withBind;
-    }
     if (paging != null) {
       _result.paging = paging;
+    }
+    if (appList != null) {
+      _result.appList.addAll(appList);
     }
     return _result;
   }
@@ -432,41 +311,19 @@ class ListAppResponse extends $pb.GeneratedMessage {
   static ListAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAppResponse>(create);
   static ListAppResponse? _defaultInstance;
 
-  ListAppResponse_Content whichContent() => _ListAppResponse_ContentByTag[$_whichOneof(0)]!;
-  void clearContent() => clearField($_whichOneof(0));
-
   @$pb.TagNumber(1)
-  ListAppResponse_AppList get withoutBind => $_getN(0);
+  $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set withoutBind(ListAppResponse_AppList v) { setField(1, v); }
+  set paging($4.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasWithoutBind() => $_has(0);
+  $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearWithoutBind() => clearField(1);
+  void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  ListAppResponse_AppList ensureWithoutBind() => $_ensure(0);
+  $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  ListAppResponse_AppListList get withBind => $_getN(1);
-  @$pb.TagNumber(2)
-  set withBind(ListAppResponse_AppListList v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasWithBind() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearWithBind() => clearField(2);
-  @$pb.TagNumber(2)
-  ListAppResponse_AppListList ensureWithBind() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $4.PagingResponse get paging => $_getN(2);
-  @$pb.TagNumber(3)
-  set paging($4.PagingResponse v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasPaging() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPaging() => clearField(3);
-  @$pb.TagNumber(3)
-  $4.PagingResponse ensurePaging() => $_ensure(2);
+  $core.List<$4.App> get appList => $_getList(1);
 }
 
 class BindAppRequest extends $pb.GeneratedMessage {
@@ -675,6 +532,96 @@ class UnBindAppResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UnBindAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnBindAppResponse>(create);
   static UnBindAppResponse? _defaultInstance;
+}
+
+class ListBindAppRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListBindAppRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appId', subBuilder: $4.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  ListBindAppRequest._() : super();
+  factory ListBindAppRequest({
+    $4.InternalID? appId,
+  }) {
+    final _result = create();
+    if (appId != null) {
+      _result.appId = appId;
+    }
+    return _result;
+  }
+  factory ListBindAppRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListBindAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListBindAppRequest clone() => ListBindAppRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListBindAppRequest copyWith(void Function(ListBindAppRequest) updates) => super.copyWith((message) => updates(message as ListBindAppRequest)) as ListBindAppRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ListBindAppRequest create() => ListBindAppRequest._();
+  ListBindAppRequest createEmptyInstance() => create();
+  static $pb.PbList<ListBindAppRequest> createRepeated() => $pb.PbList<ListBindAppRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListBindAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBindAppRequest>(create);
+  static ListBindAppRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $4.InternalID get appId => $_getN(0);
+  @$pb.TagNumber(1)
+  set appId($4.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+  @$pb.TagNumber(1)
+  $4.InternalID ensureAppId() => $_ensure(0);
+}
+
+class ListBindAppResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListBindAppResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<$4.App>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $4.App.create)
+    ..hasRequiredFields = false
+  ;
+
+  ListBindAppResponse._() : super();
+  factory ListBindAppResponse({
+    $core.Iterable<$4.App>? appList,
+  }) {
+    final _result = create();
+    if (appList != null) {
+      _result.appList.addAll(appList);
+    }
+    return _result;
+  }
+  factory ListBindAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListBindAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListBindAppResponse clone() => ListBindAppResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListBindAppResponse copyWith(void Function(ListBindAppResponse) updates) => super.copyWith((message) => updates(message as ListBindAppResponse)) as ListBindAppResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ListBindAppResponse create() => ListBindAppResponse._();
+  ListBindAppResponse createEmptyInstance() => create();
+  static $pb.PbList<ListBindAppResponse> createRepeated() => $pb.PbList<ListBindAppResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListBindAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListBindAppResponse>(create);
+  static ListBindAppResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$4.App> get appList => $_getList(0);
 }
 
 class RefreshAppRequest extends $pb.GeneratedMessage {

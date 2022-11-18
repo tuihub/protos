@@ -131,6 +131,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           ($2.RefreshAppRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $2.RefreshAppResponse.fromBuffer(value));
+  static final _$listBindApp =
+      $grpc.ClientMethod<$2.ListBindAppRequest, $2.ListBindAppResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp',
+          ($2.ListBindAppRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $2.ListBindAppResponse.fromBuffer(value));
   static final _$createAppPackage = $grpc.ClientMethod<
           $2.CreateAppPackageRequest, $2.CreateAppPackageResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage',
@@ -324,6 +330,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       $2.RefreshAppRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.ListBindAppResponse> listBindApp(
+      $2.ListBindAppRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listBindApp, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.CreateAppPackageResponse> createAppPackage(
@@ -557,6 +569,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $2.RefreshAppRequest.fromBuffer(value),
         ($2.RefreshAppResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$2.ListBindAppRequest, $2.ListBindAppResponse>(
+            'ListBindApp',
+            listBindApp_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $2.ListBindAppRequest.fromBuffer(value),
+            ($2.ListBindAppResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.CreateAppPackageRequest,
             $2.CreateAppPackageResponse>(
         'CreateAppPackage',
@@ -753,6 +774,11 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return refreshApp(call, await request);
   }
 
+  $async.Future<$2.ListBindAppResponse> listBindApp_Pre($grpc.ServiceCall call,
+      $async.Future<$2.ListBindAppRequest> request) async {
+    return listBindApp(call, await request);
+  }
+
   $async.Future<$2.CreateAppPackageResponse> createAppPackage_Pre(
       $grpc.ServiceCall call,
       $async.Future<$2.CreateAppPackageRequest> request) async {
@@ -870,6 +896,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $2.UnBindAppRequest request);
   $async.Future<$2.RefreshAppResponse> refreshApp(
       $grpc.ServiceCall call, $2.RefreshAppRequest request);
+  $async.Future<$2.ListBindAppResponse> listBindApp(
+      $grpc.ServiceCall call, $2.ListBindAppRequest request);
   $async.Future<$2.CreateAppPackageResponse> createAppPackage(
       $grpc.ServiceCall call, $2.CreateAppPackageRequest request);
   $async.Future<$2.UpdateAppPackageResponse> updateAppPackage(
