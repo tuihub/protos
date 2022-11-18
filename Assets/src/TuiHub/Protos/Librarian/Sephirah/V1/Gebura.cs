@@ -31,70 +31,71 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "EUNyZWF0ZUFwcFJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
             "LkludGVybmFsSURSAmlkIjcKEFVwZGF0ZUFwcFJlcXVlc3QSIwoDYXBwGAEg",
             "ASgLMhEubGlicmFyaWFuLnYxLkFwcFIDYXBwIhMKEVVwZGF0ZUFwcFJlc3Bv",
-            "bnNlIuMBCg5MaXN0QXBwUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJy",
+            "bnNlIpsCCg5MaXN0QXBwUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJy",
             "YXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjwKDXNvdXJjZV9maWx0",
             "ZXIYAiADKA4yFy5saWJyYXJpYW4udjEuQXBwU291cmNlUgxzb3VyY2VGaWx0",
-            "ZXISNQoJaWRfZmlsdGVyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFs",
-            "SURSCGlkRmlsdGVyEicKD2NvbnRhaW5fZGV0YWlscxgEIAEoCFIOY29udGFp",
-            "bkRldGFpbHMidQoPTGlzdEFwcFJlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIc",
-            "LmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEiwKCGFwcF9s",
-            "aXN0GAIgAygLMhEubGlicmFyaWFuLnYxLkFwcFIHYXBwTGlzdCKHAQoOQmlu",
-            "ZEFwcFJlcXVlc3QSQAoPaW50ZXJuYWxfYXBwX2lkGAEgASgLMhgubGlicmFy",
-            "aWFuLnYxLkludGVybmFsSURSDWludGVybmFsQXBwSWQSMwoLYmluZF9hcHBf",
-            "aWQYAiABKAsyEy5saWJyYXJpYW4udjEuQXBwSURSCWJpbmRBcHBJZCJLCg9C",
-            "aW5kQXBwUmVzcG9uc2USOAoLYmluZF9hcHBfaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFIJYmluZEFwcElkIo4BChBVbkJpbmRBcHBSZXF1",
-            "ZXN0EkAKD2ludGVybmFsX2FwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5J",
-            "bnRlcm5hbElEUg1pbnRlcm5hbEFwcElkEjgKC2JpbmRfYXBwX2lkGAIgASgL",
-            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCWJpbmRBcHBJZCITChFVbkJp",
-            "bmRBcHBSZXNwb25zZSJFChJMaXN0QmluZEFwcFJlcXVlc3QSLwoGYXBwX2lk",
-            "GAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkIkMKE0xp",
-            "c3RCaW5kQXBwUmVzcG9uc2USLAoIYXBwX2xpc3QYASADKAsyES5saWJyYXJp",
-            "YW4udjEuQXBwUgdhcHBMaXN0IkQKEVJlZnJlc2hBcHBSZXF1ZXN0Ei8KBmFw",
-            "cF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgVhcHBJZCIU",
-            "ChJSZWZyZXNoQXBwUmVzcG9uc2UiVAoXQ3JlYXRlQXBwUGFja2FnZVJlcXVl",
-            "c3QSOQoLYXBwX3BhY2thZ2UYASABKAsyGC5saWJyYXJpYW4udjEuQXBwUGFj",
-            "a2FnZVIKYXBwUGFja2FnZSJEChhDcmVhdGVBcHBQYWNrYWdlUmVzcG9uc2US",
-            "KAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiVAoX",
-            "VXBkYXRlQXBwUGFja2FnZVJlcXVlc3QSOQoLYXBwX3BhY2thZ2UYASABKAsy",
-            "GC5saWJyYXJpYW4udjEuQXBwUGFja2FnZVIKYXBwUGFja2FnZSIaChhVcGRh",
-            "dGVBcHBQYWNrYWdlUmVzcG9uc2UijwIKFUxpc3RBcHBQYWNrYWdlUmVxdWVz",
-            "dBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVz",
-            "dFIGcGFnaW5nEkMKDXNvdXJjZV9maWx0ZXIYAiADKA4yHi5saWJyYXJpYW4u",
-            "djEuQXBwUGFja2FnZVNvdXJjZVIMc291cmNlRmlsdGVyEjUKCWlkX2ZpbHRl",
-            "chgDIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghpZEZpbHRlchJF",
-            "ChJiaW5kX2FwcF9pZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFIPYmluZEFwcElkRmlsdGVyIpIBChZMaXN0QXBwUGFja2FnZVJl",
-            "c3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdS",
-            "ZXNwb25zZVIGcGFnaW5nEkIKEGFwcF9wYWNrYWdlX2xpc3QYAiADKAsyGC5s",
-            "aWJyYXJpYW4udjEuQXBwUGFja2FnZVIOYXBwUGFja2FnZUxpc3QiXQoXUmVw",
-            "b3J0QXBwUGFja2FnZVJlcXVlc3QSQgoQYXBwX3BhY2thZ2VfbGlzdBgBIAMo",
-            "CzIYLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlUg5hcHBQYWNrYWdlTGlzdCIa",
-            "ChhSZXBvcnRBcHBQYWNrYWdlUmVzcG9uc2UiiAEKFUJpbmRBcHBQYWNrYWdl",
-            "UmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFIFYXBwSWQSPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIhgKFkJpbmRBcHBQYWNr",
-            "YWdlUmVzcG9uc2UiWQoXVW5CaW5kQXBwUGFja2FnZVJlcXVlc3QSPgoOYXBw",
-            "X3BhY2thZ2VfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIM",
-            "YXBwUGFja2FnZUlkIhoKGFVuQmluZEFwcFBhY2thZ2VSZXNwb25zZSKlAQoZ",
-            "VXBsb2FkR2FtZVNhdmVGaWxlUmVxdWVzdBJICg1maWxlX21ldGFkYXRhGAEg",
-            "ASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIMZmls",
-            "ZU1ldGFkYXRhEj4KDmFwcF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFu",
-            "LnYxLkludGVybmFsSURSDGFwcFBhY2thZ2VJZCI/ChpVcGxvYWRHYW1lU2F2",
-            "ZUZpbGVSZXNwb25zZRIhCgx1cGxvYWRfdG9rZW4YASABKAlSC3VwbG9hZFRv",
-            "a2VuIkcKG0Rvd25sb2FkR2FtZVNhdmVGaWxlUmVxdWVzdBIoCgJpZBgBIAEo",
-            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCJFChxEb3dubG9hZEdh",
-            "bWVTYXZlRmlsZVJlc3BvbnNlEiUKDmRvd25sb2FkX3Rva2VuGAIgASgJUg1k",
-            "b3dubG9hZFRva2VuIo4BChdMaXN0R2FtZVNhdmVGaWxlUmVxdWVzdBIzCgZw",
-            "YWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFn",
-            "aW5nEj4KDmFwcF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLklu",
-            "dGVybmFsSURSDGFwcFBhY2thZ2VJZCKSAQoYTGlzdEdhbWVTYXZlRmlsZVJl",
-            "c3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdS",
-            "ZXNwb25zZVIGcGFnaW5nEkAKCWZpbGVfbGlzdBgCIAMoCzIjLmxpYnJhcmlh",
-            "bi5zZXBoaXJhaC52MS5GaWxlTWV0YWRhdGFSCGZpbGVMaXN0Ql1aNWdpdGh1",
-            "Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3Yx",
-            "O3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnBy",
-            "b3RvMw=="));
+            "ZXISNgoLdHlwZV9maWx0ZXIYAyADKA4yFS5saWJyYXJpYW4udjEuQXBwVHlw",
+            "ZVIKdHlwZUZpbHRlchI1CglpZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4u",
+            "djEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISJwoPY29udGFpbl9kZXRhaWxzGAUg",
+            "ASgIUg5jb250YWluRGV0YWlscyJ1Cg9MaXN0QXBwUmVzcG9uc2USNAoGcGFn",
+            "aW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdp",
+            "bmcSLAoIYXBwX2xpc3QYAiADKAsyES5saWJyYXJpYW4udjEuQXBwUgdhcHBM",
+            "aXN0IocBCg5CaW5kQXBwUmVxdWVzdBJACg9pbnRlcm5hbF9hcHBfaWQYASAB",
+            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFINaW50ZXJuYWxBcHBJZBIz",
+            "CgtiaW5kX2FwcF9pZBgCIAEoCzITLmxpYnJhcmlhbi52MS5BcHBJRFIJYmlu",
+            "ZEFwcElkIksKD0JpbmRBcHBSZXNwb25zZRI4CgtiaW5kX2FwcF9pZBgBIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgliaW5kQXBwSWQijgEKEFVu",
+            "QmluZEFwcFJlcXVlc3QSQAoPaW50ZXJuYWxfYXBwX2lkGAEgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSDWludGVybmFsQXBwSWQSOAoLYmluZF9h",
+            "cHBfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIJYmluZEFw",
+            "cElkIhMKEVVuQmluZEFwcFJlc3BvbnNlIkUKEkxpc3RCaW5kQXBwUmVxdWVz",
+            "dBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIF",
+            "YXBwSWQiQwoTTGlzdEJpbmRBcHBSZXNwb25zZRIsCghhcHBfbGlzdBgBIAMo",
+            "CzIRLmxpYnJhcmlhbi52MS5BcHBSB2FwcExpc3QiRAoRUmVmcmVzaEFwcFJl",
+            "cXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFs",
+            "SURSBWFwcElkIhQKElJlZnJlc2hBcHBSZXNwb25zZSJUChdDcmVhdGVBcHBQ",
+            "YWNrYWdlUmVxdWVzdBI5CgthcHBfcGFja2FnZRgBIAEoCzIYLmxpYnJhcmlh",
+            "bi52MS5BcHBQYWNrYWdlUgphcHBQYWNrYWdlIkQKGENyZWF0ZUFwcFBhY2th",
+            "Z2VSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
+            "bElEUgJpZCJUChdVcGRhdGVBcHBQYWNrYWdlUmVxdWVzdBI5CgthcHBfcGFj",
+            "a2FnZRgBIAEoCzIYLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlUgphcHBQYWNr",
+            "YWdlIhoKGFVwZGF0ZUFwcFBhY2thZ2VSZXNwb25zZSKPAgoVTGlzdEFwcFBh",
+            "Y2thZ2VSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5Q",
+            "YWdpbmdSZXF1ZXN0UgZwYWdpbmcSQwoNc291cmNlX2ZpbHRlchgCIAMoDjIe",
+            "LmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlU291cmNlUgxzb3VyY2VGaWx0ZXIS",
+            "NQoJaWRfZmlsdGVyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
+            "CGlkRmlsdGVyEkUKEmJpbmRfYXBwX2lkX2ZpbHRlchgEIAMoCzIYLmxpYnJh",
+            "cmlhbi52MS5JbnRlcm5hbElEUg9iaW5kQXBwSWRGaWx0ZXIikgEKFkxpc3RB",
+            "cHBQYWNrYWdlUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
+            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSQgoQYXBwX3BhY2thZ2VfbGlz",
+            "dBgCIAMoCzIYLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlUg5hcHBQYWNrYWdl",
+            "TGlzdCJdChdSZXBvcnRBcHBQYWNrYWdlUmVxdWVzdBJCChBhcHBfcGFja2Fn",
+            "ZV9saXN0GAEgAygLMhgubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VSDmFwcFBh",
+            "Y2thZ2VMaXN0IhoKGFJlcG9ydEFwcFBhY2thZ2VSZXNwb25zZSKIAQoVQmlu",
+            "ZEFwcFBhY2thZ2VSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlh",
+            "bi52MS5JbnRlcm5hbElEUgVhcHBJZBI+Cg5hcHBfcGFja2FnZV9pZBgCIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxhcHBQYWNrYWdlSWQiGAoW",
+            "QmluZEFwcFBhY2thZ2VSZXNwb25zZSJZChdVbkJpbmRBcHBQYWNrYWdlUmVx",
+            "dWVzdBI+Cg5hcHBfcGFja2FnZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5J",
+            "bnRlcm5hbElEUgxhcHBQYWNrYWdlSWQiGgoYVW5CaW5kQXBwUGFja2FnZVJl",
+            "c3BvbnNlIqUBChlVcGxvYWRHYW1lU2F2ZUZpbGVSZXF1ZXN0EkgKDWZpbGVf",
+            "bWV0YWRhdGEYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZU1l",
+            "dGFkYXRhUgxmaWxlTWV0YWRhdGESPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsy",
+            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIj8KGlVw",
+            "bG9hZEdhbWVTYXZlRmlsZVJlc3BvbnNlEiEKDHVwbG9hZF90b2tlbhgBIAEo",
+            "CVILdXBsb2FkVG9rZW4iRwobRG93bmxvYWRHYW1lU2F2ZUZpbGVSZXF1ZXN0",
+            "EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIkUK",
+            "HERvd25sb2FkR2FtZVNhdmVGaWxlUmVzcG9uc2USJQoOZG93bmxvYWRfdG9r",
+            "ZW4YAiABKAlSDWRvd25sb2FkVG9rZW4ijgEKF0xpc3RHYW1lU2F2ZUZpbGVS",
+            "ZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdS",
+            "ZXF1ZXN0UgZwYWdpbmcSPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIpIBChhMaXN0R2Ft",
+            "ZVNhdmVGaWxlUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
+            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSQAoJZmlsZV9saXN0GAIgAygL",
+            "MiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIIZmlsZUxp",
+            "c3RCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4v",
+            "c2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBo",
+            "aXJhaC5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +103,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRequest.Parser, new[]{ "Paging", "SourceFilter", "IdFilter", "ContainDetails" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRequest.Parser, new[]{ "Paging", "SourceFilter", "TypeFilter", "IdFilter", "ContainDetails" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppResponse.Parser, new[]{ "Paging", "AppList" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppRequest.Parser, new[]{ "InternalAppId", "BindAppId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppResponse.Parser, new[]{ "BindAppId" }, null, null, null, null),
@@ -924,6 +925,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public ListAppRequest(ListAppRequest other) : this() {
       paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       sourceFilter_ = other.sourceFilter_.Clone();
+      typeFilter_ = other.typeFilter_.Clone();
       idFilter_ = other.idFilter_.Clone();
       containDetails_ = other.containDetails_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -958,10 +960,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       get { return sourceFilter_; }
     }
 
+    /// <summary>Field number for the "type_filter" field.</summary>
+    public const int TypeFilterFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.AppType> _repeated_typeFilter_codec
+        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.V1.AppType) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppType> TypeFilter {
+      get { return typeFilter_; }
+    }
+
     /// <summary>Field number for the "id_filter" field.</summary>
-    public const int IdFilterFieldNumber = 3;
+    public const int IdFilterFieldNumber = 4;
     private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.InternalID> _repeated_idFilter_codec
-        = pb::FieldCodec.ForMessage(26, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
+        = pb::FieldCodec.ForMessage(34, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
     private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> idFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -970,7 +983,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "contain_details" field.</summary>
-    public const int ContainDetailsFieldNumber = 4;
+    public const int ContainDetailsFieldNumber = 5;
     private bool containDetails_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -998,6 +1011,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (!object.Equals(Paging, other.Paging)) return false;
       if(!sourceFilter_.Equals(other.sourceFilter_)) return false;
+      if(!typeFilter_.Equals(other.typeFilter_)) return false;
       if(!idFilter_.Equals(other.idFilter_)) return false;
       if (ContainDetails != other.ContainDetails) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1009,6 +1023,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       if (paging_ != null) hash ^= Paging.GetHashCode();
       hash ^= sourceFilter_.GetHashCode();
+      hash ^= typeFilter_.GetHashCode();
       hash ^= idFilter_.GetHashCode();
       if (ContainDetails != false) hash ^= ContainDetails.GetHashCode();
       if (_unknownFields != null) {
@@ -1034,9 +1049,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteMessage(Paging);
       }
       sourceFilter_.WriteTo(output, _repeated_sourceFilter_codec);
+      typeFilter_.WriteTo(output, _repeated_typeFilter_codec);
       idFilter_.WriteTo(output, _repeated_idFilter_codec);
       if (ContainDetails != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteBool(ContainDetails);
       }
       if (_unknownFields != null) {
@@ -1054,9 +1070,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteMessage(Paging);
       }
       sourceFilter_.WriteTo(ref output, _repeated_sourceFilter_codec);
+      typeFilter_.WriteTo(ref output, _repeated_typeFilter_codec);
       idFilter_.WriteTo(ref output, _repeated_idFilter_codec);
       if (ContainDetails != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteBool(ContainDetails);
       }
       if (_unknownFields != null) {
@@ -1073,6 +1090,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
       }
       size += sourceFilter_.CalculateSize(_repeated_sourceFilter_codec);
+      size += typeFilter_.CalculateSize(_repeated_typeFilter_codec);
       size += idFilter_.CalculateSize(_repeated_idFilter_codec);
       if (ContainDetails != false) {
         size += 1 + 1;
@@ -1096,6 +1114,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         Paging.MergeFrom(other.Paging);
       }
       sourceFilter_.Add(other.sourceFilter_);
+      typeFilter_.Add(other.typeFilter_);
       idFilter_.Add(other.idFilter_);
       if (other.ContainDetails != false) {
         ContainDetails = other.ContainDetails;
@@ -1127,11 +1146,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             sourceFilter_.AddEntriesFrom(input, _repeated_sourceFilter_codec);
             break;
           }
-          case 26: {
+          case 26:
+          case 24: {
+            typeFilter_.AddEntriesFrom(input, _repeated_typeFilter_codec);
+            break;
+          }
+          case 34: {
             idFilter_.AddEntriesFrom(input, _repeated_idFilter_codec);
             break;
           }
-          case 32: {
+          case 40: {
             ContainDetails = input.ReadBool();
             break;
           }
@@ -1162,11 +1186,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             sourceFilter_.AddEntriesFrom(ref input, _repeated_sourceFilter_codec);
             break;
           }
-          case 26: {
+          case 26:
+          case 24: {
+            typeFilter_.AddEntriesFrom(ref input, _repeated_typeFilter_codec);
+            break;
+          }
+          case 34: {
             idFilter_.AddEntriesFrom(ref input, _repeated_idFilter_codec);
             break;
           }
-          case 32: {
+          case 40: {
             ContainDetails = input.ReadBool();
             break;
           }

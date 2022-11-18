@@ -3381,6 +3381,9 @@ impl serde::Serialize for ListAppRequest {
         if !self.source_filter.is_empty() {
             len += 1;
         }
+        if !self.type_filter.is_empty() {
+            len += 1;
+        }
         if !self.id_filter.is_empty() {
             len += 1;
         }
@@ -3397,6 +3400,13 @@ impl serde::Serialize for ListAppRequest {
                     .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
                 }).collect::<Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("sourceFilter", &v)?;
+        }
+        if !self.type_filter.is_empty() {
+            let v = self.type_filter.iter().cloned().map(|v| {
+                super::super::v1::AppType::from_i32(v)
+                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("typeFilter", &v)?;
         }
         if !self.id_filter.is_empty() {
             struct_ser.serialize_field("idFilter", &self.id_filter)?;
@@ -3416,6 +3426,7 @@ impl<'de> serde::Deserialize<'de> for ListAppRequest {
         const FIELDS: &[&str] = &[
             "paging",
             "sourceFilter",
+            "typeFilter",
             "idFilter",
             "containDetails",
         ];
@@ -3424,6 +3435,7 @@ impl<'de> serde::Deserialize<'de> for ListAppRequest {
         enum GeneratedField {
             Paging,
             SourceFilter,
+            TypeFilter,
             IdFilter,
             ContainDetails,
         }
@@ -3449,6 +3461,7 @@ impl<'de> serde::Deserialize<'de> for ListAppRequest {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
                             "sourceFilter" => Ok(GeneratedField::SourceFilter),
+                            "typeFilter" => Ok(GeneratedField::TypeFilter),
                             "idFilter" => Ok(GeneratedField::IdFilter),
                             "containDetails" => Ok(GeneratedField::ContainDetails),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -3472,6 +3485,7 @@ impl<'de> serde::Deserialize<'de> for ListAppRequest {
             {
                 let mut paging__ = None;
                 let mut source_filter__ = None;
+                let mut type_filter__ = None;
                 let mut id_filter__ = None;
                 let mut contain_details__ = None;
                 while let Some(k) = map.next_key()? {
@@ -3487,6 +3501,12 @@ impl<'de> serde::Deserialize<'de> for ListAppRequest {
                                 return Err(serde::de::Error::duplicate_field("sourceFilter"));
                             }
                             source_filter__ = Some(map.next_value::<Vec<super::super::v1::AppSource>>()?.into_iter().map(|x| x as i32).collect());
+                        }
+                        GeneratedField::TypeFilter => {
+                            if type_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("typeFilter"));
+                            }
+                            type_filter__ = Some(map.next_value::<Vec<super::super::v1::AppType>>()?.into_iter().map(|x| x as i32).collect());
                         }
                         GeneratedField::IdFilter => {
                             if id_filter__.is_some() {
@@ -3505,6 +3525,7 @@ impl<'de> serde::Deserialize<'de> for ListAppRequest {
                 Ok(ListAppRequest {
                     paging: paging__,
                     source_filter: source_filter__.unwrap_or_default(),
+                    type_filter: type_filter__.unwrap_or_default(),
                     id_filter: id_filter__.unwrap_or_default(),
                     contain_details: contain_details__.unwrap_or_default(),
                 })

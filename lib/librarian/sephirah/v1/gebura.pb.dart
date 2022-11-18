@@ -194,8 +194,9 @@ class ListAppRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListAppRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingRequest.create)
     ..pc<$4.AppSource>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: $4.AppSource.valueOf, enumValues: $4.AppSource.values, defaultEnumValue: $4.AppSource.APP_SOURCE_UNSPECIFIED)
-    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
-    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containDetails')
+    ..pc<$4.AppType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $4.AppType.valueOf, enumValues: $4.AppType.values, defaultEnumValue: $4.AppType.APP_TYPE_UNSPECIFIED)
+    ..pc<$4.InternalID>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'containDetails')
     ..hasRequiredFields = false
   ;
 
@@ -203,6 +204,7 @@ class ListAppRequest extends $pb.GeneratedMessage {
   factory ListAppRequest({
     $4.PagingRequest? paging,
     $core.Iterable<$4.AppSource>? sourceFilter,
+    $core.Iterable<$4.AppType>? typeFilter,
     $core.Iterable<$4.InternalID>? idFilter,
     $core.bool? containDetails,
   }) {
@@ -212,6 +214,9 @@ class ListAppRequest extends $pb.GeneratedMessage {
     }
     if (sourceFilter != null) {
       _result.sourceFilter.addAll(sourceFilter);
+    }
+    if (typeFilter != null) {
+      _result.typeFilter.addAll(typeFilter);
     }
     if (idFilter != null) {
       _result.idFilter.addAll(idFilter);
@@ -257,16 +262,19 @@ class ListAppRequest extends $pb.GeneratedMessage {
   $core.List<$4.AppSource> get sourceFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.InternalID> get idFilter => $_getList(2);
+  $core.List<$4.AppType> get typeFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.bool get containDetails => $_getBF(3);
-  @$pb.TagNumber(4)
-  set containDetails($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasContainDetails() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearContainDetails() => clearField(4);
+  $core.List<$4.InternalID> get idFilter => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.bool get containDetails => $_getBF(4);
+  @$pb.TagNumber(5)
+  set containDetails($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasContainDetails() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContainDetails() => clearField(5);
 }
 
 class ListAppResponse extends $pb.GeneratedMessage {

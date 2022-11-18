@@ -51,13 +51,14 @@ const ListAppRequest$json = const {
   '2': const [
     const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     const {'1': 'source_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.v1.AppSource', '10': 'sourceFilter'},
-    const {'1': 'id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    const {'1': 'contain_details', '3': 4, '4': 1, '5': 8, '10': 'containDetails'},
+    const {'1': 'type_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.v1.AppType', '10': 'typeFilter'},
+    const {'1': 'id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    const {'1': 'contain_details', '3': 5, '4': 1, '5': 8, '10': 'containDetails'},
   ],
 };
 
 /// Descriptor for `ListAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAppRequestDescriptor = $convert.base64Decode('Cg5MaXN0QXBwUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjwKDXNvdXJjZV9maWx0ZXIYAiADKA4yFy5saWJyYXJpYW4udjEuQXBwU291cmNlUgxzb3VyY2VGaWx0ZXISNQoJaWRfZmlsdGVyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCGlkRmlsdGVyEicKD2NvbnRhaW5fZGV0YWlscxgEIAEoCFIOY29udGFpbkRldGFpbHM=');
+final $typed_data.Uint8List listAppRequestDescriptor = $convert.base64Decode('Cg5MaXN0QXBwUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjwKDXNvdXJjZV9maWx0ZXIYAiADKA4yFy5saWJyYXJpYW4udjEuQXBwU291cmNlUgxzb3VyY2VGaWx0ZXISNgoLdHlwZV9maWx0ZXIYAyADKA4yFS5saWJyYXJpYW4udjEuQXBwVHlwZVIKdHlwZUZpbHRlchI1CglpZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISJwoPY29udGFpbl9kZXRhaWxzGAUgASgIUg5jb250YWluRGV0YWlscw==');
 @$core.Deprecated('Use listAppResponseDescriptor instead')
 const ListAppResponse$json = const {
   '1': 'ListAppResponse',
