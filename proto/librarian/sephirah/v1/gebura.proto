@@ -26,25 +26,13 @@ message UpdateAppResponse {}
 message ListAppRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.AppSource source_filter = 2;
-  repeated librarian.v1.AppType type_filter = 3;
-  repeated librarian.v1.InternalID id_filter = 4;
-  bool contain_details = 5;
-  bool with_bind = 6;
+  repeated librarian.v1.InternalID id_filter = 3;
+  bool contain_details = 4;
 }
 
 message ListAppResponse {
-  librarian.v1.PagingResponse paging = 3;
-  oneof content {
-    AppList without_bind = 1;
-    AppListList with_bind = 2;
-  }
-
-  message AppList {
-    repeated librarian.v1.App app_list = 1;
-  }
-  message AppListList {
-    repeated AppList app_list_list = 1;
-  }
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.App app_list = 2;
 }
 
 message BindAppRequest {
@@ -62,6 +50,14 @@ message UnBindAppRequest {
 }
 
 message UnBindAppResponse {}
+
+message ListBindAppRequest {
+  librarian.v1.InternalID app_id = 1;
+}
+
+message ListBindAppResponse {
+  repeated librarian.v1.App app_list = 1;
+}
 
 message RefreshAppRequest {
   librarian.v1.InternalID app_id = 1;

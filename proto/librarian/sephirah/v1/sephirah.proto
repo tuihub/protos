@@ -66,6 +66,8 @@ service LibrarianSephirahService {
   rpc UnBindApp(UnBindAppRequest) returns (UnBindAppResponse);
   // `Gebura` `Admin` Submit an asynchronous update request
   rpc RefreshApp(RefreshAppRequest) returns (RefreshAppResponse);
+  // `Gebura` `Normal` List bind app
+  rpc ListBindApp(ListBindAppRequest) returns (ListBindAppResponse);
 
   // `Gebura` `Admin`
   rpc CreateAppPackage(CreateAppPackageRequest) returns (CreateAppPackageResponse);
