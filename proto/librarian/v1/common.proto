@@ -82,9 +82,10 @@ message AppPackage {
   AppPackageSource source = 2;
   InternalID source_id = 3;
   string source_package_id = 4;
-  string description = 5;
-  AppPackageBinary binary = 6;
-  App source_bind_app = 7;
+  string name = 5;
+  string description = 6;
+  AppPackageBinary binary = 7;
+  App source_bind_app = 8;
 }
 
 enum AppPackageSource {
@@ -97,8 +98,6 @@ message AppPackageBinary {
   string name = 1;
   string size = 2;
   string public_url = 3;
-  string md5_digest = 4;
-  string sha256_digest = 5;
 }
 
 message Feed {

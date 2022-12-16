@@ -93,10 +93,12 @@ message ListAppPackageResponse {
 }
 
 message ReportAppPackageRequest {
-  repeated librarian.v1.AppPackage app_package_list = 1;
+  map<int64, librarian.v1.AppPackageBinary> app_package_list = 1;
 }
 
-message ReportAppPackageResponse {}
+message ReportAppPackageResponse {
+  map<int64, librarian.v1.InternalID> app_package_id = 1;
+}
 
 message BindAppPackageRequest {
   librarian.v1.InternalID app_id = 1;

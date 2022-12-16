@@ -80,7 +80,7 @@ service LibrarianSephirahService {
   // `Gebura` `Admin`
   rpc UnBindAppPackage(UnBindAppPackageRequest) returns (UnBindAppPackageResponse);
   // `Gebura` `Sentinel`
-  rpc ReportAppPackage(ReportAppPackageRequest) returns (ReportAppPackageResponse);
+  rpc ReportAppPackage(stream ReportAppPackageRequest) returns (stream ReportAppPackageResponse);
 
   // `Gebura` `Normal`
   rpc UploadGameSaveFile(UploadGameSaveFileRequest) returns (UploadGameSaveFileResponse);
