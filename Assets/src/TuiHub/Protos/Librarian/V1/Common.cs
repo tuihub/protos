@@ -51,45 +51,44 @@ namespace TuiHub.Protos.Librarian.V1 {
             "aWxzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIhCgxyZWxl",
             "YXNlX2RhdGUYAiABKAlSC3JlbGVhc2VEYXRlEhwKCWRldmVsb3BlchgDIAEo",
             "CVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgEIAEoCVIJcHVibGlzaGVyEhgK",
-            "B3ZlcnNpb24YBSABKAlSB3ZlcnNpb24i5gIKCkFwcFBhY2thZ2USKAoCaWQY",
+            "B3ZlcnNpb24YBSABKAlSB3ZlcnNpb24i+gIKCkFwcFBhY2thZ2USKAoCaWQY",
             "ASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSNgoGc291cmNl",
             "GAIgASgOMh4ubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VTb3VyY2VSBnNvdXJj",
             "ZRI1Cglzb3VyY2VfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
             "RFIIc291cmNlSWQSKgoRc291cmNlX3BhY2thZ2VfaWQYBCABKAlSD3NvdXJj",
-            "ZVBhY2thZ2VJZBIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24S",
-            "NgoGYmluYXJ5GAYgASgLMh4ubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VCaW5h",
-            "cnlSBmJpbmFyeRI5Cg9zb3VyY2VfYmluZF9hcHAYByABKAsyES5saWJyYXJp",
-            "YW4udjEuQXBwUg1zb3VyY2VCaW5kQXBwIp0BChBBcHBQYWNrYWdlQmluYXJ5",
-            "EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEc2l6ZRgCIAEoCVIEc2l6ZRIdCgpw",
-            "dWJsaWNfdXJsGAMgASgJUglwdWJsaWNVcmwSHQoKbWQ1X2RpZ2VzdBgEIAEo",
-            "CVIJbWQ1RGlnZXN0EiMKDXNoYTI1Nl9kaWdlc3QYBSABKAlSDHNoYTI1NkRp",
-            "Z2VzdCKEAgoERmVlZBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSEgoEbGluaxgC",
-            "IAEoCVIEbGluaxIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24S",
-            "KgoEaXRlbRgEIAMoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRlbVIEaXRlbRIf",
-            "CghsYW5ndWFnZRgFIAEoCUgAUghsYW5ndWFnZYgBARIgCglpbWFnZV91cmwY",
-            "BiABKAlIAVIIaW1hZ2VVcmyIAQESGwoGYXV0aG9yGAcgASgJSAJSBmF1dGhv",
-            "cogBAUILCglfbGFuZ3VhZ2VCDAoKX2ltYWdlX3VybEIJCgdfYXV0aG9yIpMD",
-            "CghGZWVkSXRlbRIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSFgoGYXV0aG9yGAIg",
-            "ASgJUgZhdXRob3ISIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9u",
-            "EhgKB2NvbnRlbnQYBCABKAlSB2NvbnRlbnQSEgoEZ3VpZBgFIAEoCVIEZ3Vp",
-            "ZBISCgRsaW5rGAYgASgJUgRsaW5rEhsKCWltYWdlX3VybBgHIAEoCVIIaW1h",
-            "Z2VVcmwSIQoMcHVibGlzaF9kYXRlGAggASgJUgtwdWJsaXNoRGF0ZRJPChNw",
-            "dWJsaXNoX2RhdGVfcGFyc2VkGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcEgAUhFwdWJsaXNoRGF0ZVBhcnNlZIgBARI+CgllbmNsb3N1cmUY",
-            "CiABKAsyGy5saWJyYXJpYW4udjEuRmVlZEVuY2xvc3VyZUgBUgllbmNsb3N1",
-            "cmWIAQFCFgoUX3B1Ymxpc2hfZGF0ZV9wYXJzZWRCDAoKX2VuY2xvc3VyZSJN",
-            "Cg1GZWVkRW5jbG9zdXJlEhAKA3VybBgBIAEoCVIDdXJsEhYKBmxlbmd0aBgC",
-            "IAEoCVIGbGVuZ3RoEhIKBHR5cGUYAyABKAlSBHR5cGUqTwoPQWNjb3VudFBs",
-            "YXRmb3JtEiAKHEFDQ09VTlRfUExBVEZPUk1fVU5TUEVDSUZJRUQQABIaChZB",
-            "Q0NPVU5UX1BMQVRGT1JNX1NURUFNEAEqNgoHQXBwVHlwZRIYChRBUFBfVFlQ",
-            "RV9VTlNQRUNJRklFRBAAEhEKDUFQUF9UWVBFX0dBTUUQASpWCglBcHBTb3Vy",
-            "Y2USGgoWQVBQX1NPVVJDRV9VTlNQRUNJRklFRBAAEhcKE0FQUF9TT1VSQ0Vf",
-            "SU5URVJOQUwQARIUChBBUFBfU09VUkNFX1NURUFNEAIqdgoQQXBwUGFja2Fn",
-            "ZVNvdXJjZRIiCh5BUFBfUEFDS0FHRV9TT1VSQ0VfVU5TUEVDSUZJRUQQABId",
-            "ChlBUFBfUEFDS0FHRV9TT1VSQ0VfTUFOVUFMEAESHwobQVBQX1BBQ0tBR0Vf",
-            "U09VUkNFX1NFTlRJTkVMEAJCS1osZ2l0aHViLmNvbS90dWlodWIvcHJvdG9z",
-            "L3BrZy9saWJyYXJpYW4vdjE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlh",
-            "bi5WMWIGcHJvdG8z"));
+            "ZVBhY2thZ2VJZBISCgRuYW1lGAUgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
+            "GAYgASgJUgtkZXNjcmlwdGlvbhI2CgZiaW5hcnkYByABKAsyHi5saWJyYXJp",
+            "YW4udjEuQXBwUGFja2FnZUJpbmFyeVIGYmluYXJ5EjkKD3NvdXJjZV9iaW5k",
+            "X2FwcBgIIAEoCzIRLmxpYnJhcmlhbi52MS5BcHBSDXNvdXJjZUJpbmRBcHAi",
+            "WQoQQXBwUGFja2FnZUJpbmFyeRISCgRuYW1lGAEgASgJUgRuYW1lEhIKBHNp",
+            "emUYAiABKAlSBHNpemUSHQoKcHVibGljX3VybBgDIAEoCVIJcHVibGljVXJs",
+            "IoQCCgRGZWVkEhQKBXRpdGxlGAEgASgJUgV0aXRsZRISCgRsaW5rGAIgASgJ",
+            "UgRsaW5rEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIqCgRp",
+            "dGVtGAQgAygLMhYubGlicmFyaWFuLnYxLkZlZWRJdGVtUgRpdGVtEh8KCGxh",
+            "bmd1YWdlGAUgASgJSABSCGxhbmd1YWdliAEBEiAKCWltYWdlX3VybBgGIAEo",
+            "CUgBUghpbWFnZVVybIgBARIbCgZhdXRob3IYByABKAlIAlIGYXV0aG9yiAEB",
+            "QgsKCV9sYW5ndWFnZUIMCgpfaW1hZ2VfdXJsQgkKB19hdXRob3IikwMKCEZl",
+            "ZWRJdGVtEhQKBXRpdGxlGAEgASgJUgV0aXRsZRIWCgZhdXRob3IYAiABKAlS",
+            "BmF1dGhvchIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SGAoH",
+            "Y29udGVudBgEIAEoCVIHY29udGVudBISCgRndWlkGAUgASgJUgRndWlkEhIK",
+            "BGxpbmsYBiABKAlSBGxpbmsSGwoJaW1hZ2VfdXJsGAcgASgJUghpbWFnZVVy",
+            "bBIhCgxwdWJsaXNoX2RhdGUYCCABKAlSC3B1Ymxpc2hEYXRlEk8KE3B1Ymxp",
+            "c2hfZGF0ZV9wYXJzZWQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
+            "YW1wSABSEXB1Ymxpc2hEYXRlUGFyc2VkiAEBEj4KCWVuY2xvc3VyZRgKIAEo",
+            "CzIbLmxpYnJhcmlhbi52MS5GZWVkRW5jbG9zdXJlSAFSCWVuY2xvc3VyZYgB",
+            "AUIWChRfcHVibGlzaF9kYXRlX3BhcnNlZEIMCgpfZW5jbG9zdXJlIk0KDUZl",
+            "ZWRFbmNsb3N1cmUSEAoDdXJsGAEgASgJUgN1cmwSFgoGbGVuZ3RoGAIgASgJ",
+            "UgZsZW5ndGgSEgoEdHlwZRgDIAEoCVIEdHlwZSpPCg9BY2NvdW50UGxhdGZv",
+            "cm0SIAocQUNDT1VOVF9QTEFURk9STV9VTlNQRUNJRklFRBAAEhoKFkFDQ09V",
+            "TlRfUExBVEZPUk1fU1RFQU0QASo2CgdBcHBUeXBlEhgKFEFQUF9UWVBFX1VO",
+            "U1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVfR0FNRRABKlYKCUFwcFNvdXJjZRIa",
+            "ChZBUFBfU09VUkNFX1VOU1BFQ0lGSUVEEAASFwoTQVBQX1NPVVJDRV9JTlRF",
+            "Uk5BTBABEhQKEEFQUF9TT1VSQ0VfU1RFQU0QAip2ChBBcHBQYWNrYWdlU291",
+            "cmNlEiIKHkFQUF9QQUNLQUdFX1NPVVJDRV9VTlNQRUNJRklFRBAAEh0KGUFQ",
+            "UF9QQUNLQUdFX1NPVVJDRV9NQU5VQUwQARIfChtBUFBfUEFDS0FHRV9TT1VS",
+            "Q0VfU0VOVElORUwQAkJLWixnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtn",
+            "L2xpYnJhcmlhbi92MTt2MaoCGlR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.AccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.AppType), typeof(global::TuiHub.Protos.Librarian.V1.AppSource), typeof(global::TuiHub.Protos.Librarian.V1.AppPackageSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,8 +100,8 @@ namespace TuiHub.Protos.Librarian.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.App), global::TuiHub.Protos.Librarian.V1.App.Parser, new[]{ "Id", "Source", "SourceAppId", "SourceUrl", "Name", "Type", "ShortDescription", "ImageUrl", "Details" }, new[]{ "SourceUrl", "Details" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppID), global::TuiHub.Protos.Librarian.V1.AppID.Parser, new[]{ "Source", "SourceAppId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppDetails), global::TuiHub.Protos.Librarian.V1.AppDetails.Parser, new[]{ "Description", "ReleaseDate", "Developer", "Publisher", "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackage), global::TuiHub.Protos.Librarian.V1.AppPackage.Parser, new[]{ "Id", "Source", "SourceId", "SourcePackageId", "Description", "Binary", "SourceBindApp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackageBinary), global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Parser, new[]{ "Name", "Size", "PublicUrl", "Md5Digest", "Sha256Digest" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackage), global::TuiHub.Protos.Librarian.V1.AppPackage.Parser, new[]{ "Id", "Source", "SourceId", "SourcePackageId", "Name", "Description", "Binary", "SourceBindApp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackageBinary), global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Parser, new[]{ "Name", "Size", "PublicUrl" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.Feed), global::TuiHub.Protos.Librarian.V1.Feed.Parser, new[]{ "Title", "Link", "Description", "Item", "Language", "ImageUrl", "Author" }, new[]{ "Language", "ImageUrl", "Author" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Title", "Author", "Description", "Content", "Guid", "Link", "ImageUrl", "PublishDate", "PublishDateParsed", "Enclosure" }, new[]{ "PublishDateParsed", "Enclosure" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedEnclosure), global::TuiHub.Protos.Librarian.V1.FeedEnclosure.Parser, new[]{ "Url", "Length", "Type" }, null, null, null, null)
@@ -2469,6 +2468,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       source_ = other.source_;
       sourceId_ = other.sourceId_ != null ? other.sourceId_.Clone() : null;
       sourcePackageId_ = other.sourcePackageId_;
+      name_ = other.name_;
       description_ = other.description_;
       binary_ = other.binary_ != null ? other.binary_.Clone() : null;
       sourceBindApp_ = other.sourceBindApp_ != null ? other.sourceBindApp_.Clone() : null;
@@ -2529,8 +2529,20 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 5;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 5;
+    public const int DescriptionFieldNumber = 6;
     private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2542,7 +2554,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     }
 
     /// <summary>Field number for the "binary" field.</summary>
-    public const int BinaryFieldNumber = 6;
+    public const int BinaryFieldNumber = 7;
     private global::TuiHub.Protos.Librarian.V1.AppPackageBinary binary_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2554,7 +2566,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     }
 
     /// <summary>Field number for the "source_bind_app" field.</summary>
-    public const int SourceBindAppFieldNumber = 7;
+    public const int SourceBindAppFieldNumber = 8;
     private global::TuiHub.Protos.Librarian.V1.App sourceBindApp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2584,6 +2596,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Source != other.Source) return false;
       if (!object.Equals(SourceId, other.SourceId)) return false;
       if (SourcePackageId != other.SourcePackageId) return false;
+      if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if (!object.Equals(Binary, other.Binary)) return false;
       if (!object.Equals(SourceBindApp, other.SourceBindApp)) return false;
@@ -2598,6 +2611,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Source != global::TuiHub.Protos.Librarian.V1.AppPackageSource.Unspecified) hash ^= Source.GetHashCode();
       if (sourceId_ != null) hash ^= SourceId.GetHashCode();
       if (SourcePackageId.Length != 0) hash ^= SourcePackageId.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (binary_ != null) hash ^= Binary.GetHashCode();
       if (sourceBindApp_ != null) hash ^= SourceBindApp.GetHashCode();
@@ -2635,16 +2649,20 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(34);
         output.WriteString(SourcePackageId);
       }
-      if (Description.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(42);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(50);
         output.WriteString(Description);
       }
       if (binary_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(Binary);
       }
       if (sourceBindApp_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(SourceBindApp);
       }
       if (_unknownFields != null) {
@@ -2673,16 +2691,20 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(34);
         output.WriteString(SourcePackageId);
       }
-      if (Description.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(42);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(50);
         output.WriteString(Description);
       }
       if (binary_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(Binary);
       }
       if (sourceBindApp_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(SourceBindApp);
       }
       if (_unknownFields != null) {
@@ -2706,6 +2728,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (SourcePackageId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SourcePackageId);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
@@ -2745,6 +2770,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (other.SourcePackageId.Length != 0) {
         SourcePackageId = other.SourcePackageId;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
       }
       if (other.Description.Length != 0) {
         Description = other.Description;
@@ -2799,17 +2827,21 @@ namespace TuiHub.Protos.Librarian.V1 {
             break;
           }
           case 42: {
-            Description = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 50: {
+            Description = input.ReadString();
+            break;
+          }
+          case 58: {
             if (binary_ == null) {
               Binary = new global::TuiHub.Protos.Librarian.V1.AppPackageBinary();
             }
             input.ReadMessage(Binary);
             break;
           }
-          case 58: {
+          case 66: {
             if (sourceBindApp_ == null) {
               SourceBindApp = new global::TuiHub.Protos.Librarian.V1.App();
             }
@@ -2854,17 +2886,21 @@ namespace TuiHub.Protos.Librarian.V1 {
             break;
           }
           case 42: {
-            Description = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 50: {
+            Description = input.ReadString();
+            break;
+          }
+          case 58: {
             if (binary_ == null) {
               Binary = new global::TuiHub.Protos.Librarian.V1.AppPackageBinary();
             }
             input.ReadMessage(Binary);
             break;
           }
-          case 58: {
+          case 66: {
             if (sourceBindApp_ == null) {
               SourceBindApp = new global::TuiHub.Protos.Librarian.V1.App();
             }
@@ -2915,8 +2951,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       name_ = other.name_;
       size_ = other.size_;
       publicUrl_ = other.publicUrl_;
-      md5Digest_ = other.md5Digest_;
-      sha256Digest_ = other.sha256Digest_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2962,30 +2996,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
-    /// <summary>Field number for the "md5_digest" field.</summary>
-    public const int Md5DigestFieldNumber = 4;
-    private string md5Digest_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Md5Digest {
-      get { return md5Digest_; }
-      set {
-        md5Digest_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "sha256_digest" field.</summary>
-    public const int Sha256DigestFieldNumber = 5;
-    private string sha256Digest_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Sha256Digest {
-      get { return sha256Digest_; }
-      set {
-        sha256Digest_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -3004,8 +3014,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Name != other.Name) return false;
       if (Size != other.Size) return false;
       if (PublicUrl != other.PublicUrl) return false;
-      if (Md5Digest != other.Md5Digest) return false;
-      if (Sha256Digest != other.Sha256Digest) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3016,8 +3024,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Size.Length != 0) hash ^= Size.GetHashCode();
       if (PublicUrl.Length != 0) hash ^= PublicUrl.GetHashCode();
-      if (Md5Digest.Length != 0) hash ^= Md5Digest.GetHashCode();
-      if (Sha256Digest.Length != 0) hash ^= Sha256Digest.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3048,14 +3054,6 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(26);
         output.WriteString(PublicUrl);
       }
-      if (Md5Digest.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Md5Digest);
-      }
-      if (Sha256Digest.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(Sha256Digest);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3078,14 +3076,6 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(26);
         output.WriteString(PublicUrl);
       }
-      if (Md5Digest.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Md5Digest);
-      }
-      if (Sha256Digest.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(Sha256Digest);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3104,12 +3094,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (PublicUrl.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PublicUrl);
-      }
-      if (Md5Digest.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Md5Digest);
-      }
-      if (Sha256Digest.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sha256Digest);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3131,12 +3115,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (other.PublicUrl.Length != 0) {
         PublicUrl = other.PublicUrl;
-      }
-      if (other.Md5Digest.Length != 0) {
-        Md5Digest = other.Md5Digest;
-      }
-      if (other.Sha256Digest.Length != 0) {
-        Sha256Digest = other.Sha256Digest;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3165,14 +3143,6 @@ namespace TuiHub.Protos.Librarian.V1 {
             PublicUrl = input.ReadString();
             break;
           }
-          case 34: {
-            Md5Digest = input.ReadString();
-            break;
-          }
-          case 42: {
-            Sha256Digest = input.ReadString();
-            break;
-          }
         }
       }
     #endif
@@ -3198,14 +3168,6 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 26: {
             PublicUrl = input.ReadString();
-            break;
-          }
-          case 34: {
-            Md5Digest = input.ReadString();
-            break;
-          }
-          case 42: {
-            Sha256Digest = input.ReadString();
             break;
           }
         }

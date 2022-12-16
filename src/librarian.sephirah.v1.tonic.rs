@@ -618,8 +618,13 @@ pub mod librarian_sephirah_service_client {
 */
         pub async fn report_app_package(
             &mut self,
-            request: impl tonic::IntoRequest<super::ReportAppPackageRequest>,
-        ) -> Result<tonic::Response<super::ReportAppPackageResponse>, tonic::Status> {
+            request: impl tonic::IntoStreamingRequest<
+                Message = super::ReportAppPackageRequest,
+            >,
+        ) -> Result<
+            tonic::Response<tonic::codec::Streaming<super::ReportAppPackageResponse>>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -633,7 +638,7 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            self.inner.streaming(request.into_streaming_request(), path, codec).await
         }
         /** `Gebura` `Normal`
 */
@@ -969,12 +974,18 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::UnBindAppPackageRequest>,
         ) -> Result<tonic::Response<super::UnBindAppPackageResponse>, tonic::Status>;
+        ///Server streaming response type for the ReportAppPackage method.
+        type ReportAppPackageStream: futures_core::Stream<
+                Item = Result<super::ReportAppPackageResponse, tonic::Status>,
+            >
+            + Send
+            + 'static;
         /** `Gebura` `Sentinel`
 */
         async fn report_app_package(
             &self,
-            request: tonic::Request<super::ReportAppPackageRequest>,
-        ) -> Result<tonic::Response<super::ReportAppPackageResponse>, tonic::Status>;
+            request: tonic::Request<tonic::Streaming<super::ReportAppPackageRequest>>,
+        ) -> Result<tonic::Response<Self::ReportAppPackageStream>, tonic::Status>;
         /** `Gebura` `Normal`
 */
         async fn upload_game_save_file(
@@ -2075,16 +2086,19 @@ pub mod librarian_sephirah_service_server {
                     struct ReportAppPackageSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ReportAppPackageRequest>
+                    > tonic::server::StreamingService<super::ReportAppPackageRequest>
                     for ReportAppPackageSvc<T> {
                         type Response = super::ReportAppPackageResponse;
+                        type ResponseStream = T::ReportAppPackageStream;
                         type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
+                            tonic::Response<Self::ResponseStream>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ReportAppPackageRequest>,
+                            request: tonic::Request<
+                                tonic::Streaming<super::ReportAppPackageRequest>,
+                            >,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
@@ -2105,7 +2119,7 @@ pub mod librarian_sephirah_service_server {
                                 accept_compression_encodings,
                                 send_compression_encodings,
                             );
-                        let res = grpc.unary(method, req).await;
+                        let res = grpc.streaming(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)

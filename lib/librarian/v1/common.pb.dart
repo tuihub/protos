@@ -684,9 +684,10 @@ class AppPackage extends $pb.GeneratedMessage {
     ..e<AppPackageSource>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: AppPackageSource.APP_PACKAGE_SOURCE_UNSPECIFIED, valueOf: AppPackageSource.valueOf, enumValues: AppPackageSource.values)
     ..aOM<InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceId', subBuilder: InternalID.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourcePackageId')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..aOM<AppPackageBinary>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'binary', subBuilder: AppPackageBinary.create)
-    ..aOM<App>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceBindApp', subBuilder: App.create)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOM<AppPackageBinary>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'binary', subBuilder: AppPackageBinary.create)
+    ..aOM<App>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceBindApp', subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -696,6 +697,7 @@ class AppPackage extends $pb.GeneratedMessage {
     AppPackageSource? source,
     InternalID? sourceId,
     $core.String? sourcePackageId,
+    $core.String? name,
     $core.String? description,
     AppPackageBinary? binary,
     App? sourceBindApp,
@@ -712,6 +714,9 @@ class AppPackage extends $pb.GeneratedMessage {
     }
     if (sourcePackageId != null) {
       _result.sourcePackageId = sourcePackageId;
+    }
+    if (name != null) {
+      _result.name = name;
     }
     if (description != null) {
       _result.description = description;
@@ -786,35 +791,44 @@ class AppPackage extends $pb.GeneratedMessage {
   void clearSourcePackageId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(4);
+  $core.String get name => $_getSZ(4);
   @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(4, v); }
+  set name($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(4);
+  $core.bool hasName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDescription() => clearField(5);
+  void clearName() => clearField(5);
 
   @$pb.TagNumber(6)
-  AppPackageBinary get binary => $_getN(5);
+  $core.String get description => $_getSZ(5);
   @$pb.TagNumber(6)
-  set binary(AppPackageBinary v) { setField(6, v); }
+  set description($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasBinary() => $_has(5);
+  $core.bool hasDescription() => $_has(5);
   @$pb.TagNumber(6)
-  void clearBinary() => clearField(6);
-  @$pb.TagNumber(6)
-  AppPackageBinary ensureBinary() => $_ensure(5);
+  void clearDescription() => clearField(6);
 
   @$pb.TagNumber(7)
-  App get sourceBindApp => $_getN(6);
+  AppPackageBinary get binary => $_getN(6);
   @$pb.TagNumber(7)
-  set sourceBindApp(App v) { setField(7, v); }
+  set binary(AppPackageBinary v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasSourceBindApp() => $_has(6);
+  $core.bool hasBinary() => $_has(6);
   @$pb.TagNumber(7)
-  void clearSourceBindApp() => clearField(7);
+  void clearBinary() => clearField(7);
   @$pb.TagNumber(7)
-  App ensureSourceBindApp() => $_ensure(6);
+  AppPackageBinary ensureBinary() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  App get sourceBindApp => $_getN(7);
+  @$pb.TagNumber(8)
+  set sourceBindApp(App v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasSourceBindApp() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceBindApp() => clearField(8);
+  @$pb.TagNumber(8)
+  App ensureSourceBindApp() => $_ensure(7);
 }
 
 class AppPackageBinary extends $pb.GeneratedMessage {
@@ -822,8 +836,6 @@ class AppPackageBinary extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicUrl')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'md5Digest')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sha256Digest')
     ..hasRequiredFields = false
   ;
 
@@ -832,8 +844,6 @@ class AppPackageBinary extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? size,
     $core.String? publicUrl,
-    $core.String? md5Digest,
-    $core.String? sha256Digest,
   }) {
     final _result = create();
     if (name != null) {
@@ -844,12 +854,6 @@ class AppPackageBinary extends $pb.GeneratedMessage {
     }
     if (publicUrl != null) {
       _result.publicUrl = publicUrl;
-    }
-    if (md5Digest != null) {
-      _result.md5Digest = md5Digest;
-    }
-    if (sha256Digest != null) {
-      _result.sha256Digest = sha256Digest;
     }
     return _result;
   }
@@ -900,24 +904,6 @@ class AppPackageBinary extends $pb.GeneratedMessage {
   $core.bool hasPublicUrl() => $_has(2);
   @$pb.TagNumber(3)
   void clearPublicUrl() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get md5Digest => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set md5Digest($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasMd5Digest() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearMd5Digest() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get sha256Digest => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set sha256Digest($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasSha256Digest() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearSha256Digest() => clearField(5);
 }
 
 class Feed extends $pb.GeneratedMessage {

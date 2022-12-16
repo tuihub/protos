@@ -74,7 +74,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   listAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListAppPackageRequest, librarian_sephirah_v1_gebura_pb.ListAppPackageResponse>;
   bindAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.BindAppPackageRequest, librarian_sephirah_v1_gebura_pb.BindAppPackageResponse>;
   unBindAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest, librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse>;
-  reportAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>;
+  reportAppPackage: grpc.handleBidiStreamingCall<librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>;
   uploadGameSaveFile: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse>;
   downloadGameSaveFile: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileResponse>;
   listGameSaveFile: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse>;
@@ -157,9 +157,8 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   unBindAppPackage(argument: librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse>): grpc.ClientUnaryCall;
   unBindAppPackage(argument: librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse>): grpc.ClientUnaryCall;
   unBindAppPackage(argument: librarian_sephirah_v1_gebura_pb.UnBindAppPackageRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnBindAppPackageResponse>): grpc.ClientUnaryCall;
-  reportAppPackage(argument: librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>): grpc.ClientUnaryCall;
-  reportAppPackage(argument: librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>): grpc.ClientUnaryCall;
-  reportAppPackage(argument: librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>): grpc.ClientUnaryCall;
+  reportAppPackage(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>;
+  reportAppPackage(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse>;
   uploadGameSaveFile(argument: librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse>): grpc.ClientUnaryCall;
   uploadGameSaveFile(argument: librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse>): grpc.ClientUnaryCall;
   uploadGameSaveFile(argument: librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse>): grpc.ClientUnaryCall;

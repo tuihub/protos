@@ -1018,13 +1018,13 @@ class ListAppPackageResponse extends $pb.GeneratedMessage {
 
 class ReportAppPackageRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReportAppPackageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$4.AppPackage>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageList', $pb.PbFieldType.PM, subBuilder: $4.AppPackage.create)
+    ..m<$core.String, $4.AppPackageBinary>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageList', entryClassName: 'ReportAppPackageRequest.AppPackageListEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $4.AppPackageBinary.create, packageName: const $pb.PackageName('librarian.sephirah.v1'))
     ..hasRequiredFields = false
   ;
 
   ReportAppPackageRequest._() : super();
   factory ReportAppPackageRequest({
-    $core.Iterable<$4.AppPackage>? appPackageList,
+    $core.Map<$core.String, $4.AppPackageBinary>? appPackageList,
   }) {
     final _result = create();
     if (appPackageList != null) {
@@ -1054,7 +1054,7 @@ class ReportAppPackageRequest extends $pb.GeneratedMessage {
   static ReportAppPackageRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.AppPackage> get appPackageList => $_getList(0);
+  $core.Map<$core.String, $4.AppPackageBinary> get appPackageList => $_getMap(0);
 }
 
 class ReportAppPackageResponse extends $pb.GeneratedMessage {

@@ -5607,7 +5607,9 @@ impl<'de> serde::Deserialize<'de> for ReportAppPackageRequest {
                             if app_package_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackageList"));
                             }
-                            app_package_list__ = Some(map.next_value()?);
+                            app_package_list__ = Some(
+                                map.next_value::<std::collections::HashMap<_, _>>()?
+                            );
                         }
                     }
                 }

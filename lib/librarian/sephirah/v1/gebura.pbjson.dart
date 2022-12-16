@@ -211,12 +211,23 @@ final $typed_data.Uint8List listAppPackageResponseDescriptor = $convert.base64De
 const ReportAppPackageRequest$json = const {
   '1': 'ReportAppPackageRequest',
   '2': const [
-    const {'1': 'app_package_list', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppPackage', '10': 'appPackageList'},
+    const {'1': 'app_package_list', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ReportAppPackageRequest.AppPackageListEntry', '10': 'appPackageList'},
   ],
+  '3': const [ReportAppPackageRequest_AppPackageListEntry$json],
+};
+
+@$core.Deprecated('Use reportAppPackageRequestDescriptor instead')
+const ReportAppPackageRequest_AppPackageListEntry$json = const {
+  '1': 'AppPackageListEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.AppPackageBinary', '10': 'value'},
+  ],
+  '7': const {'7': true},
 };
 
 /// Descriptor for `ReportAppPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List reportAppPackageRequestDescriptor = $convert.base64Decode('ChdSZXBvcnRBcHBQYWNrYWdlUmVxdWVzdBJCChBhcHBfcGFja2FnZV9saXN0GAEgAygLMhgubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VSDmFwcFBhY2thZ2VMaXN0');
+final $typed_data.Uint8List reportAppPackageRequestDescriptor = $convert.base64Decode('ChdSZXBvcnRBcHBQYWNrYWdlUmVxdWVzdBJsChBhcHBfcGFja2FnZV9saXN0GAEgAygLMkIubGlicmFyaWFuLnNlcGhpcmFoLnYxLlJlcG9ydEFwcFBhY2thZ2VSZXF1ZXN0LkFwcFBhY2thZ2VMaXN0RW50cnlSDmFwcFBhY2thZ2VMaXN0GmEKE0FwcFBhY2thZ2VMaXN0RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSNAoFdmFsdWUYAiABKAsyHi5saWJyYXJpYW4udjEuQXBwUGFja2FnZUJpbmFyeVIFdmFsdWU6AjgB');
 @$core.Deprecated('Use reportAppPackageResponseDescriptor instead')
 const ReportAppPackageResponse$json = const {
   '1': 'ReportAppPackageResponse',

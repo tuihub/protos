@@ -486,11 +486,8 @@ export namespace ListAppPackageResponse {
 }
 
 export class ReportAppPackageRequest extends jspb.Message {
-  clearAppPackageListList(): void;
-  getAppPackageListList(): Array<librarian_v1_common_pb.AppPackage>;
-  setAppPackageListList(value: Array<librarian_v1_common_pb.AppPackage>): void;
-  addAppPackageList(value?: librarian_v1_common_pb.AppPackage, index?: number): librarian_v1_common_pb.AppPackage;
-
+  getAppPackageListMap(): jspb.Map<string, librarian_v1_common_pb.AppPackageBinary>;
+  clearAppPackageListMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportAppPackageRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ReportAppPackageRequest): ReportAppPackageRequest.AsObject;
@@ -503,7 +500,7 @@ export class ReportAppPackageRequest extends jspb.Message {
 
 export namespace ReportAppPackageRequest {
   export type AsObject = {
-    appPackageListList: Array<librarian_v1_common_pb.AppPackage.AsObject>,
+    appPackageListMap: Array<[string, librarian_v1_common_pb.AppPackageBinary.AsObject]>,
   }
 }
 

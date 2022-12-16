@@ -1049,8 +1049,8 @@ unBindAppPackage: {
   // `Gebura` `Sentinel`
 reportAppPackage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage',
-    requestStream: false,
-    responseStream: false,
+    requestStream: true,
+    responseStream: true,
     requestType: librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest,
     responseType: librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse,
     requestSerialize: serialize_librarian_sephirah_v1_ReportAppPackageRequest,

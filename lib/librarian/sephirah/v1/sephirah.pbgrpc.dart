@@ -368,10 +368,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$unBindAppPackage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.ReportAppPackageResponse> reportAppPackage(
-      $2.ReportAppPackageRequest request,
+  $grpc.ResponseStream<$2.ReportAppPackageResponse> reportAppPackage(
+      $async.Stream<$2.ReportAppPackageRequest> request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$reportAppPackage, request, options: options);
+    return $createStreamingCall(_$reportAppPackage, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.UploadGameSaveFileResponse> uploadGameSaveFile(
@@ -626,9 +626,9 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$2.ReportAppPackageRequest,
             $2.ReportAppPackageResponse>(
         'ReportAppPackage',
-        reportAppPackage_Pre,
-        false,
-        false,
+        reportAppPackage,
+        true,
+        true,
         ($core.List<$core.int> value) =>
             $2.ReportAppPackageRequest.fromBuffer(value),
         ($2.ReportAppPackageResponse value) => value.writeToBuffer()));
@@ -809,12 +809,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return unBindAppPackage(call, await request);
   }
 
-  $async.Future<$2.ReportAppPackageResponse> reportAppPackage_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$2.ReportAppPackageRequest> request) async {
-    return reportAppPackage(call, await request);
-  }
-
   $async.Future<$2.UploadGameSaveFileResponse> uploadGameSaveFile_Pre(
       $grpc.ServiceCall call,
       $async.Future<$2.UploadGameSaveFileRequest> request) async {
@@ -908,8 +902,9 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $2.BindAppPackageRequest request);
   $async.Future<$2.UnBindAppPackageResponse> unBindAppPackage(
       $grpc.ServiceCall call, $2.UnBindAppPackageRequest request);
-  $async.Future<$2.ReportAppPackageResponse> reportAppPackage(
-      $grpc.ServiceCall call, $2.ReportAppPackageRequest request);
+  $async.Stream<$2.ReportAppPackageResponse> reportAppPackage(
+      $grpc.ServiceCall call,
+      $async.Stream<$2.ReportAppPackageRequest> request);
   $async.Future<$2.UploadGameSaveFileResponse> uploadGameSaveFile(
       $grpc.ServiceCall call, $2.UploadGameSaveFileRequest request);
   $async.Future<$2.DownloadGameSaveFileResponse> downloadGameSaveFile(

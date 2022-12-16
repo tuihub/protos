@@ -880,6 +880,9 @@ impl serde::Serialize for AppPackage {
         if !self.source_package_id.is_empty() {
             len += 1;
         }
+        if !self.name.is_empty() {
+            len += 1;
+        }
         if !self.description.is_empty() {
             len += 1;
         }
@@ -904,6 +907,9 @@ impl serde::Serialize for AppPackage {
         if !self.source_package_id.is_empty() {
             struct_ser.serialize_field("sourcePackageId", &self.source_package_id)?;
         }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
@@ -927,6 +933,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             "source",
             "sourceId",
             "sourcePackageId",
+            "name",
             "description",
             "binary",
             "sourceBindApp",
@@ -938,6 +945,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             Source,
             SourceId,
             SourcePackageId,
+            Name,
             Description,
             Binary,
             SourceBindApp,
@@ -966,6 +974,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             "source" => Ok(GeneratedField::Source),
                             "sourceId" => Ok(GeneratedField::SourceId),
                             "sourcePackageId" => Ok(GeneratedField::SourcePackageId),
+                            "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "binary" => Ok(GeneratedField::Binary),
                             "sourceBindApp" => Ok(GeneratedField::SourceBindApp),
@@ -992,6 +1001,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                 let mut source__ = None;
                 let mut source_id__ = None;
                 let mut source_package_id__ = None;
+                let mut name__ = None;
                 let mut description__ = None;
                 let mut binary__ = None;
                 let mut source_bind_app__ = None;
@@ -1021,6 +1031,12 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             }
                             source_package_id__ = Some(map.next_value()?);
                         }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
                         GeneratedField::Description => {
                             if description__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("description"));
@@ -1046,6 +1062,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                     source: source__.unwrap_or_default(),
                     source_id: source_id__,
                     source_package_id: source_package_id__.unwrap_or_default(),
+                    name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     binary: binary__,
                     source_bind_app: source_bind_app__,
@@ -1072,12 +1089,6 @@ impl serde::Serialize for AppPackageBinary {
         if !self.public_url.is_empty() {
             len += 1;
         }
-        if !self.md5_digest.is_empty() {
-            len += 1;
-        }
-        if !self.sha256_digest.is_empty() {
-            len += 1;
-        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppPackageBinary", len)?;
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -1087,12 +1098,6 @@ impl serde::Serialize for AppPackageBinary {
         }
         if !self.public_url.is_empty() {
             struct_ser.serialize_field("publicUrl", &self.public_url)?;
-        }
-        if !self.md5_digest.is_empty() {
-            struct_ser.serialize_field("md5Digest", &self.md5_digest)?;
-        }
-        if !self.sha256_digest.is_empty() {
-            struct_ser.serialize_field("sha256Digest", &self.sha256_digest)?;
         }
         struct_ser.end()
     }
@@ -1107,8 +1112,6 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
             "name",
             "size",
             "publicUrl",
-            "md5Digest",
-            "sha256Digest",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1116,8 +1119,6 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
             Name,
             Size,
             PublicUrl,
-            Md5Digest,
-            Sha256Digest,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1142,8 +1143,6 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             "name" => Ok(GeneratedField::Name),
                             "size" => Ok(GeneratedField::Size),
                             "publicUrl" => Ok(GeneratedField::PublicUrl),
-                            "md5Digest" => Ok(GeneratedField::Md5Digest),
-                            "sha256Digest" => Ok(GeneratedField::Sha256Digest),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1166,8 +1165,6 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                 let mut name__ = None;
                 let mut size__ = None;
                 let mut public_url__ = None;
-                let mut md5_digest__ = None;
-                let mut sha256_digest__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Name => {
@@ -1188,26 +1185,12 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             }
                             public_url__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Md5Digest => {
-                            if md5_digest__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("md5Digest"));
-                            }
-                            md5_digest__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::Sha256Digest => {
-                            if sha256_digest__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sha256Digest"));
-                            }
-                            sha256_digest__ = Some(map.next_value()?);
-                        }
                     }
                 }
                 Ok(AppPackageBinary {
                     name: name__.unwrap_or_default(),
                     size: size__.unwrap_or_default(),
                     public_url: public_url__.unwrap_or_default(),
-                    md5_digest: md5_digest__.unwrap_or_default(),
-                    sha256_digest: sha256_digest__.unwrap_or_default(),
                 })
             }
         }

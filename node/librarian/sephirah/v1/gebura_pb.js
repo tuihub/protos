@@ -488,7 +488,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.ReportAppPackageRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ReportAppPackageRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.ReportAppPackageRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -4137,13 +4137,6 @@ proto.librarian.sephirah.v1.ListAppPackageResponse.prototype.clearAppPackageList
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.librarian.sephirah.v1.ReportAppPackageRequest.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4175,8 +4168,7 @@ proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ReportAppPackageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appPackageListList: jspb.Message.toObjectList(msg.getAppPackageListList(),
-    librarian_v1_common_pb.AppPackage.toObject, includeInstance)
+    appPackageListMap: (f = msg.getAppPackageListMap()) ? f.toObject(includeInstance, proto.librarian.v1.AppPackageBinary.toObject) : []
   };
 
   if (includeInstance) {
@@ -4214,9 +4206,10 @@ proto.librarian.sephirah.v1.ReportAppPackageRequest.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new librarian_v1_common_pb.AppPackage;
-      reader.readMessage(value,librarian_v1_common_pb.AppPackage.deserializeBinaryFromReader);
-      msg.addAppPackageList(value);
+      var value = msg.getAppPackageListMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.librarian.v1.AppPackageBinary.deserializeBinaryFromReader, "", new proto.librarian.v1.AppPackageBinary());
+         });
       break;
     default:
       reader.skipField();
@@ -4247,53 +4240,33 @@ proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.serializeBinary = 
  */
 proto.librarian.sephirah.v1.ReportAppPackageRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppPackageListList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      librarian_v1_common_pb.AppPackage.serializeBinaryToWriter
-    );
+  f = message.getAppPackageListMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.librarian.v1.AppPackageBinary.serializeBinaryToWriter);
   }
 };
 
 
 /**
- * repeated librarian.v1.AppPackage app_package_list = 1;
- * @return {!Array<!proto.librarian.v1.AppPackage>}
+ * map<string, librarian.v1.AppPackageBinary> app_package_list = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!proto.librarian.v1.AppPackageBinary>}
  */
-proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.getAppPackageListList = function() {
-  return /** @type{!Array<!proto.librarian.v1.AppPackage>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.AppPackage, 1));
+proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.getAppPackageListMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.librarian.v1.AppPackageBinary>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      proto.librarian.v1.AppPackageBinary));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.v1.AppPackage>} value
- * @return {!proto.librarian.sephirah.v1.ReportAppPackageRequest} returns this
-*/
-proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.setAppPackageListList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.AppPackage=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.AppPackage}
- */
-proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.addAppPackageList = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.AppPackage, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.librarian.sephirah.v1.ReportAppPackageRequest} returns this
  */
-proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.clearAppPackageListList = function() {
-  return this.setAppPackageListList([]);
-};
+proto.librarian.sephirah.v1.ReportAppPackageRequest.prototype.clearAppPackageListMap = function() {
+  this.getAppPackageListMap().clear();
+  return this;};
 
 
 

@@ -69,33 +69,36 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "cHBQYWNrYWdlUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
             "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSQgoQYXBwX3BhY2thZ2VfbGlz",
             "dBgCIAMoCzIYLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlUg5hcHBQYWNrYWdl",
-            "TGlzdCJdChdSZXBvcnRBcHBQYWNrYWdlUmVxdWVzdBJCChBhcHBfcGFja2Fn",
-            "ZV9saXN0GAEgAygLMhgubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VSDmFwcFBh",
-            "Y2thZ2VMaXN0IhoKGFJlcG9ydEFwcFBhY2thZ2VSZXNwb25zZSKIAQoVQmlu",
-            "ZEFwcFBhY2thZ2VSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgVhcHBJZBI+Cg5hcHBfcGFja2FnZV9pZBgCIAEo",
-            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxhcHBQYWNrYWdlSWQiGAoW",
-            "QmluZEFwcFBhY2thZ2VSZXNwb25zZSJZChdVbkJpbmRBcHBQYWNrYWdlUmVx",
-            "dWVzdBI+Cg5hcHBfcGFja2FnZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5J",
-            "bnRlcm5hbElEUgxhcHBQYWNrYWdlSWQiGgoYVW5CaW5kQXBwUGFja2FnZVJl",
-            "c3BvbnNlIqUBChlVcGxvYWRHYW1lU2F2ZUZpbGVSZXF1ZXN0EkgKDWZpbGVf",
-            "bWV0YWRhdGEYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZU1l",
-            "dGFkYXRhUgxmaWxlTWV0YWRhdGESPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsy",
-            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIj8KGlVw",
-            "bG9hZEdhbWVTYXZlRmlsZVJlc3BvbnNlEiEKDHVwbG9hZF90b2tlbhgBIAEo",
-            "CVILdXBsb2FkVG9rZW4iRwobRG93bmxvYWRHYW1lU2F2ZUZpbGVSZXF1ZXN0",
-            "EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIkUK",
-            "HERvd25sb2FkR2FtZVNhdmVGaWxlUmVzcG9uc2USJQoOZG93bmxvYWRfdG9r",
-            "ZW4YAiABKAlSDWRvd25sb2FkVG9rZW4ijgEKF0xpc3RHYW1lU2F2ZUZpbGVS",
-            "ZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdS",
-            "ZXF1ZXN0UgZwYWdpbmcSPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsyGC5saWJy",
-            "YXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIpIBChhMaXN0R2Ft",
-            "ZVNhdmVGaWxlUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
-            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSQAoJZmlsZV9saXN0GAIgAygL",
-            "MiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIIZmlsZUxp",
-            "c3RCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4v",
-            "c2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBo",
-            "aXJhaC5WMWIGcHJvdG8z"));
+            "TGlzdCLqAQoXUmVwb3J0QXBwUGFja2FnZVJlcXVlc3QSbAoQYXBwX3BhY2th",
+            "Z2VfbGlzdBgBIAMoCzJCLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5SZXBvcnRB",
+            "cHBQYWNrYWdlUmVxdWVzdC5BcHBQYWNrYWdlTGlzdEVudHJ5Ug5hcHBQYWNr",
+            "YWdlTGlzdBphChNBcHBQYWNrYWdlTGlzdEVudHJ5EhAKA2tleRgBIAEoCVID",
+            "a2V5EjQKBXZhbHVlGAIgASgLMh4ubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VC",
+            "aW5hcnlSBXZhbHVlOgI4ASIaChhSZXBvcnRBcHBQYWNrYWdlUmVzcG9uc2Ui",
+            "iAEKFUJpbmRBcHBQYWNrYWdlUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5s",
+            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQSPgoOYXBwX3BhY2thZ2Vf",
+            "aWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2Fn",
+            "ZUlkIhgKFkJpbmRBcHBQYWNrYWdlUmVzcG9uc2UiWQoXVW5CaW5kQXBwUGFj",
+            "a2FnZVJlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIhoKGFVuQmluZEFwcFBh",
+            "Y2thZ2VSZXNwb25zZSKlAQoZVXBsb2FkR2FtZVNhdmVGaWxlUmVxdWVzdBJI",
+            "Cg1maWxlX21ldGFkYXRhGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYx",
+            "LkZpbGVNZXRhZGF0YVIMZmlsZU1ldGFkYXRhEj4KDmFwcF9wYWNrYWdlX2lk",
+            "GAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGFwcFBhY2thZ2VJ",
+            "ZCI/ChpVcGxvYWRHYW1lU2F2ZUZpbGVSZXNwb25zZRIhCgx1cGxvYWRfdG9r",
+            "ZW4YASABKAlSC3VwbG9hZFRva2VuIkcKG0Rvd25sb2FkR2FtZVNhdmVGaWxl",
+            "UmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
+            "UgJpZCJFChxEb3dubG9hZEdhbWVTYXZlRmlsZVJlc3BvbnNlEiUKDmRvd25s",
+            "b2FkX3Rva2VuGAIgASgJUg1kb3dubG9hZFRva2VuIo4BChdMaXN0R2FtZVNh",
+            "dmVGaWxlUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEu",
+            "UGFnaW5nUmVxdWVzdFIGcGFnaW5nEj4KDmFwcF9wYWNrYWdlX2lkGAIgASgL",
+            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGFwcFBhY2thZ2VJZCKSAQoY",
+            "TGlzdEdhbWVTYXZlRmlsZVJlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxp",
+            "YnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEkAKCWZpbGVfbGlz",
+            "dBgCIAMoCzIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlTWV0YWRhdGFS",
+            "CGZpbGVMaXN0Ql1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGli",
+            "cmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJp",
+            "YW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -119,7 +122,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppPackageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppPackageResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackageRequest.Parser, new[]{ "Paging", "SourceFilter", "IdFilter", "BindAppIdFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackageResponse.Parser, new[]{ "Paging", "AppPackageList" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackageRequest.Parser, new[]{ "AppPackageList" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackageRequest.Parser, new[]{ "AppPackageList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackageResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppPackageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppPackageRequest.Parser, new[]{ "AppId", "AppPackageId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppPackageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.BindAppPackageResponse.Parser, null, null, null, null, null),
@@ -4288,12 +4291,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_package_list" field.</summary>
     public const int AppPackageListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.AppPackage> _repeated_appPackageList_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.AppPackage.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppPackage> appPackageList_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppPackage>();
+    private static readonly pbc::MapField<string, global::TuiHub.Protos.Librarian.V1.AppPackageBinary>.Codec _map_appPackageList_codec
+        = new pbc::MapField<string, global::TuiHub.Protos.Librarian.V1.AppPackageBinary>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Parser), 10);
+    private readonly pbc::MapField<string, global::TuiHub.Protos.Librarian.V1.AppPackageBinary> appPackageList_ = new pbc::MapField<string, global::TuiHub.Protos.Librarian.V1.AppPackageBinary>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppPackage> AppPackageList {
+    public pbc::MapField<string, global::TuiHub.Protos.Librarian.V1.AppPackageBinary> AppPackageList {
       get { return appPackageList_; }
     }
 
@@ -4312,7 +4315,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!appPackageList_.Equals(other.appPackageList_)) return false;
+      if (!AppPackageList.Equals(other.AppPackageList)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4320,7 +4323,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= appPackageList_.GetHashCode();
+      hash ^= AppPackageList.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4339,7 +4342,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      appPackageList_.WriteTo(output, _repeated_appPackageList_codec);
+      appPackageList_.WriteTo(output, _map_appPackageList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4350,7 +4353,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      appPackageList_.WriteTo(ref output, _repeated_appPackageList_codec);
+      appPackageList_.WriteTo(ref output, _map_appPackageList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4361,7 +4364,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += appPackageList_.CalculateSize(_repeated_appPackageList_codec);
+      size += appPackageList_.CalculateSize(_map_appPackageList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4391,7 +4394,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            appPackageList_.AddEntriesFrom(input, _repeated_appPackageList_codec);
+            appPackageList_.AddEntriesFrom(input, _map_appPackageList_codec);
             break;
           }
         }
@@ -4410,7 +4413,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            appPackageList_.AddEntriesFrom(ref input, _repeated_appPackageList_codec);
+            appPackageList_.AddEntriesFrom(ref input, _map_appPackageList_codec);
             break;
           }
         }

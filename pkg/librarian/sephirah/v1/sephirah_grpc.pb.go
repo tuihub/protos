@@ -78,7 +78,7 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Admin`
 	UnBindAppPackage(ctx context.Context, in *UnBindAppPackageRequest, opts ...grpc.CallOption) (*UnBindAppPackageResponse, error)
 	// `Gebura` `Sentinel`
-	ReportAppPackage(ctx context.Context, in *ReportAppPackageRequest, opts ...grpc.CallOption) (*ReportAppPackageResponse, error)
+	ReportAppPackage(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackageClient, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -416,13 +416,35 @@ func (c *librarianSephirahServiceClient) UnBindAppPackage(ctx context.Context, i
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ReportAppPackage(ctx context.Context, in *ReportAppPackageRequest, opts ...grpc.CallOption) (*ReportAppPackageResponse, error) {
-	out := new(ReportAppPackageResponse)
-	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage", in, out, opts...)
+func (c *librarianSephirahServiceClient) ReportAppPackage(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackageClient, error) {
+	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[4], "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage", opts...)
 	if err != nil {
 		return nil, err
 	}
-	return out, nil
+	x := &librarianSephirahServiceReportAppPackageClient{stream}
+	return x, nil
+}
+
+type LibrarianSephirahService_ReportAppPackageClient interface {
+	Send(*ReportAppPackageRequest) error
+	Recv() (*ReportAppPackageResponse, error)
+	grpc.ClientStream
+}
+
+type librarianSephirahServiceReportAppPackageClient struct {
+	grpc.ClientStream
+}
+
+func (x *librarianSephirahServiceReportAppPackageClient) Send(m *ReportAppPackageRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *librarianSephirahServiceReportAppPackageClient) Recv() (*ReportAppPackageResponse, error) {
+	m := new(ReportAppPackageResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
 }
 
 func (c *librarianSephirahServiceClient) UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error) {
@@ -548,7 +570,7 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Admin`
 	UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error)
 	// `Gebura` `Sentinel`
-	ReportAppPackage(context.Context, *ReportAppPackageRequest) (*ReportAppPackageResponse, error)
+	ReportAppPackage(LibrarianSephirahService_ReportAppPackageServer) error
 	// `Gebura` `Normal`
 	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -645,8 +667,8 @@ func (UnimplementedLibrarianSephirahServiceServer) BindAppPackage(context.Contex
 func (UnimplementedLibrarianSephirahServiceServer) UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnBindAppPackage not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackage(context.Context, *ReportAppPackageRequest) (*ReportAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReportAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackage(LibrarianSephirahService_ReportAppPackageServer) error {
+	return status.Errorf(codes.Unimplemented, "method ReportAppPackage not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadGameSaveFile not implemented")
@@ -1165,22 +1187,30 @@ func _LibrarianSephirahService_UnBindAppPackage_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ReportAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReportAppPackageRequest)
-	if err := dec(in); err != nil {
+func _LibrarianSephirahService_ReportAppPackage_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(LibrarianSephirahServiceServer).ReportAppPackage(&librarianSephirahServiceReportAppPackageServer{stream})
+}
+
+type LibrarianSephirahService_ReportAppPackageServer interface {
+	Send(*ReportAppPackageResponse) error
+	Recv() (*ReportAppPackageRequest, error)
+	grpc.ServerStream
+}
+
+type librarianSephirahServiceReportAppPackageServer struct {
+	grpc.ServerStream
+}
+
+func (x *librarianSephirahServiceReportAppPackageServer) Send(m *ReportAppPackageResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *librarianSephirahServiceReportAppPackageServer) Recv() (*ReportAppPackageRequest, error) {
+	m := new(ReportAppPackageRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ReportAppPackage(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ReportAppPackage(ctx, req.(*ReportAppPackageRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	return m, nil
 }
 
 func _LibrarianSephirahService_UploadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1401,10 +1431,6 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_UnBindAppPackage_Handler,
 		},
 		{
-			MethodName: "ReportAppPackage",
-			Handler:    _LibrarianSephirahService_ReportAppPackage_Handler,
-		},
-		{
 			MethodName: "UploadGameSaveFile",
 			Handler:    _LibrarianSephirahService_UploadGameSaveFile_Handler,
 		},
@@ -1455,6 +1481,12 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "SimpleDownloadFile",
 			Handler:       _LibrarianSephirahService_SimpleDownloadFile_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "ReportAppPackage",
+			Handler:       _LibrarianSephirahService_ReportAppPackage_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
 		},
