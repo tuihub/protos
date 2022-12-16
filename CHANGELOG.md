@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/TuiHub/Protos/compare/v0.2.1...v0.2.2) (2022-12-16)
+
+
+### Bug Fixes
+
+* update ReportAppPackage ([a23ee80](https://github.com/TuiHub/Protos/commit/a23ee8080f30b88c2a85c3447eb25a170cc5ee2e))
+* update ReportAppPackage ([f72251d](https://github.com/TuiHub/Protos/commit/f72251d03e26b021e219c8fd0a2c953c4d15e245))
+
 ## [0.2.1](https://github.com/TuiHub/Protos/compare/v0.2.0...v0.2.1) (2022-11-18)
 
 
