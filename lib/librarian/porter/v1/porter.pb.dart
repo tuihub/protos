@@ -743,19 +743,17 @@ class PullAccountAppRelationResponse extends $pb.GeneratedMessage {
   $core.List<$1.App> get appList => $_getList(0);
 }
 
-class PushDataRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushDataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+class PushDataRequest_DataMeta extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushDataRequest.DataMeta', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..e<DataSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: DataSource.DATA_SOURCE_UNSPECIFIED, valueOf: DataSource.valueOf, enumValues: DataSource.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentId')
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
-  PushDataRequest._() : super();
-  factory PushDataRequest({
+  PushDataRequest_DataMeta._() : super();
+  factory PushDataRequest_DataMeta({
     DataSource? source,
     $core.String? contentId,
-    $core.List<$core.int>? data,
   }) {
     final _result = create();
     if (source != null) {
@@ -763,6 +761,76 @@ class PushDataRequest extends $pb.GeneratedMessage {
     }
     if (contentId != null) {
       _result.contentId = contentId;
+    }
+    return _result;
+  }
+  factory PushDataRequest_DataMeta.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushDataRequest_DataMeta.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PushDataRequest_DataMeta clone() => PushDataRequest_DataMeta()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PushDataRequest_DataMeta copyWith(void Function(PushDataRequest_DataMeta) updates) => super.copyWith((message) => updates(message as PushDataRequest_DataMeta)) as PushDataRequest_DataMeta; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PushDataRequest_DataMeta create() => PushDataRequest_DataMeta._();
+  PushDataRequest_DataMeta createEmptyInstance() => create();
+  static $pb.PbList<PushDataRequest_DataMeta> createRepeated() => $pb.PbList<PushDataRequest_DataMeta>();
+  @$core.pragma('dart2js:noInline')
+  static PushDataRequest_DataMeta getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushDataRequest_DataMeta>(create);
+  static PushDataRequest_DataMeta? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DataSource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(DataSource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => clearField(2);
+}
+
+enum PushDataRequest_Content {
+  metadata, 
+  data, 
+  notSet
+}
+
+class PushDataRequest extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, PushDataRequest_Content> _PushDataRequest_ContentByTag = {
+    1 : PushDataRequest_Content.metadata,
+    2 : PushDataRequest_Content.data,
+    0 : PushDataRequest_Content.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushDataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<PushDataRequest_DataMeta>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', subBuilder: PushDataRequest_DataMeta.create)
+    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  PushDataRequest._() : super();
+  factory PushDataRequest({
+    PushDataRequest_DataMeta? metadata,
+    $core.List<$core.int>? data,
+  }) {
+    final _result = create();
+    if (metadata != null) {
+      _result.metadata = metadata;
     }
     if (data != null) {
       _result.data = data;
@@ -790,32 +858,28 @@ class PushDataRequest extends $pb.GeneratedMessage {
   static PushDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushDataRequest>(create);
   static PushDataRequest? _defaultInstance;
 
+  PushDataRequest_Content whichContent() => _PushDataRequest_ContentByTag[$_whichOneof(0)]!;
+  void clearContent() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
-  DataSource get source => $_getN(0);
+  PushDataRequest_DataMeta get metadata => $_getN(0);
   @$pb.TagNumber(1)
-  set source(DataSource v) { setField(1, v); }
+  set metadata(PushDataRequest_DataMeta v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasSource() => $_has(0);
+  $core.bool hasMetadata() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
+  void clearMetadata() => clearField(1);
+  @$pb.TagNumber(1)
+  PushDataRequest_DataMeta ensureMetadata() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get contentId => $_getSZ(1);
+  $core.List<$core.int> get data => $_getN(1);
   @$pb.TagNumber(2)
-  set contentId($core.String v) { $_setString(1, v); }
+  set data($core.List<$core.int> v) { $_setBytes(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasContentId() => $_has(1);
+  $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
-  void clearContentId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.List<$core.int> get data => $_getN(2);
-  @$pb.TagNumber(3)
-  set data($core.List<$core.int> v) { $_setBytes(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasData() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearData() => clearField(3);
+  void clearData() => clearField(2);
 }
 
 class PushDataResponse extends $pb.GeneratedMessage {

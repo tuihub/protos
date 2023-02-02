@@ -53,36 +53,38 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             "ZVIMcmVsYXRpb25UeXBlEjYKCmFjY291bnRfaWQYAiABKAsyFy5saWJyYXJp",
             "YW4udjEuQWNjb3VudElEUglhY2NvdW50SWQiTgoeUHVsbEFjY291bnRBcHBS",
             "ZWxhdGlvblJlc3BvbnNlEiwKCGFwcF9saXN0GAEgAygLMhEubGlicmFyaWFu",
-            "LnYxLkFwcFIHYXBwTGlzdCJ9Cg9QdXNoRGF0YVJlcXVlc3QSNwoGc291cmNl",
-            "GAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5EYXRhU291cmNlUgZzb3Vy",
-            "Y2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElkEhIKBGRhdGEYAyAB",
-            "KAxSBGRhdGEiEgoQUHVzaERhdGFSZXNwb25zZSpmChZBY2NvdW50QXBwUmVs",
-            "YXRpb25UeXBlEikKJUFDQ09VTlRfQVBQX1JFTEFUSU9OX1RZUEVfVU5TUEVD",
-            "SUZJRUQQABIhCh1BQ0NPVU5UX0FQUF9SRUxBVElPTl9UWVBFX09XThABKikK",
-            "CkZlZWRTb3VyY2USGwoXRkVFRF9TT1VSQ0VfVU5TUEVDSUZJRUQQAColCghE",
-            "QlNvdXJjZRIZChVEQl9TT1VSQ0VfVU5TUEVDSUZJRUQQACopCgpXaWtpU291",
-            "cmNlEhsKF1dJS0lfU09VUkNFX1VOU1BFQ0lGSUVEEAAqKQoKRGF0YVNvdXJj",
-            "ZRIbChdEQVRBX1NPVVJDRV9VTlNQRUNJRklFRBAAMo8GChZMaWJyYXJpYW5Q",
-            "b3J0ZXJTZXJ2aWNlElcKCFB1bGxGZWVkEiQubGlicmFyaWFuLnBvcnRlci52",
-            "MS5QdWxsRmVlZFJlcXVlc3QaJS5saWJyYXJpYW4ucG9ydGVyLnYxLlB1bGxG",
-            "ZWVkUmVzcG9uc2USUQoGUHVsbERCEiIubGlicmFyaWFuLnBvcnRlci52MS5Q",
-            "dWxsREJSZXF1ZXN0GiMubGlicmFyaWFuLnBvcnRlci52MS5QdWxsREJSZXNw",
-            "b25zZRJXCghQdWxsV2lraRIkLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVsbFdp",
-            "a2lSZXF1ZXN0GiUubGlicmFyaWFuLnBvcnRlci52MS5QdWxsV2lraVJlc3Bv",
-            "bnNlElkKCFB1bGxEYXRhEiQubGlicmFyaWFuLnBvcnRlci52MS5QdWxsRGF0",
-            "YVJlcXVlc3QaJS5saWJyYXJpYW4ucG9ydGVyLnYxLlB1bGxEYXRhUmVzcG9u",
-            "c2UwARJgCgtQdWxsQWNjb3VudBInLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVs",
-            "bEFjY291bnRSZXF1ZXN0GigubGlicmFyaWFuLnBvcnRlci52MS5QdWxsQWNj",
-            "b3VudFJlc3BvbnNlElQKB1B1bGxBcHASIy5saWJyYXJpYW4ucG9ydGVyLnYx",
-            "LlB1bGxBcHBSZXF1ZXN0GiQubGlicmFyaWFuLnBvcnRlci52MS5QdWxsQXBw",
-            "UmVzcG9uc2USgQEKFlB1bGxBY2NvdW50QXBwUmVsYXRpb24SMi5saWJyYXJp",
-            "YW4ucG9ydGVyLnYxLlB1bGxBY2NvdW50QXBwUmVsYXRpb25SZXF1ZXN0GjMu",
-            "bGlicmFyaWFuLnBvcnRlci52MS5QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVz",
-            "cG9uc2USWQoIUHVzaERhdGESJC5saWJyYXJpYW4ucG9ydGVyLnYxLlB1c2hE",
-            "YXRhUmVxdWVzdBolLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVzaERhdGFSZXNw",
-            "b25zZSgBQllaM2dpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFy",
-            "aWFuL3BvcnRlci92MTt2MaoCIVR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlBv",
-            "cnRlci5WMWIGcHJvdG8z"));
+            "LnYxLkFwcFIHYXBwTGlzdCLjAQoPUHVzaERhdGFSZXF1ZXN0EksKCG1ldGFk",
+            "YXRhGAEgASgLMi0ubGlicmFyaWFuLnBvcnRlci52MS5QdXNoRGF0YVJlcXVl",
+            "c3QuRGF0YU1ldGFIAFIIbWV0YWRhdGESFAoEZGF0YRgCIAEoDEgAUgRkYXRh",
+            "GmIKCERhdGFNZXRhEjcKBnNvdXJjZRgBIAEoDjIfLmxpYnJhcmlhbi5wb3J0",
+            "ZXIudjEuRGF0YVNvdXJjZVIGc291cmNlEh0KCmNvbnRlbnRfaWQYAiABKAlS",
+            "CWNvbnRlbnRJZEIJCgdjb250ZW50IhIKEFB1c2hEYXRhUmVzcG9uc2UqZgoW",
+            "QWNjb3VudEFwcFJlbGF0aW9uVHlwZRIpCiVBQ0NPVU5UX0FQUF9SRUxBVElP",
+            "Tl9UWVBFX1VOU1BFQ0lGSUVEEAASIQodQUNDT1VOVF9BUFBfUkVMQVRJT05f",
+            "VFlQRV9PV04QASopCgpGZWVkU291cmNlEhsKF0ZFRURfU09VUkNFX1VOU1BF",
+            "Q0lGSUVEEAAqJQoIREJTb3VyY2USGQoVREJfU09VUkNFX1VOU1BFQ0lGSUVE",
+            "EAAqKQoKV2lraVNvdXJjZRIbChdXSUtJX1NPVVJDRV9VTlNQRUNJRklFRBAA",
+            "KikKCkRhdGFTb3VyY2USGwoXREFUQV9TT1VSQ0VfVU5TUEVDSUZJRUQQADKP",
+            "BgoWTGlicmFyaWFuUG9ydGVyU2VydmljZRJXCghQdWxsRmVlZBIkLmxpYnJh",
+            "cmlhbi5wb3J0ZXIudjEuUHVsbEZlZWRSZXF1ZXN0GiUubGlicmFyaWFuLnBv",
+            "cnRlci52MS5QdWxsRmVlZFJlc3BvbnNlElEKBlB1bGxEQhIiLmxpYnJhcmlh",
+            "bi5wb3J0ZXIudjEuUHVsbERCUmVxdWVzdBojLmxpYnJhcmlhbi5wb3J0ZXIu",
+            "djEuUHVsbERCUmVzcG9uc2USVwoIUHVsbFdpa2kSJC5saWJyYXJpYW4ucG9y",
+            "dGVyLnYxLlB1bGxXaWtpUmVxdWVzdBolLmxpYnJhcmlhbi5wb3J0ZXIudjEu",
+            "UHVsbFdpa2lSZXNwb25zZRJZCghQdWxsRGF0YRIkLmxpYnJhcmlhbi5wb3J0",
+            "ZXIudjEuUHVsbERhdGFSZXF1ZXN0GiUubGlicmFyaWFuLnBvcnRlci52MS5Q",
+            "dWxsRGF0YVJlc3BvbnNlMAESYAoLUHVsbEFjY291bnQSJy5saWJyYXJpYW4u",
+            "cG9ydGVyLnYxLlB1bGxBY2NvdW50UmVxdWVzdBooLmxpYnJhcmlhbi5wb3J0",
+            "ZXIudjEuUHVsbEFjY291bnRSZXNwb25zZRJUCgdQdWxsQXBwEiMubGlicmFy",
+            "aWFuLnBvcnRlci52MS5QdWxsQXBwUmVxdWVzdBokLmxpYnJhcmlhbi5wb3J0",
+            "ZXIudjEuUHVsbEFwcFJlc3BvbnNlEoEBChZQdWxsQWNjb3VudEFwcFJlbGF0",
+            "aW9uEjIubGlicmFyaWFuLnBvcnRlci52MS5QdWxsQWNjb3VudEFwcFJlbGF0",
+            "aW9uUmVxdWVzdBozLmxpYnJhcmlhbi5wb3J0ZXIudjEuUHVsbEFjY291bnRB",
+            "cHBSZWxhdGlvblJlc3BvbnNlElkKCFB1c2hEYXRhEiQubGlicmFyaWFuLnBv",
+            "cnRlci52MS5QdXNoRGF0YVJlcXVlc3QaJS5saWJyYXJpYW4ucG9ydGVyLnYx",
+            "LlB1c2hEYXRhUmVzcG9uc2UoAUJZWjNnaXRodWIuY29tL3R1aWh1Yi9wcm90",
+            "b3MvcGtnL2xpYnJhcmlhbi9wb3J0ZXIvdjE7djGqAiFUdWlIdWIuUHJvdG9z",
+            "LkxpYnJhcmlhbi5Qb3J0ZXIuVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Porter.V1.AccountAppRelationType), typeof(global::TuiHub.Protos.Librarian.Porter.V1.FeedSource), typeof(global::TuiHub.Protos.Librarian.Porter.V1.DBSource), typeof(global::TuiHub.Protos.Librarian.Porter.V1.WikiSource), typeof(global::TuiHub.Protos.Librarian.Porter.V1.DataSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -100,7 +102,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PullAppResponse), global::TuiHub.Protos.Librarian.Porter.V1.PullAppResponse.Parser, new[]{ "App" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationRequest), global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationRequest.Parser, new[]{ "RelationType", "AccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationResponse), global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationResponse.Parser, new[]{ "AppList" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest), global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Parser, new[]{ "Source", "ContentId", "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest), global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Parser, new[]{ "Metadata", "Data" }, new[]{ "Content" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta), global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta.Parser, new[]{ "Source", "ContentId" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse), global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse.Parser, null, null, null, null, null)
           }));
     }
@@ -3029,9 +3031,15 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PushDataRequest(PushDataRequest other) : this() {
-      source_ = other.source_;
-      contentId_ = other.contentId_;
-      data_ = other.data_;
+      switch (other.ContentCase) {
+        case ContentOneofCase.Metadata:
+          Metadata = other.Metadata.Clone();
+          break;
+        case ContentOneofCase.Data:
+          Data = other.Data;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3041,40 +3049,49 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       return new PushDataRequest(this);
     }
 
-    /// <summary>Field number for the "source" field.</summary>
-    public const int SourceFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Porter.V1.DataSource source_ = global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified;
+    /// <summary>Field number for the "metadata" field.</summary>
+    public const int MetadataFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Porter.V1.DataSource Source {
-      get { return source_; }
+    public global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta Metadata {
+      get { return contentCase_ == ContentOneofCase.Metadata ? (global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta) content_ : null; }
       set {
-        source_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "content_id" field.</summary>
-    public const int ContentIdFieldNumber = 2;
-    private string contentId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ContentId {
-      get { return contentId_; }
-      set {
-        contentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        content_ = value;
+        contentCase_ = value == null ? ContentOneofCase.None : ContentOneofCase.Metadata;
       }
     }
 
     /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 3;
-    private pb::ByteString data_ = pb::ByteString.Empty;
+    public const int DataFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString Data {
-      get { return data_; }
+      get { return contentCase_ == ContentOneofCase.Data ? (pb::ByteString) content_ : pb::ByteString.Empty; }
       set {
-        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        contentCase_ = ContentOneofCase.Data;
       }
+    }
+
+    private object content_;
+    /// <summary>Enum of possible cases for the "content" oneof.</summary>
+    public enum ContentOneofCase {
+      None = 0,
+      Metadata = 1,
+      Data = 2,
+    }
+    private ContentOneofCase contentCase_ = ContentOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ContentOneofCase ContentCase {
+      get { return contentCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearContent() {
+      contentCase_ = ContentOneofCase.None;
+      content_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3092,9 +3109,9 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Source != other.Source) return false;
-      if (ContentId != other.ContentId) return false;
+      if (!object.Equals(Metadata, other.Metadata)) return false;
       if (Data != other.Data) return false;
+      if (ContentCase != other.ContentCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3102,9 +3119,9 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) hash ^= Source.GetHashCode();
-      if (ContentId.Length != 0) hash ^= ContentId.GetHashCode();
-      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      if (contentCase_ == ContentOneofCase.Metadata) hash ^= Metadata.GetHashCode();
+      if (contentCase_ == ContentOneofCase.Data) hash ^= Data.GetHashCode();
+      hash ^= (int) contentCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3123,16 +3140,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Source);
+      if (contentCase_ == ContentOneofCase.Metadata) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Metadata);
       }
-      if (ContentId.Length != 0) {
+      if (contentCase_ == ContentOneofCase.Data) {
         output.WriteRawTag(18);
-        output.WriteString(ContentId);
-      }
-      if (Data.Length != 0) {
-        output.WriteRawTag(26);
         output.WriteBytes(Data);
       }
       if (_unknownFields != null) {
@@ -3145,16 +3158,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Source);
+      if (contentCase_ == ContentOneofCase.Metadata) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Metadata);
       }
-      if (ContentId.Length != 0) {
+      if (contentCase_ == ContentOneofCase.Data) {
         output.WriteRawTag(18);
-        output.WriteString(ContentId);
-      }
-      if (Data.Length != 0) {
-        output.WriteRawTag(26);
         output.WriteBytes(Data);
       }
       if (_unknownFields != null) {
@@ -3167,13 +3176,10 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Source);
+      if (contentCase_ == ContentOneofCase.Metadata) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Metadata);
       }
-      if (ContentId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ContentId);
-      }
-      if (Data.Length != 0) {
+      if (contentCase_ == ContentOneofCase.Data) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
       }
       if (_unknownFields != null) {
@@ -3188,15 +3194,18 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       if (other == null) {
         return;
       }
-      if (other.Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
-        Source = other.Source;
+      switch (other.ContentCase) {
+        case ContentOneofCase.Metadata:
+          if (Metadata == null) {
+            Metadata = new global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta();
+          }
+          Metadata.MergeFrom(other.Metadata);
+          break;
+        case ContentOneofCase.Data:
+          Data = other.Data;
+          break;
       }
-      if (other.ContentId.Length != 0) {
-        ContentId = other.ContentId;
-      }
-      if (other.Data.Length != 0) {
-        Data = other.Data;
-      }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3212,15 +3221,16 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Source = (global::TuiHub.Protos.Librarian.Porter.V1.DataSource) input.ReadEnum();
+          case 10: {
+            global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta subBuilder = new global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta();
+            if (contentCase_ == ContentOneofCase.Metadata) {
+              subBuilder.MergeFrom(Metadata);
+            }
+            input.ReadMessage(subBuilder);
+            Metadata = subBuilder;
             break;
           }
           case 18: {
-            ContentId = input.ReadString();
-            break;
-          }
-          case 26: {
             Data = input.ReadBytes();
             break;
           }
@@ -3239,15 +3249,16 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Source = (global::TuiHub.Protos.Librarian.Porter.V1.DataSource) input.ReadEnum();
+          case 10: {
+            global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta subBuilder = new global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Types.DataMeta();
+            if (contentCase_ == ContentOneofCase.Metadata) {
+              subBuilder.MergeFrom(Metadata);
+            }
+            input.ReadMessage(subBuilder);
+            Metadata = subBuilder;
             break;
           }
           case 18: {
-            ContentId = input.ReadString();
-            break;
-          }
-          case 26: {
             Data = input.ReadBytes();
             break;
           }
@@ -3255,6 +3266,240 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the PushDataRequest message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class DataMeta : pb::IMessage<DataMeta>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<DataMeta> _parser = new pb::MessageParser<DataMeta>(() => new DataMeta());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<DataMeta> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public DataMeta() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public DataMeta(DataMeta other) : this() {
+          source_ = other.source_;
+          contentId_ = other.contentId_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public DataMeta Clone() {
+          return new DataMeta(this);
+        }
+
+        /// <summary>Field number for the "source" field.</summary>
+        public const int SourceFieldNumber = 1;
+        private global::TuiHub.Protos.Librarian.Porter.V1.DataSource source_ = global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::TuiHub.Protos.Librarian.Porter.V1.DataSource Source {
+          get { return source_; }
+          set {
+            source_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "content_id" field.</summary>
+        public const int ContentIdFieldNumber = 2;
+        private string contentId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string ContentId {
+          get { return contentId_; }
+          set {
+            contentId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as DataMeta);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(DataMeta other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Source != other.Source) return false;
+          if (ContentId != other.ContentId) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) hash ^= Source.GetHashCode();
+          if (ContentId.Length != 0) hash ^= ContentId.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Source);
+          }
+          if (ContentId.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(ContentId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Source);
+          }
+          if (ContentId.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(ContentId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Source);
+          }
+          if (ContentId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(ContentId);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(DataMeta other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Source != global::TuiHub.Protos.Librarian.Porter.V1.DataSource.Unspecified) {
+            Source = other.Source;
+          }
+          if (other.ContentId.Length != 0) {
+            ContentId = other.ContentId;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Source = (global::TuiHub.Protos.Librarian.Porter.V1.DataSource) input.ReadEnum();
+                break;
+              }
+              case 18: {
+                ContentId = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Source = (global::TuiHub.Protos.Librarian.Porter.V1.DataSource) input.ReadEnum();
+                break;
+              }
+              case 18: {
+                ContentId = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
 
   }
 

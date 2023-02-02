@@ -222,14 +222,26 @@ final $typed_data.Uint8List pullAccountAppRelationResponseDescriptor = $convert.
 const PushDataRequest$json = const {
   '1': 'PushDataRequest',
   '2': const [
+    const {'1': 'metadata', '3': 1, '4': 1, '5': 11, '6': '.librarian.porter.v1.PushDataRequest.DataMeta', '9': 0, '10': 'metadata'},
+    const {'1': 'data', '3': 2, '4': 1, '5': 12, '9': 0, '10': 'data'},
+  ],
+  '3': const [PushDataRequest_DataMeta$json],
+  '8': const [
+    const {'1': 'content'},
+  ],
+};
+
+@$core.Deprecated('Use pushDataRequestDescriptor instead')
+const PushDataRequest_DataMeta$json = const {
+  '1': 'DataMeta',
+  '2': const [
     const {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
     const {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
-    const {'1': 'data', '3': 3, '4': 1, '5': 12, '10': 'data'},
   ],
 };
 
 /// Descriptor for `PushDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushDataRequestDescriptor = $convert.base64Decode('Cg9QdXNoRGF0YVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElkEhIKBGRhdGEYAyABKAxSBGRhdGE=');
+final $typed_data.Uint8List pushDataRequestDescriptor = $convert.base64Decode('Cg9QdXNoRGF0YVJlcXVlc3QSSwoIbWV0YWRhdGEYASABKAsyLS5saWJyYXJpYW4ucG9ydGVyLnYxLlB1c2hEYXRhUmVxdWVzdC5EYXRhTWV0YUgAUghtZXRhZGF0YRIUCgRkYXRhGAIgASgMSABSBGRhdGEaYgoIRGF0YU1ldGESNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElkQgkKB2NvbnRlbnQ=');
 @$core.Deprecated('Use pushDataResponseDescriptor instead')
 const PushDataResponse$json = const {
   '1': 'PushDataResponse',

@@ -320,17 +320,19 @@ export namespace PullAccountAppRelationResponse {
 }
 
 export class PushDataRequest extends jspb.Message {
-  getSource(): DataSourceMap[keyof DataSourceMap];
-  setSource(value: DataSourceMap[keyof DataSourceMap]): void;
+  hasMetadata(): boolean;
+  clearMetadata(): void;
+  getMetadata(): PushDataRequest.DataMeta | undefined;
+  setMetadata(value?: PushDataRequest.DataMeta): void;
 
-  getContentId(): string;
-  setContentId(value: string): void;
-
+  hasData(): boolean;
+  clearData(): void;
   getData(): Uint8Array | string;
   getData_asU8(): Uint8Array;
   getData_asB64(): string;
   setData(value: Uint8Array | string): void;
 
+  getContentCase(): PushDataRequest.ContentCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PushDataRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PushDataRequest): PushDataRequest.AsObject;
@@ -343,9 +345,38 @@ export class PushDataRequest extends jspb.Message {
 
 export namespace PushDataRequest {
   export type AsObject = {
-    source: DataSourceMap[keyof DataSourceMap],
-    contentId: string,
+    metadata?: PushDataRequest.DataMeta.AsObject,
     data: Uint8Array | string,
+  }
+
+  export class DataMeta extends jspb.Message {
+    getSource(): DataSourceMap[keyof DataSourceMap];
+    setSource(value: DataSourceMap[keyof DataSourceMap]): void;
+
+    getContentId(): string;
+    setContentId(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DataMeta.AsObject;
+    static toObject(includeInstance: boolean, msg: DataMeta): DataMeta.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DataMeta, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DataMeta;
+    static deserializeBinaryFromReader(message: DataMeta, reader: jspb.BinaryReader): DataMeta;
+  }
+
+  export namespace DataMeta {
+    export type AsObject = {
+      source: DataSourceMap[keyof DataSourceMap],
+      contentId: string,
+    }
+  }
+
+  export enum ContentCase {
+    CONTENT_NOT_SET = 0,
+    METADATA = 1,
+    DATA = 2,
   }
 }
 
