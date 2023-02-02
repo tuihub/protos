@@ -87,9 +87,14 @@ message PullAccountAppRelationResponse {
 }
 
 message PushDataRequest {
-  DataSource source = 1;
-  string content_id = 2;
-  bytes data = 3;
+  message DataMeta {
+    DataSource source = 1;
+    string content_id = 2;
+  }
+  oneof content {
+    DataMeta metadata = 1;
+    bytes data = 2;
+  }
 }
 message PushDataResponse {}
 
