@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.3](https://github.com/TuiHub/Protos/compare/v0.2.2...v0.2.3) (2023-02-02)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#23](https://github.com/TuiHub/Protos/issues/23)) ([7daf1de](https://github.com/TuiHub/Protos/commit/7daf1de56e939fc796aa3309cdcad6d2dc4ad9fe))
+* **deps:** update all non-major dependencies ([#25](https://github.com/TuiHub/Protos/issues/25)) ([dde1815](https://github.com/TuiHub/Protos/commit/dde1815d61524fd6737545298feb23292b320411))
+* **deps:** update all non-major dependencies ([#27](https://github.com/TuiHub/Protos/issues/27)) ([eca8bbc](https://github.com/TuiHub/Protos/commit/eca8bbc31c4a66a866d16413ed81de7d6d8b3101))
+* update PushDataRequest ([2dd9445](https://github.com/TuiHub/Protos/commit/2dd944531582a2012e089da440ec41f2e882c7cf))
+
 ## [0.2.2](https://github.com/TuiHub/Protos/compare/v0.2.1...v0.2.2) (2022-12-16)
 
 
