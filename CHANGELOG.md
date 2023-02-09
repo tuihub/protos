@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.4](https://github.com/TuiHub/Protos/compare/v0.2.3...v0.2.4) (2023-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#28](https://github.com/TuiHub/Protos/issues/28)) ([687a8aa](https://github.com/TuiHub/Protos/commit/687a8aae6a96f1715721f659370f4394baab3ad7))
+* extend enum ([301c302](https://github.com/TuiHub/Protos/commit/301c3028b0dfcedf814da7f79aec2873fe0a7e46))
+* restruct feed ([bc542f2](https://github.com/TuiHub/Protos/commit/bc542f266e56ad85f5d3ecefa0ddce1b83ac7f25))
+
 ## [0.2.3](https://github.com/TuiHub/Protos/compare/v0.2.2...v0.2.3) (2023-02-02)
 
 
