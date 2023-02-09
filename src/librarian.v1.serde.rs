@@ -1439,16 +1439,16 @@ impl serde::Serialize for Feed {
         if !self.description.is_empty() {
             len += 1;
         }
-        if !self.item.is_empty() {
+        if !self.items.is_empty() {
             len += 1;
         }
-        if self.language.is_some() {
+        if !self.language.is_empty() {
             len += 1;
         }
-        if self.image_url.is_some() {
+        if !self.image.is_empty() {
             len += 1;
         }
-        if self.author.is_some() {
+        if !self.authors.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.Feed", len)?;
@@ -1461,17 +1461,17 @@ impl serde::Serialize for Feed {
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
-        if !self.item.is_empty() {
-            struct_ser.serialize_field("item", &self.item)?;
+        if !self.items.is_empty() {
+            struct_ser.serialize_field("items", &self.items)?;
         }
-        if let Some(v) = self.language.as_ref() {
-            struct_ser.serialize_field("language", v)?;
+        if !self.language.is_empty() {
+            struct_ser.serialize_field("language", &self.language)?;
         }
-        if let Some(v) = self.image_url.as_ref() {
-            struct_ser.serialize_field("imageUrl", v)?;
+        if !self.image.is_empty() {
+            struct_ser.serialize_field("image", &self.image)?;
         }
-        if let Some(v) = self.author.as_ref() {
-            struct_ser.serialize_field("author", v)?;
+        if !self.authors.is_empty() {
+            struct_ser.serialize_field("authors", &self.authors)?;
         }
         struct_ser.end()
     }
@@ -1486,10 +1486,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
             "title",
             "link",
             "description",
-            "item",
+            "items",
             "language",
-            "imageUrl",
-            "author",
+            "image",
+            "authors",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1497,10 +1497,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
             Title,
             Link,
             Description,
-            Item,
+            Items,
             Language,
-            ImageUrl,
-            Author,
+            Image,
+            Authors,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1525,10 +1525,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             "title" => Ok(GeneratedField::Title),
                             "link" => Ok(GeneratedField::Link),
                             "description" => Ok(GeneratedField::Description),
-                            "item" => Ok(GeneratedField::Item),
+                            "items" => Ok(GeneratedField::Items),
                             "language" => Ok(GeneratedField::Language),
-                            "imageUrl" => Ok(GeneratedField::ImageUrl),
-                            "author" => Ok(GeneratedField::Author),
+                            "image" => Ok(GeneratedField::Image),
+                            "authors" => Ok(GeneratedField::Authors),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1551,10 +1551,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
                 let mut title__ = None;
                 let mut link__ = None;
                 let mut description__ = None;
-                let mut item__ = None;
+                let mut items__ = None;
                 let mut language__ = None;
-                let mut image_url__ = None;
-                let mut author__ = None;
+                let mut image__ = None;
+                let mut authors__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Title => {
@@ -1575,11 +1575,11 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             }
                             description__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Item => {
-                            if item__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("item"));
+                        GeneratedField::Items => {
+                            if items__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("items"));
                             }
-                            item__ = Some(map.next_value()?);
+                            items__ = Some(map.next_value()?);
                         }
                         GeneratedField::Language => {
                             if language__.is_some() {
@@ -1587,17 +1587,17 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             }
                             language__ = Some(map.next_value()?);
                         }
-                        GeneratedField::ImageUrl => {
-                            if image_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("imageUrl"));
+                        GeneratedField::Image => {
+                            if image__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("image"));
                             }
-                            image_url__ = Some(map.next_value()?);
+                            image__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Author => {
-                            if author__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("author"));
+                        GeneratedField::Authors => {
+                            if authors__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("authors"));
                             }
-                            author__ = Some(map.next_value()?);
+                            authors__ = Some(map.next_value()?);
                         }
                     }
                 }
@@ -1605,10 +1605,10 @@ impl<'de> serde::Deserialize<'de> for Feed {
                     title: title__.unwrap_or_default(),
                     link: link__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
-                    item: item__.unwrap_or_default(),
-                    language: language__,
-                    image_url: image_url__,
-                    author: author__,
+                    items: items__.unwrap_or_default(),
+                    language: language__.unwrap_or_default(),
+                    image: image__.unwrap_or_default(),
+                    authors: authors__.unwrap_or_default(),
                 })
             }
         }
@@ -1740,6 +1740,114 @@ impl<'de> serde::Deserialize<'de> for FeedEnclosure {
         deserializer.deserialize_struct("librarian.v1.FeedEnclosure", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for FeedImage {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.url.is_empty() {
+            len += 1;
+        }
+        if !self.title.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedImage", len)?;
+        if !self.url.is_empty() {
+            struct_ser.serialize_field("url", &self.url)?;
+        }
+        if !self.title.is_empty() {
+            struct_ser.serialize_field("title", &self.title)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeedImage {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "url",
+            "title",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Url,
+            Title,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "url" => Ok(GeneratedField::Url),
+                            "title" => Ok(GeneratedField::Title),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeedImage;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.FeedImage")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeedImage, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut url__ = None;
+                let mut title__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Url => {
+                            if url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("url"));
+                            }
+                            url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Title => {
+                            if title__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("title"));
+                            }
+                            title__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(FeedImage {
+                    url: url__.unwrap_or_default(),
+                    title: title__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.FeedImage", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for FeedItem {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -1751,7 +1859,7 @@ impl serde::Serialize for FeedItem {
         if !self.title.is_empty() {
             len += 1;
         }
-        if !self.author.is_empty() {
+        if !self.authors.is_empty() {
             len += 1;
         }
         if !self.description.is_empty() {
@@ -1766,24 +1874,30 @@ impl serde::Serialize for FeedItem {
         if !self.link.is_empty() {
             len += 1;
         }
-        if !self.image_url.is_empty() {
+        if self.image.is_some() {
             len += 1;
         }
-        if !self.publish_date.is_empty() {
+        if !self.published.is_empty() {
             len += 1;
         }
-        if self.publish_date_parsed.is_some() {
+        if self.published_parsed.is_some() {
             len += 1;
         }
-        if self.enclosure.is_some() {
+        if !self.updated.is_empty() {
+            len += 1;
+        }
+        if self.updated_parsed.is_some() {
+            len += 1;
+        }
+        if !self.enclosure.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
         if !self.title.is_empty() {
             struct_ser.serialize_field("title", &self.title)?;
         }
-        if !self.author.is_empty() {
-            struct_ser.serialize_field("author", &self.author)?;
+        if !self.authors.is_empty() {
+            struct_ser.serialize_field("authors", &self.authors)?;
         }
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
@@ -1797,17 +1911,23 @@ impl serde::Serialize for FeedItem {
         if !self.link.is_empty() {
             struct_ser.serialize_field("link", &self.link)?;
         }
-        if !self.image_url.is_empty() {
-            struct_ser.serialize_field("imageUrl", &self.image_url)?;
+        if let Some(v) = self.image.as_ref() {
+            struct_ser.serialize_field("image", v)?;
         }
-        if !self.publish_date.is_empty() {
-            struct_ser.serialize_field("publishDate", &self.publish_date)?;
+        if !self.published.is_empty() {
+            struct_ser.serialize_field("published", &self.published)?;
         }
-        if let Some(v) = self.publish_date_parsed.as_ref() {
-            struct_ser.serialize_field("publishDateParsed", v)?;
+        if let Some(v) = self.published_parsed.as_ref() {
+            struct_ser.serialize_field("publishedParsed", v)?;
         }
-        if let Some(v) = self.enclosure.as_ref() {
-            struct_ser.serialize_field("enclosure", v)?;
+        if !self.updated.is_empty() {
+            struct_ser.serialize_field("updated", &self.updated)?;
+        }
+        if let Some(v) = self.updated_parsed.as_ref() {
+            struct_ser.serialize_field("updatedParsed", v)?;
+        }
+        if !self.enclosure.is_empty() {
+            struct_ser.serialize_field("enclosure", &self.enclosure)?;
         }
         struct_ser.end()
     }
@@ -1820,28 +1940,32 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
     {
         const FIELDS: &[&str] = &[
             "title",
-            "author",
+            "authors",
             "description",
             "content",
             "guid",
             "link",
-            "imageUrl",
-            "publishDate",
-            "publishDateParsed",
+            "image",
+            "published",
+            "publishedParsed",
+            "updated",
+            "updatedParsed",
             "enclosure",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Title,
-            Author,
+            Authors,
             Description,
             Content,
             Guid,
             Link,
-            ImageUrl,
-            PublishDate,
-            PublishDateParsed,
+            Image,
+            Published,
+            PublishedParsed,
+            Updated,
+            UpdatedParsed,
             Enclosure,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -1865,14 +1989,16 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     {
                         match value {
                             "title" => Ok(GeneratedField::Title),
-                            "author" => Ok(GeneratedField::Author),
+                            "authors" => Ok(GeneratedField::Authors),
                             "description" => Ok(GeneratedField::Description),
                             "content" => Ok(GeneratedField::Content),
                             "guid" => Ok(GeneratedField::Guid),
                             "link" => Ok(GeneratedField::Link),
-                            "imageUrl" => Ok(GeneratedField::ImageUrl),
-                            "publishDate" => Ok(GeneratedField::PublishDate),
-                            "publishDateParsed" => Ok(GeneratedField::PublishDateParsed),
+                            "image" => Ok(GeneratedField::Image),
+                            "published" => Ok(GeneratedField::Published),
+                            "publishedParsed" => Ok(GeneratedField::PublishedParsed),
+                            "updated" => Ok(GeneratedField::Updated),
+                            "updatedParsed" => Ok(GeneratedField::UpdatedParsed),
                             "enclosure" => Ok(GeneratedField::Enclosure),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -1894,14 +2020,16 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut title__ = None;
-                let mut author__ = None;
+                let mut authors__ = None;
                 let mut description__ = None;
                 let mut content__ = None;
                 let mut guid__ = None;
                 let mut link__ = None;
-                let mut image_url__ = None;
-                let mut publish_date__ = None;
-                let mut publish_date_parsed__ = None;
+                let mut image__ = None;
+                let mut published__ = None;
+                let mut published_parsed__ = None;
+                let mut updated__ = None;
+                let mut updated_parsed__ = None;
                 let mut enclosure__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -1911,11 +2039,11 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             }
                             title__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Author => {
-                            if author__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("author"));
+                        GeneratedField::Authors => {
+                            if authors__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("authors"));
                             }
-                            author__ = Some(map.next_value()?);
+                            authors__ = Some(map.next_value()?);
                         }
                         GeneratedField::Description => {
                             if description__.is_some() {
@@ -1941,23 +2069,35 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             }
                             link__ = Some(map.next_value()?);
                         }
-                        GeneratedField::ImageUrl => {
-                            if image_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("imageUrl"));
+                        GeneratedField::Image => {
+                            if image__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("image"));
                             }
-                            image_url__ = Some(map.next_value()?);
+                            image__ = Some(map.next_value()?);
                         }
-                        GeneratedField::PublishDate => {
-                            if publish_date__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("publishDate"));
+                        GeneratedField::Published => {
+                            if published__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("published"));
                             }
-                            publish_date__ = Some(map.next_value()?);
+                            published__ = Some(map.next_value()?);
                         }
-                        GeneratedField::PublishDateParsed => {
-                            if publish_date_parsed__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("publishDateParsed"));
+                        GeneratedField::PublishedParsed => {
+                            if published_parsed__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publishedParsed"));
                             }
-                            publish_date_parsed__ = Some(map.next_value()?);
+                            published_parsed__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Updated => {
+                            if updated__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("updated"));
+                            }
+                            updated__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::UpdatedParsed => {
+                            if updated_parsed__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("updatedParsed"));
+                            }
+                            updated_parsed__ = Some(map.next_value()?);
                         }
                         GeneratedField::Enclosure => {
                             if enclosure__.is_some() {
@@ -1969,19 +2109,129 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 }
                 Ok(FeedItem {
                     title: title__.unwrap_or_default(),
-                    author: author__.unwrap_or_default(),
+                    authors: authors__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     content: content__.unwrap_or_default(),
                     guid: guid__.unwrap_or_default(),
                     link: link__.unwrap_or_default(),
-                    image_url: image_url__.unwrap_or_default(),
-                    publish_date: publish_date__.unwrap_or_default(),
-                    publish_date_parsed: publish_date_parsed__,
-                    enclosure: enclosure__,
+                    image: image__,
+                    published: published__.unwrap_or_default(),
+                    published_parsed: published_parsed__,
+                    updated: updated__.unwrap_or_default(),
+                    updated_parsed: updated_parsed__,
+                    enclosure: enclosure__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.v1.FeedItem", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for FeedPerson {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.email.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedPerson", len)?;
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.email.is_empty() {
+            struct_ser.serialize_field("email", &self.email)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeedPerson {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "name",
+            "email",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Name,
+            Email,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "name" => Ok(GeneratedField::Name),
+                            "email" => Ok(GeneratedField::Email),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeedPerson;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.FeedPerson")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeedPerson, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut name__ = None;
+                let mut email__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Email => {
+                            if email__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("email"));
+                            }
+                            email__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(FeedPerson {
+                    name: name__.unwrap_or_default(),
+                    email: email__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.FeedPerson", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for InternalId {

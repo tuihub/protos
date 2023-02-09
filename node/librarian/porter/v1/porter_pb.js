@@ -3078,7 +3078,8 @@ proto.librarian.porter.v1.AccountAppRelationType = {
  * @enum {number}
  */
 proto.librarian.porter.v1.FeedSource = {
-  FEED_SOURCE_UNSPECIFIED: 0
+  FEED_SOURCE_UNSPECIFIED: 0,
+  FEED_SOURCE_COMMON: 1
 };
 
 /**
@@ -3099,7 +3100,8 @@ proto.librarian.porter.v1.WikiSource = {
  * @enum {number}
  */
 proto.librarian.porter.v1.DataSource = {
-  DATA_SOURCE_UNSPECIFIED: 0
+  DATA_SOURCE_UNSPECIFIED: 0,
+  DATA_SOURCE_INTERNAL_DEFAULT: 1
 };
 
 goog.object.extend(exports, proto.librarian.porter.v1);

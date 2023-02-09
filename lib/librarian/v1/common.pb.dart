@@ -911,10 +911,10 @@ class Feed extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'link')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..pc<FeedItem>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'item', $pb.PbFieldType.PM, subBuilder: FeedItem.create)
+    ..pc<FeedItem>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItem.create)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'language')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrl')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'author')
+    ..pc<FeedImage>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', $pb.PbFieldType.PM, subBuilder: FeedImage.create)
+    ..pc<FeedPerson>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authors', $pb.PbFieldType.PM, subBuilder: FeedPerson.create)
     ..hasRequiredFields = false
   ;
 
@@ -923,10 +923,10 @@ class Feed extends $pb.GeneratedMessage {
     $core.String? title,
     $core.String? link,
     $core.String? description,
-    $core.Iterable<FeedItem>? item,
+    $core.Iterable<FeedItem>? items,
     $core.String? language,
-    $core.String? imageUrl,
-    $core.String? author,
+    $core.Iterable<FeedImage>? image,
+    $core.Iterable<FeedPerson>? authors,
   }) {
     final _result = create();
     if (title != null) {
@@ -938,17 +938,17 @@ class Feed extends $pb.GeneratedMessage {
     if (description != null) {
       _result.description = description;
     }
-    if (item != null) {
-      _result.item.addAll(item);
+    if (items != null) {
+      _result.items.addAll(items);
     }
     if (language != null) {
       _result.language = language;
     }
-    if (imageUrl != null) {
-      _result.imageUrl = imageUrl;
+    if (image != null) {
+      _result.image.addAll(image);
     }
-    if (author != null) {
-      _result.author = author;
+    if (authors != null) {
+      _result.authors.addAll(authors);
     }
     return _result;
   }
@@ -1001,7 +1001,7 @@ class Feed extends $pb.GeneratedMessage {
   void clearDescription() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<FeedItem> get item => $_getList(3);
+  $core.List<FeedItem> get items => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get language => $_getSZ(4);
@@ -1013,58 +1013,50 @@ class Feed extends $pb.GeneratedMessage {
   void clearLanguage() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get imageUrl => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set imageUrl($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasImageUrl() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearImageUrl() => clearField(6);
+  $core.List<FeedImage> get image => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.String get author => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set author($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasAuthor() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearAuthor() => clearField(7);
+  $core.List<FeedPerson> get authors => $_getList(6);
 }
 
 class FeedItem extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedItem', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'author')
+    ..pc<FeedPerson>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authors', $pb.PbFieldType.PM, subBuilder: FeedPerson.create)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'content')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'guid')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'link')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrl')
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishDate')
-    ..aOM<$0.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishDateParsed', subBuilder: $0.Timestamp.create)
-    ..aOM<FeedEnclosure>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enclosure', subBuilder: FeedEnclosure.create)
+    ..aOM<FeedImage>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: FeedImage.create)
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'published')
+    ..aOM<$0.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishedParsed', subBuilder: $0.Timestamp.create)
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updated')
+    ..aOM<$0.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedParsed', subBuilder: $0.Timestamp.create)
+    ..pc<FeedEnclosure>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enclosure', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
     ..hasRequiredFields = false
   ;
 
   FeedItem._() : super();
   factory FeedItem({
     $core.String? title,
-    $core.String? author,
+    $core.Iterable<FeedPerson>? authors,
     $core.String? description,
     $core.String? content,
     $core.String? guid,
     $core.String? link,
-    $core.String? imageUrl,
-    $core.String? publishDate,
-    $0.Timestamp? publishDateParsed,
-    FeedEnclosure? enclosure,
+    FeedImage? image,
+    $core.String? published,
+    $0.Timestamp? publishedParsed,
+    $core.String? updated,
+    $0.Timestamp? updatedParsed,
+    $core.Iterable<FeedEnclosure>? enclosure,
   }) {
     final _result = create();
     if (title != null) {
       _result.title = title;
     }
-    if (author != null) {
-      _result.author = author;
+    if (authors != null) {
+      _result.authors.addAll(authors);
     }
     if (description != null) {
       _result.description = description;
@@ -1078,17 +1070,23 @@ class FeedItem extends $pb.GeneratedMessage {
     if (link != null) {
       _result.link = link;
     }
-    if (imageUrl != null) {
-      _result.imageUrl = imageUrl;
+    if (image != null) {
+      _result.image = image;
     }
-    if (publishDate != null) {
-      _result.publishDate = publishDate;
+    if (published != null) {
+      _result.published = published;
     }
-    if (publishDateParsed != null) {
-      _result.publishDateParsed = publishDateParsed;
+    if (publishedParsed != null) {
+      _result.publishedParsed = publishedParsed;
+    }
+    if (updated != null) {
+      _result.updated = updated;
+    }
+    if (updatedParsed != null) {
+      _result.updatedParsed = updatedParsed;
     }
     if (enclosure != null) {
-      _result.enclosure = enclosure;
+      _result.enclosure.addAll(enclosure);
     }
     return _result;
   }
@@ -1123,13 +1121,7 @@ class FeedItem extends $pb.GeneratedMessage {
   void clearTitle() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get author => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set author($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasAuthor() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearAuthor() => clearField(2);
+  $core.List<FeedPerson> get authors => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -1168,44 +1160,180 @@ class FeedItem extends $pb.GeneratedMessage {
   void clearLink() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get imageUrl => $_getSZ(6);
+  FeedImage get image => $_getN(6);
   @$pb.TagNumber(7)
-  set imageUrl($core.String v) { $_setString(6, v); }
+  set image(FeedImage v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasImageUrl() => $_has(6);
+  $core.bool hasImage() => $_has(6);
   @$pb.TagNumber(7)
-  void clearImageUrl() => clearField(7);
+  void clearImage() => clearField(7);
+  @$pb.TagNumber(7)
+  FeedImage ensureImage() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.String get publishDate => $_getSZ(7);
+  $core.String get published => $_getSZ(7);
   @$pb.TagNumber(8)
-  set publishDate($core.String v) { $_setString(7, v); }
+  set published($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasPublishDate() => $_has(7);
+  $core.bool hasPublished() => $_has(7);
   @$pb.TagNumber(8)
-  void clearPublishDate() => clearField(8);
+  void clearPublished() => clearField(8);
 
   @$pb.TagNumber(9)
-  $0.Timestamp get publishDateParsed => $_getN(8);
+  $0.Timestamp get publishedParsed => $_getN(8);
   @$pb.TagNumber(9)
-  set publishDateParsed($0.Timestamp v) { setField(9, v); }
+  set publishedParsed($0.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasPublishDateParsed() => $_has(8);
+  $core.bool hasPublishedParsed() => $_has(8);
   @$pb.TagNumber(9)
-  void clearPublishDateParsed() => clearField(9);
+  void clearPublishedParsed() => clearField(9);
   @$pb.TagNumber(9)
-  $0.Timestamp ensurePublishDateParsed() => $_ensure(8);
+  $0.Timestamp ensurePublishedParsed() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  FeedEnclosure get enclosure => $_getN(9);
+  $core.String get updated => $_getSZ(9);
   @$pb.TagNumber(10)
-  set enclosure(FeedEnclosure v) { setField(10, v); }
+  set updated($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasEnclosure() => $_has(9);
+  $core.bool hasUpdated() => $_has(9);
   @$pb.TagNumber(10)
-  void clearEnclosure() => clearField(10);
-  @$pb.TagNumber(10)
-  FeedEnclosure ensureEnclosure() => $_ensure(9);
+  void clearUpdated() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $0.Timestamp get updatedParsed => $_getN(10);
+  @$pb.TagNumber(11)
+  set updatedParsed($0.Timestamp v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedParsed() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedParsed() => clearField(11);
+  @$pb.TagNumber(11)
+  $0.Timestamp ensureUpdatedParsed() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.List<FeedEnclosure> get enclosure => $_getList(11);
+}
+
+class FeedPerson extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedPerson', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
+    ..hasRequiredFields = false
+  ;
+
+  FeedPerson._() : super();
+  factory FeedPerson({
+    $core.String? name,
+    $core.String? email,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (email != null) {
+      _result.email = email;
+    }
+    return _result;
+  }
+  factory FeedPerson.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeedPerson.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FeedPerson clone() => FeedPerson()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FeedPerson copyWith(void Function(FeedPerson) updates) => super.copyWith((message) => updates(message as FeedPerson)) as FeedPerson; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static FeedPerson create() => FeedPerson._();
+  FeedPerson createEmptyInstance() => create();
+  static $pb.PbList<FeedPerson> createRepeated() => $pb.PbList<FeedPerson>();
+  @$core.pragma('dart2js:noInline')
+  static FeedPerson getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedPerson>(create);
+  static FeedPerson? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get email => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set email($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEmail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmail() => clearField(2);
+}
+
+class FeedImage extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedImage', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'url')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
+    ..hasRequiredFields = false
+  ;
+
+  FeedImage._() : super();
+  factory FeedImage({
+    $core.String? url,
+    $core.String? title,
+  }) {
+    final _result = create();
+    if (url != null) {
+      _result.url = url;
+    }
+    if (title != null) {
+      _result.title = title;
+    }
+    return _result;
+  }
+  factory FeedImage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeedImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FeedImage clone() => FeedImage()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FeedImage copyWith(void Function(FeedImage) updates) => super.copyWith((message) => updates(message as FeedImage)) as FeedImage; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static FeedImage create() => FeedImage._();
+  FeedImage createEmptyInstance() => create();
+  static $pb.PbList<FeedImage> createRepeated() => $pb.PbList<FeedImage>();
+  @$core.pragma('dart2js:noInline')
+  static FeedImage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedImage>(create);
+  static FeedImage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get url => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set url($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUrl() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => clearField(2);
 }
 
 class FeedEnclosure extends $pb.GeneratedMessage {

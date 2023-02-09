@@ -26,9 +26,11 @@ class AccountAppRelationType extends $pb.ProtobufEnum {
 
 class FeedSource extends $pb.ProtobufEnum {
   static const FeedSource FEED_SOURCE_UNSPECIFIED = FeedSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_SOURCE_UNSPECIFIED');
+  static const FeedSource FEED_SOURCE_COMMON = FeedSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_SOURCE_COMMON');
 
   static const $core.List<FeedSource> values = <FeedSource> [
     FEED_SOURCE_UNSPECIFIED,
+    FEED_SOURCE_COMMON,
   ];
 
   static final $core.Map<$core.int, FeedSource> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -65,9 +67,11 @@ class WikiSource extends $pb.ProtobufEnum {
 
 class DataSource extends $pb.ProtobufEnum {
   static const DataSource DATA_SOURCE_UNSPECIFIED = DataSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DATA_SOURCE_UNSPECIFIED');
+  static const DataSource DATA_SOURCE_INTERNAL_DEFAULT = DataSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DATA_SOURCE_INTERNAL_DEFAULT');
 
   static const $core.List<DataSource> values = <DataSource> [
     DATA_SOURCE_UNSPECIFIED,
+    DATA_SOURCE_INTERNAL_DEFAULT,
   ];
 
   static final $core.Map<$core.int, DataSource> _byValue = $pb.ProtobufEnum.initByValue(values);

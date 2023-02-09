@@ -24,11 +24,12 @@ const FeedSource$json = const {
   '1': 'FeedSource',
   '2': const [
     const {'1': 'FEED_SOURCE_UNSPECIFIED', '2': 0},
+    const {'1': 'FEED_SOURCE_COMMON', '2': 1},
   ],
 };
 
 /// Descriptor for `FeedSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List feedSourceDescriptor = $convert.base64Decode('CgpGZWVkU291cmNlEhsKF0ZFRURfU09VUkNFX1VOU1BFQ0lGSUVEEAA=');
+final $typed_data.Uint8List feedSourceDescriptor = $convert.base64Decode('CgpGZWVkU291cmNlEhsKF0ZFRURfU09VUkNFX1VOU1BFQ0lGSUVEEAASFgoSRkVFRF9TT1VSQ0VfQ09NTU9OEAE=');
 @$core.Deprecated('Use dBSourceDescriptor instead')
 const DBSource$json = const {
   '1': 'DBSource',
@@ -54,11 +55,12 @@ const DataSource$json = const {
   '1': 'DataSource',
   '2': const [
     const {'1': 'DATA_SOURCE_UNSPECIFIED', '2': 0},
+    const {'1': 'DATA_SOURCE_INTERNAL_DEFAULT', '2': 1},
   ],
 };
 
 /// Descriptor for `DataSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List dataSourceDescriptor = $convert.base64Decode('CgpEYXRhU291cmNlEhsKF0RBVEFfU09VUkNFX1VOU1BFQ0lGSUVEEAA=');
+final $typed_data.Uint8List dataSourceDescriptor = $convert.base64Decode('CgpEYXRhU291cmNlEhsKF0RBVEFfU09VUkNFX1VOU1BFQ0lGSUVEEAASIAocREFUQV9TT1VSQ0VfSU5URVJOQUxfREVGQVVMVBAB');
 @$core.Deprecated('Use pullFeedRequestDescriptor instead')
 const PullFeedRequest$json = const {
   '1': 'PullFeedRequest',

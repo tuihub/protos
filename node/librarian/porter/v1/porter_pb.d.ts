@@ -405,6 +405,7 @@ export const AccountAppRelationType: AccountAppRelationTypeMap;
 
 export interface FeedSourceMap {
   FEED_SOURCE_UNSPECIFIED: 0;
+  FEED_SOURCE_COMMON: 1;
 }
 
 export const FeedSource: FeedSourceMap;
@@ -423,6 +424,7 @@ export const WikiSource: WikiSourceMap;
 
 export interface DataSourceMap {
   DATA_SOURCE_UNSPECIFIED: 0;
+  DATA_SOURCE_INTERNAL_DEFAULT: 1;
 }
 
 export const DataSource: DataSourceMap;

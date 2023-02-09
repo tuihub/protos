@@ -346,25 +346,23 @@ export class Feed extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  clearItemList(): void;
-  getItemList(): Array<FeedItem>;
-  setItemList(value: Array<FeedItem>): void;
-  addItem(value?: FeedItem, index?: number): FeedItem;
+  clearItemsList(): void;
+  getItemsList(): Array<FeedItem>;
+  setItemsList(value: Array<FeedItem>): void;
+  addItems(value?: FeedItem, index?: number): FeedItem;
 
-  hasLanguage(): boolean;
-  clearLanguage(): void;
   getLanguage(): string;
   setLanguage(value: string): void;
 
-  hasImageUrl(): boolean;
-  clearImageUrl(): void;
-  getImageUrl(): string;
-  setImageUrl(value: string): void;
+  clearImageList(): void;
+  getImageList(): Array<FeedImage>;
+  setImageList(value: Array<FeedImage>): void;
+  addImage(value?: FeedImage, index?: number): FeedImage;
 
-  hasAuthor(): boolean;
-  clearAuthor(): void;
-  getAuthor(): string;
-  setAuthor(value: string): void;
+  clearAuthorsList(): void;
+  getAuthorsList(): Array<FeedPerson>;
+  setAuthorsList(value: Array<FeedPerson>): void;
+  addAuthors(value?: FeedPerson, index?: number): FeedPerson;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Feed.AsObject;
@@ -381,10 +379,10 @@ export namespace Feed {
     title: string,
     link: string,
     description: string,
-    itemList: Array<FeedItem.AsObject>,
+    itemsList: Array<FeedItem.AsObject>,
     language: string,
-    imageUrl: string,
-    author: string,
+    imageList: Array<FeedImage.AsObject>,
+    authorsList: Array<FeedPerson.AsObject>,
   }
 }
 
@@ -392,8 +390,10 @@ export class FeedItem extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
 
-  getAuthor(): string;
-  setAuthor(value: string): void;
+  clearAuthorsList(): void;
+  getAuthorsList(): Array<FeedPerson>;
+  setAuthorsList(value: Array<FeedPerson>): void;
+  addAuthors(value?: FeedPerson, index?: number): FeedPerson;
 
   getDescription(): string;
   setDescription(value: string): void;
@@ -407,21 +407,31 @@ export class FeedItem extends jspb.Message {
   getLink(): string;
   setLink(value: string): void;
 
-  getImageUrl(): string;
-  setImageUrl(value: string): void;
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): FeedImage | undefined;
+  setImage(value?: FeedImage): void;
 
-  getPublishDate(): string;
-  setPublishDate(value: string): void;
+  getPublished(): string;
+  setPublished(value: string): void;
 
-  hasPublishDateParsed(): boolean;
-  clearPublishDateParsed(): void;
-  getPublishDateParsed(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setPublishDateParsed(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasPublishedParsed(): boolean;
+  clearPublishedParsed(): void;
+  getPublishedParsed(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedParsed(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasEnclosure(): boolean;
-  clearEnclosure(): void;
-  getEnclosure(): FeedEnclosure | undefined;
-  setEnclosure(value?: FeedEnclosure): void;
+  getUpdated(): string;
+  setUpdated(value: string): void;
+
+  hasUpdatedParsed(): boolean;
+  clearUpdatedParsed(): void;
+  getUpdatedParsed(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdatedParsed(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  clearEnclosureList(): void;
+  getEnclosureList(): Array<FeedEnclosure>;
+  setEnclosureList(value: Array<FeedEnclosure>): void;
+  addEnclosure(value?: FeedEnclosure, index?: number): FeedEnclosure;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItem.AsObject;
@@ -436,15 +446,65 @@ export class FeedItem extends jspb.Message {
 export namespace FeedItem {
   export type AsObject = {
     title: string,
-    author: string,
+    authorsList: Array<FeedPerson.AsObject>,
     description: string,
     content: string,
     guid: string,
     link: string,
-    imageUrl: string,
-    publishDate: string,
-    publishDateParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    enclosure?: FeedEnclosure.AsObject,
+    image?: FeedImage.AsObject,
+    published: string,
+    publishedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updated: string,
+    updatedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    enclosureList: Array<FeedEnclosure.AsObject>,
+  }
+}
+
+export class FeedPerson extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedPerson.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedPerson): FeedPerson.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeedPerson, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedPerson;
+  static deserializeBinaryFromReader(message: FeedPerson, reader: jspb.BinaryReader): FeedPerson;
+}
+
+export namespace FeedPerson {
+  export type AsObject = {
+    name: string,
+    email: string,
+  }
+}
+
+export class FeedImage extends jspb.Message {
+  getUrl(): string;
+  setUrl(value: string): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedImage.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedImage): FeedImage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeedImage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedImage;
+  static deserializeBinaryFromReader(message: FeedImage, reader: jspb.BinaryReader): FeedImage;
+}
+
+export namespace FeedImage {
+  export type AsObject = {
+    url: string,
+    title: string,
   }
 }
 

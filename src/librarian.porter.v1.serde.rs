@@ -150,6 +150,7 @@ impl serde::Serialize for DataSource {
     {
         let variant = match self {
             Self::Unspecified => "DATA_SOURCE_UNSPECIFIED",
+            Self::InternalDefault => "DATA_SOURCE_INTERNAL_DEFAULT",
         };
         serializer.serialize_str(variant)
     }
@@ -162,6 +163,7 @@ impl<'de> serde::Deserialize<'de> for DataSource {
     {
         const FIELDS: &[&str] = &[
             "DATA_SOURCE_UNSPECIFIED",
+            "DATA_SOURCE_INTERNAL_DEFAULT",
         ];
 
         struct GeneratedVisitor;
@@ -205,6 +207,7 @@ impl<'de> serde::Deserialize<'de> for DataSource {
             {
                 match value {
                     "DATA_SOURCE_UNSPECIFIED" => Ok(DataSource::Unspecified),
+                    "DATA_SOURCE_INTERNAL_DEFAULT" => Ok(DataSource::InternalDefault),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
@@ -220,6 +223,7 @@ impl serde::Serialize for FeedSource {
     {
         let variant = match self {
             Self::Unspecified => "FEED_SOURCE_UNSPECIFIED",
+            Self::Common => "FEED_SOURCE_COMMON",
         };
         serializer.serialize_str(variant)
     }
@@ -232,6 +236,7 @@ impl<'de> serde::Deserialize<'de> for FeedSource {
     {
         const FIELDS: &[&str] = &[
             "FEED_SOURCE_UNSPECIFIED",
+            "FEED_SOURCE_COMMON",
         ];
 
         struct GeneratedVisitor;
@@ -275,6 +280,7 @@ impl<'de> serde::Deserialize<'de> for FeedSource {
             {
                 match value {
                     "FEED_SOURCE_UNSPECIFIED" => Ok(FeedSource::Unspecified),
+                    "FEED_SOURCE_COMMON" => Ok(FeedSource::Common),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
