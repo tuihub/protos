@@ -104,24 +104,40 @@ message Feed {
   string title = 1;
   string link = 2;
   string description = 3;
-  repeated FeedItem item = 4;
+  repeated FeedItem items = 4;
 
-  optional string language = 5;
-  optional string image_url = 6;
-  optional string author = 7;
+  string language = 5;
+  repeated FeedImage image = 6;
+  repeated FeedPerson authors = 7;
 }
 
 message FeedItem {
   string title = 1;
-  string author = 2;
+  repeated FeedPerson authors = 2;
   string description = 3;
   string content = 4;
   string guid = 5;
   string link = 6;
-  string image_url = 7;
-  string publish_date = 8;
-  optional google.protobuf.Timestamp publish_date_parsed = 9;
-  optional FeedEnclosure enclosure = 10;
+  FeedImage image = 7;
+  string published = 8;
+  optional google.protobuf.Timestamp published_parsed = 9;
+  string updated = 10;
+  optional google.protobuf.Timestamp updated_parsed = 11;
+  repeated FeedEnclosure enclosure = 12;
+}
+
+// Person is an individual specified in a feed
+// (e.g. an author)
+message FeedPerson {
+  string name = 1;
+  string email = 2;
+}
+
+// Image is an image that is the artwork for a given
+// feed or item.
+message FeedImage {
+  string url = 1;
+  string title = 2;
 }
 
 // Enclosure is a file associated with a given Item.
