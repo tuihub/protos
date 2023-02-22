@@ -520,7 +520,7 @@ export namespace ReportAppPackageResponse {
   }
 }
 
-export class BindAppPackageRequest extends jspb.Message {
+export class AssignAppPackageRequest extends jspb.Message {
   hasAppId(): boolean;
   clearAppId(): void;
   getAppId(): librarian_v1_common_pb.InternalID | undefined;
@@ -532,72 +532,72 @@ export class BindAppPackageRequest extends jspb.Message {
   setAppPackageId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BindAppPackageRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: BindAppPackageRequest): BindAppPackageRequest.AsObject;
+  toObject(includeInstance?: boolean): AssignAppPackageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignAppPackageRequest): AssignAppPackageRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BindAppPackageRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BindAppPackageRequest;
-  static deserializeBinaryFromReader(message: BindAppPackageRequest, reader: jspb.BinaryReader): BindAppPackageRequest;
+  static serializeBinaryToWriter(message: AssignAppPackageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignAppPackageRequest;
+  static deserializeBinaryFromReader(message: AssignAppPackageRequest, reader: jspb.BinaryReader): AssignAppPackageRequest;
 }
 
-export namespace BindAppPackageRequest {
+export namespace AssignAppPackageRequest {
   export type AsObject = {
     appId?: librarian_v1_common_pb.InternalID.AsObject,
     appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
-export class BindAppPackageResponse extends jspb.Message {
+export class AssignAppPackageResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BindAppPackageResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BindAppPackageResponse): BindAppPackageResponse.AsObject;
+  toObject(includeInstance?: boolean): AssignAppPackageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AssignAppPackageResponse): AssignAppPackageResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BindAppPackageResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BindAppPackageResponse;
-  static deserializeBinaryFromReader(message: BindAppPackageResponse, reader: jspb.BinaryReader): BindAppPackageResponse;
+  static serializeBinaryToWriter(message: AssignAppPackageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssignAppPackageResponse;
+  static deserializeBinaryFromReader(message: AssignAppPackageResponse, reader: jspb.BinaryReader): AssignAppPackageResponse;
 }
 
-export namespace BindAppPackageResponse {
+export namespace AssignAppPackageResponse {
   export type AsObject = {
   }
 }
 
-export class UnBindAppPackageRequest extends jspb.Message {
+export class UnAssignAppPackageRequest extends jspb.Message {
   hasAppPackageId(): boolean;
   clearAppPackageId(): void;
   getAppPackageId(): librarian_v1_common_pb.InternalID | undefined;
   setAppPackageId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UnBindAppPackageRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UnBindAppPackageRequest): UnBindAppPackageRequest.AsObject;
+  toObject(includeInstance?: boolean): UnAssignAppPackageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UnAssignAppPackageRequest): UnAssignAppPackageRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UnBindAppPackageRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UnBindAppPackageRequest;
-  static deserializeBinaryFromReader(message: UnBindAppPackageRequest, reader: jspb.BinaryReader): UnBindAppPackageRequest;
+  static serializeBinaryToWriter(message: UnAssignAppPackageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnAssignAppPackageRequest;
+  static deserializeBinaryFromReader(message: UnAssignAppPackageRequest, reader: jspb.BinaryReader): UnAssignAppPackageRequest;
 }
 
-export namespace UnBindAppPackageRequest {
+export namespace UnAssignAppPackageRequest {
   export type AsObject = {
     appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
-export class UnBindAppPackageResponse extends jspb.Message {
+export class UnAssignAppPackageResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UnBindAppPackageResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UnBindAppPackageResponse): UnBindAppPackageResponse.AsObject;
+  toObject(includeInstance?: boolean): UnAssignAppPackageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UnAssignAppPackageResponse): UnAssignAppPackageResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UnBindAppPackageResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UnBindAppPackageResponse;
-  static deserializeBinaryFromReader(message: UnBindAppPackageResponse, reader: jspb.BinaryReader): UnBindAppPackageResponse;
+  static serializeBinaryToWriter(message: UnAssignAppPackageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnAssignAppPackageResponse;
+  static deserializeBinaryFromReader(message: UnAssignAppPackageResponse, reader: jspb.BinaryReader): UnAssignAppPackageResponse;
 }
 
-export namespace UnBindAppPackageResponse {
+export namespace UnAssignAppPackageResponse {
   export type AsObject = {
   }
 }

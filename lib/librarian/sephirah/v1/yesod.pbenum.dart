@@ -26,16 +26,18 @@ class FeedConfigStatus extends $pb.ProtobufEnum {
   const FeedConfigStatus._($core.int v, $core.String n) : super(v, n);
 }
 
-class FeedConfigPublisher extends $pb.ProtobufEnum {
-  static const FeedConfigPublisher FEED_CONFIG_PUBLISHER_UNSPECIFIED = FeedConfigPublisher._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_CONFIG_PUBLISHER_UNSPECIFIED');
+class FeedConfigSource extends $pb.ProtobufEnum {
+  static const FeedConfigSource FEED_CONFIG_SOURCE_UNSPECIFIED = FeedConfigSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_CONFIG_SOURCE_UNSPECIFIED');
+  static const FeedConfigSource FEED_CONFIG_SOURCE_COMMON = FeedConfigSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_CONFIG_SOURCE_COMMON');
 
-  static const $core.List<FeedConfigPublisher> values = <FeedConfigPublisher> [
-    FEED_CONFIG_PUBLISHER_UNSPECIFIED,
+  static const $core.List<FeedConfigSource> values = <FeedConfigSource> [
+    FEED_CONFIG_SOURCE_UNSPECIFIED,
+    FEED_CONFIG_SOURCE_COMMON,
   ];
 
-  static final $core.Map<$core.int, FeedConfigPublisher> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static FeedConfigPublisher? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, FeedConfigSource> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FeedConfigSource? valueOf($core.int value) => _byValue[value];
 
-  const FeedConfigPublisher._($core.int v, $core.String n) : super(v, n);
+  const FeedConfigSource._($core.int v, $core.String n) : super(v, n);
 }
 

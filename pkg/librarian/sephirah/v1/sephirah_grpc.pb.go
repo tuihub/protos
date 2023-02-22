@@ -74,9 +74,9 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Normal`
 	ListAppPackage(ctx context.Context, in *ListAppPackageRequest, opts ...grpc.CallOption) (*ListAppPackageResponse, error)
 	// `Gebura` `Admin`
-	BindAppPackage(ctx context.Context, in *BindAppPackageRequest, opts ...grpc.CallOption) (*BindAppPackageResponse, error)
+	AssignAppPackage(ctx context.Context, in *AssignAppPackageRequest, opts ...grpc.CallOption) (*AssignAppPackageResponse, error)
 	// `Gebura` `Admin`
-	UnBindAppPackage(ctx context.Context, in *UnBindAppPackageRequest, opts ...grpc.CallOption) (*UnBindAppPackageResponse, error)
+	UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error)
 	// `Gebura` `Sentinel`
 	ReportAppPackage(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackageClient, error)
 	// `Gebura` `Normal`
@@ -93,6 +93,8 @@ type LibrarianSephirahServiceClient interface {
 	ListFeed(ctx context.Context, in *ListFeedRequest, opts ...grpc.CallOption) (*ListFeedResponse, error)
 	// `Yesod` `Normal`
 	ListFeedItem(ctx context.Context, in *ListFeedItemRequest, opts ...grpc.CallOption) (*ListFeedItemResponse, error)
+	// `Yesod` `Normal`
+	GetFeedItem(ctx context.Context, in *GetFeedItemRequest, opts ...grpc.CallOption) (*GetFeedItemResponse, error)
 }
 
 type librarianSephirahServiceClient struct {
@@ -398,18 +400,18 @@ func (c *librarianSephirahServiceClient) ListAppPackage(ctx context.Context, in 
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) BindAppPackage(ctx context.Context, in *BindAppPackageRequest, opts ...grpc.CallOption) (*BindAppPackageResponse, error) {
-	out := new(BindAppPackageResponse)
-	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/BindAppPackage", in, out, opts...)
+func (c *librarianSephirahServiceClient) AssignAppPackage(ctx context.Context, in *AssignAppPackageRequest, opts ...grpc.CallOption) (*AssignAppPackageResponse, error) {
+	out := new(AssignAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) UnBindAppPackage(ctx context.Context, in *UnBindAppPackageRequest, opts ...grpc.CallOption) (*UnBindAppPackageResponse, error) {
-	out := new(UnBindAppPackageResponse)
-	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UnBindAppPackage", in, out, opts...)
+func (c *librarianSephirahServiceClient) UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error) {
+	out := new(UnAssignAppPackageResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -510,6 +512,15 @@ func (c *librarianSephirahServiceClient) ListFeedItem(ctx context.Context, in *L
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) GetFeedItem(ctx context.Context, in *GetFeedItemRequest, opts ...grpc.CallOption) (*GetFeedItemResponse, error) {
+	out := new(GetFeedItemResponse)
+	err := c.cc.Invoke(ctx, "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianSephirahServiceServer is the server API for LibrarianSephirahService service.
 // All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
@@ -566,9 +577,9 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	ListAppPackage(context.Context, *ListAppPackageRequest) (*ListAppPackageResponse, error)
 	// `Gebura` `Admin`
-	BindAppPackage(context.Context, *BindAppPackageRequest) (*BindAppPackageResponse, error)
+	AssignAppPackage(context.Context, *AssignAppPackageRequest) (*AssignAppPackageResponse, error)
 	// `Gebura` `Admin`
-	UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error)
+	UnAssignAppPackage(context.Context, *UnAssignAppPackageRequest) (*UnAssignAppPackageResponse, error)
 	// `Gebura` `Sentinel`
 	ReportAppPackage(LibrarianSephirahService_ReportAppPackageServer) error
 	// `Gebura` `Normal`
@@ -585,6 +596,8 @@ type LibrarianSephirahServiceServer interface {
 	ListFeed(context.Context, *ListFeedRequest) (*ListFeedResponse, error)
 	// `Yesod` `Normal`
 	ListFeedItem(context.Context, *ListFeedItemRequest) (*ListFeedItemResponse, error)
+	// `Yesod` `Normal`
+	GetFeedItem(context.Context, *GetFeedItemRequest) (*GetFeedItemResponse, error)
 	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
@@ -661,11 +674,11 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateAppPackage(context.Cont
 func (UnimplementedLibrarianSephirahServiceServer) ListAppPackage(context.Context, *ListAppPackageRequest) (*ListAppPackageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAppPackage not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) BindAppPackage(context.Context, *BindAppPackageRequest) (*BindAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BindAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) AssignAppPackage(context.Context, *AssignAppPackageRequest) (*AssignAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AssignAppPackage not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) UnBindAppPackage(context.Context, *UnBindAppPackageRequest) (*UnBindAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UnBindAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UnAssignAppPackage(context.Context, *UnAssignAppPackageRequest) (*UnAssignAppPackageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnAssignAppPackage not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackage(LibrarianSephirahService_ReportAppPackageServer) error {
 	return status.Errorf(codes.Unimplemented, "method ReportAppPackage not implemented")
@@ -690,6 +703,9 @@ func (UnimplementedLibrarianSephirahServiceServer) ListFeed(context.Context, *Li
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListFeedItem(context.Context, *ListFeedItemRequest) (*ListFeedItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFeedItem not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetFeedItem(context.Context, *GetFeedItemRequest) (*GetFeedItemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFeedItem not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
@@ -1151,38 +1167,38 @@ func _LibrarianSephirahService_ListAppPackage_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_BindAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(BindAppPackageRequest)
+func _LibrarianSephirahService_AssignAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AssignAppPackageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).BindAppPackage(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).AssignAppPackage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/BindAppPackage",
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).BindAppPackage(ctx, req.(*BindAppPackageRequest))
+		return srv.(LibrarianSephirahServiceServer).AssignAppPackage(ctx, req.(*AssignAppPackageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_UnBindAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnBindAppPackageRequest)
+func _LibrarianSephirahService_UnAssignAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnAssignAppPackageRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UnBindAppPackage(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UnAssignAppPackage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UnBindAppPackage",
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UnBindAppPackage(ctx, req.(*UnBindAppPackageRequest))
+		return srv.(LibrarianSephirahServiceServer).UnAssignAppPackage(ctx, req.(*UnAssignAppPackageRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1339,6 +1355,24 @@ func _LibrarianSephirahService_ListFeedItem_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_GetFeedItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFeedItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetFeedItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetFeedItem(ctx, req.(*GetFeedItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianSephirahService_ServiceDesc is the grpc.ServiceDesc for LibrarianSephirahService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1423,12 +1457,12 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_ListAppPackage_Handler,
 		},
 		{
-			MethodName: "BindAppPackage",
-			Handler:    _LibrarianSephirahService_BindAppPackage_Handler,
+			MethodName: "AssignAppPackage",
+			Handler:    _LibrarianSephirahService_AssignAppPackage_Handler,
 		},
 		{
-			MethodName: "UnBindAppPackage",
-			Handler:    _LibrarianSephirahService_UnBindAppPackage_Handler,
+			MethodName: "UnAssignAppPackage",
+			Handler:    _LibrarianSephirahService_UnAssignAppPackage_Handler,
 		},
 		{
 			MethodName: "UploadGameSaveFile",
@@ -1457,6 +1491,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListFeedItem",
 			Handler:    _LibrarianSephirahService_ListFeedItem_Handler,
+		},
+		{
+			MethodName: "GetFeedItem",
+			Handler:    _LibrarianSephirahService_GetFeedItem_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

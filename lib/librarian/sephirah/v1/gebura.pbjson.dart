@@ -235,41 +235,41 @@ const ReportAppPackageResponse$json = const {
 
 /// Descriptor for `ReportAppPackageResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reportAppPackageResponseDescriptor = $convert.base64Decode('ChhSZXBvcnRBcHBQYWNrYWdlUmVzcG9uc2U=');
-@$core.Deprecated('Use bindAppPackageRequestDescriptor instead')
-const BindAppPackageRequest$json = const {
-  '1': 'BindAppPackageRequest',
+@$core.Deprecated('Use assignAppPackageRequestDescriptor instead')
+const AssignAppPackageRequest$json = const {
+  '1': 'AssignAppPackageRequest',
   '2': const [
     const {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
     const {'1': 'app_package_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appPackageId'},
   ],
 };
 
-/// Descriptor for `BindAppPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List bindAppPackageRequestDescriptor = $convert.base64Decode('ChVCaW5kQXBwUGFja2FnZVJlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkEj4KDmFwcF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGFwcFBhY2thZ2VJZA==');
-@$core.Deprecated('Use bindAppPackageResponseDescriptor instead')
-const BindAppPackageResponse$json = const {
-  '1': 'BindAppPackageResponse',
+/// Descriptor for `AssignAppPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assignAppPackageRequestDescriptor = $convert.base64Decode('ChdBc3NpZ25BcHBQYWNrYWdlUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQSPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlk');
+@$core.Deprecated('Use assignAppPackageResponseDescriptor instead')
+const AssignAppPackageResponse$json = const {
+  '1': 'AssignAppPackageResponse',
 };
 
-/// Descriptor for `BindAppPackageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List bindAppPackageResponseDescriptor = $convert.base64Decode('ChZCaW5kQXBwUGFja2FnZVJlc3BvbnNl');
-@$core.Deprecated('Use unBindAppPackageRequestDescriptor instead')
-const UnBindAppPackageRequest$json = const {
-  '1': 'UnBindAppPackageRequest',
+/// Descriptor for `AssignAppPackageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List assignAppPackageResponseDescriptor = $convert.base64Decode('ChhBc3NpZ25BcHBQYWNrYWdlUmVzcG9uc2U=');
+@$core.Deprecated('Use unAssignAppPackageRequestDescriptor instead')
+const UnAssignAppPackageRequest$json = const {
+  '1': 'UnAssignAppPackageRequest',
   '2': const [
     const {'1': 'app_package_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appPackageId'},
   ],
 };
 
-/// Descriptor for `UnBindAppPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List unBindAppPackageRequestDescriptor = $convert.base64Decode('ChdVbkJpbmRBcHBQYWNrYWdlUmVxdWVzdBI+Cg5hcHBfcGFja2FnZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxhcHBQYWNrYWdlSWQ=');
-@$core.Deprecated('Use unBindAppPackageResponseDescriptor instead')
-const UnBindAppPackageResponse$json = const {
-  '1': 'UnBindAppPackageResponse',
+/// Descriptor for `UnAssignAppPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unAssignAppPackageRequestDescriptor = $convert.base64Decode('ChlVbkFzc2lnbkFwcFBhY2thZ2VSZXF1ZXN0Ej4KDmFwcF9wYWNrYWdlX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGFwcFBhY2thZ2VJZA==');
+@$core.Deprecated('Use unAssignAppPackageResponseDescriptor instead')
+const UnAssignAppPackageResponse$json = const {
+  '1': 'UnAssignAppPackageResponse',
 };
 
-/// Descriptor for `UnBindAppPackageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List unBindAppPackageResponseDescriptor = $convert.base64Decode('ChhVbkJpbmRBcHBQYWNrYWdlUmVzcG9uc2U=');
+/// Descriptor for `UnAssignAppPackageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unAssignAppPackageResponseDescriptor = $convert.base64Decode('ChpVbkFzc2lnbkFwcFBhY2thZ2VSZXNwb25zZQ==');
 @$core.Deprecated('Use uploadGameSaveFileRequestDescriptor instead')
 const UploadGameSaveFileRequest$json = const {
   '1': 'UploadGameSaveFileRequest',

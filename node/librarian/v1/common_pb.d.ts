@@ -312,8 +312,8 @@ export class AppPackageBinary extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getSize(): string;
-  setSize(value: string): void;
+  getSize(): number;
+  setSize(value: number): void;
 
   getPublicUrl(): string;
   setPublicUrl(value: string): void;
@@ -331,12 +331,17 @@ export class AppPackageBinary extends jspb.Message {
 export namespace AppPackageBinary {
   export type AsObject = {
     name: string,
-    size: string,
+    size: number,
     publicUrl: string,
   }
 }
 
 export class Feed extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): InternalID | undefined;
+  setId(value?: InternalID): void;
+
   getTitle(): string;
   setTitle(value: string): void;
 
@@ -376,6 +381,7 @@ export class Feed extends jspb.Message {
 
 export namespace Feed {
   export type AsObject = {
+    id?: InternalID.AsObject,
     title: string,
     link: string,
     description: string,
@@ -387,6 +393,11 @@ export namespace Feed {
 }
 
 export class FeedItem extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): InternalID | undefined;
+  setId(value?: InternalID): void;
+
   getTitle(): string;
   setTitle(value: string): void;
 
@@ -445,6 +456,7 @@ export class FeedItem extends jspb.Message {
 
 export namespace FeedItem {
   export type AsObject = {
+    id?: InternalID.AsObject,
     title: string,
     authorsList: Array<FeedPerson.AsObject>,
     description: string,

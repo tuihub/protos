@@ -1083,7 +1083,7 @@ impl serde::Serialize for AppPackageBinary {
         if !self.name.is_empty() {
             len += 1;
         }
-        if !self.size.is_empty() {
+        if self.size != 0 {
             len += 1;
         }
         if !self.public_url.is_empty() {
@@ -1093,8 +1093,8 @@ impl serde::Serialize for AppPackageBinary {
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
-        if !self.size.is_empty() {
-            struct_ser.serialize_field("size", &self.size)?;
+        if self.size != 0 {
+            struct_ser.serialize_field("size", ToString::to_string(&self.size).as_str())?;
         }
         if !self.public_url.is_empty() {
             struct_ser.serialize_field("publicUrl", &self.public_url)?;
@@ -1177,7 +1177,9 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             if size__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("size"));
                             }
-                            size__ = Some(map.next_value()?);
+                            size__ = Some(
+                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
+                            );
                         }
                         GeneratedField::PublicUrl => {
                             if public_url__.is_some() {
@@ -1430,6 +1432,9 @@ impl serde::Serialize for Feed {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
         if !self.title.is_empty() {
             len += 1;
         }
@@ -1452,6 +1457,9 @@ impl serde::Serialize for Feed {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.Feed", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
         if !self.title.is_empty() {
             struct_ser.serialize_field("title", &self.title)?;
         }
@@ -1483,6 +1491,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "id",
             "title",
             "link",
             "description",
@@ -1494,6 +1503,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Id,
             Title,
             Link,
             Description,
@@ -1522,6 +1532,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
                         E: serde::de::Error,
                     {
                         match value {
+                            "id" => Ok(GeneratedField::Id),
                             "title" => Ok(GeneratedField::Title),
                             "link" => Ok(GeneratedField::Link),
                             "description" => Ok(GeneratedField::Description),
@@ -1548,6 +1559,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut id__ = None;
                 let mut title__ = None;
                 let mut link__ = None;
                 let mut description__ = None;
@@ -1557,6 +1569,12 @@ impl<'de> serde::Deserialize<'de> for Feed {
                 let mut authors__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = Some(map.next_value()?);
+                        }
                         GeneratedField::Title => {
                             if title__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("title"));
@@ -1602,6 +1620,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
                     }
                 }
                 Ok(Feed {
+                    id: id__,
                     title: title__.unwrap_or_default(),
                     link: link__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
@@ -1856,6 +1875,9 @@ impl serde::Serialize for FeedItem {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
         if !self.title.is_empty() {
             len += 1;
         }
@@ -1893,6 +1915,9 @@ impl serde::Serialize for FeedItem {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
         if !self.title.is_empty() {
             struct_ser.serialize_field("title", &self.title)?;
         }
@@ -1939,6 +1964,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "id",
             "title",
             "authors",
             "description",
@@ -1955,6 +1981,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Id,
             Title,
             Authors,
             Description,
@@ -1988,6 +2015,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                         E: serde::de::Error,
                     {
                         match value {
+                            "id" => Ok(GeneratedField::Id),
                             "title" => Ok(GeneratedField::Title),
                             "authors" => Ok(GeneratedField::Authors),
                             "description" => Ok(GeneratedField::Description),
@@ -2019,6 +2047,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut id__ = None;
                 let mut title__ = None;
                 let mut authors__ = None;
                 let mut description__ = None;
@@ -2033,6 +2062,12 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 let mut enclosure__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = Some(map.next_value()?);
+                        }
                         GeneratedField::Title => {
                             if title__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("title"));
@@ -2108,6 +2143,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     }
                 }
                 Ok(FeedItem {
+                    id: id__,
                     title: title__.unwrap_or_default(),
                     authors: authors__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
