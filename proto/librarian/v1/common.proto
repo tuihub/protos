@@ -96,34 +96,36 @@ enum AppPackageSource {
 
 message AppPackageBinary {
   string name = 1;
-  string size = 2;
+  int64 size = 2;
   string public_url = 3;
 }
 
 message Feed {
-  string title = 1;
-  string link = 2;
-  string description = 3;
-  repeated FeedItem items = 4;
+  InternalID id = 1;
+  string title = 2;
+  string link = 3;
+  string description = 4;
+  repeated FeedItem items = 5;
 
-  string language = 5;
-  repeated FeedImage image = 6;
-  repeated FeedPerson authors = 7;
+  string language = 6;
+  repeated FeedImage image = 7;
+  repeated FeedPerson authors = 8;
 }
 
 message FeedItem {
-  string title = 1;
-  repeated FeedPerson authors = 2;
-  string description = 3;
-  string content = 4;
-  string guid = 5;
-  string link = 6;
-  FeedImage image = 7;
-  string published = 8;
-  optional google.protobuf.Timestamp published_parsed = 9;
-  string updated = 10;
-  optional google.protobuf.Timestamp updated_parsed = 11;
-  repeated FeedEnclosure enclosure = 12;
+  InternalID id = 1;
+  string title = 2;
+  repeated FeedPerson authors = 3;
+  string description = 4;
+  string content = 5;
+  string guid = 6;
+  string link = 7;
+  FeedImage image = 8;
+  string published = 9;
+  optional google.protobuf.Timestamp published_parsed = 10;
+  string updated = 11;
+  optional google.protobuf.Timestamp updated_parsed = 12;
+  repeated FeedEnclosure enclosure = 13;
 }
 
 // Person is an individual specified in a feed

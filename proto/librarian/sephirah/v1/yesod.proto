@@ -24,7 +24,8 @@ message ListFeedRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID id_filter = 2;
   repeated librarian.v1.InternalID author_filter = 3;
-  repeated FeedConfigPublisher publisher_filter = 4;
+  repeated FeedConfigSource source_filter = 4;
+  repeated FeedConfigStatus status_filter = 5;
 }
 
 message ListFeedResponse {
@@ -38,28 +39,35 @@ message ListFeedResponse {
 
 message ListFeedItemRequest {
   librarian.v1.PagingRequest paging = 1;
-  repeated librarian.v1.InternalID id_filter = 2;
+  repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_filter = 3;
-  repeated FeedConfigPublisher publisher_filter = 4;
+  repeated string publisher_filter = 4;
 }
 
 message ListFeedItemResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated FeedItemWithFeedID item_list = 2;
-  message FeedItemWithFeedID {
+  repeated FeedItemIDWithFeedID item_list = 2;
+  message FeedItemIDWithFeedID {
     librarian.v1.InternalID feed_id = 1;
-    librarian.v1.FeedItem item = 2;
+    librarian.v1.InternalID item_id = 2;
   }
+}
+
+message GetFeedItemRequest {
+  repeated librarian.v1.InternalID id_list = 1;
+}
+
+message GetFeedItemResponse {
+  repeated librarian.v1.FeedItem item_list = 1;
 }
 
 message FeedConfig {
   librarian.v1.InternalID id = 1;
   string feed_url = 2;
   librarian.v1.InternalID author_account = 3;
-  FeedConfigPublisher publisher = 4;
+  FeedConfigSource source = 4;
   FeedConfigStatus status = 5;
-  google.protobuf.Timestamp update_interval = 6;
-  librarian.v1.Feed feed = 7;
+  google.protobuf.Timestamp pull_interval = 6;
 }
 
 enum FeedConfigStatus {
@@ -68,6 +76,7 @@ enum FeedConfigStatus {
   FEED_CONFIG_STATUS_SUSPEND = 2;
 }
 
-enum FeedConfigPublisher {
-  FEED_CONFIG_PUBLISHER_UNSPECIFIED = 0;
+enum FeedConfigSource {
+  FEED_CONFIG_SOURCE_UNSPECIFIED = 0;
+  FEED_CONFIG_SOURCE_COMMON = 1;
 }
