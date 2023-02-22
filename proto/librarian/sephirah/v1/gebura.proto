@@ -98,18 +98,18 @@ message ReportAppPackageRequest {
 
 message ReportAppPackageResponse {}
 
-message BindAppPackageRequest {
+message AssignAppPackageRequest {
   librarian.v1.InternalID app_id = 1;
   librarian.v1.InternalID app_package_id = 2;
 }
 
-message BindAppPackageResponse {}
+message AssignAppPackageResponse {}
 
-message UnBindAppPackageRequest {
+message UnAssignAppPackageRequest {
   librarian.v1.InternalID app_package_id = 1;
 }
 
-message UnBindAppPackageResponse {}
+message UnAssignAppPackageResponse {}
 
 message UploadGameSaveFileRequest {
   FileMetadata file_metadata = 1;

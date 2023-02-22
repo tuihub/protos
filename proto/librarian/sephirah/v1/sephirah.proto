@@ -76,9 +76,9 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc ListAppPackage(ListAppPackageRequest) returns (ListAppPackageResponse);
   // `Gebura` `Admin`
-  rpc BindAppPackage(BindAppPackageRequest) returns (BindAppPackageResponse);
+  rpc AssignAppPackage(AssignAppPackageRequest) returns (AssignAppPackageResponse);
   // `Gebura` `Admin`
-  rpc UnBindAppPackage(UnBindAppPackageRequest) returns (UnBindAppPackageResponse);
+  rpc UnAssignAppPackage(UnAssignAppPackageRequest) returns (UnAssignAppPackageResponse);
   // `Gebura` `Sentinel`
   rpc ReportAppPackage(stream ReportAppPackageRequest) returns (stream ReportAppPackageResponse);
 
@@ -97,4 +97,6 @@ service LibrarianSephirahService {
   rpc ListFeed(ListFeedRequest) returns (ListFeedResponse);
   // `Yesod` `Normal`
   rpc ListFeedItem(ListFeedItemRequest) returns (ListFeedItemResponse);
+  // `Yesod` `Normal`
+  rpc GetFeedItem(GetFeedItemRequest) returns (GetFeedItemResponse);
 }
