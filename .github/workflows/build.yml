@@ -52,8 +52,9 @@ jobs:
 
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
+        # https://github.com/arduino/setup-protoc/issues/33
         with:
-          version: '3.21.12'
+          version: '3.20.3'
 
       - name: Install Protoc Plugins
         run: make install-plugins
