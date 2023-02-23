@@ -84,4 +84,4 @@ jobs:
       - name: Publish nuget package to GPR
         run: dotnet nuget push *.nupkg --skip-duplicate
       - name: Publish nuget package to nuget.org
-        run: dotnet nuget push *.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{secrets.NUGET_API_KEY}}
+        run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
