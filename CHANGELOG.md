@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.5](https://github.com/TuiHub/Protos/compare/v0.2.4...v0.2.5) (2023-02-23)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#30](https://github.com/TuiHub/Protos/issues/30)) ([101ff2c](https://github.com/TuiHub/Protos/commit/101ff2cbb759659c504029f3c316804204b4ee76))
+* rename BindAppPackage ([70c032f](https://github.com/TuiHub/Protos/commit/70c032f1280ffe83b8ecd1f95dfa37bdb10db869))
+* restruct feed ([b97413d](https://github.com/TuiHub/Protos/commit/b97413d4489b2b7edd45fa48bf5e260871c97689))
+
 ## [0.2.4](https://github.com/TuiHub/Protos/compare/v0.2.3...v0.2.4) (2023-02-09)
 
 
