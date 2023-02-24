@@ -6,7 +6,7 @@ install-plugins:
 	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 	go install github.com/go-kratos/kratos/cmd/protoc-gen-go-errors/v2@latest
 	npm install
-	cargo install protoc-gen-prost-crate
+	cargo install --locked protoc-gen-prost-crate
 	dart pub global activate protoc_plugin
 
 generate: clean buf go rust dart
