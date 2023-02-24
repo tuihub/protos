@@ -108,7 +108,7 @@ message Feed {
   repeated FeedItem items = 5;
 
   string language = 6;
-  repeated FeedImage image = 7;
+  FeedImage image = 7;
   repeated FeedPerson authors = 8;
 }
 
