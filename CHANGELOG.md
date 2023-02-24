@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/TuiHub/Protos/compare/v0.2.5...v0.2.6) (2023-02-24)
+
+
+### Bug Fixes
+
+* update Feed ([619f37b](https://github.com/TuiHub/Protos/commit/619f37b9dbd90f4c01ab75b852ff8783fc6017cd))
+
 ## [0.2.5](https://github.com/TuiHub/Protos/compare/v0.2.4...v0.2.5) (2023-02-23)
 
 
