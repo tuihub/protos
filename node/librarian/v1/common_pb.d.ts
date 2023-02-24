@@ -359,10 +359,10 @@ export class Feed extends jspb.Message {
   getLanguage(): string;
   setLanguage(value: string): void;
 
-  clearImageList(): void;
-  getImageList(): Array<FeedImage>;
-  setImageList(value: Array<FeedImage>): void;
-  addImage(value?: FeedImage, index?: number): FeedImage;
+  hasImage(): boolean;
+  clearImage(): void;
+  getImage(): FeedImage | undefined;
+  setImage(value?: FeedImage): void;
 
   clearAuthorsList(): void;
   getAuthorsList(): Array<FeedPerson>;
@@ -387,7 +387,7 @@ export namespace Feed {
     description: string,
     itemsList: Array<FeedItem.AsObject>,
     language: string,
-    imageList: Array<FeedImage.AsObject>,
+    image?: FeedImage.AsObject,
     authorsList: Array<FeedPerson.AsObject>,
   }
 }

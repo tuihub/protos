@@ -66,7 +66,7 @@ namespace TuiHub.Protos.Librarian.V1 {
             "SURSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRISCgRsaW5rGAMgASgJUgRs",
             "aW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIsCgVpdGVt",
             "cxgFIAMoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRlbVIFaXRlbXMSGgoIbGFu",
-            "Z3VhZ2UYBiABKAlSCGxhbmd1YWdlEi0KBWltYWdlGAcgAygLMhcubGlicmFy",
+            "Z3VhZ2UYBiABKAlSCGxhbmd1YWdlEi0KBWltYWdlGAcgASgLMhcubGlicmFy",
             "aWFuLnYxLkZlZWRJbWFnZVIFaW1hZ2USMgoHYXV0aG9ycxgIIAMoCzIYLmxp",
             "YnJhcmlhbi52MS5GZWVkUGVyc29uUgdhdXRob3JzIsAECghGZWVkSXRlbRIo",
             "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIUCgV0",
@@ -3226,7 +3226,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       description_ = other.description_;
       items_ = other.items_.Clone();
       language_ = other.language_;
-      image_ = other.image_.Clone();
+      image_ = other.image_ != null ? other.image_.Clone() : null;
       authors_ = other.authors_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -3310,13 +3310,14 @@ namespace TuiHub.Protos.Librarian.V1 {
 
     /// <summary>Field number for the "image" field.</summary>
     public const int ImageFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeedImage> _repeated_image_codec
-        = pb::FieldCodec.ForMessage(58, global::TuiHub.Protos.Librarian.V1.FeedImage.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeedImage> image_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeedImage>();
+    private global::TuiHub.Protos.Librarian.V1.FeedImage image_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeedImage> Image {
+    public global::TuiHub.Protos.Librarian.V1.FeedImage Image {
       get { return image_; }
+      set {
+        image_ = value;
+      }
     }
 
     /// <summary>Field number for the "authors" field.</summary>
@@ -3351,7 +3352,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Description != other.Description) return false;
       if(!items_.Equals(other.items_)) return false;
       if (Language != other.Language) return false;
-      if(!image_.Equals(other.image_)) return false;
+      if (!object.Equals(Image, other.Image)) return false;
       if(!authors_.Equals(other.authors_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -3366,7 +3367,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= items_.GetHashCode();
       if (Language.Length != 0) hash ^= Language.GetHashCode();
-      hash ^= image_.GetHashCode();
+      if (image_ != null) hash ^= Image.GetHashCode();
       hash ^= authors_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3407,7 +3408,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(50);
         output.WriteString(Language);
       }
-      image_.WriteTo(output, _repeated_image_codec);
+      if (image_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Image);
+      }
       authors_.WriteTo(output, _repeated_authors_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3440,7 +3444,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(50);
         output.WriteString(Language);
       }
-      image_.WriteTo(ref output, _repeated_image_codec);
+      if (image_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Image);
+      }
       authors_.WriteTo(ref output, _repeated_authors_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -3468,7 +3475,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Language.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Language);
       }
-      size += image_.CalculateSize(_repeated_image_codec);
+      if (image_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Image);
+      }
       size += authors_.CalculateSize(_repeated_authors_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3501,7 +3510,12 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (other.Language.Length != 0) {
         Language = other.Language;
       }
-      image_.Add(other.image_);
+      if (other.image_ != null) {
+        if (image_ == null) {
+          Image = new global::TuiHub.Protos.Librarian.V1.FeedImage();
+        }
+        Image.MergeFrom(other.Image);
+      }
       authors_.Add(other.authors_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3546,7 +3560,10 @@ namespace TuiHub.Protos.Librarian.V1 {
             break;
           }
           case 58: {
-            image_.AddEntriesFrom(input, _repeated_image_codec);
+            if (image_ == null) {
+              Image = new global::TuiHub.Protos.Librarian.V1.FeedImage();
+            }
+            input.ReadMessage(Image);
             break;
           }
           case 66: {
@@ -3596,7 +3613,10 @@ namespace TuiHub.Protos.Librarian.V1 {
             break;
           }
           case 58: {
-            image_.AddEntriesFrom(ref input, _repeated_image_codec);
+            if (image_ == null) {
+              Image = new global::TuiHub.Protos.Librarian.V1.FeedImage();
+            }
+            input.ReadMessage(Image);
             break;
           }
           case 66: {

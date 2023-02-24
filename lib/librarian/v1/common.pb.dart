@@ -914,7 +914,7 @@ class Feed extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..pc<FeedItem>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItem.create)
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'language')
-    ..pc<FeedImage>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', $pb.PbFieldType.PM, subBuilder: FeedImage.create)
+    ..aOM<FeedImage>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image', subBuilder: FeedImage.create)
     ..pc<FeedPerson>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authors', $pb.PbFieldType.PM, subBuilder: FeedPerson.create)
     ..hasRequiredFields = false
   ;
@@ -927,7 +927,7 @@ class Feed extends $pb.GeneratedMessage {
     $core.String? description,
     $core.Iterable<FeedItem>? items,
     $core.String? language,
-    $core.Iterable<FeedImage>? image,
+    FeedImage? image,
     $core.Iterable<FeedPerson>? authors,
   }) {
     final _result = create();
@@ -950,7 +950,7 @@ class Feed extends $pb.GeneratedMessage {
       _result.language = language;
     }
     if (image != null) {
-      _result.image.addAll(image);
+      _result.image = image;
     }
     if (authors != null) {
       _result.authors.addAll(authors);
@@ -1029,7 +1029,15 @@ class Feed extends $pb.GeneratedMessage {
   void clearLanguage() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<FeedImage> get image => $_getList(6);
+  FeedImage get image => $_getN(6);
+  @$pb.TagNumber(7)
+  set image(FeedImage v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasImage() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearImage() => clearField(7);
+  @$pb.TagNumber(7)
+  FeedImage ensureImage() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $core.List<FeedPerson> get authors => $_getList(7);

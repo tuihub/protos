@@ -197,13 +197,13 @@ const Feed$json = const {
     const {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
     const {'1': 'items', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
     const {'1': 'language', '3': 6, '4': 1, '5': 9, '10': 'language'},
-    const {'1': 'image', '3': 7, '4': 3, '5': 11, '6': '.librarian.v1.FeedImage', '10': 'image'},
+    const {'1': 'image', '3': 7, '4': 1, '5': 11, '6': '.librarian.v1.FeedImage', '10': 'image'},
     const {'1': 'authors', '3': 8, '4': 3, '5': 11, '6': '.librarian.v1.FeedPerson', '10': 'authors'},
   ],
 };
 
 /// Descriptor for `Feed`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List feedDescriptor = $convert.base64Decode('CgRGZWVkEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRISCgRsaW5rGAMgASgJUgRsaW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIsCgVpdGVtcxgFIAMoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRlbVIFaXRlbXMSGgoIbGFuZ3VhZ2UYBiABKAlSCGxhbmd1YWdlEi0KBWltYWdlGAcgAygLMhcubGlicmFyaWFuLnYxLkZlZWRJbWFnZVIFaW1hZ2USMgoHYXV0aG9ycxgIIAMoCzIYLmxpYnJhcmlhbi52MS5GZWVkUGVyc29uUgdhdXRob3Jz');
+final $typed_data.Uint8List feedDescriptor = $convert.base64Decode('CgRGZWVkEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRISCgRsaW5rGAMgASgJUgRsaW5rEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIsCgVpdGVtcxgFIAMoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRlbVIFaXRlbXMSGgoIbGFuZ3VhZ2UYBiABKAlSCGxhbmd1YWdlEi0KBWltYWdlGAcgASgLMhcubGlicmFyaWFuLnYxLkZlZWRJbWFnZVIFaW1hZ2USMgoHYXV0aG9ycxgIIAMoCzIYLmxpYnJhcmlhbi52MS5GZWVkUGVyc29uUgdhdXRob3Jz');
 @$core.Deprecated('Use feedItemDescriptor instead')
 const FeedItem$json = const {
   '1': 'FeedItem',

@@ -2698,7 +2698,7 @@ proto.librarian.v1.AppPackageBinary.prototype.setPublicUrl = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.Feed.repeatedFields_ = [5,7,8];
+proto.librarian.v1.Feed.repeatedFields_ = [5,8];
 
 
 
@@ -2738,8 +2738,7 @@ proto.librarian.v1.Feed.toObject = function(includeInstance, msg) {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.librarian.v1.FeedItem.toObject, includeInstance),
     language: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    imageList: jspb.Message.toObjectList(msg.getImageList(),
-    proto.librarian.v1.FeedImage.toObject, includeInstance),
+    image: (f = msg.getImage()) && proto.librarian.v1.FeedImage.toObject(includeInstance, f),
     authorsList: jspb.Message.toObjectList(msg.getAuthorsList(),
     proto.librarian.v1.FeedPerson.toObject, includeInstance)
   };
@@ -2807,7 +2806,7 @@ proto.librarian.v1.Feed.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = new proto.librarian.v1.FeedImage;
       reader.readMessage(value,proto.librarian.v1.FeedImage.deserializeBinaryFromReader);
-      msg.addImage(value);
+      msg.setImage(value);
       break;
     case 8:
       var value = new proto.librarian.v1.FeedPerson;
@@ -2887,9 +2886,9 @@ proto.librarian.v1.Feed.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getImageList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getImage();
+  if (f != null) {
+    writer.writeMessage(
       7,
       f,
       proto.librarian.v1.FeedImage.serializeBinaryToWriter
@@ -3054,40 +3053,39 @@ proto.librarian.v1.Feed.prototype.setLanguage = function(value) {
 
 
 /**
- * repeated FeedImage image = 7;
- * @return {!Array<!proto.librarian.v1.FeedImage>}
+ * optional FeedImage image = 7;
+ * @return {?proto.librarian.v1.FeedImage}
  */
-proto.librarian.v1.Feed.prototype.getImageList = function() {
-  return /** @type{!Array<!proto.librarian.v1.FeedImage>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.v1.FeedImage, 7));
+proto.librarian.v1.Feed.prototype.getImage = function() {
+  return /** @type{?proto.librarian.v1.FeedImage} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.v1.FeedImage, 7));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.v1.FeedImage>} value
+ * @param {?proto.librarian.v1.FeedImage|undefined} value
  * @return {!proto.librarian.v1.Feed} returns this
 */
-proto.librarian.v1.Feed.prototype.setImageList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+proto.librarian.v1.Feed.prototype.setImage = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
 /**
- * @param {!proto.librarian.v1.FeedImage=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.FeedImage}
- */
-proto.librarian.v1.Feed.prototype.addImage = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.librarian.v1.FeedImage, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.v1.Feed} returns this
  */
-proto.librarian.v1.Feed.prototype.clearImageList = function() {
-  return this.setImageList([]);
+proto.librarian.v1.Feed.prototype.clearImage = function() {
+  return this.setImage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.v1.Feed.prototype.hasImage = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

@@ -1450,7 +1450,7 @@ impl serde::Serialize for Feed {
         if !self.language.is_empty() {
             len += 1;
         }
-        if !self.image.is_empty() {
+        if self.image.is_some() {
             len += 1;
         }
         if !self.authors.is_empty() {
@@ -1475,8 +1475,8 @@ impl serde::Serialize for Feed {
         if !self.language.is_empty() {
             struct_ser.serialize_field("language", &self.language)?;
         }
-        if !self.image.is_empty() {
-            struct_ser.serialize_field("image", &self.image)?;
+        if let Some(v) = self.image.as_ref() {
+            struct_ser.serialize_field("image", v)?;
         }
         if !self.authors.is_empty() {
             struct_ser.serialize_field("authors", &self.authors)?;
@@ -1626,7 +1626,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
                     description: description__.unwrap_or_default(),
                     items: items__.unwrap_or_default(),
                     language: language__.unwrap_or_default(),
-                    image: image__.unwrap_or_default(),
+                    image: image__,
                     authors: authors__.unwrap_or_default(),
                 })
             }
