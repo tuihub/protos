@@ -439,10 +439,10 @@ export class FeedItem extends jspb.Message {
   getUpdatedParsed(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setUpdatedParsed(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  clearEnclosureList(): void;
-  getEnclosureList(): Array<FeedEnclosure>;
-  setEnclosureList(value: Array<FeedEnclosure>): void;
-  addEnclosure(value?: FeedEnclosure, index?: number): FeedEnclosure;
+  clearEnclosuresList(): void;
+  getEnclosuresList(): Array<FeedEnclosure>;
+  setEnclosuresList(value: Array<FeedEnclosure>): void;
+  addEnclosures(value?: FeedEnclosure, index?: number): FeedEnclosure;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItem.AsObject;
@@ -468,7 +468,7 @@ export namespace FeedItem {
     publishedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updated: string,
     updatedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    enclosureList: Array<FeedEnclosure.AsObject>,
+    enclosuresList: Array<FeedEnclosure.AsObject>,
   }
 }
 

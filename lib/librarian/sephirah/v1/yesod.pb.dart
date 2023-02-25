@@ -10,7 +10,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $4;
-import '../../../google/protobuf/timestamp.pb.dart' as $6;
+import '../../../google/protobuf/duration.pb.dart' as $6;
 
 import 'yesod.pbenum.dart';
 
@@ -679,7 +679,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..aOM<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorAccount', subBuilder: $4.InternalID.create)
     ..e<FeedConfigSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
     ..e<FeedConfigStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
-    ..aOM<$6.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $6.Timestamp.create)
+    ..aOM<$6.Duration>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $6.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -690,7 +690,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     $4.InternalID? authorAccount,
     FeedConfigSource? source,
     FeedConfigStatus? status,
-    $6.Timestamp? pullInterval,
+    $6.Duration? pullInterval,
   }) {
     final _result = create();
     if (id != null) {
@@ -784,14 +784,14 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearStatus() => clearField(5);
 
   @$pb.TagNumber(6)
-  $6.Timestamp get pullInterval => $_getN(5);
+  $6.Duration get pullInterval => $_getN(5);
   @$pb.TagNumber(6)
-  set pullInterval($6.Timestamp v) { setField(6, v); }
+  set pullInterval($6.Duration v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPullInterval() => $_has(5);
   @$pb.TagNumber(6)
   void clearPullInterval() => clearField(6);
   @$pb.TagNumber(6)
-  $6.Timestamp ensurePullInterval() => $_ensure(5);
+  $6.Duration ensurePullInterval() => $_ensure(5);
 }
 

@@ -21,8 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
+goog.object.extend(proto, google_protobuf_duration_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedConfigRequest', null, global);
@@ -2729,7 +2729,7 @@ proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg)
     authorAccount: (f = msg.getAuthorAccount()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     source: jspb.Message.getFieldWithDefault(msg, 4, 0),
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    pullInterval: (f = msg.getPullInterval()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2789,8 +2789,8 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       msg.setStatus(value);
       break;
     case 6:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
       msg.setPullInterval(value);
       break;
     default:
@@ -2864,7 +2864,7 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
     writer.writeMessage(
       6,
       f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
 };
@@ -2999,17 +2999,17 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.setStatus = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp pull_interval = 6;
- * @return {?proto.google.protobuf.Timestamp}
+ * optional google.protobuf.Duration pull_interval = 6;
+ * @return {?proto.google.protobuf.Duration}
  */
 proto.librarian.sephirah.v1.FeedConfig.prototype.getPullInterval = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+  return /** @type{?proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 6));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @param {?proto.google.protobuf.Duration|undefined} value
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
 */
 proto.librarian.sephirah.v1.FeedConfig.prototype.setPullInterval = function(value) {

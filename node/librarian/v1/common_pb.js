@@ -3179,7 +3179,7 @@ proto.librarian.v1.FeedItem.toObject = function(includeInstance, msg) {
     publishedParsed: (f = msg.getPublishedParsed()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updated: jspb.Message.getFieldWithDefault(msg, 11, ""),
     updatedParsed: (f = msg.getUpdatedParsed()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    enclosureList: jspb.Message.toObjectList(msg.getEnclosureList(),
+    enclosuresList: jspb.Message.toObjectList(msg.getEnclosuresList(),
     proto.librarian.v1.FeedEnclosure.toObject, includeInstance)
   };
 
@@ -3273,7 +3273,7 @@ proto.librarian.v1.FeedItem.deserializeBinaryFromReader = function(msg, reader) 
     case 13:
       var value = new proto.librarian.v1.FeedEnclosure;
       reader.readMessage(value,proto.librarian.v1.FeedEnclosure.deserializeBinaryFromReader);
-      msg.addEnclosure(value);
+      msg.addEnclosures(value);
       break;
     default:
       reader.skipField();
@@ -3393,7 +3393,7 @@ proto.librarian.v1.FeedItem.serializeBinaryToWriter = function(message, writer) 
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getEnclosureList();
+  f = message.getEnclosuresList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       13,
@@ -3717,10 +3717,10 @@ proto.librarian.v1.FeedItem.prototype.hasUpdatedParsed = function() {
 
 
 /**
- * repeated FeedEnclosure enclosure = 13;
+ * repeated FeedEnclosure enclosures = 13;
  * @return {!Array<!proto.librarian.v1.FeedEnclosure>}
  */
-proto.librarian.v1.FeedItem.prototype.getEnclosureList = function() {
+proto.librarian.v1.FeedItem.prototype.getEnclosuresList = function() {
   return /** @type{!Array<!proto.librarian.v1.FeedEnclosure>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.librarian.v1.FeedEnclosure, 13));
 };
@@ -3730,7 +3730,7 @@ proto.librarian.v1.FeedItem.prototype.getEnclosureList = function() {
  * @param {!Array<!proto.librarian.v1.FeedEnclosure>} value
  * @return {!proto.librarian.v1.FeedItem} returns this
 */
-proto.librarian.v1.FeedItem.prototype.setEnclosureList = function(value) {
+proto.librarian.v1.FeedItem.prototype.setEnclosuresList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 13, value);
 };
 
@@ -3740,7 +3740,7 @@ proto.librarian.v1.FeedItem.prototype.setEnclosureList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.librarian.v1.FeedEnclosure}
  */
-proto.librarian.v1.FeedItem.prototype.addEnclosure = function(opt_value, opt_index) {
+proto.librarian.v1.FeedItem.prototype.addEnclosures = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.librarian.v1.FeedEnclosure, opt_index);
 };
 
@@ -3749,8 +3749,8 @@ proto.librarian.v1.FeedItem.prototype.addEnclosure = function(opt_value, opt_ind
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.v1.FeedItem} returns this
  */
-proto.librarian.v1.FeedItem.prototype.clearEnclosureList = function() {
-  return this.setEnclosureList([]);
+proto.librarian.v1.FeedItem.prototype.clearEnclosuresList = function() {
+  return this.setEnclosuresList([]);
 };
 
 

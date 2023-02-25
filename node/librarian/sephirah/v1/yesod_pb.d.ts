@@ -2,7 +2,7 @@
 // file: librarian/sephirah/v1/yesod.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class CreateFeedConfigRequest extends jspb.Message {
@@ -351,8 +351,8 @@ export class FeedConfig extends jspb.Message {
 
   hasPullInterval(): boolean;
   clearPullInterval(): void;
-  getPullInterval(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setPullInterval(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  getPullInterval(): google_protobuf_duration_pb.Duration | undefined;
+  setPullInterval(value?: google_protobuf_duration_pb.Duration): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
@@ -371,7 +371,7 @@ export namespace FeedConfig {
     authorAccount?: librarian_v1_common_pb.InternalID.AsObject,
     source: FeedConfigSourceMap[keyof FeedConfigSourceMap],
     status: FeedConfigStatusMap[keyof FeedConfigStatusMap],
-    pullInterval?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    pullInterval?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

@@ -1911,7 +1911,7 @@ impl serde::Serialize for FeedItem {
         if self.updated_parsed.is_some() {
             len += 1;
         }
-        if !self.enclosure.is_empty() {
+        if !self.enclosures.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
@@ -1951,8 +1951,8 @@ impl serde::Serialize for FeedItem {
         if let Some(v) = self.updated_parsed.as_ref() {
             struct_ser.serialize_field("updatedParsed", v)?;
         }
-        if !self.enclosure.is_empty() {
-            struct_ser.serialize_field("enclosure", &self.enclosure)?;
+        if !self.enclosures.is_empty() {
+            struct_ser.serialize_field("enclosures", &self.enclosures)?;
         }
         struct_ser.end()
     }
@@ -1976,7 +1976,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             "publishedParsed",
             "updated",
             "updatedParsed",
-            "enclosure",
+            "enclosures",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1993,7 +1993,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             PublishedParsed,
             Updated,
             UpdatedParsed,
-            Enclosure,
+            Enclosures,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2027,7 +2027,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             "publishedParsed" => Ok(GeneratedField::PublishedParsed),
                             "updated" => Ok(GeneratedField::Updated),
                             "updatedParsed" => Ok(GeneratedField::UpdatedParsed),
-                            "enclosure" => Ok(GeneratedField::Enclosure),
+                            "enclosures" => Ok(GeneratedField::Enclosures),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2059,7 +2059,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 let mut published_parsed__ = None;
                 let mut updated__ = None;
                 let mut updated_parsed__ = None;
-                let mut enclosure__ = None;
+                let mut enclosures__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -2134,11 +2134,11 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             }
                             updated_parsed__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Enclosure => {
-                            if enclosure__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("enclosure"));
+                        GeneratedField::Enclosures => {
+                            if enclosures__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("enclosures"));
                             }
-                            enclosure__ = Some(map.next_value()?);
+                            enclosures__ = Some(map.next_value()?);
                         }
                     }
                 }
@@ -2155,7 +2155,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     published_parsed: published_parsed__,
                     updated: updated__.unwrap_or_default(),
                     updated_parsed: updated_parsed__,
-                    enclosure: enclosure__.unwrap_or_default(),
+                    enclosures: enclosures__.unwrap_or_default(),
                 })
             }
         }

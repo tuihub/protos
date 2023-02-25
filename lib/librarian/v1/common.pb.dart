@@ -1057,7 +1057,7 @@ class FeedItem extends $pb.GeneratedMessage {
     ..aOM<$0.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishedParsed', subBuilder: $0.Timestamp.create)
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updated')
     ..aOM<$0.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedParsed', subBuilder: $0.Timestamp.create)
-    ..pc<FeedEnclosure>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enclosure', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
+    ..pc<FeedEnclosure>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enclosures', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
     ..hasRequiredFields = false
   ;
 
@@ -1075,7 +1075,7 @@ class FeedItem extends $pb.GeneratedMessage {
     $0.Timestamp? publishedParsed,
     $core.String? updated,
     $0.Timestamp? updatedParsed,
-    $core.Iterable<FeedEnclosure>? enclosure,
+    $core.Iterable<FeedEnclosure>? enclosures,
   }) {
     final _result = create();
     if (id != null) {
@@ -1114,8 +1114,8 @@ class FeedItem extends $pb.GeneratedMessage {
     if (updatedParsed != null) {
       _result.updatedParsed = updatedParsed;
     }
-    if (enclosure != null) {
-      _result.enclosure.addAll(enclosure);
+    if (enclosures != null) {
+      _result.enclosures.addAll(enclosures);
     }
     return _result;
   }
@@ -1251,7 +1251,7 @@ class FeedItem extends $pb.GeneratedMessage {
   $0.Timestamp ensureUpdatedParsed() => $_ensure(11);
 
   @$pb.TagNumber(13)
-  $core.List<FeedEnclosure> get enclosure => $_getList(12);
+  $core.List<FeedEnclosure> get enclosures => $_getList(12);
 }
 
 class FeedPerson extends $pb.GeneratedMessage {
