@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.7](https://github.com/TuiHub/Protos/compare/v0.2.6...v0.2.7) (2023-02-25)
+
+
+### Bug Fixes
+
+* add wkt files for dart ([28ca2af](https://github.com/TuiHub/Protos/commit/28ca2af40ab378ef2c58721e749167b77235d38f))
+* update FeedConfig & FeedItem ([459e440](https://github.com/TuiHub/Protos/commit/459e4400547fd1af3ff676854278b7b58eea1e5e))
+
 ## [0.2.6](https://github.com/TuiHub/Protos/compare/v0.2.5...v0.2.6) (2023-02-24)
 
 
