@@ -125,7 +125,7 @@ message FeedItem {
   optional google.protobuf.Timestamp published_parsed = 10;
   string updated = 11;
   optional google.protobuf.Timestamp updated_parsed = 12;
-  repeated FeedEnclosure enclosure = 13;
+  repeated FeedEnclosure enclosures = 13;
 }
 
 // Person is an individual specified in a feed

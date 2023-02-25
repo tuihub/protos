@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
-import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
 import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
@@ -67,7 +67,7 @@ message FeedConfig {
   librarian.v1.InternalID author_account = 3;
   FeedConfigSource source = 4;
   FeedConfigStatus status = 5;
-  google.protobuf.Timestamp pull_interval = 6;
+  google.protobuf.Duration pull_interval = 6;
 }
 
 enum FeedConfigStatus {
