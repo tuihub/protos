@@ -129,7 +129,7 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Tiphereth` `Admin`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn create_user(
             &mut self,
@@ -150,7 +150,7 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Tiphereth` `Admin` `Normal`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn update_user(
             &mut self,
@@ -171,7 +171,7 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn list_user(
             &mut self,
@@ -834,19 +834,19 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::GenerateTokenRequest>,
         ) -> Result<tonic::Response<super::GenerateTokenResponse>, tonic::Status>;
-        /** `Tiphereth` `Admin`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn create_user(
             &self,
             request: tonic::Request<super::CreateUserRequest>,
         ) -> Result<tonic::Response<super::CreateUserResponse>, tonic::Status>;
-        /** `Tiphereth` `Admin` `Normal`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn update_user(
             &self,
             request: tonic::Request<super::UpdateUserRequest>,
         ) -> Result<tonic::Response<super::UpdateUserResponse>, tonic::Status>;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn list_user(
             &self,

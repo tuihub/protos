@@ -38,38 +38,41 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "ZXNoVG9rZW4iRAoRQ3JlYXRlVXNlclJlcXVlc3QSLwoEdXNlchgBIAEoCzIb",
             "LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyUgR1c2VyIj4KEkNyZWF0ZVVz",
             "ZXJSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
-            "bElEUgJpZCJEChFVcGRhdGVVc2VyUmVxdWVzdBIvCgR1c2VyGAEgASgLMhsu",
-            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJSBHVzZXIiFAoSVXBkYXRlVXNl",
-            "clJlc3BvbnNlItABCg9MaXN0VXNlclJlcXVlc3QSMwoGcGFnaW5nGAEgASgL",
-            "MhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxJACgt0eXBl",
-            "X2ZpbHRlchgCIAMoDjIfLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyVHlw",
-            "ZVIKdHlwZUZpbHRlchJGCg1zdGF0dXNfZmlsdGVyGAMgAygOMiEubGlicmFy",
-            "aWFuLnNlcGhpcmFoLnYxLlVzZXJTdGF0dXNSDHN0YXR1c0ZpbHRlciKBAQoQ",
-            "TGlzdFVzZXJSZXNwb25zZRIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4u",
-            "djEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjgKCXVzZXJfbGlzdBgCIAMoCzIb",
-            "LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyUgh1c2VyTGlzdCJMChJMaW5r",
-            "QWNjb3VudFJlcXVlc3QSNgoKYWNjb3VudF9pZBgBIAEoCzIXLmxpYnJhcmlh",
-            "bi52MS5BY2NvdW50SURSCWFjY291bnRJZCJOChNMaW5rQWNjb3VudFJlc3Bv",
-            "bnNlEjcKCmFjY291bnRfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFIJYWNjb3VudElkIk4KFFVuTGlua0FjY291bnRSZXF1ZXN0EjYKCmFj",
-            "Y291bnRfaWQYASABKAsyFy5saWJyYXJpYW4udjEuQWNjb3VudElEUglhY2Nv",
-            "dW50SWQiFwoVVW5MaW5rQWNjb3VudFJlc3BvbnNlIlwKFkxpc3RMaW5rQWNj",
-            "b3VudFJlcXVlc3QSNgoHdXNlcl9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5J",
-            "bnRlcm5hbElESABSBnVzZXJJZIgBAUIKCghfdXNlcl9pZCJTChdMaXN0TGlu",
-            "a0FjY291bnRSZXNwb25zZRI4CgxhY2NvdW50X2xpc3QYASADKAsyFS5saWJy",
-            "YXJpYW4udjEuQWNjb3VudFILYWNjb3VudExpc3Qi2AEKBFVzZXISKAoCaWQY",
-            "ASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSGgoIdXNlcm5h",
-            "bWUYAiABKAlSCHVzZXJuYW1lEhoKCHBhc3N3b3JkGAMgASgJUghwYXNzd29y",
-            "ZBIzCgR0eXBlGAQgASgOMh8ubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJU",
-            "eXBlUgR0eXBlEjkKBnN0YXR1cxgFIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJh",
-            "aC52MS5Vc2VyU3RhdHVzUgZzdGF0dXMqaAoIVXNlclR5cGUSGQoVVVNFUl9U",
-            "WVBFX1VOU1BFQ0lGSUVEEAASEwoPVVNFUl9UWVBFX0FETUlOEAESFAoQVVNF",
-            "Ul9UWVBFX05PUk1BTBACEhYKElVTRVJfVFlQRV9TRU5USU5FTBADKloKClVz",
-            "ZXJTdGF0dXMSGwoXVVNFUl9TVEFUVVNfVU5TUEVDSUZJRUQQABIWChJVU0VS",
-            "X1NUQVRVU19BQ1RJVkUQARIXChNVU0VSX1NUQVRVU19CTE9DS0VEEAJCXVo1",
-            "Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGly",
-            "YWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5W",
-            "MWIGcHJvdG8z"));
+            "bElEUgJpZCJyChFVcGRhdGVVc2VyUmVxdWVzdBIvCgR1c2VyGAEgASgLMhsu",
+            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJSBHVzZXISHwoIcGFzc3dvcmQY",
+            "AiABKAlIAFIIcGFzc3dvcmSIAQFCCwoJX3Bhc3N3b3JkIhQKElVwZGF0ZVVz",
+            "ZXJSZXNwb25zZSLQAQoPTGlzdFVzZXJSZXF1ZXN0EjMKBnBhZ2luZxgBIAEo",
+            "CzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSQAoLdHlw",
+            "ZV9maWx0ZXIYAiADKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuVXNlclR5",
+            "cGVSCnR5cGVGaWx0ZXISRgoNc3RhdHVzX2ZpbHRlchgDIAMoDjIhLmxpYnJh",
+            "cmlhbi5zZXBoaXJhaC52MS5Vc2VyU3RhdHVzUgxzdGF0dXNGaWx0ZXIiggEK",
+            "EExpc3RVc2VyUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
+            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSOAoJdXNlcl9saXN0GAIgAygL",
+            "MhsubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJSCHVzZXJMaXN0IkwKEkxp",
+            "bmtBY2NvdW50UmVxdWVzdBI2CgphY2NvdW50X2lkGAEgASgLMhcubGlicmFy",
+            "aWFuLnYxLkFjY291bnRJRFIJYWNjb3VudElkIk4KE0xpbmtBY2NvdW50UmVz",
+            "cG9uc2USNwoKYWNjb3VudF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRl",
+            "cm5hbElEUglhY2NvdW50SWQiTgoUVW5MaW5rQWNjb3VudFJlcXVlc3QSNgoK",
+            "YWNjb3VudF9pZBgBIAEoCzIXLmxpYnJhcmlhbi52MS5BY2NvdW50SURSCWFj",
+            "Y291bnRJZCIXChVVbkxpbmtBY2NvdW50UmVzcG9uc2UikQEKFkxpc3RMaW5r",
+            "QWNjb3VudFJlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYx",
+            "LlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI2Cgd1c2VyX2lkGAIgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURIAFIGdXNlcklkiAEBQgoKCF91c2VyX2lk",
+            "IokBChdMaXN0TGlua0FjY291bnRSZXNwb25zZRI0CgZwYWdpbmcYASABKAsy",
+            "HC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxI4CgxhY2Nv",
+            "dW50X2xpc3QYAiADKAsyFS5saWJyYXJpYW4udjEuQWNjb3VudFILYWNjb3Vu",
+            "dExpc3Qi2AEKBFVzZXISKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
+            "ZXJuYWxJRFICaWQSGgoIdXNlcm5hbWUYAiABKAlSCHVzZXJuYW1lEhoKCHBh",
+            "c3N3b3JkGAMgASgJUghwYXNzd29yZBIzCgR0eXBlGAQgASgOMh8ubGlicmFy",
+            "aWFuLnNlcGhpcmFoLnYxLlVzZXJUeXBlUgR0eXBlEjkKBnN0YXR1cxgFIAEo",
+            "DjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyU3RhdHVzUgZzdGF0dXMq",
+            "aAoIVXNlclR5cGUSGQoVVVNFUl9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPVVNF",
+            "Ul9UWVBFX0FETUlOEAESFAoQVVNFUl9UWVBFX05PUk1BTBACEhYKElVTRVJf",
+            "VFlQRV9TRU5USU5FTBADKloKClVzZXJTdGF0dXMSGwoXVVNFUl9TVEFUVVNf",
+            "VU5TUEVDSUZJRUQQABIWChJVU0VSX1NUQVRVU19BQ1RJVkUQARIXChNVU0VS",
+            "X1NUQVRVU19CTE9DS0VEEAJCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9z",
+            "L3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJvdG9z",
+            "LkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +84,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GenerateTokenResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GenerateTokenResponse.Parser, new[]{ "RefreshToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest.Parser, new[]{ "User" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserRequest.Parser, new[]{ "User" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserRequest.Parser, new[]{ "User", "Password" }, new[]{ "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserRequest.Parser, new[]{ "Paging", "TypeFilter", "StatusFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserResponse.Parser, new[]{ "Paging", "UserList" }, null, null, null, null),
@@ -89,8 +92,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountResponse.Parser, new[]{ "AccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnLinkAccountRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UnLinkAccountRequest.Parser, new[]{ "AccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnLinkAccountResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnLinkAccountResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountRequest.Parser, new[]{ "UserId" }, new[]{ "UserId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountResponse.Parser, new[]{ "AccountList" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountRequest.Parser, new[]{ "Paging", "UserId" }, new[]{ "UserId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountResponse.Parser, new[]{ "Paging", "AccountList" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.User), global::TuiHub.Protos.Librarian.Sephirah.V1.User.Parser, new[]{ "Id", "Username", "Password", "Type", "Status" }, null, null, null, null)
           }));
     }
@@ -1762,6 +1765,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UpdateUserRequest(UpdateUserRequest other) : this() {
       user_ = other.user_ != null ? other.user_.Clone() : null;
+      password_ = other.password_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1783,6 +1787,33 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private string password_;
+    /// <summary>
+    /// Original password. Required if new password is not empty string
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Password {
+      get { return password_ ?? ""; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "password" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPassword {
+      get { return password_ != null; }
+    }
+    /// <summary>Clears the value of the "password" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPassword() {
+      password_ = null;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1799,6 +1830,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return true;
       }
       if (!object.Equals(User, other.User)) return false;
+      if (Password != other.Password) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1807,6 +1839,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (user_ != null) hash ^= User.GetHashCode();
+      if (HasPassword) hash ^= Password.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1829,6 +1862,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(User);
       }
+      if (HasPassword) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1843,6 +1880,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(User);
       }
+      if (HasPassword) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1855,6 +1896,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int size = 0;
       if (user_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(User);
+      }
+      if (HasPassword) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1873,6 +1917,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
         }
         User.MergeFrom(other.User);
+      }
+      if (other.HasPassword) {
+        Password = other.Password;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1896,6 +1943,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             input.ReadMessage(User);
             break;
           }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1916,6 +1967,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
               User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
             }
             input.ReadMessage(User);
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
             break;
           }
         }
@@ -2378,10 +2433,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "paging" field.</summary>
     public const int PagingFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.V1.PagingRequest paging_;
+    private global::TuiHub.Protos.Librarian.V1.PagingResponse paging_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.PagingRequest Paging {
+    public global::TuiHub.Protos.Librarian.V1.PagingResponse Paging {
       get { return paging_; }
       set {
         paging_ = value;
@@ -2491,7 +2546,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.paging_ != null) {
         if (paging_ == null) {
-          Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
         }
         Paging.MergeFrom(other.Paging);
       }
@@ -2513,7 +2568,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (paging_ == null) {
-              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
             }
             input.ReadMessage(Paging);
             break;
@@ -2539,7 +2594,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (paging_ == null) {
-              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
             }
             input.ReadMessage(Paging);
             break;
@@ -3335,6 +3390,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListLinkAccountRequest(ListLinkAccountRequest other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       userId_ = other.userId_ != null ? other.userId_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -3345,9 +3401,24 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new ListLinkAccountRequest(this);
     }
 
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingRequest paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingRequest Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
     /// <summary>Field number for the "user_id" field.</summary>
-    public const int UserIdFieldNumber = 1;
+    public const int UserIdFieldNumber = 2;
     private global::TuiHub.Protos.Librarian.V1.InternalID userId_;
+    /// <summary>
+    /// Used to list other user's account
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::TuiHub.Protos.Librarian.V1.InternalID UserId {
@@ -3372,6 +3443,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Paging, other.Paging)) return false;
       if (!object.Equals(UserId, other.UserId)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -3380,6 +3452,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
       if (userId_ != null) hash ^= UserId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3399,8 +3472,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (userId_ != null) {
+      if (paging_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      if (userId_ != null) {
+        output.WriteRawTag(18);
         output.WriteMessage(UserId);
       }
       if (_unknownFields != null) {
@@ -3413,8 +3490,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (userId_ != null) {
+      if (paging_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      if (userId_ != null) {
+        output.WriteRawTag(18);
         output.WriteMessage(UserId);
       }
       if (_unknownFields != null) {
@@ -3427,6 +3508,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
       if (userId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserId);
       }
@@ -3441,6 +3525,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public void MergeFrom(ListLinkAccountRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+        }
+        Paging.MergeFrom(other.Paging);
       }
       if (other.userId_ != null) {
         if (userId_ == null) {
@@ -3464,6 +3554,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             if (userId_ == null) {
               UserId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
@@ -3486,6 +3583,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             if (userId_ == null) {
               UserId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
@@ -3533,6 +3637,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListLinkAccountResponse(ListLinkAccountResponse other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       accountList_ = other.accountList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -3543,10 +3648,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new ListLinkAccountResponse(this);
     }
 
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingResponse paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingResponse Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
     /// <summary>Field number for the "account_list" field.</summary>
-    public const int AccountListFieldNumber = 1;
+    public const int AccountListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.Account> _repeated_accountList_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.Account.Parser);
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.Account.Parser);
     private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.Account> accountList_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.Account>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3569,6 +3686,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Paging, other.Paging)) return false;
       if(!accountList_.Equals(other.accountList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -3577,6 +3695,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
       hash ^= accountList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3596,6 +3715,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
       accountList_.WriteTo(output, _repeated_accountList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3607,6 +3730,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
       accountList_.WriteTo(ref output, _repeated_accountList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -3618,6 +3745,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
       size += accountList_.CalculateSize(_repeated_accountList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3630,6 +3760,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public void MergeFrom(ListLinkAccountResponse other) {
       if (other == null) {
         return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+        }
+        Paging.MergeFrom(other.Paging);
       }
       accountList_.Add(other.accountList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -3648,6 +3784,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             accountList_.AddEntriesFrom(input, _repeated_accountList_codec);
             break;
           }
@@ -3667,6 +3810,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             accountList_.AddEntriesFrom(ref input, _repeated_accountList_codec);
             break;
           }

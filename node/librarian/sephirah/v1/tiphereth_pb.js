@@ -1639,7 +1639,8 @@ proto.librarian.sephirah.v1.UpdateUserRequest.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.UpdateUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f)
+    user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f),
+    password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1681,6 +1682,10 @@ proto.librarian.sephirah.v1.UpdateUserRequest.deserializeBinaryFromReader = func
       reader.readMessage(value,proto.librarian.sephirah.v1.User.deserializeBinaryFromReader);
       msg.setUser(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1716,6 +1721,13 @@ proto.librarian.sephirah.v1.UpdateUserRequest.serializeBinaryToWriter = function
       1,
       f,
       proto.librarian.sephirah.v1.User.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1755,6 +1767,42 @@ proto.librarian.sephirah.v1.UpdateUserRequest.prototype.clearUser = function() {
  */
 proto.librarian.sephirah.v1.UpdateUserRequest.prototype.hasUser = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string password = 2;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.UpdateUserRequest.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.UpdateUserRequest} returns this
+ */
+proto.librarian.sephirah.v1.UpdateUserRequest.prototype.setPassword = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.UpdateUserRequest} returns this
+ */
+proto.librarian.sephirah.v1.UpdateUserRequest.prototype.clearPassword = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.UpdateUserRequest.prototype.hasPassword = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2158,7 +2206,7 @@ proto.librarian.sephirah.v1.ListUserResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.ListUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
     userListList: jspb.Message.toObjectList(msg.getUserListList(),
     proto.librarian.sephirah.v1.User.toObject, includeInstance)
   };
@@ -2198,8 +2246,8 @@ proto.librarian.sephirah.v1.ListUserResponse.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new librarian_v1_common_pb.PagingRequest;
-      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      var value = new librarian_v1_common_pb.PagingResponse;
+      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
       msg.setPaging(value);
       break;
     case 2:
@@ -2241,7 +2289,7 @@ proto.librarian.sephirah.v1.ListUserResponse.serializeBinaryToWriter = function(
     writer.writeMessage(
       1,
       f,
-      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
     );
   }
   f = message.getUserListList();
@@ -2256,17 +2304,17 @@ proto.librarian.sephirah.v1.ListUserResponse.serializeBinaryToWriter = function(
 
 
 /**
- * optional librarian.v1.PagingRequest paging = 1;
- * @return {?proto.librarian.v1.PagingRequest}
+ * optional librarian.v1.PagingResponse paging = 1;
+ * @return {?proto.librarian.v1.PagingResponse}
  */
 proto.librarian.sephirah.v1.ListUserResponse.prototype.getPaging = function() {
-  return /** @type{?proto.librarian.v1.PagingRequest} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+  return /** @type{?proto.librarian.v1.PagingResponse} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
 };
 
 
 /**
- * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @param {?proto.librarian.v1.PagingResponse|undefined} value
  * @return {!proto.librarian.sephirah.v1.ListUserResponse} returns this
 */
 proto.librarian.sephirah.v1.ListUserResponse.prototype.setPaging = function(value) {
@@ -2916,6 +2964,7 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.ListLinkAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
@@ -2954,6 +3003,11 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.deserializeBinaryFromReader =
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.setUserId(value);
@@ -2987,10 +3041,18 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.serializeBinary = f
  */
 proto.librarian.sephirah.v1.ListLinkAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getUserId();
+  f = message.getPaging();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f != null) {
+    writer.writeMessage(
+      2,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
@@ -2999,12 +3061,49 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.serializeBinaryToWriter = fun
 
 
 /**
- * optional librarian.v1.InternalID user_id = 1;
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
+ */
+proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListLinkAccountRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListLinkAccountRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional librarian.v1.InternalID user_id = 2;
  * @return {?proto.librarian.v1.InternalID}
  */
 proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.getUserId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 2));
 };
 
 
@@ -3013,7 +3112,7 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.getUserId = functio
  * @return {!proto.librarian.sephirah.v1.ListLinkAccountRequest} returns this
 */
 proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.setUserId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -3031,7 +3130,7 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.clearUserId = funct
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.hasUserId = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3041,7 +3140,7 @@ proto.librarian.sephirah.v1.ListLinkAccountRequest.prototype.hasUserId = functio
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListLinkAccountResponse.repeatedFields_ = [1];
+proto.librarian.sephirah.v1.ListLinkAccountResponse.repeatedFields_ = [2];
 
 
 
@@ -3074,6 +3173,7 @@ proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ListLinkAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
     accountListList: jspb.Message.toObjectList(msg.getAccountListList(),
     librarian_v1_common_pb.Account.toObject, includeInstance)
   };
@@ -3113,6 +3213,11 @@ proto.librarian.sephirah.v1.ListLinkAccountResponse.deserializeBinaryFromReader 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.PagingResponse;
+      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
       var value = new librarian_v1_common_pb.Account;
       reader.readMessage(value,librarian_v1_common_pb.Account.deserializeBinaryFromReader);
       msg.addAccountList(value);
@@ -3146,10 +3251,18 @@ proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.serializeBinary = 
  */
 proto.librarian.sephirah.v1.ListLinkAccountResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
+    );
+  }
   f = message.getAccountListList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       librarian_v1_common_pb.Account.serializeBinaryToWriter
     );
@@ -3158,12 +3271,49 @@ proto.librarian.sephirah.v1.ListLinkAccountResponse.serializeBinaryToWriter = fu
 
 
 /**
- * repeated librarian.v1.Account account_list = 1;
+ * optional librarian.v1.PagingResponse paging = 1;
+ * @return {?proto.librarian.v1.PagingResponse}
+ */
+proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingResponse} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingResponse|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListLinkAccountResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListLinkAccountResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated librarian.v1.Account account_list = 2;
  * @return {!Array<!proto.librarian.v1.Account>}
  */
 proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.getAccountListList = function() {
   return /** @type{!Array<!proto.librarian.v1.Account>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.Account, 1));
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.Account, 2));
 };
 
 
@@ -3172,7 +3322,7 @@ proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.getAccountListList
  * @return {!proto.librarian.sephirah.v1.ListLinkAccountResponse} returns this
 */
 proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.setAccountListList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -3182,7 +3332,7 @@ proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.setAccountListList
  * @return {!proto.librarian.v1.Account}
  */
 proto.librarian.sephirah.v1.ListLinkAccountResponse.prototype.addAccountList = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.Account, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.Account, opt_index);
 };
 
 

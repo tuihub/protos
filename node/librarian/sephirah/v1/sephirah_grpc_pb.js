@@ -799,7 +799,7 @@ generateToken: {
     responseSerialize: serialize_librarian_sephirah_v1_GenerateTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GenerateTokenResponse,
   },
-  // `Tiphereth` `Admin`
+  // `Tiphereth` `Admin` `Normal limited`
 createUser: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateUser',
     requestStream: false,
@@ -811,7 +811,7 @@ createUser: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateUserResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateUserResponse,
   },
-  // `Tiphereth` `Admin` `Normal`
+  // `Tiphereth` `Admin` `Normal limited`
 updateUser: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser',
     requestStream: false,
@@ -823,7 +823,7 @@ updateUser: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateUserResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateUserResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `Admin` `Normal limited`
 listUser: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListUser',
     requestStream: false,

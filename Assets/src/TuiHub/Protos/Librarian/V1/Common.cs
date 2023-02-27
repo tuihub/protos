@@ -193,6 +193,9 @@ namespace TuiHub.Protos.Librarian.V1 {
     /// <summary>Field number for the "page_num" field.</summary>
     public const int PageNumFieldNumber = 1;
     private int pageNum_;
+    /// <summary>
+    /// start from 1, not 0
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int PageNum {

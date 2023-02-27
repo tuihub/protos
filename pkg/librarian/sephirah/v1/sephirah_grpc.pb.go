@@ -28,11 +28,11 @@ type LibrarianSephirahServiceClient interface {
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Admin` Generate token for given user
 	GenerateToken(ctx context.Context, in *GenerateTokenRequest, opts ...grpc.CallOption) (*GenerateTokenResponse, error)
-	// `Tiphereth` `Admin`
+	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
-	// `Tiphereth` `Admin` `Normal`
+	// `Tiphereth` `Admin` `Normal limited`
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `Admin` `Normal limited`
 	ListUser(ctx context.Context, in *ListUserRequest, opts ...grpc.CallOption) (*ListUserResponse, error)
 	// `Tiphereth` `Normal` Bind third-party account to current user.
 	// Create (account)<-[Equal]->(current user)
@@ -531,11 +531,11 @@ type LibrarianSephirahServiceServer interface {
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Admin` Generate token for given user
 	GenerateToken(context.Context, *GenerateTokenRequest) (*GenerateTokenResponse, error)
-	// `Tiphereth` `Admin`
+	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
-	// `Tiphereth` `Admin` `Normal`
+	// `Tiphereth` `Admin` `Normal limited`
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `Admin` `Normal limited`
 	ListUser(context.Context, *ListUserRequest) (*ListUserResponse, error)
 	// `Tiphereth` `Normal` Bind third-party account to current user.
 	// Create (account)<-[Equal]->(current user)

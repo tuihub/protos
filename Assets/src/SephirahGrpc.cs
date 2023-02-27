@@ -509,7 +509,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Admin`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -521,7 +521,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Admin` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -533,7 +533,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1064,7 +1064,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GenerateToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Admin`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1077,7 +1077,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Admin`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1088,7 +1088,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Admin`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1101,7 +1101,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Admin`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1112,7 +1112,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Admin` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1125,7 +1125,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Admin` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1136,7 +1136,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Admin` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1149,7 +1149,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Admin` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1160,7 +1160,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1173,7 +1173,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1184,7 +1184,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1197,7 +1197,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `Admin` `Normal limited`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

@@ -4957,10 +4957,16 @@ impl serde::Serialize for ListLinkAccountRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
         if self.user_id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListLinkAccountRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
         if let Some(v) = self.user_id.as_ref() {
             struct_ser.serialize_field("userId", v)?;
         }
@@ -4974,11 +4980,13 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
             "userId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
             UserId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -5001,6 +5009,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountRequest {
                         E: serde::de::Error,
                     {
                         match value {
+                            "paging" => Ok(GeneratedField::Paging),
                             "userId" => Ok(GeneratedField::UserId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -5021,9 +5030,16 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut paging__ = None;
                 let mut user_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = Some(map.next_value()?);
+                        }
                         GeneratedField::UserId => {
                             if user_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("userId"));
@@ -5033,6 +5049,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountRequest {
                     }
                 }
                 Ok(ListLinkAccountRequest {
+                    paging: paging__,
                     user_id: user_id__,
                 })
             }
@@ -5048,10 +5065,16 @@ impl serde::Serialize for ListLinkAccountResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
         if !self.account_list.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListLinkAccountResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
         if !self.account_list.is_empty() {
             struct_ser.serialize_field("accountList", &self.account_list)?;
         }
@@ -5065,11 +5088,13 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
             "accountList",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
             AccountList,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -5092,6 +5117,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountResponse {
                         E: serde::de::Error,
                     {
                         match value {
+                            "paging" => Ok(GeneratedField::Paging),
                             "accountList" => Ok(GeneratedField::AccountList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -5112,9 +5138,16 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut paging__ = None;
                 let mut account_list__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = Some(map.next_value()?);
+                        }
                         GeneratedField::AccountList => {
                             if account_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountList"));
@@ -5124,6 +5157,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountResponse {
                     }
                 }
                 Ok(ListLinkAccountResponse {
+                    paging: paging__,
                     account_list: account_list__.unwrap_or_default(),
                 })
             }
@@ -7227,9 +7261,15 @@ impl serde::Serialize for UpdateUserRequest {
         if self.user.is_some() {
             len += 1;
         }
+        if self.password.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateUserRequest", len)?;
         if let Some(v) = self.user.as_ref() {
             struct_ser.serialize_field("user", v)?;
+        }
+        if let Some(v) = self.password.as_ref() {
+            struct_ser.serialize_field("password", v)?;
         }
         struct_ser.end()
     }
@@ -7242,11 +7282,13 @@ impl<'de> serde::Deserialize<'de> for UpdateUserRequest {
     {
         const FIELDS: &[&str] = &[
             "user",
+            "password",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             User,
+            Password,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -7269,6 +7311,7 @@ impl<'de> serde::Deserialize<'de> for UpdateUserRequest {
                     {
                         match value {
                             "user" => Ok(GeneratedField::User),
+                            "password" => Ok(GeneratedField::Password),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7289,6 +7332,7 @@ impl<'de> serde::Deserialize<'de> for UpdateUserRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut user__ = None;
+                let mut password__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::User => {
@@ -7297,10 +7341,17 @@ impl<'de> serde::Deserialize<'de> for UpdateUserRequest {
                             }
                             user__ = Some(map.next_value()?);
                         }
+                        GeneratedField::Password => {
+                            if password__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("password"));
+                            }
+                            password__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(UpdateUserRequest {
                     user: user__,
+                    password: password__,
                 })
             }
         }
