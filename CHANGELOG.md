@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.8](https://github.com/TuiHub/Protos/compare/v0.2.7...v0.2.8) (2023-02-27)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#34](https://github.com/TuiHub/Protos/issues/34)) ([5358599](https://github.com/TuiHub/Protos/commit/53585997e8096469cc2e993cedefa9159930ec86))
+* review tiphereth ([8b4106a](https://github.com/TuiHub/Protos/commit/8b4106ad585f7ba48368e7536810cce81f5cccd5))
+
 ## [0.2.7](https://github.com/TuiHub/Protos/compare/v0.2.6...v0.2.7) (2023-02-25)
 
 
