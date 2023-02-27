@@ -25,11 +25,11 @@ service LibrarianSephirahService {
   // `Tiphereth` `Admin` Generate token for given user
   rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
 
-  // `Tiphereth` `Admin`
+  // `Tiphereth` `Admin` `Normal limited`
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-  // `Tiphereth` `Admin` `Normal`
+  // `Tiphereth` `Admin` `Normal limited`
   rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `Admin` `Normal limited`
   rpc ListUser(ListUserRequest) returns (ListUserResponse);
 
   // `Tiphereth` `Normal` Bind third-party account to current user.

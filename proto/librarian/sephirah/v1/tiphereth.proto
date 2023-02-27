@@ -41,6 +41,8 @@ message CreateUserResponse {
 
 message UpdateUserRequest {
   User user = 1;
+  // Original password. Required if new password is not empty string
+  optional string password = 2;
 }
 message UpdateUserResponse {}
 
@@ -50,7 +52,7 @@ message ListUserRequest {
   repeated UserStatus status_filter = 3;
 }
 message ListUserResponse {
-  librarian.v1.PagingRequest paging = 1;
+  librarian.v1.PagingResponse paging = 1;
   repeated User user_list = 2;
 }
 
@@ -66,10 +68,13 @@ message UnLinkAccountRequest {
 message UnLinkAccountResponse {}
 
 message ListLinkAccountRequest {
-  optional librarian.v1.InternalID user_id = 1;
+  librarian.v1.PagingRequest paging = 1;
+  // Used to list other user's account
+  optional librarian.v1.InternalID user_id = 2;
 }
 message ListLinkAccountResponse {
-  repeated librarian.v1.Account account_list = 1;
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.Account account_list = 2;
 }
 
 message User {

@@ -8,6 +8,7 @@ option csharp_namespace = "TuiHub.Protos.Librarian.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/v1;v1";
 
 message PagingRequest {
+  // start from 1, not 0
   int32 page_num = 1;
   int32 page_size = 2;
 }
