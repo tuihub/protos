@@ -46,14 +46,14 @@ message UpdateUserRequest {
 }
 message UpdateUserResponse {}
 
-message ListUserRequest {
+message ListUsersRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated UserType type_filter = 2;
   repeated UserStatus status_filter = 3;
 }
-message ListUserResponse {
+message ListUsersResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated User user_list = 2;
+  repeated User users = 2;
 }
 
 message LinkAccountRequest {
@@ -67,14 +67,14 @@ message UnLinkAccountRequest {
 }
 message UnLinkAccountResponse {}
 
-message ListLinkAccountRequest {
+message ListLinkAccountsRequest {
   librarian.v1.PagingRequest paging = 1;
   // Used to list other user's account
   optional librarian.v1.InternalID user_id = 2;
 }
-message ListLinkAccountResponse {
+message ListLinkAccountsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.Account account_list = 2;
+  repeated librarian.v1.Account accounts = 2;
 }
 
 message User {

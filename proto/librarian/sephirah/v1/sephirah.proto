@@ -30,7 +30,7 @@ service LibrarianSephirahService {
   // `Tiphereth` `Admin` `Normal limited`
   rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
   // `Tiphereth` `Admin` `Normal limited`
-  rpc ListUser(ListUserRequest) returns (ListUserResponse);
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
 
   // `Tiphereth` `Normal` Bind third-party account to current user.
   // Create (account)<-[Equal]->(current user)
@@ -40,7 +40,7 @@ service LibrarianSephirahService {
   rpc UnLinkAccount(UnLinkAccountRequest) returns (UnLinkAccountResponse);
   // `Tiphereth` `Normal` List third-party account binded to current user.
   // Match ()<-[Equal]->(current user)
-  rpc ListLinkAccount(ListLinkAccountRequest) returns (ListLinkAccountResponse);
+  rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
 
   // `Binah` `upload_token`
   rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
@@ -94,9 +94,9 @@ service LibrarianSephirahService {
   // `Yesod` `Normal`
   rpc UpdateFeedConfig(UpdateFeedConfigRequest) returns (UpdateFeedConfigResponse);
   // `Yesod` `Normal`
-  rpc ListFeed(ListFeedRequest) returns (ListFeedResponse);
+  rpc ListFeeds(ListFeedsRequest) returns (ListFeedsResponse);
   // `Yesod` `Normal`
-  rpc ListFeedItem(ListFeedItemRequest) returns (ListFeedItemResponse);
+  rpc ListFeedItems(ListFeedItemsRequest) returns (ListFeedItemsResponse);
   // `Yesod` `Normal`
   rpc GetFeedItem(GetFeedItemRequest) returns (GetFeedItemResponse);
 }

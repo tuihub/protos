@@ -3,6 +3,7 @@ syntax = "proto3";
 package librarian.sephirah.v1;
 
 import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
@@ -20,33 +21,33 @@ message UpdateFeedConfigRequest {
 }
 message UpdateFeedConfigResponse {}
 
-message ListFeedRequest {
+message ListFeedsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID id_filter = 2;
-  repeated librarian.v1.InternalID author_filter = 3;
+  repeated librarian.v1.InternalID author_id_filter = 3;
   repeated FeedConfigSource source_filter = 4;
   repeated FeedConfigStatus status_filter = 5;
 }
 
-message ListFeedResponse {
+message ListFeedsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated FeedWithConfig feed_list = 2;
+  repeated FeedWithConfig feeds_with_config = 2;
   message FeedWithConfig {
     librarian.v1.Feed feed = 1;
     FeedConfig config = 2;
   }
 }
 
-message ListFeedItemRequest {
+message ListFeedItemsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID feed_id_filter = 2;
-  repeated librarian.v1.InternalID author_filter = 3;
-  repeated string publisher_filter = 4;
+  repeated librarian.v1.InternalID author_id_filter = 3;
+  repeated string publish_platform_filter = 4;
 }
 
-message ListFeedItemResponse {
+message ListFeedItemsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated FeedItemIDWithFeedID item_list = 2;
+  repeated FeedItemIDWithFeedID items = 2;
   message FeedItemIDWithFeedID {
     librarian.v1.InternalID feed_id = 1;
     librarian.v1.InternalID item_id = 2;
@@ -54,11 +55,11 @@ message ListFeedItemResponse {
 }
 
 message GetFeedItemRequest {
-  repeated librarian.v1.InternalID id_list = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message GetFeedItemResponse {
-  repeated librarian.v1.FeedItem item_list = 1;
+  librarian.v1.FeedItem item = 1;
 }
 
 message FeedConfig {
@@ -68,6 +69,8 @@ message FeedConfig {
   FeedConfigSource source = 4;
   FeedConfigStatus status = 5;
   google.protobuf.Duration pull_interval = 6;
+  // response only
+  optional google.protobuf.Timestamp lastest_pull_time = 7;
 }
 
 enum FeedConfigStatus {
