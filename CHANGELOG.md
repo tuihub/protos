@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.9](https://github.com/TuiHub/Protos/compare/v0.2.8...v0.2.9) (2023-03-03)
+
+
+### Bug Fixes
+
+* rename some fields & update yesod protos ([2aa6cb3](https://github.com/TuiHub/Protos/commit/2aa6cb374f2bb318db230fffa7c5a1abc78b30ed))
+
 ## [0.2.8](https://github.com/TuiHub/Protos/compare/v0.2.7...v0.2.8) (2023-02-27)
 
 
