@@ -11,6 +11,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $4;
 import '../../../google/protobuf/duration.pb.dart' as $6;
+import '../../../google/protobuf/timestamp.pb.dart' as $7;
 
 import 'yesod.pbenum.dart';
 
@@ -192,21 +193,21 @@ class UpdateFeedConfigResponse extends $pb.GeneratedMessage {
   static UpdateFeedConfigResponse? _defaultInstance;
 }
 
-class ListFeedRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListFeedsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingRequest.create)
     ..pc<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
-    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pc<FeedConfigSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values, defaultEnumValue: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED)
     ..pc<FeedConfigStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
-  ListFeedRequest._() : super();
-  factory ListFeedRequest({
+  ListFeedsRequest._() : super();
+  factory ListFeedsRequest({
     $4.PagingRequest? paging,
     $core.Iterable<$4.InternalID>? idFilter,
-    $core.Iterable<$4.InternalID>? authorFilter,
+    $core.Iterable<$4.InternalID>? authorIdFilter,
     $core.Iterable<FeedConfigSource>? sourceFilter,
     $core.Iterable<FeedConfigStatus>? statusFilter,
   }) {
@@ -217,8 +218,8 @@ class ListFeedRequest extends $pb.GeneratedMessage {
     if (idFilter != null) {
       _result.idFilter.addAll(idFilter);
     }
-    if (authorFilter != null) {
-      _result.authorFilter.addAll(authorFilter);
+    if (authorIdFilter != null) {
+      _result.authorIdFilter.addAll(authorIdFilter);
     }
     if (sourceFilter != null) {
       _result.sourceFilter.addAll(sourceFilter);
@@ -228,26 +229,26 @@ class ListFeedRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListFeedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListFeedsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListFeedRequest clone() => ListFeedRequest()..mergeFromMessage(this);
+  ListFeedsRequest clone() => ListFeedsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedRequest copyWith(void Function(ListFeedRequest) updates) => super.copyWith((message) => updates(message as ListFeedRequest)) as ListFeedRequest; // ignore: deprecated_member_use
+  ListFeedsRequest copyWith(void Function(ListFeedsRequest) updates) => super.copyWith((message) => updates(message as ListFeedsRequest)) as ListFeedsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListFeedRequest create() => ListFeedRequest._();
-  ListFeedRequest createEmptyInstance() => create();
-  static $pb.PbList<ListFeedRequest> createRepeated() => $pb.PbList<ListFeedRequest>();
+  static ListFeedsRequest create() => ListFeedsRequest._();
+  ListFeedsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListFeedsRequest> createRepeated() => $pb.PbList<ListFeedsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListFeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedRequest>(create);
-  static ListFeedRequest? _defaultInstance;
+  static ListFeedsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedsRequest>(create);
+  static ListFeedsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
@@ -264,7 +265,7 @@ class ListFeedRequest extends $pb.GeneratedMessage {
   $core.List<$4.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.InternalID> get authorFilter => $_getList(2);
+  $core.List<$4.InternalID> get authorIdFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<FeedConfigSource> get sourceFilter => $_getList(3);
@@ -273,15 +274,15 @@ class ListFeedRequest extends $pb.GeneratedMessage {
   $core.List<FeedConfigStatus> get statusFilter => $_getList(4);
 }
 
-class ListFeedResponse_FeedWithConfig extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedResponse.FeedWithConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListFeedsResponse_FeedWithConfig extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedsResponse.FeedWithConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.Feed>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feed', subBuilder: $4.Feed.create)
     ..aOM<FeedConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: FeedConfig.create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedResponse_FeedWithConfig._() : super();
-  factory ListFeedResponse_FeedWithConfig({
+  ListFeedsResponse_FeedWithConfig._() : super();
+  factory ListFeedsResponse_FeedWithConfig({
     $4.Feed? feed,
     FeedConfig? config,
   }) {
@@ -294,26 +295,26 @@ class ListFeedResponse_FeedWithConfig extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListFeedResponse_FeedWithConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedResponse_FeedWithConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListFeedsResponse_FeedWithConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedsResponse_FeedWithConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListFeedResponse_FeedWithConfig clone() => ListFeedResponse_FeedWithConfig()..mergeFromMessage(this);
+  ListFeedsResponse_FeedWithConfig clone() => ListFeedsResponse_FeedWithConfig()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedResponse_FeedWithConfig copyWith(void Function(ListFeedResponse_FeedWithConfig) updates) => super.copyWith((message) => updates(message as ListFeedResponse_FeedWithConfig)) as ListFeedResponse_FeedWithConfig; // ignore: deprecated_member_use
+  ListFeedsResponse_FeedWithConfig copyWith(void Function(ListFeedsResponse_FeedWithConfig) updates) => super.copyWith((message) => updates(message as ListFeedsResponse_FeedWithConfig)) as ListFeedsResponse_FeedWithConfig; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListFeedResponse_FeedWithConfig create() => ListFeedResponse_FeedWithConfig._();
-  ListFeedResponse_FeedWithConfig createEmptyInstance() => create();
-  static $pb.PbList<ListFeedResponse_FeedWithConfig> createRepeated() => $pb.PbList<ListFeedResponse_FeedWithConfig>();
+  static ListFeedsResponse_FeedWithConfig create() => ListFeedsResponse_FeedWithConfig._();
+  ListFeedsResponse_FeedWithConfig createEmptyInstance() => create();
+  static $pb.PbList<ListFeedsResponse_FeedWithConfig> createRepeated() => $pb.PbList<ListFeedsResponse_FeedWithConfig>();
   @$core.pragma('dart2js:noInline')
-  static ListFeedResponse_FeedWithConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedResponse_FeedWithConfig>(create);
-  static ListFeedResponse_FeedWithConfig? _defaultInstance;
+  static ListFeedsResponse_FeedWithConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedsResponse_FeedWithConfig>(create);
+  static ListFeedsResponse_FeedWithConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.Feed get feed => $_getN(0);
@@ -338,47 +339,47 @@ class ListFeedResponse_FeedWithConfig extends $pb.GeneratedMessage {
   FeedConfig ensureConfig() => $_ensure(1);
 }
 
-class ListFeedResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListFeedsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<ListFeedResponse_FeedWithConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedList', $pb.PbFieldType.PM, subBuilder: ListFeedResponse_FeedWithConfig.create)
+    ..pc<ListFeedsResponse_FeedWithConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedsWithConfig', $pb.PbFieldType.PM, subBuilder: ListFeedsResponse_FeedWithConfig.create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedResponse._() : super();
-  factory ListFeedResponse({
+  ListFeedsResponse._() : super();
+  factory ListFeedsResponse({
     $4.PagingResponse? paging,
-    $core.Iterable<ListFeedResponse_FeedWithConfig>? feedList,
+    $core.Iterable<ListFeedsResponse_FeedWithConfig>? feedsWithConfig,
   }) {
     final _result = create();
     if (paging != null) {
       _result.paging = paging;
     }
-    if (feedList != null) {
-      _result.feedList.addAll(feedList);
+    if (feedsWithConfig != null) {
+      _result.feedsWithConfig.addAll(feedsWithConfig);
     }
     return _result;
   }
-  factory ListFeedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListFeedsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListFeedResponse clone() => ListFeedResponse()..mergeFromMessage(this);
+  ListFeedsResponse clone() => ListFeedsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedResponse copyWith(void Function(ListFeedResponse) updates) => super.copyWith((message) => updates(message as ListFeedResponse)) as ListFeedResponse; // ignore: deprecated_member_use
+  ListFeedsResponse copyWith(void Function(ListFeedsResponse) updates) => super.copyWith((message) => updates(message as ListFeedsResponse)) as ListFeedsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListFeedResponse create() => ListFeedResponse._();
-  ListFeedResponse createEmptyInstance() => create();
-  static $pb.PbList<ListFeedResponse> createRepeated() => $pb.PbList<ListFeedResponse>();
+  static ListFeedsResponse create() => ListFeedsResponse._();
+  ListFeedsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListFeedsResponse> createRepeated() => $pb.PbList<ListFeedsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListFeedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedResponse>(create);
-  static ListFeedResponse? _defaultInstance;
+  static ListFeedsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedsResponse>(create);
+  static ListFeedsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
@@ -392,24 +393,24 @@ class ListFeedResponse extends $pb.GeneratedMessage {
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<ListFeedResponse_FeedWithConfig> get feedList => $_getList(1);
+  $core.List<ListFeedsResponse_FeedWithConfig> get feedsWithConfig => $_getList(1);
 }
 
-class ListFeedItemRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListFeedItemsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingRequest.create)
     ..pc<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
-    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publisherFilter')
+    ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
     ..hasRequiredFields = false
   ;
 
-  ListFeedItemRequest._() : super();
-  factory ListFeedItemRequest({
+  ListFeedItemsRequest._() : super();
+  factory ListFeedItemsRequest({
     $4.PagingRequest? paging,
     $core.Iterable<$4.InternalID>? feedIdFilter,
-    $core.Iterable<$4.InternalID>? authorFilter,
-    $core.Iterable<$core.String>? publisherFilter,
+    $core.Iterable<$4.InternalID>? authorIdFilter,
+    $core.Iterable<$core.String>? publishPlatformFilter,
   }) {
     final _result = create();
     if (paging != null) {
@@ -418,34 +419,34 @@ class ListFeedItemRequest extends $pb.GeneratedMessage {
     if (feedIdFilter != null) {
       _result.feedIdFilter.addAll(feedIdFilter);
     }
-    if (authorFilter != null) {
-      _result.authorFilter.addAll(authorFilter);
+    if (authorIdFilter != null) {
+      _result.authorIdFilter.addAll(authorIdFilter);
     }
-    if (publisherFilter != null) {
-      _result.publisherFilter.addAll(publisherFilter);
+    if (publishPlatformFilter != null) {
+      _result.publishPlatformFilter.addAll(publishPlatformFilter);
     }
     return _result;
   }
-  factory ListFeedItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListFeedItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListFeedItemRequest clone() => ListFeedItemRequest()..mergeFromMessage(this);
+  ListFeedItemsRequest clone() => ListFeedItemsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemRequest copyWith(void Function(ListFeedItemRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemRequest)) as ListFeedItemRequest; // ignore: deprecated_member_use
+  ListFeedItemsRequest copyWith(void Function(ListFeedItemsRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemsRequest)) as ListFeedItemsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListFeedItemRequest create() => ListFeedItemRequest._();
-  ListFeedItemRequest createEmptyInstance() => create();
-  static $pb.PbList<ListFeedItemRequest> createRepeated() => $pb.PbList<ListFeedItemRequest>();
+  static ListFeedItemsRequest create() => ListFeedItemsRequest._();
+  ListFeedItemsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListFeedItemsRequest> createRepeated() => $pb.PbList<ListFeedItemsRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListFeedItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemRequest>(create);
-  static ListFeedItemRequest? _defaultInstance;
+  static ListFeedItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemsRequest>(create);
+  static ListFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
@@ -462,21 +463,21 @@ class ListFeedItemRequest extends $pb.GeneratedMessage {
   $core.List<$4.InternalID> get feedIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.InternalID> get authorFilter => $_getList(2);
+  $core.List<$4.InternalID> get authorIdFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get publisherFilter => $_getList(3);
+  $core.List<$core.String> get publishPlatformFilter => $_getList(3);
 }
 
-class ListFeedItemResponse_FeedItemIDWithFeedID extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemResponse.FeedItemIDWithFeedID', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListFeedItemsResponse_FeedItemIDWithFeedID extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemsResponse.FeedItemIDWithFeedID', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedId', subBuilder: $4.InternalID.create)
     ..aOM<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemId', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedItemResponse_FeedItemIDWithFeedID._() : super();
-  factory ListFeedItemResponse_FeedItemIDWithFeedID({
+  ListFeedItemsResponse_FeedItemIDWithFeedID._() : super();
+  factory ListFeedItemsResponse_FeedItemIDWithFeedID({
     $4.InternalID? feedId,
     $4.InternalID? itemId,
   }) {
@@ -489,26 +490,26 @@ class ListFeedItemResponse_FeedItemIDWithFeedID extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListFeedItemResponse_FeedItemIDWithFeedID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedItemResponse_FeedItemIDWithFeedID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListFeedItemsResponse_FeedItemIDWithFeedID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedItemsResponse_FeedItemIDWithFeedID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListFeedItemResponse_FeedItemIDWithFeedID clone() => ListFeedItemResponse_FeedItemIDWithFeedID()..mergeFromMessage(this);
+  ListFeedItemsResponse_FeedItemIDWithFeedID clone() => ListFeedItemsResponse_FeedItemIDWithFeedID()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemResponse_FeedItemIDWithFeedID copyWith(void Function(ListFeedItemResponse_FeedItemIDWithFeedID) updates) => super.copyWith((message) => updates(message as ListFeedItemResponse_FeedItemIDWithFeedID)) as ListFeedItemResponse_FeedItemIDWithFeedID; // ignore: deprecated_member_use
+  ListFeedItemsResponse_FeedItemIDWithFeedID copyWith(void Function(ListFeedItemsResponse_FeedItemIDWithFeedID) updates) => super.copyWith((message) => updates(message as ListFeedItemsResponse_FeedItemIDWithFeedID)) as ListFeedItemsResponse_FeedItemIDWithFeedID; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListFeedItemResponse_FeedItemIDWithFeedID create() => ListFeedItemResponse_FeedItemIDWithFeedID._();
-  ListFeedItemResponse_FeedItemIDWithFeedID createEmptyInstance() => create();
-  static $pb.PbList<ListFeedItemResponse_FeedItemIDWithFeedID> createRepeated() => $pb.PbList<ListFeedItemResponse_FeedItemIDWithFeedID>();
+  static ListFeedItemsResponse_FeedItemIDWithFeedID create() => ListFeedItemsResponse_FeedItemIDWithFeedID._();
+  ListFeedItemsResponse_FeedItemIDWithFeedID createEmptyInstance() => create();
+  static $pb.PbList<ListFeedItemsResponse_FeedItemIDWithFeedID> createRepeated() => $pb.PbList<ListFeedItemsResponse_FeedItemIDWithFeedID>();
   @$core.pragma('dart2js:noInline')
-  static ListFeedItemResponse_FeedItemIDWithFeedID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemResponse_FeedItemIDWithFeedID>(create);
-  static ListFeedItemResponse_FeedItemIDWithFeedID? _defaultInstance;
+  static ListFeedItemsResponse_FeedItemIDWithFeedID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemsResponse_FeedItemIDWithFeedID>(create);
+  static ListFeedItemsResponse_FeedItemIDWithFeedID? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.InternalID get feedId => $_getN(0);
@@ -533,47 +534,47 @@ class ListFeedItemResponse_FeedItemIDWithFeedID extends $pb.GeneratedMessage {
   $4.InternalID ensureItemId() => $_ensure(1);
 }
 
-class ListFeedItemResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListFeedItemsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$4.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<ListFeedItemResponse_FeedItemIDWithFeedID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemList', $pb.PbFieldType.PM, subBuilder: ListFeedItemResponse_FeedItemIDWithFeedID.create)
+    ..pc<ListFeedItemsResponse_FeedItemIDWithFeedID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: ListFeedItemsResponse_FeedItemIDWithFeedID.create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedItemResponse._() : super();
-  factory ListFeedItemResponse({
+  ListFeedItemsResponse._() : super();
+  factory ListFeedItemsResponse({
     $4.PagingResponse? paging,
-    $core.Iterable<ListFeedItemResponse_FeedItemIDWithFeedID>? itemList,
+    $core.Iterable<ListFeedItemsResponse_FeedItemIDWithFeedID>? items,
   }) {
     final _result = create();
     if (paging != null) {
       _result.paging = paging;
     }
-    if (itemList != null) {
-      _result.itemList.addAll(itemList);
+    if (items != null) {
+      _result.items.addAll(items);
     }
     return _result;
   }
-  factory ListFeedItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListFeedItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListFeedItemResponse clone() => ListFeedItemResponse()..mergeFromMessage(this);
+  ListFeedItemsResponse clone() => ListFeedItemsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemResponse copyWith(void Function(ListFeedItemResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemResponse)) as ListFeedItemResponse; // ignore: deprecated_member_use
+  ListFeedItemsResponse copyWith(void Function(ListFeedItemsResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemsResponse)) as ListFeedItemsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListFeedItemResponse create() => ListFeedItemResponse._();
-  ListFeedItemResponse createEmptyInstance() => create();
-  static $pb.PbList<ListFeedItemResponse> createRepeated() => $pb.PbList<ListFeedItemResponse>();
+  static ListFeedItemsResponse create() => ListFeedItemsResponse._();
+  ListFeedItemsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListFeedItemsResponse> createRepeated() => $pb.PbList<ListFeedItemsResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListFeedItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemResponse>(create);
-  static ListFeedItemResponse? _defaultInstance;
+  static ListFeedItemsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemsResponse>(create);
+  static ListFeedItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
@@ -587,22 +588,22 @@ class ListFeedItemResponse extends $pb.GeneratedMessage {
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<ListFeedItemResponse_FeedItemIDWithFeedID> get itemList => $_getList(1);
+  $core.List<ListFeedItemsResponse_FeedItemIDWithFeedID> get items => $_getList(1);
 }
 
 class GetFeedItemRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idList', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..aOM<$4.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
   GetFeedItemRequest._() : super();
   factory GetFeedItemRequest({
-    $core.Iterable<$4.InternalID>? idList,
+    $4.InternalID? id,
   }) {
     final _result = create();
-    if (idList != null) {
-      _result.idList.addAll(idList);
+    if (id != null) {
+      _result.id = id;
     }
     return _result;
   }
@@ -628,22 +629,30 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
   static GetFeedItemRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.InternalID> get idList => $_getList(0);
+  $4.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($4.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $4.InternalID ensureId() => $_ensure(0);
 }
 
 class GetFeedItemResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$4.FeedItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemList', $pb.PbFieldType.PM, subBuilder: $4.FeedItem.create)
+    ..aOM<$4.FeedItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'item', subBuilder: $4.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
   GetFeedItemResponse._() : super();
   factory GetFeedItemResponse({
-    $core.Iterable<$4.FeedItem>? itemList,
+    $4.FeedItem? item,
   }) {
     final _result = create();
-    if (itemList != null) {
-      _result.itemList.addAll(itemList);
+    if (item != null) {
+      _result.item = item;
     }
     return _result;
   }
@@ -669,7 +678,15 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   static GetFeedItemResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.FeedItem> get itemList => $_getList(0);
+  $4.FeedItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item($4.FeedItem v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => clearField(1);
+  @$pb.TagNumber(1)
+  $4.FeedItem ensureItem() => $_ensure(0);
 }
 
 class FeedConfig extends $pb.GeneratedMessage {
@@ -680,6 +697,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..e<FeedConfigSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
     ..e<FeedConfigStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
     ..aOM<$6.Duration>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $6.Duration.create)
+    ..aOM<$7.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastestPullTime', subBuilder: $7.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -691,6 +709,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     FeedConfigSource? source,
     FeedConfigStatus? status,
     $6.Duration? pullInterval,
+    $7.Timestamp? lastestPullTime,
   }) {
     final _result = create();
     if (id != null) {
@@ -710,6 +729,9 @@ class FeedConfig extends $pb.GeneratedMessage {
     }
     if (pullInterval != null) {
       _result.pullInterval = pullInterval;
+    }
+    if (lastestPullTime != null) {
+      _result.lastestPullTime = lastestPullTime;
     }
     return _result;
   }
@@ -793,5 +815,16 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearPullInterval() => clearField(6);
   @$pb.TagNumber(6)
   $6.Duration ensurePullInterval() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $7.Timestamp get lastestPullTime => $_getN(6);
+  @$pb.TagNumber(7)
+  set lastestPullTime($7.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLastestPullTime() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastestPullTime() => clearField(7);
+  @$pb.TagNumber(7)
+  $7.Timestamp ensureLastestPullTime() => $_ensure(6);
 }
 

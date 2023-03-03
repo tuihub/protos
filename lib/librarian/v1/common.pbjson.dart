@@ -69,12 +69,12 @@ final $typed_data.Uint8List pagingRequestDescriptor = $convert.base64Decode('Cg1
 const PagingResponse$json = const {
   '1': 'PagingResponse',
   '2': const [
-    const {'1': 'total', '3': 1, '4': 1, '5': 3, '10': 'total'},
+    const {'1': 'total_size', '3': 1, '4': 1, '5': 3, '10': 'totalSize'},
   ],
 };
 
 /// Descriptor for `PagingResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode('Cg5QYWdpbmdSZXNwb25zZRIUCgV0b3RhbBgBIAEoA1IFdG90YWw=');
+final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode('Cg5QYWdpbmdSZXNwb25zZRIdCgp0b3RhbF9zaXplGAEgASgDUgl0b3RhbFNpemU=');
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = const {
   '1': 'InternalID',
@@ -221,6 +221,7 @@ const FeedItem$json = const {
     const {'1': 'updated', '3': 11, '4': 1, '5': 9, '10': 'updated'},
     const {'1': 'updated_parsed', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 1, '10': 'updatedParsed', '17': true},
     const {'1': 'enclosures', '3': 13, '4': 3, '5': 11, '6': '.librarian.v1.FeedEnclosure', '10': 'enclosures'},
+    const {'1': 'publish_platform', '3': 14, '4': 1, '5': 9, '10': 'publishPlatform'},
   ],
   '8': const [
     const {'1': '_published_parsed'},
@@ -229,7 +230,7 @@ const FeedItem$json = const {
 };
 
 /// Descriptor for `FeedItem`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List feedItemDescriptor = $convert.base64Decode('CghGZWVkSXRlbRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSMgoHYXV0aG9ycxgDIAMoCzIYLmxpYnJhcmlhbi52MS5GZWVkUGVyc29uUgdhdXRob3JzEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIYCgdjb250ZW50GAUgASgJUgdjb250ZW50EhIKBGd1aWQYBiABKAlSBGd1aWQSEgoEbGluaxgHIAEoCVIEbGluaxItCgVpbWFnZRgIIAEoCzIXLmxpYnJhcmlhbi52MS5GZWVkSW1hZ2VSBWltYWdlEhwKCXB1Ymxpc2hlZBgJIAEoCVIJcHVibGlzaGVkEkoKEHB1Ymxpc2hlZF9wYXJzZWQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSD3B1Ymxpc2hlZFBhcnNlZIgBARIYCgd1cGRhdGVkGAsgASgJUgd1cGRhdGVkEkYKDnVwZGF0ZWRfcGFyc2VkGAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgBUg11cGRhdGVkUGFyc2VkiAEBEjsKCmVuY2xvc3VyZXMYDSADKAsyGy5saWJyYXJpYW4udjEuRmVlZEVuY2xvc3VyZVIKZW5jbG9zdXJlc0ITChFfcHVibGlzaGVkX3BhcnNlZEIRCg9fdXBkYXRlZF9wYXJzZWQ=');
+final $typed_data.Uint8List feedItemDescriptor = $convert.base64Decode('CghGZWVkSXRlbRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSMgoHYXV0aG9ycxgDIAMoCzIYLmxpYnJhcmlhbi52MS5GZWVkUGVyc29uUgdhdXRob3JzEiAKC2Rlc2NyaXB0aW9uGAQgASgJUgtkZXNjcmlwdGlvbhIYCgdjb250ZW50GAUgASgJUgdjb250ZW50EhIKBGd1aWQYBiABKAlSBGd1aWQSEgoEbGluaxgHIAEoCVIEbGluaxItCgVpbWFnZRgIIAEoCzIXLmxpYnJhcmlhbi52MS5GZWVkSW1hZ2VSBWltYWdlEhwKCXB1Ymxpc2hlZBgJIAEoCVIJcHVibGlzaGVkEkoKEHB1Ymxpc2hlZF9wYXJzZWQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSD3B1Ymxpc2hlZFBhcnNlZIgBARIYCgd1cGRhdGVkGAsgASgJUgd1cGRhdGVkEkYKDnVwZGF0ZWRfcGFyc2VkGAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgBUg11cGRhdGVkUGFyc2VkiAEBEjsKCmVuY2xvc3VyZXMYDSADKAsyGy5saWJyYXJpYW4udjEuRmVlZEVuY2xvc3VyZVIKZW5jbG9zdXJlcxIpChBwdWJsaXNoX3BsYXRmb3JtGA4gASgJUg9wdWJsaXNoUGxhdGZvcm1CEwoRX3B1Ymxpc2hlZF9wYXJzZWRCEQoPX3VwZGF0ZWRfcGFyc2Vk');
 @$core.Deprecated('Use feedPersonDescriptor instead')
 const FeedPerson$json = const {
   '1': 'FeedPerson',

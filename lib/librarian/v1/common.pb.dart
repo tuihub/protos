@@ -79,17 +79,17 @@ class PagingRequest extends $pb.GeneratedMessage {
 
 class PagingResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PagingResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'total')
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalSize')
     ..hasRequiredFields = false
   ;
 
   PagingResponse._() : super();
   factory PagingResponse({
-    $fixnum.Int64? total,
+    $fixnum.Int64? totalSize,
   }) {
     final _result = create();
-    if (total != null) {
-      _result.total = total;
+    if (totalSize != null) {
+      _result.totalSize = totalSize;
     }
     return _result;
   }
@@ -115,13 +115,13 @@ class PagingResponse extends $pb.GeneratedMessage {
   static PagingResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get total => $_getI64(0);
+  $fixnum.Int64 get totalSize => $_getI64(0);
   @$pb.TagNumber(1)
-  set total($fixnum.Int64 v) { $_setInt64(0, v); }
+  set totalSize($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTotal() => $_has(0);
+  $core.bool hasTotalSize() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTotal() => clearField(1);
+  void clearTotalSize() => clearField(1);
 }
 
 class InternalID extends $pb.GeneratedMessage {
@@ -1058,6 +1058,7 @@ class FeedItem extends $pb.GeneratedMessage {
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updated')
     ..aOM<$0.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedParsed', subBuilder: $0.Timestamp.create)
     ..pc<FeedEnclosure>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enclosures', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
+    ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatform')
     ..hasRequiredFields = false
   ;
 
@@ -1076,6 +1077,7 @@ class FeedItem extends $pb.GeneratedMessage {
     $core.String? updated,
     $0.Timestamp? updatedParsed,
     $core.Iterable<FeedEnclosure>? enclosures,
+    $core.String? publishPlatform,
   }) {
     final _result = create();
     if (id != null) {
@@ -1116,6 +1118,9 @@ class FeedItem extends $pb.GeneratedMessage {
     }
     if (enclosures != null) {
       _result.enclosures.addAll(enclosures);
+    }
+    if (publishPlatform != null) {
+      _result.publishPlatform = publishPlatform;
     }
     return _result;
   }
@@ -1252,6 +1257,15 @@ class FeedItem extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(13)
   $core.List<FeedEnclosure> get enclosures => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.String get publishPlatform => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set publishPlatform($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasPublishPlatform() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPublishPlatform() => clearField(14);
 }
 
 class FeedPerson extends $pb.GeneratedMessage {

@@ -16,10 +16,10 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   generateToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GenerateTokenRequest, librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse>;
   createUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>;
   updateUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>;
-  listUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListUserRequest, librarian_sephirah_v1_tiphereth_pb.ListUserResponse>;
+  listUsers: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListUsersRequest, librarian_sephirah_v1_tiphereth_pb.ListUsersResponse>;
   linkAccount: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>;
   unLinkAccount: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>;
-  listLinkAccount: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse>;
+  listLinkAccounts: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>;
   uploadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
   simpleUploadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
@@ -42,8 +42,8 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   listGameSaveFile: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse>;
   createFeedConfig: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.CreateFeedConfigRequest, librarian_sephirah_v1_yesod_pb.CreateFeedConfigResponse>;
   updateFeedConfig: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.UpdateFeedConfigRequest, librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse>;
-  listFeed: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.ListFeedRequest, librarian_sephirah_v1_yesod_pb.ListFeedResponse>;
-  listFeedItem: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.ListFeedItemRequest, librarian_sephirah_v1_yesod_pb.ListFeedItemResponse>;
+  listFeeds: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.ListFeedsRequest, librarian_sephirah_v1_yesod_pb.ListFeedsResponse>;
+  listFeedItems: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest, librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse>;
   getFeedItem: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.GetFeedItemRequest, librarian_sephirah_v1_yesod_pb.GetFeedItemResponse>;
 }
 
@@ -55,10 +55,10 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   generateToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GenerateTokenRequest, librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse>;
   createUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>;
   updateUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>;
-  listUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListUserRequest, librarian_sephirah_v1_tiphereth_pb.ListUserResponse>;
+  listUsers: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListUsersRequest, librarian_sephirah_v1_tiphereth_pb.ListUsersResponse>;
   linkAccount: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>;
   unLinkAccount: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>;
-  listLinkAccount: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse>;
+  listLinkAccounts: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>;
   uploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
   simpleUploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
@@ -81,8 +81,8 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   listGameSaveFile: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse>;
   createFeedConfig: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.CreateFeedConfigRequest, librarian_sephirah_v1_yesod_pb.CreateFeedConfigResponse>;
   updateFeedConfig: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.UpdateFeedConfigRequest, librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse>;
-  listFeed: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.ListFeedRequest, librarian_sephirah_v1_yesod_pb.ListFeedResponse>;
-  listFeedItem: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.ListFeedItemRequest, librarian_sephirah_v1_yesod_pb.ListFeedItemResponse>;
+  listFeeds: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.ListFeedsRequest, librarian_sephirah_v1_yesod_pb.ListFeedsResponse>;
+  listFeedItems: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest, librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse>;
   getFeedItem: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.GetFeedItemRequest, librarian_sephirah_v1_yesod_pb.GetFeedItemResponse>;
 }
 
@@ -103,18 +103,18 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   updateUser(argument: librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>): grpc.ClientUnaryCall;
   updateUser(argument: librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>): grpc.ClientUnaryCall;
   updateUser(argument: librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>): grpc.ClientUnaryCall;
-  listUser(argument: librarian_sephirah_v1_tiphereth_pb.ListUserRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUserResponse>): grpc.ClientUnaryCall;
-  listUser(argument: librarian_sephirah_v1_tiphereth_pb.ListUserRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUserResponse>): grpc.ClientUnaryCall;
-  listUser(argument: librarian_sephirah_v1_tiphereth_pb.ListUserRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUserResponse>): grpc.ClientUnaryCall;
+  listUsers(argument: librarian_sephirah_v1_tiphereth_pb.ListUsersRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUsersResponse>): grpc.ClientUnaryCall;
+  listUsers(argument: librarian_sephirah_v1_tiphereth_pb.ListUsersRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUsersResponse>): grpc.ClientUnaryCall;
+  listUsers(argument: librarian_sephirah_v1_tiphereth_pb.ListUsersRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUsersResponse>): grpc.ClientUnaryCall;
   linkAccount(argument: librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>): grpc.ClientUnaryCall;
   linkAccount(argument: librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>): grpc.ClientUnaryCall;
   linkAccount(argument: librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>): grpc.ClientUnaryCall;
   unLinkAccount(argument: librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>): grpc.ClientUnaryCall;
   unLinkAccount(argument: librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>): grpc.ClientUnaryCall;
   unLinkAccount(argument: librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>): grpc.ClientUnaryCall;
-  listLinkAccount(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse>): grpc.ClientUnaryCall;
-  listLinkAccount(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse>): grpc.ClientUnaryCall;
-  listLinkAccount(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse>): grpc.ClientUnaryCall;
+  listLinkAccounts(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>): grpc.ClientUnaryCall;
+  listLinkAccounts(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>): grpc.ClientUnaryCall;
+  listLinkAccounts(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>): grpc.ClientUnaryCall;
   uploadFile(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   uploadFile(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
@@ -176,12 +176,12 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   updateFeedConfig(argument: librarian_sephirah_v1_yesod_pb.UpdateFeedConfigRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse>): grpc.ClientUnaryCall;
   updateFeedConfig(argument: librarian_sephirah_v1_yesod_pb.UpdateFeedConfigRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse>): grpc.ClientUnaryCall;
   updateFeedConfig(argument: librarian_sephirah_v1_yesod_pb.UpdateFeedConfigRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse>): grpc.ClientUnaryCall;
-  listFeed(argument: librarian_sephirah_v1_yesod_pb.ListFeedRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedResponse>): grpc.ClientUnaryCall;
-  listFeed(argument: librarian_sephirah_v1_yesod_pb.ListFeedRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedResponse>): grpc.ClientUnaryCall;
-  listFeed(argument: librarian_sephirah_v1_yesod_pb.ListFeedRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedResponse>): grpc.ClientUnaryCall;
-  listFeedItem(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemResponse>): grpc.ClientUnaryCall;
-  listFeedItem(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemResponse>): grpc.ClientUnaryCall;
-  listFeedItem(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemResponse>): grpc.ClientUnaryCall;
+  listFeeds(argument: librarian_sephirah_v1_yesod_pb.ListFeedsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedsResponse>): grpc.ClientUnaryCall;
+  listFeeds(argument: librarian_sephirah_v1_yesod_pb.ListFeedsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedsResponse>): grpc.ClientUnaryCall;
+  listFeeds(argument: librarian_sephirah_v1_yesod_pb.ListFeedsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedsResponse>): grpc.ClientUnaryCall;
+  listFeedItems(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse>): grpc.ClientUnaryCall;
+  listFeedItems(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse>): grpc.ClientUnaryCall;
+  listFeedItems(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse>): grpc.ClientUnaryCall;
   getFeedItem(argument: librarian_sephirah_v1_yesod_pb.GetFeedItemRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.GetFeedItemResponse>): grpc.ClientUnaryCall;
   getFeedItem(argument: librarian_sephirah_v1_yesod_pb.GetFeedItemRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.GetFeedItemResponse>): grpc.ClientUnaryCall;
   getFeedItem(argument: librarian_sephirah_v1_yesod_pb.GetFeedItemRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.GetFeedItemResponse>): grpc.ClientUnaryCall;

@@ -222,7 +222,7 @@ export namespace UpdateUserResponse {
   }
 }
 
-export class ListUserRequest extends jspb.Message {
+export class ListUsersRequest extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
@@ -239,16 +239,16 @@ export class ListUserRequest extends jspb.Message {
   addStatusFilter(value: UserStatusMap[keyof UserStatusMap], index?: number): UserStatusMap[keyof UserStatusMap];
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListUserRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListUserRequest): ListUserRequest.AsObject;
+  toObject(includeInstance?: boolean): ListUsersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersRequest): ListUsersRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListUserRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListUserRequest;
-  static deserializeBinaryFromReader(message: ListUserRequest, reader: jspb.BinaryReader): ListUserRequest;
+  static serializeBinaryToWriter(message: ListUsersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersRequest;
+  static deserializeBinaryFromReader(message: ListUsersRequest, reader: jspb.BinaryReader): ListUsersRequest;
 }
 
-export namespace ListUserRequest {
+export namespace ListUsersRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     typeFilterList: Array<UserTypeMap[keyof UserTypeMap]>,
@@ -256,31 +256,31 @@ export namespace ListUserRequest {
   }
 }
 
-export class ListUserResponse extends jspb.Message {
+export class ListUsersResponse extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
-  clearUserListList(): void;
-  getUserListList(): Array<User>;
-  setUserListList(value: Array<User>): void;
-  addUserList(value?: User, index?: number): User;
+  clearUsersList(): void;
+  getUsersList(): Array<User>;
+  setUsersList(value: Array<User>): void;
+  addUsers(value?: User, index?: number): User;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListUserResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListUserResponse): ListUserResponse.AsObject;
+  toObject(includeInstance?: boolean): ListUsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListUsersResponse): ListUsersResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListUserResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListUserResponse;
-  static deserializeBinaryFromReader(message: ListUserResponse, reader: jspb.BinaryReader): ListUserResponse;
+  static serializeBinaryToWriter(message: ListUsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListUsersResponse;
+  static deserializeBinaryFromReader(message: ListUsersResponse, reader: jspb.BinaryReader): ListUsersResponse;
 }
 
-export namespace ListUserResponse {
+export namespace ListUsersResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    userListList: Array<User.AsObject>,
+    usersList: Array<User.AsObject>,
   }
 }
 
@@ -366,7 +366,7 @@ export namespace UnLinkAccountResponse {
   }
 }
 
-export class ListLinkAccountRequest extends jspb.Message {
+export class ListLinkAccountsRequest extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
@@ -378,47 +378,47 @@ export class ListLinkAccountRequest extends jspb.Message {
   setUserId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListLinkAccountRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListLinkAccountRequest): ListLinkAccountRequest.AsObject;
+  toObject(includeInstance?: boolean): ListLinkAccountsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLinkAccountsRequest): ListLinkAccountsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListLinkAccountRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListLinkAccountRequest;
-  static deserializeBinaryFromReader(message: ListLinkAccountRequest, reader: jspb.BinaryReader): ListLinkAccountRequest;
+  static serializeBinaryToWriter(message: ListLinkAccountsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLinkAccountsRequest;
+  static deserializeBinaryFromReader(message: ListLinkAccountsRequest, reader: jspb.BinaryReader): ListLinkAccountsRequest;
 }
 
-export namespace ListLinkAccountRequest {
+export namespace ListLinkAccountsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     userId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
-export class ListLinkAccountResponse extends jspb.Message {
+export class ListLinkAccountsResponse extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
-  clearAccountListList(): void;
-  getAccountListList(): Array<librarian_v1_common_pb.Account>;
-  setAccountListList(value: Array<librarian_v1_common_pb.Account>): void;
-  addAccountList(value?: librarian_v1_common_pb.Account, index?: number): librarian_v1_common_pb.Account;
+  clearAccountsList(): void;
+  getAccountsList(): Array<librarian_v1_common_pb.Account>;
+  setAccountsList(value: Array<librarian_v1_common_pb.Account>): void;
+  addAccounts(value?: librarian_v1_common_pb.Account, index?: number): librarian_v1_common_pb.Account;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListLinkAccountResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListLinkAccountResponse): ListLinkAccountResponse.AsObject;
+  toObject(includeInstance?: boolean): ListLinkAccountsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListLinkAccountsResponse): ListLinkAccountsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListLinkAccountResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListLinkAccountResponse;
-  static deserializeBinaryFromReader(message: ListLinkAccountResponse, reader: jspb.BinaryReader): ListLinkAccountResponse;
+  static serializeBinaryToWriter(message: ListLinkAccountsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListLinkAccountsResponse;
+  static deserializeBinaryFromReader(message: ListLinkAccountsResponse, reader: jspb.BinaryReader): ListLinkAccountsResponse;
 }
 
-export namespace ListLinkAccountResponse {
+export namespace ListLinkAccountsResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    accountListList: Array<librarian_v1_common_pb.Account.AsObject>,
+    accountsList: Array<librarian_v1_common_pb.Account.AsObject>,
   }
 }
 

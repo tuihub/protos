@@ -47,12 +47,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           ($0.UpdateUserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.UpdateUserResponse.fromBuffer(value));
-  static final _$listUser =
-      $grpc.ClientMethod<$0.ListUserRequest, $0.ListUserResponse>(
-          '/librarian.sephirah.v1.LibrarianSephirahService/ListUser',
-          ($0.ListUserRequest value) => value.writeToBuffer(),
+  static final _$listUsers =
+      $grpc.ClientMethod<$0.ListUsersRequest, $0.ListUsersResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/ListUsers',
+          ($0.ListUsersRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.ListUserResponse.fromBuffer(value));
+              $0.ListUsersResponse.fromBuffer(value));
   static final _$linkAccount =
       $grpc.ClientMethod<$0.LinkAccountRequest, $0.LinkAccountResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount',
@@ -65,12 +65,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           ($0.UnLinkAccountRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.UnLinkAccountResponse.fromBuffer(value));
-  static final _$listLinkAccount =
-      $grpc.ClientMethod<$0.ListLinkAccountRequest, $0.ListLinkAccountResponse>(
-          '/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccount',
-          ($0.ListLinkAccountRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.ListLinkAccountResponse.fromBuffer(value));
+  static final _$listLinkAccounts = $grpc.ClientMethod<
+          $0.ListLinkAccountsRequest, $0.ListLinkAccountsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts',
+      ($0.ListLinkAccountsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.ListLinkAccountsResponse.fromBuffer(value));
   static final _$uploadFile =
       $grpc.ClientMethod<$1.UploadFileRequest, $1.UploadFileResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/UploadFile',
@@ -203,18 +203,18 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($3.UpdateFeedConfigRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $3.UpdateFeedConfigResponse.fromBuffer(value));
-  static final _$listFeed =
-      $grpc.ClientMethod<$3.ListFeedRequest, $3.ListFeedResponse>(
-          '/librarian.sephirah.v1.LibrarianSephirahService/ListFeed',
-          ($3.ListFeedRequest value) => value.writeToBuffer(),
+  static final _$listFeeds =
+      $grpc.ClientMethod<$3.ListFeedsRequest, $3.ListFeedsResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds',
+          ($3.ListFeedsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $3.ListFeedResponse.fromBuffer(value));
-  static final _$listFeedItem =
-      $grpc.ClientMethod<$3.ListFeedItemRequest, $3.ListFeedItemResponse>(
-          '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItem',
-          ($3.ListFeedItemRequest value) => value.writeToBuffer(),
+              $3.ListFeedsResponse.fromBuffer(value));
+  static final _$listFeedItems =
+      $grpc.ClientMethod<$3.ListFeedItemsRequest, $3.ListFeedItemsResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems',
+          ($3.ListFeedItemsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $3.ListFeedItemResponse.fromBuffer(value));
+              $3.ListFeedItemsResponse.fromBuffer(value));
   static final _$getFeedItem =
       $grpc.ClientMethod<$3.GetFeedItemRequest, $3.GetFeedItemResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem',
@@ -256,9 +256,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ListUserResponse> listUser($0.ListUserRequest request,
+  $grpc.ResponseFuture<$0.ListUsersResponse> listUsers(
+      $0.ListUsersRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listUser, request, options: options);
+    return $createUnaryCall(_$listUsers, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.LinkAccountResponse> linkAccount(
@@ -273,10 +274,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$unLinkAccount, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.ListLinkAccountResponse> listLinkAccount(
-      $0.ListLinkAccountRequest request,
+  $grpc.ResponseFuture<$0.ListLinkAccountsResponse> listLinkAccounts(
+      $0.ListLinkAccountsRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listLinkAccount, request, options: options);
+    return $createUnaryCall(_$listLinkAccounts, request, options: options);
   }
 
   $grpc.ResponseStream<$1.UploadFileResponse> uploadFile(
@@ -410,15 +411,16 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateFeedConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$3.ListFeedResponse> listFeed($3.ListFeedRequest request,
+  $grpc.ResponseFuture<$3.ListFeedsResponse> listFeeds(
+      $3.ListFeedsRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listFeed, request, options: options);
+    return $createUnaryCall(_$listFeeds, request, options: options);
   }
 
-  $grpc.ResponseFuture<$3.ListFeedItemResponse> listFeedItem(
-      $3.ListFeedItemRequest request,
+  $grpc.ResponseFuture<$3.ListFeedItemsResponse> listFeedItems(
+      $3.ListFeedItemsRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listFeedItem, request, options: options);
+    return $createUnaryCall(_$listFeedItems, request, options: options);
   }
 
   $grpc.ResponseFuture<$3.GetFeedItemResponse> getFeedItem(
@@ -471,13 +473,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.UpdateUserRequest.fromBuffer(value),
         ($0.UpdateUserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ListUserRequest, $0.ListUserResponse>(
-        'ListUser',
-        listUser_Pre,
+    $addMethod($grpc.ServiceMethod<$0.ListUsersRequest, $0.ListUsersResponse>(
+        'ListUsers',
+        listUsers_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.ListUserRequest.fromBuffer(value),
-        ($0.ListUserResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.ListUsersRequest.fromBuffer(value),
+        ($0.ListUsersResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.LinkAccountRequest, $0.LinkAccountResponse>(
             'LinkAccount',
@@ -496,15 +498,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.UnLinkAccountRequest.fromBuffer(value),
             ($0.UnLinkAccountResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.ListLinkAccountRequest,
-            $0.ListLinkAccountResponse>(
-        'ListLinkAccount',
-        listLinkAccount_Pre,
+    $addMethod($grpc.ServiceMethod<$0.ListLinkAccountsRequest,
+            $0.ListLinkAccountsResponse>(
+        'ListLinkAccounts',
+        listLinkAccounts_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $0.ListLinkAccountRequest.fromBuffer(value),
-        ($0.ListLinkAccountResponse value) => value.writeToBuffer()));
+            $0.ListLinkAccountsRequest.fromBuffer(value),
+        ($0.ListLinkAccountsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.UploadFileRequest, $1.UploadFileResponse>(
         'UploadFile',
         uploadFile,
@@ -689,22 +691,22 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $3.UpdateFeedConfigRequest.fromBuffer(value),
         ($3.UpdateFeedConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$3.ListFeedRequest, $3.ListFeedResponse>(
-        'ListFeed',
-        listFeed_Pre,
+    $addMethod($grpc.ServiceMethod<$3.ListFeedsRequest, $3.ListFeedsResponse>(
+        'ListFeeds',
+        listFeeds_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $3.ListFeedRequest.fromBuffer(value),
-        ($3.ListFeedResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $3.ListFeedsRequest.fromBuffer(value),
+        ($3.ListFeedsResponse value) => value.writeToBuffer()));
     $addMethod(
-        $grpc.ServiceMethod<$3.ListFeedItemRequest, $3.ListFeedItemResponse>(
-            'ListFeedItem',
-            listFeedItem_Pre,
+        $grpc.ServiceMethod<$3.ListFeedItemsRequest, $3.ListFeedItemsResponse>(
+            'ListFeedItems',
+            listFeedItems_Pre,
             false,
             false,
             ($core.List<$core.int> value) =>
-                $3.ListFeedItemRequest.fromBuffer(value),
-            ($3.ListFeedItemResponse value) => value.writeToBuffer()));
+                $3.ListFeedItemsRequest.fromBuffer(value),
+            ($3.ListFeedItemsResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$3.GetFeedItemRequest, $3.GetFeedItemResponse>(
             'GetFeedItem',
@@ -743,9 +745,9 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return updateUser(call, await request);
   }
 
-  $async.Future<$0.ListUserResponse> listUser_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.ListUserRequest> request) async {
-    return listUser(call, await request);
+  $async.Future<$0.ListUsersResponse> listUsers_Pre($grpc.ServiceCall call,
+      $async.Future<$0.ListUsersRequest> request) async {
+    return listUsers(call, await request);
   }
 
   $async.Future<$0.LinkAccountResponse> linkAccount_Pre($grpc.ServiceCall call,
@@ -759,10 +761,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return unLinkAccount(call, await request);
   }
 
-  $async.Future<$0.ListLinkAccountResponse> listLinkAccount_Pre(
+  $async.Future<$0.ListLinkAccountsResponse> listLinkAccounts_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.ListLinkAccountRequest> request) async {
-    return listLinkAccount(call, await request);
+      $async.Future<$0.ListLinkAccountsRequest> request) async {
+    return listLinkAccounts(call, await request);
   }
 
   $async.Future<$2.CreateAppResponse> createApp_Pre($grpc.ServiceCall call,
@@ -860,15 +862,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return updateFeedConfig(call, await request);
   }
 
-  $async.Future<$3.ListFeedResponse> listFeed_Pre(
-      $grpc.ServiceCall call, $async.Future<$3.ListFeedRequest> request) async {
-    return listFeed(call, await request);
+  $async.Future<$3.ListFeedsResponse> listFeeds_Pre($grpc.ServiceCall call,
+      $async.Future<$3.ListFeedsRequest> request) async {
+    return listFeeds(call, await request);
   }
 
-  $async.Future<$3.ListFeedItemResponse> listFeedItem_Pre(
+  $async.Future<$3.ListFeedItemsResponse> listFeedItems_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$3.ListFeedItemRequest> request) async {
-    return listFeedItem(call, await request);
+      $async.Future<$3.ListFeedItemsRequest> request) async {
+    return listFeedItems(call, await request);
   }
 
   $async.Future<$3.GetFeedItemResponse> getFeedItem_Pre($grpc.ServiceCall call,
@@ -886,14 +888,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.CreateUserRequest request);
   $async.Future<$0.UpdateUserResponse> updateUser(
       $grpc.ServiceCall call, $0.UpdateUserRequest request);
-  $async.Future<$0.ListUserResponse> listUser(
-      $grpc.ServiceCall call, $0.ListUserRequest request);
+  $async.Future<$0.ListUsersResponse> listUsers(
+      $grpc.ServiceCall call, $0.ListUsersRequest request);
   $async.Future<$0.LinkAccountResponse> linkAccount(
       $grpc.ServiceCall call, $0.LinkAccountRequest request);
   $async.Future<$0.UnLinkAccountResponse> unLinkAccount(
       $grpc.ServiceCall call, $0.UnLinkAccountRequest request);
-  $async.Future<$0.ListLinkAccountResponse> listLinkAccount(
-      $grpc.ServiceCall call, $0.ListLinkAccountRequest request);
+  $async.Future<$0.ListLinkAccountsResponse> listLinkAccounts(
+      $grpc.ServiceCall call, $0.ListLinkAccountsRequest request);
   $async.Stream<$1.UploadFileResponse> uploadFile(
       $grpc.ServiceCall call, $async.Stream<$1.UploadFileRequest> request);
   $async.Stream<$1.DownloadFileResponse> downloadFile(
@@ -941,10 +943,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $3.CreateFeedConfigRequest request);
   $async.Future<$3.UpdateFeedConfigResponse> updateFeedConfig(
       $grpc.ServiceCall call, $3.UpdateFeedConfigRequest request);
-  $async.Future<$3.ListFeedResponse> listFeed(
-      $grpc.ServiceCall call, $3.ListFeedRequest request);
-  $async.Future<$3.ListFeedItemResponse> listFeedItem(
-      $grpc.ServiceCall call, $3.ListFeedItemRequest request);
+  $async.Future<$3.ListFeedsResponse> listFeeds(
+      $grpc.ServiceCall call, $3.ListFeedsRequest request);
+  $async.Future<$3.ListFeedItemsResponse> listFeedItems(
+      $grpc.ServiceCall call, $3.ListFeedItemsRequest request);
   $async.Future<$3.GetFeedItemResponse> getFeedItem(
       $grpc.ServiceCall call, $3.GetFeedItemRequest request);
 }

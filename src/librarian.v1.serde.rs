@@ -1914,6 +1914,9 @@ impl serde::Serialize for FeedItem {
         if !self.enclosures.is_empty() {
             len += 1;
         }
+        if !self.publish_platform.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -1954,6 +1957,9 @@ impl serde::Serialize for FeedItem {
         if !self.enclosures.is_empty() {
             struct_ser.serialize_field("enclosures", &self.enclosures)?;
         }
+        if !self.publish_platform.is_empty() {
+            struct_ser.serialize_field("publishPlatform", &self.publish_platform)?;
+        }
         struct_ser.end()
     }
 }
@@ -1977,6 +1983,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             "updated",
             "updatedParsed",
             "enclosures",
+            "publishPlatform",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1994,6 +2001,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             Updated,
             UpdatedParsed,
             Enclosures,
+            PublishPlatform,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2028,6 +2036,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             "updated" => Ok(GeneratedField::Updated),
                             "updatedParsed" => Ok(GeneratedField::UpdatedParsed),
                             "enclosures" => Ok(GeneratedField::Enclosures),
+                            "publishPlatform" => Ok(GeneratedField::PublishPlatform),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2060,6 +2069,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 let mut updated__ = None;
                 let mut updated_parsed__ = None;
                 let mut enclosures__ = None;
+                let mut publish_platform__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -2140,6 +2150,12 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             }
                             enclosures__ = Some(map.next_value()?);
                         }
+                        GeneratedField::PublishPlatform => {
+                            if publish_platform__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publishPlatform"));
+                            }
+                            publish_platform__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(FeedItem {
@@ -2156,6 +2172,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     updated: updated__.unwrap_or_default(),
                     updated_parsed: updated_parsed__,
                     enclosures: enclosures__.unwrap_or_default(),
+                    publish_platform: publish_platform__.unwrap_or_default(),
                 })
             }
         }
@@ -2483,12 +2500,12 @@ impl serde::Serialize for PagingResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.total != 0 {
+        if self.total_size != 0 {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.PagingResponse", len)?;
-        if self.total != 0 {
-            struct_ser.serialize_field("total", ToString::to_string(&self.total).as_str())?;
+        if self.total_size != 0 {
+            struct_ser.serialize_field("totalSize", ToString::to_string(&self.total_size).as_str())?;
         }
         struct_ser.end()
     }
@@ -2500,12 +2517,12 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "total",
+            "totalSize",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Total,
+            TotalSize,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2527,7 +2544,7 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "total" => Ok(GeneratedField::Total),
+                            "totalSize" => Ok(GeneratedField::TotalSize),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2547,21 +2564,21 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut total__ = None;
+                let mut total_size__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Total => {
-                            if total__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("total"));
+                        GeneratedField::TotalSize => {
+                            if total_size__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("totalSize"));
                             }
-                            total__ = Some(
+                            total_size__ = Some(
                                 map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
                             );
                         }
                     }
                 }
                 Ok(PagingResponse {
-                    total: total__.unwrap_or_default(),
+                    total_size: total_size__.unwrap_or_default(),
                 })
             }
         }

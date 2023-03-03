@@ -29,8 +29,8 @@ export namespace PagingRequest {
 }
 
 export class PagingResponse extends jspb.Message {
-  getTotal(): number;
-  setTotal(value: number): void;
+  getTotalSize(): number;
+  setTotalSize(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PagingResponse.AsObject;
@@ -44,7 +44,7 @@ export class PagingResponse extends jspb.Message {
 
 export namespace PagingResponse {
   export type AsObject = {
-    total: number,
+    totalSize: number,
   }
 }
 
@@ -444,6 +444,9 @@ export class FeedItem extends jspb.Message {
   setEnclosuresList(value: Array<FeedEnclosure>): void;
   addEnclosures(value?: FeedEnclosure, index?: number): FeedEnclosure;
 
+  getPublishPlatform(): string;
+  setPublishPlatform(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItem.AsObject;
   static toObject(includeInstance: boolean, msg: FeedItem): FeedItem.AsObject;
@@ -469,6 +472,7 @@ export namespace FeedItem {
     updated: string,
     updatedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     enclosuresList: Array<FeedEnclosure.AsObject>,
+    publishPlatform: string,
   }
 }
 

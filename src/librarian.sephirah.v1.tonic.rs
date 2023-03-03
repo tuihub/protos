@@ -173,10 +173,10 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Tiphereth` `Admin` `Normal limited`
 */
-        pub async fn list_user(
+        pub async fn list_users(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListUserRequest>,
-        ) -> Result<tonic::Response<super::ListUserResponse>, tonic::Status> {
+            request: impl tonic::IntoRequest<super::ListUsersRequest>,
+        ) -> Result<tonic::Response<super::ListUsersResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -188,7 +188,7 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListUser",
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListUsers",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
@@ -239,10 +239,10 @@ pub mod librarian_sephirah_service_client {
         /** `Tiphereth` `Normal` List third-party account binded to current user.
  Match ()<-[Equal]->(current user)
 */
-        pub async fn list_link_account(
+        pub async fn list_link_accounts(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListLinkAccountRequest>,
-        ) -> Result<tonic::Response<super::ListLinkAccountResponse>, tonic::Status> {
+            request: impl tonic::IntoRequest<super::ListLinkAccountsRequest>,
+        ) -> Result<tonic::Response<super::ListLinkAccountsResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -254,7 +254,7 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccount",
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
@@ -750,10 +750,10 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Yesod` `Normal`
 */
-        pub async fn list_feed(
+        pub async fn list_feeds(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListFeedRequest>,
-        ) -> Result<tonic::Response<super::ListFeedResponse>, tonic::Status> {
+            request: impl tonic::IntoRequest<super::ListFeedsRequest>,
+        ) -> Result<tonic::Response<super::ListFeedsResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -765,16 +765,16 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeed",
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
         /** `Yesod` `Normal`
 */
-        pub async fn list_feed_item(
+        pub async fn list_feed_items(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListFeedItemRequest>,
-        ) -> Result<tonic::Response<super::ListFeedItemResponse>, tonic::Status> {
+            request: impl tonic::IntoRequest<super::ListFeedItemsRequest>,
+        ) -> Result<tonic::Response<super::ListFeedItemsResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -786,7 +786,7 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItem",
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
@@ -848,10 +848,10 @@ pub mod librarian_sephirah_service_server {
         ) -> Result<tonic::Response<super::UpdateUserResponse>, tonic::Status>;
         /** `Tiphereth` `Admin` `Normal limited`
 */
-        async fn list_user(
+        async fn list_users(
             &self,
-            request: tonic::Request<super::ListUserRequest>,
-        ) -> Result<tonic::Response<super::ListUserResponse>, tonic::Status>;
+            request: tonic::Request<super::ListUsersRequest>,
+        ) -> Result<tonic::Response<super::ListUsersResponse>, tonic::Status>;
         /** `Tiphereth` `Normal` Bind third-party account to current user.
  Create (account)<-[Equal]->(current user)
 */
@@ -869,10 +869,10 @@ pub mod librarian_sephirah_service_server {
         /** `Tiphereth` `Normal` List third-party account binded to current user.
  Match ()<-[Equal]->(current user)
 */
-        async fn list_link_account(
+        async fn list_link_accounts(
             &self,
-            request: tonic::Request<super::ListLinkAccountRequest>,
-        ) -> Result<tonic::Response<super::ListLinkAccountResponse>, tonic::Status>;
+            request: tonic::Request<super::ListLinkAccountsRequest>,
+        ) -> Result<tonic::Response<super::ListLinkAccountsResponse>, tonic::Status>;
         ///Server streaming response type for the UploadFile method.
         type UploadFileStream: futures_core::Stream<
                 Item = Result<super::UploadFileResponse, tonic::Status>,
@@ -1039,16 +1039,16 @@ pub mod librarian_sephirah_service_server {
         ) -> Result<tonic::Response<super::UpdateFeedConfigResponse>, tonic::Status>;
         /** `Yesod` `Normal`
 */
-        async fn list_feed(
+        async fn list_feeds(
             &self,
-            request: tonic::Request<super::ListFeedRequest>,
-        ) -> Result<tonic::Response<super::ListFeedResponse>, tonic::Status>;
+            request: tonic::Request<super::ListFeedsRequest>,
+        ) -> Result<tonic::Response<super::ListFeedsResponse>, tonic::Status>;
         /** `Yesod` `Normal`
 */
-        async fn list_feed_item(
+        async fn list_feed_items(
             &self,
-            request: tonic::Request<super::ListFeedItemRequest>,
-        ) -> Result<tonic::Response<super::ListFeedItemResponse>, tonic::Status>;
+            request: tonic::Request<super::ListFeedItemsRequest>,
+        ) -> Result<tonic::Response<super::ListFeedItemsResponse>, tonic::Status>;
         /** `Yesod` `Normal`
 */
         async fn get_feed_item(
@@ -1310,24 +1310,24 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListUser" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListUsers" => {
                     #[allow(non_camel_case_types)]
-                    struct ListUserSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct ListUsersSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListUserRequest>
-                    for ListUserSvc<T> {
-                        type Response = super::ListUserResponse;
+                    > tonic::server::UnaryService<super::ListUsersRequest>
+                    for ListUsersSvc<T> {
+                        type Response = super::ListUsersResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ListUserRequest>,
+                            request: tonic::Request<super::ListUsersRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
-                            let fut = async move { (*inner).list_user(request).await };
+                            let fut = async move { (*inner).list_users(request).await };
                             Box::pin(fut)
                         }
                     }
@@ -1336,7 +1336,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListUserSvc(inner);
+                        let method = ListUsersSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1428,25 +1428,25 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccount" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts" => {
                     #[allow(non_camel_case_types)]
-                    struct ListLinkAccountSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct ListLinkAccountsSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListLinkAccountRequest>
-                    for ListLinkAccountSvc<T> {
-                        type Response = super::ListLinkAccountResponse;
+                    > tonic::server::UnaryService<super::ListLinkAccountsRequest>
+                    for ListLinkAccountsSvc<T> {
+                        type Response = super::ListLinkAccountsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ListLinkAccountRequest>,
+                            request: tonic::Request<super::ListLinkAccountsRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
-                                (*inner).list_link_account(request).await
+                                (*inner).list_link_accounts(request).await
                             };
                             Box::pin(fut)
                         }
@@ -1456,7 +1456,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListLinkAccountSvc(inner);
+                        let method = ListLinkAccountsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -2357,24 +2357,24 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeed" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds" => {
                     #[allow(non_camel_case_types)]
-                    struct ListFeedSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct ListFeedsSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListFeedRequest>
-                    for ListFeedSvc<T> {
-                        type Response = super::ListFeedResponse;
+                    > tonic::server::UnaryService<super::ListFeedsRequest>
+                    for ListFeedsSvc<T> {
+                        type Response = super::ListFeedsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ListFeedRequest>,
+                            request: tonic::Request<super::ListFeedsRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
-                            let fut = async move { (*inner).list_feed(request).await };
+                            let fut = async move { (*inner).list_feeds(request).await };
                             Box::pin(fut)
                         }
                     }
@@ -2383,7 +2383,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListFeedSvc(inner);
+                        let method = ListFeedsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -2395,25 +2395,25 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItem" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems" => {
                     #[allow(non_camel_case_types)]
-                    struct ListFeedItemSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct ListFeedItemsSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListFeedItemRequest>
-                    for ListFeedItemSvc<T> {
-                        type Response = super::ListFeedItemResponse;
+                    > tonic::server::UnaryService<super::ListFeedItemsRequest>
+                    for ListFeedItemsSvc<T> {
+                        type Response = super::ListFeedItemsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ListFeedItemRequest>,
+                            request: tonic::Request<super::ListFeedItemsRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
-                                (*inner).list_feed_item(request).await
+                                (*inner).list_feed_items(request).await
                             };
                             Box::pin(fut)
                         }
@@ -2423,7 +2423,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListFeedItemSvc(inner);
+                        let method = ListFeedItemsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

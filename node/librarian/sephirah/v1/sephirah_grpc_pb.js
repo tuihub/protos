@@ -337,48 +337,48 @@ function deserialize_librarian_sephirah_v1_ListBindAppResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListBindAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListFeedItemRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemRequest');
+function serialize_librarian_sephirah_v1_ListFeedItemsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListFeedItemRequest(buffer_arg) {
-  return librarian_sephirah_v1_yesod_pb.ListFeedItemRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListFeedItemsRequest(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListFeedItemResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemResponse');
+function serialize_librarian_sephirah_v1_ListFeedItemsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListFeedItemResponse(buffer_arg) {
-  return librarian_sephirah_v1_yesod_pb.ListFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListFeedItemsResponse(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListFeedRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedRequest');
+function serialize_librarian_sephirah_v1_ListFeedsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListFeedRequest(buffer_arg) {
-  return librarian_sephirah_v1_yesod_pb.ListFeedRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListFeedsRequest(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListFeedResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedResponse');
+function serialize_librarian_sephirah_v1_ListFeedsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListFeedResponse(buffer_arg) {
-  return librarian_sephirah_v1_yesod_pb.ListFeedResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListFeedsResponse(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListGameSaveFileRequest(arg) {
@@ -403,48 +403,48 @@ function deserialize_librarian_sephirah_v1_ListGameSaveFileResponse(buffer_arg) 
   return librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListLinkAccountRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListLinkAccountRequest');
+function serialize_librarian_sephirah_v1_ListLinkAccountsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListLinkAccountsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListLinkAccountRequest(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListLinkAccountsRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListLinkAccountResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListLinkAccountResponse');
+function serialize_librarian_sephirah_v1_ListLinkAccountsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListLinkAccountsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListLinkAccountResponse(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListLinkAccountsResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListUserRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUserRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListUserRequest');
+function serialize_librarian_sephirah_v1_ListUsersRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUsersRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListUsersRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListUserRequest(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.ListUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListUsersRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListUsersRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListUserResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUserResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListUserResponse');
+function serialize_librarian_sephirah_v1_ListUsersResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUsersResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListUsersResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListUserResponse(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.ListUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListUsersResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListUsersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_RefreshAppRequest(arg) {
@@ -824,16 +824,16 @@ updateUser: {
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateUserResponse,
   },
   // `Tiphereth` `Admin` `Normal limited`
-listUser: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListUser',
+listUsers: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListUsers',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_tiphereth_pb.ListUserRequest,
-    responseType: librarian_sephirah_v1_tiphereth_pb.ListUserResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListUserRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListUserRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListUserResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListUserResponse,
+    requestType: librarian_sephirah_v1_tiphereth_pb.ListUsersRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.ListUsersResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListUsersRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListUsersRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListUsersResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListUsersResponse,
   },
   // `Tiphereth` `Normal` Bind third-party account to current user.
 // Create (account)<-[Equal]->(current user)
@@ -863,16 +863,16 @@ unLinkAccount: {
   },
   // `Tiphereth` `Normal` List third-party account binded to current user.
 // Match ()<-[Equal]->(current user)
-listLinkAccount: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccount',
+listLinkAccounts: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountRequest,
-    responseType: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListLinkAccountRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListLinkAccountResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountResponse,
+    requestType: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListLinkAccountsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListLinkAccountsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountsResponse,
   },
   // `Binah` `upload_token`
 uploadFile: {
@@ -1141,28 +1141,28 @@ updateFeedConfig: {
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateFeedConfigResponse,
   },
   // `Yesod` `Normal`
-listFeed: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeed',
+listFeeds: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_yesod_pb.ListFeedRequest,
-    responseType: librarian_sephirah_v1_yesod_pb.ListFeedResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListFeedRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListFeedResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedResponse,
+    requestType: librarian_sephirah_v1_yesod_pb.ListFeedsRequest,
+    responseType: librarian_sephirah_v1_yesod_pb.ListFeedsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListFeedsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListFeedsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedsResponse,
   },
   // `Yesod` `Normal`
-listFeedItem: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItem',
+listFeedItems: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_yesod_pb.ListFeedItemRequest,
-    responseType: librarian_sephirah_v1_yesod_pb.ListFeedItemResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListFeedItemRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListFeedItemResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemResponse,
+    requestType: librarian_sephirah_v1_yesod_pb.ListFeedItemsRequest,
+    responseType: librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListFeedItemsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListFeedItemsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemsResponse,
   },
   // `Yesod` `Normal`
 getFeedItem: {
