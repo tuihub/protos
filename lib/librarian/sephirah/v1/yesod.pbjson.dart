@@ -157,6 +157,26 @@ const GetFeedItemResponse$json = const {
 
 /// Descriptor for `GetFeedItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getFeedItemResponseDescriptor = $convert.base64Decode('ChNHZXRGZWVkSXRlbVJlc3BvbnNlEioKBGl0ZW0YASABKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0ZW1SBGl0ZW0=');
+@$core.Deprecated('Use getBatchFeedItemsRequestDescriptor instead')
+const GetBatchFeedItemsRequest$json = const {
+  '1': 'GetBatchFeedItemsRequest',
+  '2': const [
+    const {'1': 'ids', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
+  ],
+};
+
+/// Descriptor for `GetBatchFeedItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBatchFeedItemsRequestDescriptor = $convert.base64Decode('ChhHZXRCYXRjaEZlZWRJdGVtc1JlcXVlc3QSKgoDaWRzGAEgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSA2lkcw==');
+@$core.Deprecated('Use getBatchFeedItemsResponseDescriptor instead')
+const GetBatchFeedItemsResponse$json = const {
+  '1': 'GetBatchFeedItemsResponse',
+  '2': const [
+    const {'1': 'items', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `GetBatchFeedItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBatchFeedItemsResponseDescriptor = $convert.base64Decode('ChlHZXRCYXRjaEZlZWRJdGVtc1Jlc3BvbnNlEiwKBWl0ZW1zGAEgAygLMhYubGlicmFyaWFuLnYxLkZlZWRJdGVtUgVpdGVtcw==');
 @$core.Deprecated('Use feedConfigDescriptor instead')
 const FeedConfig$json = const {
   '1': 'FeedConfig',

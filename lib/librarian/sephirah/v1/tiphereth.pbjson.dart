@@ -134,6 +134,29 @@ const UpdateUserResponse$json = const {
 
 /// Descriptor for `UpdateUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updateUserResponseDescriptor = $convert.base64Decode('ChJVcGRhdGVVc2VyUmVzcG9uc2U=');
+@$core.Deprecated('Use getUserRequestDescriptor instead')
+const GetUserRequest$json = const {
+  '1': 'GetUserRequest',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'id', '17': true},
+  ],
+  '8': const [
+    const {'1': '_id'},
+  ],
+};
+
+/// Descriptor for `GetUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode('Cg5HZXRVc2VyUmVxdWVzdBItCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSAmlkiAEBQgUKA19pZA==');
+@$core.Deprecated('Use getUserResponseDescriptor instead')
+const GetUserResponse$json = const {
+  '1': 'GetUserResponse',
+  '2': const [
+    const {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.User', '10': 'user'},
+  ],
+};
+
+/// Descriptor for `GetUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserResponseDescriptor = $convert.base64Decode('Cg9HZXRVc2VyUmVzcG9uc2USLwoEdXNlchgBIAEoCzIbLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyUgR1c2Vy');
 @$core.Deprecated('Use listUsersRequestDescriptor instead')
 const ListUsersRequest$json = const {
   '1': 'ListUsersRequest',

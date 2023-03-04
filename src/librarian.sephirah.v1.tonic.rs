@@ -173,6 +173,27 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Tiphereth` `Admin` `Normal limited`
 */
+        pub async fn get_user(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetUserRequest>,
+        ) -> Result<tonic::Response<super::GetUserResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetUser",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Tiphereth` `Admin` `Normal limited`
+*/
         pub async fn list_users(
             &mut self,
             request: impl tonic::IntoRequest<super::ListUsersRequest>,
@@ -811,6 +832,27 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
+        pub async fn get_batch_feed_items(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetBatchFeedItemsRequest>,
+        ) -> Result<tonic::Response<super::GetBatchFeedItemsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -846,6 +888,12 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::UpdateUserRequest>,
         ) -> Result<tonic::Response<super::UpdateUserResponse>, tonic::Status>;
+        /** `Tiphereth` `Admin` `Normal limited`
+*/
+        async fn get_user(
+            &self,
+            request: tonic::Request<super::GetUserRequest>,
+        ) -> Result<tonic::Response<super::GetUserResponse>, tonic::Status>;
         /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn list_users(
@@ -1055,6 +1103,12 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::GetFeedItemRequest>,
         ) -> Result<tonic::Response<super::GetFeedItemResponse>, tonic::Status>;
+        /** `Yesod` `Normal`
+*/
+        async fn get_batch_feed_items(
+            &self,
+            request: tonic::Request<super::GetBatchFeedItemsRequest>,
+        ) -> Result<tonic::Response<super::GetBatchFeedItemsResponse>, tonic::Status>;
     }
     #[derive(Debug)]
     pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
@@ -1299,6 +1353,44 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = UpdateUserSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetUser" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetUserSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::GetUserRequest>
+                    for GetUserSvc<T> {
+                        type Response = super::GetUserResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetUserRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move { (*inner).get_user(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = GetUserSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -2464,6 +2556,46 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = GetFeedItemSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetBatchFeedItemsSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::GetBatchFeedItemsRequest>
+                    for GetBatchFeedItemsSvc<T> {
+                        type Response = super::GetBatchFeedItemsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetBatchFeedItemsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).get_batch_feed_items(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = GetBatchFeedItemsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

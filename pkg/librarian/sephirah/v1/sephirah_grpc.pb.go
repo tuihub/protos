@@ -24,6 +24,7 @@ const (
 	LibrarianSephirahService_GenerateToken_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken"
 	LibrarianSephirahService_CreateUser_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser"
 	LibrarianSephirahService_UpdateUser_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser"
+	LibrarianSephirahService_GetUser_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/GetUser"
 	LibrarianSephirahService_ListUsers_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListUsers"
 	LibrarianSephirahService_LinkAccount_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount"
 	LibrarianSephirahService_UnLinkAccount_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount"
@@ -53,6 +54,7 @@ const (
 	LibrarianSephirahService_ListFeeds_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds"
 	LibrarianSephirahService_ListFeedItems_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems"
 	LibrarianSephirahService_GetFeedItem_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem"
+	LibrarianSephirahService_GetBatchFeedItems_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems"
 )
 
 // LibrarianSephirahServiceClient is the client API for LibrarianSephirahService service.
@@ -69,6 +71,8 @@ type LibrarianSephirahServiceClient interface {
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error)
+	// `Tiphereth` `Admin` `Normal limited`
+	GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	ListUsers(ctx context.Context, in *ListUsersRequest, opts ...grpc.CallOption) (*ListUsersResponse, error)
 	// `Tiphereth` `Normal` Bind third-party account to current user.
@@ -132,6 +136,8 @@ type LibrarianSephirahServiceClient interface {
 	ListFeedItems(ctx context.Context, in *ListFeedItemsRequest, opts ...grpc.CallOption) (*ListFeedItemsResponse, error)
 	// `Yesod` `Normal`
 	GetFeedItem(ctx context.Context, in *GetFeedItemRequest, opts ...grpc.CallOption) (*GetFeedItemResponse, error)
+	// `Yesod` `Normal`
+	GetBatchFeedItems(ctx context.Context, in *GetBatchFeedItemsRequest, opts ...grpc.CallOption) (*GetBatchFeedItemsResponse, error)
 }
 
 type librarianSephirahServiceClient struct {
@@ -181,6 +187,15 @@ func (c *librarianSephirahServiceClient) CreateUser(ctx context.Context, in *Cre
 func (c *librarianSephirahServiceClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*UpdateUserResponse, error) {
 	out := new(UpdateUserResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateUser_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
+	out := new(GetUserResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -558,6 +573,15 @@ func (c *librarianSephirahServiceClient) GetFeedItem(ctx context.Context, in *Ge
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) GetBatchFeedItems(ctx context.Context, in *GetBatchFeedItemsRequest, opts ...grpc.CallOption) (*GetBatchFeedItemsResponse, error) {
+	out := new(GetBatchFeedItemsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetBatchFeedItems_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianSephirahServiceServer is the server API for LibrarianSephirahService service.
 // All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
@@ -572,6 +596,8 @@ type LibrarianSephirahServiceServer interface {
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error)
+	// `Tiphereth` `Admin` `Normal limited`
+	GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	ListUsers(context.Context, *ListUsersRequest) (*ListUsersResponse, error)
 	// `Tiphereth` `Normal` Bind third-party account to current user.
@@ -635,6 +661,8 @@ type LibrarianSephirahServiceServer interface {
 	ListFeedItems(context.Context, *ListFeedItemsRequest) (*ListFeedItemsResponse, error)
 	// `Yesod` `Normal`
 	GetFeedItem(context.Context, *GetFeedItemRequest) (*GetFeedItemResponse, error)
+	// `Yesod` `Normal`
+	GetBatchFeedItems(context.Context, *GetBatchFeedItemsRequest) (*GetBatchFeedItemsResponse, error)
 	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
@@ -656,6 +684,9 @@ func (UnimplementedLibrarianSephirahServiceServer) CreateUser(context.Context, *
 }
 func (UnimplementedLibrarianSephirahServiceServer) UpdateUser(context.Context, *UpdateUserRequest) (*UpdateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetUser(context.Context, *GetUserRequest) (*GetUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUser not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListUsers(context.Context, *ListUsersRequest) (*ListUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUsers not implemented")
@@ -743,6 +774,9 @@ func (UnimplementedLibrarianSephirahServiceServer) ListFeedItems(context.Context
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetFeedItem(context.Context, *GetFeedItemRequest) (*GetFeedItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeedItem not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetBatchFeedItems(context.Context, *GetBatchFeedItemsRequest) (*GetBatchFeedItemsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBatchFeedItems not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
@@ -844,6 +878,24 @@ func _LibrarianSephirahService_UpdateUser_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).UpdateUser(ctx, req.(*UpdateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetUser(ctx, req.(*GetUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1410,6 +1462,24 @@ func _LibrarianSephirahService_GetFeedItem_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_GetBatchFeedItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBatchFeedItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetBatchFeedItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetBatchFeedItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetBatchFeedItems(ctx, req.(*GetBatchFeedItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianSephirahService_ServiceDesc is the grpc.ServiceDesc for LibrarianSephirahService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1436,6 +1506,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateUser",
 			Handler:    _LibrarianSephirahService_UpdateUser_Handler,
+		},
+		{
+			MethodName: "GetUser",
+			Handler:    _LibrarianSephirahService_GetUser_Handler,
 		},
 		{
 			MethodName: "ListUsers",
@@ -1532,6 +1606,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetFeedItem",
 			Handler:    _LibrarianSephirahService_GetFeedItem_Handler,
+		},
+		{
+			MethodName: "GetBatchFeedItems",
+			Handler:    _LibrarianSephirahService_GetBatchFeedItems_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

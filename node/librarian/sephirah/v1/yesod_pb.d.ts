@@ -330,6 +330,50 @@ export namespace GetFeedItemResponse {
   }
 }
 
+export class GetBatchFeedItemsRequest extends jspb.Message {
+  clearIdsList(): void;
+  getIdsList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIds(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBatchFeedItemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBatchFeedItemsRequest): GetBatchFeedItemsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBatchFeedItemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBatchFeedItemsRequest;
+  static deserializeBinaryFromReader(message: GetBatchFeedItemsRequest, reader: jspb.BinaryReader): GetBatchFeedItemsRequest;
+}
+
+export namespace GetBatchFeedItemsRequest {
+  export type AsObject = {
+    idsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+  }
+}
+
+export class GetBatchFeedItemsResponse extends jspb.Message {
+  clearItemsList(): void;
+  getItemsList(): Array<librarian_v1_common_pb.FeedItem>;
+  setItemsList(value: Array<librarian_v1_common_pb.FeedItem>): void;
+  addItems(value?: librarian_v1_common_pb.FeedItem, index?: number): librarian_v1_common_pb.FeedItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBatchFeedItemsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBatchFeedItemsResponse): GetBatchFeedItemsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBatchFeedItemsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBatchFeedItemsResponse;
+  static deserializeBinaryFromReader(message: GetBatchFeedItemsResponse, reader: jspb.BinaryReader): GetBatchFeedItemsResponse;
+}
+
+export namespace GetBatchFeedItemsResponse {
+  export type AsObject = {
+    itemsList: Array<librarian_v1_common_pb.FeedItem.AsObject>,
+  }
+}
+
 export class FeedConfig extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
