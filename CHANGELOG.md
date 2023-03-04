@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.10](https://github.com/TuiHub/Protos/compare/v0.2.9...v0.2.10) (2023-03-04)
+
+
+### Bug Fixes
+
+* add GetUser GetBatchFeedItems ([71e23ee](https://github.com/TuiHub/Protos/commit/71e23ee995292645149be76e429524c8181e184c))
+* add NewBatchIDs & use common InternalID ([c9b279a](https://github.com/TuiHub/Protos/commit/c9b279a716a008ed7023208b4b4d8e802c378f76))
+* typo ([79e258c](https://github.com/TuiHub/Protos/commit/79e258c2da91ebe312d0bae2fa51be7294d4b578))
+
 ## [0.2.9](https://github.com/TuiHub/Protos/compare/v0.2.8...v0.2.9) (2023-03-03)
 
 
