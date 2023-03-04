@@ -59,6 +59,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse> __Marshaller_librarian_searcher_v1_NewIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest> __Marshaller_librarian_searcher_v1_NewBatchIDsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse> __Marshaller_librarian_searcher_v1_NewBatchIDsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest> __Marshaller_librarian_searcher_v1_DescribeIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse> __Marshaller_librarian_searcher_v1_DescribeIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse.Parser));
@@ -74,6 +78,14 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         "NewID",
         __Marshaller_librarian_searcher_v1_NewIDRequest,
         __Marshaller_librarian_searcher_v1_NewIDResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse> __Method_NewBatchIDs = new grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "NewBatchIDs",
+        __Marshaller_librarian_searcher_v1_NewBatchIDsRequest,
+        __Marshaller_librarian_searcher_v1_NewBatchIDsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse> __Method_DescribeID = new grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse>(
@@ -103,6 +115,12 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse> NewID(global::TuiHub.Protos.Librarian.Searcher.V1.NewIDRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse> NewBatchIDs(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -169,6 +187,26 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_NewID, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse NewBatchIDs(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return NewBatchIDs(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse NewBatchIDs(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_NewBatchIDs, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse> NewBatchIDsAsync(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return NewBatchIDsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse> NewBatchIDsAsync(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_NewBatchIDs, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse DescribeID(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DescribeID(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -223,6 +261,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_NewID, serviceImpl.NewID)
+          .AddMethod(__Method_NewBatchIDs, serviceImpl.NewBatchIDs)
           .AddMethod(__Method_DescribeID, serviceImpl.DescribeID)
           .AddMethod(__Method_SearchID, serviceImpl.SearchID).Build();
     }
@@ -235,6 +274,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianSearcherServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_NewID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.NewIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse>(serviceImpl.NewID));
+      serviceBinder.AddMethod(__Method_NewBatchIDs, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse>(serviceImpl.NewBatchIDs));
       serviceBinder.AddMethod(__Method_DescribeID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse>(serviceImpl.DescribeID));
       serviceBinder.AddMethod(__Method_SearchID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse>(serviceImpl.SearchID));
     }

@@ -19,21 +19,11 @@ const FileTag$json = const {
 
 /// Descriptor for `FileTag`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List fileTagDescriptor = $convert.base64Decode('CgdGaWxlVGFnEhgKFEZJTEVfVEFHX1VOU1BFQ0lGSUVEEAASGAoURklMRV9UQUdfR0VCVVJBX1NBVkUQAQ==');
-@$core.Deprecated('Use internalIDDescriptor instead')
-const InternalID$json = const {
-  '1': 'InternalID',
-  '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
-  ],
-};
-
-/// Descriptor for `InternalID`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List internalIDDescriptor = $convert.base64Decode('CgpJbnRlcm5hbElEEg4KAmlkGAEgASgDUgJpZA==');
 @$core.Deprecated('Use fileMetadataDescriptor instead')
 const FileMetadata$json = const {
   '1': 'FileMetadata',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.InternalID', '9': 0, '10': 'id', '17': true},
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'id', '17': true},
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'size', '3': 3, '4': 1, '5': 3, '10': 'size'},
     const {'1': 'chunk_size', '3': 4, '4': 1, '5': 3, '10': 'chunkSize'},
@@ -45,4 +35,4 @@ const FileMetadata$json = const {
 };
 
 /// Descriptor for `FileMetadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESNgoCaWQYASABKAsyIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuSW50ZXJuYWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyABKANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjAKA3RhZxgFIAMoDjIeLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlVGFnUgN0YWdCBQoDX2lk');
+final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESLQoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyABKANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjAKA3RhZxgFIAMoDjIeLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlVGFnUgN0YWdCBQoDX2lk');

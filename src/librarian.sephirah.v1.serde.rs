@@ -1689,7 +1689,7 @@ impl serde::Serialize for FeedConfig {
         if self.pull_interval.is_some() {
             len += 1;
         }
-        if self.lastest_pull_time.is_some() {
+        if self.latest_pull_time.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedConfig", len)?;
@@ -1715,8 +1715,8 @@ impl serde::Serialize for FeedConfig {
         if let Some(v) = self.pull_interval.as_ref() {
             struct_ser.serialize_field("pullInterval", v)?;
         }
-        if let Some(v) = self.lastest_pull_time.as_ref() {
-            struct_ser.serialize_field("lastestPullTime", v)?;
+        if let Some(v) = self.latest_pull_time.as_ref() {
+            struct_ser.serialize_field("latestPullTime", v)?;
         }
         struct_ser.end()
     }
@@ -1734,7 +1734,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             "source",
             "status",
             "pullInterval",
-            "lastestPullTime",
+            "latestPullTime",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1745,7 +1745,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             Source,
             Status,
             PullInterval,
-            LastestPullTime,
+            LatestPullTime,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1773,7 +1773,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             "source" => Ok(GeneratedField::Source),
                             "status" => Ok(GeneratedField::Status),
                             "pullInterval" => Ok(GeneratedField::PullInterval),
-                            "lastestPullTime" => Ok(GeneratedField::LastestPullTime),
+                            "latestPullTime" => Ok(GeneratedField::LatestPullTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1799,7 +1799,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                 let mut source__ = None;
                 let mut status__ = None;
                 let mut pull_interval__ = None;
-                let mut lastest_pull_time__ = None;
+                let mut latest_pull_time__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1838,11 +1838,11 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             }
                             pull_interval__ = Some(map.next_value()?);
                         }
-                        GeneratedField::LastestPullTime => {
-                            if lastest_pull_time__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("lastestPullTime"));
+                        GeneratedField::LatestPullTime => {
+                            if latest_pull_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("latestPullTime"));
                             }
-                            lastest_pull_time__ = Some(map.next_value()?);
+                            latest_pull_time__ = Some(map.next_value()?);
                         }
                     }
                 }
@@ -1853,7 +1853,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                     source: source__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     pull_interval: pull_interval__,
-                    lastest_pull_time: lastest_pull_time__,
+                    latest_pull_time: latest_pull_time__,
                 })
             }
         }
@@ -3021,99 +3021,6 @@ impl<'de> serde::Deserialize<'de> for GetTokenResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.GetTokenResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for InternalId {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.id != 0 {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.InternalID", len)?;
-        if self.id != 0 {
-            struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for InternalId {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "id",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Id,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "id" => Ok(GeneratedField::Id),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = InternalId;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.InternalID")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<InternalId, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut id__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Id => {
-                            if id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("id"));
-                            }
-                            id__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
-                        }
-                    }
-                }
-                Ok(InternalId {
-                    id: id__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.InternalID", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for LinkAccountRequest {

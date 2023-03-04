@@ -2,6 +2,7 @@
 // file: librarian/searcher/v1/searcher.proto
 
 import * as jspb from "google-protobuf";
+import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class NewIDRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -20,8 +21,10 @@ export namespace NewIDRequest {
 }
 
 export class NewIDResponse extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewIDResponse.AsObject;
@@ -35,13 +38,57 @@ export class NewIDResponse extends jspb.Message {
 
 export namespace NewIDResponse {
   export type AsObject = {
-    id: number,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class NewBatchIDsRequest extends jspb.Message {
+  getNum(): number;
+  setNum(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewBatchIDsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: NewBatchIDsRequest): NewBatchIDsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NewBatchIDsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewBatchIDsRequest;
+  static deserializeBinaryFromReader(message: NewBatchIDsRequest, reader: jspb.BinaryReader): NewBatchIDsRequest;
+}
+
+export namespace NewBatchIDsRequest {
+  export type AsObject = {
+    num: number,
+  }
+}
+
+export class NewBatchIDsResponse extends jspb.Message {
+  clearIdsList(): void;
+  getIdsList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIds(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewBatchIDsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: NewBatchIDsResponse): NewBatchIDsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NewBatchIDsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewBatchIDsResponse;
+  static deserializeBinaryFromReader(message: NewBatchIDsResponse, reader: jspb.BinaryReader): NewBatchIDsResponse;
+}
+
+export namespace NewBatchIDsResponse {
+  export type AsObject = {
+    idsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 
 export class DescribeIDRequest extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   getDescription(): string;
   setDescription(value: string): void;
@@ -61,7 +108,7 @@ export class DescribeIDRequest extends jspb.Message {
 
 export namespace DescribeIDRequest {
   export type AsObject = {
-    id: number,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
     description: string,
     mode: DescribeIDRequest.DescribeModeMap[keyof DescribeIDRequest.DescribeModeMap],
   }
@@ -133,8 +180,10 @@ export namespace SearchIDResponse {
   }
 
   export class Result extends jspb.Message {
-    getId(): number;
-    setId(value: number): void;
+    hasId(): boolean;
+    clearId(): void;
+    getId(): librarian_v1_common_pb.InternalID | undefined;
+    setId(value?: librarian_v1_common_pb.InternalID): void;
 
     getRank(): number;
     setRank(value: number): void;
@@ -151,7 +200,7 @@ export namespace SearchIDResponse {
 
   export namespace Result {
     export type AsObject = {
-      id: number,
+      id?: librarian_v1_common_pb.InternalID.AsObject,
       rank: number,
     }
   }

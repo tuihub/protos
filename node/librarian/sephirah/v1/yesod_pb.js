@@ -2714,7 +2714,7 @@ proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg)
     source: jspb.Message.getFieldWithDefault(msg, 4, 0),
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
     pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    lastestPullTime: (f = msg.getLastestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    latestPullTime: (f = msg.getLatestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2781,7 +2781,7 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
     case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setLastestPullTime(value);
+      msg.setLatestPullTime(value);
       break;
     default:
       reader.skipField();
@@ -2857,7 +2857,7 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
       google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
-  f = message.getLastestPullTime();
+  f = message.getLatestPullTime();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -3034,10 +3034,10 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.hasPullInterval = function() {
 
 
 /**
- * optional google.protobuf.Timestamp lastest_pull_time = 7;
+ * optional google.protobuf.Timestamp latest_pull_time = 7;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getLastestPullTime = function() {
+proto.librarian.sephirah.v1.FeedConfig.prototype.getLatestPullTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
 };
@@ -3047,7 +3047,7 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.getLastestPullTime = function()
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
 */
-proto.librarian.sephirah.v1.FeedConfig.prototype.setLastestPullTime = function(value) {
+proto.librarian.sephirah.v1.FeedConfig.prototype.setLatestPullTime = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -3056,8 +3056,8 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.setLastestPullTime = function(v
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.clearLastestPullTime = function() {
-  return this.setLastestPullTime(undefined);
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearLatestPullTime = function() {
+  return this.setLatestPullTime(undefined);
 };
 
 
@@ -3065,7 +3065,7 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.clearLastestPullTime = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.hasLastestPullTime = function() {
+proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullTime = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 

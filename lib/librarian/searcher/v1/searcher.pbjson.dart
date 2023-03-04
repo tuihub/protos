@@ -19,17 +19,37 @@ final $typed_data.Uint8List newIDRequestDescriptor = $convert.base64Decode('CgxO
 const NewIDResponse$json = const {
   '1': 'NewIDResponse',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
   ],
 };
 
 /// Descriptor for `NewIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List newIDResponseDescriptor = $convert.base64Decode('Cg1OZXdJRFJlc3BvbnNlEg4KAmlkGAEgASgDUgJpZA==');
+final $typed_data.Uint8List newIDResponseDescriptor = $convert.base64Decode('Cg1OZXdJRFJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlk');
+@$core.Deprecated('Use newBatchIDsRequestDescriptor instead')
+const NewBatchIDsRequest$json = const {
+  '1': 'NewBatchIDsRequest',
+  '2': const [
+    const {'1': 'num', '3': 1, '4': 1, '5': 5, '10': 'num'},
+  ],
+};
+
+/// Descriptor for `NewBatchIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List newBatchIDsRequestDescriptor = $convert.base64Decode('ChJOZXdCYXRjaElEc1JlcXVlc3QSEAoDbnVtGAEgASgFUgNudW0=');
+@$core.Deprecated('Use newBatchIDsResponseDescriptor instead')
+const NewBatchIDsResponse$json = const {
+  '1': 'NewBatchIDsResponse',
+  '2': const [
+    const {'1': 'ids', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
+  ],
+};
+
+/// Descriptor for `NewBatchIDsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List newBatchIDsResponseDescriptor = $convert.base64Decode('ChNOZXdCYXRjaElEc1Jlc3BvbnNlEioKA2lkcxgBIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgNpZHM=');
 @$core.Deprecated('Use describeIDRequestDescriptor instead')
 const DescribeIDRequest$json = const {
   '1': 'DescribeIDRequest',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     const {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
     const {'1': 'mode', '3': 3, '4': 1, '5': 14, '6': '.librarian.searcher.v1.DescribeIDRequest.DescribeMode', '10': 'mode'},
   ],
@@ -47,7 +67,7 @@ const DescribeIDRequest_DescribeMode$json = const {
 };
 
 /// Descriptor for `DescribeIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List describeIDRequestDescriptor = $convert.base64Decode('ChFEZXNjcmliZUlEUmVxdWVzdBIOCgJpZBgBIAEoA1ICaWQSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEkkKBG1vZGUYAyABKA4yNS5saWJyYXJpYW4uc2VhcmNoZXIudjEuRGVzY3JpYmVJRFJlcXVlc3QuRGVzY3JpYmVNb2RlUgRtb2RlImMKDERlc2NyaWJlTW9kZRIdChlERVNDUklCRV9NT0RFX1VOU1BFQ0lGSUVEEAASGgoWREVTQ1JJQkVfTU9ERV9PVkVSUklERRABEhgKFERFU0NSSUJFX01PREVfQVBQRU5EEAI=');
+final $typed_data.Uint8List describeIDRequestDescriptor = $convert.base64Decode('ChFEZXNjcmliZUlEUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24SSQoEbW9kZRgDIAEoDjI1LmxpYnJhcmlhbi5zZWFyY2hlci52MS5EZXNjcmliZUlEUmVxdWVzdC5EZXNjcmliZU1vZGVSBG1vZGUiYwoMRGVzY3JpYmVNb2RlEh0KGURFU0NSSUJFX01PREVfVU5TUEVDSUZJRUQQABIaChZERVNDUklCRV9NT0RFX09WRVJSSURFEAESGAoUREVTQ1JJQkVfTU9ERV9BUFBFTkQQAg==');
 @$core.Deprecated('Use describeIDResponseDescriptor instead')
 const DescribeIDResponse$json = const {
   '1': 'DescribeIDResponse',
@@ -78,10 +98,10 @@ const SearchIDResponse$json = const {
 const SearchIDResponse_Result$json = const {
   '1': 'Result',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     const {'1': 'rank', '3': 2, '4': 1, '5': 3, '10': 'rank'},
   ],
 };
 
 /// Descriptor for `SearchIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List searchIDResponseDescriptor = $convert.base64Decode('ChBTZWFyY2hJRFJlc3BvbnNlEkYKBnJlc3VsdBgBIAMoCzIuLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlLlJlc3VsdFIGcmVzdWx0GiwKBlJlc3VsdBIOCgJpZBgBIAEoA1ICaWQSEgoEcmFuaxgCIAEoA1IEcmFuaw==');
+final $typed_data.Uint8List searchIDResponseDescriptor = $convert.base64Decode('ChBTZWFyY2hJRFJlc3BvbnNlEkYKBnJlc3VsdBgBIAMoCzIuLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlLlJlc3VsdFIGcmVzdWx0GkYKBlJlc3VsdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRyYW5rGAIgASgDUgRyYW5r');

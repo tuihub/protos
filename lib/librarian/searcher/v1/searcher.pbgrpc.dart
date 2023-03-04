@@ -18,6 +18,12 @@ class LibrarianSearcherServiceClient extends $grpc.Client {
       '/librarian.searcher.v1.LibrarianSearcherService/NewID',
       ($0.NewIDRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.NewIDResponse.fromBuffer(value));
+  static final _$newBatchIDs =
+      $grpc.ClientMethod<$0.NewBatchIDsRequest, $0.NewBatchIDsResponse>(
+          '/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs',
+          ($0.NewBatchIDsRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.NewBatchIDsResponse.fromBuffer(value));
   static final _$describeID =
       $grpc.ClientMethod<$0.DescribeIDRequest, $0.DescribeIDResponse>(
           '/librarian.searcher.v1.LibrarianSearcherService/DescribeID',
@@ -39,6 +45,12 @@ class LibrarianSearcherServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.NewIDResponse> newID($0.NewIDRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$newID, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.NewBatchIDsResponse> newBatchIDs(
+      $0.NewBatchIDsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$newBatchIDs, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.DescribeIDResponse> describeID(
@@ -64,6 +76,15 @@ abstract class LibrarianSearcherServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.NewIDRequest.fromBuffer(value),
         ($0.NewIDResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.NewBatchIDsRequest, $0.NewBatchIDsResponse>(
+            'NewBatchIDs',
+            newBatchIDs_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.NewBatchIDsRequest.fromBuffer(value),
+            ($0.NewBatchIDsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DescribeIDRequest, $0.DescribeIDResponse>(
         'DescribeID',
         describeID_Pre,
@@ -85,6 +106,11 @@ abstract class LibrarianSearcherServiceBase extends $grpc.Service {
     return newID(call, await request);
   }
 
+  $async.Future<$0.NewBatchIDsResponse> newBatchIDs_Pre($grpc.ServiceCall call,
+      $async.Future<$0.NewBatchIDsRequest> request) async {
+    return newBatchIDs(call, await request);
+  }
+
   $async.Future<$0.DescribeIDResponse> describeID_Pre($grpc.ServiceCall call,
       $async.Future<$0.DescribeIDRequest> request) async {
     return describeID(call, await request);
@@ -97,6 +123,8 @@ abstract class LibrarianSearcherServiceBase extends $grpc.Service {
 
   $async.Future<$0.NewIDResponse> newID(
       $grpc.ServiceCall call, $0.NewIDRequest request);
+  $async.Future<$0.NewBatchIDsResponse> newBatchIDs(
+      $grpc.ServiceCall call, $0.NewBatchIDsRequest request);
   $async.Future<$0.DescribeIDResponse> describeID(
       $grpc.ServiceCall call, $0.DescribeIDRequest request);
   $async.Future<$0.SearchIDResponse> searchID(

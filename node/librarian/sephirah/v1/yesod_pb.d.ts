@@ -355,10 +355,10 @@ export class FeedConfig extends jspb.Message {
   getPullInterval(): google_protobuf_duration_pb.Duration | undefined;
   setPullInterval(value?: google_protobuf_duration_pb.Duration): void;
 
-  hasLastestPullTime(): boolean;
-  clearLastestPullTime(): void;
-  getLastestPullTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLastestPullTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasLatestPullTime(): boolean;
+  clearLatestPullTime(): void;
+  getLatestPullTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLatestPullTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
@@ -378,7 +378,7 @@ export namespace FeedConfig {
     source: FeedConfigSourceMap[keyof FeedConfigSourceMap],
     status: FeedConfigStatusMap[keyof FeedConfigStatusMap],
     pullInterval?: google_protobuf_duration_pb.Duration.AsObject,
-    lastestPullTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    latestPullTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

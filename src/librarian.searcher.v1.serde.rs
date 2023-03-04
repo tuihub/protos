@@ -7,7 +7,7 @@ impl serde::Serialize for DescribeIdRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.id != 0 {
+        if self.id.is_some() {
             len += 1;
         }
         if !self.description.is_empty() {
@@ -17,8 +17,8 @@ impl serde::Serialize for DescribeIdRequest {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.DescribeIDRequest", len)?;
-        if self.id != 0 {
-            struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
@@ -100,9 +100,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            id__ = Some(map.next_value()?);
                         }
                         GeneratedField::Description => {
                             if description__.is_some() {
@@ -119,7 +117,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                     }
                 }
                 Ok(DescribeIdRequest {
-                    id: id__.unwrap_or_default(),
+                    id: id__,
                     description: description__.unwrap_or_default(),
                     mode: mode__.unwrap_or_default(),
                 })
@@ -275,6 +273,190 @@ impl<'de> serde::Deserialize<'de> for DescribeIdResponse {
         deserializer.deserialize_struct("librarian.searcher.v1.DescribeIDResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for NewBatchIDsRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.num != 0 {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.NewBatchIDsRequest", len)?;
+        if self.num != 0 {
+            struct_ser.serialize_field("num", &self.num)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for NewBatchIDsRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "num",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Num,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "num" => Ok(GeneratedField::Num),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = NewBatchIDsRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.searcher.v1.NewBatchIDsRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<NewBatchIDsRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut num__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Num => {
+                            if num__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("num"));
+                            }
+                            num__ = Some(
+                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
+                            );
+                        }
+                    }
+                }
+                Ok(NewBatchIDsRequest {
+                    num: num__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.searcher.v1.NewBatchIDsRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for NewBatchIDsResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.ids.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.NewBatchIDsResponse", len)?;
+        if !self.ids.is_empty() {
+            struct_ser.serialize_field("ids", &self.ids)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for NewBatchIDsResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "ids",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Ids,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "ids" => Ok(GeneratedField::Ids),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = NewBatchIDsResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.searcher.v1.NewBatchIDsResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<NewBatchIDsResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut ids__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Ids => {
+                            if ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("ids"));
+                            }
+                            ids__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(NewBatchIDsResponse {
+                    ids: ids__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.searcher.v1.NewBatchIDsResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for NewIdRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -354,12 +536,12 @@ impl serde::Serialize for NewIdResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.id != 0 {
+        if self.id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.NewIDResponse", len)?;
-        if self.id != 0 {
-            struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
@@ -425,14 +607,12 @@ impl<'de> serde::Deserialize<'de> for NewIdResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            id__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(NewIdResponse {
-                    id: id__.unwrap_or_default(),
+                    id: id__,
                 })
             }
         }
@@ -629,15 +809,15 @@ impl serde::Serialize for search_id_response::Result {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.id != 0 {
+        if self.id.is_some() {
             len += 1;
         }
         if self.rank != 0 {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.SearchIDResponse.Result", len)?;
-        if self.id != 0 {
-            struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         if self.rank != 0 {
             struct_ser.serialize_field("rank", ToString::to_string(&self.rank).as_str())?;
@@ -710,9 +890,7 @@ impl<'de> serde::Deserialize<'de> for search_id_response::Result {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            id__ = Some(map.next_value()?);
                         }
                         GeneratedField::Rank => {
                             if rank__.is_some() {
@@ -725,7 +903,7 @@ impl<'de> serde::Deserialize<'de> for search_id_response::Result {
                     }
                 }
                 Ok(search_id_response::Result {
-                    id: id__.unwrap_or_default(),
+                    id: id__,
                     rank: rank__.unwrap_or_default(),
                 })
             }

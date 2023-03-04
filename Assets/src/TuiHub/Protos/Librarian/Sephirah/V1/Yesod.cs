@@ -63,23 +63,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "UgZpdGVtSWQiPgoSR2V0RmVlZEl0ZW1SZXF1ZXN0EigKAmlkGAEgASgLMhgu",
             "bGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIkEKE0dldEZlZWRJdGVtUmVz",
             "cG9uc2USKgoEaXRlbRgBIAEoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRlbVIE",
-            "aXRlbSK3AwoKRmVlZENvbmZpZxIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52",
+            "aXRlbSK0AwoKRmVlZENvbmZpZxIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52",
             "MS5JbnRlcm5hbElEUgJpZBIZCghmZWVkX3VybBgCIAEoCVIHZmVlZFVybBI/",
             "Cg5hdXRob3JfYWNjb3VudBgDIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
             "bElEUg1hdXRob3JBY2NvdW50Ej8KBnNvdXJjZRgEIAEoDjInLmxpYnJhcmlh",
             "bi5zZXBoaXJhaC52MS5GZWVkQ29uZmlnU291cmNlUgZzb3VyY2USPwoGc3Rh",
             "dHVzGAUgASgOMicubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZlZWRDb25maWdT",
             "dGF0dXNSBnN0YXR1cxI+Cg1wdWxsX2ludGVydmFsGAYgASgLMhkuZ29vZ2xl",
-            "LnByb3RvYnVmLkR1cmF0aW9uUgxwdWxsSW50ZXJ2YWwSSwoRbGFzdGVzdF9w",
-            "dWxsX3RpbWUYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABS",
-            "D2xhc3Rlc3RQdWxsVGltZYgBAUIUChJfbGFzdGVzdF9wdWxsX3RpbWUqdQoQ",
-            "RmVlZENvbmZpZ1N0YXR1cxIiCh5GRUVEX0NPTkZJR19TVEFUVVNfVU5TUEVD",
-            "SUZJRUQQABIdChlGRUVEX0NPTkZJR19TVEFUVVNfQUNUSVZFEAESHgoaRkVF",
-            "RF9DT05GSUdfU1RBVFVTX1NVU1BFTkQQAipVChBGZWVkQ29uZmlnU291cmNl",
-            "EiIKHkZFRURfQ09ORklHX1NPVVJDRV9VTlNQRUNJRklFRBAAEh0KGUZFRURf",
-            "Q09ORklHX1NPVVJDRV9DT01NT04QAUJdWjVnaXRodWIuY29tL3R1aWh1Yi9w",
-            "cm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Q",
-            "cm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "LnByb3RvYnVmLkR1cmF0aW9uUgxwdWxsSW50ZXJ2YWwSSQoQbGF0ZXN0X3B1",
+            "bGxfdGltZRgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAFIO",
+            "bGF0ZXN0UHVsbFRpbWWIAQFCEwoRX2xhdGVzdF9wdWxsX3RpbWUqdQoQRmVl",
+            "ZENvbmZpZ1N0YXR1cxIiCh5GRUVEX0NPTkZJR19TVEFUVVNfVU5TUEVDSUZJ",
+            "RUQQABIdChlGRUVEX0NPTkZJR19TVEFUVVNfQUNUSVZFEAESHgoaRkVFRF9D",
+            "T05GSUdfU1RBVFVTX1NVU1BFTkQQAipVChBGZWVkQ29uZmlnU291cmNlEiIK",
+            "HkZFRURfQ09ORklHX1NPVVJDRV9VTlNQRUNJRklFRBAAEh0KGUZFRURfQ09O",
+            "RklHX1NPVVJDRV9DT01NT04QAUJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90",
+            "b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90",
+            "b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -93,7 +93,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsResponse.Parser, new[]{ "Paging", "Items" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsResponse.Types.FeedItemIDWithFeedID), global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsResponse.Types.FeedItemIDWithFeedID.Parser, new[]{ "FeedId", "ItemId" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFeedItemRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetFeedItemRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFeedItemResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetFeedItemResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig.Parser, new[]{ "Id", "FeedUrl", "AuthorAccount", "Source", "Status", "PullInterval", "LastestPullTime" }, new[]{ "LastestPullTime" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig.Parser, new[]{ "Id", "FeedUrl", "AuthorAccount", "Source", "Status", "PullInterval", "LatestPullTime" }, new[]{ "LatestPullTime" }, null, null, null)
           }));
     }
     #endregion
@@ -2830,7 +2830,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       source_ = other.source_;
       status_ = other.status_;
       pullInterval_ = other.pullInterval_ != null ? other.pullInterval_.Clone() : null;
-      lastestPullTime_ = other.lastestPullTime_ != null ? other.lastestPullTime_.Clone() : null;
+      latestPullTime_ = other.latestPullTime_ != null ? other.latestPullTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2912,18 +2912,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "lastest_pull_time" field.</summary>
-    public const int LastestPullTimeFieldNumber = 7;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp lastestPullTime_;
+    /// <summary>Field number for the "latest_pull_time" field.</summary>
+    public const int LatestPullTimeFieldNumber = 7;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp latestPullTime_;
     /// <summary>
     /// response only
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp LastestPullTime {
-      get { return lastestPullTime_; }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp LatestPullTime {
+      get { return latestPullTime_; }
       set {
-        lastestPullTime_ = value;
+        latestPullTime_ = value;
       }
     }
 
@@ -2948,7 +2948,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Source != other.Source) return false;
       if (Status != other.Status) return false;
       if (!object.Equals(PullInterval, other.PullInterval)) return false;
-      if (!object.Equals(LastestPullTime, other.LastestPullTime)) return false;
+      if (!object.Equals(LatestPullTime, other.LatestPullTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2962,7 +2962,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Source != global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigSource.Unspecified) hash ^= Source.GetHashCode();
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigStatus.Unspecified) hash ^= Status.GetHashCode();
       if (pullInterval_ != null) hash ^= PullInterval.GetHashCode();
-      if (lastestPullTime_ != null) hash ^= LastestPullTime.GetHashCode();
+      if (latestPullTime_ != null) hash ^= LatestPullTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3005,9 +3005,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(50);
         output.WriteMessage(PullInterval);
       }
-      if (lastestPullTime_ != null) {
+      if (latestPullTime_ != null) {
         output.WriteRawTag(58);
-        output.WriteMessage(LastestPullTime);
+        output.WriteMessage(LatestPullTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3043,9 +3043,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(50);
         output.WriteMessage(PullInterval);
       }
-      if (lastestPullTime_ != null) {
+      if (latestPullTime_ != null) {
         output.WriteRawTag(58);
-        output.WriteMessage(LastestPullTime);
+        output.WriteMessage(LatestPullTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -3075,8 +3075,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (pullInterval_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PullInterval);
       }
-      if (lastestPullTime_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastestPullTime);
+      if (latestPullTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LatestPullTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3117,11 +3117,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         PullInterval.MergeFrom(other.PullInterval);
       }
-      if (other.lastestPullTime_ != null) {
-        if (lastestPullTime_ == null) {
-          LastestPullTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+      if (other.latestPullTime_ != null) {
+        if (latestPullTime_ == null) {
+          LatestPullTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
-        LastestPullTime.MergeFrom(other.LastestPullTime);
+        LatestPullTime.MergeFrom(other.LatestPullTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3172,10 +3172,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 58: {
-            if (lastestPullTime_ == null) {
-              LastestPullTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (latestPullTime_ == null) {
+              LatestPullTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(LastestPullTime);
+            input.ReadMessage(LatestPullTime);
             break;
           }
         }
@@ -3227,10 +3227,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 58: {
-            if (lastestPullTime_ == null) {
-              LastestPullTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (latestPullTime_ == null) {
+              LatestPullTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(LastestPullTime);
+            input.ReadMessage(LatestPullTime);
             break;
           }
         }

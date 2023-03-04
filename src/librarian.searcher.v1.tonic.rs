@@ -89,6 +89,25 @@ pub mod librarian_searcher_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        pub async fn new_batch_i_ds(
+            &mut self,
+            request: impl tonic::IntoRequest<super::NewBatchIDsRequest>,
+        ) -> Result<tonic::Response<super::NewBatchIDsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
         pub async fn describe_id(
             &mut self,
             request: impl tonic::IntoRequest<super::DescribeIdRequest>,
@@ -140,6 +159,10 @@ pub mod librarian_searcher_service_server {
             &self,
             request: tonic::Request<super::NewIdRequest>,
         ) -> Result<tonic::Response<super::NewIdResponse>, tonic::Status>;
+        async fn new_batch_i_ds(
+            &self,
+            request: tonic::Request<super::NewBatchIDsRequest>,
+        ) -> Result<tonic::Response<super::NewBatchIDsResponse>, tonic::Status>;
         async fn describe_id(
             &self,
             request: tonic::Request<super::DescribeIdRequest>,
@@ -235,6 +258,46 @@ pub mod librarian_searcher_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = NewIDSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs" => {
+                    #[allow(non_camel_case_types)]
+                    struct NewBatchIDsSvc<T: LibrarianSearcherService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSearcherService,
+                    > tonic::server::UnaryService<super::NewBatchIDsRequest>
+                    for NewBatchIDsSvc<T> {
+                        type Response = super::NewBatchIDsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::NewBatchIDsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).new_batch_i_ds(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = NewBatchIDsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

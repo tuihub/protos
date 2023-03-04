@@ -2,32 +2,13 @@
 // file: librarian/sephirah/v1/base.proto
 
 import * as jspb from "google-protobuf";
-
-export class InternalID extends jspb.Message {
-  getId(): number;
-  setId(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InternalID.AsObject;
-  static toObject(includeInstance: boolean, msg: InternalID): InternalID.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: InternalID, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InternalID;
-  static deserializeBinaryFromReader(message: InternalID, reader: jspb.BinaryReader): InternalID;
-}
-
-export namespace InternalID {
-  export type AsObject = {
-    id: number,
-  }
-}
+import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class FileMetadata extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
-  getId(): InternalID | undefined;
-  setId(value?: InternalID): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   getName(): string;
   setName(value: string): void;
@@ -55,7 +36,7 @@ export class FileMetadata extends jspb.Message {
 
 export namespace FileMetadata {
   export type AsObject = {
-    id?: InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     size: number,
     chunkSize: number,

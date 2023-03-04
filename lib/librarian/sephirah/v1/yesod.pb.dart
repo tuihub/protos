@@ -697,7 +697,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..e<FeedConfigSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
     ..e<FeedConfigStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
     ..aOM<$6.Duration>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $6.Duration.create)
-    ..aOM<$7.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastestPullTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latestPullTime', subBuilder: $7.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -709,7 +709,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     FeedConfigSource? source,
     FeedConfigStatus? status,
     $6.Duration? pullInterval,
-    $7.Timestamp? lastestPullTime,
+    $7.Timestamp? latestPullTime,
   }) {
     final _result = create();
     if (id != null) {
@@ -730,8 +730,8 @@ class FeedConfig extends $pb.GeneratedMessage {
     if (pullInterval != null) {
       _result.pullInterval = pullInterval;
     }
-    if (lastestPullTime != null) {
-      _result.lastestPullTime = lastestPullTime;
+    if (latestPullTime != null) {
+      _result.latestPullTime = latestPullTime;
     }
     return _result;
   }
@@ -817,14 +817,14 @@ class FeedConfig extends $pb.GeneratedMessage {
   $6.Duration ensurePullInterval() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  $7.Timestamp get lastestPullTime => $_getN(6);
+  $7.Timestamp get latestPullTime => $_getN(6);
   @$pb.TagNumber(7)
-  set lastestPullTime($7.Timestamp v) { setField(7, v); }
+  set latestPullTime($7.Timestamp v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasLastestPullTime() => $_has(6);
+  $core.bool hasLatestPullTime() => $_has(6);
   @$pb.TagNumber(7)
-  void clearLastestPullTime() => clearField(7);
+  void clearLatestPullTime() => clearField(7);
   @$pb.TagNumber(7)
-  $7.Timestamp ensureLastestPullTime() => $_ensure(6);
+  $7.Timestamp ensureLatestPullTime() => $_ensure(6);
 }
 

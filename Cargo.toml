@@ -22,7 +22,7 @@ proto_full = ["errors","librarian-mapper-v1","librarian-porter-v1","librarian-se
 "errors" = []
 "librarian-mapper-v1" = []
 "librarian-porter-v1" = ["librarian-v1"]
-"librarian-searcher-v1" = []
+"librarian-searcher-v1" = ["librarian-v1"]
 "librarian-sephirah-v1" = ["librarian-v1"]
 "librarian-v1" = []
 ## @@protoc_insertion_point(features)

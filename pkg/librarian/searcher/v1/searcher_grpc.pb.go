@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LibrarianSearcherService_NewID_FullMethodName      = "/librarian.searcher.v1.LibrarianSearcherService/NewID"
-	LibrarianSearcherService_DescribeID_FullMethodName = "/librarian.searcher.v1.LibrarianSearcherService/DescribeID"
-	LibrarianSearcherService_SearchID_FullMethodName   = "/librarian.searcher.v1.LibrarianSearcherService/SearchID"
+	LibrarianSearcherService_NewID_FullMethodName       = "/librarian.searcher.v1.LibrarianSearcherService/NewID"
+	LibrarianSearcherService_NewBatchIDs_FullMethodName = "/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs"
+	LibrarianSearcherService_DescribeID_FullMethodName  = "/librarian.searcher.v1.LibrarianSearcherService/DescribeID"
+	LibrarianSearcherService_SearchID_FullMethodName    = "/librarian.searcher.v1.LibrarianSearcherService/SearchID"
 )
 
 // LibrarianSearcherServiceClient is the client API for LibrarianSearcherService service.
@@ -29,6 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LibrarianSearcherServiceClient interface {
 	NewID(ctx context.Context, in *NewIDRequest, opts ...grpc.CallOption) (*NewIDResponse, error)
+	NewBatchIDs(ctx context.Context, in *NewBatchIDsRequest, opts ...grpc.CallOption) (*NewBatchIDsResponse, error)
 	DescribeID(ctx context.Context, in *DescribeIDRequest, opts ...grpc.CallOption) (*DescribeIDResponse, error)
 	SearchID(ctx context.Context, in *SearchIDRequest, opts ...grpc.CallOption) (*SearchIDResponse, error)
 }
@@ -44,6 +46,15 @@ func NewLibrarianSearcherServiceClient(cc grpc.ClientConnInterface) LibrarianSea
 func (c *librarianSearcherServiceClient) NewID(ctx context.Context, in *NewIDRequest, opts ...grpc.CallOption) (*NewIDResponse, error) {
 	out := new(NewIDResponse)
 	err := c.cc.Invoke(ctx, LibrarianSearcherService_NewID_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSearcherServiceClient) NewBatchIDs(ctx context.Context, in *NewBatchIDsRequest, opts ...grpc.CallOption) (*NewBatchIDsResponse, error) {
+	out := new(NewBatchIDsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSearcherService_NewBatchIDs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -73,6 +84,7 @@ func (c *librarianSearcherServiceClient) SearchID(ctx context.Context, in *Searc
 // for forward compatibility
 type LibrarianSearcherServiceServer interface {
 	NewID(context.Context, *NewIDRequest) (*NewIDResponse, error)
+	NewBatchIDs(context.Context, *NewBatchIDsRequest) (*NewBatchIDsResponse, error)
 	DescribeID(context.Context, *DescribeIDRequest) (*DescribeIDResponse, error)
 	SearchID(context.Context, *SearchIDRequest) (*SearchIDResponse, error)
 	mustEmbedUnimplementedLibrarianSearcherServiceServer()
@@ -84,6 +96,9 @@ type UnimplementedLibrarianSearcherServiceServer struct {
 
 func (UnimplementedLibrarianSearcherServiceServer) NewID(context.Context, *NewIDRequest) (*NewIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewID not implemented")
+}
+func (UnimplementedLibrarianSearcherServiceServer) NewBatchIDs(context.Context, *NewBatchIDsRequest) (*NewBatchIDsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NewBatchIDs not implemented")
 }
 func (UnimplementedLibrarianSearcherServiceServer) DescribeID(context.Context, *DescribeIDRequest) (*DescribeIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeID not implemented")
@@ -119,6 +134,24 @@ func _LibrarianSearcherService_NewID_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSearcherServiceServer).NewID(ctx, req.(*NewIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSearcherService_NewBatchIDs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(NewBatchIDsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSearcherServiceServer).NewBatchIDs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSearcherService_NewBatchIDs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSearcherServiceServer).NewBatchIDs(ctx, req.(*NewBatchIDsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -169,6 +202,10 @@ var LibrarianSearcherService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "NewID",
 			Handler:    _LibrarianSearcherService_NewID_Handler,
+		},
+		{
+			MethodName: "NewBatchIDs",
+			Handler:    _LibrarianSearcherService_NewBatchIDs_Handler,
 		},
 		{
 			MethodName: "DescribeID",

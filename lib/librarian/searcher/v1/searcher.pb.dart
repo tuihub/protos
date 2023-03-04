@@ -10,6 +10,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../v1/common.pb.dart' as $1;
+
 import 'searcher.pbenum.dart';
 
 export 'searcher.pbenum.dart';
@@ -45,13 +47,13 @@ class NewIDRequest extends $pb.GeneratedMessage {
 
 class NewIDResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
     ..hasRequiredFields = false
   ;
 
   NewIDResponse._() : super();
   factory NewIDResponse({
-    $fixnum.Int64? id,
+    $1.InternalID? id,
   }) {
     final _result = create();
     if (id != null) {
@@ -81,18 +83,108 @@ class NewIDResponse extends $pb.GeneratedMessage {
   static NewIDResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $1.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($1.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.InternalID ensureId() => $_ensure(0);
+}
+
+class NewBatchIDsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewBatchIDsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'num', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  NewBatchIDsRequest._() : super();
+  factory NewBatchIDsRequest({
+    $core.int? num,
+  }) {
+    final _result = create();
+    if (num != null) {
+      _result.num = num;
+    }
+    return _result;
+  }
+  factory NewBatchIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NewBatchIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NewBatchIDsRequest clone() => NewBatchIDsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NewBatchIDsRequest copyWith(void Function(NewBatchIDsRequest) updates) => super.copyWith((message) => updates(message as NewBatchIDsRequest)) as NewBatchIDsRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static NewBatchIDsRequest create() => NewBatchIDsRequest._();
+  NewBatchIDsRequest createEmptyInstance() => create();
+  static $pb.PbList<NewBatchIDsRequest> createRepeated() => $pb.PbList<NewBatchIDsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static NewBatchIDsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NewBatchIDsRequest>(create);
+  static NewBatchIDsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get num => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set num($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNum() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNum() => clearField(1);
+}
+
+class NewBatchIDsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewBatchIDsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..pc<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $1.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  NewBatchIDsResponse._() : super();
+  factory NewBatchIDsResponse({
+    $core.Iterable<$1.InternalID>? ids,
+  }) {
+    final _result = create();
+    if (ids != null) {
+      _result.ids.addAll(ids);
+    }
+    return _result;
+  }
+  factory NewBatchIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NewBatchIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NewBatchIDsResponse clone() => NewBatchIDsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NewBatchIDsResponse copyWith(void Function(NewBatchIDsResponse) updates) => super.copyWith((message) => updates(message as NewBatchIDsResponse)) as NewBatchIDsResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static NewBatchIDsResponse create() => NewBatchIDsResponse._();
+  NewBatchIDsResponse createEmptyInstance() => create();
+  static $pb.PbList<NewBatchIDsResponse> createRepeated() => $pb.PbList<NewBatchIDsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static NewBatchIDsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NewBatchIDsResponse>(create);
+  static NewBatchIDsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$1.InternalID> get ids => $_getList(0);
 }
 
 class DescribeIDRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DescribeIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..e<DescribeIDRequest_DescribeMode>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DescribeIDRequest_DescribeMode.DESCRIBE_MODE_UNSPECIFIED, valueOf: DescribeIDRequest_DescribeMode.valueOf, enumValues: DescribeIDRequest_DescribeMode.values)
     ..hasRequiredFields = false
@@ -100,7 +192,7 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
 
   DescribeIDRequest._() : super();
   factory DescribeIDRequest({
-    $fixnum.Int64? id,
+    $1.InternalID? id,
     $core.String? description,
     DescribeIDRequest_DescribeMode? mode,
   }) {
@@ -138,13 +230,15 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
   static DescribeIDRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $1.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($1.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
@@ -243,14 +337,14 @@ class SearchIDRequest extends $pb.GeneratedMessage {
 
 class SearchIDResponse_Result extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDResponse.Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rank')
     ..hasRequiredFields = false
   ;
 
   SearchIDResponse_Result._() : super();
   factory SearchIDResponse_Result({
-    $fixnum.Int64? id,
+    $1.InternalID? id,
     $fixnum.Int64? rank,
   }) {
     final _result = create();
@@ -284,13 +378,15 @@ class SearchIDResponse_Result extends $pb.GeneratedMessage {
   static SearchIDResponse_Result? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $1.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($1.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get rank => $_getI64(1);

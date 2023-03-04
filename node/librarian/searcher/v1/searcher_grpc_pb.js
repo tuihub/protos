@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var librarian_searcher_v1_searcher_pb = require('../../../librarian/searcher/v1/searcher_pb.js');
+var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 
 function serialize_librarian_searcher_v1_DescribeIDRequest(arg) {
   if (!(arg instanceof librarian_searcher_v1_searcher_pb.DescribeIDRequest)) {
@@ -24,6 +25,28 @@ function serialize_librarian_searcher_v1_DescribeIDResponse(arg) {
 
 function deserialize_librarian_searcher_v1_DescribeIDResponse(buffer_arg) {
   return librarian_searcher_v1_searcher_pb.DescribeIDResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_searcher_v1_NewBatchIDsRequest(arg) {
+  if (!(arg instanceof librarian_searcher_v1_searcher_pb.NewBatchIDsRequest)) {
+    throw new Error('Expected argument of type librarian.searcher.v1.NewBatchIDsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_searcher_v1_NewBatchIDsRequest(buffer_arg) {
+  return librarian_searcher_v1_searcher_pb.NewBatchIDsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_searcher_v1_NewBatchIDsResponse(arg) {
+  if (!(arg instanceof librarian_searcher_v1_searcher_pb.NewBatchIDsResponse)) {
+    throw new Error('Expected argument of type librarian.searcher.v1.NewBatchIDsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_searcher_v1_NewBatchIDsResponse(buffer_arg) {
+  return librarian_searcher_v1_searcher_pb.NewBatchIDsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_searcher_v1_NewIDRequest(arg) {
@@ -89,6 +112,17 @@ var LibrarianSearcherServiceService = exports.LibrarianSearcherServiceService = 
     requestDeserialize: deserialize_librarian_searcher_v1_NewIDRequest,
     responseSerialize: serialize_librarian_searcher_v1_NewIDResponse,
     responseDeserialize: deserialize_librarian_searcher_v1_NewIDResponse,
+  },
+  newBatchIDs: {
+    path: '/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_searcher_v1_searcher_pb.NewBatchIDsRequest,
+    responseType: librarian_searcher_v1_searcher_pb.NewBatchIDsResponse,
+    requestSerialize: serialize_librarian_searcher_v1_NewBatchIDsRequest,
+    requestDeserialize: deserialize_librarian_searcher_v1_NewBatchIDsRequest,
+    responseSerialize: serialize_librarian_searcher_v1_NewBatchIDsResponse,
+    responseDeserialize: deserialize_librarian_searcher_v1_NewBatchIDsResponse,
   },
   describeID: {
     path: '/librarian.searcher.v1.LibrarianSearcherService/DescribeID',
