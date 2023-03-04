@@ -70,7 +70,7 @@ message FeedConfig {
   FeedConfigStatus status = 5;
   google.protobuf.Duration pull_interval = 6;
   // response only
-  optional google.protobuf.Timestamp lastest_pull_time = 7;
+  optional google.protobuf.Timestamp latest_pull_time = 7;
 }
 
 enum FeedConfigStatus {
