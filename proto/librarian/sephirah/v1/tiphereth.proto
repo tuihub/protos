@@ -46,6 +46,15 @@ message UpdateUserRequest {
 }
 message UpdateUserResponse {}
 
+message GetUserRequest {
+  // leave empty to get self user info
+  optional librarian.v1.InternalID id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
+}
+
 message ListUsersRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated UserType type_filter = 2;
@@ -53,6 +62,7 @@ message ListUsersRequest {
 }
 message ListUsersResponse {
   librarian.v1.PagingResponse paging = 1;
+  // self will not contained in the list
   repeated User users = 2;
 }
 

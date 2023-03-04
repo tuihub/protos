@@ -30,6 +30,8 @@ service LibrarianSephirahService {
   // `Tiphereth` `Admin` `Normal limited`
   rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
   // `Tiphereth` `Admin` `Normal limited`
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  // `Tiphereth` `Admin` `Normal limited`
   rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
 
   // `Tiphereth` `Normal` Bind third-party account to current user.
@@ -99,4 +101,6 @@ service LibrarianSephirahService {
   rpc ListFeedItems(ListFeedItemsRequest) returns (ListFeedItemsResponse);
   // `Yesod` `Normal`
   rpc GetFeedItem(GetFeedItemRequest) returns (GetFeedItemResponse);
+  // `Yesod` `Normal`
+  rpc GetBatchFeedItems(GetBatchFeedItemsRequest) returns (GetBatchFeedItemsResponse);
 }
