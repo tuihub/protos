@@ -189,11 +189,70 @@ sequenceDiagram
 
 ### 游戏时长统计
 
-待补充
+游戏时长统计面向`AppPackage`，对于`AppPackage`进行单独统计
+统计时，记录原始启动及关闭时间，供后续可能添加的统计数据分析功能所使用
+【**待细化**】服务端是否存储`App`、`AppPackage`的总时长、最后启动时间等；服务端数据过滤（过长/短的时长等）
 
 ### 游戏存档（GameSaveFile）
 
-待补充
+游戏存档功能面向`AppPackage`，每一个存档为一个文件（压缩包）
+
+对于服务端：
+- 存档可以通过`Librarian`使用`grpc`协议进行传输，也可以由客户端直接和s3后端进行文件操作
+- `AppPackage`可以有全局的特殊存档（即，所有用户均拥有只读权限），内容为全存档/修改数值的存档等
+- `AppPackage`可以有全局存档配置文件（即，所有用户均拥有只读权限），内容为默认存档配置
+- 【**待确定**】对于相同游戏引擎（存档位置相同），全局存档配置是在每个`AppPackage`存储相同的一份，还是仅存储一个引用
+- 一个`User`对于一个`AppPackage`，存档按上传时间滚动，最多保留`n`个存档（`n`为服务器设定）
+- 一个`User`可以手动选择存档进行固定操作，固定后永久保留（不受滚动存档影响），最多固定`m`个存档（`m`为服务器设定）
+- 【**待确定**】服务端是否存储最新存档上传时间
+
+对于客户端：
+- 默认情况下，每次打开游戏之前拉取最新存档，游戏进程关闭后进行存档上传（均可由用户指定是否进行拉取/上传操作）
+- 游戏进程未正常退出时，询问用户是否上传本次存档
+
+【**暂定**】压缩包生成规则：
+- 指定固定文件名的json文件作为配置文件
+- 打包时包括所有存档文件和此配置文件
+
+【**暂定**】配置文件（暂定）:
+- 顶层为一个`Entries`对象，内容为若干存档配置对象（数组）
+- 每一个存档配置包含`Id`, `Type`, `Path`, `OriginalName`
+  - `Id`为最终打包存档中，当前存档配置对应的文件/文件夹名称
+  - `Type`为当前存档配置对应的类型，可为`File`或`Folder`
+  - `Path`为当前存档配置对应的文件/文件夹的真实路径
+  - `OriginalName`为当前存档配置对应的文件/文件夹的原始名称
+- `Path`中统一使用正斜杠（`/`）作为分隔符
+- `Path`中特殊路径
+  - `.`为游戏根目录（不一定为游戏二进制所在目录）
+  - `{USER_DOCUMENT}`为用户文档目录（C#中`Environment.SpecialFolder.MyDocuments`所代表路径）
+  - `{USER_PROFILE}`为用户目录（C#中`Environment.SpecialFolder.UserProfile`所代表路径）
+  - `{USER_SAVED_GAMES}`为用户保存的游戏目录（C#中`Environment.SpecialFolder.UserProfile`所代表路径下`Saved Games`文件夹）
+
+【**暂定**】配置文件示例：
+```json
+{
+  "Entries": [
+    {
+      "Id": 1,
+      "Type": "Folder",
+      "Path": "{USER_SAVED_GAMES}/WillPlus/星の乙女と六華の姉妹",
+      "OriginalName": "星の乙女と六華の姉妹"
+    },
+    {
+      "Id": 2,
+      "Type": "Folder",
+      "Path": "./UserData",
+      "OriginalName": "UserData"
+    },
+    {
+      "Id": 3,
+      "Type": "File",
+      "Path": "./BGI.gdb",
+      "OriginalName": "BGI.gdb"
+    }
+  ]
+}
+```
 
 ## Feed聚合（Yesod）
 
