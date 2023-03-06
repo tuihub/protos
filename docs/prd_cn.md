@@ -187,13 +187,15 @@ sequenceDiagram
 - `Admin`和`Normal`能够管理自己创建的`Sentinel`拥有的`AppPackage`
 - `Admin`和`Normal`具有同等权限，不可管理他人的`AppPackage`
 
-### 游戏时长统计
+### 时长统计(AppPackageRunTime)
 
-游戏时长统计面向`AppPackage`，对于`AppPackage`进行单独统计
-统计时，记录原始启动及关闭时间，供后续可能添加的统计数据分析功能所使用
-【**待细化**】服务端是否存储`App`、`AppPackage`的总时长、最后启动时间等；服务端数据过滤（过长/短的时长等）
+- 客户端记录每个`AppPackage`的运行时间，每次运行生成一条`AppPackageRunTime`信息，包含原始启动及关闭时间， 记录的准确性完全依靠客户端维护及验证，服务端不做任何校验  
+- 服务端在`App`及`AppPackage`维度上统计总时长、最后启动时间
 
-### 游戏存档（GameSaveFile）
+用户权限：
+- `Admin`和`Normal`能够增加或删除自己的`AppPackageRunTime`，不能修改
+
+### 【待定】游戏存档（GameSaveFile）
 
 游戏存档功能面向`AppPackage`，每一个存档为一个文件（压缩包）
 
