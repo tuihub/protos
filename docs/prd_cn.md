@@ -216,20 +216,22 @@ sequenceDiagram
 #### 待定内容
 
 需要考虑安全性及可行性：
-- `AppPackage`可以有全局的特殊存档（即，所有用户均拥有只读权限），内容为全存档/修改数值的存档等
+- ~~`AppPackage`可以有全局的特殊存档（即，所有用户均拥有只读权限），内容为全存档/修改数值的存档等~~ `AppPackage`全局存档放入对应`AppPackage`中
 - `AppPackage`可以有全局存档配置文件（即，所有用户均拥有只读权限），内容为默认存档配置
 - 对于相同游戏引擎（存档位置相同），全局存档配置是在每个`AppPackage`存储相同的一份，还是仅存储一个引用
 
 需要确定打包规则：
 
 指定固定文件名的json文件作为配置文件，打包时包括所有存档文件和此配置文件
+打包时，重命名各个`Entry`对应文件/文件夹为配置中`Id`项，还原时，恢复为配置中`OriginalName`项
 
 - 顶层为一个`Entries`对象，内容为若干存档配置对象（数组）
-- 每一个存档配置包含`Id`, `Type`, `Path`, `OriginalName`
+- 每一个存档配置包含`Id`, `Type`, `Path`, `OriginalName`, `Delete`
   - `Id`为最终打包存档中，当前存档配置对应的文件/文件夹名称
   - `Type`为当前存档配置对应的类型，可为`File`或`Folder`
   - `Path`为当前存档配置对应的文件/文件夹的真实路径
   - `OriginalName`为当前存档配置对应的文件/文件夹的原始名称
+  - `Delete`为`bool`型，仅对`Type`为`Folder`的对象生效，为`true`时代表还原存档时，需要清空还原位置文件夹内容
 - `Path`中统一使用正斜杠（`/`）作为分隔符
 - `Path`中特殊路径
   - `.`为游戏根目录（不一定为游戏二进制所在目录）
@@ -245,7 +247,8 @@ sequenceDiagram
       "Id": 1,
       "Type": "Folder",
       "Path": "{USER_SAVED_GAMES}/WillPlus/星の乙女と六華の姉妹",
-      "OriginalName": "星の乙女と六華の姉妹"
+      "OriginalName": "星の乙女と六華の姉妹",
+      "Delete": true
     },
     {
       "Id": 2,
