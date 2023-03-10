@@ -187,7 +187,7 @@ sequenceDiagram
 - `Admin`和`Normal`能够管理自己创建的`Sentinel`拥有的`AppPackage`
 - `Admin`和`Normal`具有同等权限，不可管理他人的`AppPackage`
 
-### 时长统计(AppPackageRunTime)
+### 时长统计（AppPackageRunTime）
 
 - 客户端记录每个`AppPackage`的运行时间，每次运行生成一条`AppPackageRunTime`信息，包含原始启动及关闭时间， 记录的准确性完全依靠客户端维护及验证，服务端不做任何校验  
 - 服务端在`App`及`AppPackage`维度上统计总时长、最后启动时间
@@ -222,7 +222,7 @@ sequenceDiagram
 
 需要确定打包规则：
 
-指定固定文件名的json文件作为配置文件，打包时包括所有存档文件和此配置文件
+指定固定文件名的json文件作为配置文件，打包时包括所有存档文件和此配置文件  
 打包时，重命名各个`Entry`对应文件/文件夹为配置中`Id`项，还原时，恢复为配置中`OriginalName`项
 
 - 顶层为一个`Entries`对象，内容为若干存档配置对象（数组）
