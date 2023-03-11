@@ -280,10 +280,8 @@ export class AppPackage extends jspb.Message {
   getBinary(): AppPackageBinary | undefined;
   setBinary(value?: AppPackageBinary): void;
 
-  hasSourceBindApp(): boolean;
-  clearSourceBindApp(): void;
-  getSourceBindApp(): App | undefined;
-  setSourceBindApp(value?: App): void;
+  getPublic(): boolean;
+  setPublic(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppPackage.AsObject;
@@ -304,7 +302,7 @@ export namespace AppPackage {
     name: string,
     description: string,
     binary?: AppPackageBinary.AsObject,
-    sourceBindApp?: App.AsObject,
+    pb_public: boolean,
   }
 }
 
@@ -312,8 +310,8 @@ export class AppPackageBinary extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getSize(): number;
-  setSize(value: number): void;
+  getSizeByte(): number;
+  setSizeByte(value: number): void;
 
   getPublicUrl(): string;
   setPublicUrl(value: string): void;
@@ -331,7 +329,7 @@ export class AppPackageBinary extends jspb.Message {
 export namespace AppPackageBinary {
   export type AsObject = {
     name: string,
-    size: number,
+    sizeByte: number,
     publicUrl: string,
   }
 }

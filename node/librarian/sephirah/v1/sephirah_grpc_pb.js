@@ -29,28 +29,6 @@ function deserialize_librarian_sephirah_v1_AssignAppPackageResponse(buffer_arg) 
   return librarian_sephirah_v1_gebura_pb.AssignAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_BindAppRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.BindAppRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.BindAppRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_BindAppRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.BindAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_BindAppResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.BindAppResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.BindAppResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_BindAppResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.BindAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_CreateAppPackageRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.CreateAppPackageRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.CreateAppPackageRequest');
@@ -205,6 +183,28 @@ function deserialize_librarian_sephirah_v1_GenerateTokenResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_GetAppLibraryRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppLibraryRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppLibraryRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppLibraryRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppLibraryRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetAppLibraryResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppLibraryResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppLibraryResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppLibraryResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppLibraryResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_GetBatchFeedItemsRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_yesod_pb.GetBatchFeedItemsRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.GetBatchFeedItemsRequest');
@@ -225,6 +225,28 @@ function serialize_librarian_sephirah_v1_GetBatchFeedItemsResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_GetBatchFeedItemsResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.GetBatchFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetBindAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetBindAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetBindAppsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetBindAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetBindAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetBindAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetBindAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetBindAppsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetBindAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetBindAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetFeedItemRequest(arg) {
@@ -315,70 +337,48 @@ function deserialize_librarian_sephirah_v1_LinkAccountResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListAppPackageRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppPackageRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppPackageRequest');
+function serialize_librarian_sephirah_v1_ListAppPackagesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppPackagesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppPackagesRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListAppPackageRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListAppPackagesRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListAppPackagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListAppPackageResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppPackageResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppPackageResponse');
+function serialize_librarian_sephirah_v1_ListAppPackagesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppPackagesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppPackagesResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListAppPackageResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListAppPackagesResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListAppPackagesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListAppRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppRequest');
+function serialize_librarian_sephirah_v1_ListAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListAppRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListAppResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppResponse');
+function serialize_librarian_sephirah_v1_ListAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListAppsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListAppResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_ListBindAppRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListBindAppRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListBindAppRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_ListBindAppRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListBindAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_ListBindAppResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListBindAppResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListBindAppResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_ListBindAppResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListBindAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListFeedItemsRequest(arg) {
@@ -491,6 +491,50 @@ function deserialize_librarian_sephirah_v1_ListUsersResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.ListUsersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_MergeAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.MergeAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.MergeAppsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_MergeAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.MergeAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_MergeAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.MergeAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.MergeAppsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_MergeAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.MergeAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PurchaseAppRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.PurchaseAppRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PurchaseAppRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PurchaseAppRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.PurchaseAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PurchaseAppResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.PurchaseAppResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PurchaseAppResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PurchaseAppResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.PurchaseAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_RefreshAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.RefreshAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.RefreshAppRequest');
@@ -535,26 +579,48 @@ function deserialize_librarian_sephirah_v1_RefreshTokenResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ReportAppPackageRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ReportAppPackageRequest');
+function serialize_librarian_sephirah_v1_ReportAppPackagesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ReportAppPackagesRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ReportAppPackageRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ReportAppPackagesRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ReportAppPackageResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ReportAppPackageResponse');
+function serialize_librarian_sephirah_v1_ReportAppPackagesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ReportAppPackagesResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ReportAppPackageResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ReportAppPackagesResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SearchAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SearchAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SearchAppsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SearchAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SearchAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SearchAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SearchAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SearchAppsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SearchAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SearchAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_SimpleDownloadFileRequest(arg) {
@@ -621,28 +687,6 @@ function serialize_librarian_sephirah_v1_UnAssignAppPackageResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UnAssignAppPackageResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.UnAssignAppPackageResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_UnBindAppRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnBindAppRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UnBindAppRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_UnBindAppRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.UnBindAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_UnBindAppResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnBindAppResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UnBindAppResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_UnBindAppResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.UnBindAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UnLinkAccountRequest(arg) {
@@ -1002,43 +1046,17 @@ updateApp: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateAppResponse,
   },
-  // `Gebura` `Normal`
-listApp: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListApp',
+  // `Gebura` `Admin` Used to manage apps
+listApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListApps',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.ListAppRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.ListAppResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListAppRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListAppRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListAppResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListAppResponse,
-  },
-  // `Gebura` `Admin` Bind two app
-// Create (src_id)<-[Equal]->(dst_id)
-bindApp: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/BindApp',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.BindAppRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.BindAppResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_BindAppRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_BindAppRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_BindAppResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_BindAppResponse,
-  },
-  // `Gebura` `Admin` Unbind two app
-// Delete (src_id)<-[Equal]->(dst_id)
-unBindApp: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/UnBindApp',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.UnBindAppRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.UnBindAppResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_UnBindAppRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_UnBindAppRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_UnBindAppResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_UnBindAppResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.ListAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ListAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListAppsResponse,
   },
   // `Gebura` `Admin` Submit an asynchronous update request
 refreshApp: {
@@ -1052,19 +1070,67 @@ refreshApp: {
     responseSerialize: serialize_librarian_sephirah_v1_RefreshAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RefreshAppResponse,
   },
-  // `Gebura` `Normal` List bind app
-listBindApp: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListBindApp',
+  // `Gebura` `Admin` Merge two apps
+mergeApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/MergeApps',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.ListBindAppRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.ListBindAppResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListBindAppRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListBindAppRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListBindAppResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListBindAppResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.MergeAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.MergeAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_MergeAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_MergeAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_MergeAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_MergeAppsResponse,
   },
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
+searchApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SearchAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SearchAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SearchAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SearchAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SearchAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SearchAppsResponse,
+  },
+  // `Gebura` `Normal` Get full information of required app
+getBindApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.GetBindAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.GetBindAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetBindAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetBindAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetBindAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetBindAppsResponse,
+  },
+  // `Gebura` `Normal`
+purchaseApp: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.PurchaseAppRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.PurchaseAppResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_PurchaseAppRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_PurchaseAppRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_PurchaseAppResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_PurchaseAppResponse,
+  },
+  // `Gebura` `Normal` Get the entire library
+getAppLibrary: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetAppLibrary',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.GetAppLibraryRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.GetAppLibraryResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetAppLibraryRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetAppLibraryRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetAppLibraryResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetAppLibraryResponse,
+  },
+  // `Gebura` `Normal`
 createAppPackage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage',
     requestStream: false,
@@ -1076,7 +1142,7 @@ createAppPackage: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateAppPackageResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateAppPackageResponse,
   },
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
 updateAppPackage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage',
     requestStream: false,
@@ -1089,18 +1155,18 @@ updateAppPackage: {
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateAppPackageResponse,
   },
   // `Gebura` `Normal`
-listAppPackage: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackage',
+listAppPackages: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackages',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.ListAppPackageRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.ListAppPackageResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListAppPackageRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListAppPackageRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListAppPackageResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListAppPackageResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.ListAppPackagesRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ListAppPackagesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListAppPackagesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListAppPackagesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListAppPackagesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListAppPackagesResponse,
   },
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
 assignAppPackage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage',
     requestStream: false,
@@ -1112,7 +1178,7 @@ assignAppPackage: {
     responseSerialize: serialize_librarian_sephirah_v1_AssignAppPackageResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_AssignAppPackageResponse,
   },
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
 unAssignAppPackage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage',
     requestStream: false,
@@ -1125,16 +1191,16 @@ unAssignAppPackage: {
     responseDeserialize: deserialize_librarian_sephirah_v1_UnAssignAppPackageResponse,
   },
   // `Gebura` `Sentinel`
-reportAppPackage: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackage',
+reportAppPackages: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages',
     requestStream: true,
     responseStream: true,
-    requestType: librarian_sephirah_v1_gebura_pb.ReportAppPackageRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.ReportAppPackageResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ReportAppPackageRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ReportAppPackageRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ReportAppPackageResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ReportAppPackageResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ReportAppPackagesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ReportAppPackagesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ReportAppPackagesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ReportAppPackagesResponse,
   },
   // `Gebura` `Normal`
 uploadGameSaveFile: {

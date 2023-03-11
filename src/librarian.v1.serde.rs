@@ -889,7 +889,7 @@ impl serde::Serialize for AppPackage {
         if self.binary.is_some() {
             len += 1;
         }
-        if self.source_bind_app.is_some() {
+        if self.public {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppPackage", len)?;
@@ -916,8 +916,8 @@ impl serde::Serialize for AppPackage {
         if let Some(v) = self.binary.as_ref() {
             struct_ser.serialize_field("binary", v)?;
         }
-        if let Some(v) = self.source_bind_app.as_ref() {
-            struct_ser.serialize_field("sourceBindApp", v)?;
+        if self.public {
+            struct_ser.serialize_field("public", &self.public)?;
         }
         struct_ser.end()
     }
@@ -936,7 +936,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             "name",
             "description",
             "binary",
-            "sourceBindApp",
+            "public",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -948,7 +948,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             Name,
             Description,
             Binary,
-            SourceBindApp,
+            Public,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -977,7 +977,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "binary" => Ok(GeneratedField::Binary),
-                            "sourceBindApp" => Ok(GeneratedField::SourceBindApp),
+                            "public" => Ok(GeneratedField::Public),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1004,7 +1004,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                 let mut name__ = None;
                 let mut description__ = None;
                 let mut binary__ = None;
-                let mut source_bind_app__ = None;
+                let mut public__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1049,11 +1049,11 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             }
                             binary__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SourceBindApp => {
-                            if source_bind_app__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sourceBindApp"));
+                        GeneratedField::Public => {
+                            if public__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("public"));
                             }
-                            source_bind_app__ = Some(map.next_value()?);
+                            public__ = Some(map.next_value()?);
                         }
                     }
                 }
@@ -1065,7 +1065,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     binary: binary__,
-                    source_bind_app: source_bind_app__,
+                    public: public__.unwrap_or_default(),
                 })
             }
         }
@@ -1083,7 +1083,7 @@ impl serde::Serialize for AppPackageBinary {
         if !self.name.is_empty() {
             len += 1;
         }
-        if self.size != 0 {
+        if self.size_byte != 0 {
             len += 1;
         }
         if !self.public_url.is_empty() {
@@ -1093,8 +1093,8 @@ impl serde::Serialize for AppPackageBinary {
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
-        if self.size != 0 {
-            struct_ser.serialize_field("size", ToString::to_string(&self.size).as_str())?;
+        if self.size_byte != 0 {
+            struct_ser.serialize_field("sizeByte", ToString::to_string(&self.size_byte).as_str())?;
         }
         if !self.public_url.is_empty() {
             struct_ser.serialize_field("publicUrl", &self.public_url)?;
@@ -1110,14 +1110,14 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
     {
         const FIELDS: &[&str] = &[
             "name",
-            "size",
+            "sizeByte",
             "publicUrl",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Name,
-            Size,
+            SizeByte,
             PublicUrl,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -1141,7 +1141,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                     {
                         match value {
                             "name" => Ok(GeneratedField::Name),
-                            "size" => Ok(GeneratedField::Size),
+                            "sizeByte" => Ok(GeneratedField::SizeByte),
                             "publicUrl" => Ok(GeneratedField::PublicUrl),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -1163,7 +1163,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut name__ = None;
-                let mut size__ = None;
+                let mut size_byte__ = None;
                 let mut public_url__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -1173,11 +1173,11 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             }
                             name__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Size => {
-                            if size__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("size"));
+                        GeneratedField::SizeByte => {
+                            if size_byte__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeByte"));
                             }
-                            size__ = Some(
+                            size_byte__ = Some(
                                 map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
                             );
                         }
@@ -1191,7 +1191,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                 }
                 Ok(AppPackageBinary {
                     name: name__.unwrap_or_default(),
-                    size: size__.unwrap_or_default(),
+                    size_byte: size_byte__.unwrap_or_default(),
                     public_url: public_url__.unwrap_or_default(),
                 })
             }

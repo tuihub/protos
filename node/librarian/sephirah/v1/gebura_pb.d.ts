@@ -87,7 +87,7 @@ export namespace UpdateAppResponse {
   }
 }
 
-export class ListAppRequest extends jspb.Message {
+export class ListAppsRequest extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
@@ -112,16 +112,16 @@ export class ListAppRequest extends jspb.Message {
   setContainDetails(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAppRequest): ListAppRequest.AsObject;
+  toObject(includeInstance?: boolean): ListAppsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAppsRequest): ListAppsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAppRequest;
-  static deserializeBinaryFromReader(message: ListAppRequest, reader: jspb.BinaryReader): ListAppRequest;
+  static serializeBinaryToWriter(message: ListAppsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAppsRequest;
+  static deserializeBinaryFromReader(message: ListAppsRequest, reader: jspb.BinaryReader): ListAppsRequest;
 }
 
-export namespace ListAppRequest {
+export namespace ListAppsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     sourceFilterList: Array<librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]>,
@@ -131,169 +131,31 @@ export namespace ListAppRequest {
   }
 }
 
-export class ListAppResponse extends jspb.Message {
+export class ListAppsResponse extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
-  clearAppListList(): void;
-  getAppListList(): Array<librarian_v1_common_pb.App>;
-  setAppListList(value: Array<librarian_v1_common_pb.App>): void;
-  addAppList(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+  clearAppsList(): void;
+  getAppsList(): Array<librarian_v1_common_pb.App>;
+  setAppsList(value: Array<librarian_v1_common_pb.App>): void;
+  addApps(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAppResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAppResponse): ListAppResponse.AsObject;
+  toObject(includeInstance?: boolean): ListAppsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAppsResponse): ListAppsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAppResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAppResponse;
-  static deserializeBinaryFromReader(message: ListAppResponse, reader: jspb.BinaryReader): ListAppResponse;
+  static serializeBinaryToWriter(message: ListAppsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAppsResponse;
+  static deserializeBinaryFromReader(message: ListAppsResponse, reader: jspb.BinaryReader): ListAppsResponse;
 }
 
-export namespace ListAppResponse {
+export namespace ListAppsResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    appListList: Array<librarian_v1_common_pb.App.AsObject>,
-  }
-}
-
-export class BindAppRequest extends jspb.Message {
-  hasInternalAppId(): boolean;
-  clearInternalAppId(): void;
-  getInternalAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setInternalAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  hasBindAppId(): boolean;
-  clearBindAppId(): void;
-  getBindAppId(): librarian_v1_common_pb.AppID | undefined;
-  setBindAppId(value?: librarian_v1_common_pb.AppID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BindAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: BindAppRequest): BindAppRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BindAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BindAppRequest;
-  static deserializeBinaryFromReader(message: BindAppRequest, reader: jspb.BinaryReader): BindAppRequest;
-}
-
-export namespace BindAppRequest {
-  export type AsObject = {
-    internalAppId?: librarian_v1_common_pb.InternalID.AsObject,
-    bindAppId?: librarian_v1_common_pb.AppID.AsObject,
-  }
-}
-
-export class BindAppResponse extends jspb.Message {
-  hasBindAppId(): boolean;
-  clearBindAppId(): void;
-  getBindAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setBindAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BindAppResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BindAppResponse): BindAppResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BindAppResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BindAppResponse;
-  static deserializeBinaryFromReader(message: BindAppResponse, reader: jspb.BinaryReader): BindAppResponse;
-}
-
-export namespace BindAppResponse {
-  export type AsObject = {
-    bindAppId?: librarian_v1_common_pb.InternalID.AsObject,
-  }
-}
-
-export class UnBindAppRequest extends jspb.Message {
-  hasInternalAppId(): boolean;
-  clearInternalAppId(): void;
-  getInternalAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setInternalAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  hasBindAppId(): boolean;
-  clearBindAppId(): void;
-  getBindAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setBindAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UnBindAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UnBindAppRequest): UnBindAppRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UnBindAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UnBindAppRequest;
-  static deserializeBinaryFromReader(message: UnBindAppRequest, reader: jspb.BinaryReader): UnBindAppRequest;
-}
-
-export namespace UnBindAppRequest {
-  export type AsObject = {
-    internalAppId?: librarian_v1_common_pb.InternalID.AsObject,
-    bindAppId?: librarian_v1_common_pb.InternalID.AsObject,
-  }
-}
-
-export class UnBindAppResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UnBindAppResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UnBindAppResponse): UnBindAppResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UnBindAppResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UnBindAppResponse;
-  static deserializeBinaryFromReader(message: UnBindAppResponse, reader: jspb.BinaryReader): UnBindAppResponse;
-}
-
-export namespace UnBindAppResponse {
-  export type AsObject = {
-  }
-}
-
-export class ListBindAppRequest extends jspb.Message {
-  hasAppId(): boolean;
-  clearAppId(): void;
-  getAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListBindAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListBindAppRequest): ListBindAppRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListBindAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListBindAppRequest;
-  static deserializeBinaryFromReader(message: ListBindAppRequest, reader: jspb.BinaryReader): ListBindAppRequest;
-}
-
-export namespace ListBindAppRequest {
-  export type AsObject = {
-    appId?: librarian_v1_common_pb.InternalID.AsObject,
-  }
-}
-
-export class ListBindAppResponse extends jspb.Message {
-  clearAppListList(): void;
-  getAppListList(): Array<librarian_v1_common_pb.App>;
-  setAppListList(value: Array<librarian_v1_common_pb.App>): void;
-  addAppList(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListBindAppResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListBindAppResponse): ListBindAppResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListBindAppResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListBindAppResponse;
-  static deserializeBinaryFromReader(message: ListBindAppResponse, reader: jspb.BinaryReader): ListBindAppResponse;
-}
-
-export namespace ListBindAppResponse {
-  export type AsObject = {
-    appListList: Array<librarian_v1_common_pb.App.AsObject>,
+    appsList: Array<librarian_v1_common_pb.App.AsObject>,
   }
 }
 
@@ -332,6 +194,224 @@ export class RefreshAppResponse extends jspb.Message {
 
 export namespace RefreshAppResponse {
   export type AsObject = {
+  }
+}
+
+export class MergeAppsRequest extends jspb.Message {
+  hasBase(): boolean;
+  clearBase(): void;
+  getBase(): librarian_v1_common_pb.App | undefined;
+  setBase(value?: librarian_v1_common_pb.App): void;
+
+  hasMerged(): boolean;
+  clearMerged(): void;
+  getMerged(): librarian_v1_common_pb.InternalID | undefined;
+  setMerged(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MergeAppsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: MergeAppsRequest): MergeAppsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MergeAppsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MergeAppsRequest;
+  static deserializeBinaryFromReader(message: MergeAppsRequest, reader: jspb.BinaryReader): MergeAppsRequest;
+}
+
+export namespace MergeAppsRequest {
+  export type AsObject = {
+    base?: librarian_v1_common_pb.App.AsObject,
+    merged?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class MergeAppsResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MergeAppsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: MergeAppsResponse): MergeAppsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MergeAppsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MergeAppsResponse;
+  static deserializeBinaryFromReader(message: MergeAppsResponse, reader: jspb.BinaryReader): MergeAppsResponse;
+}
+
+export namespace MergeAppsResponse {
+  export type AsObject = {
+  }
+}
+
+export class SearchAppsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  getKeywords(): string;
+  setKeywords(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchAppsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchAppsRequest): SearchAppsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchAppsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchAppsRequest;
+  static deserializeBinaryFromReader(message: SearchAppsRequest, reader: jspb.BinaryReader): SearchAppsRequest;
+}
+
+export namespace SearchAppsRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    keywords: string,
+  }
+}
+
+export class SearchAppsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearAppsList(): void;
+  getAppsList(): Array<librarian_v1_common_pb.App>;
+  setAppsList(value: Array<librarian_v1_common_pb.App>): void;
+  addApps(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchAppsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchAppsResponse): SearchAppsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchAppsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchAppsResponse;
+  static deserializeBinaryFromReader(message: SearchAppsResponse, reader: jspb.BinaryReader): SearchAppsResponse;
+}
+
+export namespace SearchAppsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    appsList: Array<librarian_v1_common_pb.App.AsObject>,
+  }
+}
+
+export class GetBindAppsRequest extends jspb.Message {
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBindAppsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBindAppsRequest): GetBindAppsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBindAppsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBindAppsRequest;
+  static deserializeBinaryFromReader(message: GetBindAppsRequest, reader: jspb.BinaryReader): GetBindAppsRequest;
+}
+
+export namespace GetBindAppsRequest {
+  export type AsObject = {
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class GetBindAppsResponse extends jspb.Message {
+  clearAppsList(): void;
+  getAppsList(): Array<librarian_v1_common_pb.App>;
+  setAppsList(value: Array<librarian_v1_common_pb.App>): void;
+  addApps(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetBindAppsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetBindAppsResponse): GetBindAppsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetBindAppsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetBindAppsResponse;
+  static deserializeBinaryFromReader(message: GetBindAppsResponse, reader: jspb.BinaryReader): GetBindAppsResponse;
+}
+
+export namespace GetBindAppsResponse {
+  export type AsObject = {
+    appsList: Array<librarian_v1_common_pb.App.AsObject>,
+  }
+}
+
+export class PurchaseAppRequest extends jspb.Message {
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PurchaseAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PurchaseAppRequest): PurchaseAppRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PurchaseAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PurchaseAppRequest;
+  static deserializeBinaryFromReader(message: PurchaseAppRequest, reader: jspb.BinaryReader): PurchaseAppRequest;
+}
+
+export namespace PurchaseAppRequest {
+  export type AsObject = {
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class PurchaseAppResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PurchaseAppResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PurchaseAppResponse): PurchaseAppResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PurchaseAppResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PurchaseAppResponse;
+  static deserializeBinaryFromReader(message: PurchaseAppResponse, reader: jspb.BinaryReader): PurchaseAppResponse;
+}
+
+export namespace PurchaseAppResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetAppLibraryRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppLibraryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppLibraryRequest): GetAppLibraryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppLibraryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppLibraryRequest;
+  static deserializeBinaryFromReader(message: GetAppLibraryRequest, reader: jspb.BinaryReader): GetAppLibraryRequest;
+}
+
+export namespace GetAppLibraryRequest {
+  export type AsObject = {
+  }
+}
+
+export class GetAppLibraryResponse extends jspb.Message {
+  clearAppIdsList(): void;
+  getAppIdsList(): Array<librarian_v1_common_pb.InternalID>;
+  setAppIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addAppIds(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppLibraryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppLibraryResponse): GetAppLibraryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppLibraryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppLibraryResponse;
+  static deserializeBinaryFromReader(message: GetAppLibraryResponse, reader: jspb.BinaryReader): GetAppLibraryResponse;
+}
+
+export namespace GetAppLibraryResponse {
+  export type AsObject = {
+    appIdsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 
@@ -417,7 +497,7 @@ export namespace UpdateAppPackageResponse {
   }
 }
 
-export class ListAppPackageRequest extends jspb.Message {
+export class ListAppPackagesRequest extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
@@ -433,89 +513,89 @@ export class ListAppPackageRequest extends jspb.Message {
   setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
-  clearBindAppIdFilterList(): void;
-  getBindAppIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
-  setBindAppIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
-  addBindAppIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+  clearAssignedAppIdFilterList(): void;
+  getAssignedAppIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setAssignedAppIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addAssignedAppIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAppPackageRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAppPackageRequest): ListAppPackageRequest.AsObject;
+  toObject(includeInstance?: boolean): ListAppPackagesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAppPackagesRequest): ListAppPackagesRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAppPackageRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAppPackageRequest;
-  static deserializeBinaryFromReader(message: ListAppPackageRequest, reader: jspb.BinaryReader): ListAppPackageRequest;
+  static serializeBinaryToWriter(message: ListAppPackagesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAppPackagesRequest;
+  static deserializeBinaryFromReader(message: ListAppPackagesRequest, reader: jspb.BinaryReader): ListAppPackagesRequest;
 }
 
-export namespace ListAppPackageRequest {
+export namespace ListAppPackagesRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     sourceFilterList: Array<librarian_v1_common_pb.AppPackageSourceMap[keyof librarian_v1_common_pb.AppPackageSourceMap]>,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    bindAppIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    assignedAppIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 
-export class ListAppPackageResponse extends jspb.Message {
+export class ListAppPackagesResponse extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
-  clearAppPackageListList(): void;
-  getAppPackageListList(): Array<librarian_v1_common_pb.AppPackage>;
-  setAppPackageListList(value: Array<librarian_v1_common_pb.AppPackage>): void;
-  addAppPackageList(value?: librarian_v1_common_pb.AppPackage, index?: number): librarian_v1_common_pb.AppPackage;
+  clearAppPackagesList(): void;
+  getAppPackagesList(): Array<librarian_v1_common_pb.AppPackage>;
+  setAppPackagesList(value: Array<librarian_v1_common_pb.AppPackage>): void;
+  addAppPackages(value?: librarian_v1_common_pb.AppPackage, index?: number): librarian_v1_common_pb.AppPackage;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListAppPackageResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListAppPackageResponse): ListAppPackageResponse.AsObject;
+  toObject(includeInstance?: boolean): ListAppPackagesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAppPackagesResponse): ListAppPackagesResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListAppPackageResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListAppPackageResponse;
-  static deserializeBinaryFromReader(message: ListAppPackageResponse, reader: jspb.BinaryReader): ListAppPackageResponse;
+  static serializeBinaryToWriter(message: ListAppPackagesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAppPackagesResponse;
+  static deserializeBinaryFromReader(message: ListAppPackagesResponse, reader: jspb.BinaryReader): ListAppPackagesResponse;
 }
 
-export namespace ListAppPackageResponse {
+export namespace ListAppPackagesResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    appPackageListList: Array<librarian_v1_common_pb.AppPackage.AsObject>,
+    appPackagesList: Array<librarian_v1_common_pb.AppPackage.AsObject>,
   }
 }
 
-export class ReportAppPackageRequest extends jspb.Message {
-  getAppPackageListMap(): jspb.Map<string, librarian_v1_common_pb.AppPackageBinary>;
-  clearAppPackageListMap(): void;
+export class ReportAppPackagesRequest extends jspb.Message {
+  getAppPackagesMap(): jspb.Map<string, librarian_v1_common_pb.AppPackageBinary>;
+  clearAppPackagesMap(): void;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ReportAppPackageRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ReportAppPackageRequest): ReportAppPackageRequest.AsObject;
+  toObject(includeInstance?: boolean): ReportAppPackagesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportAppPackagesRequest): ReportAppPackagesRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ReportAppPackageRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ReportAppPackageRequest;
-  static deserializeBinaryFromReader(message: ReportAppPackageRequest, reader: jspb.BinaryReader): ReportAppPackageRequest;
+  static serializeBinaryToWriter(message: ReportAppPackagesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportAppPackagesRequest;
+  static deserializeBinaryFromReader(message: ReportAppPackagesRequest, reader: jspb.BinaryReader): ReportAppPackagesRequest;
 }
 
-export namespace ReportAppPackageRequest {
+export namespace ReportAppPackagesRequest {
   export type AsObject = {
-    appPackageListMap: Array<[string, librarian_v1_common_pb.AppPackageBinary.AsObject]>,
+    appPackagesMap: Array<[string, librarian_v1_common_pb.AppPackageBinary.AsObject]>,
   }
 }
 
-export class ReportAppPackageResponse extends jspb.Message {
+export class ReportAppPackagesResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ReportAppPackageResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ReportAppPackageResponse): ReportAppPackageResponse.AsObject;
+  toObject(includeInstance?: boolean): ReportAppPackagesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ReportAppPackagesResponse): ReportAppPackagesResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ReportAppPackageResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ReportAppPackageResponse;
-  static deserializeBinaryFromReader(message: ReportAppPackageResponse, reader: jspb.BinaryReader): ReportAppPackageResponse;
+  static serializeBinaryToWriter(message: ReportAppPackagesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReportAppPackagesResponse;
+  static deserializeBinaryFromReader(message: ReportAppPackagesResponse, reader: jspb.BinaryReader): ReportAppPackagesResponse;
 }
 
-export namespace ReportAppPackageResponse {
+export namespace ReportAppPackagesResponse {
   export type AsObject = {
   }
 }
