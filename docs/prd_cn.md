@@ -164,11 +164,11 @@ sequenceDiagram
 `InternalApp`和`ExternalApp`都各自存入数据库中，然后通过自动或手动的方式进行绑定（类似于前文中用户与账户的关系）。
 对于拥有绑定关系的`App`，客户端需要合并为同一个`App`显示。在合并时，通过固定优先级或用户自定义优先级的方式选择显示哪个来源的App的信息
 
-一个`ExternalApp`最多绑定一个`InternalApp`，一个`InternalApp`每个平台最多绑定一个`ExternalApp`。
+一个`ExternalApp`最多且**必须**绑定一个`InternalApp`，一个`InternalApp`每个平台最多绑定一个`ExternalApp`。
 
 用户权限：
 - `ExternalApp`的信息禁止编辑
-- `Normal`和`Sentinel`可以通过其他操作触发系统的自动行为
+- `Normal`和`Sentinel`可以通过一些操作触发系统的自动行为
 - `InternalApp`的编辑、绑定关系的编辑仅限`Admin`
 
 ### 游戏文件（AppPackage）

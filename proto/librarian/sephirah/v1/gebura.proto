@@ -23,7 +23,7 @@ message UpdateAppRequest {
 
 message UpdateAppResponse {}
 
-message ListAppRequest {
+message ListAppsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.AppSource source_filter = 2;
   repeated librarian.v1.AppType type_filter = 3;
@@ -31,40 +31,56 @@ message ListAppRequest {
   bool contain_details = 5;
 }
 
-message ListAppResponse {
+message ListAppsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.App app_list = 2;
-}
-
-message BindAppRequest {
-  librarian.v1.InternalID internal_app_id = 1;
-  librarian.v1.AppID bind_app_id = 2;
-}
-
-message BindAppResponse {
-  librarian.v1.InternalID bind_app_id = 1;
-}
-
-message UnBindAppRequest {
-  librarian.v1.InternalID internal_app_id = 1;
-  librarian.v1.InternalID bind_app_id = 2;
-}
-
-message UnBindAppResponse {}
-
-message ListBindAppRequest {
-  librarian.v1.InternalID app_id = 1;
-}
-
-message ListBindAppResponse {
-  repeated librarian.v1.App app_list = 1;
+  repeated librarian.v1.App apps = 2;
 }
 
 message RefreshAppRequest {
+  // Must not APP_SOURCE_INTERNAL
   librarian.v1.InternalID app_id = 1;
 }
 
 message RefreshAppResponse {}
+
+message MergeAppsRequest {
+  // source must be APP_SOURCE_INTERNAL
+  librarian.v1.App base = 1;
+  // Must be APP_SOURCE_INTERNAL.
+  // The InternalID will be dropped after merge.
+  // Other apps bind to this app will rebind to base.
+  librarian.v1.InternalID merged = 2;
+}
+
+message MergeAppsResponse {}
+
+message SearchAppsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  string keywords = 2;
+}
+message SearchAppsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.App apps = 2;
+}
+
+message GetBindAppsRequest {
+  librarian.v1.InternalID app_id = 1;
+}
+
+message GetBindAppsResponse {
+  repeated librarian.v1.App apps = 1;
+}
+
+message PurchaseAppRequest {
+  librarian.v1.InternalID app_id = 1;
+}
+
+message PurchaseAppResponse {}
+
+message GetAppLibraryRequest {}
+message GetAppLibraryResponse {
+  repeated librarian.v1.InternalID app_ids = 1;
+}
 
 message CreateAppPackageRequest {
   librarian.v1.AppPackage app_package = 1;
@@ -80,25 +96,26 @@ message UpdateAppPackageRequest {
 
 message UpdateAppPackageResponse {}
 
-message ListAppPackageRequest {
+message ListAppPackagesRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.AppPackageSource source_filter = 2;
   repeated librarian.v1.InternalID id_filter = 3;
-  repeated librarian.v1.InternalID bind_app_id_filter = 4;
+  repeated librarian.v1.InternalID assigned_app_id_filter = 4;
 }
 
-message ListAppPackageResponse {
+message ListAppPackagesResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.AppPackage app_package_list = 2;
+  repeated librarian.v1.AppPackage app_packages = 2;
 }
 
-message ReportAppPackageRequest {
-  map<string, librarian.v1.AppPackageBinary> app_package_list = 1;
+message ReportAppPackagesRequest {
+  map<string, librarian.v1.AppPackageBinary> app_packages = 1;
 }
 
-message ReportAppPackageResponse {}
+message ReportAppPackagesResponse {}
 
 message AssignAppPackageRequest {
+  // Must be APP_SOURCE_INTERNAL
   librarian.v1.InternalID app_id = 1;
   librarian.v1.InternalID app_package_id = 2;
 }

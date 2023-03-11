@@ -86,7 +86,8 @@ message AppPackage {
   string name = 5;
   string description = 6;
   AppPackageBinary binary = 7;
-  App source_bind_app = 8;
+  // false by default
+  bool public = 8;
 }
 
 enum AppPackageSource {
@@ -97,7 +98,7 @@ enum AppPackageSource {
 
 message AppPackageBinary {
   string name = 1;
-  int64 size = 2;
+  int64 size_byte = 2;
   string public_url = 3;
 }
 

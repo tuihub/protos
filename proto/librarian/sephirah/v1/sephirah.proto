@@ -57,32 +57,34 @@ service LibrarianSephirahService {
   rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);
   // `Gebura` `Admin`
   rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
-  // `Gebura` `Normal`
-  rpc ListApp(ListAppRequest) returns (ListAppResponse);
-
-  // `Gebura` `Admin` Bind two app
-  // Create (src_id)<-[Equal]->(dst_id)
-  rpc BindApp(BindAppRequest) returns (BindAppResponse);
-  // `Gebura` `Admin` Unbind two app
-  // Delete (src_id)<-[Equal]->(dst_id)
-  rpc UnBindApp(UnBindAppRequest) returns (UnBindAppResponse);
+  // `Gebura` `Admin` Used to manage apps
+  rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
   // `Gebura` `Admin` Submit an asynchronous update request
   rpc RefreshApp(RefreshAppRequest) returns (RefreshAppResponse);
-  // `Gebura` `Normal` List bind app
-  rpc ListBindApp(ListBindAppRequest) returns (ListBindAppResponse);
+  // `Gebura` `Admin` Merge two apps
+  rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);
 
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
+  rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
+  // `Gebura` `Normal` Get full information of required app
+  rpc GetBindApps(GetBindAppsRequest) returns (GetBindAppsResponse);
+  // `Gebura` `Normal`
+  rpc PurchaseApp(PurchaseAppRequest) returns (PurchaseAppResponse);
+  // `Gebura` `Normal` Get the entire library
+  rpc GetAppLibrary(GetAppLibraryRequest) returns (GetAppLibraryResponse);
+
+  // `Gebura` `Normal`
   rpc CreateAppPackage(CreateAppPackageRequest) returns (CreateAppPackageResponse);
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
   rpc UpdateAppPackage(UpdateAppPackageRequest) returns (UpdateAppPackageResponse);
   // `Gebura` `Normal`
-  rpc ListAppPackage(ListAppPackageRequest) returns (ListAppPackageResponse);
-  // `Gebura` `Admin`
+  rpc ListAppPackages(ListAppPackagesRequest) returns (ListAppPackagesResponse);
+  // `Gebura` `Normal`
   rpc AssignAppPackage(AssignAppPackageRequest) returns (AssignAppPackageResponse);
-  // `Gebura` `Admin`
+  // `Gebura` `Normal`
   rpc UnAssignAppPackage(UnAssignAppPackageRequest) returns (UnAssignAppPackageResponse);
   // `Gebura` `Sentinel`
-  rpc ReportAppPackage(stream ReportAppPackageRequest) returns (stream ReportAppPackageResponse);
+  rpc ReportAppPackages(stream ReportAppPackagesRequest) returns (stream ReportAppPackagesResponse);
 
   // `Gebura` `Normal`
   rpc UploadGameSaveFile(UploadGameSaveFileRequest) returns (UploadGameSaveFileResponse);
