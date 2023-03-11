@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>TuiHub.Protos</AssemblyName>
     <AssemblyTitle>TuiHub.Protos</AssemblyTitle>
-    <VersionPrefix>0.2.10</VersionPrefix>
+    <VersionPrefix>0.2.11</VersionPrefix>
     <PackageProjectUrl>https://github.com/TuiHub/Protos</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
