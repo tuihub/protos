@@ -1,0 +1,16 @@
+{
+  "$schema": "https://tuihub.github.io/Protos/schemas/savefile/v1.json",
+  "platform": "windows",
+  "entries": [
+    {
+      "id": 1,
+      "pathMode": "absolute",
+      "path": "//path/to/folder/"
+    },
+    {
+      "Id": 2,
+      "pathMode": "document",
+      "Path": "./path/to/file"
+    }
+  ]
+}

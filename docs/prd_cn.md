@@ -180,10 +180,10 @@ sequenceDiagram
 
 `AppPackage`存储了一个游戏文件的信息，这些信息指向一个具体的二进制文件或“最新版本”，
 但系统内并不会存储这个文件，所以无法保证文件的可访问性。  
-`App`与`AppPackage`是一对多的关系，每个`AppPackage`最多从属于一个`App`，多个`AppPackage`表示一个`App`的具有多个版本
+`App`与`AppPackage`是一对多的关系，每个`AppPackage`最多从属于一个`App`，多个`AppPackage`表示一个`App`的多个版本
 
 用户权限：
-- 所有用户均可拥有自己的`AppPackage`，可以绑定到任意一个`InternalApp`上
+- 所有用户均可拥有自己的`AppPackage`，可以绑定到任意一个`InternalApp`上，可以选择公开给其他用户
 - `Admin`和`Normal`能够管理自己创建的`Sentinel`拥有的`AppPackage`
 - `Admin`和`Normal`具有同等权限，不可管理他人的`AppPackage`
 
@@ -193,7 +193,29 @@ sequenceDiagram
 - 服务端在`App`及`AppPackage`维度上统计总时长、最后启动时间
 
 用户权限：
-- `Admin`和`Normal`能够增加或删除自己的`AppPackageRunTime`，不能修改
+- `Admin`和`Normal`能够增加或删除自己的`AppPackageRunTime`，不能修改，可以选择公开给其他用户
+
+### 游戏存档配置文件（AppPackageSaveFileConfig）
+
+- 用户在客户端生成配置文件
+- `AppPackage`与`AppPackageSaveFileConfig`是一对多的关系
+- `AppPackageSaveFileConfig`在创建时必须指定所关联的`AppPackage`并且不能修改（客户端可以为复用配置文件提供便利）
+
+用户权限：
+- `Admin`和`Normal`能够创建自己的`AppPackageSaveFileConfig`，可以选择公开给其他用户
+
+配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/Protos/schemas/savefile/v1.json)
+
+- 配置文件必须声明schema
+- 配置文件中不应出现schema定义以外的值
+- 每个`entrie`包含了一个特定路径的配置，通常情况下仅需要一个
+  - `pathMode`路径模式否则必须为相对路径，相对路径的起始路径由具体设置决定
+    - `absolute`路径必须为绝对路径
+    - `game`路径必须为相对路径，以用户设置的游戏可执行文件所在路径为起始（该路径由客户端持久化存储，不是本配置文件的一部分）
+    - `document`路径必须为相对路径，以用户文档目录为起始
+    - `profile`路径必须为相对路径，以用户主目录为起始
+  - `path`路径信息，内容必须为有效的路径（windows平台下遵循msys的路径格式），若为文件则以文件名结尾，若为文件夹则以`/`结尾
+  - `id`唯一标识符，生成的备份文件中应当有一个同名文件夹，文件夹内容为依据本`entrie`定义应当备份的文件
 
 ### 游戏存档（AppPackageSaveFile）
 
@@ -212,6 +234,19 @@ sequenceDiagram
   - 支持下载还原
 - 固定存档
   - 支持设置与下载还原
+
+存档生成与还原规则：
+
+- 文件
+  - 备份文件必须是一个有效的zip文件
+  - 备份文件中必须有一个名为`tuihub-savefile.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/Protos/schemas/savefile/v1-example.json)
+  - 备份文件中的其他内容必须遵循配置文件的设置
+- 备份
+  - 依据用户预先设置的配置文件生成备份
+  - 不应出现除读取之外的任何io操作
+- 还原
+  - 依据待还原文件中的配置文件执行
+  - 当出现无法修复的错误导致无法完成还原时应当自动回滚
 
 #### 待定内容
 

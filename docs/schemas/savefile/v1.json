@@ -1,0 +1,33 @@
+{
+    "$id": "https://github.com/TuiHub/Protos/schemas/savefile/v1",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Save File Configs",
+    "properties": {
+        "platform": {
+            "type": "string",
+            "enum": ["windows"]
+        },
+        "entries": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "number"
+                        },
+                        "pathMode": {
+                            "type": "string",
+                            "enum": ["absolute", "game", "document", "profile"]
+                        },
+                        "path": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ],
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    }
+}
