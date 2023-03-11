@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.11](https://github.com/TuiHub/Protos/compare/v0.2.10...v0.2.11) (2023-03-11)
+
+
+### Bug Fixes
+
+* update Gebura proto ([0268ebc](https://github.com/TuiHub/Protos/commit/0268ebc6d6da87c301dc631e1787752d0ea1631f))
+
 ## [0.2.10](https://github.com/TuiHub/Protos/compare/v0.2.9...v0.2.10) (2023-03-04)
 
 
