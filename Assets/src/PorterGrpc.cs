@@ -13,7 +13,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
   /// The main role of Porter is to encapsulate input&amp;output operations.
   /// In Porter's model:
   /// - The data interface is divided into four types: feed, db, wiki, and data.
-  /// Any input and output can be assigned to a specific type.
+  ///Any input and output can be assigned to a specific type.
   /// 1. Feed is the most structured type and basically refers to the RSS 2.0
   /// 2. DB can be structured but the content requires additional processing
   /// 3. Wiki cannot be structured
