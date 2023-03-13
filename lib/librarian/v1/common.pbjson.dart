@@ -75,6 +75,17 @@ const PagingResponse$json = const {
 
 /// Descriptor for `PagingResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode('Cg5QYWdpbmdSZXNwb25zZRIdCgp0b3RhbF9zaXplGAEgASgDUgl0b3RhbFNpemU=');
+@$core.Deprecated('Use timeRangeDescriptor instead')
+const TimeRange$json = const {
+  '1': 'TimeRange',
+  '2': const [
+    const {'1': 'start_time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
+    const {'1': 'duration', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'duration'},
+  ],
+};
+
+/// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode('CglUaW1lUmFuZ2USOQoKc3RhcnRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXN0YXJ0VGltZRI1CghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIIZHVyYXRpb24=');
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = const {
   '1': 'InternalID',

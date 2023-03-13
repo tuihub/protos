@@ -2,6 +2,7 @@
 // file: librarian/v1/common.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class PagingRequest extends jspb.Message {
@@ -45,6 +46,34 @@ export class PagingResponse extends jspb.Message {
 export namespace PagingResponse {
   export type AsObject = {
     totalSize: number,
+  }
+}
+
+export class TimeRange extends jspb.Message {
+  hasStartTime(): boolean;
+  clearStartTime(): void;
+  getStartTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setStartTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasDuration(): boolean;
+  clearDuration(): void;
+  getDuration(): google_protobuf_duration_pb.Duration | undefined;
+  setDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeRange.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeRange): TimeRange.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TimeRange, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeRange;
+  static deserializeBinaryFromReader(message: TimeRange, reader: jspb.BinaryReader): TimeRange;
+}
+
+export namespace TimeRange {
+  export type AsObject = {
+    startTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    duration?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

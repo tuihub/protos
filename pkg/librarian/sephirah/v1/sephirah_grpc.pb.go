@@ -53,8 +53,9 @@ const (
 	LibrarianSephirahService_ListGameSaveFile_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile"
 	LibrarianSephirahService_CreateFeedConfig_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig"
 	LibrarianSephirahService_UpdateFeedConfig_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig"
-	LibrarianSephirahService_ListFeeds_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds"
+	LibrarianSephirahService_ListFeedConfigs_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs"
 	LibrarianSephirahService_ListFeedItems_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems"
+	LibrarianSephirahService_GroupFeedItems_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/GroupFeedItems"
 	LibrarianSephirahService_GetFeedItem_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem"
 	LibrarianSephirahService_GetBatchFeedItems_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems"
 )
@@ -135,9 +136,11 @@ type LibrarianSephirahServiceClient interface {
 	// `Yesod` `Normal`
 	UpdateFeedConfig(ctx context.Context, in *UpdateFeedConfigRequest, opts ...grpc.CallOption) (*UpdateFeedConfigResponse, error)
 	// `Yesod` `Normal`
-	ListFeeds(ctx context.Context, in *ListFeedsRequest, opts ...grpc.CallOption) (*ListFeedsResponse, error)
+	ListFeedConfigs(ctx context.Context, in *ListFeedConfigsRequest, opts ...grpc.CallOption) (*ListFeedConfigsResponse, error)
 	// `Yesod` `Normal`
 	ListFeedItems(ctx context.Context, in *ListFeedItemsRequest, opts ...grpc.CallOption) (*ListFeedItemsResponse, error)
+	// `Yesod` `Normal`
+	GroupFeedItems(ctx context.Context, in *GroupFeedItemsRequest, opts ...grpc.CallOption) (*GroupFeedItemsResponse, error)
 	// `Yesod` `Normal`
 	GetFeedItem(ctx context.Context, in *GetFeedItemRequest, opts ...grpc.CallOption) (*GetFeedItemResponse, error)
 	// `Yesod` `Normal`
@@ -568,9 +571,9 @@ func (c *librarianSephirahServiceClient) UpdateFeedConfig(ctx context.Context, i
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ListFeeds(ctx context.Context, in *ListFeedsRequest, opts ...grpc.CallOption) (*ListFeedsResponse, error) {
-	out := new(ListFeedsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeeds_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ListFeedConfigs(ctx context.Context, in *ListFeedConfigsRequest, opts ...grpc.CallOption) (*ListFeedConfigsResponse, error) {
+	out := new(ListFeedConfigsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeedConfigs_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -580,6 +583,15 @@ func (c *librarianSephirahServiceClient) ListFeeds(ctx context.Context, in *List
 func (c *librarianSephirahServiceClient) ListFeedItems(ctx context.Context, in *ListFeedItemsRequest, opts ...grpc.CallOption) (*ListFeedItemsResponse, error) {
 	out := new(ListFeedItemsResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeedItems_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GroupFeedItems(ctx context.Context, in *GroupFeedItemsRequest, opts ...grpc.CallOption) (*GroupFeedItemsResponse, error) {
+	out := new(GroupFeedItemsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GroupFeedItems_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -680,9 +692,11 @@ type LibrarianSephirahServiceServer interface {
 	// `Yesod` `Normal`
 	UpdateFeedConfig(context.Context, *UpdateFeedConfigRequest) (*UpdateFeedConfigResponse, error)
 	// `Yesod` `Normal`
-	ListFeeds(context.Context, *ListFeedsRequest) (*ListFeedsResponse, error)
+	ListFeedConfigs(context.Context, *ListFeedConfigsRequest) (*ListFeedConfigsResponse, error)
 	// `Yesod` `Normal`
 	ListFeedItems(context.Context, *ListFeedItemsRequest) (*ListFeedItemsResponse, error)
+	// `Yesod` `Normal`
+	GroupFeedItems(context.Context, *GroupFeedItemsRequest) (*GroupFeedItemsResponse, error)
 	// `Yesod` `Normal`
 	GetFeedItem(context.Context, *GetFeedItemRequest) (*GetFeedItemResponse, error)
 	// `Yesod` `Normal`
@@ -796,11 +810,14 @@ func (UnimplementedLibrarianSephirahServiceServer) CreateFeedConfig(context.Cont
 func (UnimplementedLibrarianSephirahServiceServer) UpdateFeedConfig(context.Context, *UpdateFeedConfigRequest) (*UpdateFeedConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeedConfig not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ListFeeds(context.Context, *ListFeedsRequest) (*ListFeedsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeeds not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListFeedConfigs(context.Context, *ListFeedConfigsRequest) (*ListFeedConfigsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeedConfigs not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListFeedItems(context.Context, *ListFeedItemsRequest) (*ListFeedItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFeedItems not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GroupFeedItems(context.Context, *GroupFeedItemsRequest) (*GroupFeedItemsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GroupFeedItems not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetFeedItem(context.Context, *GetFeedItemRequest) (*GetFeedItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeedItem not implemented")
@@ -1474,20 +1491,20 @@ func _LibrarianSephirahService_UpdateFeedConfig_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ListFeeds_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeedsRequest)
+func _LibrarianSephirahService_ListFeedConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeedConfigsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListFeeds(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListFeedConfigs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListFeeds_FullMethodName,
+		FullMethod: LibrarianSephirahService_ListFeedConfigs_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListFeeds(ctx, req.(*ListFeedsRequest))
+		return srv.(LibrarianSephirahServiceServer).ListFeedConfigs(ctx, req.(*ListFeedConfigsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1506,6 +1523,24 @@ func _LibrarianSephirahService_ListFeedItems_Handler(srv interface{}, ctx contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).ListFeedItems(ctx, req.(*ListFeedItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GroupFeedItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GroupFeedItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GroupFeedItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GroupFeedItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GroupFeedItems(ctx, req.(*GroupFeedItemsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1670,12 +1705,16 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_UpdateFeedConfig_Handler,
 		},
 		{
-			MethodName: "ListFeeds",
-			Handler:    _LibrarianSephirahService_ListFeeds_Handler,
+			MethodName: "ListFeedConfigs",
+			Handler:    _LibrarianSephirahService_ListFeedConfigs_Handler,
 		},
 		{
 			MethodName: "ListFeedItems",
 			Handler:    _LibrarianSephirahService_ListFeedItems_Handler,
+		},
+		{
+			MethodName: "GroupFeedItems",
+			Handler:    _LibrarianSephirahService_GroupFeedItems_Handler,
 		},
 		{
 			MethodName: "GetFeedItem",

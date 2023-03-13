@@ -11,6 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../google/protobuf/duration.pb.dart' as $1;
 
 import 'common.pbenum.dart';
 
@@ -122,6 +123,71 @@ class PagingResponse extends $pb.GeneratedMessage {
   $core.bool hasTotalSize() => $_has(0);
   @$pb.TagNumber(1)
   void clearTotalSize() => clearField(1);
+}
+
+class TimeRange extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeRange', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOM<$0.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startTime', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Duration>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', subBuilder: $1.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  TimeRange._() : super();
+  factory TimeRange({
+    $0.Timestamp? startTime,
+    $1.Duration? duration,
+  }) {
+    final _result = create();
+    if (startTime != null) {
+      _result.startTime = startTime;
+    }
+    if (duration != null) {
+      _result.duration = duration;
+    }
+    return _result;
+  }
+  factory TimeRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TimeRange clone() => TimeRange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TimeRange copyWith(void Function(TimeRange) updates) => super.copyWith((message) => updates(message as TimeRange)) as TimeRange; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TimeRange create() => TimeRange._();
+  TimeRange createEmptyInstance() => create();
+  static $pb.PbList<TimeRange> createRepeated() => $pb.PbList<TimeRange>();
+  @$core.pragma('dart2js:noInline')
+  static TimeRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeRange>(create);
+  static TimeRange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.Timestamp get startTime => $_getN(0);
+  @$pb.TagNumber(1)
+  set startTime($0.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStartTime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStartTime() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.Timestamp ensureStartTime() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $1.Duration get duration => $_getN(1);
+  @$pb.TagNumber(2)
+  set duration($1.Duration v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDuration() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDuration() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Duration ensureDuration() => $_ensure(1);
 }
 
 class InternalID extends $pb.GeneratedMessage {

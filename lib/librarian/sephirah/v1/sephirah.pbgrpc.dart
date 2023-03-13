@@ -221,18 +221,24 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($3.UpdateFeedConfigRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $3.UpdateFeedConfigResponse.fromBuffer(value));
-  static final _$listFeeds =
-      $grpc.ClientMethod<$3.ListFeedsRequest, $3.ListFeedsResponse>(
-          '/librarian.sephirah.v1.LibrarianSephirahService/ListFeeds',
-          ($3.ListFeedsRequest value) => value.writeToBuffer(),
+  static final _$listFeedConfigs =
+      $grpc.ClientMethod<$3.ListFeedConfigsRequest, $3.ListFeedConfigsResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs',
+          ($3.ListFeedConfigsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $3.ListFeedsResponse.fromBuffer(value));
+              $3.ListFeedConfigsResponse.fromBuffer(value));
   static final _$listFeedItems =
       $grpc.ClientMethod<$3.ListFeedItemsRequest, $3.ListFeedItemsResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems',
           ($3.ListFeedItemsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $3.ListFeedItemsResponse.fromBuffer(value));
+  static final _$groupFeedItems =
+      $grpc.ClientMethod<$3.GroupFeedItemsRequest, $3.GroupFeedItemsResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/GroupFeedItems',
+          ($3.GroupFeedItemsRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $3.GroupFeedItemsResponse.fromBuffer(value));
   static final _$getFeedItem =
       $grpc.ClientMethod<$3.GetFeedItemRequest, $3.GetFeedItemResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem',
@@ -453,16 +459,22 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateFeedConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$3.ListFeedsResponse> listFeeds(
-      $3.ListFeedsRequest request,
+  $grpc.ResponseFuture<$3.ListFeedConfigsResponse> listFeedConfigs(
+      $3.ListFeedConfigsRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listFeeds, request, options: options);
+    return $createUnaryCall(_$listFeedConfigs, request, options: options);
   }
 
   $grpc.ResponseFuture<$3.ListFeedItemsResponse> listFeedItems(
       $3.ListFeedItemsRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.GroupFeedItemsResponse> groupFeedItems(
+      $3.GroupFeedItemsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$groupFeedItems, request, options: options);
   }
 
   $grpc.ResponseFuture<$3.GetFeedItemResponse> getFeedItem(
@@ -764,13 +776,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $3.UpdateFeedConfigRequest.fromBuffer(value),
         ($3.UpdateFeedConfigResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$3.ListFeedsRequest, $3.ListFeedsResponse>(
-        'ListFeeds',
-        listFeeds_Pre,
+    $addMethod($grpc.ServiceMethod<$3.ListFeedConfigsRequest,
+            $3.ListFeedConfigsResponse>(
+        'ListFeedConfigs',
+        listFeedConfigs_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $3.ListFeedsRequest.fromBuffer(value),
-        ($3.ListFeedsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) =>
+            $3.ListFeedConfigsRequest.fromBuffer(value),
+        ($3.ListFeedConfigsResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$3.ListFeedItemsRequest, $3.ListFeedItemsResponse>(
             'ListFeedItems',
@@ -780,6 +794,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $3.ListFeedItemsRequest.fromBuffer(value),
             ($3.ListFeedItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$3.GroupFeedItemsRequest,
+            $3.GroupFeedItemsResponse>(
+        'GroupFeedItems',
+        groupFeedItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $3.GroupFeedItemsRequest.fromBuffer(value),
+        ($3.GroupFeedItemsResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$3.GetFeedItemRequest, $3.GetFeedItemResponse>(
             'GetFeedItem',
@@ -960,15 +983,22 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return updateFeedConfig(call, await request);
   }
 
-  $async.Future<$3.ListFeedsResponse> listFeeds_Pre($grpc.ServiceCall call,
-      $async.Future<$3.ListFeedsRequest> request) async {
-    return listFeeds(call, await request);
+  $async.Future<$3.ListFeedConfigsResponse> listFeedConfigs_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$3.ListFeedConfigsRequest> request) async {
+    return listFeedConfigs(call, await request);
   }
 
   $async.Future<$3.ListFeedItemsResponse> listFeedItems_Pre(
       $grpc.ServiceCall call,
       $async.Future<$3.ListFeedItemsRequest> request) async {
     return listFeedItems(call, await request);
+  }
+
+  $async.Future<$3.GroupFeedItemsResponse> groupFeedItems_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$3.GroupFeedItemsRequest> request) async {
+    return groupFeedItems(call, await request);
   }
 
   $async.Future<$3.GetFeedItemResponse> getFeedItem_Pre($grpc.ServiceCall call,
@@ -1053,10 +1083,12 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $3.CreateFeedConfigRequest request);
   $async.Future<$3.UpdateFeedConfigResponse> updateFeedConfig(
       $grpc.ServiceCall call, $3.UpdateFeedConfigRequest request);
-  $async.Future<$3.ListFeedsResponse> listFeeds(
-      $grpc.ServiceCall call, $3.ListFeedsRequest request);
+  $async.Future<$3.ListFeedConfigsResponse> listFeedConfigs(
+      $grpc.ServiceCall call, $3.ListFeedConfigsRequest request);
   $async.Future<$3.ListFeedItemsResponse> listFeedItems(
       $grpc.ServiceCall call, $3.ListFeedItemsRequest request);
+  $async.Future<$3.GroupFeedItemsResponse> groupFeedItems(
+      $grpc.ServiceCall call, $3.GroupFeedItemsRequest request);
   $async.Future<$3.GetFeedItemResponse> getFeedItem(
       $grpc.ServiceCall call, $3.GetFeedItemRequest request);
   $async.Future<$3.GetBatchFeedItemsResponse> getBatchFeedItems(
