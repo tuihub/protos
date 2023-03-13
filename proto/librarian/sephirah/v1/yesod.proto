@@ -21,7 +21,7 @@ message UpdateFeedConfigRequest {
 }
 message UpdateFeedConfigResponse {}
 
-message ListFeedsRequest {
+message ListFeedConfigsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
@@ -29,7 +29,7 @@ message ListFeedsRequest {
   repeated FeedConfigStatus status_filter = 5;
 }
 
-message ListFeedsResponse {
+message ListFeedConfigsResponse {
   librarian.v1.PagingResponse paging = 1;
   repeated FeedWithConfig feeds_with_config = 2;
   message FeedWithConfig {
@@ -43,15 +43,36 @@ message ListFeedItemsRequest {
   repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated string publish_platform_filter = 4;
+  librarian.v1.TimeRange publish_time_range = 5;
 }
 
 message ListFeedItemsResponse {
   librarian.v1.PagingResponse paging = 1;
   repeated FeedItemIDWithFeedID items = 2;
-  message FeedItemIDWithFeedID {
-    librarian.v1.InternalID feed_id = 1;
-    librarian.v1.InternalID item_id = 2;
+}
+
+message GroupFeedItemsRequest {
+  enum GroupBy {
+    GROUP_BY_UNSPECIFIED = 0;
+    GROUP_BY_YEAR = 1;
+    GROUP_BY_MONTH = 2;
+    GROUP_BY_DAY = 3;
   }
+  GroupBy group_by = 1;
+  repeated librarian.v1.InternalID feed_id_filter = 2;
+  repeated librarian.v1.InternalID author_id_filter = 3;
+  repeated string publish_platform_filter = 4;
+  librarian.v1.TimeRange publish_time_range = 5;
+  // NULL means no limit
+  optional int64 group_size = 6;
+}
+
+message GroupFeedItemsResponse {
+  message FeedItemsGroup {
+    librarian.v1.TimeRange time_range = 1;
+    repeated FeedItemIDWithFeedID items = 2;
+  }
+  FeedItemsGroup groups = 1;
 }
 
 message GetFeedItemRequest {
@@ -72,13 +93,16 @@ message GetBatchFeedItemsResponse {
 
 message FeedConfig {
   librarian.v1.InternalID id = 1;
-  string feed_url = 2;
-  librarian.v1.InternalID author_account = 3;
-  FeedConfigSource source = 4;
-  FeedConfigStatus status = 5;
-  google.protobuf.Duration pull_interval = 6;
+  string name = 2;
+  string feed_url = 3;
+  // No meaning when source is FEED_CONFIG_SOURCE_COMMON
+  librarian.v1.InternalID author_account = 4;
+  FeedConfigSource source = 5;
+  FeedConfigStatus status = 6;
+  google.protobuf.Duration pull_interval = 7;
+  repeated string tags = 8;
   // response only
-  optional google.protobuf.Timestamp latest_pull_time = 7;
+  optional google.protobuf.Timestamp latest_pull_time = 9;
 }
 
 enum FeedConfigStatus {
@@ -90,4 +114,9 @@ enum FeedConfigStatus {
 enum FeedConfigSource {
   FEED_CONFIG_SOURCE_UNSPECIFIED = 0;
   FEED_CONFIG_SOURCE_COMMON = 1;
+}
+
+message FeedItemIDWithFeedID {
+  librarian.v1.InternalID feed_id = 1;
+  librarian.v1.InternalID item_id = 2;
 }
