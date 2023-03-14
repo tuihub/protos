@@ -43,7 +43,8 @@ message ListFeedItemsRequest {
   repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated string publish_platform_filter = 4;
-  librarian.v1.TimeRange publish_time_range = 5;
+  repeated string tag_filter = 5;
+  librarian.v1.TimeRange publish_time_range = 6;
 }
 
 message ListFeedItemsResponse {
@@ -62,9 +63,15 @@ message GroupFeedItemsRequest {
   repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated string publish_platform_filter = 4;
-  librarian.v1.TimeRange publish_time_range = 5;
+  repeated string tag_filter = 5;
+  // TimeRange will be rounded to integer time that contains the given time on server side.
+  // e.g. the given TimeRange is 2023.2.13 9:26 ~ 2023.3.14 17:21.
+  // When group by year, rounded to 2023.1.1 00:00 ~ 2024.1.1 00:00.
+  // When group by month, rounded to 2023.2.1 00:00 ~ 2023.4.1. 00:00.
+  // When group by dat, rounded to 2023.2.13 00:00 ~ 2023.3.15 00:00.
+  librarian.v1.TimeRange publish_time_range = 6;
   // NULL means no limit
-  optional int64 group_size = 6;
+  optional int32 group_size = 7;
 }
 
 message GroupFeedItemsResponse {
@@ -72,7 +79,7 @@ message GroupFeedItemsResponse {
     librarian.v1.TimeRange time_range = 1;
     repeated FeedItemIDWithFeedID items = 2;
   }
-  FeedItemsGroup groups = 1;
+  repeated FeedItemsGroup groups = 1;
 }
 
 message GetFeedItemRequest {
