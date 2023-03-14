@@ -269,7 +269,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.GroupFeedItemsResponse.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.GroupFeedItemsResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1765,7 +1765,7 @@ proto.librarian.sephirah.v1.ListFeedConfigsResponse.prototype.clearFeedsWithConf
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListFeedItemsRequest.repeatedFields_ = [2,3,4];
+proto.librarian.sephirah.v1.ListFeedItemsRequest.repeatedFields_ = [2,3,4,5];
 
 
 
@@ -1804,6 +1804,7 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.toObject = function(includeInst
     authorIdFilterList: jspb.Message.toObjectList(msg.getAuthorIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
     publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    tagFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
   };
 
@@ -1861,6 +1862,10 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.deserializeBinaryFromReader = f
       msg.addPublishPlatformFilter(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTagFilter(value);
+      break;
+    case 6:
       var value = new librarian_v1_common_pb.TimeRange;
       reader.readMessage(value,librarian_v1_common_pb.TimeRange.deserializeBinaryFromReader);
       msg.setPublishTimeRange(value);
@@ -1925,10 +1930,17 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.serializeBinaryToWriter = funct
       f
     );
   }
+  f = message.getTagFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
   f = message.getPublishTimeRange();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       librarian_v1_common_pb.TimeRange.serializeBinaryToWriter
     );
@@ -2087,12 +2099,49 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.clearPublishPlatformF
 
 
 /**
- * optional librarian.v1.TimeRange publish_time_range = 5;
+ * repeated string tag_filter = 5;
+ * @return {!Array<string>}
+ */
+proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.getTagFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.setTagFilterList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.addTagFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.clearTagFilterList = function() {
+  return this.setTagFilterList([]);
+};
+
+
+/**
+ * optional librarian.v1.TimeRange publish_time_range = 6;
  * @return {?proto.librarian.v1.TimeRange}
  */
 proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.getPublishTimeRange = function() {
   return /** @type{?proto.librarian.v1.TimeRange} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 5));
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 6));
 };
 
 
@@ -2101,7 +2150,7 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.getPublishTimeRange =
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsRequest} returns this
 */
 proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.setPublishTimeRange = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2119,7 +2168,7 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.clearPublishTimeRange
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.hasPublishTimeRange = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -2340,7 +2389,7 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.clearItemsList = fun
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.repeatedFields_ = [2,3,4];
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.repeatedFields_ = [2,3,4,5];
 
 
 
@@ -2379,8 +2428,9 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.toObject = function(includeIns
     authorIdFilterList: jspb.Message.toObjectList(msg.getAuthorIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
     publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    tagFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
-    groupSize: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    groupSize: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -2436,12 +2486,16 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.deserializeBinaryFromReader = 
       msg.addPublishPlatformFilter(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTagFilter(value);
+      break;
+    case 6:
       var value = new librarian_v1_common_pb.TimeRange;
       reader.readMessage(value,librarian_v1_common_pb.TimeRange.deserializeBinaryFromReader);
       msg.setPublishTimeRange(value);
       break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt64());
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setGroupSize(value);
       break;
     default:
@@ -2503,18 +2557,25 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.serializeBinaryToWriter = func
       f
     );
   }
+  f = message.getTagFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
+    );
+  }
   f = message.getPublishTimeRange();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       librarian_v1_common_pb.TimeRange.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
-    writer.writeInt64(
-      6,
+    writer.writeInt32(
+      7,
       f
     );
   }
@@ -2663,12 +2724,49 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearPublishPlatform
 
 
 /**
- * optional librarian.v1.TimeRange publish_time_range = 5;
+ * repeated string tag_filter = 5;
+ * @return {!Array<string>}
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getTagFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setTagFilterList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.addTagFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearTagFilterList = function() {
+  return this.setTagFilterList([]);
+};
+
+
+/**
+ * optional librarian.v1.TimeRange publish_time_range = 6;
  * @return {?proto.librarian.v1.TimeRange}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getPublishTimeRange = function() {
   return /** @type{?proto.librarian.v1.TimeRange} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 5));
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 6));
 };
 
 
@@ -2677,7 +2775,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getPublishTimeRange 
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
 */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setPublishTimeRange = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2695,16 +2793,16 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearPublishTimeRang
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.hasPublishTimeRange = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int64 group_size = 6;
+ * optional int32 group_size = 7;
  * @return {number}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getGroupSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -2713,7 +2811,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getGroupSize = funct
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setGroupSize = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -2722,7 +2820,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setGroupSize = funct
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearGroupSize = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -2731,10 +2829,17 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearGroupSize = fun
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.hasGroupSize = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsResponse.repeatedFields_ = [1];
 
 
 
@@ -2767,7 +2872,8 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groups: (f = msg.getGroups()) && proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.toObject(includeInstance, f)
+    groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
+    proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2807,7 +2913,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.deserializeBinaryFromReader =
     case 1:
       var value = new proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup;
       reader.readMessage(value,proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.deserializeBinaryFromReader);
-      msg.setGroups(value);
+      msg.addGroups(value);
       break;
     default:
       reader.skipField();
@@ -2838,9 +2944,9 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.serializeBinary = f
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getGroups();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getGroupsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
       proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.serializeBinaryToWriter
@@ -3061,39 +3167,40 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.clea
 
 
 /**
- * optional FeedItemsGroup groups = 1;
- * @return {?proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup}
+ * repeated FeedItemsGroup groups = 1;
+ * @return {!Array<!proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup>}
  */
-proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.getGroups = function() {
-  return /** @type{?proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup, 1));
+proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.getGroupsList = function() {
+  return /** @type{!Array<!proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup, 1));
 };
 
 
 /**
- * @param {?proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup|undefined} value
+ * @param {!Array<!proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup>} value
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsResponse} returns this
 */
-proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.setGroups = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.setGroupsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup}
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.addGroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsResponse} returns this
  */
-proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.clearGroups = function() {
-  return this.setGroups(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.hasGroups = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.clearGroupsList = function() {
+  return this.setGroupsList([]);
 };
 
 

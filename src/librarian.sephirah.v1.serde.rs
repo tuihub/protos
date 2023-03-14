@@ -3694,6 +3694,9 @@ impl serde::Serialize for GroupFeedItemsRequest {
         if !self.publish_platform_filter.is_empty() {
             len += 1;
         }
+        if !self.tag_filter.is_empty() {
+            len += 1;
+        }
         if self.publish_time_range.is_some() {
             len += 1;
         }
@@ -3715,11 +3718,14 @@ impl serde::Serialize for GroupFeedItemsRequest {
         if !self.publish_platform_filter.is_empty() {
             struct_ser.serialize_field("publishPlatformFilter", &self.publish_platform_filter)?;
         }
+        if !self.tag_filter.is_empty() {
+            struct_ser.serialize_field("tagFilter", &self.tag_filter)?;
+        }
         if let Some(v) = self.publish_time_range.as_ref() {
             struct_ser.serialize_field("publishTimeRange", v)?;
         }
         if let Some(v) = self.group_size.as_ref() {
-            struct_ser.serialize_field("groupSize", ToString::to_string(&v).as_str())?;
+            struct_ser.serialize_field("groupSize", v)?;
         }
         struct_ser.end()
     }
@@ -3735,6 +3741,7 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
             "feedIdFilter",
             "authorIdFilter",
             "publishPlatformFilter",
+            "tagFilter",
             "publishTimeRange",
             "groupSize",
         ];
@@ -3745,6 +3752,7 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
             FeedIdFilter,
             AuthorIdFilter,
             PublishPlatformFilter,
+            TagFilter,
             PublishTimeRange,
             GroupSize,
         }
@@ -3772,6 +3780,7 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
                             "feedIdFilter" => Ok(GeneratedField::FeedIdFilter),
                             "authorIdFilter" => Ok(GeneratedField::AuthorIdFilter),
                             "publishPlatformFilter" => Ok(GeneratedField::PublishPlatformFilter),
+                            "tagFilter" => Ok(GeneratedField::TagFilter),
                             "publishTimeRange" => Ok(GeneratedField::PublishTimeRange),
                             "groupSize" => Ok(GeneratedField::GroupSize),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -3797,6 +3806,7 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
                 let mut feed_id_filter__ = None;
                 let mut author_id_filter__ = None;
                 let mut publish_platform_filter__ = None;
+                let mut tag_filter__ = None;
                 let mut publish_time_range__ = None;
                 let mut group_size__ = None;
                 while let Some(k) = map.next_key()? {
@@ -3825,6 +3835,12 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
                             }
                             publish_platform_filter__ = Some(map.next_value()?);
                         }
+                        GeneratedField::TagFilter => {
+                            if tag_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tagFilter"));
+                            }
+                            tag_filter__ = Some(map.next_value()?);
+                        }
                         GeneratedField::PublishTimeRange => {
                             if publish_time_range__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("publishTimeRange"));
@@ -3846,6 +3862,7 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
                     feed_id_filter: feed_id_filter__.unwrap_or_default(),
                     author_id_filter: author_id_filter__.unwrap_or_default(),
                     publish_platform_filter: publish_platform_filter__.unwrap_or_default(),
+                    tag_filter: tag_filter__.unwrap_or_default(),
                     publish_time_range: publish_time_range__,
                     group_size: group_size__,
                 })
@@ -3941,12 +3958,12 @@ impl serde::Serialize for GroupFeedItemsResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.groups.is_some() {
+        if !self.groups.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GroupFeedItemsResponse", len)?;
-        if let Some(v) = self.groups.as_ref() {
-            struct_ser.serialize_field("groups", v)?;
+        if !self.groups.is_empty() {
+            struct_ser.serialize_field("groups", &self.groups)?;
         }
         struct_ser.end()
     }
@@ -4017,7 +4034,7 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsResponse {
                     }
                 }
                 Ok(GroupFeedItemsResponse {
-                    groups: groups__,
+                    groups: groups__.unwrap_or_default(),
                 })
             }
         }
@@ -5246,6 +5263,9 @@ impl serde::Serialize for ListFeedItemsRequest {
         if !self.publish_platform_filter.is_empty() {
             len += 1;
         }
+        if !self.tag_filter.is_empty() {
+            len += 1;
+        }
         if self.publish_time_range.is_some() {
             len += 1;
         }
@@ -5261,6 +5281,9 @@ impl serde::Serialize for ListFeedItemsRequest {
         }
         if !self.publish_platform_filter.is_empty() {
             struct_ser.serialize_field("publishPlatformFilter", &self.publish_platform_filter)?;
+        }
+        if !self.tag_filter.is_empty() {
+            struct_ser.serialize_field("tagFilter", &self.tag_filter)?;
         }
         if let Some(v) = self.publish_time_range.as_ref() {
             struct_ser.serialize_field("publishTimeRange", v)?;
@@ -5279,6 +5302,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
             "feedIdFilter",
             "authorIdFilter",
             "publishPlatformFilter",
+            "tagFilter",
             "publishTimeRange",
         ];
 
@@ -5288,6 +5312,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
             FeedIdFilter,
             AuthorIdFilter,
             PublishPlatformFilter,
+            TagFilter,
             PublishTimeRange,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -5314,6 +5339,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                             "feedIdFilter" => Ok(GeneratedField::FeedIdFilter),
                             "authorIdFilter" => Ok(GeneratedField::AuthorIdFilter),
                             "publishPlatformFilter" => Ok(GeneratedField::PublishPlatformFilter),
+                            "tagFilter" => Ok(GeneratedField::TagFilter),
                             "publishTimeRange" => Ok(GeneratedField::PublishTimeRange),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -5338,6 +5364,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                 let mut feed_id_filter__ = None;
                 let mut author_id_filter__ = None;
                 let mut publish_platform_filter__ = None;
+                let mut tag_filter__ = None;
                 let mut publish_time_range__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -5365,6 +5392,12 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                             }
                             publish_platform_filter__ = Some(map.next_value()?);
                         }
+                        GeneratedField::TagFilter => {
+                            if tag_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tagFilter"));
+                            }
+                            tag_filter__ = Some(map.next_value()?);
+                        }
                         GeneratedField::PublishTimeRange => {
                             if publish_time_range__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("publishTimeRange"));
@@ -5378,6 +5411,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                     feed_id_filter: feed_id_filter__.unwrap_or_default(),
                     author_id_filter: author_id_filter__.unwrap_or_default(),
                     publish_platform_filter: publish_platform_filter__.unwrap_or_default(),
+                    tag_filter: tag_filter__.unwrap_or_default(),
                     publish_time_range: publish_time_range__,
                 })
             }

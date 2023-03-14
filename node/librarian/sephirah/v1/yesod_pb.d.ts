@@ -211,6 +211,11 @@ export class ListFeedItemsRequest extends jspb.Message {
   setPublishPlatformFilterList(value: Array<string>): void;
   addPublishPlatformFilter(value: string, index?: number): string;
 
+  clearTagFilterList(): void;
+  getTagFilterList(): Array<string>;
+  setTagFilterList(value: Array<string>): void;
+  addTagFilter(value: string, index?: number): string;
+
   hasPublishTimeRange(): boolean;
   clearPublishTimeRange(): void;
   getPublishTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
@@ -232,6 +237,7 @@ export namespace ListFeedItemsRequest {
     feedIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     publishPlatformFilterList: Array<string>,
+    tagFilterList: Array<string>,
     publishTimeRange?: librarian_v1_common_pb.TimeRange.AsObject,
   }
 }
@@ -283,6 +289,11 @@ export class GroupFeedItemsRequest extends jspb.Message {
   setPublishPlatformFilterList(value: Array<string>): void;
   addPublishPlatformFilter(value: string, index?: number): string;
 
+  clearTagFilterList(): void;
+  getTagFilterList(): Array<string>;
+  setTagFilterList(value: Array<string>): void;
+  addTagFilter(value: string, index?: number): string;
+
   hasPublishTimeRange(): boolean;
   clearPublishTimeRange(): void;
   getPublishTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
@@ -309,6 +320,7 @@ export namespace GroupFeedItemsRequest {
     feedIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     publishPlatformFilterList: Array<string>,
+    tagFilterList: Array<string>,
     publishTimeRange?: librarian_v1_common_pb.TimeRange.AsObject,
     groupSize: number,
   }
@@ -324,10 +336,10 @@ export namespace GroupFeedItemsRequest {
 }
 
 export class GroupFeedItemsResponse extends jspb.Message {
-  hasGroups(): boolean;
-  clearGroups(): void;
-  getGroups(): GroupFeedItemsResponse.FeedItemsGroup | undefined;
-  setGroups(value?: GroupFeedItemsResponse.FeedItemsGroup): void;
+  clearGroupsList(): void;
+  getGroupsList(): Array<GroupFeedItemsResponse.FeedItemsGroup>;
+  setGroupsList(value: Array<GroupFeedItemsResponse.FeedItemsGroup>): void;
+  addGroups(value?: GroupFeedItemsResponse.FeedItemsGroup, index?: number): GroupFeedItemsResponse.FeedItemsGroup;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GroupFeedItemsResponse.AsObject;
@@ -341,7 +353,7 @@ export class GroupFeedItemsResponse extends jspb.Message {
 
 export namespace GroupFeedItemsResponse {
   export type AsObject = {
-    groups?: GroupFeedItemsResponse.FeedItemsGroup.AsObject,
+    groupsList: Array<GroupFeedItemsResponse.FeedItemsGroup.AsObject>,
   }
 
   export class FeedItemsGroup extends jspb.Message {

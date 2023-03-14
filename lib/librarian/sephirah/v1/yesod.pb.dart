@@ -7,7 +7,6 @@
 
 import 'dart:core' as $core;
 
-import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $4;
@@ -403,7 +402,8 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
     ..pc<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
-    ..aOM<$4.TimeRange>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $4.TimeRange.create)
+    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tagFilter')
+    ..aOM<$4.TimeRange>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $4.TimeRange.create)
     ..hasRequiredFields = false
   ;
 
@@ -413,6 +413,7 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$4.InternalID>? feedIdFilter,
     $core.Iterable<$4.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
+    $core.Iterable<$core.String>? tagFilter,
     $4.TimeRange? publishTimeRange,
   }) {
     final _result = create();
@@ -427,6 +428,9 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
     }
     if (publishPlatformFilter != null) {
       _result.publishPlatformFilter.addAll(publishPlatformFilter);
+    }
+    if (tagFilter != null) {
+      _result.tagFilter.addAll(tagFilter);
     }
     if (publishTimeRange != null) {
       _result.publishTimeRange = publishTimeRange;
@@ -475,15 +479,18 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $4.TimeRange get publishTimeRange => $_getN(4);
-  @$pb.TagNumber(5)
-  set publishTimeRange($4.TimeRange v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPublishTimeRange() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPublishTimeRange() => clearField(5);
-  @$pb.TagNumber(5)
-  $4.TimeRange ensurePublishTimeRange() => $_ensure(4);
+  $core.List<$core.String> get tagFilter => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $4.TimeRange get publishTimeRange => $_getN(5);
+  @$pb.TagNumber(6)
+  set publishTimeRange($4.TimeRange v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPublishTimeRange() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPublishTimeRange() => clearField(6);
+  @$pb.TagNumber(6)
+  $4.TimeRange ensurePublishTimeRange() => $_ensure(5);
 }
 
 class ListFeedItemsResponse extends $pb.GeneratedMessage {
@@ -549,8 +556,9 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     ..pc<$4.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pc<$4.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
-    ..aOM<$4.TimeRange>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $4.TimeRange.create)
-    ..aInt64(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSize')
+    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tagFilter')
+    ..aOM<$4.TimeRange>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $4.TimeRange.create)
+    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSize', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -560,8 +568,9 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$4.InternalID>? feedIdFilter,
     $core.Iterable<$4.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
+    $core.Iterable<$core.String>? tagFilter,
     $4.TimeRange? publishTimeRange,
-    $fixnum.Int64? groupSize,
+    $core.int? groupSize,
   }) {
     final _result = create();
     if (groupBy != null) {
@@ -575,6 +584,9 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     }
     if (publishPlatformFilter != null) {
       _result.publishPlatformFilter.addAll(publishPlatformFilter);
+    }
+    if (tagFilter != null) {
+      _result.tagFilter.addAll(tagFilter);
     }
     if (publishTimeRange != null) {
       _result.publishTimeRange = publishTimeRange;
@@ -624,24 +636,27 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $4.TimeRange get publishTimeRange => $_getN(4);
-  @$pb.TagNumber(5)
-  set publishTimeRange($4.TimeRange v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPublishTimeRange() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPublishTimeRange() => clearField(5);
-  @$pb.TagNumber(5)
-  $4.TimeRange ensurePublishTimeRange() => $_ensure(4);
+  $core.List<$core.String> get tagFilter => $_getList(4);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get groupSize => $_getI64(5);
+  $4.TimeRange get publishTimeRange => $_getN(5);
   @$pb.TagNumber(6)
-  set groupSize($fixnum.Int64 v) { $_setInt64(5, v); }
+  set publishTimeRange($4.TimeRange v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasGroupSize() => $_has(5);
+  $core.bool hasPublishTimeRange() => $_has(5);
   @$pb.TagNumber(6)
-  void clearGroupSize() => clearField(6);
+  void clearPublishTimeRange() => clearField(6);
+  @$pb.TagNumber(6)
+  $4.TimeRange ensurePublishTimeRange() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.int get groupSize => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set groupSize($core.int v) { $_setSignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasGroupSize() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGroupSize() => clearField(7);
 }
 
 class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
@@ -703,17 +718,17 @@ class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
 
 class GroupFeedItemsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<GroupFeedItemsResponse_FeedItemsGroup>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groups', subBuilder: GroupFeedItemsResponse_FeedItemsGroup.create)
+    ..pc<GroupFeedItemsResponse_FeedItemsGroup>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: GroupFeedItemsResponse_FeedItemsGroup.create)
     ..hasRequiredFields = false
   ;
 
   GroupFeedItemsResponse._() : super();
   factory GroupFeedItemsResponse({
-    GroupFeedItemsResponse_FeedItemsGroup? groups,
+    $core.Iterable<GroupFeedItemsResponse_FeedItemsGroup>? groups,
   }) {
     final _result = create();
     if (groups != null) {
-      _result.groups = groups;
+      _result.groups.addAll(groups);
     }
     return _result;
   }
@@ -739,15 +754,7 @@ class GroupFeedItemsResponse extends $pb.GeneratedMessage {
   static GroupFeedItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  GroupFeedItemsResponse_FeedItemsGroup get groups => $_getN(0);
-  @$pb.TagNumber(1)
-  set groups(GroupFeedItemsResponse_FeedItemsGroup v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasGroups() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearGroups() => clearField(1);
-  @$pb.TagNumber(1)
-  GroupFeedItemsResponse_FeedItemsGroup ensureGroups() => $_ensure(0);
+  $core.List<GroupFeedItemsResponse_FeedItemsGroup> get groups => $_getList(0);
 }
 
 class GetFeedItemRequest extends $pb.GeneratedMessage {
