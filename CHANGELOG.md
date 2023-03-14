@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.13](https://github.com/TuiHub/Protos/compare/v0.2.12...v0.2.13) (2023-03-14)
+
+
+### Bug Fixes
+
+* update Yesod proto ([6b246ce](https://github.com/TuiHub/Protos/commit/6b246ce6e34569a14f1794c073ac57d47d49a18d))
+
 ## [0.2.12](https://github.com/TuiHub/Protos/compare/v0.2.11...v0.2.12) (2023-03-13)
 
 
