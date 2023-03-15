@@ -1,4 +1,4 @@
-# Protos
+![](./docs/logo.png)
 
 ## Usage
 
