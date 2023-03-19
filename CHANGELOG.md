@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.14](https://github.com/TuiHub/Protos/compare/v0.2.13...v0.2.14) (2023-03-19)
+
+
+### Bug Fixes
+
+* **deps:** update module google.golang.org/protobuf to v1.29.1 [security] ([#43](https://github.com/TuiHub/Protos/issues/43)) ([fe9162d](https://github.com/TuiHub/Protos/commit/fe9162d212b56d75bff5db70e8a953a4b51c0e7b))
+* **deps:** update module google.golang.org/protobuf to v1.30.0 ([#45](https://github.com/TuiHub/Protos/issues/45)) ([8b47415](https://github.com/TuiHub/Protos/commit/8b4741521bfd20c33f6351882cf1ed7d07eb0dc9))
+
 ## [0.2.13](https://github.com/TuiHub/Protos/compare/v0.2.12...v0.2.13) (2023-03-14)
 
 
