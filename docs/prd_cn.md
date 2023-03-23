@@ -217,7 +217,7 @@ sequenceDiagram
   - `path`路径信息，内容必须为有效的路径（Windows平台下使用Windows平台格式，相对路径分隔符使用正斜杠`/`），若为文件则以文件名结尾，若为文件夹则以`/`结尾
   - `id`唯一标识符，生成的备份文件中应当有一个同名文件夹，文件夹内容为依据本`entry`定义应当备份的文件
 
-### 游戏存档（AppPackageSaveFile）
+### 游戏存档（AppPackageSaveData）
 
 #### 服务端
 
