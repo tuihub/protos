@@ -195,27 +195,27 @@ sequenceDiagram
 用户权限：
 - `Admin`和`Normal`能够增加或删除自己的`AppPackageRunTime`，不能修改，可以选择公开给其他用户
 
-### 游戏存档配置文件（AppPackageSaveFileConfig）
+### 游戏存档配置文件（AppPackageSaveDataConfig）
 
 - 用户在客户端生成配置文件
-- `AppPackage`与`AppPackageSaveFileConfig`是一对多的关系
-- `AppPackageSaveFileConfig`在创建时必须指定所关联的`AppPackage`并且不能修改（客户端可以为复用配置文件提供便利）
+- `AppPackage`与`AppPackageSaveDataConfig`是一对多的关系
+- `AppPackageSaveDataConfig`在创建时必须指定所关联的`AppPackage`并且不能修改（客户端可以为复用配置文件提供便利）
 
 用户权限：
-- `Admin`和`Normal`能够创建自己的`AppPackageSaveFileConfig`，可以选择公开给其他用户
+- `Admin`和`Normal`能够创建自己的`AppPackageSaveDataConfig`，可以选择公开给其他用户
 
-配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/Protos/schemas/savefile/v1.json)
+配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/Protos/schemas/savedata/v1.json)
 
 - 配置文件必须声明schema
 - 配置文件中不应出现schema定义以外的值
-- 每个`entrie`包含了一个特定路径的配置，通常情况下仅需要一个
+- 每个`entry`包含了一个特定路径的配置，通常情况下仅需要一个
   - `pathMode`路径模式否则必须为相对路径，相对路径的起始路径由具体设置决定
     - `absolute`路径必须为绝对路径
     - `game`路径必须为相对路径，以用户设置的游戏可执行文件所在路径为起始（该路径由客户端持久化存储，不是本配置文件的一部分）
     - `document`路径必须为相对路径，以用户文档目录为起始
     - `profile`路径必须为相对路径，以用户主目录为起始
-  - `path`路径信息，内容必须为有效的路径（windows平台下遵循msys的路径格式），若为文件则以文件名结尾，若为文件夹则以`/`结尾
-  - `id`唯一标识符，生成的备份文件中应当有一个同名文件夹，文件夹内容为依据本`entrie`定义应当备份的文件
+  - `path`路径信息，内容必须为有效的路径（Windows平台下使用Windows平台格式，相对路径分隔符使用正斜杠`/`），若为文件则以文件名结尾，若为文件夹则以`/`结尾
+  - `id`唯一标识符，生成的备份文件中应当有一个同名文件夹，文件夹内容为依据本`entry`定义应当备份的文件
 
 ### 游戏存档（AppPackageSaveFile）
 
@@ -239,7 +239,7 @@ sequenceDiagram
 
 - 文件
   - 备份文件必须是一个有效的zip文件
-  - 备份文件中必须有一个名为`tuihub-savefile.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/Protos/schemas/savefile/v1-example.json)
+  - 备份文件中必须有一个名为`tuihub_savedata_config.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/Protos/schemas/savedata/v1-example.json)
   - 备份文件中的其他内容必须遵循配置文件的设置
 - 备份
   - 依据用户预先设置的配置文件生成备份

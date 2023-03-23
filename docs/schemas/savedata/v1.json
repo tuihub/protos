@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/TuiHub/Protos/schemas/savefile/v1",
+    "$id": "https://github.com/TuiHub/Protos/schemas/savedata/v1",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Save File Configs",
     "properties": {
