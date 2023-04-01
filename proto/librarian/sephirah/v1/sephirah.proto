@@ -4,6 +4,7 @@ package librarian.sephirah.v1;
 
 import "librarian/sephirah/v1/binah.proto";
 import "librarian/sephirah/v1/gebura.proto";
+import "librarian/sephirah/v1/netzach.proto";
 import "librarian/sephirah/v1/tiphereth.proto";
 import "librarian/sephirah/v1/yesod.proto";
 
@@ -16,6 +17,7 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
  * 2. `Gebura` handles application data
  * 3. `Binah` handles file transfer
  * 4. `Yesod` handles feed data
+ * 5. `Netzach` handles notifications
  */
 service LibrarianSephirahService {
   // `Tiphereth` `Normal` Login via password and get two token
@@ -92,6 +94,19 @@ service LibrarianSephirahService {
   rpc DownloadGameSaveFile(DownloadGameSaveFileRequest) returns (DownloadGameSaveFileResponse);
   // `Gebura` `Normal`
   rpc ListGameSaveFile(ListGameSaveFileRequest) returns (ListGameSaveFileResponse);
+
+  // `Netzach` `Normal`
+  rpc CreateNotifyTarget(CreateNotifyTargetRequest) returns (CreateNotifyTargetResponse);
+  // `Netzach` `Normal`
+  rpc UpdateNotifyTarget(UpdateNotifyTargetRequest) returns (UpdateNotifyTargetResponse);
+  // `Netzach` `Normal`
+  rpc ListNotifyTargets(ListNotifyTargetsRequest) returns (ListNotifyTargetsResponse);
+  // `Netzach` `Normal`
+  rpc CreateNotifyFlow(CreateNotifyFlowRequest) returns (CreateNotifyFlowResponse);
+  // `Netzach` `Normal`
+  rpc UpdateNotifyFlow(UpdateNotifyFlowRequest) returns (UpdateNotifyFlowResponse);
+  // `Netzach` `Normal`
+  rpc ListNotifyFlows(ListNotifyFlowsRequest) returns (ListNotifyFlowsResponse);
 
   // `Yesod` `Normal`
   rpc CreateFeedConfig(CreateFeedConfigRequest) returns (CreateFeedConfigResponse);

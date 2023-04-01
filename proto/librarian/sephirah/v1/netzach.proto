@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+import "librarian/v1/common.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+
+message CreateNotifyTargetRequest {
+  NotifyTarget target = 1;
+}
+message CreateNotifyTargetResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateNotifyTargetRequest {
+  NotifyTarget target = 1;
+}
+message UpdateNotifyTargetResponse {}
+
+message ListNotifyTargetsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+  repeated TargetType type_filter = 3;
+  repeated TargetStatus status_filter = 4;
+}
+
+message ListNotifyTargetsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated NotifyTarget targets = 2;
+}
+
+message CreateNotifyFlowRequest {
+  NotifyFlow flow = 1;
+}
+message CreateNotifyFlowResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateNotifyFlowRequest {
+  NotifyFlow flow = 1;
+}
+message UpdateNotifyFlowResponse {}
+
+message ListNotifyFlowsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+}
+message ListNotifyFlowsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated NotifyFlow flows = 2;
+}
+
+message NotifyTarget {
+  librarian.v1.InternalID id = 1;
+  TargetType type = 2;
+  TargetStatus status = 3;
+  string token = 4;
+}
+
+message NotifyFlow {
+  librarian.v1.InternalID id = 1;
+  NotifyFlowSource source = 2;
+  repeated NotifyFlowTarget targets = 3;
+}
+
+message NotifyFlowSource {
+  repeated librarian.v1.InternalID feed_id_filter = 1;
+}
+
+message NotifyFlowTarget {
+  librarian.v1.InternalID target_id = 1;
+  string channel_id = 2;
+}
+
+enum TargetType {
+  TARGET_TYPE_UNSPECIFIED = 0;
+  TARGET_TYPE_TELEGRAM = 1;
+}
+
+enum TargetStatus {
+  TARGET_STATUS_UNSPECIFIED = 0;
+  TARGET_STATUS_ACTIVE = 1;
+  TARGET_STATUS_SUSPEND = 2;
+}
