@@ -18,21 +18,21 @@ export 'porter.pbenum.dart';
 class PullFeedRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullFeedRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..e<FeedSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedSource.FEED_SOURCE_UNSPECIFIED, valueOf: FeedSource.valueOf, enumValues: FeedSource.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId')
     ..hasRequiredFields = false
   ;
 
   PullFeedRequest._() : super();
   factory PullFeedRequest({
     FeedSource? source,
-    $core.String? contentId,
+    $core.String? channelId,
   }) {
     final _result = create();
     if (source != null) {
       _result.source = source;
     }
-    if (contentId != null) {
-      _result.contentId = contentId;
+    if (channelId != null) {
+      _result.channelId = channelId;
     }
     return _result;
   }
@@ -67,13 +67,13 @@ class PullFeedRequest extends $pb.GeneratedMessage {
   void clearSource() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get contentId => $_getSZ(1);
+  $core.String get channelId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set contentId($core.String v) { $_setString(1, v); }
+  set channelId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasContentId() => $_has(1);
+  $core.bool hasChannelId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearContentId() => clearField(2);
+  void clearChannelId() => clearField(2);
 }
 
 class PullFeedResponse extends $pb.GeneratedMessage {
@@ -123,6 +123,112 @@ class PullFeedResponse extends $pb.GeneratedMessage {
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
   $1.Feed ensureData() => $_ensure(0);
+}
+
+class PushFeedItemRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..e<FeedDestination>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination', $pb.PbFieldType.OE, defaultOrMaker: FeedDestination.FEED_DESTINATION_UNSPECIFIED, valueOf: FeedDestination.valueOf, enumValues: FeedDestination.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId')
+    ..aOM<$1.FeedItem>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', subBuilder: $1.FeedItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  PushFeedItemRequest._() : super();
+  factory PushFeedItemRequest({
+    FeedDestination? destination,
+    $core.String? channelId,
+    $1.FeedItem? data,
+  }) {
+    final _result = create();
+    if (destination != null) {
+      _result.destination = destination;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    if (data != null) {
+      _result.data = data;
+    }
+    return _result;
+  }
+  factory PushFeedItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PushFeedItemRequest clone() => PushFeedItemRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PushFeedItemRequest copyWith(void Function(PushFeedItemRequest) updates) => super.copyWith((message) => updates(message as PushFeedItemRequest)) as PushFeedItemRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PushFeedItemRequest create() => PushFeedItemRequest._();
+  PushFeedItemRequest createEmptyInstance() => create();
+  static $pb.PbList<PushFeedItemRequest> createRepeated() => $pb.PbList<PushFeedItemRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PushFeedItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemRequest>(create);
+  static PushFeedItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  FeedDestination get destination => $_getN(0);
+  @$pb.TagNumber(1)
+  set destination(FeedDestination v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDestination() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDestination() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get channelId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set channelId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasChannelId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChannelId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.FeedItem get data => $_getN(2);
+  @$pb.TagNumber(3)
+  set data($1.FeedItem v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasData() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearData() => clearField(3);
+  @$pb.TagNumber(3)
+  $1.FeedItem ensureData() => $_ensure(2);
+}
+
+class PushFeedItemResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  PushFeedItemResponse._() : super();
+  factory PushFeedItemResponse() => create();
+  factory PushFeedItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PushFeedItemResponse clone() => PushFeedItemResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PushFeedItemResponse copyWith(void Function(PushFeedItemResponse) updates) => super.copyWith((message) => updates(message as PushFeedItemResponse)) as PushFeedItemResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PushFeedItemResponse create() => PushFeedItemResponse._();
+  PushFeedItemResponse createEmptyInstance() => create();
+  static $pb.PbList<PushFeedItemResponse> createRepeated() => $pb.PbList<PushFeedItemResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PushFeedItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemResponse>(create);
+  static PushFeedItemResponse? _defaultInstance;
 }
 
 class PullDBRequest extends $pb.GeneratedMessage {

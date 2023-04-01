@@ -8,6 +8,19 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use featureFlagDescriptor instead')
+const FeatureFlag$json = const {
+  '1': 'FeatureFlag',
+  '2': const [
+    const {'1': 'FEATURE_FLAG_UNSPECIFIED', '2': 0},
+    const {'1': 'FEATURE_FLAG_SOURCE_STEAM', '2': 1},
+    const {'1': 'FEATURE_FLAG_SOURCE_TELEGRAM', '2': 2},
+    const {'1': 'FEATURE_FLAG_DEFAULT_DATA_STORAGE', '2': 3},
+  ],
+};
+
+/// Descriptor for `FeatureFlag`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List featureFlagDescriptor = $convert.base64Decode('CgtGZWF0dXJlRmxhZxIcChhGRUFUVVJFX0ZMQUdfVU5TUEVDSUZJRUQQABIdChlGRUFUVVJFX0ZMQUdfU09VUkNFX1NURUFNEAESIAocRkVBVFVSRV9GTEFHX1NPVVJDRV9URUxFR1JBTRACEiUKIUZFQVRVUkVfRkxBR19ERUZBVUxUX0RBVEFfU1RPUkFHRRAD');
 @$core.Deprecated('Use accountAppRelationTypeDescriptor instead')
 const AccountAppRelationType$json = const {
   '1': 'AccountAppRelationType',
@@ -30,6 +43,17 @@ const FeedSource$json = const {
 
 /// Descriptor for `FeedSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List feedSourceDescriptor = $convert.base64Decode('CgpGZWVkU291cmNlEhsKF0ZFRURfU09VUkNFX1VOU1BFQ0lGSUVEEAASFgoSRkVFRF9TT1VSQ0VfQ09NTU9OEAE=');
+@$core.Deprecated('Use feedDestinationDescriptor instead')
+const FeedDestination$json = const {
+  '1': 'FeedDestination',
+  '2': const [
+    const {'1': 'FEED_DESTINATION_UNSPECIFIED', '2': 0},
+    const {'1': 'FEED_DESTINATION_TELEGRAM', '2': 1},
+  ],
+};
+
+/// Descriptor for `FeedDestination`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List feedDestinationDescriptor = $convert.base64Decode('Cg9GZWVkRGVzdGluYXRpb24SIAocRkVFRF9ERVNUSU5BVElPTl9VTlNQRUNJRklFRBAAEh0KGUZFRURfREVTVElOQVRJT05fVEVMRUdSQU0QAQ==');
 @$core.Deprecated('Use dBSourceDescriptor instead')
 const DBSource$json = const {
   '1': 'DBSource',
@@ -66,12 +90,12 @@ const PullFeedRequest$json = const {
   '1': 'PullFeedRequest',
   '2': const [
     const {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.FeedSource', '10': 'source'},
-    const {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
   ],
 };
 
 /// Descriptor for `PullFeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullFeedRequestDescriptor = $convert.base64Decode('Cg9QdWxsRmVlZFJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5GZWVkU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElk');
+final $typed_data.Uint8List pullFeedRequestDescriptor = $convert.base64Decode('Cg9QdWxsRmVlZFJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5GZWVkU291cmNlUgZzb3VyY2USHQoKY2hhbm5lbF9pZBgCIAEoCVIJY2hhbm5lbElk');
 @$core.Deprecated('Use pullFeedResponseDescriptor instead')
 const PullFeedResponse$json = const {
   '1': 'PullFeedResponse',
@@ -85,6 +109,25 @@ const PullFeedResponse$json = const {
 
 /// Descriptor for `PullFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pullFeedResponseDescriptor = $convert.base64Decode('ChBQdWxsRmVlZFJlc3BvbnNlEisKBGRhdGEYASABKAsyEi5saWJyYXJpYW4udjEuRmVlZEgAUgRkYXRhiAEBQgcKBV9kYXRh');
+@$core.Deprecated('Use pushFeedItemRequestDescriptor instead')
+const PushFeedItemRequest$json = const {
+  '1': 'PushFeedItemRequest',
+  '2': const [
+    const {'1': 'destination', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.FeedDestination', '10': 'destination'},
+    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    const {'1': 'data', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'data'},
+  ],
+};
+
+/// Descriptor for `PushFeedItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pushFeedItemRequestDescriptor = $convert.base64Decode('ChNQdXNoRmVlZEl0ZW1SZXF1ZXN0EkYKC2Rlc3RpbmF0aW9uGAEgASgOMiQubGlicmFyaWFuLnBvcnRlci52MS5GZWVkRGVzdGluYXRpb25SC2Rlc3RpbmF0aW9uEh0KCmNoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBIqCgRkYXRhGAMgASgLMhYubGlicmFyaWFuLnYxLkZlZWRJdGVtUgRkYXRh');
+@$core.Deprecated('Use pushFeedItemResponseDescriptor instead')
+const PushFeedItemResponse$json = const {
+  '1': 'PushFeedItemResponse',
+};
+
+/// Descriptor for `PushFeedItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pushFeedItemResponseDescriptor = $convert.base64Decode('ChRQdXNoRmVlZEl0ZW1SZXNwb25zZQ==');
 @$core.Deprecated('Use pullDBRequestDescriptor instead')
 const PullDBRequest$json = const {
   '1': 'PullDBRequest',

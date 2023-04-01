@@ -181,6 +181,28 @@ function deserialize_librarian_porter_v1_PushDataResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.PushDataResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_porter_v1_PushFeedItemRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PushFeedItemRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PushFeedItemRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_PushFeedItemRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PushFeedItemRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_PushFeedItemResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PushFeedItemResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PushFeedItemResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_PushFeedItemResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PushFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 //
 // The main role of Porter is to encapsulate input&output operations.
@@ -202,6 +224,17 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     requestDeserialize: deserialize_librarian_porter_v1_PullFeedRequest,
     responseSerialize: serialize_librarian_porter_v1_PullFeedResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullFeedResponse,
+  },
+  pushFeedItem: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PushFeedItem',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PushFeedItemRequest,
+    responseType: librarian_porter_v1_porter_pb.PushFeedItemResponse,
+    requestSerialize: serialize_librarian_porter_v1_PushFeedItemRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PushFeedItemRequest,
+    responseSerialize: serialize_librarian_porter_v1_PushFeedItemResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemResponse,
   },
   pullDB: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullDB',
@@ -236,6 +269,17 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PullDataResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullDataResponse,
   },
+  pushData: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PushData',
+    requestStream: true,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PushDataRequest,
+    responseType: librarian_porter_v1_porter_pb.PushDataResponse,
+    requestSerialize: serialize_librarian_porter_v1_PushDataRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PushDataRequest,
+    responseSerialize: serialize_librarian_porter_v1_PushDataResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PushDataResponse,
+  },
   pullAccount: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullAccount',
     requestStream: false,
@@ -268,17 +312,6 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     requestDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationRequest,
     responseSerialize: serialize_librarian_porter_v1_PullAccountAppRelationResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationResponse,
-  },
-  pushData: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PushData',
-    requestStream: true,
-    responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PushDataRequest,
-    responseType: librarian_porter_v1_porter_pb.PushDataResponse,
-    requestSerialize: serialize_librarian_porter_v1_PushDataRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PushDataRequest,
-    responseSerialize: serialize_librarian_porter_v1_PushDataResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PushDataResponse,
   },
 };
 

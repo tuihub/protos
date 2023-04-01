@@ -10,6 +10,7 @@ pub mod librarian_sephirah_service_client {
  2. `Gebura` handles application data
  3. `Binah` handles file transfer
  4. `Yesod` handles feed data
+ 5. `Netzach` handles notifications
 */
     #[derive(Debug, Clone)]
     pub struct LibrarianSephirahServiceClient<T> {
@@ -778,6 +779,132 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** `Netzach` `Normal`
+*/
+        pub async fn create_notify_target(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CreateNotifyTargetRequest>,
+        ) -> Result<tonic::Response<super::CreateNotifyTargetResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Netzach` `Normal`
+*/
+        pub async fn update_notify_target(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UpdateNotifyTargetRequest>,
+        ) -> Result<tonic::Response<super::UpdateNotifyTargetResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Netzach` `Normal`
+*/
+        pub async fn list_notify_targets(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListNotifyTargetsRequest>,
+        ) -> Result<tonic::Response<super::ListNotifyTargetsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Netzach` `Normal`
+*/
+        pub async fn create_notify_flow(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CreateNotifyFlowRequest>,
+        ) -> Result<tonic::Response<super::CreateNotifyFlowResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Netzach` `Normal`
+*/
+        pub async fn update_notify_flow(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UpdateNotifyFlowRequest>,
+        ) -> Result<tonic::Response<super::UpdateNotifyFlowResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Netzach` `Normal`
+*/
+        pub async fn list_notify_flows(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListNotifyFlowsRequest>,
+        ) -> Result<tonic::Response<super::ListNotifyFlowsResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
         /** `Yesod` `Normal`
 */
         pub async fn create_feed_config(
@@ -1159,6 +1286,42 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::ListGameSaveFileRequest>,
         ) -> Result<tonic::Response<super::ListGameSaveFileResponse>, tonic::Status>;
+        /** `Netzach` `Normal`
+*/
+        async fn create_notify_target(
+            &self,
+            request: tonic::Request<super::CreateNotifyTargetRequest>,
+        ) -> Result<tonic::Response<super::CreateNotifyTargetResponse>, tonic::Status>;
+        /** `Netzach` `Normal`
+*/
+        async fn update_notify_target(
+            &self,
+            request: tonic::Request<super::UpdateNotifyTargetRequest>,
+        ) -> Result<tonic::Response<super::UpdateNotifyTargetResponse>, tonic::Status>;
+        /** `Netzach` `Normal`
+*/
+        async fn list_notify_targets(
+            &self,
+            request: tonic::Request<super::ListNotifyTargetsRequest>,
+        ) -> Result<tonic::Response<super::ListNotifyTargetsResponse>, tonic::Status>;
+        /** `Netzach` `Normal`
+*/
+        async fn create_notify_flow(
+            &self,
+            request: tonic::Request<super::CreateNotifyFlowRequest>,
+        ) -> Result<tonic::Response<super::CreateNotifyFlowResponse>, tonic::Status>;
+        /** `Netzach` `Normal`
+*/
+        async fn update_notify_flow(
+            &self,
+            request: tonic::Request<super::UpdateNotifyFlowRequest>,
+        ) -> Result<tonic::Response<super::UpdateNotifyFlowResponse>, tonic::Status>;
+        /** `Netzach` `Normal`
+*/
+        async fn list_notify_flows(
+            &self,
+            request: tonic::Request<super::ListNotifyFlowsRequest>,
+        ) -> Result<tonic::Response<super::ListNotifyFlowsResponse>, tonic::Status>;
         /** `Yesod` `Normal`
 */
         async fn create_feed_config(
@@ -1208,6 +1371,7 @@ pub mod librarian_sephirah_service_server {
  2. `Gebura` handles application data
  3. `Binah` handles file transfer
  4. `Yesod` handles feed data
+ 5. `Netzach` handles notifications
 */
     #[derive(Debug)]
     pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
@@ -2537,6 +2701,250 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ListGameSaveFileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateNotifyTargetSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::CreateNotifyTargetRequest>
+                    for CreateNotifyTargetSvc<T> {
+                        type Response = super::CreateNotifyTargetResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::CreateNotifyTargetRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).create_notify_target(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateNotifyTargetSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateNotifyTargetSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::UpdateNotifyTargetRequest>
+                    for UpdateNotifyTargetSvc<T> {
+                        type Response = super::UpdateNotifyTargetResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UpdateNotifyTargetRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).update_notify_target(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateNotifyTargetSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListNotifyTargetsSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListNotifyTargetsRequest>
+                    for ListNotifyTargetsSvc<T> {
+                        type Response = super::ListNotifyTargetsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListNotifyTargetsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_notify_targets(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListNotifyTargetsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateNotifyFlowSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::CreateNotifyFlowRequest>
+                    for CreateNotifyFlowSvc<T> {
+                        type Response = super::CreateNotifyFlowResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::CreateNotifyFlowRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).create_notify_flow(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateNotifyFlowSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateNotifyFlowSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::UpdateNotifyFlowRequest>
+                    for UpdateNotifyFlowSvc<T> {
+                        type Response = super::UpdateNotifyFlowResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UpdateNotifyFlowRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).update_notify_flow(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateNotifyFlowSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListNotifyFlowsSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListNotifyFlowsRequest>
+                    for ListNotifyFlowsSvc<T> {
+                        type Response = super::ListNotifyFlowsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListNotifyFlowsRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).list_notify_flows(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListNotifyFlowsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

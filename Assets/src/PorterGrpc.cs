@@ -61,6 +61,10 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse> __Marshaller_librarian_porter_v1_PullFeedResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest> __Marshaller_librarian_porter_v1_PushFeedItemRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse> __Marshaller_librarian_porter_v1_PushFeedItemResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullDBRequest> __Marshaller_librarian_porter_v1_PullDBRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullDBRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullDBResponse> __Marshaller_librarian_porter_v1_PullDBResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullDBResponse.Parser));
@@ -73,6 +77,10 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullDataResponse> __Marshaller_librarian_porter_v1_PullDataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullDataResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest> __Marshaller_librarian_porter_v1_PushDataRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> __Marshaller_librarian_porter_v1_PushDataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest> __Marshaller_librarian_porter_v1_PullAccountRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse> __Marshaller_librarian_porter_v1_PullAccountResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse.Parser));
@@ -84,10 +92,6 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationRequest> __Marshaller_librarian_porter_v1_PullAccountAppRelationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationResponse> __Marshaller_librarian_porter_v1_PullAccountAppRelationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest> __Marshaller_librarian_porter_v1_PushDataRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> __Marshaller_librarian_porter_v1_PushDataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse> __Method_PullFeed = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse>(
@@ -96,6 +100,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         "PullFeed",
         __Marshaller_librarian_porter_v1_PullFeedRequest,
         __Marshaller_librarian_porter_v1_PullFeedResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse> __Method_PushFeedItem = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PushFeedItem",
+        __Marshaller_librarian_porter_v1_PushFeedItemRequest,
+        __Marshaller_librarian_porter_v1_PushFeedItemResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullDBRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullDBResponse> __Method_PullDB = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullDBRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullDBResponse>(
@@ -122,6 +134,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         __Marshaller_librarian_porter_v1_PullDataResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> __Method_PushData = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse>(
+        grpc::MethodType.ClientStreaming,
+        __ServiceName,
+        "PushData",
+        __Marshaller_librarian_porter_v1_PushDataRequest,
+        __Marshaller_librarian_porter_v1_PushDataResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse> __Method_PullAccount = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -145,14 +165,6 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         __Marshaller_librarian_porter_v1_PullAccountAppRelationRequest,
         __Marshaller_librarian_porter_v1_PullAccountAppRelationResponse);
 
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> __Method_PushData = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse>(
-        grpc::MethodType.ClientStreaming,
-        __ServiceName,
-        "PushData",
-        __Marshaller_librarian_porter_v1_PushDataRequest,
-        __Marshaller_librarian_porter_v1_PushDataResponse);
-
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -165,6 +177,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse> PullFeed(global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse> PushFeedItem(global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -188,6 +206,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> PushData(grpc::IAsyncStreamReader<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest> requestStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse> PullAccount(global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -201,12 +225,6 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationResponse> PullAccountAppRelation(global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> PushData(grpc::IAsyncStreamReader<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest> requestStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -261,6 +279,26 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_PullFeed, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse PushFeedItem(global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PushFeedItem(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse PushFeedItem(global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PushFeedItem, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse> PushFeedItemAsync(global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PushFeedItemAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse> PushFeedItemAsync(global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PushFeedItem, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::TuiHub.Protos.Librarian.Porter.V1.PullDBResponse PullDB(global::TuiHub.Protos.Librarian.Porter.V1.PullDBRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PullDB(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -309,6 +347,16 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       public virtual grpc::AsyncServerStreamingCall<global::TuiHub.Protos.Librarian.Porter.V1.PullDataResponse> PullData(global::TuiHub.Protos.Librarian.Porter.V1.PullDataRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_PullData, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncClientStreamingCall<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> PushData(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PushData(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncClientStreamingCall<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> PushData(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncClientStreamingCall(__Method_PushData, null, options);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse PullAccount(global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
@@ -370,16 +418,6 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_PullAccountAppRelation, null, options, request);
       }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncClientStreamingCall<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> PushData(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return PushData(new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncClientStreamingCall<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse> PushData(grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncClientStreamingCall(__Method_PushData, null, options);
-      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override LibrarianPorterServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -395,13 +433,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_PullFeed, serviceImpl.PullFeed)
+          .AddMethod(__Method_PushFeedItem, serviceImpl.PushFeedItem)
           .AddMethod(__Method_PullDB, serviceImpl.PullDB)
           .AddMethod(__Method_PullWiki, serviceImpl.PullWiki)
           .AddMethod(__Method_PullData, serviceImpl.PullData)
+          .AddMethod(__Method_PushData, serviceImpl.PushData)
           .AddMethod(__Method_PullAccount, serviceImpl.PullAccount)
           .AddMethod(__Method_PullApp, serviceImpl.PullApp)
-          .AddMethod(__Method_PullAccountAppRelation, serviceImpl.PullAccountAppRelation)
-          .AddMethod(__Method_PushData, serviceImpl.PushData).Build();
+          .AddMethod(__Method_PullAccountAppRelation, serviceImpl.PullAccountAppRelation).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -412,13 +451,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianPorterServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_PullFeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse>(serviceImpl.PullFeed));
+      serviceBinder.AddMethod(__Method_PushFeedItem, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemResponse>(serviceImpl.PushFeedItem));
       serviceBinder.AddMethod(__Method_PullDB, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullDBRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullDBResponse>(serviceImpl.PullDB));
       serviceBinder.AddMethod(__Method_PullWiki, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullWikiRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullWikiResponse>(serviceImpl.PullWiki));
       serviceBinder.AddMethod(__Method_PullData, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullDataResponse>(serviceImpl.PullData));
+      serviceBinder.AddMethod(__Method_PushData, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse>(serviceImpl.PushData));
       serviceBinder.AddMethod(__Method_PullAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse>(serviceImpl.PullAccount));
       serviceBinder.AddMethod(__Method_PullApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullAppRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAppResponse>(serviceImpl.PullApp));
       serviceBinder.AddMethod(__Method_PullAccountAppRelation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppRelationResponse>(serviceImpl.PullAccountAppRelation));
-      serviceBinder.AddMethod(__Method_PushData, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse>(serviceImpl.PushData));
     }
 
   }

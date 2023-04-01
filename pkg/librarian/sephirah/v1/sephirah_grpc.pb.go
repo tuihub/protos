@@ -51,6 +51,12 @@ const (
 	LibrarianSephirahService_UploadGameSaveFile_FullMethodName   = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
 	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
 	LibrarianSephirahService_ListGameSaveFile_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile"
+	LibrarianSephirahService_CreateNotifyTarget_FullMethodName   = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget"
+	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName   = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget"
+	LibrarianSephirahService_ListNotifyTargets_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets"
+	LibrarianSephirahService_CreateNotifyFlow_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow"
+	LibrarianSephirahService_UpdateNotifyFlow_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow"
+	LibrarianSephirahService_ListNotifyFlows_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows"
 	LibrarianSephirahService_CreateFeedConfig_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig"
 	LibrarianSephirahService_UpdateFeedConfig_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig"
 	LibrarianSephirahService_ListFeedConfigs_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs"
@@ -131,6 +137,18 @@ type LibrarianSephirahServiceClient interface {
 	DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	ListGameSaveFile(ctx context.Context, in *ListGameSaveFileRequest, opts ...grpc.CallOption) (*ListGameSaveFileResponse, error)
+	// `Netzach` `Normal`
+	CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error)
+	// `Netzach` `Normal`
+	UpdateNotifyTarget(ctx context.Context, in *UpdateNotifyTargetRequest, opts ...grpc.CallOption) (*UpdateNotifyTargetResponse, error)
+	// `Netzach` `Normal`
+	ListNotifyTargets(ctx context.Context, in *ListNotifyTargetsRequest, opts ...grpc.CallOption) (*ListNotifyTargetsResponse, error)
+	// `Netzach` `Normal`
+	CreateNotifyFlow(ctx context.Context, in *CreateNotifyFlowRequest, opts ...grpc.CallOption) (*CreateNotifyFlowResponse, error)
+	// `Netzach` `Normal`
+	UpdateNotifyFlow(ctx context.Context, in *UpdateNotifyFlowRequest, opts ...grpc.CallOption) (*UpdateNotifyFlowResponse, error)
+	// `Netzach` `Normal`
+	ListNotifyFlows(ctx context.Context, in *ListNotifyFlowsRequest, opts ...grpc.CallOption) (*ListNotifyFlowsResponse, error)
 	// `Yesod` `Normal`
 	CreateFeedConfig(ctx context.Context, in *CreateFeedConfigRequest, opts ...grpc.CallOption) (*CreateFeedConfigResponse, error)
 	// `Yesod` `Normal`
@@ -553,6 +571,60 @@ func (c *librarianSephirahServiceClient) ListGameSaveFile(ctx context.Context, i
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error) {
+	out := new(CreateNotifyTargetResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateNotifyTarget_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateNotifyTarget(ctx context.Context, in *UpdateNotifyTargetRequest, opts ...grpc.CallOption) (*UpdateNotifyTargetResponse, error) {
+	out := new(UpdateNotifyTargetResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateNotifyTarget_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListNotifyTargets(ctx context.Context, in *ListNotifyTargetsRequest, opts ...grpc.CallOption) (*ListNotifyTargetsResponse, error) {
+	out := new(ListNotifyTargetsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListNotifyTargets_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) CreateNotifyFlow(ctx context.Context, in *CreateNotifyFlowRequest, opts ...grpc.CallOption) (*CreateNotifyFlowResponse, error) {
+	out := new(CreateNotifyFlowResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateNotifyFlow_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateNotifyFlow(ctx context.Context, in *UpdateNotifyFlowRequest, opts ...grpc.CallOption) (*UpdateNotifyFlowResponse, error) {
+	out := new(UpdateNotifyFlowResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateNotifyFlow_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListNotifyFlows(ctx context.Context, in *ListNotifyFlowsRequest, opts ...grpc.CallOption) (*ListNotifyFlowsResponse, error) {
+	out := new(ListNotifyFlowsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListNotifyFlows_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) CreateFeedConfig(ctx context.Context, in *CreateFeedConfigRequest, opts ...grpc.CallOption) (*CreateFeedConfigResponse, error) {
 	out := new(CreateFeedConfigResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateFeedConfig_FullMethodName, in, out, opts...)
@@ -687,6 +759,18 @@ type LibrarianSephirahServiceServer interface {
 	DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error)
+	// `Netzach` `Normal`
+	CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error)
+	// `Netzach` `Normal`
+	UpdateNotifyTarget(context.Context, *UpdateNotifyTargetRequest) (*UpdateNotifyTargetResponse, error)
+	// `Netzach` `Normal`
+	ListNotifyTargets(context.Context, *ListNotifyTargetsRequest) (*ListNotifyTargetsResponse, error)
+	// `Netzach` `Normal`
+	CreateNotifyFlow(context.Context, *CreateNotifyFlowRequest) (*CreateNotifyFlowResponse, error)
+	// `Netzach` `Normal`
+	UpdateNotifyFlow(context.Context, *UpdateNotifyFlowRequest) (*UpdateNotifyFlowResponse, error)
+	// `Netzach` `Normal`
+	ListNotifyFlows(context.Context, *ListNotifyFlowsRequest) (*ListNotifyFlowsResponse, error)
 	// `Yesod` `Normal`
 	CreateFeedConfig(context.Context, *CreateFeedConfigRequest) (*CreateFeedConfigResponse, error)
 	// `Yesod` `Normal`
@@ -803,6 +887,24 @@ func (UnimplementedLibrarianSephirahServiceServer) DownloadGameSaveFile(context.
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifyTarget not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateNotifyTarget(context.Context, *UpdateNotifyTargetRequest) (*UpdateNotifyTargetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotifyTarget not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListNotifyTargets(context.Context, *ListNotifyTargetsRequest) (*ListNotifyTargetsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNotifyTargets not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateNotifyFlow(context.Context, *CreateNotifyFlowRequest) (*CreateNotifyFlowResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifyFlow not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateNotifyFlow(context.Context, *UpdateNotifyFlowRequest) (*UpdateNotifyFlowResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotifyFlow not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListNotifyFlows(context.Context, *ListNotifyFlowsRequest) (*ListNotifyFlowsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNotifyFlows not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateFeedConfig(context.Context, *CreateFeedConfigRequest) (*CreateFeedConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateFeedConfig not implemented")
@@ -1455,6 +1557,114 @@ func _LibrarianSephirahService_ListGameSaveFile_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_CreateNotifyTarget_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotifyTargetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateNotifyTarget(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateNotifyTarget_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateNotifyTarget(ctx, req.(*CreateNotifyTargetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateNotifyTarget_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNotifyTargetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateNotifyTarget(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateNotifyTarget_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateNotifyTarget(ctx, req.(*UpdateNotifyTargetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListNotifyTargets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNotifyTargetsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListNotifyTargets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListNotifyTargets_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListNotifyTargets(ctx, req.(*ListNotifyTargetsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_CreateNotifyFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotifyFlowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateNotifyFlow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateNotifyFlow_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateNotifyFlow(ctx, req.(*CreateNotifyFlowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateNotifyFlow_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNotifyFlowRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateNotifyFlow(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateNotifyFlow_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateNotifyFlow(ctx, req.(*UpdateNotifyFlowRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListNotifyFlows_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNotifyFlowsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListNotifyFlows(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListNotifyFlows_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListNotifyFlows(ctx, req.(*ListNotifyFlowsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_CreateFeedConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateFeedConfigRequest)
 	if err := dec(in); err != nil {
@@ -1695,6 +1905,30 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListGameSaveFile",
 			Handler:    _LibrarianSephirahService_ListGameSaveFile_Handler,
+		},
+		{
+			MethodName: "CreateNotifyTarget",
+			Handler:    _LibrarianSephirahService_CreateNotifyTarget_Handler,
+		},
+		{
+			MethodName: "UpdateNotifyTarget",
+			Handler:    _LibrarianSephirahService_UpdateNotifyTarget_Handler,
+		},
+		{
+			MethodName: "ListNotifyTargets",
+			Handler:    _LibrarianSephirahService_ListNotifyTargets_Handler,
+		},
+		{
+			MethodName: "CreateNotifyFlow",
+			Handler:    _LibrarianSephirahService_CreateNotifyFlow_Handler,
+		},
+		{
+			MethodName: "UpdateNotifyFlow",
+			Handler:    _LibrarianSephirahService_UpdateNotifyFlow_Handler,
+		},
+		{
+			MethodName: "ListNotifyFlows",
+			Handler:    _LibrarianSephirahService_ListNotifyFlows_Handler,
 		},
 		{
 			MethodName: "CreateFeedConfig",

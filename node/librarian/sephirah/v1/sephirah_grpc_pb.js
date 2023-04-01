@@ -4,6 +4,7 @@
 var grpc = require('@grpc/grpc-js');
 var librarian_sephirah_v1_binah_pb = require('../../../librarian/sephirah/v1/binah_pb.js');
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
+var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
 var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
 
@@ -93,6 +94,50 @@ function serialize_librarian_sephirah_v1_CreateFeedConfigResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_CreateFeedConfigResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.CreateFeedConfigResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateNotifyFlowRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.CreateNotifyFlowRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateNotifyFlowRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateNotifyFlowRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.CreateNotifyFlowRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateNotifyFlowResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.CreateNotifyFlowResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateNotifyFlowResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateNotifyFlowResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.CreateNotifyFlowResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateNotifyTargetRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.CreateNotifyTargetRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateNotifyTargetRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateNotifyTargetRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.CreateNotifyTargetRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateNotifyTargetResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.CreateNotifyTargetResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateNotifyTargetResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateNotifyTargetResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.CreateNotifyTargetResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_CreateUserRequest(arg) {
@@ -491,6 +536,50 @@ function deserialize_librarian_sephirah_v1_ListLinkAccountsResponse(buffer_arg) 
   return librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListNotifyFlowsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListNotifyFlowsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListNotifyFlowsRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListNotifyFlowsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListNotifyFlowsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListNotifyFlowsResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListNotifyTargetsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.ListNotifyTargetsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListNotifyTargetsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListNotifyTargetsRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.ListNotifyTargetsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListNotifyTargetsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.ListNotifyTargetsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListNotifyTargetsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListNotifyTargetsResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.ListNotifyTargetsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListUsersRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUsersRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListUsersRequest');
@@ -799,6 +888,50 @@ function deserialize_librarian_sephirah_v1_UpdateFeedConfigResponse(buffer_arg) 
   return librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_UpdateNotifyFlowRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateNotifyFlowRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateNotifyFlowRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateNotifyFlowResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateNotifyFlowResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateNotifyFlowResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateNotifyTargetRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateNotifyTargetRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateNotifyTargetRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateNotifyTargetResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateNotifyTargetResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateNotifyTargetResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_UpdateUserRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.UpdateUserRequest');
@@ -872,6 +1005,7 @@ function deserialize_librarian_sephirah_v1_UploadGameSaveFileResponse(buffer_arg
 // 2. `Gebura` handles application data
 // 3. `Binah` handles file transfer
 // 4. `Yesod` handles feed data
+// 5. `Netzach` handles notifications
 var LibrarianSephirahServiceService = exports.LibrarianSephirahServiceService = {
   // `Tiphereth` `Normal` Login via password and get two token
 getToken: {
@@ -1259,6 +1393,78 @@ listGameSaveFile: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFileRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListGameSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFileResponse,
+  },
+  // `Netzach` `Normal`
+createNotifyTarget: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.CreateNotifyTargetRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.CreateNotifyTargetResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_CreateNotifyTargetRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_CreateNotifyTargetRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_CreateNotifyTargetResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_CreateNotifyTargetResponse,
+  },
+  // `Netzach` `Normal`
+updateNotifyTarget: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdateNotifyTargetRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateNotifyTargetRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdateNotifyTargetResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateNotifyTargetResponse,
+  },
+  // `Netzach` `Normal`
+listNotifyTargets: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.ListNotifyTargetsRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.ListNotifyTargetsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListNotifyTargetsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListNotifyTargetsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListNotifyTargetsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListNotifyTargetsResponse,
+  },
+  // `Netzach` `Normal`
+createNotifyFlow: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.CreateNotifyFlowRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.CreateNotifyFlowResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_CreateNotifyFlowRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_CreateNotifyFlowRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_CreateNotifyFlowResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_CreateNotifyFlowResponse,
+  },
+  // `Netzach` `Normal`
+updateNotifyFlow: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdateNotifyFlowRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateNotifyFlowRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdateNotifyFlowResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateNotifyFlowResponse,
+  },
+  // `Netzach` `Normal`
+listNotifyFlows: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListNotifyFlowsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
   },
   // `Yesod` `Normal`
 createFeedConfig: {

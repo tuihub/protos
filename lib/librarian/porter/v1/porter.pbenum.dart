@@ -9,6 +9,25 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class FeatureFlag extends $pb.ProtobufEnum {
+  static const FeatureFlag FEATURE_FLAG_UNSPECIFIED = FeatureFlag._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_UNSPECIFIED');
+  static const FeatureFlag FEATURE_FLAG_SOURCE_STEAM = FeatureFlag._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_SOURCE_STEAM');
+  static const FeatureFlag FEATURE_FLAG_SOURCE_TELEGRAM = FeatureFlag._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_SOURCE_TELEGRAM');
+  static const FeatureFlag FEATURE_FLAG_DEFAULT_DATA_STORAGE = FeatureFlag._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_DEFAULT_DATA_STORAGE');
+
+  static const $core.List<FeatureFlag> values = <FeatureFlag> [
+    FEATURE_FLAG_UNSPECIFIED,
+    FEATURE_FLAG_SOURCE_STEAM,
+    FEATURE_FLAG_SOURCE_TELEGRAM,
+    FEATURE_FLAG_DEFAULT_DATA_STORAGE,
+  ];
+
+  static final $core.Map<$core.int, FeatureFlag> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FeatureFlag? valueOf($core.int value) => _byValue[value];
+
+  const FeatureFlag._($core.int v, $core.String n) : super(v, n);
+}
+
 class AccountAppRelationType extends $pb.ProtobufEnum {
   static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = AccountAppRelationType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED');
   static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_OWN = AccountAppRelationType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_APP_RELATION_TYPE_OWN');
@@ -37,6 +56,21 @@ class FeedSource extends $pb.ProtobufEnum {
   static FeedSource? valueOf($core.int value) => _byValue[value];
 
   const FeedSource._($core.int v, $core.String n) : super(v, n);
+}
+
+class FeedDestination extends $pb.ProtobufEnum {
+  static const FeedDestination FEED_DESTINATION_UNSPECIFIED = FeedDestination._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_DESTINATION_UNSPECIFIED');
+  static const FeedDestination FEED_DESTINATION_TELEGRAM = FeedDestination._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_DESTINATION_TELEGRAM');
+
+  static const $core.List<FeedDestination> values = <FeedDestination> [
+    FEED_DESTINATION_UNSPECIFIED,
+    FEED_DESTINATION_TELEGRAM,
+  ];
+
+  static final $core.Map<$core.int, FeedDestination> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FeedDestination? valueOf($core.int value) => _byValue[value];
+
+  const FeedDestination._($core.int v, $core.String n) : super(v, n);
 }
 
 class DBSource extends $pb.ProtobufEnum {

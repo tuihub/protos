@@ -20,13 +20,14 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	LibrarianPorterService_PullFeed_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
+	LibrarianPorterService_PushFeedItem_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/PushFeedItem"
 	LibrarianPorterService_PullDB_FullMethodName                 = "/librarian.porter.v1.LibrarianPorterService/PullDB"
 	LibrarianPorterService_PullWiki_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullWiki"
 	LibrarianPorterService_PullData_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullData"
+	LibrarianPorterService_PushData_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PushData"
 	LibrarianPorterService_PullAccount_FullMethodName            = "/librarian.porter.v1.LibrarianPorterService/PullAccount"
 	LibrarianPorterService_PullApp_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullApp"
 	LibrarianPorterService_PullAccountAppRelation_FullMethodName = "/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation"
-	LibrarianPorterService_PushData_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PushData"
 )
 
 // LibrarianPorterServiceClient is the client API for LibrarianPorterService service.
@@ -34,13 +35,14 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LibrarianPorterServiceClient interface {
 	PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error)
+	PushFeedItem(ctx context.Context, in *PushFeedItemRequest, opts ...grpc.CallOption) (*PushFeedItemResponse, error)
 	PullDB(ctx context.Context, in *PullDBRequest, opts ...grpc.CallOption) (*PullDBResponse, error)
 	PullWiki(ctx context.Context, in *PullWikiRequest, opts ...grpc.CallOption) (*PullWikiResponse, error)
 	PullData(ctx context.Context, in *PullDataRequest, opts ...grpc.CallOption) (LibrarianPorterService_PullDataClient, error)
+	PushData(ctx context.Context, opts ...grpc.CallOption) (LibrarianPorterService_PushDataClient, error)
 	PullAccount(ctx context.Context, in *PullAccountRequest, opts ...grpc.CallOption) (*PullAccountResponse, error)
 	PullApp(ctx context.Context, in *PullAppRequest, opts ...grpc.CallOption) (*PullAppResponse, error)
 	PullAccountAppRelation(ctx context.Context, in *PullAccountAppRelationRequest, opts ...grpc.CallOption) (*PullAccountAppRelationResponse, error)
-	PushData(ctx context.Context, opts ...grpc.CallOption) (LibrarianPorterService_PushDataClient, error)
 }
 
 type librarianPorterServiceClient struct {
@@ -54,6 +56,15 @@ func NewLibrarianPorterServiceClient(cc grpc.ClientConnInterface) LibrarianPorte
 func (c *librarianPorterServiceClient) PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error) {
 	out := new(PullFeedResponse)
 	err := c.cc.Invoke(ctx, LibrarianPorterService_PullFeed_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianPorterServiceClient) PushFeedItem(ctx context.Context, in *PushFeedItemRequest, opts ...grpc.CallOption) (*PushFeedItemResponse, error) {
+	out := new(PushFeedItemResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PushFeedItem_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -110,33 +121,6 @@ func (x *librarianPorterServicePullDataClient) Recv() (*PullDataResponse, error)
 	return m, nil
 }
 
-func (c *librarianPorterServiceClient) PullAccount(ctx context.Context, in *PullAccountRequest, opts ...grpc.CallOption) (*PullAccountResponse, error) {
-	out := new(PullAccountResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAccount_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianPorterServiceClient) PullApp(ctx context.Context, in *PullAppRequest, opts ...grpc.CallOption) (*PullAppResponse, error) {
-	out := new(PullAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PullApp_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianPorterServiceClient) PullAccountAppRelation(ctx context.Context, in *PullAccountAppRelationRequest, opts ...grpc.CallOption) (*PullAccountAppRelationResponse, error) {
-	out := new(PullAccountAppRelationResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAccountAppRelation_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *librarianPorterServiceClient) PushData(ctx context.Context, opts ...grpc.CallOption) (LibrarianPorterService_PushDataClient, error) {
 	stream, err := c.cc.NewStream(ctx, &LibrarianPorterService_ServiceDesc.Streams[1], LibrarianPorterService_PushData_FullMethodName, opts...)
 	if err != nil {
@@ -171,18 +155,46 @@ func (x *librarianPorterServicePushDataClient) CloseAndRecv() (*PushDataResponse
 	return m, nil
 }
 
+func (c *librarianPorterServiceClient) PullAccount(ctx context.Context, in *PullAccountRequest, opts ...grpc.CallOption) (*PullAccountResponse, error) {
+	out := new(PullAccountResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAccount_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianPorterServiceClient) PullApp(ctx context.Context, in *PullAppRequest, opts ...grpc.CallOption) (*PullAppResponse, error) {
+	out := new(PullAppResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PullApp_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianPorterServiceClient) PullAccountAppRelation(ctx context.Context, in *PullAccountAppRelationRequest, opts ...grpc.CallOption) (*PullAccountAppRelationResponse, error) {
+	out := new(PullAccountAppRelationResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAccountAppRelation_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianPorterServiceServer is the server API for LibrarianPorterService service.
 // All implementations must embed UnimplementedLibrarianPorterServiceServer
 // for forward compatibility
 type LibrarianPorterServiceServer interface {
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
+	PushFeedItem(context.Context, *PushFeedItemRequest) (*PushFeedItemResponse, error)
 	PullDB(context.Context, *PullDBRequest) (*PullDBResponse, error)
 	PullWiki(context.Context, *PullWikiRequest) (*PullWikiResponse, error)
 	PullData(*PullDataRequest, LibrarianPorterService_PullDataServer) error
+	PushData(LibrarianPorterService_PushDataServer) error
 	PullAccount(context.Context, *PullAccountRequest) (*PullAccountResponse, error)
 	PullApp(context.Context, *PullAppRequest) (*PullAppResponse, error)
 	PullAccountAppRelation(context.Context, *PullAccountAppRelationRequest) (*PullAccountAppRelationResponse, error)
-	PushData(LibrarianPorterService_PushDataServer) error
 	mustEmbedUnimplementedLibrarianPorterServiceServer()
 }
 
@@ -193,6 +205,9 @@ type UnimplementedLibrarianPorterServiceServer struct {
 func (UnimplementedLibrarianPorterServiceServer) PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullFeed not implemented")
 }
+func (UnimplementedLibrarianPorterServiceServer) PushFeedItem(context.Context, *PushFeedItemRequest) (*PushFeedItemResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PushFeedItem not implemented")
+}
 func (UnimplementedLibrarianPorterServiceServer) PullDB(context.Context, *PullDBRequest) (*PullDBResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullDB not implemented")
 }
@@ -202,6 +217,9 @@ func (UnimplementedLibrarianPorterServiceServer) PullWiki(context.Context, *Pull
 func (UnimplementedLibrarianPorterServiceServer) PullData(*PullDataRequest, LibrarianPorterService_PullDataServer) error {
 	return status.Errorf(codes.Unimplemented, "method PullData not implemented")
 }
+func (UnimplementedLibrarianPorterServiceServer) PushData(LibrarianPorterService_PushDataServer) error {
+	return status.Errorf(codes.Unimplemented, "method PushData not implemented")
+}
 func (UnimplementedLibrarianPorterServiceServer) PullAccount(context.Context, *PullAccountRequest) (*PullAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullAccount not implemented")
 }
@@ -210,9 +228,6 @@ func (UnimplementedLibrarianPorterServiceServer) PullApp(context.Context, *PullA
 }
 func (UnimplementedLibrarianPorterServiceServer) PullAccountAppRelation(context.Context, *PullAccountAppRelationRequest) (*PullAccountAppRelationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullAccountAppRelation not implemented")
-}
-func (UnimplementedLibrarianPorterServiceServer) PushData(LibrarianPorterService_PushDataServer) error {
-	return status.Errorf(codes.Unimplemented, "method PushData not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) mustEmbedUnimplementedLibrarianPorterServiceServer() {
 }
@@ -242,6 +257,24 @@ func _LibrarianPorterService_PullFeed_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianPorterServiceServer).PullFeed(ctx, req.(*PullFeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianPorterService_PushFeedItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PushFeedItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).PushFeedItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_PushFeedItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).PushFeedItem(ctx, req.(*PushFeedItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -303,6 +336,32 @@ func (x *librarianPorterServicePullDataServer) Send(m *PullDataResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _LibrarianPorterService_PushData_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(LibrarianPorterServiceServer).PushData(&librarianPorterServicePushDataServer{stream})
+}
+
+type LibrarianPorterService_PushDataServer interface {
+	SendAndClose(*PushDataResponse) error
+	Recv() (*PushDataRequest, error)
+	grpc.ServerStream
+}
+
+type librarianPorterServicePushDataServer struct {
+	grpc.ServerStream
+}
+
+func (x *librarianPorterServicePushDataServer) SendAndClose(m *PushDataResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *librarianPorterServicePushDataServer) Recv() (*PushDataRequest, error) {
+	m := new(PushDataRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 func _LibrarianPorterService_PullAccount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PullAccountRequest)
 	if err := dec(in); err != nil {
@@ -357,32 +416,6 @@ func _LibrarianPorterService_PullAccountAppRelation_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianPorterService_PushData_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(LibrarianPorterServiceServer).PushData(&librarianPorterServicePushDataServer{stream})
-}
-
-type LibrarianPorterService_PushDataServer interface {
-	SendAndClose(*PushDataResponse) error
-	Recv() (*PushDataRequest, error)
-	grpc.ServerStream
-}
-
-type librarianPorterServicePushDataServer struct {
-	grpc.ServerStream
-}
-
-func (x *librarianPorterServicePushDataServer) SendAndClose(m *PushDataResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *librarianPorterServicePushDataServer) Recv() (*PushDataRequest, error) {
-	m := new(PushDataRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
 // LibrarianPorterService_ServiceDesc is the grpc.ServiceDesc for LibrarianPorterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -393,6 +426,10 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PullFeed",
 			Handler:    _LibrarianPorterService_PullFeed_Handler,
+		},
+		{
+			MethodName: "PushFeedItem",
+			Handler:    _LibrarianPorterService_PushFeedItem_Handler,
 		},
 		{
 			MethodName: "PullDB",

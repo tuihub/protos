@@ -215,6 +215,158 @@ impl<'de> serde::Deserialize<'de> for DataSource {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
+impl serde::Serialize for FeatureFlag {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "FEATURE_FLAG_UNSPECIFIED",
+            Self::SourceSteam => "FEATURE_FLAG_SOURCE_STEAM",
+            Self::SourceTelegram => "FEATURE_FLAG_SOURCE_TELEGRAM",
+            Self::DefaultDataStorage => "FEATURE_FLAG_DEFAULT_DATA_STORAGE",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeatureFlag {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "FEATURE_FLAG_UNSPECIFIED",
+            "FEATURE_FLAG_SOURCE_STEAM",
+            "FEATURE_FLAG_SOURCE_TELEGRAM",
+            "FEATURE_FLAG_DEFAULT_DATA_STORAGE",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeatureFlag;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FeatureFlag::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FeatureFlag::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "FEATURE_FLAG_UNSPECIFIED" => Ok(FeatureFlag::Unspecified),
+                    "FEATURE_FLAG_SOURCE_STEAM" => Ok(FeatureFlag::SourceSteam),
+                    "FEATURE_FLAG_SOURCE_TELEGRAM" => Ok(FeatureFlag::SourceTelegram),
+                    "FEATURE_FLAG_DEFAULT_DATA_STORAGE" => Ok(FeatureFlag::DefaultDataStorage),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for FeedDestination {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "FEED_DESTINATION_UNSPECIFIED",
+            Self::Telegram => "FEED_DESTINATION_TELEGRAM",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeedDestination {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "FEED_DESTINATION_UNSPECIFIED",
+            "FEED_DESTINATION_TELEGRAM",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeedDestination;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FeedDestination::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FeedDestination::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "FEED_DESTINATION_UNSPECIFIED" => Ok(FeedDestination::Unspecified),
+                    "FEED_DESTINATION_TELEGRAM" => Ok(FeedDestination::Telegram),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
 impl serde::Serialize for FeedSource {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -1270,7 +1422,7 @@ impl serde::Serialize for PullFeedRequest {
         if self.source != 0 {
             len += 1;
         }
-        if !self.content_id.is_empty() {
+        if !self.channel_id.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullFeedRequest", len)?;
@@ -1279,8 +1431,8 @@ impl serde::Serialize for PullFeedRequest {
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.source)))?;
             struct_ser.serialize_field("source", &v)?;
         }
-        if !self.content_id.is_empty() {
-            struct_ser.serialize_field("contentId", &self.content_id)?;
+        if !self.channel_id.is_empty() {
+            struct_ser.serialize_field("channelId", &self.channel_id)?;
         }
         struct_ser.end()
     }
@@ -1293,13 +1445,13 @@ impl<'de> serde::Deserialize<'de> for PullFeedRequest {
     {
         const FIELDS: &[&str] = &[
             "source",
-            "contentId",
+            "channelId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Source,
-            ContentId,
+            ChannelId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1322,7 +1474,7 @@ impl<'de> serde::Deserialize<'de> for PullFeedRequest {
                     {
                         match value {
                             "source" => Ok(GeneratedField::Source),
-                            "contentId" => Ok(GeneratedField::ContentId),
+                            "channelId" => Ok(GeneratedField::ChannelId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1343,7 +1495,7 @@ impl<'de> serde::Deserialize<'de> for PullFeedRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut source__ = None;
-                let mut content_id__ = None;
+                let mut channel_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Source => {
@@ -1352,17 +1504,17 @@ impl<'de> serde::Deserialize<'de> for PullFeedRequest {
                             }
                             source__ = Some(map.next_value::<FeedSource>()? as i32);
                         }
-                        GeneratedField::ContentId => {
-                            if content_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("contentId"));
+                        GeneratedField::ChannelId => {
+                            if channel_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("channelId"));
                             }
-                            content_id__ = Some(map.next_value()?);
+                            channel_id__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(PullFeedRequest {
                     source: source__.unwrap_or_default(),
-                    content_id: content_id__.unwrap_or_default(),
+                    channel_id: channel_id__.unwrap_or_default(),
                 })
             }
         }
@@ -1949,6 +2101,204 @@ impl<'de> serde::Deserialize<'de> for PushDataResponse {
             }
         }
         deserializer.deserialize_struct("librarian.porter.v1.PushDataResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PushFeedItemRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.destination != 0 {
+            len += 1;
+        }
+        if !self.channel_id.is_empty() {
+            len += 1;
+        }
+        if self.data.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PushFeedItemRequest", len)?;
+        if self.destination != 0 {
+            let v = FeedDestination::from_i32(self.destination)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.destination)))?;
+            struct_ser.serialize_field("destination", &v)?;
+        }
+        if !self.channel_id.is_empty() {
+            struct_ser.serialize_field("channelId", &self.channel_id)?;
+        }
+        if let Some(v) = self.data.as_ref() {
+            struct_ser.serialize_field("data", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PushFeedItemRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "destination",
+            "channelId",
+            "data",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Destination,
+            ChannelId,
+            Data,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "destination" => Ok(GeneratedField::Destination),
+                            "channelId" => Ok(GeneratedField::ChannelId),
+                            "data" => Ok(GeneratedField::Data),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PushFeedItemRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.PushFeedItemRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut destination__ = None;
+                let mut channel_id__ = None;
+                let mut data__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Destination => {
+                            if destination__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("destination"));
+                            }
+                            destination__ = Some(map.next_value::<FeedDestination>()? as i32);
+                        }
+                        GeneratedField::ChannelId => {
+                            if channel_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("channelId"));
+                            }
+                            channel_id__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Data => {
+                            if data__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("data"));
+                            }
+                            data__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(PushFeedItemRequest {
+                    destination: destination__.unwrap_or_default(),
+                    channel_id: channel_id__.unwrap_or_default(),
+                    data: data__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.PushFeedItemRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PushFeedItemResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.porter.v1.PushFeedItemResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PushFeedItemResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PushFeedItemResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.PushFeedItemResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(PushFeedItemResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.PushFeedItemResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for WikiSource {

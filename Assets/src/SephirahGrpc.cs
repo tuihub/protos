@@ -15,6 +15,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
   /// 2. `Gebura` handles application data
   /// 3. `Binah` handles file transfer
   /// 4. `Yesod` handles feed data
+  /// 5. `Netzach` handles notifications
   /// </summary>
   public static partial class LibrarianSephirahService
   {
@@ -181,6 +182,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileRequest> __Marshaller_librarian_sephirah_v1_ListGameSaveFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileResponse> __Marshaller_librarian_sephirah_v1_ListGameSaveFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest> __Marshaller_librarian_sephirah_v1_CreateNotifyTargetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse> __Marshaller_librarian_sephirah_v1_CreateNotifyTargetResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest> __Marshaller_librarian_sephirah_v1_UpdateNotifyTargetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse> __Marshaller_librarian_sephirah_v1_UpdateNotifyTargetResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest> __Marshaller_librarian_sephirah_v1_ListNotifyTargetsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse> __Marshaller_librarian_sephirah_v1_ListNotifyTargetsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest> __Marshaller_librarian_sephirah_v1_CreateNotifyFlowRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse> __Marshaller_librarian_sephirah_v1_CreateNotifyFlowResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest> __Marshaller_librarian_sephirah_v1_UpdateNotifyFlowRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse> __Marshaller_librarian_sephirah_v1_UpdateNotifyFlowResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest> __Marshaller_librarian_sephirah_v1_ListNotifyFlowsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> __Marshaller_librarian_sephirah_v1_ListNotifyFlowsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest> __Marshaller_librarian_sephirah_v1_CreateFeedConfigRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -465,6 +490,54 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "ListGameSaveFile",
         __Marshaller_librarian_sephirah_v1_ListGameSaveFileRequest,
         __Marshaller_librarian_sephirah_v1_ListGameSaveFileResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse> __Method_CreateNotifyTarget = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateNotifyTarget",
+        __Marshaller_librarian_sephirah_v1_CreateNotifyTargetRequest,
+        __Marshaller_librarian_sephirah_v1_CreateNotifyTargetResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse> __Method_UpdateNotifyTarget = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateNotifyTarget",
+        __Marshaller_librarian_sephirah_v1_UpdateNotifyTargetRequest,
+        __Marshaller_librarian_sephirah_v1_UpdateNotifyTargetResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse> __Method_ListNotifyTargets = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListNotifyTargets",
+        __Marshaller_librarian_sephirah_v1_ListNotifyTargetsRequest,
+        __Marshaller_librarian_sephirah_v1_ListNotifyTargetsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse> __Method_CreateNotifyFlow = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateNotifyFlow",
+        __Marshaller_librarian_sephirah_v1_CreateNotifyFlowRequest,
+        __Marshaller_librarian_sephirah_v1_CreateNotifyFlowResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse> __Method_UpdateNotifyFlow = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateNotifyFlow",
+        __Marshaller_librarian_sephirah_v1_UpdateNotifyFlowRequest,
+        __Marshaller_librarian_sephirah_v1_UpdateNotifyFlowResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> __Method_ListNotifyFlows = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListNotifyFlows",
+        __Marshaller_librarian_sephirah_v1_ListNotifyFlowsRequest,
+        __Marshaller_librarian_sephirah_v1_ListNotifyFlowsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse> __Method_CreateFeedConfig = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse>(
@@ -920,6 +993,78 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileResponse> ListGameSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse> CreateNotifyTarget(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse> UpdateNotifyTarget(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse> ListNotifyTargets(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse> CreateNotifyFlow(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse> UpdateNotifyFlow(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> ListNotifyFlows(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2456,6 +2601,294 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListGameSaveFile, null, options, request);
       }
       /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse CreateNotifyTarget(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateNotifyTarget(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse CreateNotifyTarget(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateNotifyTarget, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse> CreateNotifyTargetAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateNotifyTargetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse> CreateNotifyTargetAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateNotifyTarget, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse UpdateNotifyTarget(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateNotifyTarget(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse UpdateNotifyTarget(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateNotifyTarget, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse> UpdateNotifyTargetAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateNotifyTargetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse> UpdateNotifyTargetAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateNotifyTarget, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse ListNotifyTargets(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListNotifyTargets(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse ListNotifyTargets(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListNotifyTargets, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse> ListNotifyTargetsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListNotifyTargetsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse> ListNotifyTargetsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListNotifyTargets, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse CreateNotifyFlow(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateNotifyFlow(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse CreateNotifyFlow(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateNotifyFlow, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse> CreateNotifyFlowAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateNotifyFlowAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse> CreateNotifyFlowAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateNotifyFlow, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse UpdateNotifyFlow(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateNotifyFlow(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse UpdateNotifyFlow(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateNotifyFlow, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse> UpdateNotifyFlowAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateNotifyFlowAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse> UpdateNotifyFlowAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateNotifyFlow, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse ListNotifyFlows(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListNotifyFlows(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse ListNotifyFlows(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListNotifyFlows, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> ListNotifyFlowsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListNotifyFlowsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> ListNotifyFlowsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListNotifyFlows, null, options, request);
+      }
+      /// <summary>
       /// `Yesod` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -2837,6 +3270,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_UploadGameSaveFile, serviceImpl.UploadGameSaveFile)
           .AddMethod(__Method_DownloadGameSaveFile, serviceImpl.DownloadGameSaveFile)
           .AddMethod(__Method_ListGameSaveFile, serviceImpl.ListGameSaveFile)
+          .AddMethod(__Method_CreateNotifyTarget, serviceImpl.CreateNotifyTarget)
+          .AddMethod(__Method_UpdateNotifyTarget, serviceImpl.UpdateNotifyTarget)
+          .AddMethod(__Method_ListNotifyTargets, serviceImpl.ListNotifyTargets)
+          .AddMethod(__Method_CreateNotifyFlow, serviceImpl.CreateNotifyFlow)
+          .AddMethod(__Method_UpdateNotifyFlow, serviceImpl.UpdateNotifyFlow)
+          .AddMethod(__Method_ListNotifyFlows, serviceImpl.ListNotifyFlows)
           .AddMethod(__Method_CreateFeedConfig, serviceImpl.CreateFeedConfig)
           .AddMethod(__Method_UpdateFeedConfig, serviceImpl.UpdateFeedConfig)
           .AddMethod(__Method_ListFeedConfigs, serviceImpl.ListFeedConfigs)
@@ -2885,6 +3324,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_UploadGameSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileResponse>(serviceImpl.UploadGameSaveFile));
       serviceBinder.AddMethod(__Method_DownloadGameSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileResponse>(serviceImpl.DownloadGameSaveFile));
       serviceBinder.AddMethod(__Method_ListGameSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFileResponse>(serviceImpl.ListGameSaveFile));
+      serviceBinder.AddMethod(__Method_CreateNotifyTarget, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse>(serviceImpl.CreateNotifyTarget));
+      serviceBinder.AddMethod(__Method_UpdateNotifyTarget, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse>(serviceImpl.UpdateNotifyTarget));
+      serviceBinder.AddMethod(__Method_ListNotifyTargets, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse>(serviceImpl.ListNotifyTargets));
+      serviceBinder.AddMethod(__Method_CreateNotifyFlow, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse>(serviceImpl.CreateNotifyFlow));
+      serviceBinder.AddMethod(__Method_UpdateNotifyFlow, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse>(serviceImpl.UpdateNotifyFlow));
+      serviceBinder.AddMethod(__Method_ListNotifyFlows, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse>(serviceImpl.ListNotifyFlows));
       serviceBinder.AddMethod(__Method_CreateFeedConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse>(serviceImpl.CreateFeedConfig));
       serviceBinder.AddMethod(__Method_UpdateFeedConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateFeedConfigResponse>(serviceImpl.UpdateFeedConfig));
       serviceBinder.AddMethod(__Method_ListFeedConfigs, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedConfigsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedConfigsResponse>(serviceImpl.ListFeedConfigs));

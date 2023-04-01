@@ -8,8 +8,8 @@ export class PullFeedRequest extends jspb.Message {
   getSource(): FeedSourceMap[keyof FeedSourceMap];
   setSource(value: FeedSourceMap[keyof FeedSourceMap]): void;
 
-  getContentId(): string;
-  setContentId(value: string): void;
+  getChannelId(): string;
+  setChannelId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PullFeedRequest.AsObject;
@@ -24,7 +24,7 @@ export class PullFeedRequest extends jspb.Message {
 export namespace PullFeedRequest {
   export type AsObject = {
     source: FeedSourceMap[keyof FeedSourceMap],
-    contentId: string,
+    channelId: string,
   }
 }
 
@@ -47,6 +47,52 @@ export class PullFeedResponse extends jspb.Message {
 export namespace PullFeedResponse {
   export type AsObject = {
     data?: librarian_v1_common_pb.Feed.AsObject,
+  }
+}
+
+export class PushFeedItemRequest extends jspb.Message {
+  getDestination(): FeedDestinationMap[keyof FeedDestinationMap];
+  setDestination(value: FeedDestinationMap[keyof FeedDestinationMap]): void;
+
+  getChannelId(): string;
+  setChannelId(value: string): void;
+
+  hasData(): boolean;
+  clearData(): void;
+  getData(): librarian_v1_common_pb.FeedItem | undefined;
+  setData(value?: librarian_v1_common_pb.FeedItem): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushFeedItemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PushFeedItemRequest): PushFeedItemRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PushFeedItemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushFeedItemRequest;
+  static deserializeBinaryFromReader(message: PushFeedItemRequest, reader: jspb.BinaryReader): PushFeedItemRequest;
+}
+
+export namespace PushFeedItemRequest {
+  export type AsObject = {
+    destination: FeedDestinationMap[keyof FeedDestinationMap],
+    channelId: string,
+    data?: librarian_v1_common_pb.FeedItem.AsObject,
+  }
+}
+
+export class PushFeedItemResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PushFeedItemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PushFeedItemResponse): PushFeedItemResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PushFeedItemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushFeedItemResponse;
+  static deserializeBinaryFromReader(message: PushFeedItemResponse, reader: jspb.BinaryReader): PushFeedItemResponse;
+}
+
+export namespace PushFeedItemResponse {
+  export type AsObject = {
   }
 }
 
@@ -396,6 +442,15 @@ export namespace PushDataResponse {
   }
 }
 
+export interface FeatureFlagMap {
+  FEATURE_FLAG_UNSPECIFIED: 0;
+  FEATURE_FLAG_SOURCE_STEAM: 1;
+  FEATURE_FLAG_SOURCE_TELEGRAM: 2;
+  FEATURE_FLAG_DEFAULT_DATA_STORAGE: 3;
+}
+
+export const FeatureFlag: FeatureFlagMap;
+
 export interface AccountAppRelationTypeMap {
   ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED: 0;
   ACCOUNT_APP_RELATION_TYPE_OWN: 1;
@@ -409,6 +464,13 @@ export interface FeedSourceMap {
 }
 
 export const FeedSource: FeedSourceMap;
+
+export interface FeedDestinationMap {
+  FEED_DESTINATION_UNSPECIFIED: 0;
+  FEED_DESTINATION_TELEGRAM: 1;
+}
+
+export const FeedDestination: FeedDestinationMap;
 
 export interface DBSourceMap {
   DB_SOURCE_UNSPECIFIED: 0;
