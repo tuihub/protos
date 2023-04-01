@@ -7,6 +7,18 @@ import "librarian/v1/common.proto";
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
+// Definition of service feature flags, use original name rather than enum value.
+// Set correct feature flags in server metadata to let caller know what functions are available.
+enum FeatureFlag {
+  FEATURE_FLAG_UNSPECIFIED = 0;
+  // If set, operations pull from steam store are available.
+  FEATURE_FLAG_SOURCE_STEAM = 1;
+  // If set, operations pull from telegram are available.
+  FEATURE_FLAG_SOURCE_TELEGRAM = 2;
+  // If set, default storage bucket are available.
+  FEATURE_FLAG_DEFAULT_DATA_STORAGE = 3;
+}
+
 /*
    * The main role of Porter is to encapsulate input&output operations.
    * In Porter's model:
@@ -19,23 +31,32 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 */
 service LibrarianPorterService {
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
+  rpc PushFeedItem(PushFeedItemRequest) returns (PushFeedItemResponse);
   rpc PullDB(PullDBRequest) returns (PullDBResponse);
   rpc PullWiki(PullWikiRequest) returns (PullWikiResponse);
   rpc PullData(PullDataRequest) returns (stream PullDataResponse);
+  rpc PushData(stream PushDataRequest) returns (PushDataResponse);
   rpc PullAccount(PullAccountRequest) returns (PullAccountResponse);
   rpc PullApp(PullAppRequest) returns (PullAppResponse);
   rpc PullAccountAppRelation(PullAccountAppRelationRequest) returns (PullAccountAppRelationResponse);
-  rpc PushData(stream PushDataRequest) returns (PushDataResponse);
 }
 
 message PullFeedRequest {
   FeedSource source = 1;
-  string content_id = 2;
+  string channel_id = 2;
 }
 
 message PullFeedResponse {
   optional librarian.v1.Feed data = 1;
 }
+
+message PushFeedItemRequest {
+  FeedDestination destination = 1;
+  string channel_id = 2;
+  librarian.v1.FeedItem data = 3;
+}
+
+message PushFeedItemResponse {}
 
 message PullDBRequest {
   DBSource source = 1;
@@ -106,6 +127,11 @@ enum AccountAppRelationType {
 enum FeedSource {
   FEED_SOURCE_UNSPECIFIED = 0;
   FEED_SOURCE_COMMON = 1;
+}
+
+enum FeedDestination {
+  FEED_DESTINATION_UNSPECIFIED = 0;
+  FEED_DESTINATION_TELEGRAM = 1;
 }
 
 enum DBSource {
