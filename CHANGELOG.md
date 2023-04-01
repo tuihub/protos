@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.15](https://github.com/TuiHub/Protos/compare/v0.2.14...v0.2.15) (2023-04-01)
+
+
+### Bug Fixes
+
+* add `netzach` module ([513f80e](https://github.com/TuiHub/Protos/commit/513f80ed272d1ac2000fbace2cabcd130670b10e))
+* **deps:** update all non-major dependencies ([#46](https://github.com/TuiHub/Protos/issues/46)) ([11ff039](https://github.com/TuiHub/Protos/commit/11ff0391aaa97bceab3624b9a9bd693958b3c9a1))
+* **porter:** add PushFeedItem & FeatureFlag ([4a0f574](https://github.com/TuiHub/Protos/commit/4a0f574c921e69f4c701411c1e17db261546d932))
+
 ## [0.2.14](https://github.com/TuiHub/Protos/compare/v0.2.13...v0.2.14) (2023-03-19)
 
 
