@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.16](https://github.com/TuiHub/Protos/compare/v0.2.15...v0.2.16) (2023-04-03)
+
+
+### Bug Fixes
+
+* **netzach:** add new field ([e760934](https://github.com/TuiHub/Protos/commit/e7609346e54255ce286df5db9506f5794a3463a9))
+
 ## [0.2.15](https://github.com/TuiHub/Protos/compare/v0.2.14...v0.2.15) (2023-04-01)
 
 
