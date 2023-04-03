@@ -41,3 +41,20 @@ class TargetStatus extends $pb.ProtobufEnum {
   const TargetStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+class FlowStatus extends $pb.ProtobufEnum {
+  static const FlowStatus FLOW_STATUS_UNSPECIFIED = FlowStatus._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FLOW_STATUS_UNSPECIFIED');
+  static const FlowStatus FLOW_STATUS_ACTIVE = FlowStatus._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FLOW_STATUS_ACTIVE');
+  static const FlowStatus FLOW_STATUS_SUSPEND = FlowStatus._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FLOW_STATUS_SUSPEND');
+
+  static const $core.List<FlowStatus> values = <FlowStatus> [
+    FLOW_STATUS_UNSPECIFIED,
+    FLOW_STATUS_ACTIVE,
+    FLOW_STATUS_SUSPEND,
+  ];
+
+  static final $core.Map<$core.int, FlowStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FlowStatus? valueOf($core.int value) => _byValue[value];
+
+  const FlowStatus._($core.int v, $core.String n) : super(v, n);
+}
+

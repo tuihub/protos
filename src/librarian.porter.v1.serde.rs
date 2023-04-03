@@ -2103,7 +2103,7 @@ impl<'de> serde::Deserialize<'de> for PushDataResponse {
         deserializer.deserialize_struct("librarian.porter.v1.PushDataResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PushFeedItemRequest {
+impl serde::Serialize for PushFeedItemsRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -2117,10 +2117,13 @@ impl serde::Serialize for PushFeedItemRequest {
         if !self.channel_id.is_empty() {
             len += 1;
         }
-        if self.data.is_some() {
+        if !self.items.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PushFeedItemRequest", len)?;
+        if !self.token.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PushFeedItemsRequest", len)?;
         if self.destination != 0 {
             let v = FeedDestination::from_i32(self.destination)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.destination)))?;
@@ -2129,13 +2132,16 @@ impl serde::Serialize for PushFeedItemRequest {
         if !self.channel_id.is_empty() {
             struct_ser.serialize_field("channelId", &self.channel_id)?;
         }
-        if let Some(v) = self.data.as_ref() {
-            struct_ser.serialize_field("data", v)?;
+        if !self.items.is_empty() {
+            struct_ser.serialize_field("items", &self.items)?;
+        }
+        if !self.token.is_empty() {
+            struct_ser.serialize_field("token", &self.token)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PushFeedItemRequest {
+impl<'de> serde::Deserialize<'de> for PushFeedItemsRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -2144,14 +2150,16 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemRequest {
         const FIELDS: &[&str] = &[
             "destination",
             "channelId",
-            "data",
+            "items",
+            "token",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Destination,
             ChannelId,
-            Data,
+            Items,
+            Token,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2175,7 +2183,8 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemRequest {
                         match value {
                             "destination" => Ok(GeneratedField::Destination),
                             "channelId" => Ok(GeneratedField::ChannelId),
-                            "data" => Ok(GeneratedField::Data),
+                            "items" => Ok(GeneratedField::Items),
+                            "token" => Ok(GeneratedField::Token),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2185,19 +2194,20 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PushFeedItemRequest;
+            type Value = PushFeedItemsRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PushFeedItemRequest")
+                formatter.write_str("struct librarian.porter.v1.PushFeedItemsRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemsRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut destination__ = None;
                 let mut channel_id__ = None;
-                let mut data__ = None;
+                let mut items__ = None;
+                let mut token__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Destination => {
@@ -2212,25 +2222,32 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemRequest {
                             }
                             channel_id__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Data => {
-                            if data__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("data"));
+                        GeneratedField::Items => {
+                            if items__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("items"));
                             }
-                            data__ = Some(map.next_value()?);
+                            items__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Token => {
+                            if token__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("token"));
+                            }
+                            token__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(PushFeedItemRequest {
+                Ok(PushFeedItemsRequest {
                     destination: destination__.unwrap_or_default(),
                     channel_id: channel_id__.unwrap_or_default(),
-                    data: data__,
+                    items: items__.unwrap_or_default(),
+                    token: token__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.porter.v1.PushFeedItemRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.porter.v1.PushFeedItemsRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PushFeedItemResponse {
+impl serde::Serialize for PushFeedItemsResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -2238,11 +2255,11 @@ impl serde::Serialize for PushFeedItemResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.porter.v1.PushFeedItemResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.porter.v1.PushFeedItemsResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PushFeedItemResponse {
+impl<'de> serde::Deserialize<'de> for PushFeedItemsResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -2281,24 +2298,24 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PushFeedItemResponse;
+            type Value = PushFeedItemsResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PushFeedItemResponse")
+                formatter.write_str("struct librarian.porter.v1.PushFeedItemsResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemsResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(PushFeedItemResponse {
+                Ok(PushFeedItemsResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.porter.v1.PushFeedItemResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.porter.v1.PushFeedItemsResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for WikiSource {

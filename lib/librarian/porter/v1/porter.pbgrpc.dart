@@ -20,12 +20,12 @@ class LibrarianPorterServiceClient extends $grpc.Client {
           ($0.PullFeedRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.PullFeedResponse.fromBuffer(value));
-  static final _$pushFeedItem =
-      $grpc.ClientMethod<$0.PushFeedItemRequest, $0.PushFeedItemResponse>(
-          '/librarian.porter.v1.LibrarianPorterService/PushFeedItem',
-          ($0.PushFeedItemRequest value) => value.writeToBuffer(),
+  static final _$pushFeedItems =
+      $grpc.ClientMethod<$0.PushFeedItemsRequest, $0.PushFeedItemsResponse>(
+          '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
+          ($0.PushFeedItemsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $0.PushFeedItemResponse.fromBuffer(value));
+              $0.PushFeedItemsResponse.fromBuffer(value));
   static final _$pullDB =
       $grpc.ClientMethod<$0.PullDBRequest, $0.PullDBResponse>(
           '/librarian.porter.v1.LibrarianPorterService/PullDB',
@@ -78,10 +78,10 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createUnaryCall(_$pullFeed, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.PushFeedItemResponse> pushFeedItem(
-      $0.PushFeedItemRequest request,
+  $grpc.ResponseFuture<$0.PushFeedItemsResponse> pushFeedItems(
+      $0.PushFeedItemsRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pushFeedItem, request, options: options);
+    return $createUnaryCall(_$pushFeedItems, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PullDBResponse> pullDB($0.PullDBRequest request,
@@ -138,14 +138,14 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.PullFeedRequest.fromBuffer(value),
         ($0.PullFeedResponse value) => value.writeToBuffer()));
     $addMethod(
-        $grpc.ServiceMethod<$0.PushFeedItemRequest, $0.PushFeedItemResponse>(
-            'PushFeedItem',
-            pushFeedItem_Pre,
+        $grpc.ServiceMethod<$0.PushFeedItemsRequest, $0.PushFeedItemsResponse>(
+            'PushFeedItems',
+            pushFeedItems_Pre,
             false,
             false,
             ($core.List<$core.int> value) =>
-                $0.PushFeedItemRequest.fromBuffer(value),
-            ($0.PushFeedItemResponse value) => value.writeToBuffer()));
+                $0.PushFeedItemsRequest.fromBuffer(value),
+            ($0.PushFeedItemsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PullDBRequest, $0.PullDBResponse>(
         'PullDB',
         pullDB_Pre,
@@ -206,10 +206,10 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return pullFeed(call, await request);
   }
 
-  $async.Future<$0.PushFeedItemResponse> pushFeedItem_Pre(
+  $async.Future<$0.PushFeedItemsResponse> pushFeedItems_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$0.PushFeedItemRequest> request) async {
-    return pushFeedItem(call, await request);
+      $async.Future<$0.PushFeedItemsRequest> request) async {
+    return pushFeedItems(call, await request);
   }
 
   $async.Future<$0.PullDBResponse> pullDB_Pre(
@@ -245,8 +245,8 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
 
   $async.Future<$0.PullFeedResponse> pullFeed(
       $grpc.ServiceCall call, $0.PullFeedRequest request);
-  $async.Future<$0.PushFeedItemResponse> pushFeedItem(
-      $grpc.ServiceCall call, $0.PushFeedItemRequest request);
+  $async.Future<$0.PushFeedItemsResponse> pushFeedItems(
+      $grpc.ServiceCall call, $0.PushFeedItemsRequest request);
   $async.Future<$0.PullDBResponse> pullDB(
       $grpc.ServiceCall call, $0.PullDBRequest request);
   $async.Future<$0.PullWikiResponse> pullWiki(

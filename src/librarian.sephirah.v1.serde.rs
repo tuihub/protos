@@ -2750,6 +2750,82 @@ impl<'de> serde::Deserialize<'de> for FileTransferStatus {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
+impl serde::Serialize for FlowStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "FLOW_STATUS_UNSPECIFIED",
+            Self::Active => "FLOW_STATUS_ACTIVE",
+            Self::Suspend => "FLOW_STATUS_SUSPEND",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for FlowStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "FLOW_STATUS_UNSPECIFIED",
+            "FLOW_STATUS_ACTIVE",
+            "FLOW_STATUS_SUSPEND",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FlowStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FlowStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FlowStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "FLOW_STATUS_UNSPECIFIED" => Ok(FlowStatus::Unspecified),
+                    "FLOW_STATUS_ACTIVE" => Ok(FlowStatus::Active),
+                    "FLOW_STATUS_SUSPEND" => Ok(FlowStatus::Suspend),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
 impl serde::Serialize for GenerateTokenRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -7228,21 +7304,41 @@ impl serde::Serialize for NotifyFlow {
         if self.id.is_some() {
             len += 1;
         }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.description.is_empty() {
+            len += 1;
+        }
         if self.source.is_some() {
             len += 1;
         }
         if !self.targets.is_empty() {
             len += 1;
         }
+        if self.status != 0 {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.NotifyFlow", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
         }
         if let Some(v) = self.source.as_ref() {
             struct_ser.serialize_field("source", v)?;
         }
         if !self.targets.is_empty() {
             struct_ser.serialize_field("targets", &self.targets)?;
+        }
+        if self.status != 0 {
+            let v = FlowStatus::from_i32(self.status)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
+            struct_ser.serialize_field("status", &v)?;
         }
         struct_ser.end()
     }
@@ -7255,15 +7351,21 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
     {
         const FIELDS: &[&str] = &[
             "id",
+            "name",
+            "description",
             "source",
             "targets",
+            "status",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
+            Name,
+            Description,
             Source,
             Targets,
+            Status,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -7286,8 +7388,11 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
                             "source" => Ok(GeneratedField::Source),
                             "targets" => Ok(GeneratedField::Targets),
+                            "status" => Ok(GeneratedField::Status),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7308,8 +7413,11 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
+                let mut name__ = None;
+                let mut description__ = None;
                 let mut source__ = None;
                 let mut targets__ = None;
+                let mut status__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -7317,6 +7425,18 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
                             id__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map.next_value()?);
                         }
                         GeneratedField::Source => {
                             if source__.is_some() {
@@ -7330,12 +7450,21 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                             }
                             targets__ = Some(map.next_value()?);
                         }
+                        GeneratedField::Status => {
+                            if status__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("status"));
+                            }
+                            status__ = Some(map.next_value::<FlowStatus>()? as i32);
+                        }
                     }
                 }
                 Ok(NotifyFlow {
                     id: id__,
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
                     source: source__,
                     targets: targets__.unwrap_or_default(),
+                    status: status__.unwrap_or_default(),
                 })
             }
         }
@@ -7552,6 +7681,12 @@ impl serde::Serialize for NotifyTarget {
         if self.id.is_some() {
             len += 1;
         }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.description.is_empty() {
+            len += 1;
+        }
         if self.r#type != 0 {
             len += 1;
         }
@@ -7564,6 +7699,12 @@ impl serde::Serialize for NotifyTarget {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.NotifyTarget", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
         }
         if self.r#type != 0 {
             let v = TargetType::from_i32(self.r#type)
@@ -7589,6 +7730,8 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
     {
         const FIELDS: &[&str] = &[
             "id",
+            "name",
+            "description",
             "type",
             "status",
             "token",
@@ -7597,6 +7740,8 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
+            Name,
+            Description,
             Type,
             Status,
             Token,
@@ -7622,6 +7767,8 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
                             "type" => Ok(GeneratedField::Type),
                             "status" => Ok(GeneratedField::Status),
                             "token" => Ok(GeneratedField::Token),
@@ -7645,6 +7792,8 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
+                let mut name__ = None;
+                let mut description__ = None;
                 let mut r#type__ = None;
                 let mut status__ = None;
                 let mut token__ = None;
@@ -7655,6 +7804,18 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
                             id__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map.next_value()?);
                         }
                         GeneratedField::Type => {
                             if r#type__.is_some() {
@@ -7678,6 +7839,8 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                 }
                 Ok(NotifyTarget {
                     id: id__,
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
                     r#type: r#type__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     token: token__.unwrap_or_default(),

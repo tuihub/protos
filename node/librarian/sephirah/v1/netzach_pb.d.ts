@@ -298,6 +298,12 @@ export class NotifyTarget extends jspb.Message {
   getId(): librarian_v1_common_pb.InternalID | undefined;
   setId(value?: librarian_v1_common_pb.InternalID): void;
 
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
   getType(): TargetTypeMap[keyof TargetTypeMap];
   setType(value: TargetTypeMap[keyof TargetTypeMap]): void;
 
@@ -320,6 +326,8 @@ export class NotifyTarget extends jspb.Message {
 export namespace NotifyTarget {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
+    name: string,
+    description: string,
     type: TargetTypeMap[keyof TargetTypeMap],
     status: TargetStatusMap[keyof TargetStatusMap],
     token: string,
@@ -332,6 +340,12 @@ export class NotifyFlow extends jspb.Message {
   getId(): librarian_v1_common_pb.InternalID | undefined;
   setId(value?: librarian_v1_common_pb.InternalID): void;
 
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
   hasSource(): boolean;
   clearSource(): void;
   getSource(): NotifyFlowSource | undefined;
@@ -341,6 +355,9 @@ export class NotifyFlow extends jspb.Message {
   getTargetsList(): Array<NotifyFlowTarget>;
   setTargetsList(value: Array<NotifyFlowTarget>): void;
   addTargets(value?: NotifyFlowTarget, index?: number): NotifyFlowTarget;
+
+  getStatus(): FlowStatusMap[keyof FlowStatusMap];
+  setStatus(value: FlowStatusMap[keyof FlowStatusMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyFlow.AsObject;
@@ -355,8 +372,11 @@ export class NotifyFlow extends jspb.Message {
 export namespace NotifyFlow {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
+    name: string,
+    description: string,
     source?: NotifyFlowSource.AsObject,
     targetsList: Array<NotifyFlowTarget.AsObject>,
+    status: FlowStatusMap[keyof FlowStatusMap],
   }
 }
 
@@ -422,4 +442,12 @@ export interface TargetStatusMap {
 }
 
 export const TargetStatus: TargetStatusMap;
+
+export interface FlowStatusMap {
+  FLOW_STATUS_UNSPECIFIED: 0;
+  FLOW_STATUS_ACTIVE: 1;
+  FLOW_STATUS_SUSPEND: 2;
+}
+
+export const FlowStatus: FlowStatusMap;
 

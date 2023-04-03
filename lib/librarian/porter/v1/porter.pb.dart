@@ -125,19 +125,21 @@ class PullFeedResponse extends $pb.GeneratedMessage {
   $1.Feed ensureData() => $_ensure(0);
 }
 
-class PushFeedItemRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+class PushFeedItemsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushFeedItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..e<FeedDestination>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination', $pb.PbFieldType.OE, defaultOrMaker: FeedDestination.FEED_DESTINATION_UNSPECIFIED, valueOf: FeedDestination.valueOf, enumValues: FeedDestination.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId')
-    ..aOM<$1.FeedItem>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', subBuilder: $1.FeedItem.create)
+    ..pc<$1.FeedItem>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $1.FeedItem.create)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
-  PushFeedItemRequest._() : super();
-  factory PushFeedItemRequest({
+  PushFeedItemsRequest._() : super();
+  factory PushFeedItemsRequest({
     FeedDestination? destination,
     $core.String? channelId,
-    $1.FeedItem? data,
+    $core.Iterable<$1.FeedItem>? items,
+    $core.String? token,
   }) {
     final _result = create();
     if (destination != null) {
@@ -146,31 +148,34 @@ class PushFeedItemRequest extends $pb.GeneratedMessage {
     if (channelId != null) {
       _result.channelId = channelId;
     }
-    if (data != null) {
-      _result.data = data;
+    if (items != null) {
+      _result.items.addAll(items);
+    }
+    if (token != null) {
+      _result.token = token;
     }
     return _result;
   }
-  factory PushFeedItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PushFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory PushFeedItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PushFeedItemRequest clone() => PushFeedItemRequest()..mergeFromMessage(this);
+  PushFeedItemsRequest clone() => PushFeedItemsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PushFeedItemRequest copyWith(void Function(PushFeedItemRequest) updates) => super.copyWith((message) => updates(message as PushFeedItemRequest)) as PushFeedItemRequest; // ignore: deprecated_member_use
+  PushFeedItemsRequest copyWith(void Function(PushFeedItemsRequest) updates) => super.copyWith((message) => updates(message as PushFeedItemsRequest)) as PushFeedItemsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static PushFeedItemRequest create() => PushFeedItemRequest._();
-  PushFeedItemRequest createEmptyInstance() => create();
-  static $pb.PbList<PushFeedItemRequest> createRepeated() => $pb.PbList<PushFeedItemRequest>();
+  static PushFeedItemsRequest create() => PushFeedItemsRequest._();
+  PushFeedItemsRequest createEmptyInstance() => create();
+  static $pb.PbList<PushFeedItemsRequest> createRepeated() => $pb.PbList<PushFeedItemsRequest>();
   @$core.pragma('dart2js:noInline')
-  static PushFeedItemRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemRequest>(create);
-  static PushFeedItemRequest? _defaultInstance;
+  static PushFeedItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemsRequest>(create);
+  static PushFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   FeedDestination get destination => $_getN(0);
@@ -191,44 +196,45 @@ class PushFeedItemRequest extends $pb.GeneratedMessage {
   void clearChannelId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.FeedItem get data => $_getN(2);
-  @$pb.TagNumber(3)
-  set data($1.FeedItem v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasData() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearData() => clearField(3);
-  @$pb.TagNumber(3)
-  $1.FeedItem ensureData() => $_ensure(2);
+  $core.List<$1.FeedItem> get items => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get token => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set token($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasToken() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearToken() => clearField(4);
 }
 
-class PushFeedItemResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+class PushFeedItemsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PushFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  PushFeedItemResponse._() : super();
-  factory PushFeedItemResponse() => create();
-  factory PushFeedItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PushFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PushFeedItemsResponse._() : super();
+  factory PushFeedItemsResponse() => create();
+  factory PushFeedItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PushFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PushFeedItemResponse clone() => PushFeedItemResponse()..mergeFromMessage(this);
+  PushFeedItemsResponse clone() => PushFeedItemsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PushFeedItemResponse copyWith(void Function(PushFeedItemResponse) updates) => super.copyWith((message) => updates(message as PushFeedItemResponse)) as PushFeedItemResponse; // ignore: deprecated_member_use
+  PushFeedItemsResponse copyWith(void Function(PushFeedItemsResponse) updates) => super.copyWith((message) => updates(message as PushFeedItemsResponse)) as PushFeedItemsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static PushFeedItemResponse create() => PushFeedItemResponse._();
-  PushFeedItemResponse createEmptyInstance() => create();
-  static $pb.PbList<PushFeedItemResponse> createRepeated() => $pb.PbList<PushFeedItemResponse>();
+  static PushFeedItemsResponse create() => PushFeedItemsResponse._();
+  PushFeedItemsResponse createEmptyInstance() => create();
+  static $pb.PbList<PushFeedItemsResponse> createRepeated() => $pb.PbList<PushFeedItemsResponse>();
   @$core.pragma('dart2js:noInline')
-  static PushFeedItemResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemResponse>(create);
-  static PushFeedItemResponse? _defaultInstance;
+  static PushFeedItemsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemsResponse>(create);
+  static PushFeedItemsResponse? _defaultInstance;
 }
 
 class PullDBRequest extends $pb.GeneratedMessage {

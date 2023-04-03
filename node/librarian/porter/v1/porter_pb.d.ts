@@ -50,48 +50,52 @@ export namespace PullFeedResponse {
   }
 }
 
-export class PushFeedItemRequest extends jspb.Message {
+export class PushFeedItemsRequest extends jspb.Message {
   getDestination(): FeedDestinationMap[keyof FeedDestinationMap];
   setDestination(value: FeedDestinationMap[keyof FeedDestinationMap]): void;
 
   getChannelId(): string;
   setChannelId(value: string): void;
 
-  hasData(): boolean;
-  clearData(): void;
-  getData(): librarian_v1_common_pb.FeedItem | undefined;
-  setData(value?: librarian_v1_common_pb.FeedItem): void;
+  clearItemsList(): void;
+  getItemsList(): Array<librarian_v1_common_pb.FeedItem>;
+  setItemsList(value: Array<librarian_v1_common_pb.FeedItem>): void;
+  addItems(value?: librarian_v1_common_pb.FeedItem, index?: number): librarian_v1_common_pb.FeedItem;
+
+  getToken(): string;
+  setToken(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PushFeedItemRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PushFeedItemRequest): PushFeedItemRequest.AsObject;
+  toObject(includeInstance?: boolean): PushFeedItemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PushFeedItemsRequest): PushFeedItemsRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PushFeedItemRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PushFeedItemRequest;
-  static deserializeBinaryFromReader(message: PushFeedItemRequest, reader: jspb.BinaryReader): PushFeedItemRequest;
+  static serializeBinaryToWriter(message: PushFeedItemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushFeedItemsRequest;
+  static deserializeBinaryFromReader(message: PushFeedItemsRequest, reader: jspb.BinaryReader): PushFeedItemsRequest;
 }
 
-export namespace PushFeedItemRequest {
+export namespace PushFeedItemsRequest {
   export type AsObject = {
     destination: FeedDestinationMap[keyof FeedDestinationMap],
     channelId: string,
-    data?: librarian_v1_common_pb.FeedItem.AsObject,
+    itemsList: Array<librarian_v1_common_pb.FeedItem.AsObject>,
+    token: string,
   }
 }
 
-export class PushFeedItemResponse extends jspb.Message {
+export class PushFeedItemsResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PushFeedItemResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PushFeedItemResponse): PushFeedItemResponse.AsObject;
+  toObject(includeInstance?: boolean): PushFeedItemsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PushFeedItemsResponse): PushFeedItemsResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PushFeedItemResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PushFeedItemResponse;
-  static deserializeBinaryFromReader(message: PushFeedItemResponse, reader: jspb.BinaryReader): PushFeedItemResponse;
+  static serializeBinaryToWriter(message: PushFeedItemsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PushFeedItemsResponse;
+  static deserializeBinaryFromReader(message: PushFeedItemsResponse, reader: jspb.BinaryReader): PushFeedItemsResponse;
 }
 
-export namespace PushFeedItemResponse {
+export namespace PushFeedItemsResponse {
   export type AsObject = {
   }
 }

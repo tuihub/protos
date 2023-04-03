@@ -181,26 +181,26 @@ function deserialize_librarian_porter_v1_PushDataResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.PushDataResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_PushFeedItemRequest(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.PushFeedItemRequest)) {
-    throw new Error('Expected argument of type librarian.porter.v1.PushFeedItemRequest');
+function serialize_librarian_porter_v1_PushFeedItemsRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PushFeedItemsRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PushFeedItemsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_PushFeedItemRequest(buffer_arg) {
-  return librarian_porter_v1_porter_pb.PushFeedItemRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_PushFeedItemsRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PushFeedItemsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_PushFeedItemResponse(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.PushFeedItemResponse)) {
-    throw new Error('Expected argument of type librarian.porter.v1.PushFeedItemResponse');
+function serialize_librarian_porter_v1_PushFeedItemsResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PushFeedItemsResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PushFeedItemsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_PushFeedItemResponse(buffer_arg) {
-  return librarian_porter_v1_porter_pb.PushFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_PushFeedItemsResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PushFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -225,16 +225,16 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PullFeedResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullFeedResponse,
   },
-  pushFeedItem: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PushFeedItem',
+  pushFeedItems: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PushFeedItemRequest,
-    responseType: librarian_porter_v1_porter_pb.PushFeedItemResponse,
-    requestSerialize: serialize_librarian_porter_v1_PushFeedItemRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PushFeedItemRequest,
-    responseSerialize: serialize_librarian_porter_v1_PushFeedItemResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemResponse,
+    requestType: librarian_porter_v1_porter_pb.PushFeedItemsRequest,
+    responseType: librarian_porter_v1_porter_pb.PushFeedItemsResponse,
+    requestSerialize: serialize_librarian_porter_v1_PushFeedItemsRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PushFeedItemsRequest,
+    responseSerialize: serialize_librarian_porter_v1_PushFeedItemsResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemsResponse,
   },
   pullDB: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullDB',

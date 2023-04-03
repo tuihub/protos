@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 
 const (
 	LibrarianPorterService_PullFeed_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
-	LibrarianPorterService_PushFeedItem_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/PushFeedItem"
+	LibrarianPorterService_PushFeedItems_FullMethodName          = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
 	LibrarianPorterService_PullDB_FullMethodName                 = "/librarian.porter.v1.LibrarianPorterService/PullDB"
 	LibrarianPorterService_PullWiki_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullWiki"
 	LibrarianPorterService_PullData_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullData"
@@ -35,7 +35,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LibrarianPorterServiceClient interface {
 	PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error)
-	PushFeedItem(ctx context.Context, in *PushFeedItemRequest, opts ...grpc.CallOption) (*PushFeedItemResponse, error)
+	PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error)
 	PullDB(ctx context.Context, in *PullDBRequest, opts ...grpc.CallOption) (*PullDBResponse, error)
 	PullWiki(ctx context.Context, in *PullWikiRequest, opts ...grpc.CallOption) (*PullWikiResponse, error)
 	PullData(ctx context.Context, in *PullDataRequest, opts ...grpc.CallOption) (LibrarianPorterService_PullDataClient, error)
@@ -62,9 +62,9 @@ func (c *librarianPorterServiceClient) PullFeed(ctx context.Context, in *PullFee
 	return out, nil
 }
 
-func (c *librarianPorterServiceClient) PushFeedItem(ctx context.Context, in *PushFeedItemRequest, opts ...grpc.CallOption) (*PushFeedItemResponse, error) {
-	out := new(PushFeedItemResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PushFeedItem_FullMethodName, in, out, opts...)
+func (c *librarianPorterServiceClient) PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error) {
+	out := new(PushFeedItemsResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PushFeedItems_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -187,7 +187,7 @@ func (c *librarianPorterServiceClient) PullAccountAppRelation(ctx context.Contex
 // for forward compatibility
 type LibrarianPorterServiceServer interface {
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
-	PushFeedItem(context.Context, *PushFeedItemRequest) (*PushFeedItemResponse, error)
+	PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error)
 	PullDB(context.Context, *PullDBRequest) (*PullDBResponse, error)
 	PullWiki(context.Context, *PullWikiRequest) (*PullWikiResponse, error)
 	PullData(*PullDataRequest, LibrarianPorterService_PullDataServer) error
@@ -205,8 +205,8 @@ type UnimplementedLibrarianPorterServiceServer struct {
 func (UnimplementedLibrarianPorterServiceServer) PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullFeed not implemented")
 }
-func (UnimplementedLibrarianPorterServiceServer) PushFeedItem(context.Context, *PushFeedItemRequest) (*PushFeedItemResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PushFeedItem not implemented")
+func (UnimplementedLibrarianPorterServiceServer) PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PushFeedItems not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) PullDB(context.Context, *PullDBRequest) (*PullDBResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullDB not implemented")
@@ -261,20 +261,20 @@ func _LibrarianPorterService_PullFeed_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianPorterService_PushFeedItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PushFeedItemRequest)
+func _LibrarianPorterService_PushFeedItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PushFeedItemsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianPorterServiceServer).PushFeedItem(ctx, in)
+		return srv.(LibrarianPorterServiceServer).PushFeedItems(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianPorterService_PushFeedItem_FullMethodName,
+		FullMethod: LibrarianPorterService_PushFeedItems_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianPorterServiceServer).PushFeedItem(ctx, req.(*PushFeedItemRequest))
+		return srv.(LibrarianPorterServiceServer).PushFeedItems(ctx, req.(*PushFeedItemsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -428,8 +428,8 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianPorterService_PullFeed_Handler,
 		},
 		{
-			MethodName: "PushFeedItem",
-			Handler:    _LibrarianPorterService_PushFeedItem_Handler,
+			MethodName: "PushFeedItems",
+			Handler:    _LibrarianPorterService_PushFeedItems_Handler,
 		},
 		{
 			MethodName: "PullDB",

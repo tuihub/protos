@@ -8,7 +8,7 @@ import * as grpc from "@grpc/grpc-js";
 
 interface ILibrarianPorterServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   pullFeed: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
-  pushFeedItem: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushFeedItemRequest, librarian_porter_v1_porter_pb.PushFeedItemResponse>;
+  pushFeedItems: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
   pullDB: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullDBRequest, librarian_porter_v1_porter_pb.PullDBResponse>;
   pullWiki: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullWikiRequest, librarian_porter_v1_porter_pb.PullWikiResponse>;
   pullData: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullDataRequest, librarian_porter_v1_porter_pb.PullDataResponse>;
@@ -22,7 +22,7 @@ export const LibrarianPorterServiceService: ILibrarianPorterServiceService;
 
 export interface ILibrarianPorterServiceServer extends grpc.UntypedServiceImplementation {
   pullFeed: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
-  pushFeedItem: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PushFeedItemRequest, librarian_porter_v1_porter_pb.PushFeedItemResponse>;
+  pushFeedItems: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
   pullDB: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullDBRequest, librarian_porter_v1_porter_pb.PullDBResponse>;
   pullWiki: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullWikiRequest, librarian_porter_v1_porter_pb.PullWikiResponse>;
   pullData: grpc.handleServerStreamingCall<librarian_porter_v1_porter_pb.PullDataRequest, librarian_porter_v1_porter_pb.PullDataResponse>;
@@ -37,9 +37,9 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
-  pushFeedItem(argument: librarian_porter_v1_porter_pb.PushFeedItemRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemResponse>): grpc.ClientUnaryCall;
-  pushFeedItem(argument: librarian_porter_v1_porter_pb.PushFeedItemRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemResponse>): grpc.ClientUnaryCall;
-  pushFeedItem(argument: librarian_porter_v1_porter_pb.PushFeedItemRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemResponse>): grpc.ClientUnaryCall;
+  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
+  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
+  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
   pullDB(argument: librarian_porter_v1_porter_pb.PullDBRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullDBResponse>): grpc.ClientUnaryCall;
   pullDB(argument: librarian_porter_v1_porter_pb.PullDBRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullDBResponse>): grpc.ClientUnaryCall;
   pullDB(argument: librarian_porter_v1_porter_pb.PullDBRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullDBResponse>): grpc.ClientUnaryCall;

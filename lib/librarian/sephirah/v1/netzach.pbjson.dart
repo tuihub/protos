@@ -31,6 +31,18 @@ const TargetStatus$json = const {
 
 /// Descriptor for `TargetStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List targetStatusDescriptor = $convert.base64Decode('CgxUYXJnZXRTdGF0dXMSHQoZVEFSR0VUX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFFRBUkdFVF9TVEFUVVNfQUNUSVZFEAESGQoVVEFSR0VUX1NUQVRVU19TVVNQRU5EEAI=');
+@$core.Deprecated('Use flowStatusDescriptor instead')
+const FlowStatus$json = const {
+  '1': 'FlowStatus',
+  '2': const [
+    const {'1': 'FLOW_STATUS_UNSPECIFIED', '2': 0},
+    const {'1': 'FLOW_STATUS_ACTIVE', '2': 1},
+    const {'1': 'FLOW_STATUS_SUSPEND', '2': 2},
+  ],
+};
+
+/// Descriptor for `FlowStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List flowStatusDescriptor = $convert.base64Decode('CgpGbG93U3RhdHVzEhsKF0ZMT1dfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSRkxPV19TVEFUVVNfQUNUSVZFEAESFwoTRkxPV19TVEFUVVNfU1VTUEVORBAC');
 @$core.Deprecated('Use createNotifyTargetRequestDescriptor instead')
 const CreateNotifyTargetRequest$json = const {
   '1': 'CreateNotifyTargetRequest',
@@ -156,26 +168,31 @@ const NotifyTarget$json = const {
   '1': 'NotifyTarget',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    const {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.TargetType', '10': 'type'},
-    const {'1': 'status', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.TargetStatus', '10': 'status'},
-    const {'1': 'token', '3': 4, '4': 1, '5': 9, '10': 'token'},
+    const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    const {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.TargetType', '10': 'type'},
+    const {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.TargetStatus', '10': 'status'},
+    const {'1': 'token', '3': 6, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
 /// Descriptor for `NotifyTarget`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode('CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSNQoEdHlwZRgCIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5UYXJnZXRUeXBlUgR0eXBlEjsKBnN0YXR1cxgDIAEoDjIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5UYXJnZXRTdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgEIAEoCVIFdG9rZW4=');
+final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode('CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SNQoEdHlwZRgEIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5UYXJnZXRUeXBlUgR0eXBlEjsKBnN0YXR1cxgFIAEoDjIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5UYXJnZXRTdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgGIAEoCVIFdG9rZW4=');
 @$core.Deprecated('Use notifyFlowDescriptor instead')
 const NotifyFlow$json = const {
   '1': 'NotifyFlow',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    const {'1': 'source', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.NotifyFlowSource', '10': 'source'},
-    const {'1': 'targets', '3': 3, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.NotifyFlowTarget', '10': 'targets'},
+    const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    const {'1': 'source', '3': 4, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.NotifyFlowSource', '10': 'source'},
+    const {'1': 'targets', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.NotifyFlowTarget', '10': 'targets'},
+    const {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FlowStatus', '10': 'status'},
   ],
 };
 
 /// Descriptor for `NotifyFlow`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List notifyFlowDescriptor = $convert.base64Decode('CgpOb3RpZnlGbG93EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEj8KBnNvdXJjZRgCIAEoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93U291cmNlUgZzb3VyY2USQQoHdGFyZ2V0cxgDIAMoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93VGFyZ2V0Ugd0YXJnZXRz');
+final $typed_data.Uint8List notifyFlowDescriptor = $convert.base64Decode('CgpOb3RpZnlGbG93EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEj8KBnNvdXJjZRgEIAEoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93U291cmNlUgZzb3VyY2USQQoHdGFyZ2V0cxgFIAMoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93VGFyZ2V0Ugd0YXJnZXRzEjkKBnN0YXR1cxgGIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GbG93U3RhdHVzUgZzdGF0dXM=');
 @$core.Deprecated('Use notifyFlowSourceDescriptor instead')
 const NotifyFlowSource$json = const {
   '1': 'NotifyFlowSource',

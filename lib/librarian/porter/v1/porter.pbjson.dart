@@ -109,25 +109,26 @@ const PullFeedResponse$json = const {
 
 /// Descriptor for `PullFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pullFeedResponseDescriptor = $convert.base64Decode('ChBQdWxsRmVlZFJlc3BvbnNlEisKBGRhdGEYASABKAsyEi5saWJyYXJpYW4udjEuRmVlZEgAUgRkYXRhiAEBQgcKBV9kYXRh');
-@$core.Deprecated('Use pushFeedItemRequestDescriptor instead')
-const PushFeedItemRequest$json = const {
-  '1': 'PushFeedItemRequest',
+@$core.Deprecated('Use pushFeedItemsRequestDescriptor instead')
+const PushFeedItemsRequest$json = const {
+  '1': 'PushFeedItemsRequest',
   '2': const [
     const {'1': 'destination', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.FeedDestination', '10': 'destination'},
     const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
-    const {'1': 'data', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'data'},
+    const {'1': 'items', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
+    const {'1': 'token', '3': 4, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
-/// Descriptor for `PushFeedItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushFeedItemRequestDescriptor = $convert.base64Decode('ChNQdXNoRmVlZEl0ZW1SZXF1ZXN0EkYKC2Rlc3RpbmF0aW9uGAEgASgOMiQubGlicmFyaWFuLnBvcnRlci52MS5GZWVkRGVzdGluYXRpb25SC2Rlc3RpbmF0aW9uEh0KCmNoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZBIqCgRkYXRhGAMgASgLMhYubGlicmFyaWFuLnYxLkZlZWRJdGVtUgRkYXRh');
-@$core.Deprecated('Use pushFeedItemResponseDescriptor instead')
-const PushFeedItemResponse$json = const {
-  '1': 'PushFeedItemResponse',
+/// Descriptor for `PushFeedItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pushFeedItemsRequestDescriptor = $convert.base64Decode('ChRQdXNoRmVlZEl0ZW1zUmVxdWVzdBJGCgtkZXN0aW5hdGlvbhgBIAEoDjIkLmxpYnJhcmlhbi5wb3J0ZXIudjEuRmVlZERlc3RpbmF0aW9uUgtkZXN0aW5hdGlvbhIdCgpjaGFubmVsX2lkGAIgASgJUgljaGFubmVsSWQSLAoFaXRlbXMYAyADKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0ZW1SBWl0ZW1zEhQKBXRva2VuGAQgASgJUgV0b2tlbg==');
+@$core.Deprecated('Use pushFeedItemsResponseDescriptor instead')
+const PushFeedItemsResponse$json = const {
+  '1': 'PushFeedItemsResponse',
 };
 
-/// Descriptor for `PushFeedItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushFeedItemResponseDescriptor = $convert.base64Decode('ChRQdXNoRmVlZEl0ZW1SZXNwb25zZQ==');
+/// Descriptor for `PushFeedItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pushFeedItemsResponseDescriptor = $convert.base64Decode('ChVQdXNoRmVlZEl0ZW1zUmVzcG9uc2U=');
 @$core.Deprecated('Use pullDBRequestDescriptor instead')
 const PullDBRequest$json = const {
   '1': 'PullDBRequest',

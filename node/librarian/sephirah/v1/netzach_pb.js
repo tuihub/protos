@@ -27,6 +27,7 @@ goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyFlowRequest', null, g
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyFlowResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyTargetRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyTargetResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.FlowStatus', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListNotifyFlowsRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListNotifyFlowsResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListNotifyTargetsRequest', null, global);
@@ -2464,9 +2465,11 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.toObject = function(opt_inclu
 proto.librarian.sephirah.v1.NotifyTarget.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 4, "")
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    status: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    token: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -2509,14 +2512,22 @@ proto.librarian.sephirah.v1.NotifyTarget.deserializeBinaryFromReader = function(
       msg.setId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
       var value = /** @type {!proto.librarian.sephirah.v1.TargetType} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 3:
+    case 5:
       var value = /** @type {!proto.librarian.sephirah.v1.TargetStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
-    case 4:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setToken(value);
       break;
@@ -2557,24 +2568,38 @@ proto.librarian.sephirah.v1.NotifyTarget.serializeBinaryToWriter = function(mess
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getType();
   if (f !== 0.0) {
     writer.writeEnum(
-      2,
+      4,
       f
     );
   }
   f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
-      3,
+      5,
       f
     );
   }
   f = message.getToken();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      6,
       f
     );
   }
@@ -2619,11 +2644,47 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.hasId = function() {
 
 
 /**
- * optional TargetType type = 2;
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.NotifyTarget.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
+ */
+proto.librarian.sephirah.v1.NotifyTarget.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.NotifyTarget.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
+ */
+proto.librarian.sephirah.v1.NotifyTarget.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional TargetType type = 4;
  * @return {!proto.librarian.sephirah.v1.TargetType}
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.getType = function() {
-  return /** @type {!proto.librarian.sephirah.v1.TargetType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.librarian.sephirah.v1.TargetType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -2632,16 +2693,16 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.getType = function() {
  * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
 /**
- * optional TargetStatus status = 3;
+ * optional TargetStatus status = 5;
  * @return {!proto.librarian.sephirah.v1.TargetStatus}
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.getStatus = function() {
-  return /** @type {!proto.librarian.sephirah.v1.TargetStatus} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {!proto.librarian.sephirah.v1.TargetStatus} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -2650,16 +2711,16 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.getStatus = function() {
  * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
 /**
- * optional string token = 4;
+ * optional string token = 6;
  * @return {string}
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.getToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -2668,7 +2729,7 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.getToken = function() {
  * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.setToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -2678,7 +2739,7 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.setToken = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.NotifyFlow.repeatedFields_ = [3];
+proto.librarian.sephirah.v1.NotifyFlow.repeatedFields_ = [5];
 
 
 
@@ -2712,9 +2773,12 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.toObject = function(opt_include
 proto.librarian.sephirah.v1.NotifyFlow.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     source: (f = msg.getSource()) && proto.librarian.sephirah.v1.NotifyFlowSource.toObject(includeInstance, f),
     targetsList: jspb.Message.toObjectList(msg.getTargetsList(),
-    proto.librarian.sephirah.v1.NotifyFlowTarget.toObject, includeInstance)
+    proto.librarian.sephirah.v1.NotifyFlowTarget.toObject, includeInstance),
+    status: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -2757,14 +2821,26 @@ proto.librarian.sephirah.v1.NotifyFlow.deserializeBinaryFromReader = function(ms
       msg.setId(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
       var value = new proto.librarian.sephirah.v1.NotifyFlowSource;
       reader.readMessage(value,proto.librarian.sephirah.v1.NotifyFlowSource.deserializeBinaryFromReader);
       msg.setSource(value);
       break;
-    case 3:
+    case 5:
       var value = new proto.librarian.sephirah.v1.NotifyFlowTarget;
       reader.readMessage(value,proto.librarian.sephirah.v1.NotifyFlowTarget.deserializeBinaryFromReader);
       msg.addTargets(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.librarian.sephirah.v1.FlowStatus} */ (reader.readEnum());
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -2803,10 +2879,24 @@ proto.librarian.sephirah.v1.NotifyFlow.serializeBinaryToWriter = function(messag
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getSource();
   if (f != null) {
     writer.writeMessage(
-      2,
+      4,
       f,
       proto.librarian.sephirah.v1.NotifyFlowSource.serializeBinaryToWriter
     );
@@ -2814,9 +2904,16 @@ proto.librarian.sephirah.v1.NotifyFlow.serializeBinaryToWriter = function(messag
   f = message.getTargetsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      5,
       f,
       proto.librarian.sephirah.v1.NotifyFlowTarget.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
+      f
     );
   }
 };
@@ -2860,12 +2957,48 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.hasId = function() {
 
 
 /**
- * optional NotifyFlowSource source = 2;
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.NotifyFlow.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.NotifyFlow} returns this
+ */
+proto.librarian.sephirah.v1.NotifyFlow.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.NotifyFlow.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.NotifyFlow} returns this
+ */
+proto.librarian.sephirah.v1.NotifyFlow.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional NotifyFlowSource source = 4;
  * @return {?proto.librarian.sephirah.v1.NotifyFlowSource}
  */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.getSource = function() {
   return /** @type{?proto.librarian.sephirah.v1.NotifyFlowSource} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.NotifyFlowSource, 2));
+    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.NotifyFlowSource, 4));
 };
 
 
@@ -2874,7 +3007,7 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.getSource = function() {
  * @return {!proto.librarian.sephirah.v1.NotifyFlow} returns this
 */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.setSource = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -2892,17 +3025,17 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.clearSource = function() {
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.hasSource = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated NotifyFlowTarget targets = 3;
+ * repeated NotifyFlowTarget targets = 5;
  * @return {!Array<!proto.librarian.sephirah.v1.NotifyFlowTarget>}
  */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.getTargetsList = function() {
   return /** @type{!Array<!proto.librarian.sephirah.v1.NotifyFlowTarget>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.NotifyFlowTarget, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.NotifyFlowTarget, 5));
 };
 
 
@@ -2911,7 +3044,7 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.getTargetsList = function() {
  * @return {!proto.librarian.sephirah.v1.NotifyFlow} returns this
 */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.setTargetsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -2921,7 +3054,7 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.setTargetsList = function(value
  * @return {!proto.librarian.sephirah.v1.NotifyFlowTarget}
  */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.addTargets = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.sephirah.v1.NotifyFlowTarget, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.librarian.sephirah.v1.NotifyFlowTarget, opt_index);
 };
 
 
@@ -2931,6 +3064,24 @@ proto.librarian.sephirah.v1.NotifyFlow.prototype.addTargets = function(opt_value
  */
 proto.librarian.sephirah.v1.NotifyFlow.prototype.clearTargetsList = function() {
   return this.setTargetsList([]);
+};
+
+
+/**
+ * optional FlowStatus status = 6;
+ * @return {!proto.librarian.sephirah.v1.FlowStatus}
+ */
+proto.librarian.sephirah.v1.NotifyFlow.prototype.getStatus = function() {
+  return /** @type {!proto.librarian.sephirah.v1.FlowStatus} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.FlowStatus} value
+ * @return {!proto.librarian.sephirah.v1.NotifyFlow} returns this
+ */
+proto.librarian.sephirah.v1.NotifyFlow.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -3290,6 +3441,15 @@ proto.librarian.sephirah.v1.TargetStatus = {
   TARGET_STATUS_UNSPECIFIED: 0,
   TARGET_STATUS_ACTIVE: 1,
   TARGET_STATUS_SUSPEND: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.librarian.sephirah.v1.FlowStatus = {
+  FLOW_STATUS_UNSPECIFIED: 0,
+  FLOW_STATUS_ACTIVE: 1,
+  FLOW_STATUS_SUSPEND: 2
 };
 
 goog.object.extend(exports, proto.librarian.sephirah.v1);

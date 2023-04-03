@@ -614,15 +614,19 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
 class NotifyTarget extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NotifyTarget', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $5.InternalID.create)
-    ..e<TargetType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TargetType.TARGET_TYPE_UNSPECIFIED, valueOf: TargetType.valueOf, enumValues: TargetType.values)
-    ..e<TargetStatus>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TargetStatus.TARGET_STATUS_UNSPECIFIED, valueOf: TargetStatus.valueOf, enumValues: TargetStatus.values)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..e<TargetType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: TargetType.TARGET_TYPE_UNSPECIFIED, valueOf: TargetType.valueOf, enumValues: TargetType.values)
+    ..e<TargetStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: TargetStatus.TARGET_STATUS_UNSPECIFIED, valueOf: TargetStatus.valueOf, enumValues: TargetStatus.values)
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
   NotifyTarget._() : super();
   factory NotifyTarget({
     $5.InternalID? id,
+    $core.String? name,
+    $core.String? description,
     TargetType? type,
     TargetStatus? status,
     $core.String? token,
@@ -630,6 +634,12 @@ class NotifyTarget extends $pb.GeneratedMessage {
     final _result = create();
     if (id != null) {
       _result.id = id;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (description != null) {
+      _result.description = description;
     }
     if (type != null) {
       _result.type = type;
@@ -675,56 +685,89 @@ class NotifyTarget extends $pb.GeneratedMessage {
   $5.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  TargetType get type => $_getN(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set type(TargetType v) { setField(2, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasType() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearType() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  TargetStatus get status => $_getN(2);
+  $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
-  set status(TargetStatus v) { setField(3, v); }
+  set description($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasStatus() => $_has(2);
+  $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearStatus() => clearField(3);
+  void clearDescription() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get token => $_getSZ(3);
+  TargetType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set token($core.String v) { $_setString(3, v); }
+  set type(TargetType v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasToken() => $_has(3);
+  $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearToken() => clearField(4);
+  void clearType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  TargetStatus get status => $_getN(4);
+  @$pb.TagNumber(5)
+  set status(TargetStatus v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get token => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set token($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasToken() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearToken() => clearField(6);
 }
 
 class NotifyFlow extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NotifyFlow', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $5.InternalID.create)
-    ..aOM<NotifyFlowSource>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', subBuilder: NotifyFlowSource.create)
-    ..pc<NotifyFlowTarget>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyFlowTarget.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOM<NotifyFlowSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', subBuilder: NotifyFlowSource.create)
+    ..pc<NotifyFlowTarget>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyFlowTarget.create)
+    ..e<FlowStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FlowStatus.FLOW_STATUS_UNSPECIFIED, valueOf: FlowStatus.valueOf, enumValues: FlowStatus.values)
     ..hasRequiredFields = false
   ;
 
   NotifyFlow._() : super();
   factory NotifyFlow({
     $5.InternalID? id,
+    $core.String? name,
+    $core.String? description,
     NotifyFlowSource? source,
     $core.Iterable<NotifyFlowTarget>? targets,
+    FlowStatus? status,
   }) {
     final _result = create();
     if (id != null) {
       _result.id = id;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (description != null) {
+      _result.description = description;
     }
     if (source != null) {
       _result.source = source;
     }
     if (targets != null) {
       _result.targets.addAll(targets);
+    }
+    if (status != null) {
+      _result.status = status;
     }
     return _result;
   }
@@ -761,18 +804,45 @@ class NotifyFlow extends $pb.GeneratedMessage {
   $5.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  NotifyFlowSource get source => $_getN(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set source(NotifyFlowSource v) { setField(2, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSource() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSource() => clearField(2);
-  @$pb.TagNumber(2)
-  NotifyFlowSource ensureSource() => $_ensure(1);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<NotifyFlowTarget> get targets => $_getList(2);
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  NotifyFlowSource get source => $_getN(3);
+  @$pb.TagNumber(4)
+  set source(NotifyFlowSource v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSource() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSource() => clearField(4);
+  @$pb.TagNumber(4)
+  NotifyFlowSource ensureSource() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.List<NotifyFlowTarget> get targets => $_getList(4);
+
+  @$pb.TagNumber(6)
+  FlowStatus get status => $_getN(5);
+  @$pb.TagNumber(6)
+  set status(FlowStatus v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => clearField(6);
 }
 
 class NotifyFlowSource extends $pb.GeneratedMessage {
