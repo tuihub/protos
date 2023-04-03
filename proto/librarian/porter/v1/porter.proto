@@ -31,7 +31,7 @@ enum FeatureFlag {
 */
 service LibrarianPorterService {
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
-  rpc PushFeedItem(PushFeedItemRequest) returns (PushFeedItemResponse);
+  rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
   rpc PullDB(PullDBRequest) returns (PullDBResponse);
   rpc PullWiki(PullWikiRequest) returns (PullWikiResponse);
   rpc PullData(PullDataRequest) returns (stream PullDataResponse);
@@ -50,13 +50,14 @@ message PullFeedResponse {
   optional librarian.v1.Feed data = 1;
 }
 
-message PushFeedItemRequest {
+message PushFeedItemsRequest {
   FeedDestination destination = 1;
   string channel_id = 2;
-  librarian.v1.FeedItem data = 3;
+  repeated librarian.v1.FeedItem items = 3;
+  string token = 4;
 }
 
-message PushFeedItemResponse {}
+message PushFeedItemsResponse {}
 
 message PullDBRequest {
   DBSource source = 1;

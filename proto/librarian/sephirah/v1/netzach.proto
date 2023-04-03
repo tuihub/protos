@@ -54,15 +54,20 @@ message ListNotifyFlowsResponse {
 
 message NotifyTarget {
   librarian.v1.InternalID id = 1;
-  TargetType type = 2;
-  TargetStatus status = 3;
-  string token = 4;
+  string name = 2;
+  string description = 3;
+  TargetType type = 4;
+  TargetStatus status = 5;
+  string token = 6;
 }
 
 message NotifyFlow {
   librarian.v1.InternalID id = 1;
-  NotifyFlowSource source = 2;
-  repeated NotifyFlowTarget targets = 3;
+  string name = 2;
+  string description = 3;
+  NotifyFlowSource source = 4;
+  repeated NotifyFlowTarget targets = 5;
+  FlowStatus status = 6;
 }
 
 message NotifyFlowSource {
@@ -83,4 +88,10 @@ enum TargetStatus {
   TARGET_STATUS_UNSPECIFIED = 0;
   TARGET_STATUS_ACTIVE = 1;
   TARGET_STATUS_SUSPEND = 2;
+}
+
+enum FlowStatus {
+  FLOW_STATUS_UNSPECIFIED = 0;
+  FLOW_STATUS_ACTIVE = 1;
+  FLOW_STATUS_SUSPEND = 2;
 }
