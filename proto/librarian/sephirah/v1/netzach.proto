@@ -22,8 +22,8 @@ message UpdateNotifyTargetResponse {}
 message ListNotifyTargetsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID id_filter = 2;
-  repeated TargetType type_filter = 3;
-  repeated TargetStatus status_filter = 4;
+  repeated NotifyTargetType type_filter = 3;
+  repeated NotifyTargetStatus status_filter = 4;
 }
 
 message ListNotifyTargetsResponse {
@@ -56,8 +56,8 @@ message NotifyTarget {
   librarian.v1.InternalID id = 1;
   string name = 2;
   string description = 3;
-  TargetType type = 4;
-  TargetStatus status = 5;
+  NotifyTargetType type = 4;
+  NotifyTargetStatus status = 5;
   string token = 6;
 }
 
@@ -67,7 +67,7 @@ message NotifyFlow {
   string description = 3;
   NotifyFlowSource source = 4;
   repeated NotifyFlowTarget targets = 5;
-  FlowStatus status = 6;
+  NotifyFlowStatus status = 6;
 }
 
 message NotifyFlowSource {
@@ -79,19 +79,19 @@ message NotifyFlowTarget {
   string channel_id = 2;
 }
 
-enum TargetType {
-  TARGET_TYPE_UNSPECIFIED = 0;
-  TARGET_TYPE_TELEGRAM = 1;
+enum NotifyTargetType {
+  NOTIFY_TARGET_TYPE_UNSPECIFIED = 0;
+  NOTIFY_TARGET_TYPE_TELEGRAM = 1;
 }
 
-enum TargetStatus {
-  TARGET_STATUS_UNSPECIFIED = 0;
-  TARGET_STATUS_ACTIVE = 1;
-  TARGET_STATUS_SUSPEND = 2;
+enum NotifyTargetStatus {
+  NOTIFY_TARGET_STATUS_UNSPECIFIED = 0;
+  NOTIFY_TARGET_STATUS_ACTIVE = 1;
+  NOTIFY_TARGET_STATUS_SUSPEND = 2;
 }
 
-enum FlowStatus {
-  FLOW_STATUS_UNSPECIFIED = 0;
-  FLOW_STATUS_ACTIVE = 1;
-  FLOW_STATUS_SUSPEND = 2;
+enum NotifyFlowStatus {
+  NOTIFY_FLOW_STATUS_UNSPECIFIED = 0;
+  NOTIFY_FLOW_STATUS_ACTIVE = 1;
+  NOTIFY_FLOW_STATUS_SUSPEND = 2;
 }
