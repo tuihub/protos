@@ -1,6 +1,6 @@
 {
     "$id": "https://github.com/TuiHub/Protos/schemas/savedata/v1",
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Save File Configs",
     "properties": {
         "platform": {
