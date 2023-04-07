@@ -2750,82 +2750,6 @@ impl<'de> serde::Deserialize<'de> for FileTransferStatus {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
-impl serde::Serialize for FlowStatus {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        let variant = match self {
-            Self::Unspecified => "FLOW_STATUS_UNSPECIFIED",
-            Self::Active => "FLOW_STATUS_ACTIVE",
-            Self::Suspend => "FLOW_STATUS_SUSPEND",
-        };
-        serializer.serialize_str(variant)
-    }
-}
-impl<'de> serde::Deserialize<'de> for FlowStatus {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "FLOW_STATUS_UNSPECIFIED",
-            "FLOW_STATUS_ACTIVE",
-            "FLOW_STATUS_SUSPEND",
-        ];
-
-        struct GeneratedVisitor;
-
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = FlowStatus;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(formatter, "expected one of: {:?}", &FIELDS)
-            }
-
-            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(FlowStatus::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
-                    })
-            }
-
-            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(FlowStatus::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
-                    })
-            }
-
-            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                match value {
-                    "FLOW_STATUS_UNSPECIFIED" => Ok(FlowStatus::Unspecified),
-                    "FLOW_STATUS_ACTIVE" => Ok(FlowStatus::Active),
-                    "FLOW_STATUS_SUSPEND" => Ok(FlowStatus::Suspend),
-                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
-                }
-            }
-        }
-        deserializer.deserialize_any(GeneratedVisitor)
-    }
-}
 impl serde::Serialize for GenerateTokenRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -3714,6 +3638,202 @@ impl<'de> serde::Deserialize<'de> for GetFeedItemResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.GetFeedItemResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetServerInformationRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetServerInformationRequest", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetServerInformationRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetServerInformationRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetServerInformationRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetServerInformationRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(GetServerInformationRequest {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetServerInformationRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetServerInformationResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.server_binary_summary.is_some() {
+            len += 1;
+        }
+        if self.protocol_summary.is_some() {
+            len += 1;
+        }
+        if self.current_time.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetServerInformationResponse", len)?;
+        if let Some(v) = self.server_binary_summary.as_ref() {
+            struct_ser.serialize_field("serverBinarySummary", v)?;
+        }
+        if let Some(v) = self.protocol_summary.as_ref() {
+            struct_ser.serialize_field("protocolSummary", v)?;
+        }
+        if let Some(v) = self.current_time.as_ref() {
+            struct_ser.serialize_field("currentTime", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "serverBinarySummary",
+            "protocolSummary",
+            "currentTime",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            ServerBinarySummary,
+            ProtocolSummary,
+            CurrentTime,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "serverBinarySummary" => Ok(GeneratedField::ServerBinarySummary),
+                            "protocolSummary" => Ok(GeneratedField::ProtocolSummary),
+                            "currentTime" => Ok(GeneratedField::CurrentTime),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetServerInformationResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetServerInformationResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetServerInformationResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut server_binary_summary__ = None;
+                let mut protocol_summary__ = None;
+                let mut current_time__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::ServerBinarySummary => {
+                            if server_binary_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("serverBinarySummary"));
+                            }
+                            server_binary_summary__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::ProtocolSummary => {
+                            if protocol_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("protocolSummary"));
+                            }
+                            protocol_summary__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::CurrentTime => {
+                            if current_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("currentTime"));
+                            }
+                            current_time__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(GetServerInformationResponse {
+                    server_binary_summary: server_binary_summary__,
+                    protocol_summary: protocol_summary__,
+                    current_time: current_time__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetServerInformationResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for GetTokenRequest {
@@ -6644,14 +6764,14 @@ impl serde::Serialize for ListNotifyTargetsRequest {
         }
         if !self.type_filter.is_empty() {
             let v = self.type_filter.iter().cloned().map(|v| {
-                TargetType::from_i32(v)
+                NotifyTargetType::from_i32(v)
                     .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
                 }).collect::<Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("typeFilter", &v)?;
         }
         if !self.status_filter.is_empty() {
             let v = self.status_filter.iter().cloned().map(|v| {
-                TargetStatus::from_i32(v)
+                NotifyTargetStatus::from_i32(v)
                     .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
                 }).collect::<Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("statusFilter", &v)?;
@@ -6744,13 +6864,13 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                             if type_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("typeFilter"));
                             }
-                            type_filter__ = Some(map.next_value::<Vec<TargetType>>()?.into_iter().map(|x| x as i32).collect());
+                            type_filter__ = Some(map.next_value::<Vec<NotifyTargetType>>()?.into_iter().map(|x| x as i32).collect());
                         }
                         GeneratedField::StatusFilter => {
                             if status_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("statusFilter"));
                             }
-                            status_filter__ = Some(map.next_value::<Vec<TargetStatus>>()?.into_iter().map(|x| x as i32).collect());
+                            status_filter__ = Some(map.next_value::<Vec<NotifyTargetStatus>>()?.into_iter().map(|x| x as i32).collect());
                         }
                     }
                 }
@@ -7336,7 +7456,7 @@ impl serde::Serialize for NotifyFlow {
             struct_ser.serialize_field("targets", &self.targets)?;
         }
         if self.status != 0 {
-            let v = FlowStatus::from_i32(self.status)
+            let v = NotifyFlowStatus::from_i32(self.status)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
             struct_ser.serialize_field("status", &v)?;
         }
@@ -7454,7 +7574,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                             if status__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("status"));
                             }
-                            status__ = Some(map.next_value::<FlowStatus>()? as i32);
+                            status__ = Some(map.next_value::<NotifyFlowStatus>()? as i32);
                         }
                     }
                 }
@@ -7560,6 +7680,82 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.NotifyFlowSource", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for NotifyFlowStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "NOTIFY_FLOW_STATUS_UNSPECIFIED",
+            Self::Active => "NOTIFY_FLOW_STATUS_ACTIVE",
+            Self::Suspend => "NOTIFY_FLOW_STATUS_SUSPEND",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for NotifyFlowStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "NOTIFY_FLOW_STATUS_UNSPECIFIED",
+            "NOTIFY_FLOW_STATUS_ACTIVE",
+            "NOTIFY_FLOW_STATUS_SUSPEND",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = NotifyFlowStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(NotifyFlowStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(NotifyFlowStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "NOTIFY_FLOW_STATUS_UNSPECIFIED" => Ok(NotifyFlowStatus::Unspecified),
+                    "NOTIFY_FLOW_STATUS_ACTIVE" => Ok(NotifyFlowStatus::Active),
+                    "NOTIFY_FLOW_STATUS_SUSPEND" => Ok(NotifyFlowStatus::Suspend),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for NotifyFlowTarget {
@@ -7707,12 +7903,12 @@ impl serde::Serialize for NotifyTarget {
             struct_ser.serialize_field("description", &self.description)?;
         }
         if self.r#type != 0 {
-            let v = TargetType::from_i32(self.r#type)
+            let v = NotifyTargetType::from_i32(self.r#type)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
             struct_ser.serialize_field("type", &v)?;
         }
         if self.status != 0 {
-            let v = TargetStatus::from_i32(self.status)
+            let v = NotifyTargetStatus::from_i32(self.status)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
             struct_ser.serialize_field("status", &v)?;
         }
@@ -7821,13 +8017,13 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("type"));
                             }
-                            r#type__ = Some(map.next_value::<TargetType>()? as i32);
+                            r#type__ = Some(map.next_value::<NotifyTargetType>()? as i32);
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("status"));
                             }
-                            status__ = Some(map.next_value::<TargetStatus>()? as i32);
+                            status__ = Some(map.next_value::<NotifyTargetStatus>()? as i32);
                         }
                         GeneratedField::Token => {
                             if token__.is_some() {
@@ -7848,6 +8044,155 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.NotifyTarget", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for NotifyTargetStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "NOTIFY_TARGET_STATUS_UNSPECIFIED",
+            Self::Active => "NOTIFY_TARGET_STATUS_ACTIVE",
+            Self::Suspend => "NOTIFY_TARGET_STATUS_SUSPEND",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for NotifyTargetStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "NOTIFY_TARGET_STATUS_UNSPECIFIED",
+            "NOTIFY_TARGET_STATUS_ACTIVE",
+            "NOTIFY_TARGET_STATUS_SUSPEND",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = NotifyTargetStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(NotifyTargetStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(NotifyTargetStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "NOTIFY_TARGET_STATUS_UNSPECIFIED" => Ok(NotifyTargetStatus::Unspecified),
+                    "NOTIFY_TARGET_STATUS_ACTIVE" => Ok(NotifyTargetStatus::Active),
+                    "NOTIFY_TARGET_STATUS_SUSPEND" => Ok(NotifyTargetStatus::Suspend),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for NotifyTargetType {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "NOTIFY_TARGET_TYPE_UNSPECIFIED",
+            Self::Telegram => "NOTIFY_TARGET_TYPE_TELEGRAM",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for NotifyTargetType {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "NOTIFY_TARGET_TYPE_UNSPECIFIED",
+            "NOTIFY_TARGET_TYPE_TELEGRAM",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = NotifyTargetType;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(NotifyTargetType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(NotifyTargetType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "NOTIFY_TARGET_TYPE_UNSPECIFIED" => Ok(NotifyTargetType::Unspecified),
+                    "NOTIFY_TARGET_TYPE_TELEGRAM" => Ok(NotifyTargetType::Telegram),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for PurchaseAppRequest {
@@ -8733,6 +9078,222 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.SearchAppsResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ServerBinarySummary {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.source_code_address.is_empty() {
+            len += 1;
+        }
+        if !self.build_version.is_empty() {
+            len += 1;
+        }
+        if !self.build_date.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ServerBinarySummary", len)?;
+        if !self.source_code_address.is_empty() {
+            struct_ser.serialize_field("sourceCodeAddress", &self.source_code_address)?;
+        }
+        if !self.build_version.is_empty() {
+            struct_ser.serialize_field("buildVersion", &self.build_version)?;
+        }
+        if !self.build_date.is_empty() {
+            struct_ser.serialize_field("buildDate", &self.build_date)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ServerBinarySummary {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "sourceCodeAddress",
+            "buildVersion",
+            "buildDate",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            SourceCodeAddress,
+            BuildVersion,
+            BuildDate,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "sourceCodeAddress" => Ok(GeneratedField::SourceCodeAddress),
+                            "buildVersion" => Ok(GeneratedField::BuildVersion),
+                            "buildDate" => Ok(GeneratedField::BuildDate),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ServerBinarySummary;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ServerBinarySummary")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ServerBinarySummary, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut source_code_address__ = None;
+                let mut build_version__ = None;
+                let mut build_date__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::SourceCodeAddress => {
+                            if source_code_address__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceCodeAddress"));
+                            }
+                            source_code_address__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::BuildVersion => {
+                            if build_version__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("buildVersion"));
+                            }
+                            build_version__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::BuildDate => {
+                            if build_date__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("buildDate"));
+                            }
+                            build_date__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ServerBinarySummary {
+                    source_code_address: source_code_address__.unwrap_or_default(),
+                    build_version: build_version__.unwrap_or_default(),
+                    build_date: build_date__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ServerBinarySummary", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ServerProtocolSummary {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.version.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ServerProtocolSummary", len)?;
+        if !self.version.is_empty() {
+            struct_ser.serialize_field("version", &self.version)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ServerProtocolSummary {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "version",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Version,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "version" => Ok(GeneratedField::Version),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ServerProtocolSummary;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ServerProtocolSummary")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ServerProtocolSummary, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut version__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Version => {
+                            if version__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("version"));
+                            }
+                            version__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ServerProtocolSummary {
+                    version: version__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ServerProtocolSummary", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for SimpleDownloadFileRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -9081,155 +9642,6 @@ impl<'de> serde::Deserialize<'de> for SimpleUploadFileResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.SimpleUploadFileResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for TargetStatus {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        let variant = match self {
-            Self::Unspecified => "TARGET_STATUS_UNSPECIFIED",
-            Self::Active => "TARGET_STATUS_ACTIVE",
-            Self::Suspend => "TARGET_STATUS_SUSPEND",
-        };
-        serializer.serialize_str(variant)
-    }
-}
-impl<'de> serde::Deserialize<'de> for TargetStatus {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "TARGET_STATUS_UNSPECIFIED",
-            "TARGET_STATUS_ACTIVE",
-            "TARGET_STATUS_SUSPEND",
-        ];
-
-        struct GeneratedVisitor;
-
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = TargetStatus;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(formatter, "expected one of: {:?}", &FIELDS)
-            }
-
-            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(TargetStatus::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
-                    })
-            }
-
-            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(TargetStatus::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
-                    })
-            }
-
-            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                match value {
-                    "TARGET_STATUS_UNSPECIFIED" => Ok(TargetStatus::Unspecified),
-                    "TARGET_STATUS_ACTIVE" => Ok(TargetStatus::Active),
-                    "TARGET_STATUS_SUSPEND" => Ok(TargetStatus::Suspend),
-                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
-                }
-            }
-        }
-        deserializer.deserialize_any(GeneratedVisitor)
-    }
-}
-impl serde::Serialize for TargetType {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        let variant = match self {
-            Self::Unspecified => "TARGET_TYPE_UNSPECIFIED",
-            Self::Telegram => "TARGET_TYPE_TELEGRAM",
-        };
-        serializer.serialize_str(variant)
-    }
-}
-impl<'de> serde::Deserialize<'de> for TargetType {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "TARGET_TYPE_UNSPECIFIED",
-            "TARGET_TYPE_TELEGRAM",
-        ];
-
-        struct GeneratedVisitor;
-
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = TargetType;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(formatter, "expected one of: {:?}", &FIELDS)
-            }
-
-            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(TargetType::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
-                    })
-            }
-
-            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(TargetType::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
-                    })
-            }
-
-            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                match value {
-                    "TARGET_TYPE_UNSPECIFIED" => Ok(TargetType::Unspecified),
-                    "TARGET_TYPE_TELEGRAM" => Ok(TargetType::Telegram),
-                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
-                }
-            }
-        }
-        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for UnAssignAppPackageRequest {

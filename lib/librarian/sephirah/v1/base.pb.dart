@@ -10,7 +10,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $5;
+import '../../v1/common.pb.dart' as $6;
 
 import 'base.pbenum.dart';
 
@@ -18,7 +18,7 @@ export 'base.pbenum.dart';
 
 class FileMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FileMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $5.InternalID.create)
+    ..aOM<$6.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $6.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
     ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chunkSize')
@@ -28,7 +28,7 @@ class FileMetadata extends $pb.GeneratedMessage {
 
   FileMetadata._() : super();
   factory FileMetadata({
-    $5.InternalID? id,
+    $6.InternalID? id,
     $core.String? name,
     $fixnum.Int64? size,
     $fixnum.Int64? chunkSize,
@@ -74,15 +74,15 @@ class FileMetadata extends $pb.GeneratedMessage {
   static FileMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.InternalID get id => $_getN(0);
+  $6.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($5.InternalID v) { setField(1, v); }
+  set id($6.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureId() => $_ensure(0);
+  $6.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);

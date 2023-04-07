@@ -2,6 +2,8 @@
 
 'use strict';
 var grpc = require('@grpc/grpc-js');
+var librarian_sephirah_v1_sephirah_pb = require('../../../librarian/sephirah/v1/sephirah_pb.js');
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var librarian_sephirah_v1_binah_pb = require('../../../librarian/sephirah/v1/binah_pb.js');
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
 var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');
@@ -314,6 +316,28 @@ function serialize_librarian_sephirah_v1_GetFeedItemResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_GetFeedItemResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.GetFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetServerInformationRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetServerInformationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetServerInformationRequest(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetServerInformationResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetServerInformationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetServerInformationResponse(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetTokenRequest(arg) {
@@ -1007,6 +1031,18 @@ function deserialize_librarian_sephirah_v1_UploadGameSaveFileResponse(buffer_arg
 // 4. `Yesod` handles feed data
 // 5. `Netzach` handles notifications
 var LibrarianSephirahServiceService = exports.LibrarianSephirahServiceService = {
+  // For manual inspection only, the client may display but should not parse the response.
+getServerInformation: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest,
+    responseType: librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetServerInformationRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetServerInformationRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetServerInformationResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetServerInformationResponse,
+  },
   // `Tiphereth` `Normal` Login via password and get two token
 getToken: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetToken',

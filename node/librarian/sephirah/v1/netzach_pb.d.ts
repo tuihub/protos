@@ -98,14 +98,14 @@ export class ListNotifyTargetsRequest extends jspb.Message {
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   clearTypeFilterList(): void;
-  getTypeFilterList(): Array<TargetTypeMap[keyof TargetTypeMap]>;
-  setTypeFilterList(value: Array<TargetTypeMap[keyof TargetTypeMap]>): void;
-  addTypeFilter(value: TargetTypeMap[keyof TargetTypeMap], index?: number): TargetTypeMap[keyof TargetTypeMap];
+  getTypeFilterList(): Array<NotifyTargetTypeMap[keyof NotifyTargetTypeMap]>;
+  setTypeFilterList(value: Array<NotifyTargetTypeMap[keyof NotifyTargetTypeMap]>): void;
+  addTypeFilter(value: NotifyTargetTypeMap[keyof NotifyTargetTypeMap], index?: number): NotifyTargetTypeMap[keyof NotifyTargetTypeMap];
 
   clearStatusFilterList(): void;
-  getStatusFilterList(): Array<TargetStatusMap[keyof TargetStatusMap]>;
-  setStatusFilterList(value: Array<TargetStatusMap[keyof TargetStatusMap]>): void;
-  addStatusFilter(value: TargetStatusMap[keyof TargetStatusMap], index?: number): TargetStatusMap[keyof TargetStatusMap];
+  getStatusFilterList(): Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>;
+  setStatusFilterList(value: Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>): void;
+  addStatusFilter(value: NotifyTargetStatusMap[keyof NotifyTargetStatusMap], index?: number): NotifyTargetStatusMap[keyof NotifyTargetStatusMap];
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNotifyTargetsRequest.AsObject;
@@ -121,8 +121,8 @@ export namespace ListNotifyTargetsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    typeFilterList: Array<TargetTypeMap[keyof TargetTypeMap]>,
-    statusFilterList: Array<TargetStatusMap[keyof TargetStatusMap]>,
+    typeFilterList: Array<NotifyTargetTypeMap[keyof NotifyTargetTypeMap]>,
+    statusFilterList: Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>,
   }
 }
 
@@ -304,11 +304,11 @@ export class NotifyTarget extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getType(): TargetTypeMap[keyof TargetTypeMap];
-  setType(value: TargetTypeMap[keyof TargetTypeMap]): void;
+  getType(): NotifyTargetTypeMap[keyof NotifyTargetTypeMap];
+  setType(value: NotifyTargetTypeMap[keyof NotifyTargetTypeMap]): void;
 
-  getStatus(): TargetStatusMap[keyof TargetStatusMap];
-  setStatus(value: TargetStatusMap[keyof TargetStatusMap]): void;
+  getStatus(): NotifyTargetStatusMap[keyof NotifyTargetStatusMap];
+  setStatus(value: NotifyTargetStatusMap[keyof NotifyTargetStatusMap]): void;
 
   getToken(): string;
   setToken(value: string): void;
@@ -328,8 +328,8 @@ export namespace NotifyTarget {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     description: string,
-    type: TargetTypeMap[keyof TargetTypeMap],
-    status: TargetStatusMap[keyof TargetStatusMap],
+    type: NotifyTargetTypeMap[keyof NotifyTargetTypeMap],
+    status: NotifyTargetStatusMap[keyof NotifyTargetStatusMap],
     token: string,
   }
 }
@@ -356,8 +356,8 @@ export class NotifyFlow extends jspb.Message {
   setTargetsList(value: Array<NotifyFlowTarget>): void;
   addTargets(value?: NotifyFlowTarget, index?: number): NotifyFlowTarget;
 
-  getStatus(): FlowStatusMap[keyof FlowStatusMap];
-  setStatus(value: FlowStatusMap[keyof FlowStatusMap]): void;
+  getStatus(): NotifyFlowStatusMap[keyof NotifyFlowStatusMap];
+  setStatus(value: NotifyFlowStatusMap[keyof NotifyFlowStatusMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyFlow.AsObject;
@@ -376,7 +376,7 @@ export namespace NotifyFlow {
     description: string,
     source?: NotifyFlowSource.AsObject,
     targetsList: Array<NotifyFlowTarget.AsObject>,
-    status: FlowStatusMap[keyof FlowStatusMap],
+    status: NotifyFlowStatusMap[keyof NotifyFlowStatusMap],
   }
 }
 
@@ -428,26 +428,26 @@ export namespace NotifyFlowTarget {
   }
 }
 
-export interface TargetTypeMap {
-  TARGET_TYPE_UNSPECIFIED: 0;
-  TARGET_TYPE_TELEGRAM: 1;
+export interface NotifyTargetTypeMap {
+  NOTIFY_TARGET_TYPE_UNSPECIFIED: 0;
+  NOTIFY_TARGET_TYPE_TELEGRAM: 1;
 }
 
-export const TargetType: TargetTypeMap;
+export const NotifyTargetType: NotifyTargetTypeMap;
 
-export interface TargetStatusMap {
-  TARGET_STATUS_UNSPECIFIED: 0;
-  TARGET_STATUS_ACTIVE: 1;
-  TARGET_STATUS_SUSPEND: 2;
+export interface NotifyTargetStatusMap {
+  NOTIFY_TARGET_STATUS_UNSPECIFIED: 0;
+  NOTIFY_TARGET_STATUS_ACTIVE: 1;
+  NOTIFY_TARGET_STATUS_SUSPEND: 2;
 }
 
-export const TargetStatus: TargetStatusMap;
+export const NotifyTargetStatus: NotifyTargetStatusMap;
 
-export interface FlowStatusMap {
-  FLOW_STATUS_UNSPECIFIED: 0;
-  FLOW_STATUS_ACTIVE: 1;
-  FLOW_STATUS_SUSPEND: 2;
+export interface NotifyFlowStatusMap {
+  NOTIFY_FLOW_STATUS_UNSPECIFIED: 0;
+  NOTIFY_FLOW_STATUS_ACTIVE: 1;
+  NOTIFY_FLOW_STATUS_SUSPEND: 2;
 }
 
-export const FlowStatus: FlowStatusMap;
+export const NotifyFlowStatus: NotifyFlowStatusMap;
 

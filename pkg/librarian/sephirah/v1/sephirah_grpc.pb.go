@@ -19,6 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
+	LibrarianSephirahService_GetServerInformation_FullMethodName = "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation"
 	LibrarianSephirahService_GetToken_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
 	LibrarianSephirahService_RefreshToken_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
 	LibrarianSephirahService_GenerateToken_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken"
@@ -70,6 +71,8 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LibrarianSephirahServiceClient interface {
+	// For manual inspection only, the client may display but should not parse the response.
+	GetServerInformation(ctx context.Context, in *GetServerInformationRequest, opts ...grpc.CallOption) (*GetServerInformationResponse, error)
 	// `Tiphereth` `Normal` Login via password and get two token
 	GetToken(ctx context.Context, in *GetTokenRequest, opts ...grpc.CallOption) (*GetTokenResponse, error)
 	// `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
@@ -171,6 +174,15 @@ type librarianSephirahServiceClient struct {
 
 func NewLibrarianSephirahServiceClient(cc grpc.ClientConnInterface) LibrarianSephirahServiceClient {
 	return &librarianSephirahServiceClient{cc}
+}
+
+func (c *librarianSephirahServiceClient) GetServerInformation(ctx context.Context, in *GetServerInformationRequest, opts ...grpc.CallOption) (*GetServerInformationResponse, error) {
+	out := new(GetServerInformationResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetServerInformation_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *librarianSephirahServiceClient) GetToken(ctx context.Context, in *GetTokenRequest, opts ...grpc.CallOption) (*GetTokenResponse, error) {
@@ -692,6 +704,8 @@ func (c *librarianSephirahServiceClient) GetBatchFeedItems(ctx context.Context, 
 // All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
 type LibrarianSephirahServiceServer interface {
+	// For manual inspection only, the client may display but should not parse the response.
+	GetServerInformation(context.Context, *GetServerInformationRequest) (*GetServerInformationResponse, error)
 	// `Tiphereth` `Normal` Login via password and get two token
 	GetToken(context.Context, *GetTokenRequest) (*GetTokenResponse, error)
 	// `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
@@ -792,6 +806,9 @@ type LibrarianSephirahServiceServer interface {
 type UnimplementedLibrarianSephirahServiceServer struct {
 }
 
+func (UnimplementedLibrarianSephirahServiceServer) GetServerInformation(context.Context, *GetServerInformationRequest) (*GetServerInformationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetServerInformation not implemented")
+}
 func (UnimplementedLibrarianSephirahServiceServer) GetToken(context.Context, *GetTokenRequest) (*GetTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetToken not implemented")
 }
@@ -939,6 +956,24 @@ type UnsafeLibrarianSephirahServiceServer interface {
 
 func RegisterLibrarianSephirahServiceServer(s grpc.ServiceRegistrar, srv LibrarianSephirahServiceServer) {
 	s.RegisterService(&LibrarianSephirahService_ServiceDesc, srv)
+}
+
+func _LibrarianSephirahService_GetServerInformation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetServerInformationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetServerInformation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetServerInformation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetServerInformation(ctx, req.(*GetServerInformationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _LibrarianSephirahService_GetToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1798,6 +1833,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "librarian.sephirah.v1.LibrarianSephirahService",
 	HandlerType: (*LibrarianSephirahServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetServerInformation",
+			Handler:    _LibrarianSephirahService_GetServerInformation_Handler,
+		},
 		{
 			MethodName: "GetToken",
 			Handler:    _LibrarianSephirahService_GetToken_Handler,

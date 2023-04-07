@@ -32,56 +32,58 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "cmFyaWFuLnYxLkludGVybmFsSURSAmlkIlgKGVVwZGF0ZU5vdGlmeVRhcmdl",
             "dFJlcXVlc3QSOwoGdGFyZ2V0GAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFo",
             "LnYxLk5vdGlmeVRhcmdldFIGdGFyZ2V0IhwKGlVwZGF0ZU5vdGlmeVRhcmdl",
-            "dFJlc3BvbnNlIpQCChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFn",
+            "dFJlc3BvbnNlIqACChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFn",
             "aW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2lu",
             "ZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
-            "RFIIaWRGaWx0ZXISQgoLdHlwZV9maWx0ZXIYAyADKA4yIS5saWJyYXJpYW4u",
-            "c2VwaGlyYWgudjEuVGFyZ2V0VHlwZVIKdHlwZUZpbHRlchJICg1zdGF0dXNf",
-            "ZmlsdGVyGAQgAygOMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLlRhcmdldFN0",
-            "YXR1c1IMc3RhdHVzRmlsdGVyIpABChlMaXN0Tm90aWZ5VGFyZ2V0c1Jlc3Bv",
-            "bnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNw",
-            "b25zZVIGcGFnaW5nEj0KB3RhcmdldHMYAiADKAsyIy5saWJyYXJpYW4uc2Vw",
-            "aGlyYWgudjEuTm90aWZ5VGFyZ2V0Ugd0YXJnZXRzIlAKF0NyZWF0ZU5vdGlm",
-            "eUZsb3dSZXF1ZXN0EjUKBGZsb3cYASABKAsyIS5saWJyYXJpYW4uc2VwaGly",
-            "YWgudjEuTm90aWZ5Rmxvd1IEZmxvdyJEChhDcmVhdGVOb3RpZnlGbG93UmVz",
-            "cG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIC",
-            "aWQiUAoXVXBkYXRlTm90aWZ5Rmxvd1JlcXVlc3QSNQoEZmxvdxgBIAEoCzIh",
-            "LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93UgRmbG93IhoKGFVw",
-            "ZGF0ZU5vdGlmeUZsb3dSZXNwb25zZSKEAQoWTGlzdE5vdGlmeUZsb3dzUmVx",
-            "dWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVx",
-            "dWVzdFIGcGFnaW5nEjUKCWlkX2ZpbHRlchgCIAMoCzIYLmxpYnJhcmlhbi52",
-            "MS5JbnRlcm5hbElEUghpZEZpbHRlciKIAQoXTGlzdE5vdGlmeUZsb3dzUmVz",
-            "cG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jl",
-            "c3BvbnNlUgZwYWdpbmcSNwoFZmxvd3MYAiADKAsyIS5saWJyYXJpYW4uc2Vw",
-            "aGlyYWgudjEuTm90aWZ5Rmxvd1IFZmxvd3Mi+AEKDE5vdGlmeVRhcmdldBIo",
-            "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRu",
-            "YW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw",
-            "dGlvbhI1CgR0eXBlGAQgASgOMiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlRh",
-            "cmdldFR5cGVSBHR5cGUSOwoGc3RhdHVzGAUgASgOMiMubGlicmFyaWFuLnNl",
-            "cGhpcmFoLnYxLlRhcmdldFN0YXR1c1IGc3RhdHVzEhQKBXRva2VuGAYgASgJ",
-            "UgV0b2tlbiKrAgoKTm90aWZ5RmxvdxIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rl",
-            "c2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhI/CgZzb3VyY2UYBCABKAsy",
-            "Jy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmxvd1NvdXJjZVIGc291",
-            "cmNlEkEKB3RhcmdldHMYBSADKAsyJy5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
-            "Tm90aWZ5Rmxvd1RhcmdldFIHdGFyZ2V0cxI5CgZzdGF0dXMYBiABKA4yIS5s",
-            "aWJyYXJpYW4uc2VwaGlyYWgudjEuRmxvd1N0YXR1c1IGc3RhdHVzIlIKEE5v",
-            "dGlmeUZsb3dTb3VyY2USPgoOZmVlZF9pZF9maWx0ZXIYASADKAsyGC5saWJy",
-            "YXJpYW4udjEuSW50ZXJuYWxJRFIMZmVlZElkRmlsdGVyImgKEE5vdGlmeUZs",
-            "b3dUYXJnZXQSNQoJdGFyZ2V0X2lkGAEgASgLMhgubGlicmFyaWFuLnYxLklu",
-            "dGVybmFsSURSCHRhcmdldElkEh0KCmNoYW5uZWxfaWQYAiABKAlSCWNoYW5u",
-            "ZWxJZCpDCgpUYXJnZXRUeXBlEhsKF1RBUkdFVF9UWVBFX1VOU1BFQ0lGSUVE",
-            "EAASGAoUVEFSR0VUX1RZUEVfVEVMRUdSQU0QASpiCgxUYXJnZXRTdGF0dXMS",
-            "HQoZVEFSR0VUX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFFRBUkdFVF9TVEFU",
-            "VVNfQUNUSVZFEAESGQoVVEFSR0VUX1NUQVRVU19TVVNQRU5EEAIqWgoKRmxv",
-            "d1N0YXR1cxIbChdGTE9XX1NUQVRVU19VTlNQRUNJRklFRBAAEhYKEkZMT1df",
-            "U1RBVFVTX0FDVElWRRABEhcKE0ZMT1dfU1RBVFVTX1NVU1BFTkQQAkJdWjVn",
-            "aXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJh",
-            "aC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYx",
-            "YgZwcm90bzM="));
+            "RFIIaWRGaWx0ZXISSAoLdHlwZV9maWx0ZXIYAyADKA4yJy5saWJyYXJpYW4u",
+            "c2VwaGlyYWgudjEuTm90aWZ5VGFyZ2V0VHlwZVIKdHlwZUZpbHRlchJOCg1z",
+            "dGF0dXNfZmlsdGVyGAQgAygOMikubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5v",
+            "dGlmeVRhcmdldFN0YXR1c1IMc3RhdHVzRmlsdGVyIpABChlMaXN0Tm90aWZ5",
+            "VGFyZ2V0c1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52",
+            "MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEj0KB3RhcmdldHMYAiADKAsyIy5s",
+            "aWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5VGFyZ2V0Ugd0YXJnZXRzIlAK",
+            "F0NyZWF0ZU5vdGlmeUZsb3dSZXF1ZXN0EjUKBGZsb3cYASABKAsyIS5saWJy",
+            "YXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmxvd1IEZmxvdyJEChhDcmVhdGVO",
+            "b3RpZnlGbG93UmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEu",
+            "SW50ZXJuYWxJRFICaWQiUAoXVXBkYXRlTm90aWZ5Rmxvd1JlcXVlc3QSNQoE",
+            "ZmxvdxgBIAEoCzIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93",
+            "UgRmbG93IhoKGFVwZGF0ZU5vdGlmeUZsb3dSZXNwb25zZSKEAQoWTGlzdE5v",
+            "dGlmeUZsb3dzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4u",
+            "djEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjUKCWlkX2ZpbHRlchgCIAMoCzIY",
+            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghpZEZpbHRlciKIAQoXTGlzdE5v",
+            "dGlmeUZsb3dzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
+            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSNwoFZmxvd3MYAiADKAsyIS5s",
+            "aWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmxvd1IFZmxvd3MihAIKDE5v",
+            "dGlmeVRhcmdldBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
+            "bElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMg",
+            "ASgJUgtkZXNjcmlwdGlvbhI7CgR0eXBlGAQgASgOMicubGlicmFyaWFuLnNl",
+            "cGhpcmFoLnYxLk5vdGlmeVRhcmdldFR5cGVSBHR5cGUSQQoGc3RhdHVzGAUg",
+            "ASgOMikubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1",
+            "c1IGc3RhdHVzEhQKBXRva2VuGAYgASgJUgV0b2tlbiKxAgoKTm90aWZ5Rmxv",
+            "dxIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIS",
+            "CgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNj",
+            "cmlwdGlvbhI/CgZzb3VyY2UYBCABKAsyJy5saWJyYXJpYW4uc2VwaGlyYWgu",
+            "djEuTm90aWZ5Rmxvd1NvdXJjZVIGc291cmNlEkEKB3RhcmdldHMYBSADKAsy",
+            "Jy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmxvd1RhcmdldFIHdGFy",
+            "Z2V0cxI/CgZzdGF0dXMYBiABKA4yJy5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
+            "Tm90aWZ5Rmxvd1N0YXR1c1IGc3RhdHVzIlIKEE5vdGlmeUZsb3dTb3VyY2US",
+            "PgoOZmVlZF9pZF9maWx0ZXIYASADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
+            "YWxJRFIMZmVlZElkRmlsdGVyImgKEE5vdGlmeUZsb3dUYXJnZXQSNQoJdGFy",
+            "Z2V0X2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCHRhcmdl",
+            "dElkEh0KCmNoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZCpXChBOb3RpZnlU",
+            "YXJnZXRUeXBlEiIKHk5PVElGWV9UQVJHRVRfVFlQRV9VTlNQRUNJRklFRBAA",
+            "Eh8KG05PVElGWV9UQVJHRVRfVFlQRV9URUxFR1JBTRABKn0KEk5vdGlmeVRh",
+            "cmdldFN0YXR1cxIkCiBOT1RJRllfVEFSR0VUX1NUQVRVU19VTlNQRUNJRklF",
+            "RBAAEh8KG05PVElGWV9UQVJHRVRfU1RBVFVTX0FDVElWRRABEiAKHE5PVElG",
+            "WV9UQVJHRVRfU1RBVFVTX1NVU1BFTkQQAip1ChBOb3RpZnlGbG93U3RhdHVz",
+            "EiIKHk5PVElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGU5PVElG",
+            "WV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxPV19TVEFUVVNf",
+            "U1VTUEVORBACQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGli",
+            "cmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJp",
+            "YW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
@@ -104,21 +106,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   }
   #region Enums
-  public enum TargetType {
-    [pbr::OriginalName("TARGET_TYPE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("TARGET_TYPE_TELEGRAM")] Telegram = 1,
+  public enum NotifyTargetType {
+    [pbr::OriginalName("NOTIFY_TARGET_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("NOTIFY_TARGET_TYPE_TELEGRAM")] Telegram = 1,
   }
 
-  public enum TargetStatus {
-    [pbr::OriginalName("TARGET_STATUS_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("TARGET_STATUS_ACTIVE")] Active = 1,
-    [pbr::OriginalName("TARGET_STATUS_SUSPEND")] Suspend = 2,
+  public enum NotifyTargetStatus {
+    [pbr::OriginalName("NOTIFY_TARGET_STATUS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("NOTIFY_TARGET_STATUS_ACTIVE")] Active = 1,
+    [pbr::OriginalName("NOTIFY_TARGET_STATUS_SUSPEND")] Suspend = 2,
   }
 
-  public enum FlowStatus {
-    [pbr::OriginalName("FLOW_STATUS_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("FLOW_STATUS_ACTIVE")] Active = 1,
-    [pbr::OriginalName("FLOW_STATUS_SUSPEND")] Suspend = 2,
+  public enum NotifyFlowStatus {
+    [pbr::OriginalName("NOTIFY_FLOW_STATUS_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("NOTIFY_FLOW_STATUS_ACTIVE")] Active = 1,
+    [pbr::OriginalName("NOTIFY_FLOW_STATUS_SUSPEND")] Suspend = 2,
   }
 
   #endregion
@@ -942,23 +944,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "type_filter" field.</summary>
     public const int TypeFilterFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType> _repeated_typeFilter_codec
-        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType> _repeated_typeFilter_codec
+        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType> TypeFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType> TypeFilter {
       get { return typeFilter_; }
     }
 
     /// <summary>Field number for the "status_filter" field.</summary>
     public const int StatusFilterFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus> _repeated_statusFilter_codec
-        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus> _repeated_statusFilter_codec
+        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus> StatusFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus> StatusFilter {
       get { return statusFilter_; }
     }
 
@@ -2655,10 +2657,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 4;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType Type {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -2667,10 +2669,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 5;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -2720,8 +2722,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType.Unspecified) hash ^= Type.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType.Unspecified) hash ^= Type.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) hash ^= Status.GetHashCode();
       if (Token.Length != 0) hash ^= Token.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2753,11 +2755,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(26);
         output.WriteString(Description);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
@@ -2787,11 +2789,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(26);
         output.WriteString(Description);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Type);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
@@ -2818,10 +2820,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (Token.Length != 0) {
@@ -2851,10 +2853,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType.Unspecified) {
+      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType.Unspecified) {
         Type = other.Type;
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         Status = other.Status;
       }
       if (other.Token.Length != 0) {
@@ -2891,11 +2893,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 32: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType) input.ReadEnum();
             break;
           }
           case 40: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus) input.ReadEnum();
             break;
           }
           case 50: {
@@ -2933,11 +2935,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 32: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.TargetType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType) input.ReadEnum();
             break;
           }
           case 40: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.TargetStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus) input.ReadEnum();
             break;
           }
           case 50: {
@@ -3061,10 +3063,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 6;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -3104,7 +3106,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (source_ != null) hash ^= Source.GetHashCode();
       hash ^= targets_.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3140,7 +3142,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteMessage(Source);
       }
       targets_.WriteTo(output, _repeated_targets_codec);
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
@@ -3171,7 +3173,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteMessage(Source);
       }
       targets_.WriteTo(ref output, _repeated_targets_codec);
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
@@ -3198,7 +3200,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Source);
       }
       size += targets_.CalculateSize(_repeated_targets_codec);
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -3232,7 +3234,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         Source.MergeFrom(other.Source);
       }
       targets_.Add(other.targets_);
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -3277,7 +3279,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 48: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus) input.ReadEnum();
             break;
           }
         }
@@ -3322,7 +3324,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 48: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.FlowStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus) input.ReadEnum();
             break;
           }
         }

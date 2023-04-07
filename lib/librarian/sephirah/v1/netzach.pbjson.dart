@@ -8,41 +8,41 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use targetTypeDescriptor instead')
-const TargetType$json = const {
-  '1': 'TargetType',
+@$core.Deprecated('Use notifyTargetTypeDescriptor instead')
+const NotifyTargetType$json = const {
+  '1': 'NotifyTargetType',
   '2': const [
-    const {'1': 'TARGET_TYPE_UNSPECIFIED', '2': 0},
-    const {'1': 'TARGET_TYPE_TELEGRAM', '2': 1},
+    const {'1': 'NOTIFY_TARGET_TYPE_UNSPECIFIED', '2': 0},
+    const {'1': 'NOTIFY_TARGET_TYPE_TELEGRAM', '2': 1},
   ],
 };
 
-/// Descriptor for `TargetType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List targetTypeDescriptor = $convert.base64Decode('CgpUYXJnZXRUeXBlEhsKF1RBUkdFVF9UWVBFX1VOU1BFQ0lGSUVEEAASGAoUVEFSR0VUX1RZUEVfVEVMRUdSQU0QAQ==');
-@$core.Deprecated('Use targetStatusDescriptor instead')
-const TargetStatus$json = const {
-  '1': 'TargetStatus',
+/// Descriptor for `NotifyTargetType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List notifyTargetTypeDescriptor = $convert.base64Decode('ChBOb3RpZnlUYXJnZXRUeXBlEiIKHk5PVElGWV9UQVJHRVRfVFlQRV9VTlNQRUNJRklFRBAAEh8KG05PVElGWV9UQVJHRVRfVFlQRV9URUxFR1JBTRAB');
+@$core.Deprecated('Use notifyTargetStatusDescriptor instead')
+const NotifyTargetStatus$json = const {
+  '1': 'NotifyTargetStatus',
   '2': const [
-    const {'1': 'TARGET_STATUS_UNSPECIFIED', '2': 0},
-    const {'1': 'TARGET_STATUS_ACTIVE', '2': 1},
-    const {'1': 'TARGET_STATUS_SUSPEND', '2': 2},
+    const {'1': 'NOTIFY_TARGET_STATUS_UNSPECIFIED', '2': 0},
+    const {'1': 'NOTIFY_TARGET_STATUS_ACTIVE', '2': 1},
+    const {'1': 'NOTIFY_TARGET_STATUS_SUSPEND', '2': 2},
   ],
 };
 
-/// Descriptor for `TargetStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List targetStatusDescriptor = $convert.base64Decode('CgxUYXJnZXRTdGF0dXMSHQoZVEFSR0VUX1NUQVRVU19VTlNQRUNJRklFRBAAEhgKFFRBUkdFVF9TVEFUVVNfQUNUSVZFEAESGQoVVEFSR0VUX1NUQVRVU19TVVNQRU5EEAI=');
-@$core.Deprecated('Use flowStatusDescriptor instead')
-const FlowStatus$json = const {
-  '1': 'FlowStatus',
+/// Descriptor for `NotifyTargetStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List notifyTargetStatusDescriptor = $convert.base64Decode('ChJOb3RpZnlUYXJnZXRTdGF0dXMSJAogTk9USUZZX1RBUkdFVF9TVEFUVVNfVU5TUEVDSUZJRUQQABIfChtOT1RJRllfVEFSR0VUX1NUQVRVU19BQ1RJVkUQARIgChxOT1RJRllfVEFSR0VUX1NUQVRVU19TVVNQRU5EEAI=');
+@$core.Deprecated('Use notifyFlowStatusDescriptor instead')
+const NotifyFlowStatus$json = const {
+  '1': 'NotifyFlowStatus',
   '2': const [
-    const {'1': 'FLOW_STATUS_UNSPECIFIED', '2': 0},
-    const {'1': 'FLOW_STATUS_ACTIVE', '2': 1},
-    const {'1': 'FLOW_STATUS_SUSPEND', '2': 2},
+    const {'1': 'NOTIFY_FLOW_STATUS_UNSPECIFIED', '2': 0},
+    const {'1': 'NOTIFY_FLOW_STATUS_ACTIVE', '2': 1},
+    const {'1': 'NOTIFY_FLOW_STATUS_SUSPEND', '2': 2},
   ],
 };
 
-/// Descriptor for `FlowStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List flowStatusDescriptor = $convert.base64Decode('CgpGbG93U3RhdHVzEhsKF0ZMT1dfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSRkxPV19TVEFUVVNfQUNUSVZFEAESFwoTRkxPV19TVEFUVVNfU1VTUEVORBAC');
+/// Descriptor for `NotifyFlowStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List notifyFlowStatusDescriptor = $convert.base64Decode('ChBOb3RpZnlGbG93U3RhdHVzEiIKHk5PVElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGU5PVElGWV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxPV19TVEFUVVNfU1VTUEVORBAC');
 @$core.Deprecated('Use createNotifyTargetRequestDescriptor instead')
 const CreateNotifyTargetRequest$json = const {
   '1': 'CreateNotifyTargetRequest',
@@ -86,13 +86,13 @@ const ListNotifyTargetsRequest$json = const {
   '2': const [
     const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     const {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    const {'1': 'type_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.TargetType', '10': 'typeFilter'},
-    const {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.TargetStatus', '10': 'statusFilter'},
+    const {'1': 'type_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetType', '10': 'typeFilter'},
+    const {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetStatus', '10': 'statusFilter'},
   ],
 };
 
 /// Descriptor for `ListNotifyTargetsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listNotifyTargetsRequestDescriptor = $convert.base64Decode('ChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISQgoLdHlwZV9maWx0ZXIYAyADKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuVGFyZ2V0VHlwZVIKdHlwZUZpbHRlchJICg1zdGF0dXNfZmlsdGVyGAQgAygOMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLlRhcmdldFN0YXR1c1IMc3RhdHVzRmlsdGVy');
+final $typed_data.Uint8List listNotifyTargetsRequestDescriptor = $convert.base64Decode('ChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISSAoLdHlwZV9maWx0ZXIYAyADKA4yJy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5VGFyZ2V0VHlwZVIKdHlwZUZpbHRlchJOCg1zdGF0dXNfZmlsdGVyGAQgAygOMikubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1c1IMc3RhdHVzRmlsdGVy');
 @$core.Deprecated('Use listNotifyTargetsResponseDescriptor instead')
 const ListNotifyTargetsResponse$json = const {
   '1': 'ListNotifyTargetsResponse',
@@ -170,14 +170,14 @@ const NotifyTarget$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    const {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.TargetType', '10': 'type'},
-    const {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.TargetStatus', '10': 'status'},
+    const {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetType', '10': 'type'},
+    const {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetStatus', '10': 'status'},
     const {'1': 'token', '3': 6, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
 /// Descriptor for `NotifyTarget`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode('CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SNQoEdHlwZRgEIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5UYXJnZXRUeXBlUgR0eXBlEjsKBnN0YXR1cxgFIAEoDjIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5UYXJnZXRTdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgGIAEoCVIFdG9rZW4=');
+final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode('CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SOwoEdHlwZRgEIAEoDjInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlUYXJnZXRUeXBlUgR0eXBlEkEKBnN0YXR1cxgFIAEoDjIpLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlUYXJnZXRTdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgGIAEoCVIFdG9rZW4=');
 @$core.Deprecated('Use notifyFlowDescriptor instead')
 const NotifyFlow$json = const {
   '1': 'NotifyFlow',
@@ -187,12 +187,12 @@ const NotifyFlow$json = const {
     const {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     const {'1': 'source', '3': 4, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.NotifyFlowSource', '10': 'source'},
     const {'1': 'targets', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.NotifyFlowTarget', '10': 'targets'},
-    const {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FlowStatus', '10': 'status'},
+    const {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.NotifyFlowStatus', '10': 'status'},
   ],
 };
 
 /// Descriptor for `NotifyFlow`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List notifyFlowDescriptor = $convert.base64Decode('CgpOb3RpZnlGbG93EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEj8KBnNvdXJjZRgEIAEoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93U291cmNlUgZzb3VyY2USQQoHdGFyZ2V0cxgFIAMoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93VGFyZ2V0Ugd0YXJnZXRzEjkKBnN0YXR1cxgGIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GbG93U3RhdHVzUgZzdGF0dXM=');
+final $typed_data.Uint8List notifyFlowDescriptor = $convert.base64Decode('CgpOb3RpZnlGbG93EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEj8KBnNvdXJjZRgEIAEoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93U291cmNlUgZzb3VyY2USQQoHdGFyZ2V0cxgFIAMoCzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93VGFyZ2V0Ugd0YXJnZXRzEj8KBnN0YXR1cxgGIAEoDjInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93U3RhdHVzUgZzdGF0dXM=');
 @$core.Deprecated('Use notifyFlowSourceDescriptor instead')
 const NotifyFlowSource$json = const {
   '1': 'NotifyFlowSource',
