@@ -1,0 +1,53 @@
+{
+    "$id": "https://github.com/TuiHub/Protos/schemas/savedata/v1",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Save File Configs v2",
+    "properties": {
+        "platform": {
+            "type": "string",
+            "enum": ["windows"]
+        },
+        "entries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "baseDirMode": {
+                        "type": "string",
+                        "enum": ["game-root", "user-document", "user-profile"]
+                    },
+                    "baseDir": {
+                        "type": "string"
+                    },
+                    "filePattern": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "clearBaseDirBeforeRestore": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "id",
+                    "baseDirMode",
+                    "baseDir",
+                    "filePattern",
+                    "clearBaseDirBeforeRestore"
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "platform",
+        "entries"
+    ]
+}
