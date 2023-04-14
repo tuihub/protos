@@ -239,6 +239,7 @@ sequenceDiagram
 
 - 文件
   - 备份文件必须是一个有效的zip文件
+  - 备份文件中的所有文件名、文本文件等文本内容均**使用 UTF-8 编码**
   - 备份文件中必须有一个名为`tuihub_savedata_config.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/Protos/schemas/savedata/v1-example.json)
   - 备份文件中的其他内容必须遵循配置文件的设置
 - 备份
@@ -247,6 +248,15 @@ sequenceDiagram
 - 还原
   - 依据待还原文件中的配置文件执行
   - 当出现无法修复的错误导致无法完成还原时应当自动回滚
+
+#### 传输
+
+传输的实际操作由`Binah`执行，在客户端需要上传或下载文件时
+
+1. 客户端请求存档传输，服务端进行权限校验和字段验证
+2. 服务端通过`Binah`生成`upload_token`或`download_token`，返回给客户端
+3. 客户端调用`Binah`的接口执行传输过程
+4. 在传输的过程中和结束时通过服务端内部逻辑，`Binah`调用与存档相关的后处理逻辑。服务端应正确设置token内容以便可以从中读出需要执行的后处理逻辑
 
 #### 待定内容
 
@@ -260,47 +270,6 @@ sequenceDiagram
 
 指定固定文件名的json文件作为配置文件，打包时包括所有存档文件和此配置文件  
 打包时，重命名各个`Entry`对应文件/文件夹为配置中`Id`项，还原时，恢复为配置中`OriginalName`项
-
-- 顶层为一个`Entries`对象，内容为若干存档配置对象（数组）
-- 每一个存档配置包含`Id`, `Type`, `Path`, `OriginalName`, `Delete`
-  - `Id`为最终打包存档中，当前存档配置对应的文件/文件夹名称
-  - `Type`为当前存档配置对应的类型，可为`File`或`Folder`
-  - `Path`为当前存档配置对应的文件/文件夹的真实路径
-  - `OriginalName`为当前存档配置对应的文件/文件夹的原始名称
-  - `Delete`为`bool`型，仅对`Type`为`Folder`的对象生效，为`true`时代表还原存档时，需要清空还原位置文件夹内容
-- `Path`中统一使用正斜杠（`/`）作为分隔符
-- `Path`中特殊路径
-  - `.`为游戏根目录（不一定为游戏二进制所在目录）
-  - `{USER_DOCUMENT}`为用户文档目录（C#中`Environment.SpecialFolder.MyDocuments`所代表路径）
-  - `{USER_PROFILE}`为用户目录（C#中`Environment.SpecialFolder.UserProfile`所代表路径）
-  - `{USER_SAVED_GAMES}`为用户保存的游戏目录（C#中`Environment.SpecialFolder.UserProfile`所代表路径下`Saved Games`文件夹）
-
-【**暂定**】配置文件示例：
-```json
-{
-  "Entries": [
-    {
-      "Id": 1,
-      "Type": "Folder",
-      "Path": "{USER_SAVED_GAMES}/WillPlus/星の乙女と六華の姉妹",
-      "OriginalName": "星の乙女と六華の姉妹",
-      "Delete": true
-    },
-    {
-      "Id": 2,
-      "Type": "Folder",
-      "Path": "./UserData",
-      "OriginalName": "UserData"
-    },
-    {
-      "Id": 3,
-      "Type": "File",
-      "Path": "./BGI.gdb",
-      "OriginalName": "BGI.gdb"
-    }
-  ]
-}
-```
 
 ## Feed聚合（Yesod）
 
