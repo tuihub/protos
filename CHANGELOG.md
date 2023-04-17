@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.17](https://github.com/TuiHub/Protos/compare/v0.2.16...v0.2.17) (2023-04-17)
+
+
+### Bug Fixes
+
+* add `chesed` module ([6a905fd](https://github.com/TuiHub/Protos/commit/6a905fd9e1949e50b92ded00c5895f9bbc72637e))
+* add GetServerInformation ([5197919](https://github.com/TuiHub/Protos/commit/51979192d769a1321ab91f3fd9b1f890e868d647))
+* **deps:** update all non-major dependencies ([#55](https://github.com/TuiHub/Protos/issues/55)) ([fe1d412](https://github.com/TuiHub/Protos/commit/fe1d412dfd306ed72258c18f308c2657b8f7663f))
+* **netzach:** change enum name ([ba0bce9](https://github.com/TuiHub/Protos/commit/ba0bce9f953f73eb628e0fa1b063a492cd7c1459))
+
 ## [0.2.16](https://github.com/TuiHub/Protos/compare/v0.2.15...v0.2.16) (2023-04-03)
 
 
