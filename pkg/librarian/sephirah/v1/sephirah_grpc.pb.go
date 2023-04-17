@@ -34,6 +34,11 @@ const (
 	LibrarianSephirahService_DownloadFile_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile"
 	LibrarianSephirahService_SimpleUploadFile_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile"
 	LibrarianSephirahService_SimpleDownloadFile_FullMethodName   = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile"
+	LibrarianSephirahService_UploadImage_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/UploadImage"
+	LibrarianSephirahService_UpdateImage_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage"
+	LibrarianSephirahService_ListImages_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListImages"
+	LibrarianSephirahService_GetImage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GetImage"
+	LibrarianSephirahService_DownloadImage_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage"
 	LibrarianSephirahService_CreateApp_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
 	LibrarianSephirahService_UpdateApp_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
 	LibrarianSephirahService_ListApps_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
@@ -104,6 +109,16 @@ type LibrarianSephirahServiceClient interface {
 	SimpleUploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleUploadFileClient, error)
 	// `Binah` `download_token`
 	SimpleDownloadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error)
+	// `Chesed` `Normal`
+	UploadImage(ctx context.Context, in *UploadImageRequest, opts ...grpc.CallOption) (*UploadImageResponse, error)
+	// `Chesed` `Normal`
+	UpdateImage(ctx context.Context, in *UpdateImageRequest, opts ...grpc.CallOption) (*UpdateImageResponse, error)
+	// `Chesed` `Normal`
+	ListImages(ctx context.Context, in *ListImagesRequest, opts ...grpc.CallOption) (*ListImagesResponse, error)
+	// `Chesed` `Normal`
+	GetImage(ctx context.Context, in *GetImageRequest, opts ...grpc.CallOption) (*GetImageResponse, error)
+	// `Chesed` `Normal`
+	DownloadImage(ctx context.Context, in *DownloadImageRequest, opts ...grpc.CallOption) (*DownloadImageResponse, error)
 	// `Gebura` `Admin`
 	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	// `Gebura` `Admin`
@@ -397,6 +412,51 @@ func (x *librarianSephirahServiceSimpleDownloadFileClient) Recv() (*SimpleDownlo
 		return nil, err
 	}
 	return m, nil
+}
+
+func (c *librarianSephirahServiceClient) UploadImage(ctx context.Context, in *UploadImageRequest, opts ...grpc.CallOption) (*UploadImageResponse, error) {
+	out := new(UploadImageResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UploadImage_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateImage(ctx context.Context, in *UpdateImageRequest, opts ...grpc.CallOption) (*UpdateImageResponse, error) {
+	out := new(UpdateImageResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateImage_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListImages(ctx context.Context, in *ListImagesRequest, opts ...grpc.CallOption) (*ListImagesResponse, error) {
+	out := new(ListImagesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListImages_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetImage(ctx context.Context, in *GetImageRequest, opts ...grpc.CallOption) (*GetImageResponse, error) {
+	out := new(GetImageResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetImage_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) DownloadImage(ctx context.Context, in *DownloadImageRequest, opts ...grpc.CallOption) (*DownloadImageResponse, error) {
+	out := new(DownloadImageResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_DownloadImage_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *librarianSephirahServiceClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
@@ -737,6 +797,16 @@ type LibrarianSephirahServiceServer interface {
 	SimpleUploadFile(LibrarianSephirahService_SimpleUploadFileServer) error
 	// `Binah` `download_token`
 	SimpleDownloadFile(LibrarianSephirahService_SimpleDownloadFileServer) error
+	// `Chesed` `Normal`
+	UploadImage(context.Context, *UploadImageRequest) (*UploadImageResponse, error)
+	// `Chesed` `Normal`
+	UpdateImage(context.Context, *UpdateImageRequest) (*UpdateImageResponse, error)
+	// `Chesed` `Normal`
+	ListImages(context.Context, *ListImagesRequest) (*ListImagesResponse, error)
+	// `Chesed` `Normal`
+	GetImage(context.Context, *GetImageRequest) (*GetImageResponse, error)
+	// `Chesed` `Normal`
+	DownloadImage(context.Context, *DownloadImageRequest) (*DownloadImageResponse, error)
 	// `Gebura` `Admin`
 	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	// `Gebura` `Admin`
@@ -850,6 +920,21 @@ func (UnimplementedLibrarianSephirahServiceServer) SimpleUploadFile(LibrarianSep
 }
 func (UnimplementedLibrarianSephirahServiceServer) SimpleDownloadFile(LibrarianSephirahService_SimpleDownloadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method SimpleDownloadFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UploadImage(context.Context, *UploadImageRequest) (*UploadImageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadImage not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateImage(context.Context, *UpdateImageRequest) (*UpdateImageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateImage not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListImages(context.Context, *ListImagesRequest) (*ListImagesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListImages not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetImage(context.Context, *GetImageRequest) (*GetImageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetImage not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) DownloadImage(context.Context, *DownloadImageRequest) (*DownloadImageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadImage not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
@@ -1258,6 +1343,96 @@ func (x *librarianSephirahServiceSimpleDownloadFileServer) Recv() (*SimpleDownlo
 		return nil, err
 	}
 	return m, nil
+}
+
+func _LibrarianSephirahService_UploadImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadImageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UploadImage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UploadImage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UploadImage(ctx, req.(*UploadImageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateImageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateImage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateImage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateImage(ctx, req.(*UpdateImageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListImages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListImagesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListImages(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListImages_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListImages(ctx, req.(*ListImagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetImageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetImage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetImage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetImage(ctx, req.(*GetImageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_DownloadImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadImageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).DownloadImage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_DownloadImage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).DownloadImage(ctx, req.(*DownloadImageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _LibrarianSephirahService_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1876,6 +2051,26 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLinkAccounts",
 			Handler:    _LibrarianSephirahService_ListLinkAccounts_Handler,
+		},
+		{
+			MethodName: "UploadImage",
+			Handler:    _LibrarianSephirahService_UploadImage_Handler,
+		},
+		{
+			MethodName: "UpdateImage",
+			Handler:    _LibrarianSephirahService_UpdateImage_Handler,
+		},
+		{
+			MethodName: "ListImages",
+			Handler:    _LibrarianSephirahService_ListImages_Handler,
+		},
+		{
+			MethodName: "GetImage",
+			Handler:    _LibrarianSephirahService_GetImage_Handler,
+		},
+		{
+			MethodName: "DownloadImage",
+			Handler:    _LibrarianSephirahService_DownloadImage_Handler,
 		},
 		{
 			MethodName: "CreateApp",

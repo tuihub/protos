@@ -10,7 +10,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $6;
+import '../../v1/common.pb.dart' as $7;
 
 import 'base.pbenum.dart';
 
@@ -18,21 +18,21 @@ export 'base.pbenum.dart';
 
 class FileMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FileMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$6.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $6.InternalID.create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
     ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chunkSize')
-    ..pc<FileTag>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tag', $pb.PbFieldType.KE, valueOf: FileTag.valueOf, enumValues: FileTag.values, defaultEnumValue: FileTag.FILE_TAG_UNSPECIFIED)
+    ..e<FileType>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
     ..hasRequiredFields = false
   ;
 
   FileMetadata._() : super();
   factory FileMetadata({
-    $6.InternalID? id,
+    $7.InternalID? id,
     $core.String? name,
     $fixnum.Int64? size,
     $fixnum.Int64? chunkSize,
-    $core.Iterable<FileTag>? tag,
+    FileType? type,
   }) {
     final _result = create();
     if (id != null) {
@@ -47,8 +47,8 @@ class FileMetadata extends $pb.GeneratedMessage {
     if (chunkSize != null) {
       _result.chunkSize = chunkSize;
     }
-    if (tag != null) {
-      _result.tag.addAll(tag);
+    if (type != null) {
+      _result.type = type;
     }
     return _result;
   }
@@ -74,15 +74,15 @@ class FileMetadata extends $pb.GeneratedMessage {
   static FileMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.InternalID get id => $_getN(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($6.InternalID v) { setField(1, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $6.InternalID ensureId() => $_ensure(0);
+  $7.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -112,6 +112,12 @@ class FileMetadata extends $pb.GeneratedMessage {
   void clearChunkSize() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<FileTag> get tag => $_getList(4);
+  FileType get type => $_getN(4);
+  @$pb.TagNumber(5)
+  set type(FileType v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearType() => clearField(5);
 }
 

@@ -8,17 +8,18 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use fileTagDescriptor instead')
-const FileTag$json = const {
-  '1': 'FileTag',
+@$core.Deprecated('Use fileTypeDescriptor instead')
+const FileType$json = const {
+  '1': 'FileType',
   '2': const [
-    const {'1': 'FILE_TAG_UNSPECIFIED', '2': 0},
-    const {'1': 'FILE_TAG_GEBURA_SAVE', '2': 1},
+    const {'1': 'FILE_TYPE_UNSPECIFIED', '2': 0},
+    const {'1': 'FILE_TYPE_GEBURA_SAVE', '2': 1},
+    const {'1': 'FILE_TYPE_CHESED_IMAGE', '2': 2},
   ],
 };
 
-/// Descriptor for `FileTag`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List fileTagDescriptor = $convert.base64Decode('CgdGaWxlVGFnEhgKFEZJTEVfVEFHX1VOU1BFQ0lGSUVEEAASGAoURklMRV9UQUdfR0VCVVJBX1NBVkUQAQ==');
+/// Descriptor for `FileType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List fileTypeDescriptor = $convert.base64Decode('CghGaWxlVHlwZRIZChVGSUxFX1RZUEVfVU5TUEVDSUZJRUQQABIZChVGSUxFX1RZUEVfR0VCVVJBX1NBVkUQARIaChZGSUxFX1RZUEVfQ0hFU0VEX0lNQUdFEAI=');
 @$core.Deprecated('Use fileMetadataDescriptor instead')
 const FileMetadata$json = const {
   '1': 'FileMetadata',
@@ -27,7 +28,7 @@ const FileMetadata$json = const {
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'size', '3': 3, '4': 1, '5': 3, '10': 'size'},
     const {'1': 'chunk_size', '3': 4, '4': 1, '5': 3, '10': 'chunkSize'},
-    const {'1': 'tag', '3': 5, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.FileTag', '10': 'tag'},
+    const {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileType', '10': 'type'},
   ],
   '8': const [
     const {'1': '_id'},
@@ -35,4 +36,4 @@ const FileMetadata$json = const {
 };
 
 /// Descriptor for `FileMetadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESLQoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyABKANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjAKA3RhZxgFIAMoDjIeLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlVGFnUgN0YWdCBQoDX2lk');
+final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESLQoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyABKANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjMKBHR5cGUYBSABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGVCBQoDX2lk');

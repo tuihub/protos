@@ -25,6 +25,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var librarian_sephirah_v1_binah_pb = require('../../../librarian/sephirah/v1/binah_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_binah_pb);
+var librarian_sephirah_v1_chesed_pb = require('../../../librarian/sephirah/v1/chesed_pb.js');
+goog.object.extend(proto, librarian_sephirah_v1_chesed_pb);
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_gebura_pb);
 var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');

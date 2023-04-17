@@ -19,10 +19,8 @@ export class FileMetadata extends jspb.Message {
   getChunkSize(): number;
   setChunkSize(value: number): void;
 
-  clearTagList(): void;
-  getTagList(): Array<FileTagMap[keyof FileTagMap]>;
-  setTagList(value: Array<FileTagMap[keyof FileTagMap]>): void;
-  addTag(value: FileTagMap[keyof FileTagMap], index?: number): FileTagMap[keyof FileTagMap];
+  getType(): FileTypeMap[keyof FileTypeMap];
+  setType(value: FileTypeMap[keyof FileTypeMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileMetadata.AsObject;
@@ -40,14 +38,15 @@ export namespace FileMetadata {
     name: string,
     size: number,
     chunkSize: number,
-    tagList: Array<FileTagMap[keyof FileTagMap]>,
+    type: FileTypeMap[keyof FileTypeMap],
   }
 }
 
-export interface FileTagMap {
-  FILE_TAG_UNSPECIFIED: 0;
-  FILE_TAG_GEBURA_SAVE: 1;
+export interface FileTypeMap {
+  FILE_TYPE_UNSPECIFIED: 0;
+  FILE_TYPE_GEBURA_SAVE: 1;
+  FILE_TYPE_CHESED_IMAGE: 2;
 }
 
-export const FileTag: FileTagMap;
+export const FileType: FileTypeMap;
 

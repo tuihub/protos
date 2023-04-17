@@ -25,28 +25,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBsaWJyYXJpYW4vc2VwaGlyYWgvdjEvYmFzZS5wcm90bxIVbGlicmFyaWFu",
-            "LnNlcGhpcmFoLnYxGhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIr0BCgxG",
+            "LnNlcGhpcmFoLnYxGhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIsABCgxG",
             "aWxlTWV0YWRhdGESLQoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
             "YWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyAB",
-            "KANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjAKA3Rh",
-            "ZxgFIAMoDjIeLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlVGFnUgN0YWdC",
-            "BQoDX2lkKj0KB0ZpbGVUYWcSGAoURklMRV9UQUdfVU5TUEVDSUZJRUQQABIY",
-            "ChRGSUxFX1RBR19HRUJVUkFfU0FWRRABQl1aNWdpdGh1Yi5jb20vdHVpaHVi",
-            "L3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHVi",
-            "LlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "KANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjMKBHR5",
+            "cGUYBSABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5",
+            "cGVCBQoDX2lkKlwKCEZpbGVUeXBlEhkKFUZJTEVfVFlQRV9VTlNQRUNJRklF",
+            "RBAAEhkKFUZJTEVfVFlQRV9HRUJVUkFfU0FWRRABEhoKFkZJTEVfVFlQRV9D",
+            "SEVTRURfSU1BR0UQAkJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtn",
+            "L2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGli",
+            "cmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "ChunkSize", "Tag" }, new[]{ "Id" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "ChunkSize", "Type" }, new[]{ "Id" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum FileTag {
-    [pbr::OriginalName("FILE_TAG_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("FILE_TAG_GEBURA_SAVE")] GeburaSave = 1,
+  public enum FileType {
+    [pbr::OriginalName("FILE_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("FILE_TYPE_GEBURA_SAVE")] GeburaSave = 1,
+    [pbr::OriginalName("FILE_TYPE_CHESED_IMAGE")] ChesedImage = 2,
   }
 
   #endregion
@@ -90,7 +92,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       name_ = other.name_;
       size_ = other.size_;
       chunkSize_ = other.chunkSize_;
-      tag_ = other.tag_.Clone();
+      type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -148,15 +150,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "tag" field.</summary>
-    public const int TagFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag> _repeated_tag_codec
-        = pb::FieldCodec.ForEnum(42, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag> tag_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag>();
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 5;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.FileType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FileTag> Tag {
-      get { return tag_; }
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.FileType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -178,7 +181,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name != other.Name) return false;
       if (Size != other.Size) return false;
       if (ChunkSize != other.ChunkSize) return false;
-      if(!tag_.Equals(other.tag_)) return false;
+      if (Type != other.Type) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -190,7 +193,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Size != 0L) hash ^= Size.GetHashCode();
       if (ChunkSize != 0L) hash ^= ChunkSize.GetHashCode();
-      hash ^= tag_.GetHashCode();
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) hash ^= Type.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -225,7 +228,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(32);
         output.WriteInt64(ChunkSize);
       }
-      tag_.WriteTo(output, _repeated_tag_codec);
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -252,7 +258,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(32);
         output.WriteInt64(ChunkSize);
       }
-      tag_.WriteTo(ref output, _repeated_tag_codec);
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -275,7 +284,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ChunkSize != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ChunkSize);
       }
-      size += tag_.CalculateSize(_repeated_tag_codec);
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -303,7 +314,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.ChunkSize != 0L) {
         ChunkSize = other.ChunkSize;
       }
-      tag_.Add(other.tag_);
+      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
+        Type = other.Type;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -338,9 +351,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             ChunkSize = input.ReadInt64();
             break;
           }
-          case 42:
           case 40: {
-            tag_.AddEntriesFrom(input, _repeated_tag_codec);
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileType) input.ReadEnum();
             break;
           }
         }
@@ -377,9 +389,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             ChunkSize = input.ReadInt64();
             break;
           }
-          case 42:
           case 40: {
-            tag_.AddEntriesFrom(ref input, _repeated_tag_codec);
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileType) input.ReadEnum();
             break;
           }
         }

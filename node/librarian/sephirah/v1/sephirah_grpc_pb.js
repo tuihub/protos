@@ -5,6 +5,7 @@ var grpc = require('@grpc/grpc-js');
 var librarian_sephirah_v1_sephirah_pb = require('../../../librarian/sephirah/v1/sephirah_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 var librarian_sephirah_v1_binah_pb = require('../../../librarian/sephirah/v1/binah_pb.js');
+var librarian_sephirah_v1_chesed_pb = require('../../../librarian/sephirah/v1/chesed_pb.js');
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
 var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
@@ -208,6 +209,28 @@ function deserialize_librarian_sephirah_v1_DownloadGameSaveFileResponse(buffer_a
   return librarian_sephirah_v1_gebura_pb.DownloadGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_DownloadImageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.DownloadImageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DownloadImageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DownloadImageRequest(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.DownloadImageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_DownloadImageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.DownloadImageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DownloadImageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DownloadImageResponse(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.DownloadImageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_GenerateTokenRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GenerateTokenRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.GenerateTokenRequest');
@@ -316,6 +339,28 @@ function serialize_librarian_sephirah_v1_GetFeedItemResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_GetFeedItemResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.GetFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetImageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.GetImageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetImageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetImageRequest(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.GetImageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetImageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.GetImageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetImageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetImageResponse(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.GetImageResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetServerInformationRequest(arg) {
@@ -536,6 +581,28 @@ function serialize_librarian_sephirah_v1_ListGameSaveFileResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_ListGameSaveFileResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListImagesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.ListImagesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListImagesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListImagesRequest(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.ListImagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListImagesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.ListImagesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListImagesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListImagesResponse(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.ListImagesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListLinkAccountsRequest(arg) {
@@ -912,6 +979,28 @@ function deserialize_librarian_sephirah_v1_UpdateFeedConfigResponse(buffer_arg) 
   return librarian_sephirah_v1_yesod_pb.UpdateFeedConfigResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_UpdateImageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.UpdateImageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateImageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateImageRequest(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.UpdateImageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateImageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.UpdateImageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateImageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateImageResponse(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.UpdateImageResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_UpdateNotifyFlowRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.UpdateNotifyFlowRequest');
@@ -1020,6 +1109,28 @@ function serialize_librarian_sephirah_v1_UploadGameSaveFileResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UploadGameSaveFileResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UploadImageRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.UploadImageRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UploadImageRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UploadImageRequest(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.UploadImageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UploadImageResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.UploadImageResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UploadImageResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UploadImageResponse(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.UploadImageResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -1213,6 +1324,66 @@ simpleDownloadFile: {
     requestDeserialize: deserialize_librarian_sephirah_v1_SimpleDownloadFileRequest,
     responseSerialize: serialize_librarian_sephirah_v1_SimpleDownloadFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SimpleDownloadFileResponse,
+  },
+  // `Chesed` `Normal`
+uploadImage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UploadImage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_chesed_pb.UploadImageRequest,
+    responseType: librarian_sephirah_v1_chesed_pb.UploadImageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UploadImageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UploadImageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UploadImageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UploadImageResponse,
+  },
+  // `Chesed` `Normal`
+updateImage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_chesed_pb.UpdateImageRequest,
+    responseType: librarian_sephirah_v1_chesed_pb.UpdateImageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdateImageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateImageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdateImageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateImageResponse,
+  },
+  // `Chesed` `Normal`
+listImages: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListImages',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_chesed_pb.ListImagesRequest,
+    responseType: librarian_sephirah_v1_chesed_pb.ListImagesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListImagesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListImagesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListImagesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListImagesResponse,
+  },
+  // `Chesed` `Normal`
+getImage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetImage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_chesed_pb.GetImageRequest,
+    responseType: librarian_sephirah_v1_chesed_pb.GetImageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetImageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetImageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetImageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetImageResponse,
+  },
+  // `Chesed` `Normal`
+downloadImage: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_chesed_pb.DownloadImageRequest,
+    responseType: librarian_sephirah_v1_chesed_pb.DownloadImageResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_DownloadImageRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_DownloadImageRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_DownloadImageResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_DownloadImageResponse,
   },
   // `Gebura` `Admin`
 createApp: {
