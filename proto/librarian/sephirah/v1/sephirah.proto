@@ -4,6 +4,7 @@ package librarian.sephirah.v1;
 
 import "google/protobuf/timestamp.proto";
 import "librarian/sephirah/v1/binah.proto";
+import "librarian/sephirah/v1/chesed.proto";
 import "librarian/sephirah/v1/gebura.proto";
 import "librarian/sephirah/v1/netzach.proto";
 import "librarian/sephirah/v1/tiphereth.proto";
@@ -57,6 +58,17 @@ service LibrarianSephirahService {
   rpc SimpleUploadFile(stream SimpleUploadFileRequest) returns (stream SimpleUploadFileResponse);
   // `Binah` `download_token`
   rpc SimpleDownloadFile(stream SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
+
+  // `Chesed` `Normal`
+  rpc UploadImage(UploadImageRequest) returns (UploadImageResponse);
+  // `Chesed` `Normal`
+  rpc UpdateImage(UpdateImageRequest) returns (UpdateImageResponse);
+  // `Chesed` `Normal`
+  rpc ListImages(ListImagesRequest) returns (ListImagesResponse);
+  // `Chesed` `Normal`
+  rpc GetImage(GetImageRequest) returns (GetImageResponse);
+  // `Chesed` `Normal`
+  rpc DownloadImage(DownloadImageRequest) returns (DownloadImageResponse);
 
   // `Gebura` `Admin`
   rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+import "librarian/sephirah/v1/base.proto";
+import "librarian/v1/common.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+
+message UploadImageRequest {
+  FileMetadata file_metadata = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message UploadImageResponse {
+  string upload_token = 1;
+}
+
+message UpdateImageRequest {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message UpdateImageResponse {}
+
+message ListImagesRequest {
+  optional librarian.v1.TimeRange time_range = 1;
+}
+
+message ListImagesResponse {
+  repeated librarian.v1.InternalID ids = 1;
+}
+
+message GetImageRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message GetImageResponse {
+  FileMetadata file_metadata = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message DownloadImageRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DownloadImageResponse {
+  string download_token = 1;
+}

@@ -12,10 +12,11 @@ message FileMetadata {
   string name = 2;
   int64 size = 3;
   int64 chunk_size = 4;
-  repeated FileTag tag = 5;
+  FileType type = 5;
 }
 
-enum FileTag {
-  FILE_TAG_UNSPECIFIED = 0;
-  FILE_TAG_GEBURA_SAVE = 1;
+enum FileType {
+  FILE_TYPE_UNSPECIFIED = 0;
+  FILE_TYPE_GEBURA_SAVE = 1;
+  FILE_TYPE_CHESED_IMAGE = 2;
 }
