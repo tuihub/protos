@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.18](https://github.com/TuiHub/Protos/compare/v0.2.17...v0.2.18) (2023-04-18)
+
+
+### Bug Fixes
+
+* **binah:** update ([cbfee4b](https://github.com/TuiHub/Protos/commit/cbfee4b515a97ed5a39d85e4f17fb8ae87d98ab9))
+
 ## [0.2.17](https://github.com/TuiHub/Protos/compare/v0.2.16...v0.2.17) (2023-04-17)
 
 
