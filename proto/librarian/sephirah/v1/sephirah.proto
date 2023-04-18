@@ -55,9 +55,13 @@ service LibrarianSephirahService {
   // `Binah` `download_token`
   rpc DownloadFile(stream DownloadFileRequest) returns (stream DownloadFileResponse);
   // `Binah` `upload_token`
+  // Maximum 256M
+  // Server must send response at least once a minute to keepalive.
+  // Client should ignore in_process response and wait for success or error response.
   rpc SimpleUploadFile(stream SimpleUploadFileRequest) returns (stream SimpleUploadFileResponse);
   // `Binah` `download_token`
-  rpc SimpleDownloadFile(stream SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
+  // Server will not check the
+  rpc SimpleDownloadFile(SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
 
   // `Chesed` `Normal`
   rpc UploadImage(UploadImageRequest) returns (UploadImageResponse);
