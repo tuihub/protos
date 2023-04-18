@@ -24,16 +24,13 @@ final $typed_data.Uint8List fileTypeDescriptor = $convert.base64Decode('CghGaWxl
 const FileMetadata$json = const {
   '1': 'FileMetadata',
   '2': const [
-    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'id', '17': true},
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'size', '3': 3, '4': 1, '5': 3, '10': 'size'},
-    const {'1': 'chunk_size', '3': 4, '4': 1, '5': 3, '10': 'chunkSize'},
-    const {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileType', '10': 'type'},
-  ],
-  '8': const [
-    const {'1': '_id'},
+    const {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileType', '10': 'type'},
+    const {'1': 'sha256', '3': 5, '4': 1, '5': 12, '10': 'sha256'},
   ],
 };
 
 /// Descriptor for `FileMetadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESLQoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyABKANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjMKBHR5cGUYBSABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGVCBQoDX2lk');
+final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRzaXplEjMKBHR5cGUYBCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGUSFgoGc2hhMjU2GAUgASgMUgZzaGEyNTY=');

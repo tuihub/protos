@@ -16,11 +16,13 @@ export class FileMetadata extends jspb.Message {
   getSize(): number;
   setSize(value: number): void;
 
-  getChunkSize(): number;
-  setChunkSize(value: number): void;
-
   getType(): FileTypeMap[keyof FileTypeMap];
   setType(value: FileTypeMap[keyof FileTypeMap]): void;
+
+  getSha256(): Uint8Array | string;
+  getSha256_asU8(): Uint8Array;
+  getSha256_asB64(): string;
+  setSha256(value: Uint8Array | string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileMetadata.AsObject;
@@ -37,8 +39,8 @@ export namespace FileMetadata {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     size: number,
-    chunkSize: number,
     type: FileTypeMap[keyof FileTypeMap],
+    sha256: Uint8Array | string,
   }
 }
 

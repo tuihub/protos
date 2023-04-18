@@ -21,8 +21,8 @@ class FileMetadata extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chunkSize')
-    ..e<FileType>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
+    ..e<FileType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
+    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sha256', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
@@ -31,8 +31,8 @@ class FileMetadata extends $pb.GeneratedMessage {
     $7.InternalID? id,
     $core.String? name,
     $fixnum.Int64? size,
-    $fixnum.Int64? chunkSize,
     FileType? type,
+    $core.List<$core.int>? sha256,
   }) {
     final _result = create();
     if (id != null) {
@@ -44,11 +44,11 @@ class FileMetadata extends $pb.GeneratedMessage {
     if (size != null) {
       _result.size = size;
     }
-    if (chunkSize != null) {
-      _result.chunkSize = chunkSize;
-    }
     if (type != null) {
       _result.type = type;
+    }
+    if (sha256 != null) {
+      _result.sha256 = sha256;
     }
     return _result;
   }
@@ -103,21 +103,21 @@ class FileMetadata extends $pb.GeneratedMessage {
   void clearSize() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get chunkSize => $_getI64(3);
+  FileType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set chunkSize($fixnum.Int64 v) { $_setInt64(3, v); }
+  set type(FileType v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasChunkSize() => $_has(3);
+  $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearChunkSize() => clearField(4);
+  void clearType() => clearField(4);
 
   @$pb.TagNumber(5)
-  FileType get type => $_getN(4);
+  $core.List<$core.int> get sha256 => $_getN(4);
   @$pb.TagNumber(5)
-  set type(FileType v) { setField(5, v); }
+  set sha256($core.List<$core.int> v) { $_setBytes(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasType() => $_has(4);
+  $core.bool hasSha256() => $_has(4);
   @$pb.TagNumber(5)
-  void clearType() => clearField(5);
+  void clearSha256() => clearField(5);
 }
 

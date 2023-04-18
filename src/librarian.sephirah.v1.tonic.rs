@@ -358,6 +358,9 @@ pub mod librarian_sephirah_service_client {
             self.inner.streaming(request.into_streaming_request(), path, codec).await
         }
         /** `Binah` `upload_token`
+ Maximum 256M
+ Server must send response at least once a minute to keepalive.
+ Client should ignore in_process response and wait for success or error response.
 */
         pub async fn simple_upload_file(
             &mut self,
@@ -384,12 +387,11 @@ pub mod librarian_sephirah_service_client {
             self.inner.streaming(request.into_streaming_request(), path, codec).await
         }
         /** `Binah` `download_token`
+ Server will not check the
 */
         pub async fn simple_download_file(
             &mut self,
-            request: impl tonic::IntoStreamingRequest<
-                Message = super::SimpleDownloadFileRequest,
-            >,
+            request: impl tonic::IntoRequest<super::SimpleDownloadFileRequest>,
         ) -> Result<
             tonic::Response<tonic::codec::Streaming<super::SimpleDownloadFileResponse>>,
             tonic::Status,
@@ -407,7 +409,7 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile",
             );
-            self.inner.streaming(request.into_streaming_request(), path, codec).await
+            self.inner.server_streaming(request.into_request(), path, codec).await
         }
         /** `Chesed` `Normal`
 */
@@ -1268,6 +1270,9 @@ pub mod librarian_sephirah_service_server {
             + Send
             + 'static;
         /** `Binah` `upload_token`
+ Maximum 256M
+ Server must send response at least once a minute to keepalive.
+ Client should ignore in_process response and wait for success or error response.
 */
         async fn simple_upload_file(
             &self,
@@ -1280,10 +1285,11 @@ pub mod librarian_sephirah_service_server {
             + Send
             + 'static;
         /** `Binah` `download_token`
+ Server will not check the
 */
         async fn simple_download_file(
             &self,
-            request: tonic::Request<tonic::Streaming<super::SimpleDownloadFileRequest>>,
+            request: tonic::Request<super::SimpleDownloadFileRequest>,
         ) -> Result<tonic::Response<Self::SimpleDownloadFileStream>, tonic::Status>;
         /** `Chesed` `Normal`
 */
@@ -2120,8 +2126,9 @@ pub mod librarian_sephirah_service_server {
                     );
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::StreamingService<super::SimpleDownloadFileRequest>
-                    for SimpleDownloadFileSvc<T> {
+                    > tonic::server::ServerStreamingService<
+                        super::SimpleDownloadFileRequest,
+                    > for SimpleDownloadFileSvc<T> {
                         type Response = super::SimpleDownloadFileResponse;
                         type ResponseStream = T::SimpleDownloadFileStream;
                         type Future = BoxFuture<
@@ -2130,9 +2137,7 @@ pub mod librarian_sephirah_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<
-                                tonic::Streaming<super::SimpleDownloadFileRequest>,
-                            >,
+                            request: tonic::Request<super::SimpleDownloadFileRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
@@ -2153,7 +2158,7 @@ pub mod librarian_sephirah_service_server {
                                 accept_compression_encodings,
                                 send_compression_encodings,
                             );
-                        let res = grpc.streaming(method, req).await;
+                        let res = grpc.server_streaming(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)

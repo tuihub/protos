@@ -106,9 +106,13 @@ type LibrarianSephirahServiceClient interface {
 	// `Binah` `download_token`
 	DownloadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_DownloadFileClient, error)
 	// `Binah` `upload_token`
+	// Maximum 256M
+	// Server must send response at least once a minute to keepalive.
+	// Client should ignore in_process response and wait for success or error response.
 	SimpleUploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleUploadFileClient, error)
 	// `Binah` `download_token`
-	SimpleDownloadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error)
+	// Server will not check the
+	SimpleDownloadFile(ctx context.Context, in *SimpleDownloadFileRequest, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error)
 	// `Chesed` `Normal`
 	UploadImage(ctx context.Context, in *UploadImageRequest, opts ...grpc.CallOption) (*UploadImageResponse, error)
 	// `Chesed` `Normal`
@@ -383,27 +387,28 @@ func (x *librarianSephirahServiceSimpleUploadFileClient) Recv() (*SimpleUploadFi
 	return m, nil
 }
 
-func (c *librarianSephirahServiceClient) SimpleDownloadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error) {
+func (c *librarianSephirahServiceClient) SimpleDownloadFile(ctx context.Context, in *SimpleDownloadFileRequest, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error) {
 	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[3], LibrarianSephirahService_SimpleDownloadFile_FullMethodName, opts...)
 	if err != nil {
 		return nil, err
 	}
 	x := &librarianSephirahServiceSimpleDownloadFileClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
 	return x, nil
 }
 
 type LibrarianSephirahService_SimpleDownloadFileClient interface {
-	Send(*SimpleDownloadFileRequest) error
 	Recv() (*SimpleDownloadFileResponse, error)
 	grpc.ClientStream
 }
 
 type librarianSephirahServiceSimpleDownloadFileClient struct {
 	grpc.ClientStream
-}
-
-func (x *librarianSephirahServiceSimpleDownloadFileClient) Send(m *SimpleDownloadFileRequest) error {
-	return x.ClientStream.SendMsg(m)
 }
 
 func (x *librarianSephirahServiceSimpleDownloadFileClient) Recv() (*SimpleDownloadFileResponse, error) {
@@ -794,9 +799,13 @@ type LibrarianSephirahServiceServer interface {
 	// `Binah` `download_token`
 	DownloadFile(LibrarianSephirahService_DownloadFileServer) error
 	// `Binah` `upload_token`
+	// Maximum 256M
+	// Server must send response at least once a minute to keepalive.
+	// Client should ignore in_process response and wait for success or error response.
 	SimpleUploadFile(LibrarianSephirahService_SimpleUploadFileServer) error
 	// `Binah` `download_token`
-	SimpleDownloadFile(LibrarianSephirahService_SimpleDownloadFileServer) error
+	// Server will not check the
+	SimpleDownloadFile(*SimpleDownloadFileRequest, LibrarianSephirahService_SimpleDownloadFileServer) error
 	// `Chesed` `Normal`
 	UploadImage(context.Context, *UploadImageRequest) (*UploadImageResponse, error)
 	// `Chesed` `Normal`
@@ -918,7 +927,7 @@ func (UnimplementedLibrarianSephirahServiceServer) DownloadFile(LibrarianSephira
 func (UnimplementedLibrarianSephirahServiceServer) SimpleUploadFile(LibrarianSephirahService_SimpleUploadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method SimpleUploadFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) SimpleDownloadFile(LibrarianSephirahService_SimpleDownloadFileServer) error {
+func (UnimplementedLibrarianSephirahServiceServer) SimpleDownloadFile(*SimpleDownloadFileRequest, LibrarianSephirahService_SimpleDownloadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method SimpleDownloadFile not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadImage(context.Context, *UploadImageRequest) (*UploadImageResponse, error) {
@@ -1320,12 +1329,15 @@ func (x *librarianSephirahServiceSimpleUploadFileServer) Recv() (*SimpleUploadFi
 }
 
 func _LibrarianSephirahService_SimpleDownloadFile_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(LibrarianSephirahServiceServer).SimpleDownloadFile(&librarianSephirahServiceSimpleDownloadFileServer{stream})
+	m := new(SimpleDownloadFileRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(LibrarianSephirahServiceServer).SimpleDownloadFile(m, &librarianSephirahServiceSimpleDownloadFileServer{stream})
 }
 
 type LibrarianSephirahService_SimpleDownloadFileServer interface {
 	Send(*SimpleDownloadFileResponse) error
-	Recv() (*SimpleDownloadFileRequest, error)
 	grpc.ServerStream
 }
 
@@ -1335,14 +1347,6 @@ type librarianSephirahServiceSimpleDownloadFileServer struct {
 
 func (x *librarianSephirahServiceSimpleDownloadFileServer) Send(m *SimpleDownloadFileResponse) error {
 	return x.ServerStream.SendMsg(m)
-}
-
-func (x *librarianSephirahServiceSimpleDownloadFileServer) Recv() (*SimpleDownloadFileRequest, error) {
-	m := new(SimpleDownloadFileRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
 }
 
 func _LibrarianSephirahService_UploadImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -2216,7 +2220,6 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			StreamName:    "SimpleDownloadFile",
 			Handler:       _LibrarianSephirahService_SimpleDownloadFile_Handler,
 			ServerStreams: true,
-			ClientStreams: true,
 		},
 		{
 			StreamName:    "ReportAppPackages",

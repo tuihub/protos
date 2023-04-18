@@ -81,8 +81,8 @@ proto.librarian.sephirah.v1.FileMetadata.toObject = function(includeInstance, ms
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     size: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    chunkSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    type: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    sha256: msg.getSha256_asB64()
   };
 
   if (includeInstance) {
@@ -133,12 +133,12 @@ proto.librarian.sephirah.v1.FileMetadata.deserializeBinaryFromReader = function(
       msg.setSize(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setChunkSize(value);
-      break;
-    case 5:
       var value = /** @type {!proto.librarian.sephirah.v1.FileType} */ (reader.readEnum());
       msg.setType(value);
+      break;
+    case 5:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setSha256(value);
       break;
     default:
       reader.skipField();
@@ -191,16 +191,16 @@ proto.librarian.sephirah.v1.FileMetadata.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getChunkSize();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       4,
       f
     );
   }
-  f = message.getType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getSha256_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
       5,
       f
     );
@@ -282,29 +282,11 @@ proto.librarian.sephirah.v1.FileMetadata.prototype.setSize = function(value) {
 
 
 /**
- * optional int64 chunk_size = 4;
- * @return {number}
- */
-proto.librarian.sephirah.v1.FileMetadata.prototype.getChunkSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.librarian.sephirah.v1.FileMetadata} returns this
- */
-proto.librarian.sephirah.v1.FileMetadata.prototype.setChunkSize = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional FileType type = 5;
+ * optional FileType type = 4;
  * @return {!proto.librarian.sephirah.v1.FileType}
  */
 proto.librarian.sephirah.v1.FileMetadata.prototype.getType = function() {
-  return /** @type {!proto.librarian.sephirah.v1.FileType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.librarian.sephirah.v1.FileType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -313,7 +295,49 @@ proto.librarian.sephirah.v1.FileMetadata.prototype.getType = function() {
  * @return {!proto.librarian.sephirah.v1.FileMetadata} returns this
  */
 proto.librarian.sephirah.v1.FileMetadata.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional bytes sha256 = 5;
+ * @return {!(string|Uint8Array)}
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.getSha256 = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * optional bytes sha256 = 5;
+ * This is a type-conversion wrapper around `getSha256()`
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.getSha256_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getSha256()));
+};
+
+
+/**
+ * optional bytes sha256 = 5;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getSha256()`
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.getSha256_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getSha256()));
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.librarian.sephirah.v1.FileMetadata} returns this
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.setSha256 = function(value) {
+  return jspb.Message.setProto3BytesField(this, 5, value);
 };
 
 

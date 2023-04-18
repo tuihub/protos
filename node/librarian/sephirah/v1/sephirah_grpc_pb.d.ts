@@ -83,7 +83,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   uploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
   simpleUploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
-  simpleDownloadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest, librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse>;
+  simpleDownloadFile: grpc.handleServerStreamingCall<librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest, librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse>;
   uploadImage: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.UploadImageRequest, librarian_sephirah_v1_chesed_pb.UploadImageResponse>;
   updateImage: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.UpdateImageRequest, librarian_sephirah_v1_chesed_pb.UpdateImageResponse>;
   listImages: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.ListImagesRequest, librarian_sephirah_v1_chesed_pb.ListImagesResponse>;
@@ -163,8 +163,8 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   downloadFile(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
   simpleUploadFile(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
   simpleUploadFile(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
-  simpleDownloadFile(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest, librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse>;
-  simpleDownloadFile(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest, librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse>;
+  simpleDownloadFile(argument: librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse>;
+  simpleDownloadFile(argument: librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse>;
   uploadImage(argument: librarian_sephirah_v1_chesed_pb.UploadImageRequest, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.UploadImageResponse>): grpc.ClientUnaryCall;
   uploadImage(argument: librarian_sephirah_v1_chesed_pb.UploadImageRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.UploadImageResponse>): grpc.ClientUnaryCall;
   uploadImage(argument: librarian_sephirah_v1_chesed_pb.UploadImageRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.UploadImageResponse>): grpc.ClientUnaryCall;

@@ -1302,6 +1302,9 @@ downloadFile: {
     responseDeserialize: deserialize_librarian_sephirah_v1_DownloadFileResponse,
   },
   // `Binah` `upload_token`
+// Maximum 256M
+// Server must send response at least once a minute to keepalive.
+// Client should ignore in_process response and wait for success or error response.
 simpleUploadFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile',
     requestStream: true,
@@ -1314,9 +1317,10 @@ simpleUploadFile: {
     responseDeserialize: deserialize_librarian_sephirah_v1_SimpleUploadFileResponse,
   },
   // `Binah` `download_token`
+// Server will not check the
 simpleDownloadFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile',
-    requestStream: true,
+    requestStream: false,
     responseStream: true,
     requestType: librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest,
     responseType: librarian_sephirah_v1_binah_pb.SimpleDownloadFileResponse,

@@ -415,9 +415,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
   }
 
   $grpc.ResponseStream<$2.SimpleDownloadFileResponse> simpleDownloadFile(
-      $async.Stream<$2.SimpleDownloadFileRequest> request,
+      $2.SimpleDownloadFileRequest request,
       {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$simpleDownloadFile, request,
+    return $createStreamingCall(
+        _$simpleDownloadFile, $async.Stream.fromIterable([request]),
         options: options);
   }
 
@@ -757,8 +758,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     $addMethod($grpc.ServiceMethod<$2.SimpleDownloadFileRequest,
             $2.SimpleDownloadFileResponse>(
         'SimpleDownloadFile',
-        simpleDownloadFile,
-        true,
+        simpleDownloadFile_Pre,
+        false,
         true,
         ($core.List<$core.int> value) =>
             $2.SimpleDownloadFileRequest.fromBuffer(value),
@@ -1133,6 +1134,12 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listLinkAccounts(call, await request);
   }
 
+  $async.Stream<$2.SimpleDownloadFileResponse> simpleDownloadFile_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$2.SimpleDownloadFileRequest> request) async* {
+    yield* simpleDownloadFile(call, await request);
+  }
+
   $async.Future<$3.UploadImageResponse> uploadImage_Pre($grpc.ServiceCall call,
       $async.Future<$3.UploadImageRequest> request) async {
     return uploadImage(call, await request);
@@ -1360,8 +1367,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call,
       $async.Stream<$2.SimpleUploadFileRequest> request);
   $async.Stream<$2.SimpleDownloadFileResponse> simpleDownloadFile(
-      $grpc.ServiceCall call,
-      $async.Stream<$2.SimpleDownloadFileRequest> request);
+      $grpc.ServiceCall call, $2.SimpleDownloadFileRequest request);
   $async.Future<$3.UploadImageResponse> uploadImage(
       $grpc.ServiceCall call, $3.UploadImageRequest request);
   $async.Future<$3.UpdateImageResponse> updateImage(

@@ -25,20 +25,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBsaWJyYXJpYW4vc2VwaGlyYWgvdjEvYmFzZS5wcm90bxIVbGlicmFyaWFu",
-            "LnNlcGhpcmFoLnYxGhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIsABCgxG",
-            "aWxlTWV0YWRhdGESLQoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJREgAUgJpZIgBARISCgRuYW1lGAIgASgJUgRuYW1lEhIKBHNpemUYAyAB",
-            "KANSBHNpemUSHQoKY2h1bmtfc2l6ZRgEIAEoA1IJY2h1bmtTaXplEjMKBHR5",
-            "cGUYBSABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5",
-            "cGVCBQoDX2lkKlwKCEZpbGVUeXBlEhkKFUZJTEVfVFlQRV9VTlNQRUNJRklF",
-            "RBAAEhkKFUZJTEVfVFlQRV9HRUJVUkFfU0FWRRABEhoKFkZJTEVfVFlQRV9D",
-            "SEVTRURfSU1BR0UQAkJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtn",
-            "L2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGli",
-            "cmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "LnNlcGhpcmFoLnYxGhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIq0BCgxG",
+            "aWxlTWV0YWRhdGESKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
+            "YWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRz",
+            "aXplEjMKBHR5cGUYBCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmls",
+            "ZVR5cGVSBHR5cGUSFgoGc2hhMjU2GAUgASgMUgZzaGEyNTYqXAoIRmlsZVR5",
+            "cGUSGQoVRklMRV9UWVBFX1VOU1BFQ0lGSUVEEAASGQoVRklMRV9UWVBFX0dF",
+            "QlVSQV9TQVZFEAESGgoWRklMRV9UWVBFX0NIRVNFRF9JTUFHRRACQl1aNWdp",
+            "dGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFo",
+            "L3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "ChunkSize", "Type" }, new[]{ "Id" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "Type", "Sha256" }, null, null, null, null)
           }));
     }
     #endregion
@@ -91,8 +91,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       name_ = other.name_;
       size_ = other.size_;
-      chunkSize_ = other.chunkSize_;
       type_ = other.type_;
+      sha256_ = other.sha256_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -138,20 +138,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "chunk_size" field.</summary>
-    public const int ChunkSizeFieldNumber = 4;
-    private long chunkSize_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long ChunkSize {
-      get { return chunkSize_; }
-      set {
-        chunkSize_ = value;
-      }
-    }
-
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 5;
+    public const int TypeFieldNumber = 4;
     private global::TuiHub.Protos.Librarian.Sephirah.V1.FileType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,6 +147,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       get { return type_; }
       set {
         type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sha256" field.</summary>
+    public const int Sha256FieldNumber = 5;
+    private pb::ByteString sha256_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString Sha256 {
+      get { return sha256_; }
+      set {
+        sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -180,8 +180,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (!object.Equals(Id, other.Id)) return false;
       if (Name != other.Name) return false;
       if (Size != other.Size) return false;
-      if (ChunkSize != other.ChunkSize) return false;
       if (Type != other.Type) return false;
+      if (Sha256 != other.Sha256) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -192,8 +192,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Size != 0L) hash ^= Size.GetHashCode();
-      if (ChunkSize != 0L) hash ^= ChunkSize.GetHashCode();
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) hash ^= Type.GetHashCode();
+      if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -224,13 +224,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(24);
         output.WriteInt64(Size);
       }
-      if (ChunkSize != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(ChunkSize);
-      }
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Type);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteBytes(Sha256);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -254,13 +254,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(24);
         output.WriteInt64(Size);
       }
-      if (ChunkSize != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(ChunkSize);
-      }
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteEnum((int) Type);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteBytes(Sha256);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -281,11 +281,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Size != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Size);
       }
-      if (ChunkSize != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ChunkSize);
-      }
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Sha256.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -311,11 +311,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Size != 0L) {
         Size = other.Size;
       }
-      if (other.ChunkSize != 0L) {
-        ChunkSize = other.ChunkSize;
-      }
       if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
         Type = other.Type;
+      }
+      if (other.Sha256.Length != 0) {
+        Sha256 = other.Sha256;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -348,11 +348,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 32: {
-            ChunkSize = input.ReadInt64();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileType) input.ReadEnum();
             break;
           }
-          case 40: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileType) input.ReadEnum();
+          case 42: {
+            Sha256 = input.ReadBytes();
             break;
           }
         }
@@ -386,11 +386,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 32: {
-            ChunkSize = input.ReadInt64();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileType) input.ReadEnum();
             break;
           }
-          case 40: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileType) input.ReadEnum();
+          case 42: {
+            Sha256 = input.ReadBytes();
             break;
           }
         }
