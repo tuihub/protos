@@ -152,6 +152,8 @@ message FeedItem {
   FeedImage image = 8;
   // `standard field`
   string published = 9;
+  // must valid when send to client.
+  // if server failed to generate, fallback to server time.
   optional google.protobuf.Timestamp published_parsed = 10;
   // `standard field`
   string updated = 11;

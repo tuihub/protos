@@ -49,7 +49,7 @@ message ListFeedItemsRequest {
 
 message ListFeedItemsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated FeedItemIDWithFeedID items = 2;
+  repeated FeedItemDigest items = 2;
 }
 
 message GroupFeedItemsRequest {
@@ -77,7 +77,7 @@ message GroupFeedItemsRequest {
 message GroupFeedItemsResponse {
   message FeedItemsGroup {
     librarian.v1.TimeRange time_range = 1;
-    repeated FeedItemIDWithFeedID items = 2;
+    repeated FeedItemDigest items = 2;
   }
   repeated FeedItemsGroup groups = 1;
 }
@@ -123,7 +123,23 @@ enum FeedConfigSource {
   FEED_CONFIG_SOURCE_COMMON = 1;
 }
 
-message FeedItemIDWithFeedID {
+// Digest information generated from origin item data
+message FeedItemDigest {
   librarian.v1.InternalID feed_id = 1;
   librarian.v1.InternalID item_id = 2;
+  // `FeedItem.image.url`
+  string avatar_url = 3;
+  // `FeedItem.authors.name`, seperated by `, `
+  string authors = 4;
+  // `FeedItem.published_parsed`
+  google.protobuf.Timestamp published_parsed = 5;
+  // `FeedItem.title`
+  string title = 6;
+  // text generated from `FeedItem.content` or `FeedItem.description`
+  string short_description = 7;
+  // images generated from `FeedItem.content` or `FeedItem.description`
+  // maximum 3
+  repeated string image_urls = 8;
+  // hostname of `FeedItem.link`, e.g. github.com
+  string publish_platform = 9;
 }
