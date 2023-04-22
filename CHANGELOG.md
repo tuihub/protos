@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.19](https://github.com/TuiHub/Protos/compare/v0.2.18...v0.2.19) (2023-04-22)
+
+
+### Bug Fixes
+
+* **yesod:** enrich resp of ListFeedItems & GroupFeedItems ([22bbc01](https://github.com/TuiHub/Protos/commit/22bbc016771e8892467c34abe64c70c87d6700c9))
+
 ## [0.2.18](https://github.com/TuiHub/Protos/compare/v0.2.17...v0.2.18) (2023-04-18)
 
 
