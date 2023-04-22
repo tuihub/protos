@@ -496,14 +496,14 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
 class ListFeedItemsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<FeedItemIDWithFeedID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemIDWithFeedID.create)
+    ..pc<FeedItemDigest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
     ..hasRequiredFields = false
   ;
 
   ListFeedItemsResponse._() : super();
   factory ListFeedItemsResponse({
     $7.PagingResponse? paging,
-    $core.Iterable<FeedItemIDWithFeedID>? items,
+    $core.Iterable<FeedItemDigest>? items,
   }) {
     final _result = create();
     if (paging != null) {
@@ -547,7 +547,7 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
   $7.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<FeedItemIDWithFeedID> get items => $_getList(1);
+  $core.List<FeedItemDigest> get items => $_getList(1);
 }
 
 class GroupFeedItemsRequest extends $pb.GeneratedMessage {
@@ -662,14 +662,14 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
 class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupFeedItemsResponse.FeedItemsGroup', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.TimeRange>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRange', subBuilder: $7.TimeRange.create)
-    ..pc<FeedItemIDWithFeedID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemIDWithFeedID.create)
+    ..pc<FeedItemDigest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
     ..hasRequiredFields = false
   ;
 
   GroupFeedItemsResponse_FeedItemsGroup._() : super();
   factory GroupFeedItemsResponse_FeedItemsGroup({
     $7.TimeRange? timeRange,
-    $core.Iterable<FeedItemIDWithFeedID>? items,
+    $core.Iterable<FeedItemDigest>? items,
   }) {
     final _result = create();
     if (timeRange != null) {
@@ -713,7 +713,7 @@ class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
   $7.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<FeedItemIDWithFeedID> get items => $_getList(1);
+  $core.List<FeedItemDigest> get items => $_getList(1);
 }
 
 class GroupFeedItemsResponse extends $pb.GeneratedMessage {
@@ -1098,17 +1098,31 @@ class FeedConfig extends $pb.GeneratedMessage {
   $10.Timestamp ensureLatestPullTime() => $_ensure(8);
 }
 
-class FeedItemIDWithFeedID extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedItemIDWithFeedID', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class FeedItemDigest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedItemDigest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedId', subBuilder: $7.InternalID.create)
     ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemId', subBuilder: $7.InternalID.create)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatarUrl')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authors')
+    ..aOM<$10.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishedParsed', subBuilder: $10.Timestamp.create)
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'shortDescription')
+    ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrls')
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatform')
     ..hasRequiredFields = false
   ;
 
-  FeedItemIDWithFeedID._() : super();
-  factory FeedItemIDWithFeedID({
+  FeedItemDigest._() : super();
+  factory FeedItemDigest({
     $7.InternalID? feedId,
     $7.InternalID? itemId,
+    $core.String? avatarUrl,
+    $core.String? authors,
+    $10.Timestamp? publishedParsed,
+    $core.String? title,
+    $core.String? shortDescription,
+    $core.Iterable<$core.String>? imageUrls,
+    $core.String? publishPlatform,
   }) {
     final _result = create();
     if (feedId != null) {
@@ -1117,28 +1131,49 @@ class FeedItemIDWithFeedID extends $pb.GeneratedMessage {
     if (itemId != null) {
       _result.itemId = itemId;
     }
+    if (avatarUrl != null) {
+      _result.avatarUrl = avatarUrl;
+    }
+    if (authors != null) {
+      _result.authors = authors;
+    }
+    if (publishedParsed != null) {
+      _result.publishedParsed = publishedParsed;
+    }
+    if (title != null) {
+      _result.title = title;
+    }
+    if (shortDescription != null) {
+      _result.shortDescription = shortDescription;
+    }
+    if (imageUrls != null) {
+      _result.imageUrls.addAll(imageUrls);
+    }
+    if (publishPlatform != null) {
+      _result.publishPlatform = publishPlatform;
+    }
     return _result;
   }
-  factory FeedItemIDWithFeedID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeedItemIDWithFeedID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory FeedItemDigest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeedItemDigest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  FeedItemIDWithFeedID clone() => FeedItemIDWithFeedID()..mergeFromMessage(this);
+  FeedItemDigest clone() => FeedItemDigest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FeedItemIDWithFeedID copyWith(void Function(FeedItemIDWithFeedID) updates) => super.copyWith((message) => updates(message as FeedItemIDWithFeedID)) as FeedItemIDWithFeedID; // ignore: deprecated_member_use
+  FeedItemDigest copyWith(void Function(FeedItemDigest) updates) => super.copyWith((message) => updates(message as FeedItemDigest)) as FeedItemDigest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static FeedItemIDWithFeedID create() => FeedItemIDWithFeedID._();
-  FeedItemIDWithFeedID createEmptyInstance() => create();
-  static $pb.PbList<FeedItemIDWithFeedID> createRepeated() => $pb.PbList<FeedItemIDWithFeedID>();
+  static FeedItemDigest create() => FeedItemDigest._();
+  FeedItemDigest createEmptyInstance() => create();
+  static $pb.PbList<FeedItemDigest> createRepeated() => $pb.PbList<FeedItemDigest>();
   @$core.pragma('dart2js:noInline')
-  static FeedItemIDWithFeedID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedItemIDWithFeedID>(create);
-  static FeedItemIDWithFeedID? _defaultInstance;
+  static FeedItemDigest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedItemDigest>(create);
+  static FeedItemDigest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.InternalID get feedId => $_getN(0);
@@ -1161,5 +1196,64 @@ class FeedItemIDWithFeedID extends $pb.GeneratedMessage {
   void clearItemId() => clearField(2);
   @$pb.TagNumber(2)
   $7.InternalID ensureItemId() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get avatarUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set avatarUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAvatarUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAvatarUrl() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get authors => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set authors($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAuthors() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthors() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $10.Timestamp get publishedParsed => $_getN(4);
+  @$pb.TagNumber(5)
+  set publishedParsed($10.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPublishedParsed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPublishedParsed() => clearField(5);
+  @$pb.TagNumber(5)
+  $10.Timestamp ensurePublishedParsed() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get title => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set title($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTitle() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get shortDescription => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set shortDescription($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasShortDescription() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearShortDescription() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.String> get imageUrls => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.String get publishPlatform => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set publishPlatform($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPublishPlatform() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPublishPlatform() => clearField(9);
 }
 

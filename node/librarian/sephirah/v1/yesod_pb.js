@@ -32,7 +32,7 @@ goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedConfigResponse', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfig', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfigSource', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfigStatus', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.FeedItemIDWithFeedID', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.FeedItemDigest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GetBatchFeedItemsRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GetBatchFeedItemsResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GetFeedItemRequest', null, global);
@@ -415,16 +415,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.librarian.sephirah.v1.FeedItemDigest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.FeedItemDigest.repeatedFields_, null);
 };
-goog.inherits(proto.librarian.sephirah.v1.FeedItemIDWithFeedID, jspb.Message);
+goog.inherits(proto.librarian.sephirah.v1.FeedItemDigest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.librarian.sephirah.v1.FeedItemIDWithFeedID.displayName = 'proto.librarian.sephirah.v1.FeedItemIDWithFeedID';
+  proto.librarian.sephirah.v1.FeedItemDigest.displayName = 'proto.librarian.sephirah.v1.FeedItemDigest';
 }
 
 
@@ -2213,7 +2213,7 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.toObject = function(includeIns
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.librarian.sephirah.v1.FeedItemIDWithFeedID.toObject, includeInstance)
+    proto.librarian.sephirah.v1.FeedItemDigest.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2256,8 +2256,8 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.deserializeBinaryFromReader = 
       msg.setPaging(value);
       break;
     case 2:
-      var value = new proto.librarian.sephirah.v1.FeedItemIDWithFeedID;
-      reader.readMessage(value,proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinaryFromReader);
+      var value = new proto.librarian.sephirah.v1.FeedItemDigest;
+      reader.readMessage(value,proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     default:
@@ -2302,7 +2302,7 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.serializeBinaryToWriter = func
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.librarian.sephirah.v1.FeedItemIDWithFeedID.serializeBinaryToWriter
+      proto.librarian.sephirah.v1.FeedItemDigest.serializeBinaryToWriter
     );
   }
 };
@@ -2346,17 +2346,17 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.hasPaging = function
 
 
 /**
- * repeated FeedItemIDWithFeedID items = 2;
- * @return {!Array<!proto.librarian.sephirah.v1.FeedItemIDWithFeedID>}
+ * repeated FeedItemDigest items = 2;
+ * @return {!Array<!proto.librarian.sephirah.v1.FeedItemDigest>}
  */
 proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.librarian.sephirah.v1.FeedItemIDWithFeedID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.FeedItemIDWithFeedID, 2));
+  return /** @type{!Array<!proto.librarian.sephirah.v1.FeedItemDigest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.FeedItemDigest, 2));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.sephirah.v1.FeedItemIDWithFeedID>} value
+ * @param {!Array<!proto.librarian.sephirah.v1.FeedItemDigest>} value
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsResponse} returns this
 */
 proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.setItemsList = function(value) {
@@ -2365,12 +2365,12 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.setItemsList = funct
 
 
 /**
- * @param {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID=} opt_value
+ * @param {!proto.librarian.sephirah.v1.FeedItemDigest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID}
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest}
  */
 proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.FeedItemIDWithFeedID, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.FeedItemDigest, opt_index);
 };
 
 
@@ -2996,7 +2996,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.toObject = fun
   var f, obj = {
     timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    proto.librarian.sephirah.v1.FeedItemIDWithFeedID.toObject, includeInstance)
+    proto.librarian.sephirah.v1.FeedItemDigest.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3039,8 +3039,8 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.deserializeBin
       msg.setTimeRange(value);
       break;
     case 2:
-      var value = new proto.librarian.sephirah.v1.FeedItemIDWithFeedID;
-      reader.readMessage(value,proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinaryFromReader);
+      var value = new proto.librarian.sephirah.v1.FeedItemDigest;
+      reader.readMessage(value,proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     default:
@@ -3085,7 +3085,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.serializeBinar
     writer.writeRepeatedMessage(
       2,
       f,
-      proto.librarian.sephirah.v1.FeedItemIDWithFeedID.serializeBinaryToWriter
+      proto.librarian.sephirah.v1.FeedItemDigest.serializeBinaryToWriter
     );
   }
 };
@@ -3129,17 +3129,17 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.hasT
 
 
 /**
- * repeated FeedItemIDWithFeedID items = 2;
- * @return {!Array<!proto.librarian.sephirah.v1.FeedItemIDWithFeedID>}
+ * repeated FeedItemDigest items = 2;
+ * @return {!Array<!proto.librarian.sephirah.v1.FeedItemDigest>}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.librarian.sephirah.v1.FeedItemIDWithFeedID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.FeedItemIDWithFeedID, 2));
+  return /** @type{!Array<!proto.librarian.sephirah.v1.FeedItemDigest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.FeedItemDigest, 2));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.sephirah.v1.FeedItemIDWithFeedID>} value
+ * @param {!Array<!proto.librarian.sephirah.v1.FeedItemDigest>} value
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup} returns this
 */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.setItemsList = function(value) {
@@ -3148,12 +3148,12 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.setI
 
 
 /**
- * @param {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID=} opt_value
+ * @param {!proto.librarian.sephirah.v1.FeedItemDigest=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID}
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.FeedItemIDWithFeedID, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.FeedItemDigest, opt_index);
 };
 
 
@@ -4307,6 +4307,13 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullTime = function() 
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.repeatedFields_ = [8];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4322,8 +4329,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.FeedItemIDWithFeedID.toObject(opt_includeInstance, this);
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.FeedItemDigest.toObject(opt_includeInstance, this);
 };
 
 
@@ -4332,14 +4339,21 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} msg The msg instance to transform.
+ * @param {!proto.librarian.sephirah.v1.FeedItemDigest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.toObject = function(includeInstance, msg) {
+proto.librarian.sephirah.v1.FeedItemDigest.toObject = function(includeInstance, msg) {
   var f, obj = {
     feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    itemId: (f = msg.getItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    itemId: (f = msg.getItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    avatarUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    authors: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    publishedParsed: (f = msg.getPublishedParsed()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    shortDescription: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+    publishPlatform: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -4353,23 +4367,23 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.toObject = function(includeInst
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID}
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinary = function(bytes) {
+proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.FeedItemIDWithFeedID;
-  return proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.librarian.sephirah.v1.FeedItemDigest;
+  return proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} msg The message object to deserialize into.
+ * @param {!proto.librarian.sephirah.v1.FeedItemDigest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID}
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinaryFromReader = function(msg, reader) {
+proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -4386,6 +4400,35 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinaryFromReader = f
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.setItemId(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAvatarUrl(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAuthors(value);
+      break;
+    case 5:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setPublishedParsed(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setShortDescription(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addImageUrls(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPublishPlatform(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4399,9 +4442,9 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.deserializeBinaryFromReader = f
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.serializeBinary = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.FeedItemIDWithFeedID.serializeBinaryToWriter(this, writer);
+  proto.librarian.sephirah.v1.FeedItemDigest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4409,11 +4452,11 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.serializeBinary = fun
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} message
+ * @param {!proto.librarian.sephirah.v1.FeedItemDigest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.serializeBinaryToWriter = function(message, writer) {
+proto.librarian.sephirah.v1.FeedItemDigest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFeedId();
   if (f != null) {
@@ -4431,6 +4474,56 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.serializeBinaryToWriter = funct
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
+  f = message.getAvatarUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getAuthors();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPublishedParsed();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getShortDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getImageUrlsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      8,
+      f
+    );
+  }
+  f = message.getPublishPlatform();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
 };
 
 
@@ -4438,7 +4531,7 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.serializeBinaryToWriter = funct
  * optional librarian.v1.InternalID feed_id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.getFeedId = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getFeedId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -4446,18 +4539,18 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.getFeedId = function(
 
 /**
  * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} returns this
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
 */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.setFeedId = function(value) {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setFeedId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} returns this
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.clearFeedId = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.clearFeedId = function() {
   return this.setFeedId(undefined);
 };
 
@@ -4466,7 +4559,7 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.clearFeedId = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.hasFeedId = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.hasFeedId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -4475,7 +4568,7 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.hasFeedId = function(
  * optional librarian.v1.InternalID item_id = 2;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.getItemId = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getItemId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 2));
 };
@@ -4483,18 +4576,18 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.getItemId = function(
 
 /**
  * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} returns this
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
 */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.setItemId = function(value) {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setItemId = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.FeedItemIDWithFeedID} returns this
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.clearItemId = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.clearItemId = function() {
   return this.setItemId(undefined);
 };
 
@@ -4503,8 +4596,172 @@ proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.clearItemId = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.FeedItemIDWithFeedID.prototype.hasItemId = function() {
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.hasItemId = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string avatar_url = 3;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getAvatarUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setAvatarUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string authors = 4;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getAuthors = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setAuthors = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp published_parsed = 5;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getPublishedParsed = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+*/
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setPublishedParsed = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.clearPublishedParsed = function() {
+  return this.setPublishedParsed(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.hasPublishedParsed = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string title = 6;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setTitle = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string short_description = 7;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getShortDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setShortDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * repeated string image_urls = 8;
+ * @return {!Array<string>}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getImageUrlsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setImageUrlsList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.addImageUrls = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.clearImageUrlsList = function() {
+  return this.setImageUrlsList([]);
+};
+
+
+/**
+ * optional string publish_platform = 9;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getPublishPlatform = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setPublishPlatform = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

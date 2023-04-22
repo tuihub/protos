@@ -1112,7 +1112,9 @@ type FeedItem struct {
 	// `standard field`
 	Image *FeedImage `protobuf:"bytes,8,opt,name=image,proto3" json:"image,omitempty"`
 	// `standard field`
-	Published       string                 `protobuf:"bytes,9,opt,name=published,proto3" json:"published,omitempty"`
+	Published string `protobuf:"bytes,9,opt,name=published,proto3" json:"published,omitempty"`
+	// must valid when send to client.
+	// if server failed to generate, fallback to server time.
 	PublishedParsed *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=published_parsed,json=publishedParsed,proto3,oneof" json:"published_parsed,omitempty"`
 	// `standard field`
 	Updated       string                 `protobuf:"bytes,11,opt,name=updated,proto3" json:"updated,omitempty"`

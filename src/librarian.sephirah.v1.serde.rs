@@ -2390,7 +2390,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfigStatus {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
-impl serde::Serialize for FeedItemIdWithFeedId {
+impl serde::Serialize for FeedItemDigest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -2404,17 +2404,59 @@ impl serde::Serialize for FeedItemIdWithFeedId {
         if self.item_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedItemIDWithFeedID", len)?;
+        if !self.avatar_url.is_empty() {
+            len += 1;
+        }
+        if !self.authors.is_empty() {
+            len += 1;
+        }
+        if self.published_parsed.is_some() {
+            len += 1;
+        }
+        if !self.title.is_empty() {
+            len += 1;
+        }
+        if !self.short_description.is_empty() {
+            len += 1;
+        }
+        if !self.image_urls.is_empty() {
+            len += 1;
+        }
+        if !self.publish_platform.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedItemDigest", len)?;
         if let Some(v) = self.feed_id.as_ref() {
             struct_ser.serialize_field("feedId", v)?;
         }
         if let Some(v) = self.item_id.as_ref() {
             struct_ser.serialize_field("itemId", v)?;
         }
+        if !self.avatar_url.is_empty() {
+            struct_ser.serialize_field("avatarUrl", &self.avatar_url)?;
+        }
+        if !self.authors.is_empty() {
+            struct_ser.serialize_field("authors", &self.authors)?;
+        }
+        if let Some(v) = self.published_parsed.as_ref() {
+            struct_ser.serialize_field("publishedParsed", v)?;
+        }
+        if !self.title.is_empty() {
+            struct_ser.serialize_field("title", &self.title)?;
+        }
+        if !self.short_description.is_empty() {
+            struct_ser.serialize_field("shortDescription", &self.short_description)?;
+        }
+        if !self.image_urls.is_empty() {
+            struct_ser.serialize_field("imageUrls", &self.image_urls)?;
+        }
+        if !self.publish_platform.is_empty() {
+            struct_ser.serialize_field("publishPlatform", &self.publish_platform)?;
+        }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for FeedItemIdWithFeedId {
+impl<'de> serde::Deserialize<'de> for FeedItemDigest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -2423,12 +2465,26 @@ impl<'de> serde::Deserialize<'de> for FeedItemIdWithFeedId {
         const FIELDS: &[&str] = &[
             "feedId",
             "itemId",
+            "avatarUrl",
+            "authors",
+            "publishedParsed",
+            "title",
+            "shortDescription",
+            "imageUrls",
+            "publishPlatform",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             FeedId,
             ItemId,
+            AvatarUrl,
+            Authors,
+            PublishedParsed,
+            Title,
+            ShortDescription,
+            ImageUrls,
+            PublishPlatform,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2452,6 +2508,13 @@ impl<'de> serde::Deserialize<'de> for FeedItemIdWithFeedId {
                         match value {
                             "feedId" => Ok(GeneratedField::FeedId),
                             "itemId" => Ok(GeneratedField::ItemId),
+                            "avatarUrl" => Ok(GeneratedField::AvatarUrl),
+                            "authors" => Ok(GeneratedField::Authors),
+                            "publishedParsed" => Ok(GeneratedField::PublishedParsed),
+                            "title" => Ok(GeneratedField::Title),
+                            "shortDescription" => Ok(GeneratedField::ShortDescription),
+                            "imageUrls" => Ok(GeneratedField::ImageUrls),
+                            "publishPlatform" => Ok(GeneratedField::PublishPlatform),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2461,18 +2524,25 @@ impl<'de> serde::Deserialize<'de> for FeedItemIdWithFeedId {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = FeedItemIdWithFeedId;
+            type Value = FeedItemDigest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.FeedItemIDWithFeedID")
+                formatter.write_str("struct librarian.sephirah.v1.FeedItemDigest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeedItemIdWithFeedId, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeedItemDigest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut feed_id__ = None;
                 let mut item_id__ = None;
+                let mut avatar_url__ = None;
+                let mut authors__ = None;
+                let mut published_parsed__ = None;
+                let mut title__ = None;
+                let mut short_description__ = None;
+                let mut image_urls__ = None;
+                let mut publish_platform__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::FeedId => {
@@ -2487,15 +2557,64 @@ impl<'de> serde::Deserialize<'de> for FeedItemIdWithFeedId {
                             }
                             item_id__ = Some(map.next_value()?);
                         }
+                        GeneratedField::AvatarUrl => {
+                            if avatar_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("avatarUrl"));
+                            }
+                            avatar_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Authors => {
+                            if authors__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("authors"));
+                            }
+                            authors__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::PublishedParsed => {
+                            if published_parsed__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publishedParsed"));
+                            }
+                            published_parsed__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Title => {
+                            if title__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("title"));
+                            }
+                            title__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::ShortDescription => {
+                            if short_description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("shortDescription"));
+                            }
+                            short_description__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::ImageUrls => {
+                            if image_urls__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("imageUrls"));
+                            }
+                            image_urls__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::PublishPlatform => {
+                            if publish_platform__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publishPlatform"));
+                            }
+                            publish_platform__ = Some(map.next_value()?);
+                        }
                     }
                 }
-                Ok(FeedItemIdWithFeedId {
+                Ok(FeedItemDigest {
                     feed_id: feed_id__,
                     item_id: item_id__,
+                    avatar_url: avatar_url__.unwrap_or_default(),
+                    authors: authors__.unwrap_or_default(),
+                    published_parsed: published_parsed__,
+                    title: title__.unwrap_or_default(),
+                    short_description: short_description__.unwrap_or_default(),
+                    image_urls: image_urls__.unwrap_or_default(),
+                    publish_platform: publish_platform__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.FeedItemIDWithFeedID", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.FeedItemDigest", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for FileChunk {

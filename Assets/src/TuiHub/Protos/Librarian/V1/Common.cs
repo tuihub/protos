@@ -4097,6 +4097,10 @@ namespace TuiHub.Protos.Librarian.V1 {
     /// <summary>Field number for the "published_parsed" field.</summary>
     public const int PublishedParsedFieldNumber = 10;
     private global::Google.Protobuf.WellKnownTypes.Timestamp publishedParsed_;
+    /// <summary>
+    /// must valid when send to client.
+    /// if server failed to generate, fallback to server time.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp PublishedParsed {

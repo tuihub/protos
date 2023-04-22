@@ -249,9 +249,9 @@ export class ListFeedItemsResponse extends jspb.Message {
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
   clearItemsList(): void;
-  getItemsList(): Array<FeedItemIDWithFeedID>;
-  setItemsList(value: Array<FeedItemIDWithFeedID>): void;
-  addItems(value?: FeedItemIDWithFeedID, index?: number): FeedItemIDWithFeedID;
+  getItemsList(): Array<FeedItemDigest>;
+  setItemsList(value: Array<FeedItemDigest>): void;
+  addItems(value?: FeedItemDigest, index?: number): FeedItemDigest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeedItemsResponse.AsObject;
@@ -266,7 +266,7 @@ export class ListFeedItemsResponse extends jspb.Message {
 export namespace ListFeedItemsResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    itemsList: Array<FeedItemIDWithFeedID.AsObject>,
+    itemsList: Array<FeedItemDigest.AsObject>,
   }
 }
 
@@ -363,9 +363,9 @@ export namespace GroupFeedItemsResponse {
     setTimeRange(value?: librarian_v1_common_pb.TimeRange): void;
 
     clearItemsList(): void;
-    getItemsList(): Array<FeedItemIDWithFeedID>;
-    setItemsList(value: Array<FeedItemIDWithFeedID>): void;
-    addItems(value?: FeedItemIDWithFeedID, index?: number): FeedItemIDWithFeedID;
+    getItemsList(): Array<FeedItemDigest>;
+    setItemsList(value: Array<FeedItemDigest>): void;
+    addItems(value?: FeedItemDigest, index?: number): FeedItemDigest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): FeedItemsGroup.AsObject;
@@ -380,7 +380,7 @@ export namespace GroupFeedItemsResponse {
   export namespace FeedItemsGroup {
     export type AsObject = {
       timeRange?: librarian_v1_common_pb.TimeRange.AsObject,
-      itemsList: Array<FeedItemIDWithFeedID.AsObject>,
+      itemsList: Array<FeedItemDigest.AsObject>,
     }
   }
 }
@@ -535,7 +535,7 @@ export namespace FeedConfig {
   }
 }
 
-export class FeedItemIDWithFeedID extends jspb.Message {
+export class FeedItemDigest extends jspb.Message {
   hasFeedId(): boolean;
   clearFeedId(): void;
   getFeedId(): librarian_v1_common_pb.InternalID | undefined;
@@ -546,20 +546,52 @@ export class FeedItemIDWithFeedID extends jspb.Message {
   getItemId(): librarian_v1_common_pb.InternalID | undefined;
   setItemId(value?: librarian_v1_common_pb.InternalID): void;
 
+  getAvatarUrl(): string;
+  setAvatarUrl(value: string): void;
+
+  getAuthors(): string;
+  setAuthors(value: string): void;
+
+  hasPublishedParsed(): boolean;
+  clearPublishedParsed(): void;
+  getPublishedParsed(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setPublishedParsed(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getShortDescription(): string;
+  setShortDescription(value: string): void;
+
+  clearImageUrlsList(): void;
+  getImageUrlsList(): Array<string>;
+  setImageUrlsList(value: Array<string>): void;
+  addImageUrls(value: string, index?: number): string;
+
+  getPublishPlatform(): string;
+  setPublishPlatform(value: string): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeedItemIDWithFeedID.AsObject;
-  static toObject(includeInstance: boolean, msg: FeedItemIDWithFeedID): FeedItemIDWithFeedID.AsObject;
+  toObject(includeInstance?: boolean): FeedItemDigest.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedItemDigest): FeedItemDigest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FeedItemIDWithFeedID, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeedItemIDWithFeedID;
-  static deserializeBinaryFromReader(message: FeedItemIDWithFeedID, reader: jspb.BinaryReader): FeedItemIDWithFeedID;
+  static serializeBinaryToWriter(message: FeedItemDigest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedItemDigest;
+  static deserializeBinaryFromReader(message: FeedItemDigest, reader: jspb.BinaryReader): FeedItemDigest;
 }
 
-export namespace FeedItemIDWithFeedID {
+export namespace FeedItemDigest {
   export type AsObject = {
     feedId?: librarian_v1_common_pb.InternalID.AsObject,
     itemId?: librarian_v1_common_pb.InternalID.AsObject,
+    avatarUrl: string,
+    authors: string,
+    publishedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    title: string,
+    shortDescription: string,
+    imageUrlsList: Array<string>,
+    publishPlatform: string,
   }
 }
 

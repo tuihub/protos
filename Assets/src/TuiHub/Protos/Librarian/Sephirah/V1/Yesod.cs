@@ -56,54 +56,60 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "aF9wbGF0Zm9ybV9maWx0ZXIYBCADKAlSFXB1Ymxpc2hQbGF0Zm9ybUZpbHRl",
             "chIdCgp0YWdfZmlsdGVyGAUgAygJUgl0YWdGaWx0ZXISRQoScHVibGlzaF90",
             "aW1lX3JhbmdlGAYgASgLMhcubGlicmFyaWFuLnYxLlRpbWVSYW5nZVIQcHVi",
-            "bGlzaFRpbWVSYW5nZSKQAQoVTGlzdEZlZWRJdGVtc1Jlc3BvbnNlEjQKBnBh",
+            "bGlzaFRpbWVSYW5nZSKKAQoVTGlzdEZlZWRJdGVtc1Jlc3BvbnNlEjQKBnBh",
             "Z2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFn",
-            "aW5nEkEKBWl0ZW1zGAIgAygLMisubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZl",
-            "ZWRJdGVtSURXaXRoRmVlZElEUgVpdGVtcyKbBAoVR3JvdXBGZWVkSXRlbXNS",
-            "ZXF1ZXN0Ek8KCGdyb3VwX2J5GAEgASgOMjQubGlicmFyaWFuLnNlcGhpcmFo",
-            "LnYxLkdyb3VwRmVlZEl0ZW1zUmVxdWVzdC5Hcm91cEJ5Ugdncm91cEJ5Ej4K",
-            "DmZlZWRfaWRfZmlsdGVyGAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFs",
-            "SURSDGZlZWRJZEZpbHRlchJCChBhdXRob3JfaWRfZmlsdGVyGAMgAygLMhgu",
-            "bGlicmFyaWFuLnYxLkludGVybmFsSURSDmF1dGhvcklkRmlsdGVyEjYKF3B1",
-            "Ymxpc2hfcGxhdGZvcm1fZmlsdGVyGAQgAygJUhVwdWJsaXNoUGxhdGZvcm1G",
-            "aWx0ZXISHQoKdGFnX2ZpbHRlchgFIAMoCVIJdGFnRmlsdGVyEkUKEnB1Ymxp",
-            "c2hfdGltZV9yYW5nZRgGIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VS",
-            "EHB1Ymxpc2hUaW1lUmFuZ2USIgoKZ3JvdXBfc2l6ZRgHIAEoBUgAUglncm91",
-            "cFNpemWIAQEiXAoHR3JvdXBCeRIYChRHUk9VUF9CWV9VTlNQRUNJRklFRBAA",
-            "EhEKDUdST1VQX0JZX1lFQVIQARISCg5HUk9VUF9CWV9NT05USBACEhAKDEdS",
-            "T1VQX0JZX0RBWRADQg0KC19ncm91cF9zaXplIvwBChZHcm91cEZlZWRJdGVt",
-            "c1Jlc3BvbnNlElQKBmdyb3VwcxgBIAMoCzI8LmxpYnJhcmlhbi5zZXBoaXJh",
-            "aC52MS5Hcm91cEZlZWRJdGVtc1Jlc3BvbnNlLkZlZWRJdGVtc0dyb3VwUgZn",
-            "cm91cHMaiwEKDkZlZWRJdGVtc0dyb3VwEjYKCnRpbWVfcmFuZ2UYASABKAsy",
-            "Fy5saWJyYXJpYW4udjEuVGltZVJhbmdlUgl0aW1lUmFuZ2USQQoFaXRlbXMY",
-            "AiADKAsyKy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmVlZEl0ZW1JRFdpdGhG",
-            "ZWVkSURSBWl0ZW1zIj4KEkdldEZlZWRJdGVtUmVxdWVzdBIoCgJpZBgBIAEo",
-            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCJBChNHZXRGZWVkSXRl",
-            "bVJlc3BvbnNlEioKBGl0ZW0YASABKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0",
-            "ZW1SBGl0ZW0iRgoYR2V0QmF0Y2hGZWVkSXRlbXNSZXF1ZXN0EioKA2lkcxgB",
-            "IAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgNpZHMiSQoZR2V0QmF0",
-            "Y2hGZWVkSXRlbXNSZXNwb25zZRIsCgVpdGVtcxgBIAMoCzIWLmxpYnJhcmlh",
-            "bi52MS5GZWVkSXRlbVIFaXRlbXMi3AMKCkZlZWRDb25maWcSKAoCaWQYASAB",
-            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEo",
-            "CVIEbmFtZRIZCghmZWVkX3VybBgDIAEoCVIHZmVlZFVybBI/Cg5hdXRob3Jf",
-            "YWNjb3VudBgEIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg1hdXRo",
-            "b3JBY2NvdW50Ej8KBnNvdXJjZRgFIAEoDjInLmxpYnJhcmlhbi5zZXBoaXJh",
-            "aC52MS5GZWVkQ29uZmlnU291cmNlUgZzb3VyY2USPwoGc3RhdHVzGAYgASgO",
-            "MicubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZlZWRDb25maWdTdGF0dXNSBnN0",
-            "YXR1cxI+Cg1wdWxsX2ludGVydmFsGAcgASgLMhkuZ29vZ2xlLnByb3RvYnVm",
-            "LkR1cmF0aW9uUgxwdWxsSW50ZXJ2YWwSEgoEdGFncxgIIAMoCVIEdGFncxJJ",
-            "ChBsYXRlc3RfcHVsbF90aW1lGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcEgAUg5sYXRlc3RQdWxsVGltZYgBAUITChFfbGF0ZXN0X3B1bGxf",
-            "dGltZSJ8ChRGZWVkSXRlbUlEV2l0aEZlZWRJRBIxCgdmZWVkX2lkGAEgASgL",
-            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBmZlZWRJZBIxCgdpdGVtX2lk",
-            "GAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBml0ZW1JZCp1ChBG",
-            "ZWVkQ29uZmlnU3RhdHVzEiIKHkZFRURfQ09ORklHX1NUQVRVU19VTlNQRUNJ",
-            "RklFRBAAEh0KGUZFRURfQ09ORklHX1NUQVRVU19BQ1RJVkUQARIeChpGRUVE",
-            "X0NPTkZJR19TVEFUVVNfU1VTUEVORBACKlUKEEZlZWRDb25maWdTb3VyY2US",
-            "IgoeRkVFRF9DT05GSUdfU09VUkNFX1VOU1BFQ0lGSUVEEAASHQoZRkVFRF9D",
-            "T05GSUdfU09VUkNFX0NPTU1PThABQl1aNWdpdGh1Yi5jb20vdHVpaHViL3By",
-            "b3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlBy",
-            "b3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "aW5nEjsKBWl0ZW1zGAIgAygLMiUubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZl",
+            "ZWRJdGVtRGlnZXN0UgVpdGVtcyKbBAoVR3JvdXBGZWVkSXRlbXNSZXF1ZXN0",
+            "Ek8KCGdyb3VwX2J5GAEgASgOMjQubGlicmFyaWFuLnNlcGhpcmFoLnYxLkdy",
+            "b3VwRmVlZEl0ZW1zUmVxdWVzdC5Hcm91cEJ5Ugdncm91cEJ5Ej4KDmZlZWRf",
+            "aWRfZmlsdGVyGAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGZl",
+            "ZWRJZEZpbHRlchJCChBhdXRob3JfaWRfZmlsdGVyGAMgAygLMhgubGlicmFy",
+            "aWFuLnYxLkludGVybmFsSURSDmF1dGhvcklkRmlsdGVyEjYKF3B1Ymxpc2hf",
+            "cGxhdGZvcm1fZmlsdGVyGAQgAygJUhVwdWJsaXNoUGxhdGZvcm1GaWx0ZXIS",
+            "HQoKdGFnX2ZpbHRlchgFIAMoCVIJdGFnRmlsdGVyEkUKEnB1Ymxpc2hfdGlt",
+            "ZV9yYW5nZRgGIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VSEHB1Ymxp",
+            "c2hUaW1lUmFuZ2USIgoKZ3JvdXBfc2l6ZRgHIAEoBUgAUglncm91cFNpemWI",
+            "AQEiXAoHR3JvdXBCeRIYChRHUk9VUF9CWV9VTlNQRUNJRklFRBAAEhEKDUdS",
+            "T1VQX0JZX1lFQVIQARISCg5HUk9VUF9CWV9NT05USBACEhAKDEdST1VQX0JZ",
+            "X0RBWRADQg0KC19ncm91cF9zaXplIvYBChZHcm91cEZlZWRJdGVtc1Jlc3Bv",
+            "bnNlElQKBmdyb3VwcxgBIAMoCzI8LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5H",
+            "cm91cEZlZWRJdGVtc1Jlc3BvbnNlLkZlZWRJdGVtc0dyb3VwUgZncm91cHMa",
+            "hQEKDkZlZWRJdGVtc0dyb3VwEjYKCnRpbWVfcmFuZ2UYASABKAsyFy5saWJy",
+            "YXJpYW4udjEuVGltZVJhbmdlUgl0aW1lUmFuZ2USOwoFaXRlbXMYAiADKAsy",
+            "JS5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmVlZEl0ZW1EaWdlc3RSBWl0ZW1z",
+            "Ij4KEkdldEZlZWRJdGVtUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
+            "bi52MS5JbnRlcm5hbElEUgJpZCJBChNHZXRGZWVkSXRlbVJlc3BvbnNlEioK",
+            "BGl0ZW0YASABKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0ZW1SBGl0ZW0iRgoY",
+            "R2V0QmF0Y2hGZWVkSXRlbXNSZXF1ZXN0EioKA2lkcxgBIAMoCzIYLmxpYnJh",
+            "cmlhbi52MS5JbnRlcm5hbElEUgNpZHMiSQoZR2V0QmF0Y2hGZWVkSXRlbXNS",
+            "ZXNwb25zZRIsCgVpdGVtcxgBIAMoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRl",
+            "bVIFaXRlbXMi3AMKCkZlZWRDb25maWcSKAoCaWQYASABKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIZCghm",
+            "ZWVkX3VybBgDIAEoCVIHZmVlZFVybBI/Cg5hdXRob3JfYWNjb3VudBgEIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg1hdXRob3JBY2NvdW50Ej8K",
+            "BnNvdXJjZRgFIAEoDjInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GZWVkQ29u",
+            "ZmlnU291cmNlUgZzb3VyY2USPwoGc3RhdHVzGAYgASgOMicubGlicmFyaWFu",
+            "LnNlcGhpcmFoLnYxLkZlZWRDb25maWdTdGF0dXNSBnN0YXR1cxI+Cg1wdWxs",
+            "X2ludGVydmFsGAcgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgxw",
+            "dWxsSW50ZXJ2YWwSEgoEdGFncxgIIAMoCVIEdGFncxJJChBsYXRlc3RfcHVs",
+            "bF90aW1lGAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUg5s",
+            "YXRlc3RQdWxsVGltZYgBAUITChFfbGF0ZXN0X3B1bGxfdGltZSKDAwoORmVl",
+            "ZEl0ZW1EaWdlc3QSMQoHZmVlZF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5J",
+            "bnRlcm5hbElEUgZmZWVkSWQSMQoHaXRlbV9pZBgCIAEoCzIYLmxpYnJhcmlh",
+            "bi52MS5JbnRlcm5hbElEUgZpdGVtSWQSHQoKYXZhdGFyX3VybBgDIAEoCVIJ",
+            "YXZhdGFyVXJsEhgKB2F1dGhvcnMYBCABKAlSB2F1dGhvcnMSRQoQcHVibGlz",
+            "aGVkX3BhcnNlZBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS",
+            "D3B1Ymxpc2hlZFBhcnNlZBIUCgV0aXRsZRgGIAEoCVIFdGl0bGUSKwoRc2hv",
+            "cnRfZGVzY3JpcHRpb24YByABKAlSEHNob3J0RGVzY3JpcHRpb24SHQoKaW1h",
+            "Z2VfdXJscxgIIAMoCVIJaW1hZ2VVcmxzEikKEHB1Ymxpc2hfcGxhdGZvcm0Y",
+            "CSABKAlSD3B1Ymxpc2hQbGF0Zm9ybSp1ChBGZWVkQ29uZmlnU3RhdHVzEiIK",
+            "HkZFRURfQ09ORklHX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGUZFRURfQ09O",
+            "RklHX1NUQVRVU19BQ1RJVkUQARIeChpGRUVEX0NPTkZJR19TVEFUVVNfU1VT",
+            "UEVORBACKlUKEEZlZWRDb25maWdTb3VyY2USIgoeRkVFRF9DT05GSUdfU09V",
+            "UkNFX1VOU1BFQ0lGSUVEEAASHQoZRkVFRF9DT05GSUdfU09VUkNFX0NPTU1P",
+            "ThABQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFu",
+            "L3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2Vw",
+            "aGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -122,7 +128,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetBatchFeedItemsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetBatchFeedItemsRequest.Parser, new[]{ "Ids" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetBatchFeedItemsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetBatchFeedItemsResponse.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig.Parser, new[]{ "Id", "Name", "FeedUrl", "AuthorAccount", "Source", "Status", "PullInterval", "Tags", "LatestPullTime" }, new[]{ "LatestPullTime" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID.Parser, new[]{ "FeedId", "ItemId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest.Parser, new[]{ "FeedId", "ItemId", "AvatarUrl", "Authors", "PublishedParsed", "Title", "ShortDescription", "ImageUrls", "PublishPlatform" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2078,12 +2084,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID> items_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest> items_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID> Items {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest> Items {
       get { return items_; }
     }
 
@@ -2899,12 +2905,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
         /// <summary>Field number for the "items" field.</summary>
         public const int ItemsFieldNumber = 2;
-        private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID> _repeated_items_codec
-            = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID.Parser);
-        private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID> items_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID>();
+        private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest> _repeated_items_codec
+            = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest.Parser);
+        private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest> items_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemIDWithFeedID> Items {
+        public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest> Items {
           get { return items_; }
         }
 
@@ -4337,16 +4343,19 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   }
 
-  public sealed partial class FeedItemIDWithFeedID : pb::IMessage<FeedItemIDWithFeedID>
+  /// <summary>
+  /// Digest information generated from origin item data
+  /// </summary>
+  public sealed partial class FeedItemDigest : pb::IMessage<FeedItemDigest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FeedItemIDWithFeedID> _parser = new pb::MessageParser<FeedItemIDWithFeedID>(() => new FeedItemIDWithFeedID());
+    private static readonly pb::MessageParser<FeedItemDigest> _parser = new pb::MessageParser<FeedItemDigest>(() => new FeedItemDigest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<FeedItemIDWithFeedID> Parser { get { return _parser; } }
+    public static pb::MessageParser<FeedItemDigest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4362,7 +4371,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FeedItemIDWithFeedID() {
+    public FeedItemDigest() {
       OnConstruction();
     }
 
@@ -4370,16 +4379,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FeedItemIDWithFeedID(FeedItemIDWithFeedID other) : this() {
+    public FeedItemDigest(FeedItemDigest other) : this() {
       feedId_ = other.feedId_ != null ? other.feedId_.Clone() : null;
       itemId_ = other.itemId_ != null ? other.itemId_.Clone() : null;
+      avatarUrl_ = other.avatarUrl_;
+      authors_ = other.authors_;
+      publishedParsed_ = other.publishedParsed_ != null ? other.publishedParsed_.Clone() : null;
+      title_ = other.title_;
+      shortDescription_ = other.shortDescription_;
+      imageUrls_ = other.imageUrls_.Clone();
+      publishPlatform_ = other.publishPlatform_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FeedItemIDWithFeedID Clone() {
-      return new FeedItemIDWithFeedID(this);
+    public FeedItemDigest Clone() {
+      return new FeedItemDigest(this);
     }
 
     /// <summary>Field number for the "feed_id" field.</summary>
@@ -4406,15 +4422,120 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "avatar_url" field.</summary>
+    public const int AvatarUrlFieldNumber = 3;
+    private string avatarUrl_ = "";
+    /// <summary>
+    /// `FeedItem.image.url`
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as FeedItemIDWithFeedID);
+    public string AvatarUrl {
+      get { return avatarUrl_; }
+      set {
+        avatarUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "authors" field.</summary>
+    public const int AuthorsFieldNumber = 4;
+    private string authors_ = "";
+    /// <summary>
+    /// `FeedItem.authors.name`, seperated by `, `
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Authors {
+      get { return authors_; }
+      set {
+        authors_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "published_parsed" field.</summary>
+    public const int PublishedParsedFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp publishedParsed_;
+    /// <summary>
+    /// `FeedItem.published_parsed`
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp PublishedParsed {
+      get { return publishedParsed_; }
+      set {
+        publishedParsed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "title" field.</summary>
+    public const int TitleFieldNumber = 6;
+    private string title_ = "";
+    /// <summary>
+    /// `FeedItem.title`
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Title {
+      get { return title_; }
+      set {
+        title_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "short_description" field.</summary>
+    public const int ShortDescriptionFieldNumber = 7;
+    private string shortDescription_ = "";
+    /// <summary>
+    /// text generated from `FeedItem.content` or `FeedItem.description`
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ShortDescription {
+      get { return shortDescription_; }
+      set {
+        shortDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "image_urls" field.</summary>
+    public const int ImageUrlsFieldNumber = 8;
+    private static readonly pb::FieldCodec<string> _repeated_imageUrls_codec
+        = pb::FieldCodec.ForString(66);
+    private readonly pbc::RepeatedField<string> imageUrls_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// images generated from `FeedItem.content` or `FeedItem.description`
+    /// maximum 3
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> ImageUrls {
+      get { return imageUrls_; }
+    }
+
+    /// <summary>Field number for the "publish_platform" field.</summary>
+    public const int PublishPlatformFieldNumber = 9;
+    private string publishPlatform_ = "";
+    /// <summary>
+    /// hostname of `FeedItem.link`, e.g. github.com
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PublishPlatform {
+      get { return publishPlatform_; }
+      set {
+        publishPlatform_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(FeedItemIDWithFeedID other) {
+    public override bool Equals(object other) {
+      return Equals(other as FeedItemDigest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FeedItemDigest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -4423,6 +4544,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (!object.Equals(FeedId, other.FeedId)) return false;
       if (!object.Equals(ItemId, other.ItemId)) return false;
+      if (AvatarUrl != other.AvatarUrl) return false;
+      if (Authors != other.Authors) return false;
+      if (!object.Equals(PublishedParsed, other.PublishedParsed)) return false;
+      if (Title != other.Title) return false;
+      if (ShortDescription != other.ShortDescription) return false;
+      if(!imageUrls_.Equals(other.imageUrls_)) return false;
+      if (PublishPlatform != other.PublishPlatform) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4432,6 +4560,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       if (feedId_ != null) hash ^= FeedId.GetHashCode();
       if (itemId_ != null) hash ^= ItemId.GetHashCode();
+      if (AvatarUrl.Length != 0) hash ^= AvatarUrl.GetHashCode();
+      if (Authors.Length != 0) hash ^= Authors.GetHashCode();
+      if (publishedParsed_ != null) hash ^= PublishedParsed.GetHashCode();
+      if (Title.Length != 0) hash ^= Title.GetHashCode();
+      if (ShortDescription.Length != 0) hash ^= ShortDescription.GetHashCode();
+      hash ^= imageUrls_.GetHashCode();
+      if (PublishPlatform.Length != 0) hash ^= PublishPlatform.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4458,6 +4593,31 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(ItemId);
       }
+      if (AvatarUrl.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(AvatarUrl);
+      }
+      if (Authors.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Authors);
+      }
+      if (publishedParsed_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(PublishedParsed);
+      }
+      if (Title.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Title);
+      }
+      if (ShortDescription.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ShortDescription);
+      }
+      imageUrls_.WriteTo(output, _repeated_imageUrls_codec);
+      if (PublishPlatform.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(PublishPlatform);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4476,6 +4636,31 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(18);
         output.WriteMessage(ItemId);
       }
+      if (AvatarUrl.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(AvatarUrl);
+      }
+      if (Authors.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Authors);
+      }
+      if (publishedParsed_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(PublishedParsed);
+      }
+      if (Title.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Title);
+      }
+      if (ShortDescription.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ShortDescription);
+      }
+      imageUrls_.WriteTo(ref output, _repeated_imageUrls_codec);
+      if (PublishPlatform.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(PublishPlatform);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4492,6 +4677,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (itemId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ItemId);
       }
+      if (AvatarUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AvatarUrl);
+      }
+      if (Authors.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Authors);
+      }
+      if (publishedParsed_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PublishedParsed);
+      }
+      if (Title.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
+      }
+      if (ShortDescription.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ShortDescription);
+      }
+      size += imageUrls_.CalculateSize(_repeated_imageUrls_codec);
+      if (PublishPlatform.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PublishPlatform);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4500,7 +4704,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(FeedItemIDWithFeedID other) {
+    public void MergeFrom(FeedItemDigest other) {
       if (other == null) {
         return;
       }
@@ -4515,6 +4719,28 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           ItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
         ItemId.MergeFrom(other.ItemId);
+      }
+      if (other.AvatarUrl.Length != 0) {
+        AvatarUrl = other.AvatarUrl;
+      }
+      if (other.Authors.Length != 0) {
+        Authors = other.Authors;
+      }
+      if (other.publishedParsed_ != null) {
+        if (publishedParsed_ == null) {
+          PublishedParsed = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        PublishedParsed.MergeFrom(other.PublishedParsed);
+      }
+      if (other.Title.Length != 0) {
+        Title = other.Title;
+      }
+      if (other.ShortDescription.Length != 0) {
+        ShortDescription = other.ShortDescription;
+      }
+      imageUrls_.Add(other.imageUrls_);
+      if (other.PublishPlatform.Length != 0) {
+        PublishPlatform = other.PublishPlatform;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4545,6 +4771,37 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             input.ReadMessage(ItemId);
             break;
           }
+          case 26: {
+            AvatarUrl = input.ReadString();
+            break;
+          }
+          case 34: {
+            Authors = input.ReadString();
+            break;
+          }
+          case 42: {
+            if (publishedParsed_ == null) {
+              PublishedParsed = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(PublishedParsed);
+            break;
+          }
+          case 50: {
+            Title = input.ReadString();
+            break;
+          }
+          case 58: {
+            ShortDescription = input.ReadString();
+            break;
+          }
+          case 66: {
+            imageUrls_.AddEntriesFrom(input, _repeated_imageUrls_codec);
+            break;
+          }
+          case 74: {
+            PublishPlatform = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -4572,6 +4829,37 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
               ItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
             input.ReadMessage(ItemId);
+            break;
+          }
+          case 26: {
+            AvatarUrl = input.ReadString();
+            break;
+          }
+          case 34: {
+            Authors = input.ReadString();
+            break;
+          }
+          case 42: {
+            if (publishedParsed_ == null) {
+              PublishedParsed = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(PublishedParsed);
+            break;
+          }
+          case 50: {
+            Title = input.ReadString();
+            break;
+          }
+          case 58: {
+            ShortDescription = input.ReadString();
+            break;
+          }
+          case 66: {
+            imageUrls_.AddEntriesFrom(ref input, _repeated_imageUrls_codec);
+            break;
+          }
+          case 74: {
+            PublishPlatform = input.ReadString();
             break;
           }
         }
