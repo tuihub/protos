@@ -728,6 +728,7 @@ type PurchaseAppRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// source must be APP_SOURCE_INTERNAL
 	AppId *v1.InternalID `protobuf:"bytes,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 }
 

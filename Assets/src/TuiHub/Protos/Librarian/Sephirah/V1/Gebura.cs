@@ -3079,6 +3079,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     /// <summary>Field number for the "app_id" field.</summary>
     public const int AppIdFieldNumber = 1;
     private global::TuiHub.Protos.Librarian.V1.InternalID appId_;
+    /// <summary>
+    /// source must be APP_SOURCE_INTERNAL
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::TuiHub.Protos.Librarian.V1.InternalID AppId {
