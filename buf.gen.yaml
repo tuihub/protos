@@ -21,7 +21,7 @@ plugins:
       - paths=source_relative
 
   #JS
-  - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1
+  - plugin: buf.build/protocolbuffers/js:v3.21.2
     opt:
       - import_style=commonjs
       - binary
@@ -40,16 +40,16 @@ plugins:
     out: node
 
   #Rust
-  - remote: buf.build/prost/plugins/prost:v0.2.0-2
+  - plugin: buf.build/community/neoeinstein-prost:v0.2.2
     out: src
     opt:
       - bytes=.
       - compile_well_known_types
       - extern_path=.google.protobuf=::pbjson_types
       - file_descriptor_set
-  - remote: buf.build/prost/plugins/serde:v0.2.0-2
+  - plugin: buf.build/community/neoeinstein-prost-serde:v0.2.2
     out: src
-  - remote: buf.build/prost/plugins/tonic:v0.2.0-2
+  - plugin: buf.build/community/neoeinstein-tonic:v0.2.2
     out: src
     opt:
       - compile_well_known_types
@@ -64,7 +64,7 @@ plugins:
   - name: csharp
     out: Assets/src
     opt: base_namespace=
-  - remote: buf.build/grpc/plugins/csharp:v1.48.0-1
+  - plugin: buf.build/grpc/csharp:v1.54.2
     out: Assets/src
 
   #Dart
