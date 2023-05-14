@@ -1167,7 +1167,7 @@ pub mod librarian_sephirah_service_client {
 pub mod librarian_sephirah_service_server {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
-    ///Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
+    /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
         /** For manual inspection only, the client may display but should not parse the response.
@@ -1239,7 +1239,7 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::ListLinkAccountsRequest>,
         ) -> Result<tonic::Response<super::ListLinkAccountsResponse>, tonic::Status>;
-        ///Server streaming response type for the UploadFile method.
+        /// Server streaming response type for the UploadFile method.
         type UploadFileStream: futures_core::Stream<
                 Item = Result<super::UploadFileResponse, tonic::Status>,
             >
@@ -1251,7 +1251,7 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<tonic::Streaming<super::UploadFileRequest>>,
         ) -> Result<tonic::Response<Self::UploadFileStream>, tonic::Status>;
-        ///Server streaming response type for the DownloadFile method.
+        /// Server streaming response type for the DownloadFile method.
         type DownloadFileStream: futures_core::Stream<
                 Item = Result<super::DownloadFileResponse, tonic::Status>,
             >
@@ -1263,7 +1263,7 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<tonic::Streaming<super::DownloadFileRequest>>,
         ) -> Result<tonic::Response<Self::DownloadFileStream>, tonic::Status>;
-        ///Server streaming response type for the SimpleUploadFile method.
+        /// Server streaming response type for the SimpleUploadFile method.
         type SimpleUploadFileStream: futures_core::Stream<
                 Item = Result<super::SimpleUploadFileResponse, tonic::Status>,
             >
@@ -1278,7 +1278,7 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<tonic::Streaming<super::SimpleUploadFileRequest>>,
         ) -> Result<tonic::Response<Self::SimpleUploadFileStream>, tonic::Status>;
-        ///Server streaming response type for the SimpleDownloadFile method.
+        /// Server streaming response type for the SimpleDownloadFile method.
         type SimpleDownloadFileStream: futures_core::Stream<
                 Item = Result<super::SimpleDownloadFileResponse, tonic::Status>,
             >
@@ -1405,7 +1405,7 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::UnAssignAppPackageRequest>,
         ) -> Result<tonic::Response<super::UnAssignAppPackageResponse>, tonic::Status>;
-        ///Server streaming response type for the ReportAppPackages method.
+        /// Server streaming response type for the ReportAppPackages method.
         type ReportAppPackagesStream: futures_core::Stream<
                 Item = Result<super::ReportAppPackagesResponse, tonic::Status>,
             >

@@ -255,7 +255,7 @@ pub mod librarian_porter_service_client {
 pub mod librarian_porter_service_server {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
-    ///Generated trait containing gRPC methods that should be implemented for use with LibrarianPorterServiceServer.
+    /// Generated trait containing gRPC methods that should be implemented for use with LibrarianPorterServiceServer.
     #[async_trait]
     pub trait LibrarianPorterService: Send + Sync + 'static {
         async fn pull_feed(
@@ -274,7 +274,7 @@ pub mod librarian_porter_service_server {
             &self,
             request: tonic::Request<super::PullWikiRequest>,
         ) -> Result<tonic::Response<super::PullWikiResponse>, tonic::Status>;
-        ///Server streaming response type for the PullData method.
+        /// Server streaming response type for the PullData method.
         type PullDataStream: futures_core::Stream<
                 Item = Result<super::PullDataResponse, tonic::Status>,
             >

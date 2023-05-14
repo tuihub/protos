@@ -30,7 +30,9 @@ impl<'de> serde::Deserialize<'de> for AssignAppPackageRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_id",
             "appId",
+            "app_package_id",
             "appPackageId",
         ];
 
@@ -59,8 +61,8 @@ impl<'de> serde::Deserialize<'de> for AssignAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" => Ok(GeneratedField::AppId),
-                            "appPackageId" => Ok(GeneratedField::AppPackageId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -88,13 +90,13 @@ impl<'de> serde::Deserialize<'de> for AssignAppPackageRequest {
                             if app_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
-                            app_id__ = Some(map.next_value()?);
+                            app_id__ = map.next_value()?;
                         }
                         GeneratedField::AppPackageId => {
                             if app_package_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackageId"));
                             }
-                            app_package_id__ = Some(map.next_value()?);
+                            app_package_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -285,6 +287,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_package",
             "appPackage",
         ];
 
@@ -312,7 +315,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackage" => Ok(GeneratedField::AppPackage),
+                            "appPackage" | "app_package" => Ok(GeneratedField::AppPackage),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -339,7 +342,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageRequest {
                             if app_package__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackage"));
                             }
-                            app_package__ = Some(map.next_value()?);
+                            app_package__ = map.next_value()?;
                         }
                     }
                 }
@@ -430,7 +433,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -521,7 +524,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppRequest {
                             if app__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("app"));
                             }
-                            app__ = Some(map.next_value()?);
+                            app__ = map.next_value()?;
                         }
                     }
                 }
@@ -612,7 +615,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -703,7 +706,7 @@ impl<'de> serde::Deserialize<'de> for CreateFeedConfigRequest {
                             if config__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("config"));
                             }
-                            config__ = Some(map.next_value()?);
+                            config__ = map.next_value()?;
                         }
                     }
                 }
@@ -794,7 +797,7 @@ impl<'de> serde::Deserialize<'de> for CreateFeedConfigResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -885,7 +888,7 @@ impl<'de> serde::Deserialize<'de> for CreateNotifyFlowRequest {
                             if flow__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("flow"));
                             }
-                            flow__ = Some(map.next_value()?);
+                            flow__ = map.next_value()?;
                         }
                     }
                 }
@@ -976,7 +979,7 @@ impl<'de> serde::Deserialize<'de> for CreateNotifyFlowResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -1067,7 +1070,7 @@ impl<'de> serde::Deserialize<'de> for CreateNotifyTargetRequest {
                             if target__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("target"));
                             }
-                            target__ = Some(map.next_value()?);
+                            target__ = map.next_value()?;
                         }
                     }
                 }
@@ -1158,7 +1161,7 @@ impl<'de> serde::Deserialize<'de> for CreateNotifyTargetResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -1249,7 +1252,7 @@ impl<'de> serde::Deserialize<'de> for CreateUserRequest {
                             if user__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("user"));
                             }
-                            user__ = Some(map.next_value()?);
+                            user__ = map.next_value()?;
                         }
                     }
                 }
@@ -1340,7 +1343,7 @@ impl<'de> serde::Deserialize<'de> for CreateUserResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -1383,7 +1386,9 @@ impl<'de> serde::Deserialize<'de> for DownloadFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "start_chunk_number",
             "startChunkNumber",
+            "end_chunk_number",
             "endChunkNumber",
         ];
 
@@ -1412,8 +1417,8 @@ impl<'de> serde::Deserialize<'de> for DownloadFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "startChunkNumber" => Ok(GeneratedField::StartChunkNumber),
-                            "endChunkNumber" => Ok(GeneratedField::EndChunkNumber),
+                            "startChunkNumber" | "start_chunk_number" => Ok(GeneratedField::StartChunkNumber),
+                            "endChunkNumber" | "end_chunk_number" => Ok(GeneratedField::EndChunkNumber),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1441,17 +1446,17 @@ impl<'de> serde::Deserialize<'de> for DownloadFileRequest {
                             if start_chunk_number__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("startChunkNumber"));
                             }
-                            start_chunk_number__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            start_chunk_number__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::EndChunkNumber => {
                             if end_chunk_number__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("endChunkNumber"));
                             }
-                            end_chunk_number__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            end_chunk_number__ = 
+                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                            ;
                         }
                     }
                 }
@@ -1489,6 +1494,7 @@ impl<'de> serde::Deserialize<'de> for DownloadFileResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "file_chunk",
             "fileChunk",
         ];
 
@@ -1516,7 +1522,7 @@ impl<'de> serde::Deserialize<'de> for DownloadFileResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileChunk" => Ok(GeneratedField::FileChunk),
+                            "fileChunk" | "file_chunk" => Ok(GeneratedField::FileChunk),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1543,7 +1549,7 @@ impl<'de> serde::Deserialize<'de> for DownloadFileResponse {
                             if file_chunk__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fileChunk"));
                             }
-                            file_chunk__ = Some(map.next_value()?);
+                            file_chunk__ = map.next_value()?;
                         }
                     }
                 }
@@ -1634,7 +1640,7 @@ impl<'de> serde::Deserialize<'de> for DownloadGameSaveFileRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -1671,6 +1677,7 @@ impl<'de> serde::Deserialize<'de> for DownloadGameSaveFileResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "download_token",
             "downloadToken",
         ];
 
@@ -1698,7 +1705,7 @@ impl<'de> serde::Deserialize<'de> for DownloadGameSaveFileResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "downloadToken" => Ok(GeneratedField::DownloadToken),
+                            "downloadToken" | "download_token" => Ok(GeneratedField::DownloadToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1816,7 +1823,7 @@ impl<'de> serde::Deserialize<'de> for DownloadImageRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -1853,6 +1860,7 @@ impl<'de> serde::Deserialize<'de> for DownloadImageResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "download_token",
             "downloadToken",
         ];
 
@@ -1880,7 +1888,7 @@ impl<'de> serde::Deserialize<'de> for DownloadImageResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "downloadToken" => Ok(GeneratedField::DownloadToken),
+                            "downloadToken" | "download_token" => Ok(GeneratedField::DownloadToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2089,12 +2097,16 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
         const FIELDS: &[&str] = &[
             "id",
             "name",
+            "feed_url",
             "feedUrl",
+            "author_account",
             "authorAccount",
             "source",
             "status",
+            "pull_interval",
             "pullInterval",
             "tags",
+            "latest_pull_time",
             "latestPullTime",
         ];
 
@@ -2132,13 +2144,13 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "name" => Ok(GeneratedField::Name),
-                            "feedUrl" => Ok(GeneratedField::FeedUrl),
-                            "authorAccount" => Ok(GeneratedField::AuthorAccount),
+                            "feedUrl" | "feed_url" => Ok(GeneratedField::FeedUrl),
+                            "authorAccount" | "author_account" => Ok(GeneratedField::AuthorAccount),
                             "source" => Ok(GeneratedField::Source),
                             "status" => Ok(GeneratedField::Status),
-                            "pullInterval" => Ok(GeneratedField::PullInterval),
+                            "pullInterval" | "pull_interval" => Ok(GeneratedField::PullInterval),
                             "tags" => Ok(GeneratedField::Tags),
-                            "latestPullTime" => Ok(GeneratedField::LatestPullTime),
+                            "latestPullTime" | "latest_pull_time" => Ok(GeneratedField::LatestPullTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2173,7 +2185,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -2191,7 +2203,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             if author_account__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("authorAccount"));
                             }
-                            author_account__ = Some(map.next_value()?);
+                            author_account__ = map.next_value()?;
                         }
                         GeneratedField::Source => {
                             if source__.is_some() {
@@ -2209,7 +2221,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             if pull_interval__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("pullInterval"));
                             }
-                            pull_interval__ = Some(map.next_value()?);
+                            pull_interval__ = map.next_value()?;
                         }
                         GeneratedField::Tags => {
                             if tags__.is_some() {
@@ -2221,7 +2233,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             if latest_pull_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("latestPullTime"));
                             }
-                            latest_pull_time__ = Some(map.next_value()?);
+                            latest_pull_time__ = map.next_value()?;
                         }
                     }
                 }
@@ -2463,14 +2475,21 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "feed_id",
             "feedId",
+            "item_id",
             "itemId",
+            "avatar_url",
             "avatarUrl",
             "authors",
+            "published_parsed",
             "publishedParsed",
             "title",
+            "short_description",
             "shortDescription",
+            "image_urls",
             "imageUrls",
+            "publish_platform",
             "publishPlatform",
         ];
 
@@ -2506,15 +2525,15 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "feedId" => Ok(GeneratedField::FeedId),
-                            "itemId" => Ok(GeneratedField::ItemId),
-                            "avatarUrl" => Ok(GeneratedField::AvatarUrl),
+                            "feedId" | "feed_id" => Ok(GeneratedField::FeedId),
+                            "itemId" | "item_id" => Ok(GeneratedField::ItemId),
+                            "avatarUrl" | "avatar_url" => Ok(GeneratedField::AvatarUrl),
                             "authors" => Ok(GeneratedField::Authors),
-                            "publishedParsed" => Ok(GeneratedField::PublishedParsed),
+                            "publishedParsed" | "published_parsed" => Ok(GeneratedField::PublishedParsed),
                             "title" => Ok(GeneratedField::Title),
-                            "shortDescription" => Ok(GeneratedField::ShortDescription),
-                            "imageUrls" => Ok(GeneratedField::ImageUrls),
-                            "publishPlatform" => Ok(GeneratedField::PublishPlatform),
+                            "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
+                            "imageUrls" | "image_urls" => Ok(GeneratedField::ImageUrls),
+                            "publishPlatform" | "publish_platform" => Ok(GeneratedField::PublishPlatform),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2549,13 +2568,13 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                             if feed_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("feedId"));
                             }
-                            feed_id__ = Some(map.next_value()?);
+                            feed_id__ = map.next_value()?;
                         }
                         GeneratedField::ItemId => {
                             if item_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("itemId"));
                             }
-                            item_id__ = Some(map.next_value()?);
+                            item_id__ = map.next_value()?;
                         }
                         GeneratedField::AvatarUrl => {
                             if avatar_url__.is_some() {
@@ -2573,7 +2592,7 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                             if published_parsed__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("publishedParsed"));
                             }
-                            published_parsed__ = Some(map.next_value()?);
+                            published_parsed__ = map.next_value()?;
                         }
                         GeneratedField::Title => {
                             if title__.is_some() {
@@ -2648,6 +2667,7 @@ impl<'de> serde::Deserialize<'de> for FileChunk {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "chunk_number",
             "chunkNumber",
             "data",
         ];
@@ -2677,7 +2697,7 @@ impl<'de> serde::Deserialize<'de> for FileChunk {
                         E: serde::de::Error,
                     {
                         match value {
-                            "chunkNumber" => Ok(GeneratedField::ChunkNumber),
+                            "chunkNumber" | "chunk_number" => Ok(GeneratedField::ChunkNumber),
                             "data" => Ok(GeneratedField::Data),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -2706,17 +2726,17 @@ impl<'de> serde::Deserialize<'de> for FileChunk {
                             if chunk_number__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("chunkNumber"));
                             }
-                            chunk_number__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            chunk_number__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Data => {
                             if data__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("data"));
                             }
-                            data__ = Some(
-                                map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0
-                            );
+                            data__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -2850,7 +2870,7 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -2862,9 +2882,9 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
                             if size__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("size"));
                             }
-                            size__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            size__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Type => {
                             if r#type__.is_some() {
@@ -2876,9 +2896,9 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
                             if sha256__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sha256"));
                             }
-                            sha256__ = Some(
-                                map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0
-                            );
+                            sha256__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -3131,7 +3151,7 @@ impl<'de> serde::Deserialize<'de> for GenerateTokenRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -3168,6 +3188,7 @@ impl<'de> serde::Deserialize<'de> for GenerateTokenResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "refresh_token",
             "refreshToken",
         ];
 
@@ -3195,7 +3216,7 @@ impl<'de> serde::Deserialize<'de> for GenerateTokenResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "refreshToken" => Ok(GeneratedField::RefreshToken),
+                            "refreshToken" | "refresh_token" => Ok(GeneratedField::RefreshToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -3330,6 +3351,7 @@ impl<'de> serde::Deserialize<'de> for GetAppLibraryResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_ids",
             "appIds",
         ];
 
@@ -3357,7 +3379,7 @@ impl<'de> serde::Deserialize<'de> for GetAppLibraryResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appIds" => Ok(GeneratedField::AppIds),
+                            "appIds" | "app_ids" => Ok(GeneratedField::AppIds),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -3603,6 +3625,7 @@ impl<'de> serde::Deserialize<'de> for GetBindAppsRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_id",
             "appId",
         ];
 
@@ -3630,7 +3653,7 @@ impl<'de> serde::Deserialize<'de> for GetBindAppsRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" => Ok(GeneratedField::AppId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -3657,7 +3680,7 @@ impl<'de> serde::Deserialize<'de> for GetBindAppsRequest {
                             if app_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
-                            app_id__ = Some(map.next_value()?);
+                            app_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -3839,7 +3862,7 @@ impl<'de> serde::Deserialize<'de> for GetFeedItemRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -3930,7 +3953,7 @@ impl<'de> serde::Deserialize<'de> for GetFeedItemResponse {
                             if item__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("item"));
                             }
-                            item__ = Some(map.next_value()?);
+                            item__ = map.next_value()?;
                         }
                     }
                 }
@@ -4021,7 +4044,7 @@ impl<'de> serde::Deserialize<'de> for GetImageRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -4070,6 +4093,7 @@ impl<'de> serde::Deserialize<'de> for GetImageResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "file_metadata",
             "fileMetadata",
             "name",
             "description",
@@ -4101,7 +4125,7 @@ impl<'de> serde::Deserialize<'de> for GetImageResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileMetadata" => Ok(GeneratedField::FileMetadata),
+                            "fileMetadata" | "file_metadata" => Ok(GeneratedField::FileMetadata),
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -4132,7 +4156,7 @@ impl<'de> serde::Deserialize<'de> for GetImageResponse {
                             if file_metadata__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fileMetadata"));
                             }
-                            file_metadata__ = Some(map.next_value()?);
+                            file_metadata__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -4266,8 +4290,11 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "server_binary_summary",
             "serverBinarySummary",
+            "protocol_summary",
             "protocolSummary",
+            "current_time",
             "currentTime",
         ];
 
@@ -4297,9 +4324,9 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "serverBinarySummary" => Ok(GeneratedField::ServerBinarySummary),
-                            "protocolSummary" => Ok(GeneratedField::ProtocolSummary),
-                            "currentTime" => Ok(GeneratedField::CurrentTime),
+                            "serverBinarySummary" | "server_binary_summary" => Ok(GeneratedField::ServerBinarySummary),
+                            "protocolSummary" | "protocol_summary" => Ok(GeneratedField::ProtocolSummary),
+                            "currentTime" | "current_time" => Ok(GeneratedField::CurrentTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -4328,19 +4355,19 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                             if server_binary_summary__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("serverBinarySummary"));
                             }
-                            server_binary_summary__ = Some(map.next_value()?);
+                            server_binary_summary__ = map.next_value()?;
                         }
                         GeneratedField::ProtocolSummary => {
                             if protocol_summary__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("protocolSummary"));
                             }
-                            protocol_summary__ = Some(map.next_value()?);
+                            protocol_summary__ = map.next_value()?;
                         }
                         GeneratedField::CurrentTime => {
                             if current_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("currentTime"));
                             }
-                            current_time__ = Some(map.next_value()?);
+                            current_time__ = map.next_value()?;
                         }
                     }
                 }
@@ -4493,7 +4520,9 @@ impl<'de> serde::Deserialize<'de> for GetTokenResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "access_token",
             "accessToken",
+            "refresh_token",
             "refreshToken",
         ];
 
@@ -4522,8 +4551,8 @@ impl<'de> serde::Deserialize<'de> for GetTokenResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "accessToken" => Ok(GeneratedField::AccessToken),
-                            "refreshToken" => Ok(GeneratedField::RefreshToken),
+                            "accessToken" | "access_token" => Ok(GeneratedField::AccessToken),
+                            "refreshToken" | "refresh_token" => Ok(GeneratedField::RefreshToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -4649,7 +4678,7 @@ impl<'de> serde::Deserialize<'de> for GetUserRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -4740,7 +4769,7 @@ impl<'de> serde::Deserialize<'de> for GetUserResponse {
                             if user__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("user"));
                             }
-                            user__ = Some(map.next_value()?);
+                            user__ = map.next_value()?;
                         }
                     }
                 }
@@ -4815,12 +4844,19 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "group_by",
             "groupBy",
+            "feed_id_filter",
             "feedIdFilter",
+            "author_id_filter",
             "authorIdFilter",
+            "publish_platform_filter",
             "publishPlatformFilter",
+            "tag_filter",
             "tagFilter",
+            "publish_time_range",
             "publishTimeRange",
+            "group_size",
             "groupSize",
         ];
 
@@ -4854,13 +4890,13 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "groupBy" => Ok(GeneratedField::GroupBy),
-                            "feedIdFilter" => Ok(GeneratedField::FeedIdFilter),
-                            "authorIdFilter" => Ok(GeneratedField::AuthorIdFilter),
-                            "publishPlatformFilter" => Ok(GeneratedField::PublishPlatformFilter),
-                            "tagFilter" => Ok(GeneratedField::TagFilter),
-                            "publishTimeRange" => Ok(GeneratedField::PublishTimeRange),
-                            "groupSize" => Ok(GeneratedField::GroupSize),
+                            "groupBy" | "group_by" => Ok(GeneratedField::GroupBy),
+                            "feedIdFilter" | "feed_id_filter" => Ok(GeneratedField::FeedIdFilter),
+                            "authorIdFilter" | "author_id_filter" => Ok(GeneratedField::AuthorIdFilter),
+                            "publishPlatformFilter" | "publish_platform_filter" => Ok(GeneratedField::PublishPlatformFilter),
+                            "tagFilter" | "tag_filter" => Ok(GeneratedField::TagFilter),
+                            "publishTimeRange" | "publish_time_range" => Ok(GeneratedField::PublishTimeRange),
+                            "groupSize" | "group_size" => Ok(GeneratedField::GroupSize),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -4923,15 +4959,15 @@ impl<'de> serde::Deserialize<'de> for GroupFeedItemsRequest {
                             if publish_time_range__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("publishTimeRange"));
                             }
-                            publish_time_range__ = Some(map.next_value()?);
+                            publish_time_range__ = map.next_value()?;
                         }
                         GeneratedField::GroupSize => {
                             if group_size__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("groupSize"));
                             }
-                            group_size__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            group_size__ = 
+                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                            ;
                         }
                     }
                 }
@@ -5150,6 +5186,7 @@ impl<'de> serde::Deserialize<'de> for group_feed_items_response::FeedItemsGroup 
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "time_range",
             "timeRange",
             "items",
         ];
@@ -5179,7 +5216,7 @@ impl<'de> serde::Deserialize<'de> for group_feed_items_response::FeedItemsGroup 
                         E: serde::de::Error,
                     {
                         match value {
-                            "timeRange" => Ok(GeneratedField::TimeRange),
+                            "timeRange" | "time_range" => Ok(GeneratedField::TimeRange),
                             "items" => Ok(GeneratedField::Items),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -5208,7 +5245,7 @@ impl<'de> serde::Deserialize<'de> for group_feed_items_response::FeedItemsGroup 
                             if time_range__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("timeRange"));
                             }
-                            time_range__ = Some(map.next_value()?);
+                            time_range__ = map.next_value()?;
                         }
                         GeneratedField::Items => {
                             if items__.is_some() {
@@ -5252,6 +5289,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "account_id",
             "accountId",
         ];
 
@@ -5279,7 +5317,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "accountId" => Ok(GeneratedField::AccountId),
+                            "accountId" | "account_id" => Ok(GeneratedField::AccountId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5306,7 +5344,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountRequest {
                             if account_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountId"));
                             }
-                            account_id__ = Some(map.next_value()?);
+                            account_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -5343,6 +5381,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "account_id",
             "accountId",
         ];
 
@@ -5370,7 +5409,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "accountId" => Ok(GeneratedField::AccountId),
+                            "accountId" | "account_id" => Ok(GeneratedField::AccountId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5397,7 +5436,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountResponse {
                             if account_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountId"));
                             }
-                            account_id__ = Some(map.next_value()?);
+                            account_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -5457,8 +5496,11 @@ impl<'de> serde::Deserialize<'de> for ListAppPackagesRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "source_filter",
             "sourceFilter",
+            "id_filter",
             "idFilter",
+            "assigned_app_id_filter",
             "assignedAppIdFilter",
         ];
 
@@ -5490,9 +5532,9 @@ impl<'de> serde::Deserialize<'de> for ListAppPackagesRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "sourceFilter" => Ok(GeneratedField::SourceFilter),
-                            "idFilter" => Ok(GeneratedField::IdFilter),
-                            "assignedAppIdFilter" => Ok(GeneratedField::AssignedAppIdFilter),
+                            "sourceFilter" | "source_filter" => Ok(GeneratedField::SourceFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "assignedAppIdFilter" | "assigned_app_id_filter" => Ok(GeneratedField::AssignedAppIdFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5522,7 +5564,7 @@ impl<'de> serde::Deserialize<'de> for ListAppPackagesRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::SourceFilter => {
                             if source_filter__.is_some() {
@@ -5587,6 +5629,7 @@ impl<'de> serde::Deserialize<'de> for ListAppPackagesResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "app_packages",
             "appPackages",
         ];
 
@@ -5616,7 +5659,7 @@ impl<'de> serde::Deserialize<'de> for ListAppPackagesResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "appPackages" => Ok(GeneratedField::AppPackages),
+                            "appPackages" | "app_packages" => Ok(GeneratedField::AppPackages),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5644,7 +5687,7 @@ impl<'de> serde::Deserialize<'de> for ListAppPackagesResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::AppPackages => {
                             if app_packages__.is_some() {
@@ -5721,9 +5764,13 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "source_filter",
             "sourceFilter",
+            "type_filter",
             "typeFilter",
+            "id_filter",
             "idFilter",
+            "contain_details",
             "containDetails",
         ];
 
@@ -5756,10 +5803,10 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "sourceFilter" => Ok(GeneratedField::SourceFilter),
-                            "typeFilter" => Ok(GeneratedField::TypeFilter),
-                            "idFilter" => Ok(GeneratedField::IdFilter),
-                            "containDetails" => Ok(GeneratedField::ContainDetails),
+                            "sourceFilter" | "source_filter" => Ok(GeneratedField::SourceFilter),
+                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "containDetails" | "contain_details" => Ok(GeneratedField::ContainDetails),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5790,7 +5837,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::SourceFilter => {
                             if source_filter__.is_some() {
@@ -5919,7 +5966,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Apps => {
                             if apps__.is_some() {
@@ -5996,9 +6043,13 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "id_filter",
             "idFilter",
+            "author_id_filter",
             "authorIdFilter",
+            "source_filter",
             "sourceFilter",
+            "status_filter",
             "statusFilter",
         ];
 
@@ -6031,10 +6082,10 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "idFilter" => Ok(GeneratedField::IdFilter),
-                            "authorIdFilter" => Ok(GeneratedField::AuthorIdFilter),
-                            "sourceFilter" => Ok(GeneratedField::SourceFilter),
-                            "statusFilter" => Ok(GeneratedField::StatusFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "authorIdFilter" | "author_id_filter" => Ok(GeneratedField::AuthorIdFilter),
+                            "sourceFilter" | "source_filter" => Ok(GeneratedField::SourceFilter),
+                            "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6065,7 +6116,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::IdFilter => {
                             if id_filter__.is_some() {
@@ -6137,6 +6188,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "feeds_with_config",
             "feedsWithConfig",
         ];
 
@@ -6166,7 +6218,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "feedsWithConfig" => Ok(GeneratedField::FeedsWithConfig),
+                            "feedsWithConfig" | "feeds_with_config" => Ok(GeneratedField::FeedsWithConfig),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6194,7 +6246,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::FeedsWithConfig => {
                             if feeds_with_config__.is_some() {
@@ -6302,13 +6354,13 @@ impl<'de> serde::Deserialize<'de> for list_feed_configs_response::FeedWithConfig
                             if feed__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("feed"));
                             }
-                            feed__ = Some(map.next_value()?);
+                            feed__ = map.next_value()?;
                         }
                         GeneratedField::Config => {
                             if config__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("config"));
                             }
-                            config__ = Some(map.next_value()?);
+                            config__ = map.next_value()?;
                         }
                     }
                 }
@@ -6377,10 +6429,15 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "feed_id_filter",
             "feedIdFilter",
+            "author_id_filter",
             "authorIdFilter",
+            "publish_platform_filter",
             "publishPlatformFilter",
+            "tag_filter",
             "tagFilter",
+            "publish_time_range",
             "publishTimeRange",
         ];
 
@@ -6414,11 +6471,11 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "feedIdFilter" => Ok(GeneratedField::FeedIdFilter),
-                            "authorIdFilter" => Ok(GeneratedField::AuthorIdFilter),
-                            "publishPlatformFilter" => Ok(GeneratedField::PublishPlatformFilter),
-                            "tagFilter" => Ok(GeneratedField::TagFilter),
-                            "publishTimeRange" => Ok(GeneratedField::PublishTimeRange),
+                            "feedIdFilter" | "feed_id_filter" => Ok(GeneratedField::FeedIdFilter),
+                            "authorIdFilter" | "author_id_filter" => Ok(GeneratedField::AuthorIdFilter),
+                            "publishPlatformFilter" | "publish_platform_filter" => Ok(GeneratedField::PublishPlatformFilter),
+                            "tagFilter" | "tag_filter" => Ok(GeneratedField::TagFilter),
+                            "publishTimeRange" | "publish_time_range" => Ok(GeneratedField::PublishTimeRange),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6450,7 +6507,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::FeedIdFilter => {
                             if feed_id_filter__.is_some() {
@@ -6480,7 +6537,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsRequest {
                             if publish_time_range__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("publishTimeRange"));
                             }
-                            publish_time_range__ = Some(map.next_value()?);
+                            publish_time_range__ = map.next_value()?;
                         }
                     }
                 }
@@ -6586,7 +6643,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Items => {
                             if items__.is_some() {
@@ -6637,6 +6694,7 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "app_package_id",
             "appPackageId",
         ];
 
@@ -6666,7 +6724,7 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "appPackageId" => Ok(GeneratedField::AppPackageId),
+                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6694,13 +6752,13 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::AppPackageId => {
                             if app_package_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackageId"));
                             }
-                            app_package_id__ = Some(map.next_value()?);
+                            app_package_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -6745,6 +6803,7 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "file_list",
             "fileList",
         ];
 
@@ -6774,7 +6833,7 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "fileList" => Ok(GeneratedField::FileList),
+                            "fileList" | "file_list" => Ok(GeneratedField::FileList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6802,7 +6861,7 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::FileList => {
                             if file_list__.is_some() {
@@ -6846,6 +6905,7 @@ impl<'de> serde::Deserialize<'de> for ListImagesRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "time_range",
             "timeRange",
         ];
 
@@ -6873,7 +6933,7 @@ impl<'de> serde::Deserialize<'de> for ListImagesRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "timeRange" => Ok(GeneratedField::TimeRange),
+                            "timeRange" | "time_range" => Ok(GeneratedField::TimeRange),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6900,7 +6960,7 @@ impl<'de> serde::Deserialize<'de> for ListImagesRequest {
                             if time_range__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("timeRange"));
                             }
-                            time_range__ = Some(map.next_value()?);
+                            time_range__ = map.next_value()?;
                         }
                     }
                 }
@@ -7035,6 +7095,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "user_id",
             "userId",
         ];
 
@@ -7064,7 +7125,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "userId" => Ok(GeneratedField::UserId),
+                            "userId" | "user_id" => Ok(GeneratedField::UserId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7092,13 +7153,13 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::UserId => {
                             if user_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("userId"));
                             }
-                            user_id__ = Some(map.next_value()?);
+                            user_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -7200,7 +7261,7 @@ impl<'de> serde::Deserialize<'de> for ListLinkAccountsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Accounts => {
                             if accounts__.is_some() {
@@ -7251,6 +7312,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyFlowsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "id_filter",
             "idFilter",
         ];
 
@@ -7280,7 +7342,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyFlowsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "idFilter" => Ok(GeneratedField::IdFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7308,7 +7370,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyFlowsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::IdFilter => {
                             if id_filter__.is_some() {
@@ -7416,7 +7478,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyFlowsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Flows => {
                             if flows__.is_some() {
@@ -7487,8 +7549,11 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "id_filter",
             "idFilter",
+            "type_filter",
             "typeFilter",
+            "status_filter",
             "statusFilter",
         ];
 
@@ -7520,9 +7585,9 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "idFilter" => Ok(GeneratedField::IdFilter),
-                            "typeFilter" => Ok(GeneratedField::TypeFilter),
-                            "statusFilter" => Ok(GeneratedField::StatusFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
+                            "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7552,7 +7617,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::IdFilter => {
                             if id_filter__.is_some() {
@@ -7674,7 +7739,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Targets => {
                             if targets__.is_some() {
@@ -7739,7 +7804,9 @@ impl<'de> serde::Deserialize<'de> for ListUsersRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "type_filter",
             "typeFilter",
+            "status_filter",
             "statusFilter",
         ];
 
@@ -7770,8 +7837,8 @@ impl<'de> serde::Deserialize<'de> for ListUsersRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "typeFilter" => Ok(GeneratedField::TypeFilter),
-                            "statusFilter" => Ok(GeneratedField::StatusFilter),
+                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
+                            "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7800,7 +7867,7 @@ impl<'de> serde::Deserialize<'de> for ListUsersRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::TypeFilter => {
                             if type_filter__.is_some() {
@@ -7915,7 +7982,7 @@ impl<'de> serde::Deserialize<'de> for ListUsersResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Users => {
                             if users__.is_some() {
@@ -8023,13 +8090,13 @@ impl<'de> serde::Deserialize<'de> for MergeAppsRequest {
                             if base__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("base"));
                             }
-                            base__ = Some(map.next_value()?);
+                            base__ = map.next_value()?;
                         }
                         GeneratedField::Merged => {
                             if merged__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("merged"));
                             }
-                            merged__ = Some(map.next_value()?);
+                            merged__ = map.next_value()?;
                         }
                     }
                 }
@@ -8244,7 +8311,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -8262,7 +8329,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlow {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = Some(map.next_value()?);
+                            source__ = map.next_value()?;
                         }
                         GeneratedField::Targets => {
                             if targets__.is_some() {
@@ -8316,6 +8383,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "feed_id_filter",
             "feedIdFilter",
         ];
 
@@ -8343,7 +8411,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                         E: serde::de::Error,
                     {
                         match value {
-                            "feedIdFilter" => Ok(GeneratedField::FeedIdFilter),
+                            "feedIdFilter" | "feed_id_filter" => Ok(GeneratedField::FeedIdFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -8489,7 +8557,9 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "target_id",
             "targetId",
+            "channel_id",
             "channelId",
         ];
 
@@ -8518,8 +8588,8 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
                         E: serde::de::Error,
                     {
                         match value {
-                            "targetId" => Ok(GeneratedField::TargetId),
-                            "channelId" => Ok(GeneratedField::ChannelId),
+                            "targetId" | "target_id" => Ok(GeneratedField::TargetId),
+                            "channelId" | "channel_id" => Ok(GeneratedField::ChannelId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -8547,7 +8617,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
                             if target_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("targetId"));
                             }
-                            target_id__ = Some(map.next_value()?);
+                            target_id__ = map.next_value()?;
                         }
                         GeneratedField::ChannelId => {
                             if channel_id__.is_some() {
@@ -8699,7 +8769,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -8920,6 +8990,7 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_id",
             "appId",
         ];
 
@@ -8947,7 +9018,7 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" => Ok(GeneratedField::AppId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -8974,7 +9045,7 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppRequest {
                             if app_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
-                            app_id__ = Some(map.next_value()?);
+                            app_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -9082,6 +9153,7 @@ impl<'de> serde::Deserialize<'de> for RefreshAppRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_id",
             "appId",
         ];
 
@@ -9109,7 +9181,7 @@ impl<'de> serde::Deserialize<'de> for RefreshAppRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" => Ok(GeneratedField::AppId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -9136,7 +9208,7 @@ impl<'de> serde::Deserialize<'de> for RefreshAppRequest {
                             if app_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
-                            app_id__ = Some(map.next_value()?);
+                            app_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -9321,7 +9393,9 @@ impl<'de> serde::Deserialize<'de> for RefreshTokenResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "access_token",
             "accessToken",
+            "refresh_token",
             "refreshToken",
         ];
 
@@ -9350,8 +9424,8 @@ impl<'de> serde::Deserialize<'de> for RefreshTokenResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "accessToken" => Ok(GeneratedField::AccessToken),
-                            "refreshToken" => Ok(GeneratedField::RefreshToken),
+                            "accessToken" | "access_token" => Ok(GeneratedField::AccessToken),
+                            "refreshToken" | "refresh_token" => Ok(GeneratedField::RefreshToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -9423,6 +9497,7 @@ impl<'de> serde::Deserialize<'de> for ReportAppPackagesRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_packages",
             "appPackages",
         ];
 
@@ -9450,7 +9525,7 @@ impl<'de> serde::Deserialize<'de> for ReportAppPackagesRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackages" => Ok(GeneratedField::AppPackages),
+                            "appPackages" | "app_packages" => Ok(GeneratedField::AppPackages),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -9651,7 +9726,7 @@ impl<'de> serde::Deserialize<'de> for SearchAppsRequest {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Keywords => {
                             if keywords__.is_some() {
@@ -9759,7 +9834,7 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = Some(map.next_value()?);
+                            paging__ = map.next_value()?;
                         }
                         GeneratedField::Apps => {
                             if apps__.is_some() {
@@ -9815,8 +9890,11 @@ impl<'de> serde::Deserialize<'de> for ServerBinarySummary {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "source_code_address",
             "sourceCodeAddress",
+            "build_version",
             "buildVersion",
+            "build_date",
             "buildDate",
         ];
 
@@ -9846,9 +9924,9 @@ impl<'de> serde::Deserialize<'de> for ServerBinarySummary {
                         E: serde::de::Error,
                     {
                         match value {
-                            "sourceCodeAddress" => Ok(GeneratedField::SourceCodeAddress),
-                            "buildVersion" => Ok(GeneratedField::BuildVersion),
-                            "buildDate" => Ok(GeneratedField::BuildDate),
+                            "sourceCodeAddress" | "source_code_address" => Ok(GeneratedField::SourceCodeAddress),
+                            "buildVersion" | "build_version" => Ok(GeneratedField::BuildVersion),
+                            "buildDate" | "build_date" => Ok(GeneratedField::BuildDate),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -10144,9 +10222,9 @@ impl<'de> serde::Deserialize<'de> for SimpleDownloadFileResponse {
                             if data__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("data"));
                             }
-                            data__ = Some(
-                                map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0
-                            );
+                            data__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -10237,9 +10315,9 @@ impl<'de> serde::Deserialize<'de> for SimpleUploadFileRequest {
                             if data__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("data"));
                             }
-                            data__ = Some(
-                                map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0
-                            );
+                            data__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -10369,6 +10447,7 @@ impl<'de> serde::Deserialize<'de> for UnAssignAppPackageRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_package_id",
             "appPackageId",
         ];
 
@@ -10396,7 +10475,7 @@ impl<'de> serde::Deserialize<'de> for UnAssignAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackageId" => Ok(GeneratedField::AppPackageId),
+                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -10423,7 +10502,7 @@ impl<'de> serde::Deserialize<'de> for UnAssignAppPackageRequest {
                             if app_package_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackageId"));
                             }
-                            app_package_id__ = Some(map.next_value()?);
+                            app_package_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -10531,6 +10610,7 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "account_id",
             "accountId",
         ];
 
@@ -10558,7 +10638,7 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "accountId" => Ok(GeneratedField::AccountId),
+                            "accountId" | "account_id" => Ok(GeneratedField::AccountId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -10585,7 +10665,7 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountRequest {
                             if account_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountId"));
                             }
-                            account_id__ = Some(map.next_value()?);
+                            account_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -10693,6 +10773,7 @@ impl<'de> serde::Deserialize<'de> for UpdateAppPackageRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_package",
             "appPackage",
         ];
 
@@ -10720,7 +10801,7 @@ impl<'de> serde::Deserialize<'de> for UpdateAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackage" => Ok(GeneratedField::AppPackage),
+                            "appPackage" | "app_package" => Ok(GeneratedField::AppPackage),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -10747,7 +10828,7 @@ impl<'de> serde::Deserialize<'de> for UpdateAppPackageRequest {
                             if app_package__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackage"));
                             }
-                            app_package__ = Some(map.next_value()?);
+                            app_package__ = map.next_value()?;
                         }
                     }
                 }
@@ -10909,7 +10990,7 @@ impl<'de> serde::Deserialize<'de> for UpdateAppRequest {
                             if app__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("app"));
                             }
-                            app__ = Some(map.next_value()?);
+                            app__ = map.next_value()?;
                         }
                     }
                 }
@@ -11071,7 +11152,7 @@ impl<'de> serde::Deserialize<'de> for UpdateFeedConfigRequest {
                             if config__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("config"));
                             }
-                            config__ = Some(map.next_value()?);
+                            config__ = map.next_value()?;
                         }
                     }
                 }
@@ -11253,7 +11334,7 @@ impl<'de> serde::Deserialize<'de> for UpdateImageRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -11429,7 +11510,7 @@ impl<'de> serde::Deserialize<'de> for UpdateNotifyFlowRequest {
                             if flow__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("flow"));
                             }
-                            flow__ = Some(map.next_value()?);
+                            flow__ = map.next_value()?;
                         }
                     }
                 }
@@ -11591,7 +11672,7 @@ impl<'de> serde::Deserialize<'de> for UpdateNotifyTargetRequest {
                             if target__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("target"));
                             }
-                            target__ = Some(map.next_value()?);
+                            target__ = map.next_value()?;
                         }
                     }
                 }
@@ -11763,13 +11844,13 @@ impl<'de> serde::Deserialize<'de> for UpdateUserRequest {
                             if user__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("user"));
                             }
-                            user__ = Some(map.next_value()?);
+                            user__ = map.next_value()?;
                         }
                         GeneratedField::Password => {
                             if password__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("password"));
                             }
-                            password__ = Some(map.next_value()?);
+                            password__ = map.next_value()?;
                         }
                     }
                 }
@@ -11885,7 +11966,9 @@ impl<'de> serde::Deserialize<'de> for UploadFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "file_chunk",
             "fileChunk",
+            "require_file_status",
             "requireFileStatus",
         ];
 
@@ -11914,8 +11997,8 @@ impl<'de> serde::Deserialize<'de> for UploadFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileChunk" => Ok(GeneratedField::FileChunk),
-                            "requireFileStatus" => Ok(GeneratedField::RequireFileStatus),
+                            "fileChunk" | "file_chunk" => Ok(GeneratedField::FileChunk),
+                            "requireFileStatus" | "require_file_status" => Ok(GeneratedField::RequireFileStatus),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -11942,13 +12025,14 @@ impl<'de> serde::Deserialize<'de> for UploadFileRequest {
                             if content__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fileChunk"));
                             }
-                            content__ = Some(upload_file_request::Content::FileChunk(map.next_value()?));
+                            content__ = map.next_value::<::std::option::Option<_>>()?.map(upload_file_request::Content::FileChunk)
+;
                         }
                         GeneratedField::RequireFileStatus => {
                             if content__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("requireFileStatus"));
                             }
-                            content__ = Some(upload_file_request::Content::RequireFileStatus(map.next_value()?));
+                            content__ = map.next_value::<::std::option::Option<_>>()?.map(upload_file_request::Content::RequireFileStatus);
                         }
                     }
                 }
@@ -11992,7 +12076,9 @@ impl<'de> serde::Deserialize<'de> for UploadFileResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "chunk_status",
             "chunkStatus",
+            "file_status",
             "fileStatus",
         ];
 
@@ -12021,8 +12107,8 @@ impl<'de> serde::Deserialize<'de> for UploadFileResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "chunkStatus" => Ok(GeneratedField::ChunkStatus),
-                            "fileStatus" => Ok(GeneratedField::FileStatus),
+                            "chunkStatus" | "chunk_status" => Ok(GeneratedField::ChunkStatus),
+                            "fileStatus" | "file_status" => Ok(GeneratedField::FileStatus),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -12049,13 +12135,15 @@ impl<'de> serde::Deserialize<'de> for UploadFileResponse {
                             if content__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("chunkStatus"));
                             }
-                            content__ = Some(upload_file_response::Content::ChunkStatus(map.next_value()?));
+                            content__ = map.next_value::<::std::option::Option<_>>()?.map(upload_file_response::Content::ChunkStatus)
+;
                         }
                         GeneratedField::FileStatus => {
                             if content__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fileStatus"));
                             }
-                            content__ = Some(upload_file_response::Content::FileStatus(map.next_value()?));
+                            content__ = map.next_value::<::std::option::Option<_>>()?.map(upload_file_response::Content::FileStatus)
+;
                         }
                     }
                 }
@@ -12100,6 +12188,7 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::ChunkStatus {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "chunk_number",
             "chunkNumber",
             "status",
         ];
@@ -12129,7 +12218,7 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::ChunkStatus {
                         E: serde::de::Error,
                     {
                         match value {
-                            "chunkNumber" => Ok(GeneratedField::ChunkNumber),
+                            "chunkNumber" | "chunk_number" => Ok(GeneratedField::ChunkNumber),
                             "status" => Ok(GeneratedField::Status),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -12158,9 +12247,9 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::ChunkStatus {
                             if chunk_number__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("chunkNumber"));
                             }
-                            chunk_number__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            chunk_number__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
@@ -12212,6 +12301,7 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::FileStatus {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "missing_chunk_list",
             "missingChunkList",
             "status",
         ];
@@ -12241,7 +12331,7 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::FileStatus {
                         E: serde::de::Error,
                     {
                         match value {
-                            "missingChunkList" => Ok(GeneratedField::MissingChunkList),
+                            "missingChunkList" | "missing_chunk_list" => Ok(GeneratedField::MissingChunkList),
                             "status" => Ok(GeneratedField::Status),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -12270,10 +12360,10 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::FileStatus {
                             if missing_chunk_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("missingChunkList"));
                             }
-                            missing_chunk_list__ = Some(
-                                map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
-                                    .into_iter().map(|x| x.0).collect()
-                            );
+                            missing_chunk_list__ = 
+                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                    .into_iter().map(|x| x.0).collect())
+                            ;
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
@@ -12323,7 +12413,9 @@ impl<'de> serde::Deserialize<'de> for UploadGameSaveFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "file_metadata",
             "fileMetadata",
+            "app_package_id",
             "appPackageId",
         ];
 
@@ -12352,8 +12444,8 @@ impl<'de> serde::Deserialize<'de> for UploadGameSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileMetadata" => Ok(GeneratedField::FileMetadata),
-                            "appPackageId" => Ok(GeneratedField::AppPackageId),
+                            "fileMetadata" | "file_metadata" => Ok(GeneratedField::FileMetadata),
+                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -12381,13 +12473,13 @@ impl<'de> serde::Deserialize<'de> for UploadGameSaveFileRequest {
                             if file_metadata__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fileMetadata"));
                             }
-                            file_metadata__ = Some(map.next_value()?);
+                            file_metadata__ = map.next_value()?;
                         }
                         GeneratedField::AppPackageId => {
                             if app_package_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackageId"));
                             }
-                            app_package_id__ = Some(map.next_value()?);
+                            app_package_id__ = map.next_value()?;
                         }
                     }
                 }
@@ -12425,6 +12517,7 @@ impl<'de> serde::Deserialize<'de> for UploadGameSaveFileResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "upload_token",
             "uploadToken",
         ];
 
@@ -12452,7 +12545,7 @@ impl<'de> serde::Deserialize<'de> for UploadGameSaveFileResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "uploadToken" => Ok(GeneratedField::UploadToken),
+                            "uploadToken" | "upload_token" => Ok(GeneratedField::UploadToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -12528,6 +12621,7 @@ impl<'de> serde::Deserialize<'de> for UploadImageRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "file_metadata",
             "fileMetadata",
             "name",
             "description",
@@ -12559,7 +12653,7 @@ impl<'de> serde::Deserialize<'de> for UploadImageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileMetadata" => Ok(GeneratedField::FileMetadata),
+                            "fileMetadata" | "file_metadata" => Ok(GeneratedField::FileMetadata),
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -12590,7 +12684,7 @@ impl<'de> serde::Deserialize<'de> for UploadImageRequest {
                             if file_metadata__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fileMetadata"));
                             }
-                            file_metadata__ = Some(map.next_value()?);
+                            file_metadata__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -12641,6 +12735,7 @@ impl<'de> serde::Deserialize<'de> for UploadImageResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "upload_token",
             "uploadToken",
         ];
 
@@ -12668,7 +12763,7 @@ impl<'de> serde::Deserialize<'de> for UploadImageResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "uploadToken" => Ok(GeneratedField::UploadToken),
+                            "uploadToken" | "upload_token" => Ok(GeneratedField::UploadToken),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -12830,7 +12925,7 @@ impl<'de> serde::Deserialize<'de> for User {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Username => {
                             if username__.is_some() {

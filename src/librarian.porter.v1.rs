@@ -1,4 +1,5 @@
 // @generated
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullFeedRequest {
     #[prost(enumeration="FeedSource", tag="1")]
@@ -6,11 +7,13 @@ pub struct PullFeedRequest {
     #[prost(string, tag="2")]
     pub channel_id: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullFeedResponse {
     #[prost(message, optional, tag="1")]
     pub data: ::core::option::Option<super::super::v1::Feed>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PushFeedItemsRequest {
     #[prost(enumeration="FeedDestination", tag="1")]
@@ -22,9 +25,11 @@ pub struct PushFeedItemsRequest {
     #[prost(string, tag="4")]
     pub token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PushFeedItemsResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullDbRequest {
     #[prost(enumeration="DbSource", tag="1")]
@@ -32,11 +37,13 @@ pub struct PullDbRequest {
     #[prost(string, tag="2")]
     pub content_id: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullDbResponse {
     #[prost(map="string, string", tag="1")]
     pub data: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullWikiRequest {
     #[prost(enumeration="DbSource", tag="1")]
@@ -44,11 +51,13 @@ pub struct PullWikiRequest {
     #[prost(string, tag="2")]
     pub content_id: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullWikiResponse {
     #[prost(string, tag="1")]
     pub data: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullDataRequest {
     #[prost(enumeration="DataSource", tag="1")]
@@ -56,31 +65,37 @@ pub struct PullDataRequest {
     #[prost(string, tag="2")]
     pub content_id: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullDataResponse {
     #[prost(bytes="bytes", tag="1")]
     pub data: ::prost::bytes::Bytes,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullAccountRequest {
     #[prost(message, optional, tag="1")]
     pub account_id: ::core::option::Option<super::super::v1::AccountId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullAccountResponse {
     #[prost(message, optional, tag="1")]
     pub account: ::core::option::Option<super::super::v1::Account>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullAppRequest {
     #[prost(message, optional, tag="1")]
     pub app_id: ::core::option::Option<super::super::v1::AppId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullAppResponse {
     #[prost(message, optional, tag="1")]
     pub app: ::core::option::Option<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullAccountAppRelationRequest {
     #[prost(enumeration="AccountAppRelationType", tag="1")]
@@ -88,11 +103,13 @@ pub struct PullAccountAppRelationRequest {
     #[prost(message, optional, tag="2")]
     pub account_id: ::core::option::Option<super::super::v1::AccountId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PullAccountAppRelationResponse {
     #[prost(message, repeated, tag="1")]
     pub app_list: ::prost::alloc::vec::Vec<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PushDataRequest {
     #[prost(oneof="push_data_request::Content", tags="1, 2")]
@@ -100,14 +117,16 @@ pub struct PushDataRequest {
 }
 /// Nested message and enum types in `PushDataRequest`.
 pub mod push_data_request {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct DataMeta {
         #[prost(enumeration="super::DataSource", tag="1")]
         pub source: i32,
         #[prost(string, tag="2")]
         pub content_id: ::prost::alloc::string::String,
     }
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Content {
         #[prost(message, tag="1")]
         Metadata(DataMeta),
@@ -115,20 +134,21 @@ pub mod push_data_request {
         Data(::prost::bytes::Bytes),
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PushDataResponse {
 }
-///  Definition of service feature flags, use original name rather than enum value.
-///  Set correct feature flags in server metadata to let caller know what functions are available.
+/// Definition of service feature flags, use original name rather than enum value.
+/// Set correct feature flags in server metadata to let caller know what functions are available.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
 pub enum FeatureFlag {
     Unspecified = 0,
-    ///  If set, operations pull from steam store are available.
+    /// If set, operations pull from steam store are available.
     SourceSteam = 1,
-    ///  If set, operations pull from telegram are available.
+    /// If set, operations pull from telegram are available.
     SourceTelegram = 2,
-    ///  If set, default storage bucket are available.
+    /// If set, default storage bucket are available.
     DefaultDataStorage = 3,
 }
 impl FeatureFlag {
@@ -142,6 +162,16 @@ impl FeatureFlag {
             FeatureFlag::SourceSteam => "FEATURE_FLAG_SOURCE_STEAM",
             FeatureFlag::SourceTelegram => "FEATURE_FLAG_SOURCE_TELEGRAM",
             FeatureFlag::DefaultDataStorage => "FEATURE_FLAG_DEFAULT_DATA_STORAGE",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FEATURE_FLAG_UNSPECIFIED" => Some(Self::Unspecified),
+            "FEATURE_FLAG_SOURCE_STEAM" => Some(Self::SourceSteam),
+            "FEATURE_FLAG_SOURCE_TELEGRAM" => Some(Self::SourceTelegram),
+            "FEATURE_FLAG_DEFAULT_DATA_STORAGE" => Some(Self::DefaultDataStorage),
+            _ => None,
         }
     }
 }
@@ -162,6 +192,14 @@ impl AccountAppRelationType {
             AccountAppRelationType::Own => "ACCOUNT_APP_RELATION_TYPE_OWN",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "ACCOUNT_APP_RELATION_TYPE_OWN" => Some(Self::Own),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -178,6 +216,14 @@ impl FeedSource {
         match self {
             FeedSource::Unspecified => "FEED_SOURCE_UNSPECIFIED",
             FeedSource::Common => "FEED_SOURCE_COMMON",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FEED_SOURCE_UNSPECIFIED" => Some(Self::Unspecified),
+            "FEED_SOURCE_COMMON" => Some(Self::Common),
+            _ => None,
         }
     }
 }
@@ -198,6 +244,14 @@ impl FeedDestination {
             FeedDestination::Telegram => "FEED_DESTINATION_TELEGRAM",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FEED_DESTINATION_UNSPECIFIED" => Some(Self::Unspecified),
+            "FEED_DESTINATION_TELEGRAM" => Some(Self::Telegram),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -212,6 +266,13 @@ impl DbSource {
     pub fn as_str_name(&self) -> &'static str {
         match self {
             DbSource::Unspecified => "DB_SOURCE_UNSPECIFIED",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "DB_SOURCE_UNSPECIFIED" => Some(Self::Unspecified),
+            _ => None,
         }
     }
 }
@@ -230,6 +291,13 @@ impl WikiSource {
             WikiSource::Unspecified => "WIKI_SOURCE_UNSPECIFIED",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "WIKI_SOURCE_UNSPECIFIED" => Some(Self::Unspecified),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -246,6 +314,14 @@ impl DataSource {
         match self {
             DataSource::Unspecified => "DATA_SOURCE_UNSPECIFIED",
             DataSource::InternalDefault => "DATA_SOURCE_INTERNAL_DEFAULT",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "DATA_SOURCE_UNSPECIFIED" => Some(Self::Unspecified),
+            "DATA_SOURCE_INTERNAL_DEFAULT" => Some(Self::InternalDefault),
+            _ => None,
         }
     }
 }

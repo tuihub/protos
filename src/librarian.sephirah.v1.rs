@@ -1,4 +1,5 @@
 // @generated
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FileMetadata {
     #[prost(message, optional, tag="1")]
@@ -31,7 +32,17 @@ impl FileType {
             FileType::ChesedImage => "FILE_TYPE_CHESED_IMAGE",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FILE_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "FILE_TYPE_GEBURA_SAVE" => Some(Self::GeburaSave),
+            "FILE_TYPE_CHESED_IMAGE" => Some(Self::ChesedImage),
+            _ => None,
+        }
+    }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadFileRequest {
     #[prost(oneof="upload_file_request::Content", tags="1, 2")]
@@ -39,7 +50,8 @@ pub struct UploadFileRequest {
 }
 /// Nested message and enum types in `UploadFileRequest`.
 pub mod upload_file_request {
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Content {
         #[prost(message, tag="1")]
         FileChunk(super::FileChunk),
@@ -47,6 +59,7 @@ pub mod upload_file_request {
         RequireFileStatus(bool),
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadFileResponse {
     #[prost(oneof="upload_file_response::Content", tags="1, 2")]
@@ -54,21 +67,24 @@ pub struct UploadFileResponse {
 }
 /// Nested message and enum types in `UploadFileResponse`.
 pub mod upload_file_response {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct ChunkStatus {
         #[prost(int64, tag="1")]
         pub chunk_number: i64,
         #[prost(enumeration="super::ChunkTransferStatus", tag="2")]
         pub status: i32,
     }
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct FileStatus {
         #[prost(int64, repeated, tag="1")]
         pub missing_chunk_list: ::prost::alloc::vec::Vec<i64>,
         #[prost(enumeration="super::FileTransferStatus", tag="2")]
         pub status: i32,
     }
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Content {
         #[prost(message, tag="1")]
         ChunkStatus(ChunkStatus),
@@ -76,6 +92,7 @@ pub mod upload_file_response {
         FileStatus(FileStatus),
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DownloadFileRequest {
     #[prost(int64, tag="1")]
@@ -83,29 +100,35 @@ pub struct DownloadFileRequest {
     #[prost(int64, optional, tag="2")]
     pub end_chunk_number: ::core::option::Option<i64>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DownloadFileResponse {
     #[prost(message, optional, tag="1")]
     pub file_chunk: ::core::option::Option<FileChunk>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SimpleUploadFileRequest {
     #[prost(bytes="bytes", tag="1")]
     pub data: ::prost::bytes::Bytes,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SimpleUploadFileResponse {
     #[prost(enumeration="FileTransferStatus", tag="1")]
     pub status: i32,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SimpleDownloadFileRequest {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SimpleDownloadFileResponse {
     #[prost(bytes="bytes", tag="1")]
     pub data: ::prost::bytes::Bytes,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FileChunk {
     #[prost(int64, tag="1")]
@@ -136,6 +159,17 @@ impl ChunkTransferStatus {
             ChunkTransferStatus::Failed => "CHUNK_TRANSFER_STATUS_FAILED",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "CHUNK_TRANSFER_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "CHUNK_TRANSFER_STATUS_PENDING" => Some(Self::Pending),
+            "CHUNK_TRANSFER_STATUS_IN_PROGRESS" => Some(Self::InProgress),
+            "CHUNK_TRANSFER_STATUS_SUCCESS" => Some(Self::Success),
+            "CHUNK_TRANSFER_STATUS_FAILED" => Some(Self::Failed),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -160,7 +194,19 @@ impl FileTransferStatus {
             FileTransferStatus::Failed => "FILE_TRANSFER_STATUS_FAILED",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FILE_TRANSFER_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "FILE_TRANSFER_STATUS_PENDING" => Some(Self::Pending),
+            "FILE_TRANSFER_STATUS_IN_PROGRESS" => Some(Self::InProgress),
+            "FILE_TRANSFER_STATUS_SUCCESS" => Some(Self::Success),
+            "FILE_TRANSFER_STATUS_FAILED" => Some(Self::Failed),
+            _ => None,
+        }
+    }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadImageRequest {
     #[prost(message, optional, tag="1")]
@@ -170,11 +216,13 @@ pub struct UploadImageRequest {
     #[prost(string, tag="3")]
     pub description: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadImageResponse {
     #[prost(string, tag="1")]
     pub upload_token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateImageRequest {
     #[prost(message, optional, tag="1")]
@@ -184,24 +232,29 @@ pub struct UpdateImageRequest {
     #[prost(string, tag="3")]
     pub description: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateImageResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListImagesRequest {
     #[prost(message, optional, tag="1")]
     pub time_range: ::core::option::Option<super::super::v1::TimeRange>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListImagesResponse {
     #[prost(message, repeated, tag="1")]
     pub ids: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetImageRequest {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetImageResponse {
     #[prost(message, optional, tag="1")]
@@ -211,11 +264,13 @@ pub struct GetImageResponse {
     #[prost(string, tag="3")]
     pub description: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DownloadImageRequest {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DownloadImageResponse {
     #[prost(string, tag="1")]
@@ -250,27 +305,46 @@ impl ErrorReason {
             ErrorReason::BadGateway => "ERROR_REASON_BAD_GATEWAY",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "ERROR_REASON_UNSPECIFIED" => Some(Self::Unspecified),
+            "ERROR_REASON_BAD_REQUEST" => Some(Self::BadRequest),
+            "ERROR_REASON_UNAUTHORIZED" => Some(Self::Unauthorized),
+            "ERROR_REASON_FORBIDDEN" => Some(Self::Forbidden),
+            "ERROR_REASON_NOT_FOUND" => Some(Self::NotFound),
+            "ERROR_REASON_METHOD_NOT_ALLOWED" => Some(Self::MethodNotAllowed),
+            "ERROR_REASON_NOT_IMPLEMENTED" => Some(Self::NotImplemented),
+            "ERROR_REASON_BAD_GATEWAY" => Some(Self::BadGateway),
+            _ => None,
+        }
+    }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateAppRequest {
-    ///  `id` can be anything, `source` must be APP_SOURCE_INTERNAL
+    /// `id` can be anything, `source` must be APP_SOURCE_INTERNAL
     #[prost(message, optional, tag="1")]
     pub app: ::core::option::Option<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateAppResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateAppRequest {
-    ///  source must be APP_SOURCE_INTERNAL
+    /// source must be APP_SOURCE_INTERNAL
     #[prost(message, optional, tag="1")]
     pub app: ::core::option::Option<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateAppResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListAppsRequest {
     #[prost(message, optional, tag="1")]
@@ -284,6 +358,7 @@ pub struct ListAppsRequest {
     #[prost(bool, tag="5")]
     pub contain_details: bool,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListAppsResponse {
     #[prost(message, optional, tag="1")]
@@ -291,29 +366,34 @@ pub struct ListAppsResponse {
     #[prost(message, repeated, tag="2")]
     pub apps: ::prost::alloc::vec::Vec<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RefreshAppRequest {
-    ///  Must not APP_SOURCE_INTERNAL
+    /// Must not APP_SOURCE_INTERNAL
     #[prost(message, optional, tag="1")]
     pub app_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RefreshAppResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MergeAppsRequest {
-    ///  source must be APP_SOURCE_INTERNAL
+    /// source must be APP_SOURCE_INTERNAL
     #[prost(message, optional, tag="1")]
     pub base: ::core::option::Option<super::super::v1::App>,
-    ///  Must be APP_SOURCE_INTERNAL.
-    ///  The InternalID will be dropped after merge.
-    ///  Other apps bind to this app will rebind to base.
+    /// Must be APP_SOURCE_INTERNAL.
+    /// The InternalID will be dropped after merge.
+    /// Other apps bind to this app will rebind to base.
     #[prost(message, optional, tag="2")]
     pub merged: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MergeAppsResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SearchAppsRequest {
     #[prost(message, optional, tag="1")]
@@ -321,6 +401,7 @@ pub struct SearchAppsRequest {
     #[prost(string, tag="2")]
     pub keywords: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SearchAppsResponse {
     #[prost(message, optional, tag="1")]
@@ -328,51 +409,62 @@ pub struct SearchAppsResponse {
     #[prost(message, repeated, tag="2")]
     pub apps: ::prost::alloc::vec::Vec<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetBindAppsRequest {
     #[prost(message, optional, tag="1")]
     pub app_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetBindAppsResponse {
     #[prost(message, repeated, tag="1")]
     pub apps: ::prost::alloc::vec::Vec<super::super::v1::App>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PurchaseAppRequest {
-    ///  source must be APP_SOURCE_INTERNAL
+    /// source must be APP_SOURCE_INTERNAL
     #[prost(message, optional, tag="1")]
     pub app_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PurchaseAppResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetAppLibraryRequest {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetAppLibraryResponse {
     #[prost(message, repeated, tag="1")]
     pub app_ids: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateAppPackageRequest {
     #[prost(message, optional, tag="1")]
     pub app_package: ::core::option::Option<super::super::v1::AppPackage>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateAppPackageResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateAppPackageRequest {
     #[prost(message, optional, tag="1")]
     pub app_package: ::core::option::Option<super::super::v1::AppPackage>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateAppPackageResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListAppPackagesRequest {
     #[prost(message, optional, tag="1")]
@@ -384,6 +476,7 @@ pub struct ListAppPackagesRequest {
     #[prost(message, repeated, tag="4")]
     pub assigned_app_id_filter: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListAppPackagesResponse {
     #[prost(message, optional, tag="1")]
@@ -391,33 +484,40 @@ pub struct ListAppPackagesResponse {
     #[prost(message, repeated, tag="2")]
     pub app_packages: ::prost::alloc::vec::Vec<super::super::v1::AppPackage>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ReportAppPackagesRequest {
     #[prost(map="string, message", tag="1")]
     pub app_packages: ::std::collections::HashMap<::prost::alloc::string::String, super::super::v1::AppPackageBinary>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ReportAppPackagesResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AssignAppPackageRequest {
-    ///  Must be APP_SOURCE_INTERNAL
+    /// Must be APP_SOURCE_INTERNAL
     #[prost(message, optional, tag="1")]
     pub app_id: ::core::option::Option<super::super::v1::InternalId>,
     #[prost(message, optional, tag="2")]
     pub app_package_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AssignAppPackageResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UnAssignAppPackageRequest {
     #[prost(message, optional, tag="1")]
     pub app_package_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UnAssignAppPackageResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadGameSaveFileRequest {
     #[prost(message, optional, tag="1")]
@@ -425,21 +525,25 @@ pub struct UploadGameSaveFileRequest {
     #[prost(message, optional, tag="2")]
     pub app_package_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UploadGameSaveFileResponse {
     #[prost(string, tag="1")]
     pub upload_token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DownloadGameSaveFileRequest {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DownloadGameSaveFileResponse {
     #[prost(string, tag="2")]
     pub download_token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListGameSaveFileRequest {
     #[prost(message, optional, tag="1")]
@@ -447,6 +551,7 @@ pub struct ListGameSaveFileRequest {
     #[prost(message, optional, tag="2")]
     pub app_package_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListGameSaveFileResponse {
     #[prost(message, optional, tag="1")]
@@ -454,24 +559,29 @@ pub struct ListGameSaveFileResponse {
     #[prost(message, repeated, tag="2")]
     pub file_list: ::prost::alloc::vec::Vec<FileMetadata>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateNotifyTargetRequest {
     #[prost(message, optional, tag="1")]
     pub target: ::core::option::Option<NotifyTarget>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateNotifyTargetResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateNotifyTargetRequest {
     #[prost(message, optional, tag="1")]
     pub target: ::core::option::Option<NotifyTarget>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateNotifyTargetResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListNotifyTargetsRequest {
     #[prost(message, optional, tag="1")]
@@ -483,6 +593,7 @@ pub struct ListNotifyTargetsRequest {
     #[prost(enumeration="NotifyTargetStatus", repeated, tag="4")]
     pub status_filter: ::prost::alloc::vec::Vec<i32>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListNotifyTargetsResponse {
     #[prost(message, optional, tag="1")]
@@ -490,24 +601,29 @@ pub struct ListNotifyTargetsResponse {
     #[prost(message, repeated, tag="2")]
     pub targets: ::prost::alloc::vec::Vec<NotifyTarget>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateNotifyFlowRequest {
     #[prost(message, optional, tag="1")]
     pub flow: ::core::option::Option<NotifyFlow>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateNotifyFlowResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateNotifyFlowRequest {
     #[prost(message, optional, tag="1")]
     pub flow: ::core::option::Option<NotifyFlow>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateNotifyFlowResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListNotifyFlowsRequest {
     #[prost(message, optional, tag="1")]
@@ -515,6 +631,7 @@ pub struct ListNotifyFlowsRequest {
     #[prost(message, repeated, tag="2")]
     pub id_filter: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListNotifyFlowsResponse {
     #[prost(message, optional, tag="1")]
@@ -522,6 +639,7 @@ pub struct ListNotifyFlowsResponse {
     #[prost(message, repeated, tag="2")]
     pub flows: ::prost::alloc::vec::Vec<NotifyFlow>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NotifyTarget {
     #[prost(message, optional, tag="1")]
@@ -537,6 +655,7 @@ pub struct NotifyTarget {
     #[prost(string, tag="6")]
     pub token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NotifyFlow {
     #[prost(message, optional, tag="1")]
@@ -552,11 +671,13 @@ pub struct NotifyFlow {
     #[prost(enumeration="NotifyFlowStatus", tag="6")]
     pub status: i32,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NotifyFlowSource {
     #[prost(message, repeated, tag="1")]
     pub feed_id_filter: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NotifyFlowTarget {
     #[prost(message, optional, tag="1")]
@@ -581,6 +702,14 @@ impl NotifyTargetType {
             NotifyTargetType::Telegram => "NOTIFY_TARGET_TYPE_TELEGRAM",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "NOTIFY_TARGET_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "NOTIFY_TARGET_TYPE_TELEGRAM" => Some(Self::Telegram),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -599,6 +728,15 @@ impl NotifyTargetStatus {
             NotifyTargetStatus::Unspecified => "NOTIFY_TARGET_STATUS_UNSPECIFIED",
             NotifyTargetStatus::Active => "NOTIFY_TARGET_STATUS_ACTIVE",
             NotifyTargetStatus::Suspend => "NOTIFY_TARGET_STATUS_SUSPEND",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "NOTIFY_TARGET_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "NOTIFY_TARGET_STATUS_ACTIVE" => Some(Self::Active),
+            "NOTIFY_TARGET_STATUS_SUSPEND" => Some(Self::Suspend),
+            _ => None,
         }
     }
 }
@@ -621,7 +759,17 @@ impl NotifyFlowStatus {
             NotifyFlowStatus::Suspend => "NOTIFY_FLOW_STATUS_SUSPEND",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "NOTIFY_FLOW_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "NOTIFY_FLOW_STATUS_ACTIVE" => Some(Self::Active),
+            "NOTIFY_FLOW_STATUS_SUSPEND" => Some(Self::Suspend),
+            _ => None,
+        }
+    }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetTokenRequest {
     #[prost(string, tag="1")]
@@ -629,6 +777,7 @@ pub struct GetTokenRequest {
     #[prost(string, tag="2")]
     pub password: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetTokenResponse {
     #[prost(string, tag="1")]
@@ -636,9 +785,11 @@ pub struct GetTokenResponse {
     #[prost(string, tag="2")]
     pub refresh_token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RefreshTokenRequest {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RefreshTokenResponse {
     #[prost(string, tag="1")]
@@ -646,48 +797,57 @@ pub struct RefreshTokenResponse {
     #[prost(string, tag="2")]
     pub refresh_token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GenerateTokenRequest {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GenerateTokenResponse {
     #[prost(string, tag="1")]
     pub refresh_token: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateUserRequest {
     #[prost(message, optional, tag="1")]
     pub user: ::core::option::Option<User>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateUserResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateUserRequest {
     #[prost(message, optional, tag="1")]
     pub user: ::core::option::Option<User>,
-    ///  Original password. Required if new password is not empty string
+    /// Original password. Required if new password is not empty string
     #[prost(string, optional, tag="2")]
     pub password: ::core::option::Option<::prost::alloc::string::String>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateUserResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetUserRequest {
-    ///  leave empty to get self user info
+    /// leave empty to get self user info
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetUserResponse {
     #[prost(message, optional, tag="1")]
     pub user: ::core::option::Option<User>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListUsersRequest {
     #[prost(message, optional, tag="1")]
@@ -697,40 +857,47 @@ pub struct ListUsersRequest {
     #[prost(enumeration="UserStatus", repeated, tag="3")]
     pub status_filter: ::prost::alloc::vec::Vec<i32>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListUsersResponse {
     #[prost(message, optional, tag="1")]
     pub paging: ::core::option::Option<super::super::v1::PagingResponse>,
-    ///  self will not contained in the list
+    /// self will not contained in the list
     #[prost(message, repeated, tag="2")]
     pub users: ::prost::alloc::vec::Vec<User>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LinkAccountRequest {
     #[prost(message, optional, tag="1")]
     pub account_id: ::core::option::Option<super::super::v1::AccountId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LinkAccountResponse {
     #[prost(message, optional, tag="1")]
     pub account_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UnLinkAccountRequest {
     #[prost(message, optional, tag="1")]
     pub account_id: ::core::option::Option<super::super::v1::AccountId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UnLinkAccountResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListLinkAccountsRequest {
     #[prost(message, optional, tag="1")]
     pub paging: ::core::option::Option<super::super::v1::PagingRequest>,
-    ///  Used to list other user's account
+    /// Used to list other user's account
     #[prost(message, optional, tag="2")]
     pub user_id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListLinkAccountsResponse {
     #[prost(message, optional, tag="1")]
@@ -738,6 +905,7 @@ pub struct ListLinkAccountsResponse {
     #[prost(message, repeated, tag="2")]
     pub accounts: ::prost::alloc::vec::Vec<super::super::v1::Account>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct User {
     #[prost(message, optional, tag="1")]
@@ -772,6 +940,16 @@ impl UserType {
             UserType::Sentinel => "USER_TYPE_SENTINEL",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "USER_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "USER_TYPE_ADMIN" => Some(Self::Admin),
+            "USER_TYPE_NORMAL" => Some(Self::Normal),
+            "USER_TYPE_SENTINEL" => Some(Self::Sentinel),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -792,25 +970,39 @@ impl UserStatus {
             UserStatus::Blocked => "USER_STATUS_BLOCKED",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "USER_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "USER_STATUS_ACTIVE" => Some(Self::Active),
+            "USER_STATUS_BLOCKED" => Some(Self::Blocked),
+            _ => None,
+        }
+    }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateFeedConfigRequest {
     #[prost(message, optional, tag="1")]
     pub config: ::core::option::Option<FeedConfig>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateFeedConfigResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateFeedConfigRequest {
     #[prost(message, optional, tag="1")]
     pub config: ::core::option::Option<FeedConfig>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateFeedConfigResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListFeedConfigsRequest {
     #[prost(message, optional, tag="1")]
@@ -824,6 +1016,7 @@ pub struct ListFeedConfigsRequest {
     #[prost(enumeration="FeedConfigStatus", repeated, tag="5")]
     pub status_filter: ::prost::alloc::vec::Vec<i32>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListFeedConfigsResponse {
     #[prost(message, optional, tag="1")]
@@ -833,7 +1026,8 @@ pub struct ListFeedConfigsResponse {
 }
 /// Nested message and enum types in `ListFeedConfigsResponse`.
 pub mod list_feed_configs_response {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct FeedWithConfig {
         #[prost(message, optional, tag="1")]
         pub feed: ::core::option::Option<super::super::super::v1::Feed>,
@@ -841,6 +1035,7 @@ pub mod list_feed_configs_response {
         pub config: ::core::option::Option<super::FeedConfig>,
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListFeedItemsRequest {
     #[prost(message, optional, tag="1")]
@@ -856,6 +1051,7 @@ pub struct ListFeedItemsRequest {
     #[prost(message, optional, tag="6")]
     pub publish_time_range: ::core::option::Option<super::super::v1::TimeRange>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ListFeedItemsResponse {
     #[prost(message, optional, tag="1")]
@@ -863,6 +1059,7 @@ pub struct ListFeedItemsResponse {
     #[prost(message, repeated, tag="2")]
     pub items: ::prost::alloc::vec::Vec<FeedItemDigest>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupFeedItemsRequest {
     #[prost(enumeration="group_feed_items_request::GroupBy", tag="1")]
@@ -875,14 +1072,14 @@ pub struct GroupFeedItemsRequest {
     pub publish_platform_filter: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     #[prost(string, repeated, tag="5")]
     pub tag_filter: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    ///  TimeRange will be rounded to integer time that contains the given time on server side.
-    ///  e.g. the given TimeRange is 2023.2.13 9:26 ~ 2023.3.14 17:21.
-    ///  When group by year, rounded to 2023.1.1 00:00 ~ 2024.1.1 00:00.
-    ///  When group by month, rounded to 2023.2.1 00:00 ~ 2023.4.1. 00:00.
-    ///  When group by dat, rounded to 2023.2.13 00:00 ~ 2023.3.15 00:00.
+    /// TimeRange will be rounded to integer time that contains the given time on server side.
+    /// e.g. the given TimeRange is 2023.2.13 9:26 ~ 2023.3.14 17:21.
+    /// When group by year, rounded to 2023.1.1 00:00 ~ 2024.1.1 00:00.
+    /// When group by month, rounded to 2023.2.1 00:00 ~ 2023.4.1. 00:00.
+    /// When group by dat, rounded to 2023.2.13 00:00 ~ 2023.3.15 00:00.
     #[prost(message, optional, tag="6")]
     pub publish_time_range: ::core::option::Option<super::super::v1::TimeRange>,
-    ///  NULL means no limit
+    /// NULL means no limit
     #[prost(int32, optional, tag="7")]
     pub group_size: ::core::option::Option<i32>,
 }
@@ -909,8 +1106,19 @@ pub mod group_feed_items_request {
                 GroupBy::Day => "GROUP_BY_DAY",
             }
         }
+        /// Creates an enum from field names used in the ProtoBuf definition.
+        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+            match value {
+                "GROUP_BY_UNSPECIFIED" => Some(Self::Unspecified),
+                "GROUP_BY_YEAR" => Some(Self::Year),
+                "GROUP_BY_MONTH" => Some(Self::Month),
+                "GROUP_BY_DAY" => Some(Self::Day),
+                _ => None,
+            }
+        }
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupFeedItemsResponse {
     #[prost(message, repeated, tag="1")]
@@ -918,7 +1126,8 @@ pub struct GroupFeedItemsResponse {
 }
 /// Nested message and enum types in `GroupFeedItemsResponse`.
 pub mod group_feed_items_response {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct FeedItemsGroup {
         #[prost(message, optional, tag="1")]
         pub time_range: ::core::option::Option<super::super::super::v1::TimeRange>,
@@ -926,26 +1135,31 @@ pub mod group_feed_items_response {
         pub items: ::prost::alloc::vec::Vec<super::FeedItemDigest>,
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetFeedItemRequest {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetFeedItemResponse {
     #[prost(message, optional, tag="1")]
     pub item: ::core::option::Option<super::super::v1::FeedItem>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetBatchFeedItemsRequest {
     #[prost(message, repeated, tag="1")]
     pub ids: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetBatchFeedItemsResponse {
     #[prost(message, repeated, tag="1")]
     pub items: ::prost::alloc::vec::Vec<super::super::v1::FeedItem>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FeedConfig {
     #[prost(message, optional, tag="1")]
@@ -954,7 +1168,7 @@ pub struct FeedConfig {
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag="3")]
     pub feed_url: ::prost::alloc::string::String,
-    ///  No meaning when source is FEED_CONFIG_SOURCE_COMMON
+    /// No meaning when source is FEED_CONFIG_SOURCE_COMMON
     #[prost(message, optional, tag="4")]
     pub author_account: ::core::option::Option<super::super::v1::InternalId>,
     #[prost(enumeration="FeedConfigSource", tag="5")]
@@ -965,37 +1179,38 @@ pub struct FeedConfig {
     pub pull_interval: ::core::option::Option<::pbjson_types::Duration>,
     #[prost(string, repeated, tag="8")]
     pub tags: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    ///  response only
+    /// response only
     #[prost(message, optional, tag="9")]
     pub latest_pull_time: ::core::option::Option<::pbjson_types::Timestamp>,
 }
-///  Digest information generated from origin item data
+/// Digest information generated from origin item data
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FeedItemDigest {
     #[prost(message, optional, tag="1")]
     pub feed_id: ::core::option::Option<super::super::v1::InternalId>,
     #[prost(message, optional, tag="2")]
     pub item_id: ::core::option::Option<super::super::v1::InternalId>,
-    ///  `FeedItem.image.url`
+    /// `FeedItem.image.url`
     #[prost(string, tag="3")]
     pub avatar_url: ::prost::alloc::string::String,
-    ///  `FeedItem.authors.name`, seperated by `, `
+    /// `FeedItem.authors.name`, seperated by `, `
     #[prost(string, tag="4")]
     pub authors: ::prost::alloc::string::String,
-    ///  `FeedItem.published_parsed`
+    /// `FeedItem.published_parsed`
     #[prost(message, optional, tag="5")]
     pub published_parsed: ::core::option::Option<::pbjson_types::Timestamp>,
-    ///  `FeedItem.title`
+    /// `FeedItem.title`
     #[prost(string, tag="6")]
     pub title: ::prost::alloc::string::String,
-    ///  text generated from `FeedItem.content` or `FeedItem.description`
+    /// text generated from `FeedItem.content` or `FeedItem.description`
     #[prost(string, tag="7")]
     pub short_description: ::prost::alloc::string::String,
-    ///  images generated from `FeedItem.content` or `FeedItem.description`
-    ///  maximum 3
+    /// images generated from `FeedItem.content` or `FeedItem.description`
+    /// maximum 3
     #[prost(string, repeated, tag="8")]
     pub image_urls: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    ///  hostname of `FeedItem.link`, e.g. github.com
+    /// hostname of `FeedItem.link`, e.g. github.com
     #[prost(string, tag="9")]
     pub publish_platform: ::prost::alloc::string::String,
 }
@@ -1018,6 +1233,15 @@ impl FeedConfigStatus {
             FeedConfigStatus::Suspend => "FEED_CONFIG_STATUS_SUSPEND",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FEED_CONFIG_STATUS_UNSPECIFIED" => Some(Self::Unspecified),
+            "FEED_CONFIG_STATUS_ACTIVE" => Some(Self::Active),
+            "FEED_CONFIG_STATUS_SUSPEND" => Some(Self::Suspend),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -1036,42 +1260,54 @@ impl FeedConfigSource {
             FeedConfigSource::Common => "FEED_CONFIG_SOURCE_COMMON",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FEED_CONFIG_SOURCE_UNSPECIFIED" => Some(Self::Unspecified),
+            "FEED_CONFIG_SOURCE_COMMON" => Some(Self::Common),
+            _ => None,
+        }
+    }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetServerInformationRequest {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetServerInformationResponse {
     #[prost(message, optional, tag="1")]
     pub server_binary_summary: ::core::option::Option<ServerBinarySummary>,
     #[prost(message, optional, tag="2")]
     pub protocol_summary: ::core::option::Option<ServerProtocolSummary>,
-    ///  The time server received the request,
-    ///  note that there is a transmission delay between server and client.
+    /// The time server received the request,
+    /// note that there is a transmission delay between server and client.
     #[prost(message, optional, tag="3")]
     pub current_time: ::core::option::Option<::pbjson_types::Timestamp>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ServerBinarySummary {
-    ///  Server source code address.
-    ///  *Should* be a valid http address.
+    /// Server source code address.
+    /// *Should* be a valid http address.
     #[prost(string, tag="1")]
     pub source_code_address: ::prost::alloc::string::String,
-    ///  Binary build version.
-    ///  The content *should* be a semantic version string similar to the one generated by `git describe`,
-    ///  but rely on the actual implementation of the server.
+    /// Binary build version.
+    /// The content *should* be a semantic version string similar to the one generated by `git describe`,
+    /// but rely on the actual implementation of the server.
     #[prost(string, tag="2")]
     pub build_version: ::prost::alloc::string::String,
-    ///  Binary build date.
-    ///  The content *should* be a date format that is human-readable.
+    /// Binary build date.
+    /// The content *should* be a date format that is human-readable.
     #[prost(string, tag="3")]
     pub build_date: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ServerProtocolSummary {
-    ///  Protocol version used by server.
-    ///  The content *must* be a semantic version string generated by `git describe`,
-    ///  and if the server is built for production, it *must* be a valid version tag.
+    /// Protocol version used by server.
+    /// The content *must* be a semantic version string generated by `git describe`,
+    /// and if the server is built for production, it *must* be a valid version tag.
     #[prost(string, tag="1")]
     pub version: ::prost::alloc::string::String,
 }

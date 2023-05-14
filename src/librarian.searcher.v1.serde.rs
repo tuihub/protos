@@ -100,7 +100,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Description => {
                             if description__.is_some() {
@@ -352,9 +352,9 @@ impl<'de> serde::Deserialize<'de> for NewBatchIDsRequest {
                             if num__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("num"));
                             }
-                            num__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            num__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -607,7 +607,7 @@ impl<'de> serde::Deserialize<'de> for NewIdResponse {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                     }
                 }
@@ -890,15 +890,15 @@ impl<'de> serde::Deserialize<'de> for search_id_response::Result {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Rank => {
                             if rank__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("rank"));
                             }
-                            rank__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            rank__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }

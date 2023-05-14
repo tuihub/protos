@@ -152,7 +152,7 @@ pub mod librarian_searcher_service_client {
 pub mod librarian_searcher_service_server {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
-    ///Generated trait containing gRPC methods that should be implemented for use with LibrarianSearcherServiceServer.
+    /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSearcherServiceServer.
     #[async_trait]
     pub trait LibrarianSearcherService: Send + Sync + 'static {
         async fn new_id(

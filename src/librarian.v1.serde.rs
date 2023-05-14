@@ -58,9 +58,12 @@ impl<'de> serde::Deserialize<'de> for Account {
         const FIELDS: &[&str] = &[
             "id",
             "platform",
+            "platform_account_id",
             "platformAccountId",
             "name",
+            "profile_url",
             "profileUrl",
+            "avatar_url",
             "avatarUrl",
         ];
 
@@ -95,10 +98,10 @@ impl<'de> serde::Deserialize<'de> for Account {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "platform" => Ok(GeneratedField::Platform),
-                            "platformAccountId" => Ok(GeneratedField::PlatformAccountId),
+                            "platformAccountId" | "platform_account_id" => Ok(GeneratedField::PlatformAccountId),
                             "name" => Ok(GeneratedField::Name),
-                            "profileUrl" => Ok(GeneratedField::ProfileUrl),
-                            "avatarUrl" => Ok(GeneratedField::AvatarUrl),
+                            "profileUrl" | "profile_url" => Ok(GeneratedField::ProfileUrl),
+                            "avatarUrl" | "avatar_url" => Ok(GeneratedField::AvatarUrl),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -130,7 +133,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Platform => {
                             if platform__.is_some() {
@@ -211,6 +214,7 @@ impl<'de> serde::Deserialize<'de> for AccountId {
     {
         const FIELDS: &[&str] = &[
             "platform",
+            "platform_account_id",
             "platformAccountId",
         ];
 
@@ -240,7 +244,7 @@ impl<'de> serde::Deserialize<'de> for AccountId {
                     {
                         match value {
                             "platform" => Ok(GeneratedField::Platform),
-                            "platformAccountId" => Ok(GeneratedField::PlatformAccountId),
+                            "platformAccountId" | "platform_account_id" => Ok(GeneratedField::PlatformAccountId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -439,11 +443,15 @@ impl<'de> serde::Deserialize<'de> for App {
         const FIELDS: &[&str] = &[
             "id",
             "source",
+            "source_app_id",
             "sourceAppId",
+            "source_url",
             "sourceUrl",
             "name",
             "type",
+            "short_description",
             "shortDescription",
+            "image_url",
             "imageUrl",
             "details",
         ];
@@ -482,12 +490,12 @@ impl<'de> serde::Deserialize<'de> for App {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "source" => Ok(GeneratedField::Source),
-                            "sourceAppId" => Ok(GeneratedField::SourceAppId),
-                            "sourceUrl" => Ok(GeneratedField::SourceUrl),
+                            "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
+                            "sourceUrl" | "source_url" => Ok(GeneratedField::SourceUrl),
                             "name" => Ok(GeneratedField::Name),
                             "type" => Ok(GeneratedField::Type),
-                            "shortDescription" => Ok(GeneratedField::ShortDescription),
-                            "imageUrl" => Ok(GeneratedField::ImageUrl),
+                            "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
+                            "imageUrl" | "image_url" => Ok(GeneratedField::ImageUrl),
                             "details" => Ok(GeneratedField::Details),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -523,7 +531,7 @@ impl<'de> serde::Deserialize<'de> for App {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Source => {
                             if source__.is_some() {
@@ -541,7 +549,7 @@ impl<'de> serde::Deserialize<'de> for App {
                             if source_url__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sourceUrl"));
                             }
-                            source_url__ = Some(map.next_value()?);
+                            source_url__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -571,7 +579,7 @@ impl<'de> serde::Deserialize<'de> for App {
                             if details__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("details"));
                             }
-                            details__ = Some(map.next_value()?);
+                            details__ = map.next_value()?;
                         }
                     }
                 }
@@ -641,6 +649,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
     {
         const FIELDS: &[&str] = &[
             "description",
+            "release_date",
             "releaseDate",
             "developer",
             "publisher",
@@ -676,7 +685,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                     {
                         match value {
                             "description" => Ok(GeneratedField::Description),
-                            "releaseDate" => Ok(GeneratedField::ReleaseDate),
+                            "releaseDate" | "release_date" => Ok(GeneratedField::ReleaseDate),
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
                             "version" => Ok(GeneratedField::Version),
@@ -784,6 +793,7 @@ impl<'de> serde::Deserialize<'de> for AppId {
     {
         const FIELDS: &[&str] = &[
             "source",
+            "source_app_id",
             "sourceAppId",
         ];
 
@@ -813,7 +823,7 @@ impl<'de> serde::Deserialize<'de> for AppId {
                     {
                         match value {
                             "source" => Ok(GeneratedField::Source),
-                            "sourceAppId" => Ok(GeneratedField::SourceAppId),
+                            "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -925,6 +935,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
         const FIELDS: &[&str] = &[
             "id",
             "source",
+            "source_id",
             "sourceId",
             "name",
             "description",
@@ -964,7 +975,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "source" => Ok(GeneratedField::Source),
-                            "sourceId" => Ok(GeneratedField::SourceId),
+                            "sourceId" | "source_id" => Ok(GeneratedField::SourceId),
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "binary" => Ok(GeneratedField::Binary),
@@ -1001,7 +1012,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Source => {
                             if source__.is_some() {
@@ -1013,7 +1024,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             if source_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sourceId"));
                             }
-                            source_id__ = Some(map.next_value()?);
+                            source_id__ = map.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -1031,7 +1042,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             if binary__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("binary"));
                             }
-                            binary__ = Some(map.next_value()?);
+                            binary__ = map.next_value()?;
                         }
                         GeneratedField::Public => {
                             if public__.is_some() {
@@ -1099,7 +1110,9 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
     {
         const FIELDS: &[&str] = &[
             "name",
+            "size_byte",
             "sizeByte",
+            "public_url",
             "publicUrl",
             "sha256",
         ];
@@ -1132,8 +1145,8 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                     {
                         match value {
                             "name" => Ok(GeneratedField::Name),
-                            "sizeByte" => Ok(GeneratedField::SizeByte),
-                            "publicUrl" => Ok(GeneratedField::PublicUrl),
+                            "sizeByte" | "size_byte" => Ok(GeneratedField::SizeByte),
+                            "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
                             "sha256" => Ok(GeneratedField::Sha256),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -1170,9 +1183,9 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             if size_byte__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sizeByte"));
                             }
-                            size_byte__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            size_byte__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::PublicUrl => {
                             if public_url__.is_some() {
@@ -1184,9 +1197,9 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             if sha256__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sha256"));
                             }
-                            sha256__ = Some(
-                                map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0
-                            );
+                            sha256__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -1575,7 +1588,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Title => {
                             if title__.is_some() {
@@ -1611,7 +1624,7 @@ impl<'de> serde::Deserialize<'de> for Feed {
                             if image__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("image"));
                             }
-                            image__ = Some(map.next_value()?);
+                            image__ = map.next_value()?;
                         }
                         GeneratedField::Authors => {
                             if authors__.is_some() {
@@ -1981,10 +1994,13 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             "link",
             "image",
             "published",
+            "published_parsed",
             "publishedParsed",
             "updated",
+            "updated_parsed",
             "updatedParsed",
             "enclosures",
+            "publish_platform",
             "publishPlatform",
         ];
 
@@ -2034,11 +2050,11 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             "link" => Ok(GeneratedField::Link),
                             "image" => Ok(GeneratedField::Image),
                             "published" => Ok(GeneratedField::Published),
-                            "publishedParsed" => Ok(GeneratedField::PublishedParsed),
+                            "publishedParsed" | "published_parsed" => Ok(GeneratedField::PublishedParsed),
                             "updated" => Ok(GeneratedField::Updated),
-                            "updatedParsed" => Ok(GeneratedField::UpdatedParsed),
+                            "updatedParsed" | "updated_parsed" => Ok(GeneratedField::UpdatedParsed),
                             "enclosures" => Ok(GeneratedField::Enclosures),
-                            "publishPlatform" => Ok(GeneratedField::PublishPlatform),
+                            "publishPlatform" | "publish_platform" => Ok(GeneratedField::PublishPlatform),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2078,7 +2094,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = map.next_value()?;
                         }
                         GeneratedField::Title => {
                             if title__.is_some() {
@@ -2120,7 +2136,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             if image__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("image"));
                             }
-                            image__ = Some(map.next_value()?);
+                            image__ = map.next_value()?;
                         }
                         GeneratedField::Published => {
                             if published__.is_some() {
@@ -2132,7 +2148,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             if published_parsed__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("publishedParsed"));
                             }
-                            published_parsed__ = Some(map.next_value()?);
+                            published_parsed__ = map.next_value()?;
                         }
                         GeneratedField::Updated => {
                             if updated__.is_some() {
@@ -2144,7 +2160,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             if updated_parsed__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updatedParsed"));
                             }
-                            updated_parsed__ = Some(map.next_value()?);
+                            updated_parsed__ = map.next_value()?;
                         }
                         GeneratedField::Enclosures => {
                             if enclosures__.is_some() {
@@ -2368,9 +2384,9 @@ impl<'de> serde::Deserialize<'de> for InternalId {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            id__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -2413,7 +2429,9 @@ impl<'de> serde::Deserialize<'de> for PagingRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "page_num",
             "pageNum",
+            "page_size",
             "pageSize",
         ];
 
@@ -2442,8 +2460,8 @@ impl<'de> serde::Deserialize<'de> for PagingRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "pageNum" => Ok(GeneratedField::PageNum),
-                            "pageSize" => Ok(GeneratedField::PageSize),
+                            "pageNum" | "page_num" => Ok(GeneratedField::PageNum),
+                            "pageSize" | "page_size" => Ok(GeneratedField::PageSize),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2471,17 +2489,17 @@ impl<'de> serde::Deserialize<'de> for PagingRequest {
                             if page_num__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("pageNum"));
                             }
-                            page_num__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            page_num__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::PageSize => {
                             if page_size__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("pageSize"));
                             }
-                            page_size__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            page_size__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -2519,6 +2537,7 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "total_size",
             "totalSize",
         ];
 
@@ -2546,7 +2565,7 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "totalSize" => Ok(GeneratedField::TotalSize),
+                            "totalSize" | "total_size" => Ok(GeneratedField::TotalSize),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2573,9 +2592,9 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
                             if total_size__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("totalSize"));
                             }
-                            total_size__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            total_size__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -2618,6 +2637,7 @@ impl<'de> serde::Deserialize<'de> for TimeRange {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "start_time",
             "startTime",
             "duration",
         ];
@@ -2647,7 +2667,7 @@ impl<'de> serde::Deserialize<'de> for TimeRange {
                         E: serde::de::Error,
                     {
                         match value {
-                            "startTime" => Ok(GeneratedField::StartTime),
+                            "startTime" | "start_time" => Ok(GeneratedField::StartTime),
                             "duration" => Ok(GeneratedField::Duration),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -2676,13 +2696,13 @@ impl<'de> serde::Deserialize<'de> for TimeRange {
                             if start_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("startTime"));
                             }
-                            start_time__ = Some(map.next_value()?);
+                            start_time__ = map.next_value()?;
                         }
                         GeneratedField::Duration => {
                             if duration__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("duration"));
                             }
-                            duration__ = Some(map.next_value()?);
+                            duration__ = map.next_value()?;
                         }
                     }
                 }

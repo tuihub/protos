@@ -1,52 +1,65 @@
 // @generated
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct InsertVertexRequest {
     #[prost(message, repeated, tag="1")]
     pub vertex_list: ::prost::alloc::vec::Vec<Vertex>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct InsertVertexResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteVertexRequest {
     #[prost(int64, repeated, tag="1")]
     pub vid_list: ::prost::alloc::vec::Vec<i64>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteVertexResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateVertexRequest {
     #[prost(message, repeated, tag="1")]
     pub vertex_list: ::prost::alloc::vec::Vec<Vertex>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateVertexResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct InsertEdgeRequest {
     #[prost(message, repeated, tag="1")]
     pub edge_list: ::prost::alloc::vec::Vec<Edge>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct InsertEdgeResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteEdgeRequest {
     #[prost(message, repeated, tag="2")]
     pub edge_list: ::prost::alloc::vec::Vec<Edge>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeleteEdgeResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateEdgeRequest {
     #[prost(message, repeated, tag="3")]
     pub edge_list: ::prost::alloc::vec::Vec<Edge>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UpdateEdgeResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GoFromVertexRequest {
     #[prost(int64, tag="1")]
@@ -64,21 +77,25 @@ pub struct GoFromVertexRequest {
     #[prost(int64, tag="15")]
     pub offset: i64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GoFromVertexResponse {
     #[prost(message, repeated, tag="1")]
     pub vertex_list: ::prost::alloc::vec::Vec<Vertex>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FetchEqualVertexRequest {
     #[prost(int64, tag="1")]
     pub src_vid: i64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FetchEqualVertexResponse {
     #[prost(message, repeated, tag="1")]
     pub vertex_list: ::prost::alloc::vec::Vec<Vertex>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FetchEqualVertexNeighborRequest {
     #[prost(int64, tag="1")]
@@ -88,11 +105,13 @@ pub struct FetchEqualVertexNeighborRequest {
     #[prost(enumeration="EdgeDirection", tag="3")]
     pub edge_direction: i32,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FetchEqualVertexNeighborResponse {
     #[prost(message, repeated, tag="1")]
     pub edge_list: ::prost::alloc::vec::Vec<Edge>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindPathRequest {
     #[prost(int64, repeated, tag="1")]
@@ -106,6 +125,7 @@ pub struct FindPathRequest {
     #[prost(int64, tag="5")]
     pub max_step: i64,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FindPathResponse {
     #[prost(message, repeated, tag="1")]
@@ -113,14 +133,16 @@ pub struct FindPathResponse {
 }
 /// Nested message and enum types in `FindPathResponse`.
 pub mod find_path_response {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct SinglePath {
-        ///  Path from edge_list\[0\].src_vid to edge_list\[-1\].dst_vid
-        ///  If reverse edge is allowed, begin vid may not be src_vid but dst_vid, the end vid is the same
+        /// Path from edge_list\[0\].src_vid to edge_list\[-1\].dst_vid
+        /// If reverse edge is allowed, begin vid may not be src_vid but dst_vid, the end vid is the same
         #[prost(message, repeated, tag="3")]
         pub edge_list: ::prost::alloc::vec::Vec<super::Edge>,
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Vertex {
     #[prost(int64, tag="1")]
@@ -130,6 +152,7 @@ pub struct Vertex {
     #[prost(message, optional, tag="3")]
     pub prop: ::core::option::Option<VertexProp>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct VertexProp {
     #[prost(message, optional, tag="1")]
@@ -137,6 +160,7 @@ pub struct VertexProp {
     #[prost(map="string, int64", tag="2")]
     pub additional: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct VertexCommonProp {
     #[prost(message, optional, tag="1")]
@@ -146,6 +170,7 @@ pub struct VertexCommonProp {
     #[prost(message, optional, tag="3")]
     pub update_time: ::core::option::Option<::pbjson_types::Timestamp>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Edge {
     #[prost(int64, tag="1")]
@@ -157,6 +182,7 @@ pub struct Edge {
     #[prost(message, optional, tag="4")]
     pub prop: ::core::option::Option<EdgeProp>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct EdgeProp {
     #[prost(message, optional, tag="1")]
@@ -164,6 +190,7 @@ pub struct EdgeProp {
     #[prost(map="string, int64", tag="2")]
     pub additional: ::std::collections::HashMap<::prost::alloc::string::String, i64>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct EdgeCommonProp {
     #[prost(message, optional, tag="1")]
@@ -200,6 +227,18 @@ impl VertexType {
             VertexType::Metadata => "VERTEX_TYPE_METADATA",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "VERTEX_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "VERTEX_TYPE_ABSTRACT" => Some(Self::Abstract),
+            "VERTEX_TYPE_ENTITY" => Some(Self::Entity),
+            "VERTEX_TYPE_MESSAGE" => Some(Self::Message),
+            "VERTEX_TYPE_OBJECT" => Some(Self::Object),
+            "VERTEX_TYPE_METADATA" => Some(Self::Metadata),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -234,6 +273,22 @@ impl EdgeType {
             EdgeType::Describe => "EDGE_TYPE_DESCRIBE",
         }
     }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "EDGE_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
+            "EDGE_TYPE_GENERAL" => Some(Self::General),
+            "EDGE_TYPE_EQUAL" => Some(Self::Equal),
+            "EDGE_TYPE_CREATE" => Some(Self::Create),
+            "EDGE_TYPE_ENJOY" => Some(Self::Enjoy),
+            "EDGE_TYPE_MENTION" => Some(Self::Mention),
+            "EDGE_TYPE_DERIVE" => Some(Self::Derive),
+            "EDGE_TYPE_CONTROL" => Some(Self::Control),
+            "EDGE_TYPE_FOLLOW" => Some(Self::Follow),
+            "EDGE_TYPE_DESCRIBE" => Some(Self::Describe),
+            _ => None,
+        }
+    }
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
@@ -254,6 +309,16 @@ impl EdgeDirection {
             EdgeDirection::Out => "EDGE_DIRECTION_OUT",
             EdgeDirection::In => "EDGE_DIRECTION_IN",
             EdgeDirection::Both => "EDGE_DIRECTION_BOTH",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "EDGE_DIRECTION_UNSPECIFIED" => Some(Self::Unspecified),
+            "EDGE_DIRECTION_OUT" => Some(Self::Out),
+            "EDGE_DIRECTION_IN" => Some(Self::In),
+            "EDGE_DIRECTION_BOTH" => Some(Self::Both),
+            _ => None,
         }
     }
 }

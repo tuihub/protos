@@ -1,22 +1,27 @@
 // @generated
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NewIdRequest {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NewIdResponse {
     #[prost(message, optional, tag="1")]
     pub id: ::core::option::Option<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NewBatchIDsRequest {
     #[prost(int32, tag="1")]
     pub num: i32,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct NewBatchIDsResponse {
     #[prost(message, repeated, tag="1")]
     pub ids: ::prost::alloc::vec::Vec<super::super::v1::InternalId>,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DescribeIdRequest {
     #[prost(message, optional, tag="1")]
@@ -47,16 +52,28 @@ pub mod describe_id_request {
                 DescribeMode::Append => "DESCRIBE_MODE_APPEND",
             }
         }
+        /// Creates an enum from field names used in the ProtoBuf definition.
+        pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+            match value {
+                "DESCRIBE_MODE_UNSPECIFIED" => Some(Self::Unspecified),
+                "DESCRIBE_MODE_OVERRIDE" => Some(Self::Override),
+                "DESCRIBE_MODE_APPEND" => Some(Self::Append),
+                _ => None,
+            }
+        }
     }
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DescribeIdResponse {
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SearchIdRequest {
     #[prost(string, tag="1")]
     pub keyword: ::prost::alloc::string::String,
 }
+#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SearchIdResponse {
     #[prost(message, repeated, tag="1")]
@@ -64,7 +81,8 @@ pub struct SearchIdResponse {
 }
 /// Nested message and enum types in `SearchIDResponse`.
 pub mod search_id_response {
-    #[derive(Clone, PartialEq, ::prost::Message)]
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
     pub struct Result {
         #[prost(message, optional, tag="1")]
         pub id: ::core::option::Option<super::super::super::v1::InternalId>,

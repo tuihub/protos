@@ -24,6 +24,7 @@ impl<'de> serde::Deserialize<'de> for DeleteEdgeRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "edge_list",
             "edgeList",
         ];
 
@@ -51,7 +52,7 @@ impl<'de> serde::Deserialize<'de> for DeleteEdgeRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "edgeList" => Ok(GeneratedField::EdgeList),
+                            "edgeList" | "edge_list" => Ok(GeneratedField::EdgeList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -186,6 +187,7 @@ impl<'de> serde::Deserialize<'de> for DeleteVertexRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "vid_list",
             "vidList",
         ];
 
@@ -213,7 +215,7 @@ impl<'de> serde::Deserialize<'de> for DeleteVertexRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "vidList" => Ok(GeneratedField::VidList),
+                            "vidList" | "vid_list" => Ok(GeneratedField::VidList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -240,10 +242,10 @@ impl<'de> serde::Deserialize<'de> for DeleteVertexRequest {
                             if vid_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vidList"));
                             }
-                            vid_list__ = Some(
-                                map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
-                                    .into_iter().map(|x| x.0).collect()
-                            );
+                            vid_list__ = 
+                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                    .into_iter().map(|x| x.0).collect())
+                            ;
                         }
                     }
                 }
@@ -371,7 +373,9 @@ impl<'de> serde::Deserialize<'de> for Edge {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "src_vid",
             "srcVid",
+            "dst_vid",
             "dstVid",
             "type",
             "prop",
@@ -404,8 +408,8 @@ impl<'de> serde::Deserialize<'de> for Edge {
                         E: serde::de::Error,
                     {
                         match value {
-                            "srcVid" => Ok(GeneratedField::SrcVid),
-                            "dstVid" => Ok(GeneratedField::DstVid),
+                            "srcVid" | "src_vid" => Ok(GeneratedField::SrcVid),
+                            "dstVid" | "dst_vid" => Ok(GeneratedField::DstVid),
                             "type" => Ok(GeneratedField::Type),
                             "prop" => Ok(GeneratedField::Prop),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -437,17 +441,17 @@ impl<'de> serde::Deserialize<'de> for Edge {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
-                            src_vid__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            src_vid__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::DstVid => {
                             if dst_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("dstVid"));
                             }
-                            dst_vid__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            dst_vid__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Type => {
                             if r#type__.is_some() {
@@ -459,7 +463,7 @@ impl<'de> serde::Deserialize<'de> for Edge {
                             if prop__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("prop"));
                             }
-                            prop__ = Some(map.next_value()?);
+                            prop__ = map.next_value()?;
                         }
                     }
                 }
@@ -517,8 +521,11 @@ impl<'de> serde::Deserialize<'de> for EdgeCommonProp {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "occur_time",
             "occurTime",
+            "create_time",
             "createTime",
+            "update_time",
             "updateTime",
             "rank",
         ];
@@ -550,9 +557,9 @@ impl<'de> serde::Deserialize<'de> for EdgeCommonProp {
                         E: serde::de::Error,
                     {
                         match value {
-                            "occurTime" => Ok(GeneratedField::OccurTime),
-                            "createTime" => Ok(GeneratedField::CreateTime),
-                            "updateTime" => Ok(GeneratedField::UpdateTime),
+                            "occurTime" | "occur_time" => Ok(GeneratedField::OccurTime),
+                            "createTime" | "create_time" => Ok(GeneratedField::CreateTime),
+                            "updateTime" | "update_time" => Ok(GeneratedField::UpdateTime),
                             "rank" => Ok(GeneratedField::Rank),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -583,27 +590,27 @@ impl<'de> serde::Deserialize<'de> for EdgeCommonProp {
                             if occur_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("occurTime"));
                             }
-                            occur_time__ = Some(map.next_value()?);
+                            occur_time__ = map.next_value()?;
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = Some(map.next_value()?);
+                            create_time__ = map.next_value()?;
                         }
                         GeneratedField::UpdateTime => {
                             if update_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updateTime"));
                             }
-                            update_time__ = Some(map.next_value()?);
+                            update_time__ = map.next_value()?;
                         }
                         GeneratedField::Rank => {
                             if rank__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("rank"));
                             }
-                            rank__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            rank__ = 
+                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                            ;
                         }
                     }
                 }
@@ -788,7 +795,7 @@ impl<'de> serde::Deserialize<'de> for EdgeProp {
                             if common__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("common"));
                             }
-                            common__ = Some(map.next_value()?);
+                            common__ = map.next_value()?;
                         }
                         GeneratedField::Additional => {
                             if additional__.is_some() {
@@ -950,8 +957,11 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "src_vid",
             "srcVid",
+            "edge_type_filter",
             "edgeTypeFilter",
+            "edge_direction",
             "edgeDirection",
         ];
 
@@ -981,9 +991,9 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "srcVid" => Ok(GeneratedField::SrcVid),
-                            "edgeTypeFilter" => Ok(GeneratedField::EdgeTypeFilter),
-                            "edgeDirection" => Ok(GeneratedField::EdgeDirection),
+                            "srcVid" | "src_vid" => Ok(GeneratedField::SrcVid),
+                            "edgeTypeFilter" | "edge_type_filter" => Ok(GeneratedField::EdgeTypeFilter),
+                            "edgeDirection" | "edge_direction" => Ok(GeneratedField::EdgeDirection),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1012,9 +1022,9 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborRequest {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
-                            src_vid__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            src_vid__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::EdgeTypeFilter => {
                             if edge_type_filter__.is_some() {
@@ -1065,6 +1075,7 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "edge_list",
             "edgeList",
         ];
 
@@ -1092,7 +1103,7 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "edgeList" => Ok(GeneratedField::EdgeList),
+                            "edgeList" | "edge_list" => Ok(GeneratedField::EdgeList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1156,6 +1167,7 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "src_vid",
             "srcVid",
         ];
 
@@ -1183,7 +1195,7 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "srcVid" => Ok(GeneratedField::SrcVid),
+                            "srcVid" | "src_vid" => Ok(GeneratedField::SrcVid),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1210,9 +1222,9 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexRequest {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
-                            src_vid__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            src_vid__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -1249,6 +1261,7 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "vertex_list",
             "vertexList",
         ];
 
@@ -1276,7 +1289,7 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "vertexList" => Ok(GeneratedField::VertexList),
+                            "vertexList" | "vertex_list" => Ok(GeneratedField::VertexList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1370,10 +1383,15 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "src_vid",
             "srcVid",
+            "dst_vid",
             "dstVid",
+            "edge_type_filter",
             "edgeTypeFilter",
+            "edge_direction",
             "edgeDirection",
+            "max_step",
             "maxStep",
         ];
 
@@ -1405,11 +1423,11 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "srcVid" => Ok(GeneratedField::SrcVid),
-                            "dstVid" => Ok(GeneratedField::DstVid),
-                            "edgeTypeFilter" => Ok(GeneratedField::EdgeTypeFilter),
-                            "edgeDirection" => Ok(GeneratedField::EdgeDirection),
-                            "maxStep" => Ok(GeneratedField::MaxStep),
+                            "srcVid" | "src_vid" => Ok(GeneratedField::SrcVid),
+                            "dstVid" | "dst_vid" => Ok(GeneratedField::DstVid),
+                            "edgeTypeFilter" | "edge_type_filter" => Ok(GeneratedField::EdgeTypeFilter),
+                            "edgeDirection" | "edge_direction" => Ok(GeneratedField::EdgeDirection),
+                            "maxStep" | "max_step" => Ok(GeneratedField::MaxStep),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1440,19 +1458,19 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
-                            src_vid__ = Some(
-                                map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
-                                    .into_iter().map(|x| x.0).collect()
-                            );
+                            src_vid__ = 
+                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                    .into_iter().map(|x| x.0).collect())
+                            ;
                         }
                         GeneratedField::DstVid => {
                             if dst_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("dstVid"));
                             }
-                            dst_vid__ = Some(
-                                map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
-                                    .into_iter().map(|x| x.0).collect()
-                            );
+                            dst_vid__ = 
+                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                    .into_iter().map(|x| x.0).collect())
+                            ;
                         }
                         GeneratedField::EdgeTypeFilter => {
                             if edge_type_filter__.is_some() {
@@ -1470,9 +1488,9 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                             if max_step__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("maxStep"));
                             }
-                            max_step__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            max_step__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -1513,6 +1531,7 @@ impl<'de> serde::Deserialize<'de> for FindPathResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "path_list",
             "pathList",
         ];
 
@@ -1540,7 +1559,7 @@ impl<'de> serde::Deserialize<'de> for FindPathResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "pathList" => Ok(GeneratedField::PathList),
+                            "pathList" | "path_list" => Ok(GeneratedField::PathList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1604,6 +1623,7 @@ impl<'de> serde::Deserialize<'de> for find_path_response::SinglePath {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "edge_list",
             "edgeList",
         ];
 
@@ -1631,7 +1651,7 @@ impl<'de> serde::Deserialize<'de> for find_path_response::SinglePath {
                         E: serde::de::Error,
                     {
                         match value {
-                            "edgeList" => Ok(GeneratedField::EdgeList),
+                            "edgeList" | "edge_list" => Ok(GeneratedField::EdgeList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1737,10 +1757,15 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "src_vid",
             "srcVid",
+            "edge_type_filter",
             "edgeTypeFilter",
+            "edge_direction",
             "edgeDirection",
+            "min_step",
             "minStep",
+            "max_step",
             "maxStep",
             "limit",
             "offset",
@@ -1776,11 +1801,11 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "srcVid" => Ok(GeneratedField::SrcVid),
-                            "edgeTypeFilter" => Ok(GeneratedField::EdgeTypeFilter),
-                            "edgeDirection" => Ok(GeneratedField::EdgeDirection),
-                            "minStep" => Ok(GeneratedField::MinStep),
-                            "maxStep" => Ok(GeneratedField::MaxStep),
+                            "srcVid" | "src_vid" => Ok(GeneratedField::SrcVid),
+                            "edgeTypeFilter" | "edge_type_filter" => Ok(GeneratedField::EdgeTypeFilter),
+                            "edgeDirection" | "edge_direction" => Ok(GeneratedField::EdgeDirection),
+                            "minStep" | "min_step" => Ok(GeneratedField::MinStep),
+                            "maxStep" | "max_step" => Ok(GeneratedField::MaxStep),
                             "limit" => Ok(GeneratedField::Limit),
                             "offset" => Ok(GeneratedField::Offset),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -1815,9 +1840,9 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
-                            src_vid__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            src_vid__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::EdgeTypeFilter => {
                             if edge_type_filter__.is_some() {
@@ -1835,33 +1860,33 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                             if min_step__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("minStep"));
                             }
-                            min_step__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            min_step__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::MaxStep => {
                             if max_step__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("maxStep"));
                             }
-                            max_step__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            max_step__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Limit => {
                             if limit__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("limit"));
                             }
-                            limit__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            limit__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Offset => {
                             if offset__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("offset"));
                             }
-                            offset__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            offset__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                     }
                 }
@@ -1904,6 +1929,7 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "vertex_list",
             "vertexList",
         ];
 
@@ -1931,7 +1957,7 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "vertexList" => Ok(GeneratedField::VertexList),
+                            "vertexList" | "vertex_list" => Ok(GeneratedField::VertexList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1995,6 +2021,7 @@ impl<'de> serde::Deserialize<'de> for InsertEdgeRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "edge_list",
             "edgeList",
         ];
 
@@ -2022,7 +2049,7 @@ impl<'de> serde::Deserialize<'de> for InsertEdgeRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "edgeList" => Ok(GeneratedField::EdgeList),
+                            "edgeList" | "edge_list" => Ok(GeneratedField::EdgeList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2157,6 +2184,7 @@ impl<'de> serde::Deserialize<'de> for InsertVertexRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "vertex_list",
             "vertexList",
         ];
 
@@ -2184,7 +2212,7 @@ impl<'de> serde::Deserialize<'de> for InsertVertexRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "vertexList" => Ok(GeneratedField::VertexList),
+                            "vertexList" | "vertex_list" => Ok(GeneratedField::VertexList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2319,6 +2347,7 @@ impl<'de> serde::Deserialize<'de> for UpdateEdgeRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "edge_list",
             "edgeList",
         ];
 
@@ -2346,7 +2375,7 @@ impl<'de> serde::Deserialize<'de> for UpdateEdgeRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "edgeList" => Ok(GeneratedField::EdgeList),
+                            "edgeList" | "edge_list" => Ok(GeneratedField::EdgeList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2481,6 +2510,7 @@ impl<'de> serde::Deserialize<'de> for UpdateVertexRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "vertex_list",
             "vertexList",
         ];
 
@@ -2508,7 +2538,7 @@ impl<'de> serde::Deserialize<'de> for UpdateVertexRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "vertexList" => Ok(GeneratedField::VertexList),
+                            "vertexList" | "vertex_list" => Ok(GeneratedField::VertexList),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2719,9 +2749,9 @@ impl<'de> serde::Deserialize<'de> for Vertex {
                             if vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vid"));
                             }
-                            vid__ = Some(
-                                map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0
-                            );
+                            vid__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Type => {
                             if r#type__.is_some() {
@@ -2733,7 +2763,7 @@ impl<'de> serde::Deserialize<'de> for Vertex {
                             if prop__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("prop"));
                             }
-                            prop__ = Some(map.next_value()?);
+                            prop__ = map.next_value()?;
                         }
                     }
                 }
@@ -2784,8 +2814,11 @@ impl<'de> serde::Deserialize<'de> for VertexCommonProp {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "occur_time",
             "occurTime",
+            "create_time",
             "createTime",
+            "update_time",
             "updateTime",
         ];
 
@@ -2815,9 +2848,9 @@ impl<'de> serde::Deserialize<'de> for VertexCommonProp {
                         E: serde::de::Error,
                     {
                         match value {
-                            "occurTime" => Ok(GeneratedField::OccurTime),
-                            "createTime" => Ok(GeneratedField::CreateTime),
-                            "updateTime" => Ok(GeneratedField::UpdateTime),
+                            "occurTime" | "occur_time" => Ok(GeneratedField::OccurTime),
+                            "createTime" | "create_time" => Ok(GeneratedField::CreateTime),
+                            "updateTime" | "update_time" => Ok(GeneratedField::UpdateTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2846,19 +2879,19 @@ impl<'de> serde::Deserialize<'de> for VertexCommonProp {
                             if occur_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("occurTime"));
                             }
-                            occur_time__ = Some(map.next_value()?);
+                            occur_time__ = map.next_value()?;
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = Some(map.next_value()?);
+                            create_time__ = map.next_value()?;
                         }
                         GeneratedField::UpdateTime => {
                             if update_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updateTime"));
                             }
-                            update_time__ = Some(map.next_value()?);
+                            update_time__ = map.next_value()?;
                         }
                     }
                 }
@@ -2963,7 +2996,7 @@ impl<'de> serde::Deserialize<'de> for VertexProp {
                             if common__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("common"));
                             }
-                            common__ = Some(map.next_value()?);
+                            common__ = map.next_value()?;
                         }
                         GeneratedField::Additional => {
                             if additional__.is_some() {
