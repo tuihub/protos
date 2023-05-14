@@ -29,8 +29,9 @@ const FileMetadata$json = const {
     const {'1': 'size', '3': 3, '4': 1, '5': 3, '10': 'size'},
     const {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileType', '10': 'type'},
     const {'1': 'sha256', '3': 5, '4': 1, '5': 12, '10': 'sha256'},
+    const {'1': 'create_time', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
   ],
 };
 
 /// Descriptor for `FileMetadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRzaXplEjMKBHR5cGUYBCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGUSFgoGc2hhMjU2GAUgASgMUgZzaGEyNTY=');
+final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode('CgxGaWxlTWV0YWRhdGESKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRzaXplEjMKBHR5cGUYBCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGUSFgoGc2hhMjU2GAUgASgMUgZzaGEyNTYSOwoLY3JlYXRlX3RpbWUYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1l');

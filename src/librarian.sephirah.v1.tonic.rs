@@ -621,6 +621,27 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
+        /** `Gebura` `Admin` Pick one app out from merged
+*/
+        pub async fn pick_app(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PickAppRequest>,
+        ) -> Result<tonic::Response<super::PickAppResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/PickApp",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
         /** `Gebura` `Normal`
 */
         pub async fn search_apps(
@@ -684,12 +705,12 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Gebura` `Normal` Get the entire library
+        /** `Gebura` `Normal`
 */
-        pub async fn get_app_library(
+        pub async fn get_purchased_apps(
             &mut self,
-            request: impl tonic::IntoRequest<super::GetAppLibraryRequest>,
-        ) -> Result<tonic::Response<super::GetAppLibraryResponse>, tonic::Status> {
+            request: impl tonic::IntoRequest<super::GetPurchasedAppsRequest>,
+        ) -> Result<tonic::Response<super::GetPurchasedAppsResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -701,7 +722,7 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/GetAppLibrary",
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps",
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
@@ -1351,6 +1372,12 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::MergeAppsRequest>,
         ) -> Result<tonic::Response<super::MergeAppsResponse>, tonic::Status>;
+        /** `Gebura` `Admin` Pick one app out from merged
+*/
+        async fn pick_app(
+            &self,
+            request: tonic::Request<super::PickAppRequest>,
+        ) -> Result<tonic::Response<super::PickAppResponse>, tonic::Status>;
         /** `Gebura` `Normal`
 */
         async fn search_apps(
@@ -1369,12 +1396,12 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::PurchaseAppRequest>,
         ) -> Result<tonic::Response<super::PurchaseAppResponse>, tonic::Status>;
-        /** `Gebura` `Normal` Get the entire library
+        /** `Gebura` `Normal`
 */
-        async fn get_app_library(
+        async fn get_purchased_apps(
             &self,
-            request: tonic::Request<super::GetAppLibraryRequest>,
-        ) -> Result<tonic::Response<super::GetAppLibraryResponse>, tonic::Status>;
+            request: tonic::Request<super::GetPurchasedAppsRequest>,
+        ) -> Result<tonic::Response<super::GetPurchasedAppsResponse>, tonic::Status>;
         /** `Gebura` `Normal`
 */
         async fn create_app_package(
@@ -2549,6 +2576,44 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
+                "/librarian.sephirah.v1.LibrarianSephirahService/PickApp" => {
+                    #[allow(non_camel_case_types)]
+                    struct PickAppSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::PickAppRequest>
+                    for PickAppSvc<T> {
+                        type Response = super::PickAppResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PickAppRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move { (*inner).pick_app(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PickAppSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps" => {
                     #[allow(non_camel_case_types)]
                     struct SearchAppsSvc<T: LibrarianSephirahService>(pub Arc<T>);
@@ -2667,25 +2732,25 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/GetAppLibrary" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps" => {
                     #[allow(non_camel_case_types)]
-                    struct GetAppLibrarySvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct GetPurchasedAppsSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::GetAppLibraryRequest>
-                    for GetAppLibrarySvc<T> {
-                        type Response = super::GetAppLibraryResponse;
+                    > tonic::server::UnaryService<super::GetPurchasedAppsRequest>
+                    for GetPurchasedAppsSvc<T> {
+                        type Response = super::GetPurchasedAppsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GetAppLibraryRequest>,
+                            request: tonic::Request<super::GetPurchasedAppsRequest>,
                         ) -> Self::Future {
                             let inner = self.0.clone();
                             let fut = async move {
-                                (*inner).get_app_library(request).await
+                                (*inner).get_purchased_apps(request).await
                             };
                             Box::pin(fut)
                         }
@@ -2695,7 +2760,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = GetAppLibrarySvc(inner);
+                        let method = GetPurchasedAppsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

@@ -155,6 +155,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.MergeAppsResponse> __Marshaller_librarian_sephirah_v1_MergeAppsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.MergeAppsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest> __Marshaller_librarian_sephirah_v1_PickAppRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> __Marshaller_librarian_sephirah_v1_PickAppResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest> __Marshaller_librarian_sephirah_v1_SearchAppsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse> __Marshaller_librarian_sephirah_v1_SearchAppsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse.Parser));
@@ -167,9 +171,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PurchaseAppResponse> __Marshaller_librarian_sephirah_v1_PurchaseAppResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PurchaseAppResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest> __Marshaller_librarian_sephirah_v1_GetAppLibraryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest> __Marshaller_librarian_sephirah_v1_GetPurchasedAppsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse> __Marshaller_librarian_sephirah_v1_GetAppLibraryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse> __Marshaller_librarian_sephirah_v1_GetPurchasedAppsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest> __Marshaller_librarian_sephirah_v1_CreateAppPackageRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -460,6 +464,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_MergeAppsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> __Method_PickApp = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PickApp",
+        __Marshaller_librarian_sephirah_v1_PickAppRequest,
+        __Marshaller_librarian_sephirah_v1_PickAppResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse> __Method_SearchApps = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -484,12 +496,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_PurchaseAppResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse> __Method_GetAppLibrary = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse> __Method_GetPurchasedApps = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetAppLibrary",
-        __Marshaller_librarian_sephirah_v1_GetAppLibraryRequest,
-        __Marshaller_librarian_sephirah_v1_GetAppLibraryResponse);
+        "GetPurchasedApps",
+        __Marshaller_librarian_sephirah_v1_GetPurchasedAppsRequest,
+        __Marshaller_librarian_sephirah_v1_GetPurchasedAppsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse> __Method_CreateAppPackage = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse>(
@@ -989,6 +1001,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
+      /// `Gebura` `Admin` Pick one app out from merged
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> PickApp(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
       /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
@@ -1025,13 +1049,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal` Get the entire library
+      /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse> GetAppLibrary(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse> GetPurchasedApps(global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2449,6 +2473,54 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_MergeApps, null, options, request);
       }
       /// <summary>
+      /// `Gebura` `Admin` Pick one app out from merged
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse PickApp(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PickApp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Pick one app out from merged
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse PickApp(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PickApp, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Pick one app out from merged
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> PickAppAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PickAppAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Pick one app out from merged
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> PickAppAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PickApp, null, options, request);
+      }
+      /// <summary>
       /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -2593,7 +2665,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_PurchaseApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal` Get the entire library
+      /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2601,23 +2673,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse GetAppLibrary(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse GetPurchasedApps(global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetAppLibrary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPurchasedApps(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal` Get the entire library
+      /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse GetAppLibrary(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse GetPurchasedApps(global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_GetAppLibrary, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_GetPurchasedApps, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal` Get the entire library
+      /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2625,20 +2697,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse> GetAppLibraryAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse> GetPurchasedAppsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetAppLibraryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPurchasedAppsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal` Get the entire library
+      /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse> GetAppLibraryAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse> GetPurchasedAppsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_GetAppLibrary, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_GetPurchasedApps, null, options, request);
       }
       /// <summary>
       /// `Gebura` `Normal`
@@ -3709,10 +3781,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_ListApps, serviceImpl.ListApps)
           .AddMethod(__Method_RefreshApp, serviceImpl.RefreshApp)
           .AddMethod(__Method_MergeApps, serviceImpl.MergeApps)
+          .AddMethod(__Method_PickApp, serviceImpl.PickApp)
           .AddMethod(__Method_SearchApps, serviceImpl.SearchApps)
           .AddMethod(__Method_GetBindApps, serviceImpl.GetBindApps)
           .AddMethod(__Method_PurchaseApp, serviceImpl.PurchaseApp)
-          .AddMethod(__Method_GetAppLibrary, serviceImpl.GetAppLibrary)
+          .AddMethod(__Method_GetPurchasedApps, serviceImpl.GetPurchasedApps)
           .AddMethod(__Method_CreateAppPackage, serviceImpl.CreateAppPackage)
           .AddMethod(__Method_UpdateAppPackage, serviceImpl.UpdateAppPackage)
           .AddMethod(__Method_ListAppPackages, serviceImpl.ListAppPackages)
@@ -3769,10 +3842,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_ListApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsResponse>(serviceImpl.ListApps));
       serviceBinder.AddMethod(__Method_RefreshApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppResponse>(serviceImpl.RefreshApp));
       serviceBinder.AddMethod(__Method_MergeApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.MergeAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.MergeAppsResponse>(serviceImpl.MergeApps));
+      serviceBinder.AddMethod(__Method_PickApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse>(serviceImpl.PickApp));
       serviceBinder.AddMethod(__Method_SearchApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse>(serviceImpl.SearchApps));
       serviceBinder.AddMethod(__Method_GetBindApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetBindAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetBindAppsResponse>(serviceImpl.GetBindApps));
       serviceBinder.AddMethod(__Method_PurchaseApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PurchaseAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PurchaseAppResponse>(serviceImpl.PurchaseApp));
-      serviceBinder.AddMethod(__Method_GetAppLibrary, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppLibraryResponse>(serviceImpl.GetAppLibrary));
+      serviceBinder.AddMethod(__Method_GetPurchasedApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetPurchasedAppsResponse>(serviceImpl.GetPurchasedApps));
       serviceBinder.AddMethod(__Method_CreateAppPackage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppPackageResponse>(serviceImpl.CreateAppPackage));
       serviceBinder.AddMethod(__Method_UpdateAppPackage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppPackageResponse>(serviceImpl.UpdateAppPackage));
       serviceBinder.AddMethod(__Method_ListAppPackages, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppPackagesResponse>(serviceImpl.ListAppPackages));

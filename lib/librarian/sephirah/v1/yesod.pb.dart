@@ -10,8 +10,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $7;
-import '../../../google/protobuf/duration.pb.dart' as $9;
-import '../../../google/protobuf/timestamp.pb.dart' as $10;
+import '../../../google/protobuf/duration.pb.dart' as $10;
+import '../../../google/protobuf/timestamp.pb.dart' as $8;
 
 import 'yesod.pbenum.dart';
 
@@ -945,9 +945,9 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorAccount', subBuilder: $7.InternalID.create)
     ..e<FeedConfigSource>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
     ..e<FeedConfigStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
-    ..aOM<$9.Duration>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $9.Duration.create)
+    ..aOM<$10.Duration>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $10.Duration.create)
     ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOM<$10.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latestPullTime', subBuilder: $10.Timestamp.create)
+    ..aOM<$8.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latestPullTime', subBuilder: $8.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -959,9 +959,9 @@ class FeedConfig extends $pb.GeneratedMessage {
     $7.InternalID? authorAccount,
     FeedConfigSource? source,
     FeedConfigStatus? status,
-    $9.Duration? pullInterval,
+    $10.Duration? pullInterval,
     $core.Iterable<$core.String>? tags,
-    $10.Timestamp? latestPullTime,
+    $8.Timestamp? latestPullTime,
   }) {
     final _result = create();
     if (id != null) {
@@ -1073,29 +1073,29 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 
   @$pb.TagNumber(7)
-  $9.Duration get pullInterval => $_getN(6);
+  $10.Duration get pullInterval => $_getN(6);
   @$pb.TagNumber(7)
-  set pullInterval($9.Duration v) { setField(7, v); }
+  set pullInterval($10.Duration v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasPullInterval() => $_has(6);
   @$pb.TagNumber(7)
   void clearPullInterval() => clearField(7);
   @$pb.TagNumber(7)
-  $9.Duration ensurePullInterval() => $_ensure(6);
+  $10.Duration ensurePullInterval() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $core.List<$core.String> get tags => $_getList(7);
 
   @$pb.TagNumber(9)
-  $10.Timestamp get latestPullTime => $_getN(8);
+  $8.Timestamp get latestPullTime => $_getN(8);
   @$pb.TagNumber(9)
-  set latestPullTime($10.Timestamp v) { setField(9, v); }
+  set latestPullTime($8.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasLatestPullTime() => $_has(8);
   @$pb.TagNumber(9)
   void clearLatestPullTime() => clearField(9);
   @$pb.TagNumber(9)
-  $10.Timestamp ensureLatestPullTime() => $_ensure(8);
+  $8.Timestamp ensureLatestPullTime() => $_ensure(8);
 }
 
 class FeedItemDigest extends $pb.GeneratedMessage {
@@ -1104,7 +1104,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemId', subBuilder: $7.InternalID.create)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatarUrl')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authors')
-    ..aOM<$10.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishedParsed', subBuilder: $10.Timestamp.create)
+    ..aOM<$8.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishedParsed', subBuilder: $8.Timestamp.create)
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'shortDescription')
     ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrls')
@@ -1118,7 +1118,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     $7.InternalID? itemId,
     $core.String? avatarUrl,
     $core.String? authors,
-    $10.Timestamp? publishedParsed,
+    $8.Timestamp? publishedParsed,
     $core.String? title,
     $core.String? shortDescription,
     $core.Iterable<$core.String>? imageUrls,
@@ -1216,15 +1216,15 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   void clearAuthors() => clearField(4);
 
   @$pb.TagNumber(5)
-  $10.Timestamp get publishedParsed => $_getN(4);
+  $8.Timestamp get publishedParsed => $_getN(4);
   @$pb.TagNumber(5)
-  set publishedParsed($10.Timestamp v) { setField(5, v); }
+  set publishedParsed($8.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasPublishedParsed() => $_has(4);
   @$pb.TagNumber(5)
   void clearPublishedParsed() => clearField(5);
   @$pb.TagNumber(5)
-  $10.Timestamp ensurePublishedParsed() => $_ensure(4);
+  $8.Timestamp ensurePublishedParsed() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get title => $_getSZ(5);

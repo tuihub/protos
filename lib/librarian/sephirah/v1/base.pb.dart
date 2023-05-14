@@ -11,6 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $7;
+import '../../../google/protobuf/timestamp.pb.dart' as $8;
 
 import 'base.pbenum.dart';
 
@@ -23,6 +24,7 @@ class FileMetadata extends $pb.GeneratedMessage {
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
     ..e<FileType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
     ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sha256', $pb.PbFieldType.OY)
+    ..aOM<$8.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $8.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -33,6 +35,7 @@ class FileMetadata extends $pb.GeneratedMessage {
     $fixnum.Int64? size,
     FileType? type,
     $core.List<$core.int>? sha256,
+    $8.Timestamp? createTime,
   }) {
     final _result = create();
     if (id != null) {
@@ -49,6 +52,9 @@ class FileMetadata extends $pb.GeneratedMessage {
     }
     if (sha256 != null) {
       _result.sha256 = sha256;
+    }
+    if (createTime != null) {
+      _result.createTime = createTime;
     }
     return _result;
   }
@@ -119,5 +125,16 @@ class FileMetadata extends $pb.GeneratedMessage {
   $core.bool hasSha256() => $_has(4);
   @$pb.TagNumber(5)
   void clearSha256() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $8.Timestamp get createTime => $_getN(5);
+  @$pb.TagNumber(6)
+  set createTime($8.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreateTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreateTime() => clearField(6);
+  @$pb.TagNumber(6)
+  $8.Timestamp ensureCreateTime() => $_ensure(5);
 }
 

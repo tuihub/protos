@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.FileMetadata', null, global);
@@ -82,7 +84,8 @@ proto.librarian.sephirah.v1.FileMetadata.toObject = function(includeInstance, ms
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     size: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sha256: msg.getSha256_asB64()
+    sha256: msg.getSha256_asB64(),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -139,6 +142,11 @@ proto.librarian.sephirah.v1.FileMetadata.deserializeBinaryFromReader = function(
     case 5:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setSha256(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
       break;
     default:
       reader.skipField();
@@ -203,6 +211,14 @@ proto.librarian.sephirah.v1.FileMetadata.serializeBinaryToWriter = function(mess
     writer.writeBytes(
       5,
       f
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -338,6 +354,43 @@ proto.librarian.sephirah.v1.FileMetadata.prototype.getSha256_asU8 = function() {
  */
 proto.librarian.sephirah.v1.FileMetadata.prototype.setSha256 = function(value) {
   return jspb.Message.setProto3BytesField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.sephirah.v1.FileMetadata} returns this
+*/
+proto.librarian.sephirah.v1.FileMetadata.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.FileMetadata} returns this
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.FileMetadata.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

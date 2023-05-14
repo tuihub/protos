@@ -2,6 +2,7 @@
 // file: librarian/sephirah/v1/base.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class FileMetadata extends jspb.Message {
@@ -24,6 +25,11 @@ export class FileMetadata extends jspb.Message {
   getSha256_asB64(): string;
   setSha256(value: Uint8Array | string): void;
 
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileMetadata.AsObject;
   static toObject(includeInstance: boolean, msg: FileMetadata): FileMetadata.AsObject;
@@ -41,6 +47,7 @@ export namespace FileMetadata {
     size: number,
     type: FileTypeMap[keyof FileTypeMap],
     sha256: Uint8Array | string,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 

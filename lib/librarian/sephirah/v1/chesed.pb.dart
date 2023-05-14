@@ -9,12 +9,12 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'base.pb.dart' as $8;
+import 'base.pb.dart' as $9;
 import '../../v1/common.pb.dart' as $7;
 
 class UploadImageRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadImageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$8.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileMetadata', subBuilder: $8.FileMetadata.create)
+    ..aOM<$9.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileMetadata', subBuilder: $9.FileMetadata.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..hasRequiredFields = false
@@ -22,7 +22,7 @@ class UploadImageRequest extends $pb.GeneratedMessage {
 
   UploadImageRequest._() : super();
   factory UploadImageRequest({
-    $8.FileMetadata? fileMetadata,
+    $9.FileMetadata? fileMetadata,
     $core.String? name,
     $core.String? description,
   }) {
@@ -60,15 +60,15 @@ class UploadImageRequest extends $pb.GeneratedMessage {
   static UploadImageRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.FileMetadata get fileMetadata => $_getN(0);
+  $9.FileMetadata get fileMetadata => $_getN(0);
   @$pb.TagNumber(1)
-  set fileMetadata($8.FileMetadata v) { setField(1, v); }
+  set fileMetadata($9.FileMetadata v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileMetadata() => $_has(0);
   @$pb.TagNumber(1)
   void clearFileMetadata() => clearField(1);
   @$pb.TagNumber(1)
-  $8.FileMetadata ensureFileMetadata() => $_ensure(0);
+  $9.FileMetadata ensureFileMetadata() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -383,7 +383,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
 
 class GetImageResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetImageResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$8.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileMetadata', subBuilder: $8.FileMetadata.create)
+    ..aOM<$9.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fileMetadata', subBuilder: $9.FileMetadata.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..hasRequiredFields = false
@@ -391,7 +391,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
 
   GetImageResponse._() : super();
   factory GetImageResponse({
-    $8.FileMetadata? fileMetadata,
+    $9.FileMetadata? fileMetadata,
     $core.String? name,
     $core.String? description,
   }) {
@@ -429,15 +429,15 @@ class GetImageResponse extends $pb.GeneratedMessage {
   static GetImageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.FileMetadata get fileMetadata => $_getN(0);
+  $9.FileMetadata get fileMetadata => $_getN(0);
   @$pb.TagNumber(1)
-  set fileMetadata($8.FileMetadata v) { setField(1, v); }
+  set fileMetadata($9.FileMetadata v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileMetadata() => $_has(0);
   @$pb.TagNumber(1)
   void clearFileMetadata() => clearField(1);
   @$pb.TagNumber(1)
-  $8.FileMetadata ensureFileMetadata() => $_ensure(0);
+  $9.FileMetadata ensureFileMetadata() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);

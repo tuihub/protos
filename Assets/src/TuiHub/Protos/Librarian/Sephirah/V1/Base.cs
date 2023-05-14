@@ -25,20 +25,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBsaWJyYXJpYW4vc2VwaGlyYWgvdjEvYmFzZS5wcm90bxIVbGlicmFyaWFu",
-            "LnNlcGhpcmFoLnYxGhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIq0BCgxG",
-            "aWxlTWV0YWRhdGESKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRz",
-            "aXplEjMKBHR5cGUYBCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmls",
-            "ZVR5cGVSBHR5cGUSFgoGc2hhMjU2GAUgASgMUgZzaGEyNTYqXAoIRmlsZVR5",
-            "cGUSGQoVRklMRV9UWVBFX1VOU1BFQ0lGSUVEEAASGQoVRklMRV9UWVBFX0dF",
-            "QlVSQV9TQVZFEAESGgoWRklMRV9UWVBFX0NIRVNFRF9JTUFHRRACQl1aNWdp",
-            "dGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFo",
-            "L3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFi",
-            "BnByb3RvMw=="));
+            "LnNlcGhpcmFoLnYxGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3Rv",
+            "GhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIuoBCgxGaWxlTWV0YWRhdGES",
+            "KAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoE",
+            "bmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRzaXplEjMKBHR5cGUY",
+            "BCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGUS",
+            "FgoGc2hhMjU2GAUgASgMUgZzaGEyNTYSOwoLY3JlYXRlX3RpbWUYBiABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1lKlwKCEZp",
+            "bGVUeXBlEhkKFUZJTEVfVFlQRV9VTlNQRUNJRklFRBAAEhkKFUZJTEVfVFlQ",
+            "RV9HRUJVUkFfU0FWRRABEhoKFkZJTEVfVFlQRV9DSEVTRURfSU1BR0UQAkJd",
+            "WjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBo",
+            "aXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFo",
+            "LlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "Type", "Sha256" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "Type", "Sha256", "CreateTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -93,6 +95,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       size_ = other.size_;
       type_ = other.type_;
       sha256_ = other.sha256_;
+      createTime_ = other.createTime_ != null ? other.createTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -162,6 +165,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "create_time" field.</summary>
+    public const int CreateTimeFieldNumber = 6;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp createTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CreateTime {
+      get { return createTime_; }
+      set {
+        createTime_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -182,6 +197,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Size != other.Size) return false;
       if (Type != other.Type) return false;
       if (Sha256 != other.Sha256) return false;
+      if (!object.Equals(CreateTime, other.CreateTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,6 +210,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Size != 0L) hash ^= Size.GetHashCode();
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) hash ^= Type.GetHashCode();
       if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
+      if (createTime_ != null) hash ^= CreateTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -232,6 +249,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(42);
         output.WriteBytes(Sha256);
       }
+      if (createTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CreateTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -262,6 +283,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(42);
         output.WriteBytes(Sha256);
       }
+      if (createTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CreateTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -286,6 +311,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (Sha256.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
+      }
+      if (createTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -316,6 +344,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.Sha256.Length != 0) {
         Sha256 = other.Sha256;
+      }
+      if (other.createTime_ != null) {
+        if (createTime_ == null) {
+          CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CreateTime.MergeFrom(other.CreateTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -355,6 +389,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             Sha256 = input.ReadBytes();
             break;
           }
+          case 50: {
+            if (createTime_ == null) {
+              CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreateTime);
+            break;
+          }
         }
       }
     #endif
@@ -391,6 +432,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           }
           case 42: {
             Sha256 = input.ReadBytes();
+            break;
+          }
+          case 50: {
+            if (createTime_ == null) {
+              CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreateTime);
             break;
           }
         }

@@ -9,7 +9,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $10;
+import '../../../google/protobuf/timestamp.pb.dart' as $8;
 
 class GetServerInformationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetServerInformationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
@@ -44,7 +44,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<ServerBinarySummary>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
     ..aOM<ServerProtocolSummary>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
-    ..aOM<$10.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentTime', subBuilder: $10.Timestamp.create)
+    ..aOM<$8.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentTime', subBuilder: $8.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -52,7 +52,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   factory GetServerInformationResponse({
     ServerBinarySummary? serverBinarySummary,
     ServerProtocolSummary? protocolSummary,
-    $10.Timestamp? currentTime,
+    $8.Timestamp? currentTime,
   }) {
     final _result = create();
     if (serverBinarySummary != null) {
@@ -110,15 +110,15 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   ServerProtocolSummary ensureProtocolSummary() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $10.Timestamp get currentTime => $_getN(2);
+  $8.Timestamp get currentTime => $_getN(2);
   @$pb.TagNumber(3)
-  set currentTime($10.Timestamp v) { setField(3, v); }
+  set currentTime($8.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCurrentTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearCurrentTime() => clearField(3);
   @$pb.TagNumber(3)
-  $10.Timestamp ensureCurrentTime() => $_ensure(2);
+  $8.Timestamp ensureCurrentTime() => $_ensure(2);
 }
 
 class ServerBinarySummary extends $pb.GeneratedMessage {
