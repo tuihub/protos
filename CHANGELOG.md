@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.20](https://github.com/TuiHub/Protos/compare/v0.2.19...v0.2.20) (2023-05-14)
+
+
+### Bug Fixes
+
+* **gebura:** change sentinel binary identifier ([2a888db](https://github.com/TuiHub/Protos/commit/2a888dbc855bef3d9fc397199ab41543776f0f69))
+
 ## [0.2.19](https://github.com/TuiHub/Protos/compare/v0.2.18...v0.2.19) (2023-04-22)
 
 
