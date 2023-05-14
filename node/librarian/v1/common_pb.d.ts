@@ -295,9 +295,6 @@ export class AppPackage extends jspb.Message {
   getSourceId(): InternalID | undefined;
   setSourceId(value?: InternalID): void;
 
-  getSourcePackageId(): string;
-  setSourcePackageId(value: string): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -327,7 +324,6 @@ export namespace AppPackage {
     id?: InternalID.AsObject,
     source: AppPackageSourceMap[keyof AppPackageSourceMap],
     sourceId?: InternalID.AsObject,
-    sourcePackageId: string,
     name: string,
     description: string,
     binary?: AppPackageBinary.AsObject,
@@ -345,6 +341,11 @@ export class AppPackageBinary extends jspb.Message {
   getPublicUrl(): string;
   setPublicUrl(value: string): void;
 
+  getSha256(): Uint8Array | string;
+  getSha256_asU8(): Uint8Array;
+  getSha256_asB64(): string;
+  setSha256(value: Uint8Array | string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppPackageBinary.AsObject;
   static toObject(includeInstance: boolean, msg: AppPackageBinary): AppPackageBinary.AsObject;
@@ -360,6 +361,7 @@ export namespace AppPackageBinary {
     name: string,
     sizeByte: number,
     publicUrl: string,
+    sha256: Uint8Array | string,
   }
 }
 

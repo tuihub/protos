@@ -2339,11 +2339,10 @@ proto.librarian.v1.AppPackage.toObject = function(includeInstance, msg) {
     id: (f = msg.getId()) && proto.librarian.v1.InternalID.toObject(includeInstance, f),
     source: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sourceId: (f = msg.getSourceId()) && proto.librarian.v1.InternalID.toObject(includeInstance, f),
-    sourcePackageId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     binary: (f = msg.getBinary()) && proto.librarian.v1.AppPackageBinary.toObject(includeInstance, f),
-    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -2396,22 +2395,18 @@ proto.librarian.v1.AppPackage.deserializeBinaryFromReader = function(msg, reader
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSourcePackageId(value);
+      msg.setName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 7:
+    case 6:
       var value = new proto.librarian.v1.AppPackageBinary;
       reader.readMessage(value,proto.librarian.v1.AppPackageBinary.deserializeBinaryFromReader);
       msg.setBinary(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPublic(value);
       break;
@@ -2467,31 +2462,24 @@ proto.librarian.v1.AppPackage.serializeBinaryToWriter = function(message, writer
       proto.librarian.v1.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getSourcePackageId();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getName();
+  f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
   f = message.getBinary();
   if (f != null) {
     writer.writeMessage(
-      7,
+      6,
       f,
       proto.librarian.v1.AppPackageBinary.serializeBinaryToWriter
     );
@@ -2499,7 +2487,7 @@ proto.librarian.v1.AppPackage.serializeBinaryToWriter = function(message, writer
   f = message.getPublic();
   if (f) {
     writer.writeBool(
-      8,
+      7,
       f
     );
   }
@@ -2599,10 +2587,10 @@ proto.librarian.v1.AppPackage.prototype.hasSourceId = function() {
 
 
 /**
- * optional string source_package_id = 4;
+ * optional string name = 4;
  * @return {string}
  */
-proto.librarian.v1.AppPackage.prototype.getSourcePackageId = function() {
+proto.librarian.v1.AppPackage.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -2611,16 +2599,16 @@ proto.librarian.v1.AppPackage.prototype.getSourcePackageId = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.AppPackage} returns this
  */
-proto.librarian.v1.AppPackage.prototype.setSourcePackageId = function(value) {
+proto.librarian.v1.AppPackage.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string name = 5;
+ * optional string description = 5;
  * @return {string}
  */
-proto.librarian.v1.AppPackage.prototype.getName = function() {
+proto.librarian.v1.AppPackage.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -2629,36 +2617,18 @@ proto.librarian.v1.AppPackage.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.AppPackage} returns this
  */
-proto.librarian.v1.AppPackage.prototype.setName = function(value) {
+proto.librarian.v1.AppPackage.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string description = 6;
- * @return {string}
- */
-proto.librarian.v1.AppPackage.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.v1.AppPackage} returns this
- */
-proto.librarian.v1.AppPackage.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional AppPackageBinary binary = 7;
+ * optional AppPackageBinary binary = 6;
  * @return {?proto.librarian.v1.AppPackageBinary}
  */
 proto.librarian.v1.AppPackage.prototype.getBinary = function() {
   return /** @type{?proto.librarian.v1.AppPackageBinary} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.v1.AppPackageBinary, 7));
+    jspb.Message.getWrapperField(this, proto.librarian.v1.AppPackageBinary, 6));
 };
 
 
@@ -2667,7 +2637,7 @@ proto.librarian.v1.AppPackage.prototype.getBinary = function() {
  * @return {!proto.librarian.v1.AppPackage} returns this
 */
 proto.librarian.v1.AppPackage.prototype.setBinary = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2685,16 +2655,16 @@ proto.librarian.v1.AppPackage.prototype.clearBinary = function() {
  * @return {boolean}
  */
 proto.librarian.v1.AppPackage.prototype.hasBinary = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional bool public = 8;
+ * optional bool public = 7;
  * @return {boolean}
  */
 proto.librarian.v1.AppPackage.prototype.getPublic = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
 
@@ -2703,7 +2673,7 @@ proto.librarian.v1.AppPackage.prototype.getPublic = function() {
  * @return {!proto.librarian.v1.AppPackage} returns this
  */
 proto.librarian.v1.AppPackage.prototype.setPublic = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 8, value);
+  return jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
@@ -2741,7 +2711,8 @@ proto.librarian.v1.AppPackageBinary.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     sizeByte: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    publicUrl: jspb.Message.getFieldWithDefault(msg, 3, "")
+    publicUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    sha256: msg.getSha256_asB64()
   };
 
   if (includeInstance) {
@@ -2790,6 +2761,10 @@ proto.librarian.v1.AppPackageBinary.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setPublicUrl(value);
       break;
+    case 4:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setSha256(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2837,6 +2812,13 @@ proto.librarian.v1.AppPackageBinary.serializeBinaryToWriter = function(message, 
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getSha256_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      4,
       f
     );
   }
@@ -2894,6 +2876,48 @@ proto.librarian.v1.AppPackageBinary.prototype.getPublicUrl = function() {
  */
 proto.librarian.v1.AppPackageBinary.prototype.setPublicUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bytes sha256 = 4;
+ * @return {!(string|Uint8Array)}
+ */
+proto.librarian.v1.AppPackageBinary.prototype.getSha256 = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * optional bytes sha256 = 4;
+ * This is a type-conversion wrapper around `getSha256()`
+ * @return {string}
+ */
+proto.librarian.v1.AppPackageBinary.prototype.getSha256_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getSha256()));
+};
+
+
+/**
+ * optional bytes sha256 = 4;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getSha256()`
+ * @return {!Uint8Array}
+ */
+proto.librarian.v1.AppPackageBinary.prototype.getSha256_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getSha256()));
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.librarian.v1.AppPackageBinary} returns this
+ */
+proto.librarian.v1.AppPackageBinary.prototype.setSha256 = function(value) {
+  return jspb.Message.setProto3BytesField(this, 4, value);
 };
 
 
