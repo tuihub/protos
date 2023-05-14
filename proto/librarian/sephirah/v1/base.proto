@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
+import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
@@ -13,6 +14,7 @@ message FileMetadata {
   int64 size = 3;
   FileType type = 4;
   bytes sha256 = 5;
+  google.protobuf.Timestamp create_time = 6;
 }
 
 enum FileType {

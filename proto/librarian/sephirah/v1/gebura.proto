@@ -54,12 +54,20 @@ message MergeAppsRequest {
 
 message MergeAppsResponse {}
 
+message PickAppRequest {
+  // Must not be APP_SOURCE_INTERNAL
+  librarian.v1.InternalID picked = 1;
+}
+
+message PickAppResponse {}
+
 message SearchAppsRequest {
   librarian.v1.PagingRequest paging = 1;
   string keywords = 2;
 }
 message SearchAppsResponse {
   librarian.v1.PagingResponse paging = 1;
+  // without details
   repeated librarian.v1.App apps = 2;
 }
 
@@ -78,9 +86,10 @@ message PurchaseAppRequest {
 
 message PurchaseAppResponse {}
 
-message GetAppLibraryRequest {}
-message GetAppLibraryResponse {
-  repeated librarian.v1.InternalID app_ids = 1;
+message GetPurchasedAppsRequest {}
+message GetPurchasedAppsResponse {
+  // without details
+  repeated librarian.v1.App apps = 1;
 }
 
 message CreateAppPackageRequest {
@@ -110,7 +119,7 @@ message ListAppPackagesResponse {
 }
 
 message ReportAppPackagesRequest {
-  map<string, librarian.v1.AppPackageBinary> app_packages = 1;
+  repeated librarian.v1.AppPackageBinary app_package_binaries = 1;
 }
 
 message ReportAppPackagesResponse {}
@@ -153,5 +162,5 @@ message ListGameSaveFileRequest {
 
 message ListGameSaveFileResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated FileMetadata file_list = 2;
+  repeated FileMetadata files = 2;
 }

@@ -84,6 +84,8 @@ service LibrarianSephirahService {
   rpc RefreshApp(RefreshAppRequest) returns (RefreshAppResponse);
   // `Gebura` `Admin` Merge two apps
   rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);
+  // `Gebura` `Admin` Pick one app out from merged
+  rpc PickApp(PickAppRequest) returns (PickAppResponse);
 
   // `Gebura` `Normal`
   rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
@@ -91,8 +93,8 @@ service LibrarianSephirahService {
   rpc GetBindApps(GetBindAppsRequest) returns (GetBindAppsResponse);
   // `Gebura` `Normal`
   rpc PurchaseApp(PurchaseAppRequest) returns (PurchaseAppResponse);
-  // `Gebura` `Normal` Get the entire library
-  rpc GetAppLibrary(GetAppLibraryRequest) returns (GetAppLibraryResponse);
+  // `Gebura` `Normal`
+  rpc GetPurchasedApps(GetPurchasedAppsRequest) returns (GetPurchasedAppsResponse);
 
   // `Gebura` `Normal`
   rpc CreateAppPackage(CreateAppPackageRequest) returns (CreateAppPackageResponse);
