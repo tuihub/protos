@@ -36,6 +36,16 @@ message ListImagesResponse {
   repeated librarian.v1.InternalID ids = 2;
 }
 
+message SearchImagesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  string keywords = 2;
+}
+
+message SearchImagesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.InternalID ids = 2;
+}
+
 message GetImageRequest {
   librarian.v1.InternalID id = 1;
 }

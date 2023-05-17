@@ -73,6 +73,8 @@ service LibrarianSephirahService {
   // `Chesed` `Normal`
   rpc ListImages(ListImagesRequest) returns (ListImagesResponse);
   // `Chesed` `Normal`
+  rpc SearchImages(SearchImagesRequest) returns (SearchImagesResponse);
+  // `Chesed` `Normal`
   rpc GetImage(GetImageRequest) returns (GetImageResponse);
   // `Chesed` `Normal`
   rpc DownloadImage(DownloadImageRequest) returns (DownloadImageResponse);
