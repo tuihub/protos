@@ -32,6 +32,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   uploadImage: grpc.MethodDefinition<librarian_sephirah_v1_chesed_pb.UploadImageRequest, librarian_sephirah_v1_chesed_pb.UploadImageResponse>;
   updateImage: grpc.MethodDefinition<librarian_sephirah_v1_chesed_pb.UpdateImageRequest, librarian_sephirah_v1_chesed_pb.UpdateImageResponse>;
   listImages: grpc.MethodDefinition<librarian_sephirah_v1_chesed_pb.ListImagesRequest, librarian_sephirah_v1_chesed_pb.ListImagesResponse>;
+  searchImages: grpc.MethodDefinition<librarian_sephirah_v1_chesed_pb.SearchImagesRequest, librarian_sephirah_v1_chesed_pb.SearchImagesResponse>;
   getImage: grpc.MethodDefinition<librarian_sephirah_v1_chesed_pb.GetImageRequest, librarian_sephirah_v1_chesed_pb.GetImageResponse>;
   downloadImage: grpc.MethodDefinition<librarian_sephirah_v1_chesed_pb.DownloadImageRequest, librarian_sephirah_v1_chesed_pb.DownloadImageResponse>;
   createApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.CreateAppRequest, librarian_sephirah_v1_gebura_pb.CreateAppResponse>;
@@ -90,6 +91,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   uploadImage: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.UploadImageRequest, librarian_sephirah_v1_chesed_pb.UploadImageResponse>;
   updateImage: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.UpdateImageRequest, librarian_sephirah_v1_chesed_pb.UpdateImageResponse>;
   listImages: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.ListImagesRequest, librarian_sephirah_v1_chesed_pb.ListImagesResponse>;
+  searchImages: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.SearchImagesRequest, librarian_sephirah_v1_chesed_pb.SearchImagesResponse>;
   getImage: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.GetImageRequest, librarian_sephirah_v1_chesed_pb.GetImageResponse>;
   downloadImage: grpc.handleUnaryCall<librarian_sephirah_v1_chesed_pb.DownloadImageRequest, librarian_sephirah_v1_chesed_pb.DownloadImageResponse>;
   createApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.CreateAppRequest, librarian_sephirah_v1_gebura_pb.CreateAppResponse>;
@@ -181,6 +183,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   listImages(argument: librarian_sephirah_v1_chesed_pb.ListImagesRequest, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.ListImagesResponse>): grpc.ClientUnaryCall;
   listImages(argument: librarian_sephirah_v1_chesed_pb.ListImagesRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.ListImagesResponse>): grpc.ClientUnaryCall;
   listImages(argument: librarian_sephirah_v1_chesed_pb.ListImagesRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.ListImagesResponse>): grpc.ClientUnaryCall;
+  searchImages(argument: librarian_sephirah_v1_chesed_pb.SearchImagesRequest, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.SearchImagesResponse>): grpc.ClientUnaryCall;
+  searchImages(argument: librarian_sephirah_v1_chesed_pb.SearchImagesRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.SearchImagesResponse>): grpc.ClientUnaryCall;
+  searchImages(argument: librarian_sephirah_v1_chesed_pb.SearchImagesRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.SearchImagesResponse>): grpc.ClientUnaryCall;
   getImage(argument: librarian_sephirah_v1_chesed_pb.GetImageRequest, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.GetImageResponse>): grpc.ClientUnaryCall;
   getImage(argument: librarian_sephirah_v1_chesed_pb.GetImageRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.GetImageResponse>): grpc.ClientUnaryCall;
   getImage(argument: librarian_sephirah_v1_chesed_pb.GetImageRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_chesed_pb.GetImageResponse>): grpc.ClientUnaryCall;

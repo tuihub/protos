@@ -364,6 +364,126 @@ class ListImagesResponse extends $pb.GeneratedMessage {
   $core.List<$7.InternalID> get ids => $_getList(1);
 }
 
+class SearchImagesRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchImagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keywords')
+    ..hasRequiredFields = false
+  ;
+
+  SearchImagesRequest._() : super();
+  factory SearchImagesRequest({
+    $7.PagingRequest? paging,
+    $core.String? keywords,
+  }) {
+    final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
+    if (keywords != null) {
+      _result.keywords = keywords;
+    }
+    return _result;
+  }
+  factory SearchImagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchImagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchImagesRequest clone() => SearchImagesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchImagesRequest copyWith(void Function(SearchImagesRequest) updates) => super.copyWith((message) => updates(message as SearchImagesRequest)) as SearchImagesRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SearchImagesRequest create() => SearchImagesRequest._();
+  SearchImagesRequest createEmptyInstance() => create();
+  static $pb.PbList<SearchImagesRequest> createRepeated() => $pb.PbList<SearchImagesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SearchImagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchImagesRequest>(create);
+  static SearchImagesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get keywords => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set keywords($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKeywords() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKeywords() => clearField(2);
+}
+
+class SearchImagesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchImagesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  SearchImagesResponse._() : super();
+  factory SearchImagesResponse({
+    $7.PagingResponse? paging,
+    $core.Iterable<$7.InternalID>? ids,
+  }) {
+    final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
+    if (ids != null) {
+      _result.ids.addAll(ids);
+    }
+    return _result;
+  }
+  factory SearchImagesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchImagesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchImagesResponse clone() => SearchImagesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchImagesResponse copyWith(void Function(SearchImagesResponse) updates) => super.copyWith((message) => updates(message as SearchImagesResponse)) as SearchImagesResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SearchImagesResponse create() => SearchImagesResponse._();
+  SearchImagesResponse createEmptyInstance() => create();
+  static $pb.PbList<SearchImagesResponse> createRepeated() => $pb.PbList<SearchImagesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SearchImagesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchImagesResponse>(create);
+  static SearchImagesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$7.InternalID> get ids => $_getList(1);
+}
+
 class GetImageRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetImageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)

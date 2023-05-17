@@ -131,6 +131,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse> __Marshaller_librarian_sephirah_v1_ListImagesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest> __Marshaller_librarian_sephirah_v1_SearchImagesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse> __Marshaller_librarian_sephirah_v1_SearchImagesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest> __Marshaller_librarian_sephirah_v1_GetImageRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse> __Marshaller_librarian_sephirah_v1_GetImageResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse.Parser));
@@ -418,6 +422,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "ListImages",
         __Marshaller_librarian_sephirah_v1_ListImagesRequest,
         __Marshaller_librarian_sephirah_v1_ListImagesResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse> __Method_SearchImages = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SearchImages",
+        __Marshaller_librarian_sephirah_v1_SearchImagesRequest,
+        __Marshaller_librarian_sephirah_v1_SearchImagesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse> __Method_GetImage = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse>(
@@ -937,6 +949,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse> ListImages(global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Chesed` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse> SearchImages(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2212,6 +2236,54 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse> ListImagesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ListImages, null, options, request);
+      }
+      /// <summary>
+      /// `Chesed` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse SearchImages(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SearchImages(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Chesed` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse SearchImages(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SearchImages, null, options, request);
+      }
+      /// <summary>
+      /// `Chesed` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse> SearchImagesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SearchImagesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Chesed` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse> SearchImagesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SearchImages, null, options, request);
       }
       /// <summary>
       /// `Chesed` `Normal`
@@ -3852,6 +3924,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_UploadImage, serviceImpl.UploadImage)
           .AddMethod(__Method_UpdateImage, serviceImpl.UpdateImage)
           .AddMethod(__Method_ListImages, serviceImpl.ListImages)
+          .AddMethod(__Method_SearchImages, serviceImpl.SearchImages)
           .AddMethod(__Method_GetImage, serviceImpl.GetImage)
           .AddMethod(__Method_DownloadImage, serviceImpl.DownloadImage)
           .AddMethod(__Method_CreateApp, serviceImpl.CreateApp)
@@ -3914,6 +3987,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_UploadImage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse>(serviceImpl.UploadImage));
       serviceBinder.AddMethod(__Method_UpdateImage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageResponse>(serviceImpl.UpdateImage));
       serviceBinder.AddMethod(__Method_ListImages, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse>(serviceImpl.ListImages));
+      serviceBinder.AddMethod(__Method_SearchImages, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchImagesResponse>(serviceImpl.SearchImages));
       serviceBinder.AddMethod(__Method_GetImage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse>(serviceImpl.GetImage));
       serviceBinder.AddMethod(__Method_DownloadImage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadImageResponse>(serviceImpl.DownloadImage));
       serviceBinder.AddMethod(__Method_CreateApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse>(serviceImpl.CreateApp));

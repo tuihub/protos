@@ -38,6 +38,7 @@ const (
 	LibrarianSephirahService_UploadImage_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UploadImage"
 	LibrarianSephirahService_UpdateImage_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage"
 	LibrarianSephirahService_ListImages_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListImages"
+	LibrarianSephirahService_SearchImages_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages"
 	LibrarianSephirahService_GetImage_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/GetImage"
 	LibrarianSephirahService_DownloadImage_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage"
 	LibrarianSephirahService_CreateApp_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
@@ -124,6 +125,8 @@ type LibrarianSephirahServiceClient interface {
 	UpdateImage(ctx context.Context, in *UpdateImageRequest, opts ...grpc.CallOption) (*UpdateImageResponse, error)
 	// `Chesed` `Normal`
 	ListImages(ctx context.Context, in *ListImagesRequest, opts ...grpc.CallOption) (*ListImagesResponse, error)
+	// `Chesed` `Normal`
+	SearchImages(ctx context.Context, in *SearchImagesRequest, opts ...grpc.CallOption) (*SearchImagesResponse, error)
 	// `Chesed` `Normal`
 	GetImage(ctx context.Context, in *GetImageRequest, opts ...grpc.CallOption) (*GetImageResponse, error)
 	// `Chesed` `Normal`
@@ -456,6 +459,15 @@ func (c *librarianSephirahServiceClient) UpdateImage(ctx context.Context, in *Up
 func (c *librarianSephirahServiceClient) ListImages(ctx context.Context, in *ListImagesRequest, opts ...grpc.CallOption) (*ListImagesResponse, error) {
 	out := new(ListImagesResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListImages_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SearchImages(ctx context.Context, in *SearchImagesRequest, opts ...grpc.CallOption) (*SearchImagesResponse, error) {
+	out := new(SearchImagesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SearchImages_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -841,6 +853,8 @@ type LibrarianSephirahServiceServer interface {
 	// `Chesed` `Normal`
 	ListImages(context.Context, *ListImagesRequest) (*ListImagesResponse, error)
 	// `Chesed` `Normal`
+	SearchImages(context.Context, *SearchImagesRequest) (*SearchImagesResponse, error)
+	// `Chesed` `Normal`
 	GetImage(context.Context, *GetImageRequest) (*GetImageResponse, error)
 	// `Chesed` `Normal`
 	DownloadImage(context.Context, *DownloadImageRequest) (*DownloadImageResponse, error)
@@ -971,6 +985,9 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateImage(context.Context, 
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListImages(context.Context, *ListImagesRequest) (*ListImagesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListImages not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SearchImages(context.Context, *SearchImagesRequest) (*SearchImagesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchImages not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetImage(context.Context, *GetImageRequest) (*GetImageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetImage not implemented")
@@ -1453,6 +1470,24 @@ func _LibrarianSephirahService_ListImages_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).ListImages(ctx, req.(*ListImagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SearchImages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchImagesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SearchImages(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SearchImages_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SearchImages(ctx, req.(*SearchImagesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2143,6 +2178,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListImages",
 			Handler:    _LibrarianSephirahService_ListImages_Handler,
+		},
+		{
+			MethodName: "SearchImages",
+			Handler:    _LibrarianSephirahService_SearchImages_Handler,
 		},
 		{
 			MethodName: "GetImage",

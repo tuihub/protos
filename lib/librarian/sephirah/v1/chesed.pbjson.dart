@@ -74,6 +74,28 @@ const ListImagesResponse$json = const {
 
 /// Descriptor for `ListImagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listImagesResponseDescriptor = $convert.base64Decode('ChJMaXN0SW1hZ2VzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSKgoDaWRzGAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSA2lkcw==');
+@$core.Deprecated('Use searchImagesRequestDescriptor instead')
+const SearchImagesRequest$json = const {
+  '1': 'SearchImagesRequest',
+  '2': const [
+    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    const {'1': 'keywords', '3': 2, '4': 1, '5': 9, '10': 'keywords'},
+  ],
+};
+
+/// Descriptor for `SearchImagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchImagesRequestDescriptor = $convert.base64Decode('ChNTZWFyY2hJbWFnZXNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSGgoIa2V5d29yZHMYAiABKAlSCGtleXdvcmRz');
+@$core.Deprecated('Use searchImagesResponseDescriptor instead')
+const SearchImagesResponse$json = const {
+  '1': 'SearchImagesResponse',
+  '2': const [
+    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    const {'1': 'ids', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
+  ],
+};
+
+/// Descriptor for `SearchImagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchImagesResponseDescriptor = $convert.base64Decode('ChRTZWFyY2hJbWFnZXNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxIqCgNpZHMYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIDaWRz');
 @$core.Deprecated('Use getImageRequestDescriptor instead')
 const GetImageRequest$json = const {
   '1': 'GetImageRequest',

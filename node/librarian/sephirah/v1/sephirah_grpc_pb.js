@@ -869,6 +869,28 @@ function deserialize_librarian_sephirah_v1_SearchAppsResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.SearchAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_SearchImagesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.SearchImagesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SearchImagesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SearchImagesRequest(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.SearchImagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SearchImagesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_chesed_pb.SearchImagesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SearchImagesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SearchImagesResponse(buffer_arg) {
+  return librarian_sephirah_v1_chesed_pb.SearchImagesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_SimpleDownloadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.SimpleDownloadFileRequest');
@@ -1421,6 +1443,18 @@ listImages: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListImagesRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListImagesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListImagesResponse,
+  },
+  // `Chesed` `Normal`
+searchImages: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchImages',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_chesed_pb.SearchImagesRequest,
+    responseType: librarian_sephirah_v1_chesed_pb.SearchImagesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SearchImagesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SearchImagesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SearchImagesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SearchImagesResponse,
   },
   // `Chesed` `Normal`
 getImage: {

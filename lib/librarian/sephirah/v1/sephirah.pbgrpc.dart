@@ -134,6 +134,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           ($3.ListImagesRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $3.ListImagesResponse.fromBuffer(value));
+  static final _$searchImages =
+      $grpc.ClientMethod<$3.SearchImagesRequest, $3.SearchImagesResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/SearchImages',
+          ($3.SearchImagesRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $3.SearchImagesResponse.fromBuffer(value));
   static final _$getImage =
       $grpc.ClientMethod<$3.GetImageRequest, $3.GetImageResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/GetImage',
@@ -456,6 +462,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       $3.ListImagesRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listImages, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$3.SearchImagesResponse> searchImages(
+      $3.SearchImagesRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchImages, request, options: options);
   }
 
   $grpc.ResponseFuture<$3.GetImageResponse> getImage($3.GetImageRequest request,
@@ -821,6 +833,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.ListImagesRequest.fromBuffer(value),
         ($3.ListImagesResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$3.SearchImagesRequest, $3.SearchImagesResponse>(
+            'SearchImages',
+            searchImages_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $3.SearchImagesRequest.fromBuffer(value),
+            ($3.SearchImagesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$3.GetImageRequest, $3.GetImageResponse>(
         'GetImage',
         getImage_Pre,
@@ -1200,6 +1221,12 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listImages(call, await request);
   }
 
+  $async.Future<$3.SearchImagesResponse> searchImages_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$3.SearchImagesRequest> request) async {
+    return searchImages(call, await request);
+  }
+
   $async.Future<$3.GetImageResponse> getImage_Pre(
       $grpc.ServiceCall call, $async.Future<$3.GetImageRequest> request) async {
     return getImage(call, await request);
@@ -1426,6 +1453,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $3.UpdateImageRequest request);
   $async.Future<$3.ListImagesResponse> listImages(
       $grpc.ServiceCall call, $3.ListImagesRequest request);
+  $async.Future<$3.SearchImagesResponse> searchImages(
+      $grpc.ServiceCall call, $3.SearchImagesRequest request);
   $async.Future<$3.GetImageResponse> getImage(
       $grpc.ServiceCall call, $3.GetImageRequest request);
   $async.Future<$3.DownloadImageResponse> downloadImage(

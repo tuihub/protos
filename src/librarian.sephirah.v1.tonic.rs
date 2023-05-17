@@ -499,6 +499,27 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Chesed` `Normal`
 */
+        pub async fn search_images(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SearchImagesRequest>,
+        ) -> Result<tonic::Response<super::SearchImagesResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Chesed` `Normal`
+*/
         pub async fn get_image(
             &mut self,
             request: impl tonic::IntoRequest<super::GetImageRequest>,
@@ -1051,8 +1072,6 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Netzach` `Normal`
-*/
         pub async fn list_notify_flows(
             &mut self,
             request: impl tonic::IntoRequest<super::ListNotifyFlowsRequest>,
@@ -1363,6 +1382,12 @@ pub mod librarian_sephirah_service_server {
         ) -> Result<tonic::Response<super::ListImagesResponse>, tonic::Status>;
         /** `Chesed` `Normal`
 */
+        async fn search_images(
+            &self,
+            request: tonic::Request<super::SearchImagesRequest>,
+        ) -> Result<tonic::Response<super::SearchImagesResponse>, tonic::Status>;
+        /** `Chesed` `Normal`
+*/
         async fn get_image(
             &self,
             request: tonic::Request<super::GetImageRequest>,
@@ -1523,8 +1548,6 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::UpdateNotifyFlowRequest>,
         ) -> Result<tonic::Response<super::UpdateNotifyFlowResponse>, tonic::Status>;
-        /** `Netzach` `Normal`
-*/
         async fn list_notify_flows(
             &self,
             request: tonic::Request<super::ListNotifyFlowsRequest>,
@@ -2370,6 +2393,46 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ListImagesSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages" => {
+                    #[allow(non_camel_case_types)]
+                    struct SearchImagesSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::SearchImagesRequest>
+                    for SearchImagesSvc<T> {
+                        type Response = super::SearchImagesResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SearchImagesRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).search_images(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SearchImagesSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

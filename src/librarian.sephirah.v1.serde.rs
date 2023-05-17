@@ -10226,6 +10226,222 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.SearchAppsResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for SearchImagesRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.keywords.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SearchImagesRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.keywords.is_empty() {
+            struct_ser.serialize_field("keywords", &self.keywords)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SearchImagesRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "keywords",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            Keywords,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "keywords" => Ok(GeneratedField::Keywords),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SearchImagesRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SearchImagesRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchImagesRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut keywords__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::Keywords => {
+                            if keywords__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("keywords"));
+                            }
+                            keywords__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(SearchImagesRequest {
+                    paging: paging__,
+                    keywords: keywords__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SearchImagesRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SearchImagesResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.ids.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SearchImagesResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.ids.is_empty() {
+            struct_ser.serialize_field("ids", &self.ids)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SearchImagesResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "ids",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            Ids,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "ids" => Ok(GeneratedField::Ids),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SearchImagesResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SearchImagesResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchImagesResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut ids__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::Ids => {
+                            if ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("ids"));
+                            }
+                            ids__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(SearchImagesResponse {
+                    paging: paging__,
+                    ids: ids__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SearchImagesResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for ServerBinarySummary {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>

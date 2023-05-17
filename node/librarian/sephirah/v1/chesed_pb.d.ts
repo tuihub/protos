@@ -157,6 +157,60 @@ export namespace ListImagesResponse {
   }
 }
 
+export class SearchImagesRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  getKeywords(): string;
+  setKeywords(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchImagesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchImagesRequest): SearchImagesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchImagesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchImagesRequest;
+  static deserializeBinaryFromReader(message: SearchImagesRequest, reader: jspb.BinaryReader): SearchImagesRequest;
+}
+
+export namespace SearchImagesRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    keywords: string,
+  }
+}
+
+export class SearchImagesResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearIdsList(): void;
+  getIdsList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIds(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchImagesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchImagesResponse): SearchImagesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchImagesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchImagesResponse;
+  static deserializeBinaryFromReader(message: SearchImagesResponse, reader: jspb.BinaryReader): SearchImagesResponse;
+}
+
+export namespace SearchImagesResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    idsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+  }
+}
+
 export class GetImageRequest extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
