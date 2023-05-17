@@ -1,3 +1,5 @@
 {
-    ".": "0.2.22"
+    ".": "0.2.22",
+    "bump-minor-pre-major": true,
+    "bump-patch-for-minor-pre-major": true
 }
