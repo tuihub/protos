@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.23](https://github.com/TuiHub/Protos/compare/v0.2.22...v0.2.23) (2023-05-17)
+
+
+### Features
+
+* **chesed:** add SearchImagesResponse ([65ac59b](https://github.com/TuiHub/Protos/commit/65ac59ba0aa3caf1cd7c9fbadaeb2d561c554af4))
+
 ## [0.2.22](https://github.com/TuiHub/Protos/compare/v0.2.21...v0.2.22) (2023-05-17)
 
 
