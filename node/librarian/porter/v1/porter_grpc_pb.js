@@ -3,6 +3,7 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var librarian_porter_v1_porter_pb = require('../../../librarian/porter/v1/porter_pb.js');
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 
 function serialize_librarian_porter_v1_PresignedPullDataRequest(arg) {

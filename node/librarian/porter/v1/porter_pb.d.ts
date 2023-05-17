@@ -2,6 +2,7 @@
 // file: librarian/porter/v1/porter.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class PullFeedRequest extends jspb.Message {
@@ -453,6 +454,11 @@ export class PresignedPullDataRequest extends jspb.Message {
   getContentId(): string;
   setContentId(value: string): void;
 
+  hasExpireTime(): boolean;
+  clearExpireTime(): void;
+  getExpireTime(): google_protobuf_duration_pb.Duration | undefined;
+  setExpireTime(value?: google_protobuf_duration_pb.Duration): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PresignedPullDataRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PresignedPullDataRequest): PresignedPullDataRequest.AsObject;
@@ -467,6 +473,7 @@ export namespace PresignedPullDataRequest {
   export type AsObject = {
     source: DataSourceMap[keyof DataSourceMap],
     contentId: string,
+    expireTime?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

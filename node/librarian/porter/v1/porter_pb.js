@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
+goog.object.extend(proto, google_protobuf_duration_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
 goog.exportSymbol('proto.librarian.porter.v1.AccountAppRelationType', null, global);
@@ -3541,7 +3543,8 @@ proto.librarian.porter.v1.PresignedPullDataRequest.prototype.toObject = function
 proto.librarian.porter.v1.PresignedPullDataRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     source: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    contentId: jspb.Message.getFieldWithDefault(msg, 2, "")
+    contentId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    expireTime: (f = msg.getExpireTime()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3586,6 +3589,11 @@ proto.librarian.porter.v1.PresignedPullDataRequest.deserializeBinaryFromReader =
       var value = /** @type {string} */ (reader.readString());
       msg.setContentId(value);
       break;
+    case 3:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.setExpireTime(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3629,6 +3637,14 @@ proto.librarian.porter.v1.PresignedPullDataRequest.serializeBinaryToWriter = fun
       f
     );
   }
+  f = message.getExpireTime();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
+  }
 };
 
 
@@ -3665,6 +3681,43 @@ proto.librarian.porter.v1.PresignedPullDataRequest.prototype.getContentId = func
  */
 proto.librarian.porter.v1.PresignedPullDataRequest.prototype.setContentId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Duration expire_time = 3;
+ * @return {?proto.google.protobuf.Duration}
+ */
+proto.librarian.porter.v1.PresignedPullDataRequest.prototype.getExpireTime = function() {
+  return /** @type{?proto.google.protobuf.Duration} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Duration|undefined} value
+ * @return {!proto.librarian.porter.v1.PresignedPullDataRequest} returns this
+*/
+proto.librarian.porter.v1.PresignedPullDataRequest.prototype.setExpireTime = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.porter.v1.PresignedPullDataRequest} returns this
+ */
+proto.librarian.porter.v1.PresignedPullDataRequest.prototype.clearExpireTime = function() {
+  return this.setExpireTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.PresignedPullDataRequest.prototype.hasExpireTime = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

@@ -10,6 +10,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $1;
+import '../../../google/protobuf/duration.pb.dart' as $2;
 
 import 'porter.pbenum.dart';
 
@@ -1027,6 +1028,7 @@ class PresignedPullDataRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedPullDataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..e<DataSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: DataSource.DATA_SOURCE_UNSPECIFIED, valueOf: DataSource.valueOf, enumValues: DataSource.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentId')
+    ..aOM<$2.Duration>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $2.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1034,6 +1036,7 @@ class PresignedPullDataRequest extends $pb.GeneratedMessage {
   factory PresignedPullDataRequest({
     DataSource? source,
     $core.String? contentId,
+    $2.Duration? expireTime,
   }) {
     final _result = create();
     if (source != null) {
@@ -1041,6 +1044,9 @@ class PresignedPullDataRequest extends $pb.GeneratedMessage {
     }
     if (contentId != null) {
       _result.contentId = contentId;
+    }
+    if (expireTime != null) {
+      _result.expireTime = expireTime;
     }
     return _result;
   }
@@ -1082,6 +1088,17 @@ class PresignedPullDataRequest extends $pb.GeneratedMessage {
   $core.bool hasContentId() => $_has(1);
   @$pb.TagNumber(2)
   void clearContentId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $2.Duration get expireTime => $_getN(2);
+  @$pb.TagNumber(3)
+  set expireTime($2.Duration v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExpireTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpireTime() => clearField(3);
+  @$pb.TagNumber(3)
+  $2.Duration ensureExpireTime() => $_ensure(2);
 }
 
 class PresignedPullDataResponse extends $pb.GeneratedMessage {

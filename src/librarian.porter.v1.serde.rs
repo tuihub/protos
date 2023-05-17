@@ -454,6 +454,9 @@ impl serde::Serialize for PresignedPullDataRequest {
         if !self.content_id.is_empty() {
             len += 1;
         }
+        if self.expire_time.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PresignedPullDataRequest", len)?;
         if self.source != 0 {
             let v = DataSource::from_i32(self.source)
@@ -462,6 +465,9 @@ impl serde::Serialize for PresignedPullDataRequest {
         }
         if !self.content_id.is_empty() {
             struct_ser.serialize_field("contentId", &self.content_id)?;
+        }
+        if let Some(v) = self.expire_time.as_ref() {
+            struct_ser.serialize_field("expireTime", v)?;
         }
         struct_ser.end()
     }
@@ -476,12 +482,15 @@ impl<'de> serde::Deserialize<'de> for PresignedPullDataRequest {
             "source",
             "content_id",
             "contentId",
+            "expire_time",
+            "expireTime",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Source,
             ContentId,
+            ExpireTime,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -505,6 +514,7 @@ impl<'de> serde::Deserialize<'de> for PresignedPullDataRequest {
                         match value {
                             "source" => Ok(GeneratedField::Source),
                             "contentId" | "content_id" => Ok(GeneratedField::ContentId),
+                            "expireTime" | "expire_time" => Ok(GeneratedField::ExpireTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -526,6 +536,7 @@ impl<'de> serde::Deserialize<'de> for PresignedPullDataRequest {
             {
                 let mut source__ = None;
                 let mut content_id__ = None;
+                let mut expire_time__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Source => {
@@ -540,11 +551,18 @@ impl<'de> serde::Deserialize<'de> for PresignedPullDataRequest {
                             }
                             content_id__ = Some(map.next_value()?);
                         }
+                        GeneratedField::ExpireTime => {
+                            if expire_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("expireTime"));
+                            }
+                            expire_time__ = map.next_value()?;
+                        }
                     }
                 }
                 Ok(PresignedPullDataRequest {
                     source: source__.unwrap_or_default(),
                     content_id: content_id__.unwrap_or_default(),
+                    expire_time: expire_time__,
                 })
             }
         }
