@@ -115,6 +115,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse> __Marshaller_librarian_sephirah_v1_SimpleDownloadFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest> __Marshaller_librarian_sephirah_v1_PresignedDownloadFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse> __Marshaller_librarian_sephirah_v1_PresignedDownloadFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageRequest> __Marshaller_librarian_sephirah_v1_UploadImageRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse> __Marshaller_librarian_sephirah_v1_UploadImageResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse.Parser));
@@ -382,6 +386,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "SimpleDownloadFile",
         __Marshaller_librarian_sephirah_v1_SimpleDownloadFileRequest,
         __Marshaller_librarian_sephirah_v1_SimpleDownloadFileResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse> __Method_PresignedDownloadFile = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PresignedDownloadFile",
+        __Marshaller_librarian_sephirah_v1_PresignedDownloadFileRequest,
+        __Marshaller_librarian_sephirah_v1_PresignedDownloadFileResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse> __Method_UploadImage = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse>(
@@ -876,6 +888,19 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>A task indicating completion of the handler.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task SimpleDownloadFile(global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileRequest request, grpc::IServerStreamWriter<global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Binah` `download_token`
+      /// Download file through http url
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse> PresignedDownloadFile(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -1991,6 +2016,58 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncServerStreamingCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse> SimpleDownloadFile(global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_SimpleDownloadFile, null, options, request);
+      }
+      /// <summary>
+      /// `Binah` `download_token`
+      /// Download file through http url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse PresignedDownloadFile(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PresignedDownloadFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Binah` `download_token`
+      /// Download file through http url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse PresignedDownloadFile(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PresignedDownloadFile, null, options, request);
+      }
+      /// <summary>
+      /// `Binah` `download_token`
+      /// Download file through http url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse> PresignedDownloadFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PresignedDownloadFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Binah` `download_token`
+      /// Download file through http url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse> PresignedDownloadFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PresignedDownloadFile, null, options, request);
       }
       /// <summary>
       /// `Chesed` `Normal`
@@ -3771,6 +3848,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_DownloadFile, serviceImpl.DownloadFile)
           .AddMethod(__Method_SimpleUploadFile, serviceImpl.SimpleUploadFile)
           .AddMethod(__Method_SimpleDownloadFile, serviceImpl.SimpleDownloadFile)
+          .AddMethod(__Method_PresignedDownloadFile, serviceImpl.PresignedDownloadFile)
           .AddMethod(__Method_UploadImage, serviceImpl.UploadImage)
           .AddMethod(__Method_UpdateImage, serviceImpl.UpdateImage)
           .AddMethod(__Method_ListImages, serviceImpl.ListImages)
@@ -3832,6 +3910,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_DownloadFile, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadFileResponse>(serviceImpl.DownloadFile));
       serviceBinder.AddMethod(__Method_SimpleUploadFile, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleUploadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleUploadFileResponse>(serviceImpl.SimpleUploadFile));
       serviceBinder.AddMethod(__Method_SimpleDownloadFile, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse>(serviceImpl.SimpleDownloadFile));
+      serviceBinder.AddMethod(__Method_PresignedDownloadFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse>(serviceImpl.PresignedDownloadFile));
       serviceBinder.AddMethod(__Method_UploadImage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse>(serviceImpl.UploadImage));
       serviceBinder.AddMethod(__Method_UpdateImage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageResponse>(serviceImpl.UpdateImage));
       serviceBinder.AddMethod(__Method_ListImages, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse>(serviceImpl.ListImages));

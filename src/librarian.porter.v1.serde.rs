@@ -440,6 +440,209 @@ impl<'de> serde::Deserialize<'de> for FeedSource {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
+impl serde::Serialize for PresignedPullDataRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.source != 0 {
+            len += 1;
+        }
+        if !self.content_id.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PresignedPullDataRequest", len)?;
+        if self.source != 0 {
+            let v = DataSource::from_i32(self.source)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.source)))?;
+            struct_ser.serialize_field("source", &v)?;
+        }
+        if !self.content_id.is_empty() {
+            struct_ser.serialize_field("contentId", &self.content_id)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PresignedPullDataRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "source",
+            "content_id",
+            "contentId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Source,
+            ContentId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "source" => Ok(GeneratedField::Source),
+                            "contentId" | "content_id" => Ok(GeneratedField::ContentId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PresignedPullDataRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.PresignedPullDataRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PresignedPullDataRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut source__ = None;
+                let mut content_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Source => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("source"));
+                            }
+                            source__ = Some(map.next_value::<DataSource>()? as i32);
+                        }
+                        GeneratedField::ContentId => {
+                            if content_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("contentId"));
+                            }
+                            content_id__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(PresignedPullDataRequest {
+                    source: source__.unwrap_or_default(),
+                    content_id: content_id__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.PresignedPullDataRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PresignedPullDataResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.pull_url.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PresignedPullDataResponse", len)?;
+        if !self.pull_url.is_empty() {
+            struct_ser.serialize_field("pullUrl", &self.pull_url)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PresignedPullDataResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "pull_url",
+            "pullUrl",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            PullUrl,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "pullUrl" | "pull_url" => Ok(GeneratedField::PullUrl),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PresignedPullDataResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.PresignedPullDataResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PresignedPullDataResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut pull_url__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::PullUrl => {
+                            if pull_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("pullUrl"));
+                            }
+                            pull_url__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(PresignedPullDataResponse {
+                    pull_url: pull_url__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.PresignedPullDataResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for PullAccountAppRelationRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -1636,7 +1839,7 @@ impl serde::Serialize for PullWikiRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullWikiRequest", len)?;
         if self.source != 0 {
-            let v = DbSource::from_i32(self.source)
+            let v = WikiSource::from_i32(self.source)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.source)))?;
             struct_ser.serialize_field("source", &v)?;
         }
@@ -1712,7 +1915,7 @@ impl<'de> serde::Deserialize<'de> for PullWikiRequest {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = Some(map.next_value::<DbSource>()? as i32);
+                            source__ = Some(map.next_value::<WikiSource>()? as i32);
                         }
                         GeneratedField::ContentId => {
                             if content_id__.is_some() {

@@ -110,6 +110,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($2.SimpleDownloadFileRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $2.SimpleDownloadFileResponse.fromBuffer(value));
+  static final _$presignedDownloadFile = $grpc.ClientMethod<
+          $2.PresignedDownloadFileRequest, $2.PresignedDownloadFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile',
+      ($2.PresignedDownloadFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $2.PresignedDownloadFileResponse.fromBuffer(value));
   static final _$uploadImage =
       $grpc.ClientMethod<$3.UploadImageRequest, $3.UploadImageResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/UploadImage',
@@ -426,6 +432,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createStreamingCall(
         _$simpleDownloadFile, $async.Stream.fromIterable([request]),
         options: options);
+  }
+
+  $grpc.ResponseFuture<$2.PresignedDownloadFileResponse> presignedDownloadFile(
+      $2.PresignedDownloadFileRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$presignedDownloadFile, request, options: options);
   }
 
   $grpc.ResponseFuture<$3.UploadImageResponse> uploadImage(
@@ -775,6 +787,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $2.SimpleDownloadFileRequest.fromBuffer(value),
         ($2.SimpleDownloadFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.PresignedDownloadFileRequest,
+            $2.PresignedDownloadFileResponse>(
+        'PresignedDownloadFile',
+        presignedDownloadFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $2.PresignedDownloadFileRequest.fromBuffer(value),
+        ($2.PresignedDownloadFileResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$3.UploadImageRequest, $3.UploadImageResponse>(
             'UploadImage',
@@ -1158,6 +1179,12 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     yield* simpleDownloadFile(call, await request);
   }
 
+  $async.Future<$2.PresignedDownloadFileResponse> presignedDownloadFile_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$2.PresignedDownloadFileRequest> request) async {
+    return presignedDownloadFile(call, await request);
+  }
+
   $async.Future<$3.UploadImageResponse> uploadImage_Pre($grpc.ServiceCall call,
       $async.Future<$3.UploadImageRequest> request) async {
     return uploadImage(call, await request);
@@ -1391,6 +1418,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $async.Stream<$2.SimpleUploadFileRequest> request);
   $async.Stream<$2.SimpleDownloadFileResponse> simpleDownloadFile(
       $grpc.ServiceCall call, $2.SimpleDownloadFileRequest request);
+  $async.Future<$2.PresignedDownloadFileResponse> presignedDownloadFile(
+      $grpc.ServiceCall call, $2.PresignedDownloadFileRequest request);
   $async.Future<$3.UploadImageResponse> uploadImage(
       $grpc.ServiceCall call, $3.UploadImageRequest request);
   $async.Future<$3.UpdateImageResponse> updateImage(

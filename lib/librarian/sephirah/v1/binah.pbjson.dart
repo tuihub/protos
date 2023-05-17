@@ -144,6 +144,23 @@ const SimpleDownloadFileResponse$json = const {
 
 /// Descriptor for `SimpleDownloadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List simpleDownloadFileResponseDescriptor = $convert.base64Decode('ChpTaW1wbGVEb3dubG9hZEZpbGVSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRh');
+@$core.Deprecated('Use presignedDownloadFileRequestDescriptor instead')
+const PresignedDownloadFileRequest$json = const {
+  '1': 'PresignedDownloadFileRequest',
+};
+
+/// Descriptor for `PresignedDownloadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedDownloadFileRequestDescriptor = $convert.base64Decode('ChxQcmVzaWduZWREb3dubG9hZEZpbGVSZXF1ZXN0');
+@$core.Deprecated('Use presignedDownloadFileResponseDescriptor instead')
+const PresignedDownloadFileResponse$json = const {
+  '1': 'PresignedDownloadFileResponse',
+  '2': const [
+    const {'1': 'download_url', '3': 1, '4': 1, '5': 9, '10': 'downloadUrl'},
+  ],
+};
+
+/// Descriptor for `PresignedDownloadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedDownloadFileResponseDescriptor = $convert.base64Decode('Ch1QcmVzaWduZWREb3dubG9hZEZpbGVSZXNwb25zZRIhCgxkb3dubG9hZF91cmwYASABKAlSC2Rvd25sb2FkVXJs');
 @$core.Deprecated('Use fileChunkDescriptor instead')
 const FileChunk$json = const {
   '1': 'FileChunk',

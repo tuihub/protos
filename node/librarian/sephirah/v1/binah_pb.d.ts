@@ -251,6 +251,42 @@ export namespace SimpleDownloadFileResponse {
   }
 }
 
+export class PresignedDownloadFileRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedDownloadFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedDownloadFileRequest): PresignedDownloadFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedDownloadFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedDownloadFileRequest;
+  static deserializeBinaryFromReader(message: PresignedDownloadFileRequest, reader: jspb.BinaryReader): PresignedDownloadFileRequest;
+}
+
+export namespace PresignedDownloadFileRequest {
+  export type AsObject = {
+  }
+}
+
+export class PresignedDownloadFileResponse extends jspb.Message {
+  getDownloadUrl(): string;
+  setDownloadUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedDownloadFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedDownloadFileResponse): PresignedDownloadFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedDownloadFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedDownloadFileResponse;
+  static deserializeBinaryFromReader(message: PresignedDownloadFileResponse, reader: jspb.BinaryReader): PresignedDownloadFileResponse;
+}
+
+export namespace PresignedDownloadFileResponse {
+  export type AsObject = {
+    downloadUrl: string,
+  }
+}
+
 export class FileChunk extends jspb.Message {
   getChunkNumber(): number;
   setChunkNumber(value: number): void;

@@ -34,20 +34,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "CVILdXBsb2FkVG9rZW4idAoSVXBkYXRlSW1hZ2VSZXF1ZXN0EigKAmlkGAEg",
             "ASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiAB",
             "KAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uIhUK",
-            "E1VwZGF0ZUltYWdlUmVzcG9uc2UiXwoRTGlzdEltYWdlc1JlcXVlc3QSOwoK",
-            "dGltZV9yYW5nZRgBIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VIAFIJ",
-            "dGltZVJhbmdliAEBQg0KC190aW1lX3JhbmdlIkAKEkxpc3RJbWFnZXNSZXNw",
-            "b25zZRIqCgNpZHMYASADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFID",
-            "aWRzIjsKD0dldEltYWdlUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgJpZCKSAQoQR2V0SW1hZ2VSZXNwb25zZRJICg1m",
-            "aWxlX21ldGFkYXRhGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZp",
-            "bGVNZXRhZGF0YVIMZmlsZU1ldGFkYXRhEhIKBG5hbWUYAiABKAlSBG5hbWUS",
-            "IAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uIkAKFERvd25sb2Fk",
-            "SW1hZ2VSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVy",
-            "bmFsSURSAmlkIj4KFURvd25sb2FkSW1hZ2VSZXNwb25zZRIlCg5kb3dubG9h",
-            "ZF90b2tlbhgBIAEoCVINZG93bmxvYWRUb2tlbkJdWjVnaXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1",
-            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "E1VwZGF0ZUltYWdlUmVzcG9uc2UilAEKEUxpc3RJbWFnZXNSZXF1ZXN0EjMK",
+            "BnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZw",
+            "YWdpbmcSOwoKdGltZV9yYW5nZRgCIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1l",
+            "UmFuZ2VIAFIJdGltZVJhbmdliAEBQg0KC190aW1lX3JhbmdlInYKEkxpc3RJ",
+            "bWFnZXNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEu",
+            "UGFnaW5nUmVzcG9uc2VSBnBhZ2luZxIqCgNpZHMYAiADKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJRFIDaWRzIjsKD0dldEltYWdlUmVxdWVzdBIoCgJp",
+            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCKSAQoQR2V0",
+            "SW1hZ2VSZXNwb25zZRJICg1maWxlX21ldGFkYXRhGAEgASgLMiMubGlicmFy",
+            "aWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIMZmlsZU1ldGFkYXRhEhIK",
+            "BG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2Ny",
+            "aXB0aW9uIkAKFERvd25sb2FkSW1hZ2VSZXF1ZXN0EigKAmlkGAEgASgLMhgu",
+            "bGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIj4KFURvd25sb2FkSW1hZ2VS",
+            "ZXNwb25zZRIlCg5kb3dubG9hZF90b2tlbhgBIAEoCVINZG93bmxvYWRUb2tl",
+            "bkJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9z",
+            "ZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhp",
+            "cmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -55,8 +58,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadImageResponse.Parser, new[]{ "UploadToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageRequest.Parser, new[]{ "Id", "Name", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateImageResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest.Parser, new[]{ "TimeRange" }, new[]{ "TimeRange" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse.Parser, new[]{ "Ids" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesRequest.Parser, new[]{ "Paging", "TimeRange" }, new[]{ "TimeRange" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListImagesResponse.Parser, new[]{ "Paging", "Ids" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetImageResponse.Parser, new[]{ "FileMetadata", "Name", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadImageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadImageRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -986,6 +989,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListImagesRequest(ListImagesRequest other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       timeRange_ = other.timeRange_ != null ? other.timeRange_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -996,8 +1000,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new ListImagesRequest(this);
     }
 
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingRequest paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingRequest Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
     /// <summary>Field number for the "time_range" field.</summary>
-    public const int TimeRangeFieldNumber = 1;
+    public const int TimeRangeFieldNumber = 2;
     private global::TuiHub.Protos.Librarian.V1.TimeRange timeRange_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1023,6 +1039,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Paging, other.Paging)) return false;
       if (!object.Equals(TimeRange, other.TimeRange)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1031,6 +1048,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
       if (timeRange_ != null) hash ^= TimeRange.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1050,8 +1068,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (timeRange_ != null) {
+      if (paging_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      if (timeRange_ != null) {
+        output.WriteRawTag(18);
         output.WriteMessage(TimeRange);
       }
       if (_unknownFields != null) {
@@ -1064,8 +1086,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (timeRange_ != null) {
+      if (paging_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      if (timeRange_ != null) {
+        output.WriteRawTag(18);
         output.WriteMessage(TimeRange);
       }
       if (_unknownFields != null) {
@@ -1078,6 +1104,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
       if (timeRange_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TimeRange);
       }
@@ -1092,6 +1121,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public void MergeFrom(ListImagesRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+        }
+        Paging.MergeFrom(other.Paging);
       }
       if (other.timeRange_ != null) {
         if (timeRange_ == null) {
@@ -1115,6 +1150,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             if (timeRange_ == null) {
               TimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
             }
@@ -1137,6 +1179,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             if (timeRange_ == null) {
               TimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
             }
@@ -1184,6 +1233,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListImagesResponse(ListImagesResponse other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       ids_ = other.ids_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1194,10 +1244,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new ListImagesResponse(this);
     }
 
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingResponse paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingResponse Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
     /// <summary>Field number for the "ids" field.</summary>
-    public const int IdsFieldNumber = 1;
+    public const int IdsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.InternalID> _repeated_ids_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
     private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> ids_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1220,6 +1282,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Paging, other.Paging)) return false;
       if(!ids_.Equals(other.ids_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1228,6 +1291,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
       hash ^= ids_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1247,6 +1311,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
       ids_.WriteTo(output, _repeated_ids_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1258,6 +1326,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
       ids_.WriteTo(ref output, _repeated_ids_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1269,6 +1341,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
       size += ids_.CalculateSize(_repeated_ids_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1281,6 +1356,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public void MergeFrom(ListImagesResponse other) {
       if (other == null) {
         return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+        }
+        Paging.MergeFrom(other.Paging);
       }
       ids_.Add(other.ids_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1299,6 +1380,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             ids_.AddEntriesFrom(input, _repeated_ids_codec);
             break;
           }
@@ -1318,6 +1406,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             ids_.AddEntriesFrom(ref input, _repeated_ids_codec);
             break;
           }

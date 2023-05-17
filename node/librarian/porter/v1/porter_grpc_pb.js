@@ -5,6 +5,28 @@ var grpc = require('@grpc/grpc-js');
 var librarian_porter_v1_porter_pb = require('../../../librarian/porter/v1/porter_pb.js');
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 
+function serialize_librarian_porter_v1_PresignedPullDataRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PresignedPullDataRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PresignedPullDataRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_PresignedPullDataRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PresignedPullDataRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_PresignedPullDataResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PresignedPullDataResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PresignedPullDataResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_PresignedPullDataResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PresignedPullDataResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_porter_v1_PullAccountAppRelationRequest(arg) {
   if (!(arg instanceof librarian_porter_v1_porter_pb.PullAccountAppRelationRequest)) {
     throw new Error('Expected argument of type librarian.porter.v1.PullAccountAppRelationRequest');
@@ -214,7 +236,8 @@ function deserialize_librarian_porter_v1_PushFeedItemsResponse(buffer_arg) {
 // 3. Wiki cannot be structured
 // 4. Data can represent the binary and metadata of specific files
 var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
-  pullFeed: {
+  // `Feed`
+pullFeed: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullFeed',
     requestStream: false,
     responseStream: false,
@@ -225,7 +248,8 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PullFeedResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullFeedResponse,
   },
-  pushFeedItems: {
+  // `Feed`
+pushFeedItems: {
     path: '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
     requestStream: false,
     responseStream: false,
@@ -236,7 +260,8 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PushFeedItemsResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemsResponse,
   },
-  pullDB: {
+  // `DB`
+pullDB: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullDB',
     requestStream: false,
     responseStream: false,
@@ -247,40 +272,8 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PullDBResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullDBResponse,
   },
-  pullWiki: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PullWiki',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PullWikiRequest,
-    responseType: librarian_porter_v1_porter_pb.PullWikiResponse,
-    requestSerialize: serialize_librarian_porter_v1_PullWikiRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PullWikiRequest,
-    responseSerialize: serialize_librarian_porter_v1_PullWikiResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PullWikiResponse,
-  },
-  pullData: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PullData',
-    requestStream: false,
-    responseStream: true,
-    requestType: librarian_porter_v1_porter_pb.PullDataRequest,
-    responseType: librarian_porter_v1_porter_pb.PullDataResponse,
-    requestSerialize: serialize_librarian_porter_v1_PullDataRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PullDataRequest,
-    responseSerialize: serialize_librarian_porter_v1_PullDataResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PullDataResponse,
-  },
-  pushData: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PushData',
-    requestStream: true,
-    responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PushDataRequest,
-    responseType: librarian_porter_v1_porter_pb.PushDataResponse,
-    requestSerialize: serialize_librarian_porter_v1_PushDataRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PushDataRequest,
-    responseSerialize: serialize_librarian_porter_v1_PushDataResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PushDataResponse,
-  },
-  pullAccount: {
+  // `DB`
+pullAccount: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullAccount',
     requestStream: false,
     responseStream: false,
@@ -291,7 +284,8 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PullAccountResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullAccountResponse,
   },
-  pullApp: {
+  // `DB`
+pullApp: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullApp',
     requestStream: false,
     responseStream: false,
@@ -302,7 +296,8 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     responseSerialize: serialize_librarian_porter_v1_PullAppResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullAppResponse,
   },
-  pullAccountAppRelation: {
+  // `DB`
+pullAccountAppRelation: {
     path: '/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation',
     requestStream: false,
     responseStream: false,
@@ -312,6 +307,54 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     requestDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationRequest,
     responseSerialize: serialize_librarian_porter_v1_PullAccountAppRelationResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationResponse,
+  },
+  // `Wiki`
+pullWiki: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PullWiki',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PullWikiRequest,
+    responseType: librarian_porter_v1_porter_pb.PullWikiResponse,
+    requestSerialize: serialize_librarian_porter_v1_PullWikiRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PullWikiRequest,
+    responseSerialize: serialize_librarian_porter_v1_PullWikiResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PullWikiResponse,
+  },
+  // `Data` Pull data binary
+pullData: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PullData',
+    requestStream: false,
+    responseStream: true,
+    requestType: librarian_porter_v1_porter_pb.PullDataRequest,
+    responseType: librarian_porter_v1_porter_pb.PullDataResponse,
+    requestSerialize: serialize_librarian_porter_v1_PullDataRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PullDataRequest,
+    responseSerialize: serialize_librarian_porter_v1_PullDataResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PullDataResponse,
+  },
+  // `Data` Push data binary
+pushData: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PushData',
+    requestStream: true,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PushDataRequest,
+    responseType: librarian_porter_v1_porter_pb.PushDataResponse,
+    requestSerialize: serialize_librarian_porter_v1_PushDataRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PushDataRequest,
+    responseSerialize: serialize_librarian_porter_v1_PushDataResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PushDataResponse,
+  },
+  // `Data` Generate http GET url
+presignedPullData: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PresignedPullData',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PresignedPullDataRequest,
+    responseType: librarian_porter_v1_porter_pb.PresignedPullDataResponse,
+    requestSerialize: serialize_librarian_porter_v1_PresignedPullDataRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PresignedPullDataRequest,
+    responseSerialize: serialize_librarian_porter_v1_PresignedPullDataResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PresignedPullDataResponse,
   },
 };
 

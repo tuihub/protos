@@ -48,20 +48,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "GFNpbXBsZVVwbG9hZEZpbGVSZXNwb25zZRJBCgZzdGF0dXMYASABKA4yKS5s",
             "aWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVRyYW5zZmVyU3RhdHVzUgZzdGF0",
             "dXMiGwoZU2ltcGxlRG93bmxvYWRGaWxlUmVxdWVzdCIwChpTaW1wbGVEb3du",
-            "bG9hZEZpbGVSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRhIkIKCUZpbGVD",
-            "aHVuaxIhCgxjaHVua19udW1iZXIYASABKANSC2NodW5rTnVtYmVyEhIKBGRh",
-            "dGEYAiABKAxSBGRhdGEqywEKE0NodW5rVHJhbnNmZXJTdGF0dXMSJQohQ0hV",
-            "TktfVFJBTlNGRVJfU1RBVFVTX1VOU1BFQ0lGSUVEEAASIQodQ0hVTktfVFJB",
-            "TlNGRVJfU1RBVFVTX1BFTkRJTkcQARIlCiFDSFVOS19UUkFOU0ZFUl9TVEFU",
-            "VVNfSU5fUFJPR1JFU1MQAhIhCh1DSFVOS19UUkFOU0ZFUl9TVEFUVVNfU1VD",
-            "Q0VTUxADEiAKHENIVU5LX1RSQU5TRkVSX1NUQVRVU19GQUlMRUQQBCrFAQoS",
-            "RmlsZVRyYW5zZmVyU3RhdHVzEiQKIEZJTEVfVFJBTlNGRVJfU1RBVFVTX1VO",
-            "U1BFQ0lGSUVEEAASIAocRklMRV9UUkFOU0ZFUl9TVEFUVVNfUEVORElORxAB",
-            "EiQKIEZJTEVfVFJBTlNGRVJfU1RBVFVTX0lOX1BST0dSRVNTEAISIAocRklM",
-            "RV9UUkFOU0ZFUl9TVEFUVVNfU1VDQ0VTUxADEh8KG0ZJTEVfVFJBTlNGRVJf",
-            "U1RBVFVTX0ZBSUxFRBAEQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9w",
-            "a2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5M",
-            "aWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "bG9hZEZpbGVSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRhIh4KHFByZXNp",
+            "Z25lZERvd25sb2FkRmlsZVJlcXVlc3QiQgodUHJlc2lnbmVkRG93bmxvYWRG",
+            "aWxlUmVzcG9uc2USIQoMZG93bmxvYWRfdXJsGAEgASgJUgtkb3dubG9hZFVy",
+            "bCJCCglGaWxlQ2h1bmsSIQoMY2h1bmtfbnVtYmVyGAEgASgDUgtjaHVua051",
+            "bWJlchISCgRkYXRhGAIgASgMUgRkYXRhKssBChNDaHVua1RyYW5zZmVyU3Rh",
+            "dHVzEiUKIUNIVU5LX1RSQU5TRkVSX1NUQVRVU19VTlNQRUNJRklFRBAAEiEK",
+            "HUNIVU5LX1RSQU5TRkVSX1NUQVRVU19QRU5ESU5HEAESJQohQ0hVTktfVFJB",
+            "TlNGRVJfU1RBVFVTX0lOX1BST0dSRVNTEAISIQodQ0hVTktfVFJBTlNGRVJf",
+            "U1RBVFVTX1NVQ0NFU1MQAxIgChxDSFVOS19UUkFOU0ZFUl9TVEFUVVNfRkFJ",
+            "TEVEEAQqxQEKEkZpbGVUcmFuc2ZlclN0YXR1cxIkCiBGSUxFX1RSQU5TRkVS",
+            "X1NUQVRVU19VTlNQRUNJRklFRBAAEiAKHEZJTEVfVFJBTlNGRVJfU1RBVFVT",
+            "X1BFTkRJTkcQARIkCiBGSUxFX1RSQU5TRkVSX1NUQVRVU19JTl9QUk9HUkVT",
+            "UxACEiAKHEZJTEVfVFJBTlNGRVJfU1RBVFVTX1NVQ0NFU1MQAxIfChtGSUxF",
+            "X1RSQU5TRkVSX1NUQVRVU19GQUlMRUQQBEJdWjVnaXRodWIuY29tL3R1aWh1",
+            "Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1",
+            "Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ChunkTransferStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -74,6 +76,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleUploadFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleUploadFileResponse.Parser, new[]{ "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleDownloadFileResponse.Parser, new[]{ "Data" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.PresignedDownloadFileResponse.Parser, new[]{ "DownloadUrl" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileChunk), global::TuiHub.Protos.Librarian.Sephirah.V1.FileChunk.Parser, new[]{ "ChunkNumber", "Data" }, null, null, null, null)
           }));
     }
@@ -2266,6 +2270,350 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   }
 
+  public sealed partial class PresignedDownloadFileRequest : pb::IMessage<PresignedDownloadFileRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PresignedDownloadFileRequest> _parser = new pb::MessageParser<PresignedDownloadFileRequest>(() => new PresignedDownloadFileRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PresignedDownloadFileRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PresignedDownloadFileRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PresignedDownloadFileRequest(PresignedDownloadFileRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PresignedDownloadFileRequest Clone() {
+      return new PresignedDownloadFileRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PresignedDownloadFileRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PresignedDownloadFileRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PresignedDownloadFileRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class PresignedDownloadFileResponse : pb::IMessage<PresignedDownloadFileResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PresignedDownloadFileResponse> _parser = new pb::MessageParser<PresignedDownloadFileResponse>(() => new PresignedDownloadFileResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PresignedDownloadFileResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PresignedDownloadFileResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PresignedDownloadFileResponse(PresignedDownloadFileResponse other) : this() {
+      downloadUrl_ = other.downloadUrl_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PresignedDownloadFileResponse Clone() {
+      return new PresignedDownloadFileResponse(this);
+    }
+
+    /// <summary>Field number for the "download_url" field.</summary>
+    public const int DownloadUrlFieldNumber = 1;
+    private string downloadUrl_ = "";
+    /// <summary>
+    /// Should follow AWS S3 API
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DownloadUrl {
+      get { return downloadUrl_; }
+      set {
+        downloadUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PresignedDownloadFileResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PresignedDownloadFileResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DownloadUrl != other.DownloadUrl) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DownloadUrl.Length != 0) hash ^= DownloadUrl.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DownloadUrl.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DownloadUrl);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DownloadUrl.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DownloadUrl);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DownloadUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DownloadUrl);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PresignedDownloadFileResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DownloadUrl.Length != 0) {
+        DownloadUrl = other.DownloadUrl;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            DownloadUrl = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            DownloadUrl = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class FileChunk : pb::IMessage<FileChunk>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2280,7 +2628,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

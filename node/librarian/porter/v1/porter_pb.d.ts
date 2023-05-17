@@ -144,8 +144,8 @@ export namespace PullDBResponse {
 }
 
 export class PullWikiRequest extends jspb.Message {
-  getSource(): DBSourceMap[keyof DBSourceMap];
-  setSource(value: DBSourceMap[keyof DBSourceMap]): void;
+  getSource(): WikiSourceMap[keyof WikiSourceMap];
+  setSource(value: WikiSourceMap[keyof WikiSourceMap]): void;
 
   getContentId(): string;
   setContentId(value: string): void;
@@ -162,7 +162,7 @@ export class PullWikiRequest extends jspb.Message {
 
 export namespace PullWikiRequest {
   export type AsObject = {
-    source: DBSourceMap[keyof DBSourceMap],
+    source: WikiSourceMap[keyof WikiSourceMap],
     contentId: string,
   }
 }
@@ -443,6 +443,50 @@ export class PushDataResponse extends jspb.Message {
 
 export namespace PushDataResponse {
   export type AsObject = {
+  }
+}
+
+export class PresignedPullDataRequest extends jspb.Message {
+  getSource(): DataSourceMap[keyof DataSourceMap];
+  setSource(value: DataSourceMap[keyof DataSourceMap]): void;
+
+  getContentId(): string;
+  setContentId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedPullDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedPullDataRequest): PresignedPullDataRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedPullDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedPullDataRequest;
+  static deserializeBinaryFromReader(message: PresignedPullDataRequest, reader: jspb.BinaryReader): PresignedPullDataRequest;
+}
+
+export namespace PresignedPullDataRequest {
+  export type AsObject = {
+    source: DataSourceMap[keyof DataSourceMap],
+    contentId: string,
+  }
+}
+
+export class PresignedPullDataResponse extends jspb.Message {
+  getPullUrl(): string;
+  setPullUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedPullDataResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedPullDataResponse): PresignedPullDataResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedPullDataResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedPullDataResponse;
+  static deserializeBinaryFromReader(message: PresignedPullDataResponse, reader: jspb.BinaryReader): PresignedPullDataResponse;
+}
+
+export namespace PresignedPullDataResponse {
+  export type AsObject = {
+    pullUrl: string,
   }
 }
 

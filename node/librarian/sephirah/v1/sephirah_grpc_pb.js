@@ -737,6 +737,28 @@ function deserialize_librarian_sephirah_v1_PickAppResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.PickAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_PresignedDownloadFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedDownloadFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PresignedDownloadFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PresignedDownloadFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.PresignedDownloadFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PresignedDownloadFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedDownloadFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PresignedDownloadFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PresignedDownloadFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.PresignedDownloadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_PurchaseAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.PurchaseAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.PurchaseAppRequest');
@@ -1350,6 +1372,19 @@ simpleDownloadFile: {
     requestDeserialize: deserialize_librarian_sephirah_v1_SimpleDownloadFileRequest,
     responseSerialize: serialize_librarian_sephirah_v1_SimpleDownloadFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SimpleDownloadFileResponse,
+  },
+  // `Binah` `download_token`
+// Download file through http url
+presignedDownloadFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_binah_pb.PresignedDownloadFileRequest,
+    responseType: librarian_sephirah_v1_binah_pb.PresignedDownloadFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_PresignedDownloadFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_PresignedDownloadFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_PresignedDownloadFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_PresignedDownloadFileResponse,
   },
   // `Chesed` `Normal`
 uploadImage: {

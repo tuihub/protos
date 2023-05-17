@@ -165,13 +165,13 @@ final $typed_data.Uint8List pullDBResponseDescriptor = $convert.base64Decode('Cg
 const PullWikiRequest$json = const {
   '1': 'PullWikiRequest',
   '2': const [
-    const {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DBSource', '10': 'source'},
+    const {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.WikiSource', '10': 'source'},
     const {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
   ],
 };
 
 /// Descriptor for `PullWikiRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullWikiRequestDescriptor = $convert.base64Decode('Cg9QdWxsV2lraVJlcXVlc3QSNQoGc291cmNlGAEgASgOMh0ubGlicmFyaWFuLnBvcnRlci52MS5EQlNvdXJjZVIGc291cmNlEh0KCmNvbnRlbnRfaWQYAiABKAlSCWNvbnRlbnRJZA==');
+final $typed_data.Uint8List pullWikiRequestDescriptor = $convert.base64Decode('Cg9QdWxsV2lraVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5XaWtpU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElk');
 @$core.Deprecated('Use pullWikiResponseDescriptor instead')
 const PullWikiResponse$json = const {
   '1': 'PullWikiResponse',
@@ -295,3 +295,24 @@ const PushDataResponse$json = const {
 
 /// Descriptor for `PushDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pushDataResponseDescriptor = $convert.base64Decode('ChBQdXNoRGF0YVJlc3BvbnNl');
+@$core.Deprecated('Use presignedPullDataRequestDescriptor instead')
+const PresignedPullDataRequest$json = const {
+  '1': 'PresignedPullDataRequest',
+  '2': const [
+    const {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
+    const {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+  ],
+};
+
+/// Descriptor for `PresignedPullDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedPullDataRequestDescriptor = $convert.base64Decode('ChhQcmVzaWduZWRQdWxsRGF0YVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElk');
+@$core.Deprecated('Use presignedPullDataResponseDescriptor instead')
+const PresignedPullDataResponse$json = const {
+  '1': 'PresignedPullDataResponse',
+  '2': const [
+    const {'1': 'pull_url', '3': 1, '4': 1, '5': 9, '10': 'pullUrl'},
+  ],
+};
+
+/// Descriptor for `PresignedPullDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedPullDataResponseDescriptor = $convert.base64Decode('ChlQcmVzaWduZWRQdWxsRGF0YVJlc3BvbnNlEhkKCHB1bGxfdXJsGAEgASgJUgdwdWxsVXJs');

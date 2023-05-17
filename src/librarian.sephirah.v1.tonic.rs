@@ -70,8 +70,6 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.accept_compressed(encoding);
             self
         }
-        /** For manual inspection only, the client may display but should not parse the response.
-*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -410,6 +408,31 @@ pub mod librarian_sephirah_service_client {
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile",
             );
             self.inner.server_streaming(request.into_request(), path, codec).await
+        }
+        /** `Binah` `download_token`
+ Download file through http url
+*/
+        pub async fn presigned_download_file(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PresignedDownloadFileRequest>,
+        ) -> Result<
+            tonic::Response<super::PresignedDownloadFileResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
         }
         /** `Chesed` `Normal`
 */
@@ -1191,8 +1214,6 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
-        /** For manual inspection only, the client may display but should not parse the response.
-*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -1312,6 +1333,16 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::SimpleDownloadFileRequest>,
         ) -> Result<tonic::Response<Self::SimpleDownloadFileStream>, tonic::Status>;
+        /** `Binah` `download_token`
+ Download file through http url
+*/
+        async fn presigned_download_file(
+            &self,
+            request: tonic::Request<super::PresignedDownloadFileRequest>,
+        ) -> Result<
+            tonic::Response<super::PresignedDownloadFileResponse>,
+            tonic::Status,
+        >;
         /** `Chesed` `Normal`
 */
         async fn upload_image(
@@ -2186,6 +2217,48 @@ pub mod librarian_sephirah_service_server {
                                 send_compression_encodings,
                             );
                         let res = grpc.server_streaming(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile" => {
+                    #[allow(non_camel_case_types)]
+                    struct PresignedDownloadFileSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::PresignedDownloadFileRequest>
+                    for PresignedDownloadFileSvc<T> {
+                        type Response = super::PresignedDownloadFileResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PresignedDownloadFileRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).presigned_download_file(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PresignedDownloadFileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)

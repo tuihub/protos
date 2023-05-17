@@ -341,14 +341,14 @@ class PullDBResponse extends $pb.GeneratedMessage {
 
 class PullWikiRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PullWikiRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..e<DBSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: DBSource.DB_SOURCE_UNSPECIFIED, valueOf: DBSource.valueOf, enumValues: DBSource.values)
+    ..e<WikiSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: WikiSource.WIKI_SOURCE_UNSPECIFIED, valueOf: WikiSource.valueOf, enumValues: WikiSource.values)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentId')
     ..hasRequiredFields = false
   ;
 
   PullWikiRequest._() : super();
   factory PullWikiRequest({
-    DBSource? source,
+    WikiSource? source,
     $core.String? contentId,
   }) {
     final _result = create();
@@ -382,9 +382,9 @@ class PullWikiRequest extends $pb.GeneratedMessage {
   static PullWikiRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  DBSource get source => $_getN(0);
+  WikiSource get source => $_getN(0);
   @$pb.TagNumber(1)
-  set source(DBSource v) { setField(1, v); }
+  set source(WikiSource v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
@@ -1021,5 +1021,113 @@ class PushDataResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static PushDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushDataResponse>(create);
   static PushDataResponse? _defaultInstance;
+}
+
+class PresignedPullDataRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedPullDataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..e<DataSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: DataSource.DATA_SOURCE_UNSPECIFIED, valueOf: DataSource.valueOf, enumValues: DataSource.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentId')
+    ..hasRequiredFields = false
+  ;
+
+  PresignedPullDataRequest._() : super();
+  factory PresignedPullDataRequest({
+    DataSource? source,
+    $core.String? contentId,
+  }) {
+    final _result = create();
+    if (source != null) {
+      _result.source = source;
+    }
+    if (contentId != null) {
+      _result.contentId = contentId;
+    }
+    return _result;
+  }
+  factory PresignedPullDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PresignedPullDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PresignedPullDataRequest clone() => PresignedPullDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PresignedPullDataRequest copyWith(void Function(PresignedPullDataRequest) updates) => super.copyWith((message) => updates(message as PresignedPullDataRequest)) as PresignedPullDataRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PresignedPullDataRequest create() => PresignedPullDataRequest._();
+  PresignedPullDataRequest createEmptyInstance() => create();
+  static $pb.PbList<PresignedPullDataRequest> createRepeated() => $pb.PbList<PresignedPullDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PresignedPullDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedPullDataRequest>(create);
+  static PresignedPullDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DataSource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(DataSource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => clearField(2);
+}
+
+class PresignedPullDataResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedPullDataResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullUrl')
+    ..hasRequiredFields = false
+  ;
+
+  PresignedPullDataResponse._() : super();
+  factory PresignedPullDataResponse({
+    $core.String? pullUrl,
+  }) {
+    final _result = create();
+    if (pullUrl != null) {
+      _result.pullUrl = pullUrl;
+    }
+    return _result;
+  }
+  factory PresignedPullDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PresignedPullDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PresignedPullDataResponse clone() => PresignedPullDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PresignedPullDataResponse copyWith(void Function(PresignedPullDataResponse) updates) => super.copyWith((message) => updates(message as PresignedPullDataResponse)) as PresignedPullDataResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PresignedPullDataResponse create() => PresignedPullDataResponse._();
+  PresignedPullDataResponse createEmptyInstance() => create();
+  static $pb.PbList<PresignedPullDataResponse> createRepeated() => $pb.PbList<PresignedPullDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PresignedPullDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedPullDataResponse>(create);
+  static PresignedPullDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pullUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pullUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPullUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPullUrl() => clearField(1);
 }
 

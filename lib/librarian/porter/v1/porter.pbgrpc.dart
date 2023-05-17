@@ -31,24 +31,6 @@ class LibrarianPorterServiceClient extends $grpc.Client {
           '/librarian.porter.v1.LibrarianPorterService/PullDB',
           ($0.PullDBRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.PullDBResponse.fromBuffer(value));
-  static final _$pullWiki =
-      $grpc.ClientMethod<$0.PullWikiRequest, $0.PullWikiResponse>(
-          '/librarian.porter.v1.LibrarianPorterService/PullWiki',
-          ($0.PullWikiRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.PullWikiResponse.fromBuffer(value));
-  static final _$pullData =
-      $grpc.ClientMethod<$0.PullDataRequest, $0.PullDataResponse>(
-          '/librarian.porter.v1.LibrarianPorterService/PullData',
-          ($0.PullDataRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.PullDataResponse.fromBuffer(value));
-  static final _$pushData =
-      $grpc.ClientMethod<$0.PushDataRequest, $0.PushDataResponse>(
-          '/librarian.porter.v1.LibrarianPorterService/PushData',
-          ($0.PushDataRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.PushDataResponse.fromBuffer(value));
   static final _$pullAccount =
       $grpc.ClientMethod<$0.PullAccountRequest, $0.PullAccountResponse>(
           '/librarian.porter.v1.LibrarianPorterService/PullAccount',
@@ -67,6 +49,30 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       ($0.PullAccountAppRelationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.PullAccountAppRelationResponse.fromBuffer(value));
+  static final _$pullWiki =
+      $grpc.ClientMethod<$0.PullWikiRequest, $0.PullWikiResponse>(
+          '/librarian.porter.v1.LibrarianPorterService/PullWiki',
+          ($0.PullWikiRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.PullWikiResponse.fromBuffer(value));
+  static final _$pullData =
+      $grpc.ClientMethod<$0.PullDataRequest, $0.PullDataResponse>(
+          '/librarian.porter.v1.LibrarianPorterService/PullData',
+          ($0.PullDataRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.PullDataResponse.fromBuffer(value));
+  static final _$pushData =
+      $grpc.ClientMethod<$0.PushDataRequest, $0.PushDataResponse>(
+          '/librarian.porter.v1.LibrarianPorterService/PushData',
+          ($0.PushDataRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.PushDataResponse.fromBuffer(value));
+  static final _$presignedPullData = $grpc.ClientMethod<
+          $0.PresignedPullDataRequest, $0.PresignedPullDataResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/PresignedPullData',
+      ($0.PresignedPullDataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.PresignedPullDataResponse.fromBuffer(value));
 
   LibrarianPorterServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -89,6 +95,24 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createUnaryCall(_$pullDB, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.PullAccountResponse> pullAccount(
+      $0.PullAccountRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pullAccount, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PullAppResponse> pullApp($0.PullAppRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pullApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PullAccountAppRelationResponse>
+      pullAccountAppRelation($0.PullAccountAppRelationRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pullAccountAppRelation, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.PullWikiResponse> pullWiki($0.PullWikiRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pullWiki, request, options: options);
@@ -107,22 +131,10 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createStreamingCall(_$pushData, request, options: options).single;
   }
 
-  $grpc.ResponseFuture<$0.PullAccountResponse> pullAccount(
-      $0.PullAccountRequest request,
+  $grpc.ResponseFuture<$0.PresignedPullDataResponse> presignedPullData(
+      $0.PresignedPullDataRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pullAccount, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.PullAppResponse> pullApp($0.PullAppRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pullApp, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.PullAccountAppRelationResponse>
-      pullAccountAppRelation($0.PullAccountAppRelationRequest request,
-          {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pullAccountAppRelation, request,
-        options: options);
+    return $createUnaryCall(_$presignedPullData, request, options: options);
   }
 }
 
@@ -153,27 +165,6 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PullDBRequest.fromBuffer(value),
         ($0.PullDBResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PullWikiRequest, $0.PullWikiResponse>(
-        'PullWiki',
-        pullWiki_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PullWikiRequest.fromBuffer(value),
-        ($0.PullWikiResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PullDataRequest, $0.PullDataResponse>(
-        'PullData',
-        pullData_Pre,
-        false,
-        true,
-        ($core.List<$core.int> value) => $0.PullDataRequest.fromBuffer(value),
-        ($0.PullDataResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PushDataRequest, $0.PushDataResponse>(
-        'PushData',
-        pushData,
-        true,
-        false,
-        ($core.List<$core.int> value) => $0.PushDataRequest.fromBuffer(value),
-        ($0.PushDataResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.PullAccountRequest, $0.PullAccountResponse>(
             'PullAccount',
@@ -199,6 +190,36 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.PullAccountAppRelationRequest.fromBuffer(value),
         ($0.PullAccountAppRelationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PullWikiRequest, $0.PullWikiResponse>(
+        'PullWiki',
+        pullWiki_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PullWikiRequest.fromBuffer(value),
+        ($0.PullWikiResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PullDataRequest, $0.PullDataResponse>(
+        'PullData',
+        pullData_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $0.PullDataRequest.fromBuffer(value),
+        ($0.PullDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PushDataRequest, $0.PushDataResponse>(
+        'PushData',
+        pushData,
+        true,
+        false,
+        ($core.List<$core.int> value) => $0.PushDataRequest.fromBuffer(value),
+        ($0.PushDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PresignedPullDataRequest,
+            $0.PresignedPullDataResponse>(
+        'PresignedPullData',
+        presignedPullData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PresignedPullDataRequest.fromBuffer(value),
+        ($0.PresignedPullDataResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.PullFeedResponse> pullFeed_Pre(
@@ -217,16 +238,6 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return pullDB(call, await request);
   }
 
-  $async.Future<$0.PullWikiResponse> pullWiki_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.PullWikiRequest> request) async {
-    return pullWiki(call, await request);
-  }
-
-  $async.Stream<$0.PullDataResponse> pullData_Pre($grpc.ServiceCall call,
-      $async.Future<$0.PullDataRequest> request) async* {
-    yield* pullData(call, await request);
-  }
-
   $async.Future<$0.PullAccountResponse> pullAccount_Pre($grpc.ServiceCall call,
       $async.Future<$0.PullAccountRequest> request) async {
     return pullAccount(call, await request);
@@ -243,22 +254,40 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return pullAccountAppRelation(call, await request);
   }
 
+  $async.Future<$0.PullWikiResponse> pullWiki_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.PullWikiRequest> request) async {
+    return pullWiki(call, await request);
+  }
+
+  $async.Stream<$0.PullDataResponse> pullData_Pre($grpc.ServiceCall call,
+      $async.Future<$0.PullDataRequest> request) async* {
+    yield* pullData(call, await request);
+  }
+
+  $async.Future<$0.PresignedPullDataResponse> presignedPullData_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.PresignedPullDataRequest> request) async {
+    return presignedPullData(call, await request);
+  }
+
   $async.Future<$0.PullFeedResponse> pullFeed(
       $grpc.ServiceCall call, $0.PullFeedRequest request);
   $async.Future<$0.PushFeedItemsResponse> pushFeedItems(
       $grpc.ServiceCall call, $0.PushFeedItemsRequest request);
   $async.Future<$0.PullDBResponse> pullDB(
       $grpc.ServiceCall call, $0.PullDBRequest request);
-  $async.Future<$0.PullWikiResponse> pullWiki(
-      $grpc.ServiceCall call, $0.PullWikiRequest request);
-  $async.Stream<$0.PullDataResponse> pullData(
-      $grpc.ServiceCall call, $0.PullDataRequest request);
-  $async.Future<$0.PushDataResponse> pushData(
-      $grpc.ServiceCall call, $async.Stream<$0.PushDataRequest> request);
   $async.Future<$0.PullAccountResponse> pullAccount(
       $grpc.ServiceCall call, $0.PullAccountRequest request);
   $async.Future<$0.PullAppResponse> pullApp(
       $grpc.ServiceCall call, $0.PullAppRequest request);
   $async.Future<$0.PullAccountAppRelationResponse> pullAccountAppRelation(
       $grpc.ServiceCall call, $0.PullAccountAppRelationRequest request);
+  $async.Future<$0.PullWikiResponse> pullWiki(
+      $grpc.ServiceCall call, $0.PullWikiRequest request);
+  $async.Stream<$0.PullDataResponse> pullData(
+      $grpc.ServiceCall call, $0.PullDataRequest request);
+  $async.Future<$0.PushDataResponse> pushData(
+      $grpc.ServiceCall call, $async.Stream<$0.PushDataRequest> request);
+  $async.Future<$0.PresignedPullDataResponse> presignedPullData(
+      $grpc.ServiceCall call, $0.PresignedPullDataRequest request);
 }

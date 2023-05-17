@@ -53,7 +53,8 @@ final $typed_data.Uint8List updateImageResponseDescriptor = $convert.base64Decod
 const ListImagesRequest$json = const {
   '1': 'ListImagesRequest',
   '2': const [
-    const {'1': 'time_range', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '9': 0, '10': 'timeRange', '17': true},
+    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    const {'1': 'time_range', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '9': 0, '10': 'timeRange', '17': true},
   ],
   '8': const [
     const {'1': '_time_range'},
@@ -61,17 +62,18 @@ const ListImagesRequest$json = const {
 };
 
 /// Descriptor for `ListImagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listImagesRequestDescriptor = $convert.base64Decode('ChFMaXN0SW1hZ2VzUmVxdWVzdBI7Cgp0aW1lX3JhbmdlGAEgASgLMhcubGlicmFyaWFuLnYxLlRpbWVSYW5nZUgAUgl0aW1lUmFuZ2WIAQFCDQoLX3RpbWVfcmFuZ2U=');
+final $typed_data.Uint8List listImagesRequestDescriptor = $convert.base64Decode('ChFMaXN0SW1hZ2VzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjsKCnRpbWVfcmFuZ2UYAiABKAsyFy5saWJyYXJpYW4udjEuVGltZVJhbmdlSABSCXRpbWVSYW5nZYgBAUINCgtfdGltZV9yYW5nZQ==');
 @$core.Deprecated('Use listImagesResponseDescriptor instead')
 const ListImagesResponse$json = const {
   '1': 'ListImagesResponse',
   '2': const [
-    const {'1': 'ids', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
+    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    const {'1': 'ids', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
   ],
 };
 
 /// Descriptor for `ListImagesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listImagesResponseDescriptor = $convert.base64Decode('ChJMaXN0SW1hZ2VzUmVzcG9uc2USKgoDaWRzGAEgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSA2lkcw==');
+final $typed_data.Uint8List listImagesResponseDescriptor = $convert.base64Decode('ChJMaXN0SW1hZ2VzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSKgoDaWRzGAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSA2lkcw==');
 @$core.Deprecated('Use getImageRequestDescriptor instead')
 const GetImageRequest$json = const {
   '1': 'GetImageRequest',

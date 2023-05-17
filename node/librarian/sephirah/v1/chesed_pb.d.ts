@@ -102,6 +102,11 @@ export namespace UpdateImageResponse {
 }
 
 export class ListImagesRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
   hasTimeRange(): boolean;
   clearTimeRange(): void;
   getTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
@@ -119,11 +124,17 @@ export class ListImagesRequest extends jspb.Message {
 
 export namespace ListImagesRequest {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     timeRange?: librarian_v1_common_pb.TimeRange.AsObject,
   }
 }
 
 export class ListImagesResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
   clearIdsList(): void;
   getIdsList(): Array<librarian_v1_common_pb.InternalID>;
   setIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
@@ -141,6 +152,7 @@ export class ListImagesResponse extends jspb.Message {
 
 export namespace ListImagesResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     idsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }

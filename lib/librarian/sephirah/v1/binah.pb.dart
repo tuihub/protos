@@ -568,6 +568,82 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
   void clearData() => clearField(1);
 }
 
+class PresignedDownloadFileRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedDownloadFileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  PresignedDownloadFileRequest._() : super();
+  factory PresignedDownloadFileRequest() => create();
+  factory PresignedDownloadFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PresignedDownloadFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PresignedDownloadFileRequest clone() => PresignedDownloadFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PresignedDownloadFileRequest copyWith(void Function(PresignedDownloadFileRequest) updates) => super.copyWith((message) => updates(message as PresignedDownloadFileRequest)) as PresignedDownloadFileRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PresignedDownloadFileRequest create() => PresignedDownloadFileRequest._();
+  PresignedDownloadFileRequest createEmptyInstance() => create();
+  static $pb.PbList<PresignedDownloadFileRequest> createRepeated() => $pb.PbList<PresignedDownloadFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PresignedDownloadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileRequest>(create);
+  static PresignedDownloadFileRequest? _defaultInstance;
+}
+
+class PresignedDownloadFileResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedDownloadFileResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'downloadUrl')
+    ..hasRequiredFields = false
+  ;
+
+  PresignedDownloadFileResponse._() : super();
+  factory PresignedDownloadFileResponse({
+    $core.String? downloadUrl,
+  }) {
+    final _result = create();
+    if (downloadUrl != null) {
+      _result.downloadUrl = downloadUrl;
+    }
+    return _result;
+  }
+  factory PresignedDownloadFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PresignedDownloadFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PresignedDownloadFileResponse clone() => PresignedDownloadFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PresignedDownloadFileResponse copyWith(void Function(PresignedDownloadFileResponse) updates) => super.copyWith((message) => updates(message as PresignedDownloadFileResponse)) as PresignedDownloadFileResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PresignedDownloadFileResponse create() => PresignedDownloadFileResponse._();
+  PresignedDownloadFileResponse createEmptyInstance() => create();
+  static $pb.PbList<PresignedDownloadFileResponse> createRepeated() => $pb.PbList<PresignedDownloadFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PresignedDownloadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileResponse>(create);
+  static PresignedDownloadFileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get downloadUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set downloadUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDownloadUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDownloadUrl() => clearField(1);
+}
+
 class FileChunk extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FileChunk', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chunkNumber')
