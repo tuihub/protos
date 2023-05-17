@@ -30,15 +30,29 @@ enum FeatureFlag {
    * 4. Data can represent the binary and metadata of specific files
 */
 service LibrarianPorterService {
+  // `Feed`
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
+  // `Feed`
   rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
+
+  // `DB`
   rpc PullDB(PullDBRequest) returns (PullDBResponse);
-  rpc PullWiki(PullWikiRequest) returns (PullWikiResponse);
-  rpc PullData(PullDataRequest) returns (stream PullDataResponse);
-  rpc PushData(stream PushDataRequest) returns (PushDataResponse);
+  // `DB`
   rpc PullAccount(PullAccountRequest) returns (PullAccountResponse);
+  // `DB`
   rpc PullApp(PullAppRequest) returns (PullAppResponse);
+  // `DB`
   rpc PullAccountAppRelation(PullAccountAppRelationRequest) returns (PullAccountAppRelationResponse);
+
+  // `Wiki`
+  rpc PullWiki(PullWikiRequest) returns (PullWikiResponse);
+
+  // `Data` Pull data binary
+  rpc PullData(PullDataRequest) returns (stream PullDataResponse);
+  // `Data` Push data binary
+  rpc PushData(stream PushDataRequest) returns (PushDataResponse);
+  // `Data` Generate http GET url
+  rpc PresignedPullData(PresignedPullDataRequest) returns (PresignedPullDataResponse);
 }
 
 message PullFeedRequest {
@@ -68,7 +82,7 @@ message PullDBResponse {
 }
 
 message PullWikiRequest {
-  DBSource source = 1;
+  WikiSource source = 1;
   string content_id = 2;
 }
 message PullWikiResponse {
@@ -119,6 +133,15 @@ message PushDataRequest {
   }
 }
 message PushDataResponse {}
+
+message PresignedPullDataRequest {
+  DataSource source = 1;
+  string content_id = 2;
+}
+
+message PresignedPullDataResponse {
+  string pull_url = 1;
+}
 
 enum AccountAppRelationType {
   ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = 0;

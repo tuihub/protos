@@ -62,6 +62,9 @@ service LibrarianSephirahService {
   // `Binah` `download_token`
   // Server will not check the
   rpc SimpleDownloadFile(SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
+  // `Binah` `download_token`
+  // Download file through http url
+  rpc PresignedDownloadFile(PresignedDownloadFileRequest) returns (PresignedDownloadFileResponse);
 
   // `Chesed` `Normal`
   rpc UploadImage(UploadImageRequest) returns (UploadImageResponse);

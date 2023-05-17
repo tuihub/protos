@@ -47,6 +47,12 @@ message SimpleDownloadFileResponse {
   bytes data = 1;
 }
 
+message PresignedDownloadFileRequest {}
+message PresignedDownloadFileResponse {
+  // Should follow AWS S3 API
+  string download_url = 1;
+}
+
 message FileChunk {
   int64 chunk_number = 1;
   bytes data = 2;

@@ -27,11 +27,13 @@ message UpdateImageRequest {
 message UpdateImageResponse {}
 
 message ListImagesRequest {
-  optional librarian.v1.TimeRange time_range = 1;
+  librarian.v1.PagingRequest paging = 1;
+  optional librarian.v1.TimeRange time_range = 2;
 }
 
 message ListImagesResponse {
-  repeated librarian.v1.InternalID ids = 1;
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.InternalID ids = 2;
 }
 
 message GetImageRequest {
