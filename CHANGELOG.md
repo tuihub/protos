@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.22](https://github.com/TuiHub/Protos/compare/v0.2.21...v0.2.22) (2023-05-17)
+
+
+### Bug Fixes
+
+* **chesed:** update ([c3362f8](https://github.com/TuiHub/Protos/commit/c3362f810b2d3843f3d278a9cc4e53d0a7718455))
+* **chesed:** update ([9246ab9](https://github.com/TuiHub/Protos/commit/9246ab961f599f5dfdb8124d27aaf326425406f0))
+
 ## [0.2.21](https://github.com/TuiHub/Protos/compare/v0.2.20...v0.2.21) (2023-05-14)
 
 
