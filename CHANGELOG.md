@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.24](https://github.com/TuiHub/Protos/compare/v0.2.23...v0.2.24) (2023-05-20)
+
+
+### Bug Fixes
+
+* **searcher:** add paging to SearchID ([53b887e](https://github.com/TuiHub/Protos/commit/53b887edae41047ce5fc269f8758765926493275))
+
 ## [0.2.23](https://github.com/TuiHub/Protos/compare/v0.2.22...v0.2.23) (2023-05-17)
 
 
