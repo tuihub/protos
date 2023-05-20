@@ -36,23 +36,25 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             "MS5EZXNjcmliZUlEUmVxdWVzdC5EZXNjcmliZU1vZGVSBG1vZGUiYwoMRGVz",
             "Y3JpYmVNb2RlEh0KGURFU0NSSUJFX01PREVfVU5TUEVDSUZJRUQQABIaChZE",
             "RVNDUklCRV9NT0RFX09WRVJSSURFEAESGAoUREVTQ1JJQkVfTU9ERV9BUFBF",
-            "TkQQAiIUChJEZXNjcmliZUlEUmVzcG9uc2UiKwoPU2VhcmNoSURSZXF1ZXN0",
-            "EhgKB2tleXdvcmQYASABKAlSB2tleXdvcmQiogEKEFNlYXJjaElEUmVzcG9u",
-            "c2USRgoGcmVzdWx0GAEgAygLMi4ubGlicmFyaWFuLnNlYXJjaGVyLnYxLlNl",
-            "YXJjaElEUmVzcG9uc2UuUmVzdWx0UgZyZXN1bHQaRgoGUmVzdWx0EigKAmlk",
-            "GAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBHJhbmsY",
-            "AiABKANSBHJhbmsylAMKGExpYnJhcmlhblNlYXJjaGVyU2VydmljZRJSCgVO",
-            "ZXdJRBIjLmxpYnJhcmlhbi5zZWFyY2hlci52MS5OZXdJRFJlcXVlc3QaJC5s",
-            "aWJyYXJpYW4uc2VhcmNoZXIudjEuTmV3SURSZXNwb25zZRJkCgtOZXdCYXRj",
-            "aElEcxIpLmxpYnJhcmlhbi5zZWFyY2hlci52MS5OZXdCYXRjaElEc1JlcXVl",
-            "c3QaKi5saWJyYXJpYW4uc2VhcmNoZXIudjEuTmV3QmF0Y2hJRHNSZXNwb25z",
-            "ZRJhCgpEZXNjcmliZUlEEigubGlicmFyaWFuLnNlYXJjaGVyLnYxLkRlc2Ny",
-            "aWJlSURSZXF1ZXN0GikubGlicmFyaWFuLnNlYXJjaGVyLnYxLkRlc2NyaWJl",
-            "SURSZXNwb25zZRJbCghTZWFyY2hJRBImLmxpYnJhcmlhbi5zZWFyY2hlci52",
-            "MS5TZWFyY2hJRFJlcXVlc3QaJy5saWJyYXJpYW4uc2VhcmNoZXIudjEuU2Vh",
-            "cmNoSURSZXNwb25zZUJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtn",
-            "L2xpYnJhcmlhbi9zZWFyY2hlci92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGli",
-            "cmFyaWFuLlNlYXJjaGVyLlYxYgZwcm90bzM="));
+            "TkQQAiIUChJEZXNjcmliZUlEUmVzcG9uc2UiYAoPU2VhcmNoSURSZXF1ZXN0",
+            "EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0",
+            "UgZwYWdpbmcSGAoHa2V5d29yZBgCIAEoCVIHa2V5d29yZCLYAQoQU2VhcmNo",
+            "SURSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFn",
+            "aW5nUmVzcG9uc2VSBnBhZ2luZxJGCgZyZXN1bHQYAiADKAsyLi5saWJyYXJp",
+            "YW4uc2VhcmNoZXIudjEuU2VhcmNoSURSZXNwb25zZS5SZXN1bHRSBnJlc3Vs",
+            "dBpGCgZSZXN1bHQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
+            "YWxJRFICaWQSEgoEcmFuaxgCIAEoA1IEcmFuazKUAwoYTGlicmFyaWFuU2Vh",
+            "cmNoZXJTZXJ2aWNlElIKBU5ld0lEEiMubGlicmFyaWFuLnNlYXJjaGVyLnYx",
+            "Lk5ld0lEUmVxdWVzdBokLmxpYnJhcmlhbi5zZWFyY2hlci52MS5OZXdJRFJl",
+            "c3BvbnNlEmQKC05ld0JhdGNoSURzEikubGlicmFyaWFuLnNlYXJjaGVyLnYx",
+            "Lk5ld0JhdGNoSURzUmVxdWVzdBoqLmxpYnJhcmlhbi5zZWFyY2hlci52MS5O",
+            "ZXdCYXRjaElEc1Jlc3BvbnNlEmEKCkRlc2NyaWJlSUQSKC5saWJyYXJpYW4u",
+            "c2VhcmNoZXIudjEuRGVzY3JpYmVJRFJlcXVlc3QaKS5saWJyYXJpYW4uc2Vh",
+            "cmNoZXIudjEuRGVzY3JpYmVJRFJlc3BvbnNlElsKCFNlYXJjaElEEiYubGli",
+            "cmFyaWFuLnNlYXJjaGVyLnYxLlNlYXJjaElEUmVxdWVzdBonLmxpYnJhcmlh",
+            "bi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlQl1aNWdpdGh1Yi5jb20v",
+            "dHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlYXJjaGVyL3YxO3YxqgIj",
+            "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VhcmNoZXIuVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -62,8 +64,8 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse), global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse.Parser, new[]{ "Ids" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Parser, new[]{ "Id", "Description", "Mode" }, null, new[]{ typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest.Parser, new[]{ "Keyword" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Parser, new[]{ "Result" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result.Parser, new[]{ "Id", "Rank" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest.Parser, new[]{ "Paging", "Keyword" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Parser, new[]{ "Paging", "Result" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result.Parser, new[]{ "Id", "Rank" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -1259,6 +1261,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchIDRequest(SearchIDRequest other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       keyword_ = other.keyword_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1269,8 +1272,20 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       return new SearchIDRequest(this);
     }
 
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingRequest paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingRequest Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
     /// <summary>Field number for the "keyword" field.</summary>
-    public const int KeywordFieldNumber = 1;
+    public const int KeywordFieldNumber = 2;
     private string keyword_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1296,6 +1311,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Paging, other.Paging)) return false;
       if (Keyword != other.Keyword) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1304,6 +1320,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
       if (Keyword.Length != 0) hash ^= Keyword.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1323,8 +1340,12 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Keyword.Length != 0) {
+      if (paging_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      if (Keyword.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Keyword);
       }
       if (_unknownFields != null) {
@@ -1337,8 +1358,12 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Keyword.Length != 0) {
+      if (paging_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      if (Keyword.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Keyword);
       }
       if (_unknownFields != null) {
@@ -1351,6 +1376,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
       if (Keyword.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Keyword);
       }
@@ -1365,6 +1393,12 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     public void MergeFrom(SearchIDRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+        }
+        Paging.MergeFrom(other.Paging);
       }
       if (other.Keyword.Length != 0) {
         Keyword = other.Keyword;
@@ -1385,6 +1419,13 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             Keyword = input.ReadString();
             break;
           }
@@ -1404,6 +1445,13 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             Keyword = input.ReadString();
             break;
           }
@@ -1448,6 +1496,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchIDResponse(SearchIDResponse other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       result_ = other.result_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1458,10 +1507,22 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       return new SearchIDResponse(this);
     }
 
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingResponse paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingResponse Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
     /// <summary>Field number for the "result" field.</summary>
-    public const int ResultFieldNumber = 1;
+    public const int ResultFieldNumber = 2;
     private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result> _repeated_result_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result.Parser);
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result.Parser);
     private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result> result_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1484,6 +1545,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Paging, other.Paging)) return false;
       if(!result_.Equals(other.result_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1492,6 +1554,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
       hash ^= result_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1511,6 +1574,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
       result_.WriteTo(output, _repeated_result_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1522,6 +1589,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
       result_.WriteTo(ref output, _repeated_result_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1533,6 +1604,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
       size += result_.CalculateSize(_repeated_result_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1545,6 +1619,12 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     public void MergeFrom(SearchIDResponse other) {
       if (other == null) {
         return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+        }
+        Paging.MergeFrom(other.Paging);
       }
       result_.Add(other.result_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1563,6 +1643,13 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             result_.AddEntriesFrom(input, _repeated_result_codec);
             break;
           }
@@ -1582,6 +1669,13 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
             result_.AddEntriesFrom(ref input, _repeated_result_codec);
             break;
           }

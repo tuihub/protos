@@ -139,6 +139,11 @@ export namespace DescribeIDResponse {
 }
 
 export class SearchIDRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
   getKeyword(): string;
   setKeyword(value: string): void;
 
@@ -154,11 +159,17 @@ export class SearchIDRequest extends jspb.Message {
 
 export namespace SearchIDRequest {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     keyword: string,
   }
 }
 
 export class SearchIDResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
   clearResultList(): void;
   getResultList(): Array<SearchIDResponse.Result>;
   setResultList(value: Array<SearchIDResponse.Result>): void;
@@ -176,6 +187,7 @@ export class SearchIDResponse extends jspb.Message {
 
 export namespace SearchIDResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     resultList: Array<SearchIDResponse.Result.AsObject>,
   }
 

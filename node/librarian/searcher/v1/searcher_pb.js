@@ -1117,7 +1117,8 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.searcher.v1.SearchIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keyword: jspb.Message.getFieldWithDefault(msg, 1, "")
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    keyword: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1155,6 +1156,11 @@ proto.librarian.searcher.v1.SearchIDRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setKeyword(value);
       break;
@@ -1187,10 +1193,18 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.serializeBinary = function
  */
 proto.librarian.searcher.v1.SearchIDRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
   f = message.getKeyword();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
@@ -1198,11 +1212,48 @@ proto.librarian.searcher.v1.SearchIDRequest.serializeBinaryToWriter = function(m
 
 
 /**
- * optional string keyword = 1;
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
+ */
+proto.librarian.searcher.v1.SearchIDRequest.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.searcher.v1.SearchIDRequest} returns this
+*/
+proto.librarian.searcher.v1.SearchIDRequest.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.searcher.v1.SearchIDRequest} returns this
+ */
+proto.librarian.searcher.v1.SearchIDRequest.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.searcher.v1.SearchIDRequest.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string keyword = 2;
  * @return {string}
  */
 proto.librarian.searcher.v1.SearchIDRequest.prototype.getKeyword = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1211,7 +1262,7 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.getKeyword = function() {
  * @return {!proto.librarian.searcher.v1.SearchIDRequest} returns this
  */
 proto.librarian.searcher.v1.SearchIDRequest.prototype.setKeyword = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1221,7 +1272,7 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.setKeyword = function(valu
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.searcher.v1.SearchIDResponse.repeatedFields_ = [1];
+proto.librarian.searcher.v1.SearchIDResponse.repeatedFields_ = [2];
 
 
 
@@ -1254,6 +1305,7 @@ proto.librarian.searcher.v1.SearchIDResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.searcher.v1.SearchIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
     resultList: jspb.Message.toObjectList(msg.getResultList(),
     proto.librarian.searcher.v1.SearchIDResponse.Result.toObject, includeInstance)
   };
@@ -1293,6 +1345,11 @@ proto.librarian.searcher.v1.SearchIDResponse.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.PagingResponse;
+      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
       var value = new proto.librarian.searcher.v1.SearchIDResponse.Result;
       reader.readMessage(value,proto.librarian.searcher.v1.SearchIDResponse.Result.deserializeBinaryFromReader);
       msg.addResult(value);
@@ -1326,10 +1383,18 @@ proto.librarian.searcher.v1.SearchIDResponse.prototype.serializeBinary = functio
  */
 proto.librarian.searcher.v1.SearchIDResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
+    );
+  }
   f = message.getResultList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.librarian.searcher.v1.SearchIDResponse.Result.serializeBinaryToWriter
     );
@@ -1519,12 +1584,49 @@ proto.librarian.searcher.v1.SearchIDResponse.Result.prototype.setRank = function
 
 
 /**
- * repeated Result result = 1;
+ * optional librarian.v1.PagingResponse paging = 1;
+ * @return {?proto.librarian.v1.PagingResponse}
+ */
+proto.librarian.searcher.v1.SearchIDResponse.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingResponse} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingResponse|undefined} value
+ * @return {!proto.librarian.searcher.v1.SearchIDResponse} returns this
+*/
+proto.librarian.searcher.v1.SearchIDResponse.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.searcher.v1.SearchIDResponse} returns this
+ */
+proto.librarian.searcher.v1.SearchIDResponse.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.searcher.v1.SearchIDResponse.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated Result result = 2;
  * @return {!Array<!proto.librarian.searcher.v1.SearchIDResponse.Result>}
  */
 proto.librarian.searcher.v1.SearchIDResponse.prototype.getResultList = function() {
   return /** @type{!Array<!proto.librarian.searcher.v1.SearchIDResponse.Result>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.searcher.v1.SearchIDResponse.Result, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.searcher.v1.SearchIDResponse.Result, 2));
 };
 
 
@@ -1533,7 +1635,7 @@ proto.librarian.searcher.v1.SearchIDResponse.prototype.getResultList = function(
  * @return {!proto.librarian.searcher.v1.SearchIDResponse} returns this
 */
 proto.librarian.searcher.v1.SearchIDResponse.prototype.setResultList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1543,7 +1645,7 @@ proto.librarian.searcher.v1.SearchIDResponse.prototype.setResultList = function(
  * @return {!proto.librarian.searcher.v1.SearchIDResponse.Result}
  */
 proto.librarian.searcher.v1.SearchIDResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.searcher.v1.SearchIDResponse.Result, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.searcher.v1.SearchIDResponse.Result, opt_index);
 };
 
 

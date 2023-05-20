@@ -290,15 +290,20 @@ class DescribeIDResponse extends $pb.GeneratedMessage {
 
 class SearchIDRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keyword')
+    ..aOM<$1.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $1.PagingRequest.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keyword')
     ..hasRequiredFields = false
   ;
 
   SearchIDRequest._() : super();
   factory SearchIDRequest({
+    $1.PagingRequest? paging,
     $core.String? keyword,
   }) {
     final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
     if (keyword != null) {
       _result.keyword = keyword;
     }
@@ -326,13 +331,24 @@ class SearchIDRequest extends $pb.GeneratedMessage {
   static SearchIDRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get keyword => $_getSZ(0);
+  $1.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set keyword($core.String v) { $_setString(0, v); }
+  set paging($1.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasKeyword() => $_has(0);
+  $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKeyword() => clearField(1);
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get keyword => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set keyword($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasKeyword() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKeyword() => clearField(2);
 }
 
 class SearchIDResponse_Result extends $pb.GeneratedMessage {
@@ -400,15 +416,20 @@ class SearchIDResponse_Result extends $pb.GeneratedMessage {
 
 class SearchIDResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..pc<SearchIDResponse_Result>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', $pb.PbFieldType.PM, subBuilder: SearchIDResponse_Result.create)
+    ..aOM<$1.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $1.PagingResponse.create)
+    ..pc<SearchIDResponse_Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', $pb.PbFieldType.PM, subBuilder: SearchIDResponse_Result.create)
     ..hasRequiredFields = false
   ;
 
   SearchIDResponse._() : super();
   factory SearchIDResponse({
+    $1.PagingResponse? paging,
     $core.Iterable<SearchIDResponse_Result>? result,
   }) {
     final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
     if (result != null) {
       _result.result.addAll(result);
     }
@@ -436,6 +457,17 @@ class SearchIDResponse extends $pb.GeneratedMessage {
   static SearchIDResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<SearchIDResponse_Result> get result => $_getList(0);
+  $1.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($1.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $1.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SearchIDResponse_Result> get result => $_getList(1);
 }
 

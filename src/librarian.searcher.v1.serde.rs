@@ -627,10 +627,16 @@ impl serde::Serialize for SearchIdRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
         if !self.keyword.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.SearchIDRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
         if !self.keyword.is_empty() {
             struct_ser.serialize_field("keyword", &self.keyword)?;
         }
@@ -644,11 +650,13 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
             "keyword",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
             Keyword,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -671,6 +679,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                         E: serde::de::Error,
                     {
                         match value {
+                            "paging" => Ok(GeneratedField::Paging),
                             "keyword" => Ok(GeneratedField::Keyword),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -691,9 +700,16 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut paging__ = None;
                 let mut keyword__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
                         GeneratedField::Keyword => {
                             if keyword__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("keyword"));
@@ -703,6 +719,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                     }
                 }
                 Ok(SearchIdRequest {
+                    paging: paging__,
                     keyword: keyword__.unwrap_or_default(),
                 })
             }
@@ -718,10 +735,16 @@ impl serde::Serialize for SearchIdResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
         if !self.result.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.SearchIDResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
         if !self.result.is_empty() {
             struct_ser.serialize_field("result", &self.result)?;
         }
@@ -735,11 +758,13 @@ impl<'de> serde::Deserialize<'de> for SearchIdResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
             "result",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
             Result,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -762,6 +787,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdResponse {
                         E: serde::de::Error,
                     {
                         match value {
+                            "paging" => Ok(GeneratedField::Paging),
                             "result" => Ok(GeneratedField::Result),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -782,9 +808,16 @@ impl<'de> serde::Deserialize<'de> for SearchIdResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut paging__ = None;
                 let mut result__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
                         GeneratedField::Result => {
                             if result__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("result"));
@@ -794,6 +827,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdResponse {
                     }
                 }
                 Ok(SearchIdResponse {
+                    paging: paging__,
                     result: result__.unwrap_or_default(),
                 })
             }

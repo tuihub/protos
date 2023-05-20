@@ -79,17 +79,19 @@ final $typed_data.Uint8List describeIDResponseDescriptor = $convert.base64Decode
 const SearchIDRequest$json = const {
   '1': 'SearchIDRequest',
   '2': const [
-    const {'1': 'keyword', '3': 1, '4': 1, '5': 9, '10': 'keyword'},
+    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    const {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
   ],
 };
 
 /// Descriptor for `SearchIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List searchIDRequestDescriptor = $convert.base64Decode('Cg9TZWFyY2hJRFJlcXVlc3QSGAoHa2V5d29yZBgBIAEoCVIHa2V5d29yZA==');
+final $typed_data.Uint8List searchIDRequestDescriptor = $convert.base64Decode('Cg9TZWFyY2hJRFJlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxIYCgdrZXl3b3JkGAIgASgJUgdrZXl3b3Jk');
 @$core.Deprecated('Use searchIDResponseDescriptor instead')
 const SearchIDResponse$json = const {
   '1': 'SearchIDResponse',
   '2': const [
-    const {'1': 'result', '3': 1, '4': 3, '5': 11, '6': '.librarian.searcher.v1.SearchIDResponse.Result', '10': 'result'},
+    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    const {'1': 'result', '3': 2, '4': 3, '5': 11, '6': '.librarian.searcher.v1.SearchIDResponse.Result', '10': 'result'},
   ],
   '3': const [SearchIDResponse_Result$json],
 };
@@ -104,4 +106,4 @@ const SearchIDResponse_Result$json = const {
 };
 
 /// Descriptor for `SearchIDResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List searchIDResponseDescriptor = $convert.base64Decode('ChBTZWFyY2hJRFJlc3BvbnNlEkYKBnJlc3VsdBgBIAMoCzIuLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlLlJlc3VsdFIGcmVzdWx0GkYKBlJlc3VsdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRyYW5rGAIgASgDUgRyYW5r');
+final $typed_data.Uint8List searchIDResponseDescriptor = $convert.base64Decode('ChBTZWFyY2hJRFJlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEkYKBnJlc3VsdBgCIAMoCzIuLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlLlJlc3VsdFIGcmVzdWx0GkYKBlJlc3VsdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRyYW5rGAIgASgDUgRyYW5r');
