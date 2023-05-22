@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
+import "google/protobuf/duration.proto";
 import "librarian/sephirah/v1/base.proto";
 import "librarian/v1/common.proto";
 
@@ -139,14 +140,14 @@ message UnAssignAppPackageRequest {
 message UnAssignAppPackageResponse {}
 
 message AddAppPackageRunTimeRequest {
-  InternalID app_package_id = 1;
-  TimeRange time_range = 2;
+  librarian.v1.InternalID app_package_id = 1;
+  librarian.v1.TimeRange time_range = 2;
 }
 
 message AddAppPackageRunTimeResponse {}
 
 message GetAppPackageRunTimeRequest {
-  InternalID app_package_id = 1;
+  librarian.v1.InternalID app_package_id = 1;
 }
 
 message GetAppPackageRunTimeResponse {
