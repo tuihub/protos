@@ -11,6 +11,28 @@ var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/n
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
 var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
 
+function serialize_librarian_sephirah_v1_AddAppPackageRunTimeRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.AddAppPackageRunTimeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_AddAppPackageRunTimeRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.AddAppPackageRunTimeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_AssignAppPackageRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.AssignAppPackageRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.AssignAppPackageRequest');
@@ -251,6 +273,28 @@ function serialize_librarian_sephirah_v1_GenerateTokenResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_GenerateTokenResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppPackageRunTimeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppPackageRunTimeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetBatchFeedItemsRequest(arg) {
@@ -1671,6 +1715,30 @@ reportAppPackages: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ReportAppPackagesRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ReportAppPackagesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ReportAppPackagesResponse,
+  },
+  // `Gebura` `Normal`
+addAppPackageRunTime: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_AddAppPackageRunTimeRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_AddAppPackageRunTimeRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse,
+  },
+  // `Gebura` `Normal`
+getAppPackageRunTime: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse,
   },
   // `Gebura` `Normal`
 uploadGameSaveFile: {

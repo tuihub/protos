@@ -57,6 +57,8 @@ const (
 	LibrarianSephirahService_AssignAppPackage_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage"
 	LibrarianSephirahService_UnAssignAppPackage_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage"
 	LibrarianSephirahService_ReportAppPackages_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages"
+	LibrarianSephirahService_AddAppPackageRunTime_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime"
+	LibrarianSephirahService_GetAppPackageRunTime_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime"
 	LibrarianSephirahService_UploadGameSaveFile_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
 	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
 	LibrarianSephirahService_ListGameSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile"
@@ -163,6 +165,10 @@ type LibrarianSephirahServiceClient interface {
 	UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error)
 	// `Gebura` `Sentinel`
 	ReportAppPackages(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackagesClient, error)
+	// `Gebura` `Normal`
+	AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error)
+	// `Gebura` `Normal`
+	GetAppPackageRunTime(ctx context.Context, in *GetAppPackageRunTimeRequest, opts ...grpc.CallOption) (*GetAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -658,6 +664,24 @@ func (x *librarianSephirahServiceReportAppPackagesClient) Recv() (*ReportAppPack
 	return m, nil
 }
 
+func (c *librarianSephirahServiceClient) AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error) {
+	out := new(AddAppPackageRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddAppPackageRunTime_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetAppPackageRunTime(ctx context.Context, in *GetAppPackageRunTimeRequest, opts ...grpc.CallOption) (*GetAppPackageRunTimeResponse, error) {
+	out := new(GetAppPackageRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetAppPackageRunTime_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error) {
 	out := new(UploadGameSaveFileResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_UploadGameSaveFile_FullMethodName, in, out, opts...)
@@ -891,6 +915,10 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Sentinel`
 	ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error
 	// `Gebura` `Normal`
+	AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error)
+	// `Gebura` `Normal`
+	GetAppPackageRunTime(context.Context, *GetAppPackageRunTimeRequest) (*GetAppPackageRunTimeResponse, error)
+	// `Gebura` `Normal`
 	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
 	DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error)
@@ -1042,6 +1070,12 @@ func (UnimplementedLibrarianSephirahServiceServer) UnAssignAppPackage(context.Co
 }
 func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error {
 	return status.Errorf(codes.Unimplemented, "method ReportAppPackages not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddAppPackageRunTime not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetAppPackageRunTime(context.Context, *GetAppPackageRunTimeRequest) (*GetAppPackageRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppPackageRunTime not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadGameSaveFile not implemented")
@@ -1824,6 +1858,42 @@ func (x *librarianSephirahServiceReportAppPackagesServer) Recv() (*ReportAppPack
 	return m, nil
 }
 
+func _LibrarianSephirahService_AddAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddAppPackageRunTimeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).AddAppPackageRunTime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_AddAppPackageRunTime_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).AddAppPackageRunTime(ctx, req.(*AddAppPackageRunTimeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppPackageRunTimeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetAppPackageRunTime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetAppPackageRunTime_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetAppPackageRunTime(ctx, req.(*GetAppPackageRunTimeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_UploadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UploadGameSaveFileRequest)
 	if err := dec(in); err != nil {
@@ -2250,6 +2320,14 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnAssignAppPackage",
 			Handler:    _LibrarianSephirahService_UnAssignAppPackage_Handler,
+		},
+		{
+			MethodName: "AddAppPackageRunTime",
+			Handler:    _LibrarianSephirahService_AddAppPackageRunTime_Handler,
+		},
+		{
+			MethodName: "GetAppPackageRunTime",
+			Handler:    _LibrarianSephirahService_GetAppPackageRunTime_Handler,
 		},
 		{
 			MethodName: "UploadGameSaveFile",

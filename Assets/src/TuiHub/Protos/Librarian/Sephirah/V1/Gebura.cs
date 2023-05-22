@@ -25,84 +25,93 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiJsaWJyYXJpYW4vc2VwaGlyYWgvdjEvZ2VidXJhLnByb3RvEhVsaWJyYXJp",
-            "YW4uc2VwaGlyYWgudjEaIGxpYnJhcmlhbi9zZXBoaXJhaC92MS9iYXNlLnBy",
-            "b3RvGhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIjcKEENyZWF0ZUFwcFJl",
-            "cXVlc3QSIwoDYXBwGAEgASgLMhEubGlicmFyaWFuLnYxLkFwcFIDYXBwIj0K",
-            "EUNyZWF0ZUFwcFJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
-            "LkludGVybmFsSURSAmlkIjcKEFVwZGF0ZUFwcFJlcXVlc3QSIwoDYXBwGAEg",
-            "ASgLMhEubGlicmFyaWFuLnYxLkFwcFIDYXBwIhMKEVVwZGF0ZUFwcFJlc3Bv",
-            "bnNlIpwCCg9MaXN0QXBwc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGli",
-            "cmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI8Cg1zb3VyY2VfZmls",
-            "dGVyGAIgAygOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIMc291cmNlRmls",
-            "dGVyEjYKC3R5cGVfZmlsdGVyGAMgAygOMhUubGlicmFyaWFuLnYxLkFwcFR5",
-            "cGVSCnR5cGVGaWx0ZXISNQoJaWRfZmlsdGVyGAQgAygLMhgubGlicmFyaWFu",
-            "LnYxLkludGVybmFsSURSCGlkRmlsdGVyEicKD2NvbnRhaW5fZGV0YWlscxgF",
-            "IAEoCFIOY29udGFpbkRldGFpbHMibwoQTGlzdEFwcHNSZXNwb25zZRI0CgZw",
-            "YWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VSBnBh",
-            "Z2luZxIlCgRhcHBzGAIgAygLMhEubGlicmFyaWFuLnYxLkFwcFIEYXBwcyJE",
-            "ChFSZWZyZXNoQXBwUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFIFYXBwSWQiFAoSUmVmcmVzaEFwcFJlc3BvbnNl",
-            "ImsKEE1lcmdlQXBwc1JlcXVlc3QSJQoEYmFzZRgBIAEoCzIRLmxpYnJhcmlh",
-            "bi52MS5BcHBSBGJhc2USMAoGbWVyZ2VkGAIgASgLMhgubGlicmFyaWFuLnYx",
-            "LkludGVybmFsSURSBm1lcmdlZCITChFNZXJnZUFwcHNSZXNwb25zZSJCCg5Q",
-            "aWNrQXBwUmVxdWVzdBIwCgZwaWNrZWQYASABKAsyGC5saWJyYXJpYW4udjEu",
-            "SW50ZXJuYWxJRFIGcGlja2VkIhEKD1BpY2tBcHBSZXNwb25zZSJkChFTZWFy",
-            "Y2hBcHBzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEu",
-            "UGFnaW5nUmVxdWVzdFIGcGFnaW5nEhoKCGtleXdvcmRzGAIgASgJUghrZXl3",
-            "b3JkcyJxChJTZWFyY2hBcHBzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwu",
-            "bGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSJQoEYXBwcxgC",
-            "IAMoCzIRLmxpYnJhcmlhbi52MS5BcHBSBGFwcHMiRQoSR2V0QmluZEFwcHNS",
+            "YW4uc2VwaGlyYWgudjEaHmdvb2dsZS9wcm90b2J1Zi9kdXJhdGlvbi5wcm90",
+            "bxogbGlicmFyaWFuL3NlcGhpcmFoL3YxL2Jhc2UucHJvdG8aGWxpYnJhcmlh",
+            "bi92MS9jb21tb24ucHJvdG8iNwoQQ3JlYXRlQXBwUmVxdWVzdBIjCgNhcHAY",
+            "ASABKAsyES5saWJyYXJpYW4udjEuQXBwUgNhcHAiPQoRQ3JlYXRlQXBwUmVz",
+            "cG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIC",
+            "aWQiNwoQVXBkYXRlQXBwUmVxdWVzdBIjCgNhcHAYASABKAsyES5saWJyYXJp",
+            "YW4udjEuQXBwUgNhcHAiEwoRVXBkYXRlQXBwUmVzcG9uc2UinAIKD0xpc3RB",
+            "cHBzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFn",
+            "aW5nUmVxdWVzdFIGcGFnaW5nEjwKDXNvdXJjZV9maWx0ZXIYAiADKA4yFy5s",
+            "aWJyYXJpYW4udjEuQXBwU291cmNlUgxzb3VyY2VGaWx0ZXISNgoLdHlwZV9m",
+            "aWx0ZXIYAyADKA4yFS5saWJyYXJpYW4udjEuQXBwVHlwZVIKdHlwZUZpbHRl",
+            "chI1CglpZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
+            "RFIIaWRGaWx0ZXISJwoPY29udGFpbl9kZXRhaWxzGAUgASgIUg5jb250YWlu",
+            "RGV0YWlscyJvChBMaXN0QXBwc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIc",
+            "LmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEiUKBGFwcHMY",
+            "AiADKAsyES5saWJyYXJpYW4udjEuQXBwUgRhcHBzIkQKEVJlZnJlc2hBcHBS",
             "ZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
-            "bElEUgVhcHBJZCI8ChNHZXRCaW5kQXBwc1Jlc3BvbnNlEiUKBGFwcHMYASAD",
-            "KAsyES5saWJyYXJpYW4udjEuQXBwUgRhcHBzIkUKElB1cmNoYXNlQXBwUmVx",
-            "dWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
-            "RFIFYXBwSWQiFQoTUHVyY2hhc2VBcHBSZXNwb25zZSIZChdHZXRQdXJjaGFz",
-            "ZWRBcHBzUmVxdWVzdCJBChhHZXRQdXJjaGFzZWRBcHBzUmVzcG9uc2USJQoE",
-            "YXBwcxgBIAMoCzIRLmxpYnJhcmlhbi52MS5BcHBSBGFwcHMiVAoXQ3JlYXRl",
-            "QXBwUGFja2FnZVJlcXVlc3QSOQoLYXBwX3BhY2thZ2UYASABKAsyGC5saWJy",
-            "YXJpYW4udjEuQXBwUGFja2FnZVIKYXBwUGFja2FnZSJEChhDcmVhdGVBcHBQ",
-            "YWNrYWdlUmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFICaWQiVAoXVXBkYXRlQXBwUGFja2FnZVJlcXVlc3QSOQoLYXBw",
-            "X3BhY2thZ2UYASABKAsyGC5saWJyYXJpYW4udjEuQXBwUGFja2FnZVIKYXBw",
-            "UGFja2FnZSIaChhVcGRhdGVBcHBQYWNrYWdlUmVzcG9uc2UimAIKFkxpc3RB",
-            "cHBQYWNrYWdlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFu",
-            "LnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxJDCg1zb3VyY2VfZmlsdGVyGAIg",
-            "AygOMh4ubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VTb3VyY2VSDHNvdXJjZUZp",
-            "bHRlchI1CglpZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFIIaWRGaWx0ZXISTQoWYXNzaWduZWRfYXBwX2lkX2ZpbHRlchgEIAMo",
-            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUhNhc3NpZ25lZEFwcElkRmls",
-            "dGVyIowBChdMaXN0QXBwUGFja2FnZXNSZXNwb25zZRI0CgZwYWdpbmcYASAB",
-            "KAsyHC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxI7Cgxh",
-            "cHBfcGFja2FnZXMYAiADKAsyGC5saWJyYXJpYW4udjEuQXBwUGFja2FnZVIL",
-            "YXBwUGFja2FnZXMibAoYUmVwb3J0QXBwUGFja2FnZXNSZXF1ZXN0ElAKFGFw",
-            "cF9wYWNrYWdlX2JpbmFyaWVzGAEgAygLMh4ubGlicmFyaWFuLnYxLkFwcFBh",
-            "Y2thZ2VCaW5hcnlSEmFwcFBhY2thZ2VCaW5hcmllcyIbChlSZXBvcnRBcHBQ",
-            "YWNrYWdlc1Jlc3BvbnNlIooBChdBc3NpZ25BcHBQYWNrYWdlUmVxdWVzdBIv",
-            "CgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBw",
-            "SWQSPgoOYXBwX3BhY2thZ2VfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFIMYXBwUGFja2FnZUlkIhoKGEFzc2lnbkFwcFBhY2thZ2VSZXNw",
-            "b25zZSJbChlVbkFzc2lnbkFwcFBhY2thZ2VSZXF1ZXN0Ej4KDmFwcF9wYWNr",
-            "YWdlX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGFwcFBh",
-            "Y2thZ2VJZCIcChpVbkFzc2lnbkFwcFBhY2thZ2VSZXNwb25zZSKlAQoZVXBs",
-            "b2FkR2FtZVNhdmVGaWxlUmVxdWVzdBJICg1maWxlX21ldGFkYXRhGAEgASgL",
-            "MiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIMZmlsZU1l",
-            "dGFkYXRhEj4KDmFwcF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFuLnYx",
-            "LkludGVybmFsSURSDGFwcFBhY2thZ2VJZCI/ChpVcGxvYWRHYW1lU2F2ZUZp",
-            "bGVSZXNwb25zZRIhCgx1cGxvYWRfdG9rZW4YASABKAlSC3VwbG9hZFRva2Vu",
-            "IkcKG0Rvd25sb2FkR2FtZVNhdmVGaWxlUmVxdWVzdBIoCgJpZBgBIAEoCzIY",
-            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCJFChxEb3dubG9hZEdhbWVT",
-            "YXZlRmlsZVJlc3BvbnNlEiUKDmRvd25sb2FkX3Rva2VuGAIgASgJUg1kb3du",
-            "bG9hZFRva2VuIo4BChdMaXN0R2FtZVNhdmVGaWxlUmVxdWVzdBIzCgZwYWdp",
-            "bmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5n",
-            "Ej4KDmFwcF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVy",
-            "bmFsSURSDGFwcFBhY2thZ2VJZCKLAQoYTGlzdEdhbWVTYXZlRmlsZVJlc3Bv",
-            "bnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNw",
-            "b25zZVIGcGFnaW5nEjkKBWZpbGVzGAIgAygLMiMubGlicmFyaWFuLnNlcGhp",
-            "cmFoLnYxLkZpbGVNZXRhZGF0YVIFZmlsZXNCXVo1Z2l0aHViLmNvbS90dWlo",
-            "dWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAiNUdWlI",
-            "dWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
+            "bElEUgVhcHBJZCIUChJSZWZyZXNoQXBwUmVzcG9uc2UiawoQTWVyZ2VBcHBz",
+            "UmVxdWVzdBIlCgRiYXNlGAEgASgLMhEubGlicmFyaWFuLnYxLkFwcFIEYmFz",
+            "ZRIwCgZtZXJnZWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIG",
+            "bWVyZ2VkIhMKEU1lcmdlQXBwc1Jlc3BvbnNlIkIKDlBpY2tBcHBSZXF1ZXN0",
+            "EjAKBnBpY2tlZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgZw",
+            "aWNrZWQiEQoPUGlja0FwcFJlc3BvbnNlImQKEVNlYXJjaEFwcHNSZXF1ZXN0",
+            "EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0",
+            "UgZwYWdpbmcSGgoIa2V5d29yZHMYAiABKAlSCGtleXdvcmRzInEKElNlYXJj",
+            "aEFwcHNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEu",
+            "UGFnaW5nUmVzcG9uc2VSBnBhZ2luZxIlCgRhcHBzGAIgAygLMhEubGlicmFy",
+            "aWFuLnYxLkFwcFIEYXBwcyJFChJHZXRCaW5kQXBwc1JlcXVlc3QSLwoGYXBw",
+            "X2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkIjwK",
+            "E0dldEJpbmRBcHBzUmVzcG9uc2USJQoEYXBwcxgBIAMoCzIRLmxpYnJhcmlh",
+            "bi52MS5BcHBSBGFwcHMiRQoSUHVyY2hhc2VBcHBSZXF1ZXN0Ei8KBmFwcF9p",
+            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgVhcHBJZCIVChNQ",
+            "dXJjaGFzZUFwcFJlc3BvbnNlIhkKF0dldFB1cmNoYXNlZEFwcHNSZXF1ZXN0",
+            "IkEKGEdldFB1cmNoYXNlZEFwcHNSZXNwb25zZRIlCgRhcHBzGAEgAygLMhEu",
+            "bGlicmFyaWFuLnYxLkFwcFIEYXBwcyJUChdDcmVhdGVBcHBQYWNrYWdlUmVx",
+            "dWVzdBI5CgthcHBfcGFja2FnZRgBIAEoCzIYLmxpYnJhcmlhbi52MS5BcHBQ",
+            "YWNrYWdlUgphcHBQYWNrYWdlIkQKGENyZWF0ZUFwcFBhY2thZ2VSZXNwb25z",
+            "ZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCJU",
+            "ChdVcGRhdGVBcHBQYWNrYWdlUmVxdWVzdBI5CgthcHBfcGFja2FnZRgBIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlUgphcHBQYWNrYWdlIhoKGFVw",
+            "ZGF0ZUFwcFBhY2thZ2VSZXNwb25zZSKYAgoWTGlzdEFwcFBhY2thZ2VzUmVx",
+            "dWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVx",
+            "dWVzdFIGcGFnaW5nEkMKDXNvdXJjZV9maWx0ZXIYAiADKA4yHi5saWJyYXJp",
+            "YW4udjEuQXBwUGFja2FnZVNvdXJjZVIMc291cmNlRmlsdGVyEjUKCWlkX2Zp",
+            "bHRlchgDIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghpZEZpbHRl",
+            "chJNChZhc3NpZ25lZF9hcHBfaWRfZmlsdGVyGAQgAygLMhgubGlicmFyaWFu",
+            "LnYxLkludGVybmFsSURSE2Fzc2lnbmVkQXBwSWRGaWx0ZXIijAEKF0xpc3RB",
+            "cHBQYWNrYWdlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlh",
+            "bi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEjsKDGFwcF9wYWNrYWdlcxgC",
+            "IAMoCzIYLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlUgthcHBQYWNrYWdlcyJs",
+            "ChhSZXBvcnRBcHBQYWNrYWdlc1JlcXVlc3QSUAoUYXBwX3BhY2thZ2VfYmlu",
+            "YXJpZXMYASADKAsyHi5saWJyYXJpYW4udjEuQXBwUGFja2FnZUJpbmFyeVIS",
+            "YXBwUGFja2FnZUJpbmFyaWVzIhsKGVJlcG9ydEFwcFBhY2thZ2VzUmVzcG9u",
+            "c2UiigEKF0Fzc2lnbkFwcFBhY2thZ2VSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgVhcHBJZBI+Cg5hcHBfcGFj",
+            "a2FnZV9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxhcHBQ",
+            "YWNrYWdlSWQiGgoYQXNzaWduQXBwUGFja2FnZVJlc3BvbnNlIlsKGVVuQXNz",
+            "aWduQXBwUGFja2FnZVJlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsy",
+            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIhwKGlVu",
+            "QXNzaWduQXBwUGFja2FnZVJlc3BvbnNlIpUBChtBZGRBcHBQYWNrYWdlUnVu",
+            "VGltZVJlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkEjYKCnRpbWVfcmFuZ2UY",
+            "AiABKAsyFy5saWJyYXJpYW4udjEuVGltZVJhbmdlUgl0aW1lUmFuZ2UiHgoc",
+            "QWRkQXBwUGFja2FnZVJ1blRpbWVSZXNwb25zZSJdChtHZXRBcHBQYWNrYWdl",
+            "UnVuVGltZVJlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkIlUKHEdldEFwcFBh",
+            "Y2thZ2VSdW5UaW1lUmVzcG9uc2USNQoIZHVyYXRpb24YASABKAsyGS5nb29n",
+            "bGUucHJvdG9idWYuRHVyYXRpb25SCGR1cmF0aW9uIqUBChlVcGxvYWRHYW1l",
+            "U2F2ZUZpbGVSZXF1ZXN0EkgKDWZpbGVfbWV0YWRhdGEYASABKAsyIy5saWJy",
+            "YXJpYW4uc2VwaGlyYWgudjEuRmlsZU1ldGFkYXRhUgxmaWxlTWV0YWRhdGES",
+            "PgoOYXBwX3BhY2thZ2VfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
+            "YWxJRFIMYXBwUGFja2FnZUlkIj8KGlVwbG9hZEdhbWVTYXZlRmlsZVJlc3Bv",
+            "bnNlEiEKDHVwbG9hZF90b2tlbhgBIAEoCVILdXBsb2FkVG9rZW4iRwobRG93",
+            "bmxvYWRHYW1lU2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFy",
+            "aWFuLnYxLkludGVybmFsSURSAmlkIkUKHERvd25sb2FkR2FtZVNhdmVGaWxl",
+            "UmVzcG9uc2USJQoOZG93bmxvYWRfdG9rZW4YAiABKAlSDWRvd25sb2FkVG9r",
+            "ZW4ijgEKF0xpc3RHYW1lU2F2ZUZpbGVSZXF1ZXN0EjMKBnBhZ2luZxgBIAEo",
+            "CzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSPgoOYXBw",
+            "X3BhY2thZ2VfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIM",
+            "YXBwUGFja2FnZUlkIosBChhMaXN0R2FtZVNhdmVGaWxlUmVzcG9uc2USNAoG",
+            "cGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZw",
+            "YWdpbmcSOQoFZmlsZXMYAiADKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
+            "RmlsZU1ldGFkYXRhUgVmaWxlc0JdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90",
+            "b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90",
+            "b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse.Parser, new[]{ "Id" }, null, null, null, null),
@@ -136,6 +145,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AssignAppPackageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.AssignAppPackageResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppPackageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppPackageRequest.Parser, new[]{ "AppPackageId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppPackageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppPackageResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeRequest.Parser, new[]{ "AppPackageId", "TimeRange" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest.Parser, new[]{ "AppPackageId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse.Parser, new[]{ "Duration" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest.Parser, new[]{ "FileMetadata", "AppPackageId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileResponse.Parser, new[]{ "UploadToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -6402,6 +6415,798 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   }
 
+  public sealed partial class AddAppPackageRunTimeRequest : pb::IMessage<AddAppPackageRunTimeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AddAppPackageRunTimeRequest> _parser = new pb::MessageParser<AddAppPackageRunTimeRequest>(() => new AddAppPackageRunTimeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AddAppPackageRunTimeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[32]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAppPackageRunTimeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAppPackageRunTimeRequest(AddAppPackageRunTimeRequest other) : this() {
+      appPackageId_ = other.appPackageId_ != null ? other.appPackageId_.Clone() : null;
+      timeRange_ = other.timeRange_ != null ? other.timeRange_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAppPackageRunTimeRequest Clone() {
+      return new AddAppPackageRunTimeRequest(this);
+    }
+
+    /// <summary>Field number for the "app_package_id" field.</summary>
+    public const int AppPackageIdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID appPackageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID AppPackageId {
+      get { return appPackageId_; }
+      set {
+        appPackageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "time_range" field.</summary>
+    public const int TimeRangeFieldNumber = 2;
+    private global::TuiHub.Protos.Librarian.V1.TimeRange timeRange_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.TimeRange TimeRange {
+      get { return timeRange_; }
+      set {
+        timeRange_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AddAppPackageRunTimeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AddAppPackageRunTimeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(AppPackageId, other.AppPackageId)) return false;
+      if (!object.Equals(TimeRange, other.TimeRange)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (appPackageId_ != null) hash ^= AppPackageId.GetHashCode();
+      if (timeRange_ != null) hash ^= TimeRange.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (appPackageId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(AppPackageId);
+      }
+      if (timeRange_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(TimeRange);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (appPackageId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(AppPackageId);
+      }
+      if (timeRange_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(TimeRange);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (appPackageId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AppPackageId);
+      }
+      if (timeRange_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TimeRange);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AddAppPackageRunTimeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.appPackageId_ != null) {
+        if (appPackageId_ == null) {
+          AppPackageId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        AppPackageId.MergeFrom(other.AppPackageId);
+      }
+      if (other.timeRange_ != null) {
+        if (timeRange_ == null) {
+          TimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
+        }
+        TimeRange.MergeFrom(other.TimeRange);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (appPackageId_ == null) {
+              AppPackageId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(AppPackageId);
+            break;
+          }
+          case 18: {
+            if (timeRange_ == null) {
+              TimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
+            }
+            input.ReadMessage(TimeRange);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (appPackageId_ == null) {
+              AppPackageId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(AppPackageId);
+            break;
+          }
+          case 18: {
+            if (timeRange_ == null) {
+              TimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
+            }
+            input.ReadMessage(TimeRange);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AddAppPackageRunTimeResponse : pb::IMessage<AddAppPackageRunTimeResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AddAppPackageRunTimeResponse> _parser = new pb::MessageParser<AddAppPackageRunTimeResponse>(() => new AddAppPackageRunTimeResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AddAppPackageRunTimeResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAppPackageRunTimeResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAppPackageRunTimeResponse(AddAppPackageRunTimeResponse other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAppPackageRunTimeResponse Clone() {
+      return new AddAppPackageRunTimeResponse(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AddAppPackageRunTimeResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AddAppPackageRunTimeResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AddAppPackageRunTimeResponse other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GetAppPackageRunTimeRequest : pb::IMessage<GetAppPackageRunTimeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetAppPackageRunTimeRequest> _parser = new pb::MessageParser<GetAppPackageRunTimeRequest>(() => new GetAppPackageRunTimeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetAppPackageRunTimeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[34]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAppPackageRunTimeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAppPackageRunTimeRequest(GetAppPackageRunTimeRequest other) : this() {
+      appPackageId_ = other.appPackageId_ != null ? other.appPackageId_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAppPackageRunTimeRequest Clone() {
+      return new GetAppPackageRunTimeRequest(this);
+    }
+
+    /// <summary>Field number for the "app_package_id" field.</summary>
+    public const int AppPackageIdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID appPackageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID AppPackageId {
+      get { return appPackageId_; }
+      set {
+        appPackageId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetAppPackageRunTimeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetAppPackageRunTimeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(AppPackageId, other.AppPackageId)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (appPackageId_ != null) hash ^= AppPackageId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (appPackageId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(AppPackageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (appPackageId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(AppPackageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (appPackageId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AppPackageId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetAppPackageRunTimeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.appPackageId_ != null) {
+        if (appPackageId_ == null) {
+          AppPackageId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        AppPackageId.MergeFrom(other.AppPackageId);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (appPackageId_ == null) {
+              AppPackageId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(AppPackageId);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (appPackageId_ == null) {
+              AppPackageId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(AppPackageId);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GetAppPackageRunTimeResponse : pb::IMessage<GetAppPackageRunTimeResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetAppPackageRunTimeResponse> _parser = new pb::MessageParser<GetAppPackageRunTimeResponse>(() => new GetAppPackageRunTimeResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetAppPackageRunTimeResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[35]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAppPackageRunTimeResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAppPackageRunTimeResponse(GetAppPackageRunTimeResponse other) : this() {
+      duration_ = other.duration_ != null ? other.duration_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAppPackageRunTimeResponse Clone() {
+      return new GetAppPackageRunTimeResponse(this);
+    }
+
+    /// <summary>Field number for the "duration" field.</summary>
+    public const int DurationFieldNumber = 1;
+    private global::Google.Protobuf.WellKnownTypes.Duration duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Duration Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetAppPackageRunTimeResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetAppPackageRunTimeResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Duration, other.Duration)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (duration_ != null) hash ^= Duration.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (duration_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Duration);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (duration_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Duration);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (duration_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Duration);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetAppPackageRunTimeResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.duration_ != null) {
+        if (duration_ == null) {
+          Duration = new global::Google.Protobuf.WellKnownTypes.Duration();
+        }
+        Duration.MergeFrom(other.Duration);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (duration_ == null) {
+              Duration = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(Duration);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (duration_ == null) {
+              Duration = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(Duration);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class UploadGameSaveFileRequest : pb::IMessage<UploadGameSaveFileRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6416,7 +7221,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[32]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6660,7 +7465,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[33]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6849,7 +7654,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[34]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7047,7 +7852,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[35]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7236,7 +8041,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[36]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7480,7 +8285,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[37]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

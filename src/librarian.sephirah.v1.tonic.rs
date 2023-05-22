@@ -903,6 +903,54 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Gebura` `Normal`
 */
+        pub async fn add_app_package_run_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::AddAppPackageRunTimeRequest>,
+        ) -> Result<
+            tonic::Response<super::AddAppPackageRunTimeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Gebura` `Normal`
+*/
+        pub async fn get_app_package_run_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetAppPackageRunTimeRequest>,
+        ) -> Result<
+            tonic::Response<super::GetAppPackageRunTimeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Gebura` `Normal`
+*/
         pub async fn upload_game_save_file(
             &mut self,
             request: impl tonic::IntoRequest<super::UploadGameSaveFileRequest>,
@@ -1500,6 +1548,18 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<tonic::Streaming<super::ReportAppPackagesRequest>>,
         ) -> Result<tonic::Response<Self::ReportAppPackagesStream>, tonic::Status>;
+        /** `Gebura` `Normal`
+*/
+        async fn add_app_package_run_time(
+            &self,
+            request: tonic::Request<super::AddAppPackageRunTimeRequest>,
+        ) -> Result<tonic::Response<super::AddAppPackageRunTimeResponse>, tonic::Status>;
+        /** `Gebura` `Normal`
+*/
+        async fn get_app_package_run_time(
+            &self,
+            request: tonic::Request<super::GetAppPackageRunTimeRequest>,
+        ) -> Result<tonic::Response<super::GetAppPackageRunTimeResponse>, tonic::Status>;
         /** `Gebura` `Normal`
 */
         async fn upload_game_save_file(
@@ -3149,6 +3209,90 @@ pub mod librarian_sephirah_service_server {
                                 send_compression_encodings,
                             );
                         let res = grpc.streaming(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct AddAppPackageRunTimeSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::AddAppPackageRunTimeRequest>
+                    for AddAppPackageRunTimeSvc<T> {
+                        type Response = super::AddAppPackageRunTimeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::AddAppPackageRunTimeRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).add_app_package_run_time(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = AddAppPackageRunTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetAppPackageRunTimeSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::GetAppPackageRunTimeRequest>
+                    for GetAppPackageRunTimeSvc<T> {
+                        type Response = super::GetAppPackageRunTimeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetAppPackageRunTimeRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).get_app_package_run_time(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = GetAppPackageRunTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)

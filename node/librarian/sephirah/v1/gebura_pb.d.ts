@@ -2,6 +2,7 @@
 // file: librarian/sephirah/v1/gebura.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as librarian_sephirah_v1_base_pb from "../../../librarian/sephirah/v1/base_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
@@ -720,6 +721,94 @@ export class UnAssignAppPackageResponse extends jspb.Message {
 
 export namespace UnAssignAppPackageResponse {
   export type AsObject = {
+  }
+}
+
+export class AddAppPackageRunTimeRequest extends jspb.Message {
+  hasAppPackageId(): boolean;
+  clearAppPackageId(): void;
+  getAppPackageId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppPackageId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasTimeRange(): boolean;
+  clearTimeRange(): void;
+  getTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
+  setTimeRange(value?: librarian_v1_common_pb.TimeRange): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddAppPackageRunTimeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddAppPackageRunTimeRequest): AddAppPackageRunTimeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddAppPackageRunTimeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddAppPackageRunTimeRequest;
+  static deserializeBinaryFromReader(message: AddAppPackageRunTimeRequest, reader: jspb.BinaryReader): AddAppPackageRunTimeRequest;
+}
+
+export namespace AddAppPackageRunTimeRequest {
+  export type AsObject = {
+    appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
+    timeRange?: librarian_v1_common_pb.TimeRange.AsObject,
+  }
+}
+
+export class AddAppPackageRunTimeResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddAppPackageRunTimeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddAppPackageRunTimeResponse): AddAppPackageRunTimeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddAppPackageRunTimeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddAppPackageRunTimeResponse;
+  static deserializeBinaryFromReader(message: AddAppPackageRunTimeResponse, reader: jspb.BinaryReader): AddAppPackageRunTimeResponse;
+}
+
+export namespace AddAppPackageRunTimeResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetAppPackageRunTimeRequest extends jspb.Message {
+  hasAppPackageId(): boolean;
+  clearAppPackageId(): void;
+  getAppPackageId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppPackageId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppPackageRunTimeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppPackageRunTimeRequest): GetAppPackageRunTimeRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppPackageRunTimeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppPackageRunTimeRequest;
+  static deserializeBinaryFromReader(message: GetAppPackageRunTimeRequest, reader: jspb.BinaryReader): GetAppPackageRunTimeRequest;
+}
+
+export namespace GetAppPackageRunTimeRequest {
+  export type AsObject = {
+    appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class GetAppPackageRunTimeResponse extends jspb.Message {
+  hasDuration(): boolean;
+  clearDuration(): void;
+  getDuration(): google_protobuf_duration_pb.Duration | undefined;
+  setDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppPackageRunTimeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppPackageRunTimeResponse): GetAppPackageRunTimeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppPackageRunTimeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppPackageRunTimeResponse;
+  static deserializeBinaryFromReader(message: GetAppPackageRunTimeResponse, reader: jspb.BinaryReader): GetAppPackageRunTimeResponse;
+}
+
+export namespace GetAppPackageRunTimeResponse {
+  export type AsObject = {
+    duration?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

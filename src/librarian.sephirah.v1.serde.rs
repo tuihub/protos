@@ -1,4 +1,185 @@
 // @generated
+impl serde::Serialize for AddAppPackageRunTimeRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_package_id.is_some() {
+            len += 1;
+        }
+        if self.time_range.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeRequest", len)?;
+        if let Some(v) = self.app_package_id.as_ref() {
+            struct_ser.serialize_field("appPackageId", v)?;
+        }
+        if let Some(v) = self.time_range.as_ref() {
+            struct_ser.serialize_field("timeRange", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_package_id",
+            "appPackageId",
+            "time_range",
+            "timeRange",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppPackageId,
+            TimeRange,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
+                            "timeRange" | "time_range" => Ok(GeneratedField::TimeRange),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AddAppPackageRunTimeRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AddAppPackageRunTimeRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AddAppPackageRunTimeRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_package_id__ = None;
+                let mut time_range__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppPackageId => {
+                            if app_package_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appPackageId"));
+                            }
+                            app_package_id__ = map.next_value()?;
+                        }
+                        GeneratedField::TimeRange => {
+                            if time_range__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("timeRange"));
+                            }
+                            time_range__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(AddAppPackageRunTimeRequest {
+                    app_package_id: app_package_id__,
+                    time_range: time_range__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AddAppPackageRunTimeResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AddAppPackageRunTimeResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AddAppPackageRunTimeResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AddAppPackageRunTimeResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(AddAppPackageRunTimeResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for AssignAppPackageRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -3271,6 +3452,189 @@ impl<'de> serde::Deserialize<'de> for GenerateTokenResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.GenerateTokenResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppPackageRunTimeRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_package_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppPackageRunTimeRequest", len)?;
+        if let Some(v) = self.app_package_id.as_ref() {
+            struct_ser.serialize_field("appPackageId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppPackageRunTimeRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_package_id",
+            "appPackageId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppPackageId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppPackageRunTimeRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetAppPackageRunTimeRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppPackageRunTimeRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_package_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppPackageId => {
+                            if app_package_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appPackageId"));
+                            }
+                            app_package_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetAppPackageRunTimeRequest {
+                    app_package_id: app_package_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppPackageRunTimeRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppPackageRunTimeResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.duration.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppPackageRunTimeResponse", len)?;
+        if let Some(v) = self.duration.as_ref() {
+            struct_ser.serialize_field("duration", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppPackageRunTimeResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "duration",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Duration,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "duration" => Ok(GeneratedField::Duration),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppPackageRunTimeResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetAppPackageRunTimeResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppPackageRunTimeResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut duration__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Duration => {
+                            if duration__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("duration"));
+                            }
+                            duration__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetAppPackageRunTimeResponse {
+                    duration: duration__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppPackageRunTimeResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for GetBatchFeedItemsRequest {

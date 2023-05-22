@@ -10,6 +10,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $7;
+import '../../../google/protobuf/duration.pb.dart' as $10;
 import 'base.pb.dart' as $9;
 
 import '../../v1/common.pbenum.dart' as $7;
@@ -1488,6 +1489,198 @@ class UnAssignAppPackageResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UnAssignAppPackageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnAssignAppPackageResponse>(create);
   static UnAssignAppPackageResponse? _defaultInstance;
+}
+
+class AddAppPackageRunTimeRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddAppPackageRunTimeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.TimeRange>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRange', subBuilder: $7.TimeRange.create)
+    ..hasRequiredFields = false
+  ;
+
+  AddAppPackageRunTimeRequest._() : super();
+  factory AddAppPackageRunTimeRequest({
+    $7.InternalID? appPackageId,
+    $7.TimeRange? timeRange,
+  }) {
+    final _result = create();
+    if (appPackageId != null) {
+      _result.appPackageId = appPackageId;
+    }
+    if (timeRange != null) {
+      _result.timeRange = timeRange;
+    }
+    return _result;
+  }
+  factory AddAppPackageRunTimeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddAppPackageRunTimeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddAppPackageRunTimeRequest clone() => AddAppPackageRunTimeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddAppPackageRunTimeRequest copyWith(void Function(AddAppPackageRunTimeRequest) updates) => super.copyWith((message) => updates(message as AddAppPackageRunTimeRequest)) as AddAppPackageRunTimeRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AddAppPackageRunTimeRequest create() => AddAppPackageRunTimeRequest._();
+  AddAppPackageRunTimeRequest createEmptyInstance() => create();
+  static $pb.PbList<AddAppPackageRunTimeRequest> createRepeated() => $pb.PbList<AddAppPackageRunTimeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddAppPackageRunTimeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddAppPackageRunTimeRequest>(create);
+  static AddAppPackageRunTimeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get appPackageId => $_getN(0);
+  @$pb.TagNumber(1)
+  set appPackageId($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppPackageId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppPackageId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureAppPackageId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $7.TimeRange get timeRange => $_getN(1);
+  @$pb.TagNumber(2)
+  set timeRange($7.TimeRange v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTimeRange() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimeRange() => clearField(2);
+  @$pb.TagNumber(2)
+  $7.TimeRange ensureTimeRange() => $_ensure(1);
+}
+
+class AddAppPackageRunTimeResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddAppPackageRunTimeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  AddAppPackageRunTimeResponse._() : super();
+  factory AddAppPackageRunTimeResponse() => create();
+  factory AddAppPackageRunTimeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddAppPackageRunTimeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddAppPackageRunTimeResponse clone() => AddAppPackageRunTimeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddAppPackageRunTimeResponse copyWith(void Function(AddAppPackageRunTimeResponse) updates) => super.copyWith((message) => updates(message as AddAppPackageRunTimeResponse)) as AddAppPackageRunTimeResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AddAppPackageRunTimeResponse create() => AddAppPackageRunTimeResponse._();
+  AddAppPackageRunTimeResponse createEmptyInstance() => create();
+  static $pb.PbList<AddAppPackageRunTimeResponse> createRepeated() => $pb.PbList<AddAppPackageRunTimeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddAppPackageRunTimeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddAppPackageRunTimeResponse>(create);
+  static AddAppPackageRunTimeResponse? _defaultInstance;
+}
+
+class GetAppPackageRunTimeRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetAppPackageRunTimeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageId', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  GetAppPackageRunTimeRequest._() : super();
+  factory GetAppPackageRunTimeRequest({
+    $7.InternalID? appPackageId,
+  }) {
+    final _result = create();
+    if (appPackageId != null) {
+      _result.appPackageId = appPackageId;
+    }
+    return _result;
+  }
+  factory GetAppPackageRunTimeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppPackageRunTimeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppPackageRunTimeRequest clone() => GetAppPackageRunTimeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppPackageRunTimeRequest copyWith(void Function(GetAppPackageRunTimeRequest) updates) => super.copyWith((message) => updates(message as GetAppPackageRunTimeRequest)) as GetAppPackageRunTimeRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetAppPackageRunTimeRequest create() => GetAppPackageRunTimeRequest._();
+  GetAppPackageRunTimeRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAppPackageRunTimeRequest> createRepeated() => $pb.PbList<GetAppPackageRunTimeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppPackageRunTimeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppPackageRunTimeRequest>(create);
+  static GetAppPackageRunTimeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get appPackageId => $_getN(0);
+  @$pb.TagNumber(1)
+  set appPackageId($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppPackageId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppPackageId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureAppPackageId() => $_ensure(0);
+}
+
+class GetAppPackageRunTimeResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetAppPackageRunTimeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$10.Duration>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'duration', subBuilder: $10.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  GetAppPackageRunTimeResponse._() : super();
+  factory GetAppPackageRunTimeResponse({
+    $10.Duration? duration,
+  }) {
+    final _result = create();
+    if (duration != null) {
+      _result.duration = duration;
+    }
+    return _result;
+  }
+  factory GetAppPackageRunTimeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppPackageRunTimeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppPackageRunTimeResponse clone() => GetAppPackageRunTimeResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppPackageRunTimeResponse copyWith(void Function(GetAppPackageRunTimeResponse) updates) => super.copyWith((message) => updates(message as GetAppPackageRunTimeResponse)) as GetAppPackageRunTimeResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetAppPackageRunTimeResponse create() => GetAppPackageRunTimeResponse._();
+  GetAppPackageRunTimeResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAppPackageRunTimeResponse> createRepeated() => $pb.PbList<GetAppPackageRunTimeResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppPackageRunTimeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppPackageRunTimeResponse>(create);
+  static GetAppPackageRunTimeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $10.Duration get duration => $_getN(0);
+  @$pb.TagNumber(1)
+  set duration($10.Duration v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDuration() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDuration() => clearField(1);
+  @$pb.TagNumber(1)
+  $10.Duration ensureDuration() => $_ensure(0);
 }
 
 class UploadGameSaveFileRequest extends $pb.GeneratedMessage {
