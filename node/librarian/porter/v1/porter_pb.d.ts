@@ -497,6 +497,56 @@ export namespace PresignedPullDataResponse {
   }
 }
 
+export class PresignedPushDataRequest extends jspb.Message {
+  getSource(): DataSourceMap[keyof DataSourceMap];
+  setSource(value: DataSourceMap[keyof DataSourceMap]): void;
+
+  getContentId(): string;
+  setContentId(value: string): void;
+
+  hasExpireTime(): boolean;
+  clearExpireTime(): void;
+  getExpireTime(): google_protobuf_duration_pb.Duration | undefined;
+  setExpireTime(value?: google_protobuf_duration_pb.Duration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedPushDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedPushDataRequest): PresignedPushDataRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedPushDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedPushDataRequest;
+  static deserializeBinaryFromReader(message: PresignedPushDataRequest, reader: jspb.BinaryReader): PresignedPushDataRequest;
+}
+
+export namespace PresignedPushDataRequest {
+  export type AsObject = {
+    source: DataSourceMap[keyof DataSourceMap],
+    contentId: string,
+    expireTime?: google_protobuf_duration_pb.Duration.AsObject,
+  }
+}
+
+export class PresignedPushDataResponse extends jspb.Message {
+  getPushUrl(): string;
+  setPushUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedPushDataResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedPushDataResponse): PresignedPushDataResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedPushDataResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedPushDataResponse;
+  static deserializeBinaryFromReader(message: PresignedPushDataResponse, reader: jspb.BinaryReader): PresignedPushDataResponse;
+}
+
+export namespace PresignedPushDataResponse {
+  export type AsObject = {
+    pushUrl: string,
+  }
+}
+
 export interface FeatureFlagMap {
   FEATURE_FLAG_UNSPECIFIED: 0;
   FEATURE_FLAG_SOURCE_STEAM: 1;

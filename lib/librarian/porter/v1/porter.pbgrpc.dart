@@ -73,6 +73,12 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       ($0.PresignedPullDataRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.PresignedPullDataResponse.fromBuffer(value));
+  static final _$presignedPushData = $grpc.ClientMethod<
+          $0.PresignedPushDataRequest, $0.PresignedPushDataResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/PresignedPushData',
+      ($0.PresignedPushDataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.PresignedPushDataResponse.fromBuffer(value));
 
   LibrarianPorterServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -135,6 +141,12 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       $0.PresignedPullDataRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedPullData, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PresignedPushDataResponse> presignedPushData(
+      $0.PresignedPushDataRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$presignedPushData, request, options: options);
   }
 }
 
@@ -220,6 +232,15 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.PresignedPullDataRequest.fromBuffer(value),
         ($0.PresignedPullDataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PresignedPushDataRequest,
+            $0.PresignedPushDataResponse>(
+        'PresignedPushData',
+        presignedPushData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PresignedPushDataRequest.fromBuffer(value),
+        ($0.PresignedPushDataResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.PullFeedResponse> pullFeed_Pre(
@@ -270,6 +291,12 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return presignedPullData(call, await request);
   }
 
+  $async.Future<$0.PresignedPushDataResponse> presignedPushData_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.PresignedPushDataRequest> request) async {
+    return presignedPushData(call, await request);
+  }
+
   $async.Future<$0.PullFeedResponse> pullFeed(
       $grpc.ServiceCall call, $0.PullFeedRequest request);
   $async.Future<$0.PushFeedItemsResponse> pushFeedItems(
@@ -290,4 +317,6 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $async.Stream<$0.PushDataRequest> request);
   $async.Future<$0.PresignedPullDataResponse> presignedPullData(
       $grpc.ServiceCall call, $0.PresignedPullDataRequest request);
+  $async.Future<$0.PresignedPushDataResponse> presignedPushData(
+      $grpc.ServiceCall call, $0.PresignedPushDataRequest request);
 }

@@ -17,6 +17,7 @@ interface ILibrarianPorterServiceService extends grpc.ServiceDefinition<grpc.Unt
   pullData: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullDataRequest, librarian_porter_v1_porter_pb.PullDataResponse>;
   pushData: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushDataRequest, librarian_porter_v1_porter_pb.PushDataResponse>;
   presignedPullData: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PresignedPullDataRequest, librarian_porter_v1_porter_pb.PresignedPullDataResponse>;
+  presignedPushData: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PresignedPushDataRequest, librarian_porter_v1_porter_pb.PresignedPushDataResponse>;
 }
 
 export const LibrarianPorterServiceService: ILibrarianPorterServiceService;
@@ -32,6 +33,7 @@ export interface ILibrarianPorterServiceServer extends grpc.UntypedServiceImplem
   pullData: grpc.handleServerStreamingCall<librarian_porter_v1_porter_pb.PullDataRequest, librarian_porter_v1_porter_pb.PullDataResponse>;
   pushData: grpc.handleClientStreamingCall<librarian_porter_v1_porter_pb.PushDataRequest, librarian_porter_v1_porter_pb.PushDataResponse>;
   presignedPullData: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PresignedPullDataRequest, librarian_porter_v1_porter_pb.PresignedPullDataResponse>;
+  presignedPushData: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PresignedPushDataRequest, librarian_porter_v1_porter_pb.PresignedPushDataResponse>;
 }
 
 export class LibrarianPorterServiceClient extends grpc.Client {
@@ -65,4 +67,7 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   presignedPullData(argument: librarian_porter_v1_porter_pb.PresignedPullDataRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PresignedPullDataResponse>): grpc.ClientUnaryCall;
   presignedPullData(argument: librarian_porter_v1_porter_pb.PresignedPullDataRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PresignedPullDataResponse>): grpc.ClientUnaryCall;
   presignedPullData(argument: librarian_porter_v1_porter_pb.PresignedPullDataRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PresignedPullDataResponse>): grpc.ClientUnaryCall;
+  presignedPushData(argument: librarian_porter_v1_porter_pb.PresignedPushDataRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PresignedPushDataResponse>): grpc.ClientUnaryCall;
+  presignedPushData(argument: librarian_porter_v1_porter_pb.PresignedPushDataRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PresignedPushDataResponse>): grpc.ClientUnaryCall;
+  presignedPushData(argument: librarian_porter_v1_porter_pb.PresignedPushDataRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PresignedPushDataResponse>): grpc.ClientUnaryCall;
 }

@@ -251,6 +251,78 @@ export namespace SimpleDownloadFileResponse {
   }
 }
 
+export class PresignedUploadFileRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedUploadFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedUploadFileRequest): PresignedUploadFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedUploadFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedUploadFileRequest;
+  static deserializeBinaryFromReader(message: PresignedUploadFileRequest, reader: jspb.BinaryReader): PresignedUploadFileRequest;
+}
+
+export namespace PresignedUploadFileRequest {
+  export type AsObject = {
+  }
+}
+
+export class PresignedUploadFileResponse extends jspb.Message {
+  getUploadUrl(): string;
+  setUploadUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedUploadFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedUploadFileResponse): PresignedUploadFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedUploadFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedUploadFileResponse;
+  static deserializeBinaryFromReader(message: PresignedUploadFileResponse, reader: jspb.BinaryReader): PresignedUploadFileResponse;
+}
+
+export namespace PresignedUploadFileResponse {
+  export type AsObject = {
+    uploadUrl: string,
+  }
+}
+
+export class PresignedUploadFileStatusRequest extends jspb.Message {
+  getStatus(): FileTransferStatusMap[keyof FileTransferStatusMap];
+  setStatus(value: FileTransferStatusMap[keyof FileTransferStatusMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedUploadFileStatusRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedUploadFileStatusRequest): PresignedUploadFileStatusRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedUploadFileStatusRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedUploadFileStatusRequest;
+  static deserializeBinaryFromReader(message: PresignedUploadFileStatusRequest, reader: jspb.BinaryReader): PresignedUploadFileStatusRequest;
+}
+
+export namespace PresignedUploadFileStatusRequest {
+  export type AsObject = {
+    status: FileTransferStatusMap[keyof FileTransferStatusMap],
+  }
+}
+
+export class PresignedUploadFileStatusResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PresignedUploadFileStatusResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PresignedUploadFileStatusResponse): PresignedUploadFileStatusResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PresignedUploadFileStatusResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PresignedUploadFileStatusResponse;
+  static deserializeBinaryFromReader(message: PresignedUploadFileStatusResponse, reader: jspb.BinaryReader): PresignedUploadFileStatusResponse;
+}
+
+export namespace PresignedUploadFileStatusResponse {
+  export type AsObject = {
+  }
+}
+
 export class PresignedDownloadFileRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PresignedDownloadFileRequest.AsObject;

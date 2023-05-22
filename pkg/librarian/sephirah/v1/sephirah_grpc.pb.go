@@ -19,62 +19,64 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LibrarianSephirahService_GetServerInformation_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation"
-	LibrarianSephirahService_GetToken_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
-	LibrarianSephirahService_RefreshToken_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
-	LibrarianSephirahService_GenerateToken_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken"
-	LibrarianSephirahService_CreateUser_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser"
-	LibrarianSephirahService_UpdateUser_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser"
-	LibrarianSephirahService_GetUser_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/GetUser"
-	LibrarianSephirahService_ListUsers_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListUsers"
-	LibrarianSephirahService_LinkAccount_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount"
-	LibrarianSephirahService_UnLinkAccount_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount"
-	LibrarianSephirahService_ListLinkAccounts_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts"
-	LibrarianSephirahService_UploadFile_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile"
-	LibrarianSephirahService_DownloadFile_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile"
-	LibrarianSephirahService_SimpleUploadFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile"
-	LibrarianSephirahService_SimpleDownloadFile_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile"
-	LibrarianSephirahService_PresignedDownloadFile_FullMethodName = "/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile"
-	LibrarianSephirahService_UploadImage_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UploadImage"
-	LibrarianSephirahService_UpdateImage_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage"
-	LibrarianSephirahService_ListImages_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListImages"
-	LibrarianSephirahService_SearchImages_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages"
-	LibrarianSephirahService_GetImage_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/GetImage"
-	LibrarianSephirahService_DownloadImage_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage"
-	LibrarianSephirahService_CreateApp_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
-	LibrarianSephirahService_UpdateApp_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
-	LibrarianSephirahService_ListApps_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
-	LibrarianSephirahService_RefreshApp_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshApp"
-	LibrarianSephirahService_MergeApps_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps"
-	LibrarianSephirahService_PickApp_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/PickApp"
-	LibrarianSephirahService_SearchApps_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps"
-	LibrarianSephirahService_GetBindApps_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps"
-	LibrarianSephirahService_PurchaseApp_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp"
-	LibrarianSephirahService_GetPurchasedApps_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps"
-	LibrarianSephirahService_CreateAppPackage_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage"
-	LibrarianSephirahService_UpdateAppPackage_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage"
-	LibrarianSephirahService_ListAppPackages_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackages"
-	LibrarianSephirahService_AssignAppPackage_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage"
-	LibrarianSephirahService_UnAssignAppPackage_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage"
-	LibrarianSephirahService_ReportAppPackages_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages"
-	LibrarianSephirahService_AddAppPackageRunTime_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime"
-	LibrarianSephirahService_GetAppPackageRunTime_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime"
-	LibrarianSephirahService_UploadGameSaveFile_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
-	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
-	LibrarianSephirahService_ListGameSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile"
-	LibrarianSephirahService_CreateNotifyTarget_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget"
-	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget"
-	LibrarianSephirahService_ListNotifyTargets_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets"
-	LibrarianSephirahService_CreateNotifyFlow_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow"
-	LibrarianSephirahService_UpdateNotifyFlow_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow"
-	LibrarianSephirahService_ListNotifyFlows_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows"
-	LibrarianSephirahService_CreateFeedConfig_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig"
-	LibrarianSephirahService_UpdateFeedConfig_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig"
-	LibrarianSephirahService_ListFeedConfigs_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs"
-	LibrarianSephirahService_ListFeedItems_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems"
-	LibrarianSephirahService_GroupFeedItems_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/GroupFeedItems"
-	LibrarianSephirahService_GetFeedItem_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem"
-	LibrarianSephirahService_GetBatchFeedItems_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems"
+	LibrarianSephirahService_GetServerInformation_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation"
+	LibrarianSephirahService_GetToken_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
+	LibrarianSephirahService_RefreshToken_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
+	LibrarianSephirahService_GenerateToken_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken"
+	LibrarianSephirahService_CreateUser_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser"
+	LibrarianSephirahService_UpdateUser_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser"
+	LibrarianSephirahService_GetUser_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/GetUser"
+	LibrarianSephirahService_ListUsers_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/ListUsers"
+	LibrarianSephirahService_LinkAccount_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount"
+	LibrarianSephirahService_UnLinkAccount_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount"
+	LibrarianSephirahService_ListLinkAccounts_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts"
+	LibrarianSephirahService_UploadFile_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile"
+	LibrarianSephirahService_DownloadFile_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile"
+	LibrarianSephirahService_SimpleUploadFile_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile"
+	LibrarianSephirahService_SimpleDownloadFile_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile"
+	LibrarianSephirahService_PresignedUploadFile_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFile"
+	LibrarianSephirahService_PresignedUploadFileStatus_FullMethodName = "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFileStatus"
+	LibrarianSephirahService_PresignedDownloadFile_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile"
+	LibrarianSephirahService_UploadImage_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/UploadImage"
+	LibrarianSephirahService_UpdateImage_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage"
+	LibrarianSephirahService_ListImages_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/ListImages"
+	LibrarianSephirahService_SearchImages_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages"
+	LibrarianSephirahService_GetImage_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/GetImage"
+	LibrarianSephirahService_DownloadImage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage"
+	LibrarianSephirahService_CreateApp_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
+	LibrarianSephirahService_UpdateApp_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
+	LibrarianSephirahService_ListApps_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
+	LibrarianSephirahService_RefreshApp_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshApp"
+	LibrarianSephirahService_MergeApps_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps"
+	LibrarianSephirahService_PickApp_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/PickApp"
+	LibrarianSephirahService_SearchApps_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps"
+	LibrarianSephirahService_GetBindApps_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps"
+	LibrarianSephirahService_PurchaseApp_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp"
+	LibrarianSephirahService_GetPurchasedApps_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps"
+	LibrarianSephirahService_CreateAppPackage_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage"
+	LibrarianSephirahService_UpdateAppPackage_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage"
+	LibrarianSephirahService_ListAppPackages_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackages"
+	LibrarianSephirahService_AssignAppPackage_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage"
+	LibrarianSephirahService_UnAssignAppPackage_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage"
+	LibrarianSephirahService_ReportAppPackages_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages"
+	LibrarianSephirahService_AddAppPackageRunTime_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime"
+	LibrarianSephirahService_GetAppPackageRunTime_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime"
+	LibrarianSephirahService_UploadGameSaveFile_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
+	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
+	LibrarianSephirahService_ListGameSaveFile_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile"
+	LibrarianSephirahService_CreateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget"
+	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget"
+	LibrarianSephirahService_ListNotifyTargets_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets"
+	LibrarianSephirahService_CreateNotifyFlow_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow"
+	LibrarianSephirahService_UpdateNotifyFlow_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow"
+	LibrarianSephirahService_ListNotifyFlows_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows"
+	LibrarianSephirahService_CreateFeedConfig_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig"
+	LibrarianSephirahService_UpdateFeedConfig_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig"
+	LibrarianSephirahService_ListFeedConfigs_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs"
+	LibrarianSephirahService_ListFeedItems_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems"
+	LibrarianSephirahService_GroupFeedItems_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/GroupFeedItems"
+	LibrarianSephirahService_GetFeedItem_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem"
+	LibrarianSephirahService_GetBatchFeedItems_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems"
 )
 
 // LibrarianSephirahServiceClient is the client API for LibrarianSephirahService service.
@@ -118,6 +120,12 @@ type LibrarianSephirahServiceClient interface {
 	// `Binah` `download_token`
 	// Server will not check the
 	SimpleDownloadFile(ctx context.Context, in *SimpleDownloadFileRequest, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error)
+	// `Binah` `upload_token`
+	// Upload file through http url
+	PresignedUploadFile(ctx context.Context, in *PresignedUploadFileRequest, opts ...grpc.CallOption) (*PresignedUploadFileResponse, error)
+	// `Binah` `upload_token`
+	// Report file transfer status. Mainly used to trigger server post-process immediately
+	PresignedUploadFileStatus(ctx context.Context, in *PresignedUploadFileStatusRequest, opts ...grpc.CallOption) (*PresignedUploadFileStatusResponse, error)
 	// `Binah` `download_token`
 	// Download file through http url
 	PresignedDownloadFile(ctx context.Context, in *PresignedDownloadFileRequest, opts ...grpc.CallOption) (*PresignedDownloadFileResponse, error)
@@ -433,6 +441,24 @@ func (x *librarianSephirahServiceSimpleDownloadFileClient) Recv() (*SimpleDownlo
 		return nil, err
 	}
 	return m, nil
+}
+
+func (c *librarianSephirahServiceClient) PresignedUploadFile(ctx context.Context, in *PresignedUploadFileRequest, opts ...grpc.CallOption) (*PresignedUploadFileResponse, error) {
+	out := new(PresignedUploadFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PresignedUploadFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) PresignedUploadFileStatus(ctx context.Context, in *PresignedUploadFileStatusRequest, opts ...grpc.CallOption) (*PresignedUploadFileStatusResponse, error) {
+	out := new(PresignedUploadFileStatusResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PresignedUploadFileStatus_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *librarianSephirahServiceClient) PresignedDownloadFile(ctx context.Context, in *PresignedDownloadFileRequest, opts ...grpc.CallOption) (*PresignedDownloadFileResponse, error) {
@@ -867,6 +893,12 @@ type LibrarianSephirahServiceServer interface {
 	// `Binah` `download_token`
 	// Server will not check the
 	SimpleDownloadFile(*SimpleDownloadFileRequest, LibrarianSephirahService_SimpleDownloadFileServer) error
+	// `Binah` `upload_token`
+	// Upload file through http url
+	PresignedUploadFile(context.Context, *PresignedUploadFileRequest) (*PresignedUploadFileResponse, error)
+	// `Binah` `upload_token`
+	// Report file transfer status. Mainly used to trigger server post-process immediately
+	PresignedUploadFileStatus(context.Context, *PresignedUploadFileStatusRequest) (*PresignedUploadFileStatusResponse, error)
 	// `Binah` `download_token`
 	// Download file through http url
 	PresignedDownloadFile(context.Context, *PresignedDownloadFileRequest) (*PresignedDownloadFileResponse, error)
@@ -1001,6 +1033,12 @@ func (UnimplementedLibrarianSephirahServiceServer) SimpleUploadFile(LibrarianSep
 }
 func (UnimplementedLibrarianSephirahServiceServer) SimpleDownloadFile(*SimpleDownloadFileRequest, LibrarianSephirahService_SimpleDownloadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method SimpleDownloadFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) PresignedUploadFile(context.Context, *PresignedUploadFileRequest) (*PresignedUploadFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PresignedUploadFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) PresignedUploadFileStatus(context.Context, *PresignedUploadFileStatusRequest) (*PresignedUploadFileStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PresignedUploadFileStatus not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) PresignedDownloadFile(context.Context, *PresignedDownloadFileRequest) (*PresignedDownloadFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PresignedDownloadFile not implemented")
@@ -1434,6 +1472,42 @@ type librarianSephirahServiceSimpleDownloadFileServer struct {
 
 func (x *librarianSephirahServiceSimpleDownloadFileServer) Send(m *SimpleDownloadFileResponse) error {
 	return x.ServerStream.SendMsg(m)
+}
+
+func _LibrarianSephirahService_PresignedUploadFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PresignedUploadFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).PresignedUploadFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_PresignedUploadFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).PresignedUploadFile(ctx, req.(*PresignedUploadFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_PresignedUploadFileStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PresignedUploadFileStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).PresignedUploadFileStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_PresignedUploadFileStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).PresignedUploadFileStatus(ctx, req.(*PresignedUploadFileStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _LibrarianSephirahService_PresignedDownloadFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -2232,6 +2306,14 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLinkAccounts",
 			Handler:    _LibrarianSephirahService_ListLinkAccounts_Handler,
+		},
+		{
+			MethodName: "PresignedUploadFile",
+			Handler:    _LibrarianSephirahService_PresignedUploadFile_Handler,
+		},
+		{
+			MethodName: "PresignedUploadFileStatus",
+			Handler:    _LibrarianSephirahService_PresignedUploadFileStatus_Handler,
 		},
 		{
 			MethodName: "PresignedDownloadFile",

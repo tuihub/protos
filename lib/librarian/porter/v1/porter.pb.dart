@@ -1148,3 +1148,127 @@ class PresignedPullDataResponse extends $pb.GeneratedMessage {
   void clearPullUrl() => clearField(1);
 }
 
+class PresignedPushDataRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedPushDataRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..e<DataSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: DataSource.DATA_SOURCE_UNSPECIFIED, valueOf: DataSource.valueOf, enumValues: DataSource.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentId')
+    ..aOM<$2.Duration>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime', subBuilder: $2.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  PresignedPushDataRequest._() : super();
+  factory PresignedPushDataRequest({
+    DataSource? source,
+    $core.String? contentId,
+    $2.Duration? expireTime,
+  }) {
+    final _result = create();
+    if (source != null) {
+      _result.source = source;
+    }
+    if (contentId != null) {
+      _result.contentId = contentId;
+    }
+    if (expireTime != null) {
+      _result.expireTime = expireTime;
+    }
+    return _result;
+  }
+  factory PresignedPushDataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PresignedPushDataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PresignedPushDataRequest clone() => PresignedPushDataRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PresignedPushDataRequest copyWith(void Function(PresignedPushDataRequest) updates) => super.copyWith((message) => updates(message as PresignedPushDataRequest)) as PresignedPushDataRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PresignedPushDataRequest create() => PresignedPushDataRequest._();
+  PresignedPushDataRequest createEmptyInstance() => create();
+  static $pb.PbList<PresignedPushDataRequest> createRepeated() => $pb.PbList<PresignedPushDataRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PresignedPushDataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedPushDataRequest>(create);
+  static PresignedPushDataRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DataSource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(DataSource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $2.Duration get expireTime => $_getN(2);
+  @$pb.TagNumber(3)
+  set expireTime($2.Duration v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExpireTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpireTime() => clearField(3);
+  @$pb.TagNumber(3)
+  $2.Duration ensureExpireTime() => $_ensure(2);
+}
+
+class PresignedPushDataResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PresignedPushDataResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pushUrl')
+    ..hasRequiredFields = false
+  ;
+
+  PresignedPushDataResponse._() : super();
+  factory PresignedPushDataResponse({
+    $core.String? pushUrl,
+  }) {
+    final _result = create();
+    if (pushUrl != null) {
+      _result.pushUrl = pushUrl;
+    }
+    return _result;
+  }
+  factory PresignedPushDataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PresignedPushDataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PresignedPushDataResponse clone() => PresignedPushDataResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PresignedPushDataResponse copyWith(void Function(PresignedPushDataResponse) updates) => super.copyWith((message) => updates(message as PresignedPushDataResponse)) as PresignedPushDataResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PresignedPushDataResponse create() => PresignedPushDataResponse._();
+  PresignedPushDataResponse createEmptyInstance() => create();
+  static $pb.PbList<PresignedPushDataResponse> createRepeated() => $pb.PbList<PresignedPushDataResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PresignedPushDataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedPushDataResponse>(create);
+  static PresignedPushDataResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get pushUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set pushUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPushUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPushUrl() => clearField(1);
+}
+

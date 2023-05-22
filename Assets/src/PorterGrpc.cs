@@ -96,6 +96,10 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataRequest> __Marshaller_librarian_porter_v1_PresignedPullDataRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataResponse> __Marshaller_librarian_porter_v1_PresignedPullDataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest> __Marshaller_librarian_porter_v1_PresignedPushDataRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse> __Marshaller_librarian_porter_v1_PresignedPushDataResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse> __Method_PullFeed = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse>(
@@ -176,6 +180,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         "PresignedPullData",
         __Marshaller_librarian_porter_v1_PresignedPullDataRequest,
         __Marshaller_librarian_porter_v1_PresignedPullDataResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse> __Method_PresignedPushData = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PresignedPushData",
+        __Marshaller_librarian_porter_v1_PresignedPushDataRequest,
+        __Marshaller_librarian_porter_v1_PresignedPushDataResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -304,6 +316,18 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataResponse> PresignedPullData(global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Data` Generate http PUT url
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse> PresignedPushData(global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -767,6 +791,54 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_PresignedPullData, null, options, request);
       }
+      /// <summary>
+      /// `Data` Generate http PUT url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse PresignedPushData(global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PresignedPushData(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Data` Generate http PUT url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse PresignedPushData(global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PresignedPushData, null, options, request);
+      }
+      /// <summary>
+      /// `Data` Generate http PUT url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse> PresignedPushDataAsync(global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PresignedPushDataAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Data` Generate http PUT url
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse> PresignedPushDataAsync(global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PresignedPushData, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override LibrarianPorterServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -790,7 +862,8 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           .AddMethod(__Method_PullWiki, serviceImpl.PullWiki)
           .AddMethod(__Method_PullData, serviceImpl.PullData)
           .AddMethod(__Method_PushData, serviceImpl.PushData)
-          .AddMethod(__Method_PresignedPullData, serviceImpl.PresignedPullData).Build();
+          .AddMethod(__Method_PresignedPullData, serviceImpl.PresignedPullData)
+          .AddMethod(__Method_PresignedPushData, serviceImpl.PresignedPushData).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -810,6 +883,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       serviceBinder.AddMethod(__Method_PullData, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullDataResponse>(serviceImpl.PullData));
       serviceBinder.AddMethod(__Method_PushData, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushDataResponse>(serviceImpl.PushData));
       serviceBinder.AddMethod(__Method_PresignedPullData, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPullDataResponse>(serviceImpl.PresignedPullData));
+      serviceBinder.AddMethod(__Method_PresignedPushData, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataRequest, global::TuiHub.Protos.Librarian.Porter.V1.PresignedPushDataResponse>(serviceImpl.PresignedPushData));
     }
 
   }

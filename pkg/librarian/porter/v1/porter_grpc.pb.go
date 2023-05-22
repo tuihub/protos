@@ -29,6 +29,7 @@ const (
 	LibrarianPorterService_PullData_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullData"
 	LibrarianPorterService_PushData_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PushData"
 	LibrarianPorterService_PresignedPullData_FullMethodName      = "/librarian.porter.v1.LibrarianPorterService/PresignedPullData"
+	LibrarianPorterService_PresignedPushData_FullMethodName      = "/librarian.porter.v1.LibrarianPorterService/PresignedPushData"
 )
 
 // LibrarianPorterServiceClient is the client API for LibrarianPorterService service.
@@ -55,6 +56,8 @@ type LibrarianPorterServiceClient interface {
 	PushData(ctx context.Context, opts ...grpc.CallOption) (LibrarianPorterService_PushDataClient, error)
 	// `Data` Generate http GET url
 	PresignedPullData(ctx context.Context, in *PresignedPullDataRequest, opts ...grpc.CallOption) (*PresignedPullDataResponse, error)
+	// `Data` Generate http PUT url
+	PresignedPushData(ctx context.Context, in *PresignedPushDataRequest, opts ...grpc.CallOption) (*PresignedPushDataResponse, error)
 }
 
 type librarianPorterServiceClient struct {
@@ -203,6 +206,15 @@ func (c *librarianPorterServiceClient) PresignedPullData(ctx context.Context, in
 	return out, nil
 }
 
+func (c *librarianPorterServiceClient) PresignedPushData(ctx context.Context, in *PresignedPushDataRequest, opts ...grpc.CallOption) (*PresignedPushDataResponse, error) {
+	out := new(PresignedPushDataResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PresignedPushData_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianPorterServiceServer is the server API for LibrarianPorterService service.
 // All implementations must embed UnimplementedLibrarianPorterServiceServer
 // for forward compatibility
@@ -227,6 +239,8 @@ type LibrarianPorterServiceServer interface {
 	PushData(LibrarianPorterService_PushDataServer) error
 	// `Data` Generate http GET url
 	PresignedPullData(context.Context, *PresignedPullDataRequest) (*PresignedPullDataResponse, error)
+	// `Data` Generate http PUT url
+	PresignedPushData(context.Context, *PresignedPushDataRequest) (*PresignedPushDataResponse, error)
 	mustEmbedUnimplementedLibrarianPorterServiceServer()
 }
 
@@ -263,6 +277,9 @@ func (UnimplementedLibrarianPorterServiceServer) PushData(LibrarianPorterService
 }
 func (UnimplementedLibrarianPorterServiceServer) PresignedPullData(context.Context, *PresignedPullDataRequest) (*PresignedPullDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PresignedPullData not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) PresignedPushData(context.Context, *PresignedPushDataRequest) (*PresignedPushDataResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PresignedPushData not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) mustEmbedUnimplementedLibrarianPorterServiceServer() {
 }
@@ -469,6 +486,24 @@ func _LibrarianPorterService_PresignedPullData_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianPorterService_PresignedPushData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PresignedPushDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).PresignedPushData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_PresignedPushData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).PresignedPushData(ctx, req.(*PresignedPushDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianPorterService_ServiceDesc is the grpc.ServiceDesc for LibrarianPorterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -507,6 +542,10 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PresignedPullData",
 			Handler:    _LibrarianPorterService_PresignedPullData_Handler,
+		},
+		{
+			MethodName: "PresignedPushData",
+			Handler:    _LibrarianPorterService_PresignedPushData_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

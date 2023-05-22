@@ -317,3 +317,25 @@ const PresignedPullDataResponse$json = const {
 
 /// Descriptor for `PresignedPullDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List presignedPullDataResponseDescriptor = $convert.base64Decode('ChlQcmVzaWduZWRQdWxsRGF0YVJlc3BvbnNlEhkKCHB1bGxfdXJsGAEgASgJUgdwdWxsVXJs');
+@$core.Deprecated('Use presignedPushDataRequestDescriptor instead')
+const PresignedPushDataRequest$json = const {
+  '1': 'PresignedPushDataRequest',
+  '2': const [
+    const {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
+    const {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    const {'1': 'expire_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'expireTime'},
+  ],
+};
+
+/// Descriptor for `PresignedPushDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedPushDataRequestDescriptor = $convert.base64Decode('ChhQcmVzaWduZWRQdXNoRGF0YVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElkEjoKC2V4cGlyZV90aW1lGAMgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgpleHBpcmVUaW1l');
+@$core.Deprecated('Use presignedPushDataResponseDescriptor instead')
+const PresignedPushDataResponse$json = const {
+  '1': 'PresignedPushDataResponse',
+  '2': const [
+    const {'1': 'push_url', '3': 1, '4': 1, '5': 9, '10': 'pushUrl'},
+  ],
+};
+
+/// Descriptor for `PresignedPushDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedPushDataResponseDescriptor = $convert.base64Decode('ChlQcmVzaWduZWRQdXNoRGF0YVJlc3BvbnNlEhkKCHB1c2hfdXJsGAEgASgJUgdwdXNoVXJs');

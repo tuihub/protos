@@ -803,6 +803,50 @@ function deserialize_librarian_sephirah_v1_PresignedDownloadFileResponse(buffer_
   return librarian_sephirah_v1_binah_pb.PresignedDownloadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_PresignedUploadFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedUploadFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PresignedUploadFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PresignedUploadFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.PresignedUploadFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PresignedUploadFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedUploadFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PresignedUploadFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PresignedUploadFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.PresignedUploadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PresignedUploadFileStatusRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedUploadFileStatusRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PresignedUploadFileStatusRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PresignedUploadFileStatusRequest(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.PresignedUploadFileStatusRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PresignedUploadFileStatusResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedUploadFileStatusResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PresignedUploadFileStatusResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PresignedUploadFileStatusResponse(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.PresignedUploadFileStatusResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_PurchaseAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.PurchaseAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.PurchaseAppRequest');
@@ -1438,6 +1482,32 @@ simpleDownloadFile: {
     requestDeserialize: deserialize_librarian_sephirah_v1_SimpleDownloadFileRequest,
     responseSerialize: serialize_librarian_sephirah_v1_SimpleDownloadFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SimpleDownloadFileResponse,
+  },
+  // `Binah` `upload_token`
+// Upload file through http url
+presignedUploadFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_binah_pb.PresignedUploadFileRequest,
+    responseType: librarian_sephirah_v1_binah_pb.PresignedUploadFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_PresignedUploadFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_PresignedUploadFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_PresignedUploadFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_PresignedUploadFileResponse,
+  },
+  // `Binah` `upload_token`
+// Report file transfer status. Mainly used to trigger server post-process immediately
+presignedUploadFileStatus: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFileStatus',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_binah_pb.PresignedUploadFileStatusRequest,
+    responseType: librarian_sephirah_v1_binah_pb.PresignedUploadFileStatusResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_PresignedUploadFileStatusRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_PresignedUploadFileStatusRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_PresignedUploadFileStatusResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_PresignedUploadFileStatusResponse,
   },
   // `Binah` `download_token`
 // Download file through http url

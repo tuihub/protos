@@ -144,6 +144,40 @@ const SimpleDownloadFileResponse$json = const {
 
 /// Descriptor for `SimpleDownloadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List simpleDownloadFileResponseDescriptor = $convert.base64Decode('ChpTaW1wbGVEb3dubG9hZEZpbGVSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRh');
+@$core.Deprecated('Use presignedUploadFileRequestDescriptor instead')
+const PresignedUploadFileRequest$json = const {
+  '1': 'PresignedUploadFileRequest',
+};
+
+/// Descriptor for `PresignedUploadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedUploadFileRequestDescriptor = $convert.base64Decode('ChpQcmVzaWduZWRVcGxvYWRGaWxlUmVxdWVzdA==');
+@$core.Deprecated('Use presignedUploadFileResponseDescriptor instead')
+const PresignedUploadFileResponse$json = const {
+  '1': 'PresignedUploadFileResponse',
+  '2': const [
+    const {'1': 'upload_url', '3': 1, '4': 1, '5': 9, '10': 'uploadUrl'},
+  ],
+};
+
+/// Descriptor for `PresignedUploadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedUploadFileResponseDescriptor = $convert.base64Decode('ChtQcmVzaWduZWRVcGxvYWRGaWxlUmVzcG9uc2USHQoKdXBsb2FkX3VybBgBIAEoCVIJdXBsb2FkVXJs');
+@$core.Deprecated('Use presignedUploadFileStatusRequestDescriptor instead')
+const PresignedUploadFileStatusRequest$json = const {
+  '1': 'PresignedUploadFileStatusRequest',
+  '2': const [
+    const {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileTransferStatus', '10': 'status'},
+  ],
+};
+
+/// Descriptor for `PresignedUploadFileStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedUploadFileStatusRequestDescriptor = $convert.base64Decode('CiBQcmVzaWduZWRVcGxvYWRGaWxlU3RhdHVzUmVxdWVzdBJBCgZzdGF0dXMYASABKA4yKS5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVRyYW5zZmVyU3RhdHVzUgZzdGF0dXM=');
+@$core.Deprecated('Use presignedUploadFileStatusResponseDescriptor instead')
+const PresignedUploadFileStatusResponse$json = const {
+  '1': 'PresignedUploadFileStatusResponse',
+};
+
+/// Descriptor for `PresignedUploadFileStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List presignedUploadFileStatusResponseDescriptor = $convert.base64Decode('CiFQcmVzaWduZWRVcGxvYWRGaWxlU3RhdHVzUmVzcG9uc2U=');
 @$core.Deprecated('Use presignedDownloadFileRequestDescriptor instead')
 const PresignedDownloadFileRequest$json = const {
   '1': 'PresignedDownloadFileRequest',

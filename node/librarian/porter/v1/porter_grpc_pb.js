@@ -28,6 +28,28 @@ function deserialize_librarian_porter_v1_PresignedPullDataResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.PresignedPullDataResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_porter_v1_PresignedPushDataRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PresignedPushDataRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PresignedPushDataRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_PresignedPushDataRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PresignedPushDataRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_PresignedPushDataResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PresignedPushDataResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PresignedPushDataResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_PresignedPushDataResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PresignedPushDataResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_porter_v1_PullAccountAppRelationRequest(arg) {
   if (!(arg instanceof librarian_porter_v1_porter_pb.PullAccountAppRelationRequest)) {
     throw new Error('Expected argument of type librarian.porter.v1.PullAccountAppRelationRequest');
@@ -356,6 +378,18 @@ presignedPullData: {
     requestDeserialize: deserialize_librarian_porter_v1_PresignedPullDataRequest,
     responseSerialize: serialize_librarian_porter_v1_PresignedPullDataResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PresignedPullDataResponse,
+  },
+  // `Data` Generate http PUT url
+presignedPushData: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PresignedPushData',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PresignedPushDataRequest,
+    responseType: librarian_porter_v1_porter_pb.PresignedPushDataResponse,
+    requestSerialize: serialize_librarian_porter_v1_PresignedPushDataRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PresignedPushDataRequest,
+    responseSerialize: serialize_librarian_porter_v1_PresignedPushDataResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PresignedPushDataResponse,
   },
 };
 

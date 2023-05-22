@@ -4,6 +4,14 @@ pub mod librarian_sephirah_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    /**
+ Sephirah contains the core logic and currently divided into the following modules:
+ 1. `Tiphereth` handles account data and provides permission verification
+ 2. `Gebura` handles application data
+ 3. `Binah` handles file transfer
+ 4. `Yesod` handles feed data
+ 5. `Netzach` handles notifications
+*/
     #[derive(Debug, Clone)]
     pub struct LibrarianSephirahServiceClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -70,6 +78,8 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.accept_compressed(encoding);
             self
         }
+        /** For manual inspection only, the client may display but should not parse the response.
+*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -408,6 +418,53 @@ pub mod librarian_sephirah_service_client {
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile",
             );
             self.inner.server_streaming(request.into_request(), path, codec).await
+        }
+        /** `Binah` `upload_token`
+ Upload file through http url
+*/
+        pub async fn presigned_upload_file(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PresignedUploadFileRequest>,
+        ) -> Result<tonic::Response<super::PresignedUploadFileResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFile",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Binah` `upload_token`
+ Report file transfer status. Mainly used to trigger server post-process immediately
+*/
+        pub async fn presigned_upload_file_status(
+            &mut self,
+            request: impl tonic::IntoRequest<super::PresignedUploadFileStatusRequest>,
+        ) -> Result<
+            tonic::Response<super::PresignedUploadFileStatusResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFileStatus",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
         }
         /** `Binah` `download_token`
  Download file through http url
@@ -1099,8 +1156,6 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Netzach` `Normal`
-*/
         pub async fn update_notify_flow(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateNotifyFlowRequest>,
@@ -1281,6 +1336,8 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
+        /** For manual inspection only, the client may display but should not parse the response.
+*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -1400,6 +1457,23 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::SimpleDownloadFileRequest>,
         ) -> Result<tonic::Response<Self::SimpleDownloadFileStream>, tonic::Status>;
+        /** `Binah` `upload_token`
+ Upload file through http url
+*/
+        async fn presigned_upload_file(
+            &self,
+            request: tonic::Request<super::PresignedUploadFileRequest>,
+        ) -> Result<tonic::Response<super::PresignedUploadFileResponse>, tonic::Status>;
+        /** `Binah` `upload_token`
+ Report file transfer status. Mainly used to trigger server post-process immediately
+*/
+        async fn presigned_upload_file_status(
+            &self,
+            request: tonic::Request<super::PresignedUploadFileStatusRequest>,
+        ) -> Result<
+            tonic::Response<super::PresignedUploadFileStatusResponse>,
+            tonic::Status,
+        >;
         /** `Binah` `download_token`
  Download file through http url
 */
@@ -1602,8 +1676,6 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::CreateNotifyFlowRequest>,
         ) -> Result<tonic::Response<super::CreateNotifyFlowResponse>, tonic::Status>;
-        /** `Netzach` `Normal`
-*/
         async fn update_notify_flow(
             &self,
             request: tonic::Request<super::UpdateNotifyFlowRequest>,
@@ -1641,6 +1713,14 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<super::GetBatchFeedItemsRequest>,
         ) -> Result<tonic::Response<super::GetBatchFeedItemsResponse>, tonic::Status>;
     }
+    /**
+ Sephirah contains the core logic and currently divided into the following modules:
+ 1. `Tiphereth` handles account data and provides permission verification
+ 2. `Gebura` handles application data
+ 3. `Binah` handles file transfer
+ 4. `Yesod` handles feed data
+ 5. `Netzach` handles notifications
+*/
     #[derive(Debug)]
     pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
         inner: _Inner<T>,
@@ -2300,6 +2380,93 @@ pub mod librarian_sephirah_service_server {
                                 send_compression_encodings,
                             );
                         let res = grpc.server_streaming(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFile" => {
+                    #[allow(non_camel_case_types)]
+                    struct PresignedUploadFileSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::PresignedUploadFileRequest>
+                    for PresignedUploadFileSvc<T> {
+                        type Response = super::PresignedUploadFileResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::PresignedUploadFileRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).presigned_upload_file(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PresignedUploadFileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFileStatus" => {
+                    #[allow(non_camel_case_types)]
+                    struct PresignedUploadFileStatusSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<
+                        super::PresignedUploadFileStatusRequest,
+                    > for PresignedUploadFileStatusSvc<T> {
+                        type Response = super::PresignedUploadFileStatusResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::PresignedUploadFileStatusRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move {
+                                (*inner).presigned_upload_file_status(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = PresignedUploadFileStatusSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)
