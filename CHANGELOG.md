@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.26](https://github.com/TuiHub/Protos/compare/v0.2.25...v0.2.26) (2023-05-22)
+
+
+### Features
+
+* add presigned upload support ([d763c28](https://github.com/TuiHub/Protos/commit/d763c288da96b78f3d6450f585996d356db7e30d))
+
 ## [0.2.25](https://github.com/TuiHub/Protos/compare/v0.2.24...v0.2.25) (2023-05-22)
 
 
