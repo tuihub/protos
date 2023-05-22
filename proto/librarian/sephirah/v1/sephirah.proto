@@ -115,9 +115,9 @@ service LibrarianSephirahService {
   rpc ReportAppPackages(stream ReportAppPackagesRequest) returns (stream ReportAppPackagesResponse);
 
   // `Gebura` `Normal`
-  rpc AddAppPackageRunTime(AddAppPackageRunTimeRequest) return (AddAppPackageRunTimeResponse);
+  rpc AddAppPackageRunTime(AddAppPackageRunTimeRequest) returns (AddAppPackageRunTimeResponse);
   // `Gebura` `Normal`
-  rpc GetAppPackageRunTime(GetAppPackageRunTimeRequest) return (GetAppPackageRunTimeResponse);
+  rpc GetAppPackageRunTime(GetAppPackageRunTimeRequest) returns (GetAppPackageRunTimeResponse);
 
   // `Gebura` `Normal`
   rpc UploadGameSaveFile(UploadGameSaveFileRequest) returns (UploadGameSaveFileResponse);
