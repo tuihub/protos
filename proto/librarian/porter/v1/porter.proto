@@ -54,6 +54,8 @@ service LibrarianPorterService {
   rpc PushData(stream PushDataRequest) returns (PushDataResponse);
   // `Data` Generate http GET url
   rpc PresignedPullData(PresignedPullDataRequest) returns (PresignedPullDataResponse);
+  // `Data` Generate http PUT url
+  rpc PresignedPushData(PresignedPushDataRequest) returns (PresignedPushDataResponse);
 }
 
 message PullFeedRequest {
@@ -143,6 +145,16 @@ message PresignedPullDataRequest {
 
 message PresignedPullDataResponse {
   string pull_url = 1;
+}
+
+message PresignedPushDataRequest {
+  DataSource source = 1;
+  string content_id = 2;
+  google.protobuf.Duration expire_time = 3;
+}
+
+message PresignedPushDataResponse {
+  string push_url = 1;
 }
 
 enum AccountAppRelationType {

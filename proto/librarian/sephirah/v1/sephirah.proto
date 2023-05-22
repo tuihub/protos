@@ -62,6 +62,12 @@ service LibrarianSephirahService {
   // `Binah` `download_token`
   // Server will not check the
   rpc SimpleDownloadFile(SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
+  // `Binah` `upload_token`
+  // Upload file through http url
+  rpc PresignedUploadFile(PresignedUploadFileRequest) returns (PresignedUploadFileResponse);
+  // `Binah` `upload_token`
+  // Report file transfer status. Mainly used to trigger server post-process immediately
+  rpc PresignedUploadFileStatus(PresignedUploadFileStatusRequest) returns (PresignedUploadFileStatusResponse);
   // `Binah` `download_token`
   // Download file through http url
   rpc PresignedDownloadFile(PresignedDownloadFileRequest) returns (PresignedDownloadFileResponse);

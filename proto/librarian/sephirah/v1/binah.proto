@@ -47,6 +47,17 @@ message SimpleDownloadFileResponse {
   bytes data = 1;
 }
 
+message PresignedUploadFileRequest {}
+message PresignedUploadFileResponse {
+  string upload_url = 1;
+}
+
+message PresignedUploadFileStatusRequest {
+  FileTransferStatus status = 1;
+}
+
+message PresignedUploadFileStatusResponse {}
+
 message PresignedDownloadFileRequest {}
 message PresignedDownloadFileResponse {
   // Should follow AWS S3 API
