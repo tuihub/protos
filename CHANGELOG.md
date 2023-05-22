@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.25](https://github.com/TuiHub/Protos/compare/v0.2.24...v0.2.25) (2023-05-22)
+
+
+### Features
+
+* **gebura:** add AppPackageRunTime ([cc6d00f](https://github.com/TuiHub/Protos/commit/cc6d00f752459de1725842877d8e89cac44991ba))
+
 ## [0.2.24](https://github.com/TuiHub/Protos/compare/v0.2.23...v0.2.24) (2023-05-20)
 
 
