@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package librarian.miner.v1;
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Miner.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/miner/v1;v1";
+
+/*
+ *The main role of Miner is to encapsulate compute-intensive tasks
+ */
+service LibrarianMinerService {
+  rpc RecognizeImageBinary(stream RecognizeImageBinaryRequest) returns (RecognizeImageBinaryResponse);
+  rpc RecognizeImageURL(RecognizeImageURLRequest) returns (RecognizeImageURLResponse);
+}
+
+message RecognizeImageBinaryRequest {
+  bytes data = 1;
+}
+
+message RecognizeImageBinaryResponse {
+  repeated RecognizeImageResult results = 1;
+}
+
+message RecognizeImageURLRequest {
+  string url = 1;
+}
+
+message RecognizeImageURLResponse {
+  repeated RecognizeImageResult results = 1;
+}
+
+message RecognizeImageResult {
+  double confidence = 1;
+  string text = 2;
+}
