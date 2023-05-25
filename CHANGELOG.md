@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.27](https://github.com/TuiHub/Protos/compare/v0.2.26...v0.2.27) (2023-05-25)
+
+
+### Features
+
+* add miner module ([e23d817](https://github.com/TuiHub/Protos/commit/e23d817b10f31d4e93d39e73b7216bfa9f641a7f))
+
 ## [0.2.26](https://github.com/TuiHub/Protos/compare/v0.2.25...v0.2.26) (2023-05-22)
 
 
