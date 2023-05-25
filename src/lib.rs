@@ -14,6 +14,14 @@ pub mod librarian {
             // @@protoc_insertion_point(librarian.mapper.v1)
         }
     }
+    pub mod miner {
+        #[cfg(feature = "librarian-miner-v1")]
+        // @@protoc_insertion_point(attribute:librarian.miner.v1)
+        pub mod v1 {
+            include!("librarian.miner.v1.rs");
+            // @@protoc_insertion_point(librarian.miner.v1)
+        }
+    }
     pub mod porter {
         #[cfg(feature = "librarian-porter-v1")]
         // @@protoc_insertion_point(attribute:librarian.porter.v1)
