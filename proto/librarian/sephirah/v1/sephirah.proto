@@ -130,7 +130,18 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc DownloadGameSaveFile(DownloadGameSaveFileRequest) returns (DownloadGameSaveFileResponse);
   // `Gebura` `Normal`
-  rpc ListGameSaveFile(ListGameSaveFileRequest) returns (ListGameSaveFileResponse);
+  rpc ListGameSaveFiles(ListGameSaveFilesRequest) returns (ListGameSaveFilesResponse);
+  // `Gebura` `Normal`
+  rpc RemoveGameSaveFile(RemoveGameSaveFileRequest) returns (RemoveGameSaveFileResponse);
+  // `Gebura` `Normal`
+  rpc PinGameSaveFile(PinGameSaveFileRequest) returns (PinGameSaveFileResponse);
+  // `Gebura` `Normal`
+  rpc UnpinGameSaveFile(UnpinGameSaveFileRequest) returns (UnpinGameSaveFileResponse);
+
+  // `Gebura` `Admin`
+  rpc SetUserSaveFileCapacity(SetUserSaveFileCapacityRequest) returns (SetUserSaveFileCapacityResponse);
+  // `Gebura` `Normal`
+  rpc SetSaveFileRotation(SetSaveFileRotationRequest) returns (SetSaveFileRotationResponse);
 
   // `Netzach` `Normal`
   rpc CreateNotifyTarget(CreateNotifyTargetRequest) returns (CreateNotifyTargetResponse);

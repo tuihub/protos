@@ -171,12 +171,58 @@ message DownloadGameSaveFileResponse {
   string download_token = 2;
 }
 
-message ListGameSaveFileRequest {
+message ListGameSaveFilesRequest {
   librarian.v1.PagingRequest paging = 1;
   librarian.v1.InternalID app_package_id = 2;
 }
 
-message ListGameSaveFileResponse {
+message ListGameSaveFilesResponse {
+  message Result {
+    FileMetadata files = 1;
+    bool pinned = 2;
+  }
   librarian.v1.PagingResponse paging = 1;
-  repeated FileMetadata files = 2;
+  repeated Result results = 2;
 }
+
+message RemoveGameSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message RemoveGameSaveFileResponse {}
+
+message PinGameSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message PinGameSaveFileResponse {}
+
+message UnpinGameSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message UnpinGameSaveFileResponse {}
+
+message SetUserSaveFileCapacityRequest {
+  librarian.v1.InternalID user_id = 1;
+  // set null to restore server default value
+  optional int64 capacity_bytes = 2;
+}
+
+message SetUserSaveFileCapacityResponse {}
+
+message SetSaveFileRotationRequest {
+  VaildScope vaild_scope = 1;
+  int64 count = 2;
+  // set false to disable save file rotation(unlimited save file)
+  bool enabled = 3;
+}
+
+enum VaildScope {
+  VAILD_SCOPE_UNSPECIFIED = 0;
+  VAILD_SCOPE_ACCOUNT = 1;
+  VAILD_SCOPE_APP = 2;
+  VAILD_SCOPE_APP_PACKAGE = 3;
+}
+
+message SetSaveFileRotationResponse {}
