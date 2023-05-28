@@ -7043,7 +7043,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListFeedItemsResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ListGameSaveFileRequest {
+impl serde::Serialize for ListGameSaveFilesRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -7057,7 +7057,7 @@ impl serde::Serialize for ListGameSaveFileRequest {
         if self.app_package_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFileRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
@@ -7067,7 +7067,7 @@ impl serde::Serialize for ListGameSaveFileRequest {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for ListGameSaveFileRequest {
+impl<'de> serde::Deserialize<'de> for ListGameSaveFilesRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -7115,13 +7115,13 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListGameSaveFileRequest;
+            type Value = ListGameSaveFilesRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFileRequest")
+                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFilesRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListGameSaveFileRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListGameSaveFilesRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -7143,16 +7143,16 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileRequest {
                         }
                     }
                 }
-                Ok(ListGameSaveFileRequest {
+                Ok(ListGameSaveFilesRequest {
                     paging: paging__,
                     app_package_id: app_package_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFileRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFilesRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ListGameSaveFileResponse {
+impl serde::Serialize for ListGameSaveFilesResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -7163,20 +7163,20 @@ impl serde::Serialize for ListGameSaveFileResponse {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.files.is_empty() {
+        if !self.results.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFileResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.files.is_empty() {
-            struct_ser.serialize_field("files", &self.files)?;
+        if !self.results.is_empty() {
+            struct_ser.serialize_field("results", &self.results)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
+impl<'de> serde::Deserialize<'de> for ListGameSaveFilesResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -7184,13 +7184,13 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "files",
+            "results",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            Files,
+            Results,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -7213,7 +7213,7 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "files" => Ok(GeneratedField::Files),
+                            "results" => Ok(GeneratedField::Results),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7223,18 +7223,18 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListGameSaveFileResponse;
+            type Value = ListGameSaveFilesResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFileResponse")
+                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFilesResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListGameSaveFileResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListGameSaveFilesResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut files__ = None;
+                let mut results__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -7243,21 +7243,129 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFileResponse {
                             }
                             paging__ = map.next_value()?;
                         }
+                        GeneratedField::Results => {
+                            if results__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("results"));
+                            }
+                            results__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListGameSaveFilesResponse {
+                    paging: paging__,
+                    results: results__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for list_game_save_files_response::Result {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.files.is_some() {
+            len += 1;
+        }
+        if self.pinned {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse.Result", len)?;
+        if let Some(v) = self.files.as_ref() {
+            struct_ser.serialize_field("files", v)?;
+        }
+        if self.pinned {
+            struct_ser.serialize_field("pinned", &self.pinned)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for list_game_save_files_response::Result {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "files",
+            "pinned",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Files,
+            Pinned,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "files" => Ok(GeneratedField::Files),
+                            "pinned" => Ok(GeneratedField::Pinned),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = list_game_save_files_response::Result;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFilesResponse.Result")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<list_game_save_files_response::Result, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut files__ = None;
+                let mut pinned__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
                         GeneratedField::Files => {
                             if files__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("files"));
                             }
-                            files__ = Some(map.next_value()?);
+                            files__ = map.next_value()?;
+                        }
+                        GeneratedField::Pinned => {
+                            if pinned__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("pinned"));
+                            }
+                            pinned__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(ListGameSaveFileResponse {
-                    paging: paging__,
-                    files: files__.unwrap_or_default(),
+                Ok(list_game_save_files_response::Result {
+                    files: files__,
+                    pinned: pinned__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFileResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse.Result", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ListImagesRequest {
@@ -9541,6 +9649,168 @@ impl<'de> serde::Deserialize<'de> for PickAppResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.PickAppResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for PinGameSaveFileRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinGameSaveFileRequest", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PinGameSaveFileRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PinGameSaveFileRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.PinGameSaveFileRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PinGameSaveFileRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(PinGameSaveFileRequest {
+                    id: id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.PinGameSaveFileRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PinGameSaveFileResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinGameSaveFileResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PinGameSaveFileResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PinGameSaveFileResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.PinGameSaveFileResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PinGameSaveFileResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(PinGameSaveFileResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.PinGameSaveFileResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for PresignedDownloadFileRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -10538,6 +10808,168 @@ impl<'de> serde::Deserialize<'de> for RefreshTokenResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.RefreshTokenResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for RemoveGameSaveFileRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveGameSaveFileRequest", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = RemoveGameSaveFileRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.RemoveGameSaveFileRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<RemoveGameSaveFileRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(RemoveGameSaveFileRequest {
+                    id: id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.RemoveGameSaveFileRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for RemoveGameSaveFileResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveGameSaveFileResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = RemoveGameSaveFileResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.RemoveGameSaveFileResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<RemoveGameSaveFileResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(RemoveGameSaveFileResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.RemoveGameSaveFileResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for ReportAppPackagesRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -11352,6 +11784,390 @@ impl<'de> serde::Deserialize<'de> for ServerProtocolSummary {
         deserializer.deserialize_struct("librarian.sephirah.v1.ServerProtocolSummary", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for SetSaveFileRotationRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.vaild_scope != 0 {
+            len += 1;
+        }
+        if self.count != 0 {
+            len += 1;
+        }
+        if self.enabled {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetSaveFileRotationRequest", len)?;
+        if self.vaild_scope != 0 {
+            let v = VaildScope::from_i32(self.vaild_scope)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.vaild_scope)))?;
+            struct_ser.serialize_field("vaildScope", &v)?;
+        }
+        if self.count != 0 {
+            struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
+        }
+        if self.enabled {
+            struct_ser.serialize_field("enabled", &self.enabled)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "vaild_scope",
+            "vaildScope",
+            "count",
+            "enabled",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            VaildScope,
+            Count,
+            Enabled,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "vaildScope" | "vaild_scope" => Ok(GeneratedField::VaildScope),
+                            "count" => Ok(GeneratedField::Count),
+                            "enabled" => Ok(GeneratedField::Enabled),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SetSaveFileRotationRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SetSaveFileRotationRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetSaveFileRotationRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut vaild_scope__ = None;
+                let mut count__ = None;
+                let mut enabled__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::VaildScope => {
+                            if vaild_scope__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("vaildScope"));
+                            }
+                            vaild_scope__ = Some(map.next_value::<VaildScope>()? as i32);
+                        }
+                        GeneratedField::Count => {
+                            if count__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("count"));
+                            }
+                            count__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::Enabled => {
+                            if enabled__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("enabled"));
+                            }
+                            enabled__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(SetSaveFileRotationRequest {
+                    vaild_scope: vaild_scope__.unwrap_or_default(),
+                    count: count__.unwrap_or_default(),
+                    enabled: enabled__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetSaveFileRotationRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SetSaveFileRotationResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetSaveFileRotationResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SetSaveFileRotationResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SetSaveFileRotationResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SetSaveFileRotationResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetSaveFileRotationResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(SetSaveFileRotationResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetSaveFileRotationResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SetUserSaveFileCapacityRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.user_id.is_some() {
+            len += 1;
+        }
+        if self.capacity_bytes.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityRequest", len)?;
+        if let Some(v) = self.user_id.as_ref() {
+            struct_ser.serialize_field("userId", v)?;
+        }
+        if let Some(v) = self.capacity_bytes.as_ref() {
+            struct_ser.serialize_field("capacityBytes", ToString::to_string(&v).as_str())?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SetUserSaveFileCapacityRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "user_id",
+            "userId",
+            "capacity_bytes",
+            "capacityBytes",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            UserId,
+            CapacityBytes,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "userId" | "user_id" => Ok(GeneratedField::UserId),
+                            "capacityBytes" | "capacity_bytes" => Ok(GeneratedField::CapacityBytes),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SetUserSaveFileCapacityRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SetUserSaveFileCapacityRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetUserSaveFileCapacityRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut user_id__ = None;
+                let mut capacity_bytes__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::UserId => {
+                            if user_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("userId"));
+                            }
+                            user_id__ = map.next_value()?;
+                        }
+                        GeneratedField::CapacityBytes => {
+                            if capacity_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("capacityBytes"));
+                            }
+                            capacity_bytes__ = 
+                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                            ;
+                        }
+                    }
+                }
+                Ok(SetUserSaveFileCapacityRequest {
+                    user_id: user_id__,
+                    capacity_bytes: capacity_bytes__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SetUserSaveFileCapacityResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SetUserSaveFileCapacityResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SetUserSaveFileCapacityResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SetUserSaveFileCapacityResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetUserSaveFileCapacityResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(SetUserSaveFileCapacityResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for SimpleDownloadFileRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -12026,6 +12842,168 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.UnLinkAccountResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UnpinGameSaveFileRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinGameSaveFileRequest", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UnpinGameSaveFileRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UnpinGameSaveFileRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnpinGameSaveFileRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(UnpinGameSaveFileRequest {
+                    id: id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UnpinGameSaveFileRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UnpinGameSaveFileResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinGameSaveFileResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UnpinGameSaveFileResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UnpinGameSaveFileResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnpinGameSaveFileResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(UnpinGameSaveFileResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UnpinGameSaveFileResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for UpdateAppPackageRequest {
@@ -14393,6 +15371,85 @@ impl<'de> serde::Deserialize<'de> for UserType {
                     "USER_TYPE_ADMIN" => Ok(UserType::Admin),
                     "USER_TYPE_NORMAL" => Ok(UserType::Normal),
                     "USER_TYPE_SENTINEL" => Ok(UserType::Sentinel),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for VaildScope {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "VAILD_SCOPE_UNSPECIFIED",
+            Self::Account => "VAILD_SCOPE_ACCOUNT",
+            Self::App => "VAILD_SCOPE_APP",
+            Self::AppPackage => "VAILD_SCOPE_APP_PACKAGE",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for VaildScope {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "VAILD_SCOPE_UNSPECIFIED",
+            "VAILD_SCOPE_ACCOUNT",
+            "VAILD_SCOPE_APP",
+            "VAILD_SCOPE_APP_PACKAGE",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = VaildScope;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(VaildScope::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(VaildScope::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "VAILD_SCOPE_UNSPECIFIED" => Ok(VaildScope::Unspecified),
+                    "VAILD_SCOPE_ACCOUNT" => Ok(VaildScope::Account),
+                    "VAILD_SCOPE_APP" => Ok(VaildScope::App),
+                    "VAILD_SCOPE_APP_PACKAGE" => Ok(VaildScope::AppPackage),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

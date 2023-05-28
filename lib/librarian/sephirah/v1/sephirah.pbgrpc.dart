@@ -285,12 +285,43 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($4.DownloadGameSaveFileRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $4.DownloadGameSaveFileResponse.fromBuffer(value));
-  static final _$listGameSaveFile = $grpc.ClientMethod<
-          $4.ListGameSaveFileRequest, $4.ListGameSaveFileResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile',
-      ($4.ListGameSaveFileRequest value) => value.writeToBuffer(),
+  static final _$listGameSaveFiles = $grpc.ClientMethod<
+          $4.ListGameSaveFilesRequest, $4.ListGameSaveFilesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles',
+      ($4.ListGameSaveFilesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
-          $4.ListGameSaveFileResponse.fromBuffer(value));
+          $4.ListGameSaveFilesResponse.fromBuffer(value));
+  static final _$removeGameSaveFile = $grpc.ClientMethod<
+          $4.RemoveGameSaveFileRequest, $4.RemoveGameSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RemoveGameSaveFile',
+      ($4.RemoveGameSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.RemoveGameSaveFileResponse.fromBuffer(value));
+  static final _$pinGameSaveFile =
+      $grpc.ClientMethod<$4.PinGameSaveFileRequest, $4.PinGameSaveFileResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/PinGameSaveFile',
+          ($4.PinGameSaveFileRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $4.PinGameSaveFileResponse.fromBuffer(value));
+  static final _$unpinGameSaveFile = $grpc.ClientMethod<
+          $4.UnpinGameSaveFileRequest, $4.UnpinGameSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile',
+      ($4.UnpinGameSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.UnpinGameSaveFileResponse.fromBuffer(value));
+  static final _$setUserSaveFileCapacity = $grpc.ClientMethod<
+          $4.SetUserSaveFileCapacityRequest,
+          $4.SetUserSaveFileCapacityResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity',
+      ($4.SetUserSaveFileCapacityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.SetUserSaveFileCapacityResponse.fromBuffer(value));
+  static final _$setSaveFileRotation = $grpc.ClientMethod<
+          $4.SetSaveFileRotationRequest, $4.SetSaveFileRotationResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation',
+      ($4.SetSaveFileRotationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.SetSaveFileRotationResponse.fromBuffer(value));
   static final _$createNotifyTarget = $grpc.ClientMethod<
           $5.CreateNotifyTargetRequest, $5.CreateNotifyTargetResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget',
@@ -637,10 +668,41 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$downloadGameSaveFile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.ListGameSaveFileResponse> listGameSaveFile(
-      $4.ListGameSaveFileRequest request,
+  $grpc.ResponseFuture<$4.ListGameSaveFilesResponse> listGameSaveFiles(
+      $4.ListGameSaveFilesRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listGameSaveFile, request, options: options);
+    return $createUnaryCall(_$listGameSaveFiles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.RemoveGameSaveFileResponse> removeGameSaveFile(
+      $4.RemoveGameSaveFileRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeGameSaveFile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.PinGameSaveFileResponse> pinGameSaveFile(
+      $4.PinGameSaveFileRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pinGameSaveFile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UnpinGameSaveFileResponse> unpinGameSaveFile(
+      $4.UnpinGameSaveFileRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$unpinGameSaveFile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SetUserSaveFileCapacityResponse>
+      setUserSaveFileCapacity($4.SetUserSaveFileCapacityRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setUserSaveFileCapacity, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SetSaveFileRotationResponse> setSaveFileRotation(
+      $4.SetSaveFileRotationRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setSaveFileRotation, request, options: options);
   }
 
   $grpc.ResponseFuture<$5.CreateNotifyTargetResponse> createNotifyTarget(
@@ -1092,15 +1154,60 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $4.DownloadGameSaveFileRequest.fromBuffer(value),
         ($4.DownloadGameSaveFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListGameSaveFileRequest,
-            $4.ListGameSaveFileResponse>(
-        'ListGameSaveFile',
-        listGameSaveFile_Pre,
+    $addMethod($grpc.ServiceMethod<$4.ListGameSaveFilesRequest,
+            $4.ListGameSaveFilesResponse>(
+        'ListGameSaveFiles',
+        listGameSaveFiles_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $4.ListGameSaveFileRequest.fromBuffer(value),
-        ($4.ListGameSaveFileResponse value) => value.writeToBuffer()));
+            $4.ListGameSaveFilesRequest.fromBuffer(value),
+        ($4.ListGameSaveFilesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.RemoveGameSaveFileRequest,
+            $4.RemoveGameSaveFileResponse>(
+        'RemoveGameSaveFile',
+        removeGameSaveFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.RemoveGameSaveFileRequest.fromBuffer(value),
+        ($4.RemoveGameSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.PinGameSaveFileRequest,
+            $4.PinGameSaveFileResponse>(
+        'PinGameSaveFile',
+        pinGameSaveFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.PinGameSaveFileRequest.fromBuffer(value),
+        ($4.PinGameSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UnpinGameSaveFileRequest,
+            $4.UnpinGameSaveFileResponse>(
+        'UnpinGameSaveFile',
+        unpinGameSaveFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.UnpinGameSaveFileRequest.fromBuffer(value),
+        ($4.UnpinGameSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SetUserSaveFileCapacityRequest,
+            $4.SetUserSaveFileCapacityResponse>(
+        'SetUserSaveFileCapacity',
+        setUserSaveFileCapacity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.SetUserSaveFileCapacityRequest.fromBuffer(value),
+        ($4.SetUserSaveFileCapacityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SetSaveFileRotationRequest,
+            $4.SetSaveFileRotationResponse>(
+        'SetSaveFileRotation',
+        setSaveFileRotation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.SetSaveFileRotationRequest.fromBuffer(value),
+        ($4.SetSaveFileRotationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$5.CreateNotifyTargetRequest,
             $5.CreateNotifyTargetResponse>(
         'CreateNotifyTarget',
@@ -1441,10 +1548,40 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return downloadGameSaveFile(call, await request);
   }
 
-  $async.Future<$4.ListGameSaveFileResponse> listGameSaveFile_Pre(
+  $async.Future<$4.ListGameSaveFilesResponse> listGameSaveFiles_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$4.ListGameSaveFileRequest> request) async {
-    return listGameSaveFile(call, await request);
+      $async.Future<$4.ListGameSaveFilesRequest> request) async {
+    return listGameSaveFiles(call, await request);
+  }
+
+  $async.Future<$4.RemoveGameSaveFileResponse> removeGameSaveFile_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.RemoveGameSaveFileRequest> request) async {
+    return removeGameSaveFile(call, await request);
+  }
+
+  $async.Future<$4.PinGameSaveFileResponse> pinGameSaveFile_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.PinGameSaveFileRequest> request) async {
+    return pinGameSaveFile(call, await request);
+  }
+
+  $async.Future<$4.UnpinGameSaveFileResponse> unpinGameSaveFile_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.UnpinGameSaveFileRequest> request) async {
+    return unpinGameSaveFile(call, await request);
+  }
+
+  $async.Future<$4.SetUserSaveFileCapacityResponse> setUserSaveFileCapacity_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.SetUserSaveFileCapacityRequest> request) async {
+    return setUserSaveFileCapacity(call, await request);
+  }
+
+  $async.Future<$4.SetSaveFileRotationResponse> setSaveFileRotation_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.SetSaveFileRotationRequest> request) async {
+    return setSaveFileRotation(call, await request);
   }
 
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget_Pre(
@@ -1614,8 +1751,18 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $4.UploadGameSaveFileRequest request);
   $async.Future<$4.DownloadGameSaveFileResponse> downloadGameSaveFile(
       $grpc.ServiceCall call, $4.DownloadGameSaveFileRequest request);
-  $async.Future<$4.ListGameSaveFileResponse> listGameSaveFile(
-      $grpc.ServiceCall call, $4.ListGameSaveFileRequest request);
+  $async.Future<$4.ListGameSaveFilesResponse> listGameSaveFiles(
+      $grpc.ServiceCall call, $4.ListGameSaveFilesRequest request);
+  $async.Future<$4.RemoveGameSaveFileResponse> removeGameSaveFile(
+      $grpc.ServiceCall call, $4.RemoveGameSaveFileRequest request);
+  $async.Future<$4.PinGameSaveFileResponse> pinGameSaveFile(
+      $grpc.ServiceCall call, $4.PinGameSaveFileRequest request);
+  $async.Future<$4.UnpinGameSaveFileResponse> unpinGameSaveFile(
+      $grpc.ServiceCall call, $4.UnpinGameSaveFileRequest request);
+  $async.Future<$4.SetUserSaveFileCapacityResponse> setUserSaveFileCapacity(
+      $grpc.ServiceCall call, $4.SetUserSaveFileCapacityRequest request);
+  $async.Future<$4.SetSaveFileRotationResponse> setSaveFileRotation(
+      $grpc.ServiceCall call, $4.SetSaveFileRotationRequest request);
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget(
       $grpc.ServiceCall call, $5.CreateNotifyTargetRequest request);
   $async.Future<$5.UpdateNotifyTargetResponse> updateNotifyTarget(
