@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.28](https://github.com/TuiHub/Protos/compare/v0.2.27...v0.2.28) (2023-05-28)
+
+
+### Features
+
+* **gebura:** add save file (un)pin, rotation, add user capacity limit ([a99585c](https://github.com/TuiHub/Protos/commit/a99585cfa930b03951af4df9cd2efd9614c635dd))
+
 ## [0.2.27](https://github.com/TuiHub/Protos/compare/v0.2.26...v0.2.27) (2023-05-25)
 
 
