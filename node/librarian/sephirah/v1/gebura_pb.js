@@ -9121,9 +9121,10 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vaildScope: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    count: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    entityId: (f = msg.getEntityId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    vaildScope: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    count: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    enabled: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -9161,14 +9162,19 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setEntityId(value);
+      break;
+    case 2:
       var value = /** @type {!proto.librarian.sephirah.v1.VaildScope} */ (reader.readEnum());
       msg.setVaildScope(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setCount(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnabled(value);
       break;
@@ -9201,24 +9207,32 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.serializeBinary
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getEntityId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
   f = message.getVaildScope();
   if (f !== 0.0) {
     writer.writeEnum(
-      1,
+      2,
       f
     );
   }
   f = message.getCount();
   if (f !== 0) {
     writer.writeInt64(
-      2,
+      3,
       f
     );
   }
   f = message.getEnabled();
   if (f) {
     writer.writeBool(
-      3,
+      4,
       f
     );
   }
@@ -9226,11 +9240,48 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.serializeBinaryToWriter =
 
 
 /**
- * optional VaildScope vaild_scope = 1;
+ * optional librarian.v1.InternalID entity_id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getEntityId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SetSaveFileRotationRequest} returns this
+*/
+proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.setEntityId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SetSaveFileRotationRequest} returns this
+ */
+proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.clearEntityId = function() {
+  return this.setEntityId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.hasEntityId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional VaildScope vaild_scope = 2;
  * @return {!proto.librarian.sephirah.v1.VaildScope}
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getVaildScope = function() {
-  return /** @type {!proto.librarian.sephirah.v1.VaildScope} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.librarian.sephirah.v1.VaildScope} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -9239,16 +9290,16 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getVaildScope =
  * @return {!proto.librarian.sephirah.v1.SetSaveFileRotationRequest} returns this
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.setVaildScope = function(value) {
-  return jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
 /**
- * optional int64 count = 2;
+ * optional int64 count = 3;
  * @return {number}
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -9257,16 +9308,16 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getCount = func
  * @return {!proto.librarian.sephirah.v1.SetSaveFileRotationRequest} returns this
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.setCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional bool enabled = 3;
+ * optional bool enabled = 4;
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getEnabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -9275,7 +9326,7 @@ proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.getEnabled = fu
  * @return {!proto.librarian.sephirah.v1.SetSaveFileRotationRequest} returns this
  */
 proto.librarian.sephirah.v1.SetSaveFileRotationRequest.prototype.setEnabled = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 

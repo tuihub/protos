@@ -120,16 +120,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "ZUNhcGFjaXR5UmVxdWVzdBIxCgd1c2VyX2lkGAEgASgLMhgubGlicmFyaWFu",
             "LnYxLkludGVybmFsSURSBnVzZXJJZBIqCg5jYXBhY2l0eV9ieXRlcxgCIAEo",
             "A0gAUg1jYXBhY2l0eUJ5dGVziAEBQhEKD19jYXBhY2l0eV9ieXRlcyIhCh9T",
-            "ZXRVc2VyU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNlIpABChpTZXRTYXZlRmls",
-            "ZVJvdGF0aW9uUmVxdWVzdBJCCgt2YWlsZF9zY29wZRgBIAEoDjIhLmxpYnJh",
-            "cmlhbi5zZXBoaXJhaC52MS5WYWlsZFNjb3BlUgp2YWlsZFNjb3BlEhQKBWNv",
-            "dW50GAIgASgDUgVjb3VudBIYCgdlbmFibGVkGAMgASgIUgdlbmFibGVkIh0K",
-            "G1NldFNhdmVGaWxlUm90YXRpb25SZXNwb25zZSp0CgpWYWlsZFNjb3BlEhsK",
-            "F1ZBSUxEX1NDT1BFX1VOU1BFQ0lGSUVEEAASFwoTVkFJTERfU0NPUEVfQUND",
-            "T1VOVBABEhMKD1ZBSUxEX1NDT1BFX0FQUBACEhsKF1ZBSUxEX1NDT1BFX0FQ",
-            "UF9QQUNLQUdFEANCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9s",
-            "aWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJh",
-            "cmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
+            "ZXRVc2VyU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNlIscBChpTZXRTYXZlRmls",
+            "ZVJvdGF0aW9uUmVxdWVzdBI1CgllbnRpdHlfaWQYASABKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJRFIIZW50aXR5SWQSQgoLdmFpbGRfc2NvcGUYAiAB",
+            "KA4yIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuVmFpbGRTY29wZVIKdmFpbGRT",
+            "Y29wZRIUCgVjb3VudBgDIAEoA1IFY291bnQSGAoHZW5hYmxlZBgEIAEoCFIH",
+            "ZW5hYmxlZCIdChtTZXRTYXZlRmlsZVJvdGF0aW9uUmVzcG9uc2UqdAoKVmFp",
+            "bGRTY29wZRIbChdWQUlMRF9TQ09QRV9VTlNQRUNJRklFRBAAEhcKE1ZBSUxE",
+            "X1NDT1BFX0FDQ09VTlQQARITCg9WQUlMRF9TQ09QRV9BUFAQAhIbChdWQUlM",
+            "RF9TQ09QRV9BUFBfUEFDS0FHRRADQl1aNWdpdGh1Yi5jb20vdHVpaHViL3By",
+            "b3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlBy",
+            "b3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -183,7 +184,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinGameSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinGameSaveFileResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityRequest.Parser, new[]{ "UserId", "CapacityBytes" }, new[]{ "CapacityBytes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest.Parser, new[]{ "VaildScope", "Count", "Enabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest.Parser, new[]{ "EntityId", "VaildScope", "Count", "Enabled" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationResponse.Parser, null, null, null, null, null)
           }));
     }
@@ -10267,6 +10268,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetSaveFileRotationRequest(SetSaveFileRotationRequest other) : this() {
+      entityId_ = other.entityId_ != null ? other.entityId_.Clone() : null;
       vaildScope_ = other.vaildScope_;
       count_ = other.count_;
       enabled_ = other.enabled_;
@@ -10279,8 +10281,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new SetSaveFileRotationRequest(this);
     }
 
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID entityId_;
+    /// <summary>
+    /// don't care if valid_scope is VAILD_SCOPE_ACCOUNT
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "vaild_scope" field.</summary>
-    public const int VaildScopeFieldNumber = 1;
+    public const int VaildScopeFieldNumber = 2;
     private global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope vaildScope_ = global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10292,7 +10309,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "count" field.</summary>
-    public const int CountFieldNumber = 2;
+    public const int CountFieldNumber = 3;
     private long count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10304,7 +10321,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "enabled" field.</summary>
-    public const int EnabledFieldNumber = 3;
+    public const int EnabledFieldNumber = 4;
     private bool enabled_;
     /// <summary>
     /// set false to disable save file rotation(unlimited save file)
@@ -10333,6 +10350,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(EntityId, other.EntityId)) return false;
       if (VaildScope != other.VaildScope) return false;
       if (Count != other.Count) return false;
       if (Enabled != other.Enabled) return false;
@@ -10343,6 +10361,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (entityId_ != null) hash ^= EntityId.GetHashCode();
       if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) hash ^= VaildScope.GetHashCode();
       if (Count != 0L) hash ^= Count.GetHashCode();
       if (Enabled != false) hash ^= Enabled.GetHashCode();
@@ -10364,16 +10383,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (entityId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(EntityId);
+      }
       if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) VaildScope);
       }
       if (Count != 0L) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt64(Count);
       }
       if (Enabled != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteBool(Enabled);
       }
       if (_unknownFields != null) {
@@ -10386,16 +10409,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (entityId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(EntityId);
+      }
       if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) VaildScope);
       }
       if (Count != 0L) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt64(Count);
       }
       if (Enabled != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteBool(Enabled);
       }
       if (_unknownFields != null) {
@@ -10408,6 +10435,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (entityId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityId);
+      }
       if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) VaildScope);
       }
@@ -10428,6 +10458,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public void MergeFrom(SetSaveFileRotationRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.entityId_ != null) {
+        if (entityId_ == null) {
+          EntityId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        EntityId.MergeFrom(other.EntityId);
       }
       if (other.VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
         VaildScope = other.VaildScope;
@@ -10453,15 +10489,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            VaildScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope) input.ReadEnum();
+          case 10: {
+            if (entityId_ == null) {
+              EntityId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(EntityId);
             break;
           }
           case 16: {
-            Count = input.ReadInt64();
+            VaildScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope) input.ReadEnum();
             break;
           }
           case 24: {
+            Count = input.ReadInt64();
+            break;
+          }
+          case 32: {
             Enabled = input.ReadBool();
             break;
           }
@@ -10480,15 +10523,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            VaildScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope) input.ReadEnum();
+          case 10: {
+            if (entityId_ == null) {
+              EntityId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(EntityId);
             break;
           }
           case 16: {
-            Count = input.ReadInt64();
+            VaildScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope) input.ReadEnum();
             break;
           }
           case 24: {
+            Count = input.ReadInt64();
+            break;
+          }
+          case 32: {
             Enabled = input.ReadBool();
             break;
           }

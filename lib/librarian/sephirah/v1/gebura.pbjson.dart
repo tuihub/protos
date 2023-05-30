@@ -511,14 +511,15 @@ final $typed_data.Uint8List setUserSaveFileCapacityResponseDescriptor = $convert
 const SetSaveFileRotationRequest$json = const {
   '1': 'SetSaveFileRotationRequest',
   '2': const [
-    const {'1': 'vaild_scope', '3': 1, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.VaildScope', '10': 'vaildScope'},
-    const {'1': 'count', '3': 2, '4': 1, '5': 3, '10': 'count'},
-    const {'1': 'enabled', '3': 3, '4': 1, '5': 8, '10': 'enabled'},
+    const {'1': 'entity_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'entityId'},
+    const {'1': 'vaild_scope', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.VaildScope', '10': 'vaildScope'},
+    const {'1': 'count', '3': 3, '4': 1, '5': 3, '10': 'count'},
+    const {'1': 'enabled', '3': 4, '4': 1, '5': 8, '10': 'enabled'},
   ],
 };
 
 /// Descriptor for `SetSaveFileRotationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List setSaveFileRotationRequestDescriptor = $convert.base64Decode('ChpTZXRTYXZlRmlsZVJvdGF0aW9uUmVxdWVzdBJCCgt2YWlsZF9zY29wZRgBIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5WYWlsZFNjb3BlUgp2YWlsZFNjb3BlEhQKBWNvdW50GAIgASgDUgVjb3VudBIYCgdlbmFibGVkGAMgASgIUgdlbmFibGVk');
+final $typed_data.Uint8List setSaveFileRotationRequestDescriptor = $convert.base64Decode('ChpTZXRTYXZlRmlsZVJvdGF0aW9uUmVxdWVzdBI1CgllbnRpdHlfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIZW50aXR5SWQSQgoLdmFpbGRfc2NvcGUYAiABKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuVmFpbGRTY29wZVIKdmFpbGRTY29wZRIUCgVjb3VudBgDIAEoA1IFY291bnQSGAoHZW5hYmxlZBgEIAEoCFIHZW5hYmxlZA==');
 @$core.Deprecated('Use setSaveFileRotationResponseDescriptor instead')
 const SetSaveFileRotationResponse$json = const {
   '1': 'SetSaveFileRotationResponse',

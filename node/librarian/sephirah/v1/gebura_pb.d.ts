@@ -1143,6 +1143,11 @@ export namespace SetUserSaveFileCapacityResponse {
 }
 
 export class SetSaveFileRotationRequest extends jspb.Message {
+  hasEntityId(): boolean;
+  clearEntityId(): void;
+  getEntityId(): librarian_v1_common_pb.InternalID | undefined;
+  setEntityId(value?: librarian_v1_common_pb.InternalID): void;
+
   getVaildScope(): VaildScopeMap[keyof VaildScopeMap];
   setVaildScope(value: VaildScopeMap[keyof VaildScopeMap]): void;
 
@@ -1164,6 +1169,7 @@ export class SetSaveFileRotationRequest extends jspb.Message {
 
 export namespace SetSaveFileRotationRequest {
   export type AsObject = {
+    entityId?: librarian_v1_common_pb.InternalID.AsObject,
     vaildScope: VaildScopeMap[keyof VaildScopeMap],
     count: number,
     enabled: boolean,

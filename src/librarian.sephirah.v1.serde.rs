@@ -11793,6 +11793,9 @@ impl serde::Serialize for SetSaveFileRotationRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.entity_id.is_some() {
+            len += 1;
+        }
         if self.vaild_scope != 0 {
             len += 1;
         }
@@ -11803,6 +11806,9 @@ impl serde::Serialize for SetSaveFileRotationRequest {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetSaveFileRotationRequest", len)?;
+        if let Some(v) = self.entity_id.as_ref() {
+            struct_ser.serialize_field("entityId", v)?;
+        }
         if self.vaild_scope != 0 {
             let v = VaildScope::from_i32(self.vaild_scope)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.vaild_scope)))?;
@@ -11824,6 +11830,8 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "entity_id",
+            "entityId",
             "vaild_scope",
             "vaildScope",
             "count",
@@ -11832,6 +11840,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            EntityId,
             VaildScope,
             Count,
             Enabled,
@@ -11856,6 +11865,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                         E: serde::de::Error,
                     {
                         match value {
+                            "entityId" | "entity_id" => Ok(GeneratedField::EntityId),
                             "vaildScope" | "vaild_scope" => Ok(GeneratedField::VaildScope),
                             "count" => Ok(GeneratedField::Count),
                             "enabled" => Ok(GeneratedField::Enabled),
@@ -11878,11 +11888,18 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut entity_id__ = None;
                 let mut vaild_scope__ = None;
                 let mut count__ = None;
                 let mut enabled__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::EntityId => {
+                            if entity_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("entityId"));
+                            }
+                            entity_id__ = map.next_value()?;
+                        }
                         GeneratedField::VaildScope => {
                             if vaild_scope__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vaildScope"));
@@ -11906,6 +11923,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                     }
                 }
                 Ok(SetSaveFileRotationRequest {
+                    entity_id: entity_id__,
                     vaild_scope: vaild_scope__.unwrap_or_default(),
                     count: count__.unwrap_or_default(),
                     enabled: enabled__.unwrap_or_default(),

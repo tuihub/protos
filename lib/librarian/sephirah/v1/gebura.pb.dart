@@ -2408,19 +2408,24 @@ class SetUserSaveFileCapacityResponse extends $pb.GeneratedMessage {
 
 class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetSaveFileRotationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..e<VaildScope>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vaildScope', $pb.PbFieldType.OE, defaultOrMaker: VaildScope.VAILD_SCOPE_UNSPECIFIED, valueOf: VaildScope.valueOf, enumValues: VaildScope.values)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count')
-    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enabled')
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'entityId', subBuilder: $7.InternalID.create)
+    ..e<VaildScope>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vaildScope', $pb.PbFieldType.OE, defaultOrMaker: VaildScope.VAILD_SCOPE_UNSPECIFIED, valueOf: VaildScope.valueOf, enumValues: VaildScope.values)
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enabled')
     ..hasRequiredFields = false
   ;
 
   SetSaveFileRotationRequest._() : super();
   factory SetSaveFileRotationRequest({
+    $7.InternalID? entityId,
     VaildScope? vaildScope,
     $fixnum.Int64? count,
     $core.bool? enabled,
   }) {
     final _result = create();
+    if (entityId != null) {
+      _result.entityId = entityId;
+    }
     if (vaildScope != null) {
       _result.vaildScope = vaildScope;
     }
@@ -2454,31 +2459,42 @@ class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
   static SetSaveFileRotationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  VaildScope get vaildScope => $_getN(0);
+  $7.InternalID get entityId => $_getN(0);
   @$pb.TagNumber(1)
-  set vaildScope(VaildScope v) { setField(1, v); }
+  set entityId($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasVaildScope() => $_has(0);
+  $core.bool hasEntityId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearVaildScope() => clearField(1);
+  void clearEntityId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureEntityId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get count => $_getI64(1);
+  VaildScope get vaildScope => $_getN(1);
   @$pb.TagNumber(2)
-  set count($fixnum.Int64 v) { $_setInt64(1, v); }
+  set vaildScope(VaildScope v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasCount() => $_has(1);
+  $core.bool hasVaildScope() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCount() => clearField(2);
+  void clearVaildScope() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get enabled => $_getBF(2);
+  $fixnum.Int64 get count => $_getI64(2);
   @$pb.TagNumber(3)
-  set enabled($core.bool v) { $_setBool(2, v); }
+  set count($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasEnabled() => $_has(2);
+  $core.bool hasCount() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEnabled() => clearField(3);
+  void clearCount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get enabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set enabled($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEnabled() => clearField(4);
 }
 
 class SetSaveFileRotationResponse extends $pb.GeneratedMessage {
