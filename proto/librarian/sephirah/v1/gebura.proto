@@ -212,10 +212,12 @@ message SetUserSaveFileCapacityRequest {
 message SetUserSaveFileCapacityResponse {}
 
 message SetSaveFileRotationRequest {
-  VaildScope vaild_scope = 1;
-  int64 count = 2;
+  // don't care if valid_scope is VAILD_SCOPE_ACCOUNT
+  librarian.v1.InternalID entity_id = 1;
+  VaildScope vaild_scope = 2;
+  int64 count = 3;
   // set false to disable save file rotation(unlimited save file)
-  bool enabled = 3;
+  bool enabled = 4;
 }
 
 enum VaildScope {
