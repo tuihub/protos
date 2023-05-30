@@ -110,7 +110,7 @@ enum AppPackageSource {
 
 message AppPackageBinary {
   string name = 1;
-  int64 size_byte = 2;
+  int64 size_bytes = 2;
   string public_url = 3;
   bytes sha256 = 4;
 }

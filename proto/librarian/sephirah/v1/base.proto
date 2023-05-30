@@ -11,7 +11,7 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 message FileMetadata {
   librarian.v1.InternalID id = 1;
   string name = 2;
-  int64 size = 3;
+  int64 size_bytes = 3;
   FileType type = 4;
   bytes sha256 = 5;
   google.protobuf.Timestamp create_time = 6;
