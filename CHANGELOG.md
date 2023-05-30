@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.29](https://github.com/TuiHub/Protos/compare/v0.2.28...v0.2.29) (2023-05-30)
+
+
+### Bug Fixes
+
+* **gebura:** changed files in Result to file ([2eab843](https://github.com/TuiHub/Protos/commit/2eab8438db6be18cfeddf6a493bf0f86f50d075d))
+* **gebura:** unified to size_bytes ([9d03e7a](https://github.com/TuiHub/Protos/commit/9d03e7a927b9682857082988003de7bc7f4da827))
+
 ## [0.2.28](https://github.com/TuiHub/Protos/compare/v0.2.27...v0.2.28) (2023-05-28)
 
 
