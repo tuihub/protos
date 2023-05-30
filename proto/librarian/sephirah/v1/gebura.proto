@@ -178,7 +178,7 @@ message ListGameSaveFilesRequest {
 
 message ListGameSaveFilesResponse {
   message Result {
-    FileMetadata files = 1;
+    FileMetadata file = 1;
     bool pinned = 2;
   }
   librarian.v1.PagingResponse paging = 1;
