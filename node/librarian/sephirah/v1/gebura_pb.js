@@ -7809,7 +7809,7 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.toObject 
  */
 proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
-    files: (f = msg.getFiles()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
+    file: (f = msg.getFile()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
     pinned: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
@@ -7850,7 +7850,7 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.deserializeBinaryFr
     case 1:
       var value = new librarian_sephirah_v1_base_pb.FileMetadata;
       reader.readMessage(value,librarian_sephirah_v1_base_pb.FileMetadata.deserializeBinaryFromReader);
-      msg.setFiles(value);
+      msg.setFile(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -7885,7 +7885,7 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.serialize
  */
 proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFiles();
+  f = message.getFile();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -7904,10 +7904,10 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.serializeBinaryToWr
 
 
 /**
- * optional FileMetadata files = 1;
+ * optional FileMetadata file = 1;
  * @return {?proto.librarian.sephirah.v1.FileMetadata}
  */
-proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.getFiles = function() {
+proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.getFile = function() {
   return /** @type{?proto.librarian.sephirah.v1.FileMetadata} */ (
     jspb.Message.getWrapperField(this, librarian_sephirah_v1_base_pb.FileMetadata, 1));
 };
@@ -7917,7 +7917,7 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.getFiles 
  * @param {?proto.librarian.sephirah.v1.FileMetadata|undefined} value
  * @return {!proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result} returns this
 */
-proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.setFiles = function(value) {
+proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.setFile = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -7926,8 +7926,8 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.setFiles 
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result} returns this
  */
-proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.clearFiles = function() {
-  return this.setFiles(undefined);
+proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.clearFile = function() {
+  return this.setFile(undefined);
 };
 
 
@@ -7935,7 +7935,7 @@ proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.clearFile
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.hasFiles = function() {
+proto.librarian.sephirah.v1.ListGameSaveFilesResponse.Result.prototype.hasFile = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

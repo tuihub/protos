@@ -190,14 +190,14 @@ const AppPackageBinary$json = const {
   '1': 'AppPackageBinary',
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'size_byte', '3': 2, '4': 1, '5': 3, '10': 'sizeByte'},
+    const {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
     const {'1': 'public_url', '3': 3, '4': 1, '5': 9, '10': 'publicUrl'},
     const {'1': 'sha256', '3': 4, '4': 1, '5': 12, '10': 'sha256'},
   ],
 };
 
 /// Descriptor for `AppPackageBinary`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appPackageBinaryDescriptor = $convert.base64Decode('ChBBcHBQYWNrYWdlQmluYXJ5EhIKBG5hbWUYASABKAlSBG5hbWUSGwoJc2l6ZV9ieXRlGAIgASgDUghzaXplQnl0ZRIdCgpwdWJsaWNfdXJsGAMgASgJUglwdWJsaWNVcmwSFgoGc2hhMjU2GAQgASgMUgZzaGEyNTY=');
+final $typed_data.Uint8List appPackageBinaryDescriptor = $convert.base64Decode('ChBBcHBQYWNrYWdlQmluYXJ5EhIKBG5hbWUYASABKAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYYBCABKAxSBnNoYTI1Ng==');
 @$core.Deprecated('Use feedDescriptor instead')
 const Feed$json = const {
   '1': 'Feed',

@@ -1962,19 +1962,19 @@ class ListGameSaveFilesRequest extends $pb.GeneratedMessage {
 
 class ListGameSaveFilesResponse_Result extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFilesResponse.Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$9.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'files', subBuilder: $9.FileMetadata.create)
+    ..aOM<$9.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'file', subBuilder: $9.FileMetadata.create)
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pinned')
     ..hasRequiredFields = false
   ;
 
   ListGameSaveFilesResponse_Result._() : super();
   factory ListGameSaveFilesResponse_Result({
-    $9.FileMetadata? files,
+    $9.FileMetadata? file,
     $core.bool? pinned,
   }) {
     final _result = create();
-    if (files != null) {
-      _result.files = files;
+    if (file != null) {
+      _result.file = file;
     }
     if (pinned != null) {
       _result.pinned = pinned;
@@ -2003,15 +2003,15 @@ class ListGameSaveFilesResponse_Result extends $pb.GeneratedMessage {
   static ListGameSaveFilesResponse_Result? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $9.FileMetadata get files => $_getN(0);
+  $9.FileMetadata get file => $_getN(0);
   @$pb.TagNumber(1)
-  set files($9.FileMetadata v) { setField(1, v); }
+  set file($9.FileMetadata v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFiles() => $_has(0);
+  $core.bool hasFile() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFiles() => clearField(1);
+  void clearFile() => clearField(1);
   @$pb.TagNumber(1)
-  $9.FileMetadata ensureFiles() => $_ensure(0);
+  $9.FileMetadata ensureFile() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.bool get pinned => $_getBF(1);

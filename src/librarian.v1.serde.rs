@@ -1077,7 +1077,7 @@ impl serde::Serialize for AppPackageBinary {
         if !self.name.is_empty() {
             len += 1;
         }
-        if self.size_byte != 0 {
+        if self.size_bytes != 0 {
             len += 1;
         }
         if !self.public_url.is_empty() {
@@ -1090,8 +1090,8 @@ impl serde::Serialize for AppPackageBinary {
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
-        if self.size_byte != 0 {
-            struct_ser.serialize_field("sizeByte", ToString::to_string(&self.size_byte).as_str())?;
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if !self.public_url.is_empty() {
             struct_ser.serialize_field("publicUrl", &self.public_url)?;
@@ -1110,8 +1110,8 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
     {
         const FIELDS: &[&str] = &[
             "name",
-            "size_byte",
-            "sizeByte",
+            "size_bytes",
+            "sizeBytes",
             "public_url",
             "publicUrl",
             "sha256",
@@ -1120,7 +1120,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Name,
-            SizeByte,
+            SizeBytes,
             PublicUrl,
             Sha256,
         }
@@ -1145,7 +1145,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                     {
                         match value {
                             "name" => Ok(GeneratedField::Name),
-                            "sizeByte" | "size_byte" => Ok(GeneratedField::SizeByte),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
                             "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
                             "sha256" => Ok(GeneratedField::Sha256),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -1168,7 +1168,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut name__ = None;
-                let mut size_byte__ = None;
+                let mut size_bytes__ = None;
                 let mut public_url__ = None;
                 let mut sha256__ = None;
                 while let Some(k) = map.next_key()? {
@@ -1179,11 +1179,11 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             }
                             name__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SizeByte => {
-                            if size_byte__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sizeByte"));
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
                             }
-                            size_byte__ = 
+                            size_bytes__ = 
                                 Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
@@ -1205,7 +1205,7 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                 }
                 Ok(AppPackageBinary {
                     name: name__.unwrap_or_default(),
-                    size_byte: size_byte__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
                     public_url: public_url__.unwrap_or_default(),
                     sha256: sha256__.unwrap_or_default(),
                 })

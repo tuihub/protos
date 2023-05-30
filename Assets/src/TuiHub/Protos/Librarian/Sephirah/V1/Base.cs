@@ -26,21 +26,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           string.Concat(
             "CiBsaWJyYXJpYW4vc2VwaGlyYWgvdjEvYmFzZS5wcm90bxIVbGlicmFyaWFu",
             "LnNlcGhpcmFoLnYxGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3Rv",
-            "GhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIuoBCgxGaWxlTWV0YWRhdGES",
+            "GhlsaWJyYXJpYW4vdjEvY29tbW9uLnByb3RvIvUBCgxGaWxlTWV0YWRhdGES",
             "KAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoE",
-            "bmFtZRgCIAEoCVIEbmFtZRISCgRzaXplGAMgASgDUgRzaXplEjMKBHR5cGUY",
-            "BCABKA4yHy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZVR5cGVSBHR5cGUS",
-            "FgoGc2hhMjU2GAUgASgMUgZzaGEyNTYSOwoLY3JlYXRlX3RpbWUYBiABKAsy",
-            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1lKlwKCEZp",
-            "bGVUeXBlEhkKFUZJTEVfVFlQRV9VTlNQRUNJRklFRBAAEhkKFUZJTEVfVFlQ",
-            "RV9HRUJVUkFfU0FWRRABEhoKFkZJTEVfVFlQRV9DSEVTRURfSU1BR0UQAkJd",
-            "WjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBo",
-            "aXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFo",
-            "LlYxYgZwcm90bzM="));
+            "bmFtZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0",
+            "ZXMSMwoEdHlwZRgEIAEoDjIfLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxl",
+            "VHlwZVIEdHlwZRIWCgZzaGEyNTYYBSABKAxSBnNoYTI1NhI7CgtjcmVhdGVf",
+            "dGltZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0",
+            "ZVRpbWUqXAoIRmlsZVR5cGUSGQoVRklMRV9UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "GQoVRklMRV9UWVBFX0dFQlVSQV9TQVZFEAESGgoWRklMRV9UWVBFX0NIRVNF",
+            "RF9JTUFHRRACQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGli",
+            "cmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJp",
+            "YW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "Size", "Type", "Sha256", "CreateTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata), global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata.Parser, new[]{ "Id", "Name", "SizeBytes", "Type", "Sha256", "CreateTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -92,7 +92,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public FileMetadata(FileMetadata other) : this() {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       name_ = other.name_;
-      size_ = other.size_;
+      sizeBytes_ = other.sizeBytes_;
       type_ = other.type_;
       sha256_ = other.sha256_;
       createTime_ = other.createTime_ != null ? other.createTime_.Clone() : null;
@@ -129,15 +129,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "size" field.</summary>
-    public const int SizeFieldNumber = 3;
-    private long size_;
+    /// <summary>Field number for the "size_bytes" field.</summary>
+    public const int SizeBytesFieldNumber = 3;
+    private long sizeBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long Size {
-      get { return size_; }
+    public long SizeBytes {
+      get { return sizeBytes_; }
       set {
-        size_ = value;
+        sizeBytes_ = value;
       }
     }
 
@@ -194,7 +194,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (!object.Equals(Id, other.Id)) return false;
       if (Name != other.Name) return false;
-      if (Size != other.Size) return false;
+      if (SizeBytes != other.SizeBytes) return false;
       if (Type != other.Type) return false;
       if (Sha256 != other.Sha256) return false;
       if (!object.Equals(CreateTime, other.CreateTime)) return false;
@@ -207,7 +207,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Size != 0L) hash ^= Size.GetHashCode();
+      if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) hash ^= Type.GetHashCode();
       if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
       if (createTime_ != null) hash ^= CreateTime.GetHashCode();
@@ -237,9 +237,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Size != 0L) {
+      if (SizeBytes != 0L) {
         output.WriteRawTag(24);
-        output.WriteInt64(Size);
+        output.WriteInt64(SizeBytes);
       }
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
         output.WriteRawTag(32);
@@ -271,9 +271,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Size != 0L) {
+      if (SizeBytes != 0L) {
         output.WriteRawTag(24);
-        output.WriteInt64(Size);
+        output.WriteInt64(SizeBytes);
       }
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
         output.WriteRawTag(32);
@@ -303,8 +303,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Size != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Size);
+      if (SizeBytes != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
       }
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
@@ -336,8 +336,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Size != 0L) {
-        Size = other.Size;
+      if (other.SizeBytes != 0L) {
+        SizeBytes = other.SizeBytes;
       }
       if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.FileType.Unspecified) {
         Type = other.Type;
@@ -378,7 +378,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 24: {
-            Size = input.ReadInt64();
+            SizeBytes = input.ReadInt64();
             break;
           }
           case 32: {
@@ -423,7 +423,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 24: {
-            Size = input.ReadInt64();
+            SizeBytes = input.ReadInt64();
             break;
           }
           case 32: {

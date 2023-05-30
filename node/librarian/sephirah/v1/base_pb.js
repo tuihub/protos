@@ -82,7 +82,7 @@ proto.librarian.sephirah.v1.FileMetadata.toObject = function(includeInstance, ms
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    size: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0),
     type: jspb.Message.getFieldWithDefault(msg, 4, 0),
     sha256: msg.getSha256_asB64(),
     createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
@@ -133,7 +133,7 @@ proto.librarian.sephirah.v1.FileMetadata.deserializeBinaryFromReader = function(
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSize(value);
+      msg.setSizeBytes(value);
       break;
     case 4:
       var value = /** @type {!proto.librarian.sephirah.v1.FileType} */ (reader.readEnum());
@@ -192,7 +192,7 @@ proto.librarian.sephirah.v1.FileMetadata.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getSize();
+  f = message.getSizeBytes();
   if (f !== 0) {
     writer.writeInt64(
       3,
@@ -280,10 +280,10 @@ proto.librarian.sephirah.v1.FileMetadata.prototype.setName = function(value) {
 
 
 /**
- * optional int64 size = 3;
+ * optional int64 size_bytes = 3;
  * @return {number}
  */
-proto.librarian.sephirah.v1.FileMetadata.prototype.getSize = function() {
+proto.librarian.sephirah.v1.FileMetadata.prototype.getSizeBytes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -292,7 +292,7 @@ proto.librarian.sephirah.v1.FileMetadata.prototype.getSize = function() {
  * @param {number} value
  * @return {!proto.librarian.sephirah.v1.FileMetadata} returns this
  */
-proto.librarian.sephirah.v1.FileMetadata.prototype.setSize = function(value) {
+proto.librarian.sephirah.v1.FileMetadata.prototype.setSizeBytes = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 

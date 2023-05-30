@@ -21,7 +21,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FileMetadata', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'size')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sizeBytes')
     ..e<FileType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
     ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sha256', $pb.PbFieldType.OY)
     ..aOM<$8.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $8.Timestamp.create)
@@ -32,7 +32,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   factory FileMetadata({
     $7.InternalID? id,
     $core.String? name,
-    $fixnum.Int64? size,
+    $fixnum.Int64? sizeBytes,
     FileType? type,
     $core.List<$core.int>? sha256,
     $8.Timestamp? createTime,
@@ -44,8 +44,8 @@ class FileMetadata extends $pb.GeneratedMessage {
     if (name != null) {
       _result.name = name;
     }
-    if (size != null) {
-      _result.size = size;
+    if (sizeBytes != null) {
+      _result.sizeBytes = sizeBytes;
     }
     if (type != null) {
       _result.type = type;
@@ -100,13 +100,13 @@ class FileMetadata extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get size => $_getI64(2);
+  $fixnum.Int64 get sizeBytes => $_getI64(2);
   @$pb.TagNumber(3)
-  set size($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSize() => $_has(2);
+  $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSize() => clearField(3);
+  void clearSizeBytes() => clearField(3);
 
   @$pb.TagNumber(4)
   FileType get type => $_getN(3);

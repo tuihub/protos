@@ -14,8 +14,8 @@ export class FileMetadata extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getSize(): number;
-  setSize(value: number): void;
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
 
   getType(): FileTypeMap[keyof FileTypeMap];
   setType(value: FileTypeMap[keyof FileTypeMap]): void;
@@ -44,7 +44,7 @@ export namespace FileMetadata {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
-    size: number,
+    sizeBytes: number,
     type: FileTypeMap[keyof FileTypeMap],
     sha256: Uint8Array | string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,

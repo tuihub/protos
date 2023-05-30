@@ -2944,7 +2944,7 @@ impl serde::Serialize for FileMetadata {
         if !self.name.is_empty() {
             len += 1;
         }
-        if self.size != 0 {
+        if self.size_bytes != 0 {
             len += 1;
         }
         if self.r#type != 0 {
@@ -2963,8 +2963,8 @@ impl serde::Serialize for FileMetadata {
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
-        if self.size != 0 {
-            struct_ser.serialize_field("size", ToString::to_string(&self.size).as_str())?;
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if self.r#type != 0 {
             let v = FileType::from_i32(self.r#type)
@@ -2989,7 +2989,8 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
         const FIELDS: &[&str] = &[
             "id",
             "name",
-            "size",
+            "size_bytes",
+            "sizeBytes",
             "type",
             "sha256",
             "create_time",
@@ -3000,7 +3001,7 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
         enum GeneratedField {
             Id,
             Name,
-            Size,
+            SizeBytes,
             Type,
             Sha256,
             CreateTime,
@@ -3027,7 +3028,7 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "name" => Ok(GeneratedField::Name),
-                            "size" => Ok(GeneratedField::Size),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
                             "type" => Ok(GeneratedField::Type),
                             "sha256" => Ok(GeneratedField::Sha256),
                             "createTime" | "create_time" => Ok(GeneratedField::CreateTime),
@@ -3052,7 +3053,7 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
             {
                 let mut id__ = None;
                 let mut name__ = None;
-                let mut size__ = None;
+                let mut size_bytes__ = None;
                 let mut r#type__ = None;
                 let mut sha256__ = None;
                 let mut create_time__ = None;
@@ -3070,11 +3071,11 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
                             }
                             name__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Size => {
-                            if size__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("size"));
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
                             }
-                            size__ = 
+                            size_bytes__ = 
                                 Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
@@ -3103,7 +3104,7 @@ impl<'de> serde::Deserialize<'de> for FileMetadata {
                 Ok(FileMetadata {
                     id: id__,
                     name: name__.unwrap_or_default(),
-                    size: size__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
                     r#type: r#type__.unwrap_or_default(),
                     sha256: sha256__.unwrap_or_default(),
                     create_time: create_time__,
@@ -7268,15 +7269,15 @@ impl serde::Serialize for list_game_save_files_response::Result {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.files.is_some() {
+        if self.file.is_some() {
             len += 1;
         }
         if self.pinned {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse.Result", len)?;
-        if let Some(v) = self.files.as_ref() {
-            struct_ser.serialize_field("files", v)?;
+        if let Some(v) = self.file.as_ref() {
+            struct_ser.serialize_field("file", v)?;
         }
         if self.pinned {
             struct_ser.serialize_field("pinned", &self.pinned)?;
@@ -7291,13 +7292,13 @@ impl<'de> serde::Deserialize<'de> for list_game_save_files_response::Result {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "files",
+            "file",
             "pinned",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Files,
+            File,
             Pinned,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -7320,7 +7321,7 @@ impl<'de> serde::Deserialize<'de> for list_game_save_files_response::Result {
                         E: serde::de::Error,
                     {
                         match value {
-                            "files" => Ok(GeneratedField::Files),
+                            "file" => Ok(GeneratedField::File),
                             "pinned" => Ok(GeneratedField::Pinned),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -7341,15 +7342,15 @@ impl<'de> serde::Deserialize<'de> for list_game_save_files_response::Result {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut files__ = None;
+                let mut file__ = None;
                 let mut pinned__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Files => {
-                            if files__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("files"));
+                        GeneratedField::File => {
+                            if file__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("file"));
                             }
-                            files__ = map.next_value()?;
+                            file__ = map.next_value()?;
                         }
                         GeneratedField::Pinned => {
                             if pinned__.is_some() {
@@ -7360,7 +7361,7 @@ impl<'de> serde::Deserialize<'de> for list_game_save_files_response::Result {
                     }
                 }
                 Ok(list_game_save_files_response::Result {
-                    files: files__,
+                    file: file__,
                     pinned: pinned__.unwrap_or_default(),
                 })
             }

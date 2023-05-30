@@ -335,8 +335,8 @@ export class AppPackageBinary extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getSizeByte(): number;
-  setSizeByte(value: number): void;
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
 
   getPublicUrl(): string;
   setPublicUrl(value: string): void;
@@ -359,7 +359,7 @@ export class AppPackageBinary extends jspb.Message {
 export namespace AppPackageBinary {
   export type AsObject = {
     name: string,
-    sizeByte: number,
+    sizeBytes: number,
     publicUrl: string,
     sha256: Uint8Array | string,
   }

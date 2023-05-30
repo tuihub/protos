@@ -104,32 +104,32 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "ZW4ijwEKGExpc3RHYW1lU2F2ZUZpbGVzUmVxdWVzdBIzCgZwYWdpbmcYASAB",
             "KAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEj4KDmFw",
             "cF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
-            "DGFwcFBhY2thZ2VJZCKBAgoZTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZRI0",
+            "DGFwcFBhY2thZ2VJZCL/AQoZTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZRI0",
             "CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VS",
             "BnBhZ2luZxJRCgdyZXN1bHRzGAIgAygLMjcubGlicmFyaWFuLnNlcGhpcmFo",
             "LnYxLkxpc3RHYW1lU2F2ZUZpbGVzUmVzcG9uc2UuUmVzdWx0UgdyZXN1bHRz",
-            "GlsKBlJlc3VsdBI5CgVmaWxlcxgBIAEoCzIjLmxpYnJhcmlhbi5zZXBoaXJh",
-            "aC52MS5GaWxlTWV0YWRhdGFSBWZpbGVzEhYKBnBpbm5lZBgCIAEoCFIGcGlu",
-            "bmVkIkUKGVJlbW92ZUdhbWVTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsy",
-            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiHAoaUmVtb3ZlR2FtZVNh",
-            "dmVGaWxlUmVzcG9uc2UiQgoWUGluR2FtZVNhdmVGaWxlUmVxdWVzdBIoCgJp",
-            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIZChdQaW5H",
-            "YW1lU2F2ZUZpbGVSZXNwb25zZSJEChhVbnBpbkdhbWVTYXZlRmlsZVJlcXVl",
-            "c3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQi",
-            "GwoZVW5waW5HYW1lU2F2ZUZpbGVSZXNwb25zZSKSAQoeU2V0VXNlclNhdmVG",
-            "aWxlQ2FwYWNpdHlSZXF1ZXN0EjEKB3VzZXJfaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFIGdXNlcklkEioKDmNhcGFjaXR5X2J5dGVzGAIg",
-            "ASgDSABSDWNhcGFjaXR5Qnl0ZXOIAQFCEQoPX2NhcGFjaXR5X2J5dGVzIiEK",
-            "H1NldFVzZXJTYXZlRmlsZUNhcGFjaXR5UmVzcG9uc2UikAEKGlNldFNhdmVG",
-            "aWxlUm90YXRpb25SZXF1ZXN0EkIKC3ZhaWxkX3Njb3BlGAEgASgOMiEubGli",
-            "cmFyaWFuLnNlcGhpcmFoLnYxLlZhaWxkU2NvcGVSCnZhaWxkU2NvcGUSFAoF",
-            "Y291bnQYAiABKANSBWNvdW50EhgKB2VuYWJsZWQYAyABKAhSB2VuYWJsZWQi",
-            "HQobU2V0U2F2ZUZpbGVSb3RhdGlvblJlc3BvbnNlKnQKClZhaWxkU2NvcGUS",
-            "GwoXVkFJTERfU0NPUEVfVU5TUEVDSUZJRUQQABIXChNWQUlMRF9TQ09QRV9B",
-            "Q0NPVU5UEAESEwoPVkFJTERfU0NPUEVfQVBQEAISGwoXVkFJTERfU0NPUEVf",
-            "QVBQX1BBQ0tBR0UQA0JdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtn",
-            "L2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGli",
-            "cmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "GlkKBlJlc3VsdBI3CgRmaWxlGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLkZpbGVNZXRhZGF0YVIEZmlsZRIWCgZwaW5uZWQYAiABKAhSBnBpbm5l",
+            "ZCJFChlSZW1vdmVHYW1lU2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEgASgLMhgu",
+            "bGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIhwKGlJlbW92ZUdhbWVTYXZl",
+            "RmlsZVJlc3BvbnNlIkIKFlBpbkdhbWVTYXZlRmlsZVJlcXVlc3QSKAoCaWQY",
+            "ASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiGQoXUGluR2Ft",
+            "ZVNhdmVGaWxlUmVzcG9uc2UiRAoYVW5waW5HYW1lU2F2ZUZpbGVSZXF1ZXN0",
+            "EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIhsK",
+            "GVVucGluR2FtZVNhdmVGaWxlUmVzcG9uc2UikgEKHlNldFVzZXJTYXZlRmls",
+            "ZUNhcGFjaXR5UmVxdWVzdBIxCgd1c2VyX2lkGAEgASgLMhgubGlicmFyaWFu",
+            "LnYxLkludGVybmFsSURSBnVzZXJJZBIqCg5jYXBhY2l0eV9ieXRlcxgCIAEo",
+            "A0gAUg1jYXBhY2l0eUJ5dGVziAEBQhEKD19jYXBhY2l0eV9ieXRlcyIhCh9T",
+            "ZXRVc2VyU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNlIpABChpTZXRTYXZlRmls",
+            "ZVJvdGF0aW9uUmVxdWVzdBJCCgt2YWlsZF9zY29wZRgBIAEoDjIhLmxpYnJh",
+            "cmlhbi5zZXBoaXJhaC52MS5WYWlsZFNjb3BlUgp2YWlsZFNjb3BlEhQKBWNv",
+            "dW50GAIgASgDUgVjb3VudBIYCgdlbmFibGVkGAMgASgIUgdlbmFibGVkIh0K",
+            "G1NldFNhdmVGaWxlUm90YXRpb25SZXNwb25zZSp0CgpWYWlsZFNjb3BlEhsK",
+            "F1ZBSUxEX1NDT1BFX1VOU1BFQ0lGSUVEEAASFwoTVkFJTERfU0NPUEVfQUND",
+            "T1VOVBABEhMKD1ZBSUxEX1NDT1BFX0FQUBACEhsKF1ZBSUxEX1NDT1BFX0FQ",
+            "UF9QQUNLQUdFEANCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9s",
+            "aWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJh",
+            "cmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -174,7 +174,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileResponse.Parser, new[]{ "DownloadToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesRequest.Parser, new[]{ "Paging", "AppPackageId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse.Parser, new[]{ "Paging", "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse.Types.Result), global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse.Types.Result.Parser, new[]{ "Files", "Pinned" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse.Parser, new[]{ "Paging", "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse.Types.Result), global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse.Types.Result.Parser, new[]{ "File", "Pinned" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveGameSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveGameSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveGameSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveGameSaveFileResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PinGameSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.PinGameSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -8572,7 +8572,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Result(Result other) : this() {
-          files_ = other.files_ != null ? other.files_.Clone() : null;
+          file_ = other.file_ != null ? other.file_.Clone() : null;
           pinned_ = other.pinned_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
@@ -8583,15 +8583,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           return new Result(this);
         }
 
-        /// <summary>Field number for the "files" field.</summary>
-        public const int FilesFieldNumber = 1;
-        private global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata files_;
+        /// <summary>Field number for the "file" field.</summary>
+        public const int FileFieldNumber = 1;
+        private global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata file_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata Files {
-          get { return files_; }
+        public global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata File {
+          get { return file_; }
           set {
-            files_ = value;
+            file_ = value;
           }
         }
 
@@ -8622,7 +8622,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (!object.Equals(Files, other.Files)) return false;
+          if (!object.Equals(File, other.File)) return false;
           if (Pinned != other.Pinned) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
@@ -8631,7 +8631,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (files_ != null) hash ^= Files.GetHashCode();
+          if (file_ != null) hash ^= File.GetHashCode();
           if (Pinned != false) hash ^= Pinned.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -8651,9 +8651,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (files_ != null) {
+          if (file_ != null) {
             output.WriteRawTag(10);
-            output.WriteMessage(Files);
+            output.WriteMessage(File);
           }
           if (Pinned != false) {
             output.WriteRawTag(16);
@@ -8669,9 +8669,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (files_ != null) {
+          if (file_ != null) {
             output.WriteRawTag(10);
-            output.WriteMessage(Files);
+            output.WriteMessage(File);
           }
           if (Pinned != false) {
             output.WriteRawTag(16);
@@ -8687,8 +8687,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (files_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Files);
+          if (file_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(File);
           }
           if (Pinned != false) {
             size += 1 + 1;
@@ -8705,11 +8705,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           if (other == null) {
             return;
           }
-          if (other.files_ != null) {
-            if (files_ == null) {
-              Files = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
+          if (other.file_ != null) {
+            if (file_ == null) {
+              File = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
             }
-            Files.MergeFrom(other.Files);
+            File.MergeFrom(other.File);
           }
           if (other.Pinned != false) {
             Pinned = other.Pinned;
@@ -8730,10 +8730,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 10: {
-                if (files_ == null) {
-                  Files = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
+                if (file_ == null) {
+                  File = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
                 }
-                input.ReadMessage(Files);
+                input.ReadMessage(File);
                 break;
               }
               case 16: {
@@ -8756,10 +8756,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 10: {
-                if (files_ == null) {
-                  Files = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
+                if (file_ == null) {
+                  File = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
                 }
-                input.ReadMessage(Files);
+                input.ReadMessage(File);
                 break;
               }
               case 16: {

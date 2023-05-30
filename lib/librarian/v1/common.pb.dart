@@ -884,7 +884,7 @@ class AppPackage extends $pb.GeneratedMessage {
 class AppPackageBinary extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AppPackageBinary', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sizeByte')
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sizeBytes')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicUrl')
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sha256', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
@@ -893,7 +893,7 @@ class AppPackageBinary extends $pb.GeneratedMessage {
   AppPackageBinary._() : super();
   factory AppPackageBinary({
     $core.String? name,
-    $fixnum.Int64? sizeByte,
+    $fixnum.Int64? sizeBytes,
     $core.String? publicUrl,
     $core.List<$core.int>? sha256,
   }) {
@@ -901,8 +901,8 @@ class AppPackageBinary extends $pb.GeneratedMessage {
     if (name != null) {
       _result.name = name;
     }
-    if (sizeByte != null) {
-      _result.sizeByte = sizeByte;
+    if (sizeBytes != null) {
+      _result.sizeBytes = sizeBytes;
     }
     if (publicUrl != null) {
       _result.publicUrl = publicUrl;
@@ -943,13 +943,13 @@ class AppPackageBinary extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get sizeByte => $_getI64(1);
+  $fixnum.Int64 get sizeBytes => $_getI64(1);
   @$pb.TagNumber(2)
-  set sizeByte($fixnum.Int64 v) { $_setInt64(1, v); }
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSizeByte() => $_has(1);
+  $core.bool hasSizeBytes() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSizeByte() => clearField(2);
+  void clearSizeBytes() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get publicUrl => $_getSZ(2);

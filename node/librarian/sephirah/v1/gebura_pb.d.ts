@@ -958,10 +958,10 @@ export namespace ListGameSaveFilesResponse {
   }
 
   export class Result extends jspb.Message {
-    hasFiles(): boolean;
-    clearFiles(): void;
-    getFiles(): librarian_sephirah_v1_base_pb.FileMetadata | undefined;
-    setFiles(value?: librarian_sephirah_v1_base_pb.FileMetadata): void;
+    hasFile(): boolean;
+    clearFile(): void;
+    getFile(): librarian_sephirah_v1_base_pb.FileMetadata | undefined;
+    setFile(value?: librarian_sephirah_v1_base_pb.FileMetadata): void;
 
     getPinned(): boolean;
     setPinned(value: boolean): void;
@@ -978,7 +978,7 @@ export namespace ListGameSaveFilesResponse {
 
   export namespace Result {
     export type AsObject = {
-      files?: librarian_sephirah_v1_base_pb.FileMetadata.AsObject,
+      file?: librarian_sephirah_v1_base_pb.FileMetadata.AsObject,
       pinned: boolean,
     }
   }

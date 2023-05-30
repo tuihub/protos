@@ -2710,7 +2710,7 @@ proto.librarian.v1.AppPackageBinary.prototype.toObject = function(opt_includeIns
 proto.librarian.v1.AppPackageBinary.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sizeByte: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
     publicUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sha256: msg.getSha256_asB64()
   };
@@ -2755,7 +2755,7 @@ proto.librarian.v1.AppPackageBinary.deserializeBinaryFromReader = function(msg, 
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setSizeByte(value);
+      msg.setSizeBytes(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -2801,7 +2801,7 @@ proto.librarian.v1.AppPackageBinary.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getSizeByte();
+  f = message.getSizeBytes();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -2844,10 +2844,10 @@ proto.librarian.v1.AppPackageBinary.prototype.setName = function(value) {
 
 
 /**
- * optional int64 size_byte = 2;
+ * optional int64 size_bytes = 2;
  * @return {number}
  */
-proto.librarian.v1.AppPackageBinary.prototype.getSizeByte = function() {
+proto.librarian.v1.AppPackageBinary.prototype.getSizeBytes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -2856,7 +2856,7 @@ proto.librarian.v1.AppPackageBinary.prototype.getSizeByte = function() {
  * @param {number} value
  * @return {!proto.librarian.v1.AppPackageBinary} returns this
  */
-proto.librarian.v1.AppPackageBinary.prototype.setSizeByte = function(value) {
+proto.librarian.v1.AppPackageBinary.prototype.setSizeBytes = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 

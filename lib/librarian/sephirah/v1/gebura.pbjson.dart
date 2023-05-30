@@ -428,13 +428,13 @@ const ListGameSaveFilesResponse$json = const {
 const ListGameSaveFilesResponse_Result$json = const {
   '1': 'Result',
   '2': const [
-    const {'1': 'files', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FileMetadata', '10': 'files'},
+    const {'1': 'file', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FileMetadata', '10': 'file'},
     const {'1': 'pinned', '3': 2, '4': 1, '5': 8, '10': 'pinned'},
   ],
 };
 
 /// Descriptor for `ListGameSaveFilesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listGameSaveFilesResponseDescriptor = $convert.base64Decode('ChlMaXN0R2FtZVNhdmVGaWxlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElEKB3Jlc3VsdHMYAiADKAsyNy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZS5SZXN1bHRSB3Jlc3VsdHMaWwoGUmVzdWx0EjkKBWZpbGVzGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIFZmlsZXMSFgoGcGlubmVkGAIgASgIUgZwaW5uZWQ=');
+final $typed_data.Uint8List listGameSaveFilesResponseDescriptor = $convert.base64Decode('ChlMaXN0R2FtZVNhdmVGaWxlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElEKB3Jlc3VsdHMYAiADKAsyNy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZS5SZXN1bHRSB3Jlc3VsdHMaWQoGUmVzdWx0EjcKBGZpbGUYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZU1ldGFkYXRhUgRmaWxlEhYKBnBpbm5lZBgCIAEoCFIGcGlubmVk');
 @$core.Deprecated('Use removeGameSaveFileRequestDescriptor instead')
 const RemoveGameSaveFileRequest$json = const {
   '1': 'RemoveGameSaveFileRequest',
