@@ -63,7 +63,12 @@ const (
 	LibrarianSephirahService_GetAppPackageRunTime_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime"
 	LibrarianSephirahService_UploadGameSaveFile_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
 	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
-	LibrarianSephirahService_ListGameSaveFile_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile"
+	LibrarianSephirahService_ListGameSaveFiles_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles"
+	LibrarianSephirahService_RemoveGameSaveFile_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveGameSaveFile"
+	LibrarianSephirahService_PinGameSaveFile_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/PinGameSaveFile"
+	LibrarianSephirahService_UnpinGameSaveFile_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile"
+	LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName   = "/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity"
+	LibrarianSephirahService_SetSaveFileRotation_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation"
 	LibrarianSephirahService_CreateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget"
 	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget"
 	LibrarianSephirahService_ListNotifyTargets_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets"
@@ -182,7 +187,17 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Normal`
 	DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListGameSaveFile(ctx context.Context, in *ListGameSaveFileRequest, opts ...grpc.CallOption) (*ListGameSaveFileResponse, error)
+	ListGameSaveFiles(ctx context.Context, in *ListGameSaveFilesRequest, opts ...grpc.CallOption) (*ListGameSaveFilesResponse, error)
+	// `Gebura` `Normal`
+	RemoveGameSaveFile(ctx context.Context, in *RemoveGameSaveFileRequest, opts ...grpc.CallOption) (*RemoveGameSaveFileResponse, error)
+	// `Gebura` `Normal`
+	PinGameSaveFile(ctx context.Context, in *PinGameSaveFileRequest, opts ...grpc.CallOption) (*PinGameSaveFileResponse, error)
+	// `Gebura` `Normal`
+	UnpinGameSaveFile(ctx context.Context, in *UnpinGameSaveFileRequest, opts ...grpc.CallOption) (*UnpinGameSaveFileResponse, error)
+	// `Gebura` `Admin`
+	SetUserSaveFileCapacity(ctx context.Context, in *SetUserSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetUserSaveFileCapacityResponse, error)
+	// `Gebura` `Normal`
+	SetSaveFileRotation(ctx context.Context, in *SetSaveFileRotationRequest, opts ...grpc.CallOption) (*SetSaveFileRotationResponse, error)
 	// `Netzach` `Normal`
 	CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
@@ -726,9 +741,54 @@ func (c *librarianSephirahServiceClient) DownloadGameSaveFile(ctx context.Contex
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ListGameSaveFile(ctx context.Context, in *ListGameSaveFileRequest, opts ...grpc.CallOption) (*ListGameSaveFileResponse, error) {
-	out := new(ListGameSaveFileResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListGameSaveFile_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ListGameSaveFiles(ctx context.Context, in *ListGameSaveFilesRequest, opts ...grpc.CallOption) (*ListGameSaveFilesResponse, error) {
+	out := new(ListGameSaveFilesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListGameSaveFiles_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) RemoveGameSaveFile(ctx context.Context, in *RemoveGameSaveFileRequest, opts ...grpc.CallOption) (*RemoveGameSaveFileResponse, error) {
+	out := new(RemoveGameSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveGameSaveFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) PinGameSaveFile(ctx context.Context, in *PinGameSaveFileRequest, opts ...grpc.CallOption) (*PinGameSaveFileResponse, error) {
+	out := new(PinGameSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PinGameSaveFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UnpinGameSaveFile(ctx context.Context, in *UnpinGameSaveFileRequest, opts ...grpc.CallOption) (*UnpinGameSaveFileResponse, error) {
+	out := new(UnpinGameSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UnpinGameSaveFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SetUserSaveFileCapacity(ctx context.Context, in *SetUserSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetUserSaveFileCapacityResponse, error) {
+	out := new(SetUserSaveFileCapacityResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SetSaveFileRotation(ctx context.Context, in *SetSaveFileRotationRequest, opts ...grpc.CallOption) (*SetSaveFileRotationResponse, error) {
+	out := new(SetSaveFileRotationResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SetSaveFileRotation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -955,7 +1015,17 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error)
+	ListGameSaveFiles(context.Context, *ListGameSaveFilesRequest) (*ListGameSaveFilesResponse, error)
+	// `Gebura` `Normal`
+	RemoveGameSaveFile(context.Context, *RemoveGameSaveFileRequest) (*RemoveGameSaveFileResponse, error)
+	// `Gebura` `Normal`
+	PinGameSaveFile(context.Context, *PinGameSaveFileRequest) (*PinGameSaveFileResponse, error)
+	// `Gebura` `Normal`
+	UnpinGameSaveFile(context.Context, *UnpinGameSaveFileRequest) (*UnpinGameSaveFileResponse, error)
+	// `Gebura` `Admin`
+	SetUserSaveFileCapacity(context.Context, *SetUserSaveFileCapacityRequest) (*SetUserSaveFileCapacityResponse, error)
+	// `Gebura` `Normal`
+	SetSaveFileRotation(context.Context, *SetSaveFileRotationRequest) (*SetSaveFileRotationResponse, error)
 	// `Netzach` `Normal`
 	CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
@@ -1121,8 +1191,23 @@ func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Co
 func (UnimplementedLibrarianSephirahServiceServer) DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DownloadGameSaveFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ListGameSaveFile(context.Context, *ListGameSaveFileRequest) (*ListGameSaveFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListGameSaveFile not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListGameSaveFiles(context.Context, *ListGameSaveFilesRequest) (*ListGameSaveFilesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListGameSaveFiles not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) RemoveGameSaveFile(context.Context, *RemoveGameSaveFileRequest) (*RemoveGameSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) PinGameSaveFile(context.Context, *PinGameSaveFileRequest) (*PinGameSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PinGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UnpinGameSaveFile(context.Context, *UnpinGameSaveFileRequest) (*UnpinGameSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnpinGameSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SetUserSaveFileCapacity(context.Context, *SetUserSaveFileCapacityRequest) (*SetUserSaveFileCapacityResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetUserSaveFileCapacity not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SetSaveFileRotation(context.Context, *SetSaveFileRotationRequest) (*SetSaveFileRotationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetSaveFileRotation not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifyTarget not implemented")
@@ -2004,20 +2089,110 @@ func _LibrarianSephirahService_DownloadGameSaveFile_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ListGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListGameSaveFileRequest)
+func _LibrarianSephirahService_ListGameSaveFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListGameSaveFilesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListGameSaveFile(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListGameSaveFiles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListGameSaveFile_FullMethodName,
+		FullMethod: LibrarianSephirahService_ListGameSaveFiles_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListGameSaveFile(ctx, req.(*ListGameSaveFileRequest))
+		return srv.(LibrarianSephirahServiceServer).ListGameSaveFiles(ctx, req.(*ListGameSaveFilesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_RemoveGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveGameSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).RemoveGameSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_RemoveGameSaveFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).RemoveGameSaveFile(ctx, req.(*RemoveGameSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_PinGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PinGameSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).PinGameSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_PinGameSaveFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).PinGameSaveFile(ctx, req.(*PinGameSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UnpinGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnpinGameSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UnpinGameSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UnpinGameSaveFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UnpinGameSaveFile(ctx, req.(*UnpinGameSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SetUserSaveFileCapacity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetUserSaveFileCapacityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SetUserSaveFileCapacity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SetUserSaveFileCapacity(ctx, req.(*SetUserSaveFileCapacityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SetSaveFileRotation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetSaveFileRotationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SetSaveFileRotation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SetSaveFileRotation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SetSaveFileRotation(ctx, req.(*SetSaveFileRotationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2420,8 +2595,28 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_DownloadGameSaveFile_Handler,
 		},
 		{
-			MethodName: "ListGameSaveFile",
-			Handler:    _LibrarianSephirahService_ListGameSaveFile_Handler,
+			MethodName: "ListGameSaveFiles",
+			Handler:    _LibrarianSephirahService_ListGameSaveFiles_Handler,
+		},
+		{
+			MethodName: "RemoveGameSaveFile",
+			Handler:    _LibrarianSephirahService_RemoveGameSaveFile_Handler,
+		},
+		{
+			MethodName: "PinGameSaveFile",
+			Handler:    _LibrarianSephirahService_PinGameSaveFile_Handler,
+		},
+		{
+			MethodName: "UnpinGameSaveFile",
+			Handler:    _LibrarianSephirahService_UnpinGameSaveFile_Handler,
+		},
+		{
+			MethodName: "SetUserSaveFileCapacity",
+			Handler:    _LibrarianSephirahService_SetUserSaveFileCapacity_Handler,
+		},
+		{
+			MethodName: "SetSaveFileRotation",
+			Handler:    _LibrarianSephirahService_SetSaveFileRotation_Handler,
 		},
 		{
 			MethodName: "CreateNotifyTarget",

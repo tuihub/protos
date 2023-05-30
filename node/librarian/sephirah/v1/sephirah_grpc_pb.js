@@ -605,26 +605,26 @@ function deserialize_librarian_sephirah_v1_ListFeedItemsResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.ListFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListGameSaveFileRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListGameSaveFileRequest');
+function serialize_librarian_sephirah_v1_ListGameSaveFilesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListGameSaveFilesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListGameSaveFilesRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListGameSaveFileRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListGameSaveFilesRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListGameSaveFilesRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListGameSaveFileResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListGameSaveFileResponse');
+function serialize_librarian_sephirah_v1_ListGameSaveFilesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ListGameSaveFilesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListGameSaveFilesResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_ListGameSaveFileResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_ListGameSaveFilesResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ListGameSaveFilesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListImagesRequest(arg) {
@@ -781,6 +781,28 @@ function deserialize_librarian_sephirah_v1_PickAppResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.PickAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_PinGameSaveFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.PinGameSaveFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PinGameSaveFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PinGameSaveFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.PinGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PinGameSaveFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.PinGameSaveFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PinGameSaveFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PinGameSaveFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.PinGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_PresignedDownloadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedDownloadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.PresignedDownloadFileRequest');
@@ -913,6 +935,28 @@ function deserialize_librarian_sephirah_v1_RefreshTokenResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_RemoveGameSaveFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.RemoveGameSaveFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RemoveGameSaveFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RemoveGameSaveFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.RemoveGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_RemoveGameSaveFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.RemoveGameSaveFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RemoveGameSaveFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RemoveGameSaveFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.RemoveGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ReportAppPackagesRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ReportAppPackagesRequest');
@@ -977,6 +1021,50 @@ function serialize_librarian_sephirah_v1_SearchImagesResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_SearchImagesResponse(buffer_arg) {
   return librarian_sephirah_v1_chesed_pb.SearchImagesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetSaveFileRotationRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetSaveFileRotationRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetSaveFileRotationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetSaveFileRotationRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SetSaveFileRotationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetSaveFileRotationResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetSaveFileRotationResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetSaveFileRotationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetSaveFileRotationResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SetSaveFileRotationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetUserSaveFileCapacityRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetUserSaveFileCapacityRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetUserSaveFileCapacityRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetUserSaveFileCapacityRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SetUserSaveFileCapacityRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetUserSaveFileCapacityResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetUserSaveFileCapacityResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetUserSaveFileCapacityResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetUserSaveFileCapacityResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SetUserSaveFileCapacityResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_SimpleDownloadFileRequest(arg) {
@@ -1065,6 +1153,28 @@ function serialize_librarian_sephirah_v1_UnLinkAccountResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UnLinkAccountResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UnpinGameSaveFileRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UnpinGameSaveFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UnpinGameSaveFileRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UnpinGameSaveFileResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UnpinGameSaveFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UnpinGameSaveFileResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UpdateAppPackageRequest(arg) {
@@ -1835,16 +1945,76 @@ downloadGameSaveFile: {
     responseDeserialize: deserialize_librarian_sephirah_v1_DownloadGameSaveFileResponse,
   },
   // `Gebura` `Normal`
-listGameSaveFile: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFile',
+listGameSaveFiles: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.ListGameSaveFileRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.ListGameSaveFileResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListGameSaveFileRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFileRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListGameSaveFileResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFileResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.ListGameSaveFilesRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ListGameSaveFilesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListGameSaveFilesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFilesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListGameSaveFilesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListGameSaveFilesResponse,
+  },
+  // `Gebura` `Normal`
+removeGameSaveFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/RemoveGameSaveFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.RemoveGameSaveFileRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.RemoveGameSaveFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_RemoveGameSaveFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_RemoveGameSaveFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_RemoveGameSaveFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_RemoveGameSaveFileResponse,
+  },
+  // `Gebura` `Normal`
+pinGameSaveFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/PinGameSaveFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.PinGameSaveFileRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.PinGameSaveFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_PinGameSaveFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_PinGameSaveFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_PinGameSaveFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_PinGameSaveFileResponse,
+  },
+  // `Gebura` `Normal`
+unpinGameSaveFile: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UnpinGameSaveFileRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UnpinGameSaveFileRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UnpinGameSaveFileResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UnpinGameSaveFileResponse,
+  },
+  // `Gebura` `Admin`
+setUserSaveFileCapacity: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SetUserSaveFileCapacityRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SetUserSaveFileCapacityResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SetUserSaveFileCapacityRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SetUserSaveFileCapacityRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SetUserSaveFileCapacityResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SetUserSaveFileCapacityResponse,
+  },
+  // `Gebura` `Normal`
+setSaveFileRotation: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SetSaveFileRotationRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SetSaveFileRotationResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SetSaveFileRotationRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SetSaveFileRotationRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SetSaveFileRotationResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SetSaveFileRotationResponse,
   },
   // `Netzach` `Normal`
 createNotifyTarget: {

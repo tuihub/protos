@@ -8,6 +8,19 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use vaildScopeDescriptor instead')
+const VaildScope$json = const {
+  '1': 'VaildScope',
+  '2': const [
+    const {'1': 'VAILD_SCOPE_UNSPECIFIED', '2': 0},
+    const {'1': 'VAILD_SCOPE_ACCOUNT', '2': 1},
+    const {'1': 'VAILD_SCOPE_APP', '2': 2},
+    const {'1': 'VAILD_SCOPE_APP_PACKAGE', '2': 3},
+  ],
+};
+
+/// Descriptor for `VaildScope`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List vaildScopeDescriptor = $convert.base64Decode('CgpWYWlsZFNjb3BlEhsKF1ZBSUxEX1NDT1BFX1VOU1BFQ0lGSUVEEAASFwoTVkFJTERfU0NPUEVfQUNDT1VOVBABEhMKD1ZBSUxEX1NDT1BFX0FQUBACEhsKF1ZBSUxEX1NDT1BFX0FQUF9QQUNLQUdFEAM=');
 @$core.Deprecated('Use createAppRequestDescriptor instead')
 const CreateAppRequest$json = const {
   '1': 'CreateAppRequest',
@@ -390,25 +403,126 @@ const DownloadGameSaveFileResponse$json = const {
 
 /// Descriptor for `DownloadGameSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List downloadGameSaveFileResponseDescriptor = $convert.base64Decode('ChxEb3dubG9hZEdhbWVTYXZlRmlsZVJlc3BvbnNlEiUKDmRvd25sb2FkX3Rva2VuGAIgASgJUg1kb3dubG9hZFRva2Vu');
-@$core.Deprecated('Use listGameSaveFileRequestDescriptor instead')
-const ListGameSaveFileRequest$json = const {
-  '1': 'ListGameSaveFileRequest',
+@$core.Deprecated('Use listGameSaveFilesRequestDescriptor instead')
+const ListGameSaveFilesRequest$json = const {
+  '1': 'ListGameSaveFilesRequest',
   '2': const [
     const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     const {'1': 'app_package_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appPackageId'},
   ],
 };
 
-/// Descriptor for `ListGameSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listGameSaveFileRequestDescriptor = $convert.base64Decode('ChdMaXN0R2FtZVNhdmVGaWxlUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEj4KDmFwcF9wYWNrYWdlX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGFwcFBhY2thZ2VJZA==');
-@$core.Deprecated('Use listGameSaveFileResponseDescriptor instead')
-const ListGameSaveFileResponse$json = const {
-  '1': 'ListGameSaveFileResponse',
+/// Descriptor for `ListGameSaveFilesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listGameSaveFilesRequestDescriptor = $convert.base64Decode('ChhMaXN0R2FtZVNhdmVGaWxlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI+Cg5hcHBfcGFja2FnZV9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxhcHBQYWNrYWdlSWQ=');
+@$core.Deprecated('Use listGameSaveFilesResponseDescriptor instead')
+const ListGameSaveFilesResponse$json = const {
+  '1': 'ListGameSaveFilesResponse',
   '2': const [
     const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    const {'1': 'files', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.FileMetadata', '10': 'files'},
+    const {'1': 'results', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ListGameSaveFilesResponse.Result', '10': 'results'},
+  ],
+  '3': const [ListGameSaveFilesResponse_Result$json],
+};
+
+@$core.Deprecated('Use listGameSaveFilesResponseDescriptor instead')
+const ListGameSaveFilesResponse_Result$json = const {
+  '1': 'Result',
+  '2': const [
+    const {'1': 'files', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FileMetadata', '10': 'files'},
+    const {'1': 'pinned', '3': 2, '4': 1, '5': 8, '10': 'pinned'},
   ],
 };
 
-/// Descriptor for `ListGameSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listGameSaveFileResponseDescriptor = $convert.base64Decode('ChhMaXN0R2FtZVNhdmVGaWxlUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSOQoFZmlsZXMYAiADKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZU1ldGFkYXRhUgVmaWxlcw==');
+/// Descriptor for `ListGameSaveFilesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listGameSaveFilesResponseDescriptor = $convert.base64Decode('ChlMaXN0R2FtZVNhdmVGaWxlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElEKB3Jlc3VsdHMYAiADKAsyNy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZS5SZXN1bHRSB3Jlc3VsdHMaWwoGUmVzdWx0EjkKBWZpbGVzGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0YVIFZmlsZXMSFgoGcGlubmVkGAIgASgIUgZwaW5uZWQ=');
+@$core.Deprecated('Use removeGameSaveFileRequestDescriptor instead')
+const RemoveGameSaveFileRequest$json = const {
+  '1': 'RemoveGameSaveFileRequest',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RemoveGameSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeGameSaveFileRequestDescriptor = $convert.base64Decode('ChlSZW1vdmVHYW1lU2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlk');
+@$core.Deprecated('Use removeGameSaveFileResponseDescriptor instead')
+const RemoveGameSaveFileResponse$json = const {
+  '1': 'RemoveGameSaveFileResponse',
+};
+
+/// Descriptor for `RemoveGameSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeGameSaveFileResponseDescriptor = $convert.base64Decode('ChpSZW1vdmVHYW1lU2F2ZUZpbGVSZXNwb25zZQ==');
+@$core.Deprecated('Use pinGameSaveFileRequestDescriptor instead')
+const PinGameSaveFileRequest$json = const {
+  '1': 'PinGameSaveFileRequest',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `PinGameSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pinGameSaveFileRequestDescriptor = $convert.base64Decode('ChZQaW5HYW1lU2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlk');
+@$core.Deprecated('Use pinGameSaveFileResponseDescriptor instead')
+const PinGameSaveFileResponse$json = const {
+  '1': 'PinGameSaveFileResponse',
+};
+
+/// Descriptor for `PinGameSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pinGameSaveFileResponseDescriptor = $convert.base64Decode('ChdQaW5HYW1lU2F2ZUZpbGVSZXNwb25zZQ==');
+@$core.Deprecated('Use unpinGameSaveFileRequestDescriptor instead')
+const UnpinGameSaveFileRequest$json = const {
+  '1': 'UnpinGameSaveFileRequest',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `UnpinGameSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unpinGameSaveFileRequestDescriptor = $convert.base64Decode('ChhVbnBpbkdhbWVTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQ=');
+@$core.Deprecated('Use unpinGameSaveFileResponseDescriptor instead')
+const UnpinGameSaveFileResponse$json = const {
+  '1': 'UnpinGameSaveFileResponse',
+};
+
+/// Descriptor for `UnpinGameSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unpinGameSaveFileResponseDescriptor = $convert.base64Decode('ChlVbnBpbkdhbWVTYXZlRmlsZVJlc3BvbnNl');
+@$core.Deprecated('Use setUserSaveFileCapacityRequestDescriptor instead')
+const SetUserSaveFileCapacityRequest$json = const {
+  '1': 'SetUserSaveFileCapacityRequest',
+  '2': const [
+    const {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
+    const {'1': 'capacity_bytes', '3': 2, '4': 1, '5': 3, '9': 0, '10': 'capacityBytes', '17': true},
+  ],
+  '8': const [
+    const {'1': '_capacity_bytes'},
+  ],
+};
+
+/// Descriptor for `SetUserSaveFileCapacityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setUserSaveFileCapacityRequestDescriptor = $convert.base64Decode('Ch5TZXRVc2VyU2F2ZUZpbGVDYXBhY2l0eVJlcXVlc3QSMQoHdXNlcl9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgZ1c2VySWQSKgoOY2FwYWNpdHlfYnl0ZXMYAiABKANIAFINY2FwYWNpdHlCeXRlc4gBAUIRCg9fY2FwYWNpdHlfYnl0ZXM=');
+@$core.Deprecated('Use setUserSaveFileCapacityResponseDescriptor instead')
+const SetUserSaveFileCapacityResponse$json = const {
+  '1': 'SetUserSaveFileCapacityResponse',
+};
+
+/// Descriptor for `SetUserSaveFileCapacityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setUserSaveFileCapacityResponseDescriptor = $convert.base64Decode('Ch9TZXRVc2VyU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNl');
+@$core.Deprecated('Use setSaveFileRotationRequestDescriptor instead')
+const SetSaveFileRotationRequest$json = const {
+  '1': 'SetSaveFileRotationRequest',
+  '2': const [
+    const {'1': 'vaild_scope', '3': 1, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.VaildScope', '10': 'vaildScope'},
+    const {'1': 'count', '3': 2, '4': 1, '5': 3, '10': 'count'},
+    const {'1': 'enabled', '3': 3, '4': 1, '5': 8, '10': 'enabled'},
+  ],
+};
+
+/// Descriptor for `SetSaveFileRotationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSaveFileRotationRequestDescriptor = $convert.base64Decode('ChpTZXRTYXZlRmlsZVJvdGF0aW9uUmVxdWVzdBJCCgt2YWlsZF9zY29wZRgBIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5WYWlsZFNjb3BlUgp2YWlsZFNjb3BlEhQKBWNvdW50GAIgASgDUgVjb3VudBIYCgdlbmFibGVkGAMgASgIUgdlbmFibGVk');
+@$core.Deprecated('Use setSaveFileRotationResponseDescriptor instead')
+const SetSaveFileRotationResponse$json = const {
+  '1': 'SetSaveFileRotationResponse',
+};
+
+/// Descriptor for `SetSaveFileRotationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setSaveFileRotationResponseDescriptor = $convert.base64Decode('ChtTZXRTYXZlRmlsZVJvdGF0aW9uUmVzcG9uc2U=');

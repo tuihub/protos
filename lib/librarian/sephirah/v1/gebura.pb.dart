@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $7;
@@ -14,6 +15,9 @@ import '../../../google/protobuf/duration.pb.dart' as $10;
 import 'base.pb.dart' as $9;
 
 import '../../v1/common.pbenum.dart' as $7;
+import 'gebura.pbenum.dart';
+
+export 'gebura.pbenum.dart';
 
 class CreateAppRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateAppRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
@@ -1891,15 +1895,15 @@ class DownloadGameSaveFileResponse extends $pb.GeneratedMessage {
   void clearDownloadToken() => clearField(2);
 }
 
-class ListGameSaveFileRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class ListGameSaveFilesRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFilesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
     ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  ListGameSaveFileRequest._() : super();
-  factory ListGameSaveFileRequest({
+  ListGameSaveFilesRequest._() : super();
+  factory ListGameSaveFilesRequest({
     $7.PagingRequest? paging,
     $7.InternalID? appPackageId,
   }) {
@@ -1912,26 +1916,26 @@ class ListGameSaveFileRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListGameSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListGameSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListGameSaveFilesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListGameSaveFilesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListGameSaveFileRequest clone() => ListGameSaveFileRequest()..mergeFromMessage(this);
+  ListGameSaveFilesRequest clone() => ListGameSaveFilesRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListGameSaveFileRequest copyWith(void Function(ListGameSaveFileRequest) updates) => super.copyWith((message) => updates(message as ListGameSaveFileRequest)) as ListGameSaveFileRequest; // ignore: deprecated_member_use
+  ListGameSaveFilesRequest copyWith(void Function(ListGameSaveFilesRequest) updates) => super.copyWith((message) => updates(message as ListGameSaveFilesRequest)) as ListGameSaveFilesRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListGameSaveFileRequest create() => ListGameSaveFileRequest._();
-  ListGameSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<ListGameSaveFileRequest> createRepeated() => $pb.PbList<ListGameSaveFileRequest>();
+  static ListGameSaveFilesRequest create() => ListGameSaveFilesRequest._();
+  ListGameSaveFilesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListGameSaveFilesRequest> createRepeated() => $pb.PbList<ListGameSaveFilesRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListGameSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGameSaveFileRequest>(create);
-  static ListGameSaveFileRequest? _defaultInstance;
+  static ListGameSaveFilesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGameSaveFilesRequest>(create);
+  static ListGameSaveFilesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.PagingRequest get paging => $_getN(0);
@@ -1956,47 +1960,110 @@ class ListGameSaveFileRequest extends $pb.GeneratedMessage {
   $7.InternalID ensureAppPackageId() => $_ensure(1);
 }
 
-class ListGameSaveFileResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFileResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<$9.FileMetadata>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'files', $pb.PbFieldType.PM, subBuilder: $9.FileMetadata.create)
+class ListGameSaveFilesResponse_Result extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFilesResponse.Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$9.FileMetadata>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'files', subBuilder: $9.FileMetadata.create)
+    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pinned')
     ..hasRequiredFields = false
   ;
 
-  ListGameSaveFileResponse._() : super();
-  factory ListGameSaveFileResponse({
+  ListGameSaveFilesResponse_Result._() : super();
+  factory ListGameSaveFilesResponse_Result({
+    $9.FileMetadata? files,
+    $core.bool? pinned,
+  }) {
+    final _result = create();
+    if (files != null) {
+      _result.files = files;
+    }
+    if (pinned != null) {
+      _result.pinned = pinned;
+    }
+    return _result;
+  }
+  factory ListGameSaveFilesResponse_Result.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListGameSaveFilesResponse_Result.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListGameSaveFilesResponse_Result clone() => ListGameSaveFilesResponse_Result()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListGameSaveFilesResponse_Result copyWith(void Function(ListGameSaveFilesResponse_Result) updates) => super.copyWith((message) => updates(message as ListGameSaveFilesResponse_Result)) as ListGameSaveFilesResponse_Result; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ListGameSaveFilesResponse_Result create() => ListGameSaveFilesResponse_Result._();
+  ListGameSaveFilesResponse_Result createEmptyInstance() => create();
+  static $pb.PbList<ListGameSaveFilesResponse_Result> createRepeated() => $pb.PbList<ListGameSaveFilesResponse_Result>();
+  @$core.pragma('dart2js:noInline')
+  static ListGameSaveFilesResponse_Result getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGameSaveFilesResponse_Result>(create);
+  static ListGameSaveFilesResponse_Result? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $9.FileMetadata get files => $_getN(0);
+  @$pb.TagNumber(1)
+  set files($9.FileMetadata v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFiles() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFiles() => clearField(1);
+  @$pb.TagNumber(1)
+  $9.FileMetadata ensureFiles() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get pinned => $_getBF(1);
+  @$pb.TagNumber(2)
+  set pinned($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPinned() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPinned() => clearField(2);
+}
+
+class ListGameSaveFilesResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFilesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<ListGameSaveFilesResponse_Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'results', $pb.PbFieldType.PM, subBuilder: ListGameSaveFilesResponse_Result.create)
+    ..hasRequiredFields = false
+  ;
+
+  ListGameSaveFilesResponse._() : super();
+  factory ListGameSaveFilesResponse({
     $7.PagingResponse? paging,
-    $core.Iterable<$9.FileMetadata>? files,
+    $core.Iterable<ListGameSaveFilesResponse_Result>? results,
   }) {
     final _result = create();
     if (paging != null) {
       _result.paging = paging;
     }
-    if (files != null) {
-      _result.files.addAll(files);
+    if (results != null) {
+      _result.results.addAll(results);
     }
     return _result;
   }
-  factory ListGameSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListGameSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListGameSaveFilesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListGameSaveFilesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListGameSaveFileResponse clone() => ListGameSaveFileResponse()..mergeFromMessage(this);
+  ListGameSaveFilesResponse clone() => ListGameSaveFilesResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListGameSaveFileResponse copyWith(void Function(ListGameSaveFileResponse) updates) => super.copyWith((message) => updates(message as ListGameSaveFileResponse)) as ListGameSaveFileResponse; // ignore: deprecated_member_use
+  ListGameSaveFilesResponse copyWith(void Function(ListGameSaveFilesResponse) updates) => super.copyWith((message) => updates(message as ListGameSaveFilesResponse)) as ListGameSaveFilesResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ListGameSaveFileResponse create() => ListGameSaveFileResponse._();
-  ListGameSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<ListGameSaveFileResponse> createRepeated() => $pb.PbList<ListGameSaveFileResponse>();
+  static ListGameSaveFilesResponse create() => ListGameSaveFilesResponse._();
+  ListGameSaveFilesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListGameSaveFilesResponse> createRepeated() => $pb.PbList<ListGameSaveFilesResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListGameSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGameSaveFileResponse>(create);
-  static ListGameSaveFileResponse? _defaultInstance;
+  static ListGameSaveFilesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListGameSaveFilesResponse>(create);
+  static ListGameSaveFilesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.PagingResponse get paging => $_getN(0);
@@ -2010,6 +2077,436 @@ class ListGameSaveFileResponse extends $pb.GeneratedMessage {
   $7.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$9.FileMetadata> get files => $_getList(1);
+  $core.List<ListGameSaveFilesResponse_Result> get results => $_getList(1);
+}
+
+class RemoveGameSaveFileRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveGameSaveFileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  RemoveGameSaveFileRequest._() : super();
+  factory RemoveGameSaveFileRequest({
+    $7.InternalID? id,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    return _result;
+  }
+  factory RemoveGameSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveGameSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveGameSaveFileRequest clone() => RemoveGameSaveFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveGameSaveFileRequest copyWith(void Function(RemoveGameSaveFileRequest) updates) => super.copyWith((message) => updates(message as RemoveGameSaveFileRequest)) as RemoveGameSaveFileRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RemoveGameSaveFileRequest create() => RemoveGameSaveFileRequest._();
+  RemoveGameSaveFileRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveGameSaveFileRequest> createRepeated() => $pb.PbList<RemoveGameSaveFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveGameSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveGameSaveFileRequest>(create);
+  static RemoveGameSaveFileRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class RemoveGameSaveFileResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveGameSaveFileResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  RemoveGameSaveFileResponse._() : super();
+  factory RemoveGameSaveFileResponse() => create();
+  factory RemoveGameSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveGameSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveGameSaveFileResponse clone() => RemoveGameSaveFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveGameSaveFileResponse copyWith(void Function(RemoveGameSaveFileResponse) updates) => super.copyWith((message) => updates(message as RemoveGameSaveFileResponse)) as RemoveGameSaveFileResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static RemoveGameSaveFileResponse create() => RemoveGameSaveFileResponse._();
+  RemoveGameSaveFileResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveGameSaveFileResponse> createRepeated() => $pb.PbList<RemoveGameSaveFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveGameSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveGameSaveFileResponse>(create);
+  static RemoveGameSaveFileResponse? _defaultInstance;
+}
+
+class PinGameSaveFileRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PinGameSaveFileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  PinGameSaveFileRequest._() : super();
+  factory PinGameSaveFileRequest({
+    $7.InternalID? id,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    return _result;
+  }
+  factory PinGameSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PinGameSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PinGameSaveFileRequest clone() => PinGameSaveFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PinGameSaveFileRequest copyWith(void Function(PinGameSaveFileRequest) updates) => super.copyWith((message) => updates(message as PinGameSaveFileRequest)) as PinGameSaveFileRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PinGameSaveFileRequest create() => PinGameSaveFileRequest._();
+  PinGameSaveFileRequest createEmptyInstance() => create();
+  static $pb.PbList<PinGameSaveFileRequest> createRepeated() => $pb.PbList<PinGameSaveFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PinGameSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PinGameSaveFileRequest>(create);
+  static PinGameSaveFileRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class PinGameSaveFileResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'PinGameSaveFileResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  PinGameSaveFileResponse._() : super();
+  factory PinGameSaveFileResponse() => create();
+  factory PinGameSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PinGameSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PinGameSaveFileResponse clone() => PinGameSaveFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PinGameSaveFileResponse copyWith(void Function(PinGameSaveFileResponse) updates) => super.copyWith((message) => updates(message as PinGameSaveFileResponse)) as PinGameSaveFileResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static PinGameSaveFileResponse create() => PinGameSaveFileResponse._();
+  PinGameSaveFileResponse createEmptyInstance() => create();
+  static $pb.PbList<PinGameSaveFileResponse> createRepeated() => $pb.PbList<PinGameSaveFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PinGameSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PinGameSaveFileResponse>(create);
+  static PinGameSaveFileResponse? _defaultInstance;
+}
+
+class UnpinGameSaveFileRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnpinGameSaveFileRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  UnpinGameSaveFileRequest._() : super();
+  factory UnpinGameSaveFileRequest({
+    $7.InternalID? id,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    return _result;
+  }
+  factory UnpinGameSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnpinGameSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnpinGameSaveFileRequest clone() => UnpinGameSaveFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnpinGameSaveFileRequest copyWith(void Function(UnpinGameSaveFileRequest) updates) => super.copyWith((message) => updates(message as UnpinGameSaveFileRequest)) as UnpinGameSaveFileRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UnpinGameSaveFileRequest create() => UnpinGameSaveFileRequest._();
+  UnpinGameSaveFileRequest createEmptyInstance() => create();
+  static $pb.PbList<UnpinGameSaveFileRequest> createRepeated() => $pb.PbList<UnpinGameSaveFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UnpinGameSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnpinGameSaveFileRequest>(create);
+  static UnpinGameSaveFileRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class UnpinGameSaveFileResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnpinGameSaveFileResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  UnpinGameSaveFileResponse._() : super();
+  factory UnpinGameSaveFileResponse() => create();
+  factory UnpinGameSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnpinGameSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnpinGameSaveFileResponse clone() => UnpinGameSaveFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnpinGameSaveFileResponse copyWith(void Function(UnpinGameSaveFileResponse) updates) => super.copyWith((message) => updates(message as UnpinGameSaveFileResponse)) as UnpinGameSaveFileResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UnpinGameSaveFileResponse create() => UnpinGameSaveFileResponse._();
+  UnpinGameSaveFileResponse createEmptyInstance() => create();
+  static $pb.PbList<UnpinGameSaveFileResponse> createRepeated() => $pb.PbList<UnpinGameSaveFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UnpinGameSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnpinGameSaveFileResponse>(create);
+  static UnpinGameSaveFileResponse? _defaultInstance;
+}
+
+class SetUserSaveFileCapacityRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetUserSaveFileCapacityRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', subBuilder: $7.InternalID.create)
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'capacityBytes')
+    ..hasRequiredFields = false
+  ;
+
+  SetUserSaveFileCapacityRequest._() : super();
+  factory SetUserSaveFileCapacityRequest({
+    $7.InternalID? userId,
+    $fixnum.Int64? capacityBytes,
+  }) {
+    final _result = create();
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    if (capacityBytes != null) {
+      _result.capacityBytes = capacityBytes;
+    }
+    return _result;
+  }
+  factory SetUserSaveFileCapacityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetUserSaveFileCapacityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetUserSaveFileCapacityRequest clone() => SetUserSaveFileCapacityRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetUserSaveFileCapacityRequest copyWith(void Function(SetUserSaveFileCapacityRequest) updates) => super.copyWith((message) => updates(message as SetUserSaveFileCapacityRequest)) as SetUserSaveFileCapacityRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SetUserSaveFileCapacityRequest create() => SetUserSaveFileCapacityRequest._();
+  SetUserSaveFileCapacityRequest createEmptyInstance() => create();
+  static $pb.PbList<SetUserSaveFileCapacityRequest> createRepeated() => $pb.PbList<SetUserSaveFileCapacityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetUserSaveFileCapacityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetUserSaveFileCapacityRequest>(create);
+  static SetUserSaveFileCapacityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get userId => $_getN(0);
+  @$pb.TagNumber(1)
+  set userId($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureUserId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get capacityBytes => $_getI64(1);
+  @$pb.TagNumber(2)
+  set capacityBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCapacityBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCapacityBytes() => clearField(2);
+}
+
+class SetUserSaveFileCapacityResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetUserSaveFileCapacityResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  SetUserSaveFileCapacityResponse._() : super();
+  factory SetUserSaveFileCapacityResponse() => create();
+  factory SetUserSaveFileCapacityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetUserSaveFileCapacityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetUserSaveFileCapacityResponse clone() => SetUserSaveFileCapacityResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetUserSaveFileCapacityResponse copyWith(void Function(SetUserSaveFileCapacityResponse) updates) => super.copyWith((message) => updates(message as SetUserSaveFileCapacityResponse)) as SetUserSaveFileCapacityResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SetUserSaveFileCapacityResponse create() => SetUserSaveFileCapacityResponse._();
+  SetUserSaveFileCapacityResponse createEmptyInstance() => create();
+  static $pb.PbList<SetUserSaveFileCapacityResponse> createRepeated() => $pb.PbList<SetUserSaveFileCapacityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetUserSaveFileCapacityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetUserSaveFileCapacityResponse>(create);
+  static SetUserSaveFileCapacityResponse? _defaultInstance;
+}
+
+class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetSaveFileRotationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..e<VaildScope>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vaildScope', $pb.PbFieldType.OE, defaultOrMaker: VaildScope.VAILD_SCOPE_UNSPECIFIED, valueOf: VaildScope.valueOf, enumValues: VaildScope.values)
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enabled')
+    ..hasRequiredFields = false
+  ;
+
+  SetSaveFileRotationRequest._() : super();
+  factory SetSaveFileRotationRequest({
+    VaildScope? vaildScope,
+    $fixnum.Int64? count,
+    $core.bool? enabled,
+  }) {
+    final _result = create();
+    if (vaildScope != null) {
+      _result.vaildScope = vaildScope;
+    }
+    if (count != null) {
+      _result.count = count;
+    }
+    if (enabled != null) {
+      _result.enabled = enabled;
+    }
+    return _result;
+  }
+  factory SetSaveFileRotationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetSaveFileRotationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetSaveFileRotationRequest clone() => SetSaveFileRotationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetSaveFileRotationRequest copyWith(void Function(SetSaveFileRotationRequest) updates) => super.copyWith((message) => updates(message as SetSaveFileRotationRequest)) as SetSaveFileRotationRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SetSaveFileRotationRequest create() => SetSaveFileRotationRequest._();
+  SetSaveFileRotationRequest createEmptyInstance() => create();
+  static $pb.PbList<SetSaveFileRotationRequest> createRepeated() => $pb.PbList<SetSaveFileRotationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetSaveFileRotationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSaveFileRotationRequest>(create);
+  static SetSaveFileRotationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaildScope get vaildScope => $_getN(0);
+  @$pb.TagNumber(1)
+  set vaildScope(VaildScope v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasVaildScope() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVaildScope() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get count => $_getI64(1);
+  @$pb.TagNumber(2)
+  set count($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get enabled => $_getBF(2);
+  @$pb.TagNumber(3)
+  set enabled($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEnabled() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEnabled() => clearField(3);
+}
+
+class SetSaveFileRotationResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SetSaveFileRotationResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  SetSaveFileRotationResponse._() : super();
+  factory SetSaveFileRotationResponse() => create();
+  factory SetSaveFileRotationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetSaveFileRotationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetSaveFileRotationResponse clone() => SetSaveFileRotationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetSaveFileRotationResponse copyWith(void Function(SetSaveFileRotationResponse) updates) => super.copyWith((message) => updates(message as SetSaveFileRotationResponse)) as SetSaveFileRotationResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SetSaveFileRotationResponse create() => SetSaveFileRotationResponse._();
+  SetSaveFileRotationResponse createEmptyInstance() => create();
+  static $pb.PbList<SetSaveFileRotationResponse> createRepeated() => $pb.PbList<SetSaveFileRotationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetSaveFileRotationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSaveFileRotationResponse>(create);
+  static SetSaveFileRotationResponse? _defaultInstance;
 }
 

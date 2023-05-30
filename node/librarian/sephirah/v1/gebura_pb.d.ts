@@ -902,7 +902,7 @@ export namespace DownloadGameSaveFileResponse {
   }
 }
 
-export class ListGameSaveFileRequest extends jspb.Message {
+export class ListGameSaveFilesRequest extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
@@ -914,47 +914,284 @@ export class ListGameSaveFileRequest extends jspb.Message {
   setAppPackageId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListGameSaveFileRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListGameSaveFileRequest): ListGameSaveFileRequest.AsObject;
+  toObject(includeInstance?: boolean): ListGameSaveFilesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListGameSaveFilesRequest): ListGameSaveFilesRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListGameSaveFileRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListGameSaveFileRequest;
-  static deserializeBinaryFromReader(message: ListGameSaveFileRequest, reader: jspb.BinaryReader): ListGameSaveFileRequest;
+  static serializeBinaryToWriter(message: ListGameSaveFilesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListGameSaveFilesRequest;
+  static deserializeBinaryFromReader(message: ListGameSaveFilesRequest, reader: jspb.BinaryReader): ListGameSaveFilesRequest;
 }
 
-export namespace ListGameSaveFileRequest {
+export namespace ListGameSaveFilesRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
-export class ListGameSaveFileResponse extends jspb.Message {
+export class ListGameSaveFilesResponse extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
-  clearFilesList(): void;
-  getFilesList(): Array<librarian_sephirah_v1_base_pb.FileMetadata>;
-  setFilesList(value: Array<librarian_sephirah_v1_base_pb.FileMetadata>): void;
-  addFiles(value?: librarian_sephirah_v1_base_pb.FileMetadata, index?: number): librarian_sephirah_v1_base_pb.FileMetadata;
+  clearResultsList(): void;
+  getResultsList(): Array<ListGameSaveFilesResponse.Result>;
+  setResultsList(value: Array<ListGameSaveFilesResponse.Result>): void;
+  addResults(value?: ListGameSaveFilesResponse.Result, index?: number): ListGameSaveFilesResponse.Result;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListGameSaveFileResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListGameSaveFileResponse): ListGameSaveFileResponse.AsObject;
+  toObject(includeInstance?: boolean): ListGameSaveFilesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListGameSaveFilesResponse): ListGameSaveFilesResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListGameSaveFileResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListGameSaveFileResponse;
-  static deserializeBinaryFromReader(message: ListGameSaveFileResponse, reader: jspb.BinaryReader): ListGameSaveFileResponse;
+  static serializeBinaryToWriter(message: ListGameSaveFilesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListGameSaveFilesResponse;
+  static deserializeBinaryFromReader(message: ListGameSaveFilesResponse, reader: jspb.BinaryReader): ListGameSaveFilesResponse;
 }
 
-export namespace ListGameSaveFileResponse {
+export namespace ListGameSaveFilesResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    filesList: Array<librarian_sephirah_v1_base_pb.FileMetadata.AsObject>,
+    resultsList: Array<ListGameSaveFilesResponse.Result.AsObject>,
+  }
+
+  export class Result extends jspb.Message {
+    hasFiles(): boolean;
+    clearFiles(): void;
+    getFiles(): librarian_sephirah_v1_base_pb.FileMetadata | undefined;
+    setFiles(value?: librarian_sephirah_v1_base_pb.FileMetadata): void;
+
+    getPinned(): boolean;
+    setPinned(value: boolean): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Result.AsObject;
+    static toObject(includeInstance: boolean, msg: Result): Result.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Result, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Result;
+    static deserializeBinaryFromReader(message: Result, reader: jspb.BinaryReader): Result;
+  }
+
+  export namespace Result {
+    export type AsObject = {
+      files?: librarian_sephirah_v1_base_pb.FileMetadata.AsObject,
+      pinned: boolean,
+    }
   }
 }
+
+export class RemoveGameSaveFileRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveGameSaveFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveGameSaveFileRequest): RemoveGameSaveFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveGameSaveFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveGameSaveFileRequest;
+  static deserializeBinaryFromReader(message: RemoveGameSaveFileRequest, reader: jspb.BinaryReader): RemoveGameSaveFileRequest;
+}
+
+export namespace RemoveGameSaveFileRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class RemoveGameSaveFileResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveGameSaveFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveGameSaveFileResponse): RemoveGameSaveFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveGameSaveFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveGameSaveFileResponse;
+  static deserializeBinaryFromReader(message: RemoveGameSaveFileResponse, reader: jspb.BinaryReader): RemoveGameSaveFileResponse;
+}
+
+export namespace RemoveGameSaveFileResponse {
+  export type AsObject = {
+  }
+}
+
+export class PinGameSaveFileRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PinGameSaveFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PinGameSaveFileRequest): PinGameSaveFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PinGameSaveFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PinGameSaveFileRequest;
+  static deserializeBinaryFromReader(message: PinGameSaveFileRequest, reader: jspb.BinaryReader): PinGameSaveFileRequest;
+}
+
+export namespace PinGameSaveFileRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class PinGameSaveFileResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PinGameSaveFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PinGameSaveFileResponse): PinGameSaveFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PinGameSaveFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PinGameSaveFileResponse;
+  static deserializeBinaryFromReader(message: PinGameSaveFileResponse, reader: jspb.BinaryReader): PinGameSaveFileResponse;
+}
+
+export namespace PinGameSaveFileResponse {
+  export type AsObject = {
+  }
+}
+
+export class UnpinGameSaveFileRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnpinGameSaveFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UnpinGameSaveFileRequest): UnpinGameSaveFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnpinGameSaveFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnpinGameSaveFileRequest;
+  static deserializeBinaryFromReader(message: UnpinGameSaveFileRequest, reader: jspb.BinaryReader): UnpinGameSaveFileRequest;
+}
+
+export namespace UnpinGameSaveFileRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class UnpinGameSaveFileResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UnpinGameSaveFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UnpinGameSaveFileResponse): UnpinGameSaveFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UnpinGameSaveFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UnpinGameSaveFileResponse;
+  static deserializeBinaryFromReader(message: UnpinGameSaveFileResponse, reader: jspb.BinaryReader): UnpinGameSaveFileResponse;
+}
+
+export namespace UnpinGameSaveFileResponse {
+  export type AsObject = {
+  }
+}
+
+export class SetUserSaveFileCapacityRequest extends jspb.Message {
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): librarian_v1_common_pb.InternalID | undefined;
+  setUserId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasCapacityBytes(): boolean;
+  clearCapacityBytes(): void;
+  getCapacityBytes(): number;
+  setCapacityBytes(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetUserSaveFileCapacityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetUserSaveFileCapacityRequest): SetUserSaveFileCapacityRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetUserSaveFileCapacityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetUserSaveFileCapacityRequest;
+  static deserializeBinaryFromReader(message: SetUserSaveFileCapacityRequest, reader: jspb.BinaryReader): SetUserSaveFileCapacityRequest;
+}
+
+export namespace SetUserSaveFileCapacityRequest {
+  export type AsObject = {
+    userId?: librarian_v1_common_pb.InternalID.AsObject,
+    capacityBytes: number,
+  }
+}
+
+export class SetUserSaveFileCapacityResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetUserSaveFileCapacityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetUserSaveFileCapacityResponse): SetUserSaveFileCapacityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetUserSaveFileCapacityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetUserSaveFileCapacityResponse;
+  static deserializeBinaryFromReader(message: SetUserSaveFileCapacityResponse, reader: jspb.BinaryReader): SetUserSaveFileCapacityResponse;
+}
+
+export namespace SetUserSaveFileCapacityResponse {
+  export type AsObject = {
+  }
+}
+
+export class SetSaveFileRotationRequest extends jspb.Message {
+  getVaildScope(): VaildScopeMap[keyof VaildScopeMap];
+  setVaildScope(value: VaildScopeMap[keyof VaildScopeMap]): void;
+
+  getCount(): number;
+  setCount(value: number): void;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetSaveFileRotationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetSaveFileRotationRequest): SetSaveFileRotationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetSaveFileRotationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetSaveFileRotationRequest;
+  static deserializeBinaryFromReader(message: SetSaveFileRotationRequest, reader: jspb.BinaryReader): SetSaveFileRotationRequest;
+}
+
+export namespace SetSaveFileRotationRequest {
+  export type AsObject = {
+    vaildScope: VaildScopeMap[keyof VaildScopeMap],
+    count: number,
+    enabled: boolean,
+  }
+}
+
+export class SetSaveFileRotationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetSaveFileRotationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetSaveFileRotationResponse): SetSaveFileRotationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetSaveFileRotationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetSaveFileRotationResponse;
+  static deserializeBinaryFromReader(message: SetSaveFileRotationResponse, reader: jspb.BinaryReader): SetSaveFileRotationResponse;
+}
+
+export namespace SetSaveFileRotationResponse {
+  export type AsObject = {
+  }
+}
+
+export interface VaildScopeMap {
+  VAILD_SCOPE_UNSPECIFIED: 0;
+  VAILD_SCOPE_ACCOUNT: 1;
+  VAILD_SCOPE_APP: 2;
+  VAILD_SCOPE_APP_PACKAGE: 3;
+}
+
+export const VaildScope: VaildScopeMap;
 
