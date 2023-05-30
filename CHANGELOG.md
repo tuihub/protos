@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.30](https://github.com/TuiHub/Protos/compare/v0.2.29...v0.2.30) (2023-05-30)
+
+
+### Bug Fixes
+
+* **gebura:** add entity id in SetSaveFileRotationRequest ([6d7be5f](https://github.com/TuiHub/Protos/commit/6d7be5f2479ad8f9bff7b190f0cd6474edbc0d50))
+
 ## [0.2.29](https://github.com/TuiHub/Protos/compare/v0.2.28...v0.2.29) (2023-05-30)
 
 
