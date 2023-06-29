@@ -138,8 +138,12 @@ message FeedItemDigest {
   // text generated from `FeedItem.content` or `FeedItem.description`
   string short_description = 7;
   // images generated from `FeedItem.content` or `FeedItem.description`
-  // maximum 3
+  // maximum 9
   repeated string image_urls = 8;
   // hostname of `FeedItem.link`, e.g. github.com
   string publish_platform = 9;
+  // `FeedConfig.name`
+  string feed_config_name = 10;
+  // `Feed.image.url`
+  string feed_avatar_url = 11;
 }
