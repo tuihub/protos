@@ -68,6 +68,6 @@ plugins:
     out: Assets/src
 
   #Dart
-  - name: dart
+  - name: buf.build/protocolbuffers/dart:v21.0.2
     out: lib
     opt: grpc
