@@ -51,16 +51,13 @@ jobs:
         uses: dart-lang/setup-dart@v1.4
 
       - name: Install Protoc
-        uses: arduino/setup-protoc@v1
-        # https://github.com/arduino/setup-protoc/issues/33
-        with:
-          version: '3.20.3'
+        uses: arduino/setup-protoc@v2
 
       - name: Install Protoc Plugins
         run: make install-plugins
 
       - name: Setup bufbuild  
-        uses: bufbuild/buf-setup-action@v1.18.0
+        uses: bufbuild/buf-setup-action@v1.22.0
 
       - name: Build
         run: make generate
