@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.31](https://github.com/TuiHub/Protos/compare/v0.2.30...v0.2.31) (2023-06-29)
+
+
+### Features
+
+* add new field to FeedItemDigest ([dd7e658](https://github.com/TuiHub/Protos/commit/dd7e658ac4efb23f13787f1d9015d41e18ed0a9d))
+
 ## [0.2.30](https://github.com/TuiHub/Protos/compare/v0.2.29...v0.2.30) (2023-05-30)
 
 
