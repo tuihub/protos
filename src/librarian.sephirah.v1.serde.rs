@@ -2618,6 +2618,12 @@ impl serde::Serialize for FeedItemDigest {
         if !self.publish_platform.is_empty() {
             len += 1;
         }
+        if !self.feed_config_name.is_empty() {
+            len += 1;
+        }
+        if !self.feed_avatar_url.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedItemDigest", len)?;
         if let Some(v) = self.feed_id.as_ref() {
             struct_ser.serialize_field("feedId", v)?;
@@ -2646,6 +2652,12 @@ impl serde::Serialize for FeedItemDigest {
         if !self.publish_platform.is_empty() {
             struct_ser.serialize_field("publishPlatform", &self.publish_platform)?;
         }
+        if !self.feed_config_name.is_empty() {
+            struct_ser.serialize_field("feedConfigName", &self.feed_config_name)?;
+        }
+        if !self.feed_avatar_url.is_empty() {
+            struct_ser.serialize_field("feedAvatarUrl", &self.feed_avatar_url)?;
+        }
         struct_ser.end()
     }
 }
@@ -2672,6 +2684,10 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
             "imageUrls",
             "publish_platform",
             "publishPlatform",
+            "feed_config_name",
+            "feedConfigName",
+            "feed_avatar_url",
+            "feedAvatarUrl",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -2685,6 +2701,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
             ShortDescription,
             ImageUrls,
             PublishPlatform,
+            FeedConfigName,
+            FeedAvatarUrl,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2715,6 +2733,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                             "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
                             "imageUrls" | "image_urls" => Ok(GeneratedField::ImageUrls),
                             "publishPlatform" | "publish_platform" => Ok(GeneratedField::PublishPlatform),
+                            "feedConfigName" | "feed_config_name" => Ok(GeneratedField::FeedConfigName),
+                            "feedAvatarUrl" | "feed_avatar_url" => Ok(GeneratedField::FeedAvatarUrl),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2743,6 +2763,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                 let mut short_description__ = None;
                 let mut image_urls__ = None;
                 let mut publish_platform__ = None;
+                let mut feed_config_name__ = None;
+                let mut feed_avatar_url__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::FeedId => {
@@ -2799,6 +2821,18 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                             }
                             publish_platform__ = Some(map.next_value()?);
                         }
+                        GeneratedField::FeedConfigName => {
+                            if feed_config_name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedConfigName"));
+                            }
+                            feed_config_name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::FeedAvatarUrl => {
+                            if feed_avatar_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedAvatarUrl"));
+                            }
+                            feed_avatar_url__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(FeedItemDigest {
@@ -2811,6 +2845,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                     short_description: short_description__.unwrap_or_default(),
                     image_urls: image_urls__.unwrap_or_default(),
                     publish_platform: publish_platform__.unwrap_or_default(),
+                    feed_config_name: feed_config_name__.unwrap_or_default(),
+                    feed_avatar_url: feed_avatar_url__.unwrap_or_default(),
                 })
             }
         }

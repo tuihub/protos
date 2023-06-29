@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: librarian/mapper/v1/mapper.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -11,29 +15,21 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $1;
-
 import 'mapper.pbenum.dart';
 
 export 'mapper.pbenum.dart';
 
 class InsertVertexRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InsertVertexRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Vertex>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
+  factory InsertVertexRequest() => create();
+  InsertVertexRequest._() : super();
+  factory InsertVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InsertVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InsertVertexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Vertex>(1, _omitFieldNames ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
     ..hasRequiredFields = false
   ;
 
-  InsertVertexRequest._() : super();
-  factory InsertVertexRequest({
-    $core.Iterable<Vertex>? vertexList,
-  }) {
-    final _result = create();
-    if (vertexList != null) {
-      _result.vertexList.addAll(vertexList);
-    }
-    return _result;
-  }
-  factory InsertVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InsertVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -43,8 +39,10 @@ class InsertVertexRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InsertVertexRequest copyWith(void Function(InsertVertexRequest) updates) => super.copyWith((message) => updates(message as InsertVertexRequest)) as InsertVertexRequest; // ignore: deprecated_member_use
+  InsertVertexRequest copyWith(void Function(InsertVertexRequest) updates) => super.copyWith((message) => updates(message as InsertVertexRequest)) as InsertVertexRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static InsertVertexRequest create() => InsertVertexRequest._();
   InsertVertexRequest createEmptyInstance() => create();
@@ -58,14 +56,15 @@ class InsertVertexRequest extends $pb.GeneratedMessage {
 }
 
 class InsertVertexResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InsertVertexResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+  factory InsertVertexResponse() => create();
+  InsertVertexResponse._() : super();
+  factory InsertVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InsertVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InsertVertexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  InsertVertexResponse._() : super();
-  factory InsertVertexResponse() => create();
-  factory InsertVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InsertVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -75,8 +74,10 @@ class InsertVertexResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InsertVertexResponse copyWith(void Function(InsertVertexResponse) updates) => super.copyWith((message) => updates(message as InsertVertexResponse)) as InsertVertexResponse; // ignore: deprecated_member_use
+  InsertVertexResponse copyWith(void Function(InsertVertexResponse) updates) => super.copyWith((message) => updates(message as InsertVertexResponse)) as InsertVertexResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static InsertVertexResponse create() => InsertVertexResponse._();
   InsertVertexResponse createEmptyInstance() => create();
@@ -87,23 +88,16 @@ class InsertVertexResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteVertexRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteVertexRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vidList', $pb.PbFieldType.K6)
+  factory DeleteVertexRequest() => create();
+  DeleteVertexRequest._() : super();
+  factory DeleteVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteVertexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'vidList', $pb.PbFieldType.K6)
     ..hasRequiredFields = false
   ;
 
-  DeleteVertexRequest._() : super();
-  factory DeleteVertexRequest({
-    $core.Iterable<$fixnum.Int64>? vidList,
-  }) {
-    final _result = create();
-    if (vidList != null) {
-      _result.vidList.addAll(vidList);
-    }
-    return _result;
-  }
-  factory DeleteVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -113,8 +107,10 @@ class DeleteVertexRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteVertexRequest copyWith(void Function(DeleteVertexRequest) updates) => super.copyWith((message) => updates(message as DeleteVertexRequest)) as DeleteVertexRequest; // ignore: deprecated_member_use
+  DeleteVertexRequest copyWith(void Function(DeleteVertexRequest) updates) => super.copyWith((message) => updates(message as DeleteVertexRequest)) as DeleteVertexRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteVertexRequest create() => DeleteVertexRequest._();
   DeleteVertexRequest createEmptyInstance() => create();
@@ -128,14 +124,15 @@ class DeleteVertexRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteVertexResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteVertexResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+  factory DeleteVertexResponse() => create();
+  DeleteVertexResponse._() : super();
+  factory DeleteVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteVertexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  DeleteVertexResponse._() : super();
-  factory DeleteVertexResponse() => create();
-  factory DeleteVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -145,8 +142,10 @@ class DeleteVertexResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteVertexResponse copyWith(void Function(DeleteVertexResponse) updates) => super.copyWith((message) => updates(message as DeleteVertexResponse)) as DeleteVertexResponse; // ignore: deprecated_member_use
+  DeleteVertexResponse copyWith(void Function(DeleteVertexResponse) updates) => super.copyWith((message) => updates(message as DeleteVertexResponse)) as DeleteVertexResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteVertexResponse create() => DeleteVertexResponse._();
   DeleteVertexResponse createEmptyInstance() => create();
@@ -157,23 +156,16 @@ class DeleteVertexResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateVertexRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateVertexRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Vertex>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
+  factory UpdateVertexRequest() => create();
+  UpdateVertexRequest._() : super();
+  factory UpdateVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateVertexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Vertex>(1, _omitFieldNames ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
     ..hasRequiredFields = false
   ;
 
-  UpdateVertexRequest._() : super();
-  factory UpdateVertexRequest({
-    $core.Iterable<Vertex>? vertexList,
-  }) {
-    final _result = create();
-    if (vertexList != null) {
-      _result.vertexList.addAll(vertexList);
-    }
-    return _result;
-  }
-  factory UpdateVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -183,8 +175,10 @@ class UpdateVertexRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateVertexRequest copyWith(void Function(UpdateVertexRequest) updates) => super.copyWith((message) => updates(message as UpdateVertexRequest)) as UpdateVertexRequest; // ignore: deprecated_member_use
+  UpdateVertexRequest copyWith(void Function(UpdateVertexRequest) updates) => super.copyWith((message) => updates(message as UpdateVertexRequest)) as UpdateVertexRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateVertexRequest create() => UpdateVertexRequest._();
   UpdateVertexRequest createEmptyInstance() => create();
@@ -198,14 +192,15 @@ class UpdateVertexRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateVertexResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateVertexResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+  factory UpdateVertexResponse() => create();
+  UpdateVertexResponse._() : super();
+  factory UpdateVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateVertexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  UpdateVertexResponse._() : super();
-  factory UpdateVertexResponse() => create();
-  factory UpdateVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -215,8 +210,10 @@ class UpdateVertexResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateVertexResponse copyWith(void Function(UpdateVertexResponse) updates) => super.copyWith((message) => updates(message as UpdateVertexResponse)) as UpdateVertexResponse; // ignore: deprecated_member_use
+  UpdateVertexResponse copyWith(void Function(UpdateVertexResponse) updates) => super.copyWith((message) => updates(message as UpdateVertexResponse)) as UpdateVertexResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateVertexResponse create() => UpdateVertexResponse._();
   UpdateVertexResponse createEmptyInstance() => create();
@@ -227,23 +224,16 @@ class UpdateVertexResponse extends $pb.GeneratedMessage {
 }
 
 class InsertEdgeRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InsertEdgeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Edge>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
+  factory InsertEdgeRequest() => create();
+  InsertEdgeRequest._() : super();
+  factory InsertEdgeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InsertEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InsertEdgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Edge>(1, _omitFieldNames ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
     ..hasRequiredFields = false
   ;
 
-  InsertEdgeRequest._() : super();
-  factory InsertEdgeRequest({
-    $core.Iterable<Edge>? edgeList,
-  }) {
-    final _result = create();
-    if (edgeList != null) {
-      _result.edgeList.addAll(edgeList);
-    }
-    return _result;
-  }
-  factory InsertEdgeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InsertEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -253,8 +243,10 @@ class InsertEdgeRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InsertEdgeRequest copyWith(void Function(InsertEdgeRequest) updates) => super.copyWith((message) => updates(message as InsertEdgeRequest)) as InsertEdgeRequest; // ignore: deprecated_member_use
+  InsertEdgeRequest copyWith(void Function(InsertEdgeRequest) updates) => super.copyWith((message) => updates(message as InsertEdgeRequest)) as InsertEdgeRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static InsertEdgeRequest create() => InsertEdgeRequest._();
   InsertEdgeRequest createEmptyInstance() => create();
@@ -268,14 +260,15 @@ class InsertEdgeRequest extends $pb.GeneratedMessage {
 }
 
 class InsertEdgeResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InsertEdgeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+  factory InsertEdgeResponse() => create();
+  InsertEdgeResponse._() : super();
+  factory InsertEdgeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InsertEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InsertEdgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  InsertEdgeResponse._() : super();
-  factory InsertEdgeResponse() => create();
-  factory InsertEdgeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InsertEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -285,8 +278,10 @@ class InsertEdgeResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InsertEdgeResponse copyWith(void Function(InsertEdgeResponse) updates) => super.copyWith((message) => updates(message as InsertEdgeResponse)) as InsertEdgeResponse; // ignore: deprecated_member_use
+  InsertEdgeResponse copyWith(void Function(InsertEdgeResponse) updates) => super.copyWith((message) => updates(message as InsertEdgeResponse)) as InsertEdgeResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static InsertEdgeResponse create() => InsertEdgeResponse._();
   InsertEdgeResponse createEmptyInstance() => create();
@@ -297,23 +292,16 @@ class InsertEdgeResponse extends $pb.GeneratedMessage {
 }
 
 class DeleteEdgeRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteEdgeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Edge>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
+  factory DeleteEdgeRequest() => create();
+  DeleteEdgeRequest._() : super();
+  factory DeleteEdgeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEdgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Edge>(2, _omitFieldNames ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
     ..hasRequiredFields = false
   ;
 
-  DeleteEdgeRequest._() : super();
-  factory DeleteEdgeRequest({
-    $core.Iterable<Edge>? edgeList,
-  }) {
-    final _result = create();
-    if (edgeList != null) {
-      _result.edgeList.addAll(edgeList);
-    }
-    return _result;
-  }
-  factory DeleteEdgeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -323,8 +311,10 @@ class DeleteEdgeRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteEdgeRequest copyWith(void Function(DeleteEdgeRequest) updates) => super.copyWith((message) => updates(message as DeleteEdgeRequest)) as DeleteEdgeRequest; // ignore: deprecated_member_use
+  DeleteEdgeRequest copyWith(void Function(DeleteEdgeRequest) updates) => super.copyWith((message) => updates(message as DeleteEdgeRequest)) as DeleteEdgeRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteEdgeRequest create() => DeleteEdgeRequest._();
   DeleteEdgeRequest createEmptyInstance() => create();
@@ -338,14 +328,15 @@ class DeleteEdgeRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteEdgeResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteEdgeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+  factory DeleteEdgeResponse() => create();
+  DeleteEdgeResponse._() : super();
+  factory DeleteEdgeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteEdgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  DeleteEdgeResponse._() : super();
-  factory DeleteEdgeResponse() => create();
-  factory DeleteEdgeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -355,8 +346,10 @@ class DeleteEdgeResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteEdgeResponse copyWith(void Function(DeleteEdgeResponse) updates) => super.copyWith((message) => updates(message as DeleteEdgeResponse)) as DeleteEdgeResponse; // ignore: deprecated_member_use
+  DeleteEdgeResponse copyWith(void Function(DeleteEdgeResponse) updates) => super.copyWith((message) => updates(message as DeleteEdgeResponse)) as DeleteEdgeResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DeleteEdgeResponse create() => DeleteEdgeResponse._();
   DeleteEdgeResponse createEmptyInstance() => create();
@@ -367,23 +360,16 @@ class DeleteEdgeResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateEdgeRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateEdgeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Edge>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
+  factory UpdateEdgeRequest() => create();
+  UpdateEdgeRequest._() : super();
+  factory UpdateEdgeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateEdgeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Edge>(3, _omitFieldNames ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
     ..hasRequiredFields = false
   ;
 
-  UpdateEdgeRequest._() : super();
-  factory UpdateEdgeRequest({
-    $core.Iterable<Edge>? edgeList,
-  }) {
-    final _result = create();
-    if (edgeList != null) {
-      _result.edgeList.addAll(edgeList);
-    }
-    return _result;
-  }
-  factory UpdateEdgeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateEdgeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -393,8 +379,10 @@ class UpdateEdgeRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateEdgeRequest copyWith(void Function(UpdateEdgeRequest) updates) => super.copyWith((message) => updates(message as UpdateEdgeRequest)) as UpdateEdgeRequest; // ignore: deprecated_member_use
+  UpdateEdgeRequest copyWith(void Function(UpdateEdgeRequest) updates) => super.copyWith((message) => updates(message as UpdateEdgeRequest)) as UpdateEdgeRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateEdgeRequest create() => UpdateEdgeRequest._();
   UpdateEdgeRequest createEmptyInstance() => create();
@@ -408,14 +396,15 @@ class UpdateEdgeRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateEdgeResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateEdgeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+  factory UpdateEdgeResponse() => create();
+  UpdateEdgeResponse._() : super();
+  factory UpdateEdgeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateEdgeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  UpdateEdgeResponse._() : super();
-  factory UpdateEdgeResponse() => create();
-  factory UpdateEdgeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateEdgeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -425,8 +414,10 @@ class UpdateEdgeResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateEdgeResponse copyWith(void Function(UpdateEdgeResponse) updates) => super.copyWith((message) => updates(message as UpdateEdgeResponse)) as UpdateEdgeResponse; // ignore: deprecated_member_use
+  UpdateEdgeResponse copyWith(void Function(UpdateEdgeResponse) updates) => super.copyWith((message) => updates(message as UpdateEdgeResponse)) as UpdateEdgeResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateEdgeResponse create() => UpdateEdgeResponse._();
   UpdateEdgeResponse createEmptyInstance() => create();
@@ -437,53 +428,22 @@ class UpdateEdgeResponse extends $pb.GeneratedMessage {
 }
 
 class GoFromVertexRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GoFromVertexRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcVid')
-    ..pc<EdgeType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeTypeFilter', $pb.PbFieldType.KE, valueOf: EdgeType.valueOf, enumValues: EdgeType.values, defaultEnumValue: EdgeType.EDGE_TYPE_UNSPECIFIED)
-    ..e<EdgeDirection>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeDirection', $pb.PbFieldType.OE, defaultOrMaker: EdgeDirection.EDGE_DIRECTION_UNSPECIFIED, valueOf: EdgeDirection.valueOf, enumValues: EdgeDirection.values)
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minStep')
-    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxStep')
-    ..aInt64(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'limit')
-    ..aInt64(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'offset')
+  factory GoFromVertexRequest() => create();
+  GoFromVertexRequest._() : super();
+  factory GoFromVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GoFromVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GoFromVertexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'srcVid')
+    ..pc<EdgeType>(2, _omitFieldNames ? '' : 'edgeTypeFilter', $pb.PbFieldType.KE, valueOf: EdgeType.valueOf, enumValues: EdgeType.values, defaultEnumValue: EdgeType.EDGE_TYPE_UNSPECIFIED)
+    ..e<EdgeDirection>(3, _omitFieldNames ? '' : 'edgeDirection', $pb.PbFieldType.OE, defaultOrMaker: EdgeDirection.EDGE_DIRECTION_UNSPECIFIED, valueOf: EdgeDirection.valueOf, enumValues: EdgeDirection.values)
+    ..aInt64(4, _omitFieldNames ? '' : 'minStep')
+    ..aInt64(5, _omitFieldNames ? '' : 'maxStep')
+    ..aInt64(14, _omitFieldNames ? '' : 'limit')
+    ..aInt64(15, _omitFieldNames ? '' : 'offset')
     ..hasRequiredFields = false
   ;
 
-  GoFromVertexRequest._() : super();
-  factory GoFromVertexRequest({
-    $fixnum.Int64? srcVid,
-    $core.Iterable<EdgeType>? edgeTypeFilter,
-    EdgeDirection? edgeDirection,
-    $fixnum.Int64? minStep,
-    $fixnum.Int64? maxStep,
-    $fixnum.Int64? limit,
-    $fixnum.Int64? offset,
-  }) {
-    final _result = create();
-    if (srcVid != null) {
-      _result.srcVid = srcVid;
-    }
-    if (edgeTypeFilter != null) {
-      _result.edgeTypeFilter.addAll(edgeTypeFilter);
-    }
-    if (edgeDirection != null) {
-      _result.edgeDirection = edgeDirection;
-    }
-    if (minStep != null) {
-      _result.minStep = minStep;
-    }
-    if (maxStep != null) {
-      _result.maxStep = maxStep;
-    }
-    if (limit != null) {
-      _result.limit = limit;
-    }
-    if (offset != null) {
-      _result.offset = offset;
-    }
-    return _result;
-  }
-  factory GoFromVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GoFromVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -493,8 +453,10 @@ class GoFromVertexRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GoFromVertexRequest copyWith(void Function(GoFromVertexRequest) updates) => super.copyWith((message) => updates(message as GoFromVertexRequest)) as GoFromVertexRequest; // ignore: deprecated_member_use
+  GoFromVertexRequest copyWith(void Function(GoFromVertexRequest) updates) => super.copyWith((message) => updates(message as GoFromVertexRequest)) as GoFromVertexRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GoFromVertexRequest create() => GoFromVertexRequest._();
   GoFromVertexRequest createEmptyInstance() => create();
@@ -562,23 +524,16 @@ class GoFromVertexRequest extends $pb.GeneratedMessage {
 }
 
 class GoFromVertexResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GoFromVertexResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Vertex>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
+  factory GoFromVertexResponse() => create();
+  GoFromVertexResponse._() : super();
+  factory GoFromVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GoFromVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GoFromVertexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Vertex>(1, _omitFieldNames ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
     ..hasRequiredFields = false
   ;
 
-  GoFromVertexResponse._() : super();
-  factory GoFromVertexResponse({
-    $core.Iterable<Vertex>? vertexList,
-  }) {
-    final _result = create();
-    if (vertexList != null) {
-      _result.vertexList.addAll(vertexList);
-    }
-    return _result;
-  }
-  factory GoFromVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GoFromVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -588,8 +543,10 @@ class GoFromVertexResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GoFromVertexResponse copyWith(void Function(GoFromVertexResponse) updates) => super.copyWith((message) => updates(message as GoFromVertexResponse)) as GoFromVertexResponse; // ignore: deprecated_member_use
+  GoFromVertexResponse copyWith(void Function(GoFromVertexResponse) updates) => super.copyWith((message) => updates(message as GoFromVertexResponse)) as GoFromVertexResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GoFromVertexResponse create() => GoFromVertexResponse._();
   GoFromVertexResponse createEmptyInstance() => create();
@@ -603,23 +560,16 @@ class GoFromVertexResponse extends $pb.GeneratedMessage {
 }
 
 class FetchEqualVertexRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchEqualVertexRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcVid')
+  factory FetchEqualVertexRequest() => create();
+  FetchEqualVertexRequest._() : super();
+  factory FetchEqualVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchEqualVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FetchEqualVertexRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'srcVid')
     ..hasRequiredFields = false
   ;
 
-  FetchEqualVertexRequest._() : super();
-  factory FetchEqualVertexRequest({
-    $fixnum.Int64? srcVid,
-  }) {
-    final _result = create();
-    if (srcVid != null) {
-      _result.srcVid = srcVid;
-    }
-    return _result;
-  }
-  factory FetchEqualVertexRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FetchEqualVertexRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -629,8 +579,10 @@ class FetchEqualVertexRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FetchEqualVertexRequest copyWith(void Function(FetchEqualVertexRequest) updates) => super.copyWith((message) => updates(message as FetchEqualVertexRequest)) as FetchEqualVertexRequest; // ignore: deprecated_member_use
+  FetchEqualVertexRequest copyWith(void Function(FetchEqualVertexRequest) updates) => super.copyWith((message) => updates(message as FetchEqualVertexRequest)) as FetchEqualVertexRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FetchEqualVertexRequest create() => FetchEqualVertexRequest._();
   FetchEqualVertexRequest createEmptyInstance() => create();
@@ -650,23 +602,16 @@ class FetchEqualVertexRequest extends $pb.GeneratedMessage {
 }
 
 class FetchEqualVertexResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchEqualVertexResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Vertex>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
+  factory FetchEqualVertexResponse() => create();
+  FetchEqualVertexResponse._() : super();
+  factory FetchEqualVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchEqualVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FetchEqualVertexResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Vertex>(1, _omitFieldNames ? '' : 'vertexList', $pb.PbFieldType.PM, subBuilder: Vertex.create)
     ..hasRequiredFields = false
   ;
 
-  FetchEqualVertexResponse._() : super();
-  factory FetchEqualVertexResponse({
-    $core.Iterable<Vertex>? vertexList,
-  }) {
-    final _result = create();
-    if (vertexList != null) {
-      _result.vertexList.addAll(vertexList);
-    }
-    return _result;
-  }
-  factory FetchEqualVertexResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FetchEqualVertexResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -676,8 +621,10 @@ class FetchEqualVertexResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FetchEqualVertexResponse copyWith(void Function(FetchEqualVertexResponse) updates) => super.copyWith((message) => updates(message as FetchEqualVertexResponse)) as FetchEqualVertexResponse; // ignore: deprecated_member_use
+  FetchEqualVertexResponse copyWith(void Function(FetchEqualVertexResponse) updates) => super.copyWith((message) => updates(message as FetchEqualVertexResponse)) as FetchEqualVertexResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FetchEqualVertexResponse create() => FetchEqualVertexResponse._();
   FetchEqualVertexResponse createEmptyInstance() => create();
@@ -691,33 +638,18 @@ class FetchEqualVertexResponse extends $pb.GeneratedMessage {
 }
 
 class FetchEqualVertexNeighborRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchEqualVertexNeighborRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcVid')
-    ..pc<EdgeType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeTypeFilter', $pb.PbFieldType.KE, valueOf: EdgeType.valueOf, enumValues: EdgeType.values, defaultEnumValue: EdgeType.EDGE_TYPE_UNSPECIFIED)
-    ..e<EdgeDirection>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeDirection', $pb.PbFieldType.OE, defaultOrMaker: EdgeDirection.EDGE_DIRECTION_UNSPECIFIED, valueOf: EdgeDirection.valueOf, enumValues: EdgeDirection.values)
+  factory FetchEqualVertexNeighborRequest() => create();
+  FetchEqualVertexNeighborRequest._() : super();
+  factory FetchEqualVertexNeighborRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchEqualVertexNeighborRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FetchEqualVertexNeighborRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'srcVid')
+    ..pc<EdgeType>(2, _omitFieldNames ? '' : 'edgeTypeFilter', $pb.PbFieldType.KE, valueOf: EdgeType.valueOf, enumValues: EdgeType.values, defaultEnumValue: EdgeType.EDGE_TYPE_UNSPECIFIED)
+    ..e<EdgeDirection>(3, _omitFieldNames ? '' : 'edgeDirection', $pb.PbFieldType.OE, defaultOrMaker: EdgeDirection.EDGE_DIRECTION_UNSPECIFIED, valueOf: EdgeDirection.valueOf, enumValues: EdgeDirection.values)
     ..hasRequiredFields = false
   ;
 
-  FetchEqualVertexNeighborRequest._() : super();
-  factory FetchEqualVertexNeighborRequest({
-    $fixnum.Int64? srcVid,
-    $core.Iterable<EdgeType>? edgeTypeFilter,
-    EdgeDirection? edgeDirection,
-  }) {
-    final _result = create();
-    if (srcVid != null) {
-      _result.srcVid = srcVid;
-    }
-    if (edgeTypeFilter != null) {
-      _result.edgeTypeFilter.addAll(edgeTypeFilter);
-    }
-    if (edgeDirection != null) {
-      _result.edgeDirection = edgeDirection;
-    }
-    return _result;
-  }
-  factory FetchEqualVertexNeighborRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FetchEqualVertexNeighborRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -727,8 +659,10 @@ class FetchEqualVertexNeighborRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FetchEqualVertexNeighborRequest copyWith(void Function(FetchEqualVertexNeighborRequest) updates) => super.copyWith((message) => updates(message as FetchEqualVertexNeighborRequest)) as FetchEqualVertexNeighborRequest; // ignore: deprecated_member_use
+  FetchEqualVertexNeighborRequest copyWith(void Function(FetchEqualVertexNeighborRequest) updates) => super.copyWith((message) => updates(message as FetchEqualVertexNeighborRequest)) as FetchEqualVertexNeighborRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FetchEqualVertexNeighborRequest create() => FetchEqualVertexNeighborRequest._();
   FetchEqualVertexNeighborRequest createEmptyInstance() => create();
@@ -760,23 +694,16 @@ class FetchEqualVertexNeighborRequest extends $pb.GeneratedMessage {
 }
 
 class FetchEqualVertexNeighborResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FetchEqualVertexNeighborResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Edge>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
+  factory FetchEqualVertexNeighborResponse() => create();
+  FetchEqualVertexNeighborResponse._() : super();
+  factory FetchEqualVertexNeighborResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FetchEqualVertexNeighborResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FetchEqualVertexNeighborResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Edge>(1, _omitFieldNames ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
     ..hasRequiredFields = false
   ;
 
-  FetchEqualVertexNeighborResponse._() : super();
-  factory FetchEqualVertexNeighborResponse({
-    $core.Iterable<Edge>? edgeList,
-  }) {
-    final _result = create();
-    if (edgeList != null) {
-      _result.edgeList.addAll(edgeList);
-    }
-    return _result;
-  }
-  factory FetchEqualVertexNeighborResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FetchEqualVertexNeighborResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -786,8 +713,10 @@ class FetchEqualVertexNeighborResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FetchEqualVertexNeighborResponse copyWith(void Function(FetchEqualVertexNeighborResponse) updates) => super.copyWith((message) => updates(message as FetchEqualVertexNeighborResponse)) as FetchEqualVertexNeighborResponse; // ignore: deprecated_member_use
+  FetchEqualVertexNeighborResponse copyWith(void Function(FetchEqualVertexNeighborResponse) updates) => super.copyWith((message) => updates(message as FetchEqualVertexNeighborResponse)) as FetchEqualVertexNeighborResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FetchEqualVertexNeighborResponse create() => FetchEqualVertexNeighborResponse._();
   FetchEqualVertexNeighborResponse createEmptyInstance() => create();
@@ -801,43 +730,20 @@ class FetchEqualVertexNeighborResponse extends $pb.GeneratedMessage {
 }
 
 class FindPathRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FindPathRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcVid', $pb.PbFieldType.K6)
-    ..p<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dstVid', $pb.PbFieldType.K6)
-    ..pc<EdgeType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeTypeFilter', $pb.PbFieldType.KE, valueOf: EdgeType.valueOf, enumValues: EdgeType.values, defaultEnumValue: EdgeType.EDGE_TYPE_UNSPECIFIED)
-    ..e<EdgeDirection>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeDirection', $pb.PbFieldType.OE, defaultOrMaker: EdgeDirection.EDGE_DIRECTION_UNSPECIFIED, valueOf: EdgeDirection.valueOf, enumValues: EdgeDirection.values)
-    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxStep')
+  factory FindPathRequest() => create();
+  FindPathRequest._() : super();
+  factory FindPathRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FindPathRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FindPathRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'srcVid', $pb.PbFieldType.K6)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'dstVid', $pb.PbFieldType.K6)
+    ..pc<EdgeType>(3, _omitFieldNames ? '' : 'edgeTypeFilter', $pb.PbFieldType.KE, valueOf: EdgeType.valueOf, enumValues: EdgeType.values, defaultEnumValue: EdgeType.EDGE_TYPE_UNSPECIFIED)
+    ..e<EdgeDirection>(4, _omitFieldNames ? '' : 'edgeDirection', $pb.PbFieldType.OE, defaultOrMaker: EdgeDirection.EDGE_DIRECTION_UNSPECIFIED, valueOf: EdgeDirection.valueOf, enumValues: EdgeDirection.values)
+    ..aInt64(5, _omitFieldNames ? '' : 'maxStep')
     ..hasRequiredFields = false
   ;
 
-  FindPathRequest._() : super();
-  factory FindPathRequest({
-    $core.Iterable<$fixnum.Int64>? srcVid,
-    $core.Iterable<$fixnum.Int64>? dstVid,
-    $core.Iterable<EdgeType>? edgeTypeFilter,
-    EdgeDirection? edgeDirection,
-    $fixnum.Int64? maxStep,
-  }) {
-    final _result = create();
-    if (srcVid != null) {
-      _result.srcVid.addAll(srcVid);
-    }
-    if (dstVid != null) {
-      _result.dstVid.addAll(dstVid);
-    }
-    if (edgeTypeFilter != null) {
-      _result.edgeTypeFilter.addAll(edgeTypeFilter);
-    }
-    if (edgeDirection != null) {
-      _result.edgeDirection = edgeDirection;
-    }
-    if (maxStep != null) {
-      _result.maxStep = maxStep;
-    }
-    return _result;
-  }
-  factory FindPathRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FindPathRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -847,8 +753,10 @@ class FindPathRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FindPathRequest copyWith(void Function(FindPathRequest) updates) => super.copyWith((message) => updates(message as FindPathRequest)) as FindPathRequest; // ignore: deprecated_member_use
+  FindPathRequest copyWith(void Function(FindPathRequest) updates) => super.copyWith((message) => updates(message as FindPathRequest)) as FindPathRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FindPathRequest create() => FindPathRequest._();
   FindPathRequest createEmptyInstance() => create();
@@ -886,23 +794,16 @@ class FindPathRequest extends $pb.GeneratedMessage {
 }
 
 class FindPathResponse_SinglePath extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FindPathResponse.SinglePath', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<Edge>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
+  factory FindPathResponse_SinglePath() => create();
+  FindPathResponse_SinglePath._() : super();
+  factory FindPathResponse_SinglePath.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FindPathResponse_SinglePath.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FindPathResponse.SinglePath', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<Edge>(3, _omitFieldNames ? '' : 'edgeList', $pb.PbFieldType.PM, subBuilder: Edge.create)
     ..hasRequiredFields = false
   ;
 
-  FindPathResponse_SinglePath._() : super();
-  factory FindPathResponse_SinglePath({
-    $core.Iterable<Edge>? edgeList,
-  }) {
-    final _result = create();
-    if (edgeList != null) {
-      _result.edgeList.addAll(edgeList);
-    }
-    return _result;
-  }
-  factory FindPathResponse_SinglePath.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FindPathResponse_SinglePath.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -912,8 +813,10 @@ class FindPathResponse_SinglePath extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FindPathResponse_SinglePath copyWith(void Function(FindPathResponse_SinglePath) updates) => super.copyWith((message) => updates(message as FindPathResponse_SinglePath)) as FindPathResponse_SinglePath; // ignore: deprecated_member_use
+  FindPathResponse_SinglePath copyWith(void Function(FindPathResponse_SinglePath) updates) => super.copyWith((message) => updates(message as FindPathResponse_SinglePath)) as FindPathResponse_SinglePath;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FindPathResponse_SinglePath create() => FindPathResponse_SinglePath._();
   FindPathResponse_SinglePath createEmptyInstance() => create();
@@ -927,23 +830,16 @@ class FindPathResponse_SinglePath extends $pb.GeneratedMessage {
 }
 
 class FindPathResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FindPathResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..pc<FindPathResponse_SinglePath>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pathList', $pb.PbFieldType.PM, subBuilder: FindPathResponse_SinglePath.create)
+  factory FindPathResponse() => create();
+  FindPathResponse._() : super();
+  factory FindPathResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FindPathResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FindPathResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..pc<FindPathResponse_SinglePath>(1, _omitFieldNames ? '' : 'pathList', $pb.PbFieldType.PM, subBuilder: FindPathResponse_SinglePath.create)
     ..hasRequiredFields = false
   ;
 
-  FindPathResponse._() : super();
-  factory FindPathResponse({
-    $core.Iterable<FindPathResponse_SinglePath>? pathList,
-  }) {
-    final _result = create();
-    if (pathList != null) {
-      _result.pathList.addAll(pathList);
-    }
-    return _result;
-  }
-  factory FindPathResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FindPathResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -953,8 +849,10 @@ class FindPathResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FindPathResponse copyWith(void Function(FindPathResponse) updates) => super.copyWith((message) => updates(message as FindPathResponse)) as FindPathResponse; // ignore: deprecated_member_use
+  FindPathResponse copyWith(void Function(FindPathResponse) updates) => super.copyWith((message) => updates(message as FindPathResponse)) as FindPathResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FindPathResponse create() => FindPathResponse._();
   FindPathResponse createEmptyInstance() => create();
@@ -968,33 +866,18 @@ class FindPathResponse extends $pb.GeneratedMessage {
 }
 
 class Vertex extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Vertex', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vid')
-    ..e<VertexType>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: VertexType.VERTEX_TYPE_UNSPECIFIED, valueOf: VertexType.valueOf, enumValues: VertexType.values)
-    ..aOM<VertexProp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'prop', subBuilder: VertexProp.create)
+  factory Vertex() => create();
+  Vertex._() : super();
+  factory Vertex.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Vertex.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Vertex', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'vid')
+    ..e<VertexType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: VertexType.VERTEX_TYPE_UNSPECIFIED, valueOf: VertexType.valueOf, enumValues: VertexType.values)
+    ..aOM<VertexProp>(3, _omitFieldNames ? '' : 'prop', subBuilder: VertexProp.create)
     ..hasRequiredFields = false
   ;
 
-  Vertex._() : super();
-  factory Vertex({
-    $fixnum.Int64? vid,
-    VertexType? type,
-    VertexProp? prop,
-  }) {
-    final _result = create();
-    if (vid != null) {
-      _result.vid = vid;
-    }
-    if (type != null) {
-      _result.type = type;
-    }
-    if (prop != null) {
-      _result.prop = prop;
-    }
-    return _result;
-  }
-  factory Vertex.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Vertex.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1004,8 +887,10 @@ class Vertex extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Vertex copyWith(void Function(Vertex) updates) => super.copyWith((message) => updates(message as Vertex)) as Vertex; // ignore: deprecated_member_use
+  Vertex copyWith(void Function(Vertex) updates) => super.copyWith((message) => updates(message as Vertex)) as Vertex;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Vertex create() => Vertex._();
   Vertex createEmptyInstance() => create();
@@ -1045,28 +930,17 @@ class Vertex extends $pb.GeneratedMessage {
 }
 
 class VertexProp extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'VertexProp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aOM<VertexCommonProp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: VertexCommonProp.create)
-    ..m<$core.String, $fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'additional', entryClassName: 'VertexProp.AdditionalEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O6, packageName: const $pb.PackageName('librarian.mapper.v1'))
+  factory VertexProp() => create();
+  VertexProp._() : super();
+  factory VertexProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VertexProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VertexProp', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aOM<VertexCommonProp>(1, _omitFieldNames ? '' : 'common', subBuilder: VertexCommonProp.create)
+    ..m<$core.String, $fixnum.Int64>(2, _omitFieldNames ? '' : 'additional', entryClassName: 'VertexProp.AdditionalEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O6, packageName: const $pb.PackageName('librarian.mapper.v1'))
     ..hasRequiredFields = false
   ;
 
-  VertexProp._() : super();
-  factory VertexProp({
-    VertexCommonProp? common,
-    $core.Map<$core.String, $fixnum.Int64>? additional,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    if (additional != null) {
-      _result.additional.addAll(additional);
-    }
-    return _result;
-  }
-  factory VertexProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VertexProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1076,8 +950,10 @@ class VertexProp extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VertexProp copyWith(void Function(VertexProp) updates) => super.copyWith((message) => updates(message as VertexProp)) as VertexProp; // ignore: deprecated_member_use
+  VertexProp copyWith(void Function(VertexProp) updates) => super.copyWith((message) => updates(message as VertexProp)) as VertexProp;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static VertexProp create() => VertexProp._();
   VertexProp createEmptyInstance() => create();
@@ -1102,33 +978,18 @@ class VertexProp extends $pb.GeneratedMessage {
 }
 
 class VertexCommonProp extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'VertexCommonProp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aOM<$1.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'occurTime', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $1.Timestamp.create)
+  factory VertexCommonProp() => create();
+  VertexCommonProp._() : super();
+  factory VertexCommonProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VertexCommonProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VertexCommonProp', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'occurTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'createTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'updateTime', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
-  VertexCommonProp._() : super();
-  factory VertexCommonProp({
-    $1.Timestamp? occurTime,
-    $1.Timestamp? createTime,
-    $1.Timestamp? updateTime,
-  }) {
-    final _result = create();
-    if (occurTime != null) {
-      _result.occurTime = occurTime;
-    }
-    if (createTime != null) {
-      _result.createTime = createTime;
-    }
-    if (updateTime != null) {
-      _result.updateTime = updateTime;
-    }
-    return _result;
-  }
-  factory VertexCommonProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VertexCommonProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1138,8 +999,10 @@ class VertexCommonProp extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VertexCommonProp copyWith(void Function(VertexCommonProp) updates) => super.copyWith((message) => updates(message as VertexCommonProp)) as VertexCommonProp; // ignore: deprecated_member_use
+  VertexCommonProp copyWith(void Function(VertexCommonProp) updates) => super.copyWith((message) => updates(message as VertexCommonProp)) as VertexCommonProp;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static VertexCommonProp create() => VertexCommonProp._();
   VertexCommonProp createEmptyInstance() => create();
@@ -1183,38 +1046,19 @@ class VertexCommonProp extends $pb.GeneratedMessage {
 }
 
 class Edge extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Edge', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcVid')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dstVid')
-    ..e<EdgeType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EdgeType.EDGE_TYPE_UNSPECIFIED, valueOf: EdgeType.valueOf, enumValues: EdgeType.values)
-    ..aOM<EdgeProp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'prop', subBuilder: EdgeProp.create)
+  factory Edge() => create();
+  Edge._() : super();
+  factory Edge.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Edge.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Edge', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'srcVid')
+    ..aInt64(2, _omitFieldNames ? '' : 'dstVid')
+    ..e<EdgeType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EdgeType.EDGE_TYPE_UNSPECIFIED, valueOf: EdgeType.valueOf, enumValues: EdgeType.values)
+    ..aOM<EdgeProp>(4, _omitFieldNames ? '' : 'prop', subBuilder: EdgeProp.create)
     ..hasRequiredFields = false
   ;
 
-  Edge._() : super();
-  factory Edge({
-    $fixnum.Int64? srcVid,
-    $fixnum.Int64? dstVid,
-    EdgeType? type,
-    EdgeProp? prop,
-  }) {
-    final _result = create();
-    if (srcVid != null) {
-      _result.srcVid = srcVid;
-    }
-    if (dstVid != null) {
-      _result.dstVid = dstVid;
-    }
-    if (type != null) {
-      _result.type = type;
-    }
-    if (prop != null) {
-      _result.prop = prop;
-    }
-    return _result;
-  }
-  factory Edge.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Edge.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1224,8 +1068,10 @@ class Edge extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Edge copyWith(void Function(Edge) updates) => super.copyWith((message) => updates(message as Edge)) as Edge; // ignore: deprecated_member_use
+  Edge copyWith(void Function(Edge) updates) => super.copyWith((message) => updates(message as Edge)) as Edge;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Edge create() => Edge._();
   Edge createEmptyInstance() => create();
@@ -1274,28 +1120,17 @@ class Edge extends $pb.GeneratedMessage {
 }
 
 class EdgeProp extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EdgeProp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aOM<EdgeCommonProp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'common', subBuilder: EdgeCommonProp.create)
-    ..m<$core.String, $fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'additional', entryClassName: 'EdgeProp.AdditionalEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O6, packageName: const $pb.PackageName('librarian.mapper.v1'))
+  factory EdgeProp() => create();
+  EdgeProp._() : super();
+  factory EdgeProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EdgeProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EdgeProp', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aOM<EdgeCommonProp>(1, _omitFieldNames ? '' : 'common', subBuilder: EdgeCommonProp.create)
+    ..m<$core.String, $fixnum.Int64>(2, _omitFieldNames ? '' : 'additional', entryClassName: 'EdgeProp.AdditionalEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.O6, packageName: const $pb.PackageName('librarian.mapper.v1'))
     ..hasRequiredFields = false
   ;
 
-  EdgeProp._() : super();
-  factory EdgeProp({
-    EdgeCommonProp? common,
-    $core.Map<$core.String, $fixnum.Int64>? additional,
-  }) {
-    final _result = create();
-    if (common != null) {
-      _result.common = common;
-    }
-    if (additional != null) {
-      _result.additional.addAll(additional);
-    }
-    return _result;
-  }
-  factory EdgeProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EdgeProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1305,8 +1140,10 @@ class EdgeProp extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EdgeProp copyWith(void Function(EdgeProp) updates) => super.copyWith((message) => updates(message as EdgeProp)) as EdgeProp; // ignore: deprecated_member_use
+  EdgeProp copyWith(void Function(EdgeProp) updates) => super.copyWith((message) => updates(message as EdgeProp)) as EdgeProp;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EdgeProp create() => EdgeProp._();
   EdgeProp createEmptyInstance() => create();
@@ -1331,38 +1168,19 @@ class EdgeProp extends $pb.GeneratedMessage {
 }
 
 class EdgeCommonProp extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'EdgeCommonProp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
-    ..aOM<$1.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'occurTime', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTime', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updateTime', subBuilder: $1.Timestamp.create)
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rank')
+  factory EdgeCommonProp() => create();
+  EdgeCommonProp._() : super();
+  factory EdgeCommonProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EdgeCommonProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EdgeCommonProp', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.mapper.v1'), createEmptyInstance: create)
+    ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'occurTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'createTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'updateTime', subBuilder: $1.Timestamp.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'rank')
     ..hasRequiredFields = false
   ;
 
-  EdgeCommonProp._() : super();
-  factory EdgeCommonProp({
-    $1.Timestamp? occurTime,
-    $1.Timestamp? createTime,
-    $1.Timestamp? updateTime,
-    $fixnum.Int64? rank,
-  }) {
-    final _result = create();
-    if (occurTime != null) {
-      _result.occurTime = occurTime;
-    }
-    if (createTime != null) {
-      _result.createTime = createTime;
-    }
-    if (updateTime != null) {
-      _result.updateTime = updateTime;
-    }
-    if (rank != null) {
-      _result.rank = rank;
-    }
-    return _result;
-  }
-  factory EdgeCommonProp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EdgeCommonProp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1372,8 +1190,10 @@ class EdgeCommonProp extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EdgeCommonProp copyWith(void Function(EdgeCommonProp) updates) => super.copyWith((message) => updates(message as EdgeCommonProp)) as EdgeCommonProp; // ignore: deprecated_member_use
+  EdgeCommonProp copyWith(void Function(EdgeCommonProp) updates) => super.copyWith((message) => updates(message as EdgeCommonProp)) as EdgeCommonProp;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static EdgeCommonProp create() => EdgeCommonProp._();
   EdgeCommonProp createEmptyInstance() => create();
@@ -1425,3 +1245,6 @@ class EdgeCommonProp extends $pb.GeneratedMessage {
   void clearRank() => clearField(4);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

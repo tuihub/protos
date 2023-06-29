@@ -4353,7 +4353,9 @@ proto.librarian.sephirah.v1.FeedItemDigest.toObject = function(includeInstance, 
     title: jspb.Message.getFieldWithDefault(msg, 6, ""),
     shortDescription: jspb.Message.getFieldWithDefault(msg, 7, ""),
     imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    publishPlatform: jspb.Message.getFieldWithDefault(msg, 9, "")
+    publishPlatform: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    feedConfigName: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    feedAvatarUrl: jspb.Message.getFieldWithDefault(msg, 11, "")
   };
 
   if (includeInstance) {
@@ -4428,6 +4430,14 @@ proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader = functio
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setPublishPlatform(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFeedConfigName(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFeedAvatarUrl(value);
       break;
     default:
       reader.skipField();
@@ -4521,6 +4531,20 @@ proto.librarian.sephirah.v1.FeedItemDigest.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       9,
+      f
+    );
+  }
+  f = message.getFeedConfigName();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getFeedAvatarUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
       f
     );
   }
@@ -4762,6 +4786,42 @@ proto.librarian.sephirah.v1.FeedItemDigest.prototype.getPublishPlatform = functi
  */
 proto.librarian.sephirah.v1.FeedItemDigest.prototype.setPublishPlatform = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string feed_config_name = 10;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getFeedConfigName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setFeedConfigName = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string feed_avatar_url = 11;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getFeedAvatarUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setFeedAvatarUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
