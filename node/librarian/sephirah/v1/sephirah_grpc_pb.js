@@ -583,6 +583,28 @@ function deserialize_librarian_sephirah_v1_ListAppsResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListFeedConfigCategoriesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedConfigCategoriesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedConfigCategoriesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListFeedConfigCategoriesRequest(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedConfigCategoriesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListFeedConfigCategoriesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedConfigCategoriesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedConfigCategoriesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListFeedConfigCategoriesResponse(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedConfigCategoriesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListFeedConfigsRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedConfigsRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedConfigsRequest');
@@ -2158,6 +2180,18 @@ listFeedConfigs: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedConfigsRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedConfigsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedConfigsResponse,
+  },
+  // `Yesod` `Normal`
+listFeedConfigCategories: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigCategories',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_yesod_pb.ListFeedConfigCategoriesRequest,
+    responseType: librarian_sephirah_v1_yesod_pb.ListFeedConfigCategoriesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListFeedConfigCategoriesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedConfigCategoriesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListFeedConfigCategoriesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedConfigCategoriesResponse,
   },
   // `Yesod` `Normal`
 listFeedItems: {
