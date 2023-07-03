@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.32](https://github.com/TuiHub/Protos/compare/v0.2.31...v0.2.32) (2023-07-03)
+
+
+### Features
+
+* add GetAppRequest & category ([7b378d6](https://github.com/TuiHub/Protos/commit/7b378d6347bb905cdc465a13ffd7ff8bf9bbd9a3))
+* add proto validate ([8d2e591](https://github.com/TuiHub/Protos/commit/8d2e591828364427325414f30c15c7e42e72879f))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#71](https://github.com/TuiHub/Protos/issues/71)) ([ede3c74](https://github.com/TuiHub/Protos/commit/ede3c74d1649451aede5d2900f927a6ccfe6848f))
+
 ## [0.2.31](https://github.com/TuiHub/Protos/compare/v0.2.30...v0.2.31) (2023-06-29)
 
 
