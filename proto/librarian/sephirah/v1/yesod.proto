@@ -27,6 +27,7 @@ message ListFeedConfigsRequest {
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated FeedConfigSource source_filter = 4;
   repeated FeedConfigStatus status_filter = 5;
+  repeated string category_filter = 6;
 }
 
 message ListFeedConfigsResponse {
@@ -38,12 +39,17 @@ message ListFeedConfigsResponse {
   }
 }
 
+message ListFeedConfigCategoriesRequest {}
+message ListFeedConfigCategoriesResponse {
+  repeated string categories = 1;
+}
+
 message ListFeedItemsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated string publish_platform_filter = 4;
-  repeated string tag_filter = 5;
+  repeated string category_filter = 5;
   librarian.v1.TimeRange publish_time_range = 6;
 }
 
@@ -63,8 +69,8 @@ message GroupFeedItemsRequest {
   repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated string publish_platform_filter = 4;
-  repeated string tag_filter = 5;
-  // TimeRange will be rounded to integer time that contains the given time on server side.
+  repeated string category_filter = 5;
+  // TimeRange will be rounded to overall time that contains the given time on server side.
   // e.g. the given TimeRange is 2023.2.13 9:26 ~ 2023.3.14 17:21.
   // When group by year, rounded to 2023.1.1 00:00 ~ 2024.1.1 00:00.
   // When group by month, rounded to 2023.2.1 00:00 ~ 2023.4.1. 00:00.
@@ -107,9 +113,9 @@ message FeedConfig {
   FeedConfigSource source = 5;
   FeedConfigStatus status = 6;
   google.protobuf.Duration pull_interval = 7;
-  repeated string tags = 8;
+  string category = 8;
   // response only
-  optional google.protobuf.Timestamp latest_pull_time = 9;
+  optional google.protobuf.Timestamp latest_update_time = 9;
 }
 
 enum FeedConfigStatus {
@@ -132,7 +138,7 @@ message FeedItemDigest {
   // `FeedItem.authors.name`, seperated by `, `
   string authors = 4;
   // `FeedItem.published_parsed`
-  google.protobuf.Timestamp published_parsed = 5;
+  google.protobuf.Timestamp published_parsed_time = 5;
   // `FeedItem.title`
   string title = 6;
   // text generated from `FeedItem.content` or `FeedItem.description`

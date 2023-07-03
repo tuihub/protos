@@ -43,6 +43,7 @@ message Account {
   string name = 4;
   string profile_url = 5;
   string avatar_url = 6;
+  google.protobuf.Timestamp latest_update_time = 7;
 }
 
 message AccountID {
@@ -64,8 +65,9 @@ message App {
   string name = 6;
   AppType type = 7;
   string short_description = 8;
-  string image_url = 9;
-  optional AppDetails details = 10;
+  string icon_image_url = 9;
+  repeated string tags = 10;
+  optional AppDetails details = 11;
 }
 
 message AppID {
@@ -79,6 +81,8 @@ message AppDetails {
   string developer = 3;
   string publisher = 4;
   string version = 5;
+  string hero_image_url = 6;
+  string logo_image_url = 7;
 }
 
 enum AppType {

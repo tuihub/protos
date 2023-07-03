@@ -72,6 +72,14 @@ message SearchAppsResponse {
   repeated librarian.v1.App apps = 2;
 }
 
+message GetAppRequest {
+  librarian.v1.InternalID app_id = 1;
+}
+
+message GetAppResponse {
+  librarian.v1.App app = 1;
+}
+
 message GetBindAppsRequest {
   librarian.v1.InternalID app_id = 1;
 }

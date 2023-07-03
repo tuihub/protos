@@ -100,7 +100,10 @@ service LibrarianSephirahService {
 
   // `Gebura` `Normal`
   rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
-  // `Gebura` `Normal` Get full information of required app
+  // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
+  // e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
+  rpc GetApp(GetAppRequest) returns (GetAppResponse);
+  // `Gebura` `Normal` Original bound apps info of required app
   rpc GetBindApps(GetBindAppsRequest) returns (GetBindAppsResponse);
   // `Gebura` `Normal`
   rpc PurchaseApp(PurchaseAppRequest) returns (PurchaseAppResponse);
