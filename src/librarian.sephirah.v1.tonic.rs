@@ -764,7 +764,29 @@ pub mod librarian_sephirah_service_client {
             );
             self.inner.unary(request.into_request(), path, codec).await
         }
-        /** `Gebura` `Normal` Get full information of required app
+        /** `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
+ e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
+*/
+        pub async fn get_app(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetAppRequest>,
+        ) -> Result<tonic::Response<super::GetAppResponse>, tonic::Status> {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetApp",
+            );
+            self.inner.unary(request.into_request(), path, codec).await
+        }
+        /** `Gebura` `Normal` Original bound apps info of required app
 */
         pub async fn get_bind_apps(
             &mut self,
@@ -1688,7 +1710,14 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::SearchAppsRequest>,
         ) -> Result<tonic::Response<super::SearchAppsResponse>, tonic::Status>;
-        /** `Gebura` `Normal` Get full information of required app
+        /** `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
+ e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
+*/
+        async fn get_app(
+            &self,
+            request: tonic::Request<super::GetAppRequest>,
+        ) -> Result<tonic::Response<super::GetAppResponse>, tonic::Status>;
+        /** `Gebura` `Normal` Original bound apps info of required app
 */
         async fn get_bind_apps(
             &self,
@@ -3181,6 +3210,44 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = SearchAppsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetApp" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetAppSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::GetAppRequest>
+                    for GetAppSvc<T> {
+                        type Response = super::GetAppResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetAppRequest>,
+                        ) -> Self::Future {
+                            let inner = self.0.clone();
+                            let fut = async move { (*inner).get_app(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = GetAppSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

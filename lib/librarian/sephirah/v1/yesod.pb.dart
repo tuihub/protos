@@ -196,6 +196,7 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
     ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<FeedConfigSource>(4, _omitFieldNames ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values, defaultEnumValue: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED)
     ..pc<FeedConfigStatus>(5, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
+    ..pPS(6, _omitFieldNames ? '' : 'categoryFilter')
     ..hasRequiredFields = false
   ;
 
@@ -242,6 +243,9 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<FeedConfigStatus> get statusFilter => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get categoryFilter => $_getList(5);
 }
 
 class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
@@ -348,6 +352,74 @@ class ListFeedConfigsResponse extends $pb.GeneratedMessage {
   $core.List<ListFeedConfigsResponse_FeedWithConfig> get feedsWithConfig => $_getList(1);
 }
 
+class ListFeedConfigCategoriesRequest extends $pb.GeneratedMessage {
+  factory ListFeedConfigCategoriesRequest() => create();
+  ListFeedConfigCategoriesRequest._() : super();
+  factory ListFeedConfigCategoriesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedConfigCategoriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigCategoriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListFeedConfigCategoriesRequest clone() => ListFeedConfigCategoriesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListFeedConfigCategoriesRequest copyWith(void Function(ListFeedConfigCategoriesRequest) updates) => super.copyWith((message) => updates(message as ListFeedConfigCategoriesRequest)) as ListFeedConfigCategoriesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListFeedConfigCategoriesRequest create() => ListFeedConfigCategoriesRequest._();
+  ListFeedConfigCategoriesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListFeedConfigCategoriesRequest> createRepeated() => $pb.PbList<ListFeedConfigCategoriesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListFeedConfigCategoriesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedConfigCategoriesRequest>(create);
+  static ListFeedConfigCategoriesRequest? _defaultInstance;
+}
+
+class ListFeedConfigCategoriesResponse extends $pb.GeneratedMessage {
+  factory ListFeedConfigCategoriesResponse() => create();
+  ListFeedConfigCategoriesResponse._() : super();
+  factory ListFeedConfigCategoriesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedConfigCategoriesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigCategoriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'categories')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListFeedConfigCategoriesResponse clone() => ListFeedConfigCategoriesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListFeedConfigCategoriesResponse copyWith(void Function(ListFeedConfigCategoriesResponse) updates) => super.copyWith((message) => updates(message as ListFeedConfigCategoriesResponse)) as ListFeedConfigCategoriesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListFeedConfigCategoriesResponse create() => ListFeedConfigCategoriesResponse._();
+  ListFeedConfigCategoriesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListFeedConfigCategoriesResponse> createRepeated() => $pb.PbList<ListFeedConfigCategoriesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListFeedConfigCategoriesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedConfigCategoriesResponse>(create);
+  static ListFeedConfigCategoriesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get categories => $_getList(0);
+}
+
 class ListFeedItemsRequest extends $pb.GeneratedMessage {
   factory ListFeedItemsRequest() => create();
   ListFeedItemsRequest._() : super();
@@ -359,7 +431,7 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
     ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
-    ..pPS(5, _omitFieldNames ? '' : 'tagFilter')
+    ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
     ..aOM<$7.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
     ..hasRequiredFields = false
   ;
@@ -406,7 +478,7 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get tagFilter => $_getList(4);
+  $core.List<$core.String> get categoryFilter => $_getList(4);
 
   @$pb.TagNumber(6)
   $7.TimeRange get publishTimeRange => $_getN(5);
@@ -479,7 +551,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
-    ..pPS(5, _omitFieldNames ? '' : 'tagFilter')
+    ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
     ..aOM<$7.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
     ..a<$core.int>(7, _omitFieldNames ? '' : 'groupSize', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -525,7 +597,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get tagFilter => $_getList(4);
+  $core.List<$core.String> get categoryFilter => $_getList(4);
 
   @$pb.TagNumber(6)
   $7.TimeRange get publishTimeRange => $_getN(5);
@@ -806,8 +878,8 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..e<FeedConfigSource>(5, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
     ..e<FeedConfigStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
     ..aOM<$10.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $10.Duration.create)
-    ..pPS(8, _omitFieldNames ? '' : 'tags')
-    ..aOM<$8.Timestamp>(9, _omitFieldNames ? '' : 'latestPullTime', subBuilder: $8.Timestamp.create)
+    ..aOS(8, _omitFieldNames ? '' : 'category')
+    ..aOM<$8.Timestamp>(9, _omitFieldNames ? '' : 'latestUpdateTime', subBuilder: $8.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -902,18 +974,24 @@ class FeedConfig extends $pb.GeneratedMessage {
   $10.Duration ensurePullInterval() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  $core.List<$core.String> get tags => $_getList(7);
+  $core.String get category => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set category($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCategory() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCategory() => clearField(8);
 
   @$pb.TagNumber(9)
-  $8.Timestamp get latestPullTime => $_getN(8);
+  $8.Timestamp get latestUpdateTime => $_getN(8);
   @$pb.TagNumber(9)
-  set latestPullTime($8.Timestamp v) { setField(9, v); }
+  set latestUpdateTime($8.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasLatestPullTime() => $_has(8);
+  $core.bool hasLatestUpdateTime() => $_has(8);
   @$pb.TagNumber(9)
-  void clearLatestPullTime() => clearField(9);
+  void clearLatestUpdateTime() => clearField(9);
   @$pb.TagNumber(9)
-  $8.Timestamp ensureLatestPullTime() => $_ensure(8);
+  $8.Timestamp ensureLatestUpdateTime() => $_ensure(8);
 }
 
 class FeedItemDigest extends $pb.GeneratedMessage {
@@ -927,7 +1005,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'itemId', subBuilder: $7.InternalID.create)
     ..aOS(3, _omitFieldNames ? '' : 'avatarUrl')
     ..aOS(4, _omitFieldNames ? '' : 'authors')
-    ..aOM<$8.Timestamp>(5, _omitFieldNames ? '' : 'publishedParsed', subBuilder: $8.Timestamp.create)
+    ..aOM<$8.Timestamp>(5, _omitFieldNames ? '' : 'publishedParsedTime', subBuilder: $8.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'title')
     ..aOS(7, _omitFieldNames ? '' : 'shortDescription')
     ..pPS(8, _omitFieldNames ? '' : 'imageUrls')
@@ -999,15 +1077,15 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   void clearAuthors() => clearField(4);
 
   @$pb.TagNumber(5)
-  $8.Timestamp get publishedParsed => $_getN(4);
+  $8.Timestamp get publishedParsedTime => $_getN(4);
   @$pb.TagNumber(5)
-  set publishedParsed($8.Timestamp v) { setField(5, v); }
+  set publishedParsedTime($8.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPublishedParsed() => $_has(4);
+  $core.bool hasPublishedParsedTime() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPublishedParsed() => clearField(5);
+  void clearPublishedParsedTime() => clearField(5);
   @$pb.TagNumber(5)
-  $8.Timestamp ensurePublishedParsed() => $_ensure(4);
+  $8.Timestamp ensurePublishedParsedTime() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get title => $_getSZ(5);

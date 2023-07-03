@@ -209,6 +209,31 @@ final $typed_data.Uint8List searchAppsResponseDescriptor = $convert.base64Decode
     'luZ1Jlc3BvbnNlUgZwYWdpbmcSJQoEYXBwcxgCIAMoCzIRLmxpYnJhcmlhbi52MS5BcHBSBGFw'
     'cHM=');
 
+@$core.Deprecated('Use getAppRequestDescriptor instead')
+const GetAppRequest$json = {
+  '1': 'GetAppRequest',
+  '2': [
+    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
+  ],
+};
+
+/// Descriptor for `GetAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppRequestDescriptor = $convert.base64Decode(
+    'Cg1HZXRBcHBSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
+    'lEUgVhcHBJZA==');
+
+@$core.Deprecated('Use getAppResponseDescriptor instead')
+const GetAppResponse$json = {
+  '1': 'GetAppResponse',
+  '2': [
+    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.App', '10': 'app'},
+  ],
+};
+
+/// Descriptor for `GetAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppResponseDescriptor = $convert.base64Decode(
+    'Cg5HZXRBcHBSZXNwb25zZRIjCgNhcHAYASABKAsyES5saWJyYXJpYW4udjEuQXBwUgNhcHA=');
+
 @$core.Deprecated('Use getBindAppsRequestDescriptor instead')
 const GetBindAppsRequest$json = {
   '1': 'GetBindAppsRequest',

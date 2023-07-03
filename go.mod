@@ -3,6 +3,7 @@ module github.com/tuihub/protos
 go 1.18
 
 require (
+	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.31.0-20230609233005-3757a25ff0b9.1
 	github.com/go-kratos/kratos/v2 v2.6.2
 	google.golang.org/grpc v1.54.0
 	google.golang.org/protobuf v1.31.0

@@ -50,6 +50,7 @@ const (
 	LibrarianSephirahService_MergeApps_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps"
 	LibrarianSephirahService_PickApp_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/PickApp"
 	LibrarianSephirahService_SearchApps_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps"
+	LibrarianSephirahService_GetApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/GetApp"
 	LibrarianSephirahService_GetBindApps_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps"
 	LibrarianSephirahService_PurchaseApp_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp"
 	LibrarianSephirahService_GetPurchasedApps_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps"
@@ -160,7 +161,10 @@ type LibrarianSephirahServiceClient interface {
 	PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error)
 	// `Gebura` `Normal`
 	SearchApps(ctx context.Context, in *SearchAppsRequest, opts ...grpc.CallOption) (*SearchAppsResponse, error)
-	// `Gebura` `Normal` Get full information of required app
+	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
+	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
+	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
+	// `Gebura` `Normal` Original bound apps info of required app
 	GetBindApps(ctx context.Context, in *GetBindAppsRequest, opts ...grpc.CallOption) (*GetBindAppsResponse, error)
 	// `Gebura` `Normal`
 	PurchaseApp(ctx context.Context, in *PurchaseAppRequest, opts ...grpc.CallOption) (*PurchaseAppResponse, error)
@@ -602,6 +606,15 @@ func (c *librarianSephirahServiceClient) SearchApps(ctx context.Context, in *Sea
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
+	out := new(GetAppResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetApp_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) GetBindApps(ctx context.Context, in *GetBindAppsRequest, opts ...grpc.CallOption) (*GetBindAppsResponse, error) {
 	out := new(GetBindAppsResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetBindApps_FullMethodName, in, out, opts...)
@@ -988,7 +1001,10 @@ type LibrarianSephirahServiceServer interface {
 	PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error)
 	// `Gebura` `Normal`
 	SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error)
-	// `Gebura` `Normal` Get full information of required app
+	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
+	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
+	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
+	// `Gebura` `Normal` Original bound apps info of required app
 	GetBindApps(context.Context, *GetBindAppsRequest) (*GetBindAppsResponse, error)
 	// `Gebura` `Normal`
 	PurchaseApp(context.Context, *PurchaseAppRequest) (*PurchaseAppResponse, error)
@@ -1151,6 +1167,9 @@ func (UnimplementedLibrarianSephirahServiceServer) PickApp(context.Context, *Pic
 }
 func (UnimplementedLibrarianSephirahServiceServer) SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchApps not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetBindApps(context.Context, *GetBindAppsRequest) (*GetBindAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBindApps not implemented")
@@ -1843,6 +1862,24 @@ func _LibrarianSephirahService_SearchApps_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).SearchApps(ctx, req.(*SearchAppsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetApp_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetApp(ctx, req.(*GetAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2545,6 +2582,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SearchApps",
 			Handler:    _LibrarianSephirahService_SearchApps_Handler,
+		},
+		{
+			MethodName: "GetApp",
+			Handler:    _LibrarianSephirahService_GetApp_Handler,
 		},
 		{
 			MethodName: "GetBindApps",

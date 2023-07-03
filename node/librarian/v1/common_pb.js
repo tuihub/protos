@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var buf_validate_validate_pb = require('../../buf/validate/validate_pb.js');
+goog.object.extend(proto, buf_validate_validate_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
@@ -182,7 +184,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.v1.App = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.v1.App.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.v1.App, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1040,7 +1042,8 @@ proto.librarian.v1.Account.toObject = function(includeInstance, msg) {
     platformAccountId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     profileUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    avatarUrl: jspb.Message.getFieldWithDefault(msg, 6, "")
+    avatarUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    latestUpdateTime: (f = msg.getLatestUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1101,6 +1104,11 @@ proto.librarian.v1.Account.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setAvatarUrl(value);
+      break;
+    case 7:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLatestUpdateTime(value);
       break;
     default:
       reader.skipField();
@@ -1172,6 +1180,14 @@ proto.librarian.v1.Account.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       6,
       f
+    );
+  }
+  f = message.getLatestUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1301,6 +1317,43 @@ proto.librarian.v1.Account.prototype.getAvatarUrl = function() {
  */
 proto.librarian.v1.Account.prototype.setAvatarUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp latest_update_time = 7;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.librarian.v1.Account.prototype.getLatestUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.v1.Account} returns this
+*/
+proto.librarian.v1.Account.prototype.setLatestUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.v1.Account} returns this
+ */
+proto.librarian.v1.Account.prototype.clearLatestUpdateTime = function() {
+  return this.setLatestUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.v1.Account.prototype.hasLatestUpdateTime = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -1465,6 +1518,13 @@ proto.librarian.v1.AccountID.prototype.setPlatformAccountId = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.v1.App.repeatedFields_ = [10];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1503,7 +1563,8 @@ proto.librarian.v1.App.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     type: jspb.Message.getFieldWithDefault(msg, 7, 0),
     shortDescription: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    imageUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    iconImageUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    tagsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
     details: (f = msg.getDetails()) && proto.librarian.v1.AppDetails.toObject(includeInstance, f)
   };
 
@@ -1572,9 +1633,13 @@ proto.librarian.v1.App.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImageUrl(value);
+      msg.setIconImageUrl(value);
       break;
     case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 11:
       var value = new proto.librarian.v1.AppDetails;
       reader.readMessage(value,proto.librarian.v1.AppDetails.deserializeBinaryFromReader);
       msg.setDetails(value);
@@ -1658,17 +1723,24 @@ proto.librarian.v1.App.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getImageUrl();
+  f = message.getIconImageUrl();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      10,
+      f
+    );
+  }
   f = message.getDetails();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       proto.librarian.v1.AppDetails.serializeBinaryToWriter
     );
@@ -1840,10 +1912,10 @@ proto.librarian.v1.App.prototype.setShortDescription = function(value) {
 
 
 /**
- * optional string image_url = 9;
+ * optional string icon_image_url = 9;
  * @return {string}
  */
-proto.librarian.v1.App.prototype.getImageUrl = function() {
+proto.librarian.v1.App.prototype.getIconImageUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -1852,18 +1924,55 @@ proto.librarian.v1.App.prototype.getImageUrl = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.App} returns this
  */
-proto.librarian.v1.App.prototype.setImageUrl = function(value) {
+proto.librarian.v1.App.prototype.setIconImageUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional AppDetails details = 10;
+ * repeated string tags = 10;
+ * @return {!Array<string>}
+ */
+proto.librarian.v1.App.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.setTagsList = function(value) {
+  return jspb.Message.setField(this, 10, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.addTags = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.clearTagsList = function() {
+  return this.setTagsList([]);
+};
+
+
+/**
+ * optional AppDetails details = 11;
  * @return {?proto.librarian.v1.AppDetails}
  */
 proto.librarian.v1.App.prototype.getDetails = function() {
   return /** @type{?proto.librarian.v1.AppDetails} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.v1.AppDetails, 10));
+    jspb.Message.getWrapperField(this, proto.librarian.v1.AppDetails, 11));
 };
 
 
@@ -1872,7 +1981,7 @@ proto.librarian.v1.App.prototype.getDetails = function() {
  * @return {!proto.librarian.v1.App} returns this
 */
 proto.librarian.v1.App.prototype.setDetails = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -1890,7 +1999,7 @@ proto.librarian.v1.App.prototype.clearDetails = function() {
  * @return {boolean}
  */
 proto.librarian.v1.App.prototype.hasDetails = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -2090,7 +2199,9 @@ proto.librarian.v1.AppDetails.toObject = function(includeInstance, msg) {
     releaseDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
     developer: jspb.Message.getFieldWithDefault(msg, 3, ""),
     publisher: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 5, "")
+    version: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    heroImageUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    logoImageUrl: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2146,6 +2257,14 @@ proto.librarian.v1.AppDetails.deserializeBinaryFromReader = function(msg, reader
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersion(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHeroImageUrl(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogoImageUrl(value);
       break;
     default:
       reader.skipField();
@@ -2208,6 +2327,20 @@ proto.librarian.v1.AppDetails.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getHeroImageUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getLogoImageUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -2301,6 +2434,42 @@ proto.librarian.v1.AppDetails.prototype.getVersion = function() {
  */
 proto.librarian.v1.AppDetails.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string hero_image_url = 6;
+ * @return {string}
+ */
+proto.librarian.v1.AppDetails.prototype.getHeroImageUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.v1.AppDetails} returns this
+ */
+proto.librarian.v1.AppDetails.prototype.setHeroImageUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string logo_image_url = 7;
+ * @return {string}
+ */
+proto.librarian.v1.AppDetails.prototype.getLogoImageUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.v1.AppDetails} returns this
+ */
+proto.librarian.v1.AppDetails.prototype.setLogoImageUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

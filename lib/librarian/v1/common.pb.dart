@@ -225,6 +225,7 @@ class Account extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'name')
     ..aOS(5, _omitFieldNames ? '' : 'profileUrl')
     ..aOS(6, _omitFieldNames ? '' : 'avatarUrl')
+    ..aOM<$0.Timestamp>(7, _omitFieldNames ? '' : 'latestUpdateTime', subBuilder: $0.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -304,6 +305,17 @@ class Account extends $pb.GeneratedMessage {
   $core.bool hasAvatarUrl() => $_has(5);
   @$pb.TagNumber(6)
   void clearAvatarUrl() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $0.Timestamp get latestUpdateTime => $_getN(6);
+  @$pb.TagNumber(7)
+  set latestUpdateTime($0.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLatestUpdateTime() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLatestUpdateTime() => clearField(7);
+  @$pb.TagNumber(7)
+  $0.Timestamp ensureLatestUpdateTime() => $_ensure(6);
 }
 
 class AccountID extends $pb.GeneratedMessage {
@@ -372,8 +384,9 @@ class App extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'name')
     ..e<AppType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..aOS(8, _omitFieldNames ? '' : 'shortDescription')
-    ..aOS(9, _omitFieldNames ? '' : 'imageUrl')
-    ..aOM<AppDetails>(10, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
+    ..aOS(9, _omitFieldNames ? '' : 'iconImageUrl')
+    ..pPS(10, _omitFieldNames ? '' : 'tags')
+    ..aOM<AppDetails>(11, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
     ..hasRequiredFields = false
   ;
 
@@ -464,24 +477,27 @@ class App extends $pb.GeneratedMessage {
   void clearShortDescription() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get imageUrl => $_getSZ(7);
+  $core.String get iconImageUrl => $_getSZ(7);
   @$pb.TagNumber(9)
-  set imageUrl($core.String v) { $_setString(7, v); }
+  set iconImageUrl($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(9)
-  $core.bool hasImageUrl() => $_has(7);
+  $core.bool hasIconImageUrl() => $_has(7);
   @$pb.TagNumber(9)
-  void clearImageUrl() => clearField(9);
+  void clearIconImageUrl() => clearField(9);
 
   @$pb.TagNumber(10)
-  AppDetails get details => $_getN(8);
-  @$pb.TagNumber(10)
-  set details(AppDetails v) { setField(10, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasDetails() => $_has(8);
-  @$pb.TagNumber(10)
-  void clearDetails() => clearField(10);
-  @$pb.TagNumber(10)
-  AppDetails ensureDetails() => $_ensure(8);
+  $core.List<$core.String> get tags => $_getList(8);
+
+  @$pb.TagNumber(11)
+  AppDetails get details => $_getN(9);
+  @$pb.TagNumber(11)
+  set details(AppDetails v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasDetails() => $_has(9);
+  @$pb.TagNumber(11)
+  void clearDetails() => clearField(11);
+  @$pb.TagNumber(11)
+  AppDetails ensureDetails() => $_ensure(9);
 }
 
 class AppID extends $pb.GeneratedMessage {
@@ -548,6 +564,8 @@ class AppDetails extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'developer')
     ..aOS(4, _omitFieldNames ? '' : 'publisher')
     ..aOS(5, _omitFieldNames ? '' : 'version')
+    ..aOS(6, _omitFieldNames ? '' : 'heroImageUrl')
+    ..aOS(7, _omitFieldNames ? '' : 'logoImageUrl')
     ..hasRequiredFields = false
   ;
 
@@ -616,6 +634,24 @@ class AppDetails extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearVersion() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get heroImageUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set heroImageUrl($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasHeroImageUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHeroImageUrl() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get logoImageUrl => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set logoImageUrl($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLogoImageUrl() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLogoImageUrl() => clearField(7);
 }
 
 class AppPackage extends $pb.GeneratedMessage {

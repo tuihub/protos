@@ -2,6 +2,7 @@
 // file: librarian/v1/common.proto
 
 import * as jspb from "google-protobuf";
+import * as buf_validate_validate_pb from "../../buf/validate/validate_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
@@ -118,6 +119,11 @@ export class Account extends jspb.Message {
   getAvatarUrl(): string;
   setAvatarUrl(value: string): void;
 
+  hasLatestUpdateTime(): boolean;
+  clearLatestUpdateTime(): void;
+  getLatestUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLatestUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Account.AsObject;
   static toObject(includeInstance: boolean, msg: Account): Account.AsObject;
@@ -136,6 +142,7 @@ export namespace Account {
     name: string,
     profileUrl: string,
     avatarUrl: string,
+    latestUpdateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -189,8 +196,13 @@ export class App extends jspb.Message {
   getShortDescription(): string;
   setShortDescription(value: string): void;
 
-  getImageUrl(): string;
-  setImageUrl(value: string): void;
+  getIconImageUrl(): string;
+  setIconImageUrl(value: string): void;
+
+  clearTagsList(): void;
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): void;
+  addTags(value: string, index?: number): string;
 
   hasDetails(): boolean;
   clearDetails(): void;
@@ -216,7 +228,8 @@ export namespace App {
     name: string,
     type: AppTypeMap[keyof AppTypeMap],
     shortDescription: string,
-    imageUrl: string,
+    iconImageUrl: string,
+    tagsList: Array<string>,
     details?: AppDetails.AsObject,
   }
 }
@@ -261,6 +274,12 @@ export class AppDetails extends jspb.Message {
   getVersion(): string;
   setVersion(value: string): void;
 
+  getHeroImageUrl(): string;
+  setHeroImageUrl(value: string): void;
+
+  getLogoImageUrl(): string;
+  setLogoImageUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AppDetails): AppDetails.AsObject;
@@ -278,6 +297,8 @@ export namespace AppDetails {
     developer: string,
     publisher: string,
     version: string,
+    heroImageUrl: string,
+    logoImageUrl: string,
   }
 }
 

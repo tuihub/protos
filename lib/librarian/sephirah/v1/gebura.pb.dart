@@ -642,6 +642,94 @@ class SearchAppsResponse extends $pb.GeneratedMessage {
   $core.List<$7.App> get apps => $_getList(1);
 }
 
+class GetAppRequest extends $pb.GeneratedMessage {
+  factory GetAppRequest() => create();
+  GetAppRequest._() : super();
+  factory GetAppRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppRequest clone() => GetAppRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppRequest copyWith(void Function(GetAppRequest) updates) => super.copyWith((message) => updates(message as GetAppRequest)) as GetAppRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppRequest create() => GetAppRequest._();
+  GetAppRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAppRequest> createRepeated() => $pb.PbList<GetAppRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppRequest>(create);
+  static GetAppRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get appId => $_getN(0);
+  @$pb.TagNumber(1)
+  set appId($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureAppId() => $_ensure(0);
+}
+
+class GetAppResponse extends $pb.GeneratedMessage {
+  factory GetAppResponse() => create();
+  GetAppResponse._() : super();
+  factory GetAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.App>(1, _omitFieldNames ? '' : 'app', subBuilder: $7.App.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppResponse clone() => GetAppResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppResponse copyWith(void Function(GetAppResponse) updates) => super.copyWith((message) => updates(message as GetAppResponse)) as GetAppResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppResponse create() => GetAppResponse._();
+  GetAppResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAppResponse> createRepeated() => $pb.PbList<GetAppResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppResponse>(create);
+  static GetAppResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.App get app => $_getN(0);
+  @$pb.TagNumber(1)
+  set app($7.App v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApp() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.App ensureApp() => $_ensure(0);
+}
+
 class GetBindAppsRequest extends $pb.GeneratedMessage {
   factory GetBindAppsRequest() => create();
   GetBindAppsRequest._() : super();

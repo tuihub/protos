@@ -75,15 +75,15 @@ final $typed_data.Uint8List appPackageSourceDescriptor = $convert.base64Decode(
 const PagingRequest$json = {
   '1': 'PagingRequest',
   '2': [
-    {'1': 'page_num', '3': 1, '4': 1, '5': 5, '10': 'pageNum'},
-    {'1': 'page_size', '3': 2, '4': 1, '5': 5, '10': 'pageSize'},
+    {'1': 'page_num', '3': 1, '4': 1, '5': 5, '8': {}, '10': 'pageNum'},
+    {'1': 'page_size', '3': 2, '4': 1, '5': 5, '8': {}, '10': 'pageSize'},
   ],
 };
 
 /// Descriptor for `PagingRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pagingRequestDescriptor = $convert.base64Decode(
-    'Cg1QYWdpbmdSZXF1ZXN0EhkKCHBhZ2VfbnVtGAEgASgFUgdwYWdlTnVtEhsKCXBhZ2Vfc2l6ZR'
-    'gCIAEoBVIIcGFnZVNpemU=');
+    'Cg1QYWdpbmdSZXF1ZXN0EiMKCHBhZ2VfbnVtGAEgASgFQgj69xgEGgIgAFIHcGFnZU51bRIlCg'
+    'lwYWdlX3NpemUYAiABKAVCCPr3GAQaAiAAUghwYWdlU2l6ZQ==');
 
 @$core.Deprecated('Use pagingResponseDescriptor instead')
 const PagingResponse$json = {
@@ -102,15 +102,15 @@ const TimeRange$json = {
   '1': 'TimeRange',
   '2': [
     {'1': 'start_time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
-    {'1': 'duration', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'duration'},
+    {'1': 'duration', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '8': {}, '10': 'duration'},
   ],
 };
 
 /// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode(
     'CglUaW1lUmFuZ2USOQoKc3RhcnRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3'
-    'RhbXBSCXN0YXJ0VGltZRI1CghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJh'
-    'dGlvblIIZHVyYXRpb24=');
+    'RhbXBSCXN0YXJ0VGltZRJACghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJh'
+    'dGlvbkIJ+vcYBaoBAjIAUghkdXJhdGlvbg==');
 
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = {
@@ -134,6 +134,7 @@ const Account$json = {
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
     {'1': 'profile_url', '3': 5, '4': 1, '5': 9, '10': 'profileUrl'},
     {'1': 'avatar_url', '3': 6, '4': 1, '5': 9, '10': 'avatarUrl'},
+    {'1': 'latest_update_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'latestUpdateTime'},
   ],
 };
 
@@ -143,7 +144,8 @@ final $typed_data.Uint8List accountDescriptor = $convert.base64Decode(
     'BsYXRmb3JtGAIgASgOMh0ubGlicmFyaWFuLnYxLkFjY291bnRQbGF0Zm9ybVIIcGxhdGZvcm0S'
     'LgoTcGxhdGZvcm1fYWNjb3VudF9pZBgDIAEoCVIRcGxhdGZvcm1BY2NvdW50SWQSEgoEbmFtZR'
     'gEIAEoCVIEbmFtZRIfCgtwcm9maWxlX3VybBgFIAEoCVIKcHJvZmlsZVVybBIdCgphdmF0YXJf'
-    'dXJsGAYgASgJUglhdmF0YXJVcmw=');
+    'dXJsGAYgASgJUglhdmF0YXJVcmwSSAoSbGF0ZXN0X3VwZGF0ZV90aW1lGAcgASgLMhouZ29vZ2'
+    'xlLnByb3RvYnVmLlRpbWVzdGFtcFIQbGF0ZXN0VXBkYXRlVGltZQ==');
 
 @$core.Deprecated('Use accountIDDescriptor instead')
 const AccountID$json = {
@@ -171,8 +173,9 @@ const App$json = {
     {'1': 'name', '3': 6, '4': 1, '5': 9, '10': 'name'},
     {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
     {'1': 'short_description', '3': 8, '4': 1, '5': 9, '10': 'shortDescription'},
-    {'1': 'image_url', '3': 9, '4': 1, '5': 9, '10': 'imageUrl'},
-    {'1': 'details', '3': 10, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 1, '10': 'details', '17': true},
+    {'1': 'icon_image_url', '3': 9, '4': 1, '5': 9, '10': 'iconImageUrl'},
+    {'1': 'tags', '3': 10, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'details', '3': 11, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 1, '10': 'details', '17': true},
   ],
   '8': [
     {'1': '_source_url'},
@@ -186,10 +189,10 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'NlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBf'
     'aWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiA'
     'EBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBU'
-    'eXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEh'
-    'sKCWltYWdlX3VybBgJIAEoCVIIaW1hZ2VVcmwSNwoHZGV0YWlscxgKIAEoCzIYLmxpYnJhcmlh'
-    'bi52MS5BcHBEZXRhaWxzSAFSB2RldGFpbHOIAQFCDQoLX3NvdXJjZV91cmxCCgoIX2RldGFpbH'
-    'M=');
+    'eXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEi'
+    'QKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSEgoEdGFncxgKIAMoCVIEdGFn'
+    'cxI3CgdkZXRhaWxzGAsgASgLMhgubGlicmFyaWFuLnYxLkFwcERldGFpbHNIAVIHZGV0YWlsc4'
+    'gBAUINCgtfc291cmNlX3VybEIKCghfZGV0YWlscw==');
 
 @$core.Deprecated('Use appIDDescriptor instead')
 const AppID$json = {
@@ -214,6 +217,8 @@ const AppDetails$json = {
     {'1': 'developer', '3': 3, '4': 1, '5': 9, '10': 'developer'},
     {'1': 'publisher', '3': 4, '4': 1, '5': 9, '10': 'publisher'},
     {'1': 'version', '3': 5, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'hero_image_url', '3': 6, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    {'1': 'logo_image_url', '3': 7, '4': 1, '5': 9, '10': 'logoImageUrl'},
   ],
 };
 
@@ -222,7 +227,8 @@ final $typed_data.Uint8List appDetailsDescriptor = $convert.base64Decode(
     'CgpBcHBEZXRhaWxzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIhCgxyZWxlYX'
     'NlX2RhdGUYAiABKAlSC3JlbGVhc2VEYXRlEhwKCWRldmVsb3BlchgDIAEoCVIJZGV2ZWxvcGVy'
     'EhwKCXB1Ymxpc2hlchgEIAEoCVIJcHVibGlzaGVyEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb2'
-    '4=');
+    '4SJAoOaGVyb19pbWFnZV91cmwYBiABKAlSDGhlcm9JbWFnZVVybBIkCg5sb2dvX2ltYWdlX3Vy'
+    'bBgHIAEoCVIMbG9nb0ltYWdlVXJs');
 
 @$core.Deprecated('Use appPackageDescriptor instead')
 const AppPackage$json = {

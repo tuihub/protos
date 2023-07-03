@@ -297,6 +297,28 @@ function deserialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse(buffer_a
   return librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_GetAppRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetAppResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_GetBatchFeedItemsRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_yesod_pb.GetBatchFeedItemsRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.GetBatchFeedItemsRequest');
@@ -1788,7 +1810,20 @@ searchApps: {
     responseSerialize: serialize_librarian_sephirah_v1_SearchAppsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SearchAppsResponse,
   },
-  // `Gebura` `Normal` Get full information of required app
+  // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
+// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
+getApp: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetApp',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.GetAppRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.GetAppResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetAppRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetAppRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetAppResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetAppResponse,
+  },
+  // `Gebura` `Normal` Original bound apps info of required app
 getBindApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps',
     requestStream: false,

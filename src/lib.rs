@@ -1,4 +1,18 @@
 // @generated
+pub mod buf {
+    #[cfg(feature = "buf-validate")]
+    // @@protoc_insertion_point(attribute:buf.validate)
+    pub mod validate {
+        include!("buf.validate.rs");
+        // @@protoc_insertion_point(buf.validate)
+        #[cfg(feature = "buf-validate-priv")]
+        // @@protoc_insertion_point(attribute:buf.validate.priv)
+        pub mod r#priv {
+            include!("buf.validate.priv.rs");
+            // @@protoc_insertion_point(buf.validate.priv)
+        }
+    }
+}
 #[cfg(feature = "errors")]
 // @@protoc_insertion_point(attribute:errors)
 pub mod errors {

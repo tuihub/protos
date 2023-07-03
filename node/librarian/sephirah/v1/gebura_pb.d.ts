@@ -334,6 +334,50 @@ export namespace SearchAppsResponse {
   }
 }
 
+export class GetAppRequest extends jspb.Message {
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppRequest): GetAppRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppRequest;
+  static deserializeBinaryFromReader(message: GetAppRequest, reader: jspb.BinaryReader): GetAppRequest;
+}
+
+export namespace GetAppRequest {
+  export type AsObject = {
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class GetAppResponse extends jspb.Message {
+  hasApp(): boolean;
+  clearApp(): void;
+  getApp(): librarian_v1_common_pb.App | undefined;
+  setApp(value?: librarian_v1_common_pb.App): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppResponse): GetAppResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppResponse;
+  static deserializeBinaryFromReader(message: GetAppResponse, reader: jspb.BinaryReader): GetAppResponse;
+}
+
+export namespace GetAppResponse {
+  export type AsObject = {
+    app?: librarian_v1_common_pb.App.AsObject,
+  }
+}
+
 export class GetBindAppsRequest extends jspb.Message {
   hasAppId(): boolean;
   clearAppId(): void;

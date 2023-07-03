@@ -25,6 +25,9 @@ impl serde::Serialize for Account {
         if !self.avatar_url.is_empty() {
             len += 1;
         }
+        if self.latest_update_time.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.Account", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -46,6 +49,9 @@ impl serde::Serialize for Account {
         if !self.avatar_url.is_empty() {
             struct_ser.serialize_field("avatarUrl", &self.avatar_url)?;
         }
+        if let Some(v) = self.latest_update_time.as_ref() {
+            struct_ser.serialize_field("latestUpdateTime", v)?;
+        }
         struct_ser.end()
     }
 }
@@ -65,6 +71,8 @@ impl<'de> serde::Deserialize<'de> for Account {
             "profileUrl",
             "avatar_url",
             "avatarUrl",
+            "latest_update_time",
+            "latestUpdateTime",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -75,6 +83,7 @@ impl<'de> serde::Deserialize<'de> for Account {
             Name,
             ProfileUrl,
             AvatarUrl,
+            LatestUpdateTime,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -102,6 +111,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                             "name" => Ok(GeneratedField::Name),
                             "profileUrl" | "profile_url" => Ok(GeneratedField::ProfileUrl),
                             "avatarUrl" | "avatar_url" => Ok(GeneratedField::AvatarUrl),
+                            "latestUpdateTime" | "latest_update_time" => Ok(GeneratedField::LatestUpdateTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -127,6 +137,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                 let mut name__ = None;
                 let mut profile_url__ = None;
                 let mut avatar_url__ = None;
+                let mut latest_update_time__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -165,6 +176,12 @@ impl<'de> serde::Deserialize<'de> for Account {
                             }
                             avatar_url__ = Some(map.next_value()?);
                         }
+                        GeneratedField::LatestUpdateTime => {
+                            if latest_update_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("latestUpdateTime"));
+                            }
+                            latest_update_time__ = map.next_value()?;
+                        }
                     }
                 }
                 Ok(Account {
@@ -174,6 +191,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                     name: name__.unwrap_or_default(),
                     profile_url: profile_url__.unwrap_or_default(),
                     avatar_url: avatar_url__.unwrap_or_default(),
+                    latest_update_time: latest_update_time__,
                 })
             }
         }
@@ -393,7 +411,10 @@ impl serde::Serialize for App {
         if !self.short_description.is_empty() {
             len += 1;
         }
-        if !self.image_url.is_empty() {
+        if !self.icon_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.tags.is_empty() {
             len += 1;
         }
         if self.details.is_some() {
@@ -425,8 +446,11 @@ impl serde::Serialize for App {
         if !self.short_description.is_empty() {
             struct_ser.serialize_field("shortDescription", &self.short_description)?;
         }
-        if !self.image_url.is_empty() {
-            struct_ser.serialize_field("imageUrl", &self.image_url)?;
+        if !self.icon_image_url.is_empty() {
+            struct_ser.serialize_field("iconImageUrl", &self.icon_image_url)?;
+        }
+        if !self.tags.is_empty() {
+            struct_ser.serialize_field("tags", &self.tags)?;
         }
         if let Some(v) = self.details.as_ref() {
             struct_ser.serialize_field("details", v)?;
@@ -451,8 +475,9 @@ impl<'de> serde::Deserialize<'de> for App {
             "type",
             "short_description",
             "shortDescription",
-            "image_url",
-            "imageUrl",
+            "icon_image_url",
+            "iconImageUrl",
+            "tags",
             "details",
         ];
 
@@ -465,7 +490,8 @@ impl<'de> serde::Deserialize<'de> for App {
             Name,
             Type,
             ShortDescription,
-            ImageUrl,
+            IconImageUrl,
+            Tags,
             Details,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -495,7 +521,8 @@ impl<'de> serde::Deserialize<'de> for App {
                             "name" => Ok(GeneratedField::Name),
                             "type" => Ok(GeneratedField::Type),
                             "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
-                            "imageUrl" | "image_url" => Ok(GeneratedField::ImageUrl),
+                            "iconImageUrl" | "icon_image_url" => Ok(GeneratedField::IconImageUrl),
+                            "tags" => Ok(GeneratedField::Tags),
                             "details" => Ok(GeneratedField::Details),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -523,7 +550,8 @@ impl<'de> serde::Deserialize<'de> for App {
                 let mut name__ = None;
                 let mut r#type__ = None;
                 let mut short_description__ = None;
-                let mut image_url__ = None;
+                let mut icon_image_url__ = None;
+                let mut tags__ = None;
                 let mut details__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -569,11 +597,17 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             short_description__ = Some(map.next_value()?);
                         }
-                        GeneratedField::ImageUrl => {
-                            if image_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("imageUrl"));
+                        GeneratedField::IconImageUrl => {
+                            if icon_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("iconImageUrl"));
                             }
-                            image_url__ = Some(map.next_value()?);
+                            icon_image_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Tags => {
+                            if tags__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tags"));
+                            }
+                            tags__ = Some(map.next_value()?);
                         }
                         GeneratedField::Details => {
                             if details__.is_some() {
@@ -591,7 +625,8 @@ impl<'de> serde::Deserialize<'de> for App {
                     name: name__.unwrap_or_default(),
                     r#type: r#type__.unwrap_or_default(),
                     short_description: short_description__.unwrap_or_default(),
-                    image_url: image_url__.unwrap_or_default(),
+                    icon_image_url: icon_image_url__.unwrap_or_default(),
+                    tags: tags__.unwrap_or_default(),
                     details: details__,
                 })
             }
@@ -622,6 +657,12 @@ impl serde::Serialize for AppDetails {
         if !self.version.is_empty() {
             len += 1;
         }
+        if !self.hero_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.logo_image_url.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppDetails", len)?;
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
@@ -637,6 +678,12 @@ impl serde::Serialize for AppDetails {
         }
         if !self.version.is_empty() {
             struct_ser.serialize_field("version", &self.version)?;
+        }
+        if !self.hero_image_url.is_empty() {
+            struct_ser.serialize_field("heroImageUrl", &self.hero_image_url)?;
+        }
+        if !self.logo_image_url.is_empty() {
+            struct_ser.serialize_field("logoImageUrl", &self.logo_image_url)?;
         }
         struct_ser.end()
     }
@@ -654,6 +701,10 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
             "developer",
             "publisher",
             "version",
+            "hero_image_url",
+            "heroImageUrl",
+            "logo_image_url",
+            "logoImageUrl",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -663,6 +714,8 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
             Developer,
             Publisher,
             Version,
+            HeroImageUrl,
+            LogoImageUrl,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -689,6 +742,8 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
                             "version" => Ok(GeneratedField::Version),
+                            "heroImageUrl" | "hero_image_url" => Ok(GeneratedField::HeroImageUrl),
+                            "logoImageUrl" | "logo_image_url" => Ok(GeneratedField::LogoImageUrl),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -713,6 +768,8 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                 let mut developer__ = None;
                 let mut publisher__ = None;
                 let mut version__ = None;
+                let mut hero_image_url__ = None;
+                let mut logo_image_url__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Description => {
@@ -745,6 +802,18 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                             }
                             version__ = Some(map.next_value()?);
                         }
+                        GeneratedField::HeroImageUrl => {
+                            if hero_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("heroImageUrl"));
+                            }
+                            hero_image_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::LogoImageUrl => {
+                            if logo_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("logoImageUrl"));
+                            }
+                            logo_image_url__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(AppDetails {
@@ -753,6 +822,8 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                     developer: developer__.unwrap_or_default(),
                     publisher: publisher__.unwrap_or_default(),
                     version: version__.unwrap_or_default(),
+                    hero_image_url: hero_image_url__.unwrap_or_default(),
+                    logo_image_url: logo_image_url__.unwrap_or_default(),
                 })
             }
         }

@@ -151,6 +151,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/SearchApps',
       ($4.SearchAppsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.SearchAppsResponse.fromBuffer(value));
+  static final _$getApp = $grpc.ClientMethod<$4.GetAppRequest, $4.GetAppResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetApp',
+      ($4.GetAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetAppResponse.fromBuffer(value));
   static final _$getBindApps = $grpc.ClientMethod<$4.GetBindAppsRequest, $4.GetBindAppsResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps',
       ($4.GetBindAppsRequest value) => value.writeToBuffer(),
@@ -408,6 +412,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.SearchAppsResponse> searchApps($4.SearchAppsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchApps, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetAppResponse> getApp($4.GetAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getApp, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.GetBindAppsResponse> getBindApps($4.GetBindAppsRequest request, {$grpc.CallOptions? options}) {
@@ -761,6 +769,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.SearchAppsRequest.fromBuffer(value),
         ($4.SearchAppsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetAppRequest, $4.GetAppResponse>(
+        'GetApp',
+        getApp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetAppRequest.fromBuffer(value),
+        ($4.GetAppResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.GetBindAppsRequest, $4.GetBindAppsResponse>(
         'GetBindApps',
         getBindApps_Pre,
@@ -1099,6 +1114,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return searchApps(call, await request);
   }
 
+  $async.Future<$4.GetAppResponse> getApp_Pre($grpc.ServiceCall call, $async.Future<$4.GetAppRequest> request) async {
+    return getApp(call, await request);
+  }
+
   $async.Future<$4.GetBindAppsResponse> getBindApps_Pre($grpc.ServiceCall call, $async.Future<$4.GetBindAppsRequest> request) async {
     return getBindApps(call, await request);
   }
@@ -1254,6 +1273,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.MergeAppsResponse> mergeApps($grpc.ServiceCall call, $4.MergeAppsRequest request);
   $async.Future<$4.PickAppResponse> pickApp($grpc.ServiceCall call, $4.PickAppRequest request);
   $async.Future<$4.SearchAppsResponse> searchApps($grpc.ServiceCall call, $4.SearchAppsRequest request);
+  $async.Future<$4.GetAppResponse> getApp($grpc.ServiceCall call, $4.GetAppRequest request);
   $async.Future<$4.GetBindAppsResponse> getBindApps($grpc.ServiceCall call, $4.GetBindAppsRequest request);
   $async.Future<$4.PurchaseAppResponse> purchaseApp($grpc.ServiceCall call, $4.PurchaseAppRequest request);
   $async.Future<$4.GetPurchasedAppsResponse> getPurchasedApps($grpc.ServiceCall call, $4.GetPurchasedAppsRequest request);
