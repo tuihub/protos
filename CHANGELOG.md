@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.33](https://github.com/TuiHub/Protos/compare/v0.2.32...v0.2.33) (2023-07-03)
+
+
+### Bug Fixes
+
+* add ListFeedConfigCategories ([d5a047b](https://github.com/TuiHub/Protos/commit/d5a047bd6beb86b256e2627ddb277b3502a07e8d))
+
 ## [0.2.32](https://github.com/TuiHub/Protos/compare/v0.2.31...v0.2.32) (2023-07-03)
 
 
