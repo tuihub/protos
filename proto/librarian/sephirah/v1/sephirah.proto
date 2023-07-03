@@ -166,6 +166,8 @@ service LibrarianSephirahService {
   // `Yesod` `Normal`
   rpc ListFeedConfigs(ListFeedConfigsRequest) returns (ListFeedConfigsResponse);
   // `Yesod` `Normal`
+  rpc ListFeedConfigCategories(ListFeedConfigCategoriesRequest) returns (ListFeedConfigCategoriesResponse);
+  // `Yesod` `Normal`
   rpc ListFeedItems(ListFeedItemsRequest) returns (ListFeedItemsResponse);
   // `Yesod` `Normal`
   rpc GroupFeedItems(GroupFeedItemsRequest) returns (GroupFeedItemsResponse);
