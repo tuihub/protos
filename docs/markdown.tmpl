@@ -47,6 +47,7 @@
 {{end}}
 {{end}} <!-- end services -->
 
+{{if ne .Name "buf/validate/validate.proto"}}
 {{if .Messages}}
 ### Messages
 {{end}}
@@ -72,6 +73,7 @@
 {{end}}
 {{end}}
 
+{{end}}
 {{end}} <!-- end messages -->
 
 {{if .Enums}}
