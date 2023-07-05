@@ -1,23 +1,19 @@
-//
+///
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/porter.proto
 //
 // @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-// ignore_for_file: annotate_overrides, camel_case_types
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
-
+// ignore_for_file: UNDEFINED_SHOWN_NAME
 import 'dart:core' as $core;
-
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class FeatureFlag extends $pb.ProtobufEnum {
-  static const FeatureFlag FEATURE_FLAG_UNSPECIFIED = FeatureFlag._(0, _omitEnumNames ? '' : 'FEATURE_FLAG_UNSPECIFIED');
-  static const FeatureFlag FEATURE_FLAG_SOURCE_STEAM = FeatureFlag._(1, _omitEnumNames ? '' : 'FEATURE_FLAG_SOURCE_STEAM');
-  static const FeatureFlag FEATURE_FLAG_SOURCE_TELEGRAM = FeatureFlag._(2, _omitEnumNames ? '' : 'FEATURE_FLAG_SOURCE_TELEGRAM');
-  static const FeatureFlag FEATURE_FLAG_DEFAULT_DATA_STORAGE = FeatureFlag._(3, _omitEnumNames ? '' : 'FEATURE_FLAG_DEFAULT_DATA_STORAGE');
+  static const FeatureFlag FEATURE_FLAG_UNSPECIFIED = FeatureFlag._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_UNSPECIFIED');
+  static const FeatureFlag FEATURE_FLAG_SOURCE_STEAM = FeatureFlag._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_SOURCE_STEAM');
+  static const FeatureFlag FEATURE_FLAG_SOURCE_TELEGRAM = FeatureFlag._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_SOURCE_TELEGRAM');
+  static const FeatureFlag FEATURE_FLAG_DEFAULT_DATA_STORAGE = FeatureFlag._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEATURE_FLAG_DEFAULT_DATA_STORAGE');
 
   static const $core.List<FeatureFlag> values = <FeatureFlag> [
     FEATURE_FLAG_UNSPECIFIED,
@@ -33,8 +29,8 @@ class FeatureFlag extends $pb.ProtobufEnum {
 }
 
 class AccountAppRelationType extends $pb.ProtobufEnum {
-  static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = AccountAppRelationType._(0, _omitEnumNames ? '' : 'ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED');
-  static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_OWN = AccountAppRelationType._(1, _omitEnumNames ? '' : 'ACCOUNT_APP_RELATION_TYPE_OWN');
+  static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = AccountAppRelationType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED');
+  static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_OWN = AccountAppRelationType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_APP_RELATION_TYPE_OWN');
 
   static const $core.List<AccountAppRelationType> values = <AccountAppRelationType> [
     ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED,
@@ -48,8 +44,8 @@ class AccountAppRelationType extends $pb.ProtobufEnum {
 }
 
 class FeedSource extends $pb.ProtobufEnum {
-  static const FeedSource FEED_SOURCE_UNSPECIFIED = FeedSource._(0, _omitEnumNames ? '' : 'FEED_SOURCE_UNSPECIFIED');
-  static const FeedSource FEED_SOURCE_COMMON = FeedSource._(1, _omitEnumNames ? '' : 'FEED_SOURCE_COMMON');
+  static const FeedSource FEED_SOURCE_UNSPECIFIED = FeedSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_SOURCE_UNSPECIFIED');
+  static const FeedSource FEED_SOURCE_COMMON = FeedSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_SOURCE_COMMON');
 
   static const $core.List<FeedSource> values = <FeedSource> [
     FEED_SOURCE_UNSPECIFIED,
@@ -63,8 +59,8 @@ class FeedSource extends $pb.ProtobufEnum {
 }
 
 class FeedDestination extends $pb.ProtobufEnum {
-  static const FeedDestination FEED_DESTINATION_UNSPECIFIED = FeedDestination._(0, _omitEnumNames ? '' : 'FEED_DESTINATION_UNSPECIFIED');
-  static const FeedDestination FEED_DESTINATION_TELEGRAM = FeedDestination._(1, _omitEnumNames ? '' : 'FEED_DESTINATION_TELEGRAM');
+  static const FeedDestination FEED_DESTINATION_UNSPECIFIED = FeedDestination._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_DESTINATION_UNSPECIFIED');
+  static const FeedDestination FEED_DESTINATION_TELEGRAM = FeedDestination._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FEED_DESTINATION_TELEGRAM');
 
   static const $core.List<FeedDestination> values = <FeedDestination> [
     FEED_DESTINATION_UNSPECIFIED,
@@ -78,7 +74,7 @@ class FeedDestination extends $pb.ProtobufEnum {
 }
 
 class DBSource extends $pb.ProtobufEnum {
-  static const DBSource DB_SOURCE_UNSPECIFIED = DBSource._(0, _omitEnumNames ? '' : 'DB_SOURCE_UNSPECIFIED');
+  static const DBSource DB_SOURCE_UNSPECIFIED = DBSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DB_SOURCE_UNSPECIFIED');
 
   static const $core.List<DBSource> values = <DBSource> [
     DB_SOURCE_UNSPECIFIED,
@@ -91,7 +87,7 @@ class DBSource extends $pb.ProtobufEnum {
 }
 
 class WikiSource extends $pb.ProtobufEnum {
-  static const WikiSource WIKI_SOURCE_UNSPECIFIED = WikiSource._(0, _omitEnumNames ? '' : 'WIKI_SOURCE_UNSPECIFIED');
+  static const WikiSource WIKI_SOURCE_UNSPECIFIED = WikiSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'WIKI_SOURCE_UNSPECIFIED');
 
   static const $core.List<WikiSource> values = <WikiSource> [
     WIKI_SOURCE_UNSPECIFIED,
@@ -104,8 +100,8 @@ class WikiSource extends $pb.ProtobufEnum {
 }
 
 class DataSource extends $pb.ProtobufEnum {
-  static const DataSource DATA_SOURCE_UNSPECIFIED = DataSource._(0, _omitEnumNames ? '' : 'DATA_SOURCE_UNSPECIFIED');
-  static const DataSource DATA_SOURCE_INTERNAL_DEFAULT = DataSource._(1, _omitEnumNames ? '' : 'DATA_SOURCE_INTERNAL_DEFAULT');
+  static const DataSource DATA_SOURCE_UNSPECIFIED = DataSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DATA_SOURCE_UNSPECIFIED');
+  static const DataSource DATA_SOURCE_INTERNAL_DEFAULT = DataSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DATA_SOURCE_INTERNAL_DEFAULT');
 
   static const $core.List<DataSource> values = <DataSource> [
     DATA_SOURCE_UNSPECIFIED,
@@ -118,5 +114,3 @@ class DataSource extends $pb.ProtobufEnum {
   const DataSource._($core.int v, $core.String n) : super(v, n);
 }
 
-
-const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

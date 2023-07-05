@@ -1,21 +1,17 @@
-//
+///
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/netzach.proto
 //
 // @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-// ignore_for_file: annotate_overrides, camel_case_types
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
-
+// ignore_for_file: UNDEFINED_SHOWN_NAME
 import 'dart:core' as $core;
-
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class NotifyTargetType extends $pb.ProtobufEnum {
-  static const NotifyTargetType NOTIFY_TARGET_TYPE_UNSPECIFIED = NotifyTargetType._(0, _omitEnumNames ? '' : 'NOTIFY_TARGET_TYPE_UNSPECIFIED');
-  static const NotifyTargetType NOTIFY_TARGET_TYPE_TELEGRAM = NotifyTargetType._(1, _omitEnumNames ? '' : 'NOTIFY_TARGET_TYPE_TELEGRAM');
+  static const NotifyTargetType NOTIFY_TARGET_TYPE_UNSPECIFIED = NotifyTargetType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_TARGET_TYPE_UNSPECIFIED');
+  static const NotifyTargetType NOTIFY_TARGET_TYPE_TELEGRAM = NotifyTargetType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_TARGET_TYPE_TELEGRAM');
 
   static const $core.List<NotifyTargetType> values = <NotifyTargetType> [
     NOTIFY_TARGET_TYPE_UNSPECIFIED,
@@ -29,9 +25,9 @@ class NotifyTargetType extends $pb.ProtobufEnum {
 }
 
 class NotifyTargetStatus extends $pb.ProtobufEnum {
-  static const NotifyTargetStatus NOTIFY_TARGET_STATUS_UNSPECIFIED = NotifyTargetStatus._(0, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_UNSPECIFIED');
-  static const NotifyTargetStatus NOTIFY_TARGET_STATUS_ACTIVE = NotifyTargetStatus._(1, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_ACTIVE');
-  static const NotifyTargetStatus NOTIFY_TARGET_STATUS_SUSPEND = NotifyTargetStatus._(2, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_SUSPEND');
+  static const NotifyTargetStatus NOTIFY_TARGET_STATUS_UNSPECIFIED = NotifyTargetStatus._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_TARGET_STATUS_UNSPECIFIED');
+  static const NotifyTargetStatus NOTIFY_TARGET_STATUS_ACTIVE = NotifyTargetStatus._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_TARGET_STATUS_ACTIVE');
+  static const NotifyTargetStatus NOTIFY_TARGET_STATUS_SUSPEND = NotifyTargetStatus._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_TARGET_STATUS_SUSPEND');
 
   static const $core.List<NotifyTargetStatus> values = <NotifyTargetStatus> [
     NOTIFY_TARGET_STATUS_UNSPECIFIED,
@@ -46,9 +42,9 @@ class NotifyTargetStatus extends $pb.ProtobufEnum {
 }
 
 class NotifyFlowStatus extends $pb.ProtobufEnum {
-  static const NotifyFlowStatus NOTIFY_FLOW_STATUS_UNSPECIFIED = NotifyFlowStatus._(0, _omitEnumNames ? '' : 'NOTIFY_FLOW_STATUS_UNSPECIFIED');
-  static const NotifyFlowStatus NOTIFY_FLOW_STATUS_ACTIVE = NotifyFlowStatus._(1, _omitEnumNames ? '' : 'NOTIFY_FLOW_STATUS_ACTIVE');
-  static const NotifyFlowStatus NOTIFY_FLOW_STATUS_SUSPEND = NotifyFlowStatus._(2, _omitEnumNames ? '' : 'NOTIFY_FLOW_STATUS_SUSPEND');
+  static const NotifyFlowStatus NOTIFY_FLOW_STATUS_UNSPECIFIED = NotifyFlowStatus._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_FLOW_STATUS_UNSPECIFIED');
+  static const NotifyFlowStatus NOTIFY_FLOW_STATUS_ACTIVE = NotifyFlowStatus._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_FLOW_STATUS_ACTIVE');
+  static const NotifyFlowStatus NOTIFY_FLOW_STATUS_SUSPEND = NotifyFlowStatus._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NOTIFY_FLOW_STATUS_SUSPEND');
 
   static const $core.List<NotifyFlowStatus> values = <NotifyFlowStatus> [
     NOTIFY_FLOW_STATUS_UNSPECIFIED,
@@ -62,5 +58,3 @@ class NotifyFlowStatus extends $pb.ProtobufEnum {
   const NotifyFlowStatus._($core.int v, $core.String n) : super(v, n);
 }
 
-
-const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

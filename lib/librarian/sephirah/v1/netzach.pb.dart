@@ -1,34 +1,38 @@
-//
+///
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/netzach.proto
 //
 // @dart = 2.12
-
-// ignore_for_file: annotate_overrides, camel_case_types
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $7;
+
 import 'netzach.pbenum.dart';
 
 export 'netzach.pbenum.dart';
 
 class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
-  factory CreateNotifyTargetRequest() => create();
-  CreateNotifyTargetRequest._() : super();
-  factory CreateNotifyTargetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateNotifyTargetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifyTargetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<NotifyTarget>(1, _omitFieldNames ? '' : 'target', subBuilder: NotifyTarget.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateNotifyTargetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<NotifyTarget>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'target', subBuilder: NotifyTarget.create)
     ..hasRequiredFields = false
   ;
 
+  CreateNotifyTargetRequest._() : super();
+  factory CreateNotifyTargetRequest({
+    NotifyTarget? target,
+  }) {
+    final _result = create();
+    if (target != null) {
+      _result.target = target;
+    }
+    return _result;
+  }
+  factory CreateNotifyTargetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNotifyTargetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -38,10 +42,8 @@ class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateNotifyTargetRequest copyWith(void Function(CreateNotifyTargetRequest) updates) => super.copyWith((message) => updates(message as CreateNotifyTargetRequest)) as CreateNotifyTargetRequest;
-
+  CreateNotifyTargetRequest copyWith(void Function(CreateNotifyTargetRequest) updates) => super.copyWith((message) => updates(message as CreateNotifyTargetRequest)) as CreateNotifyTargetRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static CreateNotifyTargetRequest create() => CreateNotifyTargetRequest._();
   CreateNotifyTargetRequest createEmptyInstance() => create();
@@ -63,16 +65,23 @@ class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
 }
 
 class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
-  factory CreateNotifyTargetResponse() => create();
-  CreateNotifyTargetResponse._() : super();
-  factory CreateNotifyTargetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateNotifyTargetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifyTargetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateNotifyTargetResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
+  CreateNotifyTargetResponse._() : super();
+  factory CreateNotifyTargetResponse({
+    $7.InternalID? id,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    return _result;
+  }
+  factory CreateNotifyTargetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNotifyTargetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -82,10 +91,8 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateNotifyTargetResponse copyWith(void Function(CreateNotifyTargetResponse) updates) => super.copyWith((message) => updates(message as CreateNotifyTargetResponse)) as CreateNotifyTargetResponse;
-
+  CreateNotifyTargetResponse copyWith(void Function(CreateNotifyTargetResponse) updates) => super.copyWith((message) => updates(message as CreateNotifyTargetResponse)) as CreateNotifyTargetResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static CreateNotifyTargetResponse create() => CreateNotifyTargetResponse._();
   CreateNotifyTargetResponse createEmptyInstance() => create();
@@ -107,16 +114,23 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
-  factory UpdateNotifyTargetRequest() => create();
-  UpdateNotifyTargetRequest._() : super();
-  factory UpdateNotifyTargetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateNotifyTargetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotifyTargetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<NotifyTarget>(1, _omitFieldNames ? '' : 'target', subBuilder: NotifyTarget.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateNotifyTargetRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<NotifyTarget>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'target', subBuilder: NotifyTarget.create)
     ..hasRequiredFields = false
   ;
 
+  UpdateNotifyTargetRequest._() : super();
+  factory UpdateNotifyTargetRequest({
+    NotifyTarget? target,
+  }) {
+    final _result = create();
+    if (target != null) {
+      _result.target = target;
+    }
+    return _result;
+  }
+  factory UpdateNotifyTargetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNotifyTargetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -126,10 +140,8 @@ class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateNotifyTargetRequest copyWith(void Function(UpdateNotifyTargetRequest) updates) => super.copyWith((message) => updates(message as UpdateNotifyTargetRequest)) as UpdateNotifyTargetRequest;
-
+  UpdateNotifyTargetRequest copyWith(void Function(UpdateNotifyTargetRequest) updates) => super.copyWith((message) => updates(message as UpdateNotifyTargetRequest)) as UpdateNotifyTargetRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyTargetRequest create() => UpdateNotifyTargetRequest._();
   UpdateNotifyTargetRequest createEmptyInstance() => create();
@@ -151,15 +163,14 @@ class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateNotifyTargetResponse extends $pb.GeneratedMessage {
-  factory UpdateNotifyTargetResponse() => create();
-  UpdateNotifyTargetResponse._() : super();
-  factory UpdateNotifyTargetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateNotifyTargetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotifyTargetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateNotifyTargetResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
+  UpdateNotifyTargetResponse._() : super();
+  factory UpdateNotifyTargetResponse() => create();
+  factory UpdateNotifyTargetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNotifyTargetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -169,10 +180,8 @@ class UpdateNotifyTargetResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateNotifyTargetResponse copyWith(void Function(UpdateNotifyTargetResponse) updates) => super.copyWith((message) => updates(message as UpdateNotifyTargetResponse)) as UpdateNotifyTargetResponse;
-
+  UpdateNotifyTargetResponse copyWith(void Function(UpdateNotifyTargetResponse) updates) => super.copyWith((message) => updates(message as UpdateNotifyTargetResponse)) as UpdateNotifyTargetResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyTargetResponse create() => UpdateNotifyTargetResponse._();
   UpdateNotifyTargetResponse createEmptyInstance() => create();
@@ -183,19 +192,38 @@ class UpdateNotifyTargetResponse extends $pb.GeneratedMessage {
 }
 
 class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
-  factory ListNotifyTargetsRequest() => create();
-  ListNotifyTargetsRequest._() : super();
-  factory ListNotifyTargetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListNotifyTargetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<NotifyTargetType>(3, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetType.valueOf, enumValues: NotifyTargetType.values, defaultEnumValue: NotifyTargetType.NOTIFY_TARGET_TYPE_UNSPECIFIED)
-    ..pc<NotifyTargetStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values, defaultEnumValue: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNotifyTargetsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<NotifyTargetType>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetType.valueOf, enumValues: NotifyTargetType.values, defaultEnumValue: NotifyTargetType.NOTIFY_TARGET_TYPE_UNSPECIFIED)
+    ..pc<NotifyTargetStatus>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values, defaultEnumValue: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
+  ListNotifyTargetsRequest._() : super();
+  factory ListNotifyTargetsRequest({
+    $7.PagingRequest? paging,
+    $core.Iterable<$7.InternalID>? idFilter,
+    $core.Iterable<NotifyTargetType>? typeFilter,
+    $core.Iterable<NotifyTargetStatus>? statusFilter,
+  }) {
+    final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
+    if (idFilter != null) {
+      _result.idFilter.addAll(idFilter);
+    }
+    if (typeFilter != null) {
+      _result.typeFilter.addAll(typeFilter);
+    }
+    if (statusFilter != null) {
+      _result.statusFilter.addAll(statusFilter);
+    }
+    return _result;
+  }
+  factory ListNotifyTargetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNotifyTargetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -205,10 +233,8 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListNotifyTargetsRequest copyWith(void Function(ListNotifyTargetsRequest) updates) => super.copyWith((message) => updates(message as ListNotifyTargetsRequest)) as ListNotifyTargetsRequest;
-
+  ListNotifyTargetsRequest copyWith(void Function(ListNotifyTargetsRequest) updates) => super.copyWith((message) => updates(message as ListNotifyTargetsRequest)) as ListNotifyTargetsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static ListNotifyTargetsRequest create() => ListNotifyTargetsRequest._();
   ListNotifyTargetsRequest createEmptyInstance() => create();
@@ -239,17 +265,28 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
 }
 
 class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
-  factory ListNotifyTargetsResponse() => create();
-  ListNotifyTargetsResponse._() : super();
-  factory ListNotifyTargetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListNotifyTargetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<NotifyTarget>(2, _omitFieldNames ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyTarget.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNotifyTargetsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<NotifyTarget>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyTarget.create)
     ..hasRequiredFields = false
   ;
 
+  ListNotifyTargetsResponse._() : super();
+  factory ListNotifyTargetsResponse({
+    $7.PagingResponse? paging,
+    $core.Iterable<NotifyTarget>? targets,
+  }) {
+    final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
+    if (targets != null) {
+      _result.targets.addAll(targets);
+    }
+    return _result;
+  }
+  factory ListNotifyTargetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNotifyTargetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -259,10 +296,8 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListNotifyTargetsResponse copyWith(void Function(ListNotifyTargetsResponse) updates) => super.copyWith((message) => updates(message as ListNotifyTargetsResponse)) as ListNotifyTargetsResponse;
-
+  ListNotifyTargetsResponse copyWith(void Function(ListNotifyTargetsResponse) updates) => super.copyWith((message) => updates(message as ListNotifyTargetsResponse)) as ListNotifyTargetsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static ListNotifyTargetsResponse create() => ListNotifyTargetsResponse._();
   ListNotifyTargetsResponse createEmptyInstance() => create();
@@ -287,16 +322,23 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
 }
 
 class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
-  factory CreateNotifyFlowRequest() => create();
-  CreateNotifyFlowRequest._() : super();
-  factory CreateNotifyFlowRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateNotifyFlowRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifyFlowRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<NotifyFlow>(1, _omitFieldNames ? '' : 'flow', subBuilder: NotifyFlow.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateNotifyFlowRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<NotifyFlow>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'flow', subBuilder: NotifyFlow.create)
     ..hasRequiredFields = false
   ;
 
+  CreateNotifyFlowRequest._() : super();
+  factory CreateNotifyFlowRequest({
+    NotifyFlow? flow,
+  }) {
+    final _result = create();
+    if (flow != null) {
+      _result.flow = flow;
+    }
+    return _result;
+  }
+  factory CreateNotifyFlowRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNotifyFlowRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -306,10 +348,8 @@ class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateNotifyFlowRequest copyWith(void Function(CreateNotifyFlowRequest) updates) => super.copyWith((message) => updates(message as CreateNotifyFlowRequest)) as CreateNotifyFlowRequest;
-
+  CreateNotifyFlowRequest copyWith(void Function(CreateNotifyFlowRequest) updates) => super.copyWith((message) => updates(message as CreateNotifyFlowRequest)) as CreateNotifyFlowRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static CreateNotifyFlowRequest create() => CreateNotifyFlowRequest._();
   CreateNotifyFlowRequest createEmptyInstance() => create();
@@ -331,16 +371,23 @@ class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
 }
 
 class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
-  factory CreateNotifyFlowResponse() => create();
-  CreateNotifyFlowResponse._() : super();
-  factory CreateNotifyFlowResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateNotifyFlowResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifyFlowResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateNotifyFlowResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
+  CreateNotifyFlowResponse._() : super();
+  factory CreateNotifyFlowResponse({
+    $7.InternalID? id,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    return _result;
+  }
+  factory CreateNotifyFlowResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNotifyFlowResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -350,10 +397,8 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateNotifyFlowResponse copyWith(void Function(CreateNotifyFlowResponse) updates) => super.copyWith((message) => updates(message as CreateNotifyFlowResponse)) as CreateNotifyFlowResponse;
-
+  CreateNotifyFlowResponse copyWith(void Function(CreateNotifyFlowResponse) updates) => super.copyWith((message) => updates(message as CreateNotifyFlowResponse)) as CreateNotifyFlowResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static CreateNotifyFlowResponse create() => CreateNotifyFlowResponse._();
   CreateNotifyFlowResponse createEmptyInstance() => create();
@@ -375,16 +420,23 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
-  factory UpdateNotifyFlowRequest() => create();
-  UpdateNotifyFlowRequest._() : super();
-  factory UpdateNotifyFlowRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateNotifyFlowRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotifyFlowRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<NotifyFlow>(1, _omitFieldNames ? '' : 'flow', subBuilder: NotifyFlow.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateNotifyFlowRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<NotifyFlow>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'flow', subBuilder: NotifyFlow.create)
     ..hasRequiredFields = false
   ;
 
+  UpdateNotifyFlowRequest._() : super();
+  factory UpdateNotifyFlowRequest({
+    NotifyFlow? flow,
+  }) {
+    final _result = create();
+    if (flow != null) {
+      _result.flow = flow;
+    }
+    return _result;
+  }
+  factory UpdateNotifyFlowRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNotifyFlowRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -394,10 +446,8 @@ class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateNotifyFlowRequest copyWith(void Function(UpdateNotifyFlowRequest) updates) => super.copyWith((message) => updates(message as UpdateNotifyFlowRequest)) as UpdateNotifyFlowRequest;
-
+  UpdateNotifyFlowRequest copyWith(void Function(UpdateNotifyFlowRequest) updates) => super.copyWith((message) => updates(message as UpdateNotifyFlowRequest)) as UpdateNotifyFlowRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyFlowRequest create() => UpdateNotifyFlowRequest._();
   UpdateNotifyFlowRequest createEmptyInstance() => create();
@@ -419,15 +469,14 @@ class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateNotifyFlowResponse extends $pb.GeneratedMessage {
-  factory UpdateNotifyFlowResponse() => create();
-  UpdateNotifyFlowResponse._() : super();
-  factory UpdateNotifyFlowResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateNotifyFlowResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotifyFlowResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateNotifyFlowResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
+  UpdateNotifyFlowResponse._() : super();
+  factory UpdateNotifyFlowResponse() => create();
+  factory UpdateNotifyFlowResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNotifyFlowResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -437,10 +486,8 @@ class UpdateNotifyFlowResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateNotifyFlowResponse copyWith(void Function(UpdateNotifyFlowResponse) updates) => super.copyWith((message) => updates(message as UpdateNotifyFlowResponse)) as UpdateNotifyFlowResponse;
-
+  UpdateNotifyFlowResponse copyWith(void Function(UpdateNotifyFlowResponse) updates) => super.copyWith((message) => updates(message as UpdateNotifyFlowResponse)) as UpdateNotifyFlowResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyFlowResponse create() => UpdateNotifyFlowResponse._();
   UpdateNotifyFlowResponse createEmptyInstance() => create();
@@ -451,17 +498,28 @@ class UpdateNotifyFlowResponse extends $pb.GeneratedMessage {
 }
 
 class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
-  factory ListNotifyFlowsRequest() => create();
-  ListNotifyFlowsRequest._() : super();
-  factory ListNotifyFlowsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListNotifyFlowsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyFlowsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNotifyFlowsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
+  ListNotifyFlowsRequest._() : super();
+  factory ListNotifyFlowsRequest({
+    $7.PagingRequest? paging,
+    $core.Iterable<$7.InternalID>? idFilter,
+  }) {
+    final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
+    if (idFilter != null) {
+      _result.idFilter.addAll(idFilter);
+    }
+    return _result;
+  }
+  factory ListNotifyFlowsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNotifyFlowsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -471,10 +529,8 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListNotifyFlowsRequest copyWith(void Function(ListNotifyFlowsRequest) updates) => super.copyWith((message) => updates(message as ListNotifyFlowsRequest)) as ListNotifyFlowsRequest;
-
+  ListNotifyFlowsRequest copyWith(void Function(ListNotifyFlowsRequest) updates) => super.copyWith((message) => updates(message as ListNotifyFlowsRequest)) as ListNotifyFlowsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static ListNotifyFlowsRequest create() => ListNotifyFlowsRequest._();
   ListNotifyFlowsRequest createEmptyInstance() => create();
@@ -499,17 +555,28 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
 }
 
 class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
-  factory ListNotifyFlowsResponse() => create();
-  ListNotifyFlowsResponse._() : super();
-  factory ListNotifyFlowsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListNotifyFlowsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyFlowsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<NotifyFlow>(2, _omitFieldNames ? '' : 'flows', $pb.PbFieldType.PM, subBuilder: NotifyFlow.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListNotifyFlowsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<NotifyFlow>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'flows', $pb.PbFieldType.PM, subBuilder: NotifyFlow.create)
     ..hasRequiredFields = false
   ;
 
+  ListNotifyFlowsResponse._() : super();
+  factory ListNotifyFlowsResponse({
+    $7.PagingResponse? paging,
+    $core.Iterable<NotifyFlow>? flows,
+  }) {
+    final _result = create();
+    if (paging != null) {
+      _result.paging = paging;
+    }
+    if (flows != null) {
+      _result.flows.addAll(flows);
+    }
+    return _result;
+  }
+  factory ListNotifyFlowsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNotifyFlowsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -519,10 +586,8 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListNotifyFlowsResponse copyWith(void Function(ListNotifyFlowsResponse) updates) => super.copyWith((message) => updates(message as ListNotifyFlowsResponse)) as ListNotifyFlowsResponse;
-
+  ListNotifyFlowsResponse copyWith(void Function(ListNotifyFlowsResponse) updates) => super.copyWith((message) => updates(message as ListNotifyFlowsResponse)) as ListNotifyFlowsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static ListNotifyFlowsResponse create() => ListNotifyFlowsResponse._();
   ListNotifyFlowsResponse createEmptyInstance() => create();
@@ -547,21 +612,48 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
 }
 
 class NotifyTarget extends $pb.GeneratedMessage {
-  factory NotifyTarget() => create();
-  NotifyTarget._() : super();
-  factory NotifyTarget.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NotifyTarget.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyTarget', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..e<NotifyTargetType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetType.NOTIFY_TARGET_TYPE_UNSPECIFIED, valueOf: NotifyTargetType.valueOf, enumValues: NotifyTargetType.values)
-    ..e<NotifyTargetStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values)
-    ..aOS(6, _omitFieldNames ? '' : 'token')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NotifyTarget', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..e<NotifyTargetType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetType.NOTIFY_TARGET_TYPE_UNSPECIFIED, valueOf: NotifyTargetType.valueOf, enumValues: NotifyTargetType.values)
+    ..e<NotifyTargetStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values)
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
+  NotifyTarget._() : super();
+  factory NotifyTarget({
+    $7.InternalID? id,
+    $core.String? name,
+    $core.String? description,
+    NotifyTargetType? type,
+    NotifyTargetStatus? status,
+    $core.String? token,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    if (type != null) {
+      _result.type = type;
+    }
+    if (status != null) {
+      _result.status = status;
+    }
+    if (token != null) {
+      _result.token = token;
+    }
+    return _result;
+  }
+  factory NotifyTarget.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NotifyTarget.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -571,10 +663,8 @@ class NotifyTarget extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NotifyTarget copyWith(void Function(NotifyTarget) updates) => super.copyWith((message) => updates(message as NotifyTarget)) as NotifyTarget;
-
+  NotifyTarget copyWith(void Function(NotifyTarget) updates) => super.copyWith((message) => updates(message as NotifyTarget)) as NotifyTarget; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static NotifyTarget create() => NotifyTarget._();
   NotifyTarget createEmptyInstance() => create();
@@ -641,21 +731,48 @@ class NotifyTarget extends $pb.GeneratedMessage {
 }
 
 class NotifyFlow extends $pb.GeneratedMessage {
-  factory NotifyFlow() => create();
-  NotifyFlow._() : super();
-  factory NotifyFlow.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NotifyFlow.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlow', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..aOM<NotifyFlowSource>(4, _omitFieldNames ? '' : 'source', subBuilder: NotifyFlowSource.create)
-    ..pc<NotifyFlowTarget>(5, _omitFieldNames ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyFlowTarget.create)
-    ..e<NotifyFlowStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyFlowStatus.NOTIFY_FLOW_STATUS_UNSPECIFIED, valueOf: NotifyFlowStatus.valueOf, enumValues: NotifyFlowStatus.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NotifyFlow', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOM<NotifyFlowSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', subBuilder: NotifyFlowSource.create)
+    ..pc<NotifyFlowTarget>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyFlowTarget.create)
+    ..e<NotifyFlowStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyFlowStatus.NOTIFY_FLOW_STATUS_UNSPECIFIED, valueOf: NotifyFlowStatus.valueOf, enumValues: NotifyFlowStatus.values)
     ..hasRequiredFields = false
   ;
 
+  NotifyFlow._() : super();
+  factory NotifyFlow({
+    $7.InternalID? id,
+    $core.String? name,
+    $core.String? description,
+    NotifyFlowSource? source,
+    $core.Iterable<NotifyFlowTarget>? targets,
+    NotifyFlowStatus? status,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    if (source != null) {
+      _result.source = source;
+    }
+    if (targets != null) {
+      _result.targets.addAll(targets);
+    }
+    if (status != null) {
+      _result.status = status;
+    }
+    return _result;
+  }
+  factory NotifyFlow.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NotifyFlow.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -665,10 +782,8 @@ class NotifyFlow extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NotifyFlow copyWith(void Function(NotifyFlow) updates) => super.copyWith((message) => updates(message as NotifyFlow)) as NotifyFlow;
-
+  NotifyFlow copyWith(void Function(NotifyFlow) updates) => super.copyWith((message) => updates(message as NotifyFlow)) as NotifyFlow; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static NotifyFlow create() => NotifyFlow._();
   NotifyFlow createEmptyInstance() => create();
@@ -731,16 +846,23 @@ class NotifyFlow extends $pb.GeneratedMessage {
 }
 
 class NotifyFlowSource extends $pb.GeneratedMessage {
-  factory NotifyFlowSource() => create();
-  NotifyFlowSource._() : super();
-  factory NotifyFlowSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NotifyFlowSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.InternalID>(1, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NotifyFlowSource', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
+  NotifyFlowSource._() : super();
+  factory NotifyFlowSource({
+    $core.Iterable<$7.InternalID>? feedIdFilter,
+  }) {
+    final _result = create();
+    if (feedIdFilter != null) {
+      _result.feedIdFilter.addAll(feedIdFilter);
+    }
+    return _result;
+  }
+  factory NotifyFlowSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NotifyFlowSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -750,10 +872,8 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NotifyFlowSource copyWith(void Function(NotifyFlowSource) updates) => super.copyWith((message) => updates(message as NotifyFlowSource)) as NotifyFlowSource;
-
+  NotifyFlowSource copyWith(void Function(NotifyFlowSource) updates) => super.copyWith((message) => updates(message as NotifyFlowSource)) as NotifyFlowSource; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static NotifyFlowSource create() => NotifyFlowSource._();
   NotifyFlowSource createEmptyInstance() => create();
@@ -767,17 +887,28 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
 }
 
 class NotifyFlowTarget extends $pb.GeneratedMessage {
-  factory NotifyFlowTarget() => create();
-  NotifyFlowTarget._() : super();
-  factory NotifyFlowTarget.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NotifyFlowTarget.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowTarget', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'targetId', subBuilder: $7.InternalID.create)
-    ..aOS(2, _omitFieldNames ? '' : 'channelId')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NotifyFlowTarget', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'targetId', subBuilder: $7.InternalID.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId')
     ..hasRequiredFields = false
   ;
 
+  NotifyFlowTarget._() : super();
+  factory NotifyFlowTarget({
+    $7.InternalID? targetId,
+    $core.String? channelId,
+  }) {
+    final _result = create();
+    if (targetId != null) {
+      _result.targetId = targetId;
+    }
+    if (channelId != null) {
+      _result.channelId = channelId;
+    }
+    return _result;
+  }
+  factory NotifyFlowTarget.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NotifyFlowTarget.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -787,10 +918,8 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NotifyFlowTarget copyWith(void Function(NotifyFlowTarget) updates) => super.copyWith((message) => updates(message as NotifyFlowTarget)) as NotifyFlowTarget;
-
+  NotifyFlowTarget copyWith(void Function(NotifyFlowTarget) updates) => super.copyWith((message) => updates(message as NotifyFlowTarget)) as NotifyFlowTarget; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
-
   @$core.pragma('dart2js:noInline')
   static NotifyFlowTarget create() => NotifyFlowTarget._();
   NotifyFlowTarget createEmptyInstance() => create();
@@ -820,6 +949,3 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   void clearChannelId() => clearField(2);
 }
 
-
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

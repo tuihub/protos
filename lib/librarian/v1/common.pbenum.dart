@@ -1,21 +1,17 @@
-//
+///
 //  Generated code. Do not modify.
 //  source: librarian/v1/common.proto
 //
 // @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-// ignore_for_file: annotate_overrides, camel_case_types
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
-
+// ignore_for_file: UNDEFINED_SHOWN_NAME
 import 'dart:core' as $core;
-
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class AccountPlatform extends $pb.ProtobufEnum {
-  static const AccountPlatform ACCOUNT_PLATFORM_UNSPECIFIED = AccountPlatform._(0, _omitEnumNames ? '' : 'ACCOUNT_PLATFORM_UNSPECIFIED');
-  static const AccountPlatform ACCOUNT_PLATFORM_STEAM = AccountPlatform._(1, _omitEnumNames ? '' : 'ACCOUNT_PLATFORM_STEAM');
+  static const AccountPlatform ACCOUNT_PLATFORM_UNSPECIFIED = AccountPlatform._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_PLATFORM_UNSPECIFIED');
+  static const AccountPlatform ACCOUNT_PLATFORM_STEAM = AccountPlatform._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ACCOUNT_PLATFORM_STEAM');
 
   static const $core.List<AccountPlatform> values = <AccountPlatform> [
     ACCOUNT_PLATFORM_UNSPECIFIED,
@@ -29,8 +25,8 @@ class AccountPlatform extends $pb.ProtobufEnum {
 }
 
 class AppType extends $pb.ProtobufEnum {
-  static const AppType APP_TYPE_UNSPECIFIED = AppType._(0, _omitEnumNames ? '' : 'APP_TYPE_UNSPECIFIED');
-  static const AppType APP_TYPE_GAME = AppType._(1, _omitEnumNames ? '' : 'APP_TYPE_GAME');
+  static const AppType APP_TYPE_UNSPECIFIED = AppType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_TYPE_UNSPECIFIED');
+  static const AppType APP_TYPE_GAME = AppType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_TYPE_GAME');
 
   static const $core.List<AppType> values = <AppType> [
     APP_TYPE_UNSPECIFIED,
@@ -44,9 +40,9 @@ class AppType extends $pb.ProtobufEnum {
 }
 
 class AppSource extends $pb.ProtobufEnum {
-  static const AppSource APP_SOURCE_UNSPECIFIED = AppSource._(0, _omitEnumNames ? '' : 'APP_SOURCE_UNSPECIFIED');
-  static const AppSource APP_SOURCE_INTERNAL = AppSource._(1, _omitEnumNames ? '' : 'APP_SOURCE_INTERNAL');
-  static const AppSource APP_SOURCE_STEAM = AppSource._(2, _omitEnumNames ? '' : 'APP_SOURCE_STEAM');
+  static const AppSource APP_SOURCE_UNSPECIFIED = AppSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_UNSPECIFIED');
+  static const AppSource APP_SOURCE_INTERNAL = AppSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_INTERNAL');
+  static const AppSource APP_SOURCE_STEAM = AppSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_STEAM');
 
   static const $core.List<AppSource> values = <AppSource> [
     APP_SOURCE_UNSPECIFIED,
@@ -61,9 +57,9 @@ class AppSource extends $pb.ProtobufEnum {
 }
 
 class AppPackageSource extends $pb.ProtobufEnum {
-  static const AppPackageSource APP_PACKAGE_SOURCE_UNSPECIFIED = AppPackageSource._(0, _omitEnumNames ? '' : 'APP_PACKAGE_SOURCE_UNSPECIFIED');
-  static const AppPackageSource APP_PACKAGE_SOURCE_MANUAL = AppPackageSource._(1, _omitEnumNames ? '' : 'APP_PACKAGE_SOURCE_MANUAL');
-  static const AppPackageSource APP_PACKAGE_SOURCE_SENTINEL = AppPackageSource._(2, _omitEnumNames ? '' : 'APP_PACKAGE_SOURCE_SENTINEL');
+  static const AppPackageSource APP_PACKAGE_SOURCE_UNSPECIFIED = AppPackageSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_PACKAGE_SOURCE_UNSPECIFIED');
+  static const AppPackageSource APP_PACKAGE_SOURCE_MANUAL = AppPackageSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_PACKAGE_SOURCE_MANUAL');
+  static const AppPackageSource APP_PACKAGE_SOURCE_SENTINEL = AppPackageSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_PACKAGE_SOURCE_SENTINEL');
 
   static const $core.List<AppPackageSource> values = <AppPackageSource> [
     APP_PACKAGE_SOURCE_UNSPECIFIED,
@@ -77,5 +73,3 @@ class AppPackageSource extends $pb.ProtobufEnum {
   const AppPackageSource._($core.int v, $core.String n) : super(v, n);
 }
 
-
-const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
