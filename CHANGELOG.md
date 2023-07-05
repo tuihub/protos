@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.34](https://github.com/TuiHub/Protos/compare/v0.2.33...v0.2.34) (2023-07-05)
+
+
+### Bug Fixes
+
+* downgrade protobuf version in dart ([67ca022](https://github.com/TuiHub/Protos/commit/67ca022f89ea284ba5a0e1818167b1f4f3c42eb8))
+
 ## [0.2.33](https://github.com/TuiHub/Protos/compare/v0.2.32...v0.2.33) (2023-07-03)
 
 
