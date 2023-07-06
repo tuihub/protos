@@ -78,13 +78,11 @@ message UnLinkAccountRequest {
 message UnLinkAccountResponse {}
 
 message ListLinkAccountsRequest {
-  librarian.v1.PagingRequest paging = 1;
   // Used to list other user's account
-  optional librarian.v1.InternalID user_id = 2;
+  optional librarian.v1.InternalID user_id = 1;
 }
 message ListLinkAccountsResponse {
-  librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.Account accounts = 2;
+  repeated librarian.v1.Account accounts = 1;
 }
 
 message User {

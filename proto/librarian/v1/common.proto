@@ -62,12 +62,14 @@ message App {
   string source_app_id = 3;
   optional string source_url = 4;
 
+  optional AppDetails details = 5;
+
   string name = 6;
   AppType type = 7;
   string short_description = 8;
   string icon_image_url = 9;
-  repeated string tags = 10;
-  optional AppDetails details = 11;
+  string hero_image_url = 10;
+  repeated string tags = 11;
 }
 
 message AppID {
@@ -81,8 +83,6 @@ message AppDetails {
   string developer = 3;
   string publisher = 4;
   string version = 5;
-  string hero_image_url = 6;
-  string logo_image_url = 7;
 }
 
 enum AppType {
