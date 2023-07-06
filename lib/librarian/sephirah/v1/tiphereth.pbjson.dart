@@ -221,8 +221,7 @@ final $typed_data.Uint8List unLinkAccountResponseDescriptor = $convert.base64Dec
 const ListLinkAccountsRequest$json = const {
   '1': 'ListLinkAccountsRequest',
   '2': const [
-    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    const {'1': 'user_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'userId', '17': true},
+    const {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'userId', '17': true},
   ],
   '8': const [
     const {'1': '_user_id'},
@@ -230,18 +229,17 @@ const ListLinkAccountsRequest$json = const {
 };
 
 /// Descriptor for `ListLinkAccountsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLinkAccountsRequestDescriptor = $convert.base64Decode('ChdMaXN0TGlua0FjY291bnRzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjYKB3VzZXJfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUgZ1c2VySWSIAQFCCgoIX3VzZXJfaWQ=');
+final $typed_data.Uint8List listLinkAccountsRequestDescriptor = $convert.base64Decode('ChdMaXN0TGlua0FjY291bnRzUmVxdWVzdBI2Cgd1c2VyX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIGdXNlcklkiAEBQgoKCF91c2VyX2lk');
 @$core.Deprecated('Use listLinkAccountsResponseDescriptor instead')
 const ListLinkAccountsResponse$json = const {
   '1': 'ListLinkAccountsResponse',
   '2': const [
-    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    const {'1': 'accounts', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.Account', '10': 'accounts'},
+    const {'1': 'accounts', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.Account', '10': 'accounts'},
   ],
 };
 
 /// Descriptor for `ListLinkAccountsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLinkAccountsResponseDescriptor = $convert.base64Decode('ChhMaXN0TGlua0FjY291bnRzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSMQoIYWNjb3VudHMYAiADKAsyFS5saWJyYXJpYW4udjEuQWNjb3VudFIIYWNjb3VudHM=');
+final $typed_data.Uint8List listLinkAccountsResponseDescriptor = $convert.base64Decode('ChhMaXN0TGlua0FjY291bnRzUmVzcG9uc2USMQoIYWNjb3VudHMYASADKAsyFS5saWJyYXJpYW4udjEuQWNjb3VudFIIYWNjb3VudHM=');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',

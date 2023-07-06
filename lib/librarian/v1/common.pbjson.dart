@@ -131,12 +131,13 @@ const App$json = const {
     const {'1': 'source', '3': 2, '4': 1, '5': 14, '6': '.librarian.v1.AppSource', '10': 'source'},
     const {'1': 'source_app_id', '3': 3, '4': 1, '5': 9, '10': 'sourceAppId'},
     const {'1': 'source_url', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'sourceUrl', '17': true},
+    const {'1': 'details', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 1, '10': 'details', '17': true},
     const {'1': 'name', '3': 6, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
     const {'1': 'short_description', '3': 8, '4': 1, '5': 9, '10': 'shortDescription'},
     const {'1': 'icon_image_url', '3': 9, '4': 1, '5': 9, '10': 'iconImageUrl'},
-    const {'1': 'tags', '3': 10, '4': 3, '5': 9, '10': 'tags'},
-    const {'1': 'details', '3': 11, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 1, '10': 'details', '17': true},
+    const {'1': 'hero_image_url', '3': 10, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    const {'1': 'tags', '3': 11, '4': 3, '5': 9, '10': 'tags'},
   ],
   '8': const [
     const {'1': '_source_url'},
@@ -145,7 +146,7 @@ const App$json = const {
 };
 
 /// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appDescriptor = $convert.base64Decode('CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cmNlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSEgoEdGFncxgKIAMoCVIEdGFncxI3CgdkZXRhaWxzGAsgASgLMhgubGlicmFyaWFuLnYxLkFwcERldGFpbHNIAVIHZGV0YWlsc4gBAUINCgtfc291cmNlX3VybEIKCghfZGV0YWlscw==');
+final $typed_data.Uint8List appDescriptor = $convert.base64Decode('CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cmNlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiAEBEjcKB2RldGFpbHMYBSABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRhaWxziAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV91cmwYCiABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAsgAygJUgR0YWdzQg0KC19zb3VyY2VfdXJsQgoKCF9kZXRhaWxz');
 @$core.Deprecated('Use appIDDescriptor instead')
 const AppID$json = const {
   '1': 'AppID',
@@ -166,13 +167,11 @@ const AppDetails$json = const {
     const {'1': 'developer', '3': 3, '4': 1, '5': 9, '10': 'developer'},
     const {'1': 'publisher', '3': 4, '4': 1, '5': 9, '10': 'publisher'},
     const {'1': 'version', '3': 5, '4': 1, '5': 9, '10': 'version'},
-    const {'1': 'hero_image_url', '3': 6, '4': 1, '5': 9, '10': 'heroImageUrl'},
-    const {'1': 'logo_image_url', '3': 7, '4': 1, '5': 9, '10': 'logoImageUrl'},
   ],
 };
 
 /// Descriptor for `AppDetails`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appDetailsDescriptor = $convert.base64Decode('CgpBcHBEZXRhaWxzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIhCgxyZWxlYXNlX2RhdGUYAiABKAlSC3JlbGVhc2VEYXRlEhwKCWRldmVsb3BlchgDIAEoCVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgEIAEoCVIJcHVibGlzaGVyEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb24SJAoOaGVyb19pbWFnZV91cmwYBiABKAlSDGhlcm9JbWFnZVVybBIkCg5sb2dvX2ltYWdlX3VybBgHIAEoCVIMbG9nb0ltYWdlVXJs');
+final $typed_data.Uint8List appDetailsDescriptor = $convert.base64Decode('CgpBcHBEZXRhaWxzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIhCgxyZWxlYXNlX2RhdGUYAiABKAlSC3JlbGVhc2VEYXRlEhwKCWRldmVsb3BlchgDIAEoCVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgEIAEoCVIJcHVibGlzaGVyEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb24=');
 @$core.Deprecated('Use appPackageDescriptor instead')
 const AppPackage$json = const {
   '1': 'AppPackage',

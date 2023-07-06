@@ -439,12 +439,13 @@ class App extends $pb.GeneratedMessage {
     ..e<AppSource>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: AppSource.APP_SOURCE_UNSPECIFIED, valueOf: AppSource.valueOf, enumValues: AppSource.values)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceAppId')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceUrl')
+    ..aOM<AppDetails>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'details', subBuilder: AppDetails.create)
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..e<AppType>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'shortDescription')
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'iconImageUrl')
-    ..pPS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..aOM<AppDetails>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'details', subBuilder: AppDetails.create)
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heroImageUrl')
+    ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
@@ -454,12 +455,13 @@ class App extends $pb.GeneratedMessage {
     AppSource? source,
     $core.String? sourceAppId,
     $core.String? sourceUrl,
+    AppDetails? details,
     $core.String? name,
     AppType? type,
     $core.String? shortDescription,
     $core.String? iconImageUrl,
+    $core.String? heroImageUrl,
     $core.Iterable<$core.String>? tags,
-    AppDetails? details,
   }) {
     final _result = create();
     if (id != null) {
@@ -474,6 +476,9 @@ class App extends $pb.GeneratedMessage {
     if (sourceUrl != null) {
       _result.sourceUrl = sourceUrl;
     }
+    if (details != null) {
+      _result.details = details;
+    }
     if (name != null) {
       _result.name = name;
     }
@@ -486,11 +491,11 @@ class App extends $pb.GeneratedMessage {
     if (iconImageUrl != null) {
       _result.iconImageUrl = iconImageUrl;
     }
+    if (heroImageUrl != null) {
+      _result.heroImageUrl = heroImageUrl;
+    }
     if (tags != null) {
       _result.tags.addAll(tags);
-    }
-    if (details != null) {
-      _result.details = details;
     }
     return _result;
   }
@@ -553,55 +558,64 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearSourceUrl() => clearField(4);
 
+  @$pb.TagNumber(5)
+  AppDetails get details => $_getN(4);
+  @$pb.TagNumber(5)
+  set details(AppDetails v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDetails() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDetails() => clearField(5);
+  @$pb.TagNumber(5)
+  AppDetails ensureDetails() => $_ensure(4);
+
   @$pb.TagNumber(6)
-  $core.String get name => $_getSZ(4);
+  $core.String get name => $_getSZ(5);
   @$pb.TagNumber(6)
-  set name($core.String v) { $_setString(4, v); }
+  set name($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasName() => $_has(4);
+  $core.bool hasName() => $_has(5);
   @$pb.TagNumber(6)
   void clearName() => clearField(6);
 
   @$pb.TagNumber(7)
-  AppType get type => $_getN(5);
+  AppType get type => $_getN(6);
   @$pb.TagNumber(7)
   set type(AppType v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasType() => $_has(5);
+  $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
   void clearType() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get shortDescription => $_getSZ(6);
+  $core.String get shortDescription => $_getSZ(7);
   @$pb.TagNumber(8)
-  set shortDescription($core.String v) { $_setString(6, v); }
+  set shortDescription($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasShortDescription() => $_has(6);
+  $core.bool hasShortDescription() => $_has(7);
   @$pb.TagNumber(8)
   void clearShortDescription() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get iconImageUrl => $_getSZ(7);
+  $core.String get iconImageUrl => $_getSZ(8);
   @$pb.TagNumber(9)
-  set iconImageUrl($core.String v) { $_setString(7, v); }
+  set iconImageUrl($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasIconImageUrl() => $_has(7);
+  $core.bool hasIconImageUrl() => $_has(8);
   @$pb.TagNumber(9)
   void clearIconImageUrl() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<$core.String> get tags => $_getList(8);
+  $core.String get heroImageUrl => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set heroImageUrl($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasHeroImageUrl() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearHeroImageUrl() => clearField(10);
 
   @$pb.TagNumber(11)
-  AppDetails get details => $_getN(9);
-  @$pb.TagNumber(11)
-  set details(AppDetails v) { setField(11, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasDetails() => $_has(9);
-  @$pb.TagNumber(11)
-  void clearDetails() => clearField(11);
-  @$pb.TagNumber(11)
-  AppDetails ensureDetails() => $_ensure(9);
+  $core.List<$core.String> get tags => $_getList(10);
 }
 
 class AppID extends $pb.GeneratedMessage {
@@ -672,8 +686,6 @@ class AppDetails extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'developer')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publisher')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heroImageUrl')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logoImageUrl')
     ..hasRequiredFields = false
   ;
 
@@ -684,8 +696,6 @@ class AppDetails extends $pb.GeneratedMessage {
     $core.String? developer,
     $core.String? publisher,
     $core.String? version,
-    $core.String? heroImageUrl,
-    $core.String? logoImageUrl,
   }) {
     final _result = create();
     if (description != null) {
@@ -702,12 +712,6 @@ class AppDetails extends $pb.GeneratedMessage {
     }
     if (version != null) {
       _result.version = version;
-    }
-    if (heroImageUrl != null) {
-      _result.heroImageUrl = heroImageUrl;
-    }
-    if (logoImageUrl != null) {
-      _result.logoImageUrl = logoImageUrl;
     }
     return _result;
   }
@@ -776,24 +780,6 @@ class AppDetails extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearVersion() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get heroImageUrl => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set heroImageUrl($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasHeroImageUrl() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearHeroImageUrl() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get logoImageUrl => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set logoImageUrl($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasLogoImageUrl() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearLogoImageUrl() => clearField(7);
 }
 
 class AppPackage extends $pb.GeneratedMessage {

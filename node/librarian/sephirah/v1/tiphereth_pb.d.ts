@@ -411,11 +411,6 @@ export namespace UnLinkAccountResponse {
 }
 
 export class ListLinkAccountsRequest extends jspb.Message {
-  hasPaging(): boolean;
-  clearPaging(): void;
-  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
-  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
-
   hasUserId(): boolean;
   clearUserId(): void;
   getUserId(): librarian_v1_common_pb.InternalID | undefined;
@@ -433,17 +428,11 @@ export class ListLinkAccountsRequest extends jspb.Message {
 
 export namespace ListLinkAccountsRequest {
   export type AsObject = {
-    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     userId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class ListLinkAccountsResponse extends jspb.Message {
-  hasPaging(): boolean;
-  clearPaging(): void;
-  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
-  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
-
   clearAccountsList(): void;
   getAccountsList(): Array<librarian_v1_common_pb.Account>;
   setAccountsList(value: Array<librarian_v1_common_pb.Account>): void;
@@ -461,7 +450,6 @@ export class ListLinkAccountsResponse extends jspb.Message {
 
 export namespace ListLinkAccountsResponse {
   export type AsObject = {
-    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     accountsList: Array<librarian_v1_common_pb.Account.AsObject>,
   }
 }

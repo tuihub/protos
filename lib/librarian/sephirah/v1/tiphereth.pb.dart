@@ -911,20 +911,15 @@ class UnLinkAccountResponse extends $pb.GeneratedMessage {
 
 class ListLinkAccountsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListLinkAccountsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
   ListLinkAccountsRequest._() : super();
   factory ListLinkAccountsRequest({
-    $7.PagingRequest? paging,
     $7.InternalID? userId,
   }) {
     final _result = create();
-    if (paging != null) {
-      _result.paging = paging;
-    }
     if (userId != null) {
       _result.userId = userId;
     }
@@ -952,44 +947,28 @@ class ListLinkAccountsRequest extends $pb.GeneratedMessage {
   static ListLinkAccountsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $7.InternalID get userId => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set userId($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPaging() => $_has(0);
+  $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearUserId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $7.InternalID get userId => $_getN(1);
-  @$pb.TagNumber(2)
-  set userId($7.InternalID v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasUserId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearUserId() => clearField(2);
-  @$pb.TagNumber(2)
-  $7.InternalID ensureUserId() => $_ensure(1);
+  $7.InternalID ensureUserId() => $_ensure(0);
 }
 
 class ListLinkAccountsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListLinkAccountsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<$7.Account>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $7.Account.create)
+    ..pc<$7.Account>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $7.Account.create)
     ..hasRequiredFields = false
   ;
 
   ListLinkAccountsResponse._() : super();
   factory ListLinkAccountsResponse({
-    $7.PagingResponse? paging,
     $core.Iterable<$7.Account>? accounts,
   }) {
     final _result = create();
-    if (paging != null) {
-      _result.paging = paging;
-    }
     if (accounts != null) {
       _result.accounts.addAll(accounts);
     }
@@ -1017,18 +996,7 @@ class ListLinkAccountsResponse extends $pb.GeneratedMessage {
   static ListLinkAccountsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
-  @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPaging() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
-  @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.List<$7.Account> get accounts => $_getList(1);
+  $core.List<$7.Account> get accounts => $_getList(0);
 }
 
 class User extends $pb.GeneratedMessage {

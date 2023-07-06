@@ -187,6 +187,11 @@ export class App extends jspb.Message {
   getSourceUrl(): string;
   setSourceUrl(value: string): void;
 
+  hasDetails(): boolean;
+  clearDetails(): void;
+  getDetails(): AppDetails | undefined;
+  setDetails(value?: AppDetails): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -199,15 +204,13 @@ export class App extends jspb.Message {
   getIconImageUrl(): string;
   setIconImageUrl(value: string): void;
 
+  getHeroImageUrl(): string;
+  setHeroImageUrl(value: string): void;
+
   clearTagsList(): void;
   getTagsList(): Array<string>;
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
-
-  hasDetails(): boolean;
-  clearDetails(): void;
-  getDetails(): AppDetails | undefined;
-  setDetails(value?: AppDetails): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
@@ -225,12 +228,13 @@ export namespace App {
     source: AppSourceMap[keyof AppSourceMap],
     sourceAppId: string,
     sourceUrl: string,
+    details?: AppDetails.AsObject,
     name: string,
     type: AppTypeMap[keyof AppTypeMap],
     shortDescription: string,
     iconImageUrl: string,
+    heroImageUrl: string,
     tagsList: Array<string>,
-    details?: AppDetails.AsObject,
   }
 }
 
@@ -274,12 +278,6 @@ export class AppDetails extends jspb.Message {
   getVersion(): string;
   setVersion(value: string): void;
 
-  getHeroImageUrl(): string;
-  setHeroImageUrl(value: string): void;
-
-  getLogoImageUrl(): string;
-  setLogoImageUrl(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AppDetails): AppDetails.AsObject;
@@ -297,8 +295,6 @@ export namespace AppDetails {
     developer: string,
     publisher: string,
     version: string,
-    heroImageUrl: string,
-    logoImageUrl: string,
   }
 }
 

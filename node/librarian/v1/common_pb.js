@@ -1523,7 +1523,7 @@ proto.librarian.v1.AccountID.prototype.setPlatformAccountId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.App.repeatedFields_ = [10];
+proto.librarian.v1.App.repeatedFields_ = [11];
 
 
 
@@ -1560,12 +1560,13 @@ proto.librarian.v1.App.toObject = function(includeInstance, msg) {
     source: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sourceAppId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     sourceUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    details: (f = msg.getDetails()) && proto.librarian.v1.AppDetails.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     type: jspb.Message.getFieldWithDefault(msg, 7, 0),
     shortDescription: jspb.Message.getFieldWithDefault(msg, 8, ""),
     iconImageUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    tagsList: (f = jspb.Message.getRepeatedField(msg, 10)) == null ? undefined : f,
-    details: (f = msg.getDetails()) && proto.librarian.v1.AppDetails.toObject(includeInstance, f)
+    heroImageUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    tagsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1619,6 +1620,11 @@ proto.librarian.v1.App.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setSourceUrl(value);
       break;
+    case 5:
+      var value = new proto.librarian.v1.AppDetails;
+      reader.readMessage(value,proto.librarian.v1.AppDetails.deserializeBinaryFromReader);
+      msg.setDetails(value);
+      break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -1637,12 +1643,11 @@ proto.librarian.v1.App.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
+      msg.setHeroImageUrl(value);
       break;
     case 11:
-      var value = new proto.librarian.v1.AppDetails;
-      reader.readMessage(value,proto.librarian.v1.AppDetails.deserializeBinaryFromReader);
-      msg.setDetails(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
       break;
     default:
       reader.skipField();
@@ -1702,6 +1707,14 @@ proto.librarian.v1.App.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getDetails();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.librarian.v1.AppDetails.serializeBinaryToWriter
+    );
+  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -1730,19 +1743,18 @@ proto.librarian.v1.App.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTagsList();
+  f = message.getHeroImageUrl();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       10,
       f
     );
   }
-  f = message.getDetails();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       11,
-      f,
-      proto.librarian.v1.AppDetails.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -1858,6 +1870,43 @@ proto.librarian.v1.App.prototype.hasSourceUrl = function() {
 
 
 /**
+ * optional AppDetails details = 5;
+ * @return {?proto.librarian.v1.AppDetails}
+ */
+proto.librarian.v1.App.prototype.getDetails = function() {
+  return /** @type{?proto.librarian.v1.AppDetails} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.v1.AppDetails, 5));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.AppDetails|undefined} value
+ * @return {!proto.librarian.v1.App} returns this
+*/
+proto.librarian.v1.App.prototype.setDetails = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.clearDetails = function() {
+  return this.setDetails(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.v1.App.prototype.hasDetails = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
  * optional string name = 6;
  * @return {string}
  */
@@ -1930,11 +1979,29 @@ proto.librarian.v1.App.prototype.setIconImageUrl = function(value) {
 
 
 /**
- * repeated string tags = 10;
+ * optional string hero_image_url = 10;
+ * @return {string}
+ */
+proto.librarian.v1.App.prototype.getHeroImageUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.setHeroImageUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * repeated string tags = 11;
  * @return {!Array<string>}
  */
 proto.librarian.v1.App.prototype.getTagsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 10));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
@@ -1943,7 +2010,7 @@ proto.librarian.v1.App.prototype.getTagsList = function() {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.setTagsList = function(value) {
-  return jspb.Message.setField(this, 10, value || []);
+  return jspb.Message.setField(this, 11, value || []);
 };
 
 
@@ -1953,7 +2020,7 @@ proto.librarian.v1.App.prototype.setTagsList = function(value) {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.addTags = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 10, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
 };
 
 
@@ -1963,43 +2030,6 @@ proto.librarian.v1.App.prototype.addTags = function(value, opt_index) {
  */
 proto.librarian.v1.App.prototype.clearTagsList = function() {
   return this.setTagsList([]);
-};
-
-
-/**
- * optional AppDetails details = 11;
- * @return {?proto.librarian.v1.AppDetails}
- */
-proto.librarian.v1.App.prototype.getDetails = function() {
-  return /** @type{?proto.librarian.v1.AppDetails} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.v1.AppDetails, 11));
-};
-
-
-/**
- * @param {?proto.librarian.v1.AppDetails|undefined} value
- * @return {!proto.librarian.v1.App} returns this
-*/
-proto.librarian.v1.App.prototype.setDetails = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.v1.App} returns this
- */
-proto.librarian.v1.App.prototype.clearDetails = function() {
-  return this.setDetails(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.v1.App.prototype.hasDetails = function() {
-  return jspb.Message.getField(this, 11) != null;
 };
 
 
@@ -2199,9 +2229,7 @@ proto.librarian.v1.AppDetails.toObject = function(includeInstance, msg) {
     releaseDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
     developer: jspb.Message.getFieldWithDefault(msg, 3, ""),
     publisher: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    heroImageUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    logoImageUrl: jspb.Message.getFieldWithDefault(msg, 7, "")
+    version: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -2257,14 +2285,6 @@ proto.librarian.v1.AppDetails.deserializeBinaryFromReader = function(msg, reader
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersion(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setHeroImageUrl(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLogoImageUrl(value);
       break;
     default:
       reader.skipField();
@@ -2327,20 +2347,6 @@ proto.librarian.v1.AppDetails.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       5,
-      f
-    );
-  }
-  f = message.getHeroImageUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getLogoImageUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
       f
     );
   }
@@ -2434,42 +2440,6 @@ proto.librarian.v1.AppDetails.prototype.getVersion = function() {
  */
 proto.librarian.v1.AppDetails.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string hero_image_url = 6;
- * @return {string}
- */
-proto.librarian.v1.AppDetails.prototype.getHeroImageUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.v1.AppDetails} returns this
- */
-proto.librarian.v1.AppDetails.prototype.setHeroImageUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string logo_image_url = 7;
- * @return {string}
- */
-proto.librarian.v1.AppDetails.prototype.getLogoImageUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.v1.AppDetails} returns this
- */
-proto.librarian.v1.AppDetails.prototype.setLogoImageUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
