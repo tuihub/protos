@@ -81,6 +81,8 @@ jobs:
         run: dotnet build TuiHub.Protos.csproj --configuration Release
       - name: Create nuget package
         run: nuget pack TuiHub.Protos.csproj -Prop Configuration=Release -IncludeReferencedProjects
+        env:
+          NUGET_ENABLE_LEGACY_CSPROJ_PACK: true
       - name: Publish nuget package to GPR
         run: dotnet nuget push *.nupkg --skip-duplicate
       - name: Publish nuget package to nuget.org
