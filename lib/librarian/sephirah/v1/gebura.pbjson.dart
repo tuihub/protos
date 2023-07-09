@@ -568,12 +568,12 @@ final $typed_data.Uint8List listAppCategoriesResponseDescriptor = $convert.base6
 const CreateAppCategoryRequest$json = const {
   '1': 'CreateAppCategoryRequest',
   '2': const [
-    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'app_category', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppCategory', '10': 'appCategory'},
   ],
 };
 
 /// Descriptor for `CreateAppCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createAppCategoryRequestDescriptor = $convert.base64Decode('ChhDcmVhdGVBcHBDYXRlZ29yeVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZQ==');
+final $typed_data.Uint8List createAppCategoryRequestDescriptor = $convert.base64Decode('ChhDcmVhdGVBcHBDYXRlZ29yeVJlcXVlc3QSPAoMYXBwX2NhdGVnb3J5GAEgASgLMhkubGlicmFyaWFuLnYxLkFwcENhdGVnb3J5UgthcHBDYXRlZ29yeQ==');
 @$core.Deprecated('Use createAppCategoryResponseDescriptor instead')
 const CreateAppCategoryResponse$json = const {
   '1': 'CreateAppCategoryResponse',

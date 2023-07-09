@@ -10290,7 +10290,7 @@ proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.CreateAppCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+    appCategory: (f = msg.getAppCategory()) && librarian_v1_common_pb.AppCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10328,8 +10328,9 @@ proto.librarian.sephirah.v1.CreateAppCategoryRequest.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = new librarian_v1_common_pb.AppCategory;
+      reader.readMessage(value,librarian_v1_common_pb.AppCategory.deserializeBinaryFromReader);
+      msg.setAppCategory(value);
       break;
     default:
       reader.skipField();
@@ -10360,31 +10361,51 @@ proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.serializeBinary =
  */
 proto.librarian.sephirah.v1.CreateAppCategoryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getAppCategory();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      librarian_v1_common_pb.AppCategory.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string name = 1;
- * @return {string}
+ * optional librarian.v1.AppCategory app_category = 1;
+ * @return {?proto.librarian.v1.AppCategory}
  */
-proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.getAppCategory = function() {
+  return /** @type{?proto.librarian.v1.AppCategory} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.AppCategory, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.AppCategory|undefined} value
+ * @return {!proto.librarian.sephirah.v1.CreateAppCategoryRequest} returns this
+*/
+proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.setAppCategory = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.CreateAppCategoryRequest} returns this
  */
-proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.clearAppCategory = function() {
+  return this.setAppCategory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.hasAppCategory = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

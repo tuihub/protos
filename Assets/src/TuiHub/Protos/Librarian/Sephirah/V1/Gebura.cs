@@ -131,23 +131,24 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "U2F2ZUZpbGVSb3RhdGlvblJlc3BvbnNlIhoKGExpc3RBcHBDYXRlZ29yaWVz",
             "UmVxdWVzdCJdChlMaXN0QXBwQ2F0ZWdvcmllc1Jlc3BvbnNlEkAKDmFwcF9j",
             "YXRlZ29yaWVzGAEgAygLMhkubGlicmFyaWFuLnYxLkFwcENhdGVnb3J5Ug1h",
-            "cHBDYXRlZ29yaWVzIi4KGENyZWF0ZUFwcENhdGVnb3J5UmVxdWVzdBISCgRu",
-            "YW1lGAEgASgJUgRuYW1lIkUKGUNyZWF0ZUFwcENhdGVnb3J5UmVzcG9uc2US",
-            "KAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiWAoY",
-            "VXBkYXRlQXBwQ2F0ZWdvcnlSZXF1ZXN0EjwKDGFwcF9jYXRlZ29yeRgBIAEo",
-            "CzIZLmxpYnJhcmlhbi52MS5BcHBDYXRlZ29yeVILYXBwQ2F0ZWdvcnkiGwoZ",
-            "VXBkYXRlQXBwQ2F0ZWdvcnlSZXNwb25zZSJEChhSZW1vdmVBcHBDYXRlZ29y",
-            "eVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
-            "RFICaWQiGwoZUmVtb3ZlQXBwQ2F0ZWdvcnlSZXNwb25zZSKUAQodVXBkYXRl",
-            "QXBwQXBwQ2F0ZWdvcmllc1JlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGli",
-            "cmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkEkIKEGFwcF9jYXRlZ29yeV9p",
-            "ZHMYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOYXBwQ2F0ZWdv",
-            "cnlJZHMiIAoeVXBkYXRlQXBwQXBwQ2F0ZWdvcmllc1Jlc3BvbnNlKnQKClZh",
-            "aWxkU2NvcGUSGwoXVkFJTERfU0NPUEVfVU5TUEVDSUZJRUQQABIXChNWQUlM",
-            "RF9TQ09QRV9BQ0NPVU5UEAESEwoPVkFJTERfU0NPUEVfQVBQEAISGwoXVkFJ",
-            "TERfU0NPUEVfQVBQX1BBQ0tBR0UQA0JdWjVnaXRodWIuY29tL3R1aWh1Yi9w",
-            "cm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Q",
-            "cm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "cHBDYXRlZ29yaWVzIlgKGENyZWF0ZUFwcENhdGVnb3J5UmVxdWVzdBI8Cgxh",
+            "cHBfY2F0ZWdvcnkYASABKAsyGS5saWJyYXJpYW4udjEuQXBwQ2F0ZWdvcnlS",
+            "C2FwcENhdGVnb3J5IkUKGUNyZWF0ZUFwcENhdGVnb3J5UmVzcG9uc2USKAoC",
+            "aWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiWAoYVXBk",
+            "YXRlQXBwQ2F0ZWdvcnlSZXF1ZXN0EjwKDGFwcF9jYXRlZ29yeRgBIAEoCzIZ",
+            "LmxpYnJhcmlhbi52MS5BcHBDYXRlZ29yeVILYXBwQ2F0ZWdvcnkiGwoZVXBk",
+            "YXRlQXBwQ2F0ZWdvcnlSZXNwb25zZSJEChhSZW1vdmVBcHBDYXRlZ29yeVJl",
+            "cXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIC",
+            "aWQiGwoZUmVtb3ZlQXBwQ2F0ZWdvcnlSZXNwb25zZSKUAQodVXBkYXRlQXBw",
+            "QXBwQ2F0ZWdvcmllc1JlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFy",
+            "aWFuLnYxLkludGVybmFsSURSBWFwcElkEkIKEGFwcF9jYXRlZ29yeV9pZHMY",
+            "AiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOYXBwQ2F0ZWdvcnlJ",
+            "ZHMiIAoeVXBkYXRlQXBwQXBwQ2F0ZWdvcmllc1Jlc3BvbnNlKnQKClZhaWxk",
+            "U2NvcGUSGwoXVkFJTERfU0NPUEVfVU5TUEVDSUZJRUQQABIXChNWQUlMRF9T",
+            "Q09QRV9BQ0NPVU5UEAESEwoPVkFJTERfU0NPUEVfQVBQEAISGwoXVkFJTERf",
+            "U0NPUEVfQVBQX1BBQ0tBR0UQA0JdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90",
+            "b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90",
+            "b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -207,7 +208,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse.Parser, new[]{ "AppCategories" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest.Parser, new[]{ "AppCategory" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryResponse.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryRequest.Parser, new[]{ "AppCategory" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryResponse.Parser, null, null, null, null, null),
@@ -11492,7 +11493,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateAppCategoryRequest(CreateAppCategoryRequest other) : this() {
-      name_ = other.name_;
+      appCategory_ = other.appCategory_ != null ? other.appCategory_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -11502,15 +11503,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new CreateAppCategoryRequest(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "app_category" field.</summary>
+    public const int AppCategoryFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.AppCategory appCategory_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Name {
-      get { return name_; }
+    public global::TuiHub.Protos.Librarian.V1.AppCategory AppCategory {
+      get { return appCategory_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        appCategory_ = value;
       }
     }
 
@@ -11529,7 +11530,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
+      if (!object.Equals(AppCategory, other.AppCategory)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -11537,7 +11538,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (appCategory_ != null) hash ^= AppCategory.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -11556,9 +11557,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Name.Length != 0) {
+      if (appCategory_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteMessage(AppCategory);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -11570,9 +11571,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Name.Length != 0) {
+      if (appCategory_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteMessage(AppCategory);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -11584,8 +11585,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (appCategory_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AppCategory);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -11599,8 +11600,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.appCategory_ != null) {
+        if (appCategory_ == null) {
+          AppCategory = new global::TuiHub.Protos.Librarian.V1.AppCategory();
+        }
+        AppCategory.MergeFrom(other.AppCategory);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -11618,7 +11622,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Name = input.ReadString();
+            if (appCategory_ == null) {
+              AppCategory = new global::TuiHub.Protos.Librarian.V1.AppCategory();
+            }
+            input.ReadMessage(AppCategory);
             break;
           }
         }
@@ -11637,7 +11644,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Name = input.ReadString();
+            if (appCategory_ == null) {
+              AppCategory = new global::TuiHub.Protos.Librarian.V1.AppCategory();
+            }
+            input.ReadMessage(AppCategory);
             break;
           }
         }

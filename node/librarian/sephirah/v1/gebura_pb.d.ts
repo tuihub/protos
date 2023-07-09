@@ -1275,8 +1275,10 @@ export namespace ListAppCategoriesResponse {
 }
 
 export class CreateAppCategoryRequest extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
+  hasAppCategory(): boolean;
+  clearAppCategory(): void;
+  getAppCategory(): librarian_v1_common_pb.AppCategory | undefined;
+  setAppCategory(value?: librarian_v1_common_pb.AppCategory): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateAppCategoryRequest.AsObject;
@@ -1290,7 +1292,7 @@ export class CreateAppCategoryRequest extends jspb.Message {
 
 export namespace CreateAppCategoryRequest {
   export type AsObject = {
-    name: string,
+    appCategory?: librarian_v1_common_pb.AppCategory.AsObject,
   }
 }
 

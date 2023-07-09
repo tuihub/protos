@@ -2696,17 +2696,17 @@ class ListAppCategoriesResponse extends $pb.GeneratedMessage {
 
 class CreateAppCategoryRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateAppCategoryRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOM<$7.AppCategory>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appCategory', subBuilder: $7.AppCategory.create)
     ..hasRequiredFields = false
   ;
 
   CreateAppCategoryRequest._() : super();
   factory CreateAppCategoryRequest({
-    $core.String? name,
+    $7.AppCategory? appCategory,
   }) {
     final _result = create();
-    if (name != null) {
-      _result.name = name;
+    if (appCategory != null) {
+      _result.appCategory = appCategory;
     }
     return _result;
   }
@@ -2732,13 +2732,15 @@ class CreateAppCategoryRequest extends $pb.GeneratedMessage {
   static CreateAppCategoryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $7.AppCategory get appCategory => $_getN(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set appCategory($7.AppCategory v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasAppCategory() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearAppCategory() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.AppCategory ensureAppCategory() => $_ensure(0);
 }
 
 class CreateAppCategoryResponse extends $pb.GeneratedMessage {
