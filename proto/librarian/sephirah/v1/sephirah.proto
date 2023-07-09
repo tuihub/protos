@@ -146,6 +146,17 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc SetSaveFileRotation(SetSaveFileRotationRequest) returns (SetSaveFileRotationResponse);
 
+  // `Gebura` `Normal`
+  rpc ListAppCategories(ListAppCategoriesRequest) returns (ListAppCategoriesResponse);
+  // `Gebura` `Normal`
+  rpc CreateAppCategory(CreateAppCategoryRequest) returns (CreateAppCategoryResponse);
+  // `Gebura` `Normal`
+  rpc UpdateAppCategory(UpdateAppCategoryRequest) returns (UpdateAppCategoryResponse);
+  // `Gebura` `Normal`
+  rpc RemoveAppCategory(RemoveAppCategoryRequest) returns (RemoveAppCategoryResponse);
+  // `Gebura` `Normal`
+  rpc UpdateAppAppCategories(UpdateAppAppCategoriesRequest) returns (UpdateAppAppCategoriesResponse);
+
   // `Netzach` `Normal`
   rpc CreateNotifyTarget(CreateNotifyTargetRequest) returns (CreateNotifyTargetResponse);
   // `Netzach` `Normal`

@@ -236,3 +236,37 @@ enum VaildScope {
 }
 
 message SetSaveFileRotationResponse {}
+
+message ListAppCategoriesRequest {}
+
+message ListAppCategoriesResponse {
+  repeated librarian.v1.AppCategory app_categories = 1;
+}
+
+message CreateAppCategoryRequest {
+  string name = 1;
+}
+
+message CreateAppCategoryResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateAppCategoryRequest {
+  librarian.v1.AppCategory app_category = 1;
+}
+
+message UpdateAppCategoryResponse {}
+
+message RemoveAppCategoryRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message RemoveAppCategoryResponse {}
+
+
+message UpdateAppAppCategoriesRequest {
+  librarian.v1.InternalID app_id = 1;
+  repeated librarian.v1.InternalID app_category_ids = 2;
+}
+
+message UpdateAppAppCategoriesResponse {}

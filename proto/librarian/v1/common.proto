@@ -70,6 +70,7 @@ message App {
   string icon_image_url = 9;
   string hero_image_url = 10;
   repeated string tags = 11;
+  repeated InternalID app_category_ids = 12;
 }
 
 message AppID {
@@ -118,6 +119,11 @@ message AppPackageBinary {
   int64 size_bytes = 2;
   string public_url = 3;
   bytes sha256 = 4;
+}
+
+message AppCategory {
+  InternalID id = 1;
+  string name = 2;
 }
 
 message Feed {
