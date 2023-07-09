@@ -244,7 +244,7 @@ message ListAppCategoriesResponse {
 }
 
 message CreateAppCategoryRequest {
-  string name = 1;
+  librarian.v1.AppCategory app_category = 1;
 }
 
 message CreateAppCategoryResponse {
