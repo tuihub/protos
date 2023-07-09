@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.35](https://github.com/TuiHub/Protos/compare/v0.2.34...v0.2.35) (2023-07-09)
+
+
+### Features
+
+* **gebura:** add AppCategory ([7e13b9e](https://github.com/TuiHub/Protos/commit/7e13b9e35ad33c1bfb8540c6b1c982dfff6d7bf9))
+
+
+### Bug Fixes
+
+* update proto ([4bdd045](https://github.com/TuiHub/Protos/commit/4bdd0452a6f6d549748458aefe02ff51a4584e93))
+
 ## [0.2.34](https://github.com/TuiHub/Protos/compare/v0.2.33...v0.2.34) (2023-07-05)
 
 
