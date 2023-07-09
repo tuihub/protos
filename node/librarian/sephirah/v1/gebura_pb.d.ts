@@ -1236,6 +1236,206 @@ export namespace SetSaveFileRotationResponse {
   }
 }
 
+export class ListAppCategoriesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAppCategoriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAppCategoriesRequest): ListAppCategoriesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAppCategoriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAppCategoriesRequest;
+  static deserializeBinaryFromReader(message: ListAppCategoriesRequest, reader: jspb.BinaryReader): ListAppCategoriesRequest;
+}
+
+export namespace ListAppCategoriesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListAppCategoriesResponse extends jspb.Message {
+  clearAppCategoriesList(): void;
+  getAppCategoriesList(): Array<librarian_v1_common_pb.AppCategory>;
+  setAppCategoriesList(value: Array<librarian_v1_common_pb.AppCategory>): void;
+  addAppCategories(value?: librarian_v1_common_pb.AppCategory, index?: number): librarian_v1_common_pb.AppCategory;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAppCategoriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAppCategoriesResponse): ListAppCategoriesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListAppCategoriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAppCategoriesResponse;
+  static deserializeBinaryFromReader(message: ListAppCategoriesResponse, reader: jspb.BinaryReader): ListAppCategoriesResponse;
+}
+
+export namespace ListAppCategoriesResponse {
+  export type AsObject = {
+    appCategoriesList: Array<librarian_v1_common_pb.AppCategory.AsObject>,
+  }
+}
+
+export class CreateAppCategoryRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAppCategoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAppCategoryRequest): CreateAppCategoryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAppCategoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAppCategoryRequest;
+  static deserializeBinaryFromReader(message: CreateAppCategoryRequest, reader: jspb.BinaryReader): CreateAppCategoryRequest;
+}
+
+export namespace CreateAppCategoryRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class CreateAppCategoryResponse extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAppCategoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAppCategoryResponse): CreateAppCategoryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateAppCategoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAppCategoryResponse;
+  static deserializeBinaryFromReader(message: CreateAppCategoryResponse, reader: jspb.BinaryReader): CreateAppCategoryResponse;
+}
+
+export namespace CreateAppCategoryResponse {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class UpdateAppCategoryRequest extends jspb.Message {
+  hasAppCategory(): boolean;
+  clearAppCategory(): void;
+  getAppCategory(): librarian_v1_common_pb.AppCategory | undefined;
+  setAppCategory(value?: librarian_v1_common_pb.AppCategory): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAppCategoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAppCategoryRequest): UpdateAppCategoryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAppCategoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAppCategoryRequest;
+  static deserializeBinaryFromReader(message: UpdateAppCategoryRequest, reader: jspb.BinaryReader): UpdateAppCategoryRequest;
+}
+
+export namespace UpdateAppCategoryRequest {
+  export type AsObject = {
+    appCategory?: librarian_v1_common_pb.AppCategory.AsObject,
+  }
+}
+
+export class UpdateAppCategoryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAppCategoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAppCategoryResponse): UpdateAppCategoryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAppCategoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAppCategoryResponse;
+  static deserializeBinaryFromReader(message: UpdateAppCategoryResponse, reader: jspb.BinaryReader): UpdateAppCategoryResponse;
+}
+
+export namespace UpdateAppCategoryResponse {
+  export type AsObject = {
+  }
+}
+
+export class RemoveAppCategoryRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAppCategoryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAppCategoryRequest): RemoveAppCategoryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAppCategoryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAppCategoryRequest;
+  static deserializeBinaryFromReader(message: RemoveAppCategoryRequest, reader: jspb.BinaryReader): RemoveAppCategoryRequest;
+}
+
+export namespace RemoveAppCategoryRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class RemoveAppCategoryResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveAppCategoryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveAppCategoryResponse): RemoveAppCategoryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveAppCategoryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveAppCategoryResponse;
+  static deserializeBinaryFromReader(message: RemoveAppCategoryResponse, reader: jspb.BinaryReader): RemoveAppCategoryResponse;
+}
+
+export namespace RemoveAppCategoryResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdateAppAppCategoriesRequest extends jspb.Message {
+  hasAppId(): boolean;
+  clearAppId(): void;
+  getAppId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppId(value?: librarian_v1_common_pb.InternalID): void;
+
+  clearAppCategoryIdsList(): void;
+  getAppCategoryIdsList(): Array<librarian_v1_common_pb.InternalID>;
+  setAppCategoryIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addAppCategoryIds(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAppAppCategoriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAppAppCategoriesRequest): UpdateAppAppCategoriesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAppAppCategoriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAppAppCategoriesRequest;
+  static deserializeBinaryFromReader(message: UpdateAppAppCategoriesRequest, reader: jspb.BinaryReader): UpdateAppAppCategoriesRequest;
+}
+
+export namespace UpdateAppAppCategoriesRequest {
+  export type AsObject = {
+    appId?: librarian_v1_common_pb.InternalID.AsObject,
+    appCategoryIdsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+  }
+}
+
+export class UpdateAppAppCategoriesResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAppAppCategoriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAppAppCategoriesResponse): UpdateAppAppCategoriesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateAppAppCategoriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAppAppCategoriesResponse;
+  static deserializeBinaryFromReader(message: UpdateAppAppCategoriesResponse, reader: jspb.BinaryReader): UpdateAppAppCategoriesResponse;
+}
+
+export namespace UpdateAppAppCategoriesResponse {
+  export type AsObject = {
+  }
+}
+
 export interface VaildScopeMap {
   VAILD_SCOPE_UNSPECIFIED: 0;
   VAILD_SCOPE_ACCOUNT: 1;

@@ -446,6 +446,7 @@ class App extends $pb.GeneratedMessage {
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'iconImageUrl')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heroImageUrl')
     ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
+    ..pc<InternalID>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appCategoryIds', $pb.PbFieldType.PM, subBuilder: InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -462,6 +463,7 @@ class App extends $pb.GeneratedMessage {
     $core.String? iconImageUrl,
     $core.String? heroImageUrl,
     $core.Iterable<$core.String>? tags,
+    $core.Iterable<InternalID>? appCategoryIds,
   }) {
     final _result = create();
     if (id != null) {
@@ -496,6 +498,9 @@ class App extends $pb.GeneratedMessage {
     }
     if (tags != null) {
       _result.tags.addAll(tags);
+    }
+    if (appCategoryIds != null) {
+      _result.appCategoryIds.addAll(appCategoryIds);
     }
     return _result;
   }
@@ -616,6 +621,9 @@ class App extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<$core.String> get tags => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.List<InternalID> get appCategoryIds => $_getList(11);
 }
 
 class AppID extends $pb.GeneratedMessage {
@@ -1006,6 +1014,69 @@ class AppPackageBinary extends $pb.GeneratedMessage {
   $core.bool hasSha256() => $_has(3);
   @$pb.TagNumber(4)
   void clearSha256() => clearField(4);
+}
+
+class AppCategory extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AppCategory', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOM<InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: InternalID.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  AppCategory._() : super();
+  factory AppCategory({
+    InternalID? id,
+    $core.String? name,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
+  factory AppCategory.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppCategory.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppCategory clone() => AppCategory()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppCategory copyWith(void Function(AppCategory) updates) => super.copyWith((message) => updates(message as AppCategory)) as AppCategory; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AppCategory create() => AppCategory._();
+  AppCategory createEmptyInstance() => create();
+  static $pb.PbList<AppCategory> createRepeated() => $pb.PbList<AppCategory>();
+  @$core.pragma('dart2js:noInline')
+  static AppCategory getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppCategory>(create);
+  static AppCategory? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id(InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
 }
 
 class Feed extends $pb.GeneratedMessage {

@@ -138,6 +138,7 @@ const App$json = const {
     const {'1': 'icon_image_url', '3': 9, '4': 1, '5': 9, '10': 'iconImageUrl'},
     const {'1': 'hero_image_url', '3': 10, '4': 1, '5': 9, '10': 'heroImageUrl'},
     const {'1': 'tags', '3': 11, '4': 3, '5': 9, '10': 'tags'},
+    const {'1': 'app_category_ids', '3': 12, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appCategoryIds'},
   ],
   '8': const [
     const {'1': '_source_url'},
@@ -146,7 +147,7 @@ const App$json = const {
 };
 
 /// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appDescriptor = $convert.base64Decode('CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cmNlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiAEBEjcKB2RldGFpbHMYBSABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRhaWxziAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV91cmwYCiABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAsgAygJUgR0YWdzQg0KC19zb3VyY2VfdXJsQgoKCF9kZXRhaWxz');
+final $typed_data.Uint8List appDescriptor = $convert.base64Decode('CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cmNlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiAEBEjcKB2RldGFpbHMYBSABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRhaWxziAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV91cmwYCiABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAsgAygJUgR0YWdzEkIKEGFwcF9jYXRlZ29yeV9pZHMYDCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOYXBwQ2F0ZWdvcnlJZHNCDQoLX3NvdXJjZV91cmxCCgoIX2RldGFpbHM=');
 @$core.Deprecated('Use appIDDescriptor instead')
 const AppID$json = const {
   '1': 'AppID',
@@ -201,6 +202,17 @@ const AppPackageBinary$json = const {
 
 /// Descriptor for `AppPackageBinary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appPackageBinaryDescriptor = $convert.base64Decode('ChBBcHBQYWNrYWdlQmluYXJ5EhIKBG5hbWUYASABKAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYYBCABKAxSBnNoYTI1Ng==');
+@$core.Deprecated('Use appCategoryDescriptor instead')
+const AppCategory$json = const {
+  '1': 'AppCategory',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `AppCategory`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appCategoryDescriptor = $convert.base64Decode('CgtBcHBDYXRlZ29yeRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l');
 @$core.Deprecated('Use feedDescriptor instead')
 const Feed$json = const {
   '1': 'Feed',

@@ -327,6 +327,36 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($4.SetSaveFileRotationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $4.SetSaveFileRotationResponse.fromBuffer(value));
+  static final _$listAppCategories = $grpc.ClientMethod<
+          $4.ListAppCategoriesRequest, $4.ListAppCategoriesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories',
+      ($4.ListAppCategoriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.ListAppCategoriesResponse.fromBuffer(value));
+  static final _$createAppCategory = $grpc.ClientMethod<
+          $4.CreateAppCategoryRequest, $4.CreateAppCategoryResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory',
+      ($4.CreateAppCategoryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.CreateAppCategoryResponse.fromBuffer(value));
+  static final _$updateAppCategory = $grpc.ClientMethod<
+          $4.UpdateAppCategoryRequest, $4.UpdateAppCategoryResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory',
+      ($4.UpdateAppCategoryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.UpdateAppCategoryResponse.fromBuffer(value));
+  static final _$removeAppCategory = $grpc.ClientMethod<
+          $4.RemoveAppCategoryRequest, $4.RemoveAppCategoryResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RemoveAppCategory',
+      ($4.RemoveAppCategoryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.RemoveAppCategoryResponse.fromBuffer(value));
+  static final _$updateAppAppCategories = $grpc.ClientMethod<
+          $4.UpdateAppAppCategoriesRequest, $4.UpdateAppAppCategoriesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppAppCategories',
+      ($4.UpdateAppAppCategoriesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.UpdateAppAppCategoriesResponse.fromBuffer(value));
   static final _$createNotifyTarget = $grpc.ClientMethod<
           $5.CreateNotifyTargetRequest, $5.CreateNotifyTargetResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget',
@@ -720,6 +750,37 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       $4.SetSaveFileRotationRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setSaveFileRotation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ListAppCategoriesResponse> listAppCategories(
+      $4.ListAppCategoriesRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listAppCategories, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.CreateAppCategoryResponse> createAppCategory(
+      $4.CreateAppCategoryRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createAppCategory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateAppCategoryResponse> updateAppCategory(
+      $4.UpdateAppCategoryRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateAppCategory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.RemoveAppCategoryResponse> removeAppCategory(
+      $4.RemoveAppCategoryRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeAppCategory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateAppAppCategoriesResponse>
+      updateAppAppCategories($4.UpdateAppAppCategoriesRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateAppAppCategories, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$5.CreateNotifyTargetResponse> createNotifyTarget(
@@ -1239,6 +1300,51 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $4.SetSaveFileRotationRequest.fromBuffer(value),
         ($4.SetSaveFileRotationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListAppCategoriesRequest,
+            $4.ListAppCategoriesResponse>(
+        'ListAppCategories',
+        listAppCategories_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.ListAppCategoriesRequest.fromBuffer(value),
+        ($4.ListAppCategoriesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateAppCategoryRequest,
+            $4.CreateAppCategoryResponse>(
+        'CreateAppCategory',
+        createAppCategory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.CreateAppCategoryRequest.fromBuffer(value),
+        ($4.CreateAppCategoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateAppCategoryRequest,
+            $4.UpdateAppCategoryResponse>(
+        'UpdateAppCategory',
+        updateAppCategory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.UpdateAppCategoryRequest.fromBuffer(value),
+        ($4.UpdateAppCategoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.RemoveAppCategoryRequest,
+            $4.RemoveAppCategoryResponse>(
+        'RemoveAppCategory',
+        removeAppCategory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.RemoveAppCategoryRequest.fromBuffer(value),
+        ($4.RemoveAppCategoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateAppAppCategoriesRequest,
+            $4.UpdateAppAppCategoriesResponse>(
+        'UpdateAppAppCategories',
+        updateAppAppCategories_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.UpdateAppAppCategoriesRequest.fromBuffer(value),
+        ($4.UpdateAppAppCategoriesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$5.CreateNotifyTargetRequest,
             $5.CreateNotifyTargetResponse>(
         'CreateNotifyTarget',
@@ -1629,6 +1735,36 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return setSaveFileRotation(call, await request);
   }
 
+  $async.Future<$4.ListAppCategoriesResponse> listAppCategories_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.ListAppCategoriesRequest> request) async {
+    return listAppCategories(call, await request);
+  }
+
+  $async.Future<$4.CreateAppCategoryResponse> createAppCategory_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.CreateAppCategoryRequest> request) async {
+    return createAppCategory(call, await request);
+  }
+
+  $async.Future<$4.UpdateAppCategoryResponse> updateAppCategory_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.UpdateAppCategoryRequest> request) async {
+    return updateAppCategory(call, await request);
+  }
+
+  $async.Future<$4.RemoveAppCategoryResponse> removeAppCategory_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.RemoveAppCategoryRequest> request) async {
+    return removeAppCategory(call, await request);
+  }
+
+  $async.Future<$4.UpdateAppAppCategoriesResponse> updateAppAppCategories_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.UpdateAppAppCategoriesRequest> request) async {
+    return updateAppAppCategories(call, await request);
+  }
+
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget_Pre(
       $grpc.ServiceCall call,
       $async.Future<$5.CreateNotifyTargetRequest> request) async {
@@ -1816,6 +1952,16 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $4.SetUserSaveFileCapacityRequest request);
   $async.Future<$4.SetSaveFileRotationResponse> setSaveFileRotation(
       $grpc.ServiceCall call, $4.SetSaveFileRotationRequest request);
+  $async.Future<$4.ListAppCategoriesResponse> listAppCategories(
+      $grpc.ServiceCall call, $4.ListAppCategoriesRequest request);
+  $async.Future<$4.CreateAppCategoryResponse> createAppCategory(
+      $grpc.ServiceCall call, $4.CreateAppCategoryRequest request);
+  $async.Future<$4.UpdateAppCategoryResponse> updateAppCategory(
+      $grpc.ServiceCall call, $4.UpdateAppCategoryRequest request);
+  $async.Future<$4.RemoveAppCategoryResponse> removeAppCategory(
+      $grpc.ServiceCall call, $4.RemoveAppCategoryRequest request);
+  $async.Future<$4.UpdateAppAppCategoriesResponse> updateAppAppCategories(
+      $grpc.ServiceCall call, $4.UpdateAppAppCategoriesRequest request);
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget(
       $grpc.ServiceCall call, $5.CreateNotifyTargetRequest request);
   $async.Future<$5.UpdateNotifyTargetResponse> updateNotifyTarget(

@@ -70,6 +70,11 @@ const (
 	LibrarianSephirahService_UnpinGameSaveFile_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile"
 	LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName   = "/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity"
 	LibrarianSephirahService_SetSaveFileRotation_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation"
+	LibrarianSephirahService_ListAppCategories_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories"
+	LibrarianSephirahService_CreateAppCategory_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory"
+	LibrarianSephirahService_UpdateAppCategory_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory"
+	LibrarianSephirahService_RemoveAppCategory_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveAppCategory"
+	LibrarianSephirahService_UpdateAppAppCategories_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppAppCategories"
 	LibrarianSephirahService_CreateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget"
 	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget"
 	LibrarianSephirahService_ListNotifyTargets_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets"
@@ -203,6 +208,16 @@ type LibrarianSephirahServiceClient interface {
 	SetUserSaveFileCapacity(ctx context.Context, in *SetUserSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetUserSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
 	SetSaveFileRotation(ctx context.Context, in *SetSaveFileRotationRequest, opts ...grpc.CallOption) (*SetSaveFileRotationResponse, error)
+	// `Gebura` `Normal`
+	ListAppCategories(ctx context.Context, in *ListAppCategoriesRequest, opts ...grpc.CallOption) (*ListAppCategoriesResponse, error)
+	// `Gebura` `Normal`
+	CreateAppCategory(ctx context.Context, in *CreateAppCategoryRequest, opts ...grpc.CallOption) (*CreateAppCategoryResponse, error)
+	// `Gebura` `Normal`
+	UpdateAppCategory(ctx context.Context, in *UpdateAppCategoryRequest, opts ...grpc.CallOption) (*UpdateAppCategoryResponse, error)
+	// `Gebura` `Normal`
+	RemoveAppCategory(ctx context.Context, in *RemoveAppCategoryRequest, opts ...grpc.CallOption) (*RemoveAppCategoryResponse, error)
+	// `Gebura` `Normal`
+	UpdateAppAppCategories(ctx context.Context, in *UpdateAppAppCategoriesRequest, opts ...grpc.CallOption) (*UpdateAppAppCategoriesResponse, error)
 	// `Netzach` `Normal`
 	CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
@@ -811,6 +826,51 @@ func (c *librarianSephirahServiceClient) SetSaveFileRotation(ctx context.Context
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) ListAppCategories(ctx context.Context, in *ListAppCategoriesRequest, opts ...grpc.CallOption) (*ListAppCategoriesResponse, error) {
+	out := new(ListAppCategoriesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppCategories_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) CreateAppCategory(ctx context.Context, in *CreateAppCategoryRequest, opts ...grpc.CallOption) (*CreateAppCategoryResponse, error) {
+	out := new(CreateAppCategoryResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateAppCategory_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateAppCategory(ctx context.Context, in *UpdateAppCategoryRequest, opts ...grpc.CallOption) (*UpdateAppCategoryResponse, error) {
+	out := new(UpdateAppCategoryResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppCategory_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) RemoveAppCategory(ctx context.Context, in *RemoveAppCategoryRequest, opts ...grpc.CallOption) (*RemoveAppCategoryResponse, error) {
+	out := new(RemoveAppCategoryResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveAppCategory_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateAppAppCategories(ctx context.Context, in *UpdateAppAppCategoriesRequest, opts ...grpc.CallOption) (*UpdateAppAppCategoriesResponse, error) {
+	out := new(UpdateAppAppCategoriesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppAppCategories_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error) {
 	out := new(CreateNotifyTargetResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateNotifyTarget_FullMethodName, in, out, opts...)
@@ -1054,6 +1114,16 @@ type LibrarianSephirahServiceServer interface {
 	SetUserSaveFileCapacity(context.Context, *SetUserSaveFileCapacityRequest) (*SetUserSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
 	SetSaveFileRotation(context.Context, *SetSaveFileRotationRequest) (*SetSaveFileRotationResponse, error)
+	// `Gebura` `Normal`
+	ListAppCategories(context.Context, *ListAppCategoriesRequest) (*ListAppCategoriesResponse, error)
+	// `Gebura` `Normal`
+	CreateAppCategory(context.Context, *CreateAppCategoryRequest) (*CreateAppCategoryResponse, error)
+	// `Gebura` `Normal`
+	UpdateAppCategory(context.Context, *UpdateAppCategoryRequest) (*UpdateAppCategoryResponse, error)
+	// `Gebura` `Normal`
+	RemoveAppCategory(context.Context, *RemoveAppCategoryRequest) (*RemoveAppCategoryResponse, error)
+	// `Gebura` `Normal`
+	UpdateAppAppCategories(context.Context, *UpdateAppAppCategoriesRequest) (*UpdateAppAppCategoriesResponse, error)
 	// `Netzach` `Normal`
 	CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
@@ -1241,6 +1311,21 @@ func (UnimplementedLibrarianSephirahServiceServer) SetUserSaveFileCapacity(conte
 }
 func (UnimplementedLibrarianSephirahServiceServer) SetSaveFileRotation(context.Context, *SetSaveFileRotationRequest) (*SetSaveFileRotationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetSaveFileRotation not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListAppCategories(context.Context, *ListAppCategoriesRequest) (*ListAppCategoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAppCategories not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateAppCategory(context.Context, *CreateAppCategoryRequest) (*CreateAppCategoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppCategory not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateAppCategory(context.Context, *UpdateAppCategoryRequest) (*UpdateAppCategoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppCategory not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) RemoveAppCategory(context.Context, *RemoveAppCategoryRequest) (*RemoveAppCategoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveAppCategory not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateAppAppCategories(context.Context, *UpdateAppAppCategoriesRequest) (*UpdateAppAppCategoriesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppAppCategories not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifyTarget not implemented")
@@ -2251,6 +2336,96 @@ func _LibrarianSephirahService_SetSaveFileRotation_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_ListAppCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAppCategoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListAppCategories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListAppCategories_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListAppCategories(ctx, req.(*ListAppCategoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_CreateAppCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateAppCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateAppCategory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateAppCategory(ctx, req.(*CreateAppCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateAppCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateAppCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateAppCategory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateAppCategory(ctx, req.(*UpdateAppCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_RemoveAppCategory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveAppCategoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).RemoveAppCategory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_RemoveAppCategory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).RemoveAppCategory(ctx, req.(*RemoveAppCategoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateAppAppCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppAppCategoriesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateAppAppCategories(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateAppAppCategories_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateAppAppCategories(ctx, req.(*UpdateAppAppCategoriesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_CreateNotifyTarget_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateNotifyTargetRequest)
 	if err := dec(in); err != nil {
@@ -2693,6 +2868,26 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetSaveFileRotation",
 			Handler:    _LibrarianSephirahService_SetSaveFileRotation_Handler,
+		},
+		{
+			MethodName: "ListAppCategories",
+			Handler:    _LibrarianSephirahService_ListAppCategories_Handler,
+		},
+		{
+			MethodName: "CreateAppCategory",
+			Handler:    _LibrarianSephirahService_CreateAppCategory_Handler,
+		},
+		{
+			MethodName: "UpdateAppCategory",
+			Handler:    _LibrarianSephirahService_UpdateAppCategory_Handler,
+		},
+		{
+			MethodName: "RemoveAppCategory",
+			Handler:    _LibrarianSephirahService_RemoveAppCategory_Handler,
+		},
+		{
+			MethodName: "UpdateAppAppCategories",
+			Handler:    _LibrarianSephirahService_UpdateAppAppCategories_Handler,
 		},
 		{
 			MethodName: "CreateNotifyTarget",

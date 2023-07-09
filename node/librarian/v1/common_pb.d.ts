@@ -212,6 +212,11 @@ export class App extends jspb.Message {
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
 
+  clearAppCategoryIdsList(): void;
+  getAppCategoryIdsList(): Array<InternalID>;
+  setAppCategoryIdsList(value: Array<InternalID>): void;
+  addAppCategoryIds(value?: InternalID, index?: number): InternalID;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
   static toObject(includeInstance: boolean, msg: App): App.AsObject;
@@ -235,6 +240,7 @@ export namespace App {
     iconImageUrl: string,
     heroImageUrl: string,
     tagsList: Array<string>,
+    appCategoryIdsList: Array<InternalID.AsObject>,
   }
 }
 
@@ -379,6 +385,32 @@ export namespace AppPackageBinary {
     sizeBytes: number,
     publicUrl: string,
     sha256: Uint8Array | string,
+  }
+}
+
+export class AppCategory extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): InternalID | undefined;
+  setId(value?: InternalID): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppCategory.AsObject;
+  static toObject(includeInstance: boolean, msg: AppCategory): AppCategory.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppCategory, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppCategory;
+  static deserializeBinaryFromReader(message: AppCategory, reader: jspb.BinaryReader): AppCategory;
+}
+
+export namespace AppCategory {
+  export type AsObject = {
+    id?: InternalID.AsObject,
+    name: string,
   }
 }
 

@@ -263,7 +263,6 @@ message RemoveAppCategoryRequest {
 
 message RemoveAppCategoryResponse {}
 
-
 message UpdateAppAppCategoriesRequest {
   librarian.v1.InternalID app_id = 1;
   repeated librarian.v1.InternalID app_category_ids = 2;

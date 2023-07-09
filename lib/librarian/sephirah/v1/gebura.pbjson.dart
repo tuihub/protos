@@ -547,3 +547,92 @@ const SetSaveFileRotationResponse$json = const {
 
 /// Descriptor for `SetSaveFileRotationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List setSaveFileRotationResponseDescriptor = $convert.base64Decode('ChtTZXRTYXZlRmlsZVJvdGF0aW9uUmVzcG9uc2U=');
+@$core.Deprecated('Use listAppCategoriesRequestDescriptor instead')
+const ListAppCategoriesRequest$json = const {
+  '1': 'ListAppCategoriesRequest',
+};
+
+/// Descriptor for `ListAppCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAppCategoriesRequestDescriptor = $convert.base64Decode('ChhMaXN0QXBwQ2F0ZWdvcmllc1JlcXVlc3Q=');
+@$core.Deprecated('Use listAppCategoriesResponseDescriptor instead')
+const ListAppCategoriesResponse$json = const {
+  '1': 'ListAppCategoriesResponse',
+  '2': const [
+    const {'1': 'app_categories', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppCategory', '10': 'appCategories'},
+  ],
+};
+
+/// Descriptor for `ListAppCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listAppCategoriesResponseDescriptor = $convert.base64Decode('ChlMaXN0QXBwQ2F0ZWdvcmllc1Jlc3BvbnNlEkAKDmFwcF9jYXRlZ29yaWVzGAEgAygLMhkubGlicmFyaWFuLnYxLkFwcENhdGVnb3J5Ug1hcHBDYXRlZ29yaWVz');
+@$core.Deprecated('Use createAppCategoryRequestDescriptor instead')
+const CreateAppCategoryRequest$json = const {
+  '1': 'CreateAppCategoryRequest',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `CreateAppCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAppCategoryRequestDescriptor = $convert.base64Decode('ChhDcmVhdGVBcHBDYXRlZ29yeVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZQ==');
+@$core.Deprecated('Use createAppCategoryResponseDescriptor instead')
+const CreateAppCategoryResponse$json = const {
+  '1': 'CreateAppCategoryResponse',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateAppCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createAppCategoryResponseDescriptor = $convert.base64Decode('ChlDcmVhdGVBcHBDYXRlZ29yeVJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlk');
+@$core.Deprecated('Use updateAppCategoryRequestDescriptor instead')
+const UpdateAppCategoryRequest$json = const {
+  '1': 'UpdateAppCategoryRequest',
+  '2': const [
+    const {'1': 'app_category', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppCategory', '10': 'appCategory'},
+  ],
+};
+
+/// Descriptor for `UpdateAppCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateAppCategoryRequestDescriptor = $convert.base64Decode('ChhVcGRhdGVBcHBDYXRlZ29yeVJlcXVlc3QSPAoMYXBwX2NhdGVnb3J5GAEgASgLMhkubGlicmFyaWFuLnYxLkFwcENhdGVnb3J5UgthcHBDYXRlZ29yeQ==');
+@$core.Deprecated('Use updateAppCategoryResponseDescriptor instead')
+const UpdateAppCategoryResponse$json = const {
+  '1': 'UpdateAppCategoryResponse',
+};
+
+/// Descriptor for `UpdateAppCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateAppCategoryResponseDescriptor = $convert.base64Decode('ChlVcGRhdGVBcHBDYXRlZ29yeVJlc3BvbnNl');
+@$core.Deprecated('Use removeAppCategoryRequestDescriptor instead')
+const RemoveAppCategoryRequest$json = const {
+  '1': 'RemoveAppCategoryRequest',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RemoveAppCategoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeAppCategoryRequestDescriptor = $convert.base64Decode('ChhSZW1vdmVBcHBDYXRlZ29yeVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQ=');
+@$core.Deprecated('Use removeAppCategoryResponseDescriptor instead')
+const RemoveAppCategoryResponse$json = const {
+  '1': 'RemoveAppCategoryResponse',
+};
+
+/// Descriptor for `RemoveAppCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeAppCategoryResponseDescriptor = $convert.base64Decode('ChlSZW1vdmVBcHBDYXRlZ29yeVJlc3BvbnNl');
+@$core.Deprecated('Use updateAppAppCategoriesRequestDescriptor instead')
+const UpdateAppAppCategoriesRequest$json = const {
+  '1': 'UpdateAppAppCategoriesRequest',
+  '2': const [
+    const {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
+    const {'1': 'app_category_ids', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appCategoryIds'},
+  ],
+};
+
+/// Descriptor for `UpdateAppAppCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateAppAppCategoriesRequestDescriptor = $convert.base64Decode('Ch1VcGRhdGVBcHBBcHBDYXRlZ29yaWVzUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQSQgoQYXBwX2NhdGVnb3J5X2lkcxgCIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg5hcHBDYXRlZ29yeUlkcw==');
+@$core.Deprecated('Use updateAppAppCategoriesResponseDescriptor instead')
+const UpdateAppAppCategoriesResponse$json = const {
+  '1': 'UpdateAppAppCategoriesResponse',
+};
+
+/// Descriptor for `UpdateAppAppCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateAppAppCategoriesResponseDescriptor = $convert.base64Decode('Ch5VcGRhdGVBcHBBcHBDYXRlZ29yaWVzUmVzcG9uc2U=');
