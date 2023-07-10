@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.37](https://github.com/TuiHub/Protos/compare/v0.2.36...v0.2.37) (2023-07-10)
+
+
+### Features
+
+* **searcher:** add index ([6e265d3](https://github.com/TuiHub/Protos/commit/6e265d348f1fbebc2f1100ee1043e7c3ea3498e2))
+
 ## [0.2.36](https://github.com/TuiHub/Protos/compare/v0.2.35...v0.2.36) (2023-07-09)
 
 
