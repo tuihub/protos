@@ -38,6 +38,7 @@ message DescribeIDRequest {
   librarian.v1.InternalID id = 1;
   string description = 2;
   DescribeMode mode = 3;
+  Index index = 4;
 
   enum DescribeMode {
     DESCRIBE_MODE_UNSPECIFIED = 0;
@@ -51,6 +52,7 @@ message DescribeIDResponse {}
 message SearchIDRequest {
   librarian.v1.PagingRequest paging = 1;
   string keyword = 2;
+  Index index = 3;
 }
 
 message SearchIDResponse {
@@ -61,4 +63,11 @@ message SearchIDResponse {
     librarian.v1.InternalID id = 1;
     int64 rank = 2;
   }
+}
+
+enum Index {
+  INDEX_UNSPECIFIED = 0;
+  INDEX_GENERAL = 1;
+  INDEX_GEBURA_APP = 2;
+  INDEX_CHESED_IMAGE = 3;
 }
