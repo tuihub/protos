@@ -26,6 +26,7 @@ goog.object.extend(proto, librarian_v1_common_pb);
 goog.exportSymbol('proto.librarian.searcher.v1.DescribeIDRequest', null, global);
 goog.exportSymbol('proto.librarian.searcher.v1.DescribeIDRequest.DescribeMode', null, global);
 goog.exportSymbol('proto.librarian.searcher.v1.DescribeIDResponse', null, global);
+goog.exportSymbol('proto.librarian.searcher.v1.Index', null, global);
 goog.exportSymbol('proto.librarian.searcher.v1.NewBatchIDsRequest', null, global);
 goog.exportSymbol('proto.librarian.searcher.v1.NewBatchIDsResponse', null, global);
 goog.exportSymbol('proto.librarian.searcher.v1.NewIDRequest', null, global);
@@ -798,7 +799,8 @@ proto.librarian.searcher.v1.DescribeIDRequest.toObject = function(includeInstanc
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    mode: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    mode: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    index: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -848,6 +850,10 @@ proto.librarian.searcher.v1.DescribeIDRequest.deserializeBinaryFromReader = func
       var value = /** @type {!proto.librarian.searcher.v1.DescribeIDRequest.DescribeMode} */ (reader.readEnum());
       msg.setMode(value);
       break;
+    case 4:
+      var value = /** @type {!proto.librarian.searcher.v1.Index} */ (reader.readEnum());
+      msg.setIndex(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -896,6 +902,13 @@ proto.librarian.searcher.v1.DescribeIDRequest.serializeBinaryToWriter = function
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getIndex();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
       f
     );
   }
@@ -981,6 +994,24 @@ proto.librarian.searcher.v1.DescribeIDRequest.prototype.getMode = function() {
  */
 proto.librarian.searcher.v1.DescribeIDRequest.prototype.setMode = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional Index index = 4;
+ * @return {!proto.librarian.searcher.v1.Index}
+ */
+proto.librarian.searcher.v1.DescribeIDRequest.prototype.getIndex = function() {
+  return /** @type {!proto.librarian.searcher.v1.Index} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.searcher.v1.Index} value
+ * @return {!proto.librarian.searcher.v1.DescribeIDRequest} returns this
+ */
+proto.librarian.searcher.v1.DescribeIDRequest.prototype.setIndex = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -1118,7 +1149,8 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.toObject = function(opt_in
 proto.librarian.searcher.v1.SearchIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    keyword: jspb.Message.getFieldWithDefault(msg, 2, "")
+    keyword: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    index: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1164,6 +1196,10 @@ proto.librarian.searcher.v1.SearchIDRequest.deserializeBinaryFromReader = functi
       var value = /** @type {string} */ (reader.readString());
       msg.setKeyword(value);
       break;
+    case 3:
+      var value = /** @type {!proto.librarian.searcher.v1.Index} */ (reader.readEnum());
+      msg.setIndex(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1205,6 +1241,13 @@ proto.librarian.searcher.v1.SearchIDRequest.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getIndex();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
       f
     );
   }
@@ -1263,6 +1306,24 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.getKeyword = function() {
  */
 proto.librarian.searcher.v1.SearchIDRequest.prototype.setKeyword = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional Index index = 3;
+ * @return {!proto.librarian.searcher.v1.Index}
+ */
+proto.librarian.searcher.v1.SearchIDRequest.prototype.getIndex = function() {
+  return /** @type {!proto.librarian.searcher.v1.Index} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.searcher.v1.Index} value
+ * @return {!proto.librarian.searcher.v1.SearchIDRequest} returns this
+ */
+proto.librarian.searcher.v1.SearchIDRequest.prototype.setIndex = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -1657,5 +1718,15 @@ proto.librarian.searcher.v1.SearchIDResponse.prototype.clearResultList = functio
   return this.setResultList([]);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.librarian.searcher.v1.Index = {
+  INDEX_UNSPECIFIED: 0,
+  INDEX_GENERAL: 1,
+  INDEX_GEBURA_APP: 2,
+  INDEX_CHESED_IMAGE: 3
+};
 
 goog.object.extend(exports, proto.librarian.searcher.v1);

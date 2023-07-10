@@ -9,6 +9,25 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class Index extends $pb.ProtobufEnum {
+  static const Index INDEX_UNSPECIFIED = Index._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INDEX_UNSPECIFIED');
+  static const Index INDEX_GENERAL = Index._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INDEX_GENERAL');
+  static const Index INDEX_GEBURA_APP = Index._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INDEX_GEBURA_APP');
+  static const Index INDEX_CHESED_IMAGE = Index._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INDEX_CHESED_IMAGE');
+
+  static const $core.List<Index> values = <Index> [
+    INDEX_UNSPECIFIED,
+    INDEX_GENERAL,
+    INDEX_GEBURA_APP,
+    INDEX_CHESED_IMAGE,
+  ];
+
+  static final $core.Map<$core.int, Index> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Index? valueOf($core.int value) => _byValue[value];
+
+  const Index._($core.int v, $core.String n) : super(v, n);
+}
+
 class DescribeIDRequest_DescribeMode extends $pb.ProtobufEnum {
   static const DescribeIDRequest_DescribeMode DESCRIBE_MODE_UNSPECIFIED = DescribeIDRequest_DescribeMode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DESCRIBE_MODE_UNSPECIFIED');
   static const DescribeIDRequest_DescribeMode DESCRIBE_MODE_OVERRIDE = DescribeIDRequest_DescribeMode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DESCRIBE_MODE_OVERRIDE');

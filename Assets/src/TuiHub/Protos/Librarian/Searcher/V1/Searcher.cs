@@ -30,47 +30,62 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCImChJOZXdCYXRjaElEc1Jl",
             "cXVlc3QSEAoDbnVtGAEgASgFUgNudW0iQQoTTmV3QmF0Y2hJRHNSZXNwb25z",
             "ZRIqCgNpZHMYASADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIDaWRz",
-            "Io8CChFEZXNjcmliZUlEUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
+            "IsMCChFEZXNjcmliZUlEUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
             "bi52MS5JbnRlcm5hbElEUgJpZBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVz",
             "Y3JpcHRpb24SSQoEbW9kZRgDIAEoDjI1LmxpYnJhcmlhbi5zZWFyY2hlci52",
-            "MS5EZXNjcmliZUlEUmVxdWVzdC5EZXNjcmliZU1vZGVSBG1vZGUiYwoMRGVz",
-            "Y3JpYmVNb2RlEh0KGURFU0NSSUJFX01PREVfVU5TUEVDSUZJRUQQABIaChZE",
-            "RVNDUklCRV9NT0RFX09WRVJSSURFEAESGAoUREVTQ1JJQkVfTU9ERV9BUFBF",
-            "TkQQAiIUChJEZXNjcmliZUlEUmVzcG9uc2UiYAoPU2VhcmNoSURSZXF1ZXN0",
-            "EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0",
-            "UgZwYWdpbmcSGAoHa2V5d29yZBgCIAEoCVIHa2V5d29yZCLYAQoQU2VhcmNo",
-            "SURSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFn",
-            "aW5nUmVzcG9uc2VSBnBhZ2luZxJGCgZyZXN1bHQYAiADKAsyLi5saWJyYXJp",
-            "YW4uc2VhcmNoZXIudjEuU2VhcmNoSURSZXNwb25zZS5SZXN1bHRSBnJlc3Vs",
-            "dBpGCgZSZXN1bHQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFICaWQSEgoEcmFuaxgCIAEoA1IEcmFuazKUAwoYTGlicmFyaWFuU2Vh",
-            "cmNoZXJTZXJ2aWNlElIKBU5ld0lEEiMubGlicmFyaWFuLnNlYXJjaGVyLnYx",
-            "Lk5ld0lEUmVxdWVzdBokLmxpYnJhcmlhbi5zZWFyY2hlci52MS5OZXdJRFJl",
-            "c3BvbnNlEmQKC05ld0JhdGNoSURzEikubGlicmFyaWFuLnNlYXJjaGVyLnYx",
-            "Lk5ld0JhdGNoSURzUmVxdWVzdBoqLmxpYnJhcmlhbi5zZWFyY2hlci52MS5O",
-            "ZXdCYXRjaElEc1Jlc3BvbnNlEmEKCkRlc2NyaWJlSUQSKC5saWJyYXJpYW4u",
-            "c2VhcmNoZXIudjEuRGVzY3JpYmVJRFJlcXVlc3QaKS5saWJyYXJpYW4uc2Vh",
-            "cmNoZXIudjEuRGVzY3JpYmVJRFJlc3BvbnNlElsKCFNlYXJjaElEEiYubGli",
-            "cmFyaWFuLnNlYXJjaGVyLnYxLlNlYXJjaElEUmVxdWVzdBonLmxpYnJhcmlh",
-            "bi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlQl1aNWdpdGh1Yi5jb20v",
-            "dHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlYXJjaGVyL3YxO3YxqgIj",
-            "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VhcmNoZXIuVjFiBnByb3RvMw=="));
+            "MS5EZXNjcmliZUlEUmVxdWVzdC5EZXNjcmliZU1vZGVSBG1vZGUSMgoFaW5k",
+            "ZXgYBCABKA4yHC5saWJyYXJpYW4uc2VhcmNoZXIudjEuSW5kZXhSBWluZGV4",
+            "ImMKDERlc2NyaWJlTW9kZRIdChlERVNDUklCRV9NT0RFX1VOU1BFQ0lGSUVE",
+            "EAASGgoWREVTQ1JJQkVfTU9ERV9PVkVSUklERRABEhgKFERFU0NSSUJFX01P",
+            "REVfQVBQRU5EEAIiFAoSRGVzY3JpYmVJRFJlc3BvbnNlIpQBCg9TZWFyY2hJ",
+            "RFJlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2lu",
+            "Z1JlcXVlc3RSBnBhZ2luZxIYCgdrZXl3b3JkGAIgASgJUgdrZXl3b3JkEjIK",
+            "BWluZGV4GAMgASgOMhwubGlicmFyaWFuLnNlYXJjaGVyLnYxLkluZGV4UgVp",
+            "bmRleCLYAQoQU2VhcmNoSURSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5s",
+            "aWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJGCgZyZXN1bHQY",
+            "AiADKAsyLi5saWJyYXJpYW4uc2VhcmNoZXIudjEuU2VhcmNoSURSZXNwb25z",
+            "ZS5SZXN1bHRSBnJlc3VsdBpGCgZSZXN1bHQSKAoCaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEcmFuaxgCIAEoA1IEcmFuaypf",
+            "CgVJbmRleBIVChFJTkRFWF9VTlNQRUNJRklFRBAAEhEKDUlOREVYX0dFTkVS",
+            "QUwQARIUChBJTkRFWF9HRUJVUkFfQVBQEAISFgoSSU5ERVhfQ0hFU0VEX0lN",
+            "QUdFEAMylAMKGExpYnJhcmlhblNlYXJjaGVyU2VydmljZRJSCgVOZXdJRBIj",
+            "LmxpYnJhcmlhbi5zZWFyY2hlci52MS5OZXdJRFJlcXVlc3QaJC5saWJyYXJp",
+            "YW4uc2VhcmNoZXIudjEuTmV3SURSZXNwb25zZRJkCgtOZXdCYXRjaElEcxIp",
+            "LmxpYnJhcmlhbi5zZWFyY2hlci52MS5OZXdCYXRjaElEc1JlcXVlc3QaKi5s",
+            "aWJyYXJpYW4uc2VhcmNoZXIudjEuTmV3QmF0Y2hJRHNSZXNwb25zZRJhCgpE",
+            "ZXNjcmliZUlEEigubGlicmFyaWFuLnNlYXJjaGVyLnYxLkRlc2NyaWJlSURS",
+            "ZXF1ZXN0GikubGlicmFyaWFuLnNlYXJjaGVyLnYxLkRlc2NyaWJlSURSZXNw",
+            "b25zZRJbCghTZWFyY2hJRBImLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFy",
+            "Y2hJRFJlcXVlc3QaJy5saWJyYXJpYW4uc2VhcmNoZXIudjEuU2VhcmNoSURS",
+            "ZXNwb25zZUJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJh",
+            "cmlhbi9zZWFyY2hlci92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFu",
+            "LlNlYXJjaGVyLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Searcher.V1.Index), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.NewIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.NewIDRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest), global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest.Parser, new[]{ "Num" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse), global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse.Parser, new[]{ "Ids" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Parser, new[]{ "Id", "Description", "Mode" }, null, new[]{ typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Parser, new[]{ "Id", "Description", "Mode", "Index" }, null, new[]{ typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest.Parser, new[]{ "Paging", "Keyword" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest.Parser, new[]{ "Paging", "Keyword", "Index" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Parser, new[]{ "Paging", "Result" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result.Parser, new[]{ "Id", "Rank" }, null, null, null, null)})
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum Index {
+    [pbr::OriginalName("INDEX_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("INDEX_GENERAL")] General = 1,
+    [pbr::OriginalName("INDEX_GEBURA_APP")] GeburaApp = 2,
+    [pbr::OriginalName("INDEX_CHESED_IMAGE")] ChesedImage = 3,
+  }
+
+  #endregion
+
   #region Messages
   public sealed partial class NewIDRequest : pb::IMessage<NewIDRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -826,6 +841,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       description_ = other.description_;
       mode_ = other.mode_;
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -871,6 +887,18 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
     }
 
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 4;
+    private global::TuiHub.Protos.Librarian.Searcher.V1.Index index_ = global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.Searcher.V1.Index Index {
+      get { return index_; }
+      set {
+        index_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -889,6 +917,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       if (!object.Equals(Id, other.Id)) return false;
       if (Description != other.Description) return false;
       if (Mode != other.Mode) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -899,6 +928,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Mode != global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode.Unspecified) hash ^= Mode.GetHashCode();
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -929,6 +959,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Mode);
       }
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Index);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -951,6 +985,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         output.WriteRawTag(24);
         output.WriteEnum((int) Mode);
       }
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Index);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -969,6 +1007,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
       if (Mode != global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Mode);
+      }
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Index);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -993,6 +1034,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
       if (other.Mode != global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode.Unspecified) {
         Mode = other.Mode;
+      }
+      if (other.Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        Index = other.Index;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1024,6 +1068,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             Mode = (global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode) input.ReadEnum();
             break;
           }
+          case 32: {
+            Index = (global::TuiHub.Protos.Librarian.Searcher.V1.Index) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -1052,6 +1100,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
           }
           case 24: {
             Mode = (global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest.Types.DescribeMode) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            Index = (global::TuiHub.Protos.Librarian.Searcher.V1.Index) input.ReadEnum();
             break;
           }
         }
@@ -1263,6 +1315,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     public SearchIDRequest(SearchIDRequest other) : this() {
       paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       keyword_ = other.keyword_;
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1296,6 +1349,18 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
     }
 
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 3;
+    private global::TuiHub.Protos.Librarian.Searcher.V1.Index index_ = global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.Searcher.V1.Index Index {
+      get { return index_; }
+      set {
+        index_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1313,6 +1378,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
       if (!object.Equals(Paging, other.Paging)) return false;
       if (Keyword != other.Keyword) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1322,6 +1388,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       int hash = 1;
       if (paging_ != null) hash ^= Paging.GetHashCode();
       if (Keyword.Length != 0) hash ^= Keyword.GetHashCode();
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1348,6 +1415,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         output.WriteRawTag(18);
         output.WriteString(Keyword);
       }
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Index);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1366,6 +1437,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         output.WriteRawTag(18);
         output.WriteString(Keyword);
       }
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Index);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1381,6 +1456,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
       if (Keyword.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Keyword);
+      }
+      if (Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Index);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1402,6 +1480,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
       if (other.Keyword.Length != 0) {
         Keyword = other.Keyword;
+      }
+      if (other.Index != global::TuiHub.Protos.Librarian.Searcher.V1.Index.Unspecified) {
+        Index = other.Index;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1429,6 +1510,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             Keyword = input.ReadString();
             break;
           }
+          case 24: {
+            Index = (global::TuiHub.Protos.Librarian.Searcher.V1.Index) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -1453,6 +1538,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
           }
           case 18: {
             Keyword = input.ReadString();
+            break;
+          }
+          case 24: {
+            Index = (global::TuiHub.Protos.Librarian.Searcher.V1.Index) input.ReadEnum();
             break;
           }
         }

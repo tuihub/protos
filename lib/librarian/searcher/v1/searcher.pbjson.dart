@@ -8,6 +8,19 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use indexDescriptor instead')
+const Index$json = const {
+  '1': 'Index',
+  '2': const [
+    const {'1': 'INDEX_UNSPECIFIED', '2': 0},
+    const {'1': 'INDEX_GENERAL', '2': 1},
+    const {'1': 'INDEX_GEBURA_APP', '2': 2},
+    const {'1': 'INDEX_CHESED_IMAGE', '2': 3},
+  ],
+};
+
+/// Descriptor for `Index`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List indexDescriptor = $convert.base64Decode('CgVJbmRleBIVChFJTkRFWF9VTlNQRUNJRklFRBAAEhEKDUlOREVYX0dFTkVSQUwQARIUChBJTkRFWF9HRUJVUkFfQVBQEAISFgoSSU5ERVhfQ0hFU0VEX0lNQUdFEAM=');
 @$core.Deprecated('Use newIDRequestDescriptor instead')
 const NewIDRequest$json = const {
   '1': 'NewIDRequest',
@@ -52,6 +65,7 @@ const DescribeIDRequest$json = const {
     const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     const {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
     const {'1': 'mode', '3': 3, '4': 1, '5': 14, '6': '.librarian.searcher.v1.DescribeIDRequest.DescribeMode', '10': 'mode'},
+    const {'1': 'index', '3': 4, '4': 1, '5': 14, '6': '.librarian.searcher.v1.Index', '10': 'index'},
   ],
   '4': const [DescribeIDRequest_DescribeMode$json],
 };
@@ -67,7 +81,7 @@ const DescribeIDRequest_DescribeMode$json = const {
 };
 
 /// Descriptor for `DescribeIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List describeIDRequestDescriptor = $convert.base64Decode('ChFEZXNjcmliZUlEUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24SSQoEbW9kZRgDIAEoDjI1LmxpYnJhcmlhbi5zZWFyY2hlci52MS5EZXNjcmliZUlEUmVxdWVzdC5EZXNjcmliZU1vZGVSBG1vZGUiYwoMRGVzY3JpYmVNb2RlEh0KGURFU0NSSUJFX01PREVfVU5TUEVDSUZJRUQQABIaChZERVNDUklCRV9NT0RFX09WRVJSSURFEAESGAoUREVTQ1JJQkVfTU9ERV9BUFBFTkQQAg==');
+final $typed_data.Uint8List describeIDRequestDescriptor = $convert.base64Decode('ChFEZXNjcmliZUlEUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVzY3JpcHRpb24SSQoEbW9kZRgDIAEoDjI1LmxpYnJhcmlhbi5zZWFyY2hlci52MS5EZXNjcmliZUlEUmVxdWVzdC5EZXNjcmliZU1vZGVSBG1vZGUSMgoFaW5kZXgYBCABKA4yHC5saWJyYXJpYW4uc2VhcmNoZXIudjEuSW5kZXhSBWluZGV4ImMKDERlc2NyaWJlTW9kZRIdChlERVNDUklCRV9NT0RFX1VOU1BFQ0lGSUVEEAASGgoWREVTQ1JJQkVfTU9ERV9PVkVSUklERRABEhgKFERFU0NSSUJFX01PREVfQVBQRU5EEAI=');
 @$core.Deprecated('Use describeIDResponseDescriptor instead')
 const DescribeIDResponse$json = const {
   '1': 'DescribeIDResponse',
@@ -81,11 +95,12 @@ const SearchIDRequest$json = const {
   '2': const [
     const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     const {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
+    const {'1': 'index', '3': 3, '4': 1, '5': 14, '6': '.librarian.searcher.v1.Index', '10': 'index'},
   ],
 };
 
 /// Descriptor for `SearchIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List searchIDRequestDescriptor = $convert.base64Decode('Cg9TZWFyY2hJRFJlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxIYCgdrZXl3b3JkGAIgASgJUgdrZXl3b3Jk');
+final $typed_data.Uint8List searchIDRequestDescriptor = $convert.base64Decode('Cg9TZWFyY2hJRFJlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxIYCgdrZXl3b3JkGAIgASgJUgdrZXl3b3JkEjIKBWluZGV4GAMgASgOMhwubGlicmFyaWFuLnNlYXJjaGVyLnYxLkluZGV4UgVpbmRleA==');
 @$core.Deprecated('Use searchIDResponseDescriptor instead')
 const SearchIDResponse$json = const {
   '1': 'SearchIDResponse',

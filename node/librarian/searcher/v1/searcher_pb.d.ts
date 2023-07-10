@@ -96,6 +96,9 @@ export class DescribeIDRequest extends jspb.Message {
   getMode(): DescribeIDRequest.DescribeModeMap[keyof DescribeIDRequest.DescribeModeMap];
   setMode(value: DescribeIDRequest.DescribeModeMap[keyof DescribeIDRequest.DescribeModeMap]): void;
 
+  getIndex(): IndexMap[keyof IndexMap];
+  setIndex(value: IndexMap[keyof IndexMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DescribeIDRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DescribeIDRequest): DescribeIDRequest.AsObject;
@@ -111,6 +114,7 @@ export namespace DescribeIDRequest {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     description: string,
     mode: DescribeIDRequest.DescribeModeMap[keyof DescribeIDRequest.DescribeModeMap],
+    index: IndexMap[keyof IndexMap],
   }
 
   export interface DescribeModeMap {
@@ -147,6 +151,9 @@ export class SearchIDRequest extends jspb.Message {
   getKeyword(): string;
   setKeyword(value: string): void;
 
+  getIndex(): IndexMap[keyof IndexMap];
+  setIndex(value: IndexMap[keyof IndexMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchIDRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SearchIDRequest): SearchIDRequest.AsObject;
@@ -161,6 +168,7 @@ export namespace SearchIDRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     keyword: string,
+    index: IndexMap[keyof IndexMap],
   }
 }
 
@@ -217,4 +225,13 @@ export namespace SearchIDResponse {
     }
   }
 }
+
+export interface IndexMap {
+  INDEX_UNSPECIFIED: 0;
+  INDEX_GENERAL: 1;
+  INDEX_GEBURA_APP: 2;
+  INDEX_CHESED_IMAGE: 3;
+}
+
+export const Index: IndexMap;
 

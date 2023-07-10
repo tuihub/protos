@@ -16,6 +16,9 @@ impl serde::Serialize for DescribeIdRequest {
         if self.mode != 0 {
             len += 1;
         }
+        if self.index != 0 {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.DescribeIDRequest", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -27,6 +30,11 @@ impl serde::Serialize for DescribeIdRequest {
             let v = describe_id_request::DescribeMode::from_i32(self.mode)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.mode)))?;
             struct_ser.serialize_field("mode", &v)?;
+        }
+        if self.index != 0 {
+            let v = Index::from_i32(self.index)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.index)))?;
+            struct_ser.serialize_field("index", &v)?;
         }
         struct_ser.end()
     }
@@ -41,6 +49,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
             "id",
             "description",
             "mode",
+            "index",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -48,6 +57,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
             Id,
             Description,
             Mode,
+            Index,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -72,6 +82,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                             "id" => Ok(GeneratedField::Id),
                             "description" => Ok(GeneratedField::Description),
                             "mode" => Ok(GeneratedField::Mode),
+                            "index" => Ok(GeneratedField::Index),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -94,6 +105,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                 let mut id__ = None;
                 let mut description__ = None;
                 let mut mode__ = None;
+                let mut index__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -114,12 +126,19 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                             }
                             mode__ = Some(map.next_value::<describe_id_request::DescribeMode>()? as i32);
                         }
+                        GeneratedField::Index => {
+                            if index__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("index"));
+                            }
+                            index__ = Some(map.next_value::<Index>()? as i32);
+                        }
                     }
                 }
                 Ok(DescribeIdRequest {
                     id: id__,
                     description: description__.unwrap_or_default(),
                     mode: mode__.unwrap_or_default(),
+                    index: index__.unwrap_or_default(),
                 })
             }
         }
@@ -271,6 +290,85 @@ impl<'de> serde::Deserialize<'de> for DescribeIdResponse {
             }
         }
         deserializer.deserialize_struct("librarian.searcher.v1.DescribeIDResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for Index {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "INDEX_UNSPECIFIED",
+            Self::General => "INDEX_GENERAL",
+            Self::GeburaApp => "INDEX_GEBURA_APP",
+            Self::ChesedImage => "INDEX_CHESED_IMAGE",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for Index {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "INDEX_UNSPECIFIED",
+            "INDEX_GENERAL",
+            "INDEX_GEBURA_APP",
+            "INDEX_CHESED_IMAGE",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = Index;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(Index::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(Index::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "INDEX_UNSPECIFIED" => Ok(Index::Unspecified),
+                    "INDEX_GENERAL" => Ok(Index::General),
+                    "INDEX_GEBURA_APP" => Ok(Index::GeburaApp),
+                    "INDEX_CHESED_IMAGE" => Ok(Index::ChesedImage),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for NewBatchIDsRequest {
@@ -633,12 +731,20 @@ impl serde::Serialize for SearchIdRequest {
         if !self.keyword.is_empty() {
             len += 1;
         }
+        if self.index != 0 {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.SearchIDRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
         if !self.keyword.is_empty() {
             struct_ser.serialize_field("keyword", &self.keyword)?;
+        }
+        if self.index != 0 {
+            let v = Index::from_i32(self.index)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.index)))?;
+            struct_ser.serialize_field("index", &v)?;
         }
         struct_ser.end()
     }
@@ -652,12 +758,14 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
         const FIELDS: &[&str] = &[
             "paging",
             "keyword",
+            "index",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
             Keyword,
+            Index,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -681,6 +789,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
                             "keyword" => Ok(GeneratedField::Keyword),
+                            "index" => Ok(GeneratedField::Index),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -702,6 +811,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
             {
                 let mut paging__ = None;
                 let mut keyword__ = None;
+                let mut index__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -716,11 +826,18 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                             }
                             keyword__ = Some(map.next_value()?);
                         }
+                        GeneratedField::Index => {
+                            if index__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("index"));
+                            }
+                            index__ = Some(map.next_value::<Index>()? as i32);
+                        }
                     }
                 }
                 Ok(SearchIdRequest {
                     paging: paging__,
                     keyword: keyword__.unwrap_or_default(),
+                    index: index__.unwrap_or_default(),
                 })
             }
         }

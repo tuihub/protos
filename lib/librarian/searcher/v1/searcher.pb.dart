@@ -187,6 +187,7 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
     ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
     ..e<DescribeIDRequest_DescribeMode>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DescribeIDRequest_DescribeMode.DESCRIBE_MODE_UNSPECIFIED, valueOf: DescribeIDRequest_DescribeMode.valueOf, enumValues: DescribeIDRequest_DescribeMode.values)
+    ..e<Index>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index', $pb.PbFieldType.OE, defaultOrMaker: Index.INDEX_UNSPECIFIED, valueOf: Index.valueOf, enumValues: Index.values)
     ..hasRequiredFields = false
   ;
 
@@ -195,6 +196,7 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
     $1.InternalID? id,
     $core.String? description,
     DescribeIDRequest_DescribeMode? mode,
+    Index? index,
   }) {
     final _result = create();
     if (id != null) {
@@ -205,6 +207,9 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
     }
     if (mode != null) {
       _result.mode = mode;
+    }
+    if (index != null) {
+      _result.index = index;
     }
     return _result;
   }
@@ -257,6 +262,15 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
   $core.bool hasMode() => $_has(2);
   @$pb.TagNumber(3)
   void clearMode() => clearField(3);
+
+  @$pb.TagNumber(4)
+  Index get index => $_getN(3);
+  @$pb.TagNumber(4)
+  set index(Index v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIndex() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIndex() => clearField(4);
 }
 
 class DescribeIDResponse extends $pb.GeneratedMessage {
@@ -292,6 +306,7 @@ class SearchIDRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
     ..aOM<$1.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $1.PagingRequest.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keyword')
+    ..e<Index>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index', $pb.PbFieldType.OE, defaultOrMaker: Index.INDEX_UNSPECIFIED, valueOf: Index.valueOf, enumValues: Index.values)
     ..hasRequiredFields = false
   ;
 
@@ -299,6 +314,7 @@ class SearchIDRequest extends $pb.GeneratedMessage {
   factory SearchIDRequest({
     $1.PagingRequest? paging,
     $core.String? keyword,
+    Index? index,
   }) {
     final _result = create();
     if (paging != null) {
@@ -306,6 +322,9 @@ class SearchIDRequest extends $pb.GeneratedMessage {
     }
     if (keyword != null) {
       _result.keyword = keyword;
+    }
+    if (index != null) {
+      _result.index = index;
     }
     return _result;
   }
@@ -349,6 +368,15 @@ class SearchIDRequest extends $pb.GeneratedMessage {
   $core.bool hasKeyword() => $_has(1);
   @$pb.TagNumber(2)
   void clearKeyword() => clearField(2);
+
+  @$pb.TagNumber(3)
+  Index get index => $_getN(2);
+  @$pb.TagNumber(3)
+  set index(Index v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIndex() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIndex() => clearField(3);
 }
 
 class SearchIDResponse_Result extends $pb.GeneratedMessage {
