@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.36](https://github.com/TuiHub/Protos/compare/v0.2.35...v0.2.36) (2023-07-09)
+
+
+### Bug Fixes
+
+* **gebura:** update CreateAppCategoryRequest ([8f3aa9c](https://github.com/TuiHub/Protos/commit/8f3aa9cf3231458994339c4bf6281b0b23a7f9f7))
+
 ## [0.2.35](https://github.com/TuiHub/Protos/compare/v0.2.34...v0.2.35) (2023-07-09)
 
 
