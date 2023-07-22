@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.38](https://github.com/TuiHub/Protos/compare/v0.2.37...v0.2.38) (2023-07-22)
+
+
+### Features
+
+* add VNDB, Bangumi to AppSource ([76ca123](https://github.com/TuiHub/Protos/commit/76ca123a8feef0d356557cf5584a08096352cc9c))
+
 ## [0.2.37](https://github.com/TuiHub/Protos/compare/v0.2.36...v0.2.37) (2023-07-10)
 
 
