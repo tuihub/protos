@@ -37,11 +37,13 @@ const AppSource$json = const {
     const {'1': 'APP_SOURCE_UNSPECIFIED', '2': 0},
     const {'1': 'APP_SOURCE_INTERNAL', '2': 1},
     const {'1': 'APP_SOURCE_STEAM', '2': 2},
+    const {'1': 'APP_SOURCE_VNDB', '2': 3},
+    const {'1': 'APP_SOURCE_BANGUMI', '2': 4},
   ],
 };
 
 /// Descriptor for `AppSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List appSourceDescriptor = $convert.base64Decode('CglBcHBTb3VyY2USGgoWQVBQX1NPVVJDRV9VTlNQRUNJRklFRBAAEhcKE0FQUF9TT1VSQ0VfSU5URVJOQUwQARIUChBBUFBfU09VUkNFX1NURUFNEAI=');
+final $typed_data.Uint8List appSourceDescriptor = $convert.base64Decode('CglBcHBTb3VyY2USGgoWQVBQX1NPVVJDRV9VTlNQRUNJRklFRBAAEhcKE0FQUF9TT1VSQ0VfSU5URVJOQUwQARIUChBBUFBfU09VUkNFX1NURUFNEAISEwoPQVBQX1NPVVJDRV9WTkRCEAMSFgoSQVBQX1NPVVJDRV9CQU5HVU1JEAQ=');
 @$core.Deprecated('Use appPackageSourceDescriptor instead')
 const AppPackageSource$json = const {
   '1': 'AppPackageSource',

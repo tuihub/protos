@@ -43,11 +43,15 @@ class AppSource extends $pb.ProtobufEnum {
   static const AppSource APP_SOURCE_UNSPECIFIED = AppSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_UNSPECIFIED');
   static const AppSource APP_SOURCE_INTERNAL = AppSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_INTERNAL');
   static const AppSource APP_SOURCE_STEAM = AppSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_STEAM');
+  static const AppSource APP_SOURCE_VNDB = AppSource._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_VNDB');
+  static const AppSource APP_SOURCE_BANGUMI = AppSource._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'APP_SOURCE_BANGUMI');
 
   static const $core.List<AppSource> values = <AppSource> [
     APP_SOURCE_UNSPECIFIED,
     APP_SOURCE_INTERNAL,
     APP_SOURCE_STEAM,
+    APP_SOURCE_VNDB,
+    APP_SOURCE_BANGUMI,
   ];
 
   static final $core.Map<$core.int, AppSource> _byValue = $pb.ProtobufEnum.initByValue(values);

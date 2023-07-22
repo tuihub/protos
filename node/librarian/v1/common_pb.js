@@ -4940,7 +4940,9 @@ proto.librarian.v1.AppType = {
 proto.librarian.v1.AppSource = {
   APP_SOURCE_UNSPECIFIED: 0,
   APP_SOURCE_INTERNAL: 1,
-  APP_SOURCE_STEAM: 2
+  APP_SOURCE_STEAM: 2,
+  APP_SOURCE_VNDB: 3,
+  APP_SOURCE_BANGUMI: 4
 };
 
 /**

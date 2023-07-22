@@ -1479,6 +1479,8 @@ impl serde::Serialize for AppSource {
             Self::Unspecified => "APP_SOURCE_UNSPECIFIED",
             Self::Internal => "APP_SOURCE_INTERNAL",
             Self::Steam => "APP_SOURCE_STEAM",
+            Self::Vndb => "APP_SOURCE_VNDB",
+            Self::Bangumi => "APP_SOURCE_BANGUMI",
         };
         serializer.serialize_str(variant)
     }
@@ -1493,6 +1495,8 @@ impl<'de> serde::Deserialize<'de> for AppSource {
             "APP_SOURCE_UNSPECIFIED",
             "APP_SOURCE_INTERNAL",
             "APP_SOURCE_STEAM",
+            "APP_SOURCE_VNDB",
+            "APP_SOURCE_BANGUMI",
         ];
 
         struct GeneratedVisitor;
@@ -1538,6 +1542,8 @@ impl<'de> serde::Deserialize<'de> for AppSource {
                     "APP_SOURCE_UNSPECIFIED" => Ok(AppSource::Unspecified),
                     "APP_SOURCE_INTERNAL" => Ok(AppSource::Internal),
                     "APP_SOURCE_STEAM" => Ok(AppSource::Steam),
+                    "APP_SOURCE_VNDB" => Ok(AppSource::Vndb),
+                    "APP_SOURCE_BANGUMI" => Ok(AppSource::Bangumi),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

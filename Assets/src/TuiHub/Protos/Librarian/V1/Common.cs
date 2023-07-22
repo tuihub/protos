@@ -100,13 +100,14 @@ namespace TuiHub.Protos.Librarian.V1 {
             "KAlSBHR5cGUqTwoPQWNjb3VudFBsYXRmb3JtEiAKHEFDQ09VTlRfUExBVEZP",
             "Uk1fVU5TUEVDSUZJRUQQABIaChZBQ0NPVU5UX1BMQVRGT1JNX1NURUFNEAEq",
             "NgoHQXBwVHlwZRIYChRBUFBfVFlQRV9VTlNQRUNJRklFRBAAEhEKDUFQUF9U",
-            "WVBFX0dBTUUQASpWCglBcHBTb3VyY2USGgoWQVBQX1NPVVJDRV9VTlNQRUNJ",
-            "RklFRBAAEhcKE0FQUF9TT1VSQ0VfSU5URVJOQUwQARIUChBBUFBfU09VUkNF",
-            "X1NURUFNEAIqdgoQQXBwUGFja2FnZVNvdXJjZRIiCh5BUFBfUEFDS0FHRV9T",
-            "T1VSQ0VfVU5TUEVDSUZJRUQQABIdChlBUFBfUEFDS0FHRV9TT1VSQ0VfTUFO",
-            "VUFMEAESHwobQVBQX1BBQ0tBR0VfU09VUkNFX1NFTlRJTkVMEAJCS1osZ2l0",
-            "aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vdjE7djGqAhpU",
-            "dWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5WMWIGcHJvdG8z"));
+            "WVBFX0dBTUUQASqDAQoJQXBwU291cmNlEhoKFkFQUF9TT1VSQ0VfVU5TUEVD",
+            "SUZJRUQQABIXChNBUFBfU09VUkNFX0lOVEVSTkFMEAESFAoQQVBQX1NPVVJD",
+            "RV9TVEVBTRACEhMKD0FQUF9TT1VSQ0VfVk5EQhADEhYKEkFQUF9TT1VSQ0Vf",
+            "QkFOR1VNSRAEKnYKEEFwcFBhY2thZ2VTb3VyY2USIgoeQVBQX1BBQ0tBR0Vf",
+            "U09VUkNFX1VOU1BFQ0lGSUVEEAASHQoZQVBQX1BBQ0tBR0VfU09VUkNFX01B",
+            "TlVBTBABEh8KG0FQUF9QQUNLQUdFX1NPVVJDRV9TRU5USU5FTBACQktaLGdp",
+            "dGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3YxO3YxqgIa",
+            "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.AccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.AppType), typeof(global::TuiHub.Protos.Librarian.V1.AppSource), typeof(global::TuiHub.Protos.Librarian.V1.AppPackageSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -147,6 +148,8 @@ namespace TuiHub.Protos.Librarian.V1 {
     [pbr::OriginalName("APP_SOURCE_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("APP_SOURCE_INTERNAL")] Internal = 1,
     [pbr::OriginalName("APP_SOURCE_STEAM")] Steam = 2,
+    [pbr::OriginalName("APP_SOURCE_VNDB")] Vndb = 3,
+    [pbr::OriginalName("APP_SOURCE_BANGUMI")] Bangumi = 4,
   }
 
   public enum AppPackageSource {
