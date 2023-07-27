@@ -71,6 +71,7 @@ message App {
   string hero_image_url = 10;
   repeated string tags = 11;
   repeated InternalID app_category_ids = 12;
+  repeated string alt_names = 13;
 }
 
 message AppID {
@@ -84,6 +85,7 @@ message AppDetails {
   string developer = 3;
   string publisher = 4;
   string version = 5;
+  repeated string image_urls = 6;
 }
 
 enum AppType {
