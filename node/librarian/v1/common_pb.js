@@ -227,7 +227,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.v1.AppDetails = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.v1.AppDetails.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.v1.AppDetails, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1545,7 +1545,7 @@ proto.librarian.v1.AccountID.prototype.setPlatformAccountId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.App.repeatedFields_ = [11,12];
+proto.librarian.v1.App.repeatedFields_ = [11,12,13];
 
 
 
@@ -1590,7 +1590,8 @@ proto.librarian.v1.App.toObject = function(includeInstance, msg) {
     heroImageUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
     tagsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
     appCategoryIdsList: jspb.Message.toObjectList(msg.getAppCategoryIdsList(),
-    proto.librarian.v1.InternalID.toObject, includeInstance)
+    proto.librarian.v1.InternalID.toObject, includeInstance),
+    altNamesList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1677,6 +1678,10 @@ proto.librarian.v1.App.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.librarian.v1.InternalID;
       reader.readMessage(value,proto.librarian.v1.InternalID.deserializeBinaryFromReader);
       msg.addAppCategoryIds(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAltNames(value);
       break;
     default:
       reader.skipField();
@@ -1792,6 +1797,13 @@ proto.librarian.v1.App.serializeBinaryToWriter = function(message, writer) {
       12,
       f,
       proto.librarian.v1.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getAltNamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      13,
+      f
     );
   }
 };
@@ -2108,6 +2120,43 @@ proto.librarian.v1.App.prototype.clearAppCategoryIdsList = function() {
 };
 
 
+/**
+ * repeated string alt_names = 13;
+ * @return {!Array<string>}
+ */
+proto.librarian.v1.App.prototype.getAltNamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.setAltNamesList = function(value) {
+  return jspb.Message.setField(this, 13, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.addAltNames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.clearAltNamesList = function() {
+  return this.setAltNamesList([]);
+};
+
+
 
 
 
@@ -2269,6 +2318,13 @@ proto.librarian.v1.AppID.prototype.setSourceAppId = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.v1.AppDetails.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2304,7 +2360,8 @@ proto.librarian.v1.AppDetails.toObject = function(includeInstance, msg) {
     releaseDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
     developer: jspb.Message.getFieldWithDefault(msg, 3, ""),
     publisher: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 5, "")
+    version: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2360,6 +2417,10 @@ proto.librarian.v1.AppDetails.deserializeBinaryFromReader = function(msg, reader
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setVersion(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addImageUrls(value);
       break;
     default:
       reader.skipField();
@@ -2422,6 +2483,13 @@ proto.librarian.v1.AppDetails.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getImageUrlsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -2515,6 +2583,43 @@ proto.librarian.v1.AppDetails.prototype.getVersion = function() {
  */
 proto.librarian.v1.AppDetails.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated string image_urls = 6;
+ * @return {!Array<string>}
+ */
+proto.librarian.v1.AppDetails.prototype.getImageUrlsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.v1.AppDetails} returns this
+ */
+proto.librarian.v1.AppDetails.prototype.setImageUrlsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.AppDetails} returns this
+ */
+proto.librarian.v1.AppDetails.prototype.addImageUrls = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.v1.AppDetails} returns this
+ */
+proto.librarian.v1.AppDetails.prototype.clearImageUrlsList = function() {
+  return this.setImageUrlsList([]);
 };
 
 

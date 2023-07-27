@@ -447,6 +447,7 @@ class App extends $pb.GeneratedMessage {
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heroImageUrl')
     ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
     ..pc<InternalID>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appCategoryIds', $pb.PbFieldType.PM, subBuilder: InternalID.create)
+    ..pPS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altNames')
     ..hasRequiredFields = false
   ;
 
@@ -464,6 +465,7 @@ class App extends $pb.GeneratedMessage {
     $core.String? heroImageUrl,
     $core.Iterable<$core.String>? tags,
     $core.Iterable<InternalID>? appCategoryIds,
+    $core.Iterable<$core.String>? altNames,
   }) {
     final _result = create();
     if (id != null) {
@@ -501,6 +503,9 @@ class App extends $pb.GeneratedMessage {
     }
     if (appCategoryIds != null) {
       _result.appCategoryIds.addAll(appCategoryIds);
+    }
+    if (altNames != null) {
+      _result.altNames.addAll(altNames);
     }
     return _result;
   }
@@ -624,6 +629,9 @@ class App extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(12)
   $core.List<InternalID> get appCategoryIds => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.List<$core.String> get altNames => $_getList(12);
 }
 
 class AppID extends $pb.GeneratedMessage {
@@ -694,6 +702,7 @@ class AppDetails extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'developer')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publisher')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
+    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrls')
     ..hasRequiredFields = false
   ;
 
@@ -704,6 +713,7 @@ class AppDetails extends $pb.GeneratedMessage {
     $core.String? developer,
     $core.String? publisher,
     $core.String? version,
+    $core.Iterable<$core.String>? imageUrls,
   }) {
     final _result = create();
     if (description != null) {
@@ -720,6 +730,9 @@ class AppDetails extends $pb.GeneratedMessage {
     }
     if (version != null) {
       _result.version = version;
+    }
+    if (imageUrls != null) {
+      _result.imageUrls.addAll(imageUrls);
     }
     return _result;
   }
@@ -788,6 +801,9 @@ class AppDetails extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
   void clearVersion() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get imageUrls => $_getList(5);
 }
 
 class AppPackage extends $pb.GeneratedMessage {

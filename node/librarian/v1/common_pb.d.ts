@@ -217,6 +217,11 @@ export class App extends jspb.Message {
   setAppCategoryIdsList(value: Array<InternalID>): void;
   addAppCategoryIds(value?: InternalID, index?: number): InternalID;
 
+  clearAltNamesList(): void;
+  getAltNamesList(): Array<string>;
+  setAltNamesList(value: Array<string>): void;
+  addAltNames(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): App.AsObject;
   static toObject(includeInstance: boolean, msg: App): App.AsObject;
@@ -241,6 +246,7 @@ export namespace App {
     heroImageUrl: string,
     tagsList: Array<string>,
     appCategoryIdsList: Array<InternalID.AsObject>,
+    altNamesList: Array<string>,
   }
 }
 
@@ -284,6 +290,11 @@ export class AppDetails extends jspb.Message {
   getVersion(): string;
   setVersion(value: string): void;
 
+  clearImageUrlsList(): void;
+  getImageUrlsList(): Array<string>;
+  setImageUrlsList(value: Array<string>): void;
+  addImageUrls(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppDetails.AsObject;
   static toObject(includeInstance: boolean, msg: AppDetails): AppDetails.AsObject;
@@ -301,6 +312,7 @@ export namespace AppDetails {
     developer: string,
     publisher: string,
     version: string,
+    imageUrlsList: Array<string>,
   }
 }
 

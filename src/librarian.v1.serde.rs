@@ -426,6 +426,9 @@ impl serde::Serialize for App {
         if !self.app_category_ids.is_empty() {
             len += 1;
         }
+        if !self.alt_names.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.App", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -467,6 +470,9 @@ impl serde::Serialize for App {
         if !self.app_category_ids.is_empty() {
             struct_ser.serialize_field("appCategoryIds", &self.app_category_ids)?;
         }
+        if !self.alt_names.is_empty() {
+            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        }
         struct_ser.end()
     }
 }
@@ -495,6 +501,8 @@ impl<'de> serde::Deserialize<'de> for App {
             "tags",
             "app_category_ids",
             "appCategoryIds",
+            "alt_names",
+            "altNames",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -511,6 +519,7 @@ impl<'de> serde::Deserialize<'de> for App {
             HeroImageUrl,
             Tags,
             AppCategoryIds,
+            AltNames,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -544,6 +553,7 @@ impl<'de> serde::Deserialize<'de> for App {
                             "heroImageUrl" | "hero_image_url" => Ok(GeneratedField::HeroImageUrl),
                             "tags" => Ok(GeneratedField::Tags),
                             "appCategoryIds" | "app_category_ids" => Ok(GeneratedField::AppCategoryIds),
+                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -575,6 +585,7 @@ impl<'de> serde::Deserialize<'de> for App {
                 let mut hero_image_url__ = None;
                 let mut tags__ = None;
                 let mut app_category_ids__ = None;
+                let mut alt_names__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -649,6 +660,12 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             app_category_ids__ = Some(map.next_value()?);
                         }
+                        GeneratedField::AltNames => {
+                            if alt_names__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("altNames"));
+                            }
+                            alt_names__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(App {
@@ -664,6 +681,7 @@ impl<'de> serde::Deserialize<'de> for App {
                     hero_image_url: hero_image_url__.unwrap_or_default(),
                     tags: tags__.unwrap_or_default(),
                     app_category_ids: app_category_ids__.unwrap_or_default(),
+                    alt_names: alt_names__.unwrap_or_default(),
                 })
             }
         }
@@ -801,6 +819,9 @@ impl serde::Serialize for AppDetails {
         if !self.version.is_empty() {
             len += 1;
         }
+        if !self.image_urls.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppDetails", len)?;
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
@@ -816,6 +837,9 @@ impl serde::Serialize for AppDetails {
         }
         if !self.version.is_empty() {
             struct_ser.serialize_field("version", &self.version)?;
+        }
+        if !self.image_urls.is_empty() {
+            struct_ser.serialize_field("imageUrls", &self.image_urls)?;
         }
         struct_ser.end()
     }
@@ -833,6 +857,8 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
             "developer",
             "publisher",
             "version",
+            "image_urls",
+            "imageUrls",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -842,6 +868,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
             Developer,
             Publisher,
             Version,
+            ImageUrls,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -868,6 +895,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
                             "version" => Ok(GeneratedField::Version),
+                            "imageUrls" | "image_urls" => Ok(GeneratedField::ImageUrls),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -892,6 +920,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                 let mut developer__ = None;
                 let mut publisher__ = None;
                 let mut version__ = None;
+                let mut image_urls__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Description => {
@@ -924,6 +953,12 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                             }
                             version__ = Some(map.next_value()?);
                         }
+                        GeneratedField::ImageUrls => {
+                            if image_urls__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("imageUrls"));
+                            }
+                            image_urls__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(AppDetails {
@@ -932,6 +967,7 @@ impl<'de> serde::Deserialize<'de> for AppDetails {
                     developer: developer__.unwrap_or_default(),
                     publisher: publisher__.unwrap_or_default(),
                     version: version__.unwrap_or_default(),
+                    image_urls: image_urls__.unwrap_or_default(),
                 })
             }
         }

@@ -141,6 +141,7 @@ const App$json = const {
     const {'1': 'hero_image_url', '3': 10, '4': 1, '5': 9, '10': 'heroImageUrl'},
     const {'1': 'tags', '3': 11, '4': 3, '5': 9, '10': 'tags'},
     const {'1': 'app_category_ids', '3': 12, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appCategoryIds'},
+    const {'1': 'alt_names', '3': 13, '4': 3, '5': 9, '10': 'altNames'},
   ],
   '8': const [
     const {'1': '_source_url'},
@@ -149,7 +150,7 @@ const App$json = const {
 };
 
 /// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appDescriptor = $convert.base64Decode('CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cmNlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiAEBEjcKB2RldGFpbHMYBSABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRhaWxziAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV91cmwYCiABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAsgAygJUgR0YWdzEkIKEGFwcF9jYXRlZ29yeV9pZHMYDCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOYXBwQ2F0ZWdvcnlJZHNCDQoLX3NvdXJjZV91cmxCCgoIX2RldGFpbHM=');
+final $typed_data.Uint8List appDescriptor = $convert.base64Decode('CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cmNlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiAEBEjcKB2RldGFpbHMYBSABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRhaWxziAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV91cmwYCiABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAsgAygJUgR0YWdzEkIKEGFwcF9jYXRlZ29yeV9pZHMYDCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOYXBwQ2F0ZWdvcnlJZHMSGwoJYWx0X25hbWVzGA0gAygJUghhbHROYW1lc0INCgtfc291cmNlX3VybEIKCghfZGV0YWlscw==');
 @$core.Deprecated('Use appIDDescriptor instead')
 const AppID$json = const {
   '1': 'AppID',
@@ -170,11 +171,12 @@ const AppDetails$json = const {
     const {'1': 'developer', '3': 3, '4': 1, '5': 9, '10': 'developer'},
     const {'1': 'publisher', '3': 4, '4': 1, '5': 9, '10': 'publisher'},
     const {'1': 'version', '3': 5, '4': 1, '5': 9, '10': 'version'},
+    const {'1': 'image_urls', '3': 6, '4': 3, '5': 9, '10': 'imageUrls'},
   ],
 };
 
 /// Descriptor for `AppDetails`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appDetailsDescriptor = $convert.base64Decode('CgpBcHBEZXRhaWxzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIhCgxyZWxlYXNlX2RhdGUYAiABKAlSC3JlbGVhc2VEYXRlEhwKCWRldmVsb3BlchgDIAEoCVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgEIAEoCVIJcHVibGlzaGVyEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb24=');
+final $typed_data.Uint8List appDetailsDescriptor = $convert.base64Decode('CgpBcHBEZXRhaWxzEiAKC2Rlc2NyaXB0aW9uGAEgASgJUgtkZXNjcmlwdGlvbhIhCgxyZWxlYXNlX2RhdGUYAiABKAlSC3JlbGVhc2VEYXRlEhwKCWRldmVsb3BlchgDIAEoCVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgEIAEoCVIJcHVibGlzaGVyEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb24SHQoKaW1hZ2VfdXJscxgGIAMoCVIJaW1hZ2VVcmxz');
 @$core.Deprecated('Use appPackageDescriptor instead')
 const AppPackage$json = const {
   '1': 'AppPackage',
