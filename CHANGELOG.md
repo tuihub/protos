@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.39](https://github.com/TuiHub/Protos/compare/v0.2.38...v0.2.39) (2023-07-27)
+
+
+### Features
+
+* **gebura:** add App alt_names, AppDetails image_urls ([dca110a](https://github.com/TuiHub/Protos/commit/dca110ac566e4ac6378a43b13dffed6c14730132))
+
 ## [0.2.38](https://github.com/TuiHub/Protos/compare/v0.2.37...v0.2.38) (2023-07-22)
 
 
