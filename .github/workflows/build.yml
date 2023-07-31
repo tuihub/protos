@@ -32,7 +32,7 @@ jobs:
           go-version: 'oldstable'
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
       
       - name: Setup .NET environment
         uses: actions/setup-dotnet@v3
@@ -57,7 +57,7 @@ jobs:
         run: make install-plugins
 
       - name: Setup bufbuild  
-        uses: bufbuild/buf-setup-action@v1.23.0
+        uses: bufbuild/buf-setup-action@v1.25.0
 
       - name: Build
         run: make generate
