@@ -9,6 +9,33 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup Go environment
+        uses: actions/setup-go@v4.0.1
+        with:
+          go-version: 'oldstable'
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.7.0
+
+      - name: Setup .NET environment
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+          source-url: https://nuget.pkg.github.com/tuihub/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Setup Rust environment
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Setup Dart environment
+        uses: dart-lang/setup-dart@v1.4
+
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v2
+
       - name: Setup bufbuild  
         uses: bufbuild/buf-setup-action@v1.25.1
 
