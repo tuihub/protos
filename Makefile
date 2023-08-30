@@ -12,6 +12,8 @@ install-plugins:
 
 generate: clean buf go rust dart
 
+check: buf-lint go rust dart
+
 buf: buf-lint buf-generate
 
 buf-lint:

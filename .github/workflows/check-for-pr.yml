@@ -13,4 +13,4 @@ jobs:
         uses: bufbuild/buf-setup-action@v1.25.1
 
       - name: Check
-        run: make buf-lint
+        run: make check
