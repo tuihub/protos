@@ -192,7 +192,7 @@ message GetServerInformationRequest {}
 message GetServerInformationResponse {
   ServerBinarySummary server_binary_summary = 1;
   ServerProtocolSummary protocol_summary = 2;
-  // The time server received the request,
+  // The time that server received the request,
   // note that there is a transmission delay between server and client.
   google.protobuf.Timestamp current_time = 3;
 }
