@@ -66,7 +66,7 @@ type GetServerInformationResponse struct {
 
 	ServerBinarySummary *ServerBinarySummary   `protobuf:"bytes,1,opt,name=server_binary_summary,json=serverBinarySummary,proto3" json:"server_binary_summary,omitempty"`
 	ProtocolSummary     *ServerProtocolSummary `protobuf:"bytes,2,opt,name=protocol_summary,json=protocolSummary,proto3" json:"protocol_summary,omitempty"`
-	// The time server received the request,
+	// The time that server received the request,
 	// note that there is a transmission delay between server and client.
 	CurrentTime *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=current_time,json=currentTime,proto3" json:"current_time,omitempty"`
 }

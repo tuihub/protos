@@ -461,7 +461,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public const int CurrentTimeFieldNumber = 3;
     private global::Google.Protobuf.WellKnownTypes.Timestamp currentTime_;
     /// <summary>
-    /// The time server received the request,
+    /// The time that server received the request,
     /// note that there is a transmission delay between server and client.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
