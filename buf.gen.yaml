@@ -40,16 +40,16 @@ plugins:
     out: node
 
   #Rust
-  - plugin: buf.build/community/neoeinstein-prost:v0.2.2
+  - plugin: buf.build/community/neoeinstein-prost:v0.2.3
     out: src
     opt:
       - bytes=.
       - compile_well_known_types
       - extern_path=.google.protobuf=::pbjson_types
       - file_descriptor_set
-  - plugin: buf.build/community/neoeinstein-prost-serde:v0.2.2
+  - plugin: buf.build/community/neoeinstein-prost-serde:v0.2.3
     out: src
-  - plugin: buf.build/community/neoeinstein-tonic:v0.2.2
+  - plugin: buf.build/community/neoeinstein-tonic:v0.3.0
     out: src
     opt:
       - compile_well_known_types
