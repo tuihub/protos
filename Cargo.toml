@@ -6,12 +6,13 @@ license = "MIT"
 readme = "README.md"
 
 [dependencies]
-bytes = "1.4.0"
-pbjson = "0.5"
-pbjson-types = "0.5"
-prost = "0.11.9"
+bytes = "1.5.0"
+futures-core = "0.3.28"
+pbjson = "0.6"
+pbjson-types = "0.6"
+prost = "0.12.1"
 serde = "1.0"
-tonic = { version = "0.9", features = ["gzip"] }
+tonic = { version = "0.10", features = ["gzip"] }
 
 [features]
 default = []
