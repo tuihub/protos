@@ -12,7 +12,7 @@ pub mod librarian_mapper_service_client {
         /// Attempt to create a new client by connecting to a given endpoint.
         pub async fn connect<D>(dst: D) -> Result<Self, tonic::transport::Error>
         where
-            D: std::convert::TryInto<tonic::transport::Endpoint>,
+            D: TryInto<tonic::transport::Endpoint>,
             D::Error: Into<StdError>,
         {
             let conn = tonic::transport::Endpoint::new(dst)?.connect().await?;
@@ -70,10 +70,29 @@ pub mod librarian_mapper_service_client {
             self.inner = self.inner.accept_compressed(encoding);
             self
         }
+        /// Limits the maximum size of a decoded message.
+        ///
+        /// Default: `4MB`
+        #[must_use]
+        pub fn max_decoding_message_size(mut self, limit: usize) -> Self {
+            self.inner = self.inner.max_decoding_message_size(limit);
+            self
+        }
+        /// Limits the maximum size of an encoded message.
+        ///
+        /// Default: `usize::MAX`
+        #[must_use]
+        pub fn max_encoding_message_size(mut self, limit: usize) -> Self {
+            self.inner = self.inner.max_encoding_message_size(limit);
+            self
+        }
         pub async fn insert_vertex(
             &mut self,
             request: impl tonic::IntoRequest<super::InsertVertexRequest>,
-        ) -> Result<tonic::Response<super::InsertVertexResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::InsertVertexResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -87,12 +106,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/InsertVertex",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "InsertVertex",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn delete_vertex(
             &mut self,
             request: impl tonic::IntoRequest<super::DeleteVertexRequest>,
-        ) -> Result<tonic::Response<super::DeleteVertexResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::DeleteVertexResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -106,12 +136,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/DeleteVertex",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "DeleteVertex",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn update_vertex(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateVertexRequest>,
-        ) -> Result<tonic::Response<super::UpdateVertexResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateVertexResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -125,12 +166,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/UpdateVertex",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "UpdateVertex",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn insert_edge(
             &mut self,
             request: impl tonic::IntoRequest<super::InsertEdgeRequest>,
-        ) -> Result<tonic::Response<super::InsertEdgeResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::InsertEdgeResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -144,12 +196,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/InsertEdge",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "InsertEdge",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn delete_edge(
             &mut self,
             request: impl tonic::IntoRequest<super::DeleteEdgeRequest>,
-        ) -> Result<tonic::Response<super::DeleteEdgeResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::DeleteEdgeResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -163,12 +226,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/DeleteEdge",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "DeleteEdge",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn update_edge(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateEdgeRequest>,
-        ) -> Result<tonic::Response<super::UpdateEdgeResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateEdgeResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -182,12 +256,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/UpdateEdge",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "UpdateEdge",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn go_from_vertex(
             &mut self,
             request: impl tonic::IntoRequest<super::GoFromVertexRequest>,
-        ) -> Result<tonic::Response<super::GoFromVertexResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GoFromVertexResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -201,12 +286,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/GoFromVertex",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "GoFromVertex",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn fetch_equal_vertex(
             &mut self,
             request: impl tonic::IntoRequest<super::FetchEqualVertexRequest>,
-        ) -> Result<tonic::Response<super::FetchEqualVertexResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::FetchEqualVertexResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -220,12 +316,20 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/FetchEqualVertex",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "FetchEqualVertex",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn fetch_equal_vertex_neighbor(
             &mut self,
             request: impl tonic::IntoRequest<super::FetchEqualVertexNeighborRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::FetchEqualVertexNeighborResponse>,
             tonic::Status,
         > {
@@ -242,12 +346,23 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/FetchEqualVertexNeighbor",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "FetchEqualVertexNeighbor",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn find_path(
             &mut self,
             request: impl tonic::IntoRequest<super::FindPathRequest>,
-        ) -> Result<tonic::Response<super::FindPathResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::FindPathResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -261,7 +376,15 @@ pub mod librarian_mapper_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.mapper.v1.LibrarianMapperService/FindPath",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.mapper.v1.LibrarianMapperService",
+                        "FindPath",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
     }
 }
@@ -275,52 +398,81 @@ pub mod librarian_mapper_service_server {
         async fn insert_vertex(
             &self,
             request: tonic::Request<super::InsertVertexRequest>,
-        ) -> Result<tonic::Response<super::InsertVertexResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::InsertVertexResponse>,
+            tonic::Status,
+        >;
         async fn delete_vertex(
             &self,
             request: tonic::Request<super::DeleteVertexRequest>,
-        ) -> Result<tonic::Response<super::DeleteVertexResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::DeleteVertexResponse>,
+            tonic::Status,
+        >;
         async fn update_vertex(
             &self,
             request: tonic::Request<super::UpdateVertexRequest>,
-        ) -> Result<tonic::Response<super::UpdateVertexResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateVertexResponse>,
+            tonic::Status,
+        >;
         async fn insert_edge(
             &self,
             request: tonic::Request<super::InsertEdgeRequest>,
-        ) -> Result<tonic::Response<super::InsertEdgeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::InsertEdgeResponse>,
+            tonic::Status,
+        >;
         async fn delete_edge(
             &self,
             request: tonic::Request<super::DeleteEdgeRequest>,
-        ) -> Result<tonic::Response<super::DeleteEdgeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::DeleteEdgeResponse>,
+            tonic::Status,
+        >;
         async fn update_edge(
             &self,
             request: tonic::Request<super::UpdateEdgeRequest>,
-        ) -> Result<tonic::Response<super::UpdateEdgeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateEdgeResponse>,
+            tonic::Status,
+        >;
         async fn go_from_vertex(
             &self,
             request: tonic::Request<super::GoFromVertexRequest>,
-        ) -> Result<tonic::Response<super::GoFromVertexResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GoFromVertexResponse>,
+            tonic::Status,
+        >;
         async fn fetch_equal_vertex(
             &self,
             request: tonic::Request<super::FetchEqualVertexRequest>,
-        ) -> Result<tonic::Response<super::FetchEqualVertexResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::FetchEqualVertexResponse>,
+            tonic::Status,
+        >;
         async fn fetch_equal_vertex_neighbor(
             &self,
             request: tonic::Request<super::FetchEqualVertexNeighborRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::FetchEqualVertexNeighborResponse>,
             tonic::Status,
         >;
         async fn find_path(
             &self,
             request: tonic::Request<super::FindPathRequest>,
-        ) -> Result<tonic::Response<super::FindPathResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::FindPathResponse>,
+            tonic::Status,
+        >;
     }
     #[derive(Debug)]
     pub struct LibrarianMapperServiceServer<T: LibrarianMapperService> {
         inner: _Inner<T>,
         accept_compression_encodings: EnabledCompressionEncodings,
         send_compression_encodings: EnabledCompressionEncodings,
+        max_decoding_message_size: Option<usize>,
+        max_encoding_message_size: Option<usize>,
     }
     struct _Inner<T>(Arc<T>);
     impl<T: LibrarianMapperService> LibrarianMapperServiceServer<T> {
@@ -333,6 +485,8 @@ pub mod librarian_mapper_service_server {
                 inner,
                 accept_compression_encodings: Default::default(),
                 send_compression_encodings: Default::default(),
+                max_decoding_message_size: None,
+                max_encoding_message_size: None,
             }
         }
         pub fn with_interceptor<F>(
@@ -356,6 +510,22 @@ pub mod librarian_mapper_service_server {
             self.send_compression_encodings.enable(encoding);
             self
         }
+        /// Limits the maximum size of a decoded message.
+        ///
+        /// Default: `4MB`
+        #[must_use]
+        pub fn max_decoding_message_size(mut self, limit: usize) -> Self {
+            self.max_decoding_message_size = Some(limit);
+            self
+        }
+        /// Limits the maximum size of an encoded message.
+        ///
+        /// Default: `usize::MAX`
+        #[must_use]
+        pub fn max_encoding_message_size(mut self, limit: usize) -> Self {
+            self.max_encoding_message_size = Some(limit);
+            self
+        }
     }
     impl<T, B> tonic::codegen::Service<http::Request<B>>
     for LibrarianMapperServiceServer<T>
@@ -370,7 +540,7 @@ pub mod librarian_mapper_service_server {
         fn poll_ready(
             &mut self,
             _cx: &mut Context<'_>,
-        ) -> Poll<Result<(), Self::Error>> {
+        ) -> Poll<std::result::Result<(), Self::Error>> {
             Poll::Ready(Ok(()))
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
@@ -392,7 +562,7 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::InsertVertexRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).insert_vertex(request).await
                             };
@@ -401,6 +571,8 @@ pub mod librarian_mapper_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -410,6 +582,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -432,7 +608,7 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::DeleteVertexRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).delete_vertex(request).await
                             };
@@ -441,6 +617,8 @@ pub mod librarian_mapper_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -450,6 +628,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -472,7 +654,7 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateVertexRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_vertex(request).await
                             };
@@ -481,6 +663,8 @@ pub mod librarian_mapper_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -490,6 +674,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -512,13 +700,15 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::InsertEdgeRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).insert_edge(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -528,6 +718,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -550,13 +744,15 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::DeleteEdgeRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).delete_edge(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -566,6 +762,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -588,13 +788,15 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateEdgeRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).update_edge(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -604,6 +806,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -626,7 +832,7 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::GoFromVertexRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).go_from_vertex(request).await
                             };
@@ -635,6 +841,8 @@ pub mod librarian_mapper_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -644,6 +852,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -666,7 +878,7 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::FetchEqualVertexRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).fetch_equal_vertex(request).await
                             };
@@ -675,6 +887,8 @@ pub mod librarian_mapper_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -684,6 +898,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -710,7 +928,7 @@ pub mod librarian_mapper_service_server {
                                 super::FetchEqualVertexNeighborRequest,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).fetch_equal_vertex_neighbor(request).await
                             };
@@ -719,6 +937,8 @@ pub mod librarian_mapper_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -728,6 +948,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -750,13 +974,15 @@ pub mod librarian_mapper_service_server {
                             &mut self,
                             request: tonic::Request<super::FindPathRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).find_path(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -766,6 +992,10 @@ pub mod librarian_mapper_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -794,12 +1024,14 @@ pub mod librarian_mapper_service_server {
                 inner,
                 accept_compression_encodings: self.accept_compression_encodings,
                 send_compression_encodings: self.send_compression_encodings,
+                max_decoding_message_size: self.max_decoding_message_size,
+                max_encoding_message_size: self.max_encoding_message_size,
             }
         }
     }
     impl<T: LibrarianMapperService> Clone for _Inner<T> {
         fn clone(&self) -> Self {
-            Self(self.0.clone())
+            Self(Arc::clone(&self.0))
         }
     }
     impl<T: std::fmt::Debug> std::fmt::Debug for _Inner<T> {

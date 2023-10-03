@@ -12,7 +12,7 @@ pub mod librarian_sephirah_service_client {
         /// Attempt to create a new client by connecting to a given endpoint.
         pub async fn connect<D>(dst: D) -> Result<Self, tonic::transport::Error>
         where
-            D: std::convert::TryInto<tonic::transport::Endpoint>,
+            D: TryInto<tonic::transport::Endpoint>,
             D::Error: Into<StdError>,
         {
             let conn = tonic::transport::Endpoint::new(dst)?.connect().await?;
@@ -70,10 +70,26 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.accept_compressed(encoding);
             self
         }
+        /// Limits the maximum size of a decoded message.
+        ///
+        /// Default: `4MB`
+        #[must_use]
+        pub fn max_decoding_message_size(mut self, limit: usize) -> Self {
+            self.inner = self.inner.max_decoding_message_size(limit);
+            self
+        }
+        /// Limits the maximum size of an encoded message.
+        ///
+        /// Default: `usize::MAX`
+        #[must_use]
+        pub fn max_encoding_message_size(mut self, limit: usize) -> Self {
+            self.inner = self.inner.max_encoding_message_size(limit);
+            self
+        }
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::GetServerInformationResponse>,
             tonic::Status,
         > {
@@ -90,12 +106,23 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetServerInformation",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn get_token(
             &mut self,
             request: impl tonic::IntoRequest<super::GetTokenRequest>,
-        ) -> Result<tonic::Response<super::GetTokenResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetTokenResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -109,14 +136,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetToken",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetToken",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
 */
         pub async fn refresh_token(
             &mut self,
             request: impl tonic::IntoRequest<super::RefreshTokenRequest>,
-        ) -> Result<tonic::Response<super::RefreshTokenResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::RefreshTokenResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -130,14 +168,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RefreshToken",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Admin` Generate token for given user
 */
         pub async fn generate_token(
             &mut self,
             request: impl tonic::IntoRequest<super::GenerateTokenRequest>,
-        ) -> Result<tonic::Response<super::GenerateTokenResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GenerateTokenResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -151,14 +200,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GenerateToken",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn create_user(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateUserRequest>,
-        ) -> Result<tonic::Response<super::CreateUserResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateUserResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -172,14 +232,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateUser",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn update_user(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateUserRequest>,
-        ) -> Result<tonic::Response<super::UpdateUserResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateUserResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -193,14 +264,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateUser",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn get_user(
             &mut self,
             request: impl tonic::IntoRequest<super::GetUserRequest>,
-        ) -> Result<tonic::Response<super::GetUserResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetUserResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -214,14 +296,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetUser",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetUser",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn list_users(
             &mut self,
             request: impl tonic::IntoRequest<super::ListUsersRequest>,
-        ) -> Result<tonic::Response<super::ListUsersResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListUsersResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -235,7 +328,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListUsers",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListUsers",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Normal` Bind third-party account to current user.
  Create (account)<-[Equal]->(current user)
@@ -243,7 +344,10 @@ pub mod librarian_sephirah_service_client {
         pub async fn link_account(
             &mut self,
             request: impl tonic::IntoRequest<super::LinkAccountRequest>,
-        ) -> Result<tonic::Response<super::LinkAccountResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::LinkAccountResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -257,7 +361,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "LinkAccount",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Normal` Unbind third-party account from current user.
  Delete (account)<-[Equal]->(current user)
@@ -265,7 +377,10 @@ pub mod librarian_sephirah_service_client {
         pub async fn un_link_account(
             &mut self,
             request: impl tonic::IntoRequest<super::UnLinkAccountRequest>,
-        ) -> Result<tonic::Response<super::UnLinkAccountResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UnLinkAccountResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -279,7 +394,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UnLinkAccount",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Tiphereth` `Normal` List third-party account binded to current user.
  Match ()<-[Equal]->(current user)
@@ -287,7 +410,10 @@ pub mod librarian_sephirah_service_client {
         pub async fn list_link_accounts(
             &mut self,
             request: impl tonic::IntoRequest<super::ListLinkAccountsRequest>,
-        ) -> Result<tonic::Response<super::ListLinkAccountsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListLinkAccountsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -301,14 +427,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListLinkAccounts",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Binah` `upload_token`
 */
         pub async fn upload_file(
             &mut self,
             request: impl tonic::IntoStreamingRequest<Message = super::UploadFileRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<tonic::codec::Streaming<super::UploadFileResponse>>,
             tonic::Status,
         > {
@@ -325,7 +459,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile",
             );
-            self.inner.streaming(request.into_streaming_request(), path, codec).await
+            let mut req = request.into_streaming_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UploadFile",
+                    ),
+                );
+            self.inner.streaming(req, path, codec).await
         }
         /** `Binah` `download_token`
 */
@@ -334,7 +476,7 @@ pub mod librarian_sephirah_service_client {
             request: impl tonic::IntoStreamingRequest<
                 Message = super::DownloadFileRequest,
             >,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<tonic::codec::Streaming<super::DownloadFileResponse>>,
             tonic::Status,
         > {
@@ -351,7 +493,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile",
             );
-            self.inner.streaming(request.into_streaming_request(), path, codec).await
+            let mut req = request.into_streaming_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "DownloadFile",
+                    ),
+                );
+            self.inner.streaming(req, path, codec).await
         }
         /** `Binah` `upload_token`
  Maximum 256M
@@ -363,7 +513,7 @@ pub mod librarian_sephirah_service_client {
             request: impl tonic::IntoStreamingRequest<
                 Message = super::SimpleUploadFileRequest,
             >,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<tonic::codec::Streaming<super::SimpleUploadFileResponse>>,
             tonic::Status,
         > {
@@ -380,7 +530,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile",
             );
-            self.inner.streaming(request.into_streaming_request(), path, codec).await
+            let mut req = request.into_streaming_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SimpleUploadFile",
+                    ),
+                );
+            self.inner.streaming(req, path, codec).await
         }
         /** `Binah` `download_token`
  Server will not check the
@@ -388,7 +546,7 @@ pub mod librarian_sephirah_service_client {
         pub async fn simple_download_file(
             &mut self,
             request: impl tonic::IntoRequest<super::SimpleDownloadFileRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<tonic::codec::Streaming<super::SimpleDownloadFileResponse>>,
             tonic::Status,
         > {
@@ -405,7 +563,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile",
             );
-            self.inner.server_streaming(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SimpleDownloadFile",
+                    ),
+                );
+            self.inner.server_streaming(req, path, codec).await
         }
         /** `Binah` `upload_token`
  Upload file through http url
@@ -413,7 +579,10 @@ pub mod librarian_sephirah_service_client {
         pub async fn presigned_upload_file(
             &mut self,
             request: impl tonic::IntoRequest<super::PresignedUploadFileRequest>,
-        ) -> Result<tonic::Response<super::PresignedUploadFileResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::PresignedUploadFileResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -427,7 +596,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "PresignedUploadFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Binah` `upload_token`
  Report file transfer status. Mainly used to trigger server post-process immediately
@@ -435,7 +612,7 @@ pub mod librarian_sephirah_service_client {
         pub async fn presigned_upload_file_status(
             &mut self,
             request: impl tonic::IntoRequest<super::PresignedUploadFileStatusRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::PresignedUploadFileStatusResponse>,
             tonic::Status,
         > {
@@ -452,7 +629,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFileStatus",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "PresignedUploadFileStatus",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Binah` `download_token`
  Download file through http url
@@ -460,7 +645,7 @@ pub mod librarian_sephirah_service_client {
         pub async fn presigned_download_file(
             &mut self,
             request: impl tonic::IntoRequest<super::PresignedDownloadFileRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::PresignedDownloadFileResponse>,
             tonic::Status,
         > {
@@ -477,14 +662,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "PresignedDownloadFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Chesed` `Normal`
 */
         pub async fn upload_image(
             &mut self,
             request: impl tonic::IntoRequest<super::UploadImageRequest>,
-        ) -> Result<tonic::Response<super::UploadImageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UploadImageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -498,14 +694,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UploadImage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UploadImage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Chesed` `Normal`
 */
         pub async fn update_image(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateImageRequest>,
-        ) -> Result<tonic::Response<super::UpdateImageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateImageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -519,14 +726,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateImage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Chesed` `Normal`
 */
         pub async fn list_images(
             &mut self,
             request: impl tonic::IntoRequest<super::ListImagesRequest>,
-        ) -> Result<tonic::Response<super::ListImagesResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListImagesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -540,14 +758,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListImages",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListImages",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Chesed` `Normal`
 */
         pub async fn search_images(
             &mut self,
             request: impl tonic::IntoRequest<super::SearchImagesRequest>,
-        ) -> Result<tonic::Response<super::SearchImagesResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::SearchImagesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -561,14 +790,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SearchImages",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Chesed` `Normal`
 */
         pub async fn get_image(
             &mut self,
             request: impl tonic::IntoRequest<super::GetImageRequest>,
-        ) -> Result<tonic::Response<super::GetImageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetImageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -582,14 +822,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetImage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetImage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Chesed` `Normal`
 */
         pub async fn download_image(
             &mut self,
             request: impl tonic::IntoRequest<super::DownloadImageRequest>,
-        ) -> Result<tonic::Response<super::DownloadImageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::DownloadImageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -603,14 +854,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "DownloadImage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin`
 */
         pub async fn create_app(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateAppRequest>,
-        ) -> Result<tonic::Response<super::CreateAppResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateAppResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -624,14 +886,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin`
 */
         pub async fn update_app(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateAppRequest>,
-        ) -> Result<tonic::Response<super::UpdateAppResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateAppResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -645,14 +918,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin` Used to manage apps
 */
         pub async fn list_apps(
             &mut self,
             request: impl tonic::IntoRequest<super::ListAppsRequest>,
-        ) -> Result<tonic::Response<super::ListAppsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListAppsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -666,14 +950,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListApps",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin` Submit an asynchronous update request
 */
         pub async fn refresh_app(
             &mut self,
             request: impl tonic::IntoRequest<super::RefreshAppRequest>,
-        ) -> Result<tonic::Response<super::RefreshAppResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::RefreshAppResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -687,14 +982,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RefreshApp",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RefreshApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin` Merge two apps
 */
         pub async fn merge_apps(
             &mut self,
             request: impl tonic::IntoRequest<super::MergeAppsRequest>,
-        ) -> Result<tonic::Response<super::MergeAppsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::MergeAppsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -708,14 +1014,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "MergeApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin` Pick one app out from merged
 */
         pub async fn pick_app(
             &mut self,
             request: impl tonic::IntoRequest<super::PickAppRequest>,
-        ) -> Result<tonic::Response<super::PickAppResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::PickAppResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -729,14 +1046,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PickApp",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "PickApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn search_apps(
             &mut self,
             request: impl tonic::IntoRequest<super::SearchAppsRequest>,
-        ) -> Result<tonic::Response<super::SearchAppsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::SearchAppsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -750,7 +1078,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SearchApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
  e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
@@ -758,7 +1094,7 @@ pub mod librarian_sephirah_service_client {
         pub async fn get_app(
             &mut self,
             request: impl tonic::IntoRequest<super::GetAppRequest>,
-        ) -> Result<tonic::Response<super::GetAppResponse>, tonic::Status> {
+        ) -> std::result::Result<tonic::Response<super::GetAppResponse>, tonic::Status> {
             self.inner
                 .ready()
                 .await
@@ -772,14 +1108,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetApp",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal` Original bound apps info of required app
 */
         pub async fn get_bind_apps(
             &mut self,
             request: impl tonic::IntoRequest<super::GetBindAppsRequest>,
-        ) -> Result<tonic::Response<super::GetBindAppsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetBindAppsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -793,14 +1140,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetBindApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn purchase_app(
             &mut self,
             request: impl tonic::IntoRequest<super::PurchaseAppRequest>,
-        ) -> Result<tonic::Response<super::PurchaseAppResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::PurchaseAppResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -814,14 +1172,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "PurchaseApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn get_purchased_apps(
             &mut self,
             request: impl tonic::IntoRequest<super::GetPurchasedAppsRequest>,
-        ) -> Result<tonic::Response<super::GetPurchasedAppsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetPurchasedAppsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -835,14 +1204,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetPurchasedApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn create_app_package(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateAppPackageRequest>,
-        ) -> Result<tonic::Response<super::CreateAppPackageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateAppPackageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -856,14 +1236,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateAppPackage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn update_app_package(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateAppPackageRequest>,
-        ) -> Result<tonic::Response<super::UpdateAppPackageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateAppPackageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -877,14 +1268,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateAppPackage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn list_app_packages(
             &mut self,
             request: impl tonic::IntoRequest<super::ListAppPackagesRequest>,
-        ) -> Result<tonic::Response<super::ListAppPackagesResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListAppPackagesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -898,14 +1300,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackages",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListAppPackages",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn assign_app_package(
             &mut self,
             request: impl tonic::IntoRequest<super::AssignAppPackageRequest>,
-        ) -> Result<tonic::Response<super::AssignAppPackageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::AssignAppPackageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -919,14 +1332,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "AssignAppPackage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn un_assign_app_package(
             &mut self,
             request: impl tonic::IntoRequest<super::UnAssignAppPackageRequest>,
-        ) -> Result<tonic::Response<super::UnAssignAppPackageResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UnAssignAppPackageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -940,7 +1364,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UnAssignAppPackage",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Sentinel`
 */
@@ -949,7 +1381,7 @@ pub mod librarian_sephirah_service_client {
             request: impl tonic::IntoStreamingRequest<
                 Message = super::ReportAppPackagesRequest,
             >,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<tonic::codec::Streaming<super::ReportAppPackagesResponse>>,
             tonic::Status,
         > {
@@ -966,14 +1398,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages",
             );
-            self.inner.streaming(request.into_streaming_request(), path, codec).await
+            let mut req = request.into_streaming_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ReportAppPackages",
+                    ),
+                );
+            self.inner.streaming(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn add_app_package_run_time(
             &mut self,
             request: impl tonic::IntoRequest<super::AddAppPackageRunTimeRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::AddAppPackageRunTimeResponse>,
             tonic::Status,
         > {
@@ -990,14 +1430,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "AddAppPackageRunTime",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn get_app_package_run_time(
             &mut self,
             request: impl tonic::IntoRequest<super::GetAppPackageRunTimeRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::GetAppPackageRunTimeResponse>,
             tonic::Status,
         > {
@@ -1014,14 +1462,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetAppPackageRunTime",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn upload_game_save_file(
             &mut self,
             request: impl tonic::IntoRequest<super::UploadGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::UploadGameSaveFileResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UploadGameSaveFileResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1035,14 +1494,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UploadGameSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn download_game_save_file(
             &mut self,
             request: impl tonic::IntoRequest<super::DownloadGameSaveFileRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::DownloadGameSaveFileResponse>,
             tonic::Status,
         > {
@@ -1059,14 +1526,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "DownloadGameSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn list_game_save_files(
             &mut self,
             request: impl tonic::IntoRequest<super::ListGameSaveFilesRequest>,
-        ) -> Result<tonic::Response<super::ListGameSaveFilesResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListGameSaveFilesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1080,14 +1558,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListGameSaveFiles",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn remove_game_save_file(
             &mut self,
             request: impl tonic::IntoRequest<super::RemoveGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::RemoveGameSaveFileResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveGameSaveFileResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1101,14 +1590,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RemoveGameSaveFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RemoveGameSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn pin_game_save_file(
             &mut self,
             request: impl tonic::IntoRequest<super::PinGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::PinGameSaveFileResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::PinGameSaveFileResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1122,14 +1622,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PinGameSaveFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "PinGameSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn unpin_game_save_file(
             &mut self,
             request: impl tonic::IntoRequest<super::UnpinGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::UnpinGameSaveFileResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UnpinGameSaveFileResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1143,14 +1654,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UnpinGameSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin`
 */
         pub async fn set_user_save_file_capacity(
             &mut self,
             request: impl tonic::IntoRequest<super::SetUserSaveFileCapacityRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::SetUserSaveFileCapacityResponse>,
             tonic::Status,
         > {
@@ -1167,14 +1686,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SetUserSaveFileCapacity",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn set_save_file_rotation(
             &mut self,
             request: impl tonic::IntoRequest<super::SetSaveFileRotationRequest>,
-        ) -> Result<tonic::Response<super::SetSaveFileRotationResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::SetSaveFileRotationResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1188,14 +1718,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SetSaveFileRotation",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn list_app_categories(
             &mut self,
             request: impl tonic::IntoRequest<super::ListAppCategoriesRequest>,
-        ) -> Result<tonic::Response<super::ListAppCategoriesResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListAppCategoriesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1209,14 +1750,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListAppCategories",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn create_app_category(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateAppCategoryRequest>,
-        ) -> Result<tonic::Response<super::CreateAppCategoryResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateAppCategoryResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1230,14 +1782,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateAppCategory",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn update_app_category(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateAppCategoryRequest>,
-        ) -> Result<tonic::Response<super::UpdateAppCategoryResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateAppCategoryResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1251,14 +1814,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateAppCategory",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn remove_app_category(
             &mut self,
             request: impl tonic::IntoRequest<super::RemoveAppCategoryRequest>,
-        ) -> Result<tonic::Response<super::RemoveAppCategoryResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveAppCategoryResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1272,14 +1846,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RemoveAppCategory",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RemoveAppCategory",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
         pub async fn update_app_app_categories(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateAppAppCategoriesRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::UpdateAppAppCategoriesResponse>,
             tonic::Status,
         > {
@@ -1296,14 +1878,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppAppCategories",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateAppAppCategories",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Netzach` `Normal`
 */
         pub async fn create_notify_target(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateNotifyTargetRequest>,
-        ) -> Result<tonic::Response<super::CreateNotifyTargetResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateNotifyTargetResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1317,14 +1910,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateNotifyTarget",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Netzach` `Normal`
 */
         pub async fn update_notify_target(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateNotifyTargetRequest>,
-        ) -> Result<tonic::Response<super::UpdateNotifyTargetResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateNotifyTargetResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1338,14 +1942,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateNotifyTarget",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Netzach` `Normal`
 */
         pub async fn list_notify_targets(
             &mut self,
             request: impl tonic::IntoRequest<super::ListNotifyTargetsRequest>,
-        ) -> Result<tonic::Response<super::ListNotifyTargetsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListNotifyTargetsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1359,14 +1974,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListNotifyTargets",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Netzach` `Normal`
 */
         pub async fn create_notify_flow(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateNotifyFlowRequest>,
-        ) -> Result<tonic::Response<super::CreateNotifyFlowResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateNotifyFlowResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1380,14 +2006,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateNotifyFlow",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Netzach` `Normal`
 */
         pub async fn update_notify_flow(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateNotifyFlowRequest>,
-        ) -> Result<tonic::Response<super::UpdateNotifyFlowResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateNotifyFlowResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1401,14 +2038,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateNotifyFlow",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Netzach` `Normal`
 */
         pub async fn list_notify_flows(
             &mut self,
             request: impl tonic::IntoRequest<super::ListNotifyFlowsRequest>,
-        ) -> Result<tonic::Response<super::ListNotifyFlowsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListNotifyFlowsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1422,14 +2070,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListNotifyFlows",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn create_feed_config(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateFeedConfigRequest>,
-        ) -> Result<tonic::Response<super::CreateFeedConfigResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::CreateFeedConfigResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1443,14 +2102,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateFeedConfig",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn update_feed_config(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateFeedConfigRequest>,
-        ) -> Result<tonic::Response<super::UpdateFeedConfigResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateFeedConfigResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1464,14 +2134,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateFeedConfig",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn list_feed_configs(
             &mut self,
             request: impl tonic::IntoRequest<super::ListFeedConfigsRequest>,
-        ) -> Result<tonic::Response<super::ListFeedConfigsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListFeedConfigsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1485,14 +2166,22 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListFeedConfigs",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn list_feed_config_categories(
             &mut self,
             request: impl tonic::IntoRequest<super::ListFeedConfigCategoriesRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::ListFeedConfigCategoriesResponse>,
             tonic::Status,
         > {
@@ -1509,14 +2198,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigCategories",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListFeedConfigCategories",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn list_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::ListFeedItemsRequest>,
-        ) -> Result<tonic::Response<super::ListFeedItemsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::ListFeedItemsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1530,14 +2230,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListFeedItems",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn group_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GroupFeedItemsRequest>,
-        ) -> Result<tonic::Response<super::GroupFeedItemsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GroupFeedItemsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1551,14 +2262,25 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GroupFeedItems",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GroupFeedItems",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         /** `Yesod` `Normal`
 */
         pub async fn get_feed_item(
             &mut self,
             request: impl tonic::IntoRequest<super::GetFeedItemRequest>,
-        ) -> Result<tonic::Response<super::GetFeedItemResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetFeedItemResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1572,12 +2294,23 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetFeedItem",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn get_batch_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GetBatchFeedItemsRequest>,
-        ) -> Result<tonic::Response<super::GetBatchFeedItemsResponse>, tonic::Status> {
+        ) -> std::result::Result<
+            tonic::Response<super::GetBatchFeedItemsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1591,7 +2324,15 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems",
             );
-            self.inner.unary(request.into_request(), path, codec).await
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetBatchFeedItems",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
         }
     }
 }
@@ -1605,71 +2346,101 @@ pub mod librarian_sephirah_service_server {
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
-        ) -> Result<tonic::Response<super::GetServerInformationResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetServerInformationResponse>,
+            tonic::Status,
+        >;
         async fn get_token(
             &self,
             request: tonic::Request<super::GetTokenRequest>,
-        ) -> Result<tonic::Response<super::GetTokenResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetTokenResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
 */
         async fn refresh_token(
             &self,
             request: tonic::Request<super::RefreshTokenRequest>,
-        ) -> Result<tonic::Response<super::RefreshTokenResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RefreshTokenResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Admin` Generate token for given user
 */
         async fn generate_token(
             &self,
             request: tonic::Request<super::GenerateTokenRequest>,
-        ) -> Result<tonic::Response<super::GenerateTokenResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GenerateTokenResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn create_user(
             &self,
             request: tonic::Request<super::CreateUserRequest>,
-        ) -> Result<tonic::Response<super::CreateUserResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateUserResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn update_user(
             &self,
             request: tonic::Request<super::UpdateUserRequest>,
-        ) -> Result<tonic::Response<super::UpdateUserResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateUserResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn get_user(
             &self,
             request: tonic::Request<super::GetUserRequest>,
-        ) -> Result<tonic::Response<super::GetUserResponse>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::GetUserResponse>, tonic::Status>;
         /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn list_users(
             &self,
             request: tonic::Request<super::ListUsersRequest>,
-        ) -> Result<tonic::Response<super::ListUsersResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListUsersResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Normal` Bind third-party account to current user.
  Create (account)<-[Equal]->(current user)
 */
         async fn link_account(
             &self,
             request: tonic::Request<super::LinkAccountRequest>,
-        ) -> Result<tonic::Response<super::LinkAccountResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::LinkAccountResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Normal` Unbind third-party account from current user.
  Delete (account)<-[Equal]->(current user)
 */
         async fn un_link_account(
             &self,
             request: tonic::Request<super::UnLinkAccountRequest>,
-        ) -> Result<tonic::Response<super::UnLinkAccountResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UnLinkAccountResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Normal` List third-party account binded to current user.
  Match ()<-[Equal]->(current user)
 */
         async fn list_link_accounts(
             &self,
             request: tonic::Request<super::ListLinkAccountsRequest>,
-        ) -> Result<tonic::Response<super::ListLinkAccountsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListLinkAccountsResponse>,
+            tonic::Status,
+        >;
         /// Server streaming response type for the UploadFile method.
         type UploadFileStream: futures_core::Stream<
-                Item = Result<super::UploadFileResponse, tonic::Status>,
+                Item = std::result::Result<super::UploadFileResponse, tonic::Status>,
             >
             + Send
             + 'static;
@@ -1678,10 +2449,10 @@ pub mod librarian_sephirah_service_server {
         async fn upload_file(
             &self,
             request: tonic::Request<tonic::Streaming<super::UploadFileRequest>>,
-        ) -> Result<tonic::Response<Self::UploadFileStream>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<Self::UploadFileStream>, tonic::Status>;
         /// Server streaming response type for the DownloadFile method.
         type DownloadFileStream: futures_core::Stream<
-                Item = Result<super::DownloadFileResponse, tonic::Status>,
+                Item = std::result::Result<super::DownloadFileResponse, tonic::Status>,
             >
             + Send
             + 'static;
@@ -1690,10 +2461,16 @@ pub mod librarian_sephirah_service_server {
         async fn download_file(
             &self,
             request: tonic::Request<tonic::Streaming<super::DownloadFileRequest>>,
-        ) -> Result<tonic::Response<Self::DownloadFileStream>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<Self::DownloadFileStream>,
+            tonic::Status,
+        >;
         /// Server streaming response type for the SimpleUploadFile method.
         type SimpleUploadFileStream: futures_core::Stream<
-                Item = Result<super::SimpleUploadFileResponse, tonic::Status>,
+                Item = std::result::Result<
+                    super::SimpleUploadFileResponse,
+                    tonic::Status,
+                >,
             >
             + Send
             + 'static;
@@ -1705,10 +2482,16 @@ pub mod librarian_sephirah_service_server {
         async fn simple_upload_file(
             &self,
             request: tonic::Request<tonic::Streaming<super::SimpleUploadFileRequest>>,
-        ) -> Result<tonic::Response<Self::SimpleUploadFileStream>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<Self::SimpleUploadFileStream>,
+            tonic::Status,
+        >;
         /// Server streaming response type for the SimpleDownloadFile method.
         type SimpleDownloadFileStream: futures_core::Stream<
-                Item = Result<super::SimpleDownloadFileResponse, tonic::Status>,
+                Item = std::result::Result<
+                    super::SimpleDownloadFileResponse,
+                    tonic::Status,
+                >,
             >
             + Send
             + 'static;
@@ -1718,21 +2501,27 @@ pub mod librarian_sephirah_service_server {
         async fn simple_download_file(
             &self,
             request: tonic::Request<super::SimpleDownloadFileRequest>,
-        ) -> Result<tonic::Response<Self::SimpleDownloadFileStream>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<Self::SimpleDownloadFileStream>,
+            tonic::Status,
+        >;
         /** `Binah` `upload_token`
  Upload file through http url
 */
         async fn presigned_upload_file(
             &self,
             request: tonic::Request<super::PresignedUploadFileRequest>,
-        ) -> Result<tonic::Response<super::PresignedUploadFileResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::PresignedUploadFileResponse>,
+            tonic::Status,
+        >;
         /** `Binah` `upload_token`
  Report file transfer status. Mainly used to trigger server post-process immediately
 */
         async fn presigned_upload_file_status(
             &self,
             request: tonic::Request<super::PresignedUploadFileStatusRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::PresignedUploadFileStatusResponse>,
             tonic::Status,
         >;
@@ -1742,7 +2531,7 @@ pub mod librarian_sephirah_service_server {
         async fn presigned_download_file(
             &self,
             request: tonic::Request<super::PresignedDownloadFileRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::PresignedDownloadFileResponse>,
             tonic::Status,
         >;
@@ -1751,137 +2540,200 @@ pub mod librarian_sephirah_service_server {
         async fn upload_image(
             &self,
             request: tonic::Request<super::UploadImageRequest>,
-        ) -> Result<tonic::Response<super::UploadImageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UploadImageResponse>,
+            tonic::Status,
+        >;
         /** `Chesed` `Normal`
 */
         async fn update_image(
             &self,
             request: tonic::Request<super::UpdateImageRequest>,
-        ) -> Result<tonic::Response<super::UpdateImageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateImageResponse>,
+            tonic::Status,
+        >;
         /** `Chesed` `Normal`
 */
         async fn list_images(
             &self,
             request: tonic::Request<super::ListImagesRequest>,
-        ) -> Result<tonic::Response<super::ListImagesResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListImagesResponse>,
+            tonic::Status,
+        >;
         /** `Chesed` `Normal`
 */
         async fn search_images(
             &self,
             request: tonic::Request<super::SearchImagesRequest>,
-        ) -> Result<tonic::Response<super::SearchImagesResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::SearchImagesResponse>,
+            tonic::Status,
+        >;
         /** `Chesed` `Normal`
 */
         async fn get_image(
             &self,
             request: tonic::Request<super::GetImageRequest>,
-        ) -> Result<tonic::Response<super::GetImageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetImageResponse>,
+            tonic::Status,
+        >;
         /** `Chesed` `Normal`
 */
         async fn download_image(
             &self,
             request: tonic::Request<super::DownloadImageRequest>,
-        ) -> Result<tonic::Response<super::DownloadImageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::DownloadImageResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin`
 */
         async fn create_app(
             &self,
             request: tonic::Request<super::CreateAppRequest>,
-        ) -> Result<tonic::Response<super::CreateAppResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateAppResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin`
 */
         async fn update_app(
             &self,
             request: tonic::Request<super::UpdateAppRequest>,
-        ) -> Result<tonic::Response<super::UpdateAppResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateAppResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin` Used to manage apps
 */
         async fn list_apps(
             &self,
             request: tonic::Request<super::ListAppsRequest>,
-        ) -> Result<tonic::Response<super::ListAppsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListAppsResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin` Submit an asynchronous update request
 */
         async fn refresh_app(
             &self,
             request: tonic::Request<super::RefreshAppRequest>,
-        ) -> Result<tonic::Response<super::RefreshAppResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RefreshAppResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin` Merge two apps
 */
         async fn merge_apps(
             &self,
             request: tonic::Request<super::MergeAppsRequest>,
-        ) -> Result<tonic::Response<super::MergeAppsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::MergeAppsResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin` Pick one app out from merged
 */
         async fn pick_app(
             &self,
             request: tonic::Request<super::PickAppRequest>,
-        ) -> Result<tonic::Response<super::PickAppResponse>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::PickAppResponse>, tonic::Status>;
         /** `Gebura` `Normal`
 */
         async fn search_apps(
             &self,
             request: tonic::Request<super::SearchAppsRequest>,
-        ) -> Result<tonic::Response<super::SearchAppsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::SearchAppsResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
  e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
 */
         async fn get_app(
             &self,
             request: tonic::Request<super::GetAppRequest>,
-        ) -> Result<tonic::Response<super::GetAppResponse>, tonic::Status>;
+        ) -> std::result::Result<tonic::Response<super::GetAppResponse>, tonic::Status>;
         /** `Gebura` `Normal` Original bound apps info of required app
 */
         async fn get_bind_apps(
             &self,
             request: tonic::Request<super::GetBindAppsRequest>,
-        ) -> Result<tonic::Response<super::GetBindAppsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetBindAppsResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn purchase_app(
             &self,
             request: tonic::Request<super::PurchaseAppRequest>,
-        ) -> Result<tonic::Response<super::PurchaseAppResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::PurchaseAppResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn get_purchased_apps(
             &self,
             request: tonic::Request<super::GetPurchasedAppsRequest>,
-        ) -> Result<tonic::Response<super::GetPurchasedAppsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetPurchasedAppsResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn create_app_package(
             &self,
             request: tonic::Request<super::CreateAppPackageRequest>,
-        ) -> Result<tonic::Response<super::CreateAppPackageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateAppPackageResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn update_app_package(
             &self,
             request: tonic::Request<super::UpdateAppPackageRequest>,
-        ) -> Result<tonic::Response<super::UpdateAppPackageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateAppPackageResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn list_app_packages(
             &self,
             request: tonic::Request<super::ListAppPackagesRequest>,
-        ) -> Result<tonic::Response<super::ListAppPackagesResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListAppPackagesResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn assign_app_package(
             &self,
             request: tonic::Request<super::AssignAppPackageRequest>,
-        ) -> Result<tonic::Response<super::AssignAppPackageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::AssignAppPackageResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn un_assign_app_package(
             &self,
             request: tonic::Request<super::UnAssignAppPackageRequest>,
-        ) -> Result<tonic::Response<super::UnAssignAppPackageResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UnAssignAppPackageResponse>,
+            tonic::Status,
+        >;
         /// Server streaming response type for the ReportAppPackages method.
         type ReportAppPackagesStream: futures_core::Stream<
-                Item = Result<super::ReportAppPackagesResponse, tonic::Status>,
+                Item = std::result::Result<
+                    super::ReportAppPackagesResponse,
+                    tonic::Status,
+                >,
             >
             + Send
             + 'static;
@@ -1890,61 +2742,88 @@ pub mod librarian_sephirah_service_server {
         async fn report_app_packages(
             &self,
             request: tonic::Request<tonic::Streaming<super::ReportAppPackagesRequest>>,
-        ) -> Result<tonic::Response<Self::ReportAppPackagesStream>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<Self::ReportAppPackagesStream>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn add_app_package_run_time(
             &self,
             request: tonic::Request<super::AddAppPackageRunTimeRequest>,
-        ) -> Result<tonic::Response<super::AddAppPackageRunTimeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::AddAppPackageRunTimeResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn get_app_package_run_time(
             &self,
             request: tonic::Request<super::GetAppPackageRunTimeRequest>,
-        ) -> Result<tonic::Response<super::GetAppPackageRunTimeResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetAppPackageRunTimeResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn upload_game_save_file(
             &self,
             request: tonic::Request<super::UploadGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::UploadGameSaveFileResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UploadGameSaveFileResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn download_game_save_file(
             &self,
             request: tonic::Request<super::DownloadGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::DownloadGameSaveFileResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::DownloadGameSaveFileResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn list_game_save_files(
             &self,
             request: tonic::Request<super::ListGameSaveFilesRequest>,
-        ) -> Result<tonic::Response<super::ListGameSaveFilesResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListGameSaveFilesResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn remove_game_save_file(
             &self,
             request: tonic::Request<super::RemoveGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::RemoveGameSaveFileResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveGameSaveFileResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn pin_game_save_file(
             &self,
             request: tonic::Request<super::PinGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::PinGameSaveFileResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::PinGameSaveFileResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn unpin_game_save_file(
             &self,
             request: tonic::Request<super::UnpinGameSaveFileRequest>,
-        ) -> Result<tonic::Response<super::UnpinGameSaveFileResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UnpinGameSaveFileResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Admin`
 */
         async fn set_user_save_file_capacity(
             &self,
             request: tonic::Request<super::SetUserSaveFileCapacityRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::SetUserSaveFileCapacityResponse>,
             tonic::Status,
         >;
@@ -1953,37 +2832,52 @@ pub mod librarian_sephirah_service_server {
         async fn set_save_file_rotation(
             &self,
             request: tonic::Request<super::SetSaveFileRotationRequest>,
-        ) -> Result<tonic::Response<super::SetSaveFileRotationResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::SetSaveFileRotationResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn list_app_categories(
             &self,
             request: tonic::Request<super::ListAppCategoriesRequest>,
-        ) -> Result<tonic::Response<super::ListAppCategoriesResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListAppCategoriesResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn create_app_category(
             &self,
             request: tonic::Request<super::CreateAppCategoryRequest>,
-        ) -> Result<tonic::Response<super::CreateAppCategoryResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateAppCategoryResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn update_app_category(
             &self,
             request: tonic::Request<super::UpdateAppCategoryRequest>,
-        ) -> Result<tonic::Response<super::UpdateAppCategoryResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateAppCategoryResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn remove_app_category(
             &self,
             request: tonic::Request<super::RemoveAppCategoryRequest>,
-        ) -> Result<tonic::Response<super::RemoveAppCategoryResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveAppCategoryResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn update_app_app_categories(
             &self,
             request: tonic::Request<super::UpdateAppAppCategoriesRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::UpdateAppAppCategoriesResponse>,
             tonic::Status,
         >;
@@ -1992,61 +2886,88 @@ pub mod librarian_sephirah_service_server {
         async fn create_notify_target(
             &self,
             request: tonic::Request<super::CreateNotifyTargetRequest>,
-        ) -> Result<tonic::Response<super::CreateNotifyTargetResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateNotifyTargetResponse>,
+            tonic::Status,
+        >;
         /** `Netzach` `Normal`
 */
         async fn update_notify_target(
             &self,
             request: tonic::Request<super::UpdateNotifyTargetRequest>,
-        ) -> Result<tonic::Response<super::UpdateNotifyTargetResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateNotifyTargetResponse>,
+            tonic::Status,
+        >;
         /** `Netzach` `Normal`
 */
         async fn list_notify_targets(
             &self,
             request: tonic::Request<super::ListNotifyTargetsRequest>,
-        ) -> Result<tonic::Response<super::ListNotifyTargetsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListNotifyTargetsResponse>,
+            tonic::Status,
+        >;
         /** `Netzach` `Normal`
 */
         async fn create_notify_flow(
             &self,
             request: tonic::Request<super::CreateNotifyFlowRequest>,
-        ) -> Result<tonic::Response<super::CreateNotifyFlowResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateNotifyFlowResponse>,
+            tonic::Status,
+        >;
         /** `Netzach` `Normal`
 */
         async fn update_notify_flow(
             &self,
             request: tonic::Request<super::UpdateNotifyFlowRequest>,
-        ) -> Result<tonic::Response<super::UpdateNotifyFlowResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateNotifyFlowResponse>,
+            tonic::Status,
+        >;
         /** `Netzach` `Normal`
 */
         async fn list_notify_flows(
             &self,
             request: tonic::Request<super::ListNotifyFlowsRequest>,
-        ) -> Result<tonic::Response<super::ListNotifyFlowsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListNotifyFlowsResponse>,
+            tonic::Status,
+        >;
         /** `Yesod` `Normal`
 */
         async fn create_feed_config(
             &self,
             request: tonic::Request<super::CreateFeedConfigRequest>,
-        ) -> Result<tonic::Response<super::CreateFeedConfigResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::CreateFeedConfigResponse>,
+            tonic::Status,
+        >;
         /** `Yesod` `Normal`
 */
         async fn update_feed_config(
             &self,
             request: tonic::Request<super::UpdateFeedConfigRequest>,
-        ) -> Result<tonic::Response<super::UpdateFeedConfigResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateFeedConfigResponse>,
+            tonic::Status,
+        >;
         /** `Yesod` `Normal`
 */
         async fn list_feed_configs(
             &self,
             request: tonic::Request<super::ListFeedConfigsRequest>,
-        ) -> Result<tonic::Response<super::ListFeedConfigsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListFeedConfigsResponse>,
+            tonic::Status,
+        >;
         /** `Yesod` `Normal`
 */
         async fn list_feed_config_categories(
             &self,
             request: tonic::Request<super::ListFeedConfigCategoriesRequest>,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::ListFeedConfigCategoriesResponse>,
             tonic::Status,
         >;
@@ -2055,29 +2976,43 @@ pub mod librarian_sephirah_service_server {
         async fn list_feed_items(
             &self,
             request: tonic::Request<super::ListFeedItemsRequest>,
-        ) -> Result<tonic::Response<super::ListFeedItemsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::ListFeedItemsResponse>,
+            tonic::Status,
+        >;
         /** `Yesod` `Normal`
 */
         async fn group_feed_items(
             &self,
             request: tonic::Request<super::GroupFeedItemsRequest>,
-        ) -> Result<tonic::Response<super::GroupFeedItemsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GroupFeedItemsResponse>,
+            tonic::Status,
+        >;
         /** `Yesod` `Normal`
 */
         async fn get_feed_item(
             &self,
             request: tonic::Request<super::GetFeedItemRequest>,
-        ) -> Result<tonic::Response<super::GetFeedItemResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetFeedItemResponse>,
+            tonic::Status,
+        >;
         async fn get_batch_feed_items(
             &self,
             request: tonic::Request<super::GetBatchFeedItemsRequest>,
-        ) -> Result<tonic::Response<super::GetBatchFeedItemsResponse>, tonic::Status>;
+        ) -> std::result::Result<
+            tonic::Response<super::GetBatchFeedItemsResponse>,
+            tonic::Status,
+        >;
     }
     #[derive(Debug)]
     pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
         inner: _Inner<T>,
         accept_compression_encodings: EnabledCompressionEncodings,
         send_compression_encodings: EnabledCompressionEncodings,
+        max_decoding_message_size: Option<usize>,
+        max_encoding_message_size: Option<usize>,
     }
     struct _Inner<T>(Arc<T>);
     impl<T: LibrarianSephirahService> LibrarianSephirahServiceServer<T> {
@@ -2090,6 +3025,8 @@ pub mod librarian_sephirah_service_server {
                 inner,
                 accept_compression_encodings: Default::default(),
                 send_compression_encodings: Default::default(),
+                max_decoding_message_size: None,
+                max_encoding_message_size: None,
             }
         }
         pub fn with_interceptor<F>(
@@ -2113,6 +3050,22 @@ pub mod librarian_sephirah_service_server {
             self.send_compression_encodings.enable(encoding);
             self
         }
+        /// Limits the maximum size of a decoded message.
+        ///
+        /// Default: `4MB`
+        #[must_use]
+        pub fn max_decoding_message_size(mut self, limit: usize) -> Self {
+            self.max_decoding_message_size = Some(limit);
+            self
+        }
+        /// Limits the maximum size of an encoded message.
+        ///
+        /// Default: `usize::MAX`
+        #[must_use]
+        pub fn max_encoding_message_size(mut self, limit: usize) -> Self {
+            self.max_encoding_message_size = Some(limit);
+            self
+        }
     }
     impl<T, B> tonic::codegen::Service<http::Request<B>>
     for LibrarianSephirahServiceServer<T>
@@ -2127,7 +3080,7 @@ pub mod librarian_sephirah_service_server {
         fn poll_ready(
             &mut self,
             _cx: &mut Context<'_>,
-        ) -> Poll<Result<(), Self::Error>> {
+        ) -> Poll<std::result::Result<(), Self::Error>> {
             Poll::Ready(Ok(()))
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
@@ -2151,7 +3104,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetServerInformationRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).get_server_information(request).await
                             };
@@ -2160,6 +3113,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2169,6 +3124,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2191,13 +3150,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetTokenRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).get_token(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2207,6 +3168,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2229,7 +3194,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::RefreshTokenRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).refresh_token(request).await
                             };
@@ -2238,6 +3203,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2247,6 +3214,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2269,7 +3240,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GenerateTokenRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).generate_token(request).await
                             };
@@ -2278,6 +3249,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2287,6 +3260,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2309,13 +3286,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateUserRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).create_user(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2325,6 +3304,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2347,13 +3330,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateUserRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).update_user(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2363,6 +3348,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2385,13 +3374,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetUserRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).get_user(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2401,6 +3392,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2423,13 +3418,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListUsersRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).list_users(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2439,6 +3436,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2461,7 +3462,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::LinkAccountRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).link_account(request).await
                             };
@@ -2470,6 +3471,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2479,6 +3482,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2501,7 +3508,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UnLinkAccountRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).un_link_account(request).await
                             };
@@ -2510,6 +3517,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2519,6 +3528,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2541,7 +3554,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListLinkAccountsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_link_accounts(request).await
                             };
@@ -2550,6 +3563,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2559,6 +3574,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2584,13 +3603,15 @@ pub mod librarian_sephirah_service_server {
                                 tonic::Streaming<super::UploadFileRequest>,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).upload_file(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2600,6 +3621,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.streaming(method, req).await;
                         Ok(res)
@@ -2625,7 +3650,7 @@ pub mod librarian_sephirah_service_server {
                                 tonic::Streaming<super::DownloadFileRequest>,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).download_file(request).await
                             };
@@ -2634,6 +3659,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2643,6 +3670,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.streaming(method, req).await;
                         Ok(res)
@@ -2668,7 +3699,7 @@ pub mod librarian_sephirah_service_server {
                                 tonic::Streaming<super::SimpleUploadFileRequest>,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).simple_upload_file(request).await
                             };
@@ -2677,6 +3708,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2686,6 +3719,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.streaming(method, req).await;
                         Ok(res)
@@ -2712,7 +3749,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::SimpleDownloadFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).simple_download_file(request).await
                             };
@@ -2721,6 +3758,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2730,6 +3769,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.server_streaming(method, req).await;
                         Ok(res)
@@ -2754,7 +3797,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::PresignedUploadFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).presigned_upload_file(request).await
                             };
@@ -2763,6 +3806,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2772,6 +3817,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2799,7 +3848,7 @@ pub mod librarian_sephirah_service_server {
                                 super::PresignedUploadFileStatusRequest,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).presigned_upload_file_status(request).await
                             };
@@ -2808,6 +3857,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2817,6 +3868,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2841,7 +3896,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::PresignedDownloadFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).presigned_download_file(request).await
                             };
@@ -2850,6 +3905,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2859,6 +3916,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2881,7 +3942,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UploadImageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).upload_image(request).await
                             };
@@ -2890,6 +3951,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2899,6 +3962,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2921,7 +3988,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateImageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_image(request).await
                             };
@@ -2930,6 +3997,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2939,6 +4008,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2961,13 +4034,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListImagesRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).list_images(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -2977,6 +4052,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -2999,7 +4078,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::SearchImagesRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).search_images(request).await
                             };
@@ -3008,6 +4087,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3017,6 +4098,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3039,13 +4124,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetImageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).get_image(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3055,6 +4142,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3077,7 +4168,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::DownloadImageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).download_image(request).await
                             };
@@ -3086,6 +4177,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3095,6 +4188,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3117,13 +4214,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateAppRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).create_app(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3133,6 +4232,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3155,13 +4258,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateAppRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).update_app(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3171,6 +4276,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3193,13 +4302,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListAppsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).list_apps(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3209,6 +4320,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3231,13 +4346,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::RefreshAppRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).refresh_app(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3247,6 +4364,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3269,13 +4390,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::MergeAppsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).merge_apps(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3285,6 +4408,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3307,13 +4434,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::PickAppRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).pick_app(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3323,6 +4452,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3345,13 +4478,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::SearchAppsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).search_apps(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3361,6 +4496,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3383,13 +4522,15 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetAppRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move { (*inner).get_app(request).await };
                             Box::pin(fut)
                         }
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3399,6 +4540,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3421,7 +4566,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetBindAppsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).get_bind_apps(request).await
                             };
@@ -3430,6 +4575,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3439,6 +4586,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3461,7 +4612,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::PurchaseAppRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).purchase_app(request).await
                             };
@@ -3470,6 +4621,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3479,6 +4632,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3501,7 +4658,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetPurchasedAppsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).get_purchased_apps(request).await
                             };
@@ -3510,6 +4667,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3519,6 +4678,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3541,7 +4704,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateAppPackageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).create_app_package(request).await
                             };
@@ -3550,6 +4713,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3559,6 +4724,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3581,7 +4750,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateAppPackageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_app_package(request).await
                             };
@@ -3590,6 +4759,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3599,6 +4770,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3621,7 +4796,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListAppPackagesRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_app_packages(request).await
                             };
@@ -3630,6 +4805,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3639,6 +4816,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3661,7 +4842,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::AssignAppPackageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).assign_app_package(request).await
                             };
@@ -3670,6 +4851,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3679,6 +4862,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3703,7 +4890,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UnAssignAppPackageRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).un_assign_app_package(request).await
                             };
@@ -3712,6 +4899,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3721,6 +4910,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3746,7 +4939,7 @@ pub mod librarian_sephirah_service_server {
                                 tonic::Streaming<super::ReportAppPackagesRequest>,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).report_app_packages(request).await
                             };
@@ -3755,6 +4948,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3764,6 +4959,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.streaming(method, req).await;
                         Ok(res)
@@ -3788,7 +4987,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::AddAppPackageRunTimeRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).add_app_package_run_time(request).await
                             };
@@ -3797,6 +4996,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3806,6 +5007,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3830,7 +5035,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetAppPackageRunTimeRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).get_app_package_run_time(request).await
                             };
@@ -3839,6 +5044,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3848,6 +5055,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3872,7 +5083,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UploadGameSaveFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).upload_game_save_file(request).await
                             };
@@ -3881,6 +5092,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3890,6 +5103,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3914,7 +5131,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::DownloadGameSaveFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).download_game_save_file(request).await
                             };
@@ -3923,6 +5140,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3932,6 +5151,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3954,7 +5177,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListGameSaveFilesRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_game_save_files(request).await
                             };
@@ -3963,6 +5186,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -3972,6 +5197,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -3996,7 +5225,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::RemoveGameSaveFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).remove_game_save_file(request).await
                             };
@@ -4005,6 +5234,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4014,6 +5245,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4036,7 +5271,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::PinGameSaveFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).pin_game_save_file(request).await
                             };
@@ -4045,6 +5280,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4054,6 +5291,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4076,7 +5317,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UnpinGameSaveFileRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).unpin_game_save_file(request).await
                             };
@@ -4085,6 +5326,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4094,6 +5337,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4120,7 +5367,7 @@ pub mod librarian_sephirah_service_server {
                                 super::SetUserSaveFileCapacityRequest,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).set_user_save_file_capacity(request).await
                             };
@@ -4129,6 +5376,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4138,6 +5387,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4162,7 +5415,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::SetSaveFileRotationRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).set_save_file_rotation(request).await
                             };
@@ -4171,6 +5424,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4180,6 +5435,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4202,7 +5461,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListAppCategoriesRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_app_categories(request).await
                             };
@@ -4211,6 +5470,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4220,6 +5481,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4242,7 +5507,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateAppCategoryRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).create_app_category(request).await
                             };
@@ -4251,6 +5516,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4260,6 +5527,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4282,7 +5553,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateAppCategoryRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_app_category(request).await
                             };
@@ -4291,6 +5562,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4300,6 +5573,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4322,7 +5599,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::RemoveAppCategoryRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).remove_app_category(request).await
                             };
@@ -4331,6 +5608,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4340,6 +5619,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4364,7 +5647,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateAppAppCategoriesRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_app_app_categories(request).await
                             };
@@ -4373,6 +5656,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4382,6 +5667,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4406,7 +5695,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateNotifyTargetRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).create_notify_target(request).await
                             };
@@ -4415,6 +5704,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4424,6 +5715,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4448,7 +5743,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateNotifyTargetRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_notify_target(request).await
                             };
@@ -4457,6 +5752,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4466,6 +5763,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4488,7 +5789,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListNotifyTargetsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_notify_targets(request).await
                             };
@@ -4497,6 +5798,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4506,6 +5809,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4528,7 +5835,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateNotifyFlowRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).create_notify_flow(request).await
                             };
@@ -4537,6 +5844,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4546,6 +5855,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4568,7 +5881,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateNotifyFlowRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_notify_flow(request).await
                             };
@@ -4577,6 +5890,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4586,6 +5901,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4608,7 +5927,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListNotifyFlowsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_notify_flows(request).await
                             };
@@ -4617,6 +5936,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4626,6 +5947,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4648,7 +5973,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::CreateFeedConfigRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).create_feed_config(request).await
                             };
@@ -4657,6 +5982,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4666,6 +5993,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4688,7 +6019,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::UpdateFeedConfigRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).update_feed_config(request).await
                             };
@@ -4697,6 +6028,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4706,6 +6039,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4728,7 +6065,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListFeedConfigsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_feed_configs(request).await
                             };
@@ -4737,6 +6074,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4746,6 +6085,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4772,7 +6115,7 @@ pub mod librarian_sephirah_service_server {
                                 super::ListFeedConfigCategoriesRequest,
                             >,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_feed_config_categories(request).await
                             };
@@ -4781,6 +6124,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4790,6 +6135,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4812,7 +6161,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::ListFeedItemsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).list_feed_items(request).await
                             };
@@ -4821,6 +6170,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4830,6 +6181,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4852,7 +6207,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GroupFeedItemsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).group_feed_items(request).await
                             };
@@ -4861,6 +6216,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4870,6 +6227,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4892,7 +6253,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetFeedItemRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).get_feed_item(request).await
                             };
@@ -4901,6 +6262,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4910,6 +6273,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4932,7 +6299,7 @@ pub mod librarian_sephirah_service_server {
                             &mut self,
                             request: tonic::Request<super::GetBatchFeedItemsRequest>,
                         ) -> Self::Future {
-                            let inner = self.0.clone();
+                            let inner = Arc::clone(&self.0);
                             let fut = async move {
                                 (*inner).get_batch_feed_items(request).await
                             };
@@ -4941,6 +6308,8 @@ pub mod librarian_sephirah_service_server {
                     }
                     let accept_compression_encodings = self.accept_compression_encodings;
                     let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
@@ -4950,6 +6319,10 @@ pub mod librarian_sephirah_service_server {
                             .apply_compression_config(
                                 accept_compression_encodings,
                                 send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
                         Ok(res)
@@ -4978,12 +6351,14 @@ pub mod librarian_sephirah_service_server {
                 inner,
                 accept_compression_encodings: self.accept_compression_encodings,
                 send_compression_encodings: self.send_compression_encodings,
+                max_decoding_message_size: self.max_decoding_message_size,
+                max_encoding_message_size: self.max_encoding_message_size,
             }
         }
     }
     impl<T: LibrarianSephirahService> Clone for _Inner<T> {
         fn clone(&self) -> Self {
-            Self(self.0.clone())
+            Self(Arc::clone(&self.0))
         }
     }
     impl<T: std::fmt::Debug> std::fmt::Debug for _Inner<T> {
