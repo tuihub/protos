@@ -4,14 +4,14 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TuiHub/Protos.git"
+    "url": "git+https://github.com/tuihub/protos.git"
   },
   "author": "TuiHub",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TuiHub/Protos/issues"
+    "url": "https://github.com/tuihub/protos/issues"
   },
-  "homepage": "https://github.com/TuiHub/Protos#readme",
+  "homepage": "https://github.com/tuihub/protos#readme",
   "dependencies": {
     "@grpc/grpc-js": "^1.9.4",
     "google-protobuf": "^3.21.2",

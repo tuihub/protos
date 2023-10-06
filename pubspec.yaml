@@ -1,7 +1,7 @@
 name: tuihub_protos
 description: protobuf protocol files for TuiHub
 version: 0.0.1
-homepage: https://github.com/TuiHub/Protos
+homepage: https://github.com/tuihub/protos
 
 environment:
   sdk: '>=3.1.3 <4.0.0'

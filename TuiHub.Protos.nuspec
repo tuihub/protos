@@ -8,8 +8,8 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
-    <projectUrl>https://github.com/TuiHub/Protos</projectUrl>
-    <repository type="git" url="https://github.com/TuiHub/Protos" />
+    <projectUrl>https://github.com/tuihub/protos</projectUrl>
+    <repository type="git" url="https://github.com/tuihub/protos" />
     <description>$description$</description>
     <tags>protobuf TuiHub</tags>
     <!-- <dependencies>

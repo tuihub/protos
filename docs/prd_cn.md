@@ -222,7 +222,7 @@ sequenceDiagram
 用户权限：
 - `Admin`和`Normal`能够创建自己的`AppPackageSaveDataConfig`，可以选择公开给其他用户
 
-配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/Protos/schemas/savedata/v1.json)
+配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/protos/schemas/savedata/v1.json)
 
 - 配置文件必须声明schema
 - 配置文件中不应出现schema定义以外的值
@@ -258,7 +258,7 @@ sequenceDiagram
 - 文件
   - 备份文件必须是一个有效的zip文件
   - 备份文件中的所有文件名、文本文件等文本内容均**使用 UTF-8 编码**
-  - 备份文件中必须有一个名为`tuihub_savedata_config.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/Protos/schemas/savedata/v1-example.json)
+  - 备份文件中必须有一个名为`tuihub_savedata_config.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/protos/schemas/savedata/v1-example.json)
   - 备份文件中的其他内容必须遵循配置文件的设置
 - 备份
   - 依据用户预先设置的配置文件生成备份

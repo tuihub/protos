@@ -7,8 +7,8 @@
     <AssemblyName>TuiHub.Protos</AssemblyName>
     <AssemblyTitle>TuiHub.Protos</AssemblyTitle>
     <VersionPrefix>0.2.39</VersionPrefix>
-    <PackageProjectUrl>https://github.com/TuiHub/Protos</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/TuiHub/Protos</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/tuihub/protos</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tuihub/protos</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>protobuf;TuiHub</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
