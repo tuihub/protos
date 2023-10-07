@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.40](https://github.com/tuihub/protos/compare/v0.2.39...v0.2.40) (2023-10-06)
+
+
+### Features
+
+* org&repo name change ([f5ca9cf](https://github.com/tuihub/protos/commit/f5ca9cfe4dbfcf7da1644a52c928d3fe345875c1))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#81](https://github.com/tuihub/protos/issues/81)) ([323d0c0](https://github.com/tuihub/protos/commit/323d0c0866ad8083daee17bdd17ef93873a54eb6))
+* **deps:** update all non-major dependencies ([#82](https://github.com/tuihub/protos/issues/82)) ([375a756](https://github.com/tuihub/protos/commit/375a756fc9225a4735b1845f6aecf3de36e032e1))
+* **deps:** update all non-major dependencies ([#87](https://github.com/tuihub/protos/issues/87)) ([8f8f4ec](https://github.com/tuihub/protos/commit/8f8f4ec3603064f3f84fea2942091e0639dbbbe3))
+* **deps:** update all non-major dependencies ([#89](https://github.com/tuihub/protos/issues/89)) ([95529e7](https://github.com/tuihub/protos/commit/95529e7d7cc850f6ac9107b6ba726a9197ef9edf))
+* **deps:** update dependency protobuf to v3 ([#86](https://github.com/tuihub/protos/issues/86)) ([9b95e67](https://github.com/tuihub/protos/commit/9b95e67b3af2c5c3bbbfd23a5958ca3f8079c4a9))
+
 ## [0.2.39](https://github.com/tuihub/protos/compare/v0.2.38...v0.2.39) (2023-07-27)
 
 
