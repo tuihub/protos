@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.41](https://github.com/tuihub/protos/compare/v0.2.40...v0.2.41) (2023-10-21)
+
+
+### Features
+
+* **gebura:** Add SyncExternalApps, SyncExternalAccountApps ([a1bf390](https://github.com/tuihub/protos/commit/a1bf3904eeafd1366cde09528bf27b896308141d))
+
 ## [0.2.40](https://github.com/tuihub/protos/compare/v0.2.39...v0.2.40) (2023-10-06)
 
 
