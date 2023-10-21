@@ -62,6 +62,22 @@ message PickAppRequest {
 
 message PickAppResponse {}
 
+message SyncExternalAppsRequest {
+  message ExternalApp {
+    librarian.v1.AppSource source = 1;
+    string source_app_id = 2;
+  }
+  repeated ExternalApp external_apps = 1;
+}
+
+message SyncExternalAppsResponse {}
+
+message SyncExternalAccountAppsRequest {
+  librarian.v1.AccountID account_id = 1;
+}
+
+message SyncExternalAccountAppsResponse {}
+
 message SearchAppsRequest {
   librarian.v1.PagingRequest paging = 1;
   string keywords = 2;

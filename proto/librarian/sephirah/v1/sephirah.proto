@@ -97,6 +97,12 @@ service LibrarianSephirahService {
   rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);
   // `Gebura` `Admin` Pick one app out from merged
   rpc PickApp(PickAppRequest) returns (PickAppResponse);
+  // `Gebura` `Admin` Asynchronously update external apps.
+  // Create an INTERNAL app when requested external app does not exist
+  rpc SyncExternalApps(SyncExternalAppsRequest) returns (SyncExternalAppsResponse);
+  // `Gebura` `Admin` Asynchronously update apps associated with an external account.
+  // Create an INTERNAL app when associated external app does not exist
+  rpc SyncExternalAccountApps(SyncExternalAccountAppsRequest) returns (SyncExternalAccountAppsResponse);
 
   // `Gebura` `Normal`
   rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
