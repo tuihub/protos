@@ -201,6 +201,19 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           ($4.PickAppRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $4.PickAppResponse.fromBuffer(value));
+  static final _$syncExternalApps = $grpc.ClientMethod<
+          $4.SyncExternalAppsRequest, $4.SyncExternalAppsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalApps',
+      ($4.SyncExternalAppsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.SyncExternalAppsResponse.fromBuffer(value));
+  static final _$syncExternalAccountApps = $grpc.ClientMethod<
+          $4.SyncExternalAccountAppsRequest,
+          $4.SyncExternalAccountAppsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalAccountApps',
+      ($4.SyncExternalAccountAppsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $4.SyncExternalAccountAppsResponse.fromBuffer(value));
   static final _$searchApps =
       $grpc.ClientMethod<$4.SearchAppsRequest, $4.SearchAppsResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/SearchApps',
@@ -624,6 +637,19 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$4.PickAppResponse> pickApp($4.PickAppRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pickApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SyncExternalAppsResponse> syncExternalApps(
+      $4.SyncExternalAppsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncExternalApps, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SyncExternalAccountAppsResponse>
+      syncExternalAccountApps($4.SyncExternalAccountAppsRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncExternalAccountApps, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$4.SearchAppsResponse> searchApps(
@@ -1115,6 +1141,24 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.PickAppRequest.fromBuffer(value),
         ($4.PickAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SyncExternalAppsRequest,
+            $4.SyncExternalAppsResponse>(
+        'SyncExternalApps',
+        syncExternalApps_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.SyncExternalAppsRequest.fromBuffer(value),
+        ($4.SyncExternalAppsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SyncExternalAccountAppsRequest,
+            $4.SyncExternalAccountAppsResponse>(
+        'SyncExternalAccountApps',
+        syncExternalAccountApps_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $4.SyncExternalAccountAppsRequest.fromBuffer(value),
+        ($4.SyncExternalAccountAppsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.SearchAppsRequest, $4.SearchAppsResponse>(
         'SearchApps',
         searchApps_Pre,
@@ -1619,6 +1663,18 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return pickApp(call, await request);
   }
 
+  $async.Future<$4.SyncExternalAppsResponse> syncExternalApps_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.SyncExternalAppsRequest> request) async {
+    return syncExternalApps(call, await request);
+  }
+
+  $async.Future<$4.SyncExternalAccountAppsResponse> syncExternalAccountApps_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$4.SyncExternalAccountAppsRequest> request) async {
+    return syncExternalAccountApps(call, await request);
+  }
+
   $async.Future<$4.SearchAppsResponse> searchApps_Pre($grpc.ServiceCall call,
       $async.Future<$4.SearchAppsRequest> request) async {
     return searchApps(call, await request);
@@ -1909,6 +1965,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $4.MergeAppsRequest request);
   $async.Future<$4.PickAppResponse> pickApp(
       $grpc.ServiceCall call, $4.PickAppRequest request);
+  $async.Future<$4.SyncExternalAppsResponse> syncExternalApps(
+      $grpc.ServiceCall call, $4.SyncExternalAppsRequest request);
+  $async.Future<$4.SyncExternalAccountAppsResponse> syncExternalAccountApps(
+      $grpc.ServiceCall call, $4.SyncExternalAccountAppsRequest request);
   $async.Future<$4.SearchAppsResponse> searchApps(
       $grpc.ServiceCall call, $4.SearchAppsRequest request);
   $async.Future<$4.GetAppResponse> getApp(

@@ -43,6 +43,8 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   refreshApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.RefreshAppRequest, librarian_sephirah_v1_gebura_pb.RefreshAppResponse>;
   mergeApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.MergeAppsRequest, librarian_sephirah_v1_gebura_pb.MergeAppsResponse>;
   pickApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.PickAppRequest, librarian_sephirah_v1_gebura_pb.PickAppResponse>;
+  syncExternalApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest, librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse>;
+  syncExternalAccountApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest, librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse>;
   searchApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SearchAppsRequest, librarian_sephirah_v1_gebura_pb.SearchAppsResponse>;
   getApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.GetAppRequest, librarian_sephirah_v1_gebura_pb.GetAppResponse>;
   getBindApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.GetBindAppsRequest, librarian_sephirah_v1_gebura_pb.GetBindAppsResponse>;
@@ -118,6 +120,8 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   refreshApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.RefreshAppRequest, librarian_sephirah_v1_gebura_pb.RefreshAppResponse>;
   mergeApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.MergeAppsRequest, librarian_sephirah_v1_gebura_pb.MergeAppsResponse>;
   pickApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.PickAppRequest, librarian_sephirah_v1_gebura_pb.PickAppResponse>;
+  syncExternalApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest, librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse>;
+  syncExternalAccountApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest, librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse>;
   searchApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SearchAppsRequest, librarian_sephirah_v1_gebura_pb.SearchAppsResponse>;
   getApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.GetAppRequest, librarian_sephirah_v1_gebura_pb.GetAppResponse>;
   getBindApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.GetBindAppsRequest, librarian_sephirah_v1_gebura_pb.GetBindAppsResponse>;
@@ -248,6 +252,12 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   pickApp(argument: librarian_sephirah_v1_gebura_pb.PickAppRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.PickAppResponse>): grpc.ClientUnaryCall;
   pickApp(argument: librarian_sephirah_v1_gebura_pb.PickAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.PickAppResponse>): grpc.ClientUnaryCall;
   pickApp(argument: librarian_sephirah_v1_gebura_pb.PickAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.PickAppResponse>): grpc.ClientUnaryCall;
+  syncExternalApps(argument: librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse>): grpc.ClientUnaryCall;
+  syncExternalApps(argument: librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse>): grpc.ClientUnaryCall;
+  syncExternalApps(argument: librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse>): grpc.ClientUnaryCall;
+  syncExternalAccountApps(argument: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse>): grpc.ClientUnaryCall;
+  syncExternalAccountApps(argument: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse>): grpc.ClientUnaryCall;
+  syncExternalAccountApps(argument: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse>): grpc.ClientUnaryCall;
   searchApps(argument: librarian_sephirah_v1_gebura_pb.SearchAppsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchAppsResponse>): grpc.ClientUnaryCall;
   searchApps(argument: librarian_sephirah_v1_gebura_pb.SearchAppsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchAppsResponse>): grpc.ClientUnaryCall;
   searchApps(argument: librarian_sephirah_v1_gebura_pb.SearchAppsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchAppsResponse>): grpc.ClientUnaryCall;

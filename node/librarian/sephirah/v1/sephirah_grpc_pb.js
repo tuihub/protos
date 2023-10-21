@@ -1221,6 +1221,50 @@ function deserialize_librarian_sephirah_v1_SimpleUploadFileResponse(buffer_arg) 
   return librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAccountAppsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAccountAppsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SyncExternalAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAppsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SyncExternalAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SyncExternalAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAppsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SyncExternalAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_UnAssignAppPackageRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UnAssignAppPackageRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.UnAssignAppPackageRequest');
@@ -1929,6 +1973,32 @@ pickApp: {
     requestDeserialize: deserialize_librarian_sephirah_v1_PickAppRequest,
     responseSerialize: serialize_librarian_sephirah_v1_PickAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_PickAppResponse,
+  },
+  // `Gebura` `Admin` Asynchronously update external apps.
+// Create an INTERNAL app when requested external app does not exist
+syncExternalApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SyncExternalAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SyncExternalAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAppsResponse,
+  },
+  // `Gebura` `Admin` Asynchronously update apps associated with an external account.
+// Create an INTERNAL app when associated external app does not exist
+syncExternalAccountApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalAccountApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse,
   },
   // `Gebura` `Normal`
 searchApps: {

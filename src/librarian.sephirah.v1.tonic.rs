@@ -1056,6 +1056,72 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Gebura` `Admin` Asynchronously update external apps.
+ Create an INTERNAL app when requested external app does not exist
+*/
+        pub async fn sync_external_apps(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SyncExternalAppsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SyncExternalAppsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalApps",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SyncExternalApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Admin` Asynchronously update apps associated with an external account.
+ Create an INTERNAL app when associated external app does not exist
+*/
+        pub async fn sync_external_account_apps(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SyncExternalAccountAppsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SyncExternalAccountAppsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalAccountApps",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SyncExternalAccountApps",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /** `Gebura` `Normal`
 */
         pub async fn search_apps(
@@ -2640,6 +2706,26 @@ pub mod librarian_sephirah_service_server {
             &self,
             request: tonic::Request<super::PickAppRequest>,
         ) -> std::result::Result<tonic::Response<super::PickAppResponse>, tonic::Status>;
+        /** `Gebura` `Admin` Asynchronously update external apps.
+ Create an INTERNAL app when requested external app does not exist
+*/
+        async fn sync_external_apps(
+            &self,
+            request: tonic::Request<super::SyncExternalAppsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SyncExternalAppsResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Admin` Asynchronously update apps associated with an external account.
+ Create an INTERNAL app when associated external app does not exist
+*/
+        async fn sync_external_account_apps(
+            &self,
+            request: tonic::Request<super::SyncExternalAccountAppsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SyncExternalAccountAppsResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn search_apps(
@@ -4447,6 +4533,102 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = PickAppSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalApps" => {
+                    #[allow(non_camel_case_types)]
+                    struct SyncExternalAppsSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::SyncExternalAppsRequest>
+                    for SyncExternalAppsSvc<T> {
+                        type Response = super::SyncExternalAppsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SyncExternalAppsRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).sync_external_apps(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SyncExternalAppsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalAccountApps" => {
+                    #[allow(non_camel_case_types)]
+                    struct SyncExternalAccountAppsSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::SyncExternalAccountAppsRequest>
+                    for SyncExternalAccountAppsSvc<T> {
+                        type Response = super::SyncExternalAccountAppsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::SyncExternalAccountAppsRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).sync_external_account_apps(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SyncExternalAccountAppsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

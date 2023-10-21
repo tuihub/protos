@@ -175,6 +175,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> __Marshaller_librarian_sephirah_v1_PickAppResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest> __Marshaller_librarian_sephirah_v1_SyncExternalAppsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse> __Marshaller_librarian_sephirah_v1_SyncExternalAppsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest> __Marshaller_librarian_sephirah_v1_SyncExternalAccountAppsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse> __Marshaller_librarian_sephirah_v1_SyncExternalAccountAppsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest> __Marshaller_librarian_sephirah_v1_SearchAppsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse> __Marshaller_librarian_sephirah_v1_SearchAppsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse.Parser));
@@ -574,6 +582,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "PickApp",
         __Marshaller_librarian_sephirah_v1_PickAppRequest,
         __Marshaller_librarian_sephirah_v1_PickAppResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse> __Method_SyncExternalApps = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SyncExternalApps",
+        __Marshaller_librarian_sephirah_v1_SyncExternalAppsRequest,
+        __Marshaller_librarian_sephirah_v1_SyncExternalAppsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse> __Method_SyncExternalAccountApps = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SyncExternalAccountApps",
+        __Marshaller_librarian_sephirah_v1_SyncExternalAccountAppsRequest,
+        __Marshaller_librarian_sephirah_v1_SyncExternalAccountAppsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse> __Method_SearchApps = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse>(
@@ -1275,6 +1299,32 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> PickApp(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update external apps.
+      /// Create an INTERNAL app when requested external app does not exist
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse> SyncExternalApps(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update apps associated with an external account.
+      /// Create an INTERNAL app when associated external app does not exist
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse> SyncExternalAccountApps(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -3159,6 +3209,110 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse> PickAppAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_PickApp, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update external apps.
+      /// Create an INTERNAL app when requested external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse SyncExternalApps(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SyncExternalApps(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update external apps.
+      /// Create an INTERNAL app when requested external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse SyncExternalApps(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SyncExternalApps, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update external apps.
+      /// Create an INTERNAL app when requested external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse> SyncExternalAppsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SyncExternalAppsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update external apps.
+      /// Create an INTERNAL app when requested external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse> SyncExternalAppsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SyncExternalApps, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update apps associated with an external account.
+      /// Create an INTERNAL app when associated external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse SyncExternalAccountApps(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SyncExternalAccountApps(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update apps associated with an external account.
+      /// Create an INTERNAL app when associated external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse SyncExternalAccountApps(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SyncExternalAccountApps, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update apps associated with an external account.
+      /// Create an INTERNAL app when associated external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse> SyncExternalAccountAppsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SyncExternalAccountAppsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` Asynchronously update apps associated with an external account.
+      /// Create an INTERNAL app when associated external app does not exist
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse> SyncExternalAccountAppsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SyncExternalAccountApps, null, options, request);
       }
       /// <summary>
       /// `Gebura` `Normal`
@@ -5102,6 +5256,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_RefreshApp, serviceImpl.RefreshApp)
           .AddMethod(__Method_MergeApps, serviceImpl.MergeApps)
           .AddMethod(__Method_PickApp, serviceImpl.PickApp)
+          .AddMethod(__Method_SyncExternalApps, serviceImpl.SyncExternalApps)
+          .AddMethod(__Method_SyncExternalAccountApps, serviceImpl.SyncExternalAccountApps)
           .AddMethod(__Method_SearchApps, serviceImpl.SearchApps)
           .AddMethod(__Method_GetApp, serviceImpl.GetApp)
           .AddMethod(__Method_GetBindApps, serviceImpl.GetBindApps)
@@ -5181,6 +5337,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_RefreshApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshAppResponse>(serviceImpl.RefreshApp));
       serviceBinder.AddMethod(__Method_MergeApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.MergeAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.MergeAppsResponse>(serviceImpl.MergeApps));
       serviceBinder.AddMethod(__Method_PickApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PickAppResponse>(serviceImpl.PickApp));
+      serviceBinder.AddMethod(__Method_SyncExternalApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAppsResponse>(serviceImpl.SyncExternalApps));
+      serviceBinder.AddMethod(__Method_SyncExternalAccountApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncExternalAccountAppsResponse>(serviceImpl.SyncExternalAccountApps));
       serviceBinder.AddMethod(__Method_SearchApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppsResponse>(serviceImpl.SearchApps));
       serviceBinder.AddMethod(__Method_GetApp, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppResponse>(serviceImpl.GetApp));
       serviceBinder.AddMethod(__Method_GetBindApps, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetBindAppsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetBindAppsResponse>(serviceImpl.GetBindApps));

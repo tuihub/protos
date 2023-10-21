@@ -589,6 +589,215 @@ class PickAppResponse extends $pb.GeneratedMessage {
   static PickAppResponse? _defaultInstance;
 }
 
+class SyncExternalAppsRequest_ExternalApp extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SyncExternalAppsRequest.ExternalApp', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..e<$7.AppSource>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: $7.AppSource.APP_SOURCE_UNSPECIFIED, valueOf: $7.AppSource.valueOf, enumValues: $7.AppSource.values)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceAppId')
+    ..hasRequiredFields = false
+  ;
+
+  SyncExternalAppsRequest_ExternalApp._() : super();
+  factory SyncExternalAppsRequest_ExternalApp({
+    $7.AppSource? source,
+    $core.String? sourceAppId,
+  }) {
+    final _result = create();
+    if (source != null) {
+      _result.source = source;
+    }
+    if (sourceAppId != null) {
+      _result.sourceAppId = sourceAppId;
+    }
+    return _result;
+  }
+  factory SyncExternalAppsRequest_ExternalApp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncExternalAppsRequest_ExternalApp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SyncExternalAppsRequest_ExternalApp clone() => SyncExternalAppsRequest_ExternalApp()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SyncExternalAppsRequest_ExternalApp copyWith(void Function(SyncExternalAppsRequest_ExternalApp) updates) => super.copyWith((message) => updates(message as SyncExternalAppsRequest_ExternalApp)) as SyncExternalAppsRequest_ExternalApp; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAppsRequest_ExternalApp create() => SyncExternalAppsRequest_ExternalApp._();
+  SyncExternalAppsRequest_ExternalApp createEmptyInstance() => create();
+  static $pb.PbList<SyncExternalAppsRequest_ExternalApp> createRepeated() => $pb.PbList<SyncExternalAppsRequest_ExternalApp>();
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAppsRequest_ExternalApp getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAppsRequest_ExternalApp>(create);
+  static SyncExternalAppsRequest_ExternalApp? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.AppSource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source($7.AppSource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceAppId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceAppId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSourceAppId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceAppId() => clearField(2);
+}
+
+class SyncExternalAppsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SyncExternalAppsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<SyncExternalAppsRequest_ExternalApp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'externalApps', $pb.PbFieldType.PM, subBuilder: SyncExternalAppsRequest_ExternalApp.create)
+    ..hasRequiredFields = false
+  ;
+
+  SyncExternalAppsRequest._() : super();
+  factory SyncExternalAppsRequest({
+    $core.Iterable<SyncExternalAppsRequest_ExternalApp>? externalApps,
+  }) {
+    final _result = create();
+    if (externalApps != null) {
+      _result.externalApps.addAll(externalApps);
+    }
+    return _result;
+  }
+  factory SyncExternalAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncExternalAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SyncExternalAppsRequest clone() => SyncExternalAppsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SyncExternalAppsRequest copyWith(void Function(SyncExternalAppsRequest) updates) => super.copyWith((message) => updates(message as SyncExternalAppsRequest)) as SyncExternalAppsRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAppsRequest create() => SyncExternalAppsRequest._();
+  SyncExternalAppsRequest createEmptyInstance() => create();
+  static $pb.PbList<SyncExternalAppsRequest> createRepeated() => $pb.PbList<SyncExternalAppsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAppsRequest>(create);
+  static SyncExternalAppsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<SyncExternalAppsRequest_ExternalApp> get externalApps => $_getList(0);
+}
+
+class SyncExternalAppsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SyncExternalAppsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  SyncExternalAppsResponse._() : super();
+  factory SyncExternalAppsResponse() => create();
+  factory SyncExternalAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncExternalAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SyncExternalAppsResponse clone() => SyncExternalAppsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SyncExternalAppsResponse copyWith(void Function(SyncExternalAppsResponse) updates) => super.copyWith((message) => updates(message as SyncExternalAppsResponse)) as SyncExternalAppsResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAppsResponse create() => SyncExternalAppsResponse._();
+  SyncExternalAppsResponse createEmptyInstance() => create();
+  static $pb.PbList<SyncExternalAppsResponse> createRepeated() => $pb.PbList<SyncExternalAppsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAppsResponse>(create);
+  static SyncExternalAppsResponse? _defaultInstance;
+}
+
+class SyncExternalAccountAppsRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SyncExternalAccountAppsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.AccountID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId', subBuilder: $7.AccountID.create)
+    ..hasRequiredFields = false
+  ;
+
+  SyncExternalAccountAppsRequest._() : super();
+  factory SyncExternalAccountAppsRequest({
+    $7.AccountID? accountId,
+  }) {
+    final _result = create();
+    if (accountId != null) {
+      _result.accountId = accountId;
+    }
+    return _result;
+  }
+  factory SyncExternalAccountAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncExternalAccountAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SyncExternalAccountAppsRequest clone() => SyncExternalAccountAppsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SyncExternalAccountAppsRequest copyWith(void Function(SyncExternalAccountAppsRequest) updates) => super.copyWith((message) => updates(message as SyncExternalAccountAppsRequest)) as SyncExternalAccountAppsRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAccountAppsRequest create() => SyncExternalAccountAppsRequest._();
+  SyncExternalAccountAppsRequest createEmptyInstance() => create();
+  static $pb.PbList<SyncExternalAccountAppsRequest> createRepeated() => $pb.PbList<SyncExternalAccountAppsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAccountAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAccountAppsRequest>(create);
+  static SyncExternalAccountAppsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.AccountID get accountId => $_getN(0);
+  @$pb.TagNumber(1)
+  set accountId($7.AccountID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAccountId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccountId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.AccountID ensureAccountId() => $_ensure(0);
+}
+
+class SyncExternalAccountAppsResponse extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SyncExternalAccountAppsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  SyncExternalAccountAppsResponse._() : super();
+  factory SyncExternalAccountAppsResponse() => create();
+  factory SyncExternalAccountAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncExternalAccountAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SyncExternalAccountAppsResponse clone() => SyncExternalAccountAppsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SyncExternalAccountAppsResponse copyWith(void Function(SyncExternalAccountAppsResponse) updates) => super.copyWith((message) => updates(message as SyncExternalAccountAppsResponse)) as SyncExternalAccountAppsResponse; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAccountAppsResponse create() => SyncExternalAccountAppsResponse._();
+  SyncExternalAccountAppsResponse createEmptyInstance() => create();
+  static $pb.PbList<SyncExternalAccountAppsResponse> createRepeated() => $pb.PbList<SyncExternalAccountAppsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SyncExternalAccountAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAccountAppsResponse>(create);
+  static SyncExternalAccountAppsResponse? _defaultInstance;
+}
+
 class SearchAppsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchAppsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
