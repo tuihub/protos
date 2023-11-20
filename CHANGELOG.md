@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.42](https://github.com/tuihub/protos/compare/v0.2.41...v0.2.42) (2023-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#97](https://github.com/tuihub/protos/issues/97)) ([7855326](https://github.com/tuihub/protos/commit/785532652fd1d99df125b793dac8522dea0cd70d))
+* **deps:** update module google.golang.org/grpc to v1.58.3 [security] ([#94](https://github.com/tuihub/protos/issues/94)) ([09cd07f](https://github.com/tuihub/protos/commit/09cd07ff68cf66052c915d7fa0b76df16c2bfe3a))
+* **gebura:** add sentinel generated id to ReportAppPackages ([ec3c0b9](https://github.com/tuihub/protos/commit/ec3c0b9ca52ed34619578208f2e9b9311241e032))
+* **gebura:** remove paging from ListGameSaveFiles ([437513a](https://github.com/tuihub/protos/commit/437513a2ca520435e33154ebf9c188bbba6e66e2))
+
 ## [0.2.41](https://github.com/tuihub/protos/compare/v0.2.40...v0.2.41) (2023-10-21)
 
 
