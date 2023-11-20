@@ -144,7 +144,12 @@ message ListAppPackagesResponse {
 }
 
 message ReportAppPackagesRequest {
-  repeated librarian.v1.AppPackageBinary app_package_binaries = 1;
+  message SentinelAppPackageBinary {
+    // Sentinel generated id, not InternalId
+    int64 id = 1;
+    librarian.v1.AppPackageBinary app_package_binary = 2;
+  }
+  repeated SentinelAppPackageBinary sentinel_app_package_binaries = 1;
 }
 
 message ReportAppPackagesResponse {}
