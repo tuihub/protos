@@ -7797,16 +7797,10 @@ impl serde::Serialize for ListGameSaveFilesRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.paging.is_some() {
-            len += 1;
-        }
         if self.app_package_id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesRequest", len)?;
-        if let Some(v) = self.paging.as_ref() {
-            struct_ser.serialize_field("paging", v)?;
-        }
         if let Some(v) = self.app_package_id.as_ref() {
             struct_ser.serialize_field("appPackageId", v)?;
         }
@@ -7820,14 +7814,12 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "paging",
             "app_package_id",
             "appPackageId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Paging,
             AppPackageId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -7850,7 +7842,6 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "paging" => Ok(GeneratedField::Paging),
                             "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -7871,16 +7862,9 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut paging__ = None;
                 let mut app_package_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Paging => {
-                            if paging__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("paging"));
-                            }
-                            paging__ = map.next_value()?;
-                        }
                         GeneratedField::AppPackageId => {
                             if app_package_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appPackageId"));
@@ -7890,7 +7874,6 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesRequest {
                     }
                 }
                 Ok(ListGameSaveFilesRequest {
-                    paging: paging__,
                     app_package_id: app_package_id__,
                 })
             }
@@ -7906,16 +7889,10 @@ impl serde::Serialize for ListGameSaveFilesResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.paging.is_some() {
-            len += 1;
-        }
         if !self.results.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse", len)?;
-        if let Some(v) = self.paging.as_ref() {
-            struct_ser.serialize_field("paging", v)?;
-        }
         if !self.results.is_empty() {
             struct_ser.serialize_field("results", &self.results)?;
         }
@@ -7929,13 +7906,11 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "paging",
             "results",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Paging,
             Results,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -7958,7 +7933,6 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "paging" => Ok(GeneratedField::Paging),
                             "results" => Ok(GeneratedField::Results),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -7979,16 +7953,9 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut paging__ = None;
                 let mut results__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Paging => {
-                            if paging__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("paging"));
-                            }
-                            paging__ = map.next_value()?;
-                        }
                         GeneratedField::Results => {
                             if results__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("results"));
@@ -7998,7 +7965,6 @@ impl<'de> serde::Deserialize<'de> for ListGameSaveFilesResponse {
                     }
                 }
                 Ok(ListGameSaveFilesResponse {
-                    paging: paging__,
                     results: results__.unwrap_or_default(),
                 })
             }
@@ -11852,12 +11818,12 @@ impl serde::Serialize for ReportAppPackagesRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.app_package_binaries.is_empty() {
+        if !self.sentinel_app_package_binaries.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest", len)?;
-        if !self.app_package_binaries.is_empty() {
-            struct_ser.serialize_field("appPackageBinaries", &self.app_package_binaries)?;
+        if !self.sentinel_app_package_binaries.is_empty() {
+            struct_ser.serialize_field("sentinelAppPackageBinaries", &self.sentinel_app_package_binaries)?;
         }
         struct_ser.end()
     }
@@ -11869,13 +11835,13 @@ impl<'de> serde::Deserialize<'de> for ReportAppPackagesRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package_binaries",
-            "appPackageBinaries",
+            "sentinel_app_package_binaries",
+            "sentinelAppPackageBinaries",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackageBinaries,
+            SentinelAppPackageBinaries,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -11897,7 +11863,7 @@ impl<'de> serde::Deserialize<'de> for ReportAppPackagesRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackageBinaries" | "app_package_binaries" => Ok(GeneratedField::AppPackageBinaries),
+                            "sentinelAppPackageBinaries" | "sentinel_app_package_binaries" => Ok(GeneratedField::SentinelAppPackageBinaries),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -11917,23 +11883,134 @@ impl<'de> serde::Deserialize<'de> for ReportAppPackagesRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package_binaries__ = None;
+                let mut sentinel_app_package_binaries__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackageBinaries => {
-                            if app_package_binaries__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageBinaries"));
+                        GeneratedField::SentinelAppPackageBinaries => {
+                            if sentinel_app_package_binaries__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelAppPackageBinaries"));
                             }
-                            app_package_binaries__ = Some(map.next_value()?);
+                            sentinel_app_package_binaries__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(ReportAppPackagesRequest {
-                    app_package_binaries: app_package_binaries__.unwrap_or_default(),
+                    sentinel_app_package_binaries: sentinel_app_package_binaries__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for report_app_packages_request::SentinelAppPackageBinary {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id != 0 {
+            len += 1;
+        }
+        if self.app_package_binary.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary", len)?;
+        if self.id != 0 {
+            struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
+        }
+        if let Some(v) = self.app_package_binary.as_ref() {
+            struct_ser.serialize_field("appPackageBinary", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for report_app_packages_request::SentinelAppPackageBinary {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "app_package_binary",
+            "appPackageBinary",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            AppPackageBinary,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "appPackageBinary" | "app_package_binary" => Ok(GeneratedField::AppPackageBinary),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = report_app_packages_request::SentinelAppPackageBinary;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<report_app_packages_request::SentinelAppPackageBinary, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut app_package_binary__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::AppPackageBinary => {
+                            if app_package_binary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appPackageBinary"));
+                            }
+                            app_package_binary__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(report_app_packages_request::SentinelAppPackageBinary {
+                    id: id__.unwrap_or_default(),
+                    app_package_binary: app_package_binary__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ReportAppPackagesResponse {

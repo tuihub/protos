@@ -1560,19 +1560,82 @@ class ListAppPackagesResponse extends $pb.GeneratedMessage {
   $core.List<$7.AppPackage> get appPackages => $_getList(1);
 }
 
+class ReportAppPackagesRequest_SentinelAppPackageBinary extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReportAppPackagesRequest.SentinelAppPackageBinary', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOM<$7.AppPackageBinary>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageBinary', subBuilder: $7.AppPackageBinary.create)
+    ..hasRequiredFields = false
+  ;
+
+  ReportAppPackagesRequest_SentinelAppPackageBinary._() : super();
+  factory ReportAppPackagesRequest_SentinelAppPackageBinary({
+    $fixnum.Int64? id,
+    $7.AppPackageBinary? appPackageBinary,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (appPackageBinary != null) {
+      _result.appPackageBinary = appPackageBinary;
+    }
+    return _result;
+  }
+  factory ReportAppPackagesRequest_SentinelAppPackageBinary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportAppPackagesRequest_SentinelAppPackageBinary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportAppPackagesRequest_SentinelAppPackageBinary clone() => ReportAppPackagesRequest_SentinelAppPackageBinary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportAppPackagesRequest_SentinelAppPackageBinary copyWith(void Function(ReportAppPackagesRequest_SentinelAppPackageBinary) updates) => super.copyWith((message) => updates(message as ReportAppPackagesRequest_SentinelAppPackageBinary)) as ReportAppPackagesRequest_SentinelAppPackageBinary; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static ReportAppPackagesRequest_SentinelAppPackageBinary create() => ReportAppPackagesRequest_SentinelAppPackageBinary._();
+  ReportAppPackagesRequest_SentinelAppPackageBinary createEmptyInstance() => create();
+  static $pb.PbList<ReportAppPackagesRequest_SentinelAppPackageBinary> createRepeated() => $pb.PbList<ReportAppPackagesRequest_SentinelAppPackageBinary>();
+  @$core.pragma('dart2js:noInline')
+  static ReportAppPackagesRequest_SentinelAppPackageBinary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportAppPackagesRequest_SentinelAppPackageBinary>(create);
+  static ReportAppPackagesRequest_SentinelAppPackageBinary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $7.AppPackageBinary get appPackageBinary => $_getN(1);
+  @$pb.TagNumber(2)
+  set appPackageBinary($7.AppPackageBinary v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAppPackageBinary() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAppPackageBinary() => clearField(2);
+  @$pb.TagNumber(2)
+  $7.AppPackageBinary ensureAppPackageBinary() => $_ensure(1);
+}
+
 class ReportAppPackagesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReportAppPackagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.AppPackageBinary>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageBinaries', $pb.PbFieldType.PM, subBuilder: $7.AppPackageBinary.create)
+    ..pc<ReportAppPackagesRequest_SentinelAppPackageBinary>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sentinelAppPackageBinaries', $pb.PbFieldType.PM, subBuilder: ReportAppPackagesRequest_SentinelAppPackageBinary.create)
     ..hasRequiredFields = false
   ;
 
   ReportAppPackagesRequest._() : super();
   factory ReportAppPackagesRequest({
-    $core.Iterable<$7.AppPackageBinary>? appPackageBinaries,
+    $core.Iterable<ReportAppPackagesRequest_SentinelAppPackageBinary>? sentinelAppPackageBinaries,
   }) {
     final _result = create();
-    if (appPackageBinaries != null) {
-      _result.appPackageBinaries.addAll(appPackageBinaries);
+    if (sentinelAppPackageBinaries != null) {
+      _result.sentinelAppPackageBinaries.addAll(sentinelAppPackageBinaries);
     }
     return _result;
   }
@@ -1598,7 +1661,7 @@ class ReportAppPackagesRequest extends $pb.GeneratedMessage {
   static ReportAppPackagesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$7.AppPackageBinary> get appPackageBinaries => $_getList(0);
+  $core.List<ReportAppPackagesRequest_SentinelAppPackageBinary> get sentinelAppPackageBinaries => $_getList(0);
 }
 
 class ReportAppPackagesResponse extends $pb.GeneratedMessage {
@@ -2204,20 +2267,15 @@ class DownloadGameSaveFileResponse extends $pb.GeneratedMessage {
 
 class ListGameSaveFilesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFilesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appPackageId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
   ListGameSaveFilesRequest._() : super();
   factory ListGameSaveFilesRequest({
-    $7.PagingRequest? paging,
     $7.InternalID? appPackageId,
   }) {
     final _result = create();
-    if (paging != null) {
-      _result.paging = paging;
-    }
     if (appPackageId != null) {
       _result.appPackageId = appPackageId;
     }
@@ -2245,26 +2303,15 @@ class ListGameSaveFilesRequest extends $pb.GeneratedMessage {
   static ListGameSaveFilesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $7.InternalID get appPackageId => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set appPackageId($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPaging() => $_has(0);
+  $core.bool hasAppPackageId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearAppPackageId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $7.InternalID get appPackageId => $_getN(1);
-  @$pb.TagNumber(2)
-  set appPackageId($7.InternalID v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasAppPackageId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearAppPackageId() => clearField(2);
-  @$pb.TagNumber(2)
-  $7.InternalID ensureAppPackageId() => $_ensure(1);
+  $7.InternalID ensureAppPackageId() => $_ensure(0);
 }
 
 class ListGameSaveFilesResponse_Result extends $pb.GeneratedMessage {
@@ -2332,20 +2379,15 @@ class ListGameSaveFilesResponse_Result extends $pb.GeneratedMessage {
 
 class ListGameSaveFilesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListGameSaveFilesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<ListGameSaveFilesResponse_Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'results', $pb.PbFieldType.PM, subBuilder: ListGameSaveFilesResponse_Result.create)
+    ..pc<ListGameSaveFilesResponse_Result>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'results', $pb.PbFieldType.PM, subBuilder: ListGameSaveFilesResponse_Result.create)
     ..hasRequiredFields = false
   ;
 
   ListGameSaveFilesResponse._() : super();
   factory ListGameSaveFilesResponse({
-    $7.PagingResponse? paging,
     $core.Iterable<ListGameSaveFilesResponse_Result>? results,
   }) {
     final _result = create();
-    if (paging != null) {
-      _result.paging = paging;
-    }
     if (results != null) {
       _result.results.addAll(results);
     }
@@ -2373,18 +2415,7 @@ class ListGameSaveFilesResponse extends $pb.GeneratedMessage {
   static ListGameSaveFilesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
-  @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasPaging() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
-  @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.List<ListGameSaveFilesResponse_Result> get results => $_getList(1);
+  $core.List<ListGameSaveFilesResponse_Result> get results => $_getList(0);
 }
 
 class RemoveGameSaveFileRequest extends $pb.GeneratedMessage {

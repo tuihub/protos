@@ -340,12 +340,22 @@ final $typed_data.Uint8List listAppPackagesResponseDescriptor = $convert.base64D
 const ReportAppPackagesRequest$json = const {
   '1': 'ReportAppPackagesRequest',
   '2': const [
-    const {'1': 'app_package_binaries', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppPackageBinary', '10': 'appPackageBinaries'},
+    const {'1': 'sentinel_app_package_binaries', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary', '10': 'sentinelAppPackageBinaries'},
+  ],
+  '3': const [ReportAppPackagesRequest_SentinelAppPackageBinary$json],
+};
+
+@$core.Deprecated('Use reportAppPackagesRequestDescriptor instead')
+const ReportAppPackagesRequest_SentinelAppPackageBinary$json = const {
+  '1': 'SentinelAppPackageBinary',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    const {'1': 'app_package_binary', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.AppPackageBinary', '10': 'appPackageBinary'},
   ],
 };
 
 /// Descriptor for `ReportAppPackagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List reportAppPackagesRequestDescriptor = $convert.base64Decode('ChhSZXBvcnRBcHBQYWNrYWdlc1JlcXVlc3QSUAoUYXBwX3BhY2thZ2VfYmluYXJpZXMYASADKAsyHi5saWJyYXJpYW4udjEuQXBwUGFja2FnZUJpbmFyeVISYXBwUGFja2FnZUJpbmFyaWVz');
+final $typed_data.Uint8List reportAppPackagesRequestDescriptor = $convert.base64Decode('ChhSZXBvcnRBcHBQYWNrYWdlc1JlcXVlc3QSiwEKHXNlbnRpbmVsX2FwcF9wYWNrYWdlX2JpbmFyaWVzGAEgAygLMkgubGlicmFyaWFuLnNlcGhpcmFoLnYxLlJlcG9ydEFwcFBhY2thZ2VzUmVxdWVzdC5TZW50aW5lbEFwcFBhY2thZ2VCaW5hcnlSGnNlbnRpbmVsQXBwUGFja2FnZUJpbmFyaWVzGngKGFNlbnRpbmVsQXBwUGFja2FnZUJpbmFyeRIOCgJpZBgBIAEoA1ICaWQSTAoSYXBwX3BhY2thZ2VfYmluYXJ5GAIgASgLMh4ubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VCaW5hcnlSEGFwcFBhY2thZ2VCaW5hcnk=');
 @$core.Deprecated('Use reportAppPackagesResponseDescriptor instead')
 const ReportAppPackagesResponse$json = const {
   '1': 'ReportAppPackagesResponse',
@@ -471,19 +481,17 @@ final $typed_data.Uint8List downloadGameSaveFileResponseDescriptor = $convert.ba
 const ListGameSaveFilesRequest$json = const {
   '1': 'ListGameSaveFilesRequest',
   '2': const [
-    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    const {'1': 'app_package_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appPackageId'},
+    const {'1': 'app_package_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appPackageId'},
   ],
 };
 
 /// Descriptor for `ListGameSaveFilesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listGameSaveFilesRequestDescriptor = $convert.base64Decode('ChhMaXN0R2FtZVNhdmVGaWxlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI+Cg5hcHBfcGFja2FnZV9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxhcHBQYWNrYWdlSWQ=');
+final $typed_data.Uint8List listGameSaveFilesRequestDescriptor = $convert.base64Decode('ChhMaXN0R2FtZVNhdmVGaWxlc1JlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlk');
 @$core.Deprecated('Use listGameSaveFilesResponseDescriptor instead')
 const ListGameSaveFilesResponse$json = const {
   '1': 'ListGameSaveFilesResponse',
   '2': const [
-    const {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    const {'1': 'results', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ListGameSaveFilesResponse.Result', '10': 'results'},
+    const {'1': 'results', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ListGameSaveFilesResponse.Result', '10': 'results'},
   ],
   '3': const [ListGameSaveFilesResponse_Result$json],
 };
@@ -498,7 +506,7 @@ const ListGameSaveFilesResponse_Result$json = const {
 };
 
 /// Descriptor for `ListGameSaveFilesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listGameSaveFilesResponseDescriptor = $convert.base64Decode('ChlMaXN0R2FtZVNhdmVGaWxlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElEKB3Jlc3VsdHMYAiADKAsyNy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZS5SZXN1bHRSB3Jlc3VsdHMaWQoGUmVzdWx0EjcKBGZpbGUYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZU1ldGFkYXRhUgRmaWxlEhYKBnBpbm5lZBgCIAEoCFIGcGlubmVk');
+final $typed_data.Uint8List listGameSaveFilesResponseDescriptor = $convert.base64Decode('ChlMaXN0R2FtZVNhdmVGaWxlc1Jlc3BvbnNlElEKB3Jlc3VsdHMYASADKAsyNy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTGlzdEdhbWVTYXZlRmlsZXNSZXNwb25zZS5SZXN1bHRSB3Jlc3VsdHMaWQoGUmVzdWx0EjcKBGZpbGUYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmlsZU1ldGFkYXRhUgRmaWxlEhYKBnBpbm5lZBgCIAEoCFIGcGlubmVk');
 @$core.Deprecated('Use removeGameSaveFileRequestDescriptor instead')
 const RemoveGameSaveFileRequest$json = const {
   '1': 'RemoveGameSaveFileRequest',

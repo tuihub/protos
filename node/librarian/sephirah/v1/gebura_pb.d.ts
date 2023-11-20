@@ -749,10 +749,10 @@ export namespace ListAppPackagesResponse {
 }
 
 export class ReportAppPackagesRequest extends jspb.Message {
-  clearAppPackageBinariesList(): void;
-  getAppPackageBinariesList(): Array<librarian_v1_common_pb.AppPackageBinary>;
-  setAppPackageBinariesList(value: Array<librarian_v1_common_pb.AppPackageBinary>): void;
-  addAppPackageBinaries(value?: librarian_v1_common_pb.AppPackageBinary, index?: number): librarian_v1_common_pb.AppPackageBinary;
+  clearSentinelAppPackageBinariesList(): void;
+  getSentinelAppPackageBinariesList(): Array<ReportAppPackagesRequest.SentinelAppPackageBinary>;
+  setSentinelAppPackageBinariesList(value: Array<ReportAppPackagesRequest.SentinelAppPackageBinary>): void;
+  addSentinelAppPackageBinaries(value?: ReportAppPackagesRequest.SentinelAppPackageBinary, index?: number): ReportAppPackagesRequest.SentinelAppPackageBinary;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportAppPackagesRequest.AsObject;
@@ -766,7 +766,33 @@ export class ReportAppPackagesRequest extends jspb.Message {
 
 export namespace ReportAppPackagesRequest {
   export type AsObject = {
-    appPackageBinariesList: Array<librarian_v1_common_pb.AppPackageBinary.AsObject>,
+    sentinelAppPackageBinariesList: Array<ReportAppPackagesRequest.SentinelAppPackageBinary.AsObject>,
+  }
+
+  export class SentinelAppPackageBinary extends jspb.Message {
+    getId(): number;
+    setId(value: number): void;
+
+    hasAppPackageBinary(): boolean;
+    clearAppPackageBinary(): void;
+    getAppPackageBinary(): librarian_v1_common_pb.AppPackageBinary | undefined;
+    setAppPackageBinary(value?: librarian_v1_common_pb.AppPackageBinary): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SentinelAppPackageBinary.AsObject;
+    static toObject(includeInstance: boolean, msg: SentinelAppPackageBinary): SentinelAppPackageBinary.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SentinelAppPackageBinary, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SentinelAppPackageBinary;
+    static deserializeBinaryFromReader(message: SentinelAppPackageBinary, reader: jspb.BinaryReader): SentinelAppPackageBinary;
+  }
+
+  export namespace SentinelAppPackageBinary {
+    export type AsObject = {
+      id: number,
+      appPackageBinary?: librarian_v1_common_pb.AppPackageBinary.AsObject,
+    }
   }
 }
 
@@ -1047,11 +1073,6 @@ export namespace DownloadGameSaveFileResponse {
 }
 
 export class ListGameSaveFilesRequest extends jspb.Message {
-  hasPaging(): boolean;
-  clearPaging(): void;
-  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
-  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
-
   hasAppPackageId(): boolean;
   clearAppPackageId(): void;
   getAppPackageId(): librarian_v1_common_pb.InternalID | undefined;
@@ -1069,17 +1090,11 @@ export class ListGameSaveFilesRequest extends jspb.Message {
 
 export namespace ListGameSaveFilesRequest {
   export type AsObject = {
-    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class ListGameSaveFilesResponse extends jspb.Message {
-  hasPaging(): boolean;
-  clearPaging(): void;
-  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
-  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
-
   clearResultsList(): void;
   getResultsList(): Array<ListGameSaveFilesResponse.Result>;
   setResultsList(value: Array<ListGameSaveFilesResponse.Result>): void;
@@ -1097,7 +1112,6 @@ export class ListGameSaveFilesResponse extends jspb.Message {
 
 export namespace ListGameSaveFilesResponse {
   export type AsObject = {
-    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     resultsList: Array<ListGameSaveFilesResponse.Result.AsObject>,
   }
 
