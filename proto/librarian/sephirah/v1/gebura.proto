@@ -196,8 +196,7 @@ message DownloadGameSaveFileResponse {
 }
 
 message ListGameSaveFilesRequest {
-  librarian.v1.PagingRequest paging = 1;
-  librarian.v1.InternalID app_package_id = 2;
+  librarian.v1.InternalID app_package_id = 1;
 }
 
 message ListGameSaveFilesResponse {
@@ -205,8 +204,7 @@ message ListGameSaveFilesResponse {
     FileMetadata file = 1;
     bool pinned = 2;
   }
-  librarian.v1.PagingResponse paging = 1;
-  repeated Result results = 2;
+  repeated Result results = 1;
 }
 
 message RemoveGameSaveFileRequest {
