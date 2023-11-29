@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.43](https://github.com/tuihub/protos/compare/v0.2.42...v0.2.43) (2023-11-29)
+
+
+### Features
+
+* add TimeAggregation ([966ad90](https://github.com/tuihub/protos/commit/966ad90df6590f27d4e3c3c489a4259945c88657))
+
 ## [0.2.42](https://github.com/tuihub/protos/compare/v0.2.41...v0.2.42) (2023-11-20)
 
 
