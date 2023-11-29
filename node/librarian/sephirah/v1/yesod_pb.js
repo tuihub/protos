@@ -38,7 +38,6 @@ goog.exportSymbol('proto.librarian.sephirah.v1.GetBatchFeedItemsResponse', null,
 goog.exportSymbol('proto.librarian.sephirah.v1.GetFeedItemRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GetFeedItemResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GroupFeedItemsRequest', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.GroupFeedItemsRequest.GroupBy', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GroupFeedItemsResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListFeedConfigCategoriesRequest', null, global);
@@ -2772,14 +2771,13 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupBy: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    publishTimeAggregation: (f = msg.getPublishTimeAggregation()) && librarian_v1_common_pb.TimeAggregation.toObject(includeInstance, f),
     feedIdFilterList: jspb.Message.toObjectList(msg.getFeedIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
     authorIdFilterList: jspb.Message.toObjectList(msg.getAuthorIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
     publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
     groupSize: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
@@ -2818,8 +2816,9 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.librarian.sephirah.v1.GroupFeedItemsRequest.GroupBy} */ (reader.readEnum());
-      msg.setGroupBy(value);
+      var value = new librarian_v1_common_pb.TimeAggregation;
+      reader.readMessage(value,librarian_v1_common_pb.TimeAggregation.deserializeBinaryFromReader);
+      msg.setPublishTimeAggregation(value);
       break;
     case 2:
       var value = new librarian_v1_common_pb.InternalID;
@@ -2838,11 +2837,6 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.deserializeBinaryFromReader = 
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addCategoryFilter(value);
-      break;
-    case 6:
-      var value = new librarian_v1_common_pb.TimeRange;
-      reader.readMessage(value,librarian_v1_common_pb.TimeRange.deserializeBinaryFromReader);
-      msg.setPublishTimeRange(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2877,11 +2871,12 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.serializeBinary = fu
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getGroupBy();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getPublishTimeAggregation();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      librarian_v1_common_pb.TimeAggregation.serializeBinaryToWriter
     );
   }
   f = message.getFeedIdFilterList();
@@ -2914,14 +2909,6 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.serializeBinaryToWriter = func
       f
     );
   }
-  f = message.getPublishTimeRange();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      librarian_v1_common_pb.TimeRange.serializeBinaryToWriter
-    );
-  }
   f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
     writer.writeInt32(
@@ -2933,30 +2920,39 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.serializeBinaryToWriter = func
 
 
 /**
- * @enum {number}
+ * optional librarian.v1.TimeAggregation publish_time_aggregation = 1;
+ * @return {?proto.librarian.v1.TimeAggregation}
  */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.GroupBy = {
-  GROUP_BY_UNSPECIFIED: 0,
-  GROUP_BY_YEAR: 1,
-  GROUP_BY_MONTH: 2,
-  GROUP_BY_DAY: 3
-};
-
-/**
- * optional GroupBy group_by = 1;
- * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest.GroupBy}
- */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getGroupBy = function() {
-  return /** @type {!proto.librarian.sephirah.v1.GroupFeedItemsRequest.GroupBy} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getPublishTimeAggregation = function() {
+  return /** @type{?proto.librarian.v1.TimeAggregation} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeAggregation, 1));
 };
 
 
 /**
- * @param {!proto.librarian.sephirah.v1.GroupFeedItemsRequest.GroupBy} value
+ * @param {?proto.librarian.v1.TimeAggregation|undefined} value
+ * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
+*/
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setPublishTimeAggregation = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
  */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setGroupBy = function(value) {
-  return jspb.Message.setProto3EnumField(this, 1, value);
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearPublishTimeAggregation = function() {
+  return this.setPublishTimeAggregation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.hasPublishTimeAggregation = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3107,43 +3103,6 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.addCategoryFilter = 
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearCategoryFilterList = function() {
   return this.setCategoryFilterList([]);
-};
-
-
-/**
- * optional librarian.v1.TimeRange publish_time_range = 6;
- * @return {?proto.librarian.v1.TimeRange}
- */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getPublishTimeRange = function() {
-  return /** @type{?proto.librarian.v1.TimeRange} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 6));
-};
-
-
-/**
- * @param {?proto.librarian.v1.TimeRange|undefined} value
- * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
-*/
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.setPublishTimeRange = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.GroupFeedItemsRequest} returns this
- */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearPublishTimeRange = function() {
-  return this.setPublishTimeRange(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.hasPublishTimeRange = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 

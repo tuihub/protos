@@ -416,26 +416,37 @@ const AddAppPackageRunTimeResponse$json = const {
 
 /// Descriptor for `AddAppPackageRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addAppPackageRunTimeResponseDescriptor = $convert.base64Decode('ChxBZGRBcHBQYWNrYWdlUnVuVGltZVJlc3BvbnNl');
-@$core.Deprecated('Use getAppPackageRunTimeRequestDescriptor instead')
-const GetAppPackageRunTimeRequest$json = const {
-  '1': 'GetAppPackageRunTimeRequest',
+@$core.Deprecated('Use sumAppPackageRunTimeRequestDescriptor instead')
+const SumAppPackageRunTimeRequest$json = const {
+  '1': 'SumAppPackageRunTimeRequest',
   '2': const [
     const {'1': 'app_package_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appPackageId'},
+    const {'1': 'time_aggregation', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.TimeAggregation', '10': 'timeAggregation'},
   ],
 };
 
-/// Descriptor for `GetAppPackageRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAppPackageRunTimeRequestDescriptor = $convert.base64Decode('ChtHZXRBcHBQYWNrYWdlUnVuVGltZVJlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlk');
-@$core.Deprecated('Use getAppPackageRunTimeResponseDescriptor instead')
-const GetAppPackageRunTimeResponse$json = const {
-  '1': 'GetAppPackageRunTimeResponse',
+/// Descriptor for `SumAppPackageRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sumAppPackageRunTimeRequestDescriptor = $convert.base64Decode('ChtTdW1BcHBQYWNrYWdlUnVuVGltZVJlcXVlc3QSPgoOYXBwX3BhY2thZ2VfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMYXBwUGFja2FnZUlkEkgKEHRpbWVfYWdncmVnYXRpb24YAiABKAsyHS5saWJyYXJpYW4udjEuVGltZUFnZ3JlZ2F0aW9uUg90aW1lQWdncmVnYXRpb24=');
+@$core.Deprecated('Use sumAppPackageRunTimeResponseDescriptor instead')
+const SumAppPackageRunTimeResponse$json = const {
+  '1': 'SumAppPackageRunTimeResponse',
   '2': const [
-    const {'1': 'duration', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'duration'},
+    const {'1': 'run_time_groups', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SumAppPackageRunTimeResponse.Group', '10': 'runTimeGroups'},
+  ],
+  '3': const [SumAppPackageRunTimeResponse_Group$json],
+};
+
+@$core.Deprecated('Use sumAppPackageRunTimeResponseDescriptor instead')
+const SumAppPackageRunTimeResponse_Group$json = const {
+  '1': 'Group',
+  '2': const [
+    const {'1': 'time_range', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRange'},
+    const {'1': 'duration', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'duration'},
   ],
 };
 
-/// Descriptor for `GetAppPackageRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getAppPackageRunTimeResponseDescriptor = $convert.base64Decode('ChxHZXRBcHBQYWNrYWdlUnVuVGltZVJlc3BvbnNlEjUKCGR1cmF0aW9uGAEgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUghkdXJhdGlvbg==');
+/// Descriptor for `SumAppPackageRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sumAppPackageRunTimeResponseDescriptor = $convert.base64Decode('ChxTdW1BcHBQYWNrYWdlUnVuVGltZVJlc3BvbnNlEmEKD3J1bl90aW1lX2dyb3VwcxgBIAMoCzI5LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TdW1BcHBQYWNrYWdlUnVuVGltZVJlc3BvbnNlLkdyb3VwUg1ydW5UaW1lR3JvdXBzGnYKBUdyb3VwEjYKCnRpbWVfcmFuZ2UYASABKAsyFy5saWJyYXJpYW4udjEuVGltZVJhbmdlUgl0aW1lUmFuZ2USNQoIZHVyYXRpb24YAiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SCGR1cmF0aW9u');
 @$core.Deprecated('Use uploadGameSaveFileRequestDescriptor instead')
 const UploadGameSaveFileRequest$json = const {
   '1': 'UploadGameSaveFileRequest',
@@ -670,21 +681,3 @@ const RemoveAppCategoryResponse$json = const {
 
 /// Descriptor for `RemoveAppCategoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeAppCategoryResponseDescriptor = $convert.base64Decode('ChlSZW1vdmVBcHBDYXRlZ29yeVJlc3BvbnNl');
-@$core.Deprecated('Use updateAppAppCategoriesRequestDescriptor instead')
-const UpdateAppAppCategoriesRequest$json = const {
-  '1': 'UpdateAppAppCategoriesRequest',
-  '2': const [
-    const {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
-    const {'1': 'app_category_ids', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appCategoryIds'},
-  ],
-};
-
-/// Descriptor for `UpdateAppAppCategoriesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateAppAppCategoriesRequestDescriptor = $convert.base64Decode('Ch1VcGRhdGVBcHBBcHBDYXRlZ29yaWVzUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQSQgoQYXBwX2NhdGVnb3J5X2lkcxgCIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg5hcHBDYXRlZ29yeUlkcw==');
-@$core.Deprecated('Use updateAppAppCategoriesResponseDescriptor instead')
-const UpdateAppAppCategoriesResponse$json = const {
-  '1': 'UpdateAppAppCategoriesResponse',
-};
-
-/// Descriptor for `UpdateAppAppCategoriesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateAppAppCategoriesResponseDescriptor = $convert.base64Decode('Ch5VcGRhdGVBcHBBcHBDYXRlZ29yaWVzUmVzcG9uc2U=');

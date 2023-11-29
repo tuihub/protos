@@ -78,6 +78,41 @@ export namespace TimeRange {
   }
 }
 
+export class TimeAggregation extends jspb.Message {
+  getAggregationType(): TimeAggregation.AggregationTypeMap[keyof TimeAggregation.AggregationTypeMap];
+  setAggregationType(value: TimeAggregation.AggregationTypeMap[keyof TimeAggregation.AggregationTypeMap]): void;
+
+  hasTimeRange(): boolean;
+  clearTimeRange(): void;
+  getTimeRange(): TimeRange | undefined;
+  setTimeRange(value?: TimeRange): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TimeAggregation.AsObject;
+  static toObject(includeInstance: boolean, msg: TimeAggregation): TimeAggregation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TimeAggregation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TimeAggregation;
+  static deserializeBinaryFromReader(message: TimeAggregation, reader: jspb.BinaryReader): TimeAggregation;
+}
+
+export namespace TimeAggregation {
+  export type AsObject = {
+    aggregationType: TimeAggregation.AggregationTypeMap[keyof TimeAggregation.AggregationTypeMap],
+    timeRange?: TimeRange.AsObject,
+  }
+
+  export interface AggregationTypeMap {
+    AGGREGATION_TYPE_UNSPECIFIED: 0;
+    AGGREGATION_TYPE_YEAR: 1;
+    AGGREGATION_TYPE_MONTH: 2;
+    AGGREGATION_TYPE_DAY: 3;
+  }
+
+  export const AggregationType: AggregationTypeMap;
+}
+
 export class InternalID extends jspb.Message {
   getId(): number;
   setId(value: number): void;
@@ -409,6 +444,11 @@ export class AppCategory extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  clearAppIdsList(): void;
+  getAppIdsList(): Array<InternalID>;
+  setAppIdsList(value: Array<InternalID>): void;
+  addAppIds(value?: InternalID, index?: number): InternalID;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppCategory.AsObject;
   static toObject(includeInstance: boolean, msg: AppCategory): AppCategory.AsObject;
@@ -423,6 +463,7 @@ export namespace AppCategory {
   export type AsObject = {
     id?: InternalID.AsObject,
     name: string,
+    appIdsList: Array<InternalID.AsObject>,
   }
 }
 

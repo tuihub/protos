@@ -190,6 +190,69 @@ class TimeRange extends $pb.GeneratedMessage {
   $1.Duration ensureDuration() => $_ensure(1);
 }
 
+class TimeAggregation extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeAggregation', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..e<TimeAggregation_AggregationType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'aggregationType', $pb.PbFieldType.OE, defaultOrMaker: TimeAggregation_AggregationType.AGGREGATION_TYPE_UNSPECIFIED, valueOf: TimeAggregation_AggregationType.valueOf, enumValues: TimeAggregation_AggregationType.values)
+    ..aOM<TimeRange>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRange', subBuilder: TimeRange.create)
+    ..hasRequiredFields = false
+  ;
+
+  TimeAggregation._() : super();
+  factory TimeAggregation({
+    TimeAggregation_AggregationType? aggregationType,
+    TimeRange? timeRange,
+  }) {
+    final _result = create();
+    if (aggregationType != null) {
+      _result.aggregationType = aggregationType;
+    }
+    if (timeRange != null) {
+      _result.timeRange = timeRange;
+    }
+    return _result;
+  }
+  factory TimeAggregation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeAggregation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TimeAggregation clone() => TimeAggregation()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TimeAggregation copyWith(void Function(TimeAggregation) updates) => super.copyWith((message) => updates(message as TimeAggregation)) as TimeAggregation; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static TimeAggregation create() => TimeAggregation._();
+  TimeAggregation createEmptyInstance() => create();
+  static $pb.PbList<TimeAggregation> createRepeated() => $pb.PbList<TimeAggregation>();
+  @$core.pragma('dart2js:noInline')
+  static TimeAggregation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeAggregation>(create);
+  static TimeAggregation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TimeAggregation_AggregationType get aggregationType => $_getN(0);
+  @$pb.TagNumber(1)
+  set aggregationType(TimeAggregation_AggregationType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAggregationType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAggregationType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  TimeRange get timeRange => $_getN(1);
+  @$pb.TagNumber(2)
+  set timeRange(TimeRange v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTimeRange() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTimeRange() => clearField(2);
+  @$pb.TagNumber(2)
+  TimeRange ensureTimeRange() => $_ensure(1);
+}
+
 class InternalID extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InternalID', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
@@ -1036,6 +1099,7 @@ class AppCategory extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AppCategory', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: InternalID.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..pc<InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appIds', $pb.PbFieldType.PM, subBuilder: InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1043,6 +1107,7 @@ class AppCategory extends $pb.GeneratedMessage {
   factory AppCategory({
     InternalID? id,
     $core.String? name,
+    $core.Iterable<InternalID>? appIds,
   }) {
     final _result = create();
     if (id != null) {
@@ -1050,6 +1115,9 @@ class AppCategory extends $pb.GeneratedMessage {
     }
     if (name != null) {
       _result.name = name;
+    }
+    if (appIds != null) {
+      _result.appIds.addAll(appIds);
     }
     return _result;
   }
@@ -1093,6 +1161,9 @@ class AppCategory extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<InternalID> get appIds => $_getList(2);
 }
 
 class Feed extends $pb.GeneratedMessage {

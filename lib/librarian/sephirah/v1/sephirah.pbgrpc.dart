@@ -285,12 +285,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($4.AddAppPackageRunTimeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $4.AddAppPackageRunTimeResponse.fromBuffer(value));
-  static final _$getAppPackageRunTime = $grpc.ClientMethod<
-          $4.GetAppPackageRunTimeRequest, $4.GetAppPackageRunTimeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime',
-      ($4.GetAppPackageRunTimeRequest value) => value.writeToBuffer(),
+  static final _$sumAppPackageRunTime = $grpc.ClientMethod<
+          $4.SumAppPackageRunTimeRequest, $4.SumAppPackageRunTimeResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime',
+      ($4.SumAppPackageRunTimeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
-          $4.GetAppPackageRunTimeResponse.fromBuffer(value));
+          $4.SumAppPackageRunTimeResponse.fromBuffer(value));
   static final _$uploadGameSaveFile = $grpc.ClientMethod<
           $4.UploadGameSaveFileRequest, $4.UploadGameSaveFileResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile',
@@ -364,12 +364,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($4.RemoveAppCategoryRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $4.RemoveAppCategoryResponse.fromBuffer(value));
-  static final _$updateAppAppCategories = $grpc.ClientMethod<
-          $4.UpdateAppAppCategoriesRequest, $4.UpdateAppAppCategoriesResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppAppCategories',
-      ($4.UpdateAppAppCategoriesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) =>
-          $4.UpdateAppAppCategoriesResponse.fromBuffer(value));
   static final _$createNotifyTarget = $grpc.ClientMethod<
           $5.CreateNotifyTargetRequest, $5.CreateNotifyTargetResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget',
@@ -723,10 +717,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$addAppPackageRunTime, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.GetAppPackageRunTimeResponse> getAppPackageRunTime(
-      $4.GetAppPackageRunTimeRequest request,
+  $grpc.ResponseFuture<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime(
+      $4.SumAppPackageRunTimeRequest request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAppPackageRunTime, request, options: options);
+    return $createUnaryCall(_$sumAppPackageRunTime, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.UploadGameSaveFileResponse> uploadGameSaveFile(
@@ -800,13 +794,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       $4.RemoveAppCategoryRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeAppCategory, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.UpdateAppAppCategoriesResponse>
-      updateAppAppCategories($4.UpdateAppAppCategoriesRequest request,
-          {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateAppAppCategories, request,
-        options: options);
   }
 
   $grpc.ResponseFuture<$5.CreateNotifyTargetResponse> createNotifyTarget(
@@ -1263,15 +1250,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $4.AddAppPackageRunTimeRequest.fromBuffer(value),
         ($4.AddAppPackageRunTimeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.GetAppPackageRunTimeRequest,
-            $4.GetAppPackageRunTimeResponse>(
-        'GetAppPackageRunTime',
-        getAppPackageRunTime_Pre,
+    $addMethod($grpc.ServiceMethod<$4.SumAppPackageRunTimeRequest,
+            $4.SumAppPackageRunTimeResponse>(
+        'SumAppPackageRunTime',
+        sumAppPackageRunTime_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $4.GetAppPackageRunTimeRequest.fromBuffer(value),
-        ($4.GetAppPackageRunTimeResponse value) => value.writeToBuffer()));
+            $4.SumAppPackageRunTimeRequest.fromBuffer(value),
+        ($4.SumAppPackageRunTimeResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.UploadGameSaveFileRequest,
             $4.UploadGameSaveFileResponse>(
         'UploadGameSaveFile',
@@ -1380,15 +1367,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $4.RemoveAppCategoryRequest.fromBuffer(value),
         ($4.RemoveAppCategoryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UpdateAppAppCategoriesRequest,
-            $4.UpdateAppAppCategoriesResponse>(
-        'UpdateAppAppCategories',
-        updateAppAppCategories_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $4.UpdateAppAppCategoriesRequest.fromBuffer(value),
-        ($4.UpdateAppAppCategoriesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$5.CreateNotifyTargetRequest,
             $5.CreateNotifyTargetResponse>(
         'CreateNotifyTarget',
@@ -1737,10 +1715,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return addAppPackageRunTime(call, await request);
   }
 
-  $async.Future<$4.GetAppPackageRunTimeResponse> getAppPackageRunTime_Pre(
+  $async.Future<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime_Pre(
       $grpc.ServiceCall call,
-      $async.Future<$4.GetAppPackageRunTimeRequest> request) async {
-    return getAppPackageRunTime(call, await request);
+      $async.Future<$4.SumAppPackageRunTimeRequest> request) async {
+    return sumAppPackageRunTime(call, await request);
   }
 
   $async.Future<$4.UploadGameSaveFileResponse> uploadGameSaveFile_Pre(
@@ -1813,12 +1791,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call,
       $async.Future<$4.RemoveAppCategoryRequest> request) async {
     return removeAppCategory(call, await request);
-  }
-
-  $async.Future<$4.UpdateAppAppCategoriesResponse> updateAppAppCategories_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$4.UpdateAppAppCategoriesRequest> request) async {
-    return updateAppAppCategories(call, await request);
   }
 
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget_Pre(
@@ -1994,8 +1966,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $async.Stream<$4.ReportAppPackagesRequest> request);
   $async.Future<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime(
       $grpc.ServiceCall call, $4.AddAppPackageRunTimeRequest request);
-  $async.Future<$4.GetAppPackageRunTimeResponse> getAppPackageRunTime(
-      $grpc.ServiceCall call, $4.GetAppPackageRunTimeRequest request);
+  $async.Future<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime(
+      $grpc.ServiceCall call, $4.SumAppPackageRunTimeRequest request);
   $async.Future<$4.UploadGameSaveFileResponse> uploadGameSaveFile(
       $grpc.ServiceCall call, $4.UploadGameSaveFileRequest request);
   $async.Future<$4.DownloadGameSaveFileResponse> downloadGameSaveFile(
@@ -2020,8 +1992,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $4.UpdateAppCategoryRequest request);
   $async.Future<$4.RemoveAppCategoryResponse> removeAppCategory(
       $grpc.ServiceCall call, $4.RemoveAppCategoryRequest request);
-  $async.Future<$4.UpdateAppAppCategoriesResponse> updateAppAppCategories(
-      $grpc.ServiceCall call, $4.UpdateAppAppCategoriesRequest request);
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget(
       $grpc.ServiceCall call, $5.CreateNotifyTargetRequest request);
   $async.Future<$5.UpdateNotifyTargetResponse> updateNotifyTarget(

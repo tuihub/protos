@@ -231,9 +231,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeResponse> __Marshaller_librarian_sephirah_v1_AddAppPackageRunTimeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest> __Marshaller_librarian_sephirah_v1_GetAppPackageRunTimeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest> __Marshaller_librarian_sephirah_v1_SumAppPackageRunTimeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse> __Marshaller_librarian_sephirah_v1_GetAppPackageRunTimeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse> __Marshaller_librarian_sephirah_v1_SumAppPackageRunTimeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest> __Marshaller_librarian_sephirah_v1_UploadGameSaveFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -282,10 +282,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest> __Marshaller_librarian_sephirah_v1_RemoveAppCategoryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse> __Marshaller_librarian_sephirah_v1_RemoveAppCategoryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest> __Marshaller_librarian_sephirah_v1_UpdateAppAppCategoriesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse> __Marshaller_librarian_sephirah_v1_UpdateAppAppCategoriesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest> __Marshaller_librarian_sephirah_v1_CreateNotifyTargetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -696,12 +692,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_AddAppPackageRunTimeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse> __Method_GetAppPackageRunTime = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse> __Method_SumAppPackageRunTime = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetAppPackageRunTime",
-        __Marshaller_librarian_sephirah_v1_GetAppPackageRunTimeRequest,
-        __Marshaller_librarian_sephirah_v1_GetAppPackageRunTimeResponse);
+        "SumAppPackageRunTime",
+        __Marshaller_librarian_sephirah_v1_SumAppPackageRunTimeRequest,
+        __Marshaller_librarian_sephirah_v1_SumAppPackageRunTimeResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileResponse> __Method_UploadGameSaveFile = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileResponse>(
@@ -798,14 +794,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "RemoveAppCategory",
         __Marshaller_librarian_sephirah_v1_RemoveAppCategoryRequest,
         __Marshaller_librarian_sephirah_v1_RemoveAppCategoryResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse> __Method_UpdateAppAppCategories = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "UpdateAppAppCategories",
-        __Marshaller_librarian_sephirah_v1_UpdateAppAppCategoriesRequest,
-        __Marshaller_librarian_sephirah_v1_UpdateAppAppCategoriesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse> __Method_CreateNotifyTarget = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse>(
@@ -1108,7 +1096,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
       /// <summary>
       /// `Binah` `download_token`
-      /// Server will not check the
+      /// Server will not check the receiving state
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="responseStream">Used for sending responses back to the client.</param>
@@ -1482,7 +1470,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse> GetAppPackageRunTime(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse> SumAppPackageRunTime(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -1627,18 +1615,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse> RemoveAppCategory(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      /// <summary>
-      /// `Gebura` `Normal`
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse> UpdateAppAppCategories(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2454,7 +2430,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Binah` `download_token`
-      /// Server will not check the
+      /// Server will not check the receiving state
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2468,7 +2444,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Binah` `download_token`
-      /// Server will not check the
+      /// Server will not check the receiving state
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3877,9 +3853,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse GetAppPackageRunTime(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse SumAppPackageRunTime(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetAppPackageRunTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return SumAppPackageRunTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// `Gebura` `Normal`
@@ -3888,9 +3864,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse GetAppPackageRunTime(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse SumAppPackageRunTime(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_GetAppPackageRunTime, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_SumAppPackageRunTime, null, options, request);
       }
       /// <summary>
       /// `Gebura` `Normal`
@@ -3901,9 +3877,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse> GetAppPackageRunTimeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse> SumAppPackageRunTimeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetAppPackageRunTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return SumAppPackageRunTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// `Gebura` `Normal`
@@ -3912,9 +3888,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse> GetAppPackageRunTimeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse> SumAppPackageRunTimeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_GetAppPackageRunTime, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_SumAppPackageRunTime, null, options, request);
       }
       /// <summary>
       /// `Gebura` `Normal`
@@ -4491,54 +4467,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse> RemoveAppCategoryAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RemoveAppCategory, null, options, request);
-      }
-      /// <summary>
-      /// `Gebura` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse UpdateAppAppCategories(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return UpdateAppAppCategories(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      /// `Gebura` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse UpdateAppAppCategories(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_UpdateAppAppCategories, null, options, request);
-      }
-      /// <summary>
-      /// `Gebura` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse> UpdateAppAppCategoriesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return UpdateAppAppCategoriesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      /// `Gebura` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse> UpdateAppAppCategoriesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_UpdateAppAppCategories, null, options, request);
       }
       /// <summary>
       /// `Netzach` `Normal`
@@ -5270,7 +5198,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_UnAssignAppPackage, serviceImpl.UnAssignAppPackage)
           .AddMethod(__Method_ReportAppPackages, serviceImpl.ReportAppPackages)
           .AddMethod(__Method_AddAppPackageRunTime, serviceImpl.AddAppPackageRunTime)
-          .AddMethod(__Method_GetAppPackageRunTime, serviceImpl.GetAppPackageRunTime)
+          .AddMethod(__Method_SumAppPackageRunTime, serviceImpl.SumAppPackageRunTime)
           .AddMethod(__Method_UploadGameSaveFile, serviceImpl.UploadGameSaveFile)
           .AddMethod(__Method_DownloadGameSaveFile, serviceImpl.DownloadGameSaveFile)
           .AddMethod(__Method_ListGameSaveFiles, serviceImpl.ListGameSaveFiles)
@@ -5283,7 +5211,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_CreateAppCategory, serviceImpl.CreateAppCategory)
           .AddMethod(__Method_UpdateAppCategory, serviceImpl.UpdateAppCategory)
           .AddMethod(__Method_RemoveAppCategory, serviceImpl.RemoveAppCategory)
-          .AddMethod(__Method_UpdateAppAppCategories, serviceImpl.UpdateAppAppCategories)
           .AddMethod(__Method_CreateNotifyTarget, serviceImpl.CreateNotifyTarget)
           .AddMethod(__Method_UpdateNotifyTarget, serviceImpl.UpdateNotifyTarget)
           .AddMethod(__Method_ListNotifyTargets, serviceImpl.ListNotifyTargets)
@@ -5351,7 +5278,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_UnAssignAppPackage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppPackageRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppPackageResponse>(serviceImpl.UnAssignAppPackage));
       serviceBinder.AddMethod(__Method_ReportAppPackages, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackagesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppPackagesResponse>(serviceImpl.ReportAppPackages));
       serviceBinder.AddMethod(__Method_AddAppPackageRunTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppPackageRunTimeResponse>(serviceImpl.AddAppPackageRunTime));
-      serviceBinder.AddMethod(__Method_GetAppPackageRunTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppPackageRunTimeResponse>(serviceImpl.GetAppPackageRunTime));
+      serviceBinder.AddMethod(__Method_SumAppPackageRunTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppPackageRunTimeResponse>(serviceImpl.SumAppPackageRunTime));
       serviceBinder.AddMethod(__Method_UploadGameSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadGameSaveFileResponse>(serviceImpl.UploadGameSaveFile));
       serviceBinder.AddMethod(__Method_DownloadGameSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadGameSaveFileResponse>(serviceImpl.DownloadGameSaveFile));
       serviceBinder.AddMethod(__Method_ListGameSaveFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListGameSaveFilesResponse>(serviceImpl.ListGameSaveFiles));
@@ -5364,7 +5291,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_CreateAppCategory, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryResponse>(serviceImpl.CreateAppCategory));
       serviceBinder.AddMethod(__Method_UpdateAppCategory, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryResponse>(serviceImpl.UpdateAppCategory));
       serviceBinder.AddMethod(__Method_RemoveAppCategory, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse>(serviceImpl.RemoveAppCategory));
-      serviceBinder.AddMethod(__Method_UpdateAppAppCategories, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppAppCategoriesResponse>(serviceImpl.UpdateAppAppCategories));
       serviceBinder.AddMethod(__Method_CreateNotifyTarget, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse>(serviceImpl.CreateNotifyTarget));
       serviceBinder.AddMethod(__Method_UpdateNotifyTarget, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse>(serviceImpl.UpdateNotifyTarget));
       serviceBinder.AddMethod(__Method_ListNotifyTargets, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse>(serviceImpl.ListNotifyTargets));

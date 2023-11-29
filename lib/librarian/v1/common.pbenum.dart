@@ -77,3 +77,22 @@ class AppPackageSource extends $pb.ProtobufEnum {
   const AppPackageSource._($core.int v, $core.String n) : super(v, n);
 }
 
+class TimeAggregation_AggregationType extends $pb.ProtobufEnum {
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_UNSPECIFIED = TimeAggregation_AggregationType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_UNSPECIFIED');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_YEAR = TimeAggregation_AggregationType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_YEAR');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_MONTH = TimeAggregation_AggregationType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_MONTH');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_DAY = TimeAggregation_AggregationType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_DAY');
+
+  static const $core.List<TimeAggregation_AggregationType> values = <TimeAggregation_AggregationType> [
+    AGGREGATION_TYPE_UNSPECIFIED,
+    AGGREGATION_TYPE_YEAR,
+    AGGREGATION_TYPE_MONTH,
+    AGGREGATION_TYPE_DAY,
+  ];
+
+  static final $core.Map<$core.int, TimeAggregation_AggregationType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static TimeAggregation_AggregationType? valueOf($core.int value) => _byValue[value];
+
+  const TimeAggregation_AggregationType._($core.int v, $core.String n) : super(v, n);
+}
+

@@ -315,8 +315,10 @@ export namespace ListFeedItemsResponse {
 }
 
 export class GroupFeedItemsRequest extends jspb.Message {
-  getGroupBy(): GroupFeedItemsRequest.GroupByMap[keyof GroupFeedItemsRequest.GroupByMap];
-  setGroupBy(value: GroupFeedItemsRequest.GroupByMap[keyof GroupFeedItemsRequest.GroupByMap]): void;
+  hasPublishTimeAggregation(): boolean;
+  clearPublishTimeAggregation(): void;
+  getPublishTimeAggregation(): librarian_v1_common_pb.TimeAggregation | undefined;
+  setPublishTimeAggregation(value?: librarian_v1_common_pb.TimeAggregation): void;
 
   clearFeedIdFilterList(): void;
   getFeedIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
@@ -338,11 +340,6 @@ export class GroupFeedItemsRequest extends jspb.Message {
   setCategoryFilterList(value: Array<string>): void;
   addCategoryFilter(value: string, index?: number): string;
 
-  hasPublishTimeRange(): boolean;
-  clearPublishTimeRange(): void;
-  getPublishTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
-  setPublishTimeRange(value?: librarian_v1_common_pb.TimeRange): void;
-
   hasGroupSize(): boolean;
   clearGroupSize(): void;
   getGroupSize(): number;
@@ -360,23 +357,13 @@ export class GroupFeedItemsRequest extends jspb.Message {
 
 export namespace GroupFeedItemsRequest {
   export type AsObject = {
-    groupBy: GroupFeedItemsRequest.GroupByMap[keyof GroupFeedItemsRequest.GroupByMap],
+    publishTimeAggregation?: librarian_v1_common_pb.TimeAggregation.AsObject,
     feedIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     publishPlatformFilterList: Array<string>,
     categoryFilterList: Array<string>,
-    publishTimeRange?: librarian_v1_common_pb.TimeRange.AsObject,
     groupSize: number,
   }
-
-  export interface GroupByMap {
-    GROUP_BY_UNSPECIFIED: 0;
-    GROUP_BY_YEAR: 1;
-    GROUP_BY_MONTH: 2;
-    GROUP_BY_DAY: 3;
-  }
-
-  export const GroupBy: GroupByMap;
 }
 
 export class GroupFeedItemsResponse extends jspb.Message {

@@ -88,6 +88,29 @@ const TimeRange$json = const {
 
 /// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode('CglUaW1lUmFuZ2USOQoKc3RhcnRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXN0YXJ0VGltZRJACghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbkIJ+vcYBaoBAjIAUghkdXJhdGlvbg==');
+@$core.Deprecated('Use timeAggregationDescriptor instead')
+const TimeAggregation$json = const {
+  '1': 'TimeAggregation',
+  '2': const [
+    const {'1': 'aggregation_type', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.TimeAggregation.AggregationType', '10': 'aggregationType'},
+    const {'1': 'time_range', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRange'},
+  ],
+  '4': const [TimeAggregation_AggregationType$json],
+};
+
+@$core.Deprecated('Use timeAggregationDescriptor instead')
+const TimeAggregation_AggregationType$json = const {
+  '1': 'AggregationType',
+  '2': const [
+    const {'1': 'AGGREGATION_TYPE_UNSPECIFIED', '2': 0},
+    const {'1': 'AGGREGATION_TYPE_YEAR', '2': 1},
+    const {'1': 'AGGREGATION_TYPE_MONTH', '2': 2},
+    const {'1': 'AGGREGATION_TYPE_DAY', '2': 3},
+  ],
+};
+
+/// Descriptor for `TimeAggregation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List timeAggregationDescriptor = $convert.base64Decode('Cg9UaW1lQWdncmVnYXRpb24SWAoQYWdncmVnYXRpb25fdHlwZRgBIAEoDjItLmxpYnJhcmlhbi52MS5UaW1lQWdncmVnYXRpb24uQWdncmVnYXRpb25UeXBlUg9hZ2dyZWdhdGlvblR5cGUSNgoKdGltZV9yYW5nZRgCIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VSCXRpbWVSYW5nZSKEAQoPQWdncmVnYXRpb25UeXBlEiAKHEFHR1JFR0FUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIZChVBR0dSRUdBVElPTl9UWVBFX1lFQVIQARIaChZBR0dSRUdBVElPTl9UWVBFX01PTlRIEAISGAoUQUdHUkVHQVRJT05fVFlQRV9EQVkQAw==');
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = const {
   '1': 'InternalID',
@@ -212,11 +235,12 @@ const AppCategory$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'app_ids', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appIds'},
   ],
 };
 
 /// Descriptor for `AppCategory`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appCategoryDescriptor = $convert.base64Decode('CgtBcHBDYXRlZ29yeRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l');
+final $typed_data.Uint8List appCategoryDescriptor = $convert.base64Decode('CgtBcHBDYXRlZ29yeRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEjEKB2FwcF9pZHMYAyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGYXBwSWRz');
 @$core.Deprecated('Use feedDescriptor instead')
 const Feed$json = const {
   '1': 'Feed',

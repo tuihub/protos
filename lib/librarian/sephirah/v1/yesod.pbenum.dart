@@ -41,22 +41,3 @@ class FeedConfigSource extends $pb.ProtobufEnum {
   const FeedConfigSource._($core.int v, $core.String n) : super(v, n);
 }
 
-class GroupFeedItemsRequest_GroupBy extends $pb.ProtobufEnum {
-  static const GroupFeedItemsRequest_GroupBy GROUP_BY_UNSPECIFIED = GroupFeedItemsRequest_GroupBy._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'GROUP_BY_UNSPECIFIED');
-  static const GroupFeedItemsRequest_GroupBy GROUP_BY_YEAR = GroupFeedItemsRequest_GroupBy._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'GROUP_BY_YEAR');
-  static const GroupFeedItemsRequest_GroupBy GROUP_BY_MONTH = GroupFeedItemsRequest_GroupBy._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'GROUP_BY_MONTH');
-  static const GroupFeedItemsRequest_GroupBy GROUP_BY_DAY = GroupFeedItemsRequest_GroupBy._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'GROUP_BY_DAY');
-
-  static const $core.List<GroupFeedItemsRequest_GroupBy> values = <GroupFeedItemsRequest_GroupBy> [
-    GROUP_BY_UNSPECIFIED,
-    GROUP_BY_YEAR,
-    GROUP_BY_MONTH,
-    GROUP_BY_DAY,
-  ];
-
-  static final $core.Map<$core.int, GroupFeedItemsRequest_GroupBy> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static GroupFeedItemsRequest_GroupBy? valueOf($core.int value) => _byValue[value];
-
-  const GroupFeedItemsRequest_GroupBy._($core.int v, $core.String n) : super(v, n);
-}
-

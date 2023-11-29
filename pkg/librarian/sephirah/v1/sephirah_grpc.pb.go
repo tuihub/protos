@@ -63,7 +63,7 @@ const (
 	LibrarianSephirahService_UnAssignAppPackage_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage"
 	LibrarianSephirahService_ReportAppPackages_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages"
 	LibrarianSephirahService_AddAppPackageRunTime_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime"
-	LibrarianSephirahService_GetAppPackageRunTime_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime"
+	LibrarianSephirahService_SumAppPackageRunTime_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime"
 	LibrarianSephirahService_UploadGameSaveFile_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
 	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
 	LibrarianSephirahService_ListGameSaveFiles_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles"
@@ -76,7 +76,6 @@ const (
 	LibrarianSephirahService_CreateAppCategory_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory"
 	LibrarianSephirahService_UpdateAppCategory_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory"
 	LibrarianSephirahService_RemoveAppCategory_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveAppCategory"
-	LibrarianSephirahService_UpdateAppAppCategories_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppAppCategories"
 	LibrarianSephirahService_CreateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget"
 	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget"
 	LibrarianSephirahService_ListNotifyTargets_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets"
@@ -132,7 +131,7 @@ type LibrarianSephirahServiceClient interface {
 	// Client should ignore in_process response and wait for success or error response.
 	SimpleUploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleUploadFileClient, error)
 	// `Binah` `download_token`
-	// Server will not check the
+	// Server will not check the receiving state
 	SimpleDownloadFile(ctx context.Context, in *SimpleDownloadFileRequest, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error)
 	// `Binah` `upload_token`
 	// Upload file through http url
@@ -199,7 +198,7 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Normal`
 	AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
-	GetAppPackageRunTime(ctx context.Context, in *GetAppPackageRunTimeRequest, opts ...grpc.CallOption) (*GetAppPackageRunTimeResponse, error)
+	SumAppPackageRunTime(ctx context.Context, in *SumAppPackageRunTimeRequest, opts ...grpc.CallOption) (*SumAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -224,8 +223,6 @@ type LibrarianSephirahServiceClient interface {
 	UpdateAppCategory(ctx context.Context, in *UpdateAppCategoryRequest, opts ...grpc.CallOption) (*UpdateAppCategoryResponse, error)
 	// `Gebura` `Normal`
 	RemoveAppCategory(ctx context.Context, in *RemoveAppCategoryRequest, opts ...grpc.CallOption) (*RemoveAppCategoryResponse, error)
-	// `Gebura` `Normal`
-	UpdateAppAppCategories(ctx context.Context, in *UpdateAppAppCategoriesRequest, opts ...grpc.CallOption) (*UpdateAppAppCategoriesResponse, error)
 	// `Netzach` `Normal`
 	CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
@@ -771,9 +768,9 @@ func (c *librarianSephirahServiceClient) AddAppPackageRunTime(ctx context.Contex
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GetAppPackageRunTime(ctx context.Context, in *GetAppPackageRunTimeRequest, opts ...grpc.CallOption) (*GetAppPackageRunTimeResponse, error) {
-	out := new(GetAppPackageRunTimeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetAppPackageRunTime_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) SumAppPackageRunTime(ctx context.Context, in *SumAppPackageRunTimeRequest, opts ...grpc.CallOption) (*SumAppPackageRunTimeResponse, error) {
+	out := new(SumAppPackageRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SumAppPackageRunTime_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -882,15 +879,6 @@ func (c *librarianSephirahServiceClient) UpdateAppCategory(ctx context.Context, 
 func (c *librarianSephirahServiceClient) RemoveAppCategory(ctx context.Context, in *RemoveAppCategoryRequest, opts ...grpc.CallOption) (*RemoveAppCategoryResponse, error) {
 	out := new(RemoveAppCategoryResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveAppCategory_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) UpdateAppAppCategories(ctx context.Context, in *UpdateAppAppCategoriesRequest, opts ...grpc.CallOption) (*UpdateAppAppCategoriesResponse, error) {
-	out := new(UpdateAppAppCategoriesResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppAppCategories_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1062,7 +1050,7 @@ type LibrarianSephirahServiceServer interface {
 	// Client should ignore in_process response and wait for success or error response.
 	SimpleUploadFile(LibrarianSephirahService_SimpleUploadFileServer) error
 	// `Binah` `download_token`
-	// Server will not check the
+	// Server will not check the receiving state
 	SimpleDownloadFile(*SimpleDownloadFileRequest, LibrarianSephirahService_SimpleDownloadFileServer) error
 	// `Binah` `upload_token`
 	// Upload file through http url
@@ -1129,7 +1117,7 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
-	GetAppPackageRunTime(context.Context, *GetAppPackageRunTimeRequest) (*GetAppPackageRunTimeResponse, error)
+	SumAppPackageRunTime(context.Context, *SumAppPackageRunTimeRequest) (*SumAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -1154,8 +1142,6 @@ type LibrarianSephirahServiceServer interface {
 	UpdateAppCategory(context.Context, *UpdateAppCategoryRequest) (*UpdateAppCategoryResponse, error)
 	// `Gebura` `Normal`
 	RemoveAppCategory(context.Context, *RemoveAppCategoryRequest) (*RemoveAppCategoryResponse, error)
-	// `Gebura` `Normal`
-	UpdateAppAppCategories(context.Context, *UpdateAppAppCategoriesRequest) (*UpdateAppAppCategoriesResponse, error)
 	// `Netzach` `Normal`
 	CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
@@ -1323,8 +1309,8 @@ func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackages(LibrarianSe
 func (UnimplementedLibrarianSephirahServiceServer) AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddAppPackageRunTime not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GetAppPackageRunTime(context.Context, *GetAppPackageRunTimeRequest) (*GetAppPackageRunTimeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetAppPackageRunTime not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) SumAppPackageRunTime(context.Context, *SumAppPackageRunTimeRequest) (*SumAppPackageRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SumAppPackageRunTime not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadGameSaveFile not implemented")
@@ -1361,9 +1347,6 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateAppCategory(context.Con
 }
 func (UnimplementedLibrarianSephirahServiceServer) RemoveAppCategory(context.Context, *RemoveAppCategoryRequest) (*RemoveAppCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveAppCategory not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) UpdateAppAppCategories(context.Context, *UpdateAppAppCategoriesRequest) (*UpdateAppAppCategoriesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppAppCategories not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifyTarget not implemented")
@@ -2248,20 +2231,20 @@ func _LibrarianSephirahService_AddAppPackageRunTime_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GetAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppPackageRunTimeRequest)
+func _LibrarianSephirahService_SumAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SumAppPackageRunTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GetAppPackageRunTime(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).SumAppPackageRunTime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GetAppPackageRunTime_FullMethodName,
+		FullMethod: LibrarianSephirahService_SumAppPackageRunTime_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GetAppPackageRunTime(ctx, req.(*GetAppPackageRunTimeRequest))
+		return srv.(LibrarianSephirahServiceServer).SumAppPackageRunTime(ctx, req.(*SumAppPackageRunTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2478,24 +2461,6 @@ func _LibrarianSephirahService_RemoveAppCategory_Handler(srv interface{}, ctx co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).RemoveAppCategory(ctx, req.(*RemoveAppCategoryRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_UpdateAppAppCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppAppCategoriesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UpdateAppAppCategories(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_UpdateAppAppCategories_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UpdateAppAppCategories(ctx, req.(*UpdateAppAppCategoriesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2916,8 +2881,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_AddAppPackageRunTime_Handler,
 		},
 		{
-			MethodName: "GetAppPackageRunTime",
-			Handler:    _LibrarianSephirahService_GetAppPackageRunTime_Handler,
+			MethodName: "SumAppPackageRunTime",
+			Handler:    _LibrarianSephirahService_SumAppPackageRunTime_Handler,
 		},
 		{
 			MethodName: "UploadGameSaveFile",
@@ -2966,10 +2931,6 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RemoveAppCategory",
 			Handler:    _LibrarianSephirahService_RemoveAppCategory_Handler,
-		},
-		{
-			MethodName: "UpdateAppAppCategories",
-			Handler:    _LibrarianSephirahService_UpdateAppAppCategories_Handler,
 		},
 		{
 			MethodName: "CreateNotifyTarget",

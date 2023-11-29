@@ -938,47 +938,81 @@ export namespace AddAppPackageRunTimeResponse {
   }
 }
 
-export class GetAppPackageRunTimeRequest extends jspb.Message {
+export class SumAppPackageRunTimeRequest extends jspb.Message {
   hasAppPackageId(): boolean;
   clearAppPackageId(): void;
   getAppPackageId(): librarian_v1_common_pb.InternalID | undefined;
   setAppPackageId(value?: librarian_v1_common_pb.InternalID): void;
 
+  hasTimeAggregation(): boolean;
+  clearTimeAggregation(): void;
+  getTimeAggregation(): librarian_v1_common_pb.TimeAggregation | undefined;
+  setTimeAggregation(value?: librarian_v1_common_pb.TimeAggregation): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetAppPackageRunTimeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetAppPackageRunTimeRequest): GetAppPackageRunTimeRequest.AsObject;
+  toObject(includeInstance?: boolean): SumAppPackageRunTimeRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SumAppPackageRunTimeRequest): SumAppPackageRunTimeRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetAppPackageRunTimeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetAppPackageRunTimeRequest;
-  static deserializeBinaryFromReader(message: GetAppPackageRunTimeRequest, reader: jspb.BinaryReader): GetAppPackageRunTimeRequest;
+  static serializeBinaryToWriter(message: SumAppPackageRunTimeRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SumAppPackageRunTimeRequest;
+  static deserializeBinaryFromReader(message: SumAppPackageRunTimeRequest, reader: jspb.BinaryReader): SumAppPackageRunTimeRequest;
 }
 
-export namespace GetAppPackageRunTimeRequest {
+export namespace SumAppPackageRunTimeRequest {
   export type AsObject = {
     appPackageId?: librarian_v1_common_pb.InternalID.AsObject,
+    timeAggregation?: librarian_v1_common_pb.TimeAggregation.AsObject,
   }
 }
 
-export class GetAppPackageRunTimeResponse extends jspb.Message {
-  hasDuration(): boolean;
-  clearDuration(): void;
-  getDuration(): google_protobuf_duration_pb.Duration | undefined;
-  setDuration(value?: google_protobuf_duration_pb.Duration): void;
+export class SumAppPackageRunTimeResponse extends jspb.Message {
+  clearRunTimeGroupsList(): void;
+  getRunTimeGroupsList(): Array<SumAppPackageRunTimeResponse.Group>;
+  setRunTimeGroupsList(value: Array<SumAppPackageRunTimeResponse.Group>): void;
+  addRunTimeGroups(value?: SumAppPackageRunTimeResponse.Group, index?: number): SumAppPackageRunTimeResponse.Group;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetAppPackageRunTimeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetAppPackageRunTimeResponse): GetAppPackageRunTimeResponse.AsObject;
+  toObject(includeInstance?: boolean): SumAppPackageRunTimeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SumAppPackageRunTimeResponse): SumAppPackageRunTimeResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetAppPackageRunTimeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetAppPackageRunTimeResponse;
-  static deserializeBinaryFromReader(message: GetAppPackageRunTimeResponse, reader: jspb.BinaryReader): GetAppPackageRunTimeResponse;
+  static serializeBinaryToWriter(message: SumAppPackageRunTimeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SumAppPackageRunTimeResponse;
+  static deserializeBinaryFromReader(message: SumAppPackageRunTimeResponse, reader: jspb.BinaryReader): SumAppPackageRunTimeResponse;
 }
 
-export namespace GetAppPackageRunTimeResponse {
+export namespace SumAppPackageRunTimeResponse {
   export type AsObject = {
-    duration?: google_protobuf_duration_pb.Duration.AsObject,
+    runTimeGroupsList: Array<SumAppPackageRunTimeResponse.Group.AsObject>,
+  }
+
+  export class Group extends jspb.Message {
+    hasTimeRange(): boolean;
+    clearTimeRange(): void;
+    getTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
+    setTimeRange(value?: librarian_v1_common_pb.TimeRange): void;
+
+    hasDuration(): boolean;
+    clearDuration(): void;
+    getDuration(): google_protobuf_duration_pb.Duration | undefined;
+    setDuration(value?: google_protobuf_duration_pb.Duration): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Group.AsObject;
+    static toObject(includeInstance: boolean, msg: Group): Group.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Group, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Group;
+    static deserializeBinaryFromReader(message: Group, reader: jspb.BinaryReader): Group;
+  }
+
+  export namespace Group {
+    export type AsObject = {
+      timeRange?: librarian_v1_common_pb.TimeRange.AsObject,
+      duration?: google_protobuf_duration_pb.Duration.AsObject,
+    }
   }
 }
 
@@ -1504,50 +1538,6 @@ export class RemoveAppCategoryResponse extends jspb.Message {
 }
 
 export namespace RemoveAppCategoryResponse {
-  export type AsObject = {
-  }
-}
-
-export class UpdateAppAppCategoriesRequest extends jspb.Message {
-  hasAppId(): boolean;
-  clearAppId(): void;
-  getAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  clearAppCategoryIdsList(): void;
-  getAppCategoryIdsList(): Array<librarian_v1_common_pb.InternalID>;
-  setAppCategoryIdsList(value: Array<librarian_v1_common_pb.InternalID>): void;
-  addAppCategoryIds(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateAppAppCategoriesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateAppAppCategoriesRequest): UpdateAppAppCategoriesRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateAppAppCategoriesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateAppAppCategoriesRequest;
-  static deserializeBinaryFromReader(message: UpdateAppAppCategoriesRequest, reader: jspb.BinaryReader): UpdateAppAppCategoriesRequest;
-}
-
-export namespace UpdateAppAppCategoriesRequest {
-  export type AsObject = {
-    appId?: librarian_v1_common_pb.InternalID.AsObject,
-    appCategoryIdsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-  }
-}
-
-export class UpdateAppAppCategoriesResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateAppAppCategoriesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateAppAppCategoriesResponse): UpdateAppAppCategoriesResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateAppAppCategoriesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateAppAppCategoriesResponse;
-  static deserializeBinaryFromReader(message: UpdateAppAppCategoriesResponse, reader: jspb.BinaryReader): UpdateAppAppCategoriesResponse;
-}
-
-export namespace UpdateAppAppCategoriesResponse {
   export type AsObject = {
   }
 }

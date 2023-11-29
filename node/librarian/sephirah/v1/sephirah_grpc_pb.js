@@ -297,28 +297,6 @@ function deserialize_librarian_sephirah_v1_GenerateTokenResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppPackageRunTimeRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppPackageRunTimeResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_GetAppRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.GetAppRequest');
@@ -1221,6 +1199,28 @@ function deserialize_librarian_sephirah_v1_SimpleUploadFileResponse(buffer_arg) 
   return librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_SumAppPackageRunTimeRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SumAppPackageRunTimeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SumAppPackageRunTimeRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SumAppPackageRunTimeResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SumAppPackageRunTimeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SumAppPackageRunTimeResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAccountAppsRequest');
@@ -1329,28 +1329,6 @@ function serialize_librarian_sephirah_v1_UnpinGameSaveFileResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UnpinGameSaveFileResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.UnpinGameSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_UpdateAppAppCategoriesRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UpdateAppAppCategoriesRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateAppAppCategoriesRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_UpdateAppAppCategoriesRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.UpdateAppAppCategoriesRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_UpdateAppAppCategoriesResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.UpdateAppAppCategoriesResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateAppAppCategoriesResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_UpdateAppAppCategoriesResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.UpdateAppAppCategoriesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UpdateAppCategoryRequest(arg) {
@@ -1779,7 +1757,7 @@ simpleUploadFile: {
     responseDeserialize: deserialize_librarian_sephirah_v1_SimpleUploadFileResponse,
   },
   // `Binah` `download_token`
-// Server will not check the
+// Server will not check the receiving state
 simpleDownloadFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile',
     requestStream: false,
@@ -2146,16 +2124,16 @@ addAppPackageRunTime: {
     responseDeserialize: deserialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse,
   },
   // `Gebura` `Normal`
-getAppPackageRunTime: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetAppPackageRunTime',
+sumAppPackageRunTime: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.GetAppPackageRunTimeResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_GetAppPackageRunTimeRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_GetAppPackageRunTimeResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SumAppPackageRunTimeRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SumAppPackageRunTimeRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SumAppPackageRunTimeResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SumAppPackageRunTimeResponse,
   },
   // `Gebura` `Normal`
 uploadGameSaveFile: {
@@ -2300,18 +2278,6 @@ removeAppCategory: {
     requestDeserialize: deserialize_librarian_sephirah_v1_RemoveAppCategoryRequest,
     responseSerialize: serialize_librarian_sephirah_v1_RemoveAppCategoryResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RemoveAppCategoryResponse,
-  },
-  // `Gebura` `Normal`
-updateAppAppCategories: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppAppCategories',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.UpdateAppAppCategoriesRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.UpdateAppAppCategoriesResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_UpdateAppAppCategoriesRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateAppAppCategoriesRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_UpdateAppAppCategoriesResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateAppAppCategoriesResponse,
   },
   // `Netzach` `Normal`
 createNotifyTarget: {

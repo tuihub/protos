@@ -630,29 +630,27 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
 
 class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupFeedItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..e<GroupFeedItemsRequest_GroupBy>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupBy', $pb.PbFieldType.OE, defaultOrMaker: GroupFeedItemsRequest_GroupBy.GROUP_BY_UNSPECIFIED, valueOf: GroupFeedItemsRequest_GroupBy.valueOf, enumValues: GroupFeedItemsRequest_GroupBy.values)
+    ..aOM<$7.TimeAggregation>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeAggregation', subBuilder: $7.TimeAggregation.create)
     ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
     ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'categoryFilter')
-    ..aOM<$7.TimeRange>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
     ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSize', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
   GroupFeedItemsRequest._() : super();
   factory GroupFeedItemsRequest({
-    GroupFeedItemsRequest_GroupBy? groupBy,
+    $7.TimeAggregation? publishTimeAggregation,
     $core.Iterable<$7.InternalID>? feedIdFilter,
     $core.Iterable<$7.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
-    $7.TimeRange? publishTimeRange,
     $core.int? groupSize,
   }) {
     final _result = create();
-    if (groupBy != null) {
-      _result.groupBy = groupBy;
+    if (publishTimeAggregation != null) {
+      _result.publishTimeAggregation = publishTimeAggregation;
     }
     if (feedIdFilter != null) {
       _result.feedIdFilter.addAll(feedIdFilter);
@@ -665,9 +663,6 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     }
     if (categoryFilter != null) {
       _result.categoryFilter.addAll(categoryFilter);
-    }
-    if (publishTimeRange != null) {
-      _result.publishTimeRange = publishTimeRange;
     }
     if (groupSize != null) {
       _result.groupSize = groupSize;
@@ -696,13 +691,15 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   static GroupFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  GroupFeedItemsRequest_GroupBy get groupBy => $_getN(0);
+  $7.TimeAggregation get publishTimeAggregation => $_getN(0);
   @$pb.TagNumber(1)
-  set groupBy(GroupFeedItemsRequest_GroupBy v) { setField(1, v); }
+  set publishTimeAggregation($7.TimeAggregation v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasGroupBy() => $_has(0);
+  $core.bool hasPublishTimeAggregation() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGroupBy() => clearField(1);
+  void clearPublishTimeAggregation() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.TimeAggregation ensurePublishTimeAggregation() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$7.InternalID> get feedIdFilter => $_getList(1);
@@ -716,23 +713,12 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.List<$core.String> get categoryFilter => $_getList(4);
 
-  @$pb.TagNumber(6)
-  $7.TimeRange get publishTimeRange => $_getN(5);
-  @$pb.TagNumber(6)
-  set publishTimeRange($7.TimeRange v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasPublishTimeRange() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearPublishTimeRange() => clearField(6);
-  @$pb.TagNumber(6)
-  $7.TimeRange ensurePublishTimeRange() => $_ensure(5);
-
   @$pb.TagNumber(7)
-  $core.int get groupSize => $_getIZ(6);
+  $core.int get groupSize => $_getIZ(5);
   @$pb.TagNumber(7)
-  set groupSize($core.int v) { $_setSignedInt32(6, v); }
+  set groupSize($core.int v) { $_setSignedInt32(5, v); }
   @$pb.TagNumber(7)
-  $core.bool hasGroupSize() => $_has(6);
+  $core.bool hasGroupSize() => $_has(5);
   @$pb.TagNumber(7)
   void clearGroupSize() => clearField(7);
 }

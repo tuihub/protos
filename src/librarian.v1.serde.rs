@@ -702,12 +702,18 @@ impl serde::Serialize for AppCategory {
         if !self.name.is_empty() {
             len += 1;
         }
+        if !self.app_ids.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppCategory", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.app_ids.is_empty() {
+            struct_ser.serialize_field("appIds", &self.app_ids)?;
         }
         struct_ser.end()
     }
@@ -721,12 +727,15 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
         const FIELDS: &[&str] = &[
             "id",
             "name",
+            "app_ids",
+            "appIds",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
             Name,
+            AppIds,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -750,6 +759,7 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "name" => Ok(GeneratedField::Name),
+                            "appIds" | "app_ids" => Ok(GeneratedField::AppIds),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -771,6 +781,7 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
             {
                 let mut id__ = None;
                 let mut name__ = None;
+                let mut app_ids__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -785,11 +796,18 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
                             }
                             name__ = Some(map.next_value()?);
                         }
+                        GeneratedField::AppIds => {
+                            if app_ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appIds"));
+                            }
+                            app_ids__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(AppCategory {
                     id: id__,
                     name: name__.unwrap_or_default(),
+                    app_ids: app_ids__.unwrap_or_default(),
                 })
             }
         }
@@ -2825,6 +2843,197 @@ impl<'de> serde::Deserialize<'de> for PagingResponse {
             }
         }
         deserializer.deserialize_struct("librarian.v1.PagingResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for TimeAggregation {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.aggregation_type != 0 {
+            len += 1;
+        }
+        if self.time_range.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.TimeAggregation", len)?;
+        if self.aggregation_type != 0 {
+            let v = time_aggregation::AggregationType::from_i32(self.aggregation_type)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.aggregation_type)))?;
+            struct_ser.serialize_field("aggregationType", &v)?;
+        }
+        if let Some(v) = self.time_range.as_ref() {
+            struct_ser.serialize_field("timeRange", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for TimeAggregation {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "aggregation_type",
+            "aggregationType",
+            "time_range",
+            "timeRange",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AggregationType,
+            TimeRange,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "aggregationType" | "aggregation_type" => Ok(GeneratedField::AggregationType),
+                            "timeRange" | "time_range" => Ok(GeneratedField::TimeRange),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = TimeAggregation;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.TimeAggregation")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<TimeAggregation, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut aggregation_type__ = None;
+                let mut time_range__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AggregationType => {
+                            if aggregation_type__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("aggregationType"));
+                            }
+                            aggregation_type__ = Some(map.next_value::<time_aggregation::AggregationType>()? as i32);
+                        }
+                        GeneratedField::TimeRange => {
+                            if time_range__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("timeRange"));
+                            }
+                            time_range__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(TimeAggregation {
+                    aggregation_type: aggregation_type__.unwrap_or_default(),
+                    time_range: time_range__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.TimeAggregation", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for time_aggregation::AggregationType {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "AGGREGATION_TYPE_UNSPECIFIED",
+            Self::Year => "AGGREGATION_TYPE_YEAR",
+            Self::Month => "AGGREGATION_TYPE_MONTH",
+            Self::Day => "AGGREGATION_TYPE_DAY",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for time_aggregation::AggregationType {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "AGGREGATION_TYPE_UNSPECIFIED",
+            "AGGREGATION_TYPE_YEAR",
+            "AGGREGATION_TYPE_MONTH",
+            "AGGREGATION_TYPE_DAY",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = time_aggregation::AggregationType;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(time_aggregation::AggregationType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(time_aggregation::AggregationType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "AGGREGATION_TYPE_UNSPECIFIED" => Ok(time_aggregation::AggregationType::Unspecified),
+                    "AGGREGATION_TYPE_YEAR" => Ok(time_aggregation::AggregationType::Year),
+                    "AGGREGATION_TYPE_MONTH" => Ok(time_aggregation::AggregationType::Month),
+                    "AGGREGATION_TYPE_DAY" => Ok(time_aggregation::AggregationType::Day),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for TimeRange {
