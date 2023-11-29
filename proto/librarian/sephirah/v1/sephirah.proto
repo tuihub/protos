@@ -60,7 +60,7 @@ service LibrarianSephirahService {
   // Client should ignore in_process response and wait for success or error response.
   rpc SimpleUploadFile(stream SimpleUploadFileRequest) returns (stream SimpleUploadFileResponse);
   // `Binah` `download_token`
-  // Server will not check the
+  // Server will not check the receiving state
   rpc SimpleDownloadFile(SimpleDownloadFileRequest) returns (stream SimpleDownloadFileResponse);
   // `Binah` `upload_token`
   // Upload file through http url
@@ -132,7 +132,7 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc AddAppPackageRunTime(AddAppPackageRunTimeRequest) returns (AddAppPackageRunTimeResponse);
   // `Gebura` `Normal`
-  rpc GetAppPackageRunTime(GetAppPackageRunTimeRequest) returns (GetAppPackageRunTimeResponse);
+  rpc SumAppPackageRunTime(SumAppPackageRunTimeRequest) returns (SumAppPackageRunTimeResponse);
 
   // `Gebura` `Normal`
   rpc UploadGameSaveFile(UploadGameSaveFileRequest) returns (UploadGameSaveFileResponse);
@@ -160,8 +160,6 @@ service LibrarianSephirahService {
   rpc UpdateAppCategory(UpdateAppCategoryRequest) returns (UpdateAppCategoryResponse);
   // `Gebura` `Normal`
   rpc RemoveAppCategory(RemoveAppCategoryRequest) returns (RemoveAppCategoryResponse);
-  // `Gebura` `Normal`
-  rpc UpdateAppAppCategories(UpdateAppAppCategoriesRequest) returns (UpdateAppAppCategoriesResponse);
 
   // `Netzach` `Normal`
   rpc CreateNotifyTarget(CreateNotifyTargetRequest) returns (CreateNotifyTargetResponse);

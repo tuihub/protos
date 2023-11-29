@@ -59,23 +59,11 @@ message ListFeedItemsResponse {
 }
 
 message GroupFeedItemsRequest {
-  enum GroupBy {
-    GROUP_BY_UNSPECIFIED = 0;
-    GROUP_BY_YEAR = 1;
-    GROUP_BY_MONTH = 2;
-    GROUP_BY_DAY = 3;
-  }
-  GroupBy group_by = 1;
+  librarian.v1.TimeAggregation publish_time_aggregation = 1;
   repeated librarian.v1.InternalID feed_id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
   repeated string publish_platform_filter = 4;
   repeated string category_filter = 5;
-  // TimeRange will be rounded to overall time that contains the given time on server side.
-  // e.g. the given TimeRange is 2023.2.13 9:26 ~ 2023.3.14 17:21.
-  // When group by year, rounded to 2023.1.1 00:00 ~ 2024.1.1 00:00.
-  // When group by month, rounded to 2023.2.1 00:00 ~ 2023.4.1. 00:00.
-  // When group by dat, rounded to 2023.2.13 00:00 ~ 2023.3.15 00:00.
-  librarian.v1.TimeRange publish_time_range = 6;
   // NULL means no limit
   optional int32 group_size = 7;
 }

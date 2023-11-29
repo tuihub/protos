@@ -175,12 +175,17 @@ message AddAppPackageRunTimeRequest {
 
 message AddAppPackageRunTimeResponse {}
 
-message GetAppPackageRunTimeRequest {
+message SumAppPackageRunTimeRequest {
   librarian.v1.InternalID app_package_id = 1;
+  librarian.v1.TimeAggregation time_aggregation = 2;
 }
 
-message GetAppPackageRunTimeResponse {
-  google.protobuf.Duration duration = 1;
+message SumAppPackageRunTimeResponse {
+  message Group {
+    librarian.v1.TimeRange time_range = 1;
+    google.protobuf.Duration duration = 2;
+  }
+  repeated Group run_time_groups = 1;
 }
 
 message UploadGameSaveFileRequest {
@@ -281,10 +286,3 @@ message RemoveAppCategoryRequest {
 }
 
 message RemoveAppCategoryResponse {}
-
-message UpdateAppAppCategoriesRequest {
-  librarian.v1.InternalID app_id = 1;
-  repeated librarian.v1.InternalID app_category_ids = 2;
-}
-
-message UpdateAppAppCategoriesResponse {}
