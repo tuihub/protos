@@ -10,7 +10,7 @@ bytes = "1.5.0"
 futures-core = "0.3.29"
 pbjson = "0.6"
 pbjson-types = "0.6"
-prost = "0.12.1"
+prost = "0.12.3"
 serde = "1.0"
 tonic = { version = "0.10", features = ["gzip"] }
 
