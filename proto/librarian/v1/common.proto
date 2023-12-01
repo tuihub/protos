@@ -87,8 +87,7 @@ message App {
   string icon_image_url = 9;
   string hero_image_url = 10;
   repeated string tags = 11;
-  repeated InternalID app_category_ids = 12;
-  repeated string alt_names = 13;
+  repeated string alt_names = 12;
 }
 
 message AppID {
