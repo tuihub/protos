@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.44](https://github.com/tuihub/protos/compare/v0.2.43...v0.2.44) (2023-12-01)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#99](https://github.com/tuihub/protos/issues/99)) ([5688185](https://github.com/tuihub/protos/commit/5688185833edeb46d1e6f81969d2e15420a7bde3))
+* **gebura:** remove app_category_ids in common.App ([bbb0cfd](https://github.com/tuihub/protos/commit/bbb0cfdfa212c496b975aecb6be7171aa5eec704))
+
 ## [0.2.43](https://github.com/tuihub/protos/compare/v0.2.42...v0.2.43) (2023-11-29)
 
 
