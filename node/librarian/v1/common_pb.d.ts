@@ -247,11 +247,6 @@ export class App extends jspb.Message {
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
 
-  clearAppCategoryIdsList(): void;
-  getAppCategoryIdsList(): Array<InternalID>;
-  setAppCategoryIdsList(value: Array<InternalID>): void;
-  addAppCategoryIds(value?: InternalID, index?: number): InternalID;
-
   clearAltNamesList(): void;
   getAltNamesList(): Array<string>;
   setAltNamesList(value: Array<string>): void;
@@ -280,7 +275,6 @@ export namespace App {
     iconImageUrl: string,
     heroImageUrl: string,
     tagsList: Array<string>,
-    appCategoryIdsList: Array<InternalID.AsObject>,
     altNamesList: Array<string>,
   }
 }

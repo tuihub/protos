@@ -509,8 +509,7 @@ class App extends $pb.GeneratedMessage {
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'iconImageUrl')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heroImageUrl')
     ..pPS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tags')
-    ..pc<InternalID>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appCategoryIds', $pb.PbFieldType.PM, subBuilder: InternalID.create)
-    ..pPS(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altNames')
+    ..pPS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altNames')
     ..hasRequiredFields = false
   ;
 
@@ -527,7 +526,6 @@ class App extends $pb.GeneratedMessage {
     $core.String? iconImageUrl,
     $core.String? heroImageUrl,
     $core.Iterable<$core.String>? tags,
-    $core.Iterable<InternalID>? appCategoryIds,
     $core.Iterable<$core.String>? altNames,
   }) {
     final _result = create();
@@ -563,9 +561,6 @@ class App extends $pb.GeneratedMessage {
     }
     if (tags != null) {
       _result.tags.addAll(tags);
-    }
-    if (appCategoryIds != null) {
-      _result.appCategoryIds.addAll(appCategoryIds);
     }
     if (altNames != null) {
       _result.altNames.addAll(altNames);
@@ -691,10 +686,7 @@ class App extends $pb.GeneratedMessage {
   $core.List<$core.String> get tags => $_getList(10);
 
   @$pb.TagNumber(12)
-  $core.List<InternalID> get appCategoryIds => $_getList(11);
-
-  @$pb.TagNumber(13)
-  $core.List<$core.String> get altNames => $_getList(12);
+  $core.List<$core.String> get altNames => $_getList(11);
 }
 
 class AppID extends $pb.GeneratedMessage {

@@ -423,9 +423,6 @@ impl serde::Serialize for App {
         if !self.tags.is_empty() {
             len += 1;
         }
-        if !self.app_category_ids.is_empty() {
-            len += 1;
-        }
         if !self.alt_names.is_empty() {
             len += 1;
         }
@@ -467,9 +464,6 @@ impl serde::Serialize for App {
         if !self.tags.is_empty() {
             struct_ser.serialize_field("tags", &self.tags)?;
         }
-        if !self.app_category_ids.is_empty() {
-            struct_ser.serialize_field("appCategoryIds", &self.app_category_ids)?;
-        }
         if !self.alt_names.is_empty() {
             struct_ser.serialize_field("altNames", &self.alt_names)?;
         }
@@ -499,8 +493,6 @@ impl<'de> serde::Deserialize<'de> for App {
             "hero_image_url",
             "heroImageUrl",
             "tags",
-            "app_category_ids",
-            "appCategoryIds",
             "alt_names",
             "altNames",
         ];
@@ -518,7 +510,6 @@ impl<'de> serde::Deserialize<'de> for App {
             IconImageUrl,
             HeroImageUrl,
             Tags,
-            AppCategoryIds,
             AltNames,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -552,7 +543,6 @@ impl<'de> serde::Deserialize<'de> for App {
                             "iconImageUrl" | "icon_image_url" => Ok(GeneratedField::IconImageUrl),
                             "heroImageUrl" | "hero_image_url" => Ok(GeneratedField::HeroImageUrl),
                             "tags" => Ok(GeneratedField::Tags),
-                            "appCategoryIds" | "app_category_ids" => Ok(GeneratedField::AppCategoryIds),
                             "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -584,7 +574,6 @@ impl<'de> serde::Deserialize<'de> for App {
                 let mut icon_image_url__ = None;
                 let mut hero_image_url__ = None;
                 let mut tags__ = None;
-                let mut app_category_ids__ = None;
                 let mut alt_names__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -654,12 +643,6 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             tags__ = Some(map.next_value()?);
                         }
-                        GeneratedField::AppCategoryIds => {
-                            if app_category_ids__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appCategoryIds"));
-                            }
-                            app_category_ids__ = Some(map.next_value()?);
-                        }
                         GeneratedField::AltNames => {
                             if alt_names__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("altNames"));
@@ -680,7 +663,6 @@ impl<'de> serde::Deserialize<'de> for App {
                     icon_image_url: icon_image_url__.unwrap_or_default(),
                     hero_image_url: hero_image_url__.unwrap_or_default(),
                     tags: tags__.unwrap_or_default(),
-                    app_category_ids: app_category_ids__.unwrap_or_default(),
                     alt_names: alt_names__.unwrap_or_default(),
                 })
             }

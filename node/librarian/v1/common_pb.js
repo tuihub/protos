@@ -1759,7 +1759,7 @@ proto.librarian.v1.AccountID.prototype.setPlatformAccountId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.App.repeatedFields_ = [11,12,13];
+proto.librarian.v1.App.repeatedFields_ = [11,12];
 
 
 
@@ -1803,9 +1803,7 @@ proto.librarian.v1.App.toObject = function(includeInstance, msg) {
     iconImageUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
     heroImageUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
     tagsList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f,
-    appCategoryIdsList: jspb.Message.toObjectList(msg.getAppCategoryIdsList(),
-    proto.librarian.v1.InternalID.toObject, includeInstance),
-    altNamesList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
+    altNamesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1889,11 +1887,6 @@ proto.librarian.v1.App.deserializeBinaryFromReader = function(msg, reader) {
       msg.addTags(value);
       break;
     case 12:
-      var value = new proto.librarian.v1.InternalID;
-      reader.readMessage(value,proto.librarian.v1.InternalID.deserializeBinaryFromReader);
-      msg.addAppCategoryIds(value);
-      break;
-    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.addAltNames(value);
       break;
@@ -2005,18 +1998,10 @@ proto.librarian.v1.App.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAppCategoryIdsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      12,
-      f,
-      proto.librarian.v1.InternalID.serializeBinaryToWriter
-    );
-  }
   f = message.getAltNamesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      13,
+      12,
       f
     );
   }
@@ -2297,49 +2282,11 @@ proto.librarian.v1.App.prototype.clearTagsList = function() {
 
 
 /**
- * repeated InternalID app_category_ids = 12;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.v1.App.prototype.getAppCategoryIdsList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.v1.InternalID, 12));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.v1.App} returns this
-*/
-proto.librarian.v1.App.prototype.setAppCategoryIdsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 12, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.v1.App.prototype.addAppCategoryIds = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.v1.App} returns this
- */
-proto.librarian.v1.App.prototype.clearAppCategoryIdsList = function() {
-  return this.setAppCategoryIdsList([]);
-};
-
-
-/**
- * repeated string alt_names = 13;
+ * repeated string alt_names = 12;
  * @return {!Array<string>}
  */
 proto.librarian.v1.App.prototype.getAltNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
 };
 
 
@@ -2348,7 +2295,7 @@ proto.librarian.v1.App.prototype.getAltNamesList = function() {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.setAltNamesList = function(value) {
-  return jspb.Message.setField(this, 13, value || []);
+  return jspb.Message.setField(this, 12, value || []);
 };
 
 
@@ -2358,7 +2305,7 @@ proto.librarian.v1.App.prototype.setAltNamesList = function(value) {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.addAltNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
 };
 
 
