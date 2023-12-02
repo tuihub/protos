@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.45](https://github.com/tuihub/protos/compare/v0.2.44...v0.2.45) (2023-12-02)
+
+
+### Features
+
+* **common:** add AGGREGATION_TYPE_OVERALL ([054071d](https://github.com/tuihub/protos/commit/054071d1de51033d47053b09df293b99d3ad9e21))
+
 ## [0.2.44](https://github.com/tuihub/protos/compare/v0.2.43...v0.2.44) (2023-12-01)
 
 
