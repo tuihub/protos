@@ -131,7 +131,7 @@ service LibrarianSephirahService {
 
   // `Gebura` `Normal`
   rpc AddAppPackageRunTime(AddAppPackageRunTimeRequest) returns (AddAppPackageRunTimeResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
   rpc SumAppPackageRunTime(SumAppPackageRunTimeRequest) returns (SumAppPackageRunTimeResponse);
 
   // `Gebura` `Normal`
