@@ -1464,7 +1464,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -3845,7 +3845,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_AddAppPackageRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3858,7 +3858,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SumAppPackageRunTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3869,7 +3869,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SumAppPackageRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3882,7 +3882,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SumAppPackageRunTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

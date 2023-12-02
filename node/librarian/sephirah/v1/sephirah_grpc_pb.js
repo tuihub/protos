@@ -2123,7 +2123,7 @@ addAppPackageRunTime: {
     responseSerialize: serialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_AddAppPackageRunTimeResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
 sumAppPackageRunTime: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime',
     requestStream: false,

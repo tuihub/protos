@@ -108,6 +108,7 @@ export namespace TimeAggregation {
     AGGREGATION_TYPE_YEAR: 1;
     AGGREGATION_TYPE_MONTH: 2;
     AGGREGATION_TYPE_DAY: 3;
+    AGGREGATION_TYPE_OVERALL: 4;
   }
 
   export const AggregationType: AggregationTypeMap;

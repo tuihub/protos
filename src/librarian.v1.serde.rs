@@ -2950,6 +2950,7 @@ impl serde::Serialize for time_aggregation::AggregationType {
             Self::Year => "AGGREGATION_TYPE_YEAR",
             Self::Month => "AGGREGATION_TYPE_MONTH",
             Self::Day => "AGGREGATION_TYPE_DAY",
+            Self::Overall => "AGGREGATION_TYPE_OVERALL",
         };
         serializer.serialize_str(variant)
     }
@@ -2965,6 +2966,7 @@ impl<'de> serde::Deserialize<'de> for time_aggregation::AggregationType {
             "AGGREGATION_TYPE_YEAR",
             "AGGREGATION_TYPE_MONTH",
             "AGGREGATION_TYPE_DAY",
+            "AGGREGATION_TYPE_OVERALL",
         ];
 
         struct GeneratedVisitor;
@@ -3011,6 +3013,7 @@ impl<'de> serde::Deserialize<'de> for time_aggregation::AggregationType {
                     "AGGREGATION_TYPE_YEAR" => Ok(time_aggregation::AggregationType::Year),
                     "AGGREGATION_TYPE_MONTH" => Ok(time_aggregation::AggregationType::Month),
                     "AGGREGATION_TYPE_DAY" => Ok(time_aggregation::AggregationType::Day),
+                    "AGGREGATION_TYPE_OVERALL" => Ok(time_aggregation::AggregationType::Overall),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

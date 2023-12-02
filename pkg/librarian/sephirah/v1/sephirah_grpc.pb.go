@@ -197,7 +197,7 @@ type LibrarianSephirahServiceClient interface {
 	ReportAppPackages(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackagesClient, error)
 	// `Gebura` `Normal`
 	AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
 	SumAppPackageRunTime(ctx context.Context, in *SumAppPackageRunTimeRequest, opts ...grpc.CallOption) (*SumAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
@@ -1116,7 +1116,7 @@ type LibrarianSephirahServiceServer interface {
 	ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error
 	// `Gebura` `Normal`
 	AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
 	SumAppPackageRunTime(context.Context, *SumAppPackageRunTimeRequest) (*SumAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)

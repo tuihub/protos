@@ -106,11 +106,12 @@ const TimeAggregation_AggregationType$json = const {
     const {'1': 'AGGREGATION_TYPE_YEAR', '2': 1},
     const {'1': 'AGGREGATION_TYPE_MONTH', '2': 2},
     const {'1': 'AGGREGATION_TYPE_DAY', '2': 3},
+    const {'1': 'AGGREGATION_TYPE_OVERALL', '2': 4},
   ],
 };
 
 /// Descriptor for `TimeAggregation`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List timeAggregationDescriptor = $convert.base64Decode('Cg9UaW1lQWdncmVnYXRpb24SWAoQYWdncmVnYXRpb25fdHlwZRgBIAEoDjItLmxpYnJhcmlhbi52MS5UaW1lQWdncmVnYXRpb24uQWdncmVnYXRpb25UeXBlUg9hZ2dyZWdhdGlvblR5cGUSNgoKdGltZV9yYW5nZRgCIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VSCXRpbWVSYW5nZSKEAQoPQWdncmVnYXRpb25UeXBlEiAKHEFHR1JFR0FUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIZChVBR0dSRUdBVElPTl9UWVBFX1lFQVIQARIaChZBR0dSRUdBVElPTl9UWVBFX01PTlRIEAISGAoUQUdHUkVHQVRJT05fVFlQRV9EQVkQAw==');
+final $typed_data.Uint8List timeAggregationDescriptor = $convert.base64Decode('Cg9UaW1lQWdncmVnYXRpb24SWAoQYWdncmVnYXRpb25fdHlwZRgBIAEoDjItLmxpYnJhcmlhbi52MS5UaW1lQWdncmVnYXRpb24uQWdncmVnYXRpb25UeXBlUg9hZ2dyZWdhdGlvblR5cGUSNgoKdGltZV9yYW5nZRgCIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VSCXRpbWVSYW5nZSKiAQoPQWdncmVnYXRpb25UeXBlEiAKHEFHR1JFR0FUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIZChVBR0dSRUdBVElPTl9UWVBFX1lFQVIQARIaChZBR0dSRUdBVElPTl9UWVBFX01PTlRIEAISGAoUQUdHUkVHQVRJT05fVFlQRV9EQVkQAxIcChhBR0dSRUdBVElPTl9UWVBFX09WRVJBTEwQBA==');
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = const {
   '1': 'InternalID',

@@ -82,12 +82,14 @@ class TimeAggregation_AggregationType extends $pb.ProtobufEnum {
   static const TimeAggregation_AggregationType AGGREGATION_TYPE_YEAR = TimeAggregation_AggregationType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_YEAR');
   static const TimeAggregation_AggregationType AGGREGATION_TYPE_MONTH = TimeAggregation_AggregationType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_MONTH');
   static const TimeAggregation_AggregationType AGGREGATION_TYPE_DAY = TimeAggregation_AggregationType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_DAY');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_OVERALL = TimeAggregation_AggregationType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AGGREGATION_TYPE_OVERALL');
 
   static const $core.List<TimeAggregation_AggregationType> values = <TimeAggregation_AggregationType> [
     AGGREGATION_TYPE_UNSPECIFIED,
     AGGREGATION_TYPE_YEAR,
     AGGREGATION_TYPE_MONTH,
     AGGREGATION_TYPE_DAY,
+    AGGREGATION_TYPE_OVERALL,
   ];
 
   static final $core.Map<$core.int, TimeAggregation_AggregationType> _byValue = $pb.ProtobufEnum.initByValue(values);

@@ -1506,7 +1506,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
 */
         pub async fn sum_app_package_run_time(
             &mut self,
@@ -2809,7 +2809,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::AddAppPackageRunTimeResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
 */
         async fn sum_app_package_run_time(
             &self,
