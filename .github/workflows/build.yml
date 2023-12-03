@@ -78,12 +78,10 @@ jobs:
           commit_message: 'chore: apply auto code generation'
 
       - name: Build C# project
-        run: dotnet build TuiHub.Protos.csproj --configuration Release
+        run: dotnet build TuiHub.Protos.csproj -c Release
       - name: Create nuget package
-        run: nuget pack TuiHub.Protos.csproj -Prop Configuration=Release -IncludeReferencedProjects
-        env:
-          NUGET_ENABLE_LEGACY_CSPROJ_PACK: true
+        run: dotnet pack TuiHub.Protos.csproj --no-build -c Release
       - name: Publish nuget package to GPR
-        run: dotnet nuget push *.nupkg --skip-duplicate
+        run: dotnet nuget push bin/Release/*.nupkg --skip-duplicate
       - name: Publish nuget package to nuget.org
-        run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
+        run: dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
