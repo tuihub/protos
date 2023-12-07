@@ -85,3 +85,12 @@ jobs:
         run: dotnet nuget push bin/Release/*.nupkg --skip-duplicate
       - name: Publish nuget package to nuget.org
         run: dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
+
+  release-please:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release-please
+        with:
+          command: manifest
