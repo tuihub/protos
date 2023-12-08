@@ -39,9 +39,14 @@ message ListFeedConfigsResponse {
   }
 }
 
-message ListFeedConfigCategoriesRequest {}
-message ListFeedConfigCategoriesResponse {
+message ListFeedCategoriesRequest {}
+message ListFeedCategoriesResponse {
   repeated string categories = 1;
+}
+
+message ListFeedPlatformsRequest {}
+message ListFeedPlatformsResponse {
+  repeated string platforms = 1;
 }
 
 message ListFeedItemsRequest {
@@ -92,11 +97,60 @@ message GetBatchFeedItemsResponse {
   repeated librarian.v1.FeedItem items = 1;
 }
 
+message ReadFeedItemRequest {
+  librarian.v1.InternalID id = 1;
+}
+message ReadFeedItemResponse {}
+
+message CreateFeedItemCollectionRequest {
+  FeedItemCollection collection = 1;
+}
+message CreateFeedItemCollectionResponse {}
+
+message UpdateFeedItemCollectionRequest {
+  FeedItemCollection collection = 1;
+}
+message UpdateFeedItemCollectionResponse {}
+
+message ListFeedItemCollectionsRequest {}
+message ListFeedItemCollectionsResponse {
+  repeated FeedItemCollection collections = 1;
+}
+
+message AddFeedItemToCollectionRequest {
+  librarian.v1.InternalID feed_item_id = 1;
+  // id 0 is regarded as the default collection id
+  librarian.v1.InternalID collection_id = 2;
+}
+message AddFeedItemToCollectionResponse {}
+
+message RemoveFeedItemFromCollectionRequest {
+  librarian.v1.InternalID feed_item_id = 1;
+  // id 0 is regarded as the default collection id
+  librarian.v1.InternalID collection_id = 2;
+}
+message RemoveFeedItemFromCollectionResponse {}
+
+message ListCollectionItemsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  // id 0 is regarded as the default collection id
+  repeated librarian.v1.InternalID collection_id_filter = 2;
+  repeated librarian.v1.InternalID author_id_filter = 3;
+  repeated string publish_platform_filter = 4;
+  repeated string category_filter = 5;
+  librarian.v1.TimeRange publish_time_range = 6;
+}
+
+message ListCollectionItemsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated FeedItemDigest items = 2;
+}
+
 message FeedConfig {
   librarian.v1.InternalID id = 1;
   string name = 2;
   string feed_url = 3;
-  // No meaning when source is FEED_CONFIG_SOURCE_COMMON
+  // Not used when source is FEED_CONFIG_SOURCE_COMMON
   librarian.v1.InternalID author_account = 4;
   FeedConfigSource source = 5;
   FeedConfigStatus status = 6;
@@ -104,6 +158,8 @@ message FeedConfig {
   string category = 8;
   // response only
   optional google.protobuf.Timestamp latest_update_time = 9;
+  // If ture, exclude items from ListFeedItemsResponse
+  bool hide_items = 10;
 }
 
 enum FeedConfigStatus {
@@ -140,4 +196,14 @@ message FeedItemDigest {
   string feed_config_name = 10;
   // `Feed.image.url`
   string feed_avatar_url = 11;
+}
+
+// Server must maintain a default collection, without requirement of create
+// the default collection have its id, but sometimes client can use id 0 to specify the default collection.
+// check ListCollectionItems api for the use case.
+message FeedItemCollection {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+  string category = 4;
 }

@@ -181,7 +181,9 @@ service LibrarianSephirahService {
   // `Yesod` `Normal`
   rpc ListFeedConfigs(ListFeedConfigsRequest) returns (ListFeedConfigsResponse);
   // `Yesod` `Normal`
-  rpc ListFeedConfigCategories(ListFeedConfigCategoriesRequest) returns (ListFeedConfigCategoriesResponse);
+  rpc ListFeedCategories(ListFeedCategoriesRequest) returns (ListFeedCategoriesResponse);
+  // `Yesod` `Normal`
+  rpc ListFeedPlatforms(ListFeedPlatformsRequest) returns (ListFeedPlatformsResponse);
   // `Yesod` `Normal`
   rpc ListFeedItems(ListFeedItemsRequest) returns (ListFeedItemsResponse);
   // `Yesod` `Normal`
@@ -190,6 +192,20 @@ service LibrarianSephirahService {
   rpc GetFeedItem(GetFeedItemRequest) returns (GetFeedItemResponse);
   // `Yesod` `Normal`
   rpc GetBatchFeedItems(GetBatchFeedItemsRequest) returns (GetBatchFeedItemsResponse);
+  // `Yesod` `Normal`
+  rpc ReadFeedItem(ReadFeedItemRequest) returns (ReadFeedItemResponse);
+  // `Yesod` `Normal`
+  rpc CreateFeedItemCollection(CreateFeedItemCollectionRequest) returns (CreateFeedItemCollectionResponse);
+  // `Yesod` `Normal`
+  rpc UpdateFeedItemCollection(UpdateFeedItemCollectionRequest) returns (UpdateFeedItemCollectionResponse);
+  // `Yesod` `Normal`
+  rpc ListFeedItemCollections(ListFeedItemCollectionsRequest) returns (ListFeedItemCollectionsResponse);
+  // `Yesod` `Normal`
+  rpc AddFeedItemToCollection(AddFeedItemToCollectionRequest) returns (AddFeedItemToCollectionResponse);
+  // `Yesod` `Normal`
+  rpc RemoveFeedItemFromCollection(RemoveFeedItemFromCollectionRequest) returns (RemoveFeedItemFromCollectionResponse);
+  // `Yesod` `Normal`
+  rpc ListCollectionItems(ListCollectionItemsRequest) returns (ListCollectionItemsResponse);
 }
 
 message GetServerInformationRequest {}

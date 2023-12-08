@@ -180,7 +180,7 @@ message FeedItem {
   string content = 5;
   // `standard field`
   string guid = 6;
-  // standard field. e.g. https://github.com/TuiHub/Librarian/releases.atom
+  // `standard field`. e.g. https://github.com/TuiHub/Librarian/releases.atom
   string link = 7;
   // `standard field`
   FeedImage image = 8;
@@ -196,6 +196,8 @@ message FeedItem {
   repeated FeedEnclosure enclosures = 13;
   // hostname of `link`. e.g. github.com
   string publish_platform = 14;
+  // recorded read times
+  int64 read_count = 15;
 }
 
 // Person is an individual specified in a feed
