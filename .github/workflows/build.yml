@@ -77,20 +77,20 @@ jobs:
         with:
           commit_message: 'chore: apply auto code generation'
 
-      - name: Build C# project
-        run: dotnet build TuiHub.Protos.csproj -c Release
-      - name: Create nuget package
-        run: dotnet pack TuiHub.Protos.csproj --no-build -c Release
-      - name: Publish nuget package to GPR
-        run: dotnet nuget push bin/Release/*.nupkg --skip-duplicate
-      - name: Publish nuget package to nuget.org
-        run: dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
-
-  release-please:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - uses: google-github-actions/release-please-action@v3
         id: release-please
         with:
           command: manifest
+
+      - name: Build C# project
+        if: ${{ release-please.outputs.releases_created }}
+        run: dotnet build TuiHub.Protos.csproj -c Release
+      - name: Create nuget package
+        if: ${{ release-please.outputs.releases_created }}
+        run: dotnet pack TuiHub.Protos.csproj --no-build -c Release
+      - name: Publish nuget package to GPR
+        if: ${{ release-please.outputs.releases_created }}
+        run: dotnet nuget push bin/Release/*.nupkg --skip-duplicate
+      - name: Publish nuget package to nuget.org
+        if: ${{ release-please.outputs.releases_created }}
+        run: dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
