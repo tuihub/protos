@@ -196,41 +196,79 @@ export namespace ListFeedConfigsResponse {
   }
 }
 
-export class ListFeedConfigCategoriesRequest extends jspb.Message {
+export class ListFeedCategoriesRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFeedConfigCategoriesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFeedConfigCategoriesRequest): ListFeedConfigCategoriesRequest.AsObject;
+  toObject(includeInstance?: boolean): ListFeedCategoriesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedCategoriesRequest): ListFeedCategoriesRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFeedConfigCategoriesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFeedConfigCategoriesRequest;
-  static deserializeBinaryFromReader(message: ListFeedConfigCategoriesRequest, reader: jspb.BinaryReader): ListFeedConfigCategoriesRequest;
+  static serializeBinaryToWriter(message: ListFeedCategoriesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedCategoriesRequest;
+  static deserializeBinaryFromReader(message: ListFeedCategoriesRequest, reader: jspb.BinaryReader): ListFeedCategoriesRequest;
 }
 
-export namespace ListFeedConfigCategoriesRequest {
+export namespace ListFeedCategoriesRequest {
   export type AsObject = {
   }
 }
 
-export class ListFeedConfigCategoriesResponse extends jspb.Message {
+export class ListFeedCategoriesResponse extends jspb.Message {
   clearCategoriesList(): void;
   getCategoriesList(): Array<string>;
   setCategoriesList(value: Array<string>): void;
   addCategories(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListFeedConfigCategoriesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListFeedConfigCategoriesResponse): ListFeedConfigCategoriesResponse.AsObject;
+  toObject(includeInstance?: boolean): ListFeedCategoriesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedCategoriesResponse): ListFeedCategoriesResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListFeedConfigCategoriesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListFeedConfigCategoriesResponse;
-  static deserializeBinaryFromReader(message: ListFeedConfigCategoriesResponse, reader: jspb.BinaryReader): ListFeedConfigCategoriesResponse;
+  static serializeBinaryToWriter(message: ListFeedCategoriesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedCategoriesResponse;
+  static deserializeBinaryFromReader(message: ListFeedCategoriesResponse, reader: jspb.BinaryReader): ListFeedCategoriesResponse;
 }
 
-export namespace ListFeedConfigCategoriesResponse {
+export namespace ListFeedCategoriesResponse {
   export type AsObject = {
     categoriesList: Array<string>,
+  }
+}
+
+export class ListFeedPlatformsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFeedPlatformsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedPlatformsRequest): ListFeedPlatformsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFeedPlatformsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedPlatformsRequest;
+  static deserializeBinaryFromReader(message: ListFeedPlatformsRequest, reader: jspb.BinaryReader): ListFeedPlatformsRequest;
+}
+
+export namespace ListFeedPlatformsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListFeedPlatformsResponse extends jspb.Message {
+  clearPlatformsList(): void;
+  getPlatformsList(): Array<string>;
+  setPlatformsList(value: Array<string>): void;
+  addPlatforms(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFeedPlatformsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedPlatformsResponse): ListFeedPlatformsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFeedPlatformsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedPlatformsResponse;
+  static deserializeBinaryFromReader(message: ListFeedPlatformsResponse, reader: jspb.BinaryReader): ListFeedPlatformsResponse;
+}
+
+export namespace ListFeedPlatformsResponse {
+  export type AsObject = {
+    platformsList: Array<string>,
   }
 }
 
@@ -504,6 +542,326 @@ export namespace GetBatchFeedItemsResponse {
   }
 }
 
+export class ReadFeedItemRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReadFeedItemRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ReadFeedItemRequest): ReadFeedItemRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReadFeedItemRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReadFeedItemRequest;
+  static deserializeBinaryFromReader(message: ReadFeedItemRequest, reader: jspb.BinaryReader): ReadFeedItemRequest;
+}
+
+export namespace ReadFeedItemRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class ReadFeedItemResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ReadFeedItemResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ReadFeedItemResponse): ReadFeedItemResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ReadFeedItemResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ReadFeedItemResponse;
+  static deserializeBinaryFromReader(message: ReadFeedItemResponse, reader: jspb.BinaryReader): ReadFeedItemResponse;
+}
+
+export namespace ReadFeedItemResponse {
+  export type AsObject = {
+  }
+}
+
+export class CreateFeedItemCollectionRequest extends jspb.Message {
+  hasCollection(): boolean;
+  clearCollection(): void;
+  getCollection(): FeedItemCollection | undefined;
+  setCollection(value?: FeedItemCollection): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateFeedItemCollectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeedItemCollectionRequest): CreateFeedItemCollectionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateFeedItemCollectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeedItemCollectionRequest;
+  static deserializeBinaryFromReader(message: CreateFeedItemCollectionRequest, reader: jspb.BinaryReader): CreateFeedItemCollectionRequest;
+}
+
+export namespace CreateFeedItemCollectionRequest {
+  export type AsObject = {
+    collection?: FeedItemCollection.AsObject,
+  }
+}
+
+export class CreateFeedItemCollectionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateFeedItemCollectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeedItemCollectionResponse): CreateFeedItemCollectionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateFeedItemCollectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeedItemCollectionResponse;
+  static deserializeBinaryFromReader(message: CreateFeedItemCollectionResponse, reader: jspb.BinaryReader): CreateFeedItemCollectionResponse;
+}
+
+export namespace CreateFeedItemCollectionResponse {
+  export type AsObject = {
+  }
+}
+
+export class UpdateFeedItemCollectionRequest extends jspb.Message {
+  hasCollection(): boolean;
+  clearCollection(): void;
+  getCollection(): FeedItemCollection | undefined;
+  setCollection(value?: FeedItemCollection): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateFeedItemCollectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeedItemCollectionRequest): UpdateFeedItemCollectionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateFeedItemCollectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeedItemCollectionRequest;
+  static deserializeBinaryFromReader(message: UpdateFeedItemCollectionRequest, reader: jspb.BinaryReader): UpdateFeedItemCollectionRequest;
+}
+
+export namespace UpdateFeedItemCollectionRequest {
+  export type AsObject = {
+    collection?: FeedItemCollection.AsObject,
+  }
+}
+
+export class UpdateFeedItemCollectionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateFeedItemCollectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeedItemCollectionResponse): UpdateFeedItemCollectionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateFeedItemCollectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeedItemCollectionResponse;
+  static deserializeBinaryFromReader(message: UpdateFeedItemCollectionResponse, reader: jspb.BinaryReader): UpdateFeedItemCollectionResponse;
+}
+
+export namespace UpdateFeedItemCollectionResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListFeedItemCollectionsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFeedItemCollectionsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedItemCollectionsRequest): ListFeedItemCollectionsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFeedItemCollectionsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedItemCollectionsRequest;
+  static deserializeBinaryFromReader(message: ListFeedItemCollectionsRequest, reader: jspb.BinaryReader): ListFeedItemCollectionsRequest;
+}
+
+export namespace ListFeedItemCollectionsRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListFeedItemCollectionsResponse extends jspb.Message {
+  clearCollectionsList(): void;
+  getCollectionsList(): Array<FeedItemCollection>;
+  setCollectionsList(value: Array<FeedItemCollection>): void;
+  addCollections(value?: FeedItemCollection, index?: number): FeedItemCollection;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFeedItemCollectionsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedItemCollectionsResponse): ListFeedItemCollectionsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFeedItemCollectionsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedItemCollectionsResponse;
+  static deserializeBinaryFromReader(message: ListFeedItemCollectionsResponse, reader: jspb.BinaryReader): ListFeedItemCollectionsResponse;
+}
+
+export namespace ListFeedItemCollectionsResponse {
+  export type AsObject = {
+    collectionsList: Array<FeedItemCollection.AsObject>,
+  }
+}
+
+export class AddFeedItemToCollectionRequest extends jspb.Message {
+  hasFeedItemId(): boolean;
+  clearFeedItemId(): void;
+  getFeedItemId(): librarian_v1_common_pb.InternalID | undefined;
+  setFeedItemId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasCollectionId(): boolean;
+  clearCollectionId(): void;
+  getCollectionId(): librarian_v1_common_pb.InternalID | undefined;
+  setCollectionId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddFeedItemToCollectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AddFeedItemToCollectionRequest): AddFeedItemToCollectionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddFeedItemToCollectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddFeedItemToCollectionRequest;
+  static deserializeBinaryFromReader(message: AddFeedItemToCollectionRequest, reader: jspb.BinaryReader): AddFeedItemToCollectionRequest;
+}
+
+export namespace AddFeedItemToCollectionRequest {
+  export type AsObject = {
+    feedItemId?: librarian_v1_common_pb.InternalID.AsObject,
+    collectionId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class AddFeedItemToCollectionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AddFeedItemToCollectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AddFeedItemToCollectionResponse): AddFeedItemToCollectionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AddFeedItemToCollectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AddFeedItemToCollectionResponse;
+  static deserializeBinaryFromReader(message: AddFeedItemToCollectionResponse, reader: jspb.BinaryReader): AddFeedItemToCollectionResponse;
+}
+
+export namespace AddFeedItemToCollectionResponse {
+  export type AsObject = {
+  }
+}
+
+export class RemoveFeedItemFromCollectionRequest extends jspb.Message {
+  hasFeedItemId(): boolean;
+  clearFeedItemId(): void;
+  getFeedItemId(): librarian_v1_common_pb.InternalID | undefined;
+  setFeedItemId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasCollectionId(): boolean;
+  clearCollectionId(): void;
+  getCollectionId(): librarian_v1_common_pb.InternalID | undefined;
+  setCollectionId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveFeedItemFromCollectionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveFeedItemFromCollectionRequest): RemoveFeedItemFromCollectionRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveFeedItemFromCollectionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveFeedItemFromCollectionRequest;
+  static deserializeBinaryFromReader(message: RemoveFeedItemFromCollectionRequest, reader: jspb.BinaryReader): RemoveFeedItemFromCollectionRequest;
+}
+
+export namespace RemoveFeedItemFromCollectionRequest {
+  export type AsObject = {
+    feedItemId?: librarian_v1_common_pb.InternalID.AsObject,
+    collectionId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class RemoveFeedItemFromCollectionResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveFeedItemFromCollectionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveFeedItemFromCollectionResponse): RemoveFeedItemFromCollectionResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveFeedItemFromCollectionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveFeedItemFromCollectionResponse;
+  static deserializeBinaryFromReader(message: RemoveFeedItemFromCollectionResponse, reader: jspb.BinaryReader): RemoveFeedItemFromCollectionResponse;
+}
+
+export namespace RemoveFeedItemFromCollectionResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListCollectionItemsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  clearCollectionIdFilterList(): void;
+  getCollectionIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setCollectionIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addCollectionIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  clearAuthorIdFilterList(): void;
+  getAuthorIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setAuthorIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addAuthorIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  clearPublishPlatformFilterList(): void;
+  getPublishPlatformFilterList(): Array<string>;
+  setPublishPlatformFilterList(value: Array<string>): void;
+  addPublishPlatformFilter(value: string, index?: number): string;
+
+  clearCategoryFilterList(): void;
+  getCategoryFilterList(): Array<string>;
+  setCategoryFilterList(value: Array<string>): void;
+  addCategoryFilter(value: string, index?: number): string;
+
+  hasPublishTimeRange(): boolean;
+  clearPublishTimeRange(): void;
+  getPublishTimeRange(): librarian_v1_common_pb.TimeRange | undefined;
+  setPublishTimeRange(value?: librarian_v1_common_pb.TimeRange): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCollectionItemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCollectionItemsRequest): ListCollectionItemsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCollectionItemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCollectionItemsRequest;
+  static deserializeBinaryFromReader(message: ListCollectionItemsRequest, reader: jspb.BinaryReader): ListCollectionItemsRequest;
+}
+
+export namespace ListCollectionItemsRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    collectionIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    publishPlatformFilterList: Array<string>,
+    categoryFilterList: Array<string>,
+    publishTimeRange?: librarian_v1_common_pb.TimeRange.AsObject,
+  }
+}
+
+export class ListCollectionItemsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearItemsList(): void;
+  getItemsList(): Array<FeedItemDigest>;
+  setItemsList(value: Array<FeedItemDigest>): void;
+  addItems(value?: FeedItemDigest, index?: number): FeedItemDigest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListCollectionItemsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListCollectionItemsResponse): ListCollectionItemsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListCollectionItemsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListCollectionItemsResponse;
+  static deserializeBinaryFromReader(message: ListCollectionItemsResponse, reader: jspb.BinaryReader): ListCollectionItemsResponse;
+}
+
+export namespace ListCollectionItemsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    itemsList: Array<FeedItemDigest.AsObject>,
+  }
+}
+
 export class FeedConfig extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
@@ -540,6 +898,9 @@ export class FeedConfig extends jspb.Message {
   getLatestUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLatestUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  getHideItems(): boolean;
+  setHideItems(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
   static toObject(includeInstance: boolean, msg: FeedConfig): FeedConfig.AsObject;
@@ -561,6 +922,7 @@ export namespace FeedConfig {
     pullInterval?: google_protobuf_duration_pb.Duration.AsObject,
     category: string,
     latestUpdateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    hideItems: boolean,
   }
 }
 
@@ -629,6 +991,40 @@ export namespace FeedItemDigest {
     publishPlatform: string,
     feedConfigName: string,
     feedAvatarUrl: string,
+  }
+}
+
+export class FeedItemCollection extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getCategory(): string;
+  setCategory(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedItemCollection.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedItemCollection): FeedItemCollection.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeedItemCollection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedItemCollection;
+  static deserializeBinaryFromReader(message: FeedItemCollection, reader: jspb.BinaryReader): FeedItemCollection;
+}
+
+export namespace FeedItemCollection {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    name: string,
+    description: string,
+    category: string,
   }
 }
 

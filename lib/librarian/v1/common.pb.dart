@@ -1311,6 +1311,7 @@ class FeedItem extends $pb.GeneratedMessage {
     ..aOM<$0.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedParsed', subBuilder: $0.Timestamp.create)
     ..pc<FeedEnclosure>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enclosures', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
     ..aOS(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatform')
+    ..aInt64(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readCount')
     ..hasRequiredFields = false
   ;
 
@@ -1330,6 +1331,7 @@ class FeedItem extends $pb.GeneratedMessage {
     $0.Timestamp? updatedParsed,
     $core.Iterable<FeedEnclosure>? enclosures,
     $core.String? publishPlatform,
+    $fixnum.Int64? readCount,
   }) {
     final _result = create();
     if (id != null) {
@@ -1373,6 +1375,9 @@ class FeedItem extends $pb.GeneratedMessage {
     }
     if (publishPlatform != null) {
       _result.publishPlatform = publishPlatform;
+    }
+    if (readCount != null) {
+      _result.readCount = readCount;
     }
     return _result;
   }
@@ -1518,6 +1523,15 @@ class FeedItem extends $pb.GeneratedMessage {
   $core.bool hasPublishPlatform() => $_has(13);
   @$pb.TagNumber(14)
   void clearPublishPlatform() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $fixnum.Int64 get readCount => $_getI64(14);
+  @$pb.TagNumber(15)
+  set readCount($fixnum.Int64 v) { $_setInt64(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasReadCount() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearReadCount() => clearField(15);
 }
 
 class FeedPerson extends $pb.GeneratedMessage {

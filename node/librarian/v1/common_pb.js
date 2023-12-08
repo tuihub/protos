@@ -4132,7 +4132,8 @@ proto.librarian.v1.FeedItem.toObject = function(includeInstance, msg) {
     updatedParsed: (f = msg.getUpdatedParsed()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     enclosuresList: jspb.Message.toObjectList(msg.getEnclosuresList(),
     proto.librarian.v1.FeedEnclosure.toObject, includeInstance),
-    publishPlatform: jspb.Message.getFieldWithDefault(msg, 14, "")
+    publishPlatform: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    readCount: jspb.Message.getFieldWithDefault(msg, 15, 0)
   };
 
   if (includeInstance) {
@@ -4230,6 +4231,10 @@ proto.librarian.v1.FeedItem.deserializeBinaryFromReader = function(msg, reader) 
     case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setPublishPlatform(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setReadCount(value);
       break;
     default:
       reader.skipField();
@@ -4361,6 +4366,13 @@ proto.librarian.v1.FeedItem.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       14,
+      f
+    );
+  }
+  f = message.getReadCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      15,
       f
     );
   }
@@ -4732,6 +4744,24 @@ proto.librarian.v1.FeedItem.prototype.getPublishPlatform = function() {
  */
 proto.librarian.v1.FeedItem.prototype.setPublishPlatform = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * optional int64 read_count = 15;
+ * @return {number}
+ */
+proto.librarian.v1.FeedItem.prototype.getReadCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.librarian.v1.FeedItem} returns this
+ */
+proto.librarian.v1.FeedItem.prototype.setReadCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 15, value);
 };
 
 

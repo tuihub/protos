@@ -346,10 +346,10 @@ export class NotifyFlow extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  hasSource(): boolean;
-  clearSource(): void;
-  getSource(): NotifyFlowSource | undefined;
-  setSource(value?: NotifyFlowSource): void;
+  clearSourcesList(): void;
+  getSourcesList(): Array<NotifyFlowSource>;
+  setSourcesList(value: Array<NotifyFlowSource>): void;
+  addSources(value?: NotifyFlowSource, index?: number): NotifyFlowSource;
 
   clearTargetsList(): void;
   getTargetsList(): Array<NotifyFlowTarget>;
@@ -374,17 +374,22 @@ export namespace NotifyFlow {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     description: string,
-    source?: NotifyFlowSource.AsObject,
+    sourcesList: Array<NotifyFlowSource.AsObject>,
     targetsList: Array<NotifyFlowTarget.AsObject>,
     status: NotifyFlowStatusMap[keyof NotifyFlowStatusMap],
   }
 }
 
 export class NotifyFlowSource extends jspb.Message {
-  clearFeedIdFilterList(): void;
-  getFeedIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
-  setFeedIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
-  addFeedIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+  hasFilter(): boolean;
+  clearFilter(): void;
+  getFilter(): NotifyFilter | undefined;
+  setFilter(value?: NotifyFilter): void;
+
+  hasSourceId(): boolean;
+  clearSourceId(): void;
+  getSourceId(): librarian_v1_common_pb.InternalID | undefined;
+  setSourceId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyFlowSource.AsObject;
@@ -398,11 +403,17 @@ export class NotifyFlowSource extends jspb.Message {
 
 export namespace NotifyFlowSource {
   export type AsObject = {
-    feedIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    filter?: NotifyFilter.AsObject,
+    sourceId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
 export class NotifyFlowTarget extends jspb.Message {
+  hasFilter(): boolean;
+  clearFilter(): void;
+  getFilter(): NotifyFilter | undefined;
+  setFilter(value?: NotifyFilter): void;
+
   hasTargetId(): boolean;
   clearTargetId(): void;
   getTargetId(): librarian_v1_common_pb.InternalID | undefined;
@@ -423,8 +434,37 @@ export class NotifyFlowTarget extends jspb.Message {
 
 export namespace NotifyFlowTarget {
   export type AsObject = {
+    filter?: NotifyFilter.AsObject,
     targetId?: librarian_v1_common_pb.InternalID.AsObject,
     channelId: string,
+  }
+}
+
+export class NotifyFilter extends jspb.Message {
+  clearExcludeKeywordsList(): void;
+  getExcludeKeywordsList(): Array<string>;
+  setExcludeKeywordsList(value: Array<string>): void;
+  addExcludeKeywords(value: string, index?: number): string;
+
+  clearIncludeKeywordsList(): void;
+  getIncludeKeywordsList(): Array<string>;
+  setIncludeKeywordsList(value: Array<string>): void;
+  addIncludeKeywords(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NotifyFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: NotifyFilter): NotifyFilter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NotifyFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NotifyFilter;
+  static deserializeBinaryFromReader(message: NotifyFilter, reader: jspb.BinaryReader): NotifyFilter;
+}
+
+export namespace NotifyFilter {
+  export type AsObject = {
+    excludeKeywordsList: Array<string>,
+    includeKeywordsList: Array<string>,
   }
 }
 

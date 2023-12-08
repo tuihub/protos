@@ -87,7 +87,7 @@ namespace TuiHub.Protos.Librarian.V1 {
             "bGlicmFyaWFuLnYxLkZlZWRJdGVtUgVpdGVtcxIaCghsYW5ndWFnZRgGIAEo",
             "CVIIbGFuZ3VhZ2USLQoFaW1hZ2UYByABKAsyFy5saWJyYXJpYW4udjEuRmVl",
             "ZEltYWdlUgVpbWFnZRIyCgdhdXRob3JzGAggAygLMhgubGlicmFyaWFuLnYx",
-            "LkZlZWRQZXJzb25SB2F1dGhvcnMi7QQKCEZlZWRJdGVtEigKAmlkGAEgASgL",
+            "LkZlZWRQZXJzb25SB2F1dGhvcnMijAUKCEZlZWRJdGVtEigKAmlkGAEgASgL",
             "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhQKBXRpdGxlGAIgASgJ",
             "UgV0aXRsZRIyCgdhdXRob3JzGAMgAygLMhgubGlicmFyaWFuLnYxLkZlZWRQ",
             "ZXJzb25SB2F1dGhvcnMSIAoLZGVzY3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0",
@@ -100,23 +100,23 @@ namespace TuiHub.Protos.Librarian.V1 {
             "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSAFSDXVwZGF0ZWRQYXJz",
             "ZWSIAQESOwoKZW5jbG9zdXJlcxgNIAMoCzIbLmxpYnJhcmlhbi52MS5GZWVk",
             "RW5jbG9zdXJlUgplbmNsb3N1cmVzEikKEHB1Ymxpc2hfcGxhdGZvcm0YDiAB",
-            "KAlSD3B1Ymxpc2hQbGF0Zm9ybUITChFfcHVibGlzaGVkX3BhcnNlZEIRCg9f",
-            "dXBkYXRlZF9wYXJzZWQiNgoKRmVlZFBlcnNvbhISCgRuYW1lGAEgASgJUgRu",
-            "YW1lEhQKBWVtYWlsGAIgASgJUgVlbWFpbCIzCglGZWVkSW1hZ2USEAoDdXJs",
-            "GAEgASgJUgN1cmwSFAoFdGl0bGUYAiABKAlSBXRpdGxlIk0KDUZlZWRFbmNs",
-            "b3N1cmUSEAoDdXJsGAEgASgJUgN1cmwSFgoGbGVuZ3RoGAIgASgJUgZsZW5n",
-            "dGgSEgoEdHlwZRgDIAEoCVIEdHlwZSpPCg9BY2NvdW50UGxhdGZvcm0SIAoc",
-            "QUNDT1VOVF9QTEFURk9STV9VTlNQRUNJRklFRBAAEhoKFkFDQ09VTlRfUExB",
-            "VEZPUk1fU1RFQU0QASo2CgdBcHBUeXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lG",
-            "SUVEEAASEQoNQVBQX1RZUEVfR0FNRRABKoMBCglBcHBTb3VyY2USGgoWQVBQ",
-            "X1NPVVJDRV9VTlNQRUNJRklFRBAAEhcKE0FQUF9TT1VSQ0VfSU5URVJOQUwQ",
-            "ARIUChBBUFBfU09VUkNFX1NURUFNEAISEwoPQVBQX1NPVVJDRV9WTkRCEAMS",
-            "FgoSQVBQX1NPVVJDRV9CQU5HVU1JEAQqdgoQQXBwUGFja2FnZVNvdXJjZRIi",
-            "Ch5BUFBfUEFDS0FHRV9TT1VSQ0VfVU5TUEVDSUZJRUQQABIdChlBUFBfUEFD",
-            "S0FHRV9TT1VSQ0VfTUFOVUFMEAESHwobQVBQX1BBQ0tBR0VfU09VUkNFX1NF",
-            "TlRJTkVMEAJCS1osZ2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJy",
-            "YXJpYW4vdjE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5WMWIGcHJv",
-            "dG8z"));
+            "KAlSD3B1Ymxpc2hQbGF0Zm9ybRIdCgpyZWFkX2NvdW50GA8gASgDUglyZWFk",
+            "Q291bnRCEwoRX3B1Ymxpc2hlZF9wYXJzZWRCEQoPX3VwZGF0ZWRfcGFyc2Vk",
+            "IjYKCkZlZWRQZXJzb24SEgoEbmFtZRgBIAEoCVIEbmFtZRIUCgVlbWFpbBgC",
+            "IAEoCVIFZW1haWwiMwoJRmVlZEltYWdlEhAKA3VybBgBIAEoCVIDdXJsEhQK",
+            "BXRpdGxlGAIgASgJUgV0aXRsZSJNCg1GZWVkRW5jbG9zdXJlEhAKA3VybBgB",
+            "IAEoCVIDdXJsEhYKBmxlbmd0aBgCIAEoCVIGbGVuZ3RoEhIKBHR5cGUYAyAB",
+            "KAlSBHR5cGUqTwoPQWNjb3VudFBsYXRmb3JtEiAKHEFDQ09VTlRfUExBVEZP",
+            "Uk1fVU5TUEVDSUZJRUQQABIaChZBQ0NPVU5UX1BMQVRGT1JNX1NURUFNEAEq",
+            "NgoHQXBwVHlwZRIYChRBUFBfVFlQRV9VTlNQRUNJRklFRBAAEhEKDUFQUF9U",
+            "WVBFX0dBTUUQASqDAQoJQXBwU291cmNlEhoKFkFQUF9TT1VSQ0VfVU5TUEVD",
+            "SUZJRUQQABIXChNBUFBfU09VUkNFX0lOVEVSTkFMEAESFAoQQVBQX1NPVVJD",
+            "RV9TVEVBTRACEhMKD0FQUF9TT1VSQ0VfVk5EQhADEhYKEkFQUF9TT1VSQ0Vf",
+            "QkFOR1VNSRAEKnYKEEFwcFBhY2thZ2VTb3VyY2USIgoeQVBQX1BBQ0tBR0Vf",
+            "U09VUkNFX1VOU1BFQ0lGSUVEEAASHQoZQVBQX1BBQ0tBR0VfU09VUkNFX01B",
+            "TlVBTBABEh8KG0FQUF9QQUNLQUdFX1NPVVJDRV9TRU5USU5FTBACQktaLGdp",
+            "dGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3YxO3YxqgIa",
+            "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.AccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.AppType), typeof(global::TuiHub.Protos.Librarian.V1.AppSource), typeof(global::TuiHub.Protos.Librarian.V1.AppPackageSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -134,7 +134,7 @@ namespace TuiHub.Protos.Librarian.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackageBinary), global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Parser, new[]{ "Name", "SizeBytes", "PublicUrl", "Sha256" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppCategory), global::TuiHub.Protos.Librarian.V1.AppCategory.Parser, new[]{ "Id", "Name", "AppIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.Feed), global::TuiHub.Protos.Librarian.V1.Feed.Parser, new[]{ "Id", "Title", "Link", "Description", "Items", "Language", "Image", "Authors" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Id", "Title", "Authors", "Description", "Content", "Guid", "Link", "Image", "Published", "PublishedParsed", "Updated", "UpdatedParsed", "Enclosures", "PublishPlatform" }, new[]{ "PublishedParsed", "UpdatedParsed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Id", "Title", "Authors", "Description", "Content", "Guid", "Link", "Image", "Published", "PublishedParsed", "Updated", "UpdatedParsed", "Enclosures", "PublishPlatform", "ReadCount" }, new[]{ "PublishedParsed", "UpdatedParsed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedPerson), global::TuiHub.Protos.Librarian.V1.FeedPerson.Parser, new[]{ "Name", "Email" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedImage), global::TuiHub.Protos.Librarian.V1.FeedImage.Parser, new[]{ "Url", "Title" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedEnclosure), global::TuiHub.Protos.Librarian.V1.FeedEnclosure.Parser, new[]{ "Url", "Length", "Type" }, null, null, null, null)
@@ -4663,6 +4663,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       updatedParsed_ = other.updatedParsed_ != null ? other.updatedParsed_.Clone() : null;
       enclosures_ = other.enclosures_.Clone();
       publishPlatform_ = other.publishPlatform_;
+      readCount_ = other.readCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4762,7 +4763,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     public const int LinkFieldNumber = 7;
     private string link_ = "";
     /// <summary>
-    /// standard field. e.g. https://github.com/TuiHub/Librarian/releases.atom
+    /// `standard field`. e.g. https://github.com/TuiHub/Librarian/releases.atom
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4875,6 +4876,21 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
+    /// <summary>Field number for the "read_count" field.</summary>
+    public const int ReadCountFieldNumber = 15;
+    private long readCount_;
+    /// <summary>
+    /// recorded read times
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long ReadCount {
+      get { return readCount_; }
+      set {
+        readCount_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4904,6 +4920,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (!object.Equals(UpdatedParsed, other.UpdatedParsed)) return false;
       if(!enclosures_.Equals(other.enclosures_)) return false;
       if (PublishPlatform != other.PublishPlatform) return false;
+      if (ReadCount != other.ReadCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4925,6 +4942,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (updatedParsed_ != null) hash ^= UpdatedParsed.GetHashCode();
       hash ^= enclosures_.GetHashCode();
       if (PublishPlatform.Length != 0) hash ^= PublishPlatform.GetHashCode();
+      if (ReadCount != 0L) hash ^= ReadCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4993,6 +5011,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(114);
         output.WriteString(PublishPlatform);
       }
+      if (ReadCount != 0L) {
+        output.WriteRawTag(120);
+        output.WriteInt64(ReadCount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5053,6 +5075,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(114);
         output.WriteString(PublishPlatform);
       }
+      if (ReadCount != 0L) {
+        output.WriteRawTag(120);
+        output.WriteInt64(ReadCount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5100,6 +5126,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       size += enclosures_.CalculateSize(_repeated_enclosures_codec);
       if (PublishPlatform.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PublishPlatform);
+      }
+      if (ReadCount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ReadCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5162,6 +5191,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       enclosures_.Add(other.enclosures_);
       if (other.PublishPlatform.Length != 0) {
         PublishPlatform = other.PublishPlatform;
+      }
+      if (other.ReadCount != 0L) {
+        ReadCount = other.ReadCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5246,6 +5278,10 @@ namespace TuiHub.Protos.Librarian.V1 {
             PublishPlatform = input.ReadString();
             break;
           }
+          case 120: {
+            ReadCount = input.ReadInt64();
+            break;
+          }
         }
       }
     #endif
@@ -5327,6 +5363,10 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 114: {
             PublishPlatform = input.ReadString();
+            break;
+          }
+          case 120: {
+            ReadCount = input.ReadInt64();
             break;
           }
         }

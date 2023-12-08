@@ -573,6 +573,9 @@ export class FeedItem extends jspb.Message {
   getPublishPlatform(): string;
   setPublishPlatform(value: string): void;
 
+  getReadCount(): number;
+  setReadCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItem.AsObject;
   static toObject(includeInstance: boolean, msg: FeedItem): FeedItem.AsObject;
@@ -599,6 +602,7 @@ export namespace FeedItem {
     updatedParsed?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     enclosuresList: Array<FeedEnclosure.AsObject>,
     publishPlatform: string,
+    readCount: number,
   }
 }
 

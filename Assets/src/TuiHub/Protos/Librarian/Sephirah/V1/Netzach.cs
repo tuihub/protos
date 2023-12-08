@@ -59,28 +59,33 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "ASgJUgtkZXNjcmlwdGlvbhI7CgR0eXBlGAQgASgOMicubGlicmFyaWFuLnNl",
             "cGhpcmFoLnYxLk5vdGlmeVRhcmdldFR5cGVSBHR5cGUSQQoGc3RhdHVzGAUg",
             "ASgOMikubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1",
-            "c1IGc3RhdHVzEhQKBXRva2VuGAYgASgJUgV0b2tlbiKxAgoKTm90aWZ5Rmxv",
+            "c1IGc3RhdHVzEhQKBXRva2VuGAYgASgJUgV0b2tlbiKzAgoKTm90aWZ5Rmxv",
             "dxIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBIS",
             "CgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNj",
-            "cmlwdGlvbhI/CgZzb3VyY2UYBCABKAsyJy5saWJyYXJpYW4uc2VwaGlyYWgu",
-            "djEuTm90aWZ5Rmxvd1NvdXJjZVIGc291cmNlEkEKB3RhcmdldHMYBSADKAsy",
-            "Jy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmxvd1RhcmdldFIHdGFy",
-            "Z2V0cxI/CgZzdGF0dXMYBiABKA4yJy5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
-            "Tm90aWZ5Rmxvd1N0YXR1c1IGc3RhdHVzIlIKEE5vdGlmeUZsb3dTb3VyY2US",
-            "PgoOZmVlZF9pZF9maWx0ZXIYASADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFIMZmVlZElkRmlsdGVyImgKEE5vdGlmeUZsb3dUYXJnZXQSNQoJdGFy",
-            "Z2V0X2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCHRhcmdl",
-            "dElkEh0KCmNoYW5uZWxfaWQYAiABKAlSCWNoYW5uZWxJZCpXChBOb3RpZnlU",
-            "YXJnZXRUeXBlEiIKHk5PVElGWV9UQVJHRVRfVFlQRV9VTlNQRUNJRklFRBAA",
-            "Eh8KG05PVElGWV9UQVJHRVRfVFlQRV9URUxFR1JBTRABKn0KEk5vdGlmeVRh",
-            "cmdldFN0YXR1cxIkCiBOT1RJRllfVEFSR0VUX1NUQVRVU19VTlNQRUNJRklF",
-            "RBAAEh8KG05PVElGWV9UQVJHRVRfU1RBVFVTX0FDVElWRRABEiAKHE5PVElG",
-            "WV9UQVJHRVRfU1RBVFVTX1NVU1BFTkQQAip1ChBOb3RpZnlGbG93U3RhdHVz",
-            "EiIKHk5PVElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGU5PVElG",
-            "WV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxPV19TVEFUVVNf",
-            "U1VTUEVORBACQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGli",
-            "cmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJp",
-            "YW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "cmlwdGlvbhJBCgdzb3VyY2VzGAQgAygLMicubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLk5vdGlmeUZsb3dTb3VyY2VSB3NvdXJjZXMSQQoHdGFyZ2V0cxgFIAMo",
+            "CzInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93VGFyZ2V0Ugd0",
+            "YXJnZXRzEj8KBnN0YXR1cxgGIAEoDjInLmxpYnJhcmlhbi5zZXBoaXJhaC52",
+            "MS5Ob3RpZnlGbG93U3RhdHVzUgZzdGF0dXMihgEKEE5vdGlmeUZsb3dTb3Vy",
+            "Y2USOwoGZmlsdGVyGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5v",
+            "dGlmeUZpbHRlclIGZmlsdGVyEjUKCXNvdXJjZV9pZBgCIAEoCzIYLmxpYnJh",
+            "cmlhbi52MS5JbnRlcm5hbElEUghzb3VyY2VJZCKlAQoQTm90aWZ5Rmxvd1Rh",
+            "cmdldBI7CgZmaWx0ZXIYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
+            "Tm90aWZ5RmlsdGVyUgZmaWx0ZXISNQoJdGFyZ2V0X2lkGAIgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSCHRhcmdldElkEh0KCmNoYW5uZWxfaWQY",
+            "AyABKAlSCWNoYW5uZWxJZCJkCgxOb3RpZnlGaWx0ZXISKQoQZXhjbHVkZV9r",
+            "ZXl3b3JkcxgBIAMoCVIPZXhjbHVkZUtleXdvcmRzEikKEGluY2x1ZGVfa2V5",
+            "d29yZHMYAiADKAlSD2luY2x1ZGVLZXl3b3JkcypXChBOb3RpZnlUYXJnZXRU",
+            "eXBlEiIKHk5PVElGWV9UQVJHRVRfVFlQRV9VTlNQRUNJRklFRBAAEh8KG05P",
+            "VElGWV9UQVJHRVRfVFlQRV9URUxFR1JBTRABKn0KEk5vdGlmeVRhcmdldFN0",
+            "YXR1cxIkCiBOT1RJRllfVEFSR0VUX1NUQVRVU19VTlNQRUNJRklFRBAAEh8K",
+            "G05PVElGWV9UQVJHRVRfU1RBVFVTX0FDVElWRRABEiAKHE5PVElGWV9UQVJH",
+            "RVRfU1RBVFVTX1NVU1BFTkQQAip1ChBOb3RpZnlGbG93U3RhdHVzEiIKHk5P",
+            "VElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGU5PVElGWV9GTE9X",
+            "X1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxPV19TVEFUVVNfU1VTUEVO",
+            "RBACQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFu",
+            "L3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2Vw",
+            "aGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,9 +102,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest.Parser, new[]{ "Paging", "IdFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse.Parser, new[]{ "Paging", "Flows" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget.Parser, new[]{ "Id", "Name", "Description", "Type", "Status", "Token" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow.Parser, new[]{ "Id", "Name", "Description", "Source", "Targets", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource.Parser, new[]{ "FeedIdFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget.Parser, new[]{ "TargetId", "ChannelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow.Parser, new[]{ "Id", "Name", "Description", "Sources", "Targets", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource.Parser, new[]{ "Filter", "SourceId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget.Parser, new[]{ "Filter", "TargetId", "ChannelId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter.Parser, new[]{ "ExcludeKeywords", "IncludeKeywords" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2990,7 +2996,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       name_ = other.name_;
       description_ = other.description_;
-      source_ = other.source_ != null ? other.source_.Clone() : null;
+      sources_ = other.sources_.Clone();
       targets_ = other.targets_.Clone();
       status_ = other.status_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3038,16 +3044,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "source" field.</summary>
-    public const int SourceFieldNumber = 4;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource source_;
+    /// <summary>Field number for the "sources" field.</summary>
+    public const int SourcesFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource> _repeated_sources_codec
+        = pb::FieldCodec.ForMessage(34, global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource> sources_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource Source {
-      get { return source_; }
-      set {
-        source_ = value;
-      }
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource> Sources {
+      get { return sources_; }
     }
 
     /// <summary>Field number for the "targets" field.</summary>
@@ -3091,7 +3096,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (!object.Equals(Id, other.Id)) return false;
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
-      if (!object.Equals(Source, other.Source)) return false;
+      if(!sources_.Equals(other.sources_)) return false;
       if(!targets_.Equals(other.targets_)) return false;
       if (Status != other.Status) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -3104,7 +3109,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (source_ != null) hash ^= Source.GetHashCode();
+      hash ^= sources_.GetHashCode();
       hash ^= targets_.GetHashCode();
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
@@ -3137,10 +3142,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(26);
         output.WriteString(Description);
       }
-      if (source_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Source);
-      }
+      sources_.WriteTo(output, _repeated_sources_codec);
       targets_.WriteTo(output, _repeated_targets_codec);
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         output.WriteRawTag(48);
@@ -3168,10 +3170,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(26);
         output.WriteString(Description);
       }
-      if (source_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Source);
-      }
+      sources_.WriteTo(ref output, _repeated_sources_codec);
       targets_.WriteTo(ref output, _repeated_targets_codec);
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         output.WriteRawTag(48);
@@ -3196,9 +3195,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (source_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Source);
-      }
+      size += sources_.CalculateSize(_repeated_sources_codec);
       size += targets_.CalculateSize(_repeated_targets_codec);
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
@@ -3227,12 +3224,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.source_ != null) {
-        if (source_ == null) {
-          Source = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource();
-        }
-        Source.MergeFrom(other.Source);
-      }
+      sources_.Add(other.sources_);
       targets_.Add(other.targets_);
       if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
         Status = other.Status;
@@ -3268,10 +3260,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 34: {
-            if (source_ == null) {
-              Source = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource();
-            }
-            input.ReadMessage(Source);
+            sources_.AddEntriesFrom(input, _repeated_sources_codec);
             break;
           }
           case 42: {
@@ -3313,10 +3302,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 34: {
-            if (source_ == null) {
-              Source = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource();
-            }
-            input.ReadMessage(Source);
+            sources_.AddEntriesFrom(ref input, _repeated_sources_codec);
             break;
           }
           case 42: {
@@ -3368,7 +3354,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NotifyFlowSource(NotifyFlowSource other) : this() {
-      feedIdFilter_ = other.feedIdFilter_.Clone();
+      filter_ = other.filter_ != null ? other.filter_.Clone() : null;
+      sourceId_ = other.sourceId_ != null ? other.sourceId_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3378,15 +3365,31 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new NotifyFlowSource(this);
     }
 
-    /// <summary>Field number for the "feed_id_filter" field.</summary>
-    public const int FeedIdFilterFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.InternalID> _repeated_feedIdFilter_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> feedIdFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID>();
+    /// <summary>Field number for the "filter" field.</summary>
+    public const int FilterFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter filter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> FeedIdFilter {
-      get { return feedIdFilter_; }
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter Filter {
+      get { return filter_; }
+      set {
+        filter_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "source_id" field.</summary>
+    public const int SourceIdFieldNumber = 2;
+    private global::TuiHub.Protos.Librarian.V1.InternalID sourceId_;
+    /// <summary>
+    /// must be FeedConfigID or FeedItemCollectionID
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID SourceId {
+      get { return sourceId_; }
+      set {
+        sourceId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3404,7 +3407,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!feedIdFilter_.Equals(other.feedIdFilter_)) return false;
+      if (!object.Equals(Filter, other.Filter)) return false;
+      if (!object.Equals(SourceId, other.SourceId)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3412,7 +3416,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= feedIdFilter_.GetHashCode();
+      if (filter_ != null) hash ^= Filter.GetHashCode();
+      if (sourceId_ != null) hash ^= SourceId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3431,7 +3436,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      feedIdFilter_.WriteTo(output, _repeated_feedIdFilter_codec);
+      if (filter_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Filter);
+      }
+      if (sourceId_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SourceId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3442,7 +3454,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      feedIdFilter_.WriteTo(ref output, _repeated_feedIdFilter_codec);
+      if (filter_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Filter);
+      }
+      if (sourceId_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SourceId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3453,7 +3472,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += feedIdFilter_.CalculateSize(_repeated_feedIdFilter_codec);
+      if (filter_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Filter);
+      }
+      if (sourceId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourceId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3466,7 +3490,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      feedIdFilter_.Add(other.feedIdFilter_);
+      if (other.filter_ != null) {
+        if (filter_ == null) {
+          Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+        }
+        Filter.MergeFrom(other.Filter);
+      }
+      if (other.sourceId_ != null) {
+        if (sourceId_ == null) {
+          SourceId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        SourceId.MergeFrom(other.SourceId);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3483,7 +3518,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            feedIdFilter_.AddEntriesFrom(input, _repeated_feedIdFilter_codec);
+            if (filter_ == null) {
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+            }
+            input.ReadMessage(Filter);
+            break;
+          }
+          case 18: {
+            if (sourceId_ == null) {
+              SourceId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(SourceId);
             break;
           }
         }
@@ -3502,7 +3547,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            feedIdFilter_.AddEntriesFrom(ref input, _repeated_feedIdFilter_codec);
+            if (filter_ == null) {
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+            }
+            input.ReadMessage(Filter);
+            break;
+          }
+          case 18: {
+            if (sourceId_ == null) {
+              SourceId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(SourceId);
             break;
           }
         }
@@ -3546,6 +3601,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NotifyFlowTarget(NotifyFlowTarget other) : this() {
+      filter_ = other.filter_ != null ? other.filter_.Clone() : null;
       targetId_ = other.targetId_ != null ? other.targetId_.Clone() : null;
       channelId_ = other.channelId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3557,9 +3613,24 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new NotifyFlowTarget(this);
     }
 
+    /// <summary>Field number for the "filter" field.</summary>
+    public const int FilterFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter filter_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter Filter {
+      get { return filter_; }
+      set {
+        filter_ = value;
+      }
+    }
+
     /// <summary>Field number for the "target_id" field.</summary>
-    public const int TargetIdFieldNumber = 1;
+    public const int TargetIdFieldNumber = 2;
     private global::TuiHub.Protos.Librarian.V1.InternalID targetId_;
+    /// <summary>
+    /// must be NotifyTargetID
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::TuiHub.Protos.Librarian.V1.InternalID TargetId {
@@ -3570,7 +3641,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "channel_id" field.</summary>
-    public const int ChannelIdFieldNumber = 2;
+    public const int ChannelIdFieldNumber = 3;
     private string channelId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3596,6 +3667,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Filter, other.Filter)) return false;
       if (!object.Equals(TargetId, other.TargetId)) return false;
       if (ChannelId != other.ChannelId) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -3605,6 +3677,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (filter_ != null) hash ^= Filter.GetHashCode();
       if (targetId_ != null) hash ^= TargetId.GetHashCode();
       if (ChannelId.Length != 0) hash ^= ChannelId.GetHashCode();
       if (_unknownFields != null) {
@@ -3625,12 +3698,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (targetId_ != null) {
+      if (filter_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Filter);
+      }
+      if (targetId_ != null) {
+        output.WriteRawTag(18);
         output.WriteMessage(TargetId);
       }
       if (ChannelId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(ChannelId);
       }
       if (_unknownFields != null) {
@@ -3643,12 +3720,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (targetId_ != null) {
+      if (filter_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Filter);
+      }
+      if (targetId_ != null) {
+        output.WriteRawTag(18);
         output.WriteMessage(TargetId);
       }
       if (ChannelId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(ChannelId);
       }
       if (_unknownFields != null) {
@@ -3661,6 +3742,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (filter_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Filter);
+      }
       if (targetId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetId);
       }
@@ -3678,6 +3762,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public void MergeFrom(NotifyFlowTarget other) {
       if (other == null) {
         return;
+      }
+      if (other.filter_ != null) {
+        if (filter_ == null) {
+          Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+        }
+        Filter.MergeFrom(other.Filter);
       }
       if (other.targetId_ != null) {
         if (targetId_ == null) {
@@ -3704,13 +3794,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (filter_ == null) {
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+            }
+            input.ReadMessage(Filter);
+            break;
+          }
+          case 18: {
             if (targetId_ == null) {
               TargetId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
             input.ReadMessage(TargetId);
             break;
           }
-          case 18: {
+          case 26: {
             ChannelId = input.ReadString();
             break;
           }
@@ -3730,14 +3827,225 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            if (filter_ == null) {
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+            }
+            input.ReadMessage(Filter);
+            break;
+          }
+          case 18: {
             if (targetId_ == null) {
               TargetId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
             input.ReadMessage(TargetId);
             break;
           }
-          case 18: {
+          case 26: {
             ChannelId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class NotifyFilter : pb::IMessage<NotifyFilter>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<NotifyFilter> _parser = new pb::MessageParser<NotifyFilter>(() => new NotifyFilter());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<NotifyFilter> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NotifyFilter() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NotifyFilter(NotifyFilter other) : this() {
+      excludeKeywords_ = other.excludeKeywords_.Clone();
+      includeKeywords_ = other.includeKeywords_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NotifyFilter Clone() {
+      return new NotifyFilter(this);
+    }
+
+    /// <summary>Field number for the "exclude_keywords" field.</summary>
+    public const int ExcludeKeywordsFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_excludeKeywords_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> excludeKeywords_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> ExcludeKeywords {
+      get { return excludeKeywords_; }
+    }
+
+    /// <summary>Field number for the "include_keywords" field.</summary>
+    public const int IncludeKeywordsFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_includeKeywords_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> includeKeywords_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> IncludeKeywords {
+      get { return includeKeywords_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as NotifyFilter);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(NotifyFilter other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!excludeKeywords_.Equals(other.excludeKeywords_)) return false;
+      if(!includeKeywords_.Equals(other.includeKeywords_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= excludeKeywords_.GetHashCode();
+      hash ^= includeKeywords_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      excludeKeywords_.WriteTo(output, _repeated_excludeKeywords_codec);
+      includeKeywords_.WriteTo(output, _repeated_includeKeywords_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      excludeKeywords_.WriteTo(ref output, _repeated_excludeKeywords_codec);
+      includeKeywords_.WriteTo(ref output, _repeated_includeKeywords_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += excludeKeywords_.CalculateSize(_repeated_excludeKeywords_codec);
+      size += includeKeywords_.CalculateSize(_repeated_includeKeywords_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(NotifyFilter other) {
+      if (other == null) {
+        return;
+      }
+      excludeKeywords_.Add(other.excludeKeywords_);
+      includeKeywords_.Add(other.includeKeywords_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            excludeKeywords_.AddEntriesFrom(input, _repeated_excludeKeywords_codec);
+            break;
+          }
+          case 18: {
+            includeKeywords_.AddEntriesFrom(input, _repeated_includeKeywords_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            excludeKeywords_.AddEntriesFrom(ref input, _repeated_excludeKeywords_codec);
+            break;
+          }
+          case 18: {
+            includeKeywords_.AddEntriesFrom(ref input, _repeated_includeKeywords_codec);
             break;
           }
         }

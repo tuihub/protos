@@ -2153,6 +2153,9 @@ impl serde::Serialize for FeedItem {
         if !self.publish_platform.is_empty() {
             len += 1;
         }
+        if self.read_count != 0 {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -2196,6 +2199,9 @@ impl serde::Serialize for FeedItem {
         if !self.publish_platform.is_empty() {
             struct_ser.serialize_field("publishPlatform", &self.publish_platform)?;
         }
+        if self.read_count != 0 {
+            struct_ser.serialize_field("readCount", ToString::to_string(&self.read_count).as_str())?;
+        }
         struct_ser.end()
     }
 }
@@ -2223,6 +2229,8 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             "enclosures",
             "publish_platform",
             "publishPlatform",
+            "read_count",
+            "readCount",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -2241,6 +2249,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             UpdatedParsed,
             Enclosures,
             PublishPlatform,
+            ReadCount,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2276,6 +2285,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             "updatedParsed" | "updated_parsed" => Ok(GeneratedField::UpdatedParsed),
                             "enclosures" => Ok(GeneratedField::Enclosures),
                             "publishPlatform" | "publish_platform" => Ok(GeneratedField::PublishPlatform),
+                            "readCount" | "read_count" => Ok(GeneratedField::ReadCount),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2309,6 +2319,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 let mut updated_parsed__ = None;
                 let mut enclosures__ = None;
                 let mut publish_platform__ = None;
+                let mut read_count__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -2395,6 +2406,14 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             }
                             publish_platform__ = Some(map.next_value()?);
                         }
+                        GeneratedField::ReadCount => {
+                            if read_count__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("readCount"));
+                            }
+                            read_count__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
                     }
                 }
                 Ok(FeedItem {
@@ -2412,6 +2431,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     updated_parsed: updated_parsed__,
                     enclosures: enclosures__.unwrap_or_default(),
                     publish_platform: publish_platform__.unwrap_or_default(),
+                    read_count: read_count__.unwrap_or_default(),
                 })
             }
         }
