@@ -1,0 +1,69 @@
+{
+    "platform": "windows",
+    "entries": [
+        {
+            "id": 1,
+            "baseDirMode": "game_root",
+            "baseDir": ".\\savedata\\",
+            "filePatterns": [
+                {
+                    "type": "include",
+                    "pattern": "FLAG???"
+                },
+                {
+                    "type": "exclude",
+                    "pattern": "FLAG000"
+                },
+                {
+                    "type": "exclude",
+                    "pattern": "FLAG999"
+                }
+            ],
+            "clearBaseDirBeforeRestore": false
+        },
+        {
+            "id": 2,
+            "baseDirMode": "user_document",
+            "baseDir": ".\\example_inc\\rvdata\\",
+            "filePatterns": [
+                {
+                    "type": "include",
+                    "pattern": "*.rvdata2"
+                },
+                {
+                    "type": "exclude",
+                    "pattern": "System.rvdata2"
+                }
+            ],
+            "clearBaseDirBeforeRestore": false
+        },
+        {
+            "id": 3,
+            "baseDirMode": "user_profile",
+            "baseDir": ".\\Saved Games\\sPlus\\alp\\",
+            "filePatterns": [
+                {
+                    "type": "include",
+                    "pattern": "*"
+                },
+                {
+                    "type": "exclude",
+                    "pattern": "THM999"
+                }
+            ],
+            "clearBaseDirBeforeRestore": false
+        },
+        {
+            "id": 4,
+            "baseDirMode": "absolute",
+            "baseDir": "D:\\dummy\\savedata\\",
+            "filePatterns": [
+                {
+                    "type": "include",
+                    "pattern": "*"
+                }
+            ],
+            "clearBaseDirBeforeRestore": true
+        }
+    ]
+}

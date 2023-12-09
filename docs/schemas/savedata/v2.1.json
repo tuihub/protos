@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/tuihub/protos/schemas/savedata/v2.1.json",
+    "title": "TuiHub Savedata Config V2.1",
+    "description": "Json schema v2.1 for TuiHub savedata config.",
+    "type": "object",
+    "properties": {
+        "platform": {
+            "type": "string",
+            "enum": [
+                "windows"
+            ]
+        },
+        "entries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "number"
+                    },
+                    "baseDirMode": {
+                        "type": "string",
+                        "enum": [
+                            "game_root",
+                            "user_document",
+                            "user_profile",
+                            "absolute"
+                        ]
+                    },
+                    "baseDir": {
+                        "type": "string"
+                    },
+                    "filePatterns": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "include",
+                                        "exclude"
+                                    ]
+                                },
+                                "pattern": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "pattern"
+                            ]
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "clearBaseDirBeforeRestore": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "id",
+                    "baseDirMode",
+                    "baseDir",
+                    "filePatterns",
+                    "clearBaseDirBeforeRestore"
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "platform",
+        "entries"
+    ]
+}
