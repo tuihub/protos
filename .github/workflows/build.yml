@@ -33,7 +33,7 @@ jobs:
           go-version: 'oldstable'
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.8.2
+        uses: actions/setup-node@v4.0.0
       
       - name: Setup .NET environment
         uses: actions/setup-dotnet@v4
