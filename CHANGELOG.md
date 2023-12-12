@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.46](https://github.com/tuihub/protos/compare/v0.2.45...v0.2.46) (2023-12-12)
+
+
+### Features
+
+* **yesod:** add item collection & read count ([f8f8558](https://github.com/tuihub/protos/commit/f8f85580b9b748c025757374e045d6c72d5f5790))
+
 ## [0.2.45](https://github.com/tuihub/protos/compare/v0.2.44...v0.2.45) (2023-12-02)
 
 
