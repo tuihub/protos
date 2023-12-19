@@ -1,5 +1,6 @@
 {
     "platform": "windows",
+    "caseSensitive": false,
     "entries": [
         {
             "id": 1,
