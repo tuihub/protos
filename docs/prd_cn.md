@@ -222,7 +222,10 @@ sequenceDiagram
 用户权限：
 - `Admin`和`Normal`能够创建自己的`AppPackageSaveDataConfig`，可以选择公开给其他用户
 
-配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/protos/schemas/savedata/v1.json)
+配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/protos/schemas/savedata/v1.json)（[示例](https://tuihub.github.io/protos/schemas/savedata/v1-exmaple.json)），[v2.1](https://tuihub.github.io/protos/schemas/savedata/v1.json)（[示例](https://tuihub.github.io/protos/schemas/savedata/v2.1-example.json)）  
+推荐使用最新schema
+
+#### Savedata Schema v1 说明
 
 - 配置文件必须声明schema
 - 配置文件中不应出现schema定义以外的值
@@ -234,6 +237,26 @@ sequenceDiagram
     - `profile`路径必须为相对路径，以用户主目录为起始
   - `path`路径信息，内容必须为有效的路径（Windows平台下使用Windows平台格式，相对路径分隔符使用正斜杠`/`），若为文件则以文件名结尾，若为文件夹则以`/`结尾
   - `id`唯一标识符，生成的备份文件中应当有一个同名文件夹，文件夹内容为依据本`entry`定义应当备份的文件
+
+#### Savedata Schema v2.1 说明
+
+- 配置文件必须声明schema
+- 配置文件中不应出现schema定义以外的值
+- 存档文件应为一个标准`zip`格式的压缩文件，其中包含配置文件本体
+- `platform`项为存档使用的平台，目前只有`windows`
+- `caseSensitive`项为在处理该存档时，路径是否大小写敏感（`windows`平台默认大小写不敏感）
+- `entries`项包含该存档所有的处理规则，至少需有`1`个`entry`
+  - `id`项为唯一标识id，在`entries`中不可重复；生成的存档根目录中需有同名文件夹，包含符合本`entry`定义的文件
+  - 该`entry`的起始路径由`baseDirMode`（路径模式）以及`baseDir`（路径）组成，`baseDirMode`有`4`种情况
+    - `game_root`：以用户指定的游戏根目录为起始（该路径由客户端管理，不是本配置文件的一部分），此时`baseDir`需为相对路径，最终起始路径为用户指定的游戏根目录和`baseDir`拼接的结果
+    - `user_document`：以操作系统当前用户的`文档`目录为起始，此时`baseDir`需为相对路径，最终起始路径为`文档`目录和`baseDir`拼接的结果
+    - `user_profile`：以操作系统当前用户的主目录为起始（`windows`平台为`%USERPROFILE%`目录，`linux`平台为`~`目录），此时`baseDir`需为相对路径，最终起始路径为用户主目录和`baseDir`拼接的结果
+    - `absolute`: 绝对路径，此时`baseDir`需为绝对路径，最终起始路径`baseDir`
+  - `filePatterns`为该`entry`处理的具体规则，至少需有`1`个`filePattern`
+    - `type`有`2`种情况：`include`代表该规则为包含项，`exclude`代表该规则为排除项
+    - `pattern`为匹配的具体规则，允许`*`和`?`，不支持正则表达式，具体规则和`.NET 5+`中`System.IO.Directory.EnumerateFiles`方法中`searchPattern`的处理规则相同（[文档链接](https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.enumeratefiles?view=net-8.0)）
+    - `exclude`项将会最后处理，以保证所有`exclude`项不会出现在最终存档中
+  - `clearBaseDirBeforeRestore`项为是否在还原存档前清空该`entry`的起始路径目录
 
 ### 游戏存档（AppPackageSaveData）
 
@@ -258,7 +281,7 @@ sequenceDiagram
 - 文件
   - 备份文件必须是一个有效的zip文件
   - 备份文件中的所有文件名、文本文件等文本内容均**使用 UTF-8 编码**
-  - 备份文件中必须有一个名为`tuihub_savedata_config.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/protos/schemas/savedata/v1-example.json)
+  - 备份文件中必须有一个名为`tuihub_savedata_config.json`的配置文件，内容参考[v1-example](https://tuihub.github.io/protos/schemas/savedata/v1-example.json)，[v2.1-example](https://tuihub.github.io/protos/schemas/savedata/v2.1-example.json)
   - 备份文件中的其他内容必须遵循配置文件的设置
 - 备份
   - 依据用户预先设置的配置文件生成备份
