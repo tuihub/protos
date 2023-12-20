@@ -222,12 +222,12 @@ sequenceDiagram
 用户权限：
 - `Admin`和`Normal`能够创建自己的`AppPackageSaveDataConfig`，可以选择公开给其他用户
 
-配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/protos/schemas/savedata/v1.json)（[示例](https://tuihub.github.io/protos/schemas/savedata/v1-exmaple.json)），[v2.1](https://tuihub.github.io/protos/schemas/savedata/v1.json)（[示例](https://tuihub.github.io/protos/schemas/savedata/v2.1-example.json)）  
+配置文件为有效的json字符串，schema定义：[v1](https://tuihub.github.io/protos/schemas/savedata/v1.json)（[示例](https://tuihub.github.io/protos/schemas/savedata/v1-exmaple.json)），[v2.1](https://tuihub.github.io/protos/schemas/savedata/v2.1.json)（[示例](https://tuihub.github.io/protos/schemas/savedata/v2.1-example.json)）  
 推荐使用最新schema
 
 #### Savedata Schema v1 说明
 
-- 配置文件必须声明schema
+- 配置文件必须声明`jsonSchemaId`，其值为该配置对应的Json Schema URL
 - 配置文件中不应出现schema定义以外的值
 - 每个`entry`包含了一个特定路径的配置，通常情况下仅需要一个
   - `pathMode`路径模式否则必须为相对路径，相对路径的起始路径由具体设置决定
@@ -240,7 +240,7 @@ sequenceDiagram
 
 #### Savedata Schema v2.1 说明
 
-- 配置文件必须声明schema
+- 配置文件必须声明`jsonSchemaId`，其值为该配置对应的Json Schema URL
 - 配置文件中不应出现schema定义以外的值
 - 存档文件应为一个标准`zip`格式的压缩文件，其中包含配置文件本体
 - `platform`项为存档使用的平台，目前只有`windows`

@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://github.com/tuihub/protos/schemas/savedata/v2.1.json",
+    "$id": "https://tuihub.github.io/protos/schemas/savedata/v2.1.json",
     "title": "TuiHub Savedata Config V2.1",
     "description": "Json schema v2.1 for TuiHub savedata config.",
     "type": "object",
