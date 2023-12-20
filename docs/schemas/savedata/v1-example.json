@@ -1,5 +1,5 @@
 {
-  "jsonSchemaId": "https://tuihub.github.io/protos/schemas/savedata/v1.json",
+  "$schema": "https://tuihub.github.io/protos/schemas/savedata/v1.json",
   "platform": "windows",
   "entries": [
     {

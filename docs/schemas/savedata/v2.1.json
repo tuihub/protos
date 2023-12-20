@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://tuihub.github.io/protos/schemas/savedata/v2.1.json",
+    "$id": "https://github.com/tuihub/protos/schemas/savedata/v2.1",
     "title": "TuiHub Savedata Config V2.1",
     "description": "Json schema v2.1 for TuiHub savedata config.",
     "type": "object",
@@ -25,9 +25,9 @@
                     "baseDirMode": {
                         "type": "string",
                         "enum": [
-                            "game_root",
-                            "user_document",
-                            "user_profile",
+                            "gameRoot",
+                            "userDocument",
+                            "userProfile",
                             "absolute"
                         ]
                     },

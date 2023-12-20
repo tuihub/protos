@@ -1,5 +1,5 @@
 {
-    "$id": "https://tuihub.github.io/protos/schemas/savedata/v1.json",
+    "$id": "https://github.com/tuihub/protos/schemas/savedata/v1",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Save File Configs",
     "properties": {

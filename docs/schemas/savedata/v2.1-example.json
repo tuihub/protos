@@ -1,11 +1,11 @@
 {
-    "jsonSchemaId": "https://tuihub.github.io/protos/schemas/savedata/v2.1.json",
+    "$schema": "https://tuihub.github.io/protos/schemas/savedata/v2.1.json",
     "platform": "windows",
     "caseSensitive": false,
     "entries": [
         {
             "id": 1,
-            "baseDirMode": "game_root",
+            "baseDirMode": "gameRoot",
             "baseDir": ".\\savedata\\",
             "filePatterns": [
                 {
@@ -25,7 +25,7 @@
         },
         {
             "id": 2,
-            "baseDirMode": "user_document",
+            "baseDirMode": "userDocument",
             "baseDir": ".\\example_inc\\rvdata\\",
             "filePatterns": [
                 {
@@ -41,7 +41,7 @@
         },
         {
             "id": 3,
-            "baseDirMode": "user_profile",
+            "baseDirMode": "userProfile",
             "baseDir": ".\\Saved Games\\sPlus\\alp\\",
             "filePatterns": [
                 {
