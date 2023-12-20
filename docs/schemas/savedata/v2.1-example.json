@@ -1,4 +1,5 @@
 {
+    "$schema": "https://tuihub.github.io/protos/schemas/savedata/v2.1.json",
     "platform": "windows",
     "caseSensitive": false,
     "entries": [
