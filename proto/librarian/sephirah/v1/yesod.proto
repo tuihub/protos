@@ -196,6 +196,8 @@ message FeedItemDigest {
   string feed_config_name = 10;
   // `Feed.image.url`
   string feed_avatar_url = 11;
+  // `FeedItem.read_count`
+  int64 read_count = 12;
 }
 
 // Server must maintain a default collection, without requirement of create
