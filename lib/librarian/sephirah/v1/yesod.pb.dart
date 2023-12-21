@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $7;
@@ -1911,6 +1912,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatform')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedConfigName')
     ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedAvatarUrl')
+    ..aInt64(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readCount')
     ..hasRequiredFields = false
   ;
 
@@ -1927,6 +1929,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     $core.String? publishPlatform,
     $core.String? feedConfigName,
     $core.String? feedAvatarUrl,
+    $fixnum.Int64? readCount,
   }) {
     final _result = create();
     if (feedId != null) {
@@ -1961,6 +1964,9 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     }
     if (feedAvatarUrl != null) {
       _result.feedAvatarUrl = feedAvatarUrl;
+    }
+    if (readCount != null) {
+      _result.readCount = readCount;
     }
     return _result;
   }
@@ -2083,6 +2089,15 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   $core.bool hasFeedAvatarUrl() => $_has(10);
   @$pb.TagNumber(11)
   void clearFeedAvatarUrl() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get readCount => $_getI64(11);
+  @$pb.TagNumber(12)
+  set readCount($fixnum.Int64 v) { $_setInt64(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasReadCount() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearReadCount() => clearField(12);
 }
 
 class FeedItemCollection extends $pb.GeneratedMessage {

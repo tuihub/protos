@@ -7546,7 +7546,8 @@ proto.librarian.sephirah.v1.FeedItemDigest.toObject = function(includeInstance, 
     imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     publishPlatform: jspb.Message.getFieldWithDefault(msg, 9, ""),
     feedConfigName: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    feedAvatarUrl: jspb.Message.getFieldWithDefault(msg, 11, "")
+    feedAvatarUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    readCount: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -7629,6 +7630,10 @@ proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader = functio
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setFeedAvatarUrl(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setReadCount(value);
       break;
     default:
       reader.skipField();
@@ -7736,6 +7741,13 @@ proto.librarian.sephirah.v1.FeedItemDigest.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = message.getReadCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      12,
       f
     );
   }
@@ -8013,6 +8025,24 @@ proto.librarian.sephirah.v1.FeedItemDigest.prototype.getFeedAvatarUrl = function
  */
 proto.librarian.sephirah.v1.FeedItemDigest.prototype.setFeedAvatarUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional int64 read_count = 12;
+ * @return {number}
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.getReadCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemDigest} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemDigest.prototype.setReadCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 

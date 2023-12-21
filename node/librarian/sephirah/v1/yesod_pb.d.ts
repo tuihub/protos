@@ -968,6 +968,9 @@ export class FeedItemDigest extends jspb.Message {
   getFeedAvatarUrl(): string;
   setFeedAvatarUrl(value: string): void;
 
+  getReadCount(): number;
+  setReadCount(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItemDigest.AsObject;
   static toObject(includeInstance: boolean, msg: FeedItemDigest): FeedItemDigest.AsObject;
@@ -991,6 +994,7 @@ export namespace FeedItemDigest {
     publishPlatform: string,
     feedConfigName: string,
     feedAvatarUrl: string,
+    readCount: number,
   }
 }
 

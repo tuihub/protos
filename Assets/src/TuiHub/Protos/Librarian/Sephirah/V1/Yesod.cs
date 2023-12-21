@@ -129,7 +129,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "KAlSCGNhdGVnb3J5Ek0KEmxhdGVzdF91cGRhdGVfdGltZRgJIAEoCzIaLmdv",
             "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAFIQbGF0ZXN0VXBkYXRlVGltZYgB",
             "ARIdCgpoaWRlX2l0ZW1zGAogASgIUgloaWRlSXRlbXNCFQoTX2xhdGVzdF91",
-            "cGRhdGVfdGltZSLeAwoORmVlZEl0ZW1EaWdlc3QSMQoHZmVlZF9pZBgBIAEo",
+            "cGRhdGVfdGltZSL9AwoORmVlZEl0ZW1EaWdlc3QSMQoHZmVlZF9pZBgBIAEo",
             "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgZmZWVkSWQSMQoHaXRlbV9p",
             "ZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgZpdGVtSWQSHQoK",
             "YXZhdGFyX3VybBgDIAEoCVIJYXZhdGFyVXJsEhgKB2F1dGhvcnMYBCABKAlS",
@@ -139,18 +139,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "KAlSEHNob3J0RGVzY3JpcHRpb24SHQoKaW1hZ2VfdXJscxgIIAMoCVIJaW1h",
             "Z2VVcmxzEikKEHB1Ymxpc2hfcGxhdGZvcm0YCSABKAlSD3B1Ymxpc2hQbGF0",
             "Zm9ybRIoChBmZWVkX2NvbmZpZ19uYW1lGAogASgJUg5mZWVkQ29uZmlnTmFt",
-            "ZRImCg9mZWVkX2F2YXRhcl91cmwYCyABKAlSDWZlZWRBdmF0YXJVcmwikAEK",
-            "EkZlZWRJdGVtQ29sbGVjdGlvbhIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52",
-            "MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2Ny",
-            "aXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIaCghjYXRlZ29yeRgEIAEoCVII",
-            "Y2F0ZWdvcnkqdQoQRmVlZENvbmZpZ1N0YXR1cxIiCh5GRUVEX0NPTkZJR19T",
-            "VEFUVVNfVU5TUEVDSUZJRUQQABIdChlGRUVEX0NPTkZJR19TVEFUVVNfQUNU",
-            "SVZFEAESHgoaRkVFRF9DT05GSUdfU1RBVFVTX1NVU1BFTkQQAipVChBGZWVk",
-            "Q29uZmlnU291cmNlEiIKHkZFRURfQ09ORklHX1NPVVJDRV9VTlNQRUNJRklF",
-            "RBAAEh0KGUZFRURfQ09ORklHX1NPVVJDRV9DT01NT04QAUJdWjVnaXRodWIu",
-            "Y29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2",
-            "MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90",
-            "bzM="));
+            "ZRImCg9mZWVkX2F2YXRhcl91cmwYCyABKAlSDWZlZWRBdmF0YXJVcmwSHQoK",
+            "cmVhZF9jb3VudBgMIAEoA1IJcmVhZENvdW50IpABChJGZWVkSXRlbUNvbGxl",
+            "Y3Rpb24SKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIC",
+            "aWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVIL",
+            "ZGVzY3JpcHRpb24SGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5KnUKEEZl",
+            "ZWRDb25maWdTdGF0dXMSIgoeRkVFRF9DT05GSUdfU1RBVFVTX1VOU1BFQ0lG",
+            "SUVEEAASHQoZRkVFRF9DT05GSUdfU1RBVFVTX0FDVElWRRABEh4KGkZFRURf",
+            "Q09ORklHX1NUQVRVU19TVVNQRU5EEAIqVQoQRmVlZENvbmZpZ1NvdXJjZRIi",
+            "Ch5GRUVEX0NPTkZJR19TT1VSQ0VfVU5TUEVDSUZJRUQQABIdChlGRUVEX0NP",
+            "TkZJR19TT1VSQ0VfQ09NTU9OEAFCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJv",
+            "dG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJv",
+            "dG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfigSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -187,7 +187,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListCollectionItemsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListCollectionItemsRequest.Parser, new[]{ "Paging", "CollectionIdFilter", "AuthorIdFilter", "PublishPlatformFilter", "CategoryFilter", "PublishTimeRange" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListCollectionItemsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListCollectionItemsResponse.Parser, new[]{ "Paging", "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedConfig.Parser, new[]{ "Id", "Name", "FeedUrl", "AuthorAccount", "Source", "Status", "PullInterval", "Category", "LatestUpdateTime", "HideItems" }, new[]{ "LatestUpdateTime" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest.Parser, new[]{ "FeedId", "ItemId", "AvatarUrl", "Authors", "PublishedParsedTime", "Title", "ShortDescription", "ImageUrls", "PublishPlatform", "FeedConfigName", "FeedAvatarUrl" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemDigest.Parser, new[]{ "FeedId", "ItemId", "AvatarUrl", "Authors", "PublishedParsedTime", "Title", "ShortDescription", "ImageUrls", "PublishPlatform", "FeedConfigName", "FeedAvatarUrl", "ReadCount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemCollection), global::TuiHub.Protos.Librarian.Sephirah.V1.FeedItemCollection.Parser, new[]{ "Id", "Name", "Description", "Category" }, null, null, null, null)
           }));
     }
@@ -7884,6 +7884,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       publishPlatform_ = other.publishPlatform_;
       feedConfigName_ = other.feedConfigName_;
       feedAvatarUrl_ = other.feedAvatarUrl_;
+      readCount_ = other.readCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -8052,6 +8053,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "read_count" field.</summary>
+    public const int ReadCountFieldNumber = 12;
+    private long readCount_;
+    /// <summary>
+    /// `FeedItem.read_count`
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long ReadCount {
+      get { return readCount_; }
+      set {
+        readCount_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -8078,6 +8094,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (PublishPlatform != other.PublishPlatform) return false;
       if (FeedConfigName != other.FeedConfigName) return false;
       if (FeedAvatarUrl != other.FeedAvatarUrl) return false;
+      if (ReadCount != other.ReadCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -8096,6 +8113,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (PublishPlatform.Length != 0) hash ^= PublishPlatform.GetHashCode();
       if (FeedConfigName.Length != 0) hash ^= FeedConfigName.GetHashCode();
       if (FeedAvatarUrl.Length != 0) hash ^= FeedAvatarUrl.GetHashCode();
+      if (ReadCount != 0L) hash ^= ReadCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8155,6 +8173,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(90);
         output.WriteString(FeedAvatarUrl);
       }
+      if (ReadCount != 0L) {
+        output.WriteRawTag(96);
+        output.WriteInt64(ReadCount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -8206,6 +8228,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(90);
         output.WriteString(FeedAvatarUrl);
       }
+      if (ReadCount != 0L) {
+        output.WriteRawTag(96);
+        output.WriteInt64(ReadCount);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -8246,6 +8272,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (FeedAvatarUrl.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FeedAvatarUrl);
+      }
+      if (ReadCount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ReadCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -8298,6 +8327,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.FeedAvatarUrl.Length != 0) {
         FeedAvatarUrl = other.FeedAvatarUrl;
+      }
+      if (other.ReadCount != 0L) {
+        ReadCount = other.ReadCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -8367,6 +8399,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             FeedAvatarUrl = input.ReadString();
             break;
           }
+          case 96: {
+            ReadCount = input.ReadInt64();
+            break;
+          }
         }
       }
     #endif
@@ -8433,6 +8469,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           }
           case 90: {
             FeedAvatarUrl = input.ReadString();
+            break;
+          }
+          case 96: {
+            ReadCount = input.ReadInt64();
             break;
           }
         }

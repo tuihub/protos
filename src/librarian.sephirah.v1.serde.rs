@@ -3310,6 +3310,9 @@ impl serde::Serialize for FeedItemDigest {
         if !self.feed_avatar_url.is_empty() {
             len += 1;
         }
+        if self.read_count != 0 {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedItemDigest", len)?;
         if let Some(v) = self.feed_id.as_ref() {
             struct_ser.serialize_field("feedId", v)?;
@@ -3344,6 +3347,9 @@ impl serde::Serialize for FeedItemDigest {
         if !self.feed_avatar_url.is_empty() {
             struct_ser.serialize_field("feedAvatarUrl", &self.feed_avatar_url)?;
         }
+        if self.read_count != 0 {
+            struct_ser.serialize_field("readCount", ToString::to_string(&self.read_count).as_str())?;
+        }
         struct_ser.end()
     }
 }
@@ -3374,6 +3380,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
             "feedConfigName",
             "feed_avatar_url",
             "feedAvatarUrl",
+            "read_count",
+            "readCount",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -3389,6 +3397,7 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
             PublishPlatform,
             FeedConfigName,
             FeedAvatarUrl,
+            ReadCount,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -3421,6 +3430,7 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                             "publishPlatform" | "publish_platform" => Ok(GeneratedField::PublishPlatform),
                             "feedConfigName" | "feed_config_name" => Ok(GeneratedField::FeedConfigName),
                             "feedAvatarUrl" | "feed_avatar_url" => Ok(GeneratedField::FeedAvatarUrl),
+                            "readCount" | "read_count" => Ok(GeneratedField::ReadCount),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -3451,6 +3461,7 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                 let mut publish_platform__ = None;
                 let mut feed_config_name__ = None;
                 let mut feed_avatar_url__ = None;
+                let mut read_count__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::FeedId => {
@@ -3519,6 +3530,14 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                             }
                             feed_avatar_url__ = Some(map.next_value()?);
                         }
+                        GeneratedField::ReadCount => {
+                            if read_count__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("readCount"));
+                            }
+                            read_count__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
                     }
                 }
                 Ok(FeedItemDigest {
@@ -3533,6 +3552,7 @@ impl<'de> serde::Deserialize<'de> for FeedItemDigest {
                     publish_platform: publish_platform__.unwrap_or_default(),
                     feed_config_name: feed_config_name__.unwrap_or_default(),
                     feed_avatar_url: feed_avatar_url__.unwrap_or_default(),
+                    read_count: read_count__.unwrap_or_default(),
                 })
             }
         }
