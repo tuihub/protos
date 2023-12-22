@@ -7,8 +7,7 @@ install-plugins:
 	go install github.com/go-kratos/kratos/cmd/protoc-gen-go-errors/v2@latest
 	npm install
 	cargo install --locked protoc-gen-prost-crate
-	# https://github.com/google/protobuf.dart/issues/850
-	dart pub global activate protoc_plugin 20.0.1
+	dart pub global activate protoc_plugin
 
 generate: clean buf go rust dart
 
