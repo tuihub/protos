@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: librarian/searcher/v1/searcher.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -11,20 +15,20 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $1;
-
 import 'searcher.pbenum.dart';
 
 export 'searcher.pbenum.dart';
 
 class NewIDRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+  factory NewIDRequest() => create();
+  NewIDRequest._() : super();
+  factory NewIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NewIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NewIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  NewIDRequest._() : super();
-  factory NewIDRequest() => create();
-  factory NewIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NewIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -34,8 +38,10 @@ class NewIDRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NewIDRequest copyWith(void Function(NewIDRequest) updates) => super.copyWith((message) => updates(message as NewIDRequest)) as NewIDRequest; // ignore: deprecated_member_use
+  NewIDRequest copyWith(void Function(NewIDRequest) updates) => super.copyWith((message) => updates(message as NewIDRequest)) as NewIDRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static NewIDRequest create() => NewIDRequest._();
   NewIDRequest createEmptyInstance() => create();
@@ -46,23 +52,24 @@ class NewIDRequest extends $pb.GeneratedMessage {
 }
 
 class NewIDResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  NewIDResponse._() : super();
   factory NewIDResponse({
     $1.InternalID? id,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
-    return _result;
+    return $result;
   }
+  NewIDResponse._() : super();
   factory NewIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NewIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..aOM<$1.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $1.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -72,8 +79,10 @@ class NewIDResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NewIDResponse copyWith(void Function(NewIDResponse) updates) => super.copyWith((message) => updates(message as NewIDResponse)) as NewIDResponse; // ignore: deprecated_member_use
+  NewIDResponse copyWith(void Function(NewIDResponse) updates) => super.copyWith((message) => updates(message as NewIDResponse)) as NewIDResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static NewIDResponse create() => NewIDResponse._();
   NewIDResponse createEmptyInstance() => create();
@@ -95,23 +104,24 @@ class NewIDResponse extends $pb.GeneratedMessage {
 }
 
 class NewBatchIDsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewBatchIDsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'num', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
-
-  NewBatchIDsRequest._() : super();
   factory NewBatchIDsRequest({
     $core.int? num,
   }) {
-    final _result = create();
+    final $result = create();
     if (num != null) {
-      _result.num = num;
+      $result.num = num;
     }
-    return _result;
+    return $result;
   }
+  NewBatchIDsRequest._() : super();
   factory NewBatchIDsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewBatchIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NewBatchIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'num', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -121,8 +131,10 @@ class NewBatchIDsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NewBatchIDsRequest copyWith(void Function(NewBatchIDsRequest) updates) => super.copyWith((message) => updates(message as NewBatchIDsRequest)) as NewBatchIDsRequest; // ignore: deprecated_member_use
+  NewBatchIDsRequest copyWith(void Function(NewBatchIDsRequest) updates) => super.copyWith((message) => updates(message as NewBatchIDsRequest)) as NewBatchIDsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static NewBatchIDsRequest create() => NewBatchIDsRequest._();
   NewBatchIDsRequest createEmptyInstance() => create();
@@ -142,23 +154,24 @@ class NewBatchIDsRequest extends $pb.GeneratedMessage {
 }
 
 class NewBatchIDsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'NewBatchIDsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..pc<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $1.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  NewBatchIDsResponse._() : super();
   factory NewBatchIDsResponse({
     $core.Iterable<$1.InternalID>? ids,
   }) {
-    final _result = create();
+    final $result = create();
     if (ids != null) {
-      _result.ids.addAll(ids);
+      $result.ids.addAll(ids);
     }
-    return _result;
+    return $result;
   }
+  NewBatchIDsResponse._() : super();
   factory NewBatchIDsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NewBatchIDsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NewBatchIDsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..pc<$1.InternalID>(1, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $1.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -168,8 +181,10 @@ class NewBatchIDsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NewBatchIDsResponse copyWith(void Function(NewBatchIDsResponse) updates) => super.copyWith((message) => updates(message as NewBatchIDsResponse)) as NewBatchIDsResponse; // ignore: deprecated_member_use
+  NewBatchIDsResponse copyWith(void Function(NewBatchIDsResponse) updates) => super.copyWith((message) => updates(message as NewBatchIDsResponse)) as NewBatchIDsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static NewBatchIDsResponse create() => NewBatchIDsResponse._();
   NewBatchIDsResponse createEmptyInstance() => create();
@@ -183,38 +198,39 @@ class NewBatchIDsResponse extends $pb.GeneratedMessage {
 }
 
 class DescribeIDRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DescribeIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..e<DescribeIDRequest_DescribeMode>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DescribeIDRequest_DescribeMode.DESCRIBE_MODE_UNSPECIFIED, valueOf: DescribeIDRequest_DescribeMode.valueOf, enumValues: DescribeIDRequest_DescribeMode.values)
-    ..e<Index>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index', $pb.PbFieldType.OE, defaultOrMaker: Index.INDEX_UNSPECIFIED, valueOf: Index.valueOf, enumValues: Index.values)
-    ..hasRequiredFields = false
-  ;
-
-  DescribeIDRequest._() : super();
   factory DescribeIDRequest({
     $1.InternalID? id,
     $core.String? description,
     DescribeIDRequest_DescribeMode? mode,
     Index? index,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (mode != null) {
-      _result.mode = mode;
+      $result.mode = mode;
     }
     if (index != null) {
-      _result.index = index;
+      $result.index = index;
     }
-    return _result;
+    return $result;
   }
+  DescribeIDRequest._() : super();
   factory DescribeIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DescribeIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DescribeIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..aOM<$1.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $1.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..e<DescribeIDRequest_DescribeMode>(3, _omitFieldNames ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: DescribeIDRequest_DescribeMode.DESCRIBE_MODE_UNSPECIFIED, valueOf: DescribeIDRequest_DescribeMode.valueOf, enumValues: DescribeIDRequest_DescribeMode.values)
+    ..e<Index>(4, _omitFieldNames ? '' : 'index', $pb.PbFieldType.OE, defaultOrMaker: Index.INDEX_UNSPECIFIED, valueOf: Index.valueOf, enumValues: Index.values)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -224,8 +240,10 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DescribeIDRequest copyWith(void Function(DescribeIDRequest) updates) => super.copyWith((message) => updates(message as DescribeIDRequest)) as DescribeIDRequest; // ignore: deprecated_member_use
+  DescribeIDRequest copyWith(void Function(DescribeIDRequest) updates) => super.copyWith((message) => updates(message as DescribeIDRequest)) as DescribeIDRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DescribeIDRequest create() => DescribeIDRequest._();
   DescribeIDRequest createEmptyInstance() => create();
@@ -274,14 +292,15 @@ class DescribeIDRequest extends $pb.GeneratedMessage {
 }
 
 class DescribeIDResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DescribeIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+  factory DescribeIDResponse() => create();
+  DescribeIDResponse._() : super();
+  factory DescribeIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DescribeIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DescribeIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  DescribeIDResponse._() : super();
-  factory DescribeIDResponse() => create();
-  factory DescribeIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DescribeIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -291,8 +310,10 @@ class DescribeIDResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DescribeIDResponse copyWith(void Function(DescribeIDResponse) updates) => super.copyWith((message) => updates(message as DescribeIDResponse)) as DescribeIDResponse; // ignore: deprecated_member_use
+  DescribeIDResponse copyWith(void Function(DescribeIDResponse) updates) => super.copyWith((message) => updates(message as DescribeIDResponse)) as DescribeIDResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DescribeIDResponse create() => DescribeIDResponse._();
   DescribeIDResponse createEmptyInstance() => create();
@@ -303,33 +324,34 @@ class DescribeIDResponse extends $pb.GeneratedMessage {
 }
 
 class SearchIDRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aOM<$1.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $1.PagingRequest.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'keyword')
-    ..e<Index>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index', $pb.PbFieldType.OE, defaultOrMaker: Index.INDEX_UNSPECIFIED, valueOf: Index.valueOf, enumValues: Index.values)
-    ..hasRequiredFields = false
-  ;
-
-  SearchIDRequest._() : super();
   factory SearchIDRequest({
     $1.PagingRequest? paging,
     $core.String? keyword,
     Index? index,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (keyword != null) {
-      _result.keyword = keyword;
+      $result.keyword = keyword;
     }
     if (index != null) {
-      _result.index = index;
+      $result.index = index;
     }
-    return _result;
+    return $result;
   }
+  SearchIDRequest._() : super();
   factory SearchIDRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SearchIDRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchIDRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..aOM<$1.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $1.PagingRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'keyword')
+    ..e<Index>(3, _omitFieldNames ? '' : 'index', $pb.PbFieldType.OE, defaultOrMaker: Index.INDEX_UNSPECIFIED, valueOf: Index.valueOf, enumValues: Index.values)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -339,8 +361,10 @@ class SearchIDRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SearchIDRequest copyWith(void Function(SearchIDRequest) updates) => super.copyWith((message) => updates(message as SearchIDRequest)) as SearchIDRequest; // ignore: deprecated_member_use
+  SearchIDRequest copyWith(void Function(SearchIDRequest) updates) => super.copyWith((message) => updates(message as SearchIDRequest)) as SearchIDRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SearchIDRequest create() => SearchIDRequest._();
   SearchIDRequest createEmptyInstance() => create();
@@ -380,28 +404,29 @@ class SearchIDRequest extends $pb.GeneratedMessage {
 }
 
 class SearchIDResponse_Result extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDResponse.Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aOM<$1.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $1.InternalID.create)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rank')
-    ..hasRequiredFields = false
-  ;
-
-  SearchIDResponse_Result._() : super();
   factory SearchIDResponse_Result({
     $1.InternalID? id,
     $fixnum.Int64? rank,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (rank != null) {
-      _result.rank = rank;
+      $result.rank = rank;
     }
-    return _result;
+    return $result;
   }
+  SearchIDResponse_Result._() : super();
   factory SearchIDResponse_Result.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SearchIDResponse_Result.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchIDResponse.Result', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..aOM<$1.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $1.InternalID.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'rank')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -411,8 +436,10 @@ class SearchIDResponse_Result extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SearchIDResponse_Result copyWith(void Function(SearchIDResponse_Result) updates) => super.copyWith((message) => updates(message as SearchIDResponse_Result)) as SearchIDResponse_Result; // ignore: deprecated_member_use
+  SearchIDResponse_Result copyWith(void Function(SearchIDResponse_Result) updates) => super.copyWith((message) => updates(message as SearchIDResponse_Result)) as SearchIDResponse_Result;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SearchIDResponse_Result create() => SearchIDResponse_Result._();
   SearchIDResponse_Result createEmptyInstance() => create();
@@ -443,28 +470,29 @@ class SearchIDResponse_Result extends $pb.GeneratedMessage {
 }
 
 class SearchIDResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SearchIDResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..aOM<$1.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $1.PagingResponse.create)
-    ..pc<SearchIDResponse_Result>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', $pb.PbFieldType.PM, subBuilder: SearchIDResponse_Result.create)
-    ..hasRequiredFields = false
-  ;
-
-  SearchIDResponse._() : super();
   factory SearchIDResponse({
     $1.PagingResponse? paging,
     $core.Iterable<SearchIDResponse_Result>? result,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (result != null) {
-      _result.result.addAll(result);
+      $result.result.addAll(result);
     }
-    return _result;
+    return $result;
   }
+  SearchIDResponse._() : super();
   factory SearchIDResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SearchIDResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchIDResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
+    ..aOM<$1.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $1.PagingResponse.create)
+    ..pc<SearchIDResponse_Result>(2, _omitFieldNames ? '' : 'result', $pb.PbFieldType.PM, subBuilder: SearchIDResponse_Result.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -474,8 +502,10 @@ class SearchIDResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SearchIDResponse copyWith(void Function(SearchIDResponse) updates) => super.copyWith((message) => updates(message as SearchIDResponse)) as SearchIDResponse; // ignore: deprecated_member_use
+  SearchIDResponse copyWith(void Function(SearchIDResponse) updates) => super.copyWith((message) => updates(message as SearchIDResponse)) as SearchIDResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SearchIDResponse create() => SearchIDResponse._();
   SearchIDResponse createEmptyInstance() => create();
@@ -499,3 +529,6 @@ class SearchIDResponse extends $pb.GeneratedMessage {
   $core.List<SearchIDResponse_Result> get result => $_getList(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

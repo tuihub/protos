@@ -1,21 +1,25 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: librarian/mapper/v1/mapper.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-// ignore_for_file: UNDEFINED_SHOWN_NAME
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+
 import 'dart:core' as $core;
+
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class VertexType extends $pb.ProtobufEnum {
-  static const VertexType VERTEX_TYPE_UNSPECIFIED = VertexType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VERTEX_TYPE_UNSPECIFIED');
-  static const VertexType VERTEX_TYPE_ABSTRACT = VertexType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VERTEX_TYPE_ABSTRACT');
-  static const VertexType VERTEX_TYPE_ENTITY = VertexType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VERTEX_TYPE_ENTITY');
-  static const VertexType VERTEX_TYPE_MESSAGE = VertexType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VERTEX_TYPE_MESSAGE');
-  static const VertexType VERTEX_TYPE_OBJECT = VertexType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VERTEX_TYPE_OBJECT');
-  static const VertexType VERTEX_TYPE_METADATA = VertexType._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VERTEX_TYPE_METADATA');
+  static const VertexType VERTEX_TYPE_UNSPECIFIED = VertexType._(0, _omitEnumNames ? '' : 'VERTEX_TYPE_UNSPECIFIED');
+  static const VertexType VERTEX_TYPE_ABSTRACT = VertexType._(1, _omitEnumNames ? '' : 'VERTEX_TYPE_ABSTRACT');
+  static const VertexType VERTEX_TYPE_ENTITY = VertexType._(2, _omitEnumNames ? '' : 'VERTEX_TYPE_ENTITY');
+  static const VertexType VERTEX_TYPE_MESSAGE = VertexType._(3, _omitEnumNames ? '' : 'VERTEX_TYPE_MESSAGE');
+  static const VertexType VERTEX_TYPE_OBJECT = VertexType._(4, _omitEnumNames ? '' : 'VERTEX_TYPE_OBJECT');
+  static const VertexType VERTEX_TYPE_METADATA = VertexType._(5, _omitEnumNames ? '' : 'VERTEX_TYPE_METADATA');
 
   static const $core.List<VertexType> values = <VertexType> [
     VERTEX_TYPE_UNSPECIFIED,
@@ -33,16 +37,16 @@ class VertexType extends $pb.ProtobufEnum {
 }
 
 class EdgeType extends $pb.ProtobufEnum {
-  static const EdgeType EDGE_TYPE_UNSPECIFIED = EdgeType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_UNSPECIFIED');
-  static const EdgeType EDGE_TYPE_GENERAL = EdgeType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_GENERAL');
-  static const EdgeType EDGE_TYPE_EQUAL = EdgeType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_EQUAL');
-  static const EdgeType EDGE_TYPE_CREATE = EdgeType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_CREATE');
-  static const EdgeType EDGE_TYPE_ENJOY = EdgeType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_ENJOY');
-  static const EdgeType EDGE_TYPE_MENTION = EdgeType._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_MENTION');
-  static const EdgeType EDGE_TYPE_DERIVE = EdgeType._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_DERIVE');
-  static const EdgeType EDGE_TYPE_CONTROL = EdgeType._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_CONTROL');
-  static const EdgeType EDGE_TYPE_FOLLOW = EdgeType._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_FOLLOW');
-  static const EdgeType EDGE_TYPE_DESCRIBE = EdgeType._(9, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_TYPE_DESCRIBE');
+  static const EdgeType EDGE_TYPE_UNSPECIFIED = EdgeType._(0, _omitEnumNames ? '' : 'EDGE_TYPE_UNSPECIFIED');
+  static const EdgeType EDGE_TYPE_GENERAL = EdgeType._(1, _omitEnumNames ? '' : 'EDGE_TYPE_GENERAL');
+  static const EdgeType EDGE_TYPE_EQUAL = EdgeType._(2, _omitEnumNames ? '' : 'EDGE_TYPE_EQUAL');
+  static const EdgeType EDGE_TYPE_CREATE = EdgeType._(3, _omitEnumNames ? '' : 'EDGE_TYPE_CREATE');
+  static const EdgeType EDGE_TYPE_ENJOY = EdgeType._(4, _omitEnumNames ? '' : 'EDGE_TYPE_ENJOY');
+  static const EdgeType EDGE_TYPE_MENTION = EdgeType._(5, _omitEnumNames ? '' : 'EDGE_TYPE_MENTION');
+  static const EdgeType EDGE_TYPE_DERIVE = EdgeType._(6, _omitEnumNames ? '' : 'EDGE_TYPE_DERIVE');
+  static const EdgeType EDGE_TYPE_CONTROL = EdgeType._(7, _omitEnumNames ? '' : 'EDGE_TYPE_CONTROL');
+  static const EdgeType EDGE_TYPE_FOLLOW = EdgeType._(8, _omitEnumNames ? '' : 'EDGE_TYPE_FOLLOW');
+  static const EdgeType EDGE_TYPE_DESCRIBE = EdgeType._(9, _omitEnumNames ? '' : 'EDGE_TYPE_DESCRIBE');
 
   static const $core.List<EdgeType> values = <EdgeType> [
     EDGE_TYPE_UNSPECIFIED,
@@ -64,10 +68,10 @@ class EdgeType extends $pb.ProtobufEnum {
 }
 
 class EdgeDirection extends $pb.ProtobufEnum {
-  static const EdgeDirection EDGE_DIRECTION_UNSPECIFIED = EdgeDirection._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_DIRECTION_UNSPECIFIED');
-  static const EdgeDirection EDGE_DIRECTION_OUT = EdgeDirection._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_DIRECTION_OUT');
-  static const EdgeDirection EDGE_DIRECTION_IN = EdgeDirection._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_DIRECTION_IN');
-  static const EdgeDirection EDGE_DIRECTION_BOTH = EdgeDirection._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDGE_DIRECTION_BOTH');
+  static const EdgeDirection EDGE_DIRECTION_UNSPECIFIED = EdgeDirection._(0, _omitEnumNames ? '' : 'EDGE_DIRECTION_UNSPECIFIED');
+  static const EdgeDirection EDGE_DIRECTION_OUT = EdgeDirection._(1, _omitEnumNames ? '' : 'EDGE_DIRECTION_OUT');
+  static const EdgeDirection EDGE_DIRECTION_IN = EdgeDirection._(2, _omitEnumNames ? '' : 'EDGE_DIRECTION_IN');
+  static const EdgeDirection EDGE_DIRECTION_BOTH = EdgeDirection._(3, _omitEnumNames ? '' : 'EDGE_DIRECTION_BOTH');
 
   static const $core.List<EdgeDirection> values = <EdgeDirection> [
     EDGE_DIRECTION_UNSPECIFIED,
@@ -82,3 +86,5 @@ class EdgeDirection extends $pb.ProtobufEnum {
   const EdgeDirection._($core.int v, $core.String n) : super(v, n);
 }
 
+
+const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

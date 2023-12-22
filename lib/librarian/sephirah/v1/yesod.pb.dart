@@ -1,41 +1,45 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/yesod.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $7;
 import '../../../google/protobuf/duration.pb.dart' as $10;
 import '../../../google/protobuf/timestamp.pb.dart' as $8;
-
+import '../../v1/common.pb.dart' as $7;
 import 'yesod.pbenum.dart';
 
 export 'yesod.pbenum.dart';
 
 class CreateFeedConfigRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateFeedConfigRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<FeedConfig>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: FeedConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  CreateFeedConfigRequest._() : super();
   factory CreateFeedConfigRequest({
     FeedConfig? config,
   }) {
-    final _result = create();
+    final $result = create();
     if (config != null) {
-      _result.config = config;
+      $result.config = config;
     }
-    return _result;
+    return $result;
   }
+  CreateFeedConfigRequest._() : super();
   factory CreateFeedConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateFeedConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFeedConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<FeedConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: FeedConfig.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -45,8 +49,10 @@ class CreateFeedConfigRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateFeedConfigRequest copyWith(void Function(CreateFeedConfigRequest) updates) => super.copyWith((message) => updates(message as CreateFeedConfigRequest)) as CreateFeedConfigRequest; // ignore: deprecated_member_use
+  CreateFeedConfigRequest copyWith(void Function(CreateFeedConfigRequest) updates) => super.copyWith((message) => updates(message as CreateFeedConfigRequest)) as CreateFeedConfigRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateFeedConfigRequest create() => CreateFeedConfigRequest._();
   CreateFeedConfigRequest createEmptyInstance() => create();
@@ -68,23 +74,24 @@ class CreateFeedConfigRequest extends $pb.GeneratedMessage {
 }
 
 class CreateFeedConfigResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateFeedConfigResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  CreateFeedConfigResponse._() : super();
   factory CreateFeedConfigResponse({
     $7.InternalID? id,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
-    return _result;
+    return $result;
   }
+  CreateFeedConfigResponse._() : super();
   factory CreateFeedConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateFeedConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFeedConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -94,8 +101,10 @@ class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateFeedConfigResponse copyWith(void Function(CreateFeedConfigResponse) updates) => super.copyWith((message) => updates(message as CreateFeedConfigResponse)) as CreateFeedConfigResponse; // ignore: deprecated_member_use
+  CreateFeedConfigResponse copyWith(void Function(CreateFeedConfigResponse) updates) => super.copyWith((message) => updates(message as CreateFeedConfigResponse)) as CreateFeedConfigResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateFeedConfigResponse create() => CreateFeedConfigResponse._();
   CreateFeedConfigResponse createEmptyInstance() => create();
@@ -117,23 +126,24 @@ class CreateFeedConfigResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateFeedConfigRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateFeedConfigRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<FeedConfig>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: FeedConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  UpdateFeedConfigRequest._() : super();
   factory UpdateFeedConfigRequest({
     FeedConfig? config,
   }) {
-    final _result = create();
+    final $result = create();
     if (config != null) {
-      _result.config = config;
+      $result.config = config;
     }
-    return _result;
+    return $result;
   }
+  UpdateFeedConfigRequest._() : super();
   factory UpdateFeedConfigRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateFeedConfigRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFeedConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<FeedConfig>(1, _omitFieldNames ? '' : 'config', subBuilder: FeedConfig.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -143,8 +153,10 @@ class UpdateFeedConfigRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateFeedConfigRequest copyWith(void Function(UpdateFeedConfigRequest) updates) => super.copyWith((message) => updates(message as UpdateFeedConfigRequest)) as UpdateFeedConfigRequest; // ignore: deprecated_member_use
+  UpdateFeedConfigRequest copyWith(void Function(UpdateFeedConfigRequest) updates) => super.copyWith((message) => updates(message as UpdateFeedConfigRequest)) as UpdateFeedConfigRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateFeedConfigRequest create() => UpdateFeedConfigRequest._();
   UpdateFeedConfigRequest createEmptyInstance() => create();
@@ -166,14 +178,15 @@ class UpdateFeedConfigRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateFeedConfigResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateFeedConfigResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory UpdateFeedConfigResponse() => create();
+  UpdateFeedConfigResponse._() : super();
+  factory UpdateFeedConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateFeedConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFeedConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  UpdateFeedConfigResponse._() : super();
-  factory UpdateFeedConfigResponse() => create();
-  factory UpdateFeedConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateFeedConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -183,8 +196,10 @@ class UpdateFeedConfigResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateFeedConfigResponse copyWith(void Function(UpdateFeedConfigResponse) updates) => super.copyWith((message) => updates(message as UpdateFeedConfigResponse)) as UpdateFeedConfigResponse; // ignore: deprecated_member_use
+  UpdateFeedConfigResponse copyWith(void Function(UpdateFeedConfigResponse) updates) => super.copyWith((message) => updates(message as UpdateFeedConfigResponse)) as UpdateFeedConfigResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateFeedConfigResponse create() => UpdateFeedConfigResponse._();
   UpdateFeedConfigResponse createEmptyInstance() => create();
@@ -195,17 +210,6 @@ class UpdateFeedConfigResponse extends $pb.GeneratedMessage {
 }
 
 class ListFeedConfigsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedConfigsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<FeedConfigSource>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values, defaultEnumValue: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED)
-    ..pc<FeedConfigStatus>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
-    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'categoryFilter')
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedConfigsRequest._() : super();
   factory ListFeedConfigsRequest({
     $7.PagingRequest? paging,
     $core.Iterable<$7.InternalID>? idFilter,
@@ -214,29 +218,41 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
     $core.Iterable<FeedConfigStatus>? statusFilter,
     $core.Iterable<$core.String>? categoryFilter,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (idFilter != null) {
-      _result.idFilter.addAll(idFilter);
+      $result.idFilter.addAll(idFilter);
     }
     if (authorIdFilter != null) {
-      _result.authorIdFilter.addAll(authorIdFilter);
+      $result.authorIdFilter.addAll(authorIdFilter);
     }
     if (sourceFilter != null) {
-      _result.sourceFilter.addAll(sourceFilter);
+      $result.sourceFilter.addAll(sourceFilter);
     }
     if (statusFilter != null) {
-      _result.statusFilter.addAll(statusFilter);
+      $result.statusFilter.addAll(statusFilter);
     }
     if (categoryFilter != null) {
-      _result.categoryFilter.addAll(categoryFilter);
+      $result.categoryFilter.addAll(categoryFilter);
     }
-    return _result;
+    return $result;
   }
+  ListFeedConfigsRequest._() : super();
   factory ListFeedConfigsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedConfigsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<FeedConfigSource>(4, _omitFieldNames ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values, defaultEnumValue: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED)
+    ..pc<FeedConfigStatus>(5, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
+    ..pPS(6, _omitFieldNames ? '' : 'categoryFilter')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -246,8 +262,10 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedConfigsRequest copyWith(void Function(ListFeedConfigsRequest) updates) => super.copyWith((message) => updates(message as ListFeedConfigsRequest)) as ListFeedConfigsRequest; // ignore: deprecated_member_use
+  ListFeedConfigsRequest copyWith(void Function(ListFeedConfigsRequest) updates) => super.copyWith((message) => updates(message as ListFeedConfigsRequest)) as ListFeedConfigsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedConfigsRequest create() => ListFeedConfigsRequest._();
   ListFeedConfigsRequest createEmptyInstance() => create();
@@ -284,28 +302,29 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
 }
 
 class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedConfigsResponse.FeedWithConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.Feed>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feed', subBuilder: $7.Feed.create)
-    ..aOM<FeedConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: FeedConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedConfigsResponse_FeedWithConfig._() : super();
   factory ListFeedConfigsResponse_FeedWithConfig({
     $7.Feed? feed,
     FeedConfig? config,
   }) {
-    final _result = create();
+    final $result = create();
     if (feed != null) {
-      _result.feed = feed;
+      $result.feed = feed;
     }
     if (config != null) {
-      _result.config = config;
+      $result.config = config;
     }
-    return _result;
+    return $result;
   }
+  ListFeedConfigsResponse_FeedWithConfig._() : super();
   factory ListFeedConfigsResponse_FeedWithConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedConfigsResponse_FeedWithConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsResponse.FeedWithConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.Feed>(1, _omitFieldNames ? '' : 'feed', subBuilder: $7.Feed.create)
+    ..aOM<FeedConfig>(2, _omitFieldNames ? '' : 'config', subBuilder: FeedConfig.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -315,8 +334,10 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedConfigsResponse_FeedWithConfig copyWith(void Function(ListFeedConfigsResponse_FeedWithConfig) updates) => super.copyWith((message) => updates(message as ListFeedConfigsResponse_FeedWithConfig)) as ListFeedConfigsResponse_FeedWithConfig; // ignore: deprecated_member_use
+  ListFeedConfigsResponse_FeedWithConfig copyWith(void Function(ListFeedConfigsResponse_FeedWithConfig) updates) => super.copyWith((message) => updates(message as ListFeedConfigsResponse_FeedWithConfig)) as ListFeedConfigsResponse_FeedWithConfig;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedConfigsResponse_FeedWithConfig create() => ListFeedConfigsResponse_FeedWithConfig._();
   ListFeedConfigsResponse_FeedWithConfig createEmptyInstance() => create();
@@ -349,28 +370,29 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
 }
 
 class ListFeedConfigsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedConfigsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<ListFeedConfigsResponse_FeedWithConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedsWithConfig', $pb.PbFieldType.PM, subBuilder: ListFeedConfigsResponse_FeedWithConfig.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedConfigsResponse._() : super();
   factory ListFeedConfigsResponse({
     $7.PagingResponse? paging,
     $core.Iterable<ListFeedConfigsResponse_FeedWithConfig>? feedsWithConfig,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (feedsWithConfig != null) {
-      _result.feedsWithConfig.addAll(feedsWithConfig);
+      $result.feedsWithConfig.addAll(feedsWithConfig);
     }
-    return _result;
+    return $result;
   }
+  ListFeedConfigsResponse._() : super();
   factory ListFeedConfigsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedConfigsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<ListFeedConfigsResponse_FeedWithConfig>(2, _omitFieldNames ? '' : 'feedsWithConfig', $pb.PbFieldType.PM, subBuilder: ListFeedConfigsResponse_FeedWithConfig.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -380,8 +402,10 @@ class ListFeedConfigsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedConfigsResponse copyWith(void Function(ListFeedConfigsResponse) updates) => super.copyWith((message) => updates(message as ListFeedConfigsResponse)) as ListFeedConfigsResponse; // ignore: deprecated_member_use
+  ListFeedConfigsResponse copyWith(void Function(ListFeedConfigsResponse) updates) => super.copyWith((message) => updates(message as ListFeedConfigsResponse)) as ListFeedConfigsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedConfigsResponse create() => ListFeedConfigsResponse._();
   ListFeedConfigsResponse createEmptyInstance() => create();
@@ -406,14 +430,15 @@ class ListFeedConfigsResponse extends $pb.GeneratedMessage {
 }
 
 class ListFeedCategoriesRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedCategoriesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory ListFeedCategoriesRequest() => create();
+  ListFeedCategoriesRequest._() : super();
+  factory ListFeedCategoriesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedCategoriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedCategoriesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedCategoriesRequest._() : super();
-  factory ListFeedCategoriesRequest() => create();
-  factory ListFeedCategoriesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedCategoriesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -423,8 +448,10 @@ class ListFeedCategoriesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedCategoriesRequest copyWith(void Function(ListFeedCategoriesRequest) updates) => super.copyWith((message) => updates(message as ListFeedCategoriesRequest)) as ListFeedCategoriesRequest; // ignore: deprecated_member_use
+  ListFeedCategoriesRequest copyWith(void Function(ListFeedCategoriesRequest) updates) => super.copyWith((message) => updates(message as ListFeedCategoriesRequest)) as ListFeedCategoriesRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedCategoriesRequest create() => ListFeedCategoriesRequest._();
   ListFeedCategoriesRequest createEmptyInstance() => create();
@@ -435,23 +462,24 @@ class ListFeedCategoriesRequest extends $pb.GeneratedMessage {
 }
 
 class ListFeedCategoriesResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedCategoriesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'categories')
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedCategoriesResponse._() : super();
   factory ListFeedCategoriesResponse({
     $core.Iterable<$core.String>? categories,
   }) {
-    final _result = create();
+    final $result = create();
     if (categories != null) {
-      _result.categories.addAll(categories);
+      $result.categories.addAll(categories);
     }
-    return _result;
+    return $result;
   }
+  ListFeedCategoriesResponse._() : super();
   factory ListFeedCategoriesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedCategoriesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedCategoriesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'categories')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -461,8 +489,10 @@ class ListFeedCategoriesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedCategoriesResponse copyWith(void Function(ListFeedCategoriesResponse) updates) => super.copyWith((message) => updates(message as ListFeedCategoriesResponse)) as ListFeedCategoriesResponse; // ignore: deprecated_member_use
+  ListFeedCategoriesResponse copyWith(void Function(ListFeedCategoriesResponse) updates) => super.copyWith((message) => updates(message as ListFeedCategoriesResponse)) as ListFeedCategoriesResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedCategoriesResponse create() => ListFeedCategoriesResponse._();
   ListFeedCategoriesResponse createEmptyInstance() => create();
@@ -476,14 +506,15 @@ class ListFeedCategoriesResponse extends $pb.GeneratedMessage {
 }
 
 class ListFeedPlatformsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedPlatformsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory ListFeedPlatformsRequest() => create();
+  ListFeedPlatformsRequest._() : super();
+  factory ListFeedPlatformsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedPlatformsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedPlatformsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedPlatformsRequest._() : super();
-  factory ListFeedPlatformsRequest() => create();
-  factory ListFeedPlatformsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedPlatformsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -493,8 +524,10 @@ class ListFeedPlatformsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedPlatformsRequest copyWith(void Function(ListFeedPlatformsRequest) updates) => super.copyWith((message) => updates(message as ListFeedPlatformsRequest)) as ListFeedPlatformsRequest; // ignore: deprecated_member_use
+  ListFeedPlatformsRequest copyWith(void Function(ListFeedPlatformsRequest) updates) => super.copyWith((message) => updates(message as ListFeedPlatformsRequest)) as ListFeedPlatformsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedPlatformsRequest create() => ListFeedPlatformsRequest._();
   ListFeedPlatformsRequest createEmptyInstance() => create();
@@ -505,23 +538,24 @@ class ListFeedPlatformsRequest extends $pb.GeneratedMessage {
 }
 
 class ListFeedPlatformsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedPlatformsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'platforms')
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedPlatformsResponse._() : super();
   factory ListFeedPlatformsResponse({
     $core.Iterable<$core.String>? platforms,
   }) {
-    final _result = create();
+    final $result = create();
     if (platforms != null) {
-      _result.platforms.addAll(platforms);
+      $result.platforms.addAll(platforms);
     }
-    return _result;
+    return $result;
   }
+  ListFeedPlatformsResponse._() : super();
   factory ListFeedPlatformsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedPlatformsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedPlatformsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'platforms')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -531,8 +565,10 @@ class ListFeedPlatformsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedPlatformsResponse copyWith(void Function(ListFeedPlatformsResponse) updates) => super.copyWith((message) => updates(message as ListFeedPlatformsResponse)) as ListFeedPlatformsResponse; // ignore: deprecated_member_use
+  ListFeedPlatformsResponse copyWith(void Function(ListFeedPlatformsResponse) updates) => super.copyWith((message) => updates(message as ListFeedPlatformsResponse)) as ListFeedPlatformsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedPlatformsResponse create() => ListFeedPlatformsResponse._();
   ListFeedPlatformsResponse createEmptyInstance() => create();
@@ -546,17 +582,6 @@ class ListFeedPlatformsResponse extends $pb.GeneratedMessage {
 }
 
 class ListFeedItemsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'categoryFilter')
-    ..aOM<$7.TimeRange>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedItemsRequest._() : super();
   factory ListFeedItemsRequest({
     $7.PagingRequest? paging,
     $core.Iterable<$7.InternalID>? feedIdFilter,
@@ -565,29 +590,41 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? categoryFilter,
     $7.TimeRange? publishTimeRange,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (feedIdFilter != null) {
-      _result.feedIdFilter.addAll(feedIdFilter);
+      $result.feedIdFilter.addAll(feedIdFilter);
     }
     if (authorIdFilter != null) {
-      _result.authorIdFilter.addAll(authorIdFilter);
+      $result.authorIdFilter.addAll(authorIdFilter);
     }
     if (publishPlatformFilter != null) {
-      _result.publishPlatformFilter.addAll(publishPlatformFilter);
+      $result.publishPlatformFilter.addAll(publishPlatformFilter);
     }
     if (categoryFilter != null) {
-      _result.categoryFilter.addAll(categoryFilter);
+      $result.categoryFilter.addAll(categoryFilter);
     }
     if (publishTimeRange != null) {
-      _result.publishTimeRange = publishTimeRange;
+      $result.publishTimeRange = publishTimeRange;
     }
-    return _result;
+    return $result;
   }
+  ListFeedItemsRequest._() : super();
   factory ListFeedItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
+    ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
+    ..aOM<$7.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -597,8 +634,10 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemsRequest copyWith(void Function(ListFeedItemsRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemsRequest)) as ListFeedItemsRequest; // ignore: deprecated_member_use
+  ListFeedItemsRequest copyWith(void Function(ListFeedItemsRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemsRequest)) as ListFeedItemsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedItemsRequest create() => ListFeedItemsRequest._();
   ListFeedItemsRequest createEmptyInstance() => create();
@@ -643,28 +682,29 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
 }
 
 class ListFeedItemsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<FeedItemDigest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedItemsResponse._() : super();
   factory ListFeedItemsResponse({
     $7.PagingResponse? paging,
     $core.Iterable<FeedItemDigest>? items,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (items != null) {
-      _result.items.addAll(items);
+      $result.items.addAll(items);
     }
-    return _result;
+    return $result;
   }
+  ListFeedItemsResponse._() : super();
   factory ListFeedItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -674,8 +714,10 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemsResponse copyWith(void Function(ListFeedItemsResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemsResponse)) as ListFeedItemsResponse; // ignore: deprecated_member_use
+  ListFeedItemsResponse copyWith(void Function(ListFeedItemsResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemsResponse)) as ListFeedItemsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedItemsResponse create() => ListFeedItemsResponse._();
   ListFeedItemsResponse createEmptyInstance() => create();
@@ -700,17 +742,6 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
 }
 
 class GroupFeedItemsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupFeedItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.TimeAggregation>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeAggregation', subBuilder: $7.TimeAggregation.create)
-    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'categoryFilter')
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groupSize', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
-
-  GroupFeedItemsRequest._() : super();
   factory GroupFeedItemsRequest({
     $7.TimeAggregation? publishTimeAggregation,
     $core.Iterable<$7.InternalID>? feedIdFilter,
@@ -719,29 +750,41 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? categoryFilter,
     $core.int? groupSize,
   }) {
-    final _result = create();
+    final $result = create();
     if (publishTimeAggregation != null) {
-      _result.publishTimeAggregation = publishTimeAggregation;
+      $result.publishTimeAggregation = publishTimeAggregation;
     }
     if (feedIdFilter != null) {
-      _result.feedIdFilter.addAll(feedIdFilter);
+      $result.feedIdFilter.addAll(feedIdFilter);
     }
     if (authorIdFilter != null) {
-      _result.authorIdFilter.addAll(authorIdFilter);
+      $result.authorIdFilter.addAll(authorIdFilter);
     }
     if (publishPlatformFilter != null) {
-      _result.publishPlatformFilter.addAll(publishPlatformFilter);
+      $result.publishPlatformFilter.addAll(publishPlatformFilter);
     }
     if (categoryFilter != null) {
-      _result.categoryFilter.addAll(categoryFilter);
+      $result.categoryFilter.addAll(categoryFilter);
     }
     if (groupSize != null) {
-      _result.groupSize = groupSize;
+      $result.groupSize = groupSize;
     }
-    return _result;
+    return $result;
   }
+  GroupFeedItemsRequest._() : super();
   factory GroupFeedItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.TimeAggregation>(1, _omitFieldNames ? '' : 'publishTimeAggregation', subBuilder: $7.TimeAggregation.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
+    ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'groupSize', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -751,8 +794,10 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupFeedItemsRequest copyWith(void Function(GroupFeedItemsRequest) updates) => super.copyWith((message) => updates(message as GroupFeedItemsRequest)) as GroupFeedItemsRequest; // ignore: deprecated_member_use
+  GroupFeedItemsRequest copyWith(void Function(GroupFeedItemsRequest) updates) => super.copyWith((message) => updates(message as GroupFeedItemsRequest)) as GroupFeedItemsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupFeedItemsRequest create() => GroupFeedItemsRequest._();
   GroupFeedItemsRequest createEmptyInstance() => create();
@@ -784,6 +829,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.List<$core.String> get categoryFilter => $_getList(4);
 
+  /// NULL means no limit
   @$pb.TagNumber(7)
   $core.int get groupSize => $_getIZ(5);
   @$pb.TagNumber(7)
@@ -795,28 +841,29 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
 }
 
 class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupFeedItemsResponse.FeedItemsGroup', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.TimeRange>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRange', subBuilder: $7.TimeRange.create)
-    ..pc<FeedItemDigest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
-    ..hasRequiredFields = false
-  ;
-
-  GroupFeedItemsResponse_FeedItemsGroup._() : super();
   factory GroupFeedItemsResponse_FeedItemsGroup({
     $7.TimeRange? timeRange,
     $core.Iterable<FeedItemDigest>? items,
   }) {
-    final _result = create();
+    final $result = create();
     if (timeRange != null) {
-      _result.timeRange = timeRange;
+      $result.timeRange = timeRange;
     }
     if (items != null) {
-      _result.items.addAll(items);
+      $result.items.addAll(items);
     }
-    return _result;
+    return $result;
   }
+  GroupFeedItemsResponse_FeedItemsGroup._() : super();
   factory GroupFeedItemsResponse_FeedItemsGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupFeedItemsResponse_FeedItemsGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupFeedItemsResponse.FeedItemsGroup', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $7.TimeRange.create)
+    ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -826,8 +873,10 @@ class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupFeedItemsResponse_FeedItemsGroup copyWith(void Function(GroupFeedItemsResponse_FeedItemsGroup) updates) => super.copyWith((message) => updates(message as GroupFeedItemsResponse_FeedItemsGroup)) as GroupFeedItemsResponse_FeedItemsGroup; // ignore: deprecated_member_use
+  GroupFeedItemsResponse_FeedItemsGroup copyWith(void Function(GroupFeedItemsResponse_FeedItemsGroup) updates) => super.copyWith((message) => updates(message as GroupFeedItemsResponse_FeedItemsGroup)) as GroupFeedItemsResponse_FeedItemsGroup;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupFeedItemsResponse_FeedItemsGroup create() => GroupFeedItemsResponse_FeedItemsGroup._();
   GroupFeedItemsResponse_FeedItemsGroup createEmptyInstance() => create();
@@ -852,23 +901,24 @@ class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
 }
 
 class GroupFeedItemsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<GroupFeedItemsResponse_FeedItemsGroup>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: GroupFeedItemsResponse_FeedItemsGroup.create)
-    ..hasRequiredFields = false
-  ;
-
-  GroupFeedItemsResponse._() : super();
   factory GroupFeedItemsResponse({
     $core.Iterable<GroupFeedItemsResponse_FeedItemsGroup>? groups,
   }) {
-    final _result = create();
+    final $result = create();
     if (groups != null) {
-      _result.groups.addAll(groups);
+      $result.groups.addAll(groups);
     }
-    return _result;
+    return $result;
   }
+  GroupFeedItemsResponse._() : super();
   factory GroupFeedItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupFeedItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<GroupFeedItemsResponse_FeedItemsGroup>(1, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: GroupFeedItemsResponse_FeedItemsGroup.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -878,8 +928,10 @@ class GroupFeedItemsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GroupFeedItemsResponse copyWith(void Function(GroupFeedItemsResponse) updates) => super.copyWith((message) => updates(message as GroupFeedItemsResponse)) as GroupFeedItemsResponse; // ignore: deprecated_member_use
+  GroupFeedItemsResponse copyWith(void Function(GroupFeedItemsResponse) updates) => super.copyWith((message) => updates(message as GroupFeedItemsResponse)) as GroupFeedItemsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GroupFeedItemsResponse create() => GroupFeedItemsResponse._();
   GroupFeedItemsResponse createEmptyInstance() => create();
@@ -893,23 +945,24 @@ class GroupFeedItemsResponse extends $pb.GeneratedMessage {
 }
 
 class GetFeedItemRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  GetFeedItemRequest._() : super();
   factory GetFeedItemRequest({
     $7.InternalID? id,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
-    return _result;
+    return $result;
   }
+  GetFeedItemRequest._() : super();
   factory GetFeedItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeedItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -919,8 +972,10 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetFeedItemRequest copyWith(void Function(GetFeedItemRequest) updates) => super.copyWith((message) => updates(message as GetFeedItemRequest)) as GetFeedItemRequest; // ignore: deprecated_member_use
+  GetFeedItemRequest copyWith(void Function(GetFeedItemRequest) updates) => super.copyWith((message) => updates(message as GetFeedItemRequest)) as GetFeedItemRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetFeedItemRequest create() => GetFeedItemRequest._();
   GetFeedItemRequest createEmptyInstance() => create();
@@ -942,23 +997,24 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
 }
 
 class GetFeedItemResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.FeedItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'item', subBuilder: $7.FeedItem.create)
-    ..hasRequiredFields = false
-  ;
-
-  GetFeedItemResponse._() : super();
   factory GetFeedItemResponse({
     $7.FeedItem? item,
   }) {
-    final _result = create();
+    final $result = create();
     if (item != null) {
-      _result.item = item;
+      $result.item = item;
     }
-    return _result;
+    return $result;
   }
+  GetFeedItemResponse._() : super();
   factory GetFeedItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeedItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $7.FeedItem.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -968,8 +1024,10 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetFeedItemResponse copyWith(void Function(GetFeedItemResponse) updates) => super.copyWith((message) => updates(message as GetFeedItemResponse)) as GetFeedItemResponse; // ignore: deprecated_member_use
+  GetFeedItemResponse copyWith(void Function(GetFeedItemResponse) updates) => super.copyWith((message) => updates(message as GetFeedItemResponse)) as GetFeedItemResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetFeedItemResponse create() => GetFeedItemResponse._();
   GetFeedItemResponse createEmptyInstance() => create();
@@ -991,23 +1049,24 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
 }
 
 class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetBatchFeedItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  GetBatchFeedItemsRequest._() : super();
   factory GetBatchFeedItemsRequest({
     $core.Iterable<$7.InternalID>? ids,
   }) {
-    final _result = create();
+    final $result = create();
     if (ids != null) {
-      _result.ids.addAll(ids);
+      $result.ids.addAll(ids);
     }
-    return _result;
+    return $result;
   }
+  GetBatchFeedItemsRequest._() : super();
   factory GetBatchFeedItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBatchFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBatchFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<$7.InternalID>(1, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1017,8 +1076,10 @@ class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBatchFeedItemsRequest copyWith(void Function(GetBatchFeedItemsRequest) updates) => super.copyWith((message) => updates(message as GetBatchFeedItemsRequest)) as GetBatchFeedItemsRequest; // ignore: deprecated_member_use
+  GetBatchFeedItemsRequest copyWith(void Function(GetBatchFeedItemsRequest) updates) => super.copyWith((message) => updates(message as GetBatchFeedItemsRequest)) as GetBatchFeedItemsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetBatchFeedItemsRequest create() => GetBatchFeedItemsRequest._();
   GetBatchFeedItemsRequest createEmptyInstance() => create();
@@ -1032,23 +1093,24 @@ class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
 }
 
 class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetBatchFeedItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.FeedItem>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $7.FeedItem.create)
-    ..hasRequiredFields = false
-  ;
-
-  GetBatchFeedItemsResponse._() : super();
   factory GetBatchFeedItemsResponse({
     $core.Iterable<$7.FeedItem>? items,
   }) {
-    final _result = create();
+    final $result = create();
     if (items != null) {
-      _result.items.addAll(items);
+      $result.items.addAll(items);
     }
-    return _result;
+    return $result;
   }
+  GetBatchFeedItemsResponse._() : super();
   factory GetBatchFeedItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBatchFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBatchFeedItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<$7.FeedItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $7.FeedItem.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1058,8 +1120,10 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBatchFeedItemsResponse copyWith(void Function(GetBatchFeedItemsResponse) updates) => super.copyWith((message) => updates(message as GetBatchFeedItemsResponse)) as GetBatchFeedItemsResponse; // ignore: deprecated_member_use
+  GetBatchFeedItemsResponse copyWith(void Function(GetBatchFeedItemsResponse) updates) => super.copyWith((message) => updates(message as GetBatchFeedItemsResponse)) as GetBatchFeedItemsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetBatchFeedItemsResponse create() => GetBatchFeedItemsResponse._();
   GetBatchFeedItemsResponse createEmptyInstance() => create();
@@ -1073,23 +1137,24 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
 }
 
 class ReadFeedItemRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReadFeedItemRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  ReadFeedItemRequest._() : super();
   factory ReadFeedItemRequest({
     $7.InternalID? id,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
-    return _result;
+    return $result;
   }
+  ReadFeedItemRequest._() : super();
   factory ReadFeedItemRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ReadFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadFeedItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1099,8 +1164,10 @@ class ReadFeedItemRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ReadFeedItemRequest copyWith(void Function(ReadFeedItemRequest) updates) => super.copyWith((message) => updates(message as ReadFeedItemRequest)) as ReadFeedItemRequest; // ignore: deprecated_member_use
+  ReadFeedItemRequest copyWith(void Function(ReadFeedItemRequest) updates) => super.copyWith((message) => updates(message as ReadFeedItemRequest)) as ReadFeedItemRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ReadFeedItemRequest create() => ReadFeedItemRequest._();
   ReadFeedItemRequest createEmptyInstance() => create();
@@ -1122,14 +1189,15 @@ class ReadFeedItemRequest extends $pb.GeneratedMessage {
 }
 
 class ReadFeedItemResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ReadFeedItemResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory ReadFeedItemResponse() => create();
+  ReadFeedItemResponse._() : super();
+  factory ReadFeedItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReadFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadFeedItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  ReadFeedItemResponse._() : super();
-  factory ReadFeedItemResponse() => create();
-  factory ReadFeedItemResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReadFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1139,8 +1207,10 @@ class ReadFeedItemResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ReadFeedItemResponse copyWith(void Function(ReadFeedItemResponse) updates) => super.copyWith((message) => updates(message as ReadFeedItemResponse)) as ReadFeedItemResponse; // ignore: deprecated_member_use
+  ReadFeedItemResponse copyWith(void Function(ReadFeedItemResponse) updates) => super.copyWith((message) => updates(message as ReadFeedItemResponse)) as ReadFeedItemResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ReadFeedItemResponse create() => ReadFeedItemResponse._();
   ReadFeedItemResponse createEmptyInstance() => create();
@@ -1151,23 +1221,24 @@ class ReadFeedItemResponse extends $pb.GeneratedMessage {
 }
 
 class CreateFeedItemCollectionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateFeedItemCollectionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<FeedItemCollection>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection', subBuilder: FeedItemCollection.create)
-    ..hasRequiredFields = false
-  ;
-
-  CreateFeedItemCollectionRequest._() : super();
   factory CreateFeedItemCollectionRequest({
     FeedItemCollection? collection,
   }) {
-    final _result = create();
+    final $result = create();
     if (collection != null) {
-      _result.collection = collection;
+      $result.collection = collection;
     }
-    return _result;
+    return $result;
   }
+  CreateFeedItemCollectionRequest._() : super();
   factory CreateFeedItemCollectionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateFeedItemCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFeedItemCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<FeedItemCollection>(1, _omitFieldNames ? '' : 'collection', subBuilder: FeedItemCollection.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1177,8 +1248,10 @@ class CreateFeedItemCollectionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateFeedItemCollectionRequest copyWith(void Function(CreateFeedItemCollectionRequest) updates) => super.copyWith((message) => updates(message as CreateFeedItemCollectionRequest)) as CreateFeedItemCollectionRequest; // ignore: deprecated_member_use
+  CreateFeedItemCollectionRequest copyWith(void Function(CreateFeedItemCollectionRequest) updates) => super.copyWith((message) => updates(message as CreateFeedItemCollectionRequest)) as CreateFeedItemCollectionRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateFeedItemCollectionRequest create() => CreateFeedItemCollectionRequest._();
   CreateFeedItemCollectionRequest createEmptyInstance() => create();
@@ -1200,14 +1273,15 @@ class CreateFeedItemCollectionRequest extends $pb.GeneratedMessage {
 }
 
 class CreateFeedItemCollectionResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateFeedItemCollectionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory CreateFeedItemCollectionResponse() => create();
+  CreateFeedItemCollectionResponse._() : super();
+  factory CreateFeedItemCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateFeedItemCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFeedItemCollectionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  CreateFeedItemCollectionResponse._() : super();
-  factory CreateFeedItemCollectionResponse() => create();
-  factory CreateFeedItemCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateFeedItemCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1217,8 +1291,10 @@ class CreateFeedItemCollectionResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateFeedItemCollectionResponse copyWith(void Function(CreateFeedItemCollectionResponse) updates) => super.copyWith((message) => updates(message as CreateFeedItemCollectionResponse)) as CreateFeedItemCollectionResponse; // ignore: deprecated_member_use
+  CreateFeedItemCollectionResponse copyWith(void Function(CreateFeedItemCollectionResponse) updates) => super.copyWith((message) => updates(message as CreateFeedItemCollectionResponse)) as CreateFeedItemCollectionResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CreateFeedItemCollectionResponse create() => CreateFeedItemCollectionResponse._();
   CreateFeedItemCollectionResponse createEmptyInstance() => create();
@@ -1229,23 +1305,24 @@ class CreateFeedItemCollectionResponse extends $pb.GeneratedMessage {
 }
 
 class UpdateFeedItemCollectionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateFeedItemCollectionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<FeedItemCollection>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection', subBuilder: FeedItemCollection.create)
-    ..hasRequiredFields = false
-  ;
-
-  UpdateFeedItemCollectionRequest._() : super();
   factory UpdateFeedItemCollectionRequest({
     FeedItemCollection? collection,
   }) {
-    final _result = create();
+    final $result = create();
     if (collection != null) {
-      _result.collection = collection;
+      $result.collection = collection;
     }
-    return _result;
+    return $result;
   }
+  UpdateFeedItemCollectionRequest._() : super();
   factory UpdateFeedItemCollectionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory UpdateFeedItemCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFeedItemCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<FeedItemCollection>(1, _omitFieldNames ? '' : 'collection', subBuilder: FeedItemCollection.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1255,8 +1332,10 @@ class UpdateFeedItemCollectionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateFeedItemCollectionRequest copyWith(void Function(UpdateFeedItemCollectionRequest) updates) => super.copyWith((message) => updates(message as UpdateFeedItemCollectionRequest)) as UpdateFeedItemCollectionRequest; // ignore: deprecated_member_use
+  UpdateFeedItemCollectionRequest copyWith(void Function(UpdateFeedItemCollectionRequest) updates) => super.copyWith((message) => updates(message as UpdateFeedItemCollectionRequest)) as UpdateFeedItemCollectionRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateFeedItemCollectionRequest create() => UpdateFeedItemCollectionRequest._();
   UpdateFeedItemCollectionRequest createEmptyInstance() => create();
@@ -1278,14 +1357,15 @@ class UpdateFeedItemCollectionRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateFeedItemCollectionResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateFeedItemCollectionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory UpdateFeedItemCollectionResponse() => create();
+  UpdateFeedItemCollectionResponse._() : super();
+  factory UpdateFeedItemCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateFeedItemCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateFeedItemCollectionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  UpdateFeedItemCollectionResponse._() : super();
-  factory UpdateFeedItemCollectionResponse() => create();
-  factory UpdateFeedItemCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateFeedItemCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1295,8 +1375,10 @@ class UpdateFeedItemCollectionResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdateFeedItemCollectionResponse copyWith(void Function(UpdateFeedItemCollectionResponse) updates) => super.copyWith((message) => updates(message as UpdateFeedItemCollectionResponse)) as UpdateFeedItemCollectionResponse; // ignore: deprecated_member_use
+  UpdateFeedItemCollectionResponse copyWith(void Function(UpdateFeedItemCollectionResponse) updates) => super.copyWith((message) => updates(message as UpdateFeedItemCollectionResponse)) as UpdateFeedItemCollectionResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static UpdateFeedItemCollectionResponse create() => UpdateFeedItemCollectionResponse._();
   UpdateFeedItemCollectionResponse createEmptyInstance() => create();
@@ -1307,14 +1389,15 @@ class UpdateFeedItemCollectionResponse extends $pb.GeneratedMessage {
 }
 
 class ListFeedItemCollectionsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemCollectionsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory ListFeedItemCollectionsRequest() => create();
+  ListFeedItemCollectionsRequest._() : super();
+  factory ListFeedItemCollectionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedItemCollectionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemCollectionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  ListFeedItemCollectionsRequest._() : super();
-  factory ListFeedItemCollectionsRequest() => create();
-  factory ListFeedItemCollectionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListFeedItemCollectionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1324,8 +1407,10 @@ class ListFeedItemCollectionsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemCollectionsRequest copyWith(void Function(ListFeedItemCollectionsRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemCollectionsRequest)) as ListFeedItemCollectionsRequest; // ignore: deprecated_member_use
+  ListFeedItemCollectionsRequest copyWith(void Function(ListFeedItemCollectionsRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemCollectionsRequest)) as ListFeedItemCollectionsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedItemCollectionsRequest create() => ListFeedItemCollectionsRequest._();
   ListFeedItemCollectionsRequest createEmptyInstance() => create();
@@ -1336,23 +1421,24 @@ class ListFeedItemCollectionsRequest extends $pb.GeneratedMessage {
 }
 
 class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListFeedItemCollectionsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<FeedItemCollection>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collections', $pb.PbFieldType.PM, subBuilder: FeedItemCollection.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListFeedItemCollectionsResponse._() : super();
   factory ListFeedItemCollectionsResponse({
     $core.Iterable<FeedItemCollection>? collections,
   }) {
-    final _result = create();
+    final $result = create();
     if (collections != null) {
-      _result.collections.addAll(collections);
+      $result.collections.addAll(collections);
     }
-    return _result;
+    return $result;
   }
+  ListFeedItemCollectionsResponse._() : super();
   factory ListFeedItemCollectionsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedItemCollectionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemCollectionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<FeedItemCollection>(1, _omitFieldNames ? '' : 'collections', $pb.PbFieldType.PM, subBuilder: FeedItemCollection.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1362,8 +1448,10 @@ class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListFeedItemCollectionsResponse copyWith(void Function(ListFeedItemCollectionsResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemCollectionsResponse)) as ListFeedItemCollectionsResponse; // ignore: deprecated_member_use
+  ListFeedItemCollectionsResponse copyWith(void Function(ListFeedItemCollectionsResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemCollectionsResponse)) as ListFeedItemCollectionsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListFeedItemCollectionsResponse create() => ListFeedItemCollectionsResponse._();
   ListFeedItemCollectionsResponse createEmptyInstance() => create();
@@ -1377,28 +1465,29 @@ class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
 }
 
 class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddFeedItemToCollectionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedItemId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collectionId', subBuilder: $7.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  AddFeedItemToCollectionRequest._() : super();
   factory AddFeedItemToCollectionRequest({
     $7.InternalID? feedItemId,
     $7.InternalID? collectionId,
   }) {
-    final _result = create();
+    final $result = create();
     if (feedItemId != null) {
-      _result.feedItemId = feedItemId;
+      $result.feedItemId = feedItemId;
     }
     if (collectionId != null) {
-      _result.collectionId = collectionId;
+      $result.collectionId = collectionId;
     }
-    return _result;
+    return $result;
   }
+  AddFeedItemToCollectionRequest._() : super();
   factory AddFeedItemToCollectionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AddFeedItemToCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFeedItemToCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'feedItemId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'collectionId', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1408,8 +1497,10 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddFeedItemToCollectionRequest copyWith(void Function(AddFeedItemToCollectionRequest) updates) => super.copyWith((message) => updates(message as AddFeedItemToCollectionRequest)) as AddFeedItemToCollectionRequest; // ignore: deprecated_member_use
+  AddFeedItemToCollectionRequest copyWith(void Function(AddFeedItemToCollectionRequest) updates) => super.copyWith((message) => updates(message as AddFeedItemToCollectionRequest)) as AddFeedItemToCollectionRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AddFeedItemToCollectionRequest create() => AddFeedItemToCollectionRequest._();
   AddFeedItemToCollectionRequest createEmptyInstance() => create();
@@ -1429,6 +1520,7 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID ensureFeedItemId() => $_ensure(0);
 
+  /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
   $7.InternalID get collectionId => $_getN(1);
   @$pb.TagNumber(2)
@@ -1442,14 +1534,15 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
 }
 
 class AddFeedItemToCollectionResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AddFeedItemToCollectionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory AddFeedItemToCollectionResponse() => create();
+  AddFeedItemToCollectionResponse._() : super();
+  factory AddFeedItemToCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddFeedItemToCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFeedItemToCollectionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  AddFeedItemToCollectionResponse._() : super();
-  factory AddFeedItemToCollectionResponse() => create();
-  factory AddFeedItemToCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddFeedItemToCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1459,8 +1552,10 @@ class AddFeedItemToCollectionResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddFeedItemToCollectionResponse copyWith(void Function(AddFeedItemToCollectionResponse) updates) => super.copyWith((message) => updates(message as AddFeedItemToCollectionResponse)) as AddFeedItemToCollectionResponse; // ignore: deprecated_member_use
+  AddFeedItemToCollectionResponse copyWith(void Function(AddFeedItemToCollectionResponse) updates) => super.copyWith((message) => updates(message as AddFeedItemToCollectionResponse)) as AddFeedItemToCollectionResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static AddFeedItemToCollectionResponse create() => AddFeedItemToCollectionResponse._();
   AddFeedItemToCollectionResponse createEmptyInstance() => create();
@@ -1471,28 +1566,29 @@ class AddFeedItemToCollectionResponse extends $pb.GeneratedMessage {
 }
 
 class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveFeedItemFromCollectionRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedItemId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collectionId', subBuilder: $7.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  RemoveFeedItemFromCollectionRequest._() : super();
   factory RemoveFeedItemFromCollectionRequest({
     $7.InternalID? feedItemId,
     $7.InternalID? collectionId,
   }) {
-    final _result = create();
+    final $result = create();
     if (feedItemId != null) {
-      _result.feedItemId = feedItemId;
+      $result.feedItemId = feedItemId;
     }
     if (collectionId != null) {
-      _result.collectionId = collectionId;
+      $result.collectionId = collectionId;
     }
-    return _result;
+    return $result;
   }
+  RemoveFeedItemFromCollectionRequest._() : super();
   factory RemoveFeedItemFromCollectionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemoveFeedItemFromCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFeedItemFromCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'feedItemId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'collectionId', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1502,8 +1598,10 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveFeedItemFromCollectionRequest copyWith(void Function(RemoveFeedItemFromCollectionRequest) updates) => super.copyWith((message) => updates(message as RemoveFeedItemFromCollectionRequest)) as RemoveFeedItemFromCollectionRequest; // ignore: deprecated_member_use
+  RemoveFeedItemFromCollectionRequest copyWith(void Function(RemoveFeedItemFromCollectionRequest) updates) => super.copyWith((message) => updates(message as RemoveFeedItemFromCollectionRequest)) as RemoveFeedItemFromCollectionRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RemoveFeedItemFromCollectionRequest create() => RemoveFeedItemFromCollectionRequest._();
   RemoveFeedItemFromCollectionRequest createEmptyInstance() => create();
@@ -1523,6 +1621,7 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID ensureFeedItemId() => $_ensure(0);
 
+  /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
   $7.InternalID get collectionId => $_getN(1);
   @$pb.TagNumber(2)
@@ -1536,14 +1635,15 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
 }
 
 class RemoveFeedItemFromCollectionResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RemoveFeedItemFromCollectionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory RemoveFeedItemFromCollectionResponse() => create();
+  RemoveFeedItemFromCollectionResponse._() : super();
+  factory RemoveFeedItemFromCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveFeedItemFromCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFeedItemFromCollectionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  RemoveFeedItemFromCollectionResponse._() : super();
-  factory RemoveFeedItemFromCollectionResponse() => create();
-  factory RemoveFeedItemFromCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemoveFeedItemFromCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1553,8 +1653,10 @@ class RemoveFeedItemFromCollectionResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemoveFeedItemFromCollectionResponse copyWith(void Function(RemoveFeedItemFromCollectionResponse) updates) => super.copyWith((message) => updates(message as RemoveFeedItemFromCollectionResponse)) as RemoveFeedItemFromCollectionResponse; // ignore: deprecated_member_use
+  RemoveFeedItemFromCollectionResponse copyWith(void Function(RemoveFeedItemFromCollectionResponse) updates) => super.copyWith((message) => updates(message as RemoveFeedItemFromCollectionResponse)) as RemoveFeedItemFromCollectionResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RemoveFeedItemFromCollectionResponse create() => RemoveFeedItemFromCollectionResponse._();
   RemoveFeedItemFromCollectionResponse createEmptyInstance() => create();
@@ -1565,17 +1667,6 @@ class RemoveFeedItemFromCollectionResponse extends $pb.GeneratedMessage {
 }
 
 class ListCollectionItemsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListCollectionItemsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collectionIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatformFilter')
-    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'categoryFilter')
-    ..aOM<$7.TimeRange>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListCollectionItemsRequest._() : super();
   factory ListCollectionItemsRequest({
     $7.PagingRequest? paging,
     $core.Iterable<$7.InternalID>? collectionIdFilter,
@@ -1584,29 +1675,41 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? categoryFilter,
     $7.TimeRange? publishTimeRange,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (collectionIdFilter != null) {
-      _result.collectionIdFilter.addAll(collectionIdFilter);
+      $result.collectionIdFilter.addAll(collectionIdFilter);
     }
     if (authorIdFilter != null) {
-      _result.authorIdFilter.addAll(authorIdFilter);
+      $result.authorIdFilter.addAll(authorIdFilter);
     }
     if (publishPlatformFilter != null) {
-      _result.publishPlatformFilter.addAll(publishPlatformFilter);
+      $result.publishPlatformFilter.addAll(publishPlatformFilter);
     }
     if (categoryFilter != null) {
-      _result.categoryFilter.addAll(categoryFilter);
+      $result.categoryFilter.addAll(categoryFilter);
     }
     if (publishTimeRange != null) {
-      _result.publishTimeRange = publishTimeRange;
+      $result.publishTimeRange = publishTimeRange;
     }
-    return _result;
+    return $result;
   }
+  ListCollectionItemsRequest._() : super();
   factory ListCollectionItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListCollectionItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCollectionItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'collectionIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
+    ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
+    ..aOM<$7.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1616,8 +1719,10 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListCollectionItemsRequest copyWith(void Function(ListCollectionItemsRequest) updates) => super.copyWith((message) => updates(message as ListCollectionItemsRequest)) as ListCollectionItemsRequest; // ignore: deprecated_member_use
+  ListCollectionItemsRequest copyWith(void Function(ListCollectionItemsRequest) updates) => super.copyWith((message) => updates(message as ListCollectionItemsRequest)) as ListCollectionItemsRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListCollectionItemsRequest create() => ListCollectionItemsRequest._();
   ListCollectionItemsRequest createEmptyInstance() => create();
@@ -1637,6 +1742,7 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.PagingRequest ensurePaging() => $_ensure(0);
 
+  /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
   $core.List<$7.InternalID> get collectionIdFilter => $_getList(1);
 
@@ -1662,28 +1768,29 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
 }
 
 class ListCollectionItemsResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListCollectionItemsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<FeedItemDigest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
-    ..hasRequiredFields = false
-  ;
-
-  ListCollectionItemsResponse._() : super();
   factory ListCollectionItemsResponse({
     $7.PagingResponse? paging,
     $core.Iterable<FeedItemDigest>? items,
   }) {
-    final _result = create();
+    final $result = create();
     if (paging != null) {
-      _result.paging = paging;
+      $result.paging = paging;
     }
     if (items != null) {
-      _result.items.addAll(items);
+      $result.items.addAll(items);
     }
-    return _result;
+    return $result;
   }
+  ListCollectionItemsResponse._() : super();
   factory ListCollectionItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListCollectionItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCollectionItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1693,8 +1800,10 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListCollectionItemsResponse copyWith(void Function(ListCollectionItemsResponse) updates) => super.copyWith((message) => updates(message as ListCollectionItemsResponse)) as ListCollectionItemsResponse; // ignore: deprecated_member_use
+  ListCollectionItemsResponse copyWith(void Function(ListCollectionItemsResponse) updates) => super.copyWith((message) => updates(message as ListCollectionItemsResponse)) as ListCollectionItemsResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ListCollectionItemsResponse create() => ListCollectionItemsResponse._();
   ListCollectionItemsResponse createEmptyInstance() => create();
@@ -1719,21 +1828,6 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
 }
 
 class FeedConfig extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedConfig', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedUrl')
-    ..aOM<$7.InternalID>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorAccount', subBuilder: $7.InternalID.create)
-    ..e<FeedConfigSource>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
-    ..e<FeedConfigStatus>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
-    ..aOM<$10.Duration>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pullInterval', subBuilder: $10.Duration.create)
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'category')
-    ..aOM<$8.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latestUpdateTime', subBuilder: $8.Timestamp.create)
-    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hideItems')
-    ..hasRequiredFields = false
-  ;
-
-  FeedConfig._() : super();
   factory FeedConfig({
     $7.InternalID? id,
     $core.String? name,
@@ -1746,41 +1840,57 @@ class FeedConfig extends $pb.GeneratedMessage {
     $8.Timestamp? latestUpdateTime,
     $core.bool? hideItems,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (feedUrl != null) {
-      _result.feedUrl = feedUrl;
+      $result.feedUrl = feedUrl;
     }
     if (authorAccount != null) {
-      _result.authorAccount = authorAccount;
+      $result.authorAccount = authorAccount;
     }
     if (source != null) {
-      _result.source = source;
+      $result.source = source;
     }
     if (status != null) {
-      _result.status = status;
+      $result.status = status;
     }
     if (pullInterval != null) {
-      _result.pullInterval = pullInterval;
+      $result.pullInterval = pullInterval;
     }
     if (category != null) {
-      _result.category = category;
+      $result.category = category;
     }
     if (latestUpdateTime != null) {
-      _result.latestUpdateTime = latestUpdateTime;
+      $result.latestUpdateTime = latestUpdateTime;
     }
     if (hideItems != null) {
-      _result.hideItems = hideItems;
+      $result.hideItems = hideItems;
     }
-    return _result;
+    return $result;
   }
+  FeedConfig._() : super();
   factory FeedConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FeedConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'feedUrl')
+    ..aOM<$7.InternalID>(4, _omitFieldNames ? '' : 'authorAccount', subBuilder: $7.InternalID.create)
+    ..e<FeedConfigSource>(5, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
+    ..e<FeedConfigStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
+    ..aOM<$10.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $10.Duration.create)
+    ..aOS(8, _omitFieldNames ? '' : 'category')
+    ..aOM<$8.Timestamp>(9, _omitFieldNames ? '' : 'latestUpdateTime', subBuilder: $8.Timestamp.create)
+    ..aOB(10, _omitFieldNames ? '' : 'hideItems')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1790,8 +1900,10 @@ class FeedConfig extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FeedConfig copyWith(void Function(FeedConfig) updates) => super.copyWith((message) => updates(message as FeedConfig)) as FeedConfig; // ignore: deprecated_member_use
+  FeedConfig copyWith(void Function(FeedConfig) updates) => super.copyWith((message) => updates(message as FeedConfig)) as FeedConfig;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FeedConfig create() => FeedConfig._();
   FeedConfig createEmptyInstance() => create();
@@ -1829,6 +1941,7 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearFeedUrl() => clearField(3);
 
+  /// Not used when source is FEED_CONFIG_SOURCE_COMMON
   @$pb.TagNumber(4)
   $7.InternalID get authorAccount => $_getN(3);
   @$pb.TagNumber(4)
@@ -1878,6 +1991,7 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearCategory() => clearField(8);
 
+  /// response only
   @$pb.TagNumber(9)
   $8.Timestamp get latestUpdateTime => $_getN(8);
   @$pb.TagNumber(9)
@@ -1889,6 +2003,7 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $8.Timestamp ensureLatestUpdateTime() => $_ensure(8);
 
+  /// If ture, exclude items from ListFeedItemsResponse
   @$pb.TagNumber(10)
   $core.bool get hideItems => $_getBF(9);
   @$pb.TagNumber(10)
@@ -1899,24 +2014,8 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearHideItems() => clearField(10);
 }
 
+/// Digest information generated from origin item data
 class FeedItemDigest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedItemDigest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'itemId', subBuilder: $7.InternalID.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'avatarUrl')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authors')
-    ..aOM<$8.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishedParsedTime', subBuilder: $8.Timestamp.create)
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'title')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'shortDescription')
-    ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'imageUrls')
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publishPlatform')
-    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedConfigName')
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feedAvatarUrl')
-    ..aInt64(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'readCount')
-    ..hasRequiredFields = false
-  ;
-
-  FeedItemDigest._() : super();
   factory FeedItemDigest({
     $7.InternalID? feedId,
     $7.InternalID? itemId,
@@ -1931,47 +2030,65 @@ class FeedItemDigest extends $pb.GeneratedMessage {
     $core.String? feedAvatarUrl,
     $fixnum.Int64? readCount,
   }) {
-    final _result = create();
+    final $result = create();
     if (feedId != null) {
-      _result.feedId = feedId;
+      $result.feedId = feedId;
     }
     if (itemId != null) {
-      _result.itemId = itemId;
+      $result.itemId = itemId;
     }
     if (avatarUrl != null) {
-      _result.avatarUrl = avatarUrl;
+      $result.avatarUrl = avatarUrl;
     }
     if (authors != null) {
-      _result.authors = authors;
+      $result.authors = authors;
     }
     if (publishedParsedTime != null) {
-      _result.publishedParsedTime = publishedParsedTime;
+      $result.publishedParsedTime = publishedParsedTime;
     }
     if (title != null) {
-      _result.title = title;
+      $result.title = title;
     }
     if (shortDescription != null) {
-      _result.shortDescription = shortDescription;
+      $result.shortDescription = shortDescription;
     }
     if (imageUrls != null) {
-      _result.imageUrls.addAll(imageUrls);
+      $result.imageUrls.addAll(imageUrls);
     }
     if (publishPlatform != null) {
-      _result.publishPlatform = publishPlatform;
+      $result.publishPlatform = publishPlatform;
     }
     if (feedConfigName != null) {
-      _result.feedConfigName = feedConfigName;
+      $result.feedConfigName = feedConfigName;
     }
     if (feedAvatarUrl != null) {
-      _result.feedAvatarUrl = feedAvatarUrl;
+      $result.feedAvatarUrl = feedAvatarUrl;
     }
     if (readCount != null) {
-      _result.readCount = readCount;
+      $result.readCount = readCount;
     }
-    return _result;
+    return $result;
   }
+  FeedItemDigest._() : super();
   factory FeedItemDigest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FeedItemDigest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItemDigest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'feedId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'itemId', subBuilder: $7.InternalID.create)
+    ..aOS(3, _omitFieldNames ? '' : 'avatarUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'authors')
+    ..aOM<$8.Timestamp>(5, _omitFieldNames ? '' : 'publishedParsedTime', subBuilder: $8.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'title')
+    ..aOS(7, _omitFieldNames ? '' : 'shortDescription')
+    ..pPS(8, _omitFieldNames ? '' : 'imageUrls')
+    ..aOS(9, _omitFieldNames ? '' : 'publishPlatform')
+    ..aOS(10, _omitFieldNames ? '' : 'feedConfigName')
+    ..aOS(11, _omitFieldNames ? '' : 'feedAvatarUrl')
+    ..aInt64(12, _omitFieldNames ? '' : 'readCount')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1981,8 +2098,10 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FeedItemDigest copyWith(void Function(FeedItemDigest) updates) => super.copyWith((message) => updates(message as FeedItemDigest)) as FeedItemDigest; // ignore: deprecated_member_use
+  FeedItemDigest copyWith(void Function(FeedItemDigest) updates) => super.copyWith((message) => updates(message as FeedItemDigest)) as FeedItemDigest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FeedItemDigest create() => FeedItemDigest._();
   FeedItemDigest createEmptyInstance() => create();
@@ -2013,6 +2132,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.InternalID ensureItemId() => $_ensure(1);
 
+  /// `FeedItem.image.url`
   @$pb.TagNumber(3)
   $core.String get avatarUrl => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -2022,6 +2142,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAvatarUrl() => clearField(3);
 
+  /// `FeedItem.authors.name`, seperated by `, `
   @$pb.TagNumber(4)
   $core.String get authors => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -2031,6 +2152,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearAuthors() => clearField(4);
 
+  /// `FeedItem.published_parsed`
   @$pb.TagNumber(5)
   $8.Timestamp get publishedParsedTime => $_getN(4);
   @$pb.TagNumber(5)
@@ -2042,6 +2164,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $8.Timestamp ensurePublishedParsedTime() => $_ensure(4);
 
+  /// `FeedItem.title`
   @$pb.TagNumber(6)
   $core.String get title => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -2051,6 +2174,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearTitle() => clearField(6);
 
+  /// text generated from `FeedItem.content` or `FeedItem.description`
   @$pb.TagNumber(7)
   $core.String get shortDescription => $_getSZ(6);
   @$pb.TagNumber(7)
@@ -2060,9 +2184,12 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearShortDescription() => clearField(7);
 
+  /// images generated from `FeedItem.content` or `FeedItem.description`
+  /// maximum 9
   @$pb.TagNumber(8)
   $core.List<$core.String> get imageUrls => $_getList(7);
 
+  /// hostname of `FeedItem.link`, e.g. github.com
   @$pb.TagNumber(9)
   $core.String get publishPlatform => $_getSZ(8);
   @$pb.TagNumber(9)
@@ -2072,6 +2199,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearPublishPlatform() => clearField(9);
 
+  /// `FeedConfig.name`
   @$pb.TagNumber(10)
   $core.String get feedConfigName => $_getSZ(9);
   @$pb.TagNumber(10)
@@ -2081,6 +2209,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearFeedConfigName() => clearField(10);
 
+  /// `Feed.image.url`
   @$pb.TagNumber(11)
   $core.String get feedAvatarUrl => $_getSZ(10);
   @$pb.TagNumber(11)
@@ -2090,6 +2219,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearFeedAvatarUrl() => clearField(11);
 
+  /// `FeedItem.read_count`
   @$pb.TagNumber(12)
   $fixnum.Int64 get readCount => $_getI64(11);
   @$pb.TagNumber(12)
@@ -2100,39 +2230,43 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   void clearReadCount() => clearField(12);
 }
 
+/// Server must maintain a default collection, without requirement of create
+/// the default collection have its id, but sometimes client can use id 0 to specify the default collection.
+/// check ListCollectionItems api for the use case.
 class FeedItemCollection extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FeedItemCollection', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', subBuilder: $7.InternalID.create)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'category')
-    ..hasRequiredFields = false
-  ;
-
-  FeedItemCollection._() : super();
   factory FeedItemCollection({
     $7.InternalID? id,
     $core.String? name,
     $core.String? description,
     $core.String? category,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (category != null) {
-      _result.category = category;
+      $result.category = category;
     }
-    return _result;
+    return $result;
   }
+  FeedItemCollection._() : super();
   factory FeedItemCollection.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FeedItemCollection.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItemCollection', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'category')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2142,8 +2276,10 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FeedItemCollection copyWith(void Function(FeedItemCollection) updates) => super.copyWith((message) => updates(message as FeedItemCollection)) as FeedItemCollection; // ignore: deprecated_member_use
+  FeedItemCollection copyWith(void Function(FeedItemCollection) updates) => super.copyWith((message) => updates(message as FeedItemCollection)) as FeedItemCollection;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FeedItemCollection create() => FeedItemCollection._();
   FeedItemCollection createEmptyInstance() => create();
@@ -2191,3 +2327,6 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   void clearCategory() => clearField(4);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

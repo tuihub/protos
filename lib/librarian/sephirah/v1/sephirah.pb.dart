@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -12,14 +16,15 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/timestamp.pb.dart' as $8;
 
 class GetServerInformationRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetServerInformationRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  factory GetServerInformationRequest() => create();
+  GetServerInformationRequest._() : super();
+  factory GetServerInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetServerInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  GetServerInformationRequest._() : super();
-  factory GetServerInformationRequest() => create();
-  factory GetServerInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetServerInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -29,8 +34,10 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetServerInformationRequest copyWith(void Function(GetServerInformationRequest) updates) => super.copyWith((message) => updates(message as GetServerInformationRequest)) as GetServerInformationRequest; // ignore: deprecated_member_use
+  GetServerInformationRequest copyWith(void Function(GetServerInformationRequest) updates) => super.copyWith((message) => updates(message as GetServerInformationRequest)) as GetServerInformationRequest;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetServerInformationRequest create() => GetServerInformationRequest._();
   GetServerInformationRequest createEmptyInstance() => create();
@@ -41,33 +48,34 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
 }
 
 class GetServerInformationResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<ServerBinarySummary>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
-    ..aOM<ServerProtocolSummary>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
-    ..aOM<$8.Timestamp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentTime', subBuilder: $8.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
-
-  GetServerInformationResponse._() : super();
   factory GetServerInformationResponse({
     ServerBinarySummary? serverBinarySummary,
     ServerProtocolSummary? protocolSummary,
     $8.Timestamp? currentTime,
   }) {
-    final _result = create();
+    final $result = create();
     if (serverBinarySummary != null) {
-      _result.serverBinarySummary = serverBinarySummary;
+      $result.serverBinarySummary = serverBinarySummary;
     }
     if (protocolSummary != null) {
-      _result.protocolSummary = protocolSummary;
+      $result.protocolSummary = protocolSummary;
     }
     if (currentTime != null) {
-      _result.currentTime = currentTime;
+      $result.currentTime = currentTime;
     }
-    return _result;
+    return $result;
   }
+  GetServerInformationResponse._() : super();
   factory GetServerInformationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetServerInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
+    ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
+    ..aOM<$8.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $8.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -77,8 +85,10 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetServerInformationResponse copyWith(void Function(GetServerInformationResponse) updates) => super.copyWith((message) => updates(message as GetServerInformationResponse)) as GetServerInformationResponse; // ignore: deprecated_member_use
+  GetServerInformationResponse copyWith(void Function(GetServerInformationResponse) updates) => super.copyWith((message) => updates(message as GetServerInformationResponse)) as GetServerInformationResponse;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static GetServerInformationResponse create() => GetServerInformationResponse._();
   GetServerInformationResponse createEmptyInstance() => create();
@@ -109,6 +119,8 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   ServerProtocolSummary ensureProtocolSummary() => $_ensure(1);
 
+  /// The time that server received the request,
+  /// note that there is a transmission delay between server and client.
   @$pb.TagNumber(3)
   $8.Timestamp get currentTime => $_getN(2);
   @$pb.TagNumber(3)
@@ -122,33 +134,34 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
 }
 
 class ServerBinarySummary extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServerBinarySummary', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sourceCodeAddress')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildVersion')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildDate')
-    ..hasRequiredFields = false
-  ;
-
-  ServerBinarySummary._() : super();
   factory ServerBinarySummary({
     $core.String? sourceCodeAddress,
     $core.String? buildVersion,
     $core.String? buildDate,
   }) {
-    final _result = create();
+    final $result = create();
     if (sourceCodeAddress != null) {
-      _result.sourceCodeAddress = sourceCodeAddress;
+      $result.sourceCodeAddress = sourceCodeAddress;
     }
     if (buildVersion != null) {
-      _result.buildVersion = buildVersion;
+      $result.buildVersion = buildVersion;
     }
     if (buildDate != null) {
-      _result.buildDate = buildDate;
+      $result.buildDate = buildDate;
     }
-    return _result;
+    return $result;
   }
+  ServerBinarySummary._() : super();
   factory ServerBinarySummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServerBinarySummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerBinarySummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceCodeAddress')
+    ..aOS(2, _omitFieldNames ? '' : 'buildVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'buildDate')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -158,8 +171,10 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ServerBinarySummary copyWith(void Function(ServerBinarySummary) updates) => super.copyWith((message) => updates(message as ServerBinarySummary)) as ServerBinarySummary; // ignore: deprecated_member_use
+  ServerBinarySummary copyWith(void Function(ServerBinarySummary) updates) => super.copyWith((message) => updates(message as ServerBinarySummary)) as ServerBinarySummary;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ServerBinarySummary create() => ServerBinarySummary._();
   ServerBinarySummary createEmptyInstance() => create();
@@ -168,6 +183,8 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   static ServerBinarySummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerBinarySummary>(create);
   static ServerBinarySummary? _defaultInstance;
 
+  /// Server source code address.
+  /// *Should* be a valid http address.
   @$pb.TagNumber(1)
   $core.String get sourceCodeAddress => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -177,6 +194,9 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSourceCodeAddress() => clearField(1);
 
+  /// Binary build version.
+  /// The content *should* be a semantic version string similar to the one generated by `git describe`,
+  /// but rely on the actual implementation of the server.
   @$pb.TagNumber(2)
   $core.String get buildVersion => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -186,6 +206,8 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBuildVersion() => clearField(2);
 
+  /// Binary build date.
+  /// The content *should* be a date format that is human-readable.
   @$pb.TagNumber(3)
   $core.String get buildDate => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -197,23 +219,24 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
 }
 
 class ServerProtocolSummary extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServerProtocolSummary', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version')
-    ..hasRequiredFields = false
-  ;
-
-  ServerProtocolSummary._() : super();
   factory ServerProtocolSummary({
     $core.String? version,
   }) {
-    final _result = create();
+    final $result = create();
     if (version != null) {
-      _result.version = version;
+      $result.version = version;
     }
-    return _result;
+    return $result;
   }
+  ServerProtocolSummary._() : super();
   factory ServerProtocolSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ServerProtocolSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerProtocolSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -223,8 +246,10 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ServerProtocolSummary copyWith(void Function(ServerProtocolSummary) updates) => super.copyWith((message) => updates(message as ServerProtocolSummary)) as ServerProtocolSummary; // ignore: deprecated_member_use
+  ServerProtocolSummary copyWith(void Function(ServerProtocolSummary) updates) => super.copyWith((message) => updates(message as ServerProtocolSummary)) as ServerProtocolSummary;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ServerProtocolSummary create() => ServerProtocolSummary._();
   ServerProtocolSummary createEmptyInstance() => create();
@@ -233,6 +258,9 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   static ServerProtocolSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerProtocolSummary>(create);
   static ServerProtocolSummary? _defaultInstance;
 
+  /// Protocol version used by server.
+  /// The content *must* be a semantic version string generated by `git describe`,
+  /// and if the server is built for production, it *must* be a valid version tag.
   @$pb.TagNumber(1)
   $core.String get version => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -243,3 +271,6 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   void clearVersion() => clearField(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

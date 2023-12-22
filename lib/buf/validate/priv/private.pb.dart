@@ -1,32 +1,38 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: buf/validate/priv/private.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Do not use. Internal to protovalidate library
 class FieldConstraints extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FieldConstraints', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'buf.validate.priv'), createEmptyInstance: create)
-    ..pc<Constraint>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cel', $pb.PbFieldType.PM, subBuilder: Constraint.create)
-    ..hasRequiredFields = false
-  ;
-
-  FieldConstraints._() : super();
   factory FieldConstraints({
     $core.Iterable<Constraint>? cel,
   }) {
-    final _result = create();
+    final $result = create();
     if (cel != null) {
-      _result.cel.addAll(cel);
+      $result.cel.addAll(cel);
     }
-    return _result;
+    return $result;
   }
+  FieldConstraints._() : super();
   factory FieldConstraints.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FieldConstraints.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FieldConstraints', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate.priv'), createEmptyInstance: create)
+    ..pc<Constraint>(1, _omitFieldNames ? '' : 'cel', $pb.PbFieldType.PM, subBuilder: Constraint.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -36,8 +42,10 @@ class FieldConstraints extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FieldConstraints copyWith(void Function(FieldConstraints) updates) => super.copyWith((message) => updates(message as FieldConstraints)) as FieldConstraints; // ignore: deprecated_member_use
+  FieldConstraints copyWith(void Function(FieldConstraints) updates) => super.copyWith((message) => updates(message as FieldConstraints)) as FieldConstraints;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static FieldConstraints create() => FieldConstraints._();
   FieldConstraints createEmptyInstance() => create();
@@ -50,34 +58,36 @@ class FieldConstraints extends $pb.GeneratedMessage {
   $core.List<Constraint> get cel => $_getList(0);
 }
 
+/// Do not use. Internal to protovalidate library
 class Constraint extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Constraint', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'buf.validate.priv'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expression')
-    ..hasRequiredFields = false
-  ;
-
-  Constraint._() : super();
   factory Constraint({
     $core.String? id,
     $core.String? message,
     $core.String? expression,
   }) {
-    final _result = create();
+    final $result = create();
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (message != null) {
-      _result.message = message;
+      $result.message = message;
     }
     if (expression != null) {
-      _result.expression = expression;
+      $result.expression = expression;
     }
-    return _result;
+    return $result;
   }
+  Constraint._() : super();
   factory Constraint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Constraint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Constraint', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate.priv'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'message')
+    ..aOS(3, _omitFieldNames ? '' : 'expression')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -87,8 +97,10 @@ class Constraint extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Constraint copyWith(void Function(Constraint) updates) => super.copyWith((message) => updates(message as Constraint)) as Constraint; // ignore: deprecated_member_use
+  Constraint copyWith(void Function(Constraint) updates) => super.copyWith((message) => updates(message as Constraint)) as Constraint;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Constraint create() => Constraint._();
   Constraint createEmptyInstance() => create();
@@ -126,9 +138,12 @@ class Constraint extends $pb.GeneratedMessage {
 }
 
 class Private {
-  static final field_51072 = $pb.Extension<FieldConstraints>(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.protobuf.FieldOptions', const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'field_51072', 51072, $pb.PbFieldType.OM, defaultOrMaker: FieldConstraints.getDefault, subBuilder: FieldConstraints.create);
+  static final field_51072 = $pb.Extension<FieldConstraints>(_omitMessageNames ? '' : 'google.protobuf.FieldOptions', _omitFieldNames ? '' : 'field_51072', 51072, $pb.PbFieldType.OM, defaultOrMaker: FieldConstraints.getDefault, subBuilder: FieldConstraints.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(field_51072);
   }
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
