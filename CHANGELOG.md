@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.47](https://github.com/tuihub/protos/compare/v0.2.46...v0.2.47) (2023-12-22)
+
+
+### Bug Fixes
+
+* add read_count to itemDigest ([985b4e3](https://github.com/tuihub/protos/commit/985b4e31022c20ab39cd250bff8817f5b8c34074))
+* use the latest dart plugin since the issue fixed ([13cf492](https://github.com/tuihub/protos/commit/13cf492ebabcf84e7308555d393fc6169933a34a))
+
 ## [0.2.46](https://github.com/tuihub/protos/compare/v0.2.45...v0.2.46) (2023-12-12)
 
 
