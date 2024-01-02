@@ -71,7 +71,7 @@ jobs:
           path: 'docs'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
 
       - name: Apply Changes
         uses: stefanzweifel/git-auto-commit-action@v5
