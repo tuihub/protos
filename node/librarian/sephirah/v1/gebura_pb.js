@@ -5445,7 +5445,7 @@ proto.librarian.sephirah.v1.GetPurchasedAppsRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.GetPurchasedAppsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    source: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -5482,6 +5482,10 @@ proto.librarian.sephirah.v1.GetPurchasedAppsRequest.deserializeBinaryFromReader 
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {!proto.librarian.v1.AppSource} */ (reader.readEnum());
+      msg.setSource(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5511,6 +5515,49 @@ proto.librarian.sephirah.v1.GetPurchasedAppsRequest.prototype.serializeBinary = 
  */
 proto.librarian.sephirah.v1.GetPurchasedAppsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {!proto.librarian.v1.AppSource} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.AppSource source = 1;
+ * @return {!proto.librarian.v1.AppSource}
+ */
+proto.librarian.sephirah.v1.GetPurchasedAppsRequest.prototype.getSource = function() {
+  return /** @type {!proto.librarian.v1.AppSource} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.v1.AppSource} value
+ * @return {!proto.librarian.sephirah.v1.GetPurchasedAppsRequest} returns this
+ */
+proto.librarian.sephirah.v1.GetPurchasedAppsRequest.prototype.setSource = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.GetPurchasedAppsRequest} returns this
+ */
+proto.librarian.sephirah.v1.GetPurchasedAppsRequest.prototype.clearSource = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.GetPurchasedAppsRequest.prototype.hasSource = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

@@ -341,11 +341,18 @@ final $typed_data.Uint8List purchaseAppResponseDescriptor = $convert.base64Decod
 @$core.Deprecated('Use getPurchasedAppsRequestDescriptor instead')
 const GetPurchasedAppsRequest$json = {
   '1': 'GetPurchasedAppsRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AppSource', '9': 0, '10': 'source', '17': true},
+  ],
+  '8': [
+    {'1': '_source'},
+  ],
 };
 
 /// Descriptor for `GetPurchasedAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPurchasedAppsRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRQdXJjaGFzZWRBcHBzUmVxdWVzdA==');
+    'ChdHZXRQdXJjaGFzZWRBcHBzUmVxdWVzdBI0CgZzb3VyY2UYASABKA4yFy5saWJyYXJpYW4udj'
+    'EuQXBwU291cmNlSABSBnNvdXJjZYgBAUIJCgdfc291cmNl');
 
 @$core.Deprecated('Use getPurchasedAppsResponseDescriptor instead')
 const GetPurchasedAppsResponse$json = {

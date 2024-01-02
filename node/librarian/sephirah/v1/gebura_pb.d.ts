@@ -561,6 +561,11 @@ export namespace PurchaseAppResponse {
 }
 
 export class GetPurchasedAppsRequest extends jspb.Message {
+  hasSource(): boolean;
+  clearSource(): void;
+  getSource(): librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap];
+  setSource(value: librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPurchasedAppsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetPurchasedAppsRequest): GetPurchasedAppsRequest.AsObject;
@@ -573,6 +578,7 @@ export class GetPurchasedAppsRequest extends jspb.Message {
 
 export namespace GetPurchasedAppsRequest {
   export type AsObject = {
+    source: librarian_v1_common_pb.AppSourceMap[keyof librarian_v1_common_pb.AppSourceMap],
   }
 }
 

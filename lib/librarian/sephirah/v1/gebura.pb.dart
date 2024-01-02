@@ -1273,12 +1273,21 @@ class PurchaseAppResponse extends $pb.GeneratedMessage {
 }
 
 class GetPurchasedAppsRequest extends $pb.GeneratedMessage {
-  factory GetPurchasedAppsRequest() => create();
+  factory GetPurchasedAppsRequest({
+    $7.AppSource? source,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    return $result;
+  }
   GetPurchasedAppsRequest._() : super();
   factory GetPurchasedAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetPurchasedAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPurchasedAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..e<$7.AppSource>(1, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: $7.AppSource.APP_SOURCE_UNSPECIFIED, valueOf: $7.AppSource.valueOf, enumValues: $7.AppSource.values)
     ..hasRequiredFields = false
   ;
 
@@ -1302,6 +1311,17 @@ class GetPurchasedAppsRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GetPurchasedAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPurchasedAppsRequest>(create);
   static GetPurchasedAppsRequest? _defaultInstance;
+
+  /// Get purchase info from bound account
+  /// only support APP_SOURCE_STEAM
+  @$pb.TagNumber(1)
+  $7.AppSource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source($7.AppSource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
 }
 
 class GetPurchasedAppsResponse extends $pb.GeneratedMessage {
