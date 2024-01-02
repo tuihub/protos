@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.48](https://github.com/tuihub/protos/compare/v0.2.47...v0.2.48) (2024-01-02)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#109](https://github.com/tuihub/protos/issues/109)) ([11d9abb](https://github.com/tuihub/protos/commit/11d9abb8ef61660b5c7d0d4a7eab455507f7a94c))
+* **gebura:** add source to GetPurchasedAppsRequest ([6106348](https://github.com/tuihub/protos/commit/6106348fc68c008dca9a7e495c2764a1b86dad9e))
+
 ## [0.2.47](https://github.com/tuihub/protos/compare/v0.2.46...v0.2.47) (2023-12-22)
 
 
