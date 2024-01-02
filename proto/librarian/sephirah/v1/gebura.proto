@@ -111,7 +111,11 @@ message PurchaseAppRequest {
 
 message PurchaseAppResponse {}
 
-message GetPurchasedAppsRequest {}
+message GetPurchasedAppsRequest {
+  // Get purchase info from bound account
+  // only support APP_SOURCE_STEAM
+  optional librarian.v1.AppSource source = 1;
+}
 message GetPurchasedAppsResponse {
   // without details
   repeated librarian.v1.App apps = 1;
