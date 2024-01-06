@@ -42,6 +42,11 @@ export class GetServerInformationResponse extends jspb.Message {
   getCurrentTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCurrentTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasFeatureSummary(): boolean;
+  clearFeatureSummary(): void;
+  getFeatureSummary(): ServerFeatureSummary | undefined;
+  setFeatureSummary(value?: ServerFeatureSummary): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetServerInformationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetServerInformationResponse): GetServerInformationResponse.AsObject;
@@ -57,6 +62,7 @@ export namespace GetServerInformationResponse {
     serverBinarySummary?: ServerBinarySummary.AsObject,
     protocolSummary?: ServerProtocolSummary.AsObject,
     currentTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    featureSummary?: ServerFeatureSummary.AsObject,
   }
 }
 
@@ -105,6 +111,46 @@ export class ServerProtocolSummary extends jspb.Message {
 export namespace ServerProtocolSummary {
   export type AsObject = {
     version: string,
+  }
+}
+
+export class ServerFeatureSummary extends jspb.Message {
+  clearSupportedAccountPlatformsList(): void;
+  getSupportedAccountPlatformsList(): Array<string>;
+  setSupportedAccountPlatformsList(value: Array<string>): void;
+  addSupportedAccountPlatforms(value: string, index?: number): string;
+
+  clearSupportedAppSourcesList(): void;
+  getSupportedAppSourcesList(): Array<string>;
+  setSupportedAppSourcesList(value: Array<string>): void;
+  addSupportedAppSources(value: string, index?: number): string;
+
+  clearSupportedFeedSourcesList(): void;
+  getSupportedFeedSourcesList(): Array<string>;
+  setSupportedFeedSourcesList(value: Array<string>): void;
+  addSupportedFeedSources(value: string, index?: number): string;
+
+  clearSupportedNotifyDestinationsList(): void;
+  getSupportedNotifyDestinationsList(): Array<string>;
+  setSupportedNotifyDestinationsList(value: Array<string>): void;
+  addSupportedNotifyDestinations(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServerFeatureSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: ServerFeatureSummary): ServerFeatureSummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ServerFeatureSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServerFeatureSummary;
+  static deserializeBinaryFromReader(message: ServerFeatureSummary, reader: jspb.BinaryReader): ServerFeatureSummary;
+}
+
+export namespace ServerFeatureSummary {
+  export type AsObject = {
+    supportedAccountPlatformsList: Array<string>,
+    supportedAppSourcesList: Array<string>,
+    supportedFeedSourcesList: Array<string>,
+    supportedNotifyDestinationsList: Array<string>,
   }
 }
 

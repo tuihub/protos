@@ -319,26 +319,26 @@ function deserialize_librarian_sephirah_v1_DownloadImageResponse(buffer_arg) {
   return librarian_sephirah_v1_chesed_pb.DownloadImageResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_GenerateTokenRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GenerateTokenRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GenerateTokenRequest');
+function serialize_librarian_sephirah_v1_GainUserPrivilegeRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GainUserPrivilegeRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_GenerateTokenRequest(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.GenerateTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_GainUserPrivilegeRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_GenerateTokenResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GenerateTokenResponse');
+function serialize_librarian_sephirah_v1_GainUserPrivilegeResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GainUserPrivilegeResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_GenerateTokenResponse(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_GainUserPrivilegeResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetAppRequest(arg) {
@@ -385,26 +385,26 @@ function deserialize_librarian_sephirah_v1_GetBatchFeedItemsResponse(buffer_arg)
   return librarian_sephirah_v1_yesod_pb.GetBatchFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_GetBindAppsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetBindAppsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GetBindAppsRequest');
+function serialize_librarian_sephirah_v1_GetBoundAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetBoundAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetBoundAppsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_GetBindAppsRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.GetBindAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_GetBoundAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetBoundAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_GetBindAppsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetBindAppsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GetBindAppsResponse');
+function serialize_librarian_sephirah_v1_GetBoundAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetBoundAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetBoundAppsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_GetBindAppsResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.GetBindAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_GetBoundAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetBoundAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetFeedItemRequest(arg) {
@@ -891,6 +891,28 @@ function deserialize_librarian_sephirah_v1_ListNotifyTargetsResponse(buffer_arg)
   return librarian_sephirah_v1_netzach_pb.ListNotifyTargetsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListPorterRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPorterRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListPorterRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListPorterRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListPorterRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListPorterResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPorterResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListPorterResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListPorterResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListPorterResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListUsersRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUsersRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListUsersRequest');
@@ -1087,28 +1109,6 @@ function serialize_librarian_sephirah_v1_ReadFeedItemResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_ReadFeedItemResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.ReadFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_RefreshAppRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.RefreshAppRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.RefreshAppRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_RefreshAppRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.RefreshAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_RefreshAppResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.RefreshAppResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.RefreshAppResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_RefreshAppResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.RefreshAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_RefreshTokenRequest(arg) {
@@ -1375,48 +1375,48 @@ function deserialize_librarian_sephirah_v1_SumAppPackageRunTimeResponse(buffer_a
   return librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAccountAppsRequest');
+function serialize_librarian_sephirah_v1_SyncAccountAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncAccountAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncAccountAppsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_SyncAccountAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncAccountAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAccountAppsResponse');
+function serialize_librarian_sephirah_v1_SyncAccountAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncAccountAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncAccountAppsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_SyncAccountAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncAccountAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_SyncExternalAppsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAppsRequest');
+function serialize_librarian_sephirah_v1_SyncAppsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncAppsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncAppsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_SyncExternalAppsRequest(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_SyncAppsRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncAppsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_SyncExternalAppsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.SyncExternalAppsResponse');
+function serialize_librarian_sephirah_v1_SyncAppsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SyncAppsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SyncAppsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_SyncExternalAppsResponse(buffer_arg) {
-  return librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_SyncAppsResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SyncAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UnAssignAppPackageRequest(arg) {
@@ -1661,6 +1661,50 @@ function deserialize_librarian_sephirah_v1_UpdateNotifyTargetResponse(buffer_arg
   return librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterPrivilegeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterPrivilegeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdatePorterStatusRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterStatusRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdatePorterStatusRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdatePorterStatusResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterStatusResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdatePorterStatusResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_UpdateUserRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.UpdateUserRequest');
@@ -1758,7 +1802,7 @@ function deserialize_librarian_sephirah_v1_UploadImageResponse(buffer_arg) {
 // 4. `Yesod` handles feed data
 // 5. `Netzach` handles notifications
 var LibrarianSephirahServiceService = exports.LibrarianSephirahServiceService = {
-  // For manual inspection only, the client may display but should not parse the response.
+  // Allow anonymous call, use accessToken to get complete information
 getServerInformation: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation',
     requestStream: false,
@@ -1782,7 +1826,7 @@ getToken: {
     responseSerialize: serialize_librarian_sephirah_v1_GetTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetTokenResponse,
   },
-  // `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  // `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
 refreshToken: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken',
     requestStream: false,
@@ -1794,17 +1838,17 @@ refreshToken: {
     responseSerialize: serialize_librarian_sephirah_v1_RefreshTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RefreshTokenResponse,
   },
-  // `Tiphereth` `Admin` Generate token for given user
-generateToken: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken',
+  // `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+gainUserPrivilege: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_tiphereth_pb.GenerateTokenRequest,
-    responseType: librarian_sephirah_v1_tiphereth_pb.GenerateTokenResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_GenerateTokenRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_GenerateTokenRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_GenerateTokenResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_GenerateTokenResponse,
+    requestType: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GainUserPrivilegeRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
   },
   // `Tiphereth` `Admin` `Normal limited`
 createUser: {
@@ -1892,6 +1936,42 @@ listLinkAccounts: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountsRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListLinkAccountsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountsResponse,
+  },
+  // `Tiphereth` `Normal`
+listPorter: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorter',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.ListPorterRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.ListPorterResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListPorterRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListPorterRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListPorterResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListPorterResponse,
+  },
+  // `Tiphereth` `Admin`
+updatePorterStatus: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdatePorterStatusRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterStatusRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
+  },
+  // `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+updatePorterPrivilege: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse,
   },
   // `Binah` `upload_token`
 uploadFile: {
@@ -2092,17 +2172,32 @@ listApps: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppsResponse,
   },
-  // `Gebura` `Admin` Submit an asynchronous update request
-refreshApp: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/RefreshApp',
+  // `Gebura` `Admin` Asynchronous update apps.
+// Request on INTERNAL app applies to all bound external apps.
+// Create an INTERNAL app when requested external app does not exist
+syncApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.RefreshAppRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.RefreshAppResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_RefreshAppRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_RefreshAppRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_RefreshAppResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_RefreshAppResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.SyncAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SyncAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SyncAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SyncAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SyncAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SyncAppsResponse,
+  },
+  // `Gebura` `Admin` Asynchronously update apps associated with an account.
+// Create an INTERNAL app when associated external app does not exist
+syncAccountApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SyncAccountAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SyncAccountAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SyncAccountAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SyncAccountAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppsResponse,
   },
   // `Gebura` `Admin` Merge two apps
 mergeApps: {
@@ -2127,32 +2222,6 @@ pickApp: {
     requestDeserialize: deserialize_librarian_sephirah_v1_PickAppRequest,
     responseSerialize: serialize_librarian_sephirah_v1_PickAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_PickAppResponse,
-  },
-  // `Gebura` `Admin` Asynchronously update external apps.
-// Create an INTERNAL app when requested external app does not exist
-syncExternalApps: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalApps',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.SyncExternalAppsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.SyncExternalAppsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_SyncExternalAppsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAppsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_SyncExternalAppsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAppsResponse,
-  },
-  // `Gebura` `Admin` Asynchronously update apps associated with an external account.
-// Create an INTERNAL app when associated external app does not exist
-syncExternalAccountApps: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalAccountApps',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.SyncExternalAccountAppsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAccountAppsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_SyncExternalAccountAppsResponse,
   },
   // `Gebura` `Normal`
 searchApps: {
@@ -2180,16 +2249,16 @@ getApp: {
     responseDeserialize: deserialize_librarian_sephirah_v1_GetAppResponse,
   },
   // `Gebura` `Normal` Original bound apps info of required app
-getBindApps: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps',
+getBoundApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetBoundApps',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.GetBindAppsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.GetBindAppsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_GetBindAppsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_GetBindAppsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_GetBindAppsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_GetBindAppsResponse,
+    requestType: librarian_sephirah_v1_gebura_pb.GetBoundAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.GetBoundAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetBoundAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetBoundAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetBoundAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetBoundAppsResponse,
   },
   // `Gebura` `Normal`
 purchaseApp: {
@@ -2204,6 +2273,9 @@ purchaseApp: {
     responseDeserialize: deserialize_librarian_sephirah_v1_PurchaseAppResponse,
   },
   // `Gebura` `Normal`
+// Default get user purchased apps
+// Use `source` to get purchase info from bound account
+// only support steam
 getPurchasedApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps',
     requestStream: false,

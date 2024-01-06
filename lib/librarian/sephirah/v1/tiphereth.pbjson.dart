@@ -21,13 +21,15 @@ const UserType$json = {
     {'1': 'USER_TYPE_ADMIN', '2': 1},
     {'1': 'USER_TYPE_NORMAL', '2': 2},
     {'1': 'USER_TYPE_SENTINEL', '2': 3},
+    {'1': 'USER_TYPE_PORTER', '2': 4},
   ],
 };
 
 /// Descriptor for `UserType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List userTypeDescriptor = $convert.base64Decode(
     'CghVc2VyVHlwZRIZChVVU0VSX1RZUEVfVU5TUEVDSUZJRUQQABITCg9VU0VSX1RZUEVfQURNSU'
-    '4QARIUChBVU0VSX1RZUEVfTk9STUFMEAISFgoSVVNFUl9UWVBFX1NFTlRJTkVMEAM=');
+    '4QARIUChBVU0VSX1RZUEVfTk9STUFMEAISFgoSVVNFUl9UWVBFX1NFTlRJTkVMEAMSFAoQVVNF'
+    'Ul9UWVBFX1BPUlRFUhAE');
 
 @$core.Deprecated('Use userStatusDescriptor instead')
 const UserStatus$json = {
@@ -95,31 +97,31 @@ final $typed_data.Uint8List refreshTokenResponseDescriptor = $convert.base64Deco
     'ChRSZWZyZXNoVG9rZW5SZXNwb25zZRIhCgxhY2Nlc3NfdG9rZW4YASABKAlSC2FjY2Vzc1Rva2'
     'VuEiMKDXJlZnJlc2hfdG9rZW4YAiABKAlSDHJlZnJlc2hUb2tlbg==');
 
-@$core.Deprecated('Use generateTokenRequestDescriptor instead')
-const GenerateTokenRequest$json = {
-  '1': 'GenerateTokenRequest',
+@$core.Deprecated('Use gainUserPrivilegeRequestDescriptor instead')
+const GainUserPrivilegeRequest$json = {
+  '1': 'GainUserPrivilegeRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
   ],
 };
 
-/// Descriptor for `GenerateTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateTokenRequestDescriptor = $convert.base64Decode(
-    'ChRHZW5lcmF0ZVRva2VuUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm'
-    '5hbElEUgJpZA==');
+/// Descriptor for `GainUserPrivilegeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gainUserPrivilegeRequestDescriptor = $convert.base64Decode(
+    'ChhHYWluVXNlclByaXZpbGVnZVJlcXVlc3QSMQoHdXNlcl9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
+    '52MS5JbnRlcm5hbElEUgZ1c2VySWQ=');
 
-@$core.Deprecated('Use generateTokenResponseDescriptor instead')
-const GenerateTokenResponse$json = {
-  '1': 'GenerateTokenResponse',
+@$core.Deprecated('Use gainUserPrivilegeResponseDescriptor instead')
+const GainUserPrivilegeResponse$json = {
+  '1': 'GainUserPrivilegeResponse',
   '2': [
-    {'1': 'refresh_token', '3': 1, '4': 1, '5': 9, '10': 'refreshToken'},
+    {'1': 'access_token', '3': 1, '4': 1, '5': 9, '10': 'accessToken'},
   ],
 };
 
-/// Descriptor for `GenerateTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateTokenResponseDescriptor = $convert.base64Decode(
-    'ChVHZW5lcmF0ZVRva2VuUmVzcG9uc2USIwoNcmVmcmVzaF90b2tlbhgBIAEoCVIMcmVmcmVzaF'
-    'Rva2Vu');
+/// Descriptor for `GainUserPrivilegeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List gainUserPrivilegeResponseDescriptor = $convert.base64Decode(
+    'ChlHYWluVXNlclByaXZpbGVnZVJlc3BvbnNlEiEKDGFjY2Vzc190b2tlbhgBIAEoCVILYWNjZX'
+    'NzVG9rZW4=');
 
 @$core.Deprecated('Use createUserRequestDescriptor instead')
 const CreateUserRequest$json = {
@@ -312,6 +314,94 @@ final $typed_data.Uint8List listLinkAccountsResponseDescriptor = $convert.base64
     'ChhMaXN0TGlua0FjY291bnRzUmVzcG9uc2USMQoIYWNjb3VudHMYASADKAsyFS5saWJyYXJpYW'
     '4udjEuQWNjb3VudFIIYWNjb3VudHM=');
 
+@$core.Deprecated('Use listPorterRequestDescriptor instead')
+const ListPorterRequest$json = {
+  '1': 'ListPorterRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+  ],
+};
+
+/// Descriptor for `ListPorterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPorterRequestDescriptor = $convert.base64Decode(
+    'ChFMaXN0UG9ydGVyUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW'
+    '5nUmVxdWVzdFIGcGFnaW5n');
+
+@$core.Deprecated('Use listPorterResponseDescriptor instead')
+const ListPorterResponse$json = {
+  '1': 'ListPorterResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'porters', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.Porter', '10': 'porters'},
+  ],
+};
+
+/// Descriptor for `ListPorterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPorterResponseDescriptor = $convert.base64Decode(
+    'ChJMaXN0UG9ydGVyUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2'
+    'luZ1Jlc3BvbnNlUgZwYWdpbmcSNwoHcG9ydGVycxgCIAMoCzIdLmxpYnJhcmlhbi5zZXBoaXJh'
+    'aC52MS5Qb3J0ZXJSB3BvcnRlcnM=');
+
+@$core.Deprecated('Use updatePorterStatusRequestDescriptor instead')
+const UpdatePorterStatusRequest$json = {
+  '1': 'UpdatePorterStatusRequest',
+  '2': [
+    {'1': 'porter_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdatePorterStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePorterStatusRequestDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVQb3J0ZXJTdGF0dXNSZXF1ZXN0EjUKCXBvcnRlcl9pZBgBIAEoCzIYLmxpYnJhcm'
+    'lhbi52MS5JbnRlcm5hbElEUghwb3J0ZXJJZBI5CgZzdGF0dXMYAiABKA4yIS5saWJyYXJpYW4u'
+    'c2VwaGlyYWgudjEuVXNlclN0YXR1c1IGc3RhdHVz');
+
+@$core.Deprecated('Use updatePorterStatusResponseDescriptor instead')
+const UpdatePorterStatusResponse$json = {
+  '1': 'UpdatePorterStatusResponse',
+};
+
+/// Descriptor for `UpdatePorterStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePorterStatusResponseDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVQb3J0ZXJTdGF0dXNSZXNwb25zZQ==');
+
+@$core.Deprecated('Use updatePorterPrivilegeRequestDescriptor instead')
+const UpdatePorterPrivilegeRequest$json = {
+  '1': 'UpdatePorterPrivilegeRequest',
+  '2': [
+    {'1': 'porter_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
+    {'1': 'privilege', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.PorterPrivilege', '10': 'privilege'},
+  ],
+};
+
+/// Descriptor for `UpdatePorterPrivilegeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePorterPrivilegeRequestDescriptor = $convert.base64Decode(
+    'ChxVcGRhdGVQb3J0ZXJQcml2aWxlZ2VSZXF1ZXN0EjUKCXBvcnRlcl9pZBgBIAEoCzIYLmxpYn'
+    'Jhcmlhbi52MS5JbnRlcm5hbElEUghwb3J0ZXJJZBJECglwcml2aWxlZ2UYAiABKAsyJi5saWJy'
+    'YXJpYW4uc2VwaGlyYWgudjEuUG9ydGVyUHJpdmlsZWdlUglwcml2aWxlZ2U=');
+
+@$core.Deprecated('Use updatePorterPrivilegeResponseDescriptor instead')
+const UpdatePorterPrivilegeResponse$json = {
+  '1': 'UpdatePorterPrivilegeResponse',
+};
+
+/// Descriptor for `UpdatePorterPrivilegeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePorterPrivilegeResponseDescriptor = $convert.base64Decode(
+    'Ch1VcGRhdGVQb3J0ZXJQcml2aWxlZ2VSZXNwb25zZQ==');
+
+@$core.Deprecated('Use porterPrivilegeDescriptor instead')
+const PorterPrivilege$json = {
+  '1': 'PorterPrivilege',
+  '2': [
+    {'1': 'all', '3': 1, '4': 1, '5': 8, '10': 'all'},
+  ],
+};
+
+/// Descriptor for `PorterPrivilege`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterPrivilegeDescriptor = $convert.base64Decode(
+    'Cg9Qb3J0ZXJQcml2aWxlZ2USEAoDYWxsGAEgASgIUgNhbGw=');
+
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {
   '1': 'User',
@@ -330,4 +420,25 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'JuYW1lGAIgASgJUgh1c2VybmFtZRIaCghwYXNzd29yZBgDIAEoCVIIcGFzc3dvcmQSMwoEdHlw'
     'ZRgEIAEoDjIfLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyVHlwZVIEdHlwZRI5CgZzdGF0dX'
     'MYBSABKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuVXNlclN0YXR1c1IGc3RhdHVz');
+
+@$core.Deprecated('Use porterDescriptor instead')
+const Porter$json = {
+  '1': 'Porter',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'global_name', '3': 4, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'feature_summary', '3': 5, '4': 1, '5': 9, '10': 'featureSummary'},
+    {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
+  ],
+};
+
+/// Descriptor for `Porter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
+    'CgZQb3J0ZXISKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbm'
+    'FtZRgCIAEoCVIEbmFtZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEh8KC2dsb2JhbF9uYW1l'
+    'GAQgASgJUgpnbG9iYWxOYW1lEicKD2ZlYXR1cmVfc3VtbWFyeRgFIAEoCVIOZmVhdHVyZVN1bW'
+    '1hcnkSOQoGc3RhdHVzGAYgASgOMiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJTdGF0dXNS'
+    'BnN0YXR1cw==');
 

@@ -13,19 +13,19 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use accountPlatformDescriptor instead')
-const AccountPlatform$json = {
-  '1': 'AccountPlatform',
+@$core.Deprecated('Use accountAppRelationTypeDescriptor instead')
+const AccountAppRelationType$json = {
+  '1': 'AccountAppRelationType',
   '2': [
-    {'1': 'ACCOUNT_PLATFORM_UNSPECIFIED', '2': 0},
-    {'1': 'ACCOUNT_PLATFORM_STEAM', '2': 1},
+    {'1': 'ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'ACCOUNT_APP_RELATION_TYPE_OWN', '2': 1},
   ],
 };
 
-/// Descriptor for `AccountPlatform`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List accountPlatformDescriptor = $convert.base64Decode(
-    'Cg9BY2NvdW50UGxhdGZvcm0SIAocQUNDT1VOVF9QTEFURk9STV9VTlNQRUNJRklFRBAAEhoKFk'
-    'FDQ09VTlRfUExBVEZPUk1fU1RFQU0QAQ==');
+/// Descriptor for `AccountAppRelationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List accountAppRelationTypeDescriptor = $convert.base64Decode(
+    'ChZBY2NvdW50QXBwUmVsYXRpb25UeXBlEikKJUFDQ09VTlRfQVBQX1JFTEFUSU9OX1RZUEVfVU'
+    '5TUEVDSUZJRUQQABIhCh1BQ0NPVU5UX0FQUF9SRUxBVElPTl9UWVBFX09XThAB');
 
 @$core.Deprecated('Use appTypeDescriptor instead')
 const AppType$json = {
@@ -39,24 +39,6 @@ const AppType$json = {
 /// Descriptor for `AppType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List appTypeDescriptor = $convert.base64Decode(
     'CgdBcHBUeXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVfR0FNRRAB');
-
-@$core.Deprecated('Use appSourceDescriptor instead')
-const AppSource$json = {
-  '1': 'AppSource',
-  '2': [
-    {'1': 'APP_SOURCE_UNSPECIFIED', '2': 0},
-    {'1': 'APP_SOURCE_INTERNAL', '2': 1},
-    {'1': 'APP_SOURCE_STEAM', '2': 2},
-    {'1': 'APP_SOURCE_VNDB', '2': 3},
-    {'1': 'APP_SOURCE_BANGUMI', '2': 4},
-  ],
-};
-
-/// Descriptor for `AppSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List appSourceDescriptor = $convert.base64Decode(
-    'CglBcHBTb3VyY2USGgoWQVBQX1NPVVJDRV9VTlNQRUNJRklFRBAAEhcKE0FQUF9TT1VSQ0VfSU'
-    '5URVJOQUwQARIUChBBUFBfU09VUkNFX1NURUFNEAISEwoPQVBQX1NPVVJDRV9WTkRCEAMSFgoS'
-    'QVBQX1NPVVJDRV9CQU5HVU1JEAQ=');
 
 @$core.Deprecated('Use appPackageSourceDescriptor instead')
 const AppPackageSource$json = {
@@ -78,27 +60,28 @@ final $typed_data.Uint8List appPackageSourceDescriptor = $convert.base64Decode(
 const PagingRequest$json = {
   '1': 'PagingRequest',
   '2': [
-    {'1': 'page_num', '3': 1, '4': 1, '5': 5, '8': {}, '10': 'pageNum'},
-    {'1': 'page_size', '3': 2, '4': 1, '5': 5, '8': {}, '10': 'pageSize'},
+    {'1': 'page_num', '3': 1, '4': 1, '5': 3, '8': {}, '10': 'pageNum'},
+    {'1': 'page_size', '3': 2, '4': 1, '5': 3, '8': {}, '10': 'pageSize'},
   ],
 };
 
 /// Descriptor for `PagingRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pagingRequestDescriptor = $convert.base64Decode(
-    'Cg1QYWdpbmdSZXF1ZXN0EiMKCHBhZ2VfbnVtGAEgASgFQgj69xgEGgIgAFIHcGFnZU51bRIlCg'
-    'lwYWdlX3NpemUYAiABKAVCCPr3GAQaAiAAUghwYWdlU2l6ZQ==');
+    'Cg1QYWdpbmdSZXF1ZXN0EiMKCHBhZ2VfbnVtGAEgASgDQgj69xgEIgIgAFIHcGFnZU51bRIlCg'
+    'lwYWdlX3NpemUYAiABKANCCPr3GAQiAiAAUghwYWdlU2l6ZQ==');
 
 @$core.Deprecated('Use pagingResponseDescriptor instead')
 const PagingResponse$json = {
   '1': 'PagingResponse',
   '2': [
-    {'1': 'total_size', '3': 1, '4': 1, '5': 3, '10': 'totalSize'},
+    {'1': 'total_size', '3': 1, '4': 1, '5': 3, '8': {}, '10': 'totalSize'},
   ],
 };
 
 /// Descriptor for `PagingResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode(
-    'Cg5QYWdpbmdSZXNwb25zZRIdCgp0b3RhbF9zaXplGAEgASgDUgl0b3RhbFNpemU=');
+    'Cg5QYWdpbmdSZXNwb25zZRInCgp0b3RhbF9zaXplGAEgASgDQgj69xgEIgIoAFIJdG90YWxTaX'
+    'pl');
 
 @$core.Deprecated('Use timeRangeDescriptor instead')
 const TimeRange$json = {
@@ -130,10 +113,10 @@ const TimeAggregation_AggregationType$json = {
   '1': 'AggregationType',
   '2': [
     {'1': 'AGGREGATION_TYPE_UNSPECIFIED', '2': 0},
-    {'1': 'AGGREGATION_TYPE_YEAR', '2': 1},
-    {'1': 'AGGREGATION_TYPE_MONTH', '2': 2},
-    {'1': 'AGGREGATION_TYPE_DAY', '2': 3},
-    {'1': 'AGGREGATION_TYPE_OVERALL', '2': 4},
+    {'1': 'AGGREGATION_TYPE_OVERALL', '2': 1},
+    {'1': 'AGGREGATION_TYPE_YEAR', '2': 2},
+    {'1': 'AGGREGATION_TYPE_MONTH', '2': 3},
+    {'1': 'AGGREGATION_TYPE_DAY', '2': 4},
   ],
 };
 
@@ -142,9 +125,9 @@ final $typed_data.Uint8List timeAggregationDescriptor = $convert.base64Decode(
     'Cg9UaW1lQWdncmVnYXRpb24SWAoQYWdncmVnYXRpb25fdHlwZRgBIAEoDjItLmxpYnJhcmlhbi'
     '52MS5UaW1lQWdncmVnYXRpb24uQWdncmVnYXRpb25UeXBlUg9hZ2dyZWdhdGlvblR5cGUSNgoK'
     'dGltZV9yYW5nZRgCIAEoCzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VSCXRpbWVSYW5nZSKiAQ'
-    'oPQWdncmVnYXRpb25UeXBlEiAKHEFHR1JFR0FUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIZChVB'
-    'R0dSRUdBVElPTl9UWVBFX1lFQVIQARIaChZBR0dSRUdBVElPTl9UWVBFX01PTlRIEAISGAoUQU'
-    'dHUkVHQVRJT05fVFlQRV9EQVkQAxIcChhBR0dSRUdBVElPTl9UWVBFX09WRVJBTEwQBA==');
+    'oPQWdncmVnYXRpb25UeXBlEiAKHEFHR1JFR0FUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIcChhB'
+    'R0dSRUdBVElPTl9UWVBFX09WRVJBTEwQARIZChVBR0dSRUdBVElPTl9UWVBFX1lFQVIQAhIaCh'
+    'ZBR0dSRUdBVElPTl9UWVBFX01PTlRIEAMSGAoUQUdHUkVHQVRJT05fVFlQRV9EQVkQBA==');
 
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = {
@@ -163,7 +146,7 @@ const Account$json = {
   '1': 'Account',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'platform', '3': 2, '4': 1, '5': 14, '6': '.librarian.v1.AccountPlatform', '10': 'platform'},
+    {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
     {'1': 'platform_account_id', '3': 3, '4': 1, '5': 9, '10': 'platformAccountId'},
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
     {'1': 'profile_url', '3': 5, '4': 1, '5': 9, '10': 'profileUrl'},
@@ -174,44 +157,44 @@ const Account$json = {
 
 /// Descriptor for `Account`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List accountDescriptor = $convert.base64Decode(
-    'CgdBY2NvdW50EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEjkKCH'
-    'BsYXRmb3JtGAIgASgOMh0ubGlicmFyaWFuLnYxLkFjY291bnRQbGF0Zm9ybVIIcGxhdGZvcm0S'
-    'LgoTcGxhdGZvcm1fYWNjb3VudF9pZBgDIAEoCVIRcGxhdGZvcm1BY2NvdW50SWQSEgoEbmFtZR'
-    'gEIAEoCVIEbmFtZRIfCgtwcm9maWxlX3VybBgFIAEoCVIKcHJvZmlsZVVybBIdCgphdmF0YXJf'
-    'dXJsGAYgASgJUglhdmF0YXJVcmwSSAoSbGF0ZXN0X3VwZGF0ZV90aW1lGAcgASgLMhouZ29vZ2'
-    'xlLnByb3RvYnVmLlRpbWVzdGFtcFIQbGF0ZXN0VXBkYXRlVGltZQ==');
+    'CgdBY2NvdW50EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhoKCH'
+    'BsYXRmb3JtGAIgASgJUghwbGF0Zm9ybRIuChNwbGF0Zm9ybV9hY2NvdW50X2lkGAMgASgJUhFw'
+    'bGF0Zm9ybUFjY291bnRJZBISCgRuYW1lGAQgASgJUgRuYW1lEh8KC3Byb2ZpbGVfdXJsGAUgAS'
+    'gJUgpwcm9maWxlVXJsEh0KCmF2YXRhcl91cmwYBiABKAlSCWF2YXRhclVybBJIChJsYXRlc3Rf'
+    'dXBkYXRlX3RpbWUYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUhBsYXRlc3RVcG'
+    'RhdGVUaW1l');
 
 @$core.Deprecated('Use accountIDDescriptor instead')
 const AccountID$json = {
   '1': 'AccountID',
   '2': [
-    {'1': 'platform', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AccountPlatform', '10': 'platform'},
+    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
     {'1': 'platform_account_id', '3': 2, '4': 1, '5': 9, '10': 'platformAccountId'},
   ],
 };
 
 /// Descriptor for `AccountID`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List accountIDDescriptor = $convert.base64Decode(
-    'CglBY2NvdW50SUQSOQoIcGxhdGZvcm0YASABKA4yHS5saWJyYXJpYW4udjEuQWNjb3VudFBsYX'
-    'Rmb3JtUghwbGF0Zm9ybRIuChNwbGF0Zm9ybV9hY2NvdW50X2lkGAIgASgJUhFwbGF0Zm9ybUFj'
-    'Y291bnRJZA==');
+    'CglBY2NvdW50SUQSGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEi4KE3BsYXRmb3JtX2FjY2'
+    '91bnRfaWQYAiABKAlSEXBsYXRmb3JtQWNjb3VudElk');
 
 @$core.Deprecated('Use appDescriptor instead')
 const App$json = {
   '1': 'App',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'source', '3': 2, '4': 1, '5': 14, '6': '.librarian.v1.AppSource', '10': 'source'},
-    {'1': 'source_app_id', '3': 3, '4': 1, '5': 9, '10': 'sourceAppId'},
-    {'1': 'source_url', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'sourceUrl', '17': true},
-    {'1': 'details', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 1, '10': 'details', '17': true},
-    {'1': 'name', '3': 6, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
-    {'1': 'short_description', '3': 8, '4': 1, '5': 9, '10': 'shortDescription'},
-    {'1': 'icon_image_url', '3': 9, '4': 1, '5': 9, '10': 'iconImageUrl'},
-    {'1': 'hero_image_url', '3': 10, '4': 1, '5': 9, '10': 'heroImageUrl'},
-    {'1': 'tags', '3': 11, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 12, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'internal', '3': 2, '4': 1, '5': 8, '10': 'internal'},
+    {'1': 'source', '3': 3, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'source_app_id', '3': 4, '4': 1, '5': 9, '10': 'sourceAppId'},
+    {'1': 'source_url', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'sourceUrl', '17': true},
+    {'1': 'details', '3': 6, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 1, '10': 'details', '17': true},
+    {'1': 'name', '3': 7, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 8, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
+    {'1': 'short_description', '3': 9, '4': 1, '5': 9, '10': 'shortDescription'},
+    {'1': 'icon_image_url', '3': 10, '4': 1, '5': 9, '10': 'iconImageUrl'},
+    {'1': 'hero_image_url', '3': 11, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'alt_names', '3': 13, '4': 3, '5': 9, '10': 'altNames'},
   ],
   '8': [
     {'1': '_source_url'},
@@ -221,29 +204,59 @@ const App$json = {
 
 /// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
-    'CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSLwoGc291cm'
-    'NlGAIgASgOMhcubGlicmFyaWFuLnYxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBf'
-    'aWQYAyABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBCABKAlIAFIJc291cmNlVXJsiA'
-    'EBEjcKB2RldGFpbHMYBSABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRhaWxz'
-    'iAEBEhIKBG5hbWUYBiABKAlSBG5hbWUSKQoEdHlwZRgHIAEoDjIVLmxpYnJhcmlhbi52MS5BcH'
-    'BUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9u'
-    'EiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV91cm'
-    'wYCiABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAsgAygJUgR0YWdzEhsKCWFsdF9uYW1lcxgM'
-    'IAMoCVIIYWx0TmFtZXNCDQoLX3NvdXJjZV91cmxCCgoIX2RldGFpbHM=');
+    'CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSGgoIaW50ZX'
+    'JuYWwYAiABKAhSCGludGVybmFsEhYKBnNvdXJjZRgDIAEoCVIGc291cmNlEiIKDXNvdXJjZV9h'
+    'cHBfaWQYBCABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91cmwYBSABKAlIAFIJc291cmNlVX'
+    'JsiAEBEjcKB2RldGFpbHMYBiABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRh'
+    'aWxziAEBEhIKBG5hbWUYByABKAlSBG5hbWUSKQoEdHlwZRgIIAEoDjIVLmxpYnJhcmlhbi52MS'
+    '5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAkgASgJUhBzaG9ydERlc2NyaXB0'
+    'aW9uEiQKDmljb25faW1hZ2VfdXJsGAogASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV'
+    '91cmwYCyABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAwgAygJUgR0YWdzEhsKCWFsdF9uYW1l'
+    'cxgNIAMoCVIIYWx0TmFtZXNCDQoLX3NvdXJjZV91cmxCCgoIX2RldGFpbHM=');
+
+@$core.Deprecated('Use appMixedDescriptor instead')
+const AppMixed$json = {
+  '1': 'AppMixed',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'details', '3': 6, '4': 1, '5': 11, '6': '.librarian.v1.AppDetails', '9': 0, '10': 'details', '17': true},
+    {'1': 'name', '3': 7, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 8, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
+    {'1': 'short_description', '3': 9, '4': 1, '5': 9, '10': 'shortDescription'},
+    {'1': 'icon_image_url', '3': 10, '4': 1, '5': 9, '10': 'iconImageUrl'},
+    {'1': 'hero_image_url', '3': 11, '4': 1, '5': 9, '10': 'heroImageUrl'},
+    {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'alt_names', '3': 13, '4': 3, '5': 9, '10': 'altNames'},
+  ],
+  '8': [
+    {'1': '_details'},
+  ],
+};
+
+/// Descriptor for `AppMixed`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appMixedDescriptor = $convert.base64Decode(
+    'CghBcHBNaXhlZBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBI3Cg'
+    'dkZXRhaWxzGAYgASgLMhgubGlicmFyaWFuLnYxLkFwcERldGFpbHNIAFIHZGV0YWlsc4gBARIS'
+    'CgRuYW1lGAcgASgJUgRuYW1lEikKBHR5cGUYCCABKA4yFS5saWJyYXJpYW4udjEuQXBwVHlwZV'
+    'IEdHlwZRIrChFzaG9ydF9kZXNjcmlwdGlvbhgJIAEoCVIQc2hvcnREZXNjcmlwdGlvbhIkCg5p'
+    'Y29uX2ltYWdlX3VybBgKIAEoCVIMaWNvbkltYWdlVXJsEiQKDmhlcm9faW1hZ2VfdXJsGAsgAS'
+    'gJUgxoZXJvSW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIbCglhbHRfbmFtZXMYDSADKAlS'
+    'CGFsdE5hbWVzQgoKCF9kZXRhaWxz');
 
 @$core.Deprecated('Use appIDDescriptor instead')
 const AppID$json = {
   '1': 'AppID',
   '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AppSource', '10': 'source'},
-    {'1': 'source_app_id', '3': 2, '4': 1, '5': 9, '10': 'sourceAppId'},
+    {'1': 'internal', '3': 1, '4': 1, '5': 8, '10': 'internal'},
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'source_app_id', '3': 3, '4': 1, '5': 9, '10': 'sourceAppId'},
   ],
 };
 
 /// Descriptor for `AppID`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appIDDescriptor = $convert.base64Decode(
-    'CgVBcHBJRBIvCgZzb3VyY2UYASABKA4yFy5saWJyYXJpYW4udjEuQXBwU291cmNlUgZzb3VyY2'
-    'USIgoNc291cmNlX2FwcF9pZBgCIAEoCVILc291cmNlQXBwSWQ=');
+    'CgVBcHBJRBIaCghpbnRlcm5hbBgBIAEoCFIIaW50ZXJuYWwSFgoGc291cmNlGAIgASgJUgZzb3'
+    'VyY2USIgoNc291cmNlX2FwcF9pZBgDIAEoCVILc291cmNlQXBwSWQ=');
 
 @$core.Deprecated('Use appDetailsDescriptor instead')
 const AppDetails$json = {

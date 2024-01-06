@@ -62,7 +62,7 @@ class CreateAppRequest extends $pb.GeneratedMessage {
   static CreateAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateAppRequest>(create);
   static CreateAppRequest? _defaultInstance;
 
-  /// `id` can be anything, `source` must be APP_SOURCE_INTERNAL
+  /// `id` can be anything, `internal` must be true
   @$pb.TagNumber(1)
   $7.App get app => $_getN(0);
   @$pb.TagNumber(1)
@@ -167,7 +167,7 @@ class UpdateAppRequest extends $pb.GeneratedMessage {
   static UpdateAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateAppRequest>(create);
   static UpdateAppRequest? _defaultInstance;
 
-  /// source must be APP_SOURCE_INTERNAL
+  /// `internal` must be true
   @$pb.TagNumber(1)
   $7.App get app => $_getN(0);
   @$pb.TagNumber(1)
@@ -215,7 +215,7 @@ class UpdateAppResponse extends $pb.GeneratedMessage {
 class ListAppsRequest extends $pb.GeneratedMessage {
   factory ListAppsRequest({
     $7.PagingRequest? paging,
-    $core.Iterable<$7.AppSource>? sourceFilter,
+    $core.Iterable<$core.String>? sourceFilter,
     $core.Iterable<$7.AppType>? typeFilter,
     $core.Iterable<$7.InternalID>? idFilter,
     $core.bool? containDetails,
@@ -244,7 +244,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.AppSource>(2, _omitFieldNames ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: $7.AppSource.valueOf, enumValues: $7.AppSource.values, defaultEnumValue: $7.AppSource.APP_SOURCE_UNSPECIFIED)
+    ..pPS(2, _omitFieldNames ? '' : 'sourceFilter')
     ..pc<$7.AppType>(3, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $7.AppType.valueOf, enumValues: $7.AppType.values, defaultEnumValue: $7.AppType.APP_TYPE_UNSPECIFIED)
     ..pc<$7.InternalID>(4, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..aOB(5, _omitFieldNames ? '' : 'containDetails')
@@ -284,7 +284,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   $7.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.AppSource> get sourceFilter => $_getList(1);
+  $core.List<$core.String> get sourceFilter => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.List<$7.AppType> get typeFilter => $_getList(2);
@@ -305,7 +305,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 class ListAppsResponse extends $pb.GeneratedMessage {
   factory ListAppsResponse({
     $7.PagingResponse? paging,
-    $core.Iterable<$7.App>? apps,
+    $core.Iterable<$7.AppMixed>? apps,
   }) {
     final $result = create();
     if (paging != null) {
@@ -322,7 +322,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<$7.App>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.App.create)
+    ..pc<$7.AppMixed>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.AppMixed.create)
     ..hasRequiredFields = false
   ;
 
@@ -359,12 +359,12 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   $7.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.App> get apps => $_getList(1);
+  $core.List<$7.AppMixed> get apps => $_getList(1);
 }
 
-class RefreshAppRequest extends $pb.GeneratedMessage {
-  factory RefreshAppRequest({
-    $7.InternalID? appId,
+class SyncAppsRequest extends $pb.GeneratedMessage {
+  factory SyncAppsRequest({
+    $7.AppID? appId,
   }) {
     final $result = create();
     if (appId != null) {
@@ -372,12 +372,12 @@ class RefreshAppRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  RefreshAppRequest._() : super();
-  factory RefreshAppRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RefreshAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SyncAppsRequest._() : super();
+  factory SyncAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.AppID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.AppID.create)
     ..hasRequiredFields = false
   ;
 
@@ -385,43 +385,42 @@ class RefreshAppRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  RefreshAppRequest clone() => RefreshAppRequest()..mergeFromMessage(this);
+  SyncAppsRequest clone() => SyncAppsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RefreshAppRequest copyWith(void Function(RefreshAppRequest) updates) => super.copyWith((message) => updates(message as RefreshAppRequest)) as RefreshAppRequest;
+  SyncAppsRequest copyWith(void Function(SyncAppsRequest) updates) => super.copyWith((message) => updates(message as SyncAppsRequest)) as SyncAppsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RefreshAppRequest create() => RefreshAppRequest._();
-  RefreshAppRequest createEmptyInstance() => create();
-  static $pb.PbList<RefreshAppRequest> createRepeated() => $pb.PbList<RefreshAppRequest>();
+  static SyncAppsRequest create() => SyncAppsRequest._();
+  SyncAppsRequest createEmptyInstance() => create();
+  static $pb.PbList<SyncAppsRequest> createRepeated() => $pb.PbList<SyncAppsRequest>();
   @$core.pragma('dart2js:noInline')
-  static RefreshAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshAppRequest>(create);
-  static RefreshAppRequest? _defaultInstance;
+  static SyncAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncAppsRequest>(create);
+  static SyncAppsRequest? _defaultInstance;
 
-  /// Must not APP_SOURCE_INTERNAL
   @$pb.TagNumber(1)
-  $7.InternalID get appId => $_getN(0);
+  $7.AppID get appId => $_getN(0);
   @$pb.TagNumber(1)
-  set appId($7.InternalID v) { setField(1, v); }
+  set appId($7.AppID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppId() => $_has(0);
   @$pb.TagNumber(1)
   void clearAppId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureAppId() => $_ensure(0);
+  $7.AppID ensureAppId() => $_ensure(0);
 }
 
-class RefreshAppResponse extends $pb.GeneratedMessage {
-  factory RefreshAppResponse() => create();
-  RefreshAppResponse._() : super();
-  factory RefreshAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RefreshAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class SyncAppsResponse extends $pb.GeneratedMessage {
+  factory SyncAppsResponse() => create();
+  SyncAppsResponse._() : super();
+  factory SyncAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -429,22 +428,22 @@ class RefreshAppResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  RefreshAppResponse clone() => RefreshAppResponse()..mergeFromMessage(this);
+  SyncAppsResponse clone() => SyncAppsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RefreshAppResponse copyWith(void Function(RefreshAppResponse) updates) => super.copyWith((message) => updates(message as RefreshAppResponse)) as RefreshAppResponse;
+  SyncAppsResponse copyWith(void Function(SyncAppsResponse) updates) => super.copyWith((message) => updates(message as SyncAppsResponse)) as SyncAppsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RefreshAppResponse create() => RefreshAppResponse._();
-  RefreshAppResponse createEmptyInstance() => create();
-  static $pb.PbList<RefreshAppResponse> createRepeated() => $pb.PbList<RefreshAppResponse>();
+  static SyncAppsResponse create() => SyncAppsResponse._();
+  SyncAppsResponse createEmptyInstance() => create();
+  static $pb.PbList<SyncAppsResponse> createRepeated() => $pb.PbList<SyncAppsResponse>();
   @$core.pragma('dart2js:noInline')
-  static RefreshAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshAppResponse>(create);
-  static RefreshAppResponse? _defaultInstance;
+  static SyncAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncAppsResponse>(create);
+  static SyncAppsResponse? _defaultInstance;
 }
 
 class MergeAppsRequest extends $pb.GeneratedMessage {
@@ -492,7 +491,7 @@ class MergeAppsRequest extends $pb.GeneratedMessage {
   static MergeAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MergeAppsRequest>(create);
   static MergeAppsRequest? _defaultInstance;
 
-  /// source must be APP_SOURCE_INTERNAL
+  /// `internal` must be true
   @$pb.TagNumber(1)
   $7.App get base => $_getN(0);
   @$pb.TagNumber(1)
@@ -504,7 +503,7 @@ class MergeAppsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.App ensureBase() => $_ensure(0);
 
-  /// Must be APP_SOURCE_INTERNAL.
+  /// Must be internal app.
   /// The InternalID will be dropped after merge.
   /// Other apps bind to this app will rebind to base.
   @$pb.TagNumber(2)
@@ -591,7 +590,7 @@ class PickAppRequest extends $pb.GeneratedMessage {
   static PickAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PickAppRequest>(create);
   static PickAppRequest? _defaultInstance;
 
-  /// Must not be APP_SOURCE_INTERNAL
+  /// `internal` must be false
   @$pb.TagNumber(1)
   $7.InternalID get picked => $_getN(0);
   @$pb.TagNumber(1)
@@ -636,148 +635,8 @@ class PickAppResponse extends $pb.GeneratedMessage {
   static PickAppResponse? _defaultInstance;
 }
 
-class SyncExternalAppsRequest_ExternalApp extends $pb.GeneratedMessage {
-  factory SyncExternalAppsRequest_ExternalApp({
-    $7.AppSource? source,
-    $core.String? sourceAppId,
-  }) {
-    final $result = create();
-    if (source != null) {
-      $result.source = source;
-    }
-    if (sourceAppId != null) {
-      $result.sourceAppId = sourceAppId;
-    }
-    return $result;
-  }
-  SyncExternalAppsRequest_ExternalApp._() : super();
-  factory SyncExternalAppsRequest_ExternalApp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncExternalAppsRequest_ExternalApp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncExternalAppsRequest.ExternalApp', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..e<$7.AppSource>(1, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: $7.AppSource.APP_SOURCE_UNSPECIFIED, valueOf: $7.AppSource.valueOf, enumValues: $7.AppSource.values)
-    ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  SyncExternalAppsRequest_ExternalApp clone() => SyncExternalAppsRequest_ExternalApp()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SyncExternalAppsRequest_ExternalApp copyWith(void Function(SyncExternalAppsRequest_ExternalApp) updates) => super.copyWith((message) => updates(message as SyncExternalAppsRequest_ExternalApp)) as SyncExternalAppsRequest_ExternalApp;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SyncExternalAppsRequest_ExternalApp create() => SyncExternalAppsRequest_ExternalApp._();
-  SyncExternalAppsRequest_ExternalApp createEmptyInstance() => create();
-  static $pb.PbList<SyncExternalAppsRequest_ExternalApp> createRepeated() => $pb.PbList<SyncExternalAppsRequest_ExternalApp>();
-  @$core.pragma('dart2js:noInline')
-  static SyncExternalAppsRequest_ExternalApp getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAppsRequest_ExternalApp>(create);
-  static SyncExternalAppsRequest_ExternalApp? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $7.AppSource get source => $_getN(0);
-  @$pb.TagNumber(1)
-  set source($7.AppSource v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasSource() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get sourceAppId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set sourceAppId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSourceAppId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSourceAppId() => clearField(2);
-}
-
-class SyncExternalAppsRequest extends $pb.GeneratedMessage {
-  factory SyncExternalAppsRequest({
-    $core.Iterable<SyncExternalAppsRequest_ExternalApp>? externalApps,
-  }) {
-    final $result = create();
-    if (externalApps != null) {
-      $result.externalApps.addAll(externalApps);
-    }
-    return $result;
-  }
-  SyncExternalAppsRequest._() : super();
-  factory SyncExternalAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncExternalAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncExternalAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<SyncExternalAppsRequest_ExternalApp>(1, _omitFieldNames ? '' : 'externalApps', $pb.PbFieldType.PM, subBuilder: SyncExternalAppsRequest_ExternalApp.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  SyncExternalAppsRequest clone() => SyncExternalAppsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SyncExternalAppsRequest copyWith(void Function(SyncExternalAppsRequest) updates) => super.copyWith((message) => updates(message as SyncExternalAppsRequest)) as SyncExternalAppsRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SyncExternalAppsRequest create() => SyncExternalAppsRequest._();
-  SyncExternalAppsRequest createEmptyInstance() => create();
-  static $pb.PbList<SyncExternalAppsRequest> createRepeated() => $pb.PbList<SyncExternalAppsRequest>();
-  @$core.pragma('dart2js:noInline')
-  static SyncExternalAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAppsRequest>(create);
-  static SyncExternalAppsRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<SyncExternalAppsRequest_ExternalApp> get externalApps => $_getList(0);
-}
-
-class SyncExternalAppsResponse extends $pb.GeneratedMessage {
-  factory SyncExternalAppsResponse() => create();
-  SyncExternalAppsResponse._() : super();
-  factory SyncExternalAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncExternalAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncExternalAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  SyncExternalAppsResponse clone() => SyncExternalAppsResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SyncExternalAppsResponse copyWith(void Function(SyncExternalAppsResponse) updates) => super.copyWith((message) => updates(message as SyncExternalAppsResponse)) as SyncExternalAppsResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SyncExternalAppsResponse create() => SyncExternalAppsResponse._();
-  SyncExternalAppsResponse createEmptyInstance() => create();
-  static $pb.PbList<SyncExternalAppsResponse> createRepeated() => $pb.PbList<SyncExternalAppsResponse>();
-  @$core.pragma('dart2js:noInline')
-  static SyncExternalAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAppsResponse>(create);
-  static SyncExternalAppsResponse? _defaultInstance;
-}
-
-class SyncExternalAccountAppsRequest extends $pb.GeneratedMessage {
-  factory SyncExternalAccountAppsRequest({
+class SyncAccountAppsRequest extends $pb.GeneratedMessage {
+  factory SyncAccountAppsRequest({
     $7.AccountID? accountId,
   }) {
     final $result = create();
@@ -786,11 +645,11 @@ class SyncExternalAccountAppsRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  SyncExternalAccountAppsRequest._() : super();
-  factory SyncExternalAccountAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncExternalAccountAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SyncAccountAppsRequest._() : super();
+  factory SyncAccountAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncAccountAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncExternalAccountAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncAccountAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.AccountID>(1, _omitFieldNames ? '' : 'accountId', subBuilder: $7.AccountID.create)
     ..hasRequiredFields = false
   ;
@@ -799,22 +658,22 @@ class SyncExternalAccountAppsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SyncExternalAccountAppsRequest clone() => SyncExternalAccountAppsRequest()..mergeFromMessage(this);
+  SyncAccountAppsRequest clone() => SyncAccountAppsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SyncExternalAccountAppsRequest copyWith(void Function(SyncExternalAccountAppsRequest) updates) => super.copyWith((message) => updates(message as SyncExternalAccountAppsRequest)) as SyncExternalAccountAppsRequest;
+  SyncAccountAppsRequest copyWith(void Function(SyncAccountAppsRequest) updates) => super.copyWith((message) => updates(message as SyncAccountAppsRequest)) as SyncAccountAppsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SyncExternalAccountAppsRequest create() => SyncExternalAccountAppsRequest._();
-  SyncExternalAccountAppsRequest createEmptyInstance() => create();
-  static $pb.PbList<SyncExternalAccountAppsRequest> createRepeated() => $pb.PbList<SyncExternalAccountAppsRequest>();
+  static SyncAccountAppsRequest create() => SyncAccountAppsRequest._();
+  SyncAccountAppsRequest createEmptyInstance() => create();
+  static $pb.PbList<SyncAccountAppsRequest> createRepeated() => $pb.PbList<SyncAccountAppsRequest>();
   @$core.pragma('dart2js:noInline')
-  static SyncExternalAccountAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAccountAppsRequest>(create);
-  static SyncExternalAccountAppsRequest? _defaultInstance;
+  static SyncAccountAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncAccountAppsRequest>(create);
+  static SyncAccountAppsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.AccountID get accountId => $_getN(0);
@@ -828,13 +687,13 @@ class SyncExternalAccountAppsRequest extends $pb.GeneratedMessage {
   $7.AccountID ensureAccountId() => $_ensure(0);
 }
 
-class SyncExternalAccountAppsResponse extends $pb.GeneratedMessage {
-  factory SyncExternalAccountAppsResponse() => create();
-  SyncExternalAccountAppsResponse._() : super();
-  factory SyncExternalAccountAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncExternalAccountAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class SyncAccountAppsResponse extends $pb.GeneratedMessage {
+  factory SyncAccountAppsResponse() => create();
+  SyncAccountAppsResponse._() : super();
+  factory SyncAccountAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncAccountAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncExternalAccountAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncAccountAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -842,22 +701,22 @@ class SyncExternalAccountAppsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SyncExternalAccountAppsResponse clone() => SyncExternalAccountAppsResponse()..mergeFromMessage(this);
+  SyncAccountAppsResponse clone() => SyncAccountAppsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SyncExternalAccountAppsResponse copyWith(void Function(SyncExternalAccountAppsResponse) updates) => super.copyWith((message) => updates(message as SyncExternalAccountAppsResponse)) as SyncExternalAccountAppsResponse;
+  SyncAccountAppsResponse copyWith(void Function(SyncAccountAppsResponse) updates) => super.copyWith((message) => updates(message as SyncAccountAppsResponse)) as SyncAccountAppsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SyncExternalAccountAppsResponse create() => SyncExternalAccountAppsResponse._();
-  SyncExternalAccountAppsResponse createEmptyInstance() => create();
-  static $pb.PbList<SyncExternalAccountAppsResponse> createRepeated() => $pb.PbList<SyncExternalAccountAppsResponse>();
+  static SyncAccountAppsResponse create() => SyncAccountAppsResponse._();
+  SyncAccountAppsResponse createEmptyInstance() => create();
+  static $pb.PbList<SyncAccountAppsResponse> createRepeated() => $pb.PbList<SyncAccountAppsResponse>();
   @$core.pragma('dart2js:noInline')
-  static SyncExternalAccountAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncExternalAccountAppsResponse>(create);
-  static SyncExternalAccountAppsResponse? _defaultInstance;
+  static SyncAccountAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncAccountAppsResponse>(create);
+  static SyncAccountAppsResponse? _defaultInstance;
 }
 
 class SearchAppsRequest extends $pb.GeneratedMessage {
@@ -929,7 +788,7 @@ class SearchAppsRequest extends $pb.GeneratedMessage {
 class SearchAppsResponse extends $pb.GeneratedMessage {
   factory SearchAppsResponse({
     $7.PagingResponse? paging,
-    $core.Iterable<$7.App>? apps,
+    $core.Iterable<$7.AppMixed>? apps,
   }) {
     final $result = create();
     if (paging != null) {
@@ -946,7 +805,7 @@ class SearchAppsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<$7.App>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.App.create)
+    ..pc<$7.AppMixed>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.AppMixed.create)
     ..hasRequiredFields = false
   ;
 
@@ -984,7 +843,7 @@ class SearchAppsResponse extends $pb.GeneratedMessage {
 
   /// without details
   @$pb.TagNumber(2)
-  $core.List<$7.App> get apps => $_getList(1);
+  $core.List<$7.AppMixed> get apps => $_getList(1);
 }
 
 class GetAppRequest extends $pb.GeneratedMessage {
@@ -1091,8 +950,8 @@ class GetAppResponse extends $pb.GeneratedMessage {
   $7.App ensureApp() => $_ensure(0);
 }
 
-class GetBindAppsRequest extends $pb.GeneratedMessage {
-  factory GetBindAppsRequest({
+class GetBoundAppsRequest extends $pb.GeneratedMessage {
+  factory GetBoundAppsRequest({
     $7.InternalID? appId,
   }) {
     final $result = create();
@@ -1101,11 +960,11 @@ class GetBindAppsRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetBindAppsRequest._() : super();
-  factory GetBindAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetBindAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetBoundAppsRequest._() : super();
+  factory GetBoundAppsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetBoundAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBindAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBoundAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
@@ -1114,22 +973,22 @@ class GetBindAppsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetBindAppsRequest clone() => GetBindAppsRequest()..mergeFromMessage(this);
+  GetBoundAppsRequest clone() => GetBoundAppsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBindAppsRequest copyWith(void Function(GetBindAppsRequest) updates) => super.copyWith((message) => updates(message as GetBindAppsRequest)) as GetBindAppsRequest;
+  GetBoundAppsRequest copyWith(void Function(GetBoundAppsRequest) updates) => super.copyWith((message) => updates(message as GetBoundAppsRequest)) as GetBoundAppsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetBindAppsRequest create() => GetBindAppsRequest._();
-  GetBindAppsRequest createEmptyInstance() => create();
-  static $pb.PbList<GetBindAppsRequest> createRepeated() => $pb.PbList<GetBindAppsRequest>();
+  static GetBoundAppsRequest create() => GetBoundAppsRequest._();
+  GetBoundAppsRequest createEmptyInstance() => create();
+  static $pb.PbList<GetBoundAppsRequest> createRepeated() => $pb.PbList<GetBoundAppsRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetBindAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBindAppsRequest>(create);
-  static GetBindAppsRequest? _defaultInstance;
+  static GetBoundAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBoundAppsRequest>(create);
+  static GetBoundAppsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.InternalID get appId => $_getN(0);
@@ -1143,8 +1002,8 @@ class GetBindAppsRequest extends $pb.GeneratedMessage {
   $7.InternalID ensureAppId() => $_ensure(0);
 }
 
-class GetBindAppsResponse extends $pb.GeneratedMessage {
-  factory GetBindAppsResponse({
+class GetBoundAppsResponse extends $pb.GeneratedMessage {
+  factory GetBoundAppsResponse({
     $core.Iterable<$7.App>? apps,
   }) {
     final $result = create();
@@ -1153,11 +1012,11 @@ class GetBindAppsResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetBindAppsResponse._() : super();
-  factory GetBindAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetBindAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetBoundAppsResponse._() : super();
+  factory GetBoundAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetBoundAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBindAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBoundAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..pc<$7.App>(1, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.App.create)
     ..hasRequiredFields = false
   ;
@@ -1166,22 +1025,22 @@ class GetBindAppsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetBindAppsResponse clone() => GetBindAppsResponse()..mergeFromMessage(this);
+  GetBoundAppsResponse clone() => GetBoundAppsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBindAppsResponse copyWith(void Function(GetBindAppsResponse) updates) => super.copyWith((message) => updates(message as GetBindAppsResponse)) as GetBindAppsResponse;
+  GetBoundAppsResponse copyWith(void Function(GetBoundAppsResponse) updates) => super.copyWith((message) => updates(message as GetBoundAppsResponse)) as GetBoundAppsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetBindAppsResponse create() => GetBindAppsResponse._();
-  GetBindAppsResponse createEmptyInstance() => create();
-  static $pb.PbList<GetBindAppsResponse> createRepeated() => $pb.PbList<GetBindAppsResponse>();
+  static GetBoundAppsResponse create() => GetBoundAppsResponse._();
+  GetBoundAppsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetBoundAppsResponse> createRepeated() => $pb.PbList<GetBoundAppsResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetBindAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBindAppsResponse>(create);
-  static GetBindAppsResponse? _defaultInstance;
+  static GetBoundAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBoundAppsResponse>(create);
+  static GetBoundAppsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$7.App> get apps => $_getList(0);
@@ -1227,7 +1086,7 @@ class PurchaseAppRequest extends $pb.GeneratedMessage {
   static PurchaseAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PurchaseAppRequest>(create);
   static PurchaseAppRequest? _defaultInstance;
 
-  /// source must be APP_SOURCE_INTERNAL
+  /// `internal` must be true
   @$pb.TagNumber(1)
   $7.InternalID get appId => $_getN(0);
   @$pb.TagNumber(1)
@@ -1274,7 +1133,7 @@ class PurchaseAppResponse extends $pb.GeneratedMessage {
 
 class GetPurchasedAppsRequest extends $pb.GeneratedMessage {
   factory GetPurchasedAppsRequest({
-    $7.AppSource? source,
+    $core.String? source,
   }) {
     final $result = create();
     if (source != null) {
@@ -1287,7 +1146,7 @@ class GetPurchasedAppsRequest extends $pb.GeneratedMessage {
   factory GetPurchasedAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPurchasedAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..e<$7.AppSource>(1, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: $7.AppSource.APP_SOURCE_UNSPECIFIED, valueOf: $7.AppSource.valueOf, enumValues: $7.AppSource.values)
+    ..aOS(1, _omitFieldNames ? '' : 'source')
     ..hasRequiredFields = false
   ;
 
@@ -1312,12 +1171,10 @@ class GetPurchasedAppsRequest extends $pb.GeneratedMessage {
   static GetPurchasedAppsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPurchasedAppsRequest>(create);
   static GetPurchasedAppsRequest? _defaultInstance;
 
-  /// Get purchase info from bound account
-  /// only support APP_SOURCE_STEAM
   @$pb.TagNumber(1)
-  $7.AppSource get source => $_getN(0);
+  $core.String get source => $_getSZ(0);
   @$pb.TagNumber(1)
-  set source($7.AppSource v) { setField(1, v); }
+  set source($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
@@ -1881,7 +1738,7 @@ class AssignAppPackageRequest extends $pb.GeneratedMessage {
   static AssignAppPackageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssignAppPackageRequest>(create);
   static AssignAppPackageRequest? _defaultInstance;
 
-  /// Must be APP_SOURCE_INTERNAL
+  /// `internal` must be true
   @$pb.TagNumber(1)
   $7.InternalID get appId => $_getN(0);
   @$pb.TagNumber(1)

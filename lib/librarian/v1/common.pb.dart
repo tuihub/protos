@@ -22,8 +22,8 @@ export 'common.pbenum.dart';
 
 class PagingRequest extends $pb.GeneratedMessage {
   factory PagingRequest({
-    $core.int? pageNum,
-    $core.int? pageSize,
+    $fixnum.Int64? pageNum,
+    $fixnum.Int64? pageSize,
   }) {
     final $result = create();
     if (pageNum != null) {
@@ -39,8 +39,8 @@ class PagingRequest extends $pb.GeneratedMessage {
   factory PagingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PagingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'pageNum', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'pageSize', $pb.PbFieldType.O3)
+    ..aInt64(1, _omitFieldNames ? '' : 'pageNum')
+    ..aInt64(2, _omitFieldNames ? '' : 'pageSize')
     ..hasRequiredFields = false
   ;
 
@@ -67,18 +67,18 @@ class PagingRequest extends $pb.GeneratedMessage {
 
   /// start from 1, not 0
   @$pb.TagNumber(1)
-  $core.int get pageNum => $_getIZ(0);
+  $fixnum.Int64 get pageNum => $_getI64(0);
   @$pb.TagNumber(1)
-  set pageNum($core.int v) { $_setSignedInt32(0, v); }
+  set pageNum($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasPageNum() => $_has(0);
   @$pb.TagNumber(1)
   void clearPageNum() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.int get pageSize => $_getIZ(1);
+  $fixnum.Int64 get pageSize => $_getI64(1);
   @$pb.TagNumber(2)
-  set pageSize($core.int v) { $_setSignedInt32(1, v); }
+  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPageSize() => $_has(1);
   @$pb.TagNumber(2)
@@ -336,7 +336,7 @@ class InternalID extends $pb.GeneratedMessage {
 class Account extends $pb.GeneratedMessage {
   factory Account({
     InternalID? id,
-    AccountPlatform? platform,
+    $core.String? platform,
     $core.String? platformAccountId,
     $core.String? name,
     $core.String? profileUrl,
@@ -373,7 +373,7 @@ class Account extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Account', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
-    ..e<AccountPlatform>(2, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: AccountPlatform.ACCOUNT_PLATFORM_UNSPECIFIED, valueOf: AccountPlatform.valueOf, enumValues: AccountPlatform.values)
+    ..aOS(2, _omitFieldNames ? '' : 'platform')
     ..aOS(3, _omitFieldNames ? '' : 'platformAccountId')
     ..aOS(4, _omitFieldNames ? '' : 'name')
     ..aOS(5, _omitFieldNames ? '' : 'profileUrl')
@@ -414,10 +414,11 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   InternalID ensureId() => $_ensure(0);
 
+  /// WellKnownPlatform
   @$pb.TagNumber(2)
-  AccountPlatform get platform => $_getN(1);
+  $core.String get platform => $_getSZ(1);
   @$pb.TagNumber(2)
-  set platform(AccountPlatform v) { setField(2, v); }
+  set platform($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPlatform() => $_has(1);
   @$pb.TagNumber(2)
@@ -473,7 +474,7 @@ class Account extends $pb.GeneratedMessage {
 
 class AccountID extends $pb.GeneratedMessage {
   factory AccountID({
-    AccountPlatform? platform,
+    $core.String? platform,
     $core.String? platformAccountId,
   }) {
     final $result = create();
@@ -490,7 +491,7 @@ class AccountID extends $pb.GeneratedMessage {
   factory AccountID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AccountID', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..e<AccountPlatform>(1, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: AccountPlatform.ACCOUNT_PLATFORM_UNSPECIFIED, valueOf: AccountPlatform.valueOf, enumValues: AccountPlatform.values)
+    ..aOS(1, _omitFieldNames ? '' : 'platform')
     ..aOS(2, _omitFieldNames ? '' : 'platformAccountId')
     ..hasRequiredFields = false
   ;
@@ -516,10 +517,11 @@ class AccountID extends $pb.GeneratedMessage {
   static AccountID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AccountID>(create);
   static AccountID? _defaultInstance;
 
+  /// WellKnownAccountPlatform
   @$pb.TagNumber(1)
-  AccountPlatform get platform => $_getN(0);
+  $core.String get platform => $_getSZ(0);
   @$pb.TagNumber(1)
-  set platform(AccountPlatform v) { setField(1, v); }
+  set platform($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
@@ -538,7 +540,8 @@ class AccountID extends $pb.GeneratedMessage {
 class App extends $pb.GeneratedMessage {
   factory App({
     InternalID? id,
-    AppSource? source,
+    $core.bool? internal,
+    $core.String? source,
     $core.String? sourceAppId,
     $core.String? sourceUrl,
     AppDetails? details,
@@ -553,6 +556,9 @@ class App extends $pb.GeneratedMessage {
     final $result = create();
     if (id != null) {
       $result.id = id;
+    }
+    if (internal != null) {
+      $result.internal = internal;
     }
     if (source != null) {
       $result.source = source;
@@ -595,17 +601,18 @@ class App extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'App', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
-    ..e<AppSource>(2, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: AppSource.APP_SOURCE_UNSPECIFIED, valueOf: AppSource.valueOf, enumValues: AppSource.values)
-    ..aOS(3, _omitFieldNames ? '' : 'sourceAppId')
-    ..aOS(4, _omitFieldNames ? '' : 'sourceUrl')
-    ..aOM<AppDetails>(5, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
-    ..aOS(6, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
-    ..aOS(8, _omitFieldNames ? '' : 'shortDescription')
-    ..aOS(9, _omitFieldNames ? '' : 'iconImageUrl')
-    ..aOS(10, _omitFieldNames ? '' : 'heroImageUrl')
-    ..pPS(11, _omitFieldNames ? '' : 'tags')
-    ..pPS(12, _omitFieldNames ? '' : 'altNames')
+    ..aOB(2, _omitFieldNames ? '' : 'internal')
+    ..aOS(3, _omitFieldNames ? '' : 'source')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceAppId')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceUrl')
+    ..aOM<AppDetails>(6, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
+    ..aOS(7, _omitFieldNames ? '' : 'name')
+    ..e<AppType>(8, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
+    ..aOS(9, _omitFieldNames ? '' : 'shortDescription')
+    ..aOS(10, _omitFieldNames ? '' : 'iconImageUrl')
+    ..aOS(11, _omitFieldNames ? '' : 'heroImageUrl')
+    ..pPS(12, _omitFieldNames ? '' : 'tags')
+    ..pPS(13, _omitFieldNames ? '' : 'altNames')
     ..hasRequiredFields = false
   ;
 
@@ -641,102 +648,273 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   InternalID ensureId() => $_ensure(0);
 
+  /// ignore `source` and `source_app_id` when `internal` is true
   @$pb.TagNumber(2)
-  AppSource get source => $_getN(1);
+  $core.bool get internal => $_getBF(1);
   @$pb.TagNumber(2)
-  set source(AppSource v) { setField(2, v); }
+  set internal($core.bool v) { $_setBool(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSource() => $_has(1);
+  $core.bool hasInternal() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSource() => clearField(2);
+  void clearInternal() => clearField(2);
 
+  /// WellKnownAppSource
   @$pb.TagNumber(3)
-  $core.String get sourceAppId => $_getSZ(2);
+  $core.String get source => $_getSZ(2);
   @$pb.TagNumber(3)
-  set sourceAppId($core.String v) { $_setString(2, v); }
+  set source($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSourceAppId() => $_has(2);
+  $core.bool hasSource() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSourceAppId() => clearField(3);
+  void clearSource() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get sourceUrl => $_getSZ(3);
+  $core.String get sourceAppId => $_getSZ(3);
   @$pb.TagNumber(4)
-  set sourceUrl($core.String v) { $_setString(3, v); }
+  set sourceAppId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasSourceUrl() => $_has(3);
+  $core.bool hasSourceAppId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSourceUrl() => clearField(4);
+  void clearSourceAppId() => clearField(4);
 
   @$pb.TagNumber(5)
-  AppDetails get details => $_getN(4);
+  $core.String get sourceUrl => $_getSZ(4);
   @$pb.TagNumber(5)
-  set details(AppDetails v) { setField(5, v); }
+  set sourceUrl($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDetails() => $_has(4);
+  $core.bool hasSourceUrl() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDetails() => clearField(5);
-  @$pb.TagNumber(5)
-  AppDetails ensureDetails() => $_ensure(4);
+  void clearSourceUrl() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get name => $_getSZ(5);
+  AppDetails get details => $_getN(5);
   @$pb.TagNumber(6)
-  set name($core.String v) { $_setString(5, v); }
+  set details(AppDetails v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasName() => $_has(5);
+  $core.bool hasDetails() => $_has(5);
   @$pb.TagNumber(6)
-  void clearName() => clearField(6);
+  void clearDetails() => clearField(6);
+  @$pb.TagNumber(6)
+  AppDetails ensureDetails() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  AppType get type => $_getN(6);
+  $core.String get name => $_getSZ(6);
   @$pb.TagNumber(7)
-  set type(AppType v) { setField(7, v); }
+  set name($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasType() => $_has(6);
+  $core.bool hasName() => $_has(6);
   @$pb.TagNumber(7)
-  void clearType() => clearField(7);
+  void clearName() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get shortDescription => $_getSZ(7);
+  AppType get type => $_getN(7);
   @$pb.TagNumber(8)
-  set shortDescription($core.String v) { $_setString(7, v); }
+  set type(AppType v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasShortDescription() => $_has(7);
+  $core.bool hasType() => $_has(7);
   @$pb.TagNumber(8)
-  void clearShortDescription() => clearField(8);
+  void clearType() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get iconImageUrl => $_getSZ(8);
+  $core.String get shortDescription => $_getSZ(8);
   @$pb.TagNumber(9)
-  set iconImageUrl($core.String v) { $_setString(8, v); }
+  set shortDescription($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasIconImageUrl() => $_has(8);
+  $core.bool hasShortDescription() => $_has(8);
   @$pb.TagNumber(9)
-  void clearIconImageUrl() => clearField(9);
+  void clearShortDescription() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get heroImageUrl => $_getSZ(9);
+  $core.String get iconImageUrl => $_getSZ(9);
   @$pb.TagNumber(10)
-  set heroImageUrl($core.String v) { $_setString(9, v); }
+  set iconImageUrl($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasHeroImageUrl() => $_has(9);
+  $core.bool hasIconImageUrl() => $_has(9);
   @$pb.TagNumber(10)
-  void clearHeroImageUrl() => clearField(10);
+  void clearIconImageUrl() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.List<$core.String> get tags => $_getList(10);
+  $core.String get heroImageUrl => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set heroImageUrl($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasHeroImageUrl() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearHeroImageUrl() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.List<$core.String> get altNames => $_getList(11);
+  $core.List<$core.String> get tags => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.List<$core.String> get altNames => $_getList(12);
+}
+
+/// Mixed info of bound apps
+class AppMixed extends $pb.GeneratedMessage {
+  factory AppMixed({
+    InternalID? id,
+    AppDetails? details,
+    $core.String? name,
+    AppType? type,
+    $core.String? shortDescription,
+    $core.String? iconImageUrl,
+    $core.String? heroImageUrl,
+    $core.Iterable<$core.String>? tags,
+    $core.Iterable<$core.String>? altNames,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (details != null) {
+      $result.details = details;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (shortDescription != null) {
+      $result.shortDescription = shortDescription;
+    }
+    if (iconImageUrl != null) {
+      $result.iconImageUrl = iconImageUrl;
+    }
+    if (heroImageUrl != null) {
+      $result.heroImageUrl = heroImageUrl;
+    }
+    if (tags != null) {
+      $result.tags.addAll(tags);
+    }
+    if (altNames != null) {
+      $result.altNames.addAll(altNames);
+    }
+    return $result;
+  }
+  AppMixed._() : super();
+  factory AppMixed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppMixed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppMixed', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
+    ..aOM<AppDetails>(6, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
+    ..aOS(7, _omitFieldNames ? '' : 'name')
+    ..e<AppType>(8, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
+    ..aOS(9, _omitFieldNames ? '' : 'shortDescription')
+    ..aOS(10, _omitFieldNames ? '' : 'iconImageUrl')
+    ..aOS(11, _omitFieldNames ? '' : 'heroImageUrl')
+    ..pPS(12, _omitFieldNames ? '' : 'tags')
+    ..pPS(13, _omitFieldNames ? '' : 'altNames')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppMixed clone() => AppMixed()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppMixed copyWith(void Function(AppMixed) updates) => super.copyWith((message) => updates(message as AppMixed)) as AppMixed;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppMixed create() => AppMixed._();
+  AppMixed createEmptyInstance() => create();
+  static $pb.PbList<AppMixed> createRepeated() => $pb.PbList<AppMixed>();
+  @$core.pragma('dart2js:noInline')
+  static AppMixed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppMixed>(create);
+  static AppMixed? _defaultInstance;
+
+  /// internal app id
+  @$pb.TagNumber(1)
+  InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id(InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(6)
+  AppDetails get details => $_getN(1);
+  @$pb.TagNumber(6)
+  set details(AppDetails v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDetails() => $_has(1);
+  @$pb.TagNumber(6)
+  void clearDetails() => clearField(6);
+  @$pb.TagNumber(6)
+  AppDetails ensureDetails() => $_ensure(1);
+
+  @$pb.TagNumber(7)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(7)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(7)
+  void clearName() => clearField(7);
+
+  @$pb.TagNumber(8)
+  AppType get type => $_getN(3);
+  @$pb.TagNumber(8)
+  set type(AppType v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(8)
+  void clearType() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get shortDescription => $_getSZ(4);
+  @$pb.TagNumber(9)
+  set shortDescription($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasShortDescription() => $_has(4);
+  @$pb.TagNumber(9)
+  void clearShortDescription() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get iconImageUrl => $_getSZ(5);
+  @$pb.TagNumber(10)
+  set iconImageUrl($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasIconImageUrl() => $_has(5);
+  @$pb.TagNumber(10)
+  void clearIconImageUrl() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get heroImageUrl => $_getSZ(6);
+  @$pb.TagNumber(11)
+  set heroImageUrl($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasHeroImageUrl() => $_has(6);
+  @$pb.TagNumber(11)
+  void clearHeroImageUrl() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.List<$core.String> get tags => $_getList(7);
+
+  @$pb.TagNumber(13)
+  $core.List<$core.String> get altNames => $_getList(8);
 }
 
 class AppID extends $pb.GeneratedMessage {
   factory AppID({
-    AppSource? source,
+    $core.bool? internal,
+    $core.String? source,
     $core.String? sourceAppId,
   }) {
     final $result = create();
+    if (internal != null) {
+      $result.internal = internal;
+    }
     if (source != null) {
       $result.source = source;
     }
@@ -750,8 +928,9 @@ class AppID extends $pb.GeneratedMessage {
   factory AppID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppID', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..e<AppSource>(1, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: AppSource.APP_SOURCE_UNSPECIFIED, valueOf: AppSource.valueOf, enumValues: AppSource.values)
-    ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
+    ..aOB(1, _omitFieldNames ? '' : 'internal')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceAppId')
     ..hasRequiredFields = false
   ;
 
@@ -777,22 +956,32 @@ class AppID extends $pb.GeneratedMessage {
   static AppID? _defaultInstance;
 
   @$pb.TagNumber(1)
-  AppSource get source => $_getN(0);
+  $core.bool get internal => $_getBF(0);
   @$pb.TagNumber(1)
-  set source(AppSource v) { setField(1, v); }
+  set internal($core.bool v) { $_setBool(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasSource() => $_has(0);
+  $core.bool hasInternal() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
+  void clearInternal() => clearField(1);
 
+  /// WellKnownAppSource
   @$pb.TagNumber(2)
-  $core.String get sourceAppId => $_getSZ(1);
+  $core.String get source => $_getSZ(1);
   @$pb.TagNumber(2)
-  set sourceAppId($core.String v) { $_setString(1, v); }
+  set source($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSourceAppId() => $_has(1);
+  $core.bool hasSource() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceAppId() => clearField(2);
+  void clearSource() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceAppId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceAppId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSourceAppId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceAppId() => clearField(3);
 }
 
 class AppDetails extends $pb.GeneratedMessage {

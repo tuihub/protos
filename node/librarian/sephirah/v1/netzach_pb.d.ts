@@ -98,9 +98,9 @@ export class ListNotifyTargetsRequest extends jspb.Message {
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   clearTypeFilterList(): void;
-  getTypeFilterList(): Array<NotifyTargetTypeMap[keyof NotifyTargetTypeMap]>;
-  setTypeFilterList(value: Array<NotifyTargetTypeMap[keyof NotifyTargetTypeMap]>): void;
-  addTypeFilter(value: NotifyTargetTypeMap[keyof NotifyTargetTypeMap], index?: number): NotifyTargetTypeMap[keyof NotifyTargetTypeMap];
+  getTypeFilterList(): Array<string>;
+  setTypeFilterList(value: Array<string>): void;
+  addTypeFilter(value: string, index?: number): string;
 
   clearStatusFilterList(): void;
   getStatusFilterList(): Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>;
@@ -121,7 +121,7 @@ export namespace ListNotifyTargetsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    typeFilterList: Array<NotifyTargetTypeMap[keyof NotifyTargetTypeMap]>,
+    typeFilterList: Array<string>,
     statusFilterList: Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>,
   }
 }
@@ -304,8 +304,8 @@ export class NotifyTarget extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getType(): NotifyTargetTypeMap[keyof NotifyTargetTypeMap];
-  setType(value: NotifyTargetTypeMap[keyof NotifyTargetTypeMap]): void;
+  getType(): string;
+  setType(value: string): void;
 
   getStatus(): NotifyTargetStatusMap[keyof NotifyTargetStatusMap];
   setStatus(value: NotifyTargetStatusMap[keyof NotifyTargetStatusMap]): void;
@@ -328,7 +328,7 @@ export namespace NotifyTarget {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     description: string,
-    type: NotifyTargetTypeMap[keyof NotifyTargetTypeMap],
+    type: string,
     status: NotifyTargetStatusMap[keyof NotifyTargetStatusMap],
     token: string,
   }
@@ -467,13 +467,6 @@ export namespace NotifyFilter {
     includeKeywordsList: Array<string>,
   }
 }
-
-export interface NotifyTargetTypeMap {
-  NOTIFY_TARGET_TYPE_UNSPECIFIED: 0;
-  NOTIFY_TARGET_TYPE_TELEGRAM: 1;
-}
-
-export const NotifyTargetType: NotifyTargetTypeMap;
 
 export interface NotifyTargetStatusMap {
   NOTIFY_TARGET_STATUS_UNSPECIFIED: 0;

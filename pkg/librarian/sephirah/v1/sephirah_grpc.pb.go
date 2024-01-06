@@ -22,7 +22,7 @@ const (
 	LibrarianSephirahService_GetServerInformation_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation"
 	LibrarianSephirahService_GetToken_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
 	LibrarianSephirahService_RefreshToken_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
-	LibrarianSephirahService_GenerateToken_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/GenerateToken"
+	LibrarianSephirahService_GainUserPrivilege_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege"
 	LibrarianSephirahService_CreateUser_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser"
 	LibrarianSephirahService_UpdateUser_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser"
 	LibrarianSephirahService_GetUser_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/GetUser"
@@ -30,6 +30,9 @@ const (
 	LibrarianSephirahService_LinkAccount_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount"
 	LibrarianSephirahService_UnLinkAccount_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount"
 	LibrarianSephirahService_ListLinkAccounts_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts"
+	LibrarianSephirahService_ListPorter_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorter"
+	LibrarianSephirahService_UpdatePorterStatus_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus"
+	LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege"
 	LibrarianSephirahService_UploadFile_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile"
 	LibrarianSephirahService_DownloadFile_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile"
 	LibrarianSephirahService_SimpleUploadFile_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile"
@@ -46,14 +49,13 @@ const (
 	LibrarianSephirahService_CreateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
 	LibrarianSephirahService_UpdateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
 	LibrarianSephirahService_ListApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
-	LibrarianSephirahService_RefreshApp_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshApp"
+	LibrarianSephirahService_SyncApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/SyncApps"
+	LibrarianSephirahService_SyncAccountApps_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps"
 	LibrarianSephirahService_MergeApps_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps"
 	LibrarianSephirahService_PickApp_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/PickApp"
-	LibrarianSephirahService_SyncExternalApps_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalApps"
-	LibrarianSephirahService_SyncExternalAccountApps_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/SyncExternalAccountApps"
 	LibrarianSephirahService_SearchApps_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps"
 	LibrarianSephirahService_GetApp_FullMethodName                       = "/librarian.sephirah.v1.LibrarianSephirahService/GetApp"
-	LibrarianSephirahService_GetBindApps_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/GetBindApps"
+	LibrarianSephirahService_GetBoundApps_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/GetBoundApps"
 	LibrarianSephirahService_PurchaseApp_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp"
 	LibrarianSephirahService_GetPurchasedApps_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps"
 	LibrarianSephirahService_CreateAppPackage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage"
@@ -104,14 +106,14 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LibrarianSephirahServiceClient interface {
-	// For manual inspection only, the client may display but should not parse the response.
+	// Allow anonymous call, use accessToken to get complete information
 	GetServerInformation(ctx context.Context, in *GetServerInformationRequest, opts ...grpc.CallOption) (*GetServerInformationResponse, error)
 	// `Tiphereth` `Normal` Login via password and get two token
 	GetToken(ctx context.Context, in *GetTokenRequest, opts ...grpc.CallOption) (*GetTokenResponse, error)
-	// `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
+	// `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
-	// `Tiphereth` `Admin` Generate token for given user
-	GenerateToken(ctx context.Context, in *GenerateTokenRequest, opts ...grpc.CallOption) (*GenerateTokenResponse, error)
+	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+	GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
@@ -129,6 +131,12 @@ type LibrarianSephirahServiceClient interface {
 	// `Tiphereth` `Normal` List third-party account binded to current user.
 	// Match ()<-[Equal]->(current user)
 	ListLinkAccounts(ctx context.Context, in *ListLinkAccountsRequest, opts ...grpc.CallOption) (*ListLinkAccountsResponse, error)
+	// `Tiphereth` `Normal`
+	ListPorter(ctx context.Context, in *ListPorterRequest, opts ...grpc.CallOption) (*ListPorterResponse, error)
+	// `Tiphereth` `Admin`
+	UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error)
+	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+	UpdatePorterPrivilege(ctx context.Context, in *UpdatePorterPrivilegeRequest, opts ...grpc.CallOption) (*UpdatePorterPrivilegeResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_UploadFileClient, error)
 	// `Binah` `download_token`
@@ -168,28 +176,30 @@ type LibrarianSephirahServiceClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	// `Gebura` `Admin` Used to manage apps
 	ListApps(ctx context.Context, in *ListAppsRequest, opts ...grpc.CallOption) (*ListAppsResponse, error)
-	// `Gebura` `Admin` Submit an asynchronous update request
-	RefreshApp(ctx context.Context, in *RefreshAppRequest, opts ...grpc.CallOption) (*RefreshAppResponse, error)
+	// `Gebura` `Admin` Asynchronous update apps.
+	// Request on INTERNAL app applies to all bound external apps.
+	// Create an INTERNAL app when requested external app does not exist
+	SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error)
+	// `Gebura` `Admin` Asynchronously update apps associated with an account.
+	// Create an INTERNAL app when associated external app does not exist
+	SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error)
 	// `Gebura` `Admin` Merge two apps
 	MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error)
 	// `Gebura` `Admin` Pick one app out from merged
 	PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error)
-	// `Gebura` `Admin` Asynchronously update external apps.
-	// Create an INTERNAL app when requested external app does not exist
-	SyncExternalApps(ctx context.Context, in *SyncExternalAppsRequest, opts ...grpc.CallOption) (*SyncExternalAppsResponse, error)
-	// `Gebura` `Admin` Asynchronously update apps associated with an external account.
-	// Create an INTERNAL app when associated external app does not exist
-	SyncExternalAccountApps(ctx context.Context, in *SyncExternalAccountAppsRequest, opts ...grpc.CallOption) (*SyncExternalAccountAppsResponse, error)
 	// `Gebura` `Normal`
 	SearchApps(ctx context.Context, in *SearchAppsRequest, opts ...grpc.CallOption) (*SearchAppsResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
 	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
 	// `Gebura` `Normal` Original bound apps info of required app
-	GetBindApps(ctx context.Context, in *GetBindAppsRequest, opts ...grpc.CallOption) (*GetBindAppsResponse, error)
+	GetBoundApps(ctx context.Context, in *GetBoundAppsRequest, opts ...grpc.CallOption) (*GetBoundAppsResponse, error)
 	// `Gebura` `Normal`
 	PurchaseApp(ctx context.Context, in *PurchaseAppRequest, opts ...grpc.CallOption) (*PurchaseAppResponse, error)
 	// `Gebura` `Normal`
+	// Default get user purchased apps
+	// Use `source` to get purchase info from bound account
+	// only support steam
 	GetPurchasedApps(ctx context.Context, in *GetPurchasedAppsRequest, opts ...grpc.CallOption) (*GetPurchasedAppsResponse, error)
 	// `Gebura` `Normal`
 	CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error)
@@ -312,9 +322,9 @@ func (c *librarianSephirahServiceClient) RefreshToken(ctx context.Context, in *R
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GenerateToken(ctx context.Context, in *GenerateTokenRequest, opts ...grpc.CallOption) (*GenerateTokenResponse, error) {
-	out := new(GenerateTokenResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GenerateToken_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error) {
+	out := new(GainUserPrivilegeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GainUserPrivilege_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -378,6 +388,33 @@ func (c *librarianSephirahServiceClient) UnLinkAccount(ctx context.Context, in *
 func (c *librarianSephirahServiceClient) ListLinkAccounts(ctx context.Context, in *ListLinkAccountsRequest, opts ...grpc.CallOption) (*ListLinkAccountsResponse, error) {
 	out := new(ListLinkAccountsResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListLinkAccounts_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListPorter(ctx context.Context, in *ListPorterRequest, opts ...grpc.CallOption) (*ListPorterResponse, error) {
+	out := new(ListPorterResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListPorter_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error) {
+	out := new(UpdatePorterStatusResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdatePorterStatus_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdatePorterPrivilege(ctx context.Context, in *UpdatePorterPrivilegeRequest, opts ...grpc.CallOption) (*UpdatePorterPrivilegeResponse, error) {
+	out := new(UpdatePorterPrivilegeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -617,9 +654,18 @@ func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, in *ListA
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) RefreshApp(ctx context.Context, in *RefreshAppRequest, opts ...grpc.CallOption) (*RefreshAppResponse, error) {
-	out := new(RefreshAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_RefreshApp_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error) {
+	out := new(SyncAppsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncApps_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error) {
+	out := new(SyncAccountAppsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncAccountApps_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -644,24 +690,6 @@ func (c *librarianSephirahServiceClient) PickApp(ctx context.Context, in *PickAp
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) SyncExternalApps(ctx context.Context, in *SyncExternalAppsRequest, opts ...grpc.CallOption) (*SyncExternalAppsResponse, error) {
-	out := new(SyncExternalAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncExternalApps_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) SyncExternalAccountApps(ctx context.Context, in *SyncExternalAccountAppsRequest, opts ...grpc.CallOption) (*SyncExternalAccountAppsResponse, error) {
-	out := new(SyncExternalAccountAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncExternalAccountApps_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *librarianSephirahServiceClient) SearchApps(ctx context.Context, in *SearchAppsRequest, opts ...grpc.CallOption) (*SearchAppsResponse, error) {
 	out := new(SearchAppsResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_SearchApps_FullMethodName, in, out, opts...)
@@ -680,9 +708,9 @@ func (c *librarianSephirahServiceClient) GetApp(ctx context.Context, in *GetAppR
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GetBindApps(ctx context.Context, in *GetBindAppsRequest, opts ...grpc.CallOption) (*GetBindAppsResponse, error) {
-	out := new(GetBindAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetBindApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) GetBoundApps(ctx context.Context, in *GetBoundAppsRequest, opts ...grpc.CallOption) (*GetBoundAppsResponse, error) {
+	out := new(GetBoundAppsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetBoundApps_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1111,14 +1139,14 @@ func (c *librarianSephirahServiceClient) ListCollectionItems(ctx context.Context
 // All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
 type LibrarianSephirahServiceServer interface {
-	// For manual inspection only, the client may display but should not parse the response.
+	// Allow anonymous call, use accessToken to get complete information
 	GetServerInformation(context.Context, *GetServerInformationRequest) (*GetServerInformationResponse, error)
 	// `Tiphereth` `Normal` Login via password and get two token
 	GetToken(context.Context, *GetTokenRequest) (*GetTokenResponse, error)
-	// `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
+	// `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
-	// `Tiphereth` `Admin` Generate token for given user
-	GenerateToken(context.Context, *GenerateTokenRequest) (*GenerateTokenResponse, error)
+	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+	GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
@@ -1136,6 +1164,12 @@ type LibrarianSephirahServiceServer interface {
 	// `Tiphereth` `Normal` List third-party account binded to current user.
 	// Match ()<-[Equal]->(current user)
 	ListLinkAccounts(context.Context, *ListLinkAccountsRequest) (*ListLinkAccountsResponse, error)
+	// `Tiphereth` `Normal`
+	ListPorter(context.Context, *ListPorterRequest) (*ListPorterResponse, error)
+	// `Tiphereth` `Admin`
+	UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error)
+	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+	UpdatePorterPrivilege(context.Context, *UpdatePorterPrivilegeRequest) (*UpdatePorterPrivilegeResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(LibrarianSephirahService_UploadFileServer) error
 	// `Binah` `download_token`
@@ -1175,28 +1209,30 @@ type LibrarianSephirahServiceServer interface {
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	// `Gebura` `Admin` Used to manage apps
 	ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error)
-	// `Gebura` `Admin` Submit an asynchronous update request
-	RefreshApp(context.Context, *RefreshAppRequest) (*RefreshAppResponse, error)
+	// `Gebura` `Admin` Asynchronous update apps.
+	// Request on INTERNAL app applies to all bound external apps.
+	// Create an INTERNAL app when requested external app does not exist
+	SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error)
+	// `Gebura` `Admin` Asynchronously update apps associated with an account.
+	// Create an INTERNAL app when associated external app does not exist
+	SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error)
 	// `Gebura` `Admin` Merge two apps
 	MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error)
 	// `Gebura` `Admin` Pick one app out from merged
 	PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error)
-	// `Gebura` `Admin` Asynchronously update external apps.
-	// Create an INTERNAL app when requested external app does not exist
-	SyncExternalApps(context.Context, *SyncExternalAppsRequest) (*SyncExternalAppsResponse, error)
-	// `Gebura` `Admin` Asynchronously update apps associated with an external account.
-	// Create an INTERNAL app when associated external app does not exist
-	SyncExternalAccountApps(context.Context, *SyncExternalAccountAppsRequest) (*SyncExternalAccountAppsResponse, error)
 	// `Gebura` `Normal`
 	SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
 	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
 	// `Gebura` `Normal` Original bound apps info of required app
-	GetBindApps(context.Context, *GetBindAppsRequest) (*GetBindAppsResponse, error)
+	GetBoundApps(context.Context, *GetBoundAppsRequest) (*GetBoundAppsResponse, error)
 	// `Gebura` `Normal`
 	PurchaseApp(context.Context, *PurchaseAppRequest) (*PurchaseAppResponse, error)
 	// `Gebura` `Normal`
+	// Default get user purchased apps
+	// Use `source` to get purchase info from bound account
+	// only support steam
 	GetPurchasedApps(context.Context, *GetPurchasedAppsRequest) (*GetPurchasedAppsResponse, error)
 	// `Gebura` `Normal`
 	CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error)
@@ -1298,8 +1334,8 @@ func (UnimplementedLibrarianSephirahServiceServer) GetToken(context.Context, *Ge
 func (UnimplementedLibrarianSephirahServiceServer) RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GenerateToken(context.Context, *GenerateTokenRequest) (*GenerateTokenResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GenerateToken not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GainUserPrivilege not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
@@ -1321,6 +1357,15 @@ func (UnimplementedLibrarianSephirahServiceServer) UnLinkAccount(context.Context
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListLinkAccounts(context.Context, *ListLinkAccountsRequest) (*ListLinkAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListLinkAccounts not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListPorter(context.Context, *ListPorterRequest) (*ListPorterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPorter not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterStatus not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterPrivilege(context.Context, *UpdatePorterPrivilegeRequest) (*UpdatePorterPrivilegeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterPrivilege not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadFile(LibrarianSephirahService_UploadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method UploadFile not implemented")
@@ -1370,8 +1415,11 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateApp(context.Context, *U
 func (UnimplementedLibrarianSephirahServiceServer) ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApps not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) RefreshApp(context.Context, *RefreshAppRequest) (*RefreshAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RefreshApp not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncApps not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncAccountApps not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MergeApps not implemented")
@@ -1379,20 +1427,14 @@ func (UnimplementedLibrarianSephirahServiceServer) MergeApps(context.Context, *M
 func (UnimplementedLibrarianSephirahServiceServer) PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PickApp not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) SyncExternalApps(context.Context, *SyncExternalAppsRequest) (*SyncExternalAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SyncExternalApps not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) SyncExternalAccountApps(context.Context, *SyncExternalAccountAppsRequest) (*SyncExternalAccountAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SyncExternalAccountApps not implemented")
-}
 func (UnimplementedLibrarianSephirahServiceServer) SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchApps not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GetBindApps(context.Context, *GetBindAppsRequest) (*GetBindAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBindApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) GetBoundApps(context.Context, *GetBoundAppsRequest) (*GetBoundAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBoundApps not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) PurchaseApp(context.Context, *PurchaseAppRequest) (*PurchaseAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PurchaseApp not implemented")
@@ -1594,20 +1636,20 @@ func _LibrarianSephirahService_RefreshToken_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GenerateToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GenerateTokenRequest)
+func _LibrarianSephirahService_GainUserPrivilege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GainUserPrivilegeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GenerateToken(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).GainUserPrivilege(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GenerateToken_FullMethodName,
+		FullMethod: LibrarianSephirahService_GainUserPrivilege_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GenerateToken(ctx, req.(*GenerateTokenRequest))
+		return srv.(LibrarianSephirahServiceServer).GainUserPrivilege(ctx, req.(*GainUserPrivilegeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1734,6 +1776,60 @@ func _LibrarianSephirahService_ListLinkAccounts_Handler(srv interface{}, ctx con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).ListLinkAccounts(ctx, req.(*ListLinkAccountsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListPorter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPorterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListPorter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListPorter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListPorter(ctx, req.(*ListPorterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdatePorterStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePorterStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdatePorterStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdatePorterStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdatePorterStatus(ctx, req.(*UpdatePorterStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdatePorterPrivilege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePorterPrivilegeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdatePorterPrivilege(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdatePorterPrivilege(ctx, req.(*UpdatePorterPrivilegeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2053,20 +2149,38 @@ func _LibrarianSephirahService_ListApps_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_RefreshApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RefreshAppRequest)
+func _LibrarianSephirahService_SyncApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).RefreshApp(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_RefreshApp_FullMethodName,
+		FullMethod: LibrarianSephirahService_SyncApps_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).RefreshApp(ctx, req.(*RefreshAppRequest))
+		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, req.(*SyncAppsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SyncAccountApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncAccountAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SyncAccountApps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, req.(*SyncAccountAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2107,42 +2221,6 @@ func _LibrarianSephirahService_PickApp_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_SyncExternalApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SyncExternalAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SyncExternalApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SyncExternalApps_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SyncExternalApps(ctx, req.(*SyncExternalAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_SyncExternalAccountApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SyncExternalAccountAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SyncExternalAccountApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SyncExternalAccountApps_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SyncExternalAccountApps(ctx, req.(*SyncExternalAccountAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _LibrarianSephirahService_SearchApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SearchAppsRequest)
 	if err := dec(in); err != nil {
@@ -2179,20 +2257,20 @@ func _LibrarianSephirahService_GetApp_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GetBindApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBindAppsRequest)
+func _LibrarianSephirahService_GetBoundApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBoundAppsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GetBindApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).GetBoundApps(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GetBindApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_GetBoundApps_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GetBindApps(ctx, req.(*GetBindAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).GetBoundApps(ctx, req.(*GetBoundAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3017,8 +3095,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_RefreshToken_Handler,
 		},
 		{
-			MethodName: "GenerateToken",
-			Handler:    _LibrarianSephirahService_GenerateToken_Handler,
+			MethodName: "GainUserPrivilege",
+			Handler:    _LibrarianSephirahService_GainUserPrivilege_Handler,
 		},
 		{
 			MethodName: "CreateUser",
@@ -3047,6 +3125,18 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLinkAccounts",
 			Handler:    _LibrarianSephirahService_ListLinkAccounts_Handler,
+		},
+		{
+			MethodName: "ListPorter",
+			Handler:    _LibrarianSephirahService_ListPorter_Handler,
+		},
+		{
+			MethodName: "UpdatePorterStatus",
+			Handler:    _LibrarianSephirahService_UpdatePorterStatus_Handler,
+		},
+		{
+			MethodName: "UpdatePorterPrivilege",
+			Handler:    _LibrarianSephirahService_UpdatePorterPrivilege_Handler,
 		},
 		{
 			MethodName: "PresignedUploadFile",
@@ -3097,8 +3187,12 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_ListApps_Handler,
 		},
 		{
-			MethodName: "RefreshApp",
-			Handler:    _LibrarianSephirahService_RefreshApp_Handler,
+			MethodName: "SyncApps",
+			Handler:    _LibrarianSephirahService_SyncApps_Handler,
+		},
+		{
+			MethodName: "SyncAccountApps",
+			Handler:    _LibrarianSephirahService_SyncAccountApps_Handler,
 		},
 		{
 			MethodName: "MergeApps",
@@ -3109,14 +3203,6 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_PickApp_Handler,
 		},
 		{
-			MethodName: "SyncExternalApps",
-			Handler:    _LibrarianSephirahService_SyncExternalApps_Handler,
-		},
-		{
-			MethodName: "SyncExternalAccountApps",
-			Handler:    _LibrarianSephirahService_SyncExternalAccountApps_Handler,
-		},
-		{
 			MethodName: "SearchApps",
 			Handler:    _LibrarianSephirahService_SearchApps_Handler,
 		},
@@ -3125,8 +3211,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_GetApp_Handler,
 		},
 		{
-			MethodName: "GetBindApps",
-			Handler:    _LibrarianSephirahService_GetBindApps_Handler,
+			MethodName: "GetBoundApps",
+			Handler:    _LibrarianSephirahService_GetBoundApps_Handler,
 		},
 		{
 			MethodName: "PurchaseApp",

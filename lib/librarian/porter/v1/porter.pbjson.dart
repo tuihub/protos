@@ -13,250 +13,87 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use featureFlagDescriptor instead')
-const FeatureFlag$json = {
-  '1': 'FeatureFlag',
+@$core.Deprecated('Use getPorterInformationRequestDescriptor instead')
+const GetPorterInformationRequest$json = {
+  '1': 'GetPorterInformationRequest',
+};
+
+/// Descriptor for `GetPorterInformationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPorterInformationRequestDescriptor = $convert.base64Decode(
+    'ChtHZXRQb3J0ZXJJbmZvcm1hdGlvblJlcXVlc3Q=');
+
+@$core.Deprecated('Use getPorterInformationResponseDescriptor instead')
+const GetPorterInformationResponse$json = {
+  '1': 'GetPorterInformationResponse',
   '2': [
-    {'1': 'FEATURE_FLAG_UNSPECIFIED', '2': 0},
-    {'1': 'FEATURE_FLAG_SOURCE_STEAM', '2': 1},
-    {'1': 'FEATURE_FLAG_SOURCE_TELEGRAM', '2': 2},
-    {'1': 'FEATURE_FLAG_DEFAULT_DATA_STORAGE', '2': 3},
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'global_name', '3': 3, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary', '10': 'featureSummary'},
   ],
 };
 
-/// Descriptor for `FeatureFlag`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List featureFlagDescriptor = $convert.base64Decode(
-    'CgtGZWF0dXJlRmxhZxIcChhGRUFUVVJFX0ZMQUdfVU5TUEVDSUZJRUQQABIdChlGRUFUVVJFX0'
-    'ZMQUdfU09VUkNFX1NURUFNEAESIAocRkVBVFVSRV9GTEFHX1NPVVJDRV9URUxFR1JBTRACEiUK'
-    'IUZFQVRVUkVfRkxBR19ERUZBVUxUX0RBVEFfU1RPUkFHRRAD');
+/// Descriptor for `GetPorterInformationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPorterInformationResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRQb3J0ZXJJbmZvcm1hdGlvblJlc3BvbnNlEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHdm'
+    'Vyc2lvbhgCIAEoCVIHdmVyc2lvbhIfCgtnbG9iYWxfbmFtZRgDIAEoCVIKZ2xvYmFsTmFtZRJS'
+    'Cg9mZWF0dXJlX3N1bW1hcnkYBCABKAsyKS5saWJyYXJpYW4ucG9ydGVyLnYxLlBvcnRlckZlYX'
+    'R1cmVTdW1tYXJ5Ug5mZWF0dXJlU3VtbWFyeQ==');
 
-@$core.Deprecated('Use accountAppRelationTypeDescriptor instead')
-const AccountAppRelationType$json = {
-  '1': 'AccountAppRelationType',
+@$core.Deprecated('Use porterFeatureSummaryDescriptor instead')
+const PorterFeatureSummary$json = {
+  '1': 'PorterFeatureSummary',
   '2': [
-    {'1': 'ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED', '2': 0},
-    {'1': 'ACCOUNT_APP_RELATION_TYPE_OWN', '2': 1},
+    {'1': 'supported_accounts', '3': 1, '4': 3, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary.Account', '10': 'supportedAccounts'},
+    {'1': 'supported_app_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppSources'},
+    {'1': 'supported_feed_sources', '3': 3, '4': 3, '5': 9, '10': 'supportedFeedSources'},
+    {'1': 'supported_notify_destinations', '3': 4, '4': 3, '5': 9, '10': 'supportedNotifyDestinations'},
   ],
+  '3': [PorterFeatureSummary_Account$json],
 };
 
-/// Descriptor for `AccountAppRelationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List accountAppRelationTypeDescriptor = $convert.base64Decode(
-    'ChZBY2NvdW50QXBwUmVsYXRpb25UeXBlEikKJUFDQ09VTlRfQVBQX1JFTEFUSU9OX1RZUEVfVU'
-    '5TUEVDSUZJRUQQABIhCh1BQ0NPVU5UX0FQUF9SRUxBVElPTl9UWVBFX09XThAB');
-
-@$core.Deprecated('Use feedSourceDescriptor instead')
-const FeedSource$json = {
-  '1': 'FeedSource',
+@$core.Deprecated('Use porterFeatureSummaryDescriptor instead')
+const PorterFeatureSummary_Account$json = {
+  '1': 'Account',
   '2': [
-    {'1': 'FEED_SOURCE_UNSPECIFIED', '2': 0},
-    {'1': 'FEED_SOURCE_COMMON', '2': 1},
+    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'app_relation_types', '3': 2, '4': 3, '5': 14, '6': '.librarian.v1.AccountAppRelationType', '10': 'appRelationTypes'},
   ],
 };
 
-/// Descriptor for `FeedSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List feedSourceDescriptor = $convert.base64Decode(
-    'CgpGZWVkU291cmNlEhsKF0ZFRURfU09VUkNFX1VOU1BFQ0lGSUVEEAASFgoSRkVFRF9TT1VSQ0'
-    'VfQ09NTU9OEAE=');
+/// Descriptor for `PorterFeatureSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterFeatureSummaryDescriptor = $convert.base64Decode(
+    'ChRQb3J0ZXJGZWF0dXJlU3VtbWFyeRJgChJzdXBwb3J0ZWRfYWNjb3VudHMYASADKAsyMS5saW'
+    'JyYXJpYW4ucG9ydGVyLnYxLlBvcnRlckZlYXR1cmVTdW1tYXJ5LkFjY291bnRSEXN1cHBvcnRl'
+    'ZEFjY291bnRzEjIKFXN1cHBvcnRlZF9hcHBfc291cmNlcxgCIAMoCVITc3VwcG9ydGVkQXBwU2'
+    '91cmNlcxI0ChZzdXBwb3J0ZWRfZmVlZF9zb3VyY2VzGAMgAygJUhRzdXBwb3J0ZWRGZWVkU291'
+    'cmNlcxJCCh1zdXBwb3J0ZWRfbm90aWZ5X2Rlc3RpbmF0aW9ucxgEIAMoCVIbc3VwcG9ydGVkTm'
+    '90aWZ5RGVzdGluYXRpb25zGnkKB0FjY291bnQSGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3Jt'
+    'ElIKEmFwcF9yZWxhdGlvbl90eXBlcxgCIAMoDjIkLmxpYnJhcmlhbi52MS5BY2NvdW50QXBwUm'
+    'VsYXRpb25UeXBlUhBhcHBSZWxhdGlvblR5cGVz');
 
-@$core.Deprecated('Use feedDestinationDescriptor instead')
-const FeedDestination$json = {
-  '1': 'FeedDestination',
+@$core.Deprecated('Use enablePorterRequestDescriptor instead')
+const EnablePorterRequest$json = {
+  '1': 'EnablePorterRequest',
   '2': [
-    {'1': 'FEED_DESTINATION_UNSPECIFIED', '2': 0},
-    {'1': 'FEED_DESTINATION_TELEGRAM', '2': 1},
+    {'1': 'sephirah_id', '3': 1, '4': 1, '5': 3, '10': 'sephirahId'},
+    {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '10': 'refreshToken'},
   ],
 };
 
-/// Descriptor for `FeedDestination`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List feedDestinationDescriptor = $convert.base64Decode(
-    'Cg9GZWVkRGVzdGluYXRpb24SIAocRkVFRF9ERVNUSU5BVElPTl9VTlNQRUNJRklFRBAAEh0KGU'
-    'ZFRURfREVTVElOQVRJT05fVEVMRUdSQU0QAQ==');
+/// Descriptor for `EnablePorterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enablePorterRequestDescriptor = $convert.base64Decode(
+    'ChNFbmFibGVQb3J0ZXJSZXF1ZXN0Eh8KC3NlcGhpcmFoX2lkGAEgASgDUgpzZXBoaXJhaElkEi'
+    'MKDXJlZnJlc2hfdG9rZW4YAiABKAlSDHJlZnJlc2hUb2tlbg==');
 
-@$core.Deprecated('Use dBSourceDescriptor instead')
-const DBSource$json = {
-  '1': 'DBSource',
-  '2': [
-    {'1': 'DB_SOURCE_UNSPECIFIED', '2': 0},
-  ],
+@$core.Deprecated('Use enablePorterResponseDescriptor instead')
+const EnablePorterResponse$json = {
+  '1': 'EnablePorterResponse',
 };
 
-/// Descriptor for `DBSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List dBSourceDescriptor = $convert.base64Decode(
-    'CghEQlNvdXJjZRIZChVEQl9TT1VSQ0VfVU5TUEVDSUZJRUQQAA==');
-
-@$core.Deprecated('Use wikiSourceDescriptor instead')
-const WikiSource$json = {
-  '1': 'WikiSource',
-  '2': [
-    {'1': 'WIKI_SOURCE_UNSPECIFIED', '2': 0},
-  ],
-};
-
-/// Descriptor for `WikiSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List wikiSourceDescriptor = $convert.base64Decode(
-    'CgpXaWtpU291cmNlEhsKF1dJS0lfU09VUkNFX1VOU1BFQ0lGSUVEEAA=');
-
-@$core.Deprecated('Use dataSourceDescriptor instead')
-const DataSource$json = {
-  '1': 'DataSource',
-  '2': [
-    {'1': 'DATA_SOURCE_UNSPECIFIED', '2': 0},
-    {'1': 'DATA_SOURCE_INTERNAL_DEFAULT', '2': 1},
-  ],
-};
-
-/// Descriptor for `DataSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List dataSourceDescriptor = $convert.base64Decode(
-    'CgpEYXRhU291cmNlEhsKF0RBVEFfU09VUkNFX1VOU1BFQ0lGSUVEEAASIAocREFUQV9TT1VSQ0'
-    'VfSU5URVJOQUxfREVGQVVMVBAB');
-
-@$core.Deprecated('Use pullFeedRequestDescriptor instead')
-const PullFeedRequest$json = {
-  '1': 'PullFeedRequest',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.FeedSource', '10': 'source'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
-  ],
-};
-
-/// Descriptor for `PullFeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullFeedRequestDescriptor = $convert.base64Decode(
-    'Cg9QdWxsRmVlZFJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS'
-    '5GZWVkU291cmNlUgZzb3VyY2USHQoKY2hhbm5lbF9pZBgCIAEoCVIJY2hhbm5lbElk');
-
-@$core.Deprecated('Use pullFeedResponseDescriptor instead')
-const PullFeedResponse$json = {
-  '1': 'PullFeedResponse',
-  '2': [
-    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.Feed', '9': 0, '10': 'data', '17': true},
-  ],
-  '8': [
-    {'1': '_data'},
-  ],
-};
-
-/// Descriptor for `PullFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullFeedResponseDescriptor = $convert.base64Decode(
-    'ChBQdWxsRmVlZFJlc3BvbnNlEisKBGRhdGEYASABKAsyEi5saWJyYXJpYW4udjEuRmVlZEgAUg'
-    'RkYXRhiAEBQgcKBV9kYXRh');
-
-@$core.Deprecated('Use pushFeedItemsRequestDescriptor instead')
-const PushFeedItemsRequest$json = {
-  '1': 'PushFeedItemsRequest',
-  '2': [
-    {'1': 'destination', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.FeedDestination', '10': 'destination'},
-    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
-    {'1': 'items', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
-    {'1': 'token', '3': 4, '4': 1, '5': 9, '10': 'token'},
-  ],
-};
-
-/// Descriptor for `PushFeedItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushFeedItemsRequestDescriptor = $convert.base64Decode(
-    'ChRQdXNoRmVlZEl0ZW1zUmVxdWVzdBJGCgtkZXN0aW5hdGlvbhgBIAEoDjIkLmxpYnJhcmlhbi'
-    '5wb3J0ZXIudjEuRmVlZERlc3RpbmF0aW9uUgtkZXN0aW5hdGlvbhIdCgpjaGFubmVsX2lkGAIg'
-    'ASgJUgljaGFubmVsSWQSLAoFaXRlbXMYAyADKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0ZW1SBW'
-    'l0ZW1zEhQKBXRva2VuGAQgASgJUgV0b2tlbg==');
-
-@$core.Deprecated('Use pushFeedItemsResponseDescriptor instead')
-const PushFeedItemsResponse$json = {
-  '1': 'PushFeedItemsResponse',
-};
-
-/// Descriptor for `PushFeedItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushFeedItemsResponseDescriptor = $convert.base64Decode(
-    'ChVQdXNoRmVlZEl0ZW1zUmVzcG9uc2U=');
-
-@$core.Deprecated('Use pullDBRequestDescriptor instead')
-const PullDBRequest$json = {
-  '1': 'PullDBRequest',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DBSource', '10': 'source'},
-    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
-  ],
-};
-
-/// Descriptor for `PullDBRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullDBRequestDescriptor = $convert.base64Decode(
-    'Cg1QdWxsREJSZXF1ZXN0EjUKBnNvdXJjZRgBIAEoDjIdLmxpYnJhcmlhbi5wb3J0ZXIudjEuRE'
-    'JTb3VyY2VSBnNvdXJjZRIdCgpjb250ZW50X2lkGAIgASgJUgljb250ZW50SWQ=');
-
-@$core.Deprecated('Use pullDBResponseDescriptor instead')
-const PullDBResponse$json = {
-  '1': 'PullDBResponse',
-  '2': [
-    {'1': 'data', '3': 1, '4': 3, '5': 11, '6': '.librarian.porter.v1.PullDBResponse.DataEntry', '10': 'data'},
-  ],
-  '3': [PullDBResponse_DataEntry$json],
-};
-
-@$core.Deprecated('Use pullDBResponseDescriptor instead')
-const PullDBResponse_DataEntry$json = {
-  '1': 'DataEntry',
-  '2': [
-    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
-  ],
-  '7': {'7': true},
-};
-
-/// Descriptor for `PullDBResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullDBResponseDescriptor = $convert.base64Decode(
-    'Cg5QdWxsREJSZXNwb25zZRJBCgRkYXRhGAEgAygLMi0ubGlicmFyaWFuLnBvcnRlci52MS5QdW'
-    'xsREJSZXNwb25zZS5EYXRhRW50cnlSBGRhdGEaNwoJRGF0YUVudHJ5EhAKA2tleRgBIAEoCVID'
-    'a2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
-
-@$core.Deprecated('Use pullWikiRequestDescriptor instead')
-const PullWikiRequest$json = {
-  '1': 'PullWikiRequest',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.WikiSource', '10': 'source'},
-    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
-  ],
-};
-
-/// Descriptor for `PullWikiRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullWikiRequestDescriptor = $convert.base64Decode(
-    'Cg9QdWxsV2lraVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS'
-    '5XaWtpU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElk');
-
-@$core.Deprecated('Use pullWikiResponseDescriptor instead')
-const PullWikiResponse$json = {
-  '1': 'PullWikiResponse',
-  '2': [
-    {'1': 'data', '3': 1, '4': 1, '5': 9, '10': 'data'},
-  ],
-};
-
-/// Descriptor for `PullWikiResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullWikiResponseDescriptor = $convert.base64Decode(
-    'ChBQdWxsV2lraVJlc3BvbnNlEhIKBGRhdGEYASABKAlSBGRhdGE=');
-
-@$core.Deprecated('Use pullDataRequestDescriptor instead')
-const PullDataRequest$json = {
-  '1': 'PullDataRequest',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
-    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
-  ],
-};
-
-/// Descriptor for `PullDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullDataRequestDescriptor = $convert.base64Decode(
-    'Cg9QdWxsRGF0YVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS'
-    '5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElk');
-
-@$core.Deprecated('Use pullDataResponseDescriptor instead')
-const PullDataResponse$json = {
-  '1': 'PullDataResponse',
-  '2': [
-    {'1': 'data', '3': 1, '4': 1, '5': 12, '10': 'data'},
-  ],
-};
-
-/// Descriptor for `PullDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullDataResponseDescriptor = $convert.base64Decode(
-    'ChBQdWxsRGF0YVJlc3BvbnNlEhIKBGRhdGEYASABKAxSBGRhdGE=');
+/// Descriptor for `EnablePorterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List enablePorterResponseDescriptor = $convert.base64Decode(
+    'ChRFbmFibGVQb3J0ZXJSZXNwb25zZQ==');
 
 @$core.Deprecated('Use pullAccountRequestDescriptor instead')
 const PullAccountRequest$json = {
@@ -313,17 +150,16 @@ final $typed_data.Uint8List pullAppResponseDescriptor = $convert.base64Decode(
 const PullAccountAppRelationRequest$json = {
   '1': 'PullAccountAppRelationRequest',
   '2': [
-    {'1': 'relation_type', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.AccountAppRelationType', '10': 'relationType'},
+    {'1': 'relation_type', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AccountAppRelationType', '10': 'relationType'},
     {'1': 'account_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.AccountID', '10': 'accountId'},
   ],
 };
 
 /// Descriptor for `PullAccountAppRelationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pullAccountAppRelationRequestDescriptor = $convert.base64Decode(
-    'Ch1QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVxdWVzdBJQCg1yZWxhdGlvbl90eXBlGAEgASgOMi'
-    'subGlicmFyaWFuLnBvcnRlci52MS5BY2NvdW50QXBwUmVsYXRpb25UeXBlUgxyZWxhdGlvblR5'
-    'cGUSNgoKYWNjb3VudF9pZBgCIAEoCzIXLmxpYnJhcmlhbi52MS5BY2NvdW50SURSCWFjY291bn'
-    'RJZA==');
+    'Ch1QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVxdWVzdBJJCg1yZWxhdGlvbl90eXBlGAEgASgOMi'
+    'QubGlicmFyaWFuLnYxLkFjY291bnRBcHBSZWxhdGlvblR5cGVSDHJlbGF0aW9uVHlwZRI2Cgph'
+    'Y2NvdW50X2lkGAIgASgLMhcubGlicmFyaWFuLnYxLkFjY291bnRJRFIJYWNjb3VudElk');
 
 @$core.Deprecated('Use pullAccountAppRelationResponseDescriptor instead')
 const PullAccountAppRelationResponse$json = {
@@ -338,100 +174,59 @@ final $typed_data.Uint8List pullAccountAppRelationResponseDescriptor = $convert.
     'Ch5QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVzcG9uc2USLAoIYXBwX2xpc3QYASADKAsyES5saW'
     'JyYXJpYW4udjEuQXBwUgdhcHBMaXN0');
 
-@$core.Deprecated('Use pushDataRequestDescriptor instead')
-const PushDataRequest$json = {
-  '1': 'PushDataRequest',
+@$core.Deprecated('Use pullFeedRequestDescriptor instead')
+const PullFeedRequest$json = {
+  '1': 'PullFeedRequest',
   '2': [
-    {'1': 'metadata', '3': 1, '4': 1, '5': 11, '6': '.librarian.porter.v1.PushDataRequest.DataMeta', '9': 0, '10': 'metadata'},
-    {'1': 'data', '3': 2, '4': 1, '5': 12, '9': 0, '10': 'data'},
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
   ],
-  '3': [PushDataRequest_DataMeta$json],
+};
+
+/// Descriptor for `PullFeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pullFeedRequestDescriptor = $convert.base64Decode(
+    'Cg9QdWxsRmVlZFJlcXVlc3QSFgoGc291cmNlGAEgASgJUgZzb3VyY2USHQoKY2hhbm5lbF9pZB'
+    'gCIAEoCVIJY2hhbm5lbElk');
+
+@$core.Deprecated('Use pullFeedResponseDescriptor instead')
+const PullFeedResponse$json = {
+  '1': 'PullFeedResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.Feed', '9': 0, '10': 'data', '17': true},
+  ],
   '8': [
-    {'1': 'content'},
+    {'1': '_data'},
   ],
 };
 
-@$core.Deprecated('Use pushDataRequestDescriptor instead')
-const PushDataRequest_DataMeta$json = {
-  '1': 'DataMeta',
+/// Descriptor for `PullFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pullFeedResponseDescriptor = $convert.base64Decode(
+    'ChBQdWxsRmVlZFJlc3BvbnNlEisKBGRhdGEYASABKAsyEi5saWJyYXJpYW4udjEuRmVlZEgAUg'
+    'RkYXRhiAEBQgcKBV9kYXRh');
+
+@$core.Deprecated('Use pushFeedItemsRequestDescriptor instead')
+const PushFeedItemsRequest$json = {
+  '1': 'PushFeedItemsRequest',
   '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
-    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'destination', '3': 1, '4': 1, '5': 9, '10': 'destination'},
+    {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '10': 'channelId'},
+    {'1': 'items', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
+    {'1': 'token', '3': 4, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
-/// Descriptor for `PushDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushDataRequestDescriptor = $convert.base64Decode(
-    'Cg9QdXNoRGF0YVJlcXVlc3QSSwoIbWV0YWRhdGEYASABKAsyLS5saWJyYXJpYW4ucG9ydGVyLn'
-    'YxLlB1c2hEYXRhUmVxdWVzdC5EYXRhTWV0YUgAUghtZXRhZGF0YRIUCgRkYXRhGAIgASgMSABS'
-    'BGRhdGEaYgoIRGF0YU1ldGESNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLnBvcnRlci52MS'
-    '5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVudElkQgkKB2Nv'
-    'bnRlbnQ=');
+/// Descriptor for `PushFeedItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pushFeedItemsRequestDescriptor = $convert.base64Decode(
+    'ChRQdXNoRmVlZEl0ZW1zUmVxdWVzdBIgCgtkZXN0aW5hdGlvbhgBIAEoCVILZGVzdGluYXRpb2'
+    '4SHQoKY2hhbm5lbF9pZBgCIAEoCVIJY2hhbm5lbElkEiwKBWl0ZW1zGAMgAygLMhYubGlicmFy'
+    'aWFuLnYxLkZlZWRJdGVtUgVpdGVtcxIUCgV0b2tlbhgEIAEoCVIFdG9rZW4=');
 
-@$core.Deprecated('Use pushDataResponseDescriptor instead')
-const PushDataResponse$json = {
-  '1': 'PushDataResponse',
+@$core.Deprecated('Use pushFeedItemsResponseDescriptor instead')
+const PushFeedItemsResponse$json = {
+  '1': 'PushFeedItemsResponse',
 };
 
-/// Descriptor for `PushDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pushDataResponseDescriptor = $convert.base64Decode(
-    'ChBQdXNoRGF0YVJlc3BvbnNl');
-
-@$core.Deprecated('Use presignedPullDataRequestDescriptor instead')
-const PresignedPullDataRequest$json = {
-  '1': 'PresignedPullDataRequest',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
-    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
-    {'1': 'expire_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'expireTime'},
-  ],
-};
-
-/// Descriptor for `PresignedPullDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedPullDataRequestDescriptor = $convert.base64Decode(
-    'ChhQcmVzaWduZWRQdWxsRGF0YVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLn'
-    'BvcnRlci52MS5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVu'
-    'dElkEjoKC2V4cGlyZV90aW1lGAMgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgpleH'
-    'BpcmVUaW1l');
-
-@$core.Deprecated('Use presignedPullDataResponseDescriptor instead')
-const PresignedPullDataResponse$json = {
-  '1': 'PresignedPullDataResponse',
-  '2': [
-    {'1': 'pull_url', '3': 1, '4': 1, '5': 9, '10': 'pullUrl'},
-  ],
-};
-
-/// Descriptor for `PresignedPullDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedPullDataResponseDescriptor = $convert.base64Decode(
-    'ChlQcmVzaWduZWRQdWxsRGF0YVJlc3BvbnNlEhkKCHB1bGxfdXJsGAEgASgJUgdwdWxsVXJs');
-
-@$core.Deprecated('Use presignedPushDataRequestDescriptor instead')
-const PresignedPushDataRequest$json = {
-  '1': 'PresignedPushDataRequest',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.porter.v1.DataSource', '10': 'source'},
-    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
-    {'1': 'expire_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'expireTime'},
-  ],
-};
-
-/// Descriptor for `PresignedPushDataRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedPushDataRequestDescriptor = $convert.base64Decode(
-    'ChhQcmVzaWduZWRQdXNoRGF0YVJlcXVlc3QSNwoGc291cmNlGAEgASgOMh8ubGlicmFyaWFuLn'
-    'BvcnRlci52MS5EYXRhU291cmNlUgZzb3VyY2USHQoKY29udGVudF9pZBgCIAEoCVIJY29udGVu'
-    'dElkEjoKC2V4cGlyZV90aW1lGAMgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgpleH'
-    'BpcmVUaW1l');
-
-@$core.Deprecated('Use presignedPushDataResponseDescriptor instead')
-const PresignedPushDataResponse$json = {
-  '1': 'PresignedPushDataResponse',
-  '2': [
-    {'1': 'push_url', '3': 1, '4': 1, '5': 9, '10': 'pushUrl'},
-  ],
-};
-
-/// Descriptor for `PresignedPushDataResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedPushDataResponseDescriptor = $convert.base64Decode(
-    'ChlQcmVzaWduZWRQdXNoRGF0YVJlc3BvbnNlEhkKCHB1c2hfdXJsGAEgASgJUgdwdXNoVXJs');
+/// Descriptor for `PushFeedItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pushFeedItemsResponseDescriptor = $convert.base64Decode(
+    'ChVQdXNoRmVlZEl0ZW1zUmVzcG9uc2U=');
 

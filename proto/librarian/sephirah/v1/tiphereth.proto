@@ -101,7 +101,7 @@ message UpdatePorterStatusResponse {}
 
 message UpdatePorterPrivilegeRequest {
   librarian.v1.InternalID porter_id = 1;
-    PorterPrivilege privilege = 2;
+  PorterPrivilege privilege = 2;
 }
 message UpdatePorterPrivilegeResponse {}
 

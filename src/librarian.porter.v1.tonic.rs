@@ -86,11 +86,11 @@ pub mod librarian_porter_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
-        pub async fn pull_feed(
+        pub async fn get_porter_information(
             &mut self,
-            request: impl tonic::IntoRequest<super::PullFeedRequest>,
+            request: impl tonic::IntoRequest<super::GetPorterInformationRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PullFeedResponse>,
+            tonic::Response<super::GetPorterInformationResponse>,
             tonic::Status,
         > {
             self.inner
@@ -104,23 +104,23 @@ pub mod librarian_porter_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullFeed",
+                "/librarian.porter.v1.LibrarianPorterService/GetPorterInformation",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.porter.v1.LibrarianPorterService",
-                        "PullFeed",
+                        "GetPorterInformation",
                     ),
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn push_feed_items(
+        pub async fn enable_porter(
             &mut self,
-            request: impl tonic::IntoRequest<super::PushFeedItemsRequest>,
+            request: impl tonic::IntoRequest<super::EnablePorterRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PushFeedItemsResponse>,
+            tonic::Response<super::EnablePorterResponse>,
             tonic::Status,
         > {
             self.inner
@@ -134,41 +134,14 @@ pub mod librarian_porter_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PushFeedItems",
+                "/librarian.porter.v1.LibrarianPorterService/EnablePorter",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.porter.v1.LibrarianPorterService",
-                        "PushFeedItems",
-                    ),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn pull_db(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PullDbRequest>,
-        ) -> std::result::Result<tonic::Response<super::PullDbResponse>, tonic::Status> {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullDB",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.porter.v1.LibrarianPorterService",
-                        "PullDB",
+                        "EnablePorter",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -263,11 +236,11 @@ pub mod librarian_porter_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn pull_wiki(
+        pub async fn pull_feed(
             &mut self,
-            request: impl tonic::IntoRequest<super::PullWikiRequest>,
+            request: impl tonic::IntoRequest<super::PullFeedRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PullWikiResponse>,
+            tonic::Response<super::PullFeedResponse>,
             tonic::Status,
         > {
             self.inner
@@ -281,23 +254,23 @@ pub mod librarian_porter_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullWiki",
+                "/librarian.porter.v1.LibrarianPorterService/PullFeed",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.porter.v1.LibrarianPorterService",
-                        "PullWiki",
+                        "PullFeed",
                     ),
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn pull_data(
+        pub async fn push_feed_items(
             &mut self,
-            request: impl tonic::IntoRequest<super::PullDataRequest>,
+            request: impl tonic::IntoRequest<super::PushFeedItemsRequest>,
         ) -> std::result::Result<
-            tonic::Response<tonic::codec::Streaming<super::PullDataResponse>>,
+            tonic::Response<super::PushFeedItemsResponse>,
             tonic::Status,
         > {
             self.inner
@@ -311,104 +284,14 @@ pub mod librarian_porter_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullData",
+                "/librarian.porter.v1.LibrarianPorterService/PushFeedItems",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.porter.v1.LibrarianPorterService",
-                        "PullData",
-                    ),
-                );
-            self.inner.server_streaming(req, path, codec).await
-        }
-        pub async fn push_data(
-            &mut self,
-            request: impl tonic::IntoStreamingRequest<Message = super::PushDataRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PushDataResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PushData",
-            );
-            let mut req = request.into_streaming_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.porter.v1.LibrarianPorterService",
-                        "PushData",
-                    ),
-                );
-            self.inner.client_streaming(req, path, codec).await
-        }
-        pub async fn presigned_pull_data(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PresignedPullDataRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PresignedPullDataResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PresignedPullData",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.porter.v1.LibrarianPorterService",
-                        "PresignedPullData",
-                    ),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn presigned_push_data(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PresignedPushDataRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PresignedPushDataResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PresignedPushData",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.porter.v1.LibrarianPorterService",
-                        "PresignedPushData",
+                        "PushFeedItems",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -422,24 +305,20 @@ pub mod librarian_porter_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianPorterServiceServer.
     #[async_trait]
     pub trait LibrarianPorterService: Send + Sync + 'static {
-        async fn pull_feed(
+        async fn get_porter_information(
             &self,
-            request: tonic::Request<super::PullFeedRequest>,
+            request: tonic::Request<super::GetPorterInformationRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PullFeedResponse>,
+            tonic::Response<super::GetPorterInformationResponse>,
             tonic::Status,
         >;
-        async fn push_feed_items(
+        async fn enable_porter(
             &self,
-            request: tonic::Request<super::PushFeedItemsRequest>,
+            request: tonic::Request<super::EnablePorterRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PushFeedItemsResponse>,
+            tonic::Response<super::EnablePorterResponse>,
             tonic::Status,
         >;
-        async fn pull_db(
-            &self,
-            request: tonic::Request<super::PullDbRequest>,
-        ) -> std::result::Result<tonic::Response<super::PullDbResponse>, tonic::Status>;
         async fn pull_account(
             &self,
             request: tonic::Request<super::PullAccountRequest>,
@@ -458,42 +337,18 @@ pub mod librarian_porter_service_server {
             tonic::Response<super::PullAccountAppRelationResponse>,
             tonic::Status,
         >;
-        async fn pull_wiki(
+        async fn pull_feed(
             &self,
-            request: tonic::Request<super::PullWikiRequest>,
+            request: tonic::Request<super::PullFeedRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PullWikiResponse>,
+            tonic::Response<super::PullFeedResponse>,
             tonic::Status,
         >;
-        /// Server streaming response type for the PullData method.
-        type PullDataStream: futures_core::Stream<
-                Item = std::result::Result<super::PullDataResponse, tonic::Status>,
-            >
-            + Send
-            + 'static;
-        async fn pull_data(
+        async fn push_feed_items(
             &self,
-            request: tonic::Request<super::PullDataRequest>,
-        ) -> std::result::Result<tonic::Response<Self::PullDataStream>, tonic::Status>;
-        async fn push_data(
-            &self,
-            request: tonic::Request<tonic::Streaming<super::PushDataRequest>>,
+            request: tonic::Request<super::PushFeedItemsRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PushDataResponse>,
-            tonic::Status,
-        >;
-        async fn presigned_pull_data(
-            &self,
-            request: tonic::Request<super::PresignedPullDataRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PresignedPullDataResponse>,
-            tonic::Status,
-        >;
-        async fn presigned_push_data(
-            &self,
-            request: tonic::Request<super::PresignedPushDataRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PresignedPushDataResponse>,
+            tonic::Response<super::PushFeedItemsResponse>,
             tonic::Status,
         >;
     }
@@ -577,69 +432,27 @@ pub mod librarian_porter_service_server {
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             let inner = self.inner.clone();
             match req.uri().path() {
-                "/librarian.porter.v1.LibrarianPorterService/PullFeed" => {
+                "/librarian.porter.v1.LibrarianPorterService/GetPorterInformation" => {
                     #[allow(non_camel_case_types)]
-                    struct PullFeedSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    struct GetPorterInformationSvc<T: LibrarianPorterService>(
+                        pub Arc<T>,
+                    );
                     impl<
                         T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PullFeedRequest>
-                    for PullFeedSvc<T> {
-                        type Response = super::PullFeedResponse;
+                    > tonic::server::UnaryService<super::GetPorterInformationRequest>
+                    for GetPorterInformationSvc<T> {
+                        type Response = super::GetPorterInformationResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::PullFeedRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).pull_feed(request).await };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = PullFeedSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.porter.v1.LibrarianPorterService/PushFeedItems" => {
-                    #[allow(non_camel_case_types)]
-                    struct PushFeedItemsSvc<T: LibrarianPorterService>(pub Arc<T>);
-                    impl<
-                        T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PushFeedItemsRequest>
-                    for PushFeedItemsSvc<T> {
-                        type Response = super::PushFeedItemsResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::PushFeedItemsRequest>,
+                            request: tonic::Request<super::GetPorterInformationRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).push_feed_items(request).await
+                                (*inner).get_porter_information(request).await
                             };
                             Box::pin(fut)
                         }
@@ -651,7 +464,7 @@ pub mod librarian_porter_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = PushFeedItemsSvc(inner);
+                        let method = GetPorterInformationSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -667,24 +480,26 @@ pub mod librarian_porter_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.porter.v1.LibrarianPorterService/PullDB" => {
+                "/librarian.porter.v1.LibrarianPorterService/EnablePorter" => {
                     #[allow(non_camel_case_types)]
-                    struct PullDBSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    struct EnablePorterSvc<T: LibrarianPorterService>(pub Arc<T>);
                     impl<
                         T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PullDbRequest>
-                    for PullDBSvc<T> {
-                        type Response = super::PullDbResponse;
+                    > tonic::server::UnaryService<super::EnablePorterRequest>
+                    for EnablePorterSvc<T> {
+                        type Response = super::EnablePorterResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::PullDbRequest>,
+                            request: tonic::Request<super::EnablePorterRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).pull_db(request).await };
+                            let fut = async move {
+                                (*inner).enable_porter(request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -695,7 +510,7 @@ pub mod librarian_porter_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = PullDBSvc(inner);
+                        let method = EnablePorterSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -849,24 +664,24 @@ pub mod librarian_porter_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.porter.v1.LibrarianPorterService/PullWiki" => {
+                "/librarian.porter.v1.LibrarianPorterService/PullFeed" => {
                     #[allow(non_camel_case_types)]
-                    struct PullWikiSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    struct PullFeedSvc<T: LibrarianPorterService>(pub Arc<T>);
                     impl<
                         T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PullWikiRequest>
-                    for PullWikiSvc<T> {
-                        type Response = super::PullWikiResponse;
+                    > tonic::server::UnaryService<super::PullFeedRequest>
+                    for PullFeedSvc<T> {
+                        type Response = super::PullFeedResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::PullWikiRequest>,
+                            request: tonic::Request<super::PullFeedRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).pull_wiki(request).await };
+                            let fut = async move { (*inner).pull_feed(request).await };
                             Box::pin(fut)
                         }
                     }
@@ -877,7 +692,7 @@ pub mod librarian_porter_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = PullWikiSvc(inner);
+                        let method = PullFeedSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -893,116 +708,25 @@ pub mod librarian_porter_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.porter.v1.LibrarianPorterService/PullData" => {
+                "/librarian.porter.v1.LibrarianPorterService/PushFeedItems" => {
                     #[allow(non_camel_case_types)]
-                    struct PullDataSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    struct PushFeedItemsSvc<T: LibrarianPorterService>(pub Arc<T>);
                     impl<
                         T: LibrarianPorterService,
-                    > tonic::server::ServerStreamingService<super::PullDataRequest>
-                    for PullDataSvc<T> {
-                        type Response = super::PullDataResponse;
-                        type ResponseStream = T::PullDataStream;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::ResponseStream>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::PullDataRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).pull_data(request).await };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = PullDataSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.server_streaming(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.porter.v1.LibrarianPorterService/PushData" => {
-                    #[allow(non_camel_case_types)]
-                    struct PushDataSvc<T: LibrarianPorterService>(pub Arc<T>);
-                    impl<
-                        T: LibrarianPorterService,
-                    > tonic::server::ClientStreamingService<super::PushDataRequest>
-                    for PushDataSvc<T> {
-                        type Response = super::PushDataResponse;
+                    > tonic::server::UnaryService<super::PushFeedItemsRequest>
+                    for PushFeedItemsSvc<T> {
+                        type Response = super::PushFeedItemsResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<
-                                tonic::Streaming<super::PushDataRequest>,
-                            >,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).push_data(request).await };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = PushDataSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.client_streaming(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.porter.v1.LibrarianPorterService/PresignedPullData" => {
-                    #[allow(non_camel_case_types)]
-                    struct PresignedPullDataSvc<T: LibrarianPorterService>(pub Arc<T>);
-                    impl<
-                        T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PresignedPullDataRequest>
-                    for PresignedPullDataSvc<T> {
-                        type Response = super::PresignedPullDataResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::PresignedPullDataRequest>,
+                            request: tonic::Request<super::PushFeedItemsRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).presigned_pull_data(request).await
+                                (*inner).push_feed_items(request).await
                             };
                             Box::pin(fut)
                         }
@@ -1014,53 +738,7 @@ pub mod librarian_porter_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = PresignedPullDataSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.porter.v1.LibrarianPorterService/PresignedPushData" => {
-                    #[allow(non_camel_case_types)]
-                    struct PresignedPushDataSvc<T: LibrarianPorterService>(pub Arc<T>);
-                    impl<
-                        T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PresignedPushDataRequest>
-                    for PresignedPushDataSvc<T> {
-                        type Response = super::PresignedPushDataResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::PresignedPushDataRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                (*inner).presigned_push_data(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = PresignedPushDataSvc(inner);
+                        let method = PushFeedItemsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

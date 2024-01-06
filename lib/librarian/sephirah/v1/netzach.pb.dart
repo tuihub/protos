@@ -210,7 +210,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   factory ListNotifyTargetsRequest({
     $7.PagingRequest? paging,
     $core.Iterable<$7.InternalID>? idFilter,
-    $core.Iterable<NotifyTargetType>? typeFilter,
+    $core.Iterable<$core.String>? typeFilter,
     $core.Iterable<NotifyTargetStatus>? statusFilter,
   }) {
     final $result = create();
@@ -235,7 +235,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
     ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<NotifyTargetType>(3, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetType.valueOf, enumValues: NotifyTargetType.values, defaultEnumValue: NotifyTargetType.NOTIFY_TARGET_TYPE_UNSPECIFIED)
+    ..pPS(3, _omitFieldNames ? '' : 'typeFilter')
     ..pc<NotifyTargetStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values, defaultEnumValue: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
@@ -275,8 +275,9 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$7.InternalID> get idFilter => $_getList(1);
 
+  /// WellKnownNotifyTargetType
   @$pb.TagNumber(3)
-  $core.List<NotifyTargetType> get typeFilter => $_getList(2);
+  $core.List<$core.String> get typeFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<NotifyTargetStatus> get statusFilter => $_getList(3);
@@ -655,7 +656,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
     $7.InternalID? id,
     $core.String? name,
     $core.String? description,
-    NotifyTargetType? type,
+    $core.String? type,
     NotifyTargetStatus? status,
     $core.String? token,
   }) {
@@ -688,7 +689,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..e<NotifyTargetType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetType.NOTIFY_TARGET_TYPE_UNSPECIFIED, valueOf: NotifyTargetType.valueOf, enumValues: NotifyTargetType.values)
+    ..aOS(4, _omitFieldNames ? '' : 'type')
     ..e<NotifyTargetStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values)
     ..aOS(6, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
@@ -744,10 +745,11 @@ class NotifyTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDescription() => clearField(3);
 
+  /// WellKnownNotifyTargetType
   @$pb.TagNumber(4)
-  NotifyTargetType get type => $_getN(3);
+  $core.String get type => $_getSZ(3);
   @$pb.TagNumber(4)
-  set type(NotifyTargetType v) { setField(4, v); }
+  set type($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)

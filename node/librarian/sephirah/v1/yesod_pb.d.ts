@@ -105,9 +105,9 @@ export class ListFeedConfigsRequest extends jspb.Message {
   addAuthorIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   clearSourceFilterList(): void;
-  getSourceFilterList(): Array<FeedConfigSourceMap[keyof FeedConfigSourceMap]>;
-  setSourceFilterList(value: Array<FeedConfigSourceMap[keyof FeedConfigSourceMap]>): void;
-  addSourceFilter(value: FeedConfigSourceMap[keyof FeedConfigSourceMap], index?: number): FeedConfigSourceMap[keyof FeedConfigSourceMap];
+  getSourceFilterList(): Array<string>;
+  setSourceFilterList(value: Array<string>): void;
+  addSourceFilter(value: string, index?: number): string;
 
   clearStatusFilterList(): void;
   getStatusFilterList(): Array<FeedConfigStatusMap[keyof FeedConfigStatusMap]>;
@@ -134,7 +134,7 @@ export namespace ListFeedConfigsRequest {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    sourceFilterList: Array<FeedConfigSourceMap[keyof FeedConfigSourceMap]>,
+    sourceFilterList: Array<string>,
     statusFilterList: Array<FeedConfigStatusMap[keyof FeedConfigStatusMap]>,
     categoryFilterList: Array<string>,
   }
@@ -879,8 +879,8 @@ export class FeedConfig extends jspb.Message {
   getAuthorAccount(): librarian_v1_common_pb.InternalID | undefined;
   setAuthorAccount(value?: librarian_v1_common_pb.InternalID): void;
 
-  getSource(): FeedConfigSourceMap[keyof FeedConfigSourceMap];
-  setSource(value: FeedConfigSourceMap[keyof FeedConfigSourceMap]): void;
+  getSource(): string;
+  setSource(value: string): void;
 
   getStatus(): FeedConfigStatusMap[keyof FeedConfigStatusMap];
   setStatus(value: FeedConfigStatusMap[keyof FeedConfigStatusMap]): void;
@@ -917,7 +917,7 @@ export namespace FeedConfig {
     name: string,
     feedUrl: string,
     authorAccount?: librarian_v1_common_pb.InternalID.AsObject,
-    source: FeedConfigSourceMap[keyof FeedConfigSourceMap],
+    source: string,
     status: FeedConfigStatusMap[keyof FeedConfigStatusMap],
     pullInterval?: google_protobuf_duration_pb.Duration.AsObject,
     category: string,
@@ -1039,11 +1039,4 @@ export interface FeedConfigStatusMap {
 }
 
 export const FeedConfigStatus: FeedConfigStatusMap;
-
-export interface FeedConfigSourceMap {
-  FEED_CONFIG_SOURCE_UNSPECIFIED: 0;
-  FEED_CONFIG_SOURCE_COMMON: 1;
-}
-
-export const FeedConfigSource: FeedConfigSourceMap;
 

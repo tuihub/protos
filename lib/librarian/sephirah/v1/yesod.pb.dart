@@ -214,7 +214,7 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
     $7.PagingRequest? paging,
     $core.Iterable<$7.InternalID>? idFilter,
     $core.Iterable<$7.InternalID>? authorIdFilter,
-    $core.Iterable<FeedConfigSource>? sourceFilter,
+    $core.Iterable<$core.String>? sourceFilter,
     $core.Iterable<FeedConfigStatus>? statusFilter,
     $core.Iterable<$core.String>? categoryFilter,
   }) {
@@ -247,7 +247,7 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
     ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<FeedConfigSource>(4, _omitFieldNames ? '' : 'sourceFilter', $pb.PbFieldType.KE, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values, defaultEnumValue: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED)
+    ..pPS(4, _omitFieldNames ? '' : 'sourceFilter')
     ..pc<FeedConfigStatus>(5, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
     ..pPS(6, _omitFieldNames ? '' : 'categoryFilter')
     ..hasRequiredFields = false
@@ -291,8 +291,9 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<$7.InternalID> get authorIdFilter => $_getList(2);
 
+  /// WellKnownFeedSource
   @$pb.TagNumber(4)
-  $core.List<FeedConfigSource> get sourceFilter => $_getList(3);
+  $core.List<$core.String> get sourceFilter => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.List<FeedConfigStatus> get statusFilter => $_getList(4);
@@ -1833,7 +1834,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? feedUrl,
     $7.InternalID? authorAccount,
-    FeedConfigSource? source,
+    $core.String? source,
     FeedConfigStatus? status,
     $10.Duration? pullInterval,
     $core.String? category,
@@ -1882,7 +1883,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'feedUrl')
     ..aOM<$7.InternalID>(4, _omitFieldNames ? '' : 'authorAccount', subBuilder: $7.InternalID.create)
-    ..e<FeedConfigSource>(5, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigSource.FEED_CONFIG_SOURCE_UNSPECIFIED, valueOf: FeedConfigSource.valueOf, enumValues: FeedConfigSource.values)
+    ..aOS(5, _omitFieldNames ? '' : 'source')
     ..e<FeedConfigStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
     ..aOM<$10.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $10.Duration.create)
     ..aOS(8, _omitFieldNames ? '' : 'category')
@@ -1953,10 +1954,11 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $7.InternalID ensureAuthorAccount() => $_ensure(3);
 
+  /// WellKnownFeedSource
   @$pb.TagNumber(5)
-  FeedConfigSource get source => $_getN(4);
+  $core.String get source => $_getSZ(4);
   @$pb.TagNumber(5)
-  set source(FeedConfigSource v) { setField(5, v); }
+  set source($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasSource() => $_has(4);
   @$pb.TagNumber(5)

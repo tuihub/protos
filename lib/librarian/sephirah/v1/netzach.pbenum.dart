@@ -13,21 +13,6 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class NotifyTargetType extends $pb.ProtobufEnum {
-  static const NotifyTargetType NOTIFY_TARGET_TYPE_UNSPECIFIED = NotifyTargetType._(0, _omitEnumNames ? '' : 'NOTIFY_TARGET_TYPE_UNSPECIFIED');
-  static const NotifyTargetType NOTIFY_TARGET_TYPE_TELEGRAM = NotifyTargetType._(1, _omitEnumNames ? '' : 'NOTIFY_TARGET_TYPE_TELEGRAM');
-
-  static const $core.List<NotifyTargetType> values = <NotifyTargetType> [
-    NOTIFY_TARGET_TYPE_UNSPECIFIED,
-    NOTIFY_TARGET_TYPE_TELEGRAM,
-  ];
-
-  static final $core.Map<$core.int, NotifyTargetType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static NotifyTargetType? valueOf($core.int value) => _byValue[value];
-
-  const NotifyTargetType._($core.int v, $core.String n) : super(v, n);
-}
-
 class NotifyTargetStatus extends $pb.ProtobufEnum {
   static const NotifyTargetStatus NOTIFY_TARGET_STATUS_UNSPECIFIED = NotifyTargetStatus._(0, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_UNSPECIFIED');
   static const NotifyTargetStatus NOTIFY_TARGET_STATUS_ACTIVE = NotifyTargetStatus._(1, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_ACTIVE');

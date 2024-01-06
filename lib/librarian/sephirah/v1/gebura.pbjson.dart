@@ -83,7 +83,7 @@ const ListAppsRequest$json = {
   '1': 'ListAppsRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'source_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.v1.AppSource', '10': 'sourceFilter'},
+    {'1': 'source_filter', '3': 2, '4': 3, '5': 9, '10': 'sourceFilter'},
     {'1': 'type_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.v1.AppType', '10': 'typeFilter'},
     {'1': 'id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
     {'1': 'contain_details', '3': 5, '4': 1, '5': 8, '10': 'containDetails'},
@@ -93,47 +93,47 @@ const ListAppsRequest$json = {
 /// Descriptor for `ListAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0QXBwc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
-    'JlcXVlc3RSBnBhZ2luZxI8Cg1zb3VyY2VfZmlsdGVyGAIgAygOMhcubGlicmFyaWFuLnYxLkFw'
-    'cFNvdXJjZVIMc291cmNlRmlsdGVyEjYKC3R5cGVfZmlsdGVyGAMgAygOMhUubGlicmFyaWFuLn'
-    'YxLkFwcFR5cGVSCnR5cGVGaWx0ZXISNQoJaWRfZmlsdGVyGAQgAygLMhgubGlicmFyaWFuLnYx'
-    'LkludGVybmFsSURSCGlkRmlsdGVyEicKD2NvbnRhaW5fZGV0YWlscxgFIAEoCFIOY29udGFpbk'
-    'RldGFpbHM=');
+    'JlcXVlc3RSBnBhZ2luZxIjCg1zb3VyY2VfZmlsdGVyGAIgAygJUgxzb3VyY2VGaWx0ZXISNgoL'
+    'dHlwZV9maWx0ZXIYAyADKA4yFS5saWJyYXJpYW4udjEuQXBwVHlwZVIKdHlwZUZpbHRlchI1Cg'
+    'lpZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISJwoP'
+    'Y29udGFpbl9kZXRhaWxzGAUgASgIUg5jb250YWluRGV0YWlscw==');
 
 @$core.Deprecated('Use listAppsResponseDescriptor instead')
 const ListAppsResponse$json = {
   '1': 'ListAppsResponse',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'apps'},
+    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.AppMixed', '10': 'apps'},
   ],
 };
 
 /// Descriptor for `ListAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0QXBwc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbm'
-    'dSZXNwb25zZVIGcGFnaW5nEiUKBGFwcHMYAiADKAsyES5saWJyYXJpYW4udjEuQXBwUgRhcHBz');
+    'dSZXNwb25zZVIGcGFnaW5nEioKBGFwcHMYAiADKAsyFi5saWJyYXJpYW4udjEuQXBwTWl4ZWRS'
+    'BGFwcHM=');
 
-@$core.Deprecated('Use refreshAppRequestDescriptor instead')
-const RefreshAppRequest$json = {
-  '1': 'RefreshAppRequest',
+@$core.Deprecated('Use syncAppsRequestDescriptor instead')
+const SyncAppsRequest$json = {
+  '1': 'SyncAppsRequest',
   '2': [
-    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
+    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppID', '10': 'appId'},
   ],
 };
 
-/// Descriptor for `RefreshAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List refreshAppRequestDescriptor = $convert.base64Decode(
-    'ChFSZWZyZXNoQXBwUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZX'
-    'JuYWxJRFIFYXBwSWQ=');
+/// Descriptor for `SyncAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncAppsRequestDescriptor = $convert.base64Decode(
+    'Cg9TeW5jQXBwc1JlcXVlc3QSKgoGYXBwX2lkGAEgASgLMhMubGlicmFyaWFuLnYxLkFwcElEUg'
+    'VhcHBJZA==');
 
-@$core.Deprecated('Use refreshAppResponseDescriptor instead')
-const RefreshAppResponse$json = {
-  '1': 'RefreshAppResponse',
+@$core.Deprecated('Use syncAppsResponseDescriptor instead')
+const SyncAppsResponse$json = {
+  '1': 'SyncAppsResponse',
 };
 
-/// Descriptor for `RefreshAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List refreshAppResponseDescriptor = $convert.base64Decode(
-    'ChJSZWZyZXNoQXBwUmVzcG9uc2U=');
+/// Descriptor for `SyncAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncAppsResponseDescriptor = $convert.base64Decode(
+    'ChBTeW5jQXBwc1Jlc3BvbnNl');
 
 @$core.Deprecated('Use mergeAppsRequestDescriptor instead')
 const MergeAppsRequest$json = {
@@ -180,61 +180,27 @@ const PickAppResponse$json = {
 final $typed_data.Uint8List pickAppResponseDescriptor = $convert.base64Decode(
     'Cg9QaWNrQXBwUmVzcG9uc2U=');
 
-@$core.Deprecated('Use syncExternalAppsRequestDescriptor instead')
-const SyncExternalAppsRequest$json = {
-  '1': 'SyncExternalAppsRequest',
-  '2': [
-    {'1': 'external_apps', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SyncExternalAppsRequest.ExternalApp', '10': 'externalApps'},
-  ],
-  '3': [SyncExternalAppsRequest_ExternalApp$json],
-};
-
-@$core.Deprecated('Use syncExternalAppsRequestDescriptor instead')
-const SyncExternalAppsRequest_ExternalApp$json = {
-  '1': 'ExternalApp',
-  '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AppSource', '10': 'source'},
-    {'1': 'source_app_id', '3': 2, '4': 1, '5': 9, '10': 'sourceAppId'},
-  ],
-};
-
-/// Descriptor for `SyncExternalAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List syncExternalAppsRequestDescriptor = $convert.base64Decode(
-    'ChdTeW5jRXh0ZXJuYWxBcHBzUmVxdWVzdBJfCg1leHRlcm5hbF9hcHBzGAEgAygLMjoubGlicm'
-    'FyaWFuLnNlcGhpcmFoLnYxLlN5bmNFeHRlcm5hbEFwcHNSZXF1ZXN0LkV4dGVybmFsQXBwUgxl'
-    'eHRlcm5hbEFwcHMaYgoLRXh0ZXJuYWxBcHASLwoGc291cmNlGAEgASgOMhcubGlicmFyaWFuLn'
-    'YxLkFwcFNvdXJjZVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAiABKAlSC3NvdXJjZUFwcElk');
-
-@$core.Deprecated('Use syncExternalAppsResponseDescriptor instead')
-const SyncExternalAppsResponse$json = {
-  '1': 'SyncExternalAppsResponse',
-};
-
-/// Descriptor for `SyncExternalAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List syncExternalAppsResponseDescriptor = $convert.base64Decode(
-    'ChhTeW5jRXh0ZXJuYWxBcHBzUmVzcG9uc2U=');
-
-@$core.Deprecated('Use syncExternalAccountAppsRequestDescriptor instead')
-const SyncExternalAccountAppsRequest$json = {
-  '1': 'SyncExternalAccountAppsRequest',
+@$core.Deprecated('Use syncAccountAppsRequestDescriptor instead')
+const SyncAccountAppsRequest$json = {
+  '1': 'SyncAccountAppsRequest',
   '2': [
     {'1': 'account_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AccountID', '10': 'accountId'},
   ],
 };
 
-/// Descriptor for `SyncExternalAccountAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List syncExternalAccountAppsRequestDescriptor = $convert.base64Decode(
-    'Ch5TeW5jRXh0ZXJuYWxBY2NvdW50QXBwc1JlcXVlc3QSNgoKYWNjb3VudF9pZBgBIAEoCzIXLm'
-    'xpYnJhcmlhbi52MS5BY2NvdW50SURSCWFjY291bnRJZA==');
+/// Descriptor for `SyncAccountAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncAccountAppsRequestDescriptor = $convert.base64Decode(
+    'ChZTeW5jQWNjb3VudEFwcHNSZXF1ZXN0EjYKCmFjY291bnRfaWQYASABKAsyFy5saWJyYXJpYW'
+    '4udjEuQWNjb3VudElEUglhY2NvdW50SWQ=');
 
-@$core.Deprecated('Use syncExternalAccountAppsResponseDescriptor instead')
-const SyncExternalAccountAppsResponse$json = {
-  '1': 'SyncExternalAccountAppsResponse',
+@$core.Deprecated('Use syncAccountAppsResponseDescriptor instead')
+const SyncAccountAppsResponse$json = {
+  '1': 'SyncAccountAppsResponse',
 };
 
-/// Descriptor for `SyncExternalAccountAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List syncExternalAccountAppsResponseDescriptor = $convert.base64Decode(
-    'Ch9TeW5jRXh0ZXJuYWxBY2NvdW50QXBwc1Jlc3BvbnNl');
+/// Descriptor for `SyncAccountAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List syncAccountAppsResponseDescriptor = $convert.base64Decode(
+    'ChdTeW5jQWNjb3VudEFwcHNSZXNwb25zZQ==');
 
 @$core.Deprecated('Use searchAppsRequestDescriptor instead')
 const SearchAppsRequest$json = {
@@ -255,15 +221,15 @@ const SearchAppsResponse$json = {
   '1': 'SearchAppsResponse',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'apps'},
+    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.AppMixed', '10': 'apps'},
   ],
 };
 
 /// Descriptor for `SearchAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchAppsResponseDescriptor = $convert.base64Decode(
     'ChJTZWFyY2hBcHBzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2'
-    'luZ1Jlc3BvbnNlUgZwYWdpbmcSJQoEYXBwcxgCIAMoCzIRLmxpYnJhcmlhbi52MS5BcHBSBGFw'
-    'cHM=');
+    'luZ1Jlc3BvbnNlUgZwYWdpbmcSKgoEYXBwcxgCIAMoCzIWLmxpYnJhcmlhbi52MS5BcHBNaXhl'
+    'ZFIEYXBwcw==');
 
 @$core.Deprecated('Use getAppRequestDescriptor instead')
 const GetAppRequest$json = {
@@ -290,31 +256,31 @@ const GetAppResponse$json = {
 final $typed_data.Uint8List getAppResponseDescriptor = $convert.base64Decode(
     'Cg5HZXRBcHBSZXNwb25zZRIjCgNhcHAYASABKAsyES5saWJyYXJpYW4udjEuQXBwUgNhcHA=');
 
-@$core.Deprecated('Use getBindAppsRequestDescriptor instead')
-const GetBindAppsRequest$json = {
-  '1': 'GetBindAppsRequest',
+@$core.Deprecated('Use getBoundAppsRequestDescriptor instead')
+const GetBoundAppsRequest$json = {
+  '1': 'GetBoundAppsRequest',
   '2': [
     {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
   ],
 };
 
-/// Descriptor for `GetBindAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getBindAppsRequestDescriptor = $convert.base64Decode(
-    'ChJHZXRCaW5kQXBwc1JlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludG'
-    'VybmFsSURSBWFwcElk');
+/// Descriptor for `GetBoundAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBoundAppsRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRCb3VuZEFwcHNSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5Jbn'
+    'Rlcm5hbElEUgVhcHBJZA==');
 
-@$core.Deprecated('Use getBindAppsResponseDescriptor instead')
-const GetBindAppsResponse$json = {
-  '1': 'GetBindAppsResponse',
+@$core.Deprecated('Use getBoundAppsResponseDescriptor instead')
+const GetBoundAppsResponse$json = {
+  '1': 'GetBoundAppsResponse',
   '2': [
     {'1': 'apps', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'apps'},
   ],
 };
 
-/// Descriptor for `GetBindAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getBindAppsResponseDescriptor = $convert.base64Decode(
-    'ChNHZXRCaW5kQXBwc1Jlc3BvbnNlEiUKBGFwcHMYASADKAsyES5saWJyYXJpYW4udjEuQXBwUg'
-    'RhcHBz');
+/// Descriptor for `GetBoundAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBoundAppsResponseDescriptor = $convert.base64Decode(
+    'ChRHZXRCb3VuZEFwcHNSZXNwb25zZRIlCgRhcHBzGAEgAygLMhEubGlicmFyaWFuLnYxLkFwcF'
+    'IEYXBwcw==');
 
 @$core.Deprecated('Use purchaseAppRequestDescriptor instead')
 const PurchaseAppRequest$json = {
@@ -342,7 +308,7 @@ final $typed_data.Uint8List purchaseAppResponseDescriptor = $convert.base64Decod
 const GetPurchasedAppsRequest$json = {
   '1': 'GetPurchasedAppsRequest',
   '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AppSource', '9': 0, '10': 'source', '17': true},
+    {'1': 'source', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'source', '17': true},
   ],
   '8': [
     {'1': '_source'},
@@ -351,8 +317,8 @@ const GetPurchasedAppsRequest$json = {
 
 /// Descriptor for `GetPurchasedAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPurchasedAppsRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRQdXJjaGFzZWRBcHBzUmVxdWVzdBI0CgZzb3VyY2UYASABKA4yFy5saWJyYXJpYW4udj'
-    'EuQXBwU291cmNlSABSBnNvdXJjZYgBAUIJCgdfc291cmNl');
+    'ChdHZXRQdXJjaGFzZWRBcHBzUmVxdWVzdBIbCgZzb3VyY2UYASABKAlIAFIGc291cmNliAEBQg'
+    'kKB19zb3VyY2U=');
 
 @$core.Deprecated('Use getPurchasedAppsResponseDescriptor instead')
 const GetPurchasedAppsResponse$json = {

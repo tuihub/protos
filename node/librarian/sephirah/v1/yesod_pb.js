@@ -34,7 +34,6 @@ goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedConfigResponse', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedItemCollectionRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedItemCollectionResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfig', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfigSource', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfigStatus', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedItemCollection', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedItemDigest', null, global);
@@ -1496,10 +1495,8 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.deserializeBinaryFromReader =
       msg.addAuthorIdFilter(value);
       break;
     case 4:
-      var values = /** @type {!Array<!proto.librarian.sephirah.v1.FeedConfigSource>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addSourceFilter(values[i]);
-      }
+      var value = /** @type {string} */ (reader.readString());
+      msg.addSourceFilter(value);
       break;
     case 5:
       var values = /** @type {!Array<!proto.librarian.sephirah.v1.FeedConfigStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
@@ -1566,7 +1563,7 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.serializeBinaryToWriter = fun
   }
   f = message.getSourceFilterList();
   if (f.length > 0) {
-    writer.writePackedEnum(
+    writer.writeRepeatedString(
       4,
       f
     );
@@ -1702,16 +1699,16 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.clearAuthorIdFilter
 
 
 /**
- * repeated FeedConfigSource source_filter = 4;
- * @return {!Array<!proto.librarian.sephirah.v1.FeedConfigSource>}
+ * repeated string source_filter = 4;
+ * @return {!Array<string>}
  */
 proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.getSourceFilterList = function() {
-  return /** @type {!Array<!proto.librarian.sephirah.v1.FeedConfigSource>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.sephirah.v1.FeedConfigSource>} value
+ * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
  */
 proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.setSourceFilterList = function(value) {
@@ -1720,7 +1717,7 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.setSourceFilterList
 
 
 /**
- * @param {!proto.librarian.sephirah.v1.FeedConfigSource} value
+ * @param {string} value
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
  */
@@ -7049,7 +7046,7 @@ proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg)
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     feedUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
     authorAccount: (f = msg.getAuthorAccount()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    source: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    source: jspb.Message.getFieldWithDefault(msg, 5, ""),
     status: jspb.Message.getFieldWithDefault(msg, 6, 0),
     pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     category: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -7110,7 +7107,7 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       msg.setAuthorAccount(value);
       break;
     case 5:
-      var value = /** @type {!proto.librarian.sephirah.v1.FeedConfigSource} */ (reader.readEnum());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSource(value);
       break;
     case 6:
@@ -7195,8 +7192,8 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
     );
   }
   f = message.getSource();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  if (f.length > 0) {
+    writer.writeString(
       5,
       f
     );
@@ -7352,20 +7349,20 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.hasAuthorAccount = function() {
 
 
 /**
- * optional FeedConfigSource source = 5;
- * @return {!proto.librarian.sephirah.v1.FeedConfigSource}
+ * optional string source = 5;
+ * @return {string}
  */
 proto.librarian.sephirah.v1.FeedConfig.prototype.getSource = function() {
-  return /** @type {!proto.librarian.sephirah.v1.FeedConfigSource} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {!proto.librarian.sephirah.v1.FeedConfigSource} value
+ * @param {string} value
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
 proto.librarian.sephirah.v1.FeedConfig.prototype.setSource = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -8294,14 +8291,6 @@ proto.librarian.sephirah.v1.FeedConfigStatus = {
   FEED_CONFIG_STATUS_UNSPECIFIED: 0,
   FEED_CONFIG_STATUS_ACTIVE: 1,
   FEED_CONFIG_STATUS_SUSPEND: 2
-};
-
-/**
- * @enum {number}
- */
-proto.librarian.sephirah.v1.FeedConfigSource = {
-  FEED_CONFIG_SOURCE_UNSPECIFIED: 0,
-  FEED_CONFIG_SOURCE_COMMON: 1
 };
 
 goog.object.extend(exports, proto.librarian.sephirah.v1);

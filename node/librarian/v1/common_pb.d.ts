@@ -105,10 +105,10 @@ export namespace TimeAggregation {
 
   export interface AggregationTypeMap {
     AGGREGATION_TYPE_UNSPECIFIED: 0;
-    AGGREGATION_TYPE_YEAR: 1;
-    AGGREGATION_TYPE_MONTH: 2;
-    AGGREGATION_TYPE_DAY: 3;
-    AGGREGATION_TYPE_OVERALL: 4;
+    AGGREGATION_TYPE_OVERALL: 1;
+    AGGREGATION_TYPE_YEAR: 2;
+    AGGREGATION_TYPE_MONTH: 3;
+    AGGREGATION_TYPE_DAY: 4;
   }
 
   export const AggregationType: AggregationTypeMap;
@@ -140,8 +140,8 @@ export class Account extends jspb.Message {
   getId(): InternalID | undefined;
   setId(value?: InternalID): void;
 
-  getPlatform(): AccountPlatformMap[keyof AccountPlatformMap];
-  setPlatform(value: AccountPlatformMap[keyof AccountPlatformMap]): void;
+  getPlatform(): string;
+  setPlatform(value: string): void;
 
   getPlatformAccountId(): string;
   setPlatformAccountId(value: string): void;
@@ -173,7 +173,7 @@ export class Account extends jspb.Message {
 export namespace Account {
   export type AsObject = {
     id?: InternalID.AsObject,
-    platform: AccountPlatformMap[keyof AccountPlatformMap],
+    platform: string,
     platformAccountId: string,
     name: string,
     profileUrl: string,
@@ -183,8 +183,8 @@ export namespace Account {
 }
 
 export class AccountID extends jspb.Message {
-  getPlatform(): AccountPlatformMap[keyof AccountPlatformMap];
-  setPlatform(value: AccountPlatformMap[keyof AccountPlatformMap]): void;
+  getPlatform(): string;
+  setPlatform(value: string): void;
 
   getPlatformAccountId(): string;
   setPlatformAccountId(value: string): void;
@@ -201,7 +201,7 @@ export class AccountID extends jspb.Message {
 
 export namespace AccountID {
   export type AsObject = {
-    platform: AccountPlatformMap[keyof AccountPlatformMap],
+    platform: string,
     platformAccountId: string,
   }
 }
@@ -212,8 +212,11 @@ export class App extends jspb.Message {
   getId(): InternalID | undefined;
   setId(value?: InternalID): void;
 
-  getSource(): AppSourceMap[keyof AppSourceMap];
-  setSource(value: AppSourceMap[keyof AppSourceMap]): void;
+  getInternal(): boolean;
+  setInternal(value: boolean): void;
+
+  getSource(): string;
+  setSource(value: string): void;
 
   getSourceAppId(): string;
   setSourceAppId(value: string): void;
@@ -266,7 +269,8 @@ export class App extends jspb.Message {
 export namespace App {
   export type AsObject = {
     id?: InternalID.AsObject,
-    source: AppSourceMap[keyof AppSourceMap],
+    internal: boolean,
+    source: string,
     sourceAppId: string,
     sourceUrl: string,
     details?: AppDetails.AsObject,
@@ -280,9 +284,72 @@ export namespace App {
   }
 }
 
+export class AppMixed extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): InternalID | undefined;
+  setId(value?: InternalID): void;
+
+  hasDetails(): boolean;
+  clearDetails(): void;
+  getDetails(): AppDetails | undefined;
+  setDetails(value?: AppDetails): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getType(): AppTypeMap[keyof AppTypeMap];
+  setType(value: AppTypeMap[keyof AppTypeMap]): void;
+
+  getShortDescription(): string;
+  setShortDescription(value: string): void;
+
+  getIconImageUrl(): string;
+  setIconImageUrl(value: string): void;
+
+  getHeroImageUrl(): string;
+  setHeroImageUrl(value: string): void;
+
+  clearTagsList(): void;
+  getTagsList(): Array<string>;
+  setTagsList(value: Array<string>): void;
+  addTags(value: string, index?: number): string;
+
+  clearAltNamesList(): void;
+  getAltNamesList(): Array<string>;
+  setAltNamesList(value: Array<string>): void;
+  addAltNames(value: string, index?: number): string;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppMixed.AsObject;
+  static toObject(includeInstance: boolean, msg: AppMixed): AppMixed.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppMixed, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppMixed;
+  static deserializeBinaryFromReader(message: AppMixed, reader: jspb.BinaryReader): AppMixed;
+}
+
+export namespace AppMixed {
+  export type AsObject = {
+    id?: InternalID.AsObject,
+    details?: AppDetails.AsObject,
+    name: string,
+    type: AppTypeMap[keyof AppTypeMap],
+    shortDescription: string,
+    iconImageUrl: string,
+    heroImageUrl: string,
+    tagsList: Array<string>,
+    altNamesList: Array<string>,
+  }
+}
+
 export class AppID extends jspb.Message {
-  getSource(): AppSourceMap[keyof AppSourceMap];
-  setSource(value: AppSourceMap[keyof AppSourceMap]): void;
+  getInternal(): boolean;
+  setInternal(value: boolean): void;
+
+  getSource(): string;
+  setSource(value: string): void;
 
   getSourceAppId(): string;
   setSourceAppId(value: string): void;
@@ -299,7 +366,8 @@ export class AppID extends jspb.Message {
 
 export namespace AppID {
   export type AsObject = {
-    source: AppSourceMap[keyof AppSourceMap],
+    internal: boolean,
+    source: string,
     sourceAppId: string,
   }
 }
@@ -682,12 +750,12 @@ export namespace FeedEnclosure {
   }
 }
 
-export interface AccountPlatformMap {
-  ACCOUNT_PLATFORM_UNSPECIFIED: 0;
-  ACCOUNT_PLATFORM_STEAM: 1;
+export interface AccountAppRelationTypeMap {
+  ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED: 0;
+  ACCOUNT_APP_RELATION_TYPE_OWN: 1;
 }
 
-export const AccountPlatform: AccountPlatformMap;
+export const AccountAppRelationType: AccountAppRelationTypeMap;
 
 export interface AppTypeMap {
   APP_TYPE_UNSPECIFIED: 0;
@@ -695,16 +763,6 @@ export interface AppTypeMap {
 }
 
 export const AppType: AppTypeMap;
-
-export interface AppSourceMap {
-  APP_SOURCE_UNSPECIFIED: 0;
-  APP_SOURCE_INTERNAL: 1;
-  APP_SOURCE_STEAM: 2;
-  APP_SOURCE_VNDB: 3;
-  APP_SOURCE_BANGUMI: 4;
-}
-
-export const AppSource: AppSourceMap;
 
 export interface AppPackageSourceMap {
   APP_PACKAGE_SOURCE_UNSPECIFIED: 0;

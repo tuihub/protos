@@ -52,6 +52,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ServerBinarySummary? serverBinarySummary,
     ServerProtocolSummary? protocolSummary,
     $8.Timestamp? currentTime,
+    ServerFeatureSummary? featureSummary,
   }) {
     final $result = create();
     if (serverBinarySummary != null) {
@@ -63,6 +64,9 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     if (currentTime != null) {
       $result.currentTime = currentTime;
     }
+    if (featureSummary != null) {
+      $result.featureSummary = featureSummary;
+    }
     return $result;
   }
   GetServerInformationResponse._() : super();
@@ -73,6 +77,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
     ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
     ..aOM<$8.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $8.Timestamp.create)
+    ..aOM<ServerFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: ServerFeatureSummary.create)
     ..hasRequiredFields = false
   ;
 
@@ -97,6 +102,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   static GetServerInformationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetServerInformationResponse>(create);
   static GetServerInformationResponse? _defaultInstance;
 
+  /// For manual inspection only, the client may display but should not parse the response.
   @$pb.TagNumber(1)
   ServerBinarySummary get serverBinarySummary => $_getN(0);
   @$pb.TagNumber(1)
@@ -108,6 +114,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   ServerBinarySummary ensureServerBinarySummary() => $_ensure(0);
 
+  /// For manual inspection only, the client may display but should not parse the response.
   @$pb.TagNumber(2)
   ServerProtocolSummary get protocolSummary => $_getN(1);
   @$pb.TagNumber(2)
@@ -131,6 +138,18 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   void clearCurrentTime() => clearField(3);
   @$pb.TagNumber(3)
   $8.Timestamp ensureCurrentTime() => $_ensure(2);
+
+  /// Valid when accessToken is provided.
+  @$pb.TagNumber(4)
+  ServerFeatureSummary get featureSummary => $_getN(3);
+  @$pb.TagNumber(4)
+  set featureSummary(ServerFeatureSummary v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFeatureSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFeatureSummary() => clearField(4);
+  @$pb.TagNumber(4)
+  ServerFeatureSummary ensureFeatureSummary() => $_ensure(3);
 }
 
 class ServerBinarySummary extends $pb.GeneratedMessage {
@@ -269,6 +288,74 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(0);
   @$pb.TagNumber(1)
   void clearVersion() => clearField(1);
+}
+
+class ServerFeatureSummary extends $pb.GeneratedMessage {
+  factory ServerFeatureSummary({
+    $core.Iterable<$core.String>? supportedAccountPlatforms,
+    $core.Iterable<$core.String>? supportedAppSources,
+    $core.Iterable<$core.String>? supportedFeedSources,
+    $core.Iterable<$core.String>? supportedNotifyDestinations,
+  }) {
+    final $result = create();
+    if (supportedAccountPlatforms != null) {
+      $result.supportedAccountPlatforms.addAll(supportedAccountPlatforms);
+    }
+    if (supportedAppSources != null) {
+      $result.supportedAppSources.addAll(supportedAppSources);
+    }
+    if (supportedFeedSources != null) {
+      $result.supportedFeedSources.addAll(supportedFeedSources);
+    }
+    if (supportedNotifyDestinations != null) {
+      $result.supportedNotifyDestinations.addAll(supportedNotifyDestinations);
+    }
+    return $result;
+  }
+  ServerFeatureSummary._() : super();
+  factory ServerFeatureSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ServerFeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'supportedAccountPlatforms')
+    ..pPS(2, _omitFieldNames ? '' : 'supportedAppSources')
+    ..pPS(3, _omitFieldNames ? '' : 'supportedFeedSources')
+    ..pPS(4, _omitFieldNames ? '' : 'supportedNotifyDestinations')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ServerFeatureSummary clone() => ServerFeatureSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ServerFeatureSummary copyWith(void Function(ServerFeatureSummary) updates) => super.copyWith((message) => updates(message as ServerFeatureSummary)) as ServerFeatureSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ServerFeatureSummary create() => ServerFeatureSummary._();
+  ServerFeatureSummary createEmptyInstance() => create();
+  static $pb.PbList<ServerFeatureSummary> createRepeated() => $pb.PbList<ServerFeatureSummary>();
+  @$core.pragma('dart2js:noInline')
+  static ServerFeatureSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerFeatureSummary>(create);
+  static ServerFeatureSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get supportedAccountPlatforms => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get supportedAppSources => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get supportedFeedSources => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get supportedNotifyDestinations => $_getList(3);
 }
 
 

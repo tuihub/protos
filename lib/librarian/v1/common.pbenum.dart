@@ -13,19 +13,19 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class AccountPlatform extends $pb.ProtobufEnum {
-  static const AccountPlatform ACCOUNT_PLATFORM_UNSPECIFIED = AccountPlatform._(0, _omitEnumNames ? '' : 'ACCOUNT_PLATFORM_UNSPECIFIED');
-  static const AccountPlatform ACCOUNT_PLATFORM_STEAM = AccountPlatform._(1, _omitEnumNames ? '' : 'ACCOUNT_PLATFORM_STEAM');
+class AccountAppRelationType extends $pb.ProtobufEnum {
+  static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = AccountAppRelationType._(0, _omitEnumNames ? '' : 'ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED');
+  static const AccountAppRelationType ACCOUNT_APP_RELATION_TYPE_OWN = AccountAppRelationType._(1, _omitEnumNames ? '' : 'ACCOUNT_APP_RELATION_TYPE_OWN');
 
-  static const $core.List<AccountPlatform> values = <AccountPlatform> [
-    ACCOUNT_PLATFORM_UNSPECIFIED,
-    ACCOUNT_PLATFORM_STEAM,
+  static const $core.List<AccountAppRelationType> values = <AccountAppRelationType> [
+    ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED,
+    ACCOUNT_APP_RELATION_TYPE_OWN,
   ];
 
-  static final $core.Map<$core.int, AccountPlatform> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static AccountPlatform? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, AccountAppRelationType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AccountAppRelationType? valueOf($core.int value) => _byValue[value];
 
-  const AccountPlatform._($core.int v, $core.String n) : super(v, n);
+  const AccountAppRelationType._($core.int v, $core.String n) : super(v, n);
 }
 
 class AppType extends $pb.ProtobufEnum {
@@ -41,27 +41,6 @@ class AppType extends $pb.ProtobufEnum {
   static AppType? valueOf($core.int value) => _byValue[value];
 
   const AppType._($core.int v, $core.String n) : super(v, n);
-}
-
-class AppSource extends $pb.ProtobufEnum {
-  static const AppSource APP_SOURCE_UNSPECIFIED = AppSource._(0, _omitEnumNames ? '' : 'APP_SOURCE_UNSPECIFIED');
-  static const AppSource APP_SOURCE_INTERNAL = AppSource._(1, _omitEnumNames ? '' : 'APP_SOURCE_INTERNAL');
-  static const AppSource APP_SOURCE_STEAM = AppSource._(2, _omitEnumNames ? '' : 'APP_SOURCE_STEAM');
-  static const AppSource APP_SOURCE_VNDB = AppSource._(3, _omitEnumNames ? '' : 'APP_SOURCE_VNDB');
-  static const AppSource APP_SOURCE_BANGUMI = AppSource._(4, _omitEnumNames ? '' : 'APP_SOURCE_BANGUMI');
-
-  static const $core.List<AppSource> values = <AppSource> [
-    APP_SOURCE_UNSPECIFIED,
-    APP_SOURCE_INTERNAL,
-    APP_SOURCE_STEAM,
-    APP_SOURCE_VNDB,
-    APP_SOURCE_BANGUMI,
-  ];
-
-  static final $core.Map<$core.int, AppSource> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static AppSource? valueOf($core.int value) => _byValue[value];
-
-  const AppSource._($core.int v, $core.String n) : super(v, n);
 }
 
 class AppPackageSource extends $pb.ProtobufEnum {
@@ -83,17 +62,17 @@ class AppPackageSource extends $pb.ProtobufEnum {
 
 class TimeAggregation_AggregationType extends $pb.ProtobufEnum {
   static const TimeAggregation_AggregationType AGGREGATION_TYPE_UNSPECIFIED = TimeAggregation_AggregationType._(0, _omitEnumNames ? '' : 'AGGREGATION_TYPE_UNSPECIFIED');
-  static const TimeAggregation_AggregationType AGGREGATION_TYPE_YEAR = TimeAggregation_AggregationType._(1, _omitEnumNames ? '' : 'AGGREGATION_TYPE_YEAR');
-  static const TimeAggregation_AggregationType AGGREGATION_TYPE_MONTH = TimeAggregation_AggregationType._(2, _omitEnumNames ? '' : 'AGGREGATION_TYPE_MONTH');
-  static const TimeAggregation_AggregationType AGGREGATION_TYPE_DAY = TimeAggregation_AggregationType._(3, _omitEnumNames ? '' : 'AGGREGATION_TYPE_DAY');
-  static const TimeAggregation_AggregationType AGGREGATION_TYPE_OVERALL = TimeAggregation_AggregationType._(4, _omitEnumNames ? '' : 'AGGREGATION_TYPE_OVERALL');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_OVERALL = TimeAggregation_AggregationType._(1, _omitEnumNames ? '' : 'AGGREGATION_TYPE_OVERALL');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_YEAR = TimeAggregation_AggregationType._(2, _omitEnumNames ? '' : 'AGGREGATION_TYPE_YEAR');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_MONTH = TimeAggregation_AggregationType._(3, _omitEnumNames ? '' : 'AGGREGATION_TYPE_MONTH');
+  static const TimeAggregation_AggregationType AGGREGATION_TYPE_DAY = TimeAggregation_AggregationType._(4, _omitEnumNames ? '' : 'AGGREGATION_TYPE_DAY');
 
   static const $core.List<TimeAggregation_AggregationType> values = <TimeAggregation_AggregationType> [
     AGGREGATION_TYPE_UNSPECIFIED,
+    AGGREGATION_TYPE_OVERALL,
     AGGREGATION_TYPE_YEAR,
     AGGREGATION_TYPE_MONTH,
     AGGREGATION_TYPE_DAY,
-    AGGREGATION_TYPE_OVERALL,
   ];
 
   static final $core.Map<$core.int, TimeAggregation_AggregationType> _byValue = $pb.ProtobufEnum.initByValue(values);

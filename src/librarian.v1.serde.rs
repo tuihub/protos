@@ -10,7 +10,7 @@ impl serde::Serialize for Account {
         if self.id.is_some() {
             len += 1;
         }
-        if self.platform != 0 {
+        if !self.platform.is_empty() {
             len += 1;
         }
         if !self.platform_account_id.is_empty() {
@@ -32,10 +32,8 @@ impl serde::Serialize for Account {
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
-        if self.platform != 0 {
-            let v = AccountPlatform::from_i32(self.platform)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.platform)))?;
-            struct_ser.serialize_field("platform", &v)?;
+        if !self.platform.is_empty() {
+            struct_ser.serialize_field("platform", &self.platform)?;
         }
         if !self.platform_account_id.is_empty() {
             struct_ser.serialize_field("platformAccountId", &self.platform_account_id)?;
@@ -150,7 +148,7 @@ impl<'de> serde::Deserialize<'de> for Account {
                             if platform__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("platform"));
                             }
-                            platform__ = Some(map.next_value::<AccountPlatform>()? as i32);
+                            platform__ = Some(map.next_value()?);
                         }
                         GeneratedField::PlatformAccountId => {
                             if platform_account_id__.is_some() {
@@ -198,6 +196,79 @@ impl<'de> serde::Deserialize<'de> for Account {
         deserializer.deserialize_struct("librarian.v1.Account", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for AccountAppRelationType {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED",
+            Self::Own => "ACCOUNT_APP_RELATION_TYPE_OWN",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for AccountAppRelationType {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED",
+            "ACCOUNT_APP_RELATION_TYPE_OWN",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AccountAppRelationType;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(AccountAppRelationType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(AccountAppRelationType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED" => Ok(AccountAppRelationType::Unspecified),
+                    "ACCOUNT_APP_RELATION_TYPE_OWN" => Ok(AccountAppRelationType::Own),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
 impl serde::Serialize for AccountId {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -206,17 +277,15 @@ impl serde::Serialize for AccountId {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.platform != 0 {
+        if !self.platform.is_empty() {
             len += 1;
         }
         if !self.platform_account_id.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AccountID", len)?;
-        if self.platform != 0 {
-            let v = AccountPlatform::from_i32(self.platform)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.platform)))?;
-            struct_ser.serialize_field("platform", &v)?;
+        if !self.platform.is_empty() {
+            struct_ser.serialize_field("platform", &self.platform)?;
         }
         if !self.platform_account_id.is_empty() {
             struct_ser.serialize_field("platformAccountId", &self.platform_account_id)?;
@@ -290,7 +359,7 @@ impl<'de> serde::Deserialize<'de> for AccountId {
                             if platform__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("platform"));
                             }
-                            platform__ = Some(map.next_value::<AccountPlatform>()? as i32);
+                            platform__ = Some(map.next_value()?);
                         }
                         GeneratedField::PlatformAccountId => {
                             if platform_account_id__.is_some() {
@@ -309,79 +378,6 @@ impl<'de> serde::Deserialize<'de> for AccountId {
         deserializer.deserialize_struct("librarian.v1.AccountID", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for AccountPlatform {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        let variant = match self {
-            Self::Unspecified => "ACCOUNT_PLATFORM_UNSPECIFIED",
-            Self::Steam => "ACCOUNT_PLATFORM_STEAM",
-        };
-        serializer.serialize_str(variant)
-    }
-}
-impl<'de> serde::Deserialize<'de> for AccountPlatform {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "ACCOUNT_PLATFORM_UNSPECIFIED",
-            "ACCOUNT_PLATFORM_STEAM",
-        ];
-
-        struct GeneratedVisitor;
-
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = AccountPlatform;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(formatter, "expected one of: {:?}", &FIELDS)
-            }
-
-            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(AccountPlatform::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
-                    })
-            }
-
-            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(AccountPlatform::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
-                    })
-            }
-
-            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                match value {
-                    "ACCOUNT_PLATFORM_UNSPECIFIED" => Ok(AccountPlatform::Unspecified),
-                    "ACCOUNT_PLATFORM_STEAM" => Ok(AccountPlatform::Steam),
-                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
-                }
-            }
-        }
-        deserializer.deserialize_any(GeneratedVisitor)
-    }
-}
 impl serde::Serialize for App {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -393,7 +389,10 @@ impl serde::Serialize for App {
         if self.id.is_some() {
             len += 1;
         }
-        if self.source != 0 {
+        if self.internal {
+            len += 1;
+        }
+        if !self.source.is_empty() {
             len += 1;
         }
         if !self.source_app_id.is_empty() {
@@ -430,10 +429,11 @@ impl serde::Serialize for App {
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
-        if self.source != 0 {
-            let v = AppSource::from_i32(self.source)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.source)))?;
-            struct_ser.serialize_field("source", &v)?;
+        if self.internal {
+            struct_ser.serialize_field("internal", &self.internal)?;
+        }
+        if !self.source.is_empty() {
+            struct_ser.serialize_field("source", &self.source)?;
         }
         if !self.source_app_id.is_empty() {
             struct_ser.serialize_field("sourceAppId", &self.source_app_id)?;
@@ -478,6 +478,7 @@ impl<'de> serde::Deserialize<'de> for App {
     {
         const FIELDS: &[&str] = &[
             "id",
+            "internal",
             "source",
             "source_app_id",
             "sourceAppId",
@@ -500,6 +501,7 @@ impl<'de> serde::Deserialize<'de> for App {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
+            Internal,
             Source,
             SourceAppId,
             SourceUrl,
@@ -533,6 +535,7 @@ impl<'de> serde::Deserialize<'de> for App {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
+                            "internal" => Ok(GeneratedField::Internal),
                             "source" => Ok(GeneratedField::Source),
                             "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
                             "sourceUrl" | "source_url" => Ok(GeneratedField::SourceUrl),
@@ -564,6 +567,7 @@ impl<'de> serde::Deserialize<'de> for App {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
+                let mut internal__ = None;
                 let mut source__ = None;
                 let mut source_app_id__ = None;
                 let mut source_url__ = None;
@@ -583,11 +587,17 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             id__ = map.next_value()?;
                         }
+                        GeneratedField::Internal => {
+                            if internal__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("internal"));
+                            }
+                            internal__ = Some(map.next_value()?);
+                        }
                         GeneratedField::Source => {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = Some(map.next_value::<AppSource>()? as i32);
+                            source__ = Some(map.next_value()?);
                         }
                         GeneratedField::SourceAppId => {
                             if source_app_id__.is_some() {
@@ -653,6 +663,7 @@ impl<'de> serde::Deserialize<'de> for App {
                 }
                 Ok(App {
                     id: id__,
+                    internal: internal__.unwrap_or_default(),
                     source: source__.unwrap_or_default(),
                     source_app_id: source_app_id__.unwrap_or_default(),
                     source_url: source_url__,
@@ -982,17 +993,21 @@ impl serde::Serialize for AppId {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.source != 0 {
+        if self.internal {
+            len += 1;
+        }
+        if !self.source.is_empty() {
             len += 1;
         }
         if !self.source_app_id.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppID", len)?;
-        if self.source != 0 {
-            let v = AppSource::from_i32(self.source)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.source)))?;
-            struct_ser.serialize_field("source", &v)?;
+        if self.internal {
+            struct_ser.serialize_field("internal", &self.internal)?;
+        }
+        if !self.source.is_empty() {
+            struct_ser.serialize_field("source", &self.source)?;
         }
         if !self.source_app_id.is_empty() {
             struct_ser.serialize_field("sourceAppId", &self.source_app_id)?;
@@ -1007,6 +1022,7 @@ impl<'de> serde::Deserialize<'de> for AppId {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "internal",
             "source",
             "source_app_id",
             "sourceAppId",
@@ -1014,6 +1030,7 @@ impl<'de> serde::Deserialize<'de> for AppId {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Internal,
             Source,
             SourceAppId,
         }
@@ -1037,6 +1054,7 @@ impl<'de> serde::Deserialize<'de> for AppId {
                         E: serde::de::Error,
                     {
                         match value {
+                            "internal" => Ok(GeneratedField::Internal),
                             "source" => Ok(GeneratedField::Source),
                             "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -1058,15 +1076,22 @@ impl<'de> serde::Deserialize<'de> for AppId {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut internal__ = None;
                 let mut source__ = None;
                 let mut source_app_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Internal => {
+                            if internal__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("internal"));
+                            }
+                            internal__ = Some(map.next_value()?);
+                        }
                         GeneratedField::Source => {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = Some(map.next_value::<AppSource>()? as i32);
+                            source__ = Some(map.next_value()?);
                         }
                         GeneratedField::SourceAppId => {
                             if source_app_id__.is_some() {
@@ -1077,12 +1102,246 @@ impl<'de> serde::Deserialize<'de> for AppId {
                     }
                 }
                 Ok(AppId {
+                    internal: internal__.unwrap_or_default(),
                     source: source__.unwrap_or_default(),
                     source_app_id: source_app_id__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.v1.AppID", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppMixed {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        if self.details.is_some() {
+            len += 1;
+        }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if self.r#type != 0 {
+            len += 1;
+        }
+        if !self.short_description.is_empty() {
+            len += 1;
+        }
+        if !self.icon_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.hero_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.tags.is_empty() {
+            len += 1;
+        }
+        if !self.alt_names.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.AppMixed", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        if let Some(v) = self.details.as_ref() {
+            struct_ser.serialize_field("details", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if self.r#type != 0 {
+            let v = AppType::from_i32(self.r#type)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
+            struct_ser.serialize_field("type", &v)?;
+        }
+        if !self.short_description.is_empty() {
+            struct_ser.serialize_field("shortDescription", &self.short_description)?;
+        }
+        if !self.icon_image_url.is_empty() {
+            struct_ser.serialize_field("iconImageUrl", &self.icon_image_url)?;
+        }
+        if !self.hero_image_url.is_empty() {
+            struct_ser.serialize_field("heroImageUrl", &self.hero_image_url)?;
+        }
+        if !self.tags.is_empty() {
+            struct_ser.serialize_field("tags", &self.tags)?;
+        }
+        if !self.alt_names.is_empty() {
+            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppMixed {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "details",
+            "name",
+            "type",
+            "short_description",
+            "shortDescription",
+            "icon_image_url",
+            "iconImageUrl",
+            "hero_image_url",
+            "heroImageUrl",
+            "tags",
+            "alt_names",
+            "altNames",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            Details,
+            Name,
+            Type,
+            ShortDescription,
+            IconImageUrl,
+            HeroImageUrl,
+            Tags,
+            AltNames,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "details" => Ok(GeneratedField::Details),
+                            "name" => Ok(GeneratedField::Name),
+                            "type" => Ok(GeneratedField::Type),
+                            "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
+                            "iconImageUrl" | "icon_image_url" => Ok(GeneratedField::IconImageUrl),
+                            "heroImageUrl" | "hero_image_url" => Ok(GeneratedField::HeroImageUrl),
+                            "tags" => Ok(GeneratedField::Tags),
+                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppMixed;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.AppMixed")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AppMixed, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut details__ = None;
+                let mut name__ = None;
+                let mut r#type__ = None;
+                let mut short_description__ = None;
+                let mut icon_image_url__ = None;
+                let mut hero_image_url__ = None;
+                let mut tags__ = None;
+                let mut alt_names__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                        GeneratedField::Details => {
+                            if details__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("details"));
+                            }
+                            details__ = map.next_value()?;
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Type => {
+                            if r#type__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("type"));
+                            }
+                            r#type__ = Some(map.next_value::<AppType>()? as i32);
+                        }
+                        GeneratedField::ShortDescription => {
+                            if short_description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("shortDescription"));
+                            }
+                            short_description__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::IconImageUrl => {
+                            if icon_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("iconImageUrl"));
+                            }
+                            icon_image_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::HeroImageUrl => {
+                            if hero_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("heroImageUrl"));
+                            }
+                            hero_image_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Tags => {
+                            if tags__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tags"));
+                            }
+                            tags__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::AltNames => {
+                            if alt_names__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("altNames"));
+                            }
+                            alt_names__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(AppMixed {
+                    id: id__,
+                    details: details__,
+                    name: name__.unwrap_or_default(),
+                    r#type: r#type__.unwrap_or_default(),
+                    short_description: short_description__.unwrap_or_default(),
+                    icon_image_url: icon_image_url__.unwrap_or_default(),
+                    hero_image_url: hero_image_url__.unwrap_or_default(),
+                    tags: tags__.unwrap_or_default(),
+                    alt_names: alt_names__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.AppMixed", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for AppPackage {
@@ -1498,88 +1757,6 @@ impl<'de> serde::Deserialize<'de> for AppPackageSource {
                     "APP_PACKAGE_SOURCE_UNSPECIFIED" => Ok(AppPackageSource::Unspecified),
                     "APP_PACKAGE_SOURCE_MANUAL" => Ok(AppPackageSource::Manual),
                     "APP_PACKAGE_SOURCE_SENTINEL" => Ok(AppPackageSource::Sentinel),
-                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
-                }
-            }
-        }
-        deserializer.deserialize_any(GeneratedVisitor)
-    }
-}
-impl serde::Serialize for AppSource {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        let variant = match self {
-            Self::Unspecified => "APP_SOURCE_UNSPECIFIED",
-            Self::Internal => "APP_SOURCE_INTERNAL",
-            Self::Steam => "APP_SOURCE_STEAM",
-            Self::Vndb => "APP_SOURCE_VNDB",
-            Self::Bangumi => "APP_SOURCE_BANGUMI",
-        };
-        serializer.serialize_str(variant)
-    }
-}
-impl<'de> serde::Deserialize<'de> for AppSource {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "APP_SOURCE_UNSPECIFIED",
-            "APP_SOURCE_INTERNAL",
-            "APP_SOURCE_STEAM",
-            "APP_SOURCE_VNDB",
-            "APP_SOURCE_BANGUMI",
-        ];
-
-        struct GeneratedVisitor;
-
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = AppSource;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(formatter, "expected one of: {:?}", &FIELDS)
-            }
-
-            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(AppSource::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
-                    })
-            }
-
-            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(AppSource::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
-                    })
-            }
-
-            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                match value {
-                    "APP_SOURCE_UNSPECIFIED" => Ok(AppSource::Unspecified),
-                    "APP_SOURCE_INTERNAL" => Ok(AppSource::Internal),
-                    "APP_SOURCE_STEAM" => Ok(AppSource::Steam),
-                    "APP_SOURCE_VNDB" => Ok(AppSource::Vndb),
-                    "APP_SOURCE_BANGUMI" => Ok(AppSource::Bangumi),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
@@ -2655,10 +2832,10 @@ impl serde::Serialize for PagingRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.PagingRequest", len)?;
         if self.page_num != 0 {
-            struct_ser.serialize_field("pageNum", &self.page_num)?;
+            struct_ser.serialize_field("pageNum", ToString::to_string(&self.page_num).as_str())?;
         }
         if self.page_size != 0 {
-            struct_ser.serialize_field("pageSize", &self.page_size)?;
+            struct_ser.serialize_field("pageSize", ToString::to_string(&self.page_size).as_str())?;
         }
         struct_ser.end()
     }
@@ -2967,10 +3144,10 @@ impl serde::Serialize for time_aggregation::AggregationType {
     {
         let variant = match self {
             Self::Unspecified => "AGGREGATION_TYPE_UNSPECIFIED",
+            Self::Overall => "AGGREGATION_TYPE_OVERALL",
             Self::Year => "AGGREGATION_TYPE_YEAR",
             Self::Month => "AGGREGATION_TYPE_MONTH",
             Self::Day => "AGGREGATION_TYPE_DAY",
-            Self::Overall => "AGGREGATION_TYPE_OVERALL",
         };
         serializer.serialize_str(variant)
     }
@@ -2983,10 +3160,10 @@ impl<'de> serde::Deserialize<'de> for time_aggregation::AggregationType {
     {
         const FIELDS: &[&str] = &[
             "AGGREGATION_TYPE_UNSPECIFIED",
+            "AGGREGATION_TYPE_OVERALL",
             "AGGREGATION_TYPE_YEAR",
             "AGGREGATION_TYPE_MONTH",
             "AGGREGATION_TYPE_DAY",
-            "AGGREGATION_TYPE_OVERALL",
         ];
 
         struct GeneratedVisitor;
@@ -3030,10 +3207,10 @@ impl<'de> serde::Deserialize<'de> for time_aggregation::AggregationType {
             {
                 match value {
                     "AGGREGATION_TYPE_UNSPECIFIED" => Ok(time_aggregation::AggregationType::Unspecified),
+                    "AGGREGATION_TYPE_OVERALL" => Ok(time_aggregation::AggregationType::Overall),
                     "AGGREGATION_TYPE_YEAR" => Ok(time_aggregation::AggregationType::Year),
                     "AGGREGATION_TYPE_MONTH" => Ok(time_aggregation::AggregationType::Month),
                     "AGGREGATION_TYPE_DAY" => Ok(time_aggregation::AggregationType::Day),
-                    "AGGREGATION_TYPE_OVERALL" => Ok(time_aggregation::AggregationType::Overall),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
@@ -3148,5 +3325,303 @@ impl<'de> serde::Deserialize<'de> for TimeRange {
             }
         }
         deserializer.deserialize_struct("librarian.v1.TimeRange", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for WellKnownAccountPlatform {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "WELL_KNOWN_ACCOUNT_PLATFORM_UNSPECIFIED",
+            Self::Steam => "WELL_KNOWN_ACCOUNT_PLATFORM_STEAM",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for WellKnownAccountPlatform {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "WELL_KNOWN_ACCOUNT_PLATFORM_UNSPECIFIED",
+            "WELL_KNOWN_ACCOUNT_PLATFORM_STEAM",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = WellKnownAccountPlatform;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownAccountPlatform::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownAccountPlatform::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "WELL_KNOWN_ACCOUNT_PLATFORM_UNSPECIFIED" => Ok(WellKnownAccountPlatform::Unspecified),
+                    "WELL_KNOWN_ACCOUNT_PLATFORM_STEAM" => Ok(WellKnownAccountPlatform::Steam),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for WellKnownAppSource {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "WELL_KNOWN_APP_SOURCE_UNSPECIFIED",
+            Self::Steam => "WELL_KNOWN_APP_SOURCE_STEAM",
+            Self::Vndb => "WELL_KNOWN_APP_SOURCE_VNDB",
+            Self::Bangumi => "WELL_KNOWN_APP_SOURCE_BANGUMI",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for WellKnownAppSource {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "WELL_KNOWN_APP_SOURCE_UNSPECIFIED",
+            "WELL_KNOWN_APP_SOURCE_STEAM",
+            "WELL_KNOWN_APP_SOURCE_VNDB",
+            "WELL_KNOWN_APP_SOURCE_BANGUMI",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = WellKnownAppSource;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownAppSource::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownAppSource::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "WELL_KNOWN_APP_SOURCE_UNSPECIFIED" => Ok(WellKnownAppSource::Unspecified),
+                    "WELL_KNOWN_APP_SOURCE_STEAM" => Ok(WellKnownAppSource::Steam),
+                    "WELL_KNOWN_APP_SOURCE_VNDB" => Ok(WellKnownAppSource::Vndb),
+                    "WELL_KNOWN_APP_SOURCE_BANGUMI" => Ok(WellKnownAppSource::Bangumi),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for WellKnownFeedSource {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "WELL_KNOWN_FEED_SOURCE_UNSPECIFIED",
+            Self::Rss => "WELL_KNOWN_FEED_SOURCE_RSS",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for WellKnownFeedSource {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "WELL_KNOWN_FEED_SOURCE_UNSPECIFIED",
+            "WELL_KNOWN_FEED_SOURCE_RSS",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = WellKnownFeedSource;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownFeedSource::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownFeedSource::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "WELL_KNOWN_FEED_SOURCE_UNSPECIFIED" => Ok(WellKnownFeedSource::Unspecified),
+                    "WELL_KNOWN_FEED_SOURCE_RSS" => Ok(WellKnownFeedSource::Rss),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for WellKnownNotifyDestination {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED",
+            Self::Telegram => "WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for WellKnownNotifyDestination {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED",
+            "WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = WellKnownNotifyDestination;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownNotifyDestination::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownNotifyDestination::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED" => Ok(WellKnownNotifyDestination::Unspecified),
+                    "WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM" => Ok(WellKnownNotifyDestination::Telegram),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
