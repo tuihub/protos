@@ -10,7 +10,7 @@ option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 message CreateAppRequest {
-  // `id` can be anything, `source` must be APP_SOURCE_INTERNAL
+  // `id` can be anything, `internal` must be true
   librarian.v1.App app = 1;
 }
 message CreateAppResponse {
@@ -18,7 +18,7 @@ message CreateAppResponse {
 }
 
 message UpdateAppRequest {
-  // source must be APP_SOURCE_INTERNAL
+  // `internal` must be true
   librarian.v1.App app = 1;
 }
 
@@ -26,7 +26,7 @@ message UpdateAppResponse {}
 
 message ListAppsRequest {
   librarian.v1.PagingRequest paging = 1;
-  repeated librarian.v1.AppSource source_filter = 2;
+  repeated string source_filter = 2;
   repeated librarian.v1.AppType type_filter = 3;
   repeated librarian.v1.InternalID id_filter = 4;
   bool contain_details = 5;
@@ -34,20 +34,19 @@ message ListAppsRequest {
 
 message ListAppsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.App apps = 2;
+  repeated librarian.v1.AppMixed apps = 2;
 }
 
-message RefreshAppRequest {
-  // Must not APP_SOURCE_INTERNAL
-  librarian.v1.InternalID app_id = 1;
+message SyncAppsRequest {
+  librarian.v1.AppID app_id = 1;
 }
 
-message RefreshAppResponse {}
+message SyncAppsResponse {}
 
 message MergeAppsRequest {
-  // source must be APP_SOURCE_INTERNAL
+  // `internal` must be true
   librarian.v1.App base = 1;
-  // Must be APP_SOURCE_INTERNAL.
+  // Must be internal app.
   // The InternalID will be dropped after merge.
   // Other apps bind to this app will rebind to base.
   librarian.v1.InternalID merged = 2;
@@ -56,27 +55,17 @@ message MergeAppsRequest {
 message MergeAppsResponse {}
 
 message PickAppRequest {
-  // Must not be APP_SOURCE_INTERNAL
+  // `internal` must be false
   librarian.v1.InternalID picked = 1;
 }
 
 message PickAppResponse {}
 
-message SyncExternalAppsRequest {
-  message ExternalApp {
-    librarian.v1.AppSource source = 1;
-    string source_app_id = 2;
-  }
-  repeated ExternalApp external_apps = 1;
-}
-
-message SyncExternalAppsResponse {}
-
-message SyncExternalAccountAppsRequest {
+message SyncAccountAppsRequest {
   librarian.v1.AccountID account_id = 1;
 }
 
-message SyncExternalAccountAppsResponse {}
+message SyncAccountAppsResponse {}
 
 message SearchAppsRequest {
   librarian.v1.PagingRequest paging = 1;
@@ -85,7 +74,7 @@ message SearchAppsRequest {
 message SearchAppsResponse {
   librarian.v1.PagingResponse paging = 1;
   // without details
-  repeated librarian.v1.App apps = 2;
+  repeated librarian.v1.AppMixed apps = 2;
 }
 
 message GetAppRequest {
@@ -96,25 +85,23 @@ message GetAppResponse {
   librarian.v1.App app = 1;
 }
 
-message GetBindAppsRequest {
+message GetBoundAppsRequest {
   librarian.v1.InternalID app_id = 1;
 }
 
-message GetBindAppsResponse {
+message GetBoundAppsResponse {
   repeated librarian.v1.App apps = 1;
 }
 
 message PurchaseAppRequest {
-  // source must be APP_SOURCE_INTERNAL
+  // `internal` must be true
   librarian.v1.InternalID app_id = 1;
 }
 
 message PurchaseAppResponse {}
 
 message GetPurchasedAppsRequest {
-  // Get purchase info from bound account
-  // only support APP_SOURCE_STEAM
-  optional librarian.v1.AppSource source = 1;
+  optional string source = 1;
 }
 message GetPurchasedAppsResponse {
   // without details
@@ -159,7 +146,7 @@ message ReportAppPackagesRequest {
 message ReportAppPackagesResponse {}
 
 message AssignAppPackageRequest {
-  // Must be APP_SOURCE_INTERNAL
+  // `internal` must be true
   librarian.v1.InternalID app_id = 1;
   librarian.v1.InternalID app_package_id = 2;
 }

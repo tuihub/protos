@@ -2,108 +2,65 @@ syntax = "proto3";
 
 package librarian.porter.v1;
 
-import "google/protobuf/duration.proto";
 import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
-// Definition of service feature flags, use original name rather than enum value.
-// Set correct feature flags in server metadata to let caller know what functions are available.
-enum FeatureFlag {
-  FEATURE_FLAG_UNSPECIFIED = 0;
-  // If set, operations pull from steam store are available.
-  FEATURE_FLAG_SOURCE_STEAM = 1;
-  // If set, operations pull from telegram are available.
-  FEATURE_FLAG_SOURCE_TELEGRAM = 2;
-  // If set, default storage bucket are available.
-  FEATURE_FLAG_DEFAULT_DATA_STORAGE = 3;
-}
-
-/*
-   * The main role of Porter is to encapsulate input&output operations.
-   * In Porter's model:
-   * - The data interface is divided into four types: feed, db, wiki, and data.
-   Any input and output can be assigned to a specific type.
-   * 1. Feed is the most structured type and basically refers to the RSS 2.0
-   * 2. DB can be structured but the content requires additional processing
-   * 3. Wiki cannot be structured
-   * 4. Data can represent the binary and metadata of specific files
-*/
 service LibrarianPorterService {
-  // `Feed`
-  rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
-  // `Feed`
-  rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
+  rpc GetPorterInformation(GetPorterInformationRequest) returns (GetPorterInformationResponse);
+  rpc EnablePorter(EnablePorterRequest) returns (EnablePorterResponse);
 
-  // `DB`
-  rpc PullDB(PullDBRequest) returns (PullDBResponse);
-  // `DB`
+  // `Tiphereth`
   rpc PullAccount(PullAccountRequest) returns (PullAccountResponse);
-  // `DB`
+
+  // `Gebura`
   rpc PullApp(PullAppRequest) returns (PullAppResponse);
-  // `DB`
+  // `Gebura`
   rpc PullAccountAppRelation(PullAccountAppRelationRequest) returns (PullAccountAppRelationResponse);
 
-  // `Wiki`
-  rpc PullWiki(PullWikiRequest) returns (PullWikiResponse);
-
-  // `Data` Pull data binary
-  rpc PullData(PullDataRequest) returns (stream PullDataResponse);
-  // `Data` Push data binary
-  rpc PushData(stream PushDataRequest) returns (PushDataResponse);
-  // `Data` Generate http GET url
-  rpc PresignedPullData(PresignedPullDataRequest) returns (PresignedPullDataResponse);
-  // `Data` Generate http PUT url
-  rpc PresignedPushData(PresignedPushDataRequest) returns (PresignedPushDataResponse);
+  // `Yesod`
+  rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
+  // `Yesod`
+  rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
 }
 
-message PullFeedRequest {
-  FeedSource source = 1;
-  string channel_id = 2;
+message GetPorterInformationRequest {}
+message GetPorterInformationResponse {
+  // Human-readable name. no format limit.
+  string name = 1;
+  // Version of the porter. no format limit.
+  string version = 2;
+  // Global identifier. Same global name means same project. no format limit.
+  // e.g. use project url "github.com/tuihub/porter-steam".
+  string global_name = 3;
+  PorterFeatureSummary feature_summary = 4;
 }
 
-message PullFeedResponse {
-  optional librarian.v1.Feed data = 1;
+message PorterFeatureSummary {
+  message Account {
+    string platform = 1;
+    repeated librarian.v1.AccountAppRelationType app_relation_types = 2;
+  }
+  repeated Account supported_accounts = 1;
+  repeated string supported_app_sources = 2;
+  repeated string supported_feed_sources = 3;
+  repeated string supported_notify_destinations = 4;
 }
 
-message PushFeedItemsRequest {
-  FeedDestination destination = 1;
-  string channel_id = 2;
-  repeated librarian.v1.FeedItem items = 3;
-  string token = 4;
+message EnablePorterRequest {
+  // Identifier of sephirah. can be randomly generated.
+  // porter can only be enabled by on sephirah.
+  // redundancy requests from enabler must return success.
+  int64 sephirah_id = 1;
+  // Porter should refresh token before response to verify reverse call is available.
+  string refresh_token = 2;
 }
-
-message PushFeedItemsResponse {}
-
-message PullDBRequest {
-  DBSource source = 1;
-  string content_id = 2;
-}
-message PullDBResponse {
-  map<string, string> data = 1;
-}
-
-message PullWikiRequest {
-  WikiSource source = 1;
-  string content_id = 2;
-}
-message PullWikiResponse {
-  string data = 1;
-}
-
-message PullDataRequest {
-  DataSource source = 1;
-  string content_id = 2;
-}
-message PullDataResponse {
-  bytes data = 1;
-}
+message EnablePorterResponse {}
 
 message PullAccountRequest {
   librarian.v1.AccountID account_id = 1;
 }
-
 message PullAccountResponse {
   librarian.v1.Account account = 1;
 }
@@ -117,7 +74,7 @@ message PullAppResponse {
 }
 
 message PullAccountAppRelationRequest {
-  AccountAppRelationType relation_type = 1;
+  librarian.v1.AccountAppRelationType relation_type = 1;
   librarian.v1.AccountID account_id = 2;
 }
 
@@ -125,62 +82,22 @@ message PullAccountAppRelationResponse {
   repeated librarian.v1.App app_list = 1;
 }
 
-message PushDataRequest {
-  message DataMeta {
-    DataSource source = 1;
-    string content_id = 2;
-  }
-  oneof content {
-    DataMeta metadata = 1;
-    bytes data = 2;
-  }
-}
-message PushDataResponse {}
-
-message PresignedPullDataRequest {
-  DataSource source = 1;
-  string content_id = 2;
-  google.protobuf.Duration expire_time = 3;
+message PullFeedRequest {
+  // WellKnownFeedSource
+  string source = 1;
+  string channel_id = 2;
 }
 
-message PresignedPullDataResponse {
-  string pull_url = 1;
+message PullFeedResponse {
+  optional librarian.v1.Feed data = 1;
 }
 
-message PresignedPushDataRequest {
-  DataSource source = 1;
-  string content_id = 2;
-  google.protobuf.Duration expire_time = 3;
+message PushFeedItemsRequest {
+  // WellKnownNotifyTargetType
+  string destination = 1;
+  string channel_id = 2;
+  repeated librarian.v1.FeedItem items = 3;
+  string token = 4;
 }
 
-message PresignedPushDataResponse {
-  string push_url = 1;
-}
-
-enum AccountAppRelationType {
-  ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = 0;
-  ACCOUNT_APP_RELATION_TYPE_OWN = 1;
-}
-
-enum FeedSource {
-  FEED_SOURCE_UNSPECIFIED = 0;
-  FEED_SOURCE_COMMON = 1;
-}
-
-enum FeedDestination {
-  FEED_DESTINATION_UNSPECIFIED = 0;
-  FEED_DESTINATION_TELEGRAM = 1;
-}
-
-enum DBSource {
-  DB_SOURCE_UNSPECIFIED = 0;
-}
-
-enum WikiSource {
-  WIKI_SOURCE_UNSPECIFIED = 0;
-}
-
-enum DataSource {
-  DATA_SOURCE_UNSPECIFIED = 0;
-  DATA_SOURCE_INTERNAL_DEFAULT = 1;
-}
+message PushFeedItemsResponse {}

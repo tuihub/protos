@@ -24,12 +24,12 @@ message RefreshTokenResponse {
   string refresh_token = 2;
 }
 
-message GenerateTokenRequest {
-  librarian.v1.InternalID id = 1;
+message GainUserPrivilegeRequest {
+  librarian.v1.InternalID user_id = 1;
 }
 
-message GenerateTokenResponse {
-  string refresh_token = 1;
+message GainUserPrivilegeResponse {
+  string access_token = 1;
 }
 
 message CreateUserRequest {
@@ -85,6 +85,30 @@ message ListLinkAccountsResponse {
   repeated librarian.v1.Account accounts = 1;
 }
 
+message ListPorterRequest {
+  librarian.v1.PagingRequest paging = 1;
+}
+message ListPorterResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated Porter porters = 2;
+}
+
+message UpdatePorterStatusRequest {
+  librarian.v1.InternalID porter_id = 1;
+  UserStatus status = 2;
+}
+message UpdatePorterStatusResponse {}
+
+message UpdatePorterPrivilegeRequest {
+  librarian.v1.InternalID porter_id = 1;
+    PorterPrivilege privilege = 2;
+}
+message UpdatePorterPrivilegeResponse {}
+
+message PorterPrivilege {
+  bool all = 1;
+}
+
 message User {
   librarian.v1.InternalID id = 1;
   string username = 2;
@@ -98,10 +122,20 @@ enum UserType {
   USER_TYPE_ADMIN = 1;
   USER_TYPE_NORMAL = 2;
   USER_TYPE_SENTINEL = 3;
+  USER_TYPE_PORTER = 4;
 }
 
 enum UserStatus {
   USER_STATUS_UNSPECIFIED = 0;
   USER_STATUS_ACTIVE = 1;
   USER_STATUS_BLOCKED = 2;
+}
+
+message Porter {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string version = 3;
+  string global_name = 4;
+  string feature_summary = 5;
+  UserStatus status = 6;
 }

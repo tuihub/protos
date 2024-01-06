@@ -11,12 +11,12 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/v1;v1";
 
 message PagingRequest {
   // start from 1, not 0
-  int32 page_num = 1 [(buf.validate.field).int32.gt = 0];
-  int32 page_size = 2 [(buf.validate.field).int32.gt = 0];
+  int64 page_num = 1 [(buf.validate.field).int64.gt = 0];
+  int64 page_size = 2 [(buf.validate.field).int64.gt = 0];
 }
 
 message PagingResponse {
-  int64 total_size = 1;
+  int64 total_size = 1 [(buf.validate.field).int64.gte = 0];
 }
 
 // half-open e.g.
@@ -35,10 +35,10 @@ message TimeRange {
 message TimeAggregation {
   enum AggregationType {
     AGGREGATION_TYPE_UNSPECIFIED = 0;
-    AGGREGATION_TYPE_YEAR = 1;
-    AGGREGATION_TYPE_MONTH = 2;
-    AGGREGATION_TYPE_DAY = 3;
-    AGGREGATION_TYPE_OVERALL = 4;
+    AGGREGATION_TYPE_OVERALL = 1;
+    AGGREGATION_TYPE_YEAR = 2;
+    AGGREGATION_TYPE_MONTH = 3;
+    AGGREGATION_TYPE_DAY = 4;
   }
   AggregationType aggregation_type = 1;
   // The `TimeRange` should be adjusted on the server side to align with the nearest boundary when aggregating.
@@ -56,7 +56,8 @@ message InternalID {
 
 message Account {
   InternalID id = 1;
-  AccountPlatform platform = 2;
+  // WellKnownPlatform
+  string platform = 2;
   string platform_account_id = 3;
   string name = 4;
   string profile_url = 5;
@@ -65,35 +66,57 @@ message Account {
 }
 
 message AccountID {
-  AccountPlatform platform = 1;
+  // WellKnownAccountPlatform
+  string platform = 1;
   string platform_account_id = 2;
 }
 
-enum AccountPlatform {
-  ACCOUNT_PLATFORM_UNSPECIFIED = 0;
-  ACCOUNT_PLATFORM_STEAM = 1;
+enum AccountAppRelationType {
+  ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED = 0;
+  ACCOUNT_APP_RELATION_TYPE_OWN = 1;
 }
 
 message App {
   InternalID id = 1;
-  AppSource source = 2;
-  string source_app_id = 3;
-  optional string source_url = 4;
+  // ignore `source` and `source_app_id` when `internal` is true
+  bool internal = 2;
+  // WellKnownAppSource
+  string source = 3;
+  string source_app_id = 4;
+  optional string source_url = 5;
 
-  optional AppDetails details = 5;
+  optional AppDetails details = 6;
 
-  string name = 6;
-  AppType type = 7;
-  string short_description = 8;
-  string icon_image_url = 9;
-  string hero_image_url = 10;
-  repeated string tags = 11;
-  repeated string alt_names = 12;
+  string name = 7;
+  AppType type = 8;
+  string short_description = 9;
+  string icon_image_url = 10;
+  string hero_image_url = 11;
+  repeated string tags = 12;
+  repeated string alt_names = 13;
+}
+
+// Mixed info of bound apps
+message AppMixed {
+  // internal app id
+  InternalID id = 1;
+
+  optional AppDetails details = 6;
+
+  string name = 7;
+  AppType type = 8;
+  string short_description = 9;
+  string icon_image_url = 10;
+  string hero_image_url = 11;
+  repeated string tags = 12;
+  repeated string alt_names = 13;
 }
 
 message AppID {
-  AppSource source = 1;
-  string source_app_id = 2;
+  bool internal = 1;
+  // WellKnownAppSource
+  string source = 2;
+  string source_app_id = 3;
 }
 
 message AppDetails {
@@ -108,14 +131,6 @@ message AppDetails {
 enum AppType {
   APP_TYPE_UNSPECIFIED = 0;
   APP_TYPE_GAME = 1;
-}
-
-enum AppSource {
-  APP_SOURCE_UNSPECIFIED = 0;
-  APP_SOURCE_INTERNAL = 1;
-  APP_SOURCE_STEAM = 2;
-  APP_SOURCE_VNDB = 3;
-  APP_SOURCE_BANGUMI = 4;
 }
 
 message AppPackage {

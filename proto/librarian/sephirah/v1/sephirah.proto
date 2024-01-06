@@ -22,14 +22,14 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
  * 5. `Netzach` handles notifications
  */
 service LibrarianSephirahService {
-  // For manual inspection only, the client may display but should not parse the response.
+  // Allow anonymous call, use accessToken to get complete information
   rpc GetServerInformation(GetServerInformationRequest) returns (GetServerInformationResponse);
   // `Tiphereth` `Normal` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
-  // `Tiphereth` `Normal` `Sentinel` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  // `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
-  // `Tiphereth` `Admin` Generate token for given user
-  rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
+  // `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+  rpc GainUserPrivilege(GainUserPrivilegeRequest) returns (GainUserPrivilegeResponse);
 
   // `Tiphereth` `Admin` `Normal limited`
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
@@ -49,6 +49,13 @@ service LibrarianSephirahService {
   // `Tiphereth` `Normal` List third-party account binded to current user.
   // Match ()<-[Equal]->(current user)
   rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
+
+  // `Tiphereth` `Normal`
+  rpc ListPorter(ListPorterRequest) returns (ListPorterResponse);
+  // `Tiphereth` `Admin`
+  rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
+  // `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+  rpc UpdatePorterPrivilege(UpdatePorterPrivilegeRequest) returns (UpdatePorterPrivilegeResponse);
 
   // `Binah` `upload_token`
   rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
@@ -91,18 +98,17 @@ service LibrarianSephirahService {
   rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
   // `Gebura` `Admin` Used to manage apps
   rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
-  // `Gebura` `Admin` Submit an asynchronous update request
-  rpc RefreshApp(RefreshAppRequest) returns (RefreshAppResponse);
+  // `Gebura` `Admin` Asynchronous update apps.
+  // Request on INTERNAL app applies to all bound external apps.
+  // Create an INTERNAL app when requested external app does not exist
+  rpc SyncApps(SyncAppsRequest) returns (SyncAppsResponse);
+  // `Gebura` `Admin` Asynchronously update apps associated with an account.
+  // Create an INTERNAL app when associated external app does not exist
+  rpc SyncAccountApps(SyncAccountAppsRequest) returns (SyncAccountAppsResponse);
   // `Gebura` `Admin` Merge two apps
   rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);
   // `Gebura` `Admin` Pick one app out from merged
   rpc PickApp(PickAppRequest) returns (PickAppResponse);
-  // `Gebura` `Admin` Asynchronously update external apps.
-  // Create an INTERNAL app when requested external app does not exist
-  rpc SyncExternalApps(SyncExternalAppsRequest) returns (SyncExternalAppsResponse);
-  // `Gebura` `Admin` Asynchronously update apps associated with an external account.
-  // Create an INTERNAL app when associated external app does not exist
-  rpc SyncExternalAccountApps(SyncExternalAccountAppsRequest) returns (SyncExternalAccountAppsResponse);
 
   // `Gebura` `Normal`
   rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
@@ -110,10 +116,13 @@ service LibrarianSephirahService {
   // e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
   rpc GetApp(GetAppRequest) returns (GetAppResponse);
   // `Gebura` `Normal` Original bound apps info of required app
-  rpc GetBindApps(GetBindAppsRequest) returns (GetBindAppsResponse);
+  rpc GetBoundApps(GetBoundAppsRequest) returns (GetBoundAppsResponse);
   // `Gebura` `Normal`
   rpc PurchaseApp(PurchaseAppRequest) returns (PurchaseAppResponse);
   // `Gebura` `Normal`
+  // Default get user purchased apps
+  // Use `source` to get purchase info from bound account
+  // only support steam
   rpc GetPurchasedApps(GetPurchasedAppsRequest) returns (GetPurchasedAppsResponse);
 
   // `Gebura` `Normal`
@@ -180,6 +189,7 @@ service LibrarianSephirahService {
   rpc UpdateFeedConfig(UpdateFeedConfigRequest) returns (UpdateFeedConfigResponse);
   // `Yesod` `Normal`
   rpc ListFeedConfigs(ListFeedConfigsRequest) returns (ListFeedConfigsResponse);
+
   // `Yesod` `Normal`
   rpc ListFeedCategories(ListFeedCategoriesRequest) returns (ListFeedCategoriesResponse);
   // `Yesod` `Normal`
@@ -194,6 +204,7 @@ service LibrarianSephirahService {
   rpc GetBatchFeedItems(GetBatchFeedItemsRequest) returns (GetBatchFeedItemsResponse);
   // `Yesod` `Normal`
   rpc ReadFeedItem(ReadFeedItemRequest) returns (ReadFeedItemResponse);
+
   // `Yesod` `Normal`
   rpc CreateFeedItemCollection(CreateFeedItemCollectionRequest) returns (CreateFeedItemCollectionResponse);
   // `Yesod` `Normal`
@@ -210,11 +221,15 @@ service LibrarianSephirahService {
 
 message GetServerInformationRequest {}
 message GetServerInformationResponse {
+  // For manual inspection only, the client may display but should not parse the response.
   ServerBinarySummary server_binary_summary = 1;
+  // For manual inspection only, the client may display but should not parse the response.
   ServerProtocolSummary protocol_summary = 2;
   // The time that server received the request,
   // note that there is a transmission delay between server and client.
   google.protobuf.Timestamp current_time = 3;
+  // Valid when accessToken is provided.
+  optional ServerFeatureSummary feature_summary = 4;
 }
 
 message ServerBinarySummary {
@@ -235,4 +250,11 @@ message ServerProtocolSummary {
   // The content *must* be a semantic version string generated by `git describe`,
   // and if the server is built for production, it *must* be a valid version tag.
   string version = 1;
+}
+
+message ServerFeatureSummary {
+  repeated string supported_account_platforms = 1;
+  repeated string supported_app_sources = 2;
+  repeated string supported_feed_sources = 3;
+  repeated string supported_notify_destinations = 4;
 }

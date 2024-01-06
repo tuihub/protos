@@ -25,7 +25,8 @@ message ListFeedConfigsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID id_filter = 2;
   repeated librarian.v1.InternalID author_id_filter = 3;
-  repeated FeedConfigSource source_filter = 4;
+  // WellKnownFeedSource
+  repeated string source_filter = 4;
   repeated FeedConfigStatus status_filter = 5;
   repeated string category_filter = 6;
 }
@@ -152,7 +153,8 @@ message FeedConfig {
   string feed_url = 3;
   // Not used when source is FEED_CONFIG_SOURCE_COMMON
   librarian.v1.InternalID author_account = 4;
-  FeedConfigSource source = 5;
+  // WellKnownFeedSource
+  string source = 5;
   FeedConfigStatus status = 6;
   google.protobuf.Duration pull_interval = 7;
   string category = 8;
@@ -166,11 +168,6 @@ enum FeedConfigStatus {
   FEED_CONFIG_STATUS_UNSPECIFIED = 0;
   FEED_CONFIG_STATUS_ACTIVE = 1;
   FEED_CONFIG_STATUS_SUSPEND = 2;
-}
-
-enum FeedConfigSource {
-  FEED_CONFIG_SOURCE_UNSPECIFIED = 0;
-  FEED_CONFIG_SOURCE_COMMON = 1;
 }
 
 // Digest information generated from origin item data

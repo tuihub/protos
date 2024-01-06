@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package librarian.v1;
+
+import "google/protobuf/descriptor.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/v1;v1";
+
+extend google.protobuf.EnumValueOptions {
+  string to_string = 1000;
+}
+
+enum WellKnownAccountPlatform {
+  WELL_KNOWN_ACCOUNT_PLATFORM_UNSPECIFIED = 0 [(to_string) = ""];
+  WELL_KNOWN_ACCOUNT_PLATFORM_STEAM = 1 [(to_string) = "steam"];
+}
+
+enum WellKnownAppSource {
+  WELL_KNOWN_APP_SOURCE_UNSPECIFIED = 0 [(to_string) = ""];
+  WELL_KNOWN_APP_SOURCE_STEAM = 2 [(to_string) = "steam"];
+  WELL_KNOWN_APP_SOURCE_VNDB = 3 [(to_string) = "vndb"];
+  WELL_KNOWN_APP_SOURCE_BANGUMI = 4 [(to_string) = "bangumi"];
+}
+
+enum WellKnownFeedSource {
+  WELL_KNOWN_FEED_SOURCE_UNSPECIFIED = 0 [(to_string) = ""];
+  WELL_KNOWN_FEED_SOURCE_RSS = 1 [(to_string) = "rss"];
+}
+
+enum WellKnownNotifyDestination {
+  WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED = 0 [(to_string) = ""];
+  WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM = 1 [(to_string) = "telegram"];
+}
