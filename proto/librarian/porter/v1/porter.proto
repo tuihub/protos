@@ -93,7 +93,7 @@ message PullFeedResponse {
 }
 
 message PushFeedItemsRequest {
-  // WellKnownNotifyTargetType
+  // WellKnownNotifyDestination
   string destination = 1;
   string channel_id = 2;
   repeated librarian.v1.FeedItem items = 3;

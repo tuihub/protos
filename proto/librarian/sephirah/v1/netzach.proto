@@ -22,8 +22,8 @@ message UpdateNotifyTargetResponse {}
 message ListNotifyTargetsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID id_filter = 2;
-  // WellKnownNotifyTargetType
-  repeated string type_filter = 3;
+  // WellKnownNotifyDestination
+  repeated string destination_filter = 3;
   repeated NotifyTargetStatus status_filter = 4;
 }
 
@@ -57,8 +57,8 @@ message NotifyTarget {
   librarian.v1.InternalID id = 1;
   string name = 2;
   string description = 3;
-  // WellKnownNotifyTargetType
-  string type = 4;
+  // WellKnownNotifyDestination
+  string destination = 4;
   NotifyTargetStatus status = 5;
   string token = 6;
 }

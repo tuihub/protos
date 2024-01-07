@@ -34,7 +34,7 @@ message ListAppsRequest {
 
 message ListAppsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.AppMixed apps = 2;
+  repeated librarian.v1.App apps = 2;
 }
 
 message SyncAppsRequest {
@@ -105,7 +105,7 @@ message GetPurchasedAppsRequest {
 }
 message GetPurchasedAppsResponse {
   // without details
-  repeated librarian.v1.App apps = 1;
+  repeated librarian.v1.AppMixed apps = 1;
 }
 
 message CreateAppPackageRequest {
