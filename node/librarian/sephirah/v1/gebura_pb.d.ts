@@ -139,9 +139,9 @@ export class ListAppsResponse extends jspb.Message {
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
   clearAppsList(): void;
-  getAppsList(): Array<librarian_v1_common_pb.AppMixed>;
-  setAppsList(value: Array<librarian_v1_common_pb.AppMixed>): void;
-  addApps(value?: librarian_v1_common_pb.AppMixed, index?: number): librarian_v1_common_pb.AppMixed;
+  getAppsList(): Array<librarian_v1_common_pb.App>;
+  setAppsList(value: Array<librarian_v1_common_pb.App>): void;
+  addApps(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppsResponse.AsObject;
@@ -156,7 +156,7 @@ export class ListAppsResponse extends jspb.Message {
 export namespace ListAppsResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    appsList: Array<librarian_v1_common_pb.AppMixed.AsObject>,
+    appsList: Array<librarian_v1_common_pb.App.AsObject>,
   }
 }
 
@@ -522,9 +522,9 @@ export namespace GetPurchasedAppsRequest {
 
 export class GetPurchasedAppsResponse extends jspb.Message {
   clearAppsList(): void;
-  getAppsList(): Array<librarian_v1_common_pb.App>;
-  setAppsList(value: Array<librarian_v1_common_pb.App>): void;
-  addApps(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+  getAppsList(): Array<librarian_v1_common_pb.AppMixed>;
+  setAppsList(value: Array<librarian_v1_common_pb.AppMixed>): void;
+  addApps(value?: librarian_v1_common_pb.AppMixed, index?: number): librarian_v1_common_pb.AppMixed;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPurchasedAppsResponse.AsObject;
@@ -538,7 +538,7 @@ export class GetPurchasedAppsResponse extends jspb.Message {
 
 export namespace GetPurchasedAppsResponse {
   export type AsObject = {
-    appsList: Array<librarian_v1_common_pb.App.AsObject>,
+    appsList: Array<librarian_v1_common_pb.AppMixed.AsObject>,
   }
 }
 

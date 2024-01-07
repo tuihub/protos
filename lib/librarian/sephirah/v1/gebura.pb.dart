@@ -305,7 +305,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 class ListAppsResponse extends $pb.GeneratedMessage {
   factory ListAppsResponse({
     $7.PagingResponse? paging,
-    $core.Iterable<$7.AppMixed>? apps,
+    $core.Iterable<$7.App>? apps,
   }) {
     final $result = create();
     if (paging != null) {
@@ -322,7 +322,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<$7.AppMixed>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.AppMixed.create)
+    ..pc<$7.App>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.App.create)
     ..hasRequiredFields = false
   ;
 
@@ -359,7 +359,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   $7.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.AppMixed> get apps => $_getList(1);
+  $core.List<$7.App> get apps => $_getList(1);
 }
 
 class SyncAppsRequest extends $pb.GeneratedMessage {
@@ -1183,7 +1183,7 @@ class GetPurchasedAppsRequest extends $pb.GeneratedMessage {
 
 class GetPurchasedAppsResponse extends $pb.GeneratedMessage {
   factory GetPurchasedAppsResponse({
-    $core.Iterable<$7.App>? apps,
+    $core.Iterable<$7.AppMixed>? apps,
   }) {
     final $result = create();
     if (apps != null) {
@@ -1196,7 +1196,7 @@ class GetPurchasedAppsResponse extends $pb.GeneratedMessage {
   factory GetPurchasedAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPurchasedAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.App>(1, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.App.create)
+    ..pc<$7.AppMixed>(1, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.AppMixed.create)
     ..hasRequiredFields = false
   ;
 
@@ -1223,7 +1223,7 @@ class GetPurchasedAppsResponse extends $pb.GeneratedMessage {
 
   /// without details
   @$pb.TagNumber(1)
-  $core.List<$7.App> get apps => $_getList(0);
+  $core.List<$7.AppMixed> get apps => $_getList(0);
 }
 
 class CreateAppPackageRequest extends $pb.GeneratedMessage {

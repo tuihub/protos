@@ -863,7 +863,7 @@ class PushFeedItemsRequest extends $pb.GeneratedMessage {
   static PushFeedItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemsRequest>(create);
   static PushFeedItemsRequest? _defaultInstance;
 
-  /// WellKnownNotifyTargetType
+  /// WellKnownNotifyDestination
   @$pb.TagNumber(1)
   $core.String get destination => $_getSZ(0);
   @$pb.TagNumber(1)

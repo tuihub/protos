@@ -103,15 +103,14 @@ const ListAppsResponse$json = {
   '1': 'ListAppsResponse',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.AppMixed', '10': 'apps'},
+    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'apps'},
   ],
 };
 
 /// Descriptor for `ListAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0QXBwc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbm'
-    'dSZXNwb25zZVIGcGFnaW5nEioKBGFwcHMYAiADKAsyFi5saWJyYXJpYW4udjEuQXBwTWl4ZWRS'
-    'BGFwcHM=');
+    'dSZXNwb25zZVIGcGFnaW5nEiUKBGFwcHMYAiADKAsyES5saWJyYXJpYW4udjEuQXBwUgRhcHBz');
 
 @$core.Deprecated('Use syncAppsRequestDescriptor instead')
 const SyncAppsRequest$json = {
@@ -324,14 +323,14 @@ final $typed_data.Uint8List getPurchasedAppsRequestDescriptor = $convert.base64D
 const GetPurchasedAppsResponse$json = {
   '1': 'GetPurchasedAppsResponse',
   '2': [
-    {'1': 'apps', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'apps'},
+    {'1': 'apps', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppMixed', '10': 'apps'},
   ],
 };
 
 /// Descriptor for `GetPurchasedAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPurchasedAppsResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRQdXJjaGFzZWRBcHBzUmVzcG9uc2USJQoEYXBwcxgBIAMoCzIRLmxpYnJhcmlhbi52MS'
-    '5BcHBSBGFwcHM=');
+    'ChhHZXRQdXJjaGFzZWRBcHBzUmVzcG9uc2USKgoEYXBwcxgBIAMoCzIWLmxpYnJhcmlhbi52MS'
+    '5BcHBNaXhlZFIEYXBwcw==');
 
 @$core.Deprecated('Use createAppPackageRequestDescriptor instead')
 const CreateAppPackageRequest$json = {

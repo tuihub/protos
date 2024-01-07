@@ -32,56 +32,57 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "cmFyaWFuLnYxLkludGVybmFsSURSAmlkIlgKGVVwZGF0ZU5vdGlmeVRhcmdl",
             "dFJlcXVlc3QSOwoGdGFyZ2V0GAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFo",
             "LnYxLk5vdGlmeVRhcmdldFIGdGFyZ2V0IhwKGlVwZGF0ZU5vdGlmeVRhcmdl",
-            "dFJlc3BvbnNlIvcBChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFn",
+            "dFJlc3BvbnNlIoUCChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFn",
             "aW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2lu",
             "ZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
-            "RFIIaWRGaWx0ZXISHwoLdHlwZV9maWx0ZXIYAyADKAlSCnR5cGVGaWx0ZXIS",
-            "TgoNc3RhdHVzX2ZpbHRlchgEIAMoDjIpLmxpYnJhcmlhbi5zZXBoaXJhaC52",
-            "MS5Ob3RpZnlUYXJnZXRTdGF0dXNSDHN0YXR1c0ZpbHRlciKQAQoZTGlzdE5v",
-            "dGlmeVRhcmdldHNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJp",
-            "YW4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxI9Cgd0YXJnZXRzGAIgAygL",
-            "MiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeVRhcmdldFIHdGFyZ2V0",
-            "cyJQChdDcmVhdGVOb3RpZnlGbG93UmVxdWVzdBI1CgRmbG93GAEgASgLMiEu",
-            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeUZsb3dSBGZsb3ciRAoYQ3Jl",
-            "YXRlTm90aWZ5Rmxvd1Jlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFu",
-            "LnYxLkludGVybmFsSURSAmlkIlAKF1VwZGF0ZU5vdGlmeUZsb3dSZXF1ZXN0",
-            "EjUKBGZsb3cYASABKAsyIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5",
-            "Rmxvd1IEZmxvdyIaChhVcGRhdGVOb3RpZnlGbG93UmVzcG9uc2UihAEKFkxp",
-            "c3ROb3RpZnlGbG93c1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFy",
-            "aWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiAD",
-            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXIiiAEKF0xp",
-            "c3ROb3RpZnlGbG93c1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJh",
-            "cmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEjcKBWZsb3dzGAIgAygL",
-            "MiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeUZsb3dSBWZsb3dzItsB",
-            "CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlv",
-            "bhgDIAEoCVILZGVzY3JpcHRpb24SEgoEdHlwZRgEIAEoCVIEdHlwZRJBCgZz",
-            "dGF0dXMYBSABKA4yKS5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5VGFy",
-            "Z2V0U3RhdHVzUgZzdGF0dXMSFAoFdG9rZW4YBiABKAlSBXRva2VuIrMCCgpO",
-            "b3RpZnlGbG93EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFs",
-            "SURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyAB",
-            "KAlSC2Rlc2NyaXB0aW9uEkEKB3NvdXJjZXMYBCADKAsyJy5saWJyYXJpYW4u",
-            "c2VwaGlyYWgudjEuTm90aWZ5Rmxvd1NvdXJjZVIHc291cmNlcxJBCgd0YXJn",
-            "ZXRzGAUgAygLMicubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeUZsb3dU",
-            "YXJnZXRSB3RhcmdldHMSPwoGc3RhdHVzGAYgASgOMicubGlicmFyaWFuLnNl",
-            "cGhpcmFoLnYxLk5vdGlmeUZsb3dTdGF0dXNSBnN0YXR1cyKGAQoQTm90aWZ5",
-            "Rmxvd1NvdXJjZRI7CgZmaWx0ZXIYASABKAsyIy5saWJyYXJpYW4uc2VwaGly",
-            "YWgudjEuTm90aWZ5RmlsdGVyUgZmaWx0ZXISNQoJc291cmNlX2lkGAIgASgL",
-            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCHNvdXJjZUlkIqUBChBOb3Rp",
-            "ZnlGbG93VGFyZ2V0EjsKBmZpbHRlchgBIAEoCzIjLmxpYnJhcmlhbi5zZXBo",
-            "aXJhaC52MS5Ob3RpZnlGaWx0ZXJSBmZpbHRlchI1Cgl0YXJnZXRfaWQYAiAB",
-            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIdGFyZ2V0SWQSHQoKY2hh",
-            "bm5lbF9pZBgDIAEoCVIJY2hhbm5lbElkImQKDE5vdGlmeUZpbHRlchIpChBl",
-            "eGNsdWRlX2tleXdvcmRzGAEgAygJUg9leGNsdWRlS2V5d29yZHMSKQoQaW5j",
-            "bHVkZV9rZXl3b3JkcxgCIAMoCVIPaW5jbHVkZUtleXdvcmRzKn0KEk5vdGlm",
-            "eVRhcmdldFN0YXR1cxIkCiBOT1RJRllfVEFSR0VUX1NUQVRVU19VTlNQRUNJ",
-            "RklFRBAAEh8KG05PVElGWV9UQVJHRVRfU1RBVFVTX0FDVElWRRABEiAKHE5P",
-            "VElGWV9UQVJHRVRfU1RBVFVTX1NVU1BFTkQQAip1ChBOb3RpZnlGbG93U3Rh",
-            "dHVzEiIKHk5PVElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGU5P",
-            "VElGWV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxPV19TVEFU",
-            "VVNfU1VTUEVORBACQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cv",
-            "bGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJy",
-            "YXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "RFIIaWRGaWx0ZXISLQoSZGVzdGluYXRpb25fZmlsdGVyGAMgAygJUhFkZXN0",
+            "aW5hdGlvbkZpbHRlchJOCg1zdGF0dXNfZmlsdGVyGAQgAygOMikubGlicmFy",
+            "aWFuLnNlcGhpcmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1c1IMc3RhdHVzRmls",
+            "dGVyIpABChlMaXN0Tm90aWZ5VGFyZ2V0c1Jlc3BvbnNlEjQKBnBhZ2luZxgB",
+            "IAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEj0K",
+            "B3RhcmdldHMYAiADKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5",
+            "VGFyZ2V0Ugd0YXJnZXRzIlAKF0NyZWF0ZU5vdGlmeUZsb3dSZXF1ZXN0EjUK",
+            "BGZsb3cYASABKAsyIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmxv",
+            "d1IEZmxvdyJEChhDcmVhdGVOb3RpZnlGbG93UmVzcG9uc2USKAoCaWQYASAB",
+            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiUAoXVXBkYXRlTm90",
+            "aWZ5Rmxvd1JlcXVlc3QSNQoEZmxvdxgBIAEoCzIhLmxpYnJhcmlhbi5zZXBo",
+            "aXJhaC52MS5Ob3RpZnlGbG93UgRmbG93IhoKGFVwZGF0ZU5vdGlmeUZsb3dS",
+            "ZXNwb25zZSKEAQoWTGlzdE5vdGlmeUZsb3dzUmVxdWVzdBIzCgZwYWdpbmcY",
+            "ASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjUK",
+            "CWlkX2ZpbHRlchgCIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghp",
+            "ZEZpbHRlciKIAQoXTGlzdE5vdGlmeUZsb3dzUmVzcG9uc2USNAoGcGFnaW5n",
+            "GAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcS",
+            "NwoFZmxvd3MYAiADKAsyIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5",
+            "Rmxvd1IFZmxvd3Mi6QEKDE5vdGlmeVRhcmdldBIoCgJpZBgBIAEoCzIYLmxp",
+            "YnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l",
+            "EiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhIgCgtkZXN0aW5h",
+            "dGlvbhgEIAEoCVILZGVzdGluYXRpb24SQQoGc3RhdHVzGAUgASgOMikubGli",
+            "cmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1c1IGc3RhdHVz",
+            "EhQKBXRva2VuGAYgASgJUgV0b2tlbiKzAgoKTm90aWZ5RmxvdxIoCgJpZBgB",
+            "IAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIg",
+            "ASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhJB",
+            "Cgdzb3VyY2VzGAQgAygLMicubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlm",
+            "eUZsb3dTb3VyY2VSB3NvdXJjZXMSQQoHdGFyZ2V0cxgFIAMoCzInLmxpYnJh",
+            "cmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlGbG93VGFyZ2V0Ugd0YXJnZXRzEj8K",
+            "BnN0YXR1cxgGIAEoDjInLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlG",
+            "bG93U3RhdHVzUgZzdGF0dXMihgEKEE5vdGlmeUZsb3dTb3VyY2USOwoGZmls",
+            "dGVyGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLk5vdGlmeUZpbHRl",
+            "clIGZmlsdGVyEjUKCXNvdXJjZV9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5J",
+            "bnRlcm5hbElEUghzb3VyY2VJZCKlAQoQTm90aWZ5Rmxvd1RhcmdldBI7CgZm",
+            "aWx0ZXIYASABKAsyIy5saWJyYXJpYW4uc2VwaGlyYWgudjEuTm90aWZ5Rmls",
+            "dGVyUgZmaWx0ZXISNQoJdGFyZ2V0X2lkGAIgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURSCHRhcmdldElkEh0KCmNoYW5uZWxfaWQYAyABKAlSCWNo",
+            "YW5uZWxJZCJkCgxOb3RpZnlGaWx0ZXISKQoQZXhjbHVkZV9rZXl3b3JkcxgB",
+            "IAMoCVIPZXhjbHVkZUtleXdvcmRzEikKEGluY2x1ZGVfa2V5d29yZHMYAiAD",
+            "KAlSD2luY2x1ZGVLZXl3b3Jkcyp9ChJOb3RpZnlUYXJnZXRTdGF0dXMSJAog",
+            "Tk9USUZZX1RBUkdFVF9TVEFUVVNfVU5TUEVDSUZJRUQQABIfChtOT1RJRllf",
+            "VEFSR0VUX1NUQVRVU19BQ1RJVkUQARIgChxOT1RJRllfVEFSR0VUX1NUQVRV",
+            "U19TVVNQRU5EEAIqdQoQTm90aWZ5Rmxvd1N0YXR1cxIiCh5OT1RJRllfRkxP",
+            "V19TVEFUVVNfVU5TUEVDSUZJRUQQABIdChlOT1RJRllfRkxPV19TVEFUVVNf",
+            "QUNUSVZFEAESHgoaTk9USUZZX0ZMT1dfU1RBVFVTX1NVU1BFTkQQAkJdWjVn",
+            "aXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJh",
+            "aC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYx",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,7 +90,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest.Parser, new[]{ "Paging", "IdFilter", "TypeFilter", "StatusFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest.Parser, new[]{ "Paging", "IdFilter", "DestinationFilter", "StatusFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse.Parser, new[]{ "Paging", "Targets" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest.Parser, new[]{ "Flow" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse.Parser, new[]{ "Id" }, null, null, null, null),
@@ -97,7 +98,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest.Parser, new[]{ "Paging", "IdFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse.Parser, new[]{ "Paging", "Flows" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget.Parser, new[]{ "Id", "Name", "Description", "Type", "Status", "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget.Parser, new[]{ "Id", "Name", "Description", "Destination", "Status", "Token" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow.Parser, new[]{ "Id", "Name", "Description", "Sources", "Targets", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource.Parser, new[]{ "Filter", "SourceId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget.Parser, new[]{ "Filter", "TargetId", "ChannelId" }, null, null, null, null),
@@ -905,7 +906,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public ListNotifyTargetsRequest(ListNotifyTargetsRequest other) : this() {
       paging_ = other.paging_ != null ? other.paging_.Clone() : null;
       idFilter_ = other.idFilter_.Clone();
-      typeFilter_ = other.typeFilter_.Clone();
+      destinationFilter_ = other.destinationFilter_.Clone();
       statusFilter_ = other.statusFilter_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -939,18 +940,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       get { return idFilter_; }
     }
 
-    /// <summary>Field number for the "type_filter" field.</summary>
-    public const int TypeFilterFieldNumber = 3;
-    private static readonly pb::FieldCodec<string> _repeated_typeFilter_codec
+    /// <summary>Field number for the "destination_filter" field.</summary>
+    public const int DestinationFilterFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_destinationFilter_codec
         = pb::FieldCodec.ForString(26);
-    private readonly pbc::RepeatedField<string> typeFilter_ = new pbc::RepeatedField<string>();
+    private readonly pbc::RepeatedField<string> destinationFilter_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// WellKnownNotifyTargetType
+    /// WellKnownNotifyDestination
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> TypeFilter {
-      get { return typeFilter_; }
+    public pbc::RepeatedField<string> DestinationFilter {
+      get { return destinationFilter_; }
     }
 
     /// <summary>Field number for the "status_filter" field.</summary>
@@ -981,7 +982,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (!object.Equals(Paging, other.Paging)) return false;
       if(!idFilter_.Equals(other.idFilter_)) return false;
-      if(!typeFilter_.Equals(other.typeFilter_)) return false;
+      if(!destinationFilter_.Equals(other.destinationFilter_)) return false;
       if(!statusFilter_.Equals(other.statusFilter_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -992,7 +993,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       if (paging_ != null) hash ^= Paging.GetHashCode();
       hash ^= idFilter_.GetHashCode();
-      hash ^= typeFilter_.GetHashCode();
+      hash ^= destinationFilter_.GetHashCode();
       hash ^= statusFilter_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1017,7 +1018,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteMessage(Paging);
       }
       idFilter_.WriteTo(output, _repeated_idFilter_codec);
-      typeFilter_.WriteTo(output, _repeated_typeFilter_codec);
+      destinationFilter_.WriteTo(output, _repeated_destinationFilter_codec);
       statusFilter_.WriteTo(output, _repeated_statusFilter_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1034,7 +1035,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteMessage(Paging);
       }
       idFilter_.WriteTo(ref output, _repeated_idFilter_codec);
-      typeFilter_.WriteTo(ref output, _repeated_typeFilter_codec);
+      destinationFilter_.WriteTo(ref output, _repeated_destinationFilter_codec);
       statusFilter_.WriteTo(ref output, _repeated_statusFilter_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1050,7 +1051,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
       }
       size += idFilter_.CalculateSize(_repeated_idFilter_codec);
-      size += typeFilter_.CalculateSize(_repeated_typeFilter_codec);
+      size += destinationFilter_.CalculateSize(_repeated_destinationFilter_codec);
       size += statusFilter_.CalculateSize(_repeated_statusFilter_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1071,7 +1072,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         Paging.MergeFrom(other.Paging);
       }
       idFilter_.Add(other.idFilter_);
-      typeFilter_.Add(other.typeFilter_);
+      destinationFilter_.Add(other.destinationFilter_);
       statusFilter_.Add(other.statusFilter_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1100,7 +1101,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 26: {
-            typeFilter_.AddEntriesFrom(input, _repeated_typeFilter_codec);
+            destinationFilter_.AddEntriesFrom(input, _repeated_destinationFilter_codec);
             break;
           }
           case 34:
@@ -1135,7 +1136,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 26: {
-            typeFilter_.AddEntriesFrom(ref input, _repeated_typeFilter_codec);
+            destinationFilter_.AddEntriesFrom(ref input, _repeated_destinationFilter_codec);
             break;
           }
           case 34:
@@ -2605,7 +2606,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       name_ = other.name_;
       description_ = other.description_;
-      type_ = other.type_;
+      destination_ = other.destination_;
       status_ = other.status_;
       token_ = other.token_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -2653,18 +2654,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 4;
-    private string type_ = "";
+    /// <summary>Field number for the "destination" field.</summary>
+    public const int DestinationFieldNumber = 4;
+    private string destination_ = "";
     /// <summary>
-    /// WellKnownNotifyTargetType
+    /// WellKnownNotifyDestination
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Type {
-      get { return type_; }
+    public string Destination {
+      get { return destination_; }
       set {
-        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        destination_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2710,7 +2711,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (!object.Equals(Id, other.Id)) return false;
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
-      if (Type != other.Type) return false;
+      if (Destination != other.Destination) return false;
       if (Status != other.Status) return false;
       if (Token != other.Token) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -2723,7 +2724,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (Type.Length != 0) hash ^= Type.GetHashCode();
+      if (Destination.Length != 0) hash ^= Destination.GetHashCode();
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) hash ^= Status.GetHashCode();
       if (Token.Length != 0) hash ^= Token.GetHashCode();
       if (_unknownFields != null) {
@@ -2756,9 +2757,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(26);
         output.WriteString(Description);
       }
-      if (Type.Length != 0) {
+      if (Destination.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Type);
+        output.WriteString(Destination);
       }
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         output.WriteRawTag(40);
@@ -2790,9 +2791,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(26);
         output.WriteString(Description);
       }
-      if (Type.Length != 0) {
+      if (Destination.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Type);
+        output.WriteString(Destination);
       }
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         output.WriteRawTag(40);
@@ -2821,8 +2822,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (Type.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      if (Destination.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Destination);
       }
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
@@ -2854,8 +2855,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.Type.Length != 0) {
-        Type = other.Type;
+      if (other.Destination.Length != 0) {
+        Destination = other.Destination;
       }
       if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
         Status = other.Status;
@@ -2894,7 +2895,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 34: {
-            Type = input.ReadString();
+            Destination = input.ReadString();
             break;
           }
           case 40: {
@@ -2936,7 +2937,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 34: {
-            Type = input.ReadString();
+            Destination = input.ReadString();
             break;
           }
           case 40: {

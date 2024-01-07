@@ -99,7 +99,7 @@ const ListNotifyTargetsRequest$json = {
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'type_filter', '3': 3, '4': 3, '5': 9, '10': 'typeFilter'},
+    {'1': 'destination_filter', '3': 3, '4': 3, '5': 9, '10': 'destinationFilter'},
     {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetStatus', '10': 'statusFilter'},
   ],
 };
@@ -108,9 +108,9 @@ const ListNotifyTargetsRequest$json = {
 final $typed_data.Uint8List listNotifyTargetsRequestDescriptor = $convert.base64Decode(
     'ChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLn'
     'YxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4u'
-    'djEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISHwoLdHlwZV9maWx0ZXIYAyADKAlSCnR5cGVGaWx0ZX'
-    'ISTgoNc3RhdHVzX2ZpbHRlchgEIAMoDjIpLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlU'
-    'YXJnZXRTdGF0dXNSDHN0YXR1c0ZpbHRlcg==');
+    'djEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISLQoSZGVzdGluYXRpb25fZmlsdGVyGAMgAygJUhFkZX'
+    'N0aW5hdGlvbkZpbHRlchJOCg1zdGF0dXNfZmlsdGVyGAQgAygOMikubGlicmFyaWFuLnNlcGhp'
+    'cmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1c1IMc3RhdHVzRmlsdGVy');
 
 @$core.Deprecated('Use listNotifyTargetsResponseDescriptor instead')
 const ListNotifyTargetsResponse$json = {
@@ -212,7 +212,7 @@ const NotifyTarget$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'destination', '3': 4, '4': 1, '5': 9, '10': 'destination'},
     {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetStatus', '10': 'status'},
     {'1': 'token', '3': 6, '4': 1, '5': 9, '10': 'token'},
   ],
@@ -222,8 +222,9 @@ const NotifyTarget$json = {
 final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode(
     'CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaW'
     'QSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24S'
-    'EgoEdHlwZRgEIAEoCVIEdHlwZRJBCgZzdGF0dXMYBSABKA4yKS5saWJyYXJpYW4uc2VwaGlyYW'
-    'gudjEuTm90aWZ5VGFyZ2V0U3RhdHVzUgZzdGF0dXMSFAoFdG9rZW4YBiABKAlSBXRva2Vu');
+    'IAoLZGVzdGluYXRpb24YBCABKAlSC2Rlc3RpbmF0aW9uEkEKBnN0YXR1cxgFIAEoDjIpLmxpYn'
+    'Jhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlUYXJnZXRTdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgG'
+    'IAEoCVIFdG9rZW4=');
 
 @$core.Deprecated('Use notifyFlowDescriptor instead')
 const NotifyFlow$json = {

@@ -210,7 +210,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   factory ListNotifyTargetsRequest({
     $7.PagingRequest? paging,
     $core.Iterable<$7.InternalID>? idFilter,
-    $core.Iterable<$core.String>? typeFilter,
+    $core.Iterable<$core.String>? destinationFilter,
     $core.Iterable<NotifyTargetStatus>? statusFilter,
   }) {
     final $result = create();
@@ -220,8 +220,8 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
     }
-    if (typeFilter != null) {
-      $result.typeFilter.addAll(typeFilter);
+    if (destinationFilter != null) {
+      $result.destinationFilter.addAll(destinationFilter);
     }
     if (statusFilter != null) {
       $result.statusFilter.addAll(statusFilter);
@@ -235,7 +235,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
     ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pPS(3, _omitFieldNames ? '' : 'typeFilter')
+    ..pPS(3, _omitFieldNames ? '' : 'destinationFilter')
     ..pc<NotifyTargetStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values, defaultEnumValue: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
@@ -275,9 +275,9 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$7.InternalID> get idFilter => $_getList(1);
 
-  /// WellKnownNotifyTargetType
+  /// WellKnownNotifyDestination
   @$pb.TagNumber(3)
-  $core.List<$core.String> get typeFilter => $_getList(2);
+  $core.List<$core.String> get destinationFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<NotifyTargetStatus> get statusFilter => $_getList(3);
@@ -656,7 +656,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
     $7.InternalID? id,
     $core.String? name,
     $core.String? description,
-    $core.String? type,
+    $core.String? destination,
     NotifyTargetStatus? status,
     $core.String? token,
   }) {
@@ -670,8 +670,8 @@ class NotifyTarget extends $pb.GeneratedMessage {
     if (description != null) {
       $result.description = description;
     }
-    if (type != null) {
-      $result.type = type;
+    if (destination != null) {
+      $result.destination = destination;
     }
     if (status != null) {
       $result.status = status;
@@ -689,7 +689,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..aOS(4, _omitFieldNames ? '' : 'type')
+    ..aOS(4, _omitFieldNames ? '' : 'destination')
     ..e<NotifyTargetStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values)
     ..aOS(6, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
@@ -745,15 +745,15 @@ class NotifyTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDescription() => clearField(3);
 
-  /// WellKnownNotifyTargetType
+  /// WellKnownNotifyDestination
   @$pb.TagNumber(4)
-  $core.String get type => $_getSZ(3);
+  $core.String get destination => $_getSZ(3);
   @$pb.TagNumber(4)
-  set type($core.String v) { $_setString(3, v); }
+  set destination($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasType() => $_has(3);
+  $core.bool hasDestination() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearDestination() => clearField(4);
 
   @$pb.TagNumber(5)
   NotifyTargetStatus get status => $_getN(4);

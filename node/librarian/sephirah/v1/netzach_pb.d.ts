@@ -97,10 +97,10 @@ export class ListNotifyTargetsRequest extends jspb.Message {
   setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
-  clearTypeFilterList(): void;
-  getTypeFilterList(): Array<string>;
-  setTypeFilterList(value: Array<string>): void;
-  addTypeFilter(value: string, index?: number): string;
+  clearDestinationFilterList(): void;
+  getDestinationFilterList(): Array<string>;
+  setDestinationFilterList(value: Array<string>): void;
+  addDestinationFilter(value: string, index?: number): string;
 
   clearStatusFilterList(): void;
   getStatusFilterList(): Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>;
@@ -121,7 +121,7 @@ export namespace ListNotifyTargetsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    typeFilterList: Array<string>,
+    destinationFilterList: Array<string>,
     statusFilterList: Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>,
   }
 }
@@ -304,8 +304,8 @@ export class NotifyTarget extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getDestination(): string;
+  setDestination(value: string): void;
 
   getStatus(): NotifyTargetStatusMap[keyof NotifyTargetStatusMap];
   setStatus(value: NotifyTargetStatusMap[keyof NotifyTargetStatusMap]): void;
@@ -328,7 +328,7 @@ export namespace NotifyTarget {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     description: string,
-    type: string,
+    destination: string,
     status: NotifyTargetStatusMap[keyof NotifyTargetStatusMap],
     token: string,
   }

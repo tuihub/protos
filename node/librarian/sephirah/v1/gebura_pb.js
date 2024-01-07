@@ -2438,7 +2438,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.toObject = function(includeInstance
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
     appsList: jspb.Message.toObjectList(msg.getAppsList(),
-    librarian_v1_common_pb.AppMixed.toObject, includeInstance)
+    librarian_v1_common_pb.App.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2481,8 +2481,8 @@ proto.librarian.sephirah.v1.ListAppsResponse.deserializeBinaryFromReader = funct
       msg.setPaging(value);
       break;
     case 2:
-      var value = new librarian_v1_common_pb.AppMixed;
-      reader.readMessage(value,librarian_v1_common_pb.AppMixed.deserializeBinaryFromReader);
+      var value = new librarian_v1_common_pb.App;
+      reader.readMessage(value,librarian_v1_common_pb.App.deserializeBinaryFromReader);
       msg.addApps(value);
       break;
     default:
@@ -2527,7 +2527,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.serializeBinaryToWriter = function(
     writer.writeRepeatedMessage(
       2,
       f,
-      librarian_v1_common_pb.AppMixed.serializeBinaryToWriter
+      librarian_v1_common_pb.App.serializeBinaryToWriter
     );
   }
 };
@@ -2571,17 +2571,17 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.hasPaging = function() {
 
 
 /**
- * repeated librarian.v1.AppMixed apps = 2;
- * @return {!Array<!proto.librarian.v1.AppMixed>}
+ * repeated librarian.v1.App apps = 2;
+ * @return {!Array<!proto.librarian.v1.App>}
  */
 proto.librarian.sephirah.v1.ListAppsResponse.prototype.getAppsList = function() {
-  return /** @type{!Array<!proto.librarian.v1.AppMixed>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.AppMixed, 2));
+  return /** @type{!Array<!proto.librarian.v1.App>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.App, 2));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.v1.AppMixed>} value
+ * @param {!Array<!proto.librarian.v1.App>} value
  * @return {!proto.librarian.sephirah.v1.ListAppsResponse} returns this
 */
 proto.librarian.sephirah.v1.ListAppsResponse.prototype.setAppsList = function(value) {
@@ -2590,12 +2590,12 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.setAppsList = function(va
 
 
 /**
- * @param {!proto.librarian.v1.AppMixed=} opt_value
+ * @param {!proto.librarian.v1.App=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.v1.AppMixed}
+ * @return {!proto.librarian.v1.App}
  */
 proto.librarian.sephirah.v1.ListAppsResponse.prototype.addApps = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.AppMixed, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.App, opt_index);
 };
 
 
@@ -5112,7 +5112,7 @@ proto.librarian.sephirah.v1.GetPurchasedAppsResponse.prototype.toObject = functi
 proto.librarian.sephirah.v1.GetPurchasedAppsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     appsList: jspb.Message.toObjectList(msg.getAppsList(),
-    librarian_v1_common_pb.App.toObject, includeInstance)
+    librarian_v1_common_pb.AppMixed.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -5150,8 +5150,8 @@ proto.librarian.sephirah.v1.GetPurchasedAppsResponse.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new librarian_v1_common_pb.App;
-      reader.readMessage(value,librarian_v1_common_pb.App.deserializeBinaryFromReader);
+      var value = new librarian_v1_common_pb.AppMixed;
+      reader.readMessage(value,librarian_v1_common_pb.AppMixed.deserializeBinaryFromReader);
       msg.addApps(value);
       break;
     default:
@@ -5188,24 +5188,24 @@ proto.librarian.sephirah.v1.GetPurchasedAppsResponse.serializeBinaryToWriter = f
     writer.writeRepeatedMessage(
       1,
       f,
-      librarian_v1_common_pb.App.serializeBinaryToWriter
+      librarian_v1_common_pb.AppMixed.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated librarian.v1.App apps = 1;
- * @return {!Array<!proto.librarian.v1.App>}
+ * repeated librarian.v1.AppMixed apps = 1;
+ * @return {!Array<!proto.librarian.v1.AppMixed>}
  */
 proto.librarian.sephirah.v1.GetPurchasedAppsResponse.prototype.getAppsList = function() {
-  return /** @type{!Array<!proto.librarian.v1.App>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.App, 1));
+  return /** @type{!Array<!proto.librarian.v1.AppMixed>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.AppMixed, 1));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.v1.App>} value
+ * @param {!Array<!proto.librarian.v1.AppMixed>} value
  * @return {!proto.librarian.sephirah.v1.GetPurchasedAppsResponse} returns this
 */
 proto.librarian.sephirah.v1.GetPurchasedAppsResponse.prototype.setAppsList = function(value) {
@@ -5214,12 +5214,12 @@ proto.librarian.sephirah.v1.GetPurchasedAppsResponse.prototype.setAppsList = fun
 
 
 /**
- * @param {!proto.librarian.v1.App=} opt_value
+ * @param {!proto.librarian.v1.AppMixed=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.v1.App}
+ * @return {!proto.librarian.v1.AppMixed}
  */
 proto.librarian.sephirah.v1.GetPurchasedAppsResponse.prototype.addApps = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.App, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.AppMixed, opt_index);
 };
 
 

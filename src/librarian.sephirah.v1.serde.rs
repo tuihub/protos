@@ -9521,7 +9521,7 @@ impl serde::Serialize for ListNotifyTargetsRequest {
         if !self.id_filter.is_empty() {
             len += 1;
         }
-        if !self.type_filter.is_empty() {
+        if !self.destination_filter.is_empty() {
             len += 1;
         }
         if !self.status_filter.is_empty() {
@@ -9534,8 +9534,8 @@ impl serde::Serialize for ListNotifyTargetsRequest {
         if !self.id_filter.is_empty() {
             struct_ser.serialize_field("idFilter", &self.id_filter)?;
         }
-        if !self.type_filter.is_empty() {
-            struct_ser.serialize_field("typeFilter", &self.type_filter)?;
+        if !self.destination_filter.is_empty() {
+            struct_ser.serialize_field("destinationFilter", &self.destination_filter)?;
         }
         if !self.status_filter.is_empty() {
             let v = self.status_filter.iter().cloned().map(|v| {
@@ -9557,8 +9557,8 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
             "paging",
             "id_filter",
             "idFilter",
-            "type_filter",
-            "typeFilter",
+            "destination_filter",
+            "destinationFilter",
             "status_filter",
             "statusFilter",
         ];
@@ -9567,7 +9567,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
         enum GeneratedField {
             Paging,
             IdFilter,
-            TypeFilter,
+            DestinationFilter,
             StatusFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -9592,7 +9592,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
                             "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
-                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
+                            "destinationFilter" | "destination_filter" => Ok(GeneratedField::DestinationFilter),
                             "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -9615,7 +9615,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
             {
                 let mut paging__ = None;
                 let mut id_filter__ = None;
-                let mut type_filter__ = None;
+                let mut destination_filter__ = None;
                 let mut status_filter__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -9631,11 +9631,11 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                             }
                             id_filter__ = Some(map.next_value()?);
                         }
-                        GeneratedField::TypeFilter => {
-                            if type_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("typeFilter"));
+                        GeneratedField::DestinationFilter => {
+                            if destination_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("destinationFilter"));
                             }
-                            type_filter__ = Some(map.next_value()?);
+                            destination_filter__ = Some(map.next_value()?);
                         }
                         GeneratedField::StatusFilter => {
                             if status_filter__.is_some() {
@@ -9648,7 +9648,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                 Ok(ListNotifyTargetsRequest {
                     paging: paging__,
                     id_filter: id_filter__.unwrap_or_default(),
-                    type_filter: type_filter__.unwrap_or_default(),
+                    destination_filter: destination_filter__.unwrap_or_default(),
                     status_filter: status_filter__.unwrap_or_default(),
                 })
             }
@@ -11002,7 +11002,7 @@ impl serde::Serialize for NotifyTarget {
         if !self.description.is_empty() {
             len += 1;
         }
-        if !self.r#type.is_empty() {
+        if !self.destination.is_empty() {
             len += 1;
         }
         if self.status != 0 {
@@ -11021,8 +11021,8 @@ impl serde::Serialize for NotifyTarget {
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
-        if !self.r#type.is_empty() {
-            struct_ser.serialize_field("type", &self.r#type)?;
+        if !self.destination.is_empty() {
+            struct_ser.serialize_field("destination", &self.destination)?;
         }
         if self.status != 0 {
             let v = NotifyTargetStatus::from_i32(self.status)
@@ -11045,7 +11045,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
             "id",
             "name",
             "description",
-            "type",
+            "destination",
             "status",
             "token",
         ];
@@ -11055,7 +11055,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
             Id,
             Name,
             Description,
-            Type,
+            Destination,
             Status,
             Token,
         }
@@ -11082,7 +11082,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             "id" => Ok(GeneratedField::Id),
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
-                            "type" => Ok(GeneratedField::Type),
+                            "destination" => Ok(GeneratedField::Destination),
                             "status" => Ok(GeneratedField::Status),
                             "token" => Ok(GeneratedField::Token),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -11107,7 +11107,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                 let mut id__ = None;
                 let mut name__ = None;
                 let mut description__ = None;
-                let mut r#type__ = None;
+                let mut destination__ = None;
                 let mut status__ = None;
                 let mut token__ = None;
                 while let Some(k) = map.next_key()? {
@@ -11130,11 +11130,11 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             }
                             description__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Type => {
-                            if r#type__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("type"));
+                        GeneratedField::Destination => {
+                            if destination__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("destination"));
                             }
-                            r#type__ = Some(map.next_value()?);
+                            destination__ = Some(map.next_value()?);
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
@@ -11154,7 +11154,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                     id: id__,
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
-                    r#type: r#type__.unwrap_or_default(),
+                    destination: destination__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     token: token__.unwrap_or_default(),
                 })

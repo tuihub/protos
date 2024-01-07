@@ -37,34 +37,34 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "dXJjZUZpbHRlchI2Cgt0eXBlX2ZpbHRlchgDIAMoDjIVLmxpYnJhcmlhbi52",
             "MS5BcHBUeXBlUgp0eXBlRmlsdGVyEjUKCWlkX2ZpbHRlchgEIAMoCzIYLmxp",
             "YnJhcmlhbi52MS5JbnRlcm5hbElEUghpZEZpbHRlchInCg9jb250YWluX2Rl",
-            "dGFpbHMYBSABKAhSDmNvbnRhaW5EZXRhaWxzInQKEExpc3RBcHBzUmVzcG9u",
+            "dGFpbHMYBSABKAhSDmNvbnRhaW5EZXRhaWxzIm8KEExpc3RBcHBzUmVzcG9u",
             "c2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3Bv",
-            "bnNlUgZwYWdpbmcSKgoEYXBwcxgCIAMoCzIWLmxpYnJhcmlhbi52MS5BcHBN",
-            "aXhlZFIEYXBwcyI9Cg9TeW5jQXBwc1JlcXVlc3QSKgoGYXBwX2lkGAEgASgL",
-            "MhMubGlicmFyaWFuLnYxLkFwcElEUgVhcHBJZCISChBTeW5jQXBwc1Jlc3Bv",
-            "bnNlImsKEE1lcmdlQXBwc1JlcXVlc3QSJQoEYmFzZRgBIAEoCzIRLmxpYnJh",
-            "cmlhbi52MS5BcHBSBGJhc2USMAoGbWVyZ2VkGAIgASgLMhgubGlicmFyaWFu",
-            "LnYxLkludGVybmFsSURSBm1lcmdlZCITChFNZXJnZUFwcHNSZXNwb25zZSJC",
-            "Cg5QaWNrQXBwUmVxdWVzdBIwCgZwaWNrZWQYASABKAsyGC5saWJyYXJpYW4u",
-            "djEuSW50ZXJuYWxJRFIGcGlja2VkIhEKD1BpY2tBcHBSZXNwb25zZSJQChZT",
-            "eW5jQWNjb3VudEFwcHNSZXF1ZXN0EjYKCmFjY291bnRfaWQYASABKAsyFy5s",
-            "aWJyYXJpYW4udjEuQWNjb3VudElEUglhY2NvdW50SWQiGQoXU3luY0FjY291",
-            "bnRBcHBzUmVzcG9uc2UiZAoRU2VhcmNoQXBwc1JlcXVlc3QSMwoGcGFnaW5n",
-            "GAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxIa",
-            "CghrZXl3b3JkcxgCIAEoCVIIa2V5d29yZHMidgoSU2VhcmNoQXBwc1Jlc3Bv",
-            "bnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNw",
-            "b25zZVIGcGFnaW5nEioKBGFwcHMYAiADKAsyFi5saWJyYXJpYW4udjEuQXBw",
-            "TWl4ZWRSBGFwcHMiQAoNR2V0QXBwUmVxdWVzdBIvCgZhcHBfaWQYASABKAsy",
-            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQiNQoOR2V0QXBwUmVz",
-            "cG9uc2USIwoDYXBwGAEgASgLMhEubGlicmFyaWFuLnYxLkFwcFIDYXBwIkYK",
-            "E0dldEJvdW5kQXBwc1JlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFy",
-            "aWFuLnYxLkludGVybmFsSURSBWFwcElkIj0KFEdldEJvdW5kQXBwc1Jlc3Bv",
-            "bnNlEiUKBGFwcHMYASADKAsyES5saWJyYXJpYW4udjEuQXBwUgRhcHBzIkUK",
-            "ElB1cmNoYXNlQXBwUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFIFYXBwSWQiFQoTUHVyY2hhc2VBcHBSZXNwb25z",
-            "ZSJBChdHZXRQdXJjaGFzZWRBcHBzUmVxdWVzdBIbCgZzb3VyY2UYASABKAlI",
-            "AFIGc291cmNliAEBQgkKB19zb3VyY2UiQQoYR2V0UHVyY2hhc2VkQXBwc1Jl",
-            "c3BvbnNlEiUKBGFwcHMYASADKAsyES5saWJyYXJpYW4udjEuQXBwUgRhcHBz",
+            "bnNlUgZwYWdpbmcSJQoEYXBwcxgCIAMoCzIRLmxpYnJhcmlhbi52MS5BcHBS",
+            "BGFwcHMiPQoPU3luY0FwcHNSZXF1ZXN0EioKBmFwcF9pZBgBIAEoCzITLmxp",
+            "YnJhcmlhbi52MS5BcHBJRFIFYXBwSWQiEgoQU3luY0FwcHNSZXNwb25zZSJr",
+            "ChBNZXJnZUFwcHNSZXF1ZXN0EiUKBGJhc2UYASABKAsyES5saWJyYXJpYW4u",
+            "djEuQXBwUgRiYXNlEjAKBm1lcmdlZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5J",
+            "bnRlcm5hbElEUgZtZXJnZWQiEwoRTWVyZ2VBcHBzUmVzcG9uc2UiQgoOUGlj",
+            "a0FwcFJlcXVlc3QSMAoGcGlja2VkGAEgASgLMhgubGlicmFyaWFuLnYxLklu",
+            "dGVybmFsSURSBnBpY2tlZCIRCg9QaWNrQXBwUmVzcG9uc2UiUAoWU3luY0Fj",
+            "Y291bnRBcHBzUmVxdWVzdBI2CgphY2NvdW50X2lkGAEgASgLMhcubGlicmFy",
+            "aWFuLnYxLkFjY291bnRJRFIJYWNjb3VudElkIhkKF1N5bmNBY2NvdW50QXBw",
+            "c1Jlc3BvbnNlImQKEVNlYXJjaEFwcHNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEo",
+            "CzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSGgoIa2V5",
+            "d29yZHMYAiABKAlSCGtleXdvcmRzInYKElNlYXJjaEFwcHNSZXNwb25zZRI0",
+            "CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VS",
+            "BnBhZ2luZxIqCgRhcHBzGAIgAygLMhYubGlicmFyaWFuLnYxLkFwcE1peGVk",
+            "UgRhcHBzIkAKDUdldEFwcFJlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkIjUKDkdldEFwcFJlc3BvbnNl",
+            "EiMKA2FwcBgBIAEoCzIRLmxpYnJhcmlhbi52MS5BcHBSA2FwcCJGChNHZXRC",
+            "b3VuZEFwcHNSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52",
+            "MS5JbnRlcm5hbElEUgVhcHBJZCI9ChRHZXRCb3VuZEFwcHNSZXNwb25zZRIl",
+            "CgRhcHBzGAEgAygLMhEubGlicmFyaWFuLnYxLkFwcFIEYXBwcyJFChJQdXJj",
+            "aGFzZUFwcFJlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURSBWFwcElkIhUKE1B1cmNoYXNlQXBwUmVzcG9uc2UiQQoX",
+            "R2V0UHVyY2hhc2VkQXBwc1JlcXVlc3QSGwoGc291cmNlGAEgASgJSABSBnNv",
+            "dXJjZYgBAUIJCgdfc291cmNlIkYKGEdldFB1cmNoYXNlZEFwcHNSZXNwb25z",
+            "ZRIqCgRhcHBzGAEgAygLMhYubGlicmFyaWFuLnYxLkFwcE1peGVkUgRhcHBz",
             "IlQKF0NyZWF0ZUFwcFBhY2thZ2VSZXF1ZXN0EjkKC2FwcF9wYWNrYWdlGAEg",
             "ASgLMhgubGlicmFyaWFuLnYxLkFwcFBhY2thZ2VSCmFwcFBhY2thZ2UiRAoY",
             "Q3JlYXRlQXBwUGFja2FnZVJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFy",
@@ -1364,12 +1364,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "apps" field.</summary>
     public const int AppsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.AppMixed> _repeated_apps_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.AppMixed.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppMixed> apps_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppMixed>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.App> _repeated_apps_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.App.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.App> apps_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.App>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppMixed> Apps {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.App> Apps {
       get { return apps_; }
     }
 
@@ -4822,15 +4822,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "apps" field.</summary>
     public const int AppsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.App> _repeated_apps_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.App.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.App> apps_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.App>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.AppMixed> _repeated_apps_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.AppMixed.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppMixed> apps_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppMixed>();
     /// <summary>
     /// without details
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.App> Apps {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppMixed> Apps {
       get { return apps_; }
     }
 

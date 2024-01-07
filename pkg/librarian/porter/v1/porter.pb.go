@@ -700,7 +700,7 @@ type PushFeedItemsRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// WellKnownNotifyTargetType
+	// WellKnownNotifyDestination
 	Destination string         `protobuf:"bytes,1,opt,name=destination,proto3" json:"destination,omitempty"`
 	ChannelId   string         `protobuf:"bytes,2,opt,name=channel_id,json=channelId,proto3" json:"channel_id,omitempty"`
 	Items       []*v1.FeedItem `protobuf:"bytes,3,rep,name=items,proto3" json:"items,omitempty"`

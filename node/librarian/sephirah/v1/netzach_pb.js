@@ -995,7 +995,7 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.toObject = function(include
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    destinationFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     statusFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
@@ -1045,7 +1045,7 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.deserializeBinaryFromReader
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.addTypeFilter(value);
+      msg.addDestinationFilter(value);
       break;
     case 4:
       var values = /** @type {!Array<!proto.librarian.sephirah.v1.NotifyTargetStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
@@ -1098,7 +1098,7 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.serializeBinaryToWriter = f
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getTypeFilterList();
+  f = message.getDestinationFilterList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
@@ -1191,10 +1191,10 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.clearIdFilterList
 
 
 /**
- * repeated string type_filter = 3;
+ * repeated string destination_filter = 3;
  * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.getTypeFilterList = function() {
+proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.getDestinationFilterList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
@@ -1203,7 +1203,7 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.getTypeFilterList
  * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.ListNotifyTargetsRequest} returns this
  */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.setTypeFilterList = function(value) {
+proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.setDestinationFilterList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -1213,7 +1213,7 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.setTypeFilterList
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.ListNotifyTargetsRequest} returns this
  */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.addTypeFilter = function(value, opt_index) {
+proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.addDestinationFilter = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
@@ -1222,8 +1222,8 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.addTypeFilter = f
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ListNotifyTargetsRequest} returns this
  */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.clearTypeFilterList = function() {
-  return this.setTypeFilterList([]);
+proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.clearDestinationFilterList = function() {
+  return this.setDestinationFilterList([]);
 };
 
 
@@ -2486,7 +2486,7 @@ proto.librarian.sephirah.v1.NotifyTarget.toObject = function(includeInstance, ms
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    destination: jspb.Message.getFieldWithDefault(msg, 4, ""),
     status: jspb.Message.getFieldWithDefault(msg, 5, 0),
     token: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
@@ -2540,7 +2540,7 @@ proto.librarian.sephirah.v1.NotifyTarget.deserializeBinaryFromReader = function(
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setDestination(value);
       break;
     case 5:
       var value = /** @type {!proto.librarian.sephirah.v1.NotifyTargetStatus} */ (reader.readEnum());
@@ -2601,7 +2601,7 @@ proto.librarian.sephirah.v1.NotifyTarget.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getType();
+  f = message.getDestination();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -2699,10 +2699,10 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.setDescription = function(val
 
 
 /**
- * optional string type = 4;
+ * optional string destination = 4;
  * @return {string}
  */
-proto.librarian.sephirah.v1.NotifyTarget.prototype.getType = function() {
+proto.librarian.sephirah.v1.NotifyTarget.prototype.getDestination = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -2711,7 +2711,7 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.getType = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
  */
-proto.librarian.sephirah.v1.NotifyTarget.prototype.setType = function(value) {
+proto.librarian.sephirah.v1.NotifyTarget.prototype.setDestination = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 

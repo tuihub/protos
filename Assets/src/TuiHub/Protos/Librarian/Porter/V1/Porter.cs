@@ -3126,7 +3126,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     public const int DestinationFieldNumber = 1;
     private string destination_ = "";
     /// <summary>
-    /// WellKnownNotifyTargetType
+    /// WellKnownNotifyDestination
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
