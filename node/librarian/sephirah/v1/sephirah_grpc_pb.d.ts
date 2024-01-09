@@ -24,7 +24,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   linkAccount: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>;
   unLinkAccount: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>;
   listLinkAccounts: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>;
-  listPorter: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListPorterRequest, librarian_sephirah_v1_tiphereth_pb.ListPorterResponse>;
+  listPorters: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>;
   updatePorterStatus: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>;
   updatePorterPrivilege: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>;
   uploadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
@@ -110,7 +110,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   linkAccount: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.LinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.LinkAccountResponse>;
   unLinkAccount: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UnLinkAccountRequest, librarian_sephirah_v1_tiphereth_pb.UnLinkAccountResponse>;
   listLinkAccounts: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>;
-  listPorter: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListPorterRequest, librarian_sephirah_v1_tiphereth_pb.ListPorterResponse>;
+  listPorters: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>;
   updatePorterStatus: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>;
   updatePorterPrivilege: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>;
   uploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
@@ -217,9 +217,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   listLinkAccounts(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>): grpc.ClientUnaryCall;
   listLinkAccounts(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>): grpc.ClientUnaryCall;
   listLinkAccounts(argument: librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>): grpc.ClientUnaryCall;
-  listPorter(argument: librarian_sephirah_v1_tiphereth_pb.ListPorterRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPorterResponse>): grpc.ClientUnaryCall;
-  listPorter(argument: librarian_sephirah_v1_tiphereth_pb.ListPorterRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPorterResponse>): grpc.ClientUnaryCall;
-  listPorter(argument: librarian_sephirah_v1_tiphereth_pb.ListPorterRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPorterResponse>): grpc.ClientUnaryCall;
+  listPorters(argument: librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>): grpc.ClientUnaryCall;
+  listPorters(argument: librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>): grpc.ClientUnaryCall;
+  listPorters(argument: librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>): grpc.ClientUnaryCall;
   updatePorterStatus(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>): grpc.ClientUnaryCall;
   updatePorterStatus(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>): grpc.ClientUnaryCall;
   updatePorterStatus(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>): grpc.ClientUnaryCall;

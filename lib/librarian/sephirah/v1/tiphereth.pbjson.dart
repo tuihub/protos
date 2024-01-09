@@ -314,33 +314,33 @@ final $typed_data.Uint8List listLinkAccountsResponseDescriptor = $convert.base64
     'ChhMaXN0TGlua0FjY291bnRzUmVzcG9uc2USMQoIYWNjb3VudHMYASADKAsyFS5saWJyYXJpYW'
     '4udjEuQWNjb3VudFIIYWNjb3VudHM=');
 
-@$core.Deprecated('Use listPorterRequestDescriptor instead')
-const ListPorterRequest$json = {
-  '1': 'ListPorterRequest',
+@$core.Deprecated('Use listPortersRequestDescriptor instead')
+const ListPortersRequest$json = {
+  '1': 'ListPortersRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
   ],
 };
 
-/// Descriptor for `ListPorterRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listPorterRequestDescriptor = $convert.base64Decode(
-    'ChFMaXN0UG9ydGVyUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW'
-    '5nUmVxdWVzdFIGcGFnaW5n');
+/// Descriptor for `ListPortersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPortersRequestDescriptor = $convert.base64Decode(
+    'ChJMaXN0UG9ydGVyc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2'
+    'luZ1JlcXVlc3RSBnBhZ2luZw==');
 
-@$core.Deprecated('Use listPorterResponseDescriptor instead')
-const ListPorterResponse$json = {
-  '1': 'ListPorterResponse',
+@$core.Deprecated('Use listPortersResponseDescriptor instead')
+const ListPortersResponse$json = {
+  '1': 'ListPortersResponse',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
     {'1': 'porters', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.Porter', '10': 'porters'},
   ],
 };
 
-/// Descriptor for `ListPorterResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listPorterResponseDescriptor = $convert.base64Decode(
-    'ChJMaXN0UG9ydGVyUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2'
-    'luZ1Jlc3BvbnNlUgZwYWdpbmcSNwoHcG9ydGVycxgCIAMoCzIdLmxpYnJhcmlhbi5zZXBoaXJh'
-    'aC52MS5Qb3J0ZXJSB3BvcnRlcnM=');
+/// Descriptor for `ListPortersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPortersResponseDescriptor = $convert.base64Decode(
+    'ChNMaXN0UG9ydGVyc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYW'
+    'dpbmdSZXNwb25zZVIGcGFnaW5nEjcKB3BvcnRlcnMYAiADKAsyHS5saWJyYXJpYW4uc2VwaGly'
+    'YWgudjEuUG9ydGVyUgdwb3J0ZXJz');
 
 @$core.Deprecated('Use updatePorterStatusRequestDescriptor instead')
 const UpdatePorterStatusRequest$json = {

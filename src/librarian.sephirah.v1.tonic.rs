@@ -437,11 +437,11 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Tiphereth` `Normal`
 */
-        pub async fn list_porter(
+        pub async fn list_porters(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListPorterRequest>,
+            request: impl tonic::IntoRequest<super::ListPortersRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ListPorterResponse>,
+            tonic::Response<super::ListPortersResponse>,
             tonic::Status,
         > {
             self.inner
@@ -455,14 +455,14 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorter",
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorters",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
-                        "ListPorter",
+                        "ListPorters",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -2778,11 +2778,11 @@ pub mod librarian_sephirah_service_server {
         >;
         /** `Tiphereth` `Normal`
 */
-        async fn list_porter(
+        async fn list_porters(
             &self,
-            request: tonic::Request<super::ListPorterRequest>,
+            request: tonic::Request<super::ListPortersRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ListPorterResponse>,
+            tonic::Response<super::ListPortersResponse>,
             tonic::Status,
         >;
         /** `Tiphereth` `Admin`
@@ -4011,24 +4011,26 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorter" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorters" => {
                     #[allow(non_camel_case_types)]
-                    struct ListPorterSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct ListPortersSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListPorterRequest>
-                    for ListPorterSvc<T> {
-                        type Response = super::ListPorterResponse;
+                    > tonic::server::UnaryService<super::ListPortersRequest>
+                    for ListPortersSvc<T> {
+                        type Response = super::ListPortersResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ListPorterRequest>,
+                            request: tonic::Request<super::ListPortersRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).list_porter(request).await };
+                            let fut = async move {
+                                (*inner).list_porters(request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -4039,7 +4041,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListPorterSvc(inner);
+                        let method = ListPortersSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

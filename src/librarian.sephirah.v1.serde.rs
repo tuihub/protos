@@ -9764,7 +9764,7 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListNotifyTargetsResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ListPorterRequest {
+impl serde::Serialize for ListPortersRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -9775,14 +9775,14 @@ impl serde::Serialize for ListPorterRequest {
         if self.paging.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPorterRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPortersRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for ListPorterRequest {
+impl<'de> serde::Deserialize<'de> for ListPortersRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -9826,13 +9826,13 @@ impl<'de> serde::Deserialize<'de> for ListPorterRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListPorterRequest;
+            type Value = ListPortersRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListPorterRequest")
+                formatter.write_str("struct librarian.sephirah.v1.ListPortersRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListPorterRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListPortersRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -9847,15 +9847,15 @@ impl<'de> serde::Deserialize<'de> for ListPorterRequest {
                         }
                     }
                 }
-                Ok(ListPorterRequest {
+                Ok(ListPortersRequest {
                     paging: paging__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListPorterRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListPortersRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ListPorterResponse {
+impl serde::Serialize for ListPortersResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -9869,7 +9869,7 @@ impl serde::Serialize for ListPorterResponse {
         if !self.porters.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPorterResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPortersResponse", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
@@ -9879,7 +9879,7 @@ impl serde::Serialize for ListPorterResponse {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for ListPorterResponse {
+impl<'de> serde::Deserialize<'de> for ListPortersResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -9926,13 +9926,13 @@ impl<'de> serde::Deserialize<'de> for ListPorterResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListPorterResponse;
+            type Value = ListPortersResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListPorterResponse")
+                formatter.write_str("struct librarian.sephirah.v1.ListPortersResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListPorterResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListPortersResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -9954,13 +9954,13 @@ impl<'de> serde::Deserialize<'de> for ListPorterResponse {
                         }
                     }
                 }
-                Ok(ListPorterResponse {
+                Ok(ListPortersResponse {
                     paging: paging__,
                     porters: porters__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListPorterResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListPortersResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ListUsersRequest {

@@ -71,10 +71,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts',
       ($1.ListLinkAccountsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.ListLinkAccountsResponse.fromBuffer(value));
-  static final _$listPorter = $grpc.ClientMethod<$1.ListPorterRequest, $1.ListPorterResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/ListPorter',
-      ($1.ListPorterRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.ListPorterResponse.fromBuffer(value));
+  static final _$listPorters = $grpc.ClientMethod<$1.ListPortersRequest, $1.ListPortersResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListPorters',
+      ($1.ListPortersRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ListPortersResponse.fromBuffer(value));
   static final _$updatePorterStatus = $grpc.ClientMethod<$1.UpdatePorterStatusRequest, $1.UpdatePorterStatusResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus',
       ($1.UpdatePorterStatusRequest value) => value.writeToBuffer(),
@@ -402,8 +402,8 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listLinkAccounts, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.ListPorterResponse> listPorter($1.ListPorterRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listPorter, request, options: options);
+  $grpc.ResponseFuture<$1.ListPortersResponse> listPorters($1.ListPortersRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listPorters, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.UpdatePorterStatusResponse> updatePorterStatus($1.UpdatePorterStatusRequest request, {$grpc.CallOptions? options}) {
@@ -765,13 +765,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.ListLinkAccountsRequest.fromBuffer(value),
         ($1.ListLinkAccountsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.ListPorterRequest, $1.ListPorterResponse>(
-        'ListPorter',
-        listPorter_Pre,
+    $addMethod($grpc.ServiceMethod<$1.ListPortersRequest, $1.ListPortersResponse>(
+        'ListPorters',
+        listPorters_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.ListPorterRequest.fromBuffer(value),
-        ($1.ListPorterResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $1.ListPortersRequest.fromBuffer(value),
+        ($1.ListPortersResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.UpdatePorterStatusRequest, $1.UpdatePorterStatusResponse>(
         'UpdatePorterStatus',
         updatePorterStatus_Pre,
@@ -1301,8 +1301,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listLinkAccounts(call, await request);
   }
 
-  $async.Future<$1.ListPorterResponse> listPorter_Pre($grpc.ServiceCall call, $async.Future<$1.ListPorterRequest> request) async {
-    return listPorter(call, await request);
+  $async.Future<$1.ListPortersResponse> listPorters_Pre($grpc.ServiceCall call, $async.Future<$1.ListPortersRequest> request) async {
+    return listPorters(call, await request);
   }
 
   $async.Future<$1.UpdatePorterStatusResponse> updatePorterStatus_Pre($grpc.ServiceCall call, $async.Future<$1.UpdatePorterStatusRequest> request) async {
@@ -1576,7 +1576,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.LinkAccountResponse> linkAccount($grpc.ServiceCall call, $1.LinkAccountRequest request);
   $async.Future<$1.UnLinkAccountResponse> unLinkAccount($grpc.ServiceCall call, $1.UnLinkAccountRequest request);
   $async.Future<$1.ListLinkAccountsResponse> listLinkAccounts($grpc.ServiceCall call, $1.ListLinkAccountsRequest request);
-  $async.Future<$1.ListPorterResponse> listPorter($grpc.ServiceCall call, $1.ListPorterRequest request);
+  $async.Future<$1.ListPortersResponse> listPorters($grpc.ServiceCall call, $1.ListPortersRequest request);
   $async.Future<$1.UpdatePorterStatusResponse> updatePorterStatus($grpc.ServiceCall call, $1.UpdatePorterStatusRequest request);
   $async.Future<$1.UpdatePorterPrivilegeResponse> updatePorterPrivilege($grpc.ServiceCall call, $1.UpdatePorterPrivilegeRequest request);
   $async.Stream<$2.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$2.UploadFileRequest> request);

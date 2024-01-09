@@ -30,7 +30,7 @@ const (
 	LibrarianSephirahService_LinkAccount_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount"
 	LibrarianSephirahService_UnLinkAccount_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount"
 	LibrarianSephirahService_ListLinkAccounts_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts"
-	LibrarianSephirahService_ListPorter_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorter"
+	LibrarianSephirahService_ListPorters_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorters"
 	LibrarianSephirahService_UpdatePorterStatus_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus"
 	LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege"
 	LibrarianSephirahService_UploadFile_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile"
@@ -132,7 +132,7 @@ type LibrarianSephirahServiceClient interface {
 	// Match ()<-[Equal]->(current user)
 	ListLinkAccounts(ctx context.Context, in *ListLinkAccountsRequest, opts ...grpc.CallOption) (*ListLinkAccountsResponse, error)
 	// `Tiphereth` `Normal`
-	ListPorter(ctx context.Context, in *ListPorterRequest, opts ...grpc.CallOption) (*ListPorterResponse, error)
+	ListPorters(ctx context.Context, in *ListPortersRequest, opts ...grpc.CallOption) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error)
 	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
@@ -394,9 +394,9 @@ func (c *librarianSephirahServiceClient) ListLinkAccounts(ctx context.Context, i
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ListPorter(ctx context.Context, in *ListPorterRequest, opts ...grpc.CallOption) (*ListPorterResponse, error) {
-	out := new(ListPorterResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListPorter_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ListPorters(ctx context.Context, in *ListPortersRequest, opts ...grpc.CallOption) (*ListPortersResponse, error) {
+	out := new(ListPortersResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListPorters_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1165,7 +1165,7 @@ type LibrarianSephirahServiceServer interface {
 	// Match ()<-[Equal]->(current user)
 	ListLinkAccounts(context.Context, *ListLinkAccountsRequest) (*ListLinkAccountsResponse, error)
 	// `Tiphereth` `Normal`
-	ListPorter(context.Context, *ListPorterRequest) (*ListPorterResponse, error)
+	ListPorters(context.Context, *ListPortersRequest) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error)
 	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
@@ -1358,8 +1358,8 @@ func (UnimplementedLibrarianSephirahServiceServer) UnLinkAccount(context.Context
 func (UnimplementedLibrarianSephirahServiceServer) ListLinkAccounts(context.Context, *ListLinkAccountsRequest) (*ListLinkAccountsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListLinkAccounts not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ListPorter(context.Context, *ListPorterRequest) (*ListPorterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListPorter not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListPorters(context.Context, *ListPortersRequest) (*ListPortersResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPorters not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterStatus not implemented")
@@ -1780,20 +1780,20 @@ func _LibrarianSephirahService_ListLinkAccounts_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ListPorter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListPorterRequest)
+func _LibrarianSephirahService_ListPorters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPortersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListPorter(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListPorters(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListPorter_FullMethodName,
+		FullMethod: LibrarianSephirahService_ListPorters_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListPorter(ctx, req.(*ListPorterRequest))
+		return srv.(LibrarianSephirahServiceServer).ListPorters(ctx, req.(*ListPortersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3127,8 +3127,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_ListLinkAccounts_Handler,
 		},
 		{
-			MethodName: "ListPorter",
-			Handler:    _LibrarianSephirahService_ListPorter_Handler,
+			MethodName: "ListPorters",
+			Handler:    _LibrarianSephirahService_ListPorters_Handler,
 		},
 		{
 			MethodName: "UpdatePorterStatus",

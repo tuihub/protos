@@ -454,29 +454,29 @@ export namespace ListLinkAccountsResponse {
   }
 }
 
-export class ListPorterRequest extends jspb.Message {
+export class ListPortersRequest extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListPorterRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListPorterRequest): ListPorterRequest.AsObject;
+  toObject(includeInstance?: boolean): ListPortersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPortersRequest): ListPortersRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListPorterRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListPorterRequest;
-  static deserializeBinaryFromReader(message: ListPorterRequest, reader: jspb.BinaryReader): ListPorterRequest;
+  static serializeBinaryToWriter(message: ListPortersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPortersRequest;
+  static deserializeBinaryFromReader(message: ListPortersRequest, reader: jspb.BinaryReader): ListPortersRequest;
 }
 
-export namespace ListPorterRequest {
+export namespace ListPortersRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
   }
 }
 
-export class ListPorterResponse extends jspb.Message {
+export class ListPortersResponse extends jspb.Message {
   hasPaging(): boolean;
   clearPaging(): void;
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
@@ -488,16 +488,16 @@ export class ListPorterResponse extends jspb.Message {
   addPorters(value?: Porter, index?: number): Porter;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListPorterResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListPorterResponse): ListPorterResponse.AsObject;
+  toObject(includeInstance?: boolean): ListPortersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPortersResponse): ListPortersResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListPorterResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListPorterResponse;
-  static deserializeBinaryFromReader(message: ListPorterResponse, reader: jspb.BinaryReader): ListPorterResponse;
+  static serializeBinaryToWriter(message: ListPortersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPortersResponse;
+  static deserializeBinaryFromReader(message: ListPortersResponse, reader: jspb.BinaryReader): ListPortersResponse;
 }
 
-export namespace ListPorterResponse {
+export namespace ListPortersResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     portersList: Array<Porter.AsObject>,
