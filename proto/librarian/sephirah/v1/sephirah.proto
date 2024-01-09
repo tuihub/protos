@@ -51,7 +51,7 @@ service LibrarianSephirahService {
   rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
 
   // `Tiphereth` `Normal`
-  rpc ListPorter(ListPorterRequest) returns (ListPorterResponse);
+  rpc ListPorters(ListPortersRequest) returns (ListPortersResponse);
   // `Tiphereth` `Admin`
   rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
   // `Tiphereth` `Normal only` Set porter privilege, default none privilege.

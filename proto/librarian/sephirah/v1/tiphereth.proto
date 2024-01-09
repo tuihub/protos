@@ -85,10 +85,10 @@ message ListLinkAccountsResponse {
   repeated librarian.v1.Account accounts = 1;
 }
 
-message ListPorterRequest {
+message ListPortersRequest {
   librarian.v1.PagingRequest paging = 1;
 }
-message ListPorterResponse {
+message ListPortersResponse {
   librarian.v1.PagingResponse paging = 1;
   repeated Porter porters = 2;
 }
