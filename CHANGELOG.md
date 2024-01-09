@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://github.com/tuihub/protos/compare/v0.2.48...v0.3.0) (2024-01-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* porter has completely redesigned, see documents for details
+
+### Features
+
+* make porter pluggable ([4b4644a](https://github.com/tuihub/protos/commit/4b4644a2bbd785116b815b4137a94d84c1c9e808))
+* porter has completely redesigned, see documents for details ([29059b3](https://github.com/tuihub/protos/commit/29059b323761de5c51dfe2af93dede8597a3b9cf))
+
+
+### Bug Fixes
+
+* correct fields name ([5da322f](https://github.com/tuihub/protos/commit/5da322f531e32616e13fa7ae0b350273b21c2126))
+* typo ([5313405](https://github.com/tuihub/protos/commit/5313405ada79db761b287e5f345b72303d0e1a65))
+
 ## [0.2.48](https://github.com/tuihub/protos/compare/v0.2.47...v0.2.48) (2024-01-02)
 
 
