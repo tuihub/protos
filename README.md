@@ -29,13 +29,13 @@ cargo add --git https://github.com/tuihub/protos
 
 ### CSharp
 
-- Check [Package](https://github.com/orgs/tuihub/packages?repo_name=protos) page for pre-packed file
+- Check [Package](https://github.com/orgs/tuihub/packages?repo_name=protos) page or [nuget](https://www.nuget.org/packages/TuiHub.Protos) for pre-packed file
 - Or pack locally
 
 ```bash
 git clone https://github.com/tuihub/protos && cd protos
-# How to install `nuget`: https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools
-nuget pack TuiHub.Protos.nuspec
+# How to install `dotnet`: https://learn.microsoft.com/en-us/dotnet/core/install/
+dotnet pack TuiHub.Protos.csproj -c Release
 ```
 
 ### Dart
