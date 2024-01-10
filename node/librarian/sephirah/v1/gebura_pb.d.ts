@@ -94,6 +94,9 @@ export class ListAppsRequest extends jspb.Message {
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
+  getExcludeInternal(): boolean;
+  setExcludeInternal(value: boolean): void;
+
   clearSourceFilterList(): void;
   getSourceFilterList(): Array<string>;
   setSourceFilterList(value: Array<string>): void;
@@ -125,6 +128,7 @@ export class ListAppsRequest extends jspb.Message {
 export namespace ListAppsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    excludeInternal: boolean,
     sourceFilterList: Array<string>,
     typeFilterList: Array<librarian_v1_common_pb.AppTypeMap[keyof librarian_v1_common_pb.AppTypeMap]>,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,

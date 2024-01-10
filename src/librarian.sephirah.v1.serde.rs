@@ -6869,6 +6869,9 @@ impl serde::Serialize for ListAppsRequest {
         if self.paging.is_some() {
             len += 1;
         }
+        if self.exclude_internal {
+            len += 1;
+        }
         if !self.source_filter.is_empty() {
             len += 1;
         }
@@ -6884,6 +6887,9 @@ impl serde::Serialize for ListAppsRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
+        }
+        if self.exclude_internal {
+            struct_ser.serialize_field("excludeInternal", &self.exclude_internal)?;
         }
         if !self.source_filter.is_empty() {
             struct_ser.serialize_field("sourceFilter", &self.source_filter)?;
@@ -6912,6 +6918,8 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "exclude_internal",
+            "excludeInternal",
             "source_filter",
             "sourceFilter",
             "type_filter",
@@ -6925,6 +6933,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
+            ExcludeInternal,
             SourceFilter,
             TypeFilter,
             IdFilter,
@@ -6951,6 +6960,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
+                            "excludeInternal" | "exclude_internal" => Ok(GeneratedField::ExcludeInternal),
                             "sourceFilter" | "source_filter" => Ok(GeneratedField::SourceFilter),
                             "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
                             "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
@@ -6975,6 +6985,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
+                let mut exclude_internal__ = None;
                 let mut source_filter__ = None;
                 let mut type_filter__ = None;
                 let mut id_filter__ = None;
@@ -6986,6 +6997,12 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
                             paging__ = map.next_value()?;
+                        }
+                        GeneratedField::ExcludeInternal => {
+                            if exclude_internal__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("excludeInternal"));
+                            }
+                            exclude_internal__ = Some(map.next_value()?);
                         }
                         GeneratedField::SourceFilter => {
                             if source_filter__.is_some() {
@@ -7015,6 +7032,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                 }
                 Ok(ListAppsRequest {
                     paging: paging__,
+                    exclude_internal: exclude_internal__.unwrap_or_default(),
                     source_filter: source_filter__.unwrap_or_default(),
                     type_filter: type_filter__.unwrap_or_default(),
                     id_filter: id_filter__.unwrap_or_default(),

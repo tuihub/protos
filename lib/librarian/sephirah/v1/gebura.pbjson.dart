@@ -83,20 +83,22 @@ const ListAppsRequest$json = {
   '1': 'ListAppsRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'source_filter', '3': 2, '4': 3, '5': 9, '10': 'sourceFilter'},
-    {'1': 'type_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.v1.AppType', '10': 'typeFilter'},
-    {'1': 'id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'contain_details', '3': 5, '4': 1, '5': 8, '10': 'containDetails'},
+    {'1': 'exclude_internal', '3': 2, '4': 1, '5': 8, '10': 'excludeInternal'},
+    {'1': 'source_filter', '3': 3, '4': 3, '5': 9, '10': 'sourceFilter'},
+    {'1': 'type_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.v1.AppType', '10': 'typeFilter'},
+    {'1': 'id_filter', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {'1': 'contain_details', '3': 6, '4': 1, '5': 8, '10': 'containDetails'},
   ],
 };
 
 /// Descriptor for `ListAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0QXBwc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
-    'JlcXVlc3RSBnBhZ2luZxIjCg1zb3VyY2VfZmlsdGVyGAIgAygJUgxzb3VyY2VGaWx0ZXISNgoL'
-    'dHlwZV9maWx0ZXIYAyADKA4yFS5saWJyYXJpYW4udjEuQXBwVHlwZVIKdHlwZUZpbHRlchI1Cg'
-    'lpZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISJwoP'
-    'Y29udGFpbl9kZXRhaWxzGAUgASgIUg5jb250YWluRGV0YWlscw==');
+    'JlcXVlc3RSBnBhZ2luZxIpChBleGNsdWRlX2ludGVybmFsGAIgASgIUg9leGNsdWRlSW50ZXJu'
+    'YWwSIwoNc291cmNlX2ZpbHRlchgDIAMoCVIMc291cmNlRmlsdGVyEjYKC3R5cGVfZmlsdGVyGA'
+    'QgAygOMhUubGlicmFyaWFuLnYxLkFwcFR5cGVSCnR5cGVGaWx0ZXISNQoJaWRfZmlsdGVyGAUg'
+    'AygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCGlkRmlsdGVyEicKD2NvbnRhaW5fZGV0YW'
+    'lscxgGIAEoCFIOY29udGFpbkRldGFpbHM=');
 
 @$core.Deprecated('Use listAppsResponseDescriptor instead')
 const ListAppsResponse$json = {

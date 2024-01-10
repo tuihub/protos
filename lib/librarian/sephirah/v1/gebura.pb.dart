@@ -215,6 +215,7 @@ class UpdateAppResponse extends $pb.GeneratedMessage {
 class ListAppsRequest extends $pb.GeneratedMessage {
   factory ListAppsRequest({
     $7.PagingRequest? paging,
+    $core.bool? excludeInternal,
     $core.Iterable<$core.String>? sourceFilter,
     $core.Iterable<$7.AppType>? typeFilter,
     $core.Iterable<$7.InternalID>? idFilter,
@@ -223,6 +224,9 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     final $result = create();
     if (paging != null) {
       $result.paging = paging;
+    }
+    if (excludeInternal != null) {
+      $result.excludeInternal = excludeInternal;
     }
     if (sourceFilter != null) {
       $result.sourceFilter.addAll(sourceFilter);
@@ -244,10 +248,11 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pPS(2, _omitFieldNames ? '' : 'sourceFilter')
-    ..pc<$7.AppType>(3, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $7.AppType.valueOf, enumValues: $7.AppType.values, defaultEnumValue: $7.AppType.APP_TYPE_UNSPECIFIED)
-    ..pc<$7.InternalID>(4, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..aOB(5, _omitFieldNames ? '' : 'containDetails')
+    ..aOB(2, _omitFieldNames ? '' : 'excludeInternal')
+    ..pPS(3, _omitFieldNames ? '' : 'sourceFilter')
+    ..pc<$7.AppType>(4, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $7.AppType.valueOf, enumValues: $7.AppType.values, defaultEnumValue: $7.AppType.APP_TYPE_UNSPECIFIED)
+    ..pc<$7.InternalID>(5, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOB(6, _omitFieldNames ? '' : 'containDetails')
     ..hasRequiredFields = false
   ;
 
@@ -284,22 +289,31 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   $7.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get sourceFilter => $_getList(1);
+  $core.bool get excludeInternal => $_getBF(1);
+  @$pb.TagNumber(2)
+  set excludeInternal($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasExcludeInternal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExcludeInternal() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$7.AppType> get typeFilter => $_getList(2);
+  $core.List<$core.String> get sourceFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$7.InternalID> get idFilter => $_getList(3);
+  $core.List<$7.AppType> get typeFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.bool get containDetails => $_getBF(4);
-  @$pb.TagNumber(5)
-  set containDetails($core.bool v) { $_setBool(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasContainDetails() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearContainDetails() => clearField(5);
+  $core.List<$7.InternalID> get idFilter => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.bool get containDetails => $_getBF(5);
+  @$pb.TagNumber(6)
+  set containDetails($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasContainDetails() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearContainDetails() => clearField(6);
 }
 
 class ListAppsResponse extends $pb.GeneratedMessage {

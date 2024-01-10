@@ -2062,7 +2062,7 @@ proto.librarian.sephirah.v1.UpdateAppResponse.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListAppsRequest.repeatedFields_ = [2,3,4];
+proto.librarian.sephirah.v1.ListAppsRequest.repeatedFields_ = [3,4,5];
 
 
 
@@ -2096,11 +2096,12 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.toObject = function(opt_in
 proto.librarian.sephirah.v1.ListAppsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    excludeInternal: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    containDetails: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+    containDetails: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -2143,21 +2144,25 @@ proto.librarian.sephirah.v1.ListAppsRequest.deserializeBinaryFromReader = functi
       msg.setPaging(value);
       break;
     case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExcludeInternal(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.addSourceFilter(value);
       break;
-    case 3:
+    case 4:
       var values = /** @type {!Array<!proto.librarian.v1.AppType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addTypeFilter(values[i]);
       }
       break;
-    case 4:
+    case 5:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.addIdFilter(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setContainDetails(value);
       break;
@@ -2198,24 +2203,31 @@ proto.librarian.sephirah.v1.ListAppsRequest.serializeBinaryToWriter = function(m
       librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
     );
   }
+  f = message.getExcludeInternal();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
   f = message.getSourceFilterList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      2,
+      3,
       f
     );
   }
   f = message.getTypeFilterList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      3,
+      4,
       f
     );
   }
   f = message.getIdFilterList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      5,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
@@ -2223,7 +2235,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.serializeBinaryToWriter = function(m
   f = message.getContainDetails();
   if (f) {
     writer.writeBool(
-      5,
+      6,
       f
     );
   }
@@ -2268,11 +2280,29 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.hasPaging = function() {
 
 
 /**
- * repeated string source_filter = 2;
+ * optional bool exclude_internal = 2;
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.getExcludeInternal = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.setExcludeInternal = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * repeated string source_filter = 3;
  * @return {!Array<string>}
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.getSourceFilterList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
@@ -2281,7 +2311,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.getSourceFilterList = func
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.setSourceFilterList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -2291,7 +2321,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.setSourceFilterList = func
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.addSourceFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
@@ -2305,11 +2335,11 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearSourceFilterList = fu
 
 
 /**
- * repeated librarian.v1.AppType type_filter = 3;
+ * repeated librarian.v1.AppType type_filter = 4;
  * @return {!Array<!proto.librarian.v1.AppType>}
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.getTypeFilterList = function() {
-  return /** @type {!Array<!proto.librarian.v1.AppType>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<!proto.librarian.v1.AppType>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
@@ -2318,7 +2348,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.getTypeFilterList = functi
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.setTypeFilterList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 4, value || []);
 };
 
 
@@ -2328,7 +2358,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.setTypeFilterList = functi
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.addTypeFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
 };
 
 
@@ -2342,12 +2372,12 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearTypeFilterList = func
 
 
 /**
- * repeated librarian.v1.InternalID id_filter = 4;
+ * repeated librarian.v1.InternalID id_filter = 5;
  * @return {!Array<!proto.librarian.v1.InternalID>}
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.getIdFilterList = function() {
   return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 4));
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 5));
 };
 
 
@@ -2356,7 +2386,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.getIdFilterList = function
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
 */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.setIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -2366,7 +2396,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.setIdFilterList = function
  * @return {!proto.librarian.v1.InternalID}
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.addIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.librarian.v1.InternalID, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.librarian.v1.InternalID, opt_index);
 };
 
 
@@ -2380,11 +2410,11 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearIdFilterList = functi
 
 
 /**
- * optional bool contain_details = 5;
+ * optional bool contain_details = 6;
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.getContainDetails = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -2393,7 +2423,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.getContainDetails = functi
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.setContainDetails = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 5, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
