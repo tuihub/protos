@@ -174,6 +174,31 @@ final $typed_data.Uint8List pullAccountAppRelationResponseDescriptor = $convert.
     'Ch5QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVzcG9uc2USLAoIYXBwX2xpc3QYASADKAsyES5saW'
     'JyYXJpYW4udjEuQXBwUgdhcHBMaXN0');
 
+@$core.Deprecated('Use searchAppRequestDescriptor instead')
+const SearchAppRequest$json = {
+  '1': 'SearchAppRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `SearchAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchAppRequestDescriptor = $convert.base64Decode(
+    'ChBTZWFyY2hBcHBSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWU=');
+
+@$core.Deprecated('Use searchAppResponseDescriptor instead')
+const SearchAppResponse$json = {
+  '1': 'SearchAppResponse',
+  '2': [
+    {'1': 'app_list', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'appList'},
+  ],
+};
+
+/// Descriptor for `SearchAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchAppResponseDescriptor = $convert.base64Decode(
+    'ChFTZWFyY2hBcHBSZXNwb25zZRIsCghhcHBfbGlzdBgBIAMoCzIRLmxpYnJhcmlhbi52MS5BcH'
+    'BSB2FwcExpc3Q=');
+
 @$core.Deprecated('Use pullFeedRequestDescriptor instead')
 const PullFeedRequest$json = {
   '1': 'PullFeedRequest',

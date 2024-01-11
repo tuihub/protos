@@ -208,6 +208,105 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Tiphereth` `Normal` Client should register device after the first login
+ and store the device_id locally.
+ The server could add extra limits to non-registered device
+*/
+        pub async fn register_device(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RegisterDeviceRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterDeviceResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RegisterDevice",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Tiphereth` `Normal`
+*/
+        pub async fn list_user_sessions(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListUserSessionsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListUserSessionsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListUserSessions",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+ NOTE: This can also be used to logout on server side.
+*/
+        pub async fn delete_user_session(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DeleteUserSessionRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DeleteUserSessionResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "DeleteUserSession",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn create_user(
@@ -2372,8 +2471,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn group_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GroupFeedItemsRequest>,
@@ -2711,6 +2808,36 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<super::GainUserPrivilegeRequest>,
         ) -> std::result::Result<
             tonic::Response<super::GainUserPrivilegeResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `Normal` Client should register device after the first login
+ and store the device_id locally.
+ The server could add extra limits to non-registered device
+*/
+        async fn register_device(
+            &self,
+            request: tonic::Request<super::RegisterDeviceRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterDeviceResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `Normal`
+*/
+        async fn list_user_sessions(
+            &self,
+            request: tonic::Request<super::ListUserSessionsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListUserSessionsResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+ NOTE: This can also be used to logout on server side.
+*/
+        async fn delete_user_session(
+            &self,
+            request: tonic::Request<super::DeleteUserSessionRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DeleteUserSessionResponse>,
             tonic::Status,
         >;
         /** `Tiphereth` `Admin` `Normal limited`
@@ -3360,8 +3487,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedItemsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn group_feed_items(
             &self,
             request: tonic::Request<super::GroupFeedItemsRequest>,
@@ -3682,6 +3807,144 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = GainUserPrivilegeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice" => {
+                    #[allow(non_camel_case_types)]
+                    struct RegisterDeviceSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::RegisterDeviceRequest>
+                    for RegisterDeviceSvc<T> {
+                        type Response = super::RegisterDeviceResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RegisterDeviceRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).register_device(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = RegisterDeviceSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListUserSessionsSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListUserSessionsRequest>
+                    for ListUserSessionsSvc<T> {
+                        type Response = super::ListUserSessionsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListUserSessionsRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_user_sessions(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListUserSessionsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteUserSessionSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::DeleteUserSessionRequest>
+                    for DeleteUserSessionSvc<T> {
+                        type Response = super::DeleteUserSessionResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DeleteUserSessionRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).delete_user_session(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DeleteUserSessionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

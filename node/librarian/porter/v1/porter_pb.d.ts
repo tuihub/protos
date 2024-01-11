@@ -296,6 +296,48 @@ export namespace PullAccountAppRelationResponse {
   }
 }
 
+export class SearchAppRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchAppRequest): SearchAppRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchAppRequest;
+  static deserializeBinaryFromReader(message: SearchAppRequest, reader: jspb.BinaryReader): SearchAppRequest;
+}
+
+export namespace SearchAppRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class SearchAppResponse extends jspb.Message {
+  clearAppListList(): void;
+  getAppListList(): Array<librarian_v1_common_pb.App>;
+  setAppListList(value: Array<librarian_v1_common_pb.App>): void;
+  addAppList(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchAppResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchAppResponse): SearchAppResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchAppResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchAppResponse;
+  static deserializeBinaryFromReader(message: SearchAppResponse, reader: jspb.BinaryReader): SearchAppResponse;
+}
+
+export namespace SearchAppResponse {
+  export type AsObject = {
+    appListList: Array<librarian_v1_common_pb.App.AsObject>,
+  }
+}
+
 export class PullFeedRequest extends jspb.Message {
   getSource(): string;
   setSource(value: string): void;

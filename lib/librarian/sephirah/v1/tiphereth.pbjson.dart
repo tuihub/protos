@@ -52,13 +52,18 @@ const GetTokenRequest$json = {
   '2': [
     {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
+    {'1': 'device_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'deviceId', '17': true},
+  ],
+  '8': [
+    {'1': '_device_id'},
   ],
 };
 
 /// Descriptor for `GetTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getTokenRequestDescriptor = $convert.base64Decode(
     'Cg9HZXRUb2tlblJlcXVlc3QSGgoIdXNlcm5hbWUYASABKAlSCHVzZXJuYW1lEhoKCHBhc3N3b3'
-    'JkGAIgASgJUghwYXNzd29yZA==');
+    'JkGAIgASgJUghwYXNzd29yZBI6CglkZXZpY2VfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50'
+    'ZXJuYWxJREgAUghkZXZpY2VJZIgBAUIMCgpfZGV2aWNlX2lk');
 
 @$core.Deprecated('Use getTokenResponseDescriptor instead')
 const GetTokenResponse$json = {
@@ -122,6 +127,76 @@ const GainUserPrivilegeResponse$json = {
 final $typed_data.Uint8List gainUserPrivilegeResponseDescriptor = $convert.base64Decode(
     'ChlHYWluVXNlclByaXZpbGVnZVJlc3BvbnNlEiEKDGFjY2Vzc190b2tlbhgBIAEoCVILYWNjZX'
     'NzVG9rZW4=');
+
+@$core.Deprecated('Use registerDeviceRequestDescriptor instead')
+const RegisterDeviceRequest$json = {
+  '1': 'RegisterDeviceRequest',
+  '2': [
+    {'1': 'device_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.DeviceInfo', '10': 'deviceInfo'},
+  ],
+};
+
+/// Descriptor for `RegisterDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerDeviceRequestDescriptor = $convert.base64Decode(
+    'ChVSZWdpc3RlckRldmljZVJlcXVlc3QSQgoLZGV2aWNlX2luZm8YASABKAsyIS5saWJyYXJpYW'
+    '4uc2VwaGlyYWgudjEuRGV2aWNlSW5mb1IKZGV2aWNlSW5mbw==');
+
+@$core.Deprecated('Use registerDeviceResponseDescriptor instead')
+const RegisterDeviceResponse$json = {
+  '1': 'RegisterDeviceResponse',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `RegisterDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerDeviceResponseDescriptor = $convert.base64Decode(
+    'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
+    '52MS5JbnRlcm5hbElEUghkZXZpY2VJZA==');
+
+@$core.Deprecated('Use listUserSessionsRequestDescriptor instead')
+const ListUserSessionsRequest$json = {
+  '1': 'ListUserSessionsRequest',
+};
+
+/// Descriptor for `ListUserSessionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUserSessionsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0VXNlclNlc3Npb25zUmVxdWVzdA==');
+
+@$core.Deprecated('Use listUserSessionsResponseDescriptor instead')
+const ListUserSessionsResponse$json = {
+  '1': 'ListUserSessionsResponse',
+  '2': [
+    {'1': 'sessions', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.UserSession', '10': 'sessions'},
+  ],
+};
+
+/// Descriptor for `ListUserSessionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listUserSessionsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0VXNlclNlc3Npb25zUmVzcG9uc2USPgoIc2Vzc2lvbnMYASADKAsyIi5saWJyYXJpYW'
+    '4uc2VwaGlyYWgudjEuVXNlclNlc3Npb25SCHNlc3Npb25z');
+
+@$core.Deprecated('Use deleteUserSessionRequestDescriptor instead')
+const DeleteUserSessionRequest$json = {
+  '1': 'DeleteUserSessionRequest',
+  '2': [
+    {'1': 'session_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sessionId'},
+  ],
+};
+
+/// Descriptor for `DeleteUserSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteUserSessionRequestDescriptor = $convert.base64Decode(
+    'ChhEZWxldGVVc2VyU2Vzc2lvblJlcXVlc3QSNwoKc2Vzc2lvbl9pZBgBIAEoCzIYLmxpYnJhcm'
+    'lhbi52MS5JbnRlcm5hbElEUglzZXNzaW9uSWQ=');
+
+@$core.Deprecated('Use deleteUserSessionResponseDescriptor instead')
+const DeleteUserSessionResponse$json = {
+  '1': 'DeleteUserSessionResponse',
+};
+
+/// Descriptor for `DeleteUserSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteUserSessionResponseDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVVc2VyU2Vzc2lvblJlc3BvbnNl');
 
 @$core.Deprecated('Use createUserRequestDescriptor instead')
 const CreateUserRequest$json = {
@@ -420,6 +495,47 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'JuYW1lGAIgASgJUgh1c2VybmFtZRIaCghwYXNzd29yZBgDIAEoCVIIcGFzc3dvcmQSMwoEdHlw'
     'ZRgEIAEoDjIfLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyVHlwZVIEdHlwZRI5CgZzdGF0dX'
     'MYBSABKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgudjEuVXNlclN0YXR1c1IGc3RhdHVz');
+
+@$core.Deprecated('Use userSessionDescriptor instead')
+const UserSession$json = {
+  '1': 'UserSession',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
+    {'1': 'device_info', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.DeviceInfo', '10': 'deviceInfo'},
+    {'1': 'create_time', '3': 4, '4': 1, '5': 3, '10': 'createTime'},
+    {'1': 'expire_time', '3': 5, '4': 1, '5': 3, '10': 'expireTime'},
+  ],
+};
+
+/// Descriptor for `UserSession`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userSessionDescriptor = $convert.base64Decode(
+    'CgtVc2VyU2Vzc2lvbhIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZB'
+    'IxCgd1c2VyX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBnVzZXJJZBJCCgtk'
+    'ZXZpY2VfaW5mbxgDIAEoCzIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5EZXZpY2VJbmZvUgpkZX'
+    'ZpY2VJbmZvEh8KC2NyZWF0ZV90aW1lGAQgASgDUgpjcmVhdGVUaW1lEh8KC2V4cGlyZV90aW1l'
+    'GAUgASgDUgpleHBpcmVUaW1l');
+
+@$core.Deprecated('Use deviceInfoDescriptor instead')
+const DeviceInfo$json = {
+  '1': 'DeviceInfo',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
+    {'1': 'device_model', '3': 2, '4': 1, '5': 9, '10': 'deviceModel'},
+    {'1': 'system_version', '3': 3, '4': 1, '5': 9, '10': 'systemVersion'},
+    {'1': 'client_name', '3': 4, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'client_source_code_address', '3': 5, '4': 1, '5': 9, '10': 'clientSourceCodeAddress'},
+    {'1': 'client_version', '3': 6, '4': 1, '5': 9, '10': 'clientVersion'},
+  ],
+};
+
+/// Descriptor for `DeviceInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deviceInfoDescriptor = $convert.base64Decode(
+    'CgpEZXZpY2VJbmZvEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
+    'lEUghkZXZpY2VJZBIhCgxkZXZpY2VfbW9kZWwYAiABKAlSC2RldmljZU1vZGVsEiUKDnN5c3Rl'
+    'bV92ZXJzaW9uGAMgASgJUg1zeXN0ZW1WZXJzaW9uEh8KC2NsaWVudF9uYW1lGAQgASgJUgpjbG'
+    'llbnROYW1lEjsKGmNsaWVudF9zb3VyY2VfY29kZV9hZGRyZXNzGAUgASgJUhdjbGllbnRTb3Vy'
+    'Y2VDb2RlQWRkcmVzcxIlCg5jbGllbnRfdmVyc2lvbhgGIAEoCVINY2xpZW50VmVyc2lvbg==');
 
 @$core.Deprecated('Use porterDescriptor instead')
 const Porter$json = {

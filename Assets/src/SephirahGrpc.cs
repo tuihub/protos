@@ -71,6 +71,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> __Marshaller_librarian_sephirah_v1_GainUserPrivilegeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest> __Marshaller_librarian_sephirah_v1_RegisterDeviceRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse> __Marshaller_librarian_sephirah_v1_RegisterDeviceResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest> __Marshaller_librarian_sephirah_v1_ListUserSessionsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> __Marshaller_librarian_sephirah_v1_ListUserSessionsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest> __Marshaller_librarian_sephirah_v1_DeleteUserSessionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> __Marshaller_librarian_sephirah_v1_DeleteUserSessionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest> __Marshaller_librarian_sephirah_v1_CreateUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse> __Marshaller_librarian_sephirah_v1_CreateUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse.Parser));
@@ -410,6 +422,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "GainUserPrivilege",
         __Marshaller_librarian_sephirah_v1_GainUserPrivilegeRequest,
         __Marshaller_librarian_sephirah_v1_GainUserPrivilegeResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse> __Method_RegisterDevice = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RegisterDevice",
+        __Marshaller_librarian_sephirah_v1_RegisterDeviceRequest,
+        __Marshaller_librarian_sephirah_v1_RegisterDeviceResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> __Method_ListUserSessions = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListUserSessions",
+        __Marshaller_librarian_sephirah_v1_ListUserSessionsRequest,
+        __Marshaller_librarian_sephirah_v1_ListUserSessionsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> __Method_DeleteUserSession = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteUserSession",
+        __Marshaller_librarian_sephirah_v1_DeleteUserSessionRequest,
+        __Marshaller_librarian_sephirah_v1_DeleteUserSessionResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse> __Method_CreateUser = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse>(
@@ -1081,6 +1117,45 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> GainUserPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// and store the device_id locally.
+      /// The server could add extra limits to non-registered device
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse> RegisterDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> ListUserSessions(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// NOTE: This can also be used to logout on server side.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> DeleteUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2251,6 +2326,162 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> GainUserPrivilegeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GainUserPrivilege, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// and store the device_id locally.
+      /// The server could add extra limits to non-registered device
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse RegisterDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RegisterDevice(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// and store the device_id locally.
+      /// The server could add extra limits to non-registered device
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse RegisterDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RegisterDevice, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// and store the device_id locally.
+      /// The server could add extra limits to non-registered device
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse> RegisterDeviceAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RegisterDeviceAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// and store the device_id locally.
+      /// The server could add extra limits to non-registered device
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse> RegisterDeviceAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RegisterDevice, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse ListUserSessions(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListUserSessions(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse ListUserSessions(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListUserSessions, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> ListUserSessionsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListUserSessionsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> ListUserSessionsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListUserSessions, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// NOTE: This can also be used to logout on server side.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse DeleteUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteUserSession(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// NOTE: This can also be used to logout on server side.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse DeleteUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteUserSession, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// NOTE: This can also be used to logout on server side.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> DeleteUserSessionAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteUserSessionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// NOTE: This can also be used to logout on server side.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> DeleteUserSessionAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteUserSession, null, options, request);
       }
       /// <summary>
       /// `Tiphereth` `Admin` `Normal limited`
@@ -5898,6 +6129,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_GetToken, serviceImpl.GetToken)
           .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
           .AddMethod(__Method_GainUserPrivilege, serviceImpl.GainUserPrivilege)
+          .AddMethod(__Method_RegisterDevice, serviceImpl.RegisterDevice)
+          .AddMethod(__Method_ListUserSessions, serviceImpl.ListUserSessions)
+          .AddMethod(__Method_DeleteUserSession, serviceImpl.DeleteUserSession)
           .AddMethod(__Method_CreateUser, serviceImpl.CreateUser)
           .AddMethod(__Method_UpdateUser, serviceImpl.UpdateUser)
           .AddMethod(__Method_GetUser, serviceImpl.GetUser)
@@ -5988,6 +6222,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_GetToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse>(serviceImpl.GetToken));
       serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenResponse>(serviceImpl.RefreshToken));
       serviceBinder.AddMethod(__Method_GainUserPrivilege, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse>(serviceImpl.GainUserPrivilege));
+      serviceBinder.AddMethod(__Method_RegisterDevice, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse>(serviceImpl.RegisterDevice));
+      serviceBinder.AddMethod(__Method_ListUserSessions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse>(serviceImpl.ListUserSessions));
+      serviceBinder.AddMethod(__Method_DeleteUserSession, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse>(serviceImpl.DeleteUserSession));
       serviceBinder.AddMethod(__Method_CreateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateUserResponse>(serviceImpl.CreateUser));
       serviceBinder.AddMethod(__Method_UpdateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserResponse>(serviceImpl.UpdateUser));
       serviceBinder.AddMethod(__Method_GetUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetUserResponse>(serviceImpl.GetUser));

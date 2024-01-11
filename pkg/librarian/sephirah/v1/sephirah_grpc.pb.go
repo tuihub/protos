@@ -23,6 +23,9 @@ const (
 	LibrarianSephirahService_GetToken_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
 	LibrarianSephirahService_RefreshToken_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
 	LibrarianSephirahService_GainUserPrivilege_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege"
+	LibrarianSephirahService_RegisterDevice_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice"
+	LibrarianSephirahService_ListUserSessions_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions"
+	LibrarianSephirahService_DeleteUserSession_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession"
 	LibrarianSephirahService_CreateUser_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser"
 	LibrarianSephirahService_UpdateUser_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser"
 	LibrarianSephirahService_GetUser_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/GetUser"
@@ -114,6 +117,15 @@ type LibrarianSephirahServiceClient interface {
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
 	GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error)
+	// `Tiphereth` `Normal` Client should register device after the first login
+	// and store the device_id locally.
+	// The server could add extra limits to non-registered device
+	RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error)
+	// `Tiphereth` `Normal`
+	ListUserSessions(ctx context.Context, in *ListUserSessionsRequest, opts ...grpc.CallOption) (*ListUserSessionsResponse, error)
+	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+	// NOTE: This can also be used to logout on server side.
+	DeleteUserSession(ctx context.Context, in *DeleteUserSessionRequest, opts ...grpc.CallOption) (*DeleteUserSessionResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
@@ -325,6 +337,33 @@ func (c *librarianSephirahServiceClient) RefreshToken(ctx context.Context, in *R
 func (c *librarianSephirahServiceClient) GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error) {
 	out := new(GainUserPrivilegeResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_GainUserPrivilege_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error) {
+	out := new(RegisterDeviceResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RegisterDevice_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListUserSessions(ctx context.Context, in *ListUserSessionsRequest, opts ...grpc.CallOption) (*ListUserSessionsResponse, error) {
+	out := new(ListUserSessionsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListUserSessions_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) DeleteUserSession(ctx context.Context, in *DeleteUserSessionRequest, opts ...grpc.CallOption) (*DeleteUserSessionResponse, error) {
+	out := new(DeleteUserSessionResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_DeleteUserSession_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1147,6 +1186,15 @@ type LibrarianSephirahServiceServer interface {
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
 	GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error)
+	// `Tiphereth` `Normal` Client should register device after the first login
+	// and store the device_id locally.
+	// The server could add extra limits to non-registered device
+	RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error)
+	// `Tiphereth` `Normal`
+	ListUserSessions(context.Context, *ListUserSessionsRequest) (*ListUserSessionsResponse, error)
+	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+	// NOTE: This can also be used to logout on server side.
+	DeleteUserSession(context.Context, *DeleteUserSessionRequest) (*DeleteUserSessionResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
@@ -1336,6 +1384,15 @@ func (UnimplementedLibrarianSephirahServiceServer) RefreshToken(context.Context,
 }
 func (UnimplementedLibrarianSephirahServiceServer) GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GainUserPrivilege not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterDevice not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListUserSessions(context.Context, *ListUserSessionsRequest) (*ListUserSessionsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListUserSessions not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) DeleteUserSession(context.Context, *DeleteUserSessionRequest) (*DeleteUserSessionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserSession not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
@@ -1650,6 +1707,60 @@ func _LibrarianSephirahService_GainUserPrivilege_Handler(srv interface{}, ctx co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).GainUserPrivilege(ctx, req.(*GainUserPrivilegeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_RegisterDevice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterDeviceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).RegisterDevice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_RegisterDevice_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).RegisterDevice(ctx, req.(*RegisterDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListUserSessions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUserSessionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListUserSessions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListUserSessions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListUserSessions(ctx, req.(*ListUserSessionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_DeleteUserSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteUserSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).DeleteUserSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_DeleteUserSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).DeleteUserSession(ctx, req.(*DeleteUserSessionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3097,6 +3208,18 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GainUserPrivilege",
 			Handler:    _LibrarianSephirahService_GainUserPrivilege_Handler,
+		},
+		{
+			MethodName: "RegisterDevice",
+			Handler:    _LibrarianSephirahService_RegisterDevice_Handler,
+		},
+		{
+			MethodName: "ListUserSessions",
+			Handler:    _LibrarianSephirahService_ListUserSessions_Handler,
+		},
+		{
+			MethodName: "DeleteUserSession",
+			Handler:    _LibrarianSephirahService_DeleteUserSession_Handler,
 		},
 		{
 			MethodName: "CreateUser",

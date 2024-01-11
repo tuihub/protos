@@ -43,6 +43,18 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege',
       ($1.GainUserPrivilegeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.GainUserPrivilegeResponse.fromBuffer(value));
+  static final _$registerDevice = $grpc.ClientMethod<$1.RegisterDeviceRequest, $1.RegisterDeviceResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice',
+      ($1.RegisterDeviceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.RegisterDeviceResponse.fromBuffer(value));
+  static final _$listUserSessions = $grpc.ClientMethod<$1.ListUserSessionsRequest, $1.ListUserSessionsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions',
+      ($1.ListUserSessionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ListUserSessionsResponse.fromBuffer(value));
+  static final _$deleteUserSession = $grpc.ClientMethod<$1.DeleteUserSessionRequest, $1.DeleteUserSessionResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession',
+      ($1.DeleteUserSessionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.DeleteUserSessionResponse.fromBuffer(value));
   static final _$createUser = $grpc.ClientMethod<$1.CreateUserRequest, $1.CreateUserResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateUser',
       ($1.CreateUserRequest value) => value.writeToBuffer(),
@@ -372,6 +384,18 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.GainUserPrivilegeResponse> gainUserPrivilege($1.GainUserPrivilegeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$gainUserPrivilege, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.RegisterDeviceResponse> registerDevice($1.RegisterDeviceRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$registerDevice, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ListUserSessionsResponse> listUserSessions($1.ListUserSessionsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listUserSessions, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.DeleteUserSessionResponse> deleteUserSession($1.DeleteUserSessionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteUserSession, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.CreateUserResponse> createUser($1.CreateUserRequest request, {$grpc.CallOptions? options}) {
@@ -716,6 +740,27 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GainUserPrivilegeRequest.fromBuffer(value),
         ($1.GainUserPrivilegeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.RegisterDeviceRequest, $1.RegisterDeviceResponse>(
+        'RegisterDevice',
+        registerDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.RegisterDeviceRequest.fromBuffer(value),
+        ($1.RegisterDeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ListUserSessionsRequest, $1.ListUserSessionsResponse>(
+        'ListUserSessions',
+        listUserSessions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.ListUserSessionsRequest.fromBuffer(value),
+        ($1.ListUserSessionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.DeleteUserSessionRequest, $1.DeleteUserSessionResponse>(
+        'DeleteUserSession',
+        deleteUserSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.DeleteUserSessionRequest.fromBuffer(value),
+        ($1.DeleteUserSessionResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateUserRequest, $1.CreateUserResponse>(
         'CreateUser',
         createUser_Pre,
@@ -1273,6 +1318,18 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return gainUserPrivilege(call, await request);
   }
 
+  $async.Future<$1.RegisterDeviceResponse> registerDevice_Pre($grpc.ServiceCall call, $async.Future<$1.RegisterDeviceRequest> request) async {
+    return registerDevice(call, await request);
+  }
+
+  $async.Future<$1.ListUserSessionsResponse> listUserSessions_Pre($grpc.ServiceCall call, $async.Future<$1.ListUserSessionsRequest> request) async {
+    return listUserSessions(call, await request);
+  }
+
+  $async.Future<$1.DeleteUserSessionResponse> deleteUserSession_Pre($grpc.ServiceCall call, $async.Future<$1.DeleteUserSessionRequest> request) async {
+    return deleteUserSession(call, await request);
+  }
+
   $async.Future<$1.CreateUserResponse> createUser_Pre($grpc.ServiceCall call, $async.Future<$1.CreateUserRequest> request) async {
     return createUser(call, await request);
   }
@@ -1569,6 +1626,9 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.GetTokenResponse> getToken($grpc.ServiceCall call, $1.GetTokenRequest request);
   $async.Future<$1.RefreshTokenResponse> refreshToken($grpc.ServiceCall call, $1.RefreshTokenRequest request);
   $async.Future<$1.GainUserPrivilegeResponse> gainUserPrivilege($grpc.ServiceCall call, $1.GainUserPrivilegeRequest request);
+  $async.Future<$1.RegisterDeviceResponse> registerDevice($grpc.ServiceCall call, $1.RegisterDeviceRequest request);
+  $async.Future<$1.ListUserSessionsResponse> listUserSessions($grpc.ServiceCall call, $1.ListUserSessionsRequest request);
+  $async.Future<$1.DeleteUserSessionResponse> deleteUserSession($grpc.ServiceCall call, $1.DeleteUserSessionRequest request);
   $async.Future<$1.CreateUserResponse> createUser($grpc.ServiceCall call, $1.CreateUserRequest request);
   $async.Future<$1.UpdateUserResponse> updateUser($grpc.ServiceCall call, $1.UpdateUserRequest request);
   $async.Future<$1.GetUserResponse> getUser($grpc.ServiceCall call, $1.GetUserRequest request);

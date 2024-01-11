@@ -691,6 +691,100 @@ class PullAccountAppRelationResponse extends $pb.GeneratedMessage {
   $core.List<$4.App> get appList => $_getList(0);
 }
 
+class SearchAppRequest extends $pb.GeneratedMessage {
+  factory SearchAppRequest({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  SearchAppRequest._() : super();
+  factory SearchAppRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchAppRequest clone() => SearchAppRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchAppRequest copyWith(void Function(SearchAppRequest) updates) => super.copyWith((message) => updates(message as SearchAppRequest)) as SearchAppRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchAppRequest create() => SearchAppRequest._();
+  SearchAppRequest createEmptyInstance() => create();
+  static $pb.PbList<SearchAppRequest> createRepeated() => $pb.PbList<SearchAppRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SearchAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppRequest>(create);
+  static SearchAppRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+class SearchAppResponse extends $pb.GeneratedMessage {
+  factory SearchAppResponse({
+    $core.Iterable<$4.App>? appList,
+  }) {
+    final $result = create();
+    if (appList != null) {
+      $result.appList.addAll(appList);
+    }
+    return $result;
+  }
+  SearchAppResponse._() : super();
+  factory SearchAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..pc<$4.App>(1, _omitFieldNames ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $4.App.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchAppResponse clone() => SearchAppResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchAppResponse copyWith(void Function(SearchAppResponse) updates) => super.copyWith((message) => updates(message as SearchAppResponse)) as SearchAppResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchAppResponse create() => SearchAppResponse._();
+  SearchAppResponse createEmptyInstance() => create();
+  static $pb.PbList<SearchAppResponse> createRepeated() => $pb.PbList<SearchAppResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SearchAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppResponse>(create);
+  static SearchAppResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$4.App> get appList => $_getList(0);
+}
+
 class PullFeedRequest extends $pb.GeneratedMessage {
   factory PullFeedRequest({
     $core.String? source,

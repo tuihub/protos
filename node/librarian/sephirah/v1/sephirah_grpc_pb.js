@@ -253,6 +253,28 @@ function deserialize_librarian_sephirah_v1_CreateUserResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.CreateUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_DeleteUserSessionRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DeleteUserSessionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DeleteUserSessionRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_DeleteUserSessionResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DeleteUserSessionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DeleteUserSessionResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_DownloadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.DownloadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.DownloadFileRequest');
@@ -913,6 +935,28 @@ function deserialize_librarian_sephirah_v1_ListPortersResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.ListPortersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListUserSessionsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListUserSessionsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListUserSessionsRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListUserSessionsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListUserSessionsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListUserSessionsResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListUsersRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListUsersRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListUsersRequest');
@@ -1131,6 +1175,28 @@ function serialize_librarian_sephirah_v1_RefreshTokenResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_RefreshTokenResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_RegisterDeviceRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RegisterDeviceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RegisterDeviceRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_RegisterDeviceResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RegisterDeviceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RegisterDeviceResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_RemoveAppCategoryRequest(arg) {
@@ -1849,6 +1915,45 @@ gainUserPrivilege: {
     requestDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeRequest,
     responseSerialize: serialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
+  },
+  // `Tiphereth` `Normal` Client should register device after the first login
+// and store the device_id locally.
+// The server could add extra limits to non-registered device
+registerDevice: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_RegisterDeviceRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_RegisterDeviceRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_RegisterDeviceResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_RegisterDeviceResponse,
+  },
+  // `Tiphereth` `Normal`
+listUserSessions: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListUserSessionsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListUserSessionsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListUserSessionsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListUserSessionsResponse,
+  },
+  // `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+// NOTE: This can also be used to logout on server side.
+deleteUserSession: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_DeleteUserSessionRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_DeleteUserSessionRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_DeleteUserSessionResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_DeleteUserSessionResponse,
   },
   // `Tiphereth` `Admin` `Normal limited`
 createUser: {

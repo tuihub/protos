@@ -17,6 +17,9 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   getToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>;
   refreshToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.RefreshTokenRequest, librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse>;
   gainUserPrivilege: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>;
+  registerDevice: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>;
+  listUserSessions: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>;
+  deleteUserSession: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest, librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse>;
   createUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>;
   updateUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>;
   getUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GetUserRequest, librarian_sephirah_v1_tiphereth_pb.GetUserResponse>;
@@ -103,6 +106,9 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   getToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>;
   refreshToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.RefreshTokenRequest, librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse>;
   gainUserPrivilege: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>;
+  registerDevice: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>;
+  listUserSessions: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>;
+  deleteUserSession: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest, librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse>;
   createUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>;
   updateUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdateUserRequest, librarian_sephirah_v1_tiphereth_pb.UpdateUserResponse>;
   getUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GetUserRequest, librarian_sephirah_v1_tiphereth_pb.GetUserResponse>;
@@ -196,6 +202,15 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   gainUserPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>): grpc.ClientUnaryCall;
   gainUserPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>): grpc.ClientUnaryCall;
   gainUserPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>): grpc.ClientUnaryCall;
+  registerDevice(argument: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>): grpc.ClientUnaryCall;
+  registerDevice(argument: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>): grpc.ClientUnaryCall;
+  registerDevice(argument: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>): grpc.ClientUnaryCall;
+  listUserSessions(argument: librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>): grpc.ClientUnaryCall;
+  listUserSessions(argument: librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>): grpc.ClientUnaryCall;
+  listUserSessions(argument: librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>): grpc.ClientUnaryCall;
+  deleteUserSession(argument: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse>): grpc.ClientUnaryCall;
+  deleteUserSession(argument: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse>): grpc.ClientUnaryCall;
+  deleteUserSession(argument: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse>): grpc.ClientUnaryCall;
   createUser(argument: librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>): grpc.ClientUnaryCall;
   createUser(argument: librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>): grpc.ClientUnaryCall;
   createUser(argument: librarian_sephirah_v1_tiphereth_pb.CreateUserRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.CreateUserResponse>): grpc.ClientUnaryCall;

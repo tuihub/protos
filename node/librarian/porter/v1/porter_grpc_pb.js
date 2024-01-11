@@ -159,6 +159,28 @@ function deserialize_librarian_porter_v1_PushFeedItemsResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.PushFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_porter_v1_SearchAppRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.SearchAppRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.SearchAppRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_SearchAppRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.SearchAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_SearchAppResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.SearchAppResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.SearchAppResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_SearchAppResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.SearchAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
   getPorterInformation: {
@@ -218,6 +240,18 @@ pullAccountAppRelation: {
     requestDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationRequest,
     responseSerialize: serialize_librarian_porter_v1_PullAccountAppRelationResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationResponse,
+  },
+  // `Gebura`
+searchApp: {
+    path: '/librarian.porter.v1.LibrarianPorterService/SearchApp',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.SearchAppRequest,
+    responseType: librarian_porter_v1_porter_pb.SearchAppResponse,
+    requestSerialize: serialize_librarian_porter_v1_SearchAppRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_SearchAppRequest,
+    responseSerialize: serialize_librarian_porter_v1_SearchAppResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_SearchAppResponse,
   },
   // `Yesod`
 pullFeed: {

@@ -24,6 +24,7 @@ const (
 	LibrarianPorterService_PullAccount_FullMethodName            = "/librarian.porter.v1.LibrarianPorterService/PullAccount"
 	LibrarianPorterService_PullApp_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullApp"
 	LibrarianPorterService_PullAccountAppRelation_FullMethodName = "/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation"
+	LibrarianPorterService_SearchApp_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/SearchApp"
 	LibrarianPorterService_PullFeed_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
 	LibrarianPorterService_PushFeedItems_FullMethodName          = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
 )
@@ -40,6 +41,8 @@ type LibrarianPorterServiceClient interface {
 	PullApp(ctx context.Context, in *PullAppRequest, opts ...grpc.CallOption) (*PullAppResponse, error)
 	// `Gebura`
 	PullAccountAppRelation(ctx context.Context, in *PullAccountAppRelationRequest, opts ...grpc.CallOption) (*PullAccountAppRelationResponse, error)
+	// `Gebura`
+	SearchApp(ctx context.Context, in *SearchAppRequest, opts ...grpc.CallOption) (*SearchAppResponse, error)
 	// `Yesod`
 	PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error)
 	// `Yesod`
@@ -99,6 +102,15 @@ func (c *librarianPorterServiceClient) PullAccountAppRelation(ctx context.Contex
 	return out, nil
 }
 
+func (c *librarianPorterServiceClient) SearchApp(ctx context.Context, in *SearchAppRequest, opts ...grpc.CallOption) (*SearchAppResponse, error) {
+	out := new(SearchAppResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_SearchApp_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianPorterServiceClient) PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error) {
 	out := new(PullFeedResponse)
 	err := c.cc.Invoke(ctx, LibrarianPorterService_PullFeed_FullMethodName, in, out, opts...)
@@ -129,6 +141,8 @@ type LibrarianPorterServiceServer interface {
 	PullApp(context.Context, *PullAppRequest) (*PullAppResponse, error)
 	// `Gebura`
 	PullAccountAppRelation(context.Context, *PullAccountAppRelationRequest) (*PullAccountAppRelationResponse, error)
+	// `Gebura`
+	SearchApp(context.Context, *SearchAppRequest) (*SearchAppResponse, error)
 	// `Yesod`
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
 	// `Yesod`
@@ -154,6 +168,9 @@ func (UnimplementedLibrarianPorterServiceServer) PullApp(context.Context, *PullA
 }
 func (UnimplementedLibrarianPorterServiceServer) PullAccountAppRelation(context.Context, *PullAccountAppRelationRequest) (*PullAccountAppRelationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullAccountAppRelation not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) SearchApp(context.Context, *SearchAppRequest) (*SearchAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchApp not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullFeed not implemented")
@@ -265,6 +282,24 @@ func _LibrarianPorterService_PullAccountAppRelation_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianPorterService_SearchApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).SearchApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_SearchApp_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).SearchApp(ctx, req.(*SearchAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianPorterService_PullFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PullFeedRequest)
 	if err := dec(in); err != nil {
@@ -327,6 +362,10 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PullAccountAppRelation",
 			Handler:    _LibrarianPorterService_PullAccountAppRelation_Handler,
+		},
+		{
+			MethodName: "SearchApp",
+			Handler:    _LibrarianPorterService_SearchApp_Handler,
 		},
 		{
 			MethodName: "PullFeed",

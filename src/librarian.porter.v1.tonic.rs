@@ -236,6 +236,36 @@ pub mod librarian_porter_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn search_app(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SearchAppRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SearchAppResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/SearchApp",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "SearchApp",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn pull_feed(
             &mut self,
             request: impl tonic::IntoRequest<super::PullFeedRequest>,
@@ -335,6 +365,13 @@ pub mod librarian_porter_service_server {
             request: tonic::Request<super::PullAccountAppRelationRequest>,
         ) -> std::result::Result<
             tonic::Response<super::PullAccountAppRelationResponse>,
+            tonic::Status,
+        >;
+        async fn search_app(
+            &self,
+            request: tonic::Request<super::SearchAppRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SearchAppResponse>,
             tonic::Status,
         >;
         async fn pull_feed(
@@ -649,6 +686,50 @@ pub mod librarian_porter_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = PullAccountAppRelationSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/SearchApp" => {
+                    #[allow(non_camel_case_types)]
+                    struct SearchAppSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::SearchAppRequest>
+                    for SearchAppSvc<T> {
+                        type Response = super::SearchAppResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SearchAppRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move { (*inner).search_app(request).await };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SearchAppSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
