@@ -236,19 +236,19 @@ message SetUserSaveFileCapacityRequest {
 message SetUserSaveFileCapacityResponse {}
 
 message SetSaveFileRotationRequest {
-  // don't care if valid_scope is VAILD_SCOPE_ACCOUNT
+  // don't care if valid_scope is VALID_SCOPE_ACCOUNT
   librarian.v1.InternalID entity_id = 1;
-  VaildScope vaild_scope = 2;
+  ValidScope valid_scope = 2;
   int64 count = 3;
   // set false to disable save file rotation(unlimited save file)
   bool enabled = 4;
 }
 
-enum VaildScope {
-  VAILD_SCOPE_UNSPECIFIED = 0;
-  VAILD_SCOPE_ACCOUNT = 1;
-  VAILD_SCOPE_APP = 2;
-  VAILD_SCOPE_APP_PACKAGE = 3;
+enum ValidScope {
+  VALID_SCOPE_UNSPECIFIED = 0;
+  VALID_SCOPE_ACCOUNT = 1;
+  VALID_SCOPE_APP = 2;
+  VALID_SCOPE_APP_PACKAGE = 3;
 }
 
 message SetSaveFileRotationResponse {}

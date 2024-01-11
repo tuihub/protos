@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
+import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
@@ -141,8 +142,8 @@ message UserSession {
   librarian.v1.InternalID id = 1;
   librarian.v1.InternalID user_id = 2;
   DeviceInfo device_info = 3;
-  int64 create_time = 4;
-  int64 expire_time = 5;
+  google.protobuf.Timestamp create_time = 4;
+  google.protobuf.Timestamp expire_time = 5;
 }
 
 message DeviceInfo {
