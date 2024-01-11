@@ -10,6 +10,9 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 message GetTokenRequest {
   string username = 1;
   string password = 2;
+  // Always ignore this if client don't impl device info feature.
+  // Otherwise, re-login after registered device with this and every time after
+  optional librarian.v1.InternalID device_id = 3;
 }
 
 message GetTokenResponse {
@@ -31,6 +34,23 @@ message GainUserPrivilegeRequest {
 message GainUserPrivilegeResponse {
   string access_token = 1;
 }
+
+message RegisterDeviceRequest {
+  DeviceInfo device_info = 1;
+}
+message RegisterDeviceResponse {
+  librarian.v1.InternalID device_id = 1;
+}
+
+message ListUserSessionsRequest {}
+message ListUserSessionsResponse {
+  repeated UserSession sessions = 1;
+}
+
+message DeleteUserSessionRequest {
+  librarian.v1.InternalID session_id = 1;
+}
+message DeleteUserSessionResponse {}
 
 message CreateUserRequest {
   User user = 1;
@@ -115,6 +135,24 @@ message User {
   string password = 3;
   UserType type = 4;
   UserStatus status = 5;
+}
+
+message UserSession {
+  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID user_id = 2;
+  DeviceInfo device_info = 3;
+  int64 create_time = 4;
+  int64 expire_time = 5;
+}
+
+message DeviceInfo {
+  librarian.v1.InternalID device_id = 1;
+  string device_model = 2;
+  string system_version = 3;
+
+  string client_name = 4;
+  string client_source_code_address = 5;
+  string client_version = 6;
 }
 
 enum UserType {

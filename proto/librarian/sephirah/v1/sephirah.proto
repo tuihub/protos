@@ -31,6 +31,16 @@ service LibrarianSephirahService {
   // `Tiphereth` `Porter` Get access_token of another user with allowed privilege
   rpc GainUserPrivilege(GainUserPrivilegeRequest) returns (GainUserPrivilegeResponse);
 
+  // `Tiphereth` `Normal` Client should register device after the first login
+  // and store the device_id locally.
+  // The server could add extra limits to non-registered device
+  rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse);
+  // `Tiphereth` `Normal`
+  rpc ListUserSessions(ListUserSessionsRequest) returns (ListUserSessionsResponse);
+  // `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+  // NOTE: This can also be used to logout on server side.
+  rpc DeleteUserSession(DeleteUserSessionRequest) returns (DeleteUserSessionResponse);
+
   // `Tiphereth` `Admin` `Normal limited`
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
   // `Tiphereth` `Admin` `Normal limited`
