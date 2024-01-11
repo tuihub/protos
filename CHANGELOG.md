@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/tuihub/protos/compare/v0.3.1...v0.3.2) (2024-01-11)
+
+
+### Features
+
+* **tiphereth:** update UserSession & typo ([b050135](https://github.com/tuihub/protos/commit/b050135744830d627fb6055d2f68d75c2e793af2))
+
 ## [0.3.1](https://github.com/tuihub/protos/compare/v0.3.0...v0.3.1) (2024-01-11)
 
 
