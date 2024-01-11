@@ -503,8 +503,8 @@ const UserSession$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'user_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
     {'1': 'device_info', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.DeviceInfo', '10': 'deviceInfo'},
-    {'1': 'create_time', '3': 4, '4': 1, '5': 3, '10': 'createTime'},
-    {'1': 'expire_time', '3': 5, '4': 1, '5': 3, '10': 'expireTime'},
+    {'1': 'create_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
+    {'1': 'expire_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expireTime'},
   ],
 };
 
@@ -513,8 +513,9 @@ final $typed_data.Uint8List userSessionDescriptor = $convert.base64Decode(
     'CgtVc2VyU2Vzc2lvbhIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZB'
     'IxCgd1c2VyX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBnVzZXJJZBJCCgtk'
     'ZXZpY2VfaW5mbxgDIAEoCzIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5EZXZpY2VJbmZvUgpkZX'
-    'ZpY2VJbmZvEh8KC2NyZWF0ZV90aW1lGAQgASgDUgpjcmVhdGVUaW1lEh8KC2V4cGlyZV90aW1l'
-    'GAUgASgDUgpleHBpcmVUaW1l');
+    'ZpY2VJbmZvEjsKC2NyZWF0ZV90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
+    'cFIKY3JlYXRlVGltZRI7CgtleHBpcmVfdGltZRgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
+    '1lc3RhbXBSCmV4cGlyZVRpbWU=');
 
 @$core.Deprecated('Use deviceInfoDescriptor instead')
 const DeviceInfo$json = {

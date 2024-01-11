@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+goog.object.extend(proto, google_protobuf_timestamp_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateUserRequest', null, global);
@@ -6190,8 +6192,8 @@ proto.librarian.sephirah.v1.UserSession.toObject = function(includeInstance, msg
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f),
-    createTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    expireTime: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    expireTime: (f = msg.getExpireTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6244,11 +6246,13 @@ proto.librarian.sephirah.v1.UserSession.deserializeBinaryFromReader = function(m
       msg.setDeviceInfo(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setExpireTime(value);
       break;
     default:
@@ -6305,17 +6309,19 @@ proto.librarian.sephirah.v1.UserSession.serializeBinaryToWriter = function(messa
     );
   }
   f = message.getCreateTime();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
   f = message.getExpireTime();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -6433,38 +6439,76 @@ proto.librarian.sephirah.v1.UserSession.prototype.hasDeviceInfo = function() {
 
 
 /**
- * optional int64 create_time = 4;
- * @return {number}
+ * optional google.protobuf.Timestamp create_time = 4;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.sephirah.v1.UserSession.prototype.getCreateTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 4));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.sephirah.v1.UserSession} returns this
+*/
+proto.librarian.sephirah.v1.UserSession.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.UserSession} returns this
  */
-proto.librarian.sephirah.v1.UserSession.prototype.setCreateTime = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+proto.librarian.sephirah.v1.UserSession.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
 };
 
 
 /**
- * optional int64 expire_time = 5;
- * @return {number}
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.UserSession.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp expire_time = 5;
+ * @return {?proto.google.protobuf.Timestamp}
  */
 proto.librarian.sephirah.v1.UserSession.prototype.getExpireTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.sephirah.v1.UserSession} returns this
+*/
+proto.librarian.sephirah.v1.UserSession.prototype.setExpireTime = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.UserSession} returns this
  */
-proto.librarian.sephirah.v1.UserSession.prototype.setExpireTime = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+proto.librarian.sephirah.v1.UserSession.prototype.clearExpireTime = function() {
+  return this.setExpireTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.UserSession.prototype.hasExpireTime = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

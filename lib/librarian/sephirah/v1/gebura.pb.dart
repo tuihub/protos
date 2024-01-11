@@ -2908,7 +2908,7 @@ class SetUserSaveFileCapacityResponse extends $pb.GeneratedMessage {
 class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
   factory SetSaveFileRotationRequest({
     $7.InternalID? entityId,
-    VaildScope? vaildScope,
+    ValidScope? validScope,
     $fixnum.Int64? count,
     $core.bool? enabled,
   }) {
@@ -2916,8 +2916,8 @@ class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
     if (entityId != null) {
       $result.entityId = entityId;
     }
-    if (vaildScope != null) {
-      $result.vaildScope = vaildScope;
+    if (validScope != null) {
+      $result.validScope = validScope;
     }
     if (count != null) {
       $result.count = count;
@@ -2933,7 +2933,7 @@ class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetSaveFileRotationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'entityId', subBuilder: $7.InternalID.create)
-    ..e<VaildScope>(2, _omitFieldNames ? '' : 'vaildScope', $pb.PbFieldType.OE, defaultOrMaker: VaildScope.VAILD_SCOPE_UNSPECIFIED, valueOf: VaildScope.valueOf, enumValues: VaildScope.values)
+    ..e<ValidScope>(2, _omitFieldNames ? '' : 'validScope', $pb.PbFieldType.OE, defaultOrMaker: ValidScope.VALID_SCOPE_UNSPECIFIED, valueOf: ValidScope.valueOf, enumValues: ValidScope.values)
     ..aInt64(3, _omitFieldNames ? '' : 'count')
     ..aOB(4, _omitFieldNames ? '' : 'enabled')
     ..hasRequiredFields = false
@@ -2960,7 +2960,7 @@ class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
   static SetSaveFileRotationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetSaveFileRotationRequest>(create);
   static SetSaveFileRotationRequest? _defaultInstance;
 
-  /// don't care if valid_scope is VAILD_SCOPE_ACCOUNT
+  /// don't care if valid_scope is VALID_SCOPE_ACCOUNT
   @$pb.TagNumber(1)
   $7.InternalID get entityId => $_getN(0);
   @$pb.TagNumber(1)
@@ -2973,13 +2973,13 @@ class SetSaveFileRotationRequest extends $pb.GeneratedMessage {
   $7.InternalID ensureEntityId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  VaildScope get vaildScope => $_getN(1);
+  ValidScope get validScope => $_getN(1);
   @$pb.TagNumber(2)
-  set vaildScope(VaildScope v) { setField(2, v); }
+  set validScope(ValidScope v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasVaildScope() => $_has(1);
+  $core.bool hasValidScope() => $_has(1);
   @$pb.TagNumber(2)
-  void clearVaildScope() => clearField(2);
+  void clearValidScope() => clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get count => $_getI64(2);

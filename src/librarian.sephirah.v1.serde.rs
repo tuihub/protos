@@ -15144,7 +15144,7 @@ impl serde::Serialize for SetSaveFileRotationRequest {
         if self.entity_id.is_some() {
             len += 1;
         }
-        if self.vaild_scope != 0 {
+        if self.valid_scope != 0 {
             len += 1;
         }
         if self.count != 0 {
@@ -15157,10 +15157,10 @@ impl serde::Serialize for SetSaveFileRotationRequest {
         if let Some(v) = self.entity_id.as_ref() {
             struct_ser.serialize_field("entityId", v)?;
         }
-        if self.vaild_scope != 0 {
-            let v = VaildScope::from_i32(self.vaild_scope)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.vaild_scope)))?;
-            struct_ser.serialize_field("vaildScope", &v)?;
+        if self.valid_scope != 0 {
+            let v = ValidScope::from_i32(self.valid_scope)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.valid_scope)))?;
+            struct_ser.serialize_field("validScope", &v)?;
         }
         if self.count != 0 {
             struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
@@ -15180,8 +15180,8 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
         const FIELDS: &[&str] = &[
             "entity_id",
             "entityId",
-            "vaild_scope",
-            "vaildScope",
+            "valid_scope",
+            "validScope",
             "count",
             "enabled",
         ];
@@ -15189,7 +15189,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             EntityId,
-            VaildScope,
+            ValidScope,
             Count,
             Enabled,
         }
@@ -15214,7 +15214,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                     {
                         match value {
                             "entityId" | "entity_id" => Ok(GeneratedField::EntityId),
-                            "vaildScope" | "vaild_scope" => Ok(GeneratedField::VaildScope),
+                            "validScope" | "valid_scope" => Ok(GeneratedField::ValidScope),
                             "count" => Ok(GeneratedField::Count),
                             "enabled" => Ok(GeneratedField::Enabled),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -15237,7 +15237,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut entity_id__ = None;
-                let mut vaild_scope__ = None;
+                let mut valid_scope__ = None;
                 let mut count__ = None;
                 let mut enabled__ = None;
                 while let Some(k) = map.next_key()? {
@@ -15248,11 +15248,11 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                             }
                             entity_id__ = map.next_value()?;
                         }
-                        GeneratedField::VaildScope => {
-                            if vaild_scope__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("vaildScope"));
+                        GeneratedField::ValidScope => {
+                            if valid_scope__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("validScope"));
                             }
-                            vaild_scope__ = Some(map.next_value::<VaildScope>()? as i32);
+                            valid_scope__ = Some(map.next_value::<ValidScope>()? as i32);
                         }
                         GeneratedField::Count => {
                             if count__.is_some() {
@@ -15272,7 +15272,7 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                 }
                 Ok(SetSaveFileRotationRequest {
                     entity_id: entity_id__,
-                    vaild_scope: vaild_scope__.unwrap_or_default(),
+                    valid_scope: valid_scope__.unwrap_or_default(),
                     count: count__.unwrap_or_default(),
                     enabled: enabled__.unwrap_or_default(),
                 })
@@ -19931,10 +19931,10 @@ impl serde::Serialize for UserSession {
         if self.device_info.is_some() {
             len += 1;
         }
-        if self.create_time != 0 {
+        if self.create_time.is_some() {
             len += 1;
         }
-        if self.expire_time != 0 {
+        if self.expire_time.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UserSession", len)?;
@@ -19947,11 +19947,11 @@ impl serde::Serialize for UserSession {
         if let Some(v) = self.device_info.as_ref() {
             struct_ser.serialize_field("deviceInfo", v)?;
         }
-        if self.create_time != 0 {
-            struct_ser.serialize_field("createTime", ToString::to_string(&self.create_time).as_str())?;
+        if let Some(v) = self.create_time.as_ref() {
+            struct_ser.serialize_field("createTime", v)?;
         }
-        if self.expire_time != 0 {
-            struct_ser.serialize_field("expireTime", ToString::to_string(&self.expire_time).as_str())?;
+        if let Some(v) = self.expire_time.as_ref() {
+            struct_ser.serialize_field("expireTime", v)?;
         }
         struct_ser.end()
     }
@@ -20055,17 +20055,13 @@ impl<'de> serde::Deserialize<'de> for UserSession {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
-                            ;
+                            create_time__ = map.next_value()?;
                         }
                         GeneratedField::ExpireTime => {
                             if expire_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("expireTime"));
                             }
-                            expire_time__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
-                            ;
+                            expire_time__ = map.next_value()?;
                         }
                     }
                 }
@@ -20073,8 +20069,8 @@ impl<'de> serde::Deserialize<'de> for UserSession {
                     id: id__,
                     user_id: user_id__,
                     device_info: device_info__,
-                    create_time: create_time__.unwrap_or_default(),
-                    expire_time: expire_time__.unwrap_or_default(),
+                    create_time: create_time__,
+                    expire_time: expire_time__,
                 })
             }
         }
@@ -20239,38 +20235,38 @@ impl<'de> serde::Deserialize<'de> for UserType {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
-impl serde::Serialize for VaildScope {
+impl serde::Serialize for ValidScope {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
         S: serde::Serializer,
     {
         let variant = match self {
-            Self::Unspecified => "VAILD_SCOPE_UNSPECIFIED",
-            Self::Account => "VAILD_SCOPE_ACCOUNT",
-            Self::App => "VAILD_SCOPE_APP",
-            Self::AppPackage => "VAILD_SCOPE_APP_PACKAGE",
+            Self::Unspecified => "VALID_SCOPE_UNSPECIFIED",
+            Self::Account => "VALID_SCOPE_ACCOUNT",
+            Self::App => "VALID_SCOPE_APP",
+            Self::AppPackage => "VALID_SCOPE_APP_PACKAGE",
         };
         serializer.serialize_str(variant)
     }
 }
-impl<'de> serde::Deserialize<'de> for VaildScope {
+impl<'de> serde::Deserialize<'de> for ValidScope {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "VAILD_SCOPE_UNSPECIFIED",
-            "VAILD_SCOPE_ACCOUNT",
-            "VAILD_SCOPE_APP",
-            "VAILD_SCOPE_APP_PACKAGE",
+            "VALID_SCOPE_UNSPECIFIED",
+            "VALID_SCOPE_ACCOUNT",
+            "VALID_SCOPE_APP",
+            "VALID_SCOPE_APP_PACKAGE",
         ];
 
         struct GeneratedVisitor;
 
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = VaildScope;
+            type Value = ValidScope;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
                 write!(formatter, "expected one of: {:?}", &FIELDS)
@@ -20283,7 +20279,7 @@ impl<'de> serde::Deserialize<'de> for VaildScope {
                 use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(VaildScope::from_i32)
+                    .and_then(ValidScope::from_i32)
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -20296,7 +20292,7 @@ impl<'de> serde::Deserialize<'de> for VaildScope {
                 use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(VaildScope::from_i32)
+                    .and_then(ValidScope::from_i32)
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -20307,10 +20303,10 @@ impl<'de> serde::Deserialize<'de> for VaildScope {
                 E: serde::de::Error,
             {
                 match value {
-                    "VAILD_SCOPE_UNSPECIFIED" => Ok(VaildScope::Unspecified),
-                    "VAILD_SCOPE_ACCOUNT" => Ok(VaildScope::Account),
-                    "VAILD_SCOPE_APP" => Ok(VaildScope::App),
-                    "VAILD_SCOPE_APP_PACKAGE" => Ok(VaildScope::AppPackage),
+                    "VALID_SCOPE_UNSPECIFIED" => Ok(ValidScope::Unspecified),
+                    "VALID_SCOPE_ACCOUNT" => Ok(ValidScope::Account),
+                    "VALID_SCOPE_APP" => Ok(ValidScope::App),
+                    "VALID_SCOPE_APP_PACKAGE" => Ok(ValidScope::AppPackage),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

@@ -13,21 +13,21 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use vaildScopeDescriptor instead')
-const VaildScope$json = {
-  '1': 'VaildScope',
+@$core.Deprecated('Use validScopeDescriptor instead')
+const ValidScope$json = {
+  '1': 'ValidScope',
   '2': [
-    {'1': 'VAILD_SCOPE_UNSPECIFIED', '2': 0},
-    {'1': 'VAILD_SCOPE_ACCOUNT', '2': 1},
-    {'1': 'VAILD_SCOPE_APP', '2': 2},
-    {'1': 'VAILD_SCOPE_APP_PACKAGE', '2': 3},
+    {'1': 'VALID_SCOPE_UNSPECIFIED', '2': 0},
+    {'1': 'VALID_SCOPE_ACCOUNT', '2': 1},
+    {'1': 'VALID_SCOPE_APP', '2': 2},
+    {'1': 'VALID_SCOPE_APP_PACKAGE', '2': 3},
   ],
 };
 
-/// Descriptor for `VaildScope`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List vaildScopeDescriptor = $convert.base64Decode(
-    'CgpWYWlsZFNjb3BlEhsKF1ZBSUxEX1NDT1BFX1VOU1BFQ0lGSUVEEAASFwoTVkFJTERfU0NPUE'
-    'VfQUNDT1VOVBABEhMKD1ZBSUxEX1NDT1BFX0FQUBACEhsKF1ZBSUxEX1NDT1BFX0FQUF9QQUNL'
+/// Descriptor for `ValidScope`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List validScopeDescriptor = $convert.base64Decode(
+    'CgpWYWxpZFNjb3BlEhsKF1ZBTElEX1NDT1BFX1VOU1BFQ0lGSUVEEAASFwoTVkFMSURfU0NPUE'
+    'VfQUNDT1VOVBABEhMKD1ZBTElEX1NDT1BFX0FQUBACEhsKF1ZBTElEX1NDT1BFX0FQUF9QQUNL'
     'QUdFEAM=');
 
 @$core.Deprecated('Use createAppRequestDescriptor instead')
@@ -755,7 +755,7 @@ const SetSaveFileRotationRequest$json = {
   '1': 'SetSaveFileRotationRequest',
   '2': [
     {'1': 'entity_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'entityId'},
-    {'1': 'vaild_scope', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.VaildScope', '10': 'vaildScope'},
+    {'1': 'valid_scope', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.ValidScope', '10': 'validScope'},
     {'1': 'count', '3': 3, '4': 1, '5': 3, '10': 'count'},
     {'1': 'enabled', '3': 4, '4': 1, '5': 8, '10': 'enabled'},
   ],
@@ -764,8 +764,8 @@ const SetSaveFileRotationRequest$json = {
 /// Descriptor for `SetSaveFileRotationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List setSaveFileRotationRequestDescriptor = $convert.base64Decode(
     'ChpTZXRTYXZlRmlsZVJvdGF0aW9uUmVxdWVzdBI1CgllbnRpdHlfaWQYASABKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJRFIIZW50aXR5SWQSQgoLdmFpbGRfc2NvcGUYAiABKA4yIS5saWJy'
-    'YXJpYW4uc2VwaGlyYWgudjEuVmFpbGRTY29wZVIKdmFpbGRTY29wZRIUCgVjb3VudBgDIAEoA1'
+    'JpYW4udjEuSW50ZXJuYWxJRFIIZW50aXR5SWQSQgoLdmFsaWRfc2NvcGUYAiABKA4yIS5saWJy'
+    'YXJpYW4uc2VwaGlyYWgudjEuVmFsaWRTY29wZVIKdmFsaWRTY29wZRIUCgVjb3VudBgDIAEoA1'
     'IFY291bnQSGAoHZW5hYmxlZBgEIAEoCFIHZW5hYmxlZA==');
 
 @$core.Deprecated('Use setSaveFileRotationResponseDescriptor instead')

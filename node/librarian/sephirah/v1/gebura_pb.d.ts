@@ -1288,8 +1288,8 @@ export class SetSaveFileRotationRequest extends jspb.Message {
   getEntityId(): librarian_v1_common_pb.InternalID | undefined;
   setEntityId(value?: librarian_v1_common_pb.InternalID): void;
 
-  getVaildScope(): VaildScopeMap[keyof VaildScopeMap];
-  setVaildScope(value: VaildScopeMap[keyof VaildScopeMap]): void;
+  getValidScope(): ValidScopeMap[keyof ValidScopeMap];
+  setValidScope(value: ValidScopeMap[keyof ValidScopeMap]): void;
 
   getCount(): number;
   setCount(value: number): void;
@@ -1310,7 +1310,7 @@ export class SetSaveFileRotationRequest extends jspb.Message {
 export namespace SetSaveFileRotationRequest {
   export type AsObject = {
     entityId?: librarian_v1_common_pb.InternalID.AsObject,
-    vaildScope: VaildScopeMap[keyof VaildScopeMap],
+    validScope: ValidScopeMap[keyof ValidScopeMap],
     count: number,
     enabled: boolean,
   }
@@ -1490,12 +1490,12 @@ export namespace RemoveAppCategoryResponse {
   }
 }
 
-export interface VaildScopeMap {
-  VAILD_SCOPE_UNSPECIFIED: 0;
-  VAILD_SCOPE_ACCOUNT: 1;
-  VAILD_SCOPE_APP: 2;
-  VAILD_SCOPE_APP_PACKAGE: 3;
+export interface ValidScopeMap {
+  VALID_SCOPE_UNSPECIFIED: 0;
+  VALID_SCOPE_ACCOUNT: 1;
+  VALID_SCOPE_APP: 2;
+  VALID_SCOPE_APP_PACKAGE: 3;
 }
 
-export const VaildScope: VaildScopeMap;
+export const ValidScope: ValidScopeMap;
 

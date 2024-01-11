@@ -136,8 +136,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "D19jYXBhY2l0eV9ieXRlcyIhCh9TZXRVc2VyU2F2ZUZpbGVDYXBhY2l0eVJl",
             "c3BvbnNlIscBChpTZXRTYXZlRmlsZVJvdGF0aW9uUmVxdWVzdBI1CgllbnRp",
             "dHlfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIZW50aXR5",
-            "SWQSQgoLdmFpbGRfc2NvcGUYAiABKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgu",
-            "djEuVmFpbGRTY29wZVIKdmFpbGRTY29wZRIUCgVjb3VudBgDIAEoA1IFY291",
+            "SWQSQgoLdmFsaWRfc2NvcGUYAiABKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgu",
+            "djEuVmFsaWRTY29wZVIKdmFsaWRTY29wZRIUCgVjb3VudBgDIAEoA1IFY291",
             "bnQSGAoHZW5hYmxlZBgEIAEoCFIHZW5hYmxlZCIdChtTZXRTYXZlRmlsZVJv",
             "dGF0aW9uUmVzcG9uc2UiGgoYTGlzdEFwcENhdGVnb3JpZXNSZXF1ZXN0Il0K",
             "GUxpc3RBcHBDYXRlZ29yaWVzUmVzcG9uc2USQAoOYXBwX2NhdGVnb3JpZXMY",
@@ -150,15 +150,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "LnYxLkFwcENhdGVnb3J5UgthcHBDYXRlZ29yeSIbChlVcGRhdGVBcHBDYXRl",
             "Z29yeVJlc3BvbnNlIkQKGFJlbW92ZUFwcENhdGVnb3J5UmVxdWVzdBIoCgJp",
             "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIbChlSZW1v",
-            "dmVBcHBDYXRlZ29yeVJlc3BvbnNlKnQKClZhaWxkU2NvcGUSGwoXVkFJTERf",
-            "U0NPUEVfVU5TUEVDSUZJRUQQABIXChNWQUlMRF9TQ09QRV9BQ0NPVU5UEAES",
-            "EwoPVkFJTERfU0NPUEVfQVBQEAISGwoXVkFJTERfU0NPUEVfQVBQX1BBQ0tB",
+            "dmVBcHBDYXRlZ29yeVJlc3BvbnNlKnQKClZhbGlkU2NvcGUSGwoXVkFMSURf",
+            "U0NPUEVfVU5TUEVDSUZJRUQQABIXChNWQUxJRF9TQ09QRV9BQ0NPVU5UEAES",
+            "EwoPVkFMSURfU0NPUEVfQVBQEAISGwoXVkFMSURfU0NPUEVfQVBQX1BBQ0tB",
             "R0UQA0JdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlh",
             "bi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNl",
             "cGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
@@ -213,7 +213,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinGameSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinGameSaveFileResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityRequest.Parser, new[]{ "UserId", "CapacityBytes" }, new[]{ "CapacityBytes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetUserSaveFileCapacityResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest.Parser, new[]{ "EntityId", "VaildScope", "Count", "Enabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationRequest.Parser, new[]{ "EntityId", "ValidScope", "Count", "Enabled" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetSaveFileRotationResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse.Parser, new[]{ "AppCategories" }, null, null, null, null),
@@ -229,11 +229,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   }
   #region Enums
-  public enum VaildScope {
-    [pbr::OriginalName("VAILD_SCOPE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("VAILD_SCOPE_ACCOUNT")] Account = 1,
-    [pbr::OriginalName("VAILD_SCOPE_APP")] App = 2,
-    [pbr::OriginalName("VAILD_SCOPE_APP_PACKAGE")] AppPackage = 3,
+  public enum ValidScope {
+    [pbr::OriginalName("VALID_SCOPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("VALID_SCOPE_ACCOUNT")] Account = 1,
+    [pbr::OriginalName("VALID_SCOPE_APP")] App = 2,
+    [pbr::OriginalName("VALID_SCOPE_APP_PACKAGE")] AppPackage = 3,
   }
 
   #endregion
@@ -11569,7 +11569,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetSaveFileRotationRequest(SetSaveFileRotationRequest other) : this() {
       entityId_ = other.entityId_ != null ? other.entityId_.Clone() : null;
-      vaildScope_ = other.vaildScope_;
+      validScope_ = other.validScope_;
       count_ = other.count_;
       enabled_ = other.enabled_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -11585,7 +11585,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public const int EntityIdFieldNumber = 1;
     private global::TuiHub.Protos.Librarian.V1.InternalID entityId_;
     /// <summary>
-    /// don't care if valid_scope is VAILD_SCOPE_ACCOUNT
+    /// don't care if valid_scope is VALID_SCOPE_ACCOUNT
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11596,15 +11596,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "vaild_scope" field.</summary>
-    public const int VaildScopeFieldNumber = 2;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope vaildScope_ = global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified;
+    /// <summary>Field number for the "valid_scope" field.</summary>
+    public const int ValidScopeFieldNumber = 2;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope validScope_ = global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope VaildScope {
-      get { return vaildScope_; }
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope ValidScope {
+      get { return validScope_; }
       set {
-        vaildScope_ = value;
+        validScope_ = value;
       }
     }
 
@@ -11651,7 +11651,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return true;
       }
       if (!object.Equals(EntityId, other.EntityId)) return false;
-      if (VaildScope != other.VaildScope) return false;
+      if (ValidScope != other.ValidScope) return false;
       if (Count != other.Count) return false;
       if (Enabled != other.Enabled) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -11662,7 +11662,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (entityId_ != null) hash ^= EntityId.GetHashCode();
-      if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) hash ^= VaildScope.GetHashCode();
+      if (ValidScope != global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope.Unspecified) hash ^= ValidScope.GetHashCode();
       if (Count != 0L) hash ^= Count.GetHashCode();
       if (Enabled != false) hash ^= Enabled.GetHashCode();
       if (_unknownFields != null) {
@@ -11687,9 +11687,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(EntityId);
       }
-      if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
+      if (ValidScope != global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope.Unspecified) {
         output.WriteRawTag(16);
-        output.WriteEnum((int) VaildScope);
+        output.WriteEnum((int) ValidScope);
       }
       if (Count != 0L) {
         output.WriteRawTag(24);
@@ -11713,9 +11713,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(EntityId);
       }
-      if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
+      if (ValidScope != global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope.Unspecified) {
         output.WriteRawTag(16);
-        output.WriteEnum((int) VaildScope);
+        output.WriteEnum((int) ValidScope);
       }
       if (Count != 0L) {
         output.WriteRawTag(24);
@@ -11738,8 +11738,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (entityId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityId);
       }
-      if (VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) VaildScope);
+      if (ValidScope != global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ValidScope);
       }
       if (Count != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Count);
@@ -11765,8 +11765,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         EntityId.MergeFrom(other.EntityId);
       }
-      if (other.VaildScope != global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope.Unspecified) {
-        VaildScope = other.VaildScope;
+      if (other.ValidScope != global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope.Unspecified) {
+        ValidScope = other.ValidScope;
       }
       if (other.Count != 0L) {
         Count = other.Count;
@@ -11797,7 +11797,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 16: {
-            VaildScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope) input.ReadEnum();
+            ValidScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope) input.ReadEnum();
             break;
           }
           case 24: {
@@ -11831,7 +11831,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 16: {
-            VaildScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.VaildScope) input.ReadEnum();
+            ValidScope = (global::TuiHub.Protos.Librarian.Sephirah.V1.ValidScope) input.ReadEnum();
             break;
           }
           case 24: {

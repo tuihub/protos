@@ -11,9 +11,9 @@
 
 import 'dart:core' as $core;
 
-import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../google/protobuf/timestamp.pb.dart' as $8;
 import '../../v1/common.pb.dart' as $7;
 import 'tiphereth.pbenum.dart';
 
@@ -1822,8 +1822,8 @@ class UserSession extends $pb.GeneratedMessage {
     $7.InternalID? id,
     $7.InternalID? userId,
     DeviceInfo? deviceInfo,
-    $fixnum.Int64? createTime,
-    $fixnum.Int64? expireTime,
+    $8.Timestamp? createTime,
+    $8.Timestamp? expireTime,
   }) {
     final $result = create();
     if (id != null) {
@@ -1851,8 +1851,8 @@ class UserSession extends $pb.GeneratedMessage {
     ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'userId', subBuilder: $7.InternalID.create)
     ..aOM<DeviceInfo>(3, _omitFieldNames ? '' : 'deviceInfo', subBuilder: DeviceInfo.create)
-    ..aInt64(4, _omitFieldNames ? '' : 'createTime')
-    ..aInt64(5, _omitFieldNames ? '' : 'expireTime')
+    ..aOM<$8.Timestamp>(4, _omitFieldNames ? '' : 'createTime', subBuilder: $8.Timestamp.create)
+    ..aOM<$8.Timestamp>(5, _omitFieldNames ? '' : 'expireTime', subBuilder: $8.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1911,22 +1911,26 @@ class UserSession extends $pb.GeneratedMessage {
   DeviceInfo ensureDeviceInfo() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get createTime => $_getI64(3);
+  $8.Timestamp get createTime => $_getN(3);
   @$pb.TagNumber(4)
-  set createTime($fixnum.Int64 v) { $_setInt64(3, v); }
+  set createTime($8.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCreateTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearCreateTime() => clearField(4);
+  @$pb.TagNumber(4)
+  $8.Timestamp ensureCreateTime() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get expireTime => $_getI64(4);
+  $8.Timestamp get expireTime => $_getN(4);
   @$pb.TagNumber(5)
-  set expireTime($fixnum.Int64 v) { $_setInt64(4, v); }
+  set expireTime($8.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasExpireTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearExpireTime() => clearField(5);
+  @$pb.TagNumber(5)
+  $8.Timestamp ensureExpireTime() => $_ensure(4);
 }
 
 class DeviceInfo extends $pb.GeneratedMessage {

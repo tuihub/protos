@@ -2,6 +2,7 @@
 // file: librarian/sephirah/v1/tiphereth.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class GetTokenRequest extends jspb.Message {
@@ -790,11 +791,15 @@ export class UserSession extends jspb.Message {
   getDeviceInfo(): DeviceInfo | undefined;
   setDeviceInfo(value?: DeviceInfo): void;
 
-  getCreateTime(): number;
-  setCreateTime(value: number): void;
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  getExpireTime(): number;
-  setExpireTime(value: number): void;
+  hasExpireTime(): boolean;
+  clearExpireTime(): void;
+  getExpireTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setExpireTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UserSession.AsObject;
@@ -811,8 +816,8 @@ export namespace UserSession {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     userId?: librarian_v1_common_pb.InternalID.AsObject,
     deviceInfo?: DeviceInfo.AsObject,
-    createTime: number,
-    expireTime: number,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    expireTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
