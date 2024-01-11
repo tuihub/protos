@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.1](https://github.com/tuihub/protos/compare/v0.3.0...v0.3.1) (2024-01-11)
+
+
+### Features
+
+* **porter:** add SearchApp ([aaa487c](https://github.com/tuihub/protos/commit/aaa487c12d99da5ffbbb214eb01a211717e586df))
+* **tiphereth:** add session manage ([3346148](https://github.com/tuihub/protos/commit/3346148eaca2a1e149356e171b4663a6875993cc))
+
+
+### Bug Fixes
+
+* **gebura:** add exclude_internal for ListApps ([88ac7a5](https://github.com/tuihub/protos/commit/88ac7a5ae4730f47f1e2f472ae0e6cac6c212880))
+
 ## [0.3.0](https://github.com/tuihub/protos/compare/v0.2.48...v0.3.0) (2024-01-09)
 
 
