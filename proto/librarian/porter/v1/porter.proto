@@ -18,6 +18,8 @@ service LibrarianPorterService {
   rpc PullApp(PullAppRequest) returns (PullAppResponse);
   // `Gebura`
   rpc PullAccountAppRelation(PullAccountAppRelationRequest) returns (PullAccountAppRelationResponse);
+  // `Gebura`
+  rpc SearchApp(SearchAppRequest) returns (SearchAppResponse);
 
   // `Yesod`
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
@@ -79,6 +81,14 @@ message PullAccountAppRelationRequest {
 }
 
 message PullAccountAppRelationResponse {
+  repeated librarian.v1.App app_list = 1;
+}
+
+message SearchAppRequest {
+  string name = 1;
+}
+
+message SearchAppResponse {
   repeated librarian.v1.App app_list = 1;
 }
 
