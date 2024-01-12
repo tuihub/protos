@@ -1244,7 +1244,7 @@ proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.RefreshTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1281,6 +1281,11 @@ proto.librarian.sephirah.v1.RefreshTokenRequest.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 3:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setDeviceId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1310,6 +1315,51 @@ proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.serializeBinary = func
  */
 proto.librarian.sephirah.v1.RefreshTokenRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDeviceId();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID device_id = 3;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.getDeviceId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 3));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.RefreshTokenRequest} returns this
+*/
+proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.setDeviceId = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.RefreshTokenRequest} returns this
+ */
+proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.clearDeviceId = function() {
+  return this.setDeviceId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.hasDeviceId = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

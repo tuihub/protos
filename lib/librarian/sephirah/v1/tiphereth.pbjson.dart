@@ -82,11 +82,18 @@ final $typed_data.Uint8List getTokenResponseDescriptor = $convert.base64Decode(
 @$core.Deprecated('Use refreshTokenRequestDescriptor instead')
 const RefreshTokenRequest$json = {
   '1': 'RefreshTokenRequest',
+  '2': [
+    {'1': 'device_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'deviceId', '17': true},
+  ],
+  '8': [
+    {'1': '_device_id'},
+  ],
 };
 
 /// Descriptor for `RefreshTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List refreshTokenRequestDescriptor = $convert.base64Decode(
-    'ChNSZWZyZXNoVG9rZW5SZXF1ZXN0');
+    'ChNSZWZyZXNoVG9rZW5SZXF1ZXN0EjoKCWRldmljZV9pZBgDIAEoCzIYLmxpYnJhcmlhbi52MS'
+    '5JbnRlcm5hbElESABSCGRldmljZUlkiAEBQgwKCl9kZXZpY2VfaWQ=');
 
 @$core.Deprecated('Use refreshTokenResponseDescriptor instead')
 const RefreshTokenResponse$json = {

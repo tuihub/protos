@@ -166,12 +166,21 @@ class GetTokenResponse extends $pb.GeneratedMessage {
 }
 
 class RefreshTokenRequest extends $pb.GeneratedMessage {
-  factory RefreshTokenRequest() => create();
+  factory RefreshTokenRequest({
+    $7.InternalID? deviceId,
+  }) {
+    final $result = create();
+    if (deviceId != null) {
+      $result.deviceId = deviceId;
+    }
+    return $result;
+  }
   RefreshTokenRequest._() : super();
   factory RefreshTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RefreshTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(3, _omitFieldNames ? '' : 'deviceId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -195,6 +204,20 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static RefreshTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefreshTokenRequest>(create);
   static RefreshTokenRequest? _defaultInstance;
+
+  /// Always ignore this if client don't impl device info feature.
+  /// Be used to add device info after registered device.
+  /// Only first device_id will be used.
+  @$pb.TagNumber(3)
+  $7.InternalID get deviceId => $_getN(0);
+  @$pb.TagNumber(3)
+  set deviceId($7.InternalID v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(3)
+  void clearDeviceId() => clearField(3);
+  @$pb.TagNumber(3)
+  $7.InternalID ensureDeviceId() => $_ensure(0);
 }
 
 class RefreshTokenResponse extends $pb.GeneratedMessage {

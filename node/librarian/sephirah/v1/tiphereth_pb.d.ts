@@ -60,6 +60,11 @@ export namespace GetTokenResponse {
 }
 
 export class RefreshTokenRequest extends jspb.Message {
+  hasDeviceId(): boolean;
+  clearDeviceId(): void;
+  getDeviceId(): librarian_v1_common_pb.InternalID | undefined;
+  setDeviceId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RefreshTokenRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RefreshTokenRequest): RefreshTokenRequest.AsObject;
@@ -72,6 +77,7 @@ export class RefreshTokenRequest extends jspb.Message {
 
 export namespace RefreshTokenRequest {
   export type AsObject = {
+    deviceId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
