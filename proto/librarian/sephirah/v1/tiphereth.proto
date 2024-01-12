@@ -21,7 +21,12 @@ message GetTokenResponse {
   string refresh_token = 2;
 }
 
-message RefreshTokenRequest {}
+message RefreshTokenRequest {
+  // Always ignore this if client don't impl device info feature.
+  // Be used to add device info after registered device.
+  // Only first device_id will be used.
+  optional librarian.v1.InternalID device_id = 3;
+}
 
 message RefreshTokenResponse {
   string access_token = 1;
