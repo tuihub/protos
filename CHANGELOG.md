@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/tuihub/protos/compare/v0.3.2...v0.3.3) (2024-01-12)
+
+
+### Bug Fixes
+
+* **tiphereth:** add device_id to RefreshToken ([c40d53c](https://github.com/tuihub/protos/commit/c40d53cbd8486097b31f61030ec8b90f0504c482))
+
 ## [0.3.2](https://github.com/tuihub/protos/compare/v0.3.1...v0.3.2) (2024-01-11)
 
 
