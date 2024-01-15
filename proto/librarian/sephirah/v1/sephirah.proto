@@ -111,9 +111,13 @@ service LibrarianSephirahService {
   // `Gebura` `Admin` Asynchronous update apps.
   // Request on INTERNAL app applies to all bound external apps.
   // Create an INTERNAL app when requested external app does not exist
+  // Server should implement a sync rate limit to prevent abuse,
+  // when rate limit reached, return without real sync.
   rpc SyncApps(SyncAppsRequest) returns (SyncAppsResponse);
   // `Gebura` `Admin` Asynchronously update apps associated with an account.
-  // Create an INTERNAL app when associated external app does not exist
+  // Create an INTERNAL app when associated external app does not exist.
+  // Server should implement a sync rate limit to prevent abuse,
+  // when rate limit reached, return without real sync.
   rpc SyncAccountApps(SyncAccountAppsRequest) returns (SyncAccountAppsResponse);
   // `Gebura` `Admin` Merge two apps
   rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);

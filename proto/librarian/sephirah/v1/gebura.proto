@@ -39,10 +39,15 @@ message ListAppsResponse {
 }
 
 message SyncAppsRequest {
-  librarian.v1.AppID app_id = 1;
+  repeated librarian.v1.AppID app_ids = 1;
+  // if false, server will return immediately.
+  // if true, server will return data after sync finished.
+  optional bool wait_data = 2;
 }
 
-message SyncAppsResponse {}
+message SyncAppsResponse {
+  repeated librarian.v1.App apps = 1;
+}
 
 message MergeAppsRequest {
   // `internal` must be true
