@@ -2280,6 +2280,8 @@ listApps: {
   // `Gebura` `Admin` Asynchronous update apps.
 // Request on INTERNAL app applies to all bound external apps.
 // Create an INTERNAL app when requested external app does not exist
+// Server should implement a sync rate limit to prevent abuse,
+// when rate limit reached, return without real sync.
 syncApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
     requestStream: false,
@@ -2292,7 +2294,9 @@ syncApps: {
     responseDeserialize: deserialize_librarian_sephirah_v1_SyncAppsResponse,
   },
   // `Gebura` `Admin` Asynchronously update apps associated with an account.
-// Create an INTERNAL app when associated external app does not exist
+// Create an INTERNAL app when associated external app does not exist.
+// Server should implement a sync rate limit to prevent abuse,
+// when rate limit reached, return without real sync.
 syncAccountApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
     requestStream: false,

@@ -1156,6 +1156,8 @@ pub mod librarian_sephirah_service_client {
         /** `Gebura` `Admin` Asynchronous update apps.
  Request on INTERNAL app applies to all bound external apps.
  Create an INTERNAL app when requested external app does not exist
+ Server should implement a sync rate limit to prevent abuse,
+ when rate limit reached, return without real sync.
 */
         pub async fn sync_apps(
             &mut self,
@@ -1188,7 +1190,9 @@ pub mod librarian_sephirah_service_client {
             self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Admin` Asynchronously update apps associated with an account.
- Create an INTERNAL app when associated external app does not exist
+ Create an INTERNAL app when associated external app does not exist.
+ Server should implement a sync rate limit to prevent abuse,
+ when rate limit reached, return without real sync.
 */
         pub async fn sync_account_apps(
             &mut self,
@@ -3111,6 +3115,8 @@ pub mod librarian_sephirah_service_server {
         /** `Gebura` `Admin` Asynchronous update apps.
  Request on INTERNAL app applies to all bound external apps.
  Create an INTERNAL app when requested external app does not exist
+ Server should implement a sync rate limit to prevent abuse,
+ when rate limit reached, return without real sync.
 */
         async fn sync_apps(
             &self,
@@ -3120,7 +3126,9 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
         /** `Gebura` `Admin` Asynchronously update apps associated with an account.
- Create an INTERNAL app when associated external app does not exist
+ Create an INTERNAL app when associated external app does not exist.
+ Server should implement a sync rate limit to prevent abuse,
+ when rate limit reached, return without real sync.
 */
         async fn sync_account_apps(
             &self,

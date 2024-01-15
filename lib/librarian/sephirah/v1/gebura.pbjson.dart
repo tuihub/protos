@@ -118,23 +118,31 @@ final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
 const SyncAppsRequest$json = {
   '1': 'SyncAppsRequest',
   '2': [
-    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppID', '10': 'appId'},
+    {'1': 'app_ids', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppID', '10': 'appIds'},
+    {'1': 'wait_data', '3': 2, '4': 1, '5': 8, '9': 0, '10': 'waitData', '17': true},
+  ],
+  '8': [
+    {'1': '_wait_data'},
   ],
 };
 
 /// Descriptor for `SyncAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List syncAppsRequestDescriptor = $convert.base64Decode(
-    'Cg9TeW5jQXBwc1JlcXVlc3QSKgoGYXBwX2lkGAEgASgLMhMubGlicmFyaWFuLnYxLkFwcElEUg'
-    'VhcHBJZA==');
+    'Cg9TeW5jQXBwc1JlcXVlc3QSLAoHYXBwX2lkcxgBIAMoCzITLmxpYnJhcmlhbi52MS5BcHBJRF'
+    'IGYXBwSWRzEiAKCXdhaXRfZGF0YRgCIAEoCEgAUgh3YWl0RGF0YYgBAUIMCgpfd2FpdF9kYXRh');
 
 @$core.Deprecated('Use syncAppsResponseDescriptor instead')
 const SyncAppsResponse$json = {
   '1': 'SyncAppsResponse',
+  '2': [
+    {'1': 'apps', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'apps'},
+  ],
 };
 
 /// Descriptor for `SyncAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List syncAppsResponseDescriptor = $convert.base64Decode(
-    'ChBTeW5jQXBwc1Jlc3BvbnNl');
+    'ChBTeW5jQXBwc1Jlc3BvbnNlEiUKBGFwcHMYASADKAsyES5saWJyYXJpYW4udjEuQXBwUgRhcH'
+    'Bz');
 
 @$core.Deprecated('Use mergeAppsRequestDescriptor instead')
 const MergeAppsRequest$json = {

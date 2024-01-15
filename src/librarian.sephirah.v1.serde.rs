@@ -16388,12 +16388,18 @@ impl serde::Serialize for SyncAppsRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_id.is_some() {
+        if !self.app_ids.is_empty() {
+            len += 1;
+        }
+        if self.wait_data.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppsRequest", len)?;
-        if let Some(v) = self.app_id.as_ref() {
-            struct_ser.serialize_field("appId", v)?;
+        if !self.app_ids.is_empty() {
+            struct_ser.serialize_field("appIds", &self.app_ids)?;
+        }
+        if let Some(v) = self.wait_data.as_ref() {
+            struct_ser.serialize_field("waitData", v)?;
         }
         struct_ser.end()
     }
@@ -16405,13 +16411,16 @@ impl<'de> serde::Deserialize<'de> for SyncAppsRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_id",
-            "appId",
+            "app_ids",
+            "appIds",
+            "wait_data",
+            "waitData",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppId,
+            AppIds,
+            WaitData,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -16433,7 +16442,8 @@ impl<'de> serde::Deserialize<'de> for SyncAppsRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            "appIds" | "app_ids" => Ok(GeneratedField::AppIds),
+                            "waitData" | "wait_data" => Ok(GeneratedField::WaitData),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -16453,19 +16463,27 @@ impl<'de> serde::Deserialize<'de> for SyncAppsRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_id__ = None;
+                let mut app_ids__ = None;
+                let mut wait_data__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppId => {
-                            if app_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appId"));
+                        GeneratedField::AppIds => {
+                            if app_ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appIds"));
                             }
-                            app_id__ = map.next_value()?;
+                            app_ids__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::WaitData => {
+                            if wait_data__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("waitData"));
+                            }
+                            wait_data__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(SyncAppsRequest {
-                    app_id: app_id__,
+                    app_ids: app_ids__.unwrap_or_default(),
+                    wait_data: wait_data__,
                 })
             }
         }
@@ -16479,8 +16497,14 @@ impl serde::Serialize for SyncAppsResponse {
         S: serde::Serializer,
     {
         use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppsResponse", len)?;
+        let mut len = 0;
+        if !self.apps.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppsResponse", len)?;
+        if !self.apps.is_empty() {
+            struct_ser.serialize_field("apps", &self.apps)?;
+        }
         struct_ser.end()
     }
 }
@@ -16491,10 +16515,12 @@ impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "apps",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Apps,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -16515,7 +16541,10 @@ impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
                     where
                         E: serde::de::Error,
                     {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                        match value {
+                            "apps" => Ok(GeneratedField::Apps),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
                     }
                 }
                 deserializer.deserialize_identifier(GeneratedVisitor)
@@ -16533,10 +16562,19 @@ impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                let mut apps__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Apps => {
+                            if apps__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("apps"));
+                            }
+                            apps__ = Some(map.next_value()?);
+                        }
+                    }
                 }
                 Ok(SyncAppsResponse {
+                    apps: apps__.unwrap_or_default(),
                 })
             }
         }

@@ -1781,7 +1781,7 @@ proto.librarian.v1.AccountID.prototype.setPlatformAccountId = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.App.repeatedFields_ = [12,13];
+proto.librarian.v1.App.repeatedFields_ = [13,14];
 
 
 
@@ -1824,9 +1824,10 @@ proto.librarian.v1.App.toObject = function(includeInstance, msg) {
     type: jspb.Message.getFieldWithDefault(msg, 8, 0),
     shortDescription: jspb.Message.getFieldWithDefault(msg, 9, ""),
     iconImageUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    heroImageUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    tagsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
-    altNamesList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
+    backgroundImageUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    coverImageUrl: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    tagsList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f,
+    altNamesList: (f = jspb.Message.getRepeatedField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1907,13 +1908,17 @@ proto.librarian.v1.App.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHeroImageUrl(value);
+      msg.setBackgroundImageUrl(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
+      msg.setCoverImageUrl(value);
       break;
     case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.addAltNames(value);
       break;
@@ -2018,24 +2023,31 @@ proto.librarian.v1.App.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getHeroImageUrl();
+  f = message.getBackgroundImageUrl();
   if (f.length > 0) {
     writer.writeString(
       11,
       f
     );
   }
+  f = message.getCoverImageUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
   f = message.getTagsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      12,
+      13,
       f
     );
   }
   f = message.getAltNamesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      13,
+      14,
       f
     );
   }
@@ -2279,10 +2291,10 @@ proto.librarian.v1.App.prototype.setIconImageUrl = function(value) {
 
 
 /**
- * optional string hero_image_url = 11;
+ * optional string background_image_url = 11;
  * @return {string}
  */
-proto.librarian.v1.App.prototype.getHeroImageUrl = function() {
+proto.librarian.v1.App.prototype.getBackgroundImageUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -2291,17 +2303,35 @@ proto.librarian.v1.App.prototype.getHeroImageUrl = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.App} returns this
  */
-proto.librarian.v1.App.prototype.setHeroImageUrl = function(value) {
+proto.librarian.v1.App.prototype.setBackgroundImageUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * repeated string tags = 12;
+ * optional string cover_image_url = 12;
+ * @return {string}
+ */
+proto.librarian.v1.App.prototype.getCoverImageUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.v1.App} returns this
+ */
+proto.librarian.v1.App.prototype.setCoverImageUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * repeated string tags = 13;
  * @return {!Array<string>}
  */
 proto.librarian.v1.App.prototype.getTagsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
 };
 
 
@@ -2310,7 +2340,7 @@ proto.librarian.v1.App.prototype.getTagsList = function() {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.setTagsList = function(value) {
-  return jspb.Message.setField(this, 12, value || []);
+  return jspb.Message.setField(this, 13, value || []);
 };
 
 
@@ -2320,7 +2350,7 @@ proto.librarian.v1.App.prototype.setTagsList = function(value) {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.addTags = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
 };
 
 
@@ -2334,11 +2364,11 @@ proto.librarian.v1.App.prototype.clearTagsList = function() {
 
 
 /**
- * repeated string alt_names = 13;
+ * repeated string alt_names = 14;
  * @return {!Array<string>}
  */
 proto.librarian.v1.App.prototype.getAltNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 14));
 };
 
 
@@ -2347,7 +2377,7 @@ proto.librarian.v1.App.prototype.getAltNamesList = function() {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.setAltNamesList = function(value) {
-  return jspb.Message.setField(this, 13, value || []);
+  return jspb.Message.setField(this, 14, value || []);
 };
 
 
@@ -2357,7 +2387,7 @@ proto.librarian.v1.App.prototype.setAltNamesList = function(value) {
  * @return {!proto.librarian.v1.App} returns this
  */
 proto.librarian.v1.App.prototype.addAltNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
 };
 
 

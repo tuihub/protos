@@ -549,7 +549,8 @@ class App extends $pb.GeneratedMessage {
     AppType? type,
     $core.String? shortDescription,
     $core.String? iconImageUrl,
-    $core.String? heroImageUrl,
+    $core.String? backgroundImageUrl,
+    $core.String? coverImageUrl,
     $core.Iterable<$core.String>? tags,
     $core.Iterable<$core.String>? altNames,
   }) {
@@ -584,8 +585,11 @@ class App extends $pb.GeneratedMessage {
     if (iconImageUrl != null) {
       $result.iconImageUrl = iconImageUrl;
     }
-    if (heroImageUrl != null) {
-      $result.heroImageUrl = heroImageUrl;
+    if (backgroundImageUrl != null) {
+      $result.backgroundImageUrl = backgroundImageUrl;
+    }
+    if (coverImageUrl != null) {
+      $result.coverImageUrl = coverImageUrl;
     }
     if (tags != null) {
       $result.tags.addAll(tags);
@@ -610,9 +614,10 @@ class App extends $pb.GeneratedMessage {
     ..e<AppType>(8, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..aOS(9, _omitFieldNames ? '' : 'shortDescription')
     ..aOS(10, _omitFieldNames ? '' : 'iconImageUrl')
-    ..aOS(11, _omitFieldNames ? '' : 'heroImageUrl')
-    ..pPS(12, _omitFieldNames ? '' : 'tags')
-    ..pPS(13, _omitFieldNames ? '' : 'altNames')
+    ..aOS(11, _omitFieldNames ? '' : 'backgroundImageUrl')
+    ..aOS(12, _omitFieldNames ? '' : 'coverImageUrl')
+    ..pPS(13, _omitFieldNames ? '' : 'tags')
+    ..pPS(14, _omitFieldNames ? '' : 'altNames')
     ..hasRequiredFields = false
   ;
 
@@ -733,20 +738,31 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearIconImageUrl() => clearField(10);
 
+  /// must be horizontal, usually 16:9
   @$pb.TagNumber(11)
-  $core.String get heroImageUrl => $_getSZ(10);
+  $core.String get backgroundImageUrl => $_getSZ(10);
   @$pb.TagNumber(11)
-  set heroImageUrl($core.String v) { $_setString(10, v); }
+  set backgroundImageUrl($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasHeroImageUrl() => $_has(10);
+  $core.bool hasBackgroundImageUrl() => $_has(10);
   @$pb.TagNumber(11)
-  void clearHeroImageUrl() => clearField(11);
+  void clearBackgroundImageUrl() => clearField(11);
 
+  /// must be vertical, usually 4:3
   @$pb.TagNumber(12)
-  $core.List<$core.String> get tags => $_getList(11);
+  $core.String get coverImageUrl => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set coverImageUrl($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCoverImageUrl() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCoverImageUrl() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.List<$core.String> get altNames => $_getList(12);
+  $core.List<$core.String> get tags => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.List<$core.String> get altNames => $_getList(13);
 }
 
 /// Mixed info of bound apps

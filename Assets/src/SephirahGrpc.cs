@@ -1490,6 +1490,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// `Gebura` `Admin` Asynchronous update apps.
       /// Request on INTERNAL app applies to all bound external apps.
       /// Create an INTERNAL app when requested external app does not exist
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1502,7 +1504,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
       /// <summary>
       /// `Gebura` `Admin` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist
+      /// Create an INTERNAL app when associated external app does not exist.
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -3665,6 +3669,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// `Gebura` `Admin` Asynchronous update apps.
       /// Request on INTERNAL app applies to all bound external apps.
       /// Create an INTERNAL app when requested external app does not exist
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3680,6 +3686,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// `Gebura` `Admin` Asynchronous update apps.
       /// Request on INTERNAL app applies to all bound external apps.
       /// Create an INTERNAL app when requested external app does not exist
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3693,6 +3701,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// `Gebura` `Admin` Asynchronous update apps.
       /// Request on INTERNAL app applies to all bound external apps.
       /// Create an INTERNAL app when requested external app does not exist
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3708,6 +3718,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// `Gebura` `Admin` Asynchronous update apps.
       /// Request on INTERNAL app applies to all bound external apps.
       /// Create an INTERNAL app when requested external app does not exist
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3719,7 +3731,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Admin` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist
+      /// Create an INTERNAL app when associated external app does not exist.
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3733,7 +3747,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Admin` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist
+      /// Create an INTERNAL app when associated external app does not exist.
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3745,7 +3761,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Admin` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist
+      /// Create an INTERNAL app when associated external app does not exist.
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3759,7 +3777,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Admin` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist
+      /// Create an INTERNAL app when associated external app does not exist.
+      /// Server should implement a sync rate limit to prevent abuse,
+      /// when rate limit reached, return without real sync.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

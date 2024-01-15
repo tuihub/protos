@@ -165,10 +165,15 @@ export namespace ListAppsResponse {
 }
 
 export class SyncAppsRequest extends jspb.Message {
-  hasAppId(): boolean;
-  clearAppId(): void;
-  getAppId(): librarian_v1_common_pb.AppID | undefined;
-  setAppId(value?: librarian_v1_common_pb.AppID): void;
+  clearAppIdsList(): void;
+  getAppIdsList(): Array<librarian_v1_common_pb.AppID>;
+  setAppIdsList(value: Array<librarian_v1_common_pb.AppID>): void;
+  addAppIds(value?: librarian_v1_common_pb.AppID, index?: number): librarian_v1_common_pb.AppID;
+
+  hasWaitData(): boolean;
+  clearWaitData(): void;
+  getWaitData(): boolean;
+  setWaitData(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncAppsRequest.AsObject;
@@ -182,11 +187,17 @@ export class SyncAppsRequest extends jspb.Message {
 
 export namespace SyncAppsRequest {
   export type AsObject = {
-    appId?: librarian_v1_common_pb.AppID.AsObject,
+    appIdsList: Array<librarian_v1_common_pb.AppID.AsObject>,
+    waitData: boolean,
   }
 }
 
 export class SyncAppsResponse extends jspb.Message {
+  clearAppsList(): void;
+  getAppsList(): Array<librarian_v1_common_pb.App>;
+  setAppsList(value: Array<librarian_v1_common_pb.App>): void;
+  addApps(value?: librarian_v1_common_pb.App, index?: number): librarian_v1_common_pb.App;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SyncAppsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SyncAppsResponse): SyncAppsResponse.AsObject;
@@ -199,6 +210,7 @@ export class SyncAppsResponse extends jspb.Message {
 
 export namespace SyncAppsResponse {
   export type AsObject = {
+    appsList: Array<librarian_v1_common_pb.App.AsObject>,
   }
 }
 

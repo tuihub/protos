@@ -416,7 +416,10 @@ impl serde::Serialize for App {
         if !self.icon_image_url.is_empty() {
             len += 1;
         }
-        if !self.hero_image_url.is_empty() {
+        if !self.background_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.cover_image_url.is_empty() {
             len += 1;
         }
         if !self.tags.is_empty() {
@@ -458,8 +461,11 @@ impl serde::Serialize for App {
         if !self.icon_image_url.is_empty() {
             struct_ser.serialize_field("iconImageUrl", &self.icon_image_url)?;
         }
-        if !self.hero_image_url.is_empty() {
-            struct_ser.serialize_field("heroImageUrl", &self.hero_image_url)?;
+        if !self.background_image_url.is_empty() {
+            struct_ser.serialize_field("backgroundImageUrl", &self.background_image_url)?;
+        }
+        if !self.cover_image_url.is_empty() {
+            struct_ser.serialize_field("coverImageUrl", &self.cover_image_url)?;
         }
         if !self.tags.is_empty() {
             struct_ser.serialize_field("tags", &self.tags)?;
@@ -491,8 +497,10 @@ impl<'de> serde::Deserialize<'de> for App {
             "shortDescription",
             "icon_image_url",
             "iconImageUrl",
-            "hero_image_url",
-            "heroImageUrl",
+            "background_image_url",
+            "backgroundImageUrl",
+            "cover_image_url",
+            "coverImageUrl",
             "tags",
             "alt_names",
             "altNames",
@@ -510,7 +518,8 @@ impl<'de> serde::Deserialize<'de> for App {
             Type,
             ShortDescription,
             IconImageUrl,
-            HeroImageUrl,
+            BackgroundImageUrl,
+            CoverImageUrl,
             Tags,
             AltNames,
         }
@@ -544,7 +553,8 @@ impl<'de> serde::Deserialize<'de> for App {
                             "type" => Ok(GeneratedField::Type),
                             "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
                             "iconImageUrl" | "icon_image_url" => Ok(GeneratedField::IconImageUrl),
-                            "heroImageUrl" | "hero_image_url" => Ok(GeneratedField::HeroImageUrl),
+                            "backgroundImageUrl" | "background_image_url" => Ok(GeneratedField::BackgroundImageUrl),
+                            "coverImageUrl" | "cover_image_url" => Ok(GeneratedField::CoverImageUrl),
                             "tags" => Ok(GeneratedField::Tags),
                             "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -576,7 +586,8 @@ impl<'de> serde::Deserialize<'de> for App {
                 let mut r#type__ = None;
                 let mut short_description__ = None;
                 let mut icon_image_url__ = None;
-                let mut hero_image_url__ = None;
+                let mut background_image_url__ = None;
+                let mut cover_image_url__ = None;
                 let mut tags__ = None;
                 let mut alt_names__ = None;
                 while let Some(k) = map.next_key()? {
@@ -641,11 +652,17 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             icon_image_url__ = Some(map.next_value()?);
                         }
-                        GeneratedField::HeroImageUrl => {
-                            if hero_image_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("heroImageUrl"));
+                        GeneratedField::BackgroundImageUrl => {
+                            if background_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("backgroundImageUrl"));
                             }
-                            hero_image_url__ = Some(map.next_value()?);
+                            background_image_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::CoverImageUrl => {
+                            if cover_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("coverImageUrl"));
+                            }
+                            cover_image_url__ = Some(map.next_value()?);
                         }
                         GeneratedField::Tags => {
                             if tags__.is_some() {
@@ -672,7 +689,8 @@ impl<'de> serde::Deserialize<'de> for App {
                     r#type: r#type__.unwrap_or_default(),
                     short_description: short_description__.unwrap_or_default(),
                     icon_image_url: icon_image_url__.unwrap_or_default(),
-                    hero_image_url: hero_image_url__.unwrap_or_default(),
+                    background_image_url: background_image_url__.unwrap_or_default(),
+                    cover_image_url: cover_image_url__.unwrap_or_default(),
                     tags: tags__.unwrap_or_default(),
                     alt_names: alt_names__.unwrap_or_default(),
                 })

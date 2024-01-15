@@ -191,9 +191,13 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Admin` Asynchronous update apps.
 	// Request on INTERNAL app applies to all bound external apps.
 	// Create an INTERNAL app when requested external app does not exist
+	// Server should implement a sync rate limit to prevent abuse,
+	// when rate limit reached, return without real sync.
 	SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error)
 	// `Gebura` `Admin` Asynchronously update apps associated with an account.
-	// Create an INTERNAL app when associated external app does not exist
+	// Create an INTERNAL app when associated external app does not exist.
+	// Server should implement a sync rate limit to prevent abuse,
+	// when rate limit reached, return without real sync.
 	SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error)
 	// `Gebura` `Admin` Merge two apps
 	MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error)
@@ -1260,9 +1264,13 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Admin` Asynchronous update apps.
 	// Request on INTERNAL app applies to all bound external apps.
 	// Create an INTERNAL app when requested external app does not exist
+	// Server should implement a sync rate limit to prevent abuse,
+	// when rate limit reached, return without real sync.
 	SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error)
 	// `Gebura` `Admin` Asynchronously update apps associated with an account.
-	// Create an INTERNAL app when associated external app does not exist
+	// Create an INTERNAL app when associated external app does not exist.
+	// Server should implement a sync rate limit to prevent abuse,
+	// when rate limit reached, return without real sync.
 	SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error)
 	// `Gebura` `Admin` Merge two apps
 	MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error)

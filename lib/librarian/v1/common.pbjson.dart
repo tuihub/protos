@@ -192,9 +192,10 @@ const App$json = {
     {'1': 'type', '3': 8, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
     {'1': 'short_description', '3': 9, '4': 1, '5': 9, '10': 'shortDescription'},
     {'1': 'icon_image_url', '3': 10, '4': 1, '5': 9, '10': 'iconImageUrl'},
-    {'1': 'hero_image_url', '3': 11, '4': 1, '5': 9, '10': 'heroImageUrl'},
-    {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 13, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'background_image_url', '3': 11, '4': 1, '5': 9, '10': 'backgroundImageUrl'},
+    {'1': 'cover_image_url', '3': 12, '4': 1, '5': 9, '10': 'coverImageUrl'},
+    {'1': 'tags', '3': 13, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'alt_names', '3': 14, '4': 3, '5': 9, '10': 'altNames'},
   ],
   '8': [
     {'1': '_source_url'},
@@ -210,9 +211,10 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'JsiAEBEjcKB2RldGFpbHMYBiABKAsyGC5saWJyYXJpYW4udjEuQXBwRGV0YWlsc0gBUgdkZXRh'
     'aWxziAEBEhIKBG5hbWUYByABKAlSBG5hbWUSKQoEdHlwZRgIIAEoDjIVLmxpYnJhcmlhbi52MS'
     '5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAkgASgJUhBzaG9ydERlc2NyaXB0'
-    'aW9uEiQKDmljb25faW1hZ2VfdXJsGAogASgJUgxpY29uSW1hZ2VVcmwSJAoOaGVyb19pbWFnZV'
-    '91cmwYCyABKAlSDGhlcm9JbWFnZVVybBISCgR0YWdzGAwgAygJUgR0YWdzEhsKCWFsdF9uYW1l'
-    'cxgNIAMoCVIIYWx0TmFtZXNCDQoLX3NvdXJjZV91cmxCCgoIX2RldGFpbHM=');
+    'aW9uEiQKDmljb25faW1hZ2VfdXJsGAogASgJUgxpY29uSW1hZ2VVcmwSMAoUYmFja2dyb3VuZF'
+    '9pbWFnZV91cmwYCyABKAlSEmJhY2tncm91bmRJbWFnZVVybBImCg9jb3Zlcl9pbWFnZV91cmwY'
+    'DCABKAlSDWNvdmVySW1hZ2VVcmwSEgoEdGFncxgNIAMoCVIEdGFncxIbCglhbHRfbmFtZXMYDi'
+    'ADKAlSCGFsdE5hbWVzQg0KC19zb3VyY2VfdXJsQgoKCF9kZXRhaWxz');
 
 @$core.Deprecated('Use appMixedDescriptor instead')
 const AppMixed$json = {

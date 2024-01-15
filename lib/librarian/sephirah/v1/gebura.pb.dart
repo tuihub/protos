@@ -378,11 +378,15 @@ class ListAppsResponse extends $pb.GeneratedMessage {
 
 class SyncAppsRequest extends $pb.GeneratedMessage {
   factory SyncAppsRequest({
-    $7.AppID? appId,
+    $core.Iterable<$7.AppID>? appIds,
+    $core.bool? waitData,
   }) {
     final $result = create();
-    if (appId != null) {
-      $result.appId = appId;
+    if (appIds != null) {
+      $result.appIds.addAll(appIds);
+    }
+    if (waitData != null) {
+      $result.waitData = waitData;
     }
     return $result;
   }
@@ -391,7 +395,8 @@ class SyncAppsRequest extends $pb.GeneratedMessage {
   factory SyncAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.AppID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.AppID.create)
+    ..pc<$7.AppID>(1, _omitFieldNames ? '' : 'appIds', $pb.PbFieldType.PM, subBuilder: $7.AppID.create)
+    ..aOB(2, _omitFieldNames ? '' : 'waitData')
     ..hasRequiredFields = false
   ;
 
@@ -417,24 +422,36 @@ class SyncAppsRequest extends $pb.GeneratedMessage {
   static SyncAppsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.AppID get appId => $_getN(0);
-  @$pb.TagNumber(1)
-  set appId($7.AppID v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAppId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAppId() => clearField(1);
-  @$pb.TagNumber(1)
-  $7.AppID ensureAppId() => $_ensure(0);
+  $core.List<$7.AppID> get appIds => $_getList(0);
+
+  /// if false, server will return immediately.
+  /// if true, server will return data after sync finished.
+  @$pb.TagNumber(2)
+  $core.bool get waitData => $_getBF(1);
+  @$pb.TagNumber(2)
+  set waitData($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasWaitData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWaitData() => clearField(2);
 }
 
 class SyncAppsResponse extends $pb.GeneratedMessage {
-  factory SyncAppsResponse() => create();
+  factory SyncAppsResponse({
+    $core.Iterable<$7.App>? apps,
+  }) {
+    final $result = create();
+    if (apps != null) {
+      $result.apps.addAll(apps);
+    }
+    return $result;
+  }
   SyncAppsResponse._() : super();
   factory SyncAppsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SyncAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<$7.App>(1, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: $7.App.create)
     ..hasRequiredFields = false
   ;
 
@@ -458,6 +475,9 @@ class SyncAppsResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static SyncAppsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncAppsResponse>(create);
   static SyncAppsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$7.App> get apps => $_getList(0);
 }
 
 class MergeAppsRequest extends $pb.GeneratedMessage {
