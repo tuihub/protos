@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/tuihub/protos/compare/v0.3.3...v0.3.4) (2024-01-15)
+
+
+### Bug Fixes
+
+* **gebura:** update SyncApps ([45a8a46](https://github.com/tuihub/protos/commit/45a8a46e3e22969d2b6688b7000c04d0e9bede2e))
+
 ## [0.3.3](https://github.com/tuihub/protos/compare/v0.3.2...v0.3.3) (2024-01-12)
 
 
