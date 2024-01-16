@@ -311,8 +311,11 @@ export class AppMixed extends jspb.Message {
   getIconImageUrl(): string;
   setIconImageUrl(value: string): void;
 
-  getHeroImageUrl(): string;
-  setHeroImageUrl(value: string): void;
+  getBackgroundImageUrl(): string;
+  setBackgroundImageUrl(value: string): void;
+
+  getCoverImageUrl(): string;
+  setCoverImageUrl(value: string): void;
 
   clearTagsList(): void;
   getTagsList(): Array<string>;
@@ -342,7 +345,8 @@ export namespace AppMixed {
     type: AppTypeMap[keyof AppTypeMap],
     shortDescription: string,
     iconImageUrl: string,
-    heroImageUrl: string,
+    backgroundImageUrl: string,
+    coverImageUrl: string,
     tagsList: Array<string>,
     altNamesList: Array<string>,
   }

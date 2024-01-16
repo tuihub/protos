@@ -226,9 +226,10 @@ const AppMixed$json = {
     {'1': 'type', '3': 8, '4': 1, '5': 14, '6': '.librarian.v1.AppType', '10': 'type'},
     {'1': 'short_description', '3': 9, '4': 1, '5': 9, '10': 'shortDescription'},
     {'1': 'icon_image_url', '3': 10, '4': 1, '5': 9, '10': 'iconImageUrl'},
-    {'1': 'hero_image_url', '3': 11, '4': 1, '5': 9, '10': 'heroImageUrl'},
-    {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 13, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'background_image_url', '3': 11, '4': 1, '5': 9, '10': 'backgroundImageUrl'},
+    {'1': 'cover_image_url', '3': 12, '4': 1, '5': 9, '10': 'coverImageUrl'},
+    {'1': 'tags', '3': 13, '4': 3, '5': 9, '10': 'tags'},
+    {'1': 'alt_names', '3': 14, '4': 3, '5': 9, '10': 'altNames'},
   ],
   '8': [
     {'1': '_details'},
@@ -241,9 +242,10 @@ final $typed_data.Uint8List appMixedDescriptor = $convert.base64Decode(
     'dkZXRhaWxzGAYgASgLMhgubGlicmFyaWFuLnYxLkFwcERldGFpbHNIAFIHZGV0YWlsc4gBARIS'
     'CgRuYW1lGAcgASgJUgRuYW1lEikKBHR5cGUYCCABKA4yFS5saWJyYXJpYW4udjEuQXBwVHlwZV'
     'IEdHlwZRIrChFzaG9ydF9kZXNjcmlwdGlvbhgJIAEoCVIQc2hvcnREZXNjcmlwdGlvbhIkCg5p'
-    'Y29uX2ltYWdlX3VybBgKIAEoCVIMaWNvbkltYWdlVXJsEiQKDmhlcm9faW1hZ2VfdXJsGAsgAS'
-    'gJUgxoZXJvSW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIbCglhbHRfbmFtZXMYDSADKAlS'
-    'CGFsdE5hbWVzQgoKCF9kZXRhaWxz');
+    'Y29uX2ltYWdlX3VybBgKIAEoCVIMaWNvbkltYWdlVXJsEjAKFGJhY2tncm91bmRfaW1hZ2VfdX'
+    'JsGAsgASgJUhJiYWNrZ3JvdW5kSW1hZ2VVcmwSJgoPY292ZXJfaW1hZ2VfdXJsGAwgASgJUg1j'
+    'b3ZlckltYWdlVXJsEhIKBHRhZ3MYDSADKAlSBHRhZ3MSGwoJYWx0X25hbWVzGA4gAygJUghhbH'
+    'ROYW1lc0IKCghfZGV0YWlscw==');
 
 @$core.Deprecated('Use appIDDescriptor instead')
 const AppID$json = {
