@@ -1123,6 +1123,7 @@ class AppPackage extends $pb.GeneratedMessage {
     $core.String? description,
     AppPackageBinary? binary,
     $core.bool? public,
+    InternalID? assignedAppId,
   }) {
     final $result = create();
     if (id != null) {
@@ -1146,6 +1147,9 @@ class AppPackage extends $pb.GeneratedMessage {
     if (public != null) {
       $result.public = public;
     }
+    if (assignedAppId != null) {
+      $result.assignedAppId = assignedAppId;
+    }
     return $result;
   }
   AppPackage._() : super();
@@ -1160,6 +1164,7 @@ class AppPackage extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'description')
     ..aOM<AppPackageBinary>(6, _omitFieldNames ? '' : 'binary', subBuilder: AppPackageBinary.create)
     ..aOB(7, _omitFieldNames ? '' : 'public')
+    ..aOM<InternalID>(8, _omitFieldNames ? '' : 'assignedAppId', subBuilder: InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1253,6 +1258,19 @@ class AppPackage extends $pb.GeneratedMessage {
   $core.bool hasPublic() => $_has(6);
   @$pb.TagNumber(7)
   void clearPublic() => clearField(7);
+
+  /// Only used in response
+  /// Available when assigned to an app
+  @$pb.TagNumber(8)
+  InternalID get assignedAppId => $_getN(7);
+  @$pb.TagNumber(8)
+  set assignedAppId(InternalID v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAssignedAppId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAssignedAppId() => clearField(8);
+  @$pb.TagNumber(8)
+  InternalID ensureAssignedAppId() => $_ensure(7);
 }
 
 class AppPackageBinary extends $pb.GeneratedMessage {

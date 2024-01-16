@@ -446,6 +446,11 @@ export class AppPackage extends jspb.Message {
   getPublic(): boolean;
   setPublic(value: boolean): void;
 
+  hasAssignedAppId(): boolean;
+  clearAssignedAppId(): void;
+  getAssignedAppId(): InternalID | undefined;
+  setAssignedAppId(value?: InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppPackage.AsObject;
   static toObject(includeInstance: boolean, msg: AppPackage): AppPackage.AsObject;
@@ -465,6 +470,7 @@ export namespace AppPackage {
     description: string,
     binary?: AppPackageBinary.AsObject,
     pb_public: boolean,
+    assignedAppId?: InternalID.AsObject,
   }
 }
 

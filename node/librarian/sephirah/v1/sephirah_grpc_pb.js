@@ -2277,37 +2277,6 @@ listApps: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppsResponse,
   },
-  // `Gebura` `Admin` Asynchronous update apps.
-// Request on INTERNAL app applies to all bound external apps.
-// Create an INTERNAL app when requested external app does not exist
-// Server should implement a sync rate limit to prevent abuse,
-// when rate limit reached, return without real sync.
-syncApps: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.SyncAppsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.SyncAppsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_SyncAppsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_SyncAppsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_SyncAppsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_SyncAppsResponse,
-  },
-  // `Gebura` `Admin` Asynchronously update apps associated with an account.
-// Create an INTERNAL app when associated external app does not exist.
-// Server should implement a sync rate limit to prevent abuse,
-// when rate limit reached, return without real sync.
-syncAccountApps: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_gebura_pb.SyncAccountAppsRequest,
-    responseType: librarian_sephirah_v1_gebura_pb.SyncAccountAppsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_SyncAccountAppsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_SyncAccountAppsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppsResponse,
-  },
   // `Gebura` `Admin` Merge two apps
 mergeApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/MergeApps',
@@ -2331,6 +2300,37 @@ pickApp: {
     requestDeserialize: deserialize_librarian_sephirah_v1_PickAppRequest,
     responseSerialize: serialize_librarian_sephirah_v1_PickAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_PickAppResponse,
+  },
+  // `Gebura` `Normal` Asynchronous update apps.
+// Request on INTERNAL app applies to all bound external apps.
+// Create an INTERNAL app when requested external app does not exist
+// Server should implement a sync rate limit to prevent abuse,
+// when rate limit reached, return without real sync.
+syncApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SyncAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SyncAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SyncAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SyncAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SyncAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SyncAppsResponse,
+  },
+  // `Gebura` `Normal` Asynchronously update apps associated with an account.
+// Create an INTERNAL app when associated external app does not exist.
+// Server should implement a sync rate limit to prevent abuse,
+// when rate limit reached, return without real sync.
+syncAccountApps: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SyncAccountAppsRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SyncAccountAppsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SyncAccountAppsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SyncAccountAppsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppsResponse,
   },
   // `Gebura` `Normal`
 searchApps: {

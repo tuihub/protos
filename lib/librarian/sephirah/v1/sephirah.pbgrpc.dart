@@ -159,14 +159,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/ListApps',
       ($4.ListAppsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.ListAppsResponse.fromBuffer(value));
-  static final _$syncApps = $grpc.ClientMethod<$4.SyncAppsRequest, $4.SyncAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
-      ($4.SyncAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SyncAppsResponse.fromBuffer(value));
-  static final _$syncAccountApps = $grpc.ClientMethod<$4.SyncAccountAppsRequest, $4.SyncAccountAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
-      ($4.SyncAccountAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SyncAccountAppsResponse.fromBuffer(value));
   static final _$mergeApps = $grpc.ClientMethod<$4.MergeAppsRequest, $4.MergeAppsResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/MergeApps',
       ($4.MergeAppsRequest value) => value.writeToBuffer(),
@@ -175,6 +167,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/PickApp',
       ($4.PickAppRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.PickAppResponse.fromBuffer(value));
+  static final _$syncApps = $grpc.ClientMethod<$4.SyncAppsRequest, $4.SyncAppsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
+      ($4.SyncAppsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SyncAppsResponse.fromBuffer(value));
+  static final _$syncAccountApps = $grpc.ClientMethod<$4.SyncAccountAppsRequest, $4.SyncAccountAppsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
+      ($4.SyncAccountAppsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SyncAccountAppsResponse.fromBuffer(value));
   static final _$searchApps = $grpc.ClientMethod<$4.SearchAppsRequest, $4.SearchAppsResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/SearchApps',
       ($4.SearchAppsRequest value) => value.writeToBuffer(),
@@ -502,20 +502,20 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listApps, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.SyncAppsResponse> syncApps($4.SyncAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$syncApps, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.SyncAccountAppsResponse> syncAccountApps($4.SyncAccountAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$syncAccountApps, request, options: options);
-  }
-
   $grpc.ResponseFuture<$4.MergeAppsResponse> mergeApps($4.MergeAppsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$mergeApps, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.PickAppResponse> pickApp($4.PickAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pickApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SyncAppsResponse> syncApps($4.SyncAppsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncApps, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SyncAccountAppsResponse> syncAccountApps($4.SyncAccountAppsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncAccountApps, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.SearchAppsResponse> searchApps($4.SearchAppsRequest request, {$grpc.CallOptions? options}) {
@@ -943,20 +943,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.ListAppsRequest.fromBuffer(value),
         ($4.ListAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SyncAppsRequest, $4.SyncAppsResponse>(
-        'SyncApps',
-        syncApps_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.SyncAppsRequest.fromBuffer(value),
-        ($4.SyncAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SyncAccountAppsRequest, $4.SyncAccountAppsResponse>(
-        'SyncAccountApps',
-        syncAccountApps_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.SyncAccountAppsRequest.fromBuffer(value),
-        ($4.SyncAccountAppsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.MergeAppsRequest, $4.MergeAppsResponse>(
         'MergeApps',
         mergeApps_Pre,
@@ -971,6 +957,20 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.PickAppRequest.fromBuffer(value),
         ($4.PickAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SyncAppsRequest, $4.SyncAppsResponse>(
+        'SyncApps',
+        syncApps_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SyncAppsRequest.fromBuffer(value),
+        ($4.SyncAppsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SyncAccountAppsRequest, $4.SyncAccountAppsResponse>(
+        'SyncAccountApps',
+        syncAccountApps_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SyncAccountAppsRequest.fromBuffer(value),
+        ($4.SyncAccountAppsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.SearchAppsRequest, $4.SearchAppsResponse>(
         'SearchApps',
         searchApps_Pre,
@@ -1422,20 +1422,20 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listApps(call, await request);
   }
 
-  $async.Future<$4.SyncAppsResponse> syncApps_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAppsRequest> request) async {
-    return syncApps(call, await request);
-  }
-
-  $async.Future<$4.SyncAccountAppsResponse> syncAccountApps_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAccountAppsRequest> request) async {
-    return syncAccountApps(call, await request);
-  }
-
   $async.Future<$4.MergeAppsResponse> mergeApps_Pre($grpc.ServiceCall call, $async.Future<$4.MergeAppsRequest> request) async {
     return mergeApps(call, await request);
   }
 
   $async.Future<$4.PickAppResponse> pickApp_Pre($grpc.ServiceCall call, $async.Future<$4.PickAppRequest> request) async {
     return pickApp(call, await request);
+  }
+
+  $async.Future<$4.SyncAppsResponse> syncApps_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAppsRequest> request) async {
+    return syncApps(call, await request);
+  }
+
+  $async.Future<$4.SyncAccountAppsResponse> syncAccountApps_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAccountAppsRequest> request) async {
+    return syncAccountApps(call, await request);
   }
 
   $async.Future<$4.SearchAppsResponse> searchApps_Pre($grpc.ServiceCall call, $async.Future<$4.SearchAppsRequest> request) async {
@@ -1655,10 +1655,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.CreateAppResponse> createApp($grpc.ServiceCall call, $4.CreateAppRequest request);
   $async.Future<$4.UpdateAppResponse> updateApp($grpc.ServiceCall call, $4.UpdateAppRequest request);
   $async.Future<$4.ListAppsResponse> listApps($grpc.ServiceCall call, $4.ListAppsRequest request);
-  $async.Future<$4.SyncAppsResponse> syncApps($grpc.ServiceCall call, $4.SyncAppsRequest request);
-  $async.Future<$4.SyncAccountAppsResponse> syncAccountApps($grpc.ServiceCall call, $4.SyncAccountAppsRequest request);
   $async.Future<$4.MergeAppsResponse> mergeApps($grpc.ServiceCall call, $4.MergeAppsRequest request);
   $async.Future<$4.PickAppResponse> pickApp($grpc.ServiceCall call, $4.PickAppRequest request);
+  $async.Future<$4.SyncAppsResponse> syncApps($grpc.ServiceCall call, $4.SyncAppsRequest request);
+  $async.Future<$4.SyncAccountAppsResponse> syncAccountApps($grpc.ServiceCall call, $4.SyncAccountAppsRequest request);
   $async.Future<$4.SearchAppsResponse> searchApps($grpc.ServiceCall call, $4.SearchAppsRequest request);
   $async.Future<$4.GetAppResponse> getApp($grpc.ServiceCall call, $4.GetAppRequest request);
   $async.Future<$4.GetBoundAppsResponse> getBoundApps($grpc.ServiceCall call, $4.GetBoundAppsRequest request);

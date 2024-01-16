@@ -3391,7 +3391,8 @@ proto.librarian.v1.AppPackage.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     binary: (f = msg.getBinary()) && proto.librarian.v1.AppPackageBinary.toObject(includeInstance, f),
-    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    assignedAppId: (f = msg.getAssignedAppId()) && proto.librarian.v1.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3458,6 +3459,11 @@ proto.librarian.v1.AppPackage.deserializeBinaryFromReader = function(msg, reader
     case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPublic(value);
+      break;
+    case 8:
+      var value = new proto.librarian.v1.InternalID;
+      reader.readMessage(value,proto.librarian.v1.InternalID.deserializeBinaryFromReader);
+      msg.setAssignedAppId(value);
       break;
     default:
       reader.skipField();
@@ -3538,6 +3544,14 @@ proto.librarian.v1.AppPackage.serializeBinaryToWriter = function(message, writer
     writer.writeBool(
       7,
       f
+    );
+  }
+  f = message.getAssignedAppId();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.librarian.v1.InternalID.serializeBinaryToWriter
     );
   }
 };
@@ -3723,6 +3737,43 @@ proto.librarian.v1.AppPackage.prototype.getPublic = function() {
  */
 proto.librarian.v1.AppPackage.prototype.setPublic = function(value) {
   return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional InternalID assigned_app_id = 8;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.v1.AppPackage.prototype.getAssignedAppId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.v1.InternalID, 8));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.v1.AppPackage} returns this
+*/
+proto.librarian.v1.AppPackage.prototype.setAssignedAppId = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.v1.AppPackage} returns this
+ */
+proto.librarian.v1.AppPackage.prototype.clearAssignedAppId = function() {
+  return this.setAssignedAppId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.v1.AppPackage.prototype.hasAssignedAppId = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

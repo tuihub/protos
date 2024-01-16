@@ -52,10 +52,10 @@ const (
 	LibrarianSephirahService_CreateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
 	LibrarianSephirahService_UpdateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
 	LibrarianSephirahService_ListApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
-	LibrarianSephirahService_SyncApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/SyncApps"
-	LibrarianSephirahService_SyncAccountApps_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps"
 	LibrarianSephirahService_MergeApps_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps"
 	LibrarianSephirahService_PickApp_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/PickApp"
+	LibrarianSephirahService_SyncApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/SyncApps"
+	LibrarianSephirahService_SyncAccountApps_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps"
 	LibrarianSephirahService_SearchApps_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps"
 	LibrarianSephirahService_GetApp_FullMethodName                       = "/librarian.sephirah.v1.LibrarianSephirahService/GetApp"
 	LibrarianSephirahService_GetBoundApps_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/GetBoundApps"
@@ -188,21 +188,21 @@ type LibrarianSephirahServiceClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	// `Gebura` `Admin` Used to manage apps
 	ListApps(ctx context.Context, in *ListAppsRequest, opts ...grpc.CallOption) (*ListAppsResponse, error)
-	// `Gebura` `Admin` Asynchronous update apps.
+	// `Gebura` `Admin` Merge two apps
+	MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error)
+	// `Gebura` `Admin` Pick one app out from merged
+	PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error)
+	// `Gebura` `Normal` Asynchronous update apps.
 	// Request on INTERNAL app applies to all bound external apps.
 	// Create an INTERNAL app when requested external app does not exist
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error)
-	// `Gebura` `Admin` Asynchronously update apps associated with an account.
+	// `Gebura` `Normal` Asynchronously update apps associated with an account.
 	// Create an INTERNAL app when associated external app does not exist.
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error)
-	// `Gebura` `Admin` Merge two apps
-	MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error)
-	// `Gebura` `Admin` Pick one app out from merged
-	PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error)
 	// `Gebura` `Normal`
 	SearchApps(ctx context.Context, in *SearchAppsRequest, opts ...grpc.CallOption) (*SearchAppsResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
@@ -697,24 +697,6 @@ func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, in *ListA
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error) {
-	out := new(SyncAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncApps_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error) {
-	out := new(SyncAccountAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncAccountApps_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *librarianSephirahServiceClient) MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error) {
 	out := new(MergeAppsResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_MergeApps_FullMethodName, in, out, opts...)
@@ -727,6 +709,24 @@ func (c *librarianSephirahServiceClient) MergeApps(ctx context.Context, in *Merg
 func (c *librarianSephirahServiceClient) PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error) {
 	out := new(PickAppResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_PickApp_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error) {
+	out := new(SyncAppsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncApps_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error) {
+	out := new(SyncAccountAppsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncAccountApps_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1261,21 +1261,21 @@ type LibrarianSephirahServiceServer interface {
 	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	// `Gebura` `Admin` Used to manage apps
 	ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error)
-	// `Gebura` `Admin` Asynchronous update apps.
+	// `Gebura` `Admin` Merge two apps
+	MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error)
+	// `Gebura` `Admin` Pick one app out from merged
+	PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error)
+	// `Gebura` `Normal` Asynchronous update apps.
 	// Request on INTERNAL app applies to all bound external apps.
 	// Create an INTERNAL app when requested external app does not exist
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error)
-	// `Gebura` `Admin` Asynchronously update apps associated with an account.
+	// `Gebura` `Normal` Asynchronously update apps associated with an account.
 	// Create an INTERNAL app when associated external app does not exist.
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error)
-	// `Gebura` `Admin` Merge two apps
-	MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error)
-	// `Gebura` `Admin` Pick one app out from merged
-	PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error)
 	// `Gebura` `Normal`
 	SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
@@ -1480,17 +1480,17 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateApp(context.Context, *U
 func (UnimplementedLibrarianSephirahServiceServer) ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApps not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SyncApps not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SyncAccountApps not implemented")
-}
 func (UnimplementedLibrarianSephirahServiceServer) MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MergeApps not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PickApp not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncApps not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncAccountApps not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchApps not implemented")
@@ -2268,42 +2268,6 @@ func _LibrarianSephirahService_ListApps_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_SyncApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SyncAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SyncApps_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, req.(*SyncAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_SyncAccountApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SyncAccountAppsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SyncAccountApps_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, req.(*SyncAccountAppsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _LibrarianSephirahService_MergeApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MergeAppsRequest)
 	if err := dec(in); err != nil {
@@ -2336,6 +2300,42 @@ func _LibrarianSephirahService_PickApp_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).PickApp(ctx, req.(*PickAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SyncApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SyncApps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, req.(*SyncAppsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SyncAccountApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncAccountAppsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SyncAccountApps_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, req.(*SyncAccountAppsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3318,20 +3318,20 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_ListApps_Handler,
 		},
 		{
-			MethodName: "SyncApps",
-			Handler:    _LibrarianSephirahService_SyncApps_Handler,
-		},
-		{
-			MethodName: "SyncAccountApps",
-			Handler:    _LibrarianSephirahService_SyncAccountApps_Handler,
-		},
-		{
 			MethodName: "MergeApps",
 			Handler:    _LibrarianSephirahService_MergeApps_Handler,
 		},
 		{
 			MethodName: "PickApp",
 			Handler:    _LibrarianSephirahService_PickApp_Handler,
+		},
+		{
+			MethodName: "SyncApps",
+			Handler:    _LibrarianSephirahService_SyncApps_Handler,
+		},
+		{
+			MethodName: "SyncAccountApps",
+			Handler:    _LibrarianSephirahService_SyncAccountApps_Handler,
 		},
 		{
 			MethodName: "SearchApps",
