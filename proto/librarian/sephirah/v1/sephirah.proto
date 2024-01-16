@@ -108,22 +108,22 @@ service LibrarianSephirahService {
   rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
   // `Gebura` `Admin` Used to manage apps
   rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
-  // `Gebura` `Admin` Asynchronous update apps.
-  // Request on INTERNAL app applies to all bound external apps.
-  // Create an INTERNAL app when requested external app does not exist
-  // Server should implement a sync rate limit to prevent abuse,
-  // when rate limit reached, return without real sync.
-  rpc SyncApps(SyncAppsRequest) returns (SyncAppsResponse);
-  // `Gebura` `Admin` Asynchronously update apps associated with an account.
-  // Create an INTERNAL app when associated external app does not exist.
-  // Server should implement a sync rate limit to prevent abuse,
-  // when rate limit reached, return without real sync.
-  rpc SyncAccountApps(SyncAccountAppsRequest) returns (SyncAccountAppsResponse);
   // `Gebura` `Admin` Merge two apps
   rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);
   // `Gebura` `Admin` Pick one app out from merged
   rpc PickApp(PickAppRequest) returns (PickAppResponse);
 
+  // `Gebura` `Normal` Asynchronous update apps.
+  // Request on INTERNAL app applies to all bound external apps.
+  // Create an INTERNAL app when requested external app does not exist
+  // Server should implement a sync rate limit to prevent abuse,
+  // when rate limit reached, return without real sync.
+  rpc SyncApps(SyncAppsRequest) returns (SyncAppsResponse);
+  // `Gebura` `Normal` Asynchronously update apps associated with an account.
+  // Create an INTERNAL app when associated external app does not exist.
+  // Server should implement a sync rate limit to prevent abuse,
+  // when rate limit reached, return without real sync.
+  rpc SyncAccountApps(SyncAccountAppsRequest) returns (SyncAccountAppsResponse);
   // `Gebura` `Normal`
   rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
   // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
