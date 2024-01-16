@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.5](https://github.com/tuihub/protos/compare/v0.3.4...v0.3.5) (2024-01-16)
+
+
+### Bug Fixes
+
+* **gebura:** update ([c7b4e2e](https://github.com/tuihub/protos/commit/c7b4e2e9f67dcd94d9193d3175b4704e6fcdd77b))
+
 ## [0.3.4](https://github.com/tuihub/protos/compare/v0.3.3...v0.3.4) (2024-01-15)
 
 
