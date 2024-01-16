@@ -93,7 +93,7 @@ message App {
   string icon_image_url = 10;
   // must be horizontal, usually 16:9
   string background_image_url = 11;
-  // must be vertical, usually 4:3
+  // must be vertical, usually 3:4
   string cover_image_url = 12;
   repeated string tags = 13;
   repeated string alt_names = 14;
@@ -110,9 +110,12 @@ message AppMixed {
   AppType type = 8;
   string short_description = 9;
   string icon_image_url = 10;
-  string hero_image_url = 11;
-  repeated string tags = 12;
-  repeated string alt_names = 13;
+  // must be horizontal, usually 16:9
+  string background_image_url = 11;
+  // must be vertical, usually 3:4
+  string cover_image_url = 12;
+  repeated string tags = 13;
+  repeated string alt_names = 14;
 }
 
 message AppID {
