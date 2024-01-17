@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.6](https://github.com/tuihub/protos/compare/v0.3.5...v0.3.6) (2024-01-16)
+
+
+### Bug Fixes
+
+* **gebura:** update AppMixed ([1815550](https://github.com/tuihub/protos/commit/1815550e7eeb14d400a18f5e7a934cfa0b7ab104))
+
 ## [0.3.5](https://github.com/tuihub/protos/compare/v0.3.4...v0.3.5) (2024-01-16)
 
 
