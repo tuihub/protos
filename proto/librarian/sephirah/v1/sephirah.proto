@@ -153,6 +153,9 @@ service LibrarianSephirahService {
   rpc ReportAppPackages(stream ReportAppPackagesRequest) returns (stream ReportAppPackagesResponse);
 
   // `Gebura` `Normal`
+  rpc DownloadAppPackageBinary(DownloadAppPackageBinaryRequest) returns (DownloadAppPackageBinaryResponse);
+
+  // `Gebura` `Normal`
   rpc AddAppPackageRunTime(AddAppPackageRunTimeRequest) returns (AddAppPackageRunTimeResponse);
   // `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
   rpc SumAppPackageRunTime(SumAppPackageRunTimeRequest) returns (SumAppPackageRunTimeResponse);

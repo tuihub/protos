@@ -165,6 +165,15 @@ message UnAssignAppPackageRequest {
 
 message UnAssignAppPackageResponse {}
 
+message DownloadAppPackageBinaryRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DownloadAppPackageBinaryResponse {
+  librarian.v1.AppPackageBinary app_package_binary = 1;
+  string token = 2;
+}
+
 message AddAppPackageRunTimeRequest {
   librarian.v1.InternalID app_package_id = 1;
   librarian.v1.TimeRange time_range = 2;
