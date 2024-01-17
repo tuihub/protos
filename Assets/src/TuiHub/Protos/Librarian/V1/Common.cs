@@ -86,46 +86,51 @@ namespace TuiHub.Protos.Librarian.V1 {
             "bGlicmFyaWFuLnYxLkFwcFBhY2thZ2VCaW5hcnlSBmJpbmFyeRIWCgZwdWJs",
             "aWMYByABKAhSBnB1YmxpYxJFCg9hc3NpZ25lZF9hcHBfaWQYCCABKAsyGC5s",
             "aWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUg1hc3NpZ25lZEFwcElkiAEBQhIK",
-            "EF9hc3NpZ25lZF9hcHBfaWQifAoQQXBwUGFja2FnZUJpbmFyeRISCgRuYW1l",
-            "GAEgASgJUgRuYW1lEh0KCnNpemVfYnl0ZXMYAiABKANSCXNpemVCeXRlcxId",
-            "CgpwdWJsaWNfdXJsGAMgASgJUglwdWJsaWNVcmwSFgoGc2hhMjU2GAQgASgM",
-            "UgZzaGEyNTYifgoLQXBwQ2F0ZWdvcnkSKAoCaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIxCgdh",
-            "cHBfaWRzGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBmFwcElk",
-            "cyKpAgoERmVlZBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
-            "bElEUgJpZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSEgoEbGluaxgDIAEoCVIE",
-            "bGluaxIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoFaXRl",
-            "bXMYBSADKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0ZW1SBWl0ZW1zEhoKCGxh",
-            "bmd1YWdlGAYgASgJUghsYW5ndWFnZRItCgVpbWFnZRgHIAEoCzIXLmxpYnJh",
-            "cmlhbi52MS5GZWVkSW1hZ2VSBWltYWdlEjIKB2F1dGhvcnMYCCADKAsyGC5s",
-            "aWJyYXJpYW4udjEuRmVlZFBlcnNvblIHYXV0aG9ycyKMBQoIRmVlZEl0ZW0S",
-            "KAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSFAoF",
-            "dGl0bGUYAiABKAlSBXRpdGxlEjIKB2F1dGhvcnMYAyADKAsyGC5saWJyYXJp",
-            "YW4udjEuRmVlZFBlcnNvblIHYXV0aG9ycxIgCgtkZXNjcmlwdGlvbhgEIAEo",
-            "CVILZGVzY3JpcHRpb24SGAoHY29udGVudBgFIAEoCVIHY29udGVudBISCgRn",
-            "dWlkGAYgASgJUgRndWlkEhIKBGxpbmsYByABKAlSBGxpbmsSLQoFaW1hZ2UY",
-            "CCABKAsyFy5saWJyYXJpYW4udjEuRmVlZEltYWdlUgVpbWFnZRIcCglwdWJs",
-            "aXNoZWQYCSABKAlSCXB1Ymxpc2hlZBJKChBwdWJsaXNoZWRfcGFyc2VkGAog",
-            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUg9wdWJsaXNoZWRQ",
-            "YXJzZWSIAQESGAoHdXBkYXRlZBgLIAEoCVIHdXBkYXRlZBJGCg51cGRhdGVk",
-            "X3BhcnNlZBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAVIN",
-            "dXBkYXRlZFBhcnNlZIgBARI7CgplbmNsb3N1cmVzGA0gAygLMhsubGlicmFy",
-            "aWFuLnYxLkZlZWRFbmNsb3N1cmVSCmVuY2xvc3VyZXMSKQoQcHVibGlzaF9w",
-            "bGF0Zm9ybRgOIAEoCVIPcHVibGlzaFBsYXRmb3JtEh0KCnJlYWRfY291bnQY",
-            "DyABKANSCXJlYWRDb3VudEITChFfcHVibGlzaGVkX3BhcnNlZEIRCg9fdXBk",
-            "YXRlZF9wYXJzZWQiNgoKRmVlZFBlcnNvbhISCgRuYW1lGAEgASgJUgRuYW1l",
-            "EhQKBWVtYWlsGAIgASgJUgVlbWFpbCIzCglGZWVkSW1hZ2USEAoDdXJsGAEg",
-            "ASgJUgN1cmwSFAoFdGl0bGUYAiABKAlSBXRpdGxlIk0KDUZlZWRFbmNsb3N1",
-            "cmUSEAoDdXJsGAEgASgJUgN1cmwSFgoGbGVuZ3RoGAIgASgJUgZsZW5ndGgS",
-            "EgoEdHlwZRgDIAEoCVIEdHlwZSpmChZBY2NvdW50QXBwUmVsYXRpb25UeXBl",
-            "EikKJUFDQ09VTlRfQVBQX1JFTEFUSU9OX1RZUEVfVU5TUEVDSUZJRUQQABIh",
-            "Ch1BQ0NPVU5UX0FQUF9SRUxBVElPTl9UWVBFX09XThABKjYKB0FwcFR5cGUS",
-            "GAoUQVBQX1RZUEVfVU5TUEVDSUZJRUQQABIRCg1BUFBfVFlQRV9HQU1FEAEq",
-            "dgoQQXBwUGFja2FnZVNvdXJjZRIiCh5BUFBfUEFDS0FHRV9TT1VSQ0VfVU5T",
-            "UEVDSUZJRUQQABIdChlBUFBfUEFDS0FHRV9TT1VSQ0VfTUFOVUFMEAESHwob",
-            "QVBQX1BBQ0tBR0VfU09VUkNFX1NFTlRJTkVMEAJCS1osZ2l0aHViLmNvbS90",
-            "dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vdjE7djGqAhpUdWlIdWIuUHJv",
-            "dG9zLkxpYnJhcmlhbi5WMWIGcHJvdG8z"));
+            "EF9hc3NpZ25lZF9hcHBfaWQi3wIKEEFwcFBhY2thZ2VCaW5hcnkSEgoEbmFt",
+            "ZRgBIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMS",
+            "HQoKcHVibGljX3VybBgDIAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgEIAEo",
+            "DFIGc2hhMjU2EigKEHRva2VuX3NlcnZlcl91cmwYBSABKAlSDnRva2VuU2Vy",
+            "dmVyVXJsEjwKBmNodW5rcxgGIAMoCzIkLmxpYnJhcmlhbi52MS5BcHBQYWNr",
+            "YWdlQmluYXJ5LkNodW5rUgZjaHVua3MaeQoFQ2h1bmsSGgoIc2VxdWVuY2UY",
+            "ASABKANSCHNlcXVlbmNlEh0KCnNpemVfYnl0ZXMYAiABKANSCXNpemVCeXRl",
+            "cxIdCgpwdWJsaWNfdXJsGAMgASgJUglwdWJsaWNVcmwSFgoGc2hhMjU2GAQg",
+            "ASgMUgZzaGEyNTYifgoLQXBwQ2F0ZWdvcnkSKAoCaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIx",
+            "CgdhcHBfaWRzGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBmFw",
+            "cElkcyKpAgoERmVlZBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRl",
+            "cm5hbElEUgJpZBIUCgV0aXRsZRgCIAEoCVIFdGl0bGUSEgoEbGluaxgDIAEo",
+            "CVIEbGluaxIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoF",
+            "aXRlbXMYBSADKAsyFi5saWJyYXJpYW4udjEuRmVlZEl0ZW1SBWl0ZW1zEhoK",
+            "CGxhbmd1YWdlGAYgASgJUghsYW5ndWFnZRItCgVpbWFnZRgHIAEoCzIXLmxp",
+            "YnJhcmlhbi52MS5GZWVkSW1hZ2VSBWltYWdlEjIKB2F1dGhvcnMYCCADKAsy",
+            "GC5saWJyYXJpYW4udjEuRmVlZFBlcnNvblIHYXV0aG9ycyKMBQoIRmVlZEl0",
+            "ZW0SKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQS",
+            "FAoFdGl0bGUYAiABKAlSBXRpdGxlEjIKB2F1dGhvcnMYAyADKAsyGC5saWJy",
+            "YXJpYW4udjEuRmVlZFBlcnNvblIHYXV0aG9ycxIgCgtkZXNjcmlwdGlvbhgE",
+            "IAEoCVILZGVzY3JpcHRpb24SGAoHY29udGVudBgFIAEoCVIHY29udGVudBIS",
+            "CgRndWlkGAYgASgJUgRndWlkEhIKBGxpbmsYByABKAlSBGxpbmsSLQoFaW1h",
+            "Z2UYCCABKAsyFy5saWJyYXJpYW4udjEuRmVlZEltYWdlUgVpbWFnZRIcCglw",
+            "dWJsaXNoZWQYCSABKAlSCXB1Ymxpc2hlZBJKChBwdWJsaXNoZWRfcGFyc2Vk",
+            "GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUg9wdWJsaXNo",
+            "ZWRQYXJzZWSIAQESGAoHdXBkYXRlZBgLIAEoCVIHdXBkYXRlZBJGCg51cGRh",
+            "dGVkX3BhcnNlZBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBI",
+            "AVINdXBkYXRlZFBhcnNlZIgBARI7CgplbmNsb3N1cmVzGA0gAygLMhsubGli",
+            "cmFyaWFuLnYxLkZlZWRFbmNsb3N1cmVSCmVuY2xvc3VyZXMSKQoQcHVibGlz",
+            "aF9wbGF0Zm9ybRgOIAEoCVIPcHVibGlzaFBsYXRmb3JtEh0KCnJlYWRfY291",
+            "bnQYDyABKANSCXJlYWRDb3VudEITChFfcHVibGlzaGVkX3BhcnNlZEIRCg9f",
+            "dXBkYXRlZF9wYXJzZWQiNgoKRmVlZFBlcnNvbhISCgRuYW1lGAEgASgJUgRu",
+            "YW1lEhQKBWVtYWlsGAIgASgJUgVlbWFpbCIzCglGZWVkSW1hZ2USEAoDdXJs",
+            "GAEgASgJUgN1cmwSFAoFdGl0bGUYAiABKAlSBXRpdGxlIk0KDUZlZWRFbmNs",
+            "b3N1cmUSEAoDdXJsGAEgASgJUgN1cmwSFgoGbGVuZ3RoGAIgASgJUgZsZW5n",
+            "dGgSEgoEdHlwZRgDIAEoCVIEdHlwZSpmChZBY2NvdW50QXBwUmVsYXRpb25U",
+            "eXBlEikKJUFDQ09VTlRfQVBQX1JFTEFUSU9OX1RZUEVfVU5TUEVDSUZJRUQQ",
+            "ABIhCh1BQ0NPVU5UX0FQUF9SRUxBVElPTl9UWVBFX09XThABKjYKB0FwcFR5",
+            "cGUSGAoUQVBQX1RZUEVfVU5TUEVDSUZJRUQQABIRCg1BUFBfVFlQRV9HQU1F",
+            "EAEqdgoQQXBwUGFja2FnZVNvdXJjZRIiCh5BUFBfUEFDS0FHRV9TT1VSQ0Vf",
+            "VU5TUEVDSUZJRUQQABIdChlBUFBfUEFDS0FHRV9TT1VSQ0VfTUFOVUFMEAES",
+            "HwobQVBQX1BBQ0tBR0VfU09VUkNFX1NFTlRJTkVMEAJCS1osZ2l0aHViLmNv",
+            "bS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vdjE7djGqAhpUdWlIdWIu",
+            "UHJvdG9zLkxpYnJhcmlhbi5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.AccountAppRelationType), typeof(global::TuiHub.Protos.Librarian.V1.AppType), typeof(global::TuiHub.Protos.Librarian.V1.AppPackageSource), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -141,7 +146,7 @@ namespace TuiHub.Protos.Librarian.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppID), global::TuiHub.Protos.Librarian.V1.AppID.Parser, new[]{ "Internal", "Source", "SourceAppId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppDetails), global::TuiHub.Protos.Librarian.V1.AppDetails.Parser, new[]{ "Description", "ReleaseDate", "Developer", "Publisher", "Version", "ImageUrls" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackage), global::TuiHub.Protos.Librarian.V1.AppPackage.Parser, new[]{ "Id", "Source", "SourceId", "Name", "Description", "Binary", "Public", "AssignedAppId" }, new[]{ "AssignedAppId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackageBinary), global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Parser, new[]{ "Name", "SizeBytes", "PublicUrl", "Sha256" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackageBinary), global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Parser, new[]{ "Name", "SizeBytes", "PublicUrl", "Sha256", "TokenServerUrl", "Chunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk), global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk.Parser, new[]{ "Sequence", "SizeBytes", "PublicUrl", "Sha256" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.AppCategory), global::TuiHub.Protos.Librarian.V1.AppCategory.Parser, new[]{ "Id", "Name", "AppIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.Feed), global::TuiHub.Protos.Librarian.V1.Feed.Parser, new[]{ "Id", "Title", "Link", "Description", "Items", "Language", "Image", "Authors" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Id", "Title", "Authors", "Description", "Content", "Guid", "Link", "Image", "Published", "PublishedParsed", "Updated", "UpdatedParsed", "Enclosures", "PublishPlatform", "ReadCount" }, new[]{ "PublishedParsed", "UpdatedParsed" }, null, null, null),
@@ -4338,6 +4343,8 @@ namespace TuiHub.Protos.Librarian.V1 {
       sizeBytes_ = other.sizeBytes_;
       publicUrl_ = other.publicUrl_;
       sha256_ = other.sha256_;
+      tokenServerUrl_ = other.tokenServerUrl_;
+      chunks_ = other.chunks_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4395,6 +4402,29 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
+    /// <summary>Field number for the "token_server_url" field.</summary>
+    public const int TokenServerUrlFieldNumber = 5;
+    private string tokenServerUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TokenServerUrl {
+      get { return tokenServerUrl_; }
+      set {
+        tokenServerUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "chunks" field.</summary>
+    public const int ChunksFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk> _repeated_chunks_codec
+        = pb::FieldCodec.ForMessage(50, global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk> chunks_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Types.Chunk> Chunks {
+      get { return chunks_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4414,6 +4444,8 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (SizeBytes != other.SizeBytes) return false;
       if (PublicUrl != other.PublicUrl) return false;
       if (Sha256 != other.Sha256) return false;
+      if (TokenServerUrl != other.TokenServerUrl) return false;
+      if(!chunks_.Equals(other.chunks_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4425,6 +4457,8 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
       if (PublicUrl.Length != 0) hash ^= PublicUrl.GetHashCode();
       if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
+      if (TokenServerUrl.Length != 0) hash ^= TokenServerUrl.GetHashCode();
+      hash ^= chunks_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4459,6 +4493,11 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(34);
         output.WriteBytes(Sha256);
       }
+      if (TokenServerUrl.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(TokenServerUrl);
+      }
+      chunks_.WriteTo(output, _repeated_chunks_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4485,6 +4524,11 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(34);
         output.WriteBytes(Sha256);
       }
+      if (TokenServerUrl.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(TokenServerUrl);
+      }
+      chunks_.WriteTo(ref output, _repeated_chunks_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4507,6 +4551,10 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Sha256.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
       }
+      if (TokenServerUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TokenServerUrl);
+      }
+      size += chunks_.CalculateSize(_repeated_chunks_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4531,6 +4579,10 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (other.Sha256.Length != 0) {
         Sha256 = other.Sha256;
       }
+      if (other.TokenServerUrl.Length != 0) {
+        TokenServerUrl = other.TokenServerUrl;
+      }
+      chunks_.Add(other.chunks_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4560,6 +4612,14 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 34: {
             Sha256 = input.ReadBytes();
+            break;
+          }
+          case 42: {
+            TokenServerUrl = input.ReadString();
+            break;
+          }
+          case 50: {
+            chunks_.AddEntriesFrom(input, _repeated_chunks_codec);
             break;
           }
         }
@@ -4593,10 +4653,329 @@ namespace TuiHub.Protos.Librarian.V1 {
             Sha256 = input.ReadBytes();
             break;
           }
+          case 42: {
+            TokenServerUrl = input.ReadString();
+            break;
+          }
+          case 50: {
+            chunks_.AddEntriesFrom(ref input, _repeated_chunks_codec);
+            break;
+          }
         }
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the AppPackageBinary message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class Chunk : pb::IMessage<Chunk>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<Chunk> _parser = new pb::MessageParser<Chunk>(() => new Chunk());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<Chunk> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TuiHub.Protos.Librarian.V1.AppPackageBinary.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Chunk() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Chunk(Chunk other) : this() {
+          sequence_ = other.sequence_;
+          sizeBytes_ = other.sizeBytes_;
+          publicUrl_ = other.publicUrl_;
+          sha256_ = other.sha256_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Chunk Clone() {
+          return new Chunk(this);
+        }
+
+        /// <summary>Field number for the "sequence" field.</summary>
+        public const int SequenceFieldNumber = 1;
+        private long sequence_;
+        /// <summary>
+        /// Starts from 1
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public long Sequence {
+          get { return sequence_; }
+          set {
+            sequence_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "size_bytes" field.</summary>
+        public const int SizeBytesFieldNumber = 2;
+        private long sizeBytes_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public long SizeBytes {
+          get { return sizeBytes_; }
+          set {
+            sizeBytes_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "public_url" field.</summary>
+        public const int PublicUrlFieldNumber = 3;
+        private string publicUrl_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string PublicUrl {
+          get { return publicUrl_; }
+          set {
+            publicUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "sha256" field.</summary>
+        public const int Sha256FieldNumber = 4;
+        private pb::ByteString sha256_ = pb::ByteString.Empty;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pb::ByteString Sha256 {
+          get { return sha256_; }
+          set {
+            sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as Chunk);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(Chunk other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Sequence != other.Sequence) return false;
+          if (SizeBytes != other.SizeBytes) return false;
+          if (PublicUrl != other.PublicUrl) return false;
+          if (Sha256 != other.Sha256) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Sequence != 0L) hash ^= Sequence.GetHashCode();
+          if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
+          if (PublicUrl.Length != 0) hash ^= PublicUrl.GetHashCode();
+          if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Sequence != 0L) {
+            output.WriteRawTag(8);
+            output.WriteInt64(Sequence);
+          }
+          if (SizeBytes != 0L) {
+            output.WriteRawTag(16);
+            output.WriteInt64(SizeBytes);
+          }
+          if (PublicUrl.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(PublicUrl);
+          }
+          if (Sha256.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteBytes(Sha256);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Sequence != 0L) {
+            output.WriteRawTag(8);
+            output.WriteInt64(Sequence);
+          }
+          if (SizeBytes != 0L) {
+            output.WriteRawTag(16);
+            output.WriteInt64(SizeBytes);
+          }
+          if (PublicUrl.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(PublicUrl);
+          }
+          if (Sha256.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteBytes(Sha256);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Sequence != 0L) {
+            size += 1 + pb::CodedOutputStream.ComputeInt64Size(Sequence);
+          }
+          if (SizeBytes != 0L) {
+            size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
+          }
+          if (PublicUrl.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(PublicUrl);
+          }
+          if (Sha256.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(Chunk other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Sequence != 0L) {
+            Sequence = other.Sequence;
+          }
+          if (other.SizeBytes != 0L) {
+            SizeBytes = other.SizeBytes;
+          }
+          if (other.PublicUrl.Length != 0) {
+            PublicUrl = other.PublicUrl;
+          }
+          if (other.Sha256.Length != 0) {
+            Sha256 = other.Sha256;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Sequence = input.ReadInt64();
+                break;
+              }
+              case 16: {
+                SizeBytes = input.ReadInt64();
+                break;
+              }
+              case 26: {
+                PublicUrl = input.ReadString();
+                break;
+              }
+              case 34: {
+                Sha256 = input.ReadBytes();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Sequence = input.ReadInt64();
+                break;
+              }
+              case 16: {
+                SizeBytes = input.ReadInt64();
+                break;
+              }
+              case 26: {
+                PublicUrl = input.ReadString();
+                break;
+              }
+              case 34: {
+                Sha256 = input.ReadBytes();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
 
   }
 

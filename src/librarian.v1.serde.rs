@@ -1614,6 +1614,12 @@ impl serde::Serialize for AppPackageBinary {
         if !self.sha256.is_empty() {
             len += 1;
         }
+        if !self.token_server_url.is_empty() {
+            len += 1;
+        }
+        if !self.chunks.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppPackageBinary", len)?;
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -1626,6 +1632,12 @@ impl serde::Serialize for AppPackageBinary {
         }
         if !self.sha256.is_empty() {
             struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
+        }
+        if !self.token_server_url.is_empty() {
+            struct_ser.serialize_field("tokenServerUrl", &self.token_server_url)?;
+        }
+        if !self.chunks.is_empty() {
+            struct_ser.serialize_field("chunks", &self.chunks)?;
         }
         struct_ser.end()
     }
@@ -1643,6 +1655,9 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
             "public_url",
             "publicUrl",
             "sha256",
+            "token_server_url",
+            "tokenServerUrl",
+            "chunks",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1651,6 +1666,8 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
             SizeBytes,
             PublicUrl,
             Sha256,
+            TokenServerUrl,
+            Chunks,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1676,6 +1693,8 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                             "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
                             "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
                             "sha256" => Ok(GeneratedField::Sha256),
+                            "tokenServerUrl" | "token_server_url" => Ok(GeneratedField::TokenServerUrl),
+                            "chunks" => Ok(GeneratedField::Chunks),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1699,6 +1718,8 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                 let mut size_bytes__ = None;
                 let mut public_url__ = None;
                 let mut sha256__ = None;
+                let mut token_server_url__ = None;
+                let mut chunks__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Name => {
@@ -1729,6 +1750,18 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                                 Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
                             ;
                         }
+                        GeneratedField::TokenServerUrl => {
+                            if token_server_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tokenServerUrl"));
+                            }
+                            token_server_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Chunks => {
+                            if chunks__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("chunks"));
+                            }
+                            chunks__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(AppPackageBinary {
@@ -1736,10 +1769,162 @@ impl<'de> serde::Deserialize<'de> for AppPackageBinary {
                     size_bytes: size_bytes__.unwrap_or_default(),
                     public_url: public_url__.unwrap_or_default(),
                     sha256: sha256__.unwrap_or_default(),
+                    token_server_url: token_server_url__.unwrap_or_default(),
+                    chunks: chunks__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.v1.AppPackageBinary", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for app_package_binary::Chunk {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.sequence != 0 {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if !self.public_url.is_empty() {
+            len += 1;
+        }
+        if !self.sha256.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.AppPackageBinary.Chunk", len)?;
+        if self.sequence != 0 {
+            struct_ser.serialize_field("sequence", ToString::to_string(&self.sequence).as_str())?;
+        }
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if !self.public_url.is_empty() {
+            struct_ser.serialize_field("publicUrl", &self.public_url)?;
+        }
+        if !self.sha256.is_empty() {
+            struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for app_package_binary::Chunk {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "sequence",
+            "size_bytes",
+            "sizeBytes",
+            "public_url",
+            "publicUrl",
+            "sha256",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Sequence,
+            SizeBytes,
+            PublicUrl,
+            Sha256,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "sequence" => Ok(GeneratedField::Sequence),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
+                            "sha256" => Ok(GeneratedField::Sha256),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = app_package_binary::Chunk;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.AppPackageBinary.Chunk")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<app_package_binary::Chunk, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut sequence__ = None;
+                let mut size_bytes__ = None;
+                let mut public_url__ = None;
+                let mut sha256__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Sequence => {
+                            if sequence__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sequence"));
+                            }
+                            sequence__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::PublicUrl => {
+                            if public_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publicUrl"));
+                            }
+                            public_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Sha256 => {
+                            if sha256__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sha256"));
+                            }
+                            sha256__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
+                        }
+                    }
+                }
+                Ok(app_package_binary::Chunk {
+                    sequence: sequence__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    public_url: public_url__.unwrap_or_default(),
+                    sha256: sha256__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.AppPackageBinary.Chunk", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for AppPackageSource {

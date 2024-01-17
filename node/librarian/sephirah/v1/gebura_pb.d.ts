@@ -854,6 +854,54 @@ export namespace UnAssignAppPackageResponse {
   }
 }
 
+export class DownloadAppPackageBinaryRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadAppPackageBinaryRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadAppPackageBinaryRequest): DownloadAppPackageBinaryRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownloadAppPackageBinaryRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadAppPackageBinaryRequest;
+  static deserializeBinaryFromReader(message: DownloadAppPackageBinaryRequest, reader: jspb.BinaryReader): DownloadAppPackageBinaryRequest;
+}
+
+export namespace DownloadAppPackageBinaryRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class DownloadAppPackageBinaryResponse extends jspb.Message {
+  hasAppPackageBinary(): boolean;
+  clearAppPackageBinary(): void;
+  getAppPackageBinary(): librarian_v1_common_pb.AppPackageBinary | undefined;
+  setAppPackageBinary(value?: librarian_v1_common_pb.AppPackageBinary): void;
+
+  getToken(): string;
+  setToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DownloadAppPackageBinaryResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DownloadAppPackageBinaryResponse): DownloadAppPackageBinaryResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DownloadAppPackageBinaryResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DownloadAppPackageBinaryResponse;
+  static deserializeBinaryFromReader(message: DownloadAppPackageBinaryResponse, reader: jspb.BinaryReader): DownloadAppPackageBinaryResponse;
+}
+
+export namespace DownloadAppPackageBinaryResponse {
+  export type AsObject = {
+    appPackageBinary?: librarian_v1_common_pb.AppPackageBinary.AsObject,
+    token: string,
+  }
+}
+
 export class AddAppPackageRunTimeRequest extends jspb.Message {
   hasAppPackageId(): boolean;
   clearAppPackageId(): void;

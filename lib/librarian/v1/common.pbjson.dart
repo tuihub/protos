@@ -319,6 +319,20 @@ const AppPackageBinary$json = {
     {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
     {'1': 'public_url', '3': 3, '4': 1, '5': 9, '10': 'publicUrl'},
     {'1': 'sha256', '3': 4, '4': 1, '5': 12, '10': 'sha256'},
+    {'1': 'token_server_url', '3': 5, '4': 1, '5': 9, '10': 'tokenServerUrl'},
+    {'1': 'chunks', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.AppPackageBinary.Chunk', '10': 'chunks'},
+  ],
+  '3': [AppPackageBinary_Chunk$json],
+};
+
+@$core.Deprecated('Use appPackageBinaryDescriptor instead')
+const AppPackageBinary_Chunk$json = {
+  '1': 'Chunk',
+  '2': [
+    {'1': 'sequence', '3': 1, '4': 1, '5': 3, '10': 'sequence'},
+    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'public_url', '3': 3, '4': 1, '5': 9, '10': 'publicUrl'},
+    {'1': 'sha256', '3': 4, '4': 1, '5': 12, '10': 'sha256'},
   ],
 };
 
@@ -326,7 +340,11 @@ const AppPackageBinary$json = {
 final $typed_data.Uint8List appPackageBinaryDescriptor = $convert.base64Decode(
     'ChBBcHBQYWNrYWdlQmluYXJ5EhIKBG5hbWUYASABKAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgCIA'
     'EoA1IJc2l6ZUJ5dGVzEh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYY'
-    'BCABKAxSBnNoYTI1Ng==');
+    'BCABKAxSBnNoYTI1NhIoChB0b2tlbl9zZXJ2ZXJfdXJsGAUgASgJUg50b2tlblNlcnZlclVybB'
+    'I8CgZjaHVua3MYBiADKAsyJC5saWJyYXJpYW4udjEuQXBwUGFja2FnZUJpbmFyeS5DaHVua1IG'
+    'Y2h1bmtzGnkKBUNodW5rEhoKCHNlcXVlbmNlGAEgASgDUghzZXF1ZW5jZRIdCgpzaXplX2J5dG'
+    'VzGAIgASgDUglzaXplQnl0ZXMSHQoKcHVibGljX3VybBgDIAEoCVIJcHVibGljVXJsEhYKBnNo'
+    'YTI1NhgEIAEoDFIGc2hhMjU2');
 
 @$core.Deprecated('Use appCategoryDescriptor instead')
 const AppCategory$json = {

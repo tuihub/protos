@@ -219,6 +219,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages',
       ($4.ReportAppPackagesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.ReportAppPackagesResponse.fromBuffer(value));
+  static final _$downloadAppPackageBinary = $grpc.ClientMethod<$4.DownloadAppPackageBinaryRequest, $4.DownloadAppPackageBinaryResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppPackageBinary',
+      ($4.DownloadAppPackageBinaryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DownloadAppPackageBinaryResponse.fromBuffer(value));
   static final _$addAppPackageRunTime = $grpc.ClientMethod<$4.AddAppPackageRunTimeRequest, $4.AddAppPackageRunTimeResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime',
       ($4.AddAppPackageRunTimeRequest value) => value.writeToBuffer(),
@@ -560,6 +564,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseStream<$4.ReportAppPackagesResponse> reportAppPackages($async.Stream<$4.ReportAppPackagesRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$reportAppPackages, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary($4.DownloadAppPackageBinaryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$downloadAppPackageBinary, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime($4.AddAppPackageRunTimeRequest request, {$grpc.CallOptions? options}) {
@@ -1048,6 +1056,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $4.ReportAppPackagesRequest.fromBuffer(value),
         ($4.ReportAppPackagesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.DownloadAppPackageBinaryRequest, $4.DownloadAppPackageBinaryResponse>(
+        'DownloadAppPackageBinary',
+        downloadAppPackageBinary_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.DownloadAppPackageBinaryRequest.fromBuffer(value),
+        ($4.DownloadAppPackageBinaryResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.AddAppPackageRunTimeRequest, $4.AddAppPackageRunTimeResponse>(
         'AddAppPackageRunTime',
         addAppPackageRunTime_Pre,
@@ -1478,6 +1493,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return unAssignAppPackage(call, await request);
   }
 
+  $async.Future<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary_Pre($grpc.ServiceCall call, $async.Future<$4.DownloadAppPackageBinaryRequest> request) async {
+    return downloadAppPackageBinary(call, await request);
+  }
+
   $async.Future<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.AddAppPackageRunTimeRequest> request) async {
     return addAppPackageRunTime(call, await request);
   }
@@ -1670,6 +1689,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.AssignAppPackageResponse> assignAppPackage($grpc.ServiceCall call, $4.AssignAppPackageRequest request);
   $async.Future<$4.UnAssignAppPackageResponse> unAssignAppPackage($grpc.ServiceCall call, $4.UnAssignAppPackageRequest request);
   $async.Stream<$4.ReportAppPackagesResponse> reportAppPackages($grpc.ServiceCall call, $async.Stream<$4.ReportAppPackagesRequest> request);
+  $async.Future<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary($grpc.ServiceCall call, $4.DownloadAppPackageBinaryRequest request);
   $async.Future<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime($grpc.ServiceCall call, $4.AddAppPackageRunTimeRequest request);
   $async.Future<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime($grpc.ServiceCall call, $4.SumAppPackageRunTimeRequest request);
   $async.Future<$4.UploadGameSaveFileResponse> uploadGameSaveFile($grpc.ServiceCall call, $4.UploadGameSaveFileRequest request);

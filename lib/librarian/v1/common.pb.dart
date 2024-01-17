@@ -1289,12 +1289,107 @@ class AppPackage extends $pb.GeneratedMessage {
   InternalID ensureAssignedAppId() => $_ensure(7);
 }
 
+class AppPackageBinary_Chunk extends $pb.GeneratedMessage {
+  factory AppPackageBinary_Chunk({
+    $fixnum.Int64? sequence,
+    $fixnum.Int64? sizeBytes,
+    $core.String? publicUrl,
+    $core.List<$core.int>? sha256,
+  }) {
+    final $result = create();
+    if (sequence != null) {
+      $result.sequence = sequence;
+    }
+    if (sizeBytes != null) {
+      $result.sizeBytes = sizeBytes;
+    }
+    if (publicUrl != null) {
+      $result.publicUrl = publicUrl;
+    }
+    if (sha256 != null) {
+      $result.sha256 = sha256;
+    }
+    return $result;
+  }
+  AppPackageBinary_Chunk._() : super();
+  factory AppPackageBinary_Chunk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppPackageBinary_Chunk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppPackageBinary.Chunk', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'sequence')
+    ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
+    ..aOS(3, _omitFieldNames ? '' : 'publicUrl')
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AppPackageBinary_Chunk clone() => AppPackageBinary_Chunk()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AppPackageBinary_Chunk copyWith(void Function(AppPackageBinary_Chunk) updates) => super.copyWith((message) => updates(message as AppPackageBinary_Chunk)) as AppPackageBinary_Chunk;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppPackageBinary_Chunk create() => AppPackageBinary_Chunk._();
+  AppPackageBinary_Chunk createEmptyInstance() => create();
+  static $pb.PbList<AppPackageBinary_Chunk> createRepeated() => $pb.PbList<AppPackageBinary_Chunk>();
+  @$core.pragma('dart2js:noInline')
+  static AppPackageBinary_Chunk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppPackageBinary_Chunk>(create);
+  static AppPackageBinary_Chunk? _defaultInstance;
+
+  /// Starts from 1
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get sequence => $_getI64(0);
+  @$pb.TagNumber(1)
+  set sequence($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSequence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSequence() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get sizeBytes => $_getI64(1);
+  @$pb.TagNumber(2)
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSizeBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSizeBytes() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get publicUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set publicUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPublicUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPublicUrl() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.int> get sha256 => $_getN(3);
+  @$pb.TagNumber(4)
+  set sha256($core.List<$core.int> v) { $_setBytes(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSha256() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSha256() => clearField(4);
+}
+
 class AppPackageBinary extends $pb.GeneratedMessage {
   factory AppPackageBinary({
     $core.String? name,
     $fixnum.Int64? sizeBytes,
     $core.String? publicUrl,
     $core.List<$core.int>? sha256,
+    $core.String? tokenServerUrl,
+    $core.Iterable<AppPackageBinary_Chunk>? chunks,
   }) {
     final $result = create();
     if (name != null) {
@@ -1309,6 +1404,12 @@ class AppPackageBinary extends $pb.GeneratedMessage {
     if (sha256 != null) {
       $result.sha256 = sha256;
     }
+    if (tokenServerUrl != null) {
+      $result.tokenServerUrl = tokenServerUrl;
+    }
+    if (chunks != null) {
+      $result.chunks.addAll(chunks);
+    }
     return $result;
   }
   AppPackageBinary._() : super();
@@ -1320,6 +1421,8 @@ class AppPackageBinary extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
     ..aOS(3, _omitFieldNames ? '' : 'publicUrl')
     ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
+    ..aOS(5, _omitFieldNames ? '' : 'tokenServerUrl')
+    ..pc<AppPackageBinary_Chunk>(6, _omitFieldNames ? '' : 'chunks', $pb.PbFieldType.PM, subBuilder: AppPackageBinary_Chunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -1379,6 +1482,18 @@ class AppPackageBinary extends $pb.GeneratedMessage {
   $core.bool hasSha256() => $_has(3);
   @$pb.TagNumber(4)
   void clearSha256() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get tokenServerUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set tokenServerUrl($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTokenServerUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTokenServerUrl() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<AppPackageBinary_Chunk> get chunks => $_getList(5);
 }
 
 class AppCategory extends $pb.GeneratedMessage {

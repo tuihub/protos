@@ -493,6 +493,14 @@ export class AppPackageBinary extends jspb.Message {
   getSha256_asB64(): string;
   setSha256(value: Uint8Array | string): void;
 
+  getTokenServerUrl(): string;
+  setTokenServerUrl(value: string): void;
+
+  clearChunksList(): void;
+  getChunksList(): Array<AppPackageBinary.Chunk>;
+  setChunksList(value: Array<AppPackageBinary.Chunk>): void;
+  addChunks(value?: AppPackageBinary.Chunk, index?: number): AppPackageBinary.Chunk;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppPackageBinary.AsObject;
   static toObject(includeInstance: boolean, msg: AppPackageBinary): AppPackageBinary.AsObject;
@@ -509,6 +517,42 @@ export namespace AppPackageBinary {
     sizeBytes: number,
     publicUrl: string,
     sha256: Uint8Array | string,
+    tokenServerUrl: string,
+    chunksList: Array<AppPackageBinary.Chunk.AsObject>,
+  }
+
+  export class Chunk extends jspb.Message {
+    getSequence(): number;
+    setSequence(value: number): void;
+
+    getSizeBytes(): number;
+    setSizeBytes(value: number): void;
+
+    getPublicUrl(): string;
+    setPublicUrl(value: string): void;
+
+    getSha256(): Uint8Array | string;
+    getSha256_asU8(): Uint8Array;
+    getSha256_asB64(): string;
+    setSha256(value: Uint8Array | string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Chunk.AsObject;
+    static toObject(includeInstance: boolean, msg: Chunk): Chunk.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Chunk, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Chunk;
+    static deserializeBinaryFromReader(message: Chunk, reader: jspb.BinaryReader): Chunk;
+  }
+
+  export namespace Chunk {
+    export type AsObject = {
+      sequence: number,
+      sizeBytes: number,
+      publicUrl: string,
+      sha256: Uint8Array | string,
+    }
   }
 }
 

@@ -507,6 +507,34 @@ const UnAssignAppPackageResponse$json = {
 final $typed_data.Uint8List unAssignAppPackageResponseDescriptor = $convert.base64Decode(
     'ChpVbkFzc2lnbkFwcFBhY2thZ2VSZXNwb25zZQ==');
 
+@$core.Deprecated('Use downloadAppPackageBinaryRequestDescriptor instead')
+const DownloadAppPackageBinaryRequest$json = {
+  '1': 'DownloadAppPackageBinaryRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DownloadAppPackageBinaryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadAppPackageBinaryRequestDescriptor = $convert.base64Decode(
+    'Ch9Eb3dubG9hZEFwcFBhY2thZ2VCaW5hcnlSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaW'
+    'FuLnYxLkludGVybmFsSURSAmlk');
+
+@$core.Deprecated('Use downloadAppPackageBinaryResponseDescriptor instead')
+const DownloadAppPackageBinaryResponse$json = {
+  '1': 'DownloadAppPackageBinaryResponse',
+  '2': [
+    {'1': 'app_package_binary', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppPackageBinary', '10': 'appPackageBinary'},
+    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+  ],
+};
+
+/// Descriptor for `DownloadAppPackageBinaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List downloadAppPackageBinaryResponseDescriptor = $convert.base64Decode(
+    'CiBEb3dubG9hZEFwcFBhY2thZ2VCaW5hcnlSZXNwb25zZRJMChJhcHBfcGFja2FnZV9iaW5hcn'
+    'kYASABKAsyHi5saWJyYXJpYW4udjEuQXBwUGFja2FnZUJpbmFyeVIQYXBwUGFja2FnZUJpbmFy'
+    'eRIUCgV0b2tlbhgCIAEoCVIFdG9rZW4=');
+
 @$core.Deprecated('Use addAppPackageRunTimeRequestDescriptor instead')
 const AddAppPackageRunTimeRequest$json = {
   '1': 'AddAppPackageRunTimeRequest',

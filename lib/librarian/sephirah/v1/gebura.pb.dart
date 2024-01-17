@@ -1912,6 +1912,124 @@ class UnAssignAppPackageResponse extends $pb.GeneratedMessage {
   static UnAssignAppPackageResponse? _defaultInstance;
 }
 
+class DownloadAppPackageBinaryRequest extends $pb.GeneratedMessage {
+  factory DownloadAppPackageBinaryRequest({
+    $7.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  DownloadAppPackageBinaryRequest._() : super();
+  factory DownloadAppPackageBinaryRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DownloadAppPackageBinaryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadAppPackageBinaryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DownloadAppPackageBinaryRequest clone() => DownloadAppPackageBinaryRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DownloadAppPackageBinaryRequest copyWith(void Function(DownloadAppPackageBinaryRequest) updates) => super.copyWith((message) => updates(message as DownloadAppPackageBinaryRequest)) as DownloadAppPackageBinaryRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadAppPackageBinaryRequest create() => DownloadAppPackageBinaryRequest._();
+  DownloadAppPackageBinaryRequest createEmptyInstance() => create();
+  static $pb.PbList<DownloadAppPackageBinaryRequest> createRepeated() => $pb.PbList<DownloadAppPackageBinaryRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DownloadAppPackageBinaryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadAppPackageBinaryRequest>(create);
+  static DownloadAppPackageBinaryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class DownloadAppPackageBinaryResponse extends $pb.GeneratedMessage {
+  factory DownloadAppPackageBinaryResponse({
+    $7.AppPackageBinary? appPackageBinary,
+    $core.String? token,
+  }) {
+    final $result = create();
+    if (appPackageBinary != null) {
+      $result.appPackageBinary = appPackageBinary;
+    }
+    if (token != null) {
+      $result.token = token;
+    }
+    return $result;
+  }
+  DownloadAppPackageBinaryResponse._() : super();
+  factory DownloadAppPackageBinaryResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DownloadAppPackageBinaryResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadAppPackageBinaryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.AppPackageBinary>(1, _omitFieldNames ? '' : 'appPackageBinary', subBuilder: $7.AppPackageBinary.create)
+    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DownloadAppPackageBinaryResponse clone() => DownloadAppPackageBinaryResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DownloadAppPackageBinaryResponse copyWith(void Function(DownloadAppPackageBinaryResponse) updates) => super.copyWith((message) => updates(message as DownloadAppPackageBinaryResponse)) as DownloadAppPackageBinaryResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DownloadAppPackageBinaryResponse create() => DownloadAppPackageBinaryResponse._();
+  DownloadAppPackageBinaryResponse createEmptyInstance() => create();
+  static $pb.PbList<DownloadAppPackageBinaryResponse> createRepeated() => $pb.PbList<DownloadAppPackageBinaryResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DownloadAppPackageBinaryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadAppPackageBinaryResponse>(create);
+  static DownloadAppPackageBinaryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.AppPackageBinary get appPackageBinary => $_getN(0);
+  @$pb.TagNumber(1)
+  set appPackageBinary($7.AppPackageBinary v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppPackageBinary() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppPackageBinary() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.AppPackageBinary ensureAppPackageBinary() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get token => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set token($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearToken() => clearField(2);
+}
+
 class AddAppPackageRunTimeRequest extends $pb.GeneratedMessage {
   factory AddAppPackageRunTimeRequest({
     $7.InternalID? appPackageId,

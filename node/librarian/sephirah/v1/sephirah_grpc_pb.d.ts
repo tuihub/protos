@@ -61,6 +61,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   assignAppPackage: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.AssignAppPackageRequest, librarian_sephirah_v1_gebura_pb.AssignAppPackageResponse>;
   unAssignAppPackage: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.UnAssignAppPackageRequest, librarian_sephirah_v1_gebura_pb.UnAssignAppPackageResponse>;
   reportAppPackages: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse>;
+  downloadAppPackageBinary: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryRequest, librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryResponse>;
   addAppPackageRunTime: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest, librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse>;
   sumAppPackageRunTime: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeRequest, librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeResponse>;
   uploadGameSaveFile: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse>;
@@ -150,6 +151,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   assignAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.AssignAppPackageRequest, librarian_sephirah_v1_gebura_pb.AssignAppPackageResponse>;
   unAssignAppPackage: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UnAssignAppPackageRequest, librarian_sephirah_v1_gebura_pb.UnAssignAppPackageResponse>;
   reportAppPackages: grpc.handleBidiStreamingCall<librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse>;
+  downloadAppPackageBinary: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryRequest, librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryResponse>;
   addAppPackageRunTime: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest, librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse>;
   sumAppPackageRunTime: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeRequest, librarian_sephirah_v1_gebura_pb.SumAppPackageRunTimeResponse>;
   uploadGameSaveFile: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UploadGameSaveFileRequest, librarian_sephirah_v1_gebura_pb.UploadGameSaveFileResponse>;
@@ -329,6 +331,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   unAssignAppPackage(argument: librarian_sephirah_v1_gebura_pb.UnAssignAppPackageRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnAssignAppPackageResponse>): grpc.ClientUnaryCall;
   reportAppPackages(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse>;
   reportAppPackages(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest, librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse>;
+  downloadAppPackageBinary(argument: librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryResponse>): grpc.ClientUnaryCall;
+  downloadAppPackageBinary(argument: librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryResponse>): grpc.ClientUnaryCall;
+  downloadAppPackageBinary(argument: librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.DownloadAppPackageBinaryResponse>): grpc.ClientUnaryCall;
   addAppPackageRunTime(argument: librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse>): grpc.ClientUnaryCall;
   addAppPackageRunTime(argument: librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse>): grpc.ClientUnaryCall;
   addAppPackageRunTime(argument: librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.AddAppPackageRunTimeResponse>): grpc.ClientUnaryCall;

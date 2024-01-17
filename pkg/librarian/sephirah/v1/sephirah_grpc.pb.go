@@ -67,6 +67,7 @@ const (
 	LibrarianSephirahService_AssignAppPackage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage"
 	LibrarianSephirahService_UnAssignAppPackage_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage"
 	LibrarianSephirahService_ReportAppPackages_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages"
+	LibrarianSephirahService_DownloadAppPackageBinary_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppPackageBinary"
 	LibrarianSephirahService_AddAppPackageRunTime_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime"
 	LibrarianSephirahService_SumAppPackageRunTime_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime"
 	LibrarianSephirahService_UploadGameSaveFile_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
@@ -229,6 +230,8 @@ type LibrarianSephirahServiceClient interface {
 	UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error)
 	// `Gebura` `Sentinel`
 	ReportAppPackages(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackagesClient, error)
+	// `Gebura` `Normal`
+	DownloadAppPackageBinary(ctx context.Context, in *DownloadAppPackageBinaryRequest, opts ...grpc.CallOption) (*DownloadAppPackageBinaryResponse, error)
 	// `Gebura` `Normal`
 	AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
@@ -854,6 +857,15 @@ func (x *librarianSephirahServiceReportAppPackagesClient) Recv() (*ReportAppPack
 	return m, nil
 }
 
+func (c *librarianSephirahServiceClient) DownloadAppPackageBinary(ctx context.Context, in *DownloadAppPackageBinaryRequest, opts ...grpc.CallOption) (*DownloadAppPackageBinaryResponse, error) {
+	out := new(DownloadAppPackageBinaryResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_DownloadAppPackageBinary_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error) {
 	out := new(AddAppPackageRunTimeResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddAppPackageRunTime_FullMethodName, in, out, opts...)
@@ -1303,6 +1315,8 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Sentinel`
 	ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error
 	// `Gebura` `Normal`
+	DownloadAppPackageBinary(context.Context, *DownloadAppPackageBinaryRequest) (*DownloadAppPackageBinaryResponse, error)
+	// `Gebura` `Normal`
 	AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error)
 	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
 	SumAppPackageRunTime(context.Context, *SumAppPackageRunTimeRequest) (*SumAppPackageRunTimeResponse, error)
@@ -1524,6 +1538,9 @@ func (UnimplementedLibrarianSephirahServiceServer) UnAssignAppPackage(context.Co
 }
 func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error {
 	return status.Errorf(codes.Unimplemented, "method ReportAppPackages not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) DownloadAppPackageBinary(context.Context, *DownloadAppPackageBinaryRequest) (*DownloadAppPackageBinaryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadAppPackageBinary not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddAppPackageRunTime not implemented")
@@ -2546,6 +2563,24 @@ func (x *librarianSephirahServiceReportAppPackagesServer) Recv() (*ReportAppPack
 	return m, nil
 }
 
+func _LibrarianSephirahService_DownloadAppPackageBinary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadAppPackageBinaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).DownloadAppPackageBinary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_DownloadAppPackageBinary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).DownloadAppPackageBinary(ctx, req.(*DownloadAppPackageBinaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_AddAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddAppPackageRunTimeRequest)
 	if err := dec(in); err != nil {
@@ -3372,6 +3407,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnAssignAppPackage",
 			Handler:    _LibrarianSephirahService_UnAssignAppPackage_Handler,
+		},
+		{
+			MethodName: "DownloadAppPackageBinary",
+			Handler:    _LibrarianSephirahService_DownloadAppPackageBinary_Handler,
 		},
 		{
 			MethodName: "AddAppPackageRunTime",

@@ -1645,6 +1645,38 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Gebura` `Normal`
 */
+        pub async fn download_app_package_binary(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DownloadAppPackageBinaryRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DownloadAppPackageBinaryResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppPackageBinary",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "DownloadAppPackageBinary",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Normal`
+*/
         pub async fn add_app_package_run_time(
             &mut self,
             request: impl tonic::IntoRequest<super::AddAppPackageRunTimeRequest>,
@@ -3259,6 +3291,15 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<tonic::Streaming<super::ReportAppPackagesRequest>>,
         ) -> std::result::Result<
             tonic::Response<Self::ReportAppPackagesStream>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Normal`
+*/
+        async fn download_app_package_binary(
+            &self,
+            request: tonic::Request<super::DownloadAppPackageBinaryRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DownloadAppPackageBinaryResponse>,
             tonic::Status,
         >;
         /** `Gebura` `Normal`
@@ -5851,6 +5892,56 @@ pub mod librarian_sephirah_service_server {
                                 max_encoding_message_size,
                             );
                         let res = grpc.streaming(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppPackageBinary" => {
+                    #[allow(non_camel_case_types)]
+                    struct DownloadAppPackageBinarySvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::DownloadAppPackageBinaryRequest>
+                    for DownloadAppPackageBinarySvc<T> {
+                        type Response = super::DownloadAppPackageBinaryResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::DownloadAppPackageBinaryRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).download_app_package_binary(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DownloadAppPackageBinarySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)
