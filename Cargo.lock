@@ -950,7 +950,7 @@ checksum = "59547bce71d9c38b83d9c0e92b6066c4253371f15005def0c30d9657f50c7642"
 
 [[package]]
 name = "tuihub-protos"
-version = "0.3.7"
+version = "0.3.8"
 dependencies = [
  "bytes",
  "futures-core",
