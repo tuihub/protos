@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.8](https://github.com/tuihub/protos/compare/v0.3.7...v0.3.8) (2024-01-18)
+
+
+### Features
+
+* **gebura:** change PurchaseApp ([c365676](https://github.com/tuihub/protos/commit/c365676196db8787fca6a06a9f38ffef820e06a1))
+
 ## [0.3.7](https://github.com/tuihub/protos/compare/v0.3.6...v0.3.7) (2024-01-17)
 
 
