@@ -100,11 +100,15 @@ message GetBoundAppsResponse {
 }
 
 message PurchaseAppRequest {
-  // `internal` must be true
-  librarian.v1.InternalID app_id = 1;
+  // When `internal` is true, `source_app_id` must be valid InternalID.
+  // When `internal` is false, Server should create that app and return no matter the source is supported.
+  librarian.v1.AppID app_id = 1;
 }
 
-message PurchaseAppResponse {}
+message PurchaseAppResponse {
+  // When purchase external app, return the auto created internal app id.
+  librarian.v1.InternalID id = 1;
+}
 
 message GetPurchasedAppsRequest {
   optional string source = 1;
