@@ -295,23 +295,27 @@ final $typed_data.Uint8List getBoundAppsResponseDescriptor = $convert.base64Deco
 const PurchaseAppRequest$json = {
   '1': 'PurchaseAppRequest',
   '2': [
-    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
+    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppID', '10': 'appId'},
   ],
 };
 
 /// Descriptor for `PurchaseAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List purchaseAppRequestDescriptor = $convert.base64Decode(
-    'ChJQdXJjaGFzZUFwcFJlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludG'
-    'VybmFsSURSBWFwcElk');
+    'ChJQdXJjaGFzZUFwcFJlcXVlc3QSKgoGYXBwX2lkGAEgASgLMhMubGlicmFyaWFuLnYxLkFwcE'
+    'lEUgVhcHBJZA==');
 
 @$core.Deprecated('Use purchaseAppResponseDescriptor instead')
 const PurchaseAppResponse$json = {
   '1': 'PurchaseAppResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
 };
 
 /// Descriptor for `PurchaseAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List purchaseAppResponseDescriptor = $convert.base64Decode(
-    'ChNQdXJjaGFzZUFwcFJlc3BvbnNl');
+    'ChNQdXJjaGFzZUFwcFJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybm'
+    'FsSURSAmlk');
 
 @$core.Deprecated('Use getPurchasedAppsRequestDescriptor instead')
 const GetPurchasedAppsRequest$json = {

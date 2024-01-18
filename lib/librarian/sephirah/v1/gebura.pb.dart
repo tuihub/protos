@@ -1082,7 +1082,7 @@ class GetBoundAppsResponse extends $pb.GeneratedMessage {
 
 class PurchaseAppRequest extends $pb.GeneratedMessage {
   factory PurchaseAppRequest({
-    $7.InternalID? appId,
+    $7.AppID? appId,
   }) {
     final $result = create();
     if (appId != null) {
@@ -1095,7 +1095,7 @@ class PurchaseAppRequest extends $pb.GeneratedMessage {
   factory PurchaseAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PurchaseAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.AppID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.AppID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1120,26 +1120,36 @@ class PurchaseAppRequest extends $pb.GeneratedMessage {
   static PurchaseAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PurchaseAppRequest>(create);
   static PurchaseAppRequest? _defaultInstance;
 
-  /// `internal` must be true
+  /// When `internal` is true, `source_app_id` must be valid InternalID.
+  /// When `internal` is false, Server should create that app and return no matter the source is supported.
   @$pb.TagNumber(1)
-  $7.InternalID get appId => $_getN(0);
+  $7.AppID get appId => $_getN(0);
   @$pb.TagNumber(1)
-  set appId($7.InternalID v) { setField(1, v); }
+  set appId($7.AppID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppId() => $_has(0);
   @$pb.TagNumber(1)
   void clearAppId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureAppId() => $_ensure(0);
+  $7.AppID ensureAppId() => $_ensure(0);
 }
 
 class PurchaseAppResponse extends $pb.GeneratedMessage {
-  factory PurchaseAppResponse() => create();
+  factory PurchaseAppResponse({
+    $7.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
   PurchaseAppResponse._() : super();
   factory PurchaseAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PurchaseAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PurchaseAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1163,6 +1173,18 @@ class PurchaseAppResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static PurchaseAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PurchaseAppResponse>(create);
   static PurchaseAppResponse? _defaultInstance;
+
+  /// When purchase external app, return the auto created internal app id.
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
 }
 
 class GetPurchasedAppsRequest extends $pb.GeneratedMessage {

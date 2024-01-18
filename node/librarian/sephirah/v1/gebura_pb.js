@@ -4894,7 +4894,7 @@ proto.librarian.sephirah.v1.PurchaseAppRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.PurchaseAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    appId: (f = msg.getAppId()) && librarian_v1_common_pb.AppID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4932,8 +4932,8 @@ proto.librarian.sephirah.v1.PurchaseAppRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      var value = new librarian_v1_common_pb.AppID;
+      reader.readMessage(value,librarian_v1_common_pb.AppID.deserializeBinaryFromReader);
       msg.setAppId(value);
       break;
     default:
@@ -4970,24 +4970,24 @@ proto.librarian.sephirah.v1.PurchaseAppRequest.serializeBinaryToWriter = functio
     writer.writeMessage(
       1,
       f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+      librarian_v1_common_pb.AppID.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional librarian.v1.InternalID app_id = 1;
- * @return {?proto.librarian.v1.InternalID}
+ * optional librarian.v1.AppID app_id = 1;
+ * @return {?proto.librarian.v1.AppID}
  */
 proto.librarian.sephirah.v1.PurchaseAppRequest.prototype.getAppId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+  return /** @type{?proto.librarian.v1.AppID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.AppID, 1));
 };
 
 
 /**
- * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @param {?proto.librarian.v1.AppID|undefined} value
  * @return {!proto.librarian.sephirah.v1.PurchaseAppRequest} returns this
 */
 proto.librarian.sephirah.v1.PurchaseAppRequest.prototype.setAppId = function(value) {
@@ -5045,7 +5045,7 @@ proto.librarian.sephirah.v1.PurchaseAppResponse.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.PurchaseAppResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5082,6 +5082,11 @@ proto.librarian.sephirah.v1.PurchaseAppResponse.deserializeBinaryFromReader = fu
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5111,6 +5116,51 @@ proto.librarian.sephirah.v1.PurchaseAppResponse.prototype.serializeBinary = func
  */
 proto.librarian.sephirah.v1.PurchaseAppResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.PurchaseAppResponse.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.PurchaseAppResponse} returns this
+*/
+proto.librarian.sephirah.v1.PurchaseAppResponse.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.PurchaseAppResponse} returns this
+ */
+proto.librarian.sephirah.v1.PurchaseAppResponse.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.PurchaseAppResponse.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

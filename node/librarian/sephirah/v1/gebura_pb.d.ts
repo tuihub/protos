@@ -479,8 +479,8 @@ export namespace GetBoundAppsResponse {
 export class PurchaseAppRequest extends jspb.Message {
   hasAppId(): boolean;
   clearAppId(): void;
-  getAppId(): librarian_v1_common_pb.InternalID | undefined;
-  setAppId(value?: librarian_v1_common_pb.InternalID): void;
+  getAppId(): librarian_v1_common_pb.AppID | undefined;
+  setAppId(value?: librarian_v1_common_pb.AppID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PurchaseAppRequest.AsObject;
@@ -494,11 +494,16 @@ export class PurchaseAppRequest extends jspb.Message {
 
 export namespace PurchaseAppRequest {
   export type AsObject = {
-    appId?: librarian_v1_common_pb.InternalID.AsObject,
+    appId?: librarian_v1_common_pb.AppID.AsObject,
   }
 }
 
 export class PurchaseAppResponse extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PurchaseAppResponse.AsObject;
   static toObject(includeInstance: boolean, msg: PurchaseAppResponse): PurchaseAppResponse.AsObject;
@@ -511,6 +516,7 @@ export class PurchaseAppResponse extends jspb.Message {
 
 export namespace PurchaseAppResponse {
   export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
