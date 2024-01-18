@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.7](https://github.com/tuihub/protos/compare/v0.3.6...v0.3.7) (2024-01-17)
+
+
+### Features
+
+* **gebura:** add DownloadAppPackageBinary ([2d10d35](https://github.com/tuihub/protos/commit/2d10d35a638ecb65c301ce5f0452c209832d0a1d))
+
 ## [0.3.6](https://github.com/tuihub/protos/compare/v0.3.5...v0.3.6) (2024-01-16)
 
 
