@@ -150,7 +150,8 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc UnAssignAppPackage(UnAssignAppPackageRequest) returns (UnAssignAppPackageResponse);
   // `Gebura` `Sentinel`
-  rpc ReportAppPackages(stream ReportAppPackagesRequest) returns (stream ReportAppPackagesResponse);
+  // Full update, changes are handled by librarian
+  rpc ReportAppPackages(ReportAppPackagesRequest) returns (ReportAppPackagesResponse);
 
   // `Gebura` `Normal`
   rpc DownloadAppPackageBinary(DownloadAppPackageBinaryRequest) returns (DownloadAppPackageBinaryResponse);
