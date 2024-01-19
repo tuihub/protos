@@ -2479,10 +2479,11 @@ unAssignAppPackage: {
     responseDeserialize: deserialize_librarian_sephirah_v1_UnAssignAppPackageResponse,
   },
   // `Gebura` `Sentinel`
+// Full update, changes are handled by librarian
 reportAppPackages: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages',
-    requestStream: true,
-    responseStream: true,
+    requestStream: false,
+    responseStream: false,
     requestType: librarian_sephirah_v1_gebura_pb.ReportAppPackagesRequest,
     responseType: librarian_sephirah_v1_gebura_pb.ReportAppPackagesResponse,
     requestSerialize: serialize_librarian_sephirah_v1_ReportAppPackagesRequest,

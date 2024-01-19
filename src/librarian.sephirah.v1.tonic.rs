@@ -1610,14 +1610,13 @@ pub mod librarian_sephirah_service_client {
             self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Sentinel`
+ Full update, changes are handled by librarian
 */
         pub async fn report_app_packages(
             &mut self,
-            request: impl tonic::IntoStreamingRequest<
-                Message = super::ReportAppPackagesRequest,
-            >,
+            request: impl tonic::IntoRequest<super::ReportAppPackagesRequest>,
         ) -> std::result::Result<
-            tonic::Response<tonic::codec::Streaming<super::ReportAppPackagesResponse>>,
+            tonic::Response<super::ReportAppPackagesResponse>,
             tonic::Status,
         > {
             self.inner
@@ -1633,7 +1632,7 @@ pub mod librarian_sephirah_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages",
             );
-            let mut req = request.into_streaming_request();
+            let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
@@ -1641,7 +1640,7 @@ pub mod librarian_sephirah_service_client {
                         "ReportAppPackages",
                     ),
                 );
-            self.inner.streaming(req, path, codec).await
+            self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal`
 */
@@ -3275,22 +3274,14 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UnAssignAppPackageResponse>,
             tonic::Status,
         >;
-        /// Server streaming response type for the ReportAppPackages method.
-        type ReportAppPackagesStream: futures_core::Stream<
-                Item = std::result::Result<
-                    super::ReportAppPackagesResponse,
-                    tonic::Status,
-                >,
-            >
-            + Send
-            + 'static;
         /** `Gebura` `Sentinel`
+ Full update, changes are handled by librarian
 */
         async fn report_app_packages(
             &self,
-            request: tonic::Request<tonic::Streaming<super::ReportAppPackagesRequest>>,
+            request: tonic::Request<super::ReportAppPackagesRequest>,
         ) -> std::result::Result<
-            tonic::Response<Self::ReportAppPackagesStream>,
+            tonic::Response<super::ReportAppPackagesResponse>,
             tonic::Status,
         >;
         /** `Gebura` `Normal`
@@ -5852,19 +5843,16 @@ pub mod librarian_sephirah_service_server {
                     struct ReportAppPackagesSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::StreamingService<super::ReportAppPackagesRequest>
+                    > tonic::server::UnaryService<super::ReportAppPackagesRequest>
                     for ReportAppPackagesSvc<T> {
                         type Response = super::ReportAppPackagesResponse;
-                        type ResponseStream = T::ReportAppPackagesStream;
                         type Future = BoxFuture<
-                            tonic::Response<Self::ResponseStream>,
+                            tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<
-                                tonic::Streaming<super::ReportAppPackagesRequest>,
-                            >,
+                            request: tonic::Request<super::ReportAppPackagesRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -5891,7 +5879,7 @@ pub mod librarian_sephirah_service_server {
                                 max_decoding_message_size,
                                 max_encoding_message_size,
                             );
-                        let res = grpc.streaming(method, req).await;
+                        let res = grpc.unary(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)

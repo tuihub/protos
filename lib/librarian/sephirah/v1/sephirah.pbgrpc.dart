@@ -562,8 +562,8 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$unAssignAppPackage, request, options: options);
   }
 
-  $grpc.ResponseStream<$4.ReportAppPackagesResponse> reportAppPackages($async.Stream<$4.ReportAppPackagesRequest> request, {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$reportAppPackages, request, options: options);
+  $grpc.ResponseFuture<$4.ReportAppPackagesResponse> reportAppPackages($4.ReportAppPackagesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$reportAppPackages, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary($4.DownloadAppPackageBinaryRequest request, {$grpc.CallOptions? options}) {
@@ -1051,9 +1051,9 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($4.UnAssignAppPackageResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.ReportAppPackagesRequest, $4.ReportAppPackagesResponse>(
         'ReportAppPackages',
-        reportAppPackages,
-        true,
-        true,
+        reportAppPackages_Pre,
+        false,
+        false,
         ($core.List<$core.int> value) => $4.ReportAppPackagesRequest.fromBuffer(value),
         ($4.ReportAppPackagesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.DownloadAppPackageBinaryRequest, $4.DownloadAppPackageBinaryResponse>(
@@ -1493,6 +1493,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return unAssignAppPackage(call, await request);
   }
 
+  $async.Future<$4.ReportAppPackagesResponse> reportAppPackages_Pre($grpc.ServiceCall call, $async.Future<$4.ReportAppPackagesRequest> request) async {
+    return reportAppPackages(call, await request);
+  }
+
   $async.Future<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary_Pre($grpc.ServiceCall call, $async.Future<$4.DownloadAppPackageBinaryRequest> request) async {
     return downloadAppPackageBinary(call, await request);
   }
@@ -1688,7 +1692,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.ListAppPackagesResponse> listAppPackages($grpc.ServiceCall call, $4.ListAppPackagesRequest request);
   $async.Future<$4.AssignAppPackageResponse> assignAppPackage($grpc.ServiceCall call, $4.AssignAppPackageRequest request);
   $async.Future<$4.UnAssignAppPackageResponse> unAssignAppPackage($grpc.ServiceCall call, $4.UnAssignAppPackageRequest request);
-  $async.Stream<$4.ReportAppPackagesResponse> reportAppPackages($grpc.ServiceCall call, $async.Stream<$4.ReportAppPackagesRequest> request);
+  $async.Future<$4.ReportAppPackagesResponse> reportAppPackages($grpc.ServiceCall call, $4.ReportAppPackagesRequest request);
   $async.Future<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary($grpc.ServiceCall call, $4.DownloadAppPackageBinaryRequest request);
   $async.Future<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime($grpc.ServiceCall call, $4.AddAppPackageRunTimeRequest request);
   $async.Future<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime($grpc.ServiceCall call, $4.SumAppPackageRunTimeRequest request);

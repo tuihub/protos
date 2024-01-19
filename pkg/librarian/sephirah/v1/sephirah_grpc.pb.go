@@ -229,7 +229,8 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Normal`
 	UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error)
 	// `Gebura` `Sentinel`
-	ReportAppPackages(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackagesClient, error)
+	// Full update, changes are handled by librarian
+	ReportAppPackages(ctx context.Context, in *ReportAppPackagesRequest, opts ...grpc.CallOption) (*ReportAppPackagesResponse, error)
 	// `Gebura` `Normal`
 	DownloadAppPackageBinary(ctx context.Context, in *DownloadAppPackageBinaryRequest, opts ...grpc.CallOption) (*DownloadAppPackageBinaryResponse, error)
 	// `Gebura` `Normal`
@@ -826,35 +827,13 @@ func (c *librarianSephirahServiceClient) UnAssignAppPackage(ctx context.Context,
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ReportAppPackages(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_ReportAppPackagesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[4], LibrarianSephirahService_ReportAppPackages_FullMethodName, opts...)
+func (c *librarianSephirahServiceClient) ReportAppPackages(ctx context.Context, in *ReportAppPackagesRequest, opts ...grpc.CallOption) (*ReportAppPackagesResponse, error) {
+	out := new(ReportAppPackagesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ReportAppPackages_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &librarianSephirahServiceReportAppPackagesClient{stream}
-	return x, nil
-}
-
-type LibrarianSephirahService_ReportAppPackagesClient interface {
-	Send(*ReportAppPackagesRequest) error
-	Recv() (*ReportAppPackagesResponse, error)
-	grpc.ClientStream
-}
-
-type librarianSephirahServiceReportAppPackagesClient struct {
-	grpc.ClientStream
-}
-
-func (x *librarianSephirahServiceReportAppPackagesClient) Send(m *ReportAppPackagesRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *librarianSephirahServiceReportAppPackagesClient) Recv() (*ReportAppPackagesResponse, error) {
-	m := new(ReportAppPackagesResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	return out, nil
 }
 
 func (c *librarianSephirahServiceClient) DownloadAppPackageBinary(ctx context.Context, in *DownloadAppPackageBinaryRequest, opts ...grpc.CallOption) (*DownloadAppPackageBinaryResponse, error) {
@@ -1313,7 +1292,8 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	UnAssignAppPackage(context.Context, *UnAssignAppPackageRequest) (*UnAssignAppPackageResponse, error)
 	// `Gebura` `Sentinel`
-	ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error
+	// Full update, changes are handled by librarian
+	ReportAppPackages(context.Context, *ReportAppPackagesRequest) (*ReportAppPackagesResponse, error)
 	// `Gebura` `Normal`
 	DownloadAppPackageBinary(context.Context, *DownloadAppPackageBinaryRequest) (*DownloadAppPackageBinaryResponse, error)
 	// `Gebura` `Normal`
@@ -1536,8 +1516,8 @@ func (UnimplementedLibrarianSephirahServiceServer) AssignAppPackage(context.Cont
 func (UnimplementedLibrarianSephirahServiceServer) UnAssignAppPackage(context.Context, *UnAssignAppPackageRequest) (*UnAssignAppPackageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnAssignAppPackage not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackages(LibrarianSephirahService_ReportAppPackagesServer) error {
-	return status.Errorf(codes.Unimplemented, "method ReportAppPackages not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackages(context.Context, *ReportAppPackagesRequest) (*ReportAppPackagesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReportAppPackages not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) DownloadAppPackageBinary(context.Context, *DownloadAppPackageBinaryRequest) (*DownloadAppPackageBinaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DownloadAppPackageBinary not implemented")
@@ -2537,30 +2517,22 @@ func _LibrarianSephirahService_UnAssignAppPackage_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ReportAppPackages_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(LibrarianSephirahServiceServer).ReportAppPackages(&librarianSephirahServiceReportAppPackagesServer{stream})
-}
-
-type LibrarianSephirahService_ReportAppPackagesServer interface {
-	Send(*ReportAppPackagesResponse) error
-	Recv() (*ReportAppPackagesRequest, error)
-	grpc.ServerStream
-}
-
-type librarianSephirahServiceReportAppPackagesServer struct {
-	grpc.ServerStream
-}
-
-func (x *librarianSephirahServiceReportAppPackagesServer) Send(m *ReportAppPackagesResponse) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *librarianSephirahServiceReportAppPackagesServer) Recv() (*ReportAppPackagesRequest, error) {
-	m := new(ReportAppPackagesRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _LibrarianSephirahService_ReportAppPackages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportAppPackagesRequest)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ReportAppPackages(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ReportAppPackages_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ReportAppPackages(ctx, req.(*ReportAppPackagesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _LibrarianSephirahService_DownloadAppPackageBinary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -3409,6 +3381,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_UnAssignAppPackage_Handler,
 		},
 		{
+			MethodName: "ReportAppPackages",
+			Handler:    _LibrarianSephirahService_ReportAppPackages_Handler,
+		},
+		{
 			MethodName: "DownloadAppPackageBinary",
 			Handler:    _LibrarianSephirahService_DownloadAppPackageBinary_Handler,
 		},
@@ -3580,12 +3556,6 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			StreamName:    "SimpleDownloadFile",
 			Handler:       _LibrarianSephirahService_SimpleDownloadFile_Handler,
 			ServerStreams: true,
-		},
-		{
-			StreamName:    "ReportAppPackages",
-			Handler:       _LibrarianSephirahService_ReportAppPackages_Handler,
-			ServerStreams: true,
-			ClientStreams: true,
 		},
 	},
 	Metadata: "librarian/sephirah/v1/sephirah.proto",
