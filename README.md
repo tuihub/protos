@@ -1,5 +1,8 @@
 ![](./docs/logo.png)
 
+This repository contains protobuf definition and generated code for TuiHub **developers and contributors**.
+All the `.proto` files located at [proto folder](proto), it is recommended to import generated code rather than original definition.
+
 ## Usage
 
 ### Document
