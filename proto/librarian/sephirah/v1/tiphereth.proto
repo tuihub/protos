@@ -193,4 +193,18 @@ message Porter {
   string global_name = 4;
   string feature_summary = 5;
   UserStatus status = 6;
+  // Only used in response
+  PorterConnectionStatus connection_status = 7;
+}
+
+enum PorterConnectionStatus {
+  PORTER_CONNECTION_STATUS_UNSPECIFIED = 0;
+  // Available and not active
+  PORTER_CONNECTION_STATUS_CONNECTED = 1;
+  // Not available
+  PORTER_CONNECTION_STATUS_DISCONNECTED = 2;
+  // Available and active
+  PORTER_CONNECTION_STATUS_ACTIVE = 3;
+  // Available but failed to activate
+  PORTER_CONNECTION_STATUS_ACTIVATION_FAILED = 4;
 }
