@@ -20,8 +20,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.25.1"/>
-    <PackageReference Include="Grpc.Net.Common" Version="2.59.0"/>
+    <PackageReference Include="Google.Protobuf" Version="3.25.2"/>
+    <PackageReference Include="Grpc.Net.Common" Version="2.60.0"/>
   </ItemGroup>
   
   <!--Target Name="IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
