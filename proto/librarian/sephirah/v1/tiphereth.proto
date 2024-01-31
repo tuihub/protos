@@ -153,12 +153,23 @@ message UserSession {
 
 message DeviceInfo {
   librarian.v1.InternalID device_id = 1;
-  string device_model = 2;
-  string system_version = 3;
+  string device_name = 2;
+  SystemType system_type = 3;
+  string system_version = 4;
 
-  string client_name = 4;
-  string client_source_code_address = 5;
-  string client_version = 6;
+  string client_name = 5;
+  string client_source_code_address = 6;
+  string client_version = 7;
+}
+
+enum SystemType {
+  SYSTEM_TYPE_UNSPECIFIED = 0;
+  SYSTEM_TYPE_ANDROID = 1;
+  SYSTEM_TYPE_IOS = 2;
+  SYSTEM_TYPE_WINDOWS = 3;
+  SYSTEM_TYPE_MACOS = 4;
+  SYSTEM_TYPE_LINUX = 5;
+  SYSTEM_TYPE_WEB = 6;
 }
 
 enum UserType {
