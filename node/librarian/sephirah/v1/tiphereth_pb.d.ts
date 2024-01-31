@@ -833,8 +833,11 @@ export class DeviceInfo extends jspb.Message {
   getDeviceId(): librarian_v1_common_pb.InternalID | undefined;
   setDeviceId(value?: librarian_v1_common_pb.InternalID): void;
 
-  getDeviceModel(): string;
-  setDeviceModel(value: string): void;
+  getDeviceName(): string;
+  setDeviceName(value: string): void;
+
+  getSystemType(): SystemTypeMap[keyof SystemTypeMap];
+  setSystemType(value: SystemTypeMap[keyof SystemTypeMap]): void;
 
   getSystemVersion(): string;
   setSystemVersion(value: string): void;
@@ -861,7 +864,8 @@ export class DeviceInfo extends jspb.Message {
 export namespace DeviceInfo {
   export type AsObject = {
     deviceId?: librarian_v1_common_pb.InternalID.AsObject,
-    deviceModel: string,
+    deviceName: string,
+    systemType: SystemTypeMap[keyof SystemTypeMap],
     systemVersion: string,
     clientName: string,
     clientSourceCodeAddress: string,
@@ -910,6 +914,18 @@ export namespace Porter {
     status: UserStatusMap[keyof UserStatusMap],
   }
 }
+
+export interface SystemTypeMap {
+  SYSTEM_TYPE_UNSPECIFIED: 0;
+  SYSTEM_TYPE_ANDROID: 1;
+  SYSTEM_TYPE_IOS: 2;
+  SYSTEM_TYPE_WINDOWS: 3;
+  SYSTEM_TYPE_MACOS: 4;
+  SYSTEM_TYPE_LINUX: 5;
+  SYSTEM_TYPE_WEB: 6;
+}
+
+export const SystemType: SystemTypeMap;
 
 export interface UserTypeMap {
   USER_TYPE_UNSPECIFIED: 0;

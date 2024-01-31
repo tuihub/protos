@@ -13,6 +13,31 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class SystemType extends $pb.ProtobufEnum {
+  static const SystemType SYSTEM_TYPE_UNSPECIFIED = SystemType._(0, _omitEnumNames ? '' : 'SYSTEM_TYPE_UNSPECIFIED');
+  static const SystemType SYSTEM_TYPE_ANDROID = SystemType._(1, _omitEnumNames ? '' : 'SYSTEM_TYPE_ANDROID');
+  static const SystemType SYSTEM_TYPE_IOS = SystemType._(2, _omitEnumNames ? '' : 'SYSTEM_TYPE_IOS');
+  static const SystemType SYSTEM_TYPE_WINDOWS = SystemType._(3, _omitEnumNames ? '' : 'SYSTEM_TYPE_WINDOWS');
+  static const SystemType SYSTEM_TYPE_MACOS = SystemType._(4, _omitEnumNames ? '' : 'SYSTEM_TYPE_MACOS');
+  static const SystemType SYSTEM_TYPE_LINUX = SystemType._(5, _omitEnumNames ? '' : 'SYSTEM_TYPE_LINUX');
+  static const SystemType SYSTEM_TYPE_WEB = SystemType._(6, _omitEnumNames ? '' : 'SYSTEM_TYPE_WEB');
+
+  static const $core.List<SystemType> values = <SystemType> [
+    SYSTEM_TYPE_UNSPECIFIED,
+    SYSTEM_TYPE_ANDROID,
+    SYSTEM_TYPE_IOS,
+    SYSTEM_TYPE_WINDOWS,
+    SYSTEM_TYPE_MACOS,
+    SYSTEM_TYPE_LINUX,
+    SYSTEM_TYPE_WEB,
+  ];
+
+  static final $core.Map<$core.int, SystemType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SystemType? valueOf($core.int value) => _byValue[value];
+
+  const SystemType._($core.int v, $core.String n) : super(v, n);
+}
+
 class UserType extends $pb.ProtobufEnum {
   static const UserType USER_TYPE_UNSPECIFIED = UserType._(0, _omitEnumNames ? '' : 'USER_TYPE_UNSPECIFIED');
   static const UserType USER_TYPE_ADMIN = UserType._(1, _omitEnumNames ? '' : 'USER_TYPE_ADMIN');

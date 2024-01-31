@@ -4,6 +4,14 @@ pub mod librarian_sephirah_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
+    /**
+ Sephirah contains the core logic and currently divided into the following modules:
+ 1. `Tiphereth` handles account data and provides permission verification
+ 2. `Gebura` handles application data
+ 3. `Binah` handles file transfer
+ 4. `Yesod` handles feed data
+ 5. `Netzach` handles notifications
+*/
     #[derive(Debug, Clone)]
     pub struct LibrarianSephirahServiceClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -86,6 +94,8 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        /** Allow anonymous call, use accessToken to get complete information
+*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -116,6 +126,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Tiphereth` `Normal` Login via password and get two token
+*/
         pub async fn get_token(
             &mut self,
             request: impl tonic::IntoRequest<super::GetTokenRequest>,
@@ -146,6 +158,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
+*/
         pub async fn refresh_token(
             &mut self,
             request: impl tonic::IntoRequest<super::RefreshTokenRequest>,
@@ -2506,6 +2520,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn group_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GroupFeedItemsRequest>,
@@ -2536,6 +2552,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn get_feed_item(
             &mut self,
             request: impl tonic::IntoRequest<super::GetFeedItemRequest>,
@@ -2566,6 +2584,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn get_batch_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GetBatchFeedItemsRequest>,
@@ -2596,6 +2616,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn read_feed_item(
             &mut self,
             request: impl tonic::IntoRequest<super::ReadFeedItemRequest>,
@@ -2626,6 +2648,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn create_feed_item_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateFeedItemCollectionRequest>,
@@ -2815,6 +2839,8 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
+        /** Allow anonymous call, use accessToken to get complete information
+*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -2822,6 +2848,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetServerInformationResponse>,
             tonic::Status,
         >;
+        /** `Tiphereth` `Normal` Login via password and get two token
+*/
         async fn get_token(
             &self,
             request: tonic::Request<super::GetTokenRequest>,
@@ -2829,6 +2857,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetTokenResponse>,
             tonic::Status,
         >;
+        /** `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
+*/
         async fn refresh_token(
             &self,
             request: tonic::Request<super::RefreshTokenRequest>,
@@ -3527,6 +3557,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedItemsResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn group_feed_items(
             &self,
             request: tonic::Request<super::GroupFeedItemsRequest>,
@@ -3534,6 +3566,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GroupFeedItemsResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn get_feed_item(
             &self,
             request: tonic::Request<super::GetFeedItemRequest>,
@@ -3541,6 +3575,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetFeedItemResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn get_batch_feed_items(
             &self,
             request: tonic::Request<super::GetBatchFeedItemsRequest>,
@@ -3548,6 +3584,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetBatchFeedItemsResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn read_feed_item(
             &self,
             request: tonic::Request<super::ReadFeedItemRequest>,
@@ -3555,6 +3593,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ReadFeedItemResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn create_feed_item_collection(
             &self,
             request: tonic::Request<super::CreateFeedItemCollectionRequest>,
@@ -3598,6 +3638,14 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
     }
+    /**
+ Sephirah contains the core logic and currently divided into the following modules:
+ 1. `Tiphereth` handles account data and provides permission verification
+ 2. `Gebura` handles application data
+ 3. `Binah` handles file transfer
+ 4. `Yesod` handles feed data
+ 5. `Netzach` handles notifications
+*/
     #[derive(Debug)]
     pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
         inner: _Inner<T>,

@@ -52,6 +52,7 @@ goog.exportSymbol('proto.librarian.sephirah.v1.RefreshTokenRequest', null, globa
 goog.exportSymbol('proto.librarian.sephirah.v1.RefreshTokenResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.RegisterDeviceRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.RegisterDeviceResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.SystemType', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UnLinkAccountRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UnLinkAccountResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdatePorterPrivilegeRequest', null, global);
@@ -6595,11 +6596,12 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.toObject = function(opt_include
 proto.librarian.sephirah.v1.DeviceInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    deviceModel: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    systemVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    clientName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    clientSourceCodeAddress: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    clientVersion: jspb.Message.getFieldWithDefault(msg, 6, "")
+    deviceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    systemType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    systemVersion: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    clientName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    clientSourceCodeAddress: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    clientVersion: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -6643,21 +6645,25 @@ proto.librarian.sephirah.v1.DeviceInfo.deserializeBinaryFromReader = function(ms
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDeviceModel(value);
+      msg.setDeviceName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSystemVersion(value);
+      var value = /** @type {!proto.librarian.sephirah.v1.SystemType} */ (reader.readEnum());
+      msg.setSystemType(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClientName(value);
+      msg.setSystemVersion(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClientSourceCodeAddress(value);
+      msg.setClientName(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClientSourceCodeAddress(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setClientVersion(value);
       break;
@@ -6698,38 +6704,45 @@ proto.librarian.sephirah.v1.DeviceInfo.serializeBinaryToWriter = function(messag
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getDeviceModel();
+  f = message.getDeviceName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getSystemVersion();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getSystemType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       3,
       f
     );
   }
-  f = message.getClientName();
+  f = message.getSystemVersion();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getClientSourceCodeAddress();
+  f = message.getClientName();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getClientVersion();
+  f = message.getClientSourceCodeAddress();
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getClientVersion();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -6774,10 +6787,10 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.hasDeviceId = function() {
 
 
 /**
- * optional string device_model = 2;
+ * optional string device_name = 2;
  * @return {string}
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.getDeviceModel = function() {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.getDeviceName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -6786,34 +6799,34 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.getDeviceModel = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.setDeviceModel = function(value) {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.setDeviceName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string system_version = 3;
+ * optional SystemType system_type = 3;
+ * @return {!proto.librarian.sephirah.v1.SystemType}
+ */
+proto.librarian.sephirah.v1.DeviceInfo.prototype.getSystemType = function() {
+  return /** @type {!proto.librarian.sephirah.v1.SystemType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.SystemType} value
+ * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
+ */
+proto.librarian.sephirah.v1.DeviceInfo.prototype.setSystemType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional string system_version = 4;
  * @return {string}
  */
 proto.librarian.sephirah.v1.DeviceInfo.prototype.getSystemVersion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
- */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.setSystemVersion = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string client_name = 4;
- * @return {string}
- */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -6822,16 +6835,16 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientName = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.setClientName = function(value) {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.setSystemVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string client_source_code_address = 5;
+ * optional string client_name = 5;
  * @return {string}
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientSourceCodeAddress = function() {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -6840,16 +6853,16 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientSourceCodeAddress = fu
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.setClientSourceCodeAddress = function(value) {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.setClientName = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string client_version = 6;
+ * optional string client_source_code_address = 6;
  * @return {string}
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientVersion = function() {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientSourceCodeAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -6858,8 +6871,26 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientVersion = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
  */
-proto.librarian.sephirah.v1.DeviceInfo.prototype.setClientVersion = function(value) {
+proto.librarian.sephirah.v1.DeviceInfo.prototype.setClientSourceCodeAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string client_version = 7;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.DeviceInfo.prototype.getClientVersion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.DeviceInfo} returns this
+ */
+proto.librarian.sephirah.v1.DeviceInfo.prototype.setClientVersion = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -7163,6 +7194,19 @@ proto.librarian.sephirah.v1.Porter.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.librarian.sephirah.v1.SystemType = {
+  SYSTEM_TYPE_UNSPECIFIED: 0,
+  SYSTEM_TYPE_ANDROID: 1,
+  SYSTEM_TYPE_IOS: 2,
+  SYSTEM_TYPE_WINDOWS: 3,
+  SYSTEM_TYPE_MACOS: 4,
+  SYSTEM_TYPE_LINUX: 5,
+  SYSTEM_TYPE_WEB: 6
+};
 
 /**
  * @enum {number}

@@ -1959,7 +1959,8 @@ class UserSession extends $pb.GeneratedMessage {
 class DeviceInfo extends $pb.GeneratedMessage {
   factory DeviceInfo({
     $7.InternalID? deviceId,
-    $core.String? deviceModel,
+    $core.String? deviceName,
+    SystemType? systemType,
     $core.String? systemVersion,
     $core.String? clientName,
     $core.String? clientSourceCodeAddress,
@@ -1969,8 +1970,11 @@ class DeviceInfo extends $pb.GeneratedMessage {
     if (deviceId != null) {
       $result.deviceId = deviceId;
     }
-    if (deviceModel != null) {
-      $result.deviceModel = deviceModel;
+    if (deviceName != null) {
+      $result.deviceName = deviceName;
+    }
+    if (systemType != null) {
+      $result.systemType = systemType;
     }
     if (systemVersion != null) {
       $result.systemVersion = systemVersion;
@@ -1992,11 +1996,12 @@ class DeviceInfo extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'deviceId', subBuilder: $7.InternalID.create)
-    ..aOS(2, _omitFieldNames ? '' : 'deviceModel')
-    ..aOS(3, _omitFieldNames ? '' : 'systemVersion')
-    ..aOS(4, _omitFieldNames ? '' : 'clientName')
-    ..aOS(5, _omitFieldNames ? '' : 'clientSourceCodeAddress')
-    ..aOS(6, _omitFieldNames ? '' : 'clientVersion')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceName')
+    ..e<SystemType>(3, _omitFieldNames ? '' : 'systemType', $pb.PbFieldType.OE, defaultOrMaker: SystemType.SYSTEM_TYPE_UNSPECIFIED, valueOf: SystemType.valueOf, enumValues: SystemType.values)
+    ..aOS(4, _omitFieldNames ? '' : 'systemVersion')
+    ..aOS(5, _omitFieldNames ? '' : 'clientName')
+    ..aOS(6, _omitFieldNames ? '' : 'clientSourceCodeAddress')
+    ..aOS(7, _omitFieldNames ? '' : 'clientVersion')
     ..hasRequiredFields = false
   ;
 
@@ -2033,49 +2038,58 @@ class DeviceInfo extends $pb.GeneratedMessage {
   $7.InternalID ensureDeviceId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get deviceModel => $_getSZ(1);
+  $core.String get deviceName => $_getSZ(1);
   @$pb.TagNumber(2)
-  set deviceModel($core.String v) { $_setString(1, v); }
+  set deviceName($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDeviceModel() => $_has(1);
+  $core.bool hasDeviceName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDeviceModel() => clearField(2);
+  void clearDeviceName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get systemVersion => $_getSZ(2);
+  SystemType get systemType => $_getN(2);
   @$pb.TagNumber(3)
-  set systemVersion($core.String v) { $_setString(2, v); }
+  set systemType(SystemType v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSystemVersion() => $_has(2);
+  $core.bool hasSystemType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSystemVersion() => clearField(3);
+  void clearSystemType() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get clientName => $_getSZ(3);
+  $core.String get systemVersion => $_getSZ(3);
   @$pb.TagNumber(4)
-  set clientName($core.String v) { $_setString(3, v); }
+  set systemVersion($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasClientName() => $_has(3);
+  $core.bool hasSystemVersion() => $_has(3);
   @$pb.TagNumber(4)
-  void clearClientName() => clearField(4);
+  void clearSystemVersion() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get clientSourceCodeAddress => $_getSZ(4);
+  $core.String get clientName => $_getSZ(4);
   @$pb.TagNumber(5)
-  set clientSourceCodeAddress($core.String v) { $_setString(4, v); }
+  set clientName($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasClientSourceCodeAddress() => $_has(4);
+  $core.bool hasClientName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearClientSourceCodeAddress() => clearField(5);
+  void clearClientName() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get clientVersion => $_getSZ(5);
+  $core.String get clientSourceCodeAddress => $_getSZ(5);
   @$pb.TagNumber(6)
-  set clientVersion($core.String v) { $_setString(5, v); }
+  set clientSourceCodeAddress($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasClientVersion() => $_has(5);
+  $core.bool hasClientSourceCodeAddress() => $_has(5);
   @$pb.TagNumber(6)
-  void clearClientVersion() => clearField(6);
+  void clearClientSourceCodeAddress() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get clientVersion => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set clientVersion($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasClientVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearClientVersion() => clearField(7);
 }
 
 class Porter extends $pb.GeneratedMessage {

@@ -47,6 +47,11 @@ export class GetServerInformationResponse extends jspb.Message {
   getFeatureSummary(): ServerFeatureSummary | undefined;
   setFeatureSummary(value?: ServerFeatureSummary): void;
 
+  hasServerInstanceSummary(): boolean;
+  clearServerInstanceSummary(): void;
+  getServerInstanceSummary(): ServerInstanceSummary | undefined;
+  setServerInstanceSummary(value?: ServerInstanceSummary): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetServerInformationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetServerInformationResponse): GetServerInformationResponse.AsObject;
@@ -63,6 +68,7 @@ export namespace GetServerInformationResponse {
     protocolSummary?: ServerProtocolSummary.AsObject,
     currentTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     featureSummary?: ServerFeatureSummary.AsObject,
+    serverInstanceSummary?: ServerInstanceSummary.AsObject,
   }
 }
 
@@ -151,6 +157,42 @@ export namespace ServerFeatureSummary {
     supportedAppSourcesList: Array<string>,
     supportedFeedSourcesList: Array<string>,
     supportedNotifyDestinationsList: Array<string>,
+  }
+}
+
+export class ServerInstanceSummary extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getWebsiteUrl(): string;
+  setWebsiteUrl(value: string): void;
+
+  getLogoUrl(): string;
+  setLogoUrl(value: string): void;
+
+  getBackgroundUrl(): string;
+  setBackgroundUrl(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServerInstanceSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: ServerInstanceSummary): ServerInstanceSummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ServerInstanceSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServerInstanceSummary;
+  static deserializeBinaryFromReader(message: ServerInstanceSummary, reader: jspb.BinaryReader): ServerInstanceSummary;
+}
+
+export namespace ServerInstanceSummary {
+  export type AsObject = {
+    name: string,
+    description: string,
+    websiteUrl: string,
+    logoUrl: string,
+    backgroundUrl: string,
   }
 }
 

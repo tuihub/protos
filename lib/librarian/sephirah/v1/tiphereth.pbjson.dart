@@ -13,6 +13,27 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use systemTypeDescriptor instead')
+const SystemType$json = {
+  '1': 'SystemType',
+  '2': [
+    {'1': 'SYSTEM_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'SYSTEM_TYPE_ANDROID', '2': 1},
+    {'1': 'SYSTEM_TYPE_IOS', '2': 2},
+    {'1': 'SYSTEM_TYPE_WINDOWS', '2': 3},
+    {'1': 'SYSTEM_TYPE_MACOS', '2': 4},
+    {'1': 'SYSTEM_TYPE_LINUX', '2': 5},
+    {'1': 'SYSTEM_TYPE_WEB', '2': 6},
+  ],
+};
+
+/// Descriptor for `SystemType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List systemTypeDescriptor = $convert.base64Decode(
+    'CgpTeXN0ZW1UeXBlEhsKF1NZU1RFTV9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTU1lTVEVNX1RZUE'
+    'VfQU5EUk9JRBABEhMKD1NZU1RFTV9UWVBFX0lPUxACEhcKE1NZU1RFTV9UWVBFX1dJTkRPV1MQ'
+    'AxIVChFTWVNURU1fVFlQRV9NQUNPUxAEEhUKEVNZU1RFTV9UWVBFX0xJTlVYEAUSEwoPU1lTVE'
+    'VNX1RZUEVfV0VCEAY=');
+
 @$core.Deprecated('Use userTypeDescriptor instead')
 const UserType$json = {
   '1': 'UserType',
@@ -529,21 +550,24 @@ const DeviceInfo$json = {
   '1': 'DeviceInfo',
   '2': [
     {'1': 'device_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
-    {'1': 'device_model', '3': 2, '4': 1, '5': 9, '10': 'deviceModel'},
-    {'1': 'system_version', '3': 3, '4': 1, '5': 9, '10': 'systemVersion'},
-    {'1': 'client_name', '3': 4, '4': 1, '5': 9, '10': 'clientName'},
-    {'1': 'client_source_code_address', '3': 5, '4': 1, '5': 9, '10': 'clientSourceCodeAddress'},
-    {'1': 'client_version', '3': 6, '4': 1, '5': 9, '10': 'clientVersion'},
+    {'1': 'device_name', '3': 2, '4': 1, '5': 9, '10': 'deviceName'},
+    {'1': 'system_type', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemType', '10': 'systemType'},
+    {'1': 'system_version', '3': 4, '4': 1, '5': 9, '10': 'systemVersion'},
+    {'1': 'client_name', '3': 5, '4': 1, '5': 9, '10': 'clientName'},
+    {'1': 'client_source_code_address', '3': 6, '4': 1, '5': 9, '10': 'clientSourceCodeAddress'},
+    {'1': 'client_version', '3': 7, '4': 1, '5': 9, '10': 'clientVersion'},
   ],
 };
 
 /// Descriptor for `DeviceInfo`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceInfoDescriptor = $convert.base64Decode(
     'CgpEZXZpY2VJbmZvEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
-    'lEUghkZXZpY2VJZBIhCgxkZXZpY2VfbW9kZWwYAiABKAlSC2RldmljZU1vZGVsEiUKDnN5c3Rl'
-    'bV92ZXJzaW9uGAMgASgJUg1zeXN0ZW1WZXJzaW9uEh8KC2NsaWVudF9uYW1lGAQgASgJUgpjbG'
-    'llbnROYW1lEjsKGmNsaWVudF9zb3VyY2VfY29kZV9hZGRyZXNzGAUgASgJUhdjbGllbnRTb3Vy'
-    'Y2VDb2RlQWRkcmVzcxIlCg5jbGllbnRfdmVyc2lvbhgGIAEoCVINY2xpZW50VmVyc2lvbg==');
+    'lEUghkZXZpY2VJZBIfCgtkZXZpY2VfbmFtZRgCIAEoCVIKZGV2aWNlTmFtZRJCCgtzeXN0ZW1f'
+    'dHlwZRgDIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TeXN0ZW1UeXBlUgpzeXN0ZW1UeX'
+    'BlEiUKDnN5c3RlbV92ZXJzaW9uGAQgASgJUg1zeXN0ZW1WZXJzaW9uEh8KC2NsaWVudF9uYW1l'
+    'GAUgASgJUgpjbGllbnROYW1lEjsKGmNsaWVudF9zb3VyY2VfY29kZV9hZGRyZXNzGAYgASgJUh'
+    'djbGllbnRTb3VyY2VDb2RlQWRkcmVzcxIlCg5jbGllbnRfdmVyc2lvbhgHIAEoCVINY2xpZW50'
+    'VmVyc2lvbg==');
 
 @$core.Deprecated('Use porterDescriptor instead')
 const Porter$json = {

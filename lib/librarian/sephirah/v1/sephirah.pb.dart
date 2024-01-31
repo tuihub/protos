@@ -53,6 +53,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ServerProtocolSummary? protocolSummary,
     $8.Timestamp? currentTime,
     ServerFeatureSummary? featureSummary,
+    ServerInstanceSummary? serverInstanceSummary,
   }) {
     final $result = create();
     if (serverBinarySummary != null) {
@@ -67,6 +68,9 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     if (featureSummary != null) {
       $result.featureSummary = featureSummary;
     }
+    if (serverInstanceSummary != null) {
+      $result.serverInstanceSummary = serverInstanceSummary;
+    }
     return $result;
   }
   GetServerInformationResponse._() : super();
@@ -78,6 +82,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
     ..aOM<$8.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $8.Timestamp.create)
     ..aOM<ServerFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: ServerFeatureSummary.create)
+    ..aOM<ServerInstanceSummary>(5, _omitFieldNames ? '' : 'serverInstanceSummary', subBuilder: ServerInstanceSummary.create)
     ..hasRequiredFields = false
   ;
 
@@ -150,6 +155,18 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   void clearFeatureSummary() => clearField(4);
   @$pb.TagNumber(4)
   ServerFeatureSummary ensureFeatureSummary() => $_ensure(3);
+
+  /// For showing to user, customizable by server owner.
+  @$pb.TagNumber(5)
+  ServerInstanceSummary get serverInstanceSummary => $_getN(4);
+  @$pb.TagNumber(5)
+  set serverInstanceSummary(ServerInstanceSummary v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasServerInstanceSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearServerInstanceSummary() => clearField(5);
+  @$pb.TagNumber(5)
+  ServerInstanceSummary ensureServerInstanceSummary() => $_ensure(4);
 }
 
 class ServerBinarySummary extends $pb.GeneratedMessage {
@@ -356,6 +373,112 @@ class ServerFeatureSummary extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get supportedNotifyDestinations => $_getList(3);
+}
+
+class ServerInstanceSummary extends $pb.GeneratedMessage {
+  factory ServerInstanceSummary({
+    $core.String? name,
+    $core.String? description,
+    $core.String? websiteUrl,
+    $core.String? logoUrl,
+    $core.String? backgroundUrl,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (websiteUrl != null) {
+      $result.websiteUrl = websiteUrl;
+    }
+    if (logoUrl != null) {
+      $result.logoUrl = logoUrl;
+    }
+    if (backgroundUrl != null) {
+      $result.backgroundUrl = backgroundUrl;
+    }
+    return $result;
+  }
+  ServerInstanceSummary._() : super();
+  factory ServerInstanceSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ServerInstanceSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerInstanceSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..aOS(3, _omitFieldNames ? '' : 'websiteUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'logoUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'backgroundUrl')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ServerInstanceSummary clone() => ServerInstanceSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ServerInstanceSummary copyWith(void Function(ServerInstanceSummary) updates) => super.copyWith((message) => updates(message as ServerInstanceSummary)) as ServerInstanceSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ServerInstanceSummary create() => ServerInstanceSummary._();
+  ServerInstanceSummary createEmptyInstance() => create();
+  static $pb.PbList<ServerInstanceSummary> createRepeated() => $pb.PbList<ServerInstanceSummary>();
+  @$core.pragma('dart2js:noInline')
+  static ServerInstanceSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerInstanceSummary>(create);
+  static ServerInstanceSummary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get description => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set description($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDescription() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDescription() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get websiteUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set websiteUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasWebsiteUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWebsiteUrl() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get logoUrl => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set logoUrl($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasLogoUrl() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLogoUrl() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get backgroundUrl => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set backgroundUrl($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasBackgroundUrl() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBackgroundUrl() => clearField(5);
 }
 
 

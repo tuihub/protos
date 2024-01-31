@@ -100,28 +100,34 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "ZUluZm9SCmRldmljZUluZm8SOwoLY3JlYXRlX3RpbWUYBCABKAsyGi5nb29n",
             "bGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1lEjsKC2V4cGlyZV90",
             "aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKZXhwaXJl",
-            "VGltZSKSAgoKRGV2aWNlSW5mbxI1CglkZXZpY2VfaWQYASABKAsyGC5saWJy",
-            "YXJpYW4udjEuSW50ZXJuYWxJRFIIZGV2aWNlSWQSIQoMZGV2aWNlX21vZGVs",
-            "GAIgASgJUgtkZXZpY2VNb2RlbBIlCg5zeXN0ZW1fdmVyc2lvbhgDIAEoCVIN",
-            "c3lzdGVtVmVyc2lvbhIfCgtjbGllbnRfbmFtZRgEIAEoCVIKY2xpZW50TmFt",
-            "ZRI7ChpjbGllbnRfc291cmNlX2NvZGVfYWRkcmVzcxgFIAEoCVIXY2xpZW50",
-            "U291cmNlQ29kZUFkZHJlc3MSJQoOY2xpZW50X3ZlcnNpb24YBiABKAlSDWNs",
-            "aWVudFZlcnNpb24i5QEKBlBvcnRlchIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhgKB3Zl",
-            "cnNpb24YAyABKAlSB3ZlcnNpb24SHwoLZ2xvYmFsX25hbWUYBCABKAlSCmds",
-            "b2JhbE5hbWUSJwoPZmVhdHVyZV9zdW1tYXJ5GAUgASgJUg5mZWF0dXJlU3Vt",
-            "bWFyeRI5CgZzdGF0dXMYBiABKA4yIS5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
-            "VXNlclN0YXR1c1IGc3RhdHVzKn4KCFVzZXJUeXBlEhkKFVVTRVJfVFlQRV9V",
-            "TlNQRUNJRklFRBAAEhMKD1VTRVJfVFlQRV9BRE1JThABEhQKEFVTRVJfVFlQ",
-            "RV9OT1JNQUwQAhIWChJVU0VSX1RZUEVfU0VOVElORUwQAxIUChBVU0VSX1RZ",
-            "UEVfUE9SVEVSEAQqWgoKVXNlclN0YXR1cxIbChdVU0VSX1NUQVRVU19VTlNQ",
-            "RUNJRklFRBAAEhYKElVTRVJfU1RBVFVTX0FDVElWRRABEhcKE1VTRVJfU1RB",
-            "VFVTX0JMT0NLRUQQAkJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtn",
-            "L2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGli",
-            "cmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "VGltZSLUAgoKRGV2aWNlSW5mbxI1CglkZXZpY2VfaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFIIZGV2aWNlSWQSHwoLZGV2aWNlX25hbWUY",
+            "AiABKAlSCmRldmljZU5hbWUSQgoLc3lzdGVtX3R5cGUYAyABKA4yIS5saWJy",
+            "YXJpYW4uc2VwaGlyYWgudjEuU3lzdGVtVHlwZVIKc3lzdGVtVHlwZRIlCg5z",
+            "eXN0ZW1fdmVyc2lvbhgEIAEoCVINc3lzdGVtVmVyc2lvbhIfCgtjbGllbnRf",
+            "bmFtZRgFIAEoCVIKY2xpZW50TmFtZRI7ChpjbGllbnRfc291cmNlX2NvZGVf",
+            "YWRkcmVzcxgGIAEoCVIXY2xpZW50U291cmNlQ29kZUFkZHJlc3MSJQoOY2xp",
+            "ZW50X3ZlcnNpb24YByABKAlSDWNsaWVudFZlcnNpb24i5QEKBlBvcnRlchIo",
+            "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRu",
+            "YW1lGAIgASgJUgRuYW1lEhgKB3ZlcnNpb24YAyABKAlSB3ZlcnNpb24SHwoL",
+            "Z2xvYmFsX25hbWUYBCABKAlSCmdsb2JhbE5hbWUSJwoPZmVhdHVyZV9zdW1t",
+            "YXJ5GAUgASgJUg5mZWF0dXJlU3VtbWFyeRI5CgZzdGF0dXMYBiABKA4yIS5s",
+            "aWJyYXJpYW4uc2VwaGlyYWgudjEuVXNlclN0YXR1c1IGc3RhdHVzKrMBCgpT",
+            "eXN0ZW1UeXBlEhsKF1NZU1RFTV9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTU1lT",
+            "VEVNX1RZUEVfQU5EUk9JRBABEhMKD1NZU1RFTV9UWVBFX0lPUxACEhcKE1NZ",
+            "U1RFTV9UWVBFX1dJTkRPV1MQAxIVChFTWVNURU1fVFlQRV9NQUNPUxAEEhUK",
+            "EVNZU1RFTV9UWVBFX0xJTlVYEAUSEwoPU1lTVEVNX1RZUEVfV0VCEAYqfgoI",
+            "VXNlclR5cGUSGQoVVVNFUl9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPVVNFUl9U",
+            "WVBFX0FETUlOEAESFAoQVVNFUl9UWVBFX05PUk1BTBACEhYKElVTRVJfVFlQ",
+            "RV9TRU5USU5FTBADEhQKEFVTRVJfVFlQRV9QT1JURVIQBCpaCgpVc2VyU3Rh",
+            "dHVzEhsKF1VTRVJfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSVVNFUl9TVEFU",
+            "VVNfQUNUSVZFEAESFwoTVVNFUl9TVEFUVVNfQkxPQ0tFRBACQl1aNWdpdGh1",
+            "Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3Yx",
+            "O3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest.Parser, new[]{ "Username", "Password", "DeviceId" }, new[]{ "DeviceId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse.Parser, new[]{ "AccessToken", "RefreshToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest.Parser, new[]{ "DeviceId" }, new[]{ "DeviceId" }, null, null, null),
@@ -157,7 +163,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PorterPrivilege), global::TuiHub.Protos.Librarian.Sephirah.V1.PorterPrivilege.Parser, new[]{ "All" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.User), global::TuiHub.Protos.Librarian.Sephirah.V1.User.Parser, new[]{ "Id", "Username", "Password", "Type", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserSession), global::TuiHub.Protos.Librarian.Sephirah.V1.UserSession.Parser, new[]{ "Id", "UserId", "DeviceInfo", "CreateTime", "ExpireTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeviceInfo), global::TuiHub.Protos.Librarian.Sephirah.V1.DeviceInfo.Parser, new[]{ "DeviceId", "DeviceModel", "SystemVersion", "ClientName", "ClientSourceCodeAddress", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeviceInfo), global::TuiHub.Protos.Librarian.Sephirah.V1.DeviceInfo.Parser, new[]{ "DeviceId", "DeviceName", "SystemType", "SystemVersion", "ClientName", "ClientSourceCodeAddress", "ClientVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter), global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.Parser, new[]{ "Id", "Name", "Version", "GlobalName", "FeatureSummary", "Status" }, null, null, null, null)
           }));
     }
@@ -165,6 +171,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   }
   #region Enums
+  public enum SystemType {
+    [pbr::OriginalName("SYSTEM_TYPE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("SYSTEM_TYPE_ANDROID")] Android = 1,
+    [pbr::OriginalName("SYSTEM_TYPE_IOS")] Ios = 2,
+    [pbr::OriginalName("SYSTEM_TYPE_WINDOWS")] Windows = 3,
+    [pbr::OriginalName("SYSTEM_TYPE_MACOS")] Macos = 4,
+    [pbr::OriginalName("SYSTEM_TYPE_LINUX")] Linux = 5,
+    [pbr::OriginalName("SYSTEM_TYPE_WEB")] Web = 6,
+  }
+
   public enum UserType {
     [pbr::OriginalName("USER_TYPE_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("USER_TYPE_ADMIN")] Admin = 1,
@@ -7538,7 +7554,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceInfo(DeviceInfo other) : this() {
       deviceId_ = other.deviceId_ != null ? other.deviceId_.Clone() : null;
-      deviceModel_ = other.deviceModel_;
+      deviceName_ = other.deviceName_;
+      systemType_ = other.systemType_;
       systemVersion_ = other.systemVersion_;
       clientName_ = other.clientName_;
       clientSourceCodeAddress_ = other.clientSourceCodeAddress_;
@@ -7564,20 +7581,32 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "device_model" field.</summary>
-    public const int DeviceModelFieldNumber = 2;
-    private string deviceModel_ = "";
+    /// <summary>Field number for the "device_name" field.</summary>
+    public const int DeviceNameFieldNumber = 2;
+    private string deviceName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DeviceModel {
-      get { return deviceModel_; }
+    public string DeviceName {
+      get { return deviceName_; }
       set {
-        deviceModel_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        deviceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "system_type" field.</summary>
+    public const int SystemTypeFieldNumber = 3;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType systemType_ = global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType SystemType {
+      get { return systemType_; }
+      set {
+        systemType_ = value;
       }
     }
 
     /// <summary>Field number for the "system_version" field.</summary>
-    public const int SystemVersionFieldNumber = 3;
+    public const int SystemVersionFieldNumber = 4;
     private string systemVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7589,7 +7618,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "client_name" field.</summary>
-    public const int ClientNameFieldNumber = 4;
+    public const int ClientNameFieldNumber = 5;
     private string clientName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7601,7 +7630,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "client_source_code_address" field.</summary>
-    public const int ClientSourceCodeAddressFieldNumber = 5;
+    public const int ClientSourceCodeAddressFieldNumber = 6;
     private string clientSourceCodeAddress_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7613,7 +7642,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "client_version" field.</summary>
-    public const int ClientVersionFieldNumber = 6;
+    public const int ClientVersionFieldNumber = 7;
     private string clientVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7640,7 +7669,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return true;
       }
       if (!object.Equals(DeviceId, other.DeviceId)) return false;
-      if (DeviceModel != other.DeviceModel) return false;
+      if (DeviceName != other.DeviceName) return false;
+      if (SystemType != other.SystemType) return false;
       if (SystemVersion != other.SystemVersion) return false;
       if (ClientName != other.ClientName) return false;
       if (ClientSourceCodeAddress != other.ClientSourceCodeAddress) return false;
@@ -7653,7 +7683,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (deviceId_ != null) hash ^= DeviceId.GetHashCode();
-      if (DeviceModel.Length != 0) hash ^= DeviceModel.GetHashCode();
+      if (DeviceName.Length != 0) hash ^= DeviceName.GetHashCode();
+      if (SystemType != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType.Unspecified) hash ^= SystemType.GetHashCode();
       if (SystemVersion.Length != 0) hash ^= SystemVersion.GetHashCode();
       if (ClientName.Length != 0) hash ^= ClientName.GetHashCode();
       if (ClientSourceCodeAddress.Length != 0) hash ^= ClientSourceCodeAddress.GetHashCode();
@@ -7680,24 +7711,28 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(DeviceId);
       }
-      if (DeviceModel.Length != 0) {
+      if (DeviceName.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(DeviceModel);
+        output.WriteString(DeviceName);
+      }
+      if (SystemType != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType.Unspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) SystemType);
       }
       if (SystemVersion.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(SystemVersion);
       }
       if (ClientName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(ClientName);
       }
       if (ClientSourceCodeAddress.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(ClientSourceCodeAddress);
       }
       if (ClientVersion.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteString(ClientVersion);
       }
       if (_unknownFields != null) {
@@ -7714,24 +7749,28 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(DeviceId);
       }
-      if (DeviceModel.Length != 0) {
+      if (DeviceName.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(DeviceModel);
+        output.WriteString(DeviceName);
+      }
+      if (SystemType != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType.Unspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) SystemType);
       }
       if (SystemVersion.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(SystemVersion);
       }
       if (ClientName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(ClientName);
       }
       if (ClientSourceCodeAddress.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(ClientSourceCodeAddress);
       }
       if (ClientVersion.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteString(ClientVersion);
       }
       if (_unknownFields != null) {
@@ -7747,8 +7786,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (deviceId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DeviceId);
       }
-      if (DeviceModel.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceModel);
+      if (DeviceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceName);
+      }
+      if (SystemType != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SystemType);
       }
       if (SystemVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SystemVersion);
@@ -7780,8 +7822,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         DeviceId.MergeFrom(other.DeviceId);
       }
-      if (other.DeviceModel.Length != 0) {
-        DeviceModel = other.DeviceModel;
+      if (other.DeviceName.Length != 0) {
+        DeviceName = other.DeviceName;
+      }
+      if (other.SystemType != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType.Unspecified) {
+        SystemType = other.SystemType;
       }
       if (other.SystemVersion.Length != 0) {
         SystemVersion = other.SystemVersion;
@@ -7818,22 +7863,26 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
-            DeviceModel = input.ReadString();
+            DeviceName = input.ReadString();
             break;
           }
-          case 26: {
-            SystemVersion = input.ReadString();
+          case 24: {
+            SystemType = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType) input.ReadEnum();
             break;
           }
           case 34: {
-            ClientName = input.ReadString();
+            SystemVersion = input.ReadString();
             break;
           }
           case 42: {
-            ClientSourceCodeAddress = input.ReadString();
+            ClientName = input.ReadString();
             break;
           }
           case 50: {
+            ClientSourceCodeAddress = input.ReadString();
+            break;
+          }
+          case 58: {
             ClientVersion = input.ReadString();
             break;
           }
@@ -7860,22 +7909,26 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
-            DeviceModel = input.ReadString();
+            DeviceName = input.ReadString();
             break;
           }
-          case 26: {
-            SystemVersion = input.ReadString();
+          case 24: {
+            SystemType = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType) input.ReadEnum();
             break;
           }
           case 34: {
-            ClientName = input.ReadString();
+            SystemVersion = input.ReadString();
             break;
           }
           case 42: {
-            ClientSourceCodeAddress = input.ReadString();
+            ClientName = input.ReadString();
             break;
           }
           case 50: {
+            ClientSourceCodeAddress = input.ReadString();
+            break;
+          }
+          case 58: {
             ClientVersion = input.ReadString();
             break;
           }

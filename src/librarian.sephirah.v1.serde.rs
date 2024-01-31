@@ -2236,7 +2236,10 @@ impl serde::Serialize for DeviceInfo {
         if self.device_id.is_some() {
             len += 1;
         }
-        if !self.device_model.is_empty() {
+        if !self.device_name.is_empty() {
+            len += 1;
+        }
+        if self.system_type != 0 {
             len += 1;
         }
         if !self.system_version.is_empty() {
@@ -2255,8 +2258,13 @@ impl serde::Serialize for DeviceInfo {
         if let Some(v) = self.device_id.as_ref() {
             struct_ser.serialize_field("deviceId", v)?;
         }
-        if !self.device_model.is_empty() {
-            struct_ser.serialize_field("deviceModel", &self.device_model)?;
+        if !self.device_name.is_empty() {
+            struct_ser.serialize_field("deviceName", &self.device_name)?;
+        }
+        if self.system_type != 0 {
+            let v = SystemType::from_i32(self.system_type)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.system_type)))?;
+            struct_ser.serialize_field("systemType", &v)?;
         }
         if !self.system_version.is_empty() {
             struct_ser.serialize_field("systemVersion", &self.system_version)?;
@@ -2282,8 +2290,10 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
         const FIELDS: &[&str] = &[
             "device_id",
             "deviceId",
-            "device_model",
-            "deviceModel",
+            "device_name",
+            "deviceName",
+            "system_type",
+            "systemType",
             "system_version",
             "systemVersion",
             "client_name",
@@ -2297,7 +2307,8 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             DeviceId,
-            DeviceModel,
+            DeviceName,
+            SystemType,
             SystemVersion,
             ClientName,
             ClientSourceCodeAddress,
@@ -2324,7 +2335,8 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
                     {
                         match value {
                             "deviceId" | "device_id" => Ok(GeneratedField::DeviceId),
-                            "deviceModel" | "device_model" => Ok(GeneratedField::DeviceModel),
+                            "deviceName" | "device_name" => Ok(GeneratedField::DeviceName),
+                            "systemType" | "system_type" => Ok(GeneratedField::SystemType),
                             "systemVersion" | "system_version" => Ok(GeneratedField::SystemVersion),
                             "clientName" | "client_name" => Ok(GeneratedField::ClientName),
                             "clientSourceCodeAddress" | "client_source_code_address" => Ok(GeneratedField::ClientSourceCodeAddress),
@@ -2349,7 +2361,8 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut device_id__ = None;
-                let mut device_model__ = None;
+                let mut device_name__ = None;
+                let mut system_type__ = None;
                 let mut system_version__ = None;
                 let mut client_name__ = None;
                 let mut client_source_code_address__ = None;
@@ -2362,11 +2375,17 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
                             }
                             device_id__ = map.next_value()?;
                         }
-                        GeneratedField::DeviceModel => {
-                            if device_model__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("deviceModel"));
+                        GeneratedField::DeviceName => {
+                            if device_name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceName"));
                             }
-                            device_model__ = Some(map.next_value()?);
+                            device_name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::SystemType => {
+                            if system_type__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("systemType"));
+                            }
+                            system_type__ = Some(map.next_value::<SystemType>()? as i32);
                         }
                         GeneratedField::SystemVersion => {
                             if system_version__.is_some() {
@@ -2396,7 +2415,8 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
                 }
                 Ok(DeviceInfo {
                     device_id: device_id__,
-                    device_model: device_model__.unwrap_or_default(),
+                    device_name: device_name__.unwrap_or_default(),
+                    system_type: system_type__.unwrap_or_default(),
                     system_version: system_version__.unwrap_or_default(),
                     client_name: client_name__.unwrap_or_default(),
                     client_source_code_address: client_source_code_address__.unwrap_or_default(),
@@ -5888,6 +5908,9 @@ impl serde::Serialize for GetServerInformationResponse {
         if self.feature_summary.is_some() {
             len += 1;
         }
+        if self.server_instance_summary.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetServerInformationResponse", len)?;
         if let Some(v) = self.server_binary_summary.as_ref() {
             struct_ser.serialize_field("serverBinarySummary", v)?;
@@ -5900,6 +5923,9 @@ impl serde::Serialize for GetServerInformationResponse {
         }
         if let Some(v) = self.feature_summary.as_ref() {
             struct_ser.serialize_field("featureSummary", v)?;
+        }
+        if let Some(v) = self.server_instance_summary.as_ref() {
+            struct_ser.serialize_field("serverInstanceSummary", v)?;
         }
         struct_ser.end()
     }
@@ -5919,6 +5945,8 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
             "currentTime",
             "feature_summary",
             "featureSummary",
+            "server_instance_summary",
+            "serverInstanceSummary",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -5927,6 +5955,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
             ProtocolSummary,
             CurrentTime,
             FeatureSummary,
+            ServerInstanceSummary,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5952,6 +5981,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                             "protocolSummary" | "protocol_summary" => Ok(GeneratedField::ProtocolSummary),
                             "currentTime" | "current_time" => Ok(GeneratedField::CurrentTime),
                             "featureSummary" | "feature_summary" => Ok(GeneratedField::FeatureSummary),
+                            "serverInstanceSummary" | "server_instance_summary" => Ok(GeneratedField::ServerInstanceSummary),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5975,6 +6005,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                 let mut protocol_summary__ = None;
                 let mut current_time__ = None;
                 let mut feature_summary__ = None;
+                let mut server_instance_summary__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::ServerBinarySummary => {
@@ -6001,6 +6032,12 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                             }
                             feature_summary__ = map.next_value()?;
                         }
+                        GeneratedField::ServerInstanceSummary => {
+                            if server_instance_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("serverInstanceSummary"));
+                            }
+                            server_instance_summary__ = map.next_value()?;
+                        }
                     }
                 }
                 Ok(GetServerInformationResponse {
@@ -6008,6 +6045,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                     protocol_summary: protocol_summary__,
                     current_time: current_time__,
                     feature_summary: feature_summary__,
+                    server_instance_summary: server_instance_summary__,
                 })
             }
         }
@@ -15283,6 +15321,168 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
         deserializer.deserialize_struct("librarian.sephirah.v1.ServerFeatureSummary", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ServerInstanceSummary {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.description.is_empty() {
+            len += 1;
+        }
+        if !self.website_url.is_empty() {
+            len += 1;
+        }
+        if !self.logo_url.is_empty() {
+            len += 1;
+        }
+        if !self.background_url.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ServerInstanceSummary", len)?;
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
+        }
+        if !self.website_url.is_empty() {
+            struct_ser.serialize_field("websiteUrl", &self.website_url)?;
+        }
+        if !self.logo_url.is_empty() {
+            struct_ser.serialize_field("logoUrl", &self.logo_url)?;
+        }
+        if !self.background_url.is_empty() {
+            struct_ser.serialize_field("backgroundUrl", &self.background_url)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ServerInstanceSummary {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "name",
+            "description",
+            "website_url",
+            "websiteUrl",
+            "logo_url",
+            "logoUrl",
+            "background_url",
+            "backgroundUrl",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Name,
+            Description,
+            WebsiteUrl,
+            LogoUrl,
+            BackgroundUrl,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
+                            "websiteUrl" | "website_url" => Ok(GeneratedField::WebsiteUrl),
+                            "logoUrl" | "logo_url" => Ok(GeneratedField::LogoUrl),
+                            "backgroundUrl" | "background_url" => Ok(GeneratedField::BackgroundUrl),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ServerInstanceSummary;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ServerInstanceSummary")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ServerInstanceSummary, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut name__ = None;
+                let mut description__ = None;
+                let mut website_url__ = None;
+                let mut logo_url__ = None;
+                let mut background_url__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::WebsiteUrl => {
+                            if website_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("websiteUrl"));
+                            }
+                            website_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::LogoUrl => {
+                            if logo_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("logoUrl"));
+                            }
+                            logo_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::BackgroundUrl => {
+                            if background_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("backgroundUrl"));
+                            }
+                            background_url__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ServerInstanceSummary {
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
+                    website_url: website_url__.unwrap_or_default(),
+                    logo_url: logo_url__.unwrap_or_default(),
+                    background_url: background_url__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ServerInstanceSummary", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for ServerProtocolSummary {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -16799,6 +16999,94 @@ impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.SyncAppsResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SystemType {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "SYSTEM_TYPE_UNSPECIFIED",
+            Self::Android => "SYSTEM_TYPE_ANDROID",
+            Self::Ios => "SYSTEM_TYPE_IOS",
+            Self::Windows => "SYSTEM_TYPE_WINDOWS",
+            Self::Macos => "SYSTEM_TYPE_MACOS",
+            Self::Linux => "SYSTEM_TYPE_LINUX",
+            Self::Web => "SYSTEM_TYPE_WEB",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for SystemType {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "SYSTEM_TYPE_UNSPECIFIED",
+            "SYSTEM_TYPE_ANDROID",
+            "SYSTEM_TYPE_IOS",
+            "SYSTEM_TYPE_WINDOWS",
+            "SYSTEM_TYPE_MACOS",
+            "SYSTEM_TYPE_LINUX",
+            "SYSTEM_TYPE_WEB",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SystemType;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "SYSTEM_TYPE_UNSPECIFIED" => Ok(SystemType::Unspecified),
+                    "SYSTEM_TYPE_ANDROID" => Ok(SystemType::Android),
+                    "SYSTEM_TYPE_IOS" => Ok(SystemType::Ios),
+                    "SYSTEM_TYPE_WINDOWS" => Ok(SystemType::Windows),
+                    "SYSTEM_TYPE_MACOS" => Ok(SystemType::Macos),
+                    "SYSTEM_TYPE_LINUX" => Ok(SystemType::Linux),
+                    "SYSTEM_TYPE_WEB" => Ok(SystemType::Web),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for UnAssignAppPackageRequest {

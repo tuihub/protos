@@ -30,6 +30,7 @@ const GetServerInformationResponse$json = {
     {'1': 'protocol_summary', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerProtocolSummary', '10': 'protocolSummary'},
     {'1': 'current_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'currentTime'},
     {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerFeatureSummary', '9': 0, '10': 'featureSummary', '17': true},
+    {'1': 'server_instance_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerInstanceSummary', '10': 'serverInstanceSummary'},
   ],
   '8': [
     {'1': '_feature_summary'},
@@ -44,8 +45,9 @@ final $typed_data.Uint8List getServerInformationResponseDescriptor = $convert.ba
     'VwaGlyYWgudjEuU2VydmVyUHJvdG9jb2xTdW1tYXJ5Ug9wcm90b2NvbFN1bW1hcnkSPQoMY3Vy'
     'cmVudF90aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY3VycmVudFRpbW'
     'USWQoPZmVhdHVyZV9zdW1tYXJ5GAQgASgLMisubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNlcnZl'
-    'ckZlYXR1cmVTdW1tYXJ5SABSDmZlYXR1cmVTdW1tYXJ5iAEBQhIKEF9mZWF0dXJlX3N1bW1hcn'
-    'k=');
+    'ckZlYXR1cmVTdW1tYXJ5SABSDmZlYXR1cmVTdW1tYXJ5iAEBEmQKF3NlcnZlcl9pbnN0YW5jZV'
+    '9zdW1tYXJ5GAUgASgLMiwubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNlcnZlckluc3RhbmNlU3Vt'
+    'bWFyeVIVc2VydmVySW5zdGFuY2VTdW1tYXJ5QhIKEF9mZWF0dXJlX3N1bW1hcnk=');
 
 @$core.Deprecated('Use serverBinarySummaryDescriptor instead')
 const ServerBinarySummary$json = {
@@ -93,4 +95,23 @@ final $typed_data.Uint8List serverFeatureSummaryDescriptor = $convert.base64Deco
     'GAIgAygJUhNzdXBwb3J0ZWRBcHBTb3VyY2VzEjQKFnN1cHBvcnRlZF9mZWVkX3NvdXJjZXMYAy'
     'ADKAlSFHN1cHBvcnRlZEZlZWRTb3VyY2VzEkIKHXN1cHBvcnRlZF9ub3RpZnlfZGVzdGluYXRp'
     'b25zGAQgAygJUhtzdXBwb3J0ZWROb3RpZnlEZXN0aW5hdGlvbnM=');
+
+@$core.Deprecated('Use serverInstanceSummaryDescriptor instead')
+const ServerInstanceSummary$json = {
+  '1': 'ServerInstanceSummary',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'website_url', '3': 3, '4': 1, '5': 9, '10': 'websiteUrl'},
+    {'1': 'logo_url', '3': 4, '4': 1, '5': 9, '10': 'logoUrl'},
+    {'1': 'background_url', '3': 5, '4': 1, '5': 9, '10': 'backgroundUrl'},
+  ],
+};
+
+/// Descriptor for `ServerInstanceSummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List serverInstanceSummaryDescriptor = $convert.base64Decode(
+    'ChVTZXJ2ZXJJbnN0YW5jZVN1bW1hcnkSEgoEbmFtZRgBIAEoCVIEbmFtZRIgCgtkZXNjcmlwdG'
+    'lvbhgCIAEoCVILZGVzY3JpcHRpb24SHwoLd2Vic2l0ZV91cmwYAyABKAlSCndlYnNpdGVVcmwS'
+    'GQoIbG9nb191cmwYBCABKAlSB2xvZ29VcmwSJQoOYmFja2dyb3VuZF91cmwYBSABKAlSDWJhY2'
+    'tncm91bmRVcmw=');
 
