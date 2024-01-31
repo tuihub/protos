@@ -248,6 +248,8 @@ message GetServerInformationResponse {
   google.protobuf.Timestamp current_time = 3;
   // Valid when accessToken is provided.
   optional ServerFeatureSummary feature_summary = 4;
+  // For showing to user, customizable by server owner.
+  ServerInstanceSummary server_instance_summary = 5;
 }
 
 message ServerBinarySummary {
@@ -275,4 +277,12 @@ message ServerFeatureSummary {
   repeated string supported_app_sources = 2;
   repeated string supported_feed_sources = 3;
   repeated string supported_notify_destinations = 4;
+}
+
+message ServerInstanceSummary {
+  string name = 1;
+  string description = 2;
+  string website_url = 3;
+  string logo_url = 4;
+  string background_url = 5;
 }
