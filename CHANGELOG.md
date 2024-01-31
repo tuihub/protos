@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.3.9](https://github.com/tuihub/protos/compare/v0.3.8...v0.3.9) (2024-01-31)
+
+
+### Bug Fixes
+
+* add PorterConnectionStatus ([3376854](https://github.com/tuihub/protos/commit/3376854f982f522406da47416542deaea8caddcc))
+* add serverInstanceSummary ([abdb537](https://github.com/tuihub/protos/commit/abdb537ea286999630278c53a274e871f90ba8f7))
+* **deps:** update all non-major dependencies ([#124](https://github.com/tuihub/protos/issues/124)) ([fa69ac1](https://github.com/tuihub/protos/commit/fa69ac1ddec836d55abf7d4c3d4f33644eef77fa))
+* **gebura:** update ReportAppPackages ([71a9649](https://github.com/tuihub/protos/commit/71a96492ad180c940fd050976c028d4a55337355))
+* update DeviceInfo ([efe29bc](https://github.com/tuihub/protos/commit/efe29bc98aca1644de8dc021342433b1d5dc127d))
+
 ## [0.3.8](https://github.com/tuihub/protos/compare/v0.3.7...v0.3.8) (2024-01-18)
 
 
