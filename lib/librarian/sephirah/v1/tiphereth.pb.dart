@@ -2100,6 +2100,7 @@ class Porter extends $pb.GeneratedMessage {
     $core.String? globalName,
     $core.String? featureSummary,
     UserStatus? status,
+    PorterConnectionStatus? connectionStatus,
   }) {
     final $result = create();
     if (id != null) {
@@ -2120,6 +2121,9 @@ class Porter extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (connectionStatus != null) {
+      $result.connectionStatus = connectionStatus;
+    }
     return $result;
   }
   Porter._() : super();
@@ -2133,6 +2137,7 @@ class Porter extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'globalName')
     ..aOS(5, _omitFieldNames ? '' : 'featureSummary')
     ..e<UserStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
+    ..e<PorterConnectionStatus>(7, _omitFieldNames ? '' : 'connectionStatus', $pb.PbFieldType.OE, defaultOrMaker: PorterConnectionStatus.PORTER_CONNECTION_STATUS_UNSPECIFIED, valueOf: PorterConnectionStatus.valueOf, enumValues: PorterConnectionStatus.values)
     ..hasRequiredFields = false
   ;
 
@@ -2212,6 +2217,16 @@ class Porter extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
   void clearStatus() => clearField(6);
+
+  /// Only used in response
+  @$pb.TagNumber(7)
+  PorterConnectionStatus get connectionStatus => $_getN(6);
+  @$pb.TagNumber(7)
+  set connectionStatus(PorterConnectionStatus v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasConnectionStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConnectionStatus() => clearField(7);
 }
 
 

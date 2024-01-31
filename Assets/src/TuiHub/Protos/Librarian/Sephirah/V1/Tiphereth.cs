@@ -107,27 +107,34 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "eXN0ZW1fdmVyc2lvbhgEIAEoCVINc3lzdGVtVmVyc2lvbhIfCgtjbGllbnRf",
             "bmFtZRgFIAEoCVIKY2xpZW50TmFtZRI7ChpjbGllbnRfc291cmNlX2NvZGVf",
             "YWRkcmVzcxgGIAEoCVIXY2xpZW50U291cmNlQ29kZUFkZHJlc3MSJQoOY2xp",
-            "ZW50X3ZlcnNpb24YByABKAlSDWNsaWVudFZlcnNpb24i5QEKBlBvcnRlchIo",
+            "ZW50X3ZlcnNpb24YByABKAlSDWNsaWVudFZlcnNpb24iwQIKBlBvcnRlchIo",
             "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRu",
             "YW1lGAIgASgJUgRuYW1lEhgKB3ZlcnNpb24YAyABKAlSB3ZlcnNpb24SHwoL",
             "Z2xvYmFsX25hbWUYBCABKAlSCmdsb2JhbE5hbWUSJwoPZmVhdHVyZV9zdW1t",
             "YXJ5GAUgASgJUg5mZWF0dXJlU3VtbWFyeRI5CgZzdGF0dXMYBiABKA4yIS5s",
-            "aWJyYXJpYW4uc2VwaGlyYWgudjEuVXNlclN0YXR1c1IGc3RhdHVzKrMBCgpT",
-            "eXN0ZW1UeXBlEhsKF1NZU1RFTV9UWVBFX1VOU1BFQ0lGSUVEEAASFwoTU1lT",
-            "VEVNX1RZUEVfQU5EUk9JRBABEhMKD1NZU1RFTV9UWVBFX0lPUxACEhcKE1NZ",
-            "U1RFTV9UWVBFX1dJTkRPV1MQAxIVChFTWVNURU1fVFlQRV9NQUNPUxAEEhUK",
-            "EVNZU1RFTV9UWVBFX0xJTlVYEAUSEwoPU1lTVEVNX1RZUEVfV0VCEAYqfgoI",
-            "VXNlclR5cGUSGQoVVVNFUl9UWVBFX1VOU1BFQ0lGSUVEEAASEwoPVVNFUl9U",
-            "WVBFX0FETUlOEAESFAoQVVNFUl9UWVBFX05PUk1BTBACEhYKElVTRVJfVFlQ",
-            "RV9TRU5USU5FTBADEhQKEFVTRVJfVFlQRV9QT1JURVIQBCpaCgpVc2VyU3Rh",
-            "dHVzEhsKF1VTRVJfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSVVNFUl9TVEFU",
-            "VVNfQUNUSVZFEAESFwoTVVNFUl9TVEFUVVNfQkxPQ0tFRBACQl1aNWdpdGh1",
-            "Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3Yx",
-            "O3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnBy",
-            "b3RvMw=="));
+            "aWJyYXJpYW4uc2VwaGlyYWgudjEuVXNlclN0YXR1c1IGc3RhdHVzEloKEWNv",
+            "bm5lY3Rpb25fc3RhdHVzGAcgASgOMi0ubGlicmFyaWFuLnNlcGhpcmFoLnYx",
+            "LlBvcnRlckNvbm5lY3Rpb25TdGF0dXNSEGNvbm5lY3Rpb25TdGF0dXMqswEK",
+            "ClN5c3RlbVR5cGUSGwoXU1lTVEVNX1RZUEVfVU5TUEVDSUZJRUQQABIXChNT",
+            "WVNURU1fVFlQRV9BTkRST0lEEAESEwoPU1lTVEVNX1RZUEVfSU9TEAISFwoT",
+            "U1lTVEVNX1RZUEVfV0lORE9XUxADEhUKEVNZU1RFTV9UWVBFX01BQ09TEAQS",
+            "FQoRU1lTVEVNX1RZUEVfTElOVVgQBRITCg9TWVNURU1fVFlQRV9XRUIQBip+",
+            "CghVc2VyVHlwZRIZChVVU0VSX1RZUEVfVU5TUEVDSUZJRUQQABITCg9VU0VS",
+            "X1RZUEVfQURNSU4QARIUChBVU0VSX1RZUEVfTk9STUFMEAISFgoSVVNFUl9U",
+            "WVBFX1NFTlRJTkVMEAMSFAoQVVNFUl9UWVBFX1BPUlRFUhAEKloKClVzZXJT",
+            "dGF0dXMSGwoXVVNFUl9TVEFUVVNfVU5TUEVDSUZJRUQQABIWChJVU0VSX1NU",
+            "QVRVU19BQ1RJVkUQARIXChNVU0VSX1NUQVRVU19CTE9DS0VEEAIq6gEKFlBv",
+            "cnRlckNvbm5lY3Rpb25TdGF0dXMSKAokUE9SVEVSX0NPTk5FQ1RJT05fU1RB",
+            "VFVTX1VOU1BFQ0lGSUVEEAASJgoiUE9SVEVSX0NPTk5FQ1RJT05fU1RBVFVT",
+            "X0NPTk5FQ1RFRBABEikKJVBPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19ESVND",
+            "T05ORUNURUQQAhIjCh9QT1JURVJfQ09OTkVDVElPTl9TVEFUVVNfQUNUSVZF",
+            "EAMSLgoqUE9SVEVSX0NPTk5FQ1RJT05fU1RBVFVTX0FDVElWQVRJT05fRkFJ",
+            "TEVEEARCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJp",
+            "YW4vc2VwaGlyYWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5T",
+            "ZXBoaXJhaC5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest.Parser, new[]{ "Username", "Password", "DeviceId" }, new[]{ "DeviceId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse.Parser, new[]{ "AccessToken", "RefreshToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest.Parser, new[]{ "DeviceId" }, new[]{ "DeviceId" }, null, null, null),
@@ -164,7 +171,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.User), global::TuiHub.Protos.Librarian.Sephirah.V1.User.Parser, new[]{ "Id", "Username", "Password", "Type", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UserSession), global::TuiHub.Protos.Librarian.Sephirah.V1.UserSession.Parser, new[]{ "Id", "UserId", "DeviceInfo", "CreateTime", "ExpireTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeviceInfo), global::TuiHub.Protos.Librarian.Sephirah.V1.DeviceInfo.Parser, new[]{ "DeviceId", "DeviceName", "SystemType", "SystemVersion", "ClientName", "ClientSourceCodeAddress", "ClientVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter), global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.Parser, new[]{ "Id", "Name", "Version", "GlobalName", "FeatureSummary", "Status" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter), global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.Parser, new[]{ "Id", "Name", "Version", "GlobalName", "FeatureSummary", "Status", "ConnectionStatus" }, null, null, null, null)
           }));
     }
     #endregion
@@ -193,6 +200,26 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [pbr::OriginalName("USER_STATUS_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("USER_STATUS_ACTIVE")] Active = 1,
     [pbr::OriginalName("USER_STATUS_BLOCKED")] Blocked = 2,
+  }
+
+  public enum PorterConnectionStatus {
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Available and not active
+    /// </summary>
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_CONNECTED")] Connected = 1,
+    /// <summary>
+    /// Not available
+    /// </summary>
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_DISCONNECTED")] Disconnected = 2,
+    /// <summary>
+    /// Available and active
+    /// </summary>
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_ACTIVE")] Active = 3,
+    /// <summary>
+    /// Available but failed to activate
+    /// </summary>
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_ACTIVATION_FAILED")] ActivationFailed = 4,
   }
 
   #endregion
@@ -7979,6 +8006,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       globalName_ = other.globalName_;
       featureSummary_ = other.featureSummary_;
       status_ = other.status_;
+      connectionStatus_ = other.connectionStatus_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -8060,6 +8088,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "connection_status" field.</summary>
+    public const int ConnectionStatusFieldNumber = 7;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus connectionStatus_ = global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus.Unspecified;
+    /// <summary>
+    /// Only used in response
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus ConnectionStatus {
+      get { return connectionStatus_; }
+      set {
+        connectionStatus_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -8081,6 +8124,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (GlobalName != other.GlobalName) return false;
       if (FeatureSummary != other.FeatureSummary) return false;
       if (Status != other.Status) return false;
+      if (ConnectionStatus != other.ConnectionStatus) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -8094,6 +8138,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (GlobalName.Length != 0) hash ^= GlobalName.GetHashCode();
       if (FeatureSummary.Length != 0) hash ^= FeatureSummary.GetHashCode();
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (ConnectionStatus != global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus.Unspecified) hash ^= ConnectionStatus.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8136,6 +8181,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
+      if (ConnectionStatus != global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) ConnectionStatus);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -8170,6 +8219,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
+      if (ConnectionStatus != global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus.Unspecified) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) ConnectionStatus);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -8197,6 +8250,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (ConnectionStatus != global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ConnectionStatus);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -8230,6 +8286,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) {
         Status = other.Status;
+      }
+      if (other.ConnectionStatus != global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus.Unspecified) {
+        ConnectionStatus = other.ConnectionStatus;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -8273,6 +8332,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus) input.ReadEnum();
             break;
           }
+          case 56: {
+            ConnectionStatus = (global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus) input.ReadEnum();
+            break;
+          }
         }
       }
     #endif
@@ -8313,6 +8376,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           }
           case 48: {
             Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            ConnectionStatus = (global::TuiHub.Protos.Librarian.Sephirah.V1.PorterConnectionStatus) input.ReadEnum();
             break;
           }
         }

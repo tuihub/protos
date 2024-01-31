@@ -67,6 +67,26 @@ final $typed_data.Uint8List userStatusDescriptor = $convert.base64Decode(
     'CgpVc2VyU3RhdHVzEhsKF1VTRVJfU1RBVFVTX1VOU1BFQ0lGSUVEEAASFgoSVVNFUl9TVEFUVV'
     'NfQUNUSVZFEAESFwoTVVNFUl9TVEFUVVNfQkxPQ0tFRBAC');
 
+@$core.Deprecated('Use porterConnectionStatusDescriptor instead')
+const PorterConnectionStatus$json = {
+  '1': 'PorterConnectionStatus',
+  '2': [
+    {'1': 'PORTER_CONNECTION_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'PORTER_CONNECTION_STATUS_CONNECTED', '2': 1},
+    {'1': 'PORTER_CONNECTION_STATUS_DISCONNECTED', '2': 2},
+    {'1': 'PORTER_CONNECTION_STATUS_ACTIVE', '2': 3},
+    {'1': 'PORTER_CONNECTION_STATUS_ACTIVATION_FAILED', '2': 4},
+  ],
+};
+
+/// Descriptor for `PorterConnectionStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List porterConnectionStatusDescriptor = $convert.base64Decode(
+    'ChZQb3J0ZXJDb25uZWN0aW9uU3RhdHVzEigKJFBPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19VTl'
+    'NQRUNJRklFRBAAEiYKIlBPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19DT05ORUNURUQQARIpCiVQ'
+    'T1JURVJfQ09OTkVDVElPTl9TVEFUVVNfRElTQ09OTkVDVEVEEAISIwofUE9SVEVSX0NPTk5FQ1'
+    'RJT05fU1RBVFVTX0FDVElWRRADEi4KKlBPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19BQ1RJVkFU'
+    'SU9OX0ZBSUxFRBAE');
+
 @$core.Deprecated('Use getTokenRequestDescriptor instead')
 const GetTokenRequest$json = {
   '1': 'GetTokenRequest',
@@ -579,6 +599,7 @@ const Porter$json = {
     {'1': 'global_name', '3': 4, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'feature_summary', '3': 5, '4': 1, '5': 9, '10': 'featureSummary'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
+    {'1': 'connection_status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterConnectionStatus', '10': 'connectionStatus'},
   ],
 };
 
@@ -588,5 +609,6 @@ final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
     'FtZRgCIAEoCVIEbmFtZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEh8KC2dsb2JhbF9uYW1l'
     'GAQgASgJUgpnbG9iYWxOYW1lEicKD2ZlYXR1cmVfc3VtbWFyeRgFIAEoCVIOZmVhdHVyZVN1bW'
     '1hcnkSOQoGc3RhdHVzGAYgASgOMiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJTdGF0dXNS'
-    'BnN0YXR1cw==');
+    'BnN0YXR1cxJaChFjb25uZWN0aW9uX3N0YXR1cxgHIAEoDjItLmxpYnJhcmlhbi5zZXBoaXJhaC'
+    '52MS5Qb3J0ZXJDb25uZWN0aW9uU3RhdHVzUhBjb25uZWN0aW9uU3RhdHVz');
 

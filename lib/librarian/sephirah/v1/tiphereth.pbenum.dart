@@ -76,5 +76,26 @@ class UserStatus extends $pb.ProtobufEnum {
   const UserStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+class PorterConnectionStatus extends $pb.ProtobufEnum {
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_UNSPECIFIED = PorterConnectionStatus._(0, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_UNSPECIFIED');
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_CONNECTED = PorterConnectionStatus._(1, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_CONNECTED');
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_DISCONNECTED = PorterConnectionStatus._(2, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DISCONNECTED');
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_ACTIVE = PorterConnectionStatus._(3, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVE');
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_ACTIVATION_FAILED = PorterConnectionStatus._(4, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVATION_FAILED');
+
+  static const $core.List<PorterConnectionStatus> values = <PorterConnectionStatus> [
+    PORTER_CONNECTION_STATUS_UNSPECIFIED,
+    PORTER_CONNECTION_STATUS_CONNECTED,
+    PORTER_CONNECTION_STATUS_DISCONNECTED,
+    PORTER_CONNECTION_STATUS_ACTIVE,
+    PORTER_CONNECTION_STATUS_ACTIVATION_FAILED,
+  ];
+
+  static final $core.Map<$core.int, PorterConnectionStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static PorterConnectionStatus? valueOf($core.int value) => _byValue[value];
+
+  const PorterConnectionStatus._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

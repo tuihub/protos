@@ -47,6 +47,7 @@ goog.exportSymbol('proto.librarian.sephirah.v1.ListUserSessionsResponse', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.ListUsersRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListUsersResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.Porter', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.PorterConnectionStatus', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.PorterPrivilege', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.RefreshTokenRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.RefreshTokenResponse', null, global);
@@ -6931,7 +6932,8 @@ proto.librarian.sephirah.v1.Porter.toObject = function(includeInstance, msg) {
     version: jspb.Message.getFieldWithDefault(msg, 3, ""),
     globalName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     featureSummary: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -6992,6 +6994,10 @@ proto.librarian.sephirah.v1.Porter.deserializeBinaryFromReader = function(msg, r
     case 6:
       var value = /** @type {!proto.librarian.sephirah.v1.UserStatus} */ (reader.readEnum());
       msg.setStatus(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.librarian.sephirah.v1.PorterConnectionStatus} */ (reader.readEnum());
+      msg.setConnectionStatus(value);
       break;
     default:
       reader.skipField();
@@ -7062,6 +7068,13 @@ proto.librarian.sephirah.v1.Porter.serializeBinaryToWriter = function(message, w
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getConnectionStatus();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
       f
     );
   }
@@ -7196,6 +7209,24 @@ proto.librarian.sephirah.v1.Porter.prototype.setStatus = function(value) {
 
 
 /**
+ * optional PorterConnectionStatus connection_status = 7;
+ * @return {!proto.librarian.sephirah.v1.PorterConnectionStatus}
+ */
+proto.librarian.sephirah.v1.Porter.prototype.getConnectionStatus = function() {
+  return /** @type {!proto.librarian.sephirah.v1.PorterConnectionStatus} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.PorterConnectionStatus} value
+ * @return {!proto.librarian.sephirah.v1.Porter} returns this
+ */
+proto.librarian.sephirah.v1.Porter.prototype.setConnectionStatus = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
  * @enum {number}
  */
 proto.librarian.sephirah.v1.SystemType = {
@@ -7226,6 +7257,17 @@ proto.librarian.sephirah.v1.UserStatus = {
   USER_STATUS_UNSPECIFIED: 0,
   USER_STATUS_ACTIVE: 1,
   USER_STATUS_BLOCKED: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.librarian.sephirah.v1.PorterConnectionStatus = {
+  PORTER_CONNECTION_STATUS_UNSPECIFIED: 0,
+  PORTER_CONNECTION_STATUS_CONNECTED: 1,
+  PORTER_CONNECTION_STATUS_DISCONNECTED: 2,
+  PORTER_CONNECTION_STATUS_ACTIVE: 3,
+  PORTER_CONNECTION_STATUS_ACTIVATION_FAILED: 4
 };
 
 goog.object.extend(exports, proto.librarian.sephirah.v1);

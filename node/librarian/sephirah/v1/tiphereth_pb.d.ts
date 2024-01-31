@@ -894,6 +894,9 @@ export class Porter extends jspb.Message {
   getStatus(): UserStatusMap[keyof UserStatusMap];
   setStatus(value: UserStatusMap[keyof UserStatusMap]): void;
 
+  getConnectionStatus(): PorterConnectionStatusMap[keyof PorterConnectionStatusMap];
+  setConnectionStatus(value: PorterConnectionStatusMap[keyof PorterConnectionStatusMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Porter.AsObject;
   static toObject(includeInstance: boolean, msg: Porter): Porter.AsObject;
@@ -912,6 +915,7 @@ export namespace Porter {
     globalName: string,
     featureSummary: string,
     status: UserStatusMap[keyof UserStatusMap],
+    connectionStatus: PorterConnectionStatusMap[keyof PorterConnectionStatusMap],
   }
 }
 
@@ -944,4 +948,14 @@ export interface UserStatusMap {
 }
 
 export const UserStatus: UserStatusMap;
+
+export interface PorterConnectionStatusMap {
+  PORTER_CONNECTION_STATUS_UNSPECIFIED: 0;
+  PORTER_CONNECTION_STATUS_CONNECTED: 1;
+  PORTER_CONNECTION_STATUS_DISCONNECTED: 2;
+  PORTER_CONNECTION_STATUS_ACTIVE: 3;
+  PORTER_CONNECTION_STATUS_ACTIVATION_FAILED: 4;
+}
+
+export const PorterConnectionStatus: PorterConnectionStatusMap;
 
