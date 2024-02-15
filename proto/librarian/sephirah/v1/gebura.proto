@@ -39,14 +39,14 @@ message ListAppInfosResponse {
 }
 
 message SyncAppInfosRequest {
-  repeated librarian.v1.AppInfoID app_ids = 1;
+  repeated librarian.v1.AppInfoID app_info_ids = 1;
   // if false, server will return immediately.
   // if true, server will return data after sync finished.
   optional bool wait_data = 2;
 }
 
 message SyncAppInfosResponse {
-  repeated librarian.v1.AppInfo apps = 1;
+  repeated librarian.v1.AppInfo app_infos = 1;
 }
 
 message MergeAppInfosRequest {
