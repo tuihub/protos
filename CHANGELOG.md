@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/tuihub/protos/compare/v0.3.10...v0.4.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* gebura redesigned
+
+### Features
+
+* **binah:** add file capacity ([6ebb472](https://github.com/tuihub/protos/commit/6ebb47233a87bae1e912b7aeb0cc2b431f2eda4f))
+* gebura redesigned ([b281171](https://github.com/tuihub/protos/commit/b281171e6ab6b6e4a3e70b5b686c7a7f11308bf7))
+* **gebura:** redesigned ([f05c32f](https://github.com/tuihub/protos/commit/f05c32f63b625a127b4f1bf34680efddcc3cd161))
+
 ## [0.3.10](https://github.com/tuihub/protos/compare/v0.3.9...v0.3.10) (2024-02-15)
 
 
