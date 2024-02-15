@@ -142,6 +142,8 @@ enum AppType {
 message AppPackage {
   InternalID id = 1;
   AppPackageSource source = 2;
+  // For sentinel, use sentinel id.
+  // For manual, use device id
   InternalID source_id = 3;
   string name = 4;
   string description = 5;
@@ -151,6 +153,8 @@ message AppPackage {
   // Only used in response
   // Available when assigned to an app
   optional InternalID assigned_app_id = 8;
+  // Server should generate new group id when it is 0 in create or update request.
+  InternalID group_id = 9;
 }
 
 enum AppPackageSource {
