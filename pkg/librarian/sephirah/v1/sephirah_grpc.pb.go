@@ -36,6 +36,8 @@ const (
 	LibrarianSephirahService_ListPorters_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorters"
 	LibrarianSephirahService_UpdatePorterStatus_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus"
 	LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege"
+	LibrarianSephirahService_SetFileCapacity_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity"
+	LibrarianSephirahService_GetFileCapacity_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/GetFileCapacity"
 	LibrarianSephirahService_UploadFile_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile"
 	LibrarianSephirahService_DownloadFile_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile"
 	LibrarianSephirahService_SimpleUploadFile_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile"
@@ -153,6 +155,10 @@ type LibrarianSephirahServiceClient interface {
 	UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error)
 	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
 	UpdatePorterPrivilege(ctx context.Context, in *UpdatePorterPrivilegeRequest, opts ...grpc.CallOption) (*UpdatePorterPrivilegeResponse, error)
+	// `Binah` `Admin`
+	SetFileCapacity(ctx context.Context, in *SetFileCapacityRequest, opts ...grpc.CallOption) (*SetFileCapacityResponse, error)
+	// `Binah` `Admin` `Normal limited`
+	GetFileCapacity(ctx context.Context, in *GetFileCapacityRequest, opts ...grpc.CallOption) (*GetFileCapacityResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_UploadFileClient, error)
 	// `Binah` `download_token`
@@ -471,6 +477,24 @@ func (c *librarianSephirahServiceClient) UpdatePorterStatus(ctx context.Context,
 func (c *librarianSephirahServiceClient) UpdatePorterPrivilege(ctx context.Context, in *UpdatePorterPrivilegeRequest, opts ...grpc.CallOption) (*UpdatePorterPrivilegeResponse, error) {
 	out := new(UpdatePorterPrivilegeResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SetFileCapacity(ctx context.Context, in *SetFileCapacityRequest, opts ...grpc.CallOption) (*SetFileCapacityResponse, error) {
+	out := new(SetFileCapacityResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SetFileCapacity_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetFileCapacity(ctx context.Context, in *GetFileCapacityRequest, opts ...grpc.CallOption) (*GetFileCapacityResponse, error) {
+	out := new(GetFileCapacityResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetFileCapacity_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1249,6 +1273,10 @@ type LibrarianSephirahServiceServer interface {
 	UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error)
 	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
 	UpdatePorterPrivilege(context.Context, *UpdatePorterPrivilegeRequest) (*UpdatePorterPrivilegeResponse, error)
+	// `Binah` `Admin`
+	SetFileCapacity(context.Context, *SetFileCapacityRequest) (*SetFileCapacityResponse, error)
+	// `Binah` `Admin` `Normal limited`
+	GetFileCapacity(context.Context, *GetFileCapacityRequest) (*GetFileCapacityResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(LibrarianSephirahService_UploadFileServer) error
 	// `Binah` `download_token`
@@ -1467,6 +1495,12 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterStatus(context.Co
 }
 func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterPrivilege(context.Context, *UpdatePorterPrivilegeRequest) (*UpdatePorterPrivilegeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterPrivilege not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SetFileCapacity(context.Context, *SetFileCapacityRequest) (*SetFileCapacityResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetFileCapacity not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetFileCapacity(context.Context, *GetFileCapacityRequest) (*GetFileCapacityResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetFileCapacity not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadFile(LibrarianSephirahService_UploadFileServer) error {
 	return status.Errorf(codes.Unimplemented, "method UploadFile not implemented")
@@ -1997,6 +2031,42 @@ func _LibrarianSephirahService_UpdatePorterPrivilege_Handler(srv interface{}, ct
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).UpdatePorterPrivilege(ctx, req.(*UpdatePorterPrivilegeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SetFileCapacity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetFileCapacityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SetFileCapacity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SetFileCapacity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SetFileCapacity(ctx, req.(*SetFileCapacityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetFileCapacity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFileCapacityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetFileCapacity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetFileCapacity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetFileCapacity(ctx, req.(*GetFileCapacityRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3380,6 +3450,14 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePorterPrivilege",
 			Handler:    _LibrarianSephirahService_UpdatePorterPrivilege_Handler,
+		},
+		{
+			MethodName: "SetFileCapacity",
+			Handler:    _LibrarianSephirahService_SetFileCapacity_Handler,
+		},
+		{
+			MethodName: "GetFileCapacity",
+			Handler:    _LibrarianSephirahService_GetFileCapacity_Handler,
 		},
 		{
 			MethodName: "PresignedUploadFile",

@@ -644,6 +644,70 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Binah` `Admin`
+*/
+        pub async fn set_file_capacity(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SetFileCapacityRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SetFileCapacityResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SetFileCapacity",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Binah` `Admin` `Normal limited`
+*/
+        pub async fn get_file_capacity(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetFileCapacityRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::GetFileCapacityResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetFileCapacity",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetFileCapacity",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /** `Binah` `upload_token`
 */
         pub async fn upload_file(
@@ -2715,8 +2779,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn read_feed_item(
             &mut self,
             request: impl tonic::IntoRequest<super::ReadFeedItemRequest>,
@@ -3090,6 +3152,24 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<super::UpdatePorterPrivilegeRequest>,
         ) -> std::result::Result<
             tonic::Response<super::UpdatePorterPrivilegeResponse>,
+            tonic::Status,
+        >;
+        /** `Binah` `Admin`
+*/
+        async fn set_file_capacity(
+            &self,
+            request: tonic::Request<super::SetFileCapacityRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SetFileCapacityResponse>,
+            tonic::Status,
+        >;
+        /** `Binah` `Admin` `Normal limited`
+*/
+        async fn get_file_capacity(
+            &self,
+            request: tonic::Request<super::GetFileCapacityRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::GetFileCapacityResponse>,
             tonic::Status,
         >;
         /// Server streaming response type for the UploadFile method.
@@ -3714,8 +3794,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetBatchFeedItemsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn read_feed_item(
             &self,
             request: tonic::Request<super::ReadFeedItemRequest>,
@@ -4617,6 +4695,98 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = UpdatePorterPrivilegeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity" => {
+                    #[allow(non_camel_case_types)]
+                    struct SetFileCapacitySvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::SetFileCapacityRequest>
+                    for SetFileCapacitySvc<T> {
+                        type Response = super::SetFileCapacityResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SetFileCapacityRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).set_file_capacity(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SetFileCapacitySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetFileCapacity" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetFileCapacitySvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::GetFileCapacityRequest>
+                    for GetFileCapacitySvc<T> {
+                        type Response = super::GetFileCapacityResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetFileCapacityRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).get_file_capacity(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = GetFileCapacitySvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

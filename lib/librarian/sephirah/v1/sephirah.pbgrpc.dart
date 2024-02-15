@@ -95,6 +95,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege',
       ($1.UpdatePorterPrivilegeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.UpdatePorterPrivilegeResponse.fromBuffer(value));
+  static final _$setFileCapacity = $grpc.ClientMethod<$2.SetFileCapacityRequest, $2.SetFileCapacityResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity',
+      ($2.SetFileCapacityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.SetFileCapacityResponse.fromBuffer(value));
+  static final _$getFileCapacity = $grpc.ClientMethod<$2.GetFileCapacityRequest, $2.GetFileCapacityResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetFileCapacity',
+      ($2.GetFileCapacityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.GetFileCapacityResponse.fromBuffer(value));
   static final _$uploadFile = $grpc.ClientMethod<$2.UploadFileRequest, $2.UploadFileResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/UploadFile',
       ($2.UploadFileRequest value) => value.writeToBuffer(),
@@ -452,6 +460,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.UpdatePorterPrivilegeResponse> updatePorterPrivilege($1.UpdatePorterPrivilegeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updatePorterPrivilege, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.SetFileCapacityResponse> setFileCapacity($2.SetFileCapacityRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setFileCapacity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$2.GetFileCapacityResponse> getFileCapacity($2.GetFileCapacityRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getFileCapacity, request, options: options);
   }
 
   $grpc.ResponseStream<$2.UploadFileResponse> uploadFile($async.Stream<$2.UploadFileRequest> request, {$grpc.CallOptions? options}) {
@@ -863,6 +879,20 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.UpdatePorterPrivilegeRequest.fromBuffer(value),
         ($1.UpdatePorterPrivilegeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.SetFileCapacityRequest, $2.SetFileCapacityResponse>(
+        'SetFileCapacity',
+        setFileCapacity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.SetFileCapacityRequest.fromBuffer(value),
+        ($2.SetFileCapacityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.GetFileCapacityRequest, $2.GetFileCapacityResponse>(
+        'GetFileCapacity',
+        getFileCapacity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $2.GetFileCapacityRequest.fromBuffer(value),
+        ($2.GetFileCapacityResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.UploadFileRequest, $2.UploadFileResponse>(
         'UploadFile',
         uploadFile,
@@ -1430,6 +1460,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return updatePorterPrivilege(call, await request);
   }
 
+  $async.Future<$2.SetFileCapacityResponse> setFileCapacity_Pre($grpc.ServiceCall call, $async.Future<$2.SetFileCapacityRequest> request) async {
+    return setFileCapacity(call, await request);
+  }
+
+  $async.Future<$2.GetFileCapacityResponse> getFileCapacity_Pre($grpc.ServiceCall call, $async.Future<$2.GetFileCapacityRequest> request) async {
+    return getFileCapacity(call, await request);
+  }
+
   $async.Stream<$2.SimpleDownloadFileResponse> simpleDownloadFile_Pre($grpc.ServiceCall call, $async.Future<$2.SimpleDownloadFileRequest> request) async* {
     yield* simpleDownloadFile(call, await request);
   }
@@ -1719,6 +1757,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.ListPortersResponse> listPorters($grpc.ServiceCall call, $1.ListPortersRequest request);
   $async.Future<$1.UpdatePorterStatusResponse> updatePorterStatus($grpc.ServiceCall call, $1.UpdatePorterStatusRequest request);
   $async.Future<$1.UpdatePorterPrivilegeResponse> updatePorterPrivilege($grpc.ServiceCall call, $1.UpdatePorterPrivilegeRequest request);
+  $async.Future<$2.SetFileCapacityResponse> setFileCapacity($grpc.ServiceCall call, $2.SetFileCapacityRequest request);
+  $async.Future<$2.GetFileCapacityResponse> getFileCapacity($grpc.ServiceCall call, $2.GetFileCapacityRequest request);
   $async.Stream<$2.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$2.UploadFileRequest> request);
   $async.Stream<$2.DownloadFileResponse> downloadFile($grpc.ServiceCall call, $async.Stream<$2.DownloadFileRequest> request);
   $async.Stream<$2.SimpleUploadFileResponse> simpleUploadFile($grpc.ServiceCall call, $async.Stream<$2.SimpleUploadFileRequest> request);

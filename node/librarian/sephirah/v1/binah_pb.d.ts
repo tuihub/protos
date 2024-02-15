@@ -2,6 +2,104 @@
 // file: librarian/sephirah/v1/binah.proto
 
 import * as jspb from "google-protobuf";
+import * as librarian_sephirah_v1_base_pb from "../../../librarian/sephirah/v1/base_pb";
+import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
+
+export class SetFileCapacityRequest extends jspb.Message {
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): librarian_v1_common_pb.InternalID | undefined;
+  setUserId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getFileType(): librarian_sephirah_v1_base_pb.FileTypeMap[keyof librarian_sephirah_v1_base_pb.FileTypeMap];
+  setFileType(value: librarian_sephirah_v1_base_pb.FileTypeMap[keyof librarian_sephirah_v1_base_pb.FileTypeMap]): void;
+
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetFileCapacityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetFileCapacityRequest): SetFileCapacityRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetFileCapacityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetFileCapacityRequest;
+  static deserializeBinaryFromReader(message: SetFileCapacityRequest, reader: jspb.BinaryReader): SetFileCapacityRequest;
+}
+
+export namespace SetFileCapacityRequest {
+  export type AsObject = {
+    userId?: librarian_v1_common_pb.InternalID.AsObject,
+    fileType: librarian_sephirah_v1_base_pb.FileTypeMap[keyof librarian_sephirah_v1_base_pb.FileTypeMap],
+    sizeBytes: number,
+  }
+}
+
+export class SetFileCapacityResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetFileCapacityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetFileCapacityResponse): SetFileCapacityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetFileCapacityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetFileCapacityResponse;
+  static deserializeBinaryFromReader(message: SetFileCapacityResponse, reader: jspb.BinaryReader): SetFileCapacityResponse;
+}
+
+export namespace SetFileCapacityResponse {
+  export type AsObject = {
+  }
+}
+
+export class GetFileCapacityRequest extends jspb.Message {
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): librarian_v1_common_pb.InternalID | undefined;
+  setUserId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getFileType(): librarian_sephirah_v1_base_pb.FileTypeMap[keyof librarian_sephirah_v1_base_pb.FileTypeMap];
+  setFileType(value: librarian_sephirah_v1_base_pb.FileTypeMap[keyof librarian_sephirah_v1_base_pb.FileTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFileCapacityRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFileCapacityRequest): GetFileCapacityRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetFileCapacityRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFileCapacityRequest;
+  static deserializeBinaryFromReader(message: GetFileCapacityRequest, reader: jspb.BinaryReader): GetFileCapacityRequest;
+}
+
+export namespace GetFileCapacityRequest {
+  export type AsObject = {
+    userId?: librarian_v1_common_pb.InternalID.AsObject,
+    fileType: librarian_sephirah_v1_base_pb.FileTypeMap[keyof librarian_sephirah_v1_base_pb.FileTypeMap],
+  }
+}
+
+export class GetFileCapacityResponse extends jspb.Message {
+  getLimitSizeBytes(): number;
+  setLimitSizeBytes(value: number): void;
+
+  getUsedSizeBytes(): number;
+  setUsedSizeBytes(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetFileCapacityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFileCapacityResponse): GetFileCapacityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetFileCapacityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFileCapacityResponse;
+  static deserializeBinaryFromReader(message: GetFileCapacityResponse, reader: jspb.BinaryReader): GetFileCapacityResponse;
+}
+
+export namespace GetFileCapacityResponse {
+  export type AsObject = {
+    limitSizeBytes: number,
+    usedSizeBytes: number,
+  }
+}
 
 export class UploadFileRequest extends jspb.Message {
   hasFileChunk(): boolean;

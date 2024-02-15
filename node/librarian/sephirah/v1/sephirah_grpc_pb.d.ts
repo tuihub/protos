@@ -30,6 +30,8 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   listPorters: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>;
   updatePorterStatus: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>;
   updatePorterPrivilege: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>;
+  setFileCapacity: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.SetFileCapacityRequest, librarian_sephirah_v1_binah_pb.SetFileCapacityResponse>;
+  getFileCapacity: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.GetFileCapacityRequest, librarian_sephirah_v1_binah_pb.GetFileCapacityResponse>;
   uploadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
   simpleUploadFile: grpc.MethodDefinition<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
@@ -123,6 +125,8 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   listPorters: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>;
   updatePorterStatus: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>;
   updatePorterPrivilege: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>;
+  setFileCapacity: grpc.handleUnaryCall<librarian_sephirah_v1_binah_pb.SetFileCapacityRequest, librarian_sephirah_v1_binah_pb.SetFileCapacityResponse>;
+  getFileCapacity: grpc.handleUnaryCall<librarian_sephirah_v1_binah_pb.GetFileCapacityRequest, librarian_sephirah_v1_binah_pb.GetFileCapacityResponse>;
   uploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;
   simpleUploadFile: grpc.handleBidiStreamingCall<librarian_sephirah_v1_binah_pb.SimpleUploadFileRequest, librarian_sephirah_v1_binah_pb.SimpleUploadFileResponse>;
@@ -249,6 +253,12 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   updatePorterPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>): grpc.ClientUnaryCall;
   updatePorterPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>): grpc.ClientUnaryCall;
   updatePorterPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse>): grpc.ClientUnaryCall;
+  setFileCapacity(argument: librarian_sephirah_v1_binah_pb.SetFileCapacityRequest, callback: grpc.requestCallback<librarian_sephirah_v1_binah_pb.SetFileCapacityResponse>): grpc.ClientUnaryCall;
+  setFileCapacity(argument: librarian_sephirah_v1_binah_pb.SetFileCapacityRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_binah_pb.SetFileCapacityResponse>): grpc.ClientUnaryCall;
+  setFileCapacity(argument: librarian_sephirah_v1_binah_pb.SetFileCapacityRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_binah_pb.SetFileCapacityResponse>): grpc.ClientUnaryCall;
+  getFileCapacity(argument: librarian_sephirah_v1_binah_pb.GetFileCapacityRequest, callback: grpc.requestCallback<librarian_sephirah_v1_binah_pb.GetFileCapacityResponse>): grpc.ClientUnaryCall;
+  getFileCapacity(argument: librarian_sephirah_v1_binah_pb.GetFileCapacityRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_binah_pb.GetFileCapacityResponse>): grpc.ClientUnaryCall;
+  getFileCapacity(argument: librarian_sephirah_v1_binah_pb.GetFileCapacityRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_binah_pb.GetFileCapacityResponse>): grpc.ClientUnaryCall;
   uploadFile(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   uploadFile(metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.UploadFileRequest, librarian_sephirah_v1_binah_pb.UploadFileResponse>;
   downloadFile(metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientDuplexStream<librarian_sephirah_v1_binah_pb.DownloadFileRequest, librarian_sephirah_v1_binah_pb.DownloadFileResponse>;

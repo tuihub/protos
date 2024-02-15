@@ -517,6 +517,28 @@ function deserialize_librarian_sephirah_v1_GetFeedItemResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.GetFeedItemResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_GetFileCapacityRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.GetFileCapacityRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetFileCapacityRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetFileCapacityRequest(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.GetFileCapacityRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetFileCapacityResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.GetFileCapacityResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetFileCapacityResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetFileCapacityResponse(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.GetFileCapacityResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_GetImageRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_chesed_pb.GetImageRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.GetImageRequest');
@@ -1441,6 +1463,28 @@ function deserialize_librarian_sephirah_v1_SetAppSaveFileCapacityResponse(buffer
   return librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_SetFileCapacityRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.SetFileCapacityRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetFileCapacityRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetFileCapacityRequest(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.SetFileCapacityRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetFileCapacityResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_binah_pb.SetFileCapacityResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetFileCapacityResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetFileCapacityResponse(buffer_arg) {
+  return librarian_sephirah_v1_binah_pb.SetFileCapacityResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_SimpleDownloadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.SimpleDownloadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.SimpleDownloadFileRequest');
@@ -2165,6 +2209,30 @@ updatePorterPrivilege: {
     requestDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
     responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse,
+  },
+  // `Binah` `Admin`
+setFileCapacity: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_binah_pb.SetFileCapacityRequest,
+    responseType: librarian_sephirah_v1_binah_pb.SetFileCapacityResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SetFileCapacityRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SetFileCapacityRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SetFileCapacityResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SetFileCapacityResponse,
+  },
+  // `Binah` `Admin` `Normal limited`
+getFileCapacity: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetFileCapacity',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_binah_pb.GetFileCapacityRequest,
+    responseType: librarian_sephirah_v1_binah_pb.GetFileCapacityResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetFileCapacityRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetFileCapacityRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetFileCapacityResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetFileCapacityResponse,
   },
   // `Binah` `upload_token`
 uploadFile: {

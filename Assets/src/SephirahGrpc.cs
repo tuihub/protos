@@ -123,6 +123,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest> __Marshaller_librarian_sephirah_v1_SetFileCapacityRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse> __Marshaller_librarian_sephirah_v1_SetFileCapacityResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest> __Marshaller_librarian_sephirah_v1_GetFileCapacityRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse> __Marshaller_librarian_sephirah_v1_GetFileCapacityResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileRequest> __Marshaller_librarian_sephirah_v1_UploadFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileResponse> __Marshaller_librarian_sephirah_v1_UploadFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileResponse.Parser));
@@ -542,6 +550,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "UpdatePorterPrivilege",
         __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
         __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse> __Method_SetFileCapacity = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SetFileCapacity",
+        __Marshaller_librarian_sephirah_v1_SetFileCapacityRequest,
+        __Marshaller_librarian_sephirah_v1_SetFileCapacityResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse> __Method_GetFileCapacity = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetFileCapacity",
+        __Marshaller_librarian_sephirah_v1_GetFileCapacityRequest,
+        __Marshaller_librarian_sephirah_v1_GetFileCapacityResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileResponse> __Method_UploadFile = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileResponse>(
@@ -1327,6 +1351,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> UpdatePorterPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Binah` `Admin`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse> SetFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Binah` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse> GetFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -3074,6 +3122,102 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> UpdatePorterPrivilegeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdatePorterPrivilege, null, options, request);
+      }
+      /// <summary>
+      /// `Binah` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse SetFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetFileCapacity(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Binah` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse SetFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SetFileCapacity, null, options, request);
+      }
+      /// <summary>
+      /// `Binah` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse> SetFileCapacityAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetFileCapacityAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Binah` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse> SetFileCapacityAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SetFileCapacity, null, options, request);
+      }
+      /// <summary>
+      /// `Binah` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse GetFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFileCapacity(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Binah` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse GetFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetFileCapacity, null, options, request);
+      }
+      /// <summary>
+      /// `Binah` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse> GetFileCapacityAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetFileCapacityAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Binah` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse> GetFileCapacityAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetFileCapacity, null, options, request);
       }
       /// <summary>
       /// `Binah` `upload_token`
@@ -6480,6 +6624,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_ListPorters, serviceImpl.ListPorters)
           .AddMethod(__Method_UpdatePorterStatus, serviceImpl.UpdatePorterStatus)
           .AddMethod(__Method_UpdatePorterPrivilege, serviceImpl.UpdatePorterPrivilege)
+          .AddMethod(__Method_SetFileCapacity, serviceImpl.SetFileCapacity)
+          .AddMethod(__Method_GetFileCapacity, serviceImpl.GetFileCapacity)
           .AddMethod(__Method_UploadFile, serviceImpl.UploadFile)
           .AddMethod(__Method_DownloadFile, serviceImpl.DownloadFile)
           .AddMethod(__Method_SimpleUploadFile, serviceImpl.SimpleUploadFile)
@@ -6577,6 +6723,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_ListPorters, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPortersRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPortersResponse>(serviceImpl.ListPorters));
       serviceBinder.AddMethod(__Method_UpdatePorterStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterStatusRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterStatusResponse>(serviceImpl.UpdatePorterStatus));
       serviceBinder.AddMethod(__Method_UpdatePorterPrivilege, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse>(serviceImpl.UpdatePorterPrivilege));
+      serviceBinder.AddMethod(__Method_SetFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse>(serviceImpl.SetFileCapacity));
+      serviceBinder.AddMethod(__Method_GetFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse>(serviceImpl.GetFileCapacity));
       serviceBinder.AddMethod(__Method_UploadFile, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileResponse>(serviceImpl.UploadFile));
       serviceBinder.AddMethod(__Method_DownloadFile, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadFileResponse>(serviceImpl.DownloadFile));
       serviceBinder.AddMethod(__Method_SimpleUploadFile, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleUploadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SimpleUploadFileResponse>(serviceImpl.SimpleUploadFile));

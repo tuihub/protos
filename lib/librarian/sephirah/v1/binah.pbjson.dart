@@ -51,6 +51,64 @@ final $typed_data.Uint8List fileTransferStatusDescriptor = $convert.base64Decode
     'VEFUVVNfSU5fUFJPR1JFU1MQAhIgChxGSUxFX1RSQU5TRkVSX1NUQVRVU19TVUNDRVNTEAMSHw'
     'obRklMRV9UUkFOU0ZFUl9TVEFUVVNfRkFJTEVEEAQ=');
 
+@$core.Deprecated('Use setFileCapacityRequestDescriptor instead')
+const SetFileCapacityRequest$json = {
+  '1': 'SetFileCapacityRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
+    {'1': 'file_type', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileType', '10': 'fileType'},
+    {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
+  ],
+};
+
+/// Descriptor for `SetFileCapacityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setFileCapacityRequestDescriptor = $convert.base64Decode(
+    'ChZTZXRGaWxlQ2FwYWNpdHlSZXF1ZXN0EjEKB3VzZXJfaWQYASABKAsyGC5saWJyYXJpYW4udj'
+    'EuSW50ZXJuYWxJRFIGdXNlcklkEjwKCWZpbGVfdHlwZRgCIAEoDjIfLmxpYnJhcmlhbi5zZXBo'
+    'aXJhaC52MS5GaWxlVHlwZVIIZmlsZVR5cGUSHQoKc2l6ZV9ieXRlcxgDIAEoA1IJc2l6ZUJ5dG'
+    'Vz');
+
+@$core.Deprecated('Use setFileCapacityResponseDescriptor instead')
+const SetFileCapacityResponse$json = {
+  '1': 'SetFileCapacityResponse',
+};
+
+/// Descriptor for `SetFileCapacityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setFileCapacityResponseDescriptor = $convert.base64Decode(
+    'ChdTZXRGaWxlQ2FwYWNpdHlSZXNwb25zZQ==');
+
+@$core.Deprecated('Use getFileCapacityRequestDescriptor instead')
+const GetFileCapacityRequest$json = {
+  '1': 'GetFileCapacityRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'userId', '17': true},
+    {'1': 'file_type', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FileType', '10': 'fileType'},
+  ],
+  '8': [
+    {'1': '_user_id'},
+  ],
+};
+
+/// Descriptor for `GetFileCapacityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFileCapacityRequestDescriptor = $convert.base64Decode(
+    'ChZHZXRGaWxlQ2FwYWNpdHlSZXF1ZXN0EjYKB3VzZXJfaWQYASABKAsyGC5saWJyYXJpYW4udj'
+    'EuSW50ZXJuYWxJREgAUgZ1c2VySWSIAQESPAoJZmlsZV90eXBlGAIgASgOMh8ubGlicmFyaWFu'
+    'LnNlcGhpcmFoLnYxLkZpbGVUeXBlUghmaWxlVHlwZUIKCghfdXNlcl9pZA==');
+
+@$core.Deprecated('Use getFileCapacityResponseDescriptor instead')
+const GetFileCapacityResponse$json = {
+  '1': 'GetFileCapacityResponse',
+  '2': [
+    {'1': 'limit_size_bytes', '3': 1, '4': 1, '5': 3, '10': 'limitSizeBytes'},
+    {'1': 'used_size_bytes', '3': 2, '4': 1, '5': 3, '10': 'usedSizeBytes'},
+  ],
+};
+
+/// Descriptor for `GetFileCapacityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFileCapacityResponseDescriptor = $convert.base64Decode(
+    'ChdHZXRGaWxlQ2FwYWNpdHlSZXNwb25zZRIoChBsaW1pdF9zaXplX2J5dGVzGAEgASgDUg5saW'
+    '1pdFNpemVCeXRlcxImCg91c2VkX3NpemVfYnl0ZXMYAiABKANSDXVzZWRTaXplQnl0ZXM=');
+
 @$core.Deprecated('Use uploadFileRequestDescriptor instead')
 const UploadFileRequest$json = {
   '1': 'UploadFileRequest',

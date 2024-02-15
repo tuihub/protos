@@ -14,9 +14,254 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../v1/common.pb.dart' as $7;
+import 'base.pbenum.dart' as $9;
 import 'binah.pbenum.dart';
 
 export 'binah.pbenum.dart';
+
+class SetFileCapacityRequest extends $pb.GeneratedMessage {
+  factory SetFileCapacityRequest({
+    $7.InternalID? userId,
+    $9.FileType? fileType,
+    $fixnum.Int64? sizeBytes,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (fileType != null) {
+      $result.fileType = fileType;
+    }
+    if (sizeBytes != null) {
+      $result.sizeBytes = sizeBytes;
+    }
+    return $result;
+  }
+  SetFileCapacityRequest._() : super();
+  factory SetFileCapacityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetFileCapacityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFileCapacityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $7.InternalID.create)
+    ..e<$9.FileType>(2, _omitFieldNames ? '' : 'fileType', $pb.PbFieldType.OE, defaultOrMaker: $9.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $9.FileType.valueOf, enumValues: $9.FileType.values)
+    ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetFileCapacityRequest clone() => SetFileCapacityRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetFileCapacityRequest copyWith(void Function(SetFileCapacityRequest) updates) => super.copyWith((message) => updates(message as SetFileCapacityRequest)) as SetFileCapacityRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetFileCapacityRequest create() => SetFileCapacityRequest._();
+  SetFileCapacityRequest createEmptyInstance() => create();
+  static $pb.PbList<SetFileCapacityRequest> createRepeated() => $pb.PbList<SetFileCapacityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetFileCapacityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetFileCapacityRequest>(create);
+  static SetFileCapacityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get userId => $_getN(0);
+  @$pb.TagNumber(1)
+  set userId($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureUserId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $9.FileType get fileType => $_getN(1);
+  @$pb.TagNumber(2)
+  set fileType($9.FileType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFileType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFileType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get sizeBytes => $_getI64(2);
+  @$pb.TagNumber(3)
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSizeBytes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSizeBytes() => clearField(3);
+}
+
+class SetFileCapacityResponse extends $pb.GeneratedMessage {
+  factory SetFileCapacityResponse() => create();
+  SetFileCapacityResponse._() : super();
+  factory SetFileCapacityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetFileCapacityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFileCapacityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetFileCapacityResponse clone() => SetFileCapacityResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetFileCapacityResponse copyWith(void Function(SetFileCapacityResponse) updates) => super.copyWith((message) => updates(message as SetFileCapacityResponse)) as SetFileCapacityResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetFileCapacityResponse create() => SetFileCapacityResponse._();
+  SetFileCapacityResponse createEmptyInstance() => create();
+  static $pb.PbList<SetFileCapacityResponse> createRepeated() => $pb.PbList<SetFileCapacityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetFileCapacityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetFileCapacityResponse>(create);
+  static SetFileCapacityResponse? _defaultInstance;
+}
+
+class GetFileCapacityRequest extends $pb.GeneratedMessage {
+  factory GetFileCapacityRequest({
+    $7.InternalID? userId,
+    $9.FileType? fileType,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (fileType != null) {
+      $result.fileType = fileType;
+    }
+    return $result;
+  }
+  GetFileCapacityRequest._() : super();
+  factory GetFileCapacityRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFileCapacityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFileCapacityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $7.InternalID.create)
+    ..e<$9.FileType>(2, _omitFieldNames ? '' : 'fileType', $pb.PbFieldType.OE, defaultOrMaker: $9.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $9.FileType.valueOf, enumValues: $9.FileType.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFileCapacityRequest clone() => GetFileCapacityRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFileCapacityRequest copyWith(void Function(GetFileCapacityRequest) updates) => super.copyWith((message) => updates(message as GetFileCapacityRequest)) as GetFileCapacityRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFileCapacityRequest create() => GetFileCapacityRequest._();
+  GetFileCapacityRequest createEmptyInstance() => create();
+  static $pb.PbList<GetFileCapacityRequest> createRepeated() => $pb.PbList<GetFileCapacityRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetFileCapacityRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFileCapacityRequest>(create);
+  static GetFileCapacityRequest? _defaultInstance;
+
+  /// Only admin can get the file capacity of other users
+  @$pb.TagNumber(1)
+  $7.InternalID get userId => $_getN(0);
+  @$pb.TagNumber(1)
+  set userId($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureUserId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $9.FileType get fileType => $_getN(1);
+  @$pb.TagNumber(2)
+  set fileType($9.FileType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFileType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFileType() => clearField(2);
+}
+
+class GetFileCapacityResponse extends $pb.GeneratedMessage {
+  factory GetFileCapacityResponse({
+    $fixnum.Int64? limitSizeBytes,
+    $fixnum.Int64? usedSizeBytes,
+  }) {
+    final $result = create();
+    if (limitSizeBytes != null) {
+      $result.limitSizeBytes = limitSizeBytes;
+    }
+    if (usedSizeBytes != null) {
+      $result.usedSizeBytes = usedSizeBytes;
+    }
+    return $result;
+  }
+  GetFileCapacityResponse._() : super();
+  factory GetFileCapacityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFileCapacityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFileCapacityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'limitSizeBytes')
+    ..aInt64(2, _omitFieldNames ? '' : 'usedSizeBytes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetFileCapacityResponse clone() => GetFileCapacityResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetFileCapacityResponse copyWith(void Function(GetFileCapacityResponse) updates) => super.copyWith((message) => updates(message as GetFileCapacityResponse)) as GetFileCapacityResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetFileCapacityResponse create() => GetFileCapacityResponse._();
+  GetFileCapacityResponse createEmptyInstance() => create();
+  static $pb.PbList<GetFileCapacityResponse> createRepeated() => $pb.PbList<GetFileCapacityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetFileCapacityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFileCapacityResponse>(create);
+  static GetFileCapacityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get limitSizeBytes => $_getI64(0);
+  @$pb.TagNumber(1)
+  set limitSizeBytes($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasLimitSizeBytes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimitSizeBytes() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get usedSizeBytes => $_getI64(1);
+  @$pb.TagNumber(2)
+  set usedSizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUsedSizeBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUsedSizeBytes() => clearField(2);
+}
 
 enum UploadFileRequest_Content {
   fileChunk, 
