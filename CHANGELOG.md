@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.10](https://github.com/tuihub/protos/compare/v0.3.9...v0.3.10) (2024-02-15)
+
+
+### Bug Fixes
+
+* add app package group id ([d5faaca](https://github.com/tuihub/protos/commit/d5faaca54766fe17ab83ff3ae62d41a58e2a7e0e))
+* update build config ([cb56603](https://github.com/tuihub/protos/commit/cb56603bdb27c68bf06f94424d60c71be2146b78))
+
 ## [0.3.9](https://github.com/tuihub/protos/compare/v0.3.8...v0.3.9) (2024-01-31)
 
 
