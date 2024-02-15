@@ -67,6 +67,10 @@ service LibrarianSephirahService {
   // `Tiphereth` `Normal only` Set porter privilege, default none privilege.
   rpc UpdatePorterPrivilege(UpdatePorterPrivilegeRequest) returns (UpdatePorterPrivilegeResponse);
 
+  // `Binah` `Admin`
+  rpc SetFileCapacity(SetFileCapacityRequest) returns (SetFileCapacityResponse);
+  // `Binah` `Admin` `Normal limited`
+  rpc GetFileCapacity(GetFileCapacityRequest) returns (GetFileCapacityResponse);
   // `Binah` `upload_token`
   rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
   // `Binah` `download_token`

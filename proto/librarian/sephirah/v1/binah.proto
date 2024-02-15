@@ -2,8 +2,30 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
+import "librarian/sephirah/v1/base.proto";
+import "librarian/v1/common.proto";
+
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+
+message SetFileCapacityRequest {
+  librarian.v1.InternalID user_id = 1;
+  FileType file_type = 2;
+  int64 size_bytes = 3;
+}
+
+message SetFileCapacityResponse {}
+
+message GetFileCapacityRequest {
+  // Only admin can get the file capacity of other users
+  optional librarian.v1.InternalID user_id = 1;
+  FileType file_type = 2;
+}
+
+message GetFileCapacityResponse {
+  int64 limit_size_bytes = 1;
+  int64 used_size_bytes = 2;
+}
 
 message UploadFileRequest {
   oneof content {
