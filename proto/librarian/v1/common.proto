@@ -76,7 +76,7 @@ enum AccountAppRelationType {
   ACCOUNT_APP_RELATION_TYPE_OWN = 1;
 }
 
-message App {
+message AppInfo {
   InternalID id = 1;
   // ignore `source` and `source_app_id` when `internal` is true
   bool internal = 2;
@@ -85,7 +85,7 @@ message App {
   string source_app_id = 4;
   optional string source_url = 5;
 
-  optional AppDetails details = 6;
+  optional AppInfoDetails details = 6;
 
   string name = 7;
   AppType type = 8;
@@ -100,11 +100,11 @@ message App {
 }
 
 // Mixed info of bound apps
-message AppMixed {
+message AppInfoMixed {
   // internal app id
   InternalID id = 1;
 
-  optional AppDetails details = 6;
+  optional AppInfoDetails details = 6;
 
   string name = 7;
   AppType type = 8;
@@ -118,14 +118,14 @@ message AppMixed {
   repeated string alt_names = 14;
 }
 
-message AppID {
+message AppInfoID {
   bool internal = 1;
   // WellKnownAppSource
   string source = 2;
   string source_app_id = 3;
 }
 
-message AppDetails {
+message AppInfoDetails {
   string description = 1;
   string release_date = 2;
   string developer = 3;
@@ -137,53 +137,6 @@ message AppDetails {
 enum AppType {
   APP_TYPE_UNSPECIFIED = 0;
   APP_TYPE_GAME = 1;
-}
-
-message AppPackage {
-  InternalID id = 1;
-  AppPackageSource source = 2;
-  // For sentinel, use sentinel id.
-  // For manual, use device id
-  InternalID source_id = 3;
-  string name = 4;
-  string description = 5;
-  AppPackageBinary binary = 6;
-  // false by default
-  bool public = 7;
-  // Only used in response
-  // Available when assigned to an app
-  optional InternalID assigned_app_id = 8;
-  // Server should generate new group id when it is 0 in create or update request.
-  InternalID group_id = 9;
-}
-
-enum AppPackageSource {
-  APP_PACKAGE_SOURCE_UNSPECIFIED = 0;
-  APP_PACKAGE_SOURCE_MANUAL = 1;
-  APP_PACKAGE_SOURCE_SENTINEL = 2;
-}
-
-message AppPackageBinary {
-  string name = 1;
-  int64 size_bytes = 2;
-  string public_url = 3;
-  bytes sha256 = 4;
-  string token_server_url = 5;
-  repeated Chunk chunks = 6;
-  message Chunk {
-    // Starts from 1
-    int64 sequence = 1;
-    int64 size_bytes = 2;
-    string public_url = 3;
-    bytes sha256 = 4;
-  }
-}
-
-message AppCategory {
-  InternalID id = 1;
-  string name = 2;
-  // Full update
-  repeated InternalID app_ids = 3;
 }
 
 message Feed {

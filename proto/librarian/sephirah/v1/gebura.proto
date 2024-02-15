@@ -9,22 +9,22 @@ import "librarian/v1/common.proto";
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
-message CreateAppRequest {
+message CreateAppInfoRequest {
   // `id` can be anything, `internal` must be true
-  librarian.v1.App app = 1;
+  librarian.v1.AppInfo app_info = 1;
 }
-message CreateAppResponse {
+message CreateAppInfoResponse {
   librarian.v1.InternalID id = 1;
 }
 
-message UpdateAppRequest {
+message UpdateAppInfoRequest {
   // `internal` must be true
-  librarian.v1.App app = 1;
+  librarian.v1.AppInfo app_info = 1;
 }
 
-message UpdateAppResponse {}
+message UpdateAppInfoResponse {}
 
-message ListAppsRequest {
+message ListAppInfosRequest {
   librarian.v1.PagingRequest paging = 1;
   bool exclude_internal = 2;
   repeated string source_filter = 3;
@@ -33,164 +33,185 @@ message ListAppsRequest {
   bool contain_details = 6;
 }
 
-message ListAppsResponse {
+message ListAppInfosResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.App apps = 2;
+  repeated librarian.v1.AppInfo app_infos = 2;
 }
 
-message SyncAppsRequest {
-  repeated librarian.v1.AppID app_ids = 1;
+message SyncAppInfosRequest {
+  repeated librarian.v1.AppInfoID app_ids = 1;
   // if false, server will return immediately.
   // if true, server will return data after sync finished.
   optional bool wait_data = 2;
 }
 
-message SyncAppsResponse {
-  repeated librarian.v1.App apps = 1;
+message SyncAppInfosResponse {
+  repeated librarian.v1.AppInfo apps = 1;
 }
 
-message MergeAppsRequest {
+message MergeAppInfosRequest {
   // `internal` must be true
-  librarian.v1.App base = 1;
+  librarian.v1.AppInfo base = 1;
   // Must be internal app.
   // The InternalID will be dropped after merge.
   // Other apps bind to this app will rebind to base.
   librarian.v1.InternalID merged = 2;
 }
 
-message MergeAppsResponse {}
+message MergeAppInfosResponse {}
 
-message PickAppRequest {
+message PickAppInfoRequest {
   // `internal` must be false
   librarian.v1.InternalID picked = 1;
 }
 
-message PickAppResponse {}
+message PickAppInfoResponse {}
 
-message SyncAccountAppsRequest {
+message SyncAccountAppInfosRequest {
   librarian.v1.AccountID account_id = 1;
 }
 
-message SyncAccountAppsResponse {}
+message SyncAccountAppInfosResponse {}
 
-message SearchAppsRequest {
+message SearchAppInfosRequest {
   librarian.v1.PagingRequest paging = 1;
-  string keywords = 2;
+  string query = 2;
 }
-message SearchAppsResponse {
+message SearchAppInfosResponse {
   librarian.v1.PagingResponse paging = 1;
   // without details
-  repeated librarian.v1.AppMixed apps = 2;
+  repeated librarian.v1.AppInfoMixed app_infos = 2;
 }
 
-message GetAppRequest {
+message GetAppInfoRequest {
+  librarian.v1.InternalID app_info_id = 1;
+}
+
+message GetAppInfoResponse {
+  librarian.v1.AppInfo app_info = 1;
+}
+
+message GetBoundAppInfosRequest {
   librarian.v1.InternalID app_id = 1;
 }
 
-message GetAppResponse {
-  librarian.v1.App app = 1;
+message GetBoundAppInfosResponse {
+  repeated librarian.v1.AppInfo app_infos = 1;
 }
 
-message GetBoundAppsRequest {
-  librarian.v1.InternalID app_id = 1;
-}
-
-message GetBoundAppsResponse {
-  repeated librarian.v1.App apps = 1;
-}
-
-message PurchaseAppRequest {
+message PurchaseAppInfoRequest {
   // When `internal` is true, `source_app_id` must be valid InternalID.
   // When `internal` is false, Server should create that app and return no matter the source is supported.
-  librarian.v1.AppID app_id = 1;
+  librarian.v1.AppInfoID app_id = 1;
 }
 
-message PurchaseAppResponse {
+message PurchaseAppInfoResponse {
   // When purchase external app, return the auto created internal app id.
   librarian.v1.InternalID id = 1;
 }
 
-message GetPurchasedAppsRequest {
+message GetPurchasedAppInfosRequest {
   optional string source = 1;
 }
-message GetPurchasedAppsResponse {
+message GetPurchasedAppInfosResponse {
   // without details
-  repeated librarian.v1.AppMixed apps = 1;
+  repeated librarian.v1.AppInfoMixed app_infos = 1;
 }
 
-message CreateAppPackageRequest {
-  librarian.v1.AppPackage app_package = 1;
+message CreateAppRequest {
+  App app = 1;
 }
 
-message CreateAppPackageResponse {
+message CreateAppResponse {
   librarian.v1.InternalID id = 1;
 }
 
-message UpdateAppPackageRequest {
-  librarian.v1.AppPackage app_package = 1;
+message UpdateAppRequest {
+  App app = 1;
 }
 
-message UpdateAppPackageResponse {}
+message UpdateAppResponse {}
 
-message ListAppPackagesRequest {
+message ListAppsRequest {
   librarian.v1.PagingRequest paging = 1;
-  repeated librarian.v1.AppPackageSource source_filter = 2;
+  repeated librarian.v1.InternalID device_id_filter = 2;
   repeated librarian.v1.InternalID id_filter = 3;
   repeated librarian.v1.InternalID assigned_app_id_filter = 4;
 }
 
-message ListAppPackagesResponse {
+message ListAppsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated librarian.v1.AppPackage app_packages = 2;
+  repeated App app_packages = 2;
 }
 
-message ReportAppPackagesRequest {
-  message SentinelAppPackageBinary {
-    // Sentinel generated id, not InternalId
-    int64 id = 1;
-    librarian.v1.AppPackageBinary app_package_binary = 2;
-  }
-  repeated SentinelAppPackageBinary sentinel_app_package_binaries = 1;
+message ReportAppBinariesRequest {
+  repeated AppBinary app_binaries = 1;
 }
 
-message ReportAppPackagesResponse {}
+message ReportAppBinariesResponse {}
 
-message AssignAppPackageRequest {
+message AssignAppRequest {
   // `internal` must be true
+  librarian.v1.InternalID app_info_id = 1;
+  librarian.v1.InternalID app_id = 2;
+}
+
+message AssignAppResponse {}
+
+message UnAssignAppRequest {
   librarian.v1.InternalID app_id = 1;
-  librarian.v1.InternalID app_package_id = 2;
 }
 
-message AssignAppPackageResponse {}
+message UnAssignAppResponse {}
 
-message UnAssignAppPackageRequest {
-  librarian.v1.InternalID app_package_id = 1;
-}
-
-message UnAssignAppPackageResponse {}
-
-message DownloadAppPackageBinaryRequest {
+message DownloadAppBinaryRequest {
   librarian.v1.InternalID id = 1;
 }
 
-message DownloadAppPackageBinaryResponse {
-  librarian.v1.AppPackageBinary app_package_binary = 1;
+message DownloadAppBinaryResponse {
+  AppBinary app_binary = 1;
   string token = 2;
 }
 
-message AddAppPackageRunTimeRequest {
-  librarian.v1.InternalID app_package_id = 1;
+message CreateAppInstRequest {
+  AppInst app_inst = 1;
+}
+
+message CreateAppInstResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateAppInstRequest {
+  AppInst app_inst = 1;
+}
+
+message UpdateAppInstResponse {}
+
+message ListAppInstsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID device_id_filter = 2;
+  repeated librarian.v1.InternalID id_filter = 3;
+  repeated librarian.v1.InternalID app_id_filter = 4;
+}
+
+message ListAppInstsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated AppInst app_insts = 2;
+}
+
+message AddAppInstRunTimeRequest {
+  librarian.v1.InternalID app_inst_id = 1;
   librarian.v1.TimeRange time_range = 2;
 }
 
-message AddAppPackageRunTimeResponse {}
+message AddAppInstRunTimeResponse {}
 
-message SumAppPackageRunTimeRequest {
-  librarian.v1.InternalID app_package_id = 1;
+message SumAppInstRunTimeRequest {
+  librarian.v1.InternalID app_inst_id = 1;
   librarian.v1.TimeAggregation time_aggregation = 2;
 }
 
-message SumAppPackageRunTimeResponse {
+message SumAppInstRunTimeResponse {
   message Group {
     librarian.v1.TimeRange time_range = 1;
     google.protobuf.Duration duration = 2;
@@ -198,28 +219,28 @@ message SumAppPackageRunTimeResponse {
   repeated Group run_time_groups = 1;
 }
 
-message UploadGameSaveFileRequest {
+message UploadAppSaveFileRequest {
   FileMetadata file_metadata = 1;
-  librarian.v1.InternalID app_package_id = 2;
+  librarian.v1.InternalID app_id = 2;
 }
 
-message UploadGameSaveFileResponse {
+message UploadAppSaveFileResponse {
   string upload_token = 1;
 }
 
-message DownloadGameSaveFileRequest {
-  librarian.v1.InternalID id = 1;
+message DownloadAppSaveFileRequest {
+  librarian.v1.InternalID file_id = 1;
 }
 
-message DownloadGameSaveFileResponse {
+message DownloadAppSaveFileResponse {
   string download_token = 2;
 }
 
-message ListGameSaveFilesRequest {
-  librarian.v1.InternalID app_package_id = 1;
+message ListAppSaveFilesRequest {
+  librarian.v1.InternalID app_id = 1;
 }
 
-message ListGameSaveFilesResponse {
+message ListAppSaveFilesResponse {
   message Result {
     FileMetadata file = 1;
     bool pinned = 2;
@@ -227,58 +248,67 @@ message ListGameSaveFilesResponse {
   repeated Result results = 1;
 }
 
-message RemoveGameSaveFileRequest {
-  librarian.v1.InternalID id = 1;
+message RemoveAppSaveFileRequest {
+  librarian.v1.InternalID file_id = 1;
 }
 
-message RemoveGameSaveFileResponse {}
+message RemoveAppSaveFileResponse {}
 
-message PinGameSaveFileRequest {
-  librarian.v1.InternalID id = 1;
+message PinAppSaveFileRequest {
+  librarian.v1.InternalID file_id = 1;
 }
 
-message PinGameSaveFileResponse {}
+message PinAppSaveFileResponse {}
 
-message UnpinGameSaveFileRequest {
-  librarian.v1.InternalID id = 1;
+message UnpinAppSaveFileRequest {
+  librarian.v1.InternalID file_id = 1;
 }
 
-message UnpinGameSaveFileResponse {}
+message UnpinAppSaveFileResponse {}
 
-message SetUserSaveFileCapacityRequest {
-  librarian.v1.InternalID user_id = 1;
-  // set null to restore server default value
-  optional int64 capacity_bytes = 2;
+message SetAppSaveFileCapacityRequest {
+  oneof entity {
+    bool user = 1;
+    librarian.v1.InternalID app_id = 2;
+    librarian.v1.InternalID app_inst_id = 3;
+  }
+  // negative value means no limit
+  int64 count = 4;
+  // negative value means no limit
+  int64 size_bytes = 5;
+  AppSaveFileCapacityStrategy strategy = 6;
 }
 
-message SetUserSaveFileCapacityResponse {}
-
-message SetSaveFileRotationRequest {
-  // don't care if valid_scope is VALID_SCOPE_ACCOUNT
-  librarian.v1.InternalID entity_id = 1;
-  ValidScope valid_scope = 2;
-  int64 count = 3;
-  // set false to disable save file rotation(unlimited save file)
-  bool enabled = 4;
+enum AppSaveFileCapacityStrategy {
+  APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED = 0;
+  APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL = 1;
+  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST = 2;
 }
 
-enum ValidScope {
-  VALID_SCOPE_UNSPECIFIED = 0;
-  VALID_SCOPE_ACCOUNT = 1;
-  VALID_SCOPE_APP = 2;
-  VALID_SCOPE_APP_PACKAGE = 3;
+message GetAppSaveFileCapacityRequest {
+  oneof entity {
+    bool user = 1;
+    librarian.v1.InternalID app_id = 2;
+    librarian.v1.InternalID app_inst_id = 3;
+  }
 }
 
-message SetSaveFileRotationResponse {}
+message GetAppSaveFileCapacityResponse {
+  int64 count = 1;
+  int64 size_bytes = 2;
+  AppSaveFileCapacityStrategy strategy = 3;
+}
+
+message SetAppSaveFileCapacityResponse {}
 
 message ListAppCategoriesRequest {}
 
 message ListAppCategoriesResponse {
-  repeated librarian.v1.AppCategory app_categories = 1;
+  repeated AppCategory app_categories = 1;
 }
 
 message CreateAppCategoryRequest {
-  librarian.v1.AppCategory app_category = 1;
+  AppCategory app_category = 1;
 }
 
 message CreateAppCategoryResponse {
@@ -286,7 +316,7 @@ message CreateAppCategoryResponse {
 }
 
 message UpdateAppCategoryRequest {
-  librarian.v1.AppCategory app_category = 1;
+  AppCategory app_category = 1;
 }
 
 message UpdateAppCategoryResponse {}
@@ -296,3 +326,46 @@ message RemoveAppCategoryRequest {
 }
 
 message RemoveAppCategoryResponse {}
+
+message App {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+  // Only used in response
+  // Available when assigned to an app
+  optional librarian.v1.InternalID assigned_app_info_id = 4;
+
+  // false by default
+  bool public = 10;
+}
+
+message AppBinary {
+  string name = 1;
+  int64 size_bytes = 2;
+  string public_url = 3;
+  bytes sha256 = 4;
+  string token_server_url = 5;
+  repeated Chunk chunks = 6;
+  message Chunk {
+    // Starts from 1
+    int64 sequence = 1;
+    int64 size_bytes = 2;
+    string public_url = 3;
+    bytes sha256 = 4;
+  }
+}
+
+message AppCategory {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  // Full update
+  repeated librarian.v1.InternalID app_ids = 3;
+  // Full update
+  repeated librarian.v1.InternalID app_info_ids = 4;
+}
+
+message AppInst {
+  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID device_id = 2;
+  librarian.v1.InternalID app_id = 3;
+}

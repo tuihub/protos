@@ -103,81 +103,87 @@ service LibrarianSephirahService {
   rpc DownloadImage(DownloadImageRequest) returns (DownloadImageResponse);
 
   // `Gebura` `Admin`
-  rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);
+  rpc CreateAppInfo(CreateAppInfoRequest) returns (CreateAppInfoResponse);
   // `Gebura` `Admin`
-  rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
-  // `Gebura` `Admin` Used to manage apps
-  rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
+  rpc UpdateAppInfo(UpdateAppInfoRequest) returns (UpdateAppInfoResponse);
+  // `Gebura` `Admin` Used to manage app info
+  rpc ListAppInfos(ListAppInfosRequest) returns (ListAppInfosResponse);
   // `Gebura` `Admin` Merge two apps
-  rpc MergeApps(MergeAppsRequest) returns (MergeAppsResponse);
+  rpc MergeAppInfos(MergeAppInfosRequest) returns (MergeAppInfosResponse);
   // `Gebura` `Admin` Pick one app out from merged
-  rpc PickApp(PickAppRequest) returns (PickAppResponse);
+  rpc PickAppInfo(PickAppInfoRequest) returns (PickAppInfoResponse);
 
-  // `Gebura` `Normal` Asynchronous update apps.
+  // `Gebura` `Normal` Asynchronous update app infos.
   // Request on INTERNAL app applies to all bound external apps.
   // Create an INTERNAL app when requested external app does not exist
   // Server should implement a sync rate limit to prevent abuse,
   // when rate limit reached, return without real sync.
-  rpc SyncApps(SyncAppsRequest) returns (SyncAppsResponse);
+  rpc SyncAppInfos(SyncAppInfosRequest) returns (SyncAppInfosResponse);
   // `Gebura` `Normal` Asynchronously update apps associated with an account.
   // Create an INTERNAL app when associated external app does not exist.
   // Server should implement a sync rate limit to prevent abuse,
   // when rate limit reached, return without real sync.
-  rpc SyncAccountApps(SyncAccountAppsRequest) returns (SyncAccountAppsResponse);
+  rpc SyncAccountAppInfos(SyncAccountAppInfosRequest) returns (SyncAccountAppInfosResponse);
   // `Gebura` `Normal`
-  rpc SearchApps(SearchAppsRequest) returns (SearchAppsResponse);
+  rpc SearchAppInfos(SearchAppInfosRequest) returns (SearchAppInfosResponse);
   // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
   // e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
-  rpc GetApp(GetAppRequest) returns (GetAppResponse);
+  rpc GetAppInfo(GetAppInfoRequest) returns (GetAppInfoResponse);
   // `Gebura` `Normal` Original bound apps info of required app
-  rpc GetBoundApps(GetBoundAppsRequest) returns (GetBoundAppsResponse);
+  rpc GetBoundAppInfos(GetBoundAppInfosRequest) returns (GetBoundAppInfosResponse);
   // `Gebura` `Normal`
-  rpc PurchaseApp(PurchaseAppRequest) returns (PurchaseAppResponse);
+  rpc PurchaseAppInfo(PurchaseAppInfoRequest) returns (PurchaseAppInfoResponse);
   // `Gebura` `Normal`
   // Default get user purchased apps
   // Use `source` to get purchase info from bound account
   // only support steam
-  rpc GetPurchasedApps(GetPurchasedAppsRequest) returns (GetPurchasedAppsResponse);
+  rpc GetPurchasedAppInfos(GetPurchasedAppInfosRequest) returns (GetPurchasedAppInfosResponse);
 
   // `Gebura` `Normal`
-  rpc CreateAppPackage(CreateAppPackageRequest) returns (CreateAppPackageResponse);
+  rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);
   // `Gebura` `Normal`
-  rpc UpdateAppPackage(UpdateAppPackageRequest) returns (UpdateAppPackageResponse);
+  rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
   // `Gebura` `Normal`
-  rpc ListAppPackages(ListAppPackagesRequest) returns (ListAppPackagesResponse);
+  rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
   // `Gebura` `Normal`
-  rpc AssignAppPackage(AssignAppPackageRequest) returns (AssignAppPackageResponse);
+  rpc AssignApp(AssignAppRequest) returns (AssignAppResponse);
   // `Gebura` `Normal`
-  rpc UnAssignAppPackage(UnAssignAppPackageRequest) returns (UnAssignAppPackageResponse);
+  rpc UnAssignApp(UnAssignAppRequest) returns (UnAssignAppResponse);
+
   // `Gebura` `Sentinel`
   // Full update, changes are handled by librarian
-  rpc ReportAppPackages(ReportAppPackagesRequest) returns (ReportAppPackagesResponse);
+  rpc ReportAppBinaries(ReportAppBinariesRequest) returns (ReportAppBinariesResponse);
+  // `Gebura` `Normal`
+  rpc DownloadAppBinary(DownloadAppBinaryRequest) returns (DownloadAppBinaryResponse);
 
   // `Gebura` `Normal`
-  rpc DownloadAppPackageBinary(DownloadAppPackageBinaryRequest) returns (DownloadAppPackageBinaryResponse);
+  rpc CreateAppInst(CreateAppInstRequest) returns (CreateAppInstResponse);
+  // `Gebura` `Normal`
+  rpc UpdateAppInst(UpdateAppInstRequest) returns (UpdateAppInstResponse);
+  // `Gebura` `Normal`
+  rpc ListAppInsts(ListAppInstsRequest) returns (ListAppInstsResponse);
 
   // `Gebura` `Normal`
-  rpc AddAppPackageRunTime(AddAppPackageRunTimeRequest) returns (AddAppPackageRunTimeResponse);
+  rpc AddAppInstRunTime(AddAppInstRunTimeRequest) returns (AddAppInstRunTimeResponse);
   // `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
-  rpc SumAppPackageRunTime(SumAppPackageRunTimeRequest) returns (SumAppPackageRunTimeResponse);
+  rpc SumAppInstRunTime(SumAppInstRunTimeRequest) returns (SumAppInstRunTimeResponse);
 
   // `Gebura` `Normal`
-  rpc UploadGameSaveFile(UploadGameSaveFileRequest) returns (UploadGameSaveFileResponse);
+  rpc UploadAppSaveFile(UploadAppSaveFileRequest) returns (UploadAppSaveFileResponse);
   // `Gebura` `Normal`
-  rpc DownloadGameSaveFile(DownloadGameSaveFileRequest) returns (DownloadGameSaveFileResponse);
+  rpc DownloadAppSaveFile(DownloadAppSaveFileRequest) returns (DownloadAppSaveFileResponse);
   // `Gebura` `Normal`
-  rpc ListGameSaveFiles(ListGameSaveFilesRequest) returns (ListGameSaveFilesResponse);
+  rpc ListAppSaveFiles(ListAppSaveFilesRequest) returns (ListAppSaveFilesResponse);
   // `Gebura` `Normal`
-  rpc RemoveGameSaveFile(RemoveGameSaveFileRequest) returns (RemoveGameSaveFileResponse);
+  rpc RemoveAppSaveFile(RemoveAppSaveFileRequest) returns (RemoveAppSaveFileResponse);
   // `Gebura` `Normal`
-  rpc PinGameSaveFile(PinGameSaveFileRequest) returns (PinGameSaveFileResponse);
+  rpc PinAppSaveFile(PinAppSaveFileRequest) returns (PinAppSaveFileResponse);
   // `Gebura` `Normal`
-  rpc UnpinGameSaveFile(UnpinGameSaveFileRequest) returns (UnpinGameSaveFileResponse);
-
-  // `Gebura` `Admin`
-  rpc SetUserSaveFileCapacity(SetUserSaveFileCapacityRequest) returns (SetUserSaveFileCapacityResponse);
+  rpc UnpinAppSaveFile(UnpinAppSaveFileRequest) returns (UnpinAppSaveFileResponse);
   // `Gebura` `Normal`
-  rpc SetSaveFileRotation(SetSaveFileRotationRequest) returns (SetSaveFileRotationResponse);
+  rpc SetAppSaveFileCapacity(SetAppSaveFileCapacityRequest) returns (SetAppSaveFileCapacityResponse);
+  // `Gebura` `Normal`
+  rpc GetAppSaveFileCapacity(GetAppSaveFileCapacityRequest) returns (GetAppSaveFileCapacityResponse);
 
   // `Gebura` `Normal`
   rpc ListAppCategories(ListAppCategoriesRequest) returns (ListAppCategoriesResponse);

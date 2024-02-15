@@ -15,11 +15,11 @@ service LibrarianPorterService {
   rpc PullAccount(PullAccountRequest) returns (PullAccountResponse);
 
   // `Gebura`
-  rpc PullApp(PullAppRequest) returns (PullAppResponse);
+  rpc PullAppInfo(PullAppInfoRequest) returns (PullAppInfoResponse);
   // `Gebura`
-  rpc PullAccountAppRelation(PullAccountAppRelationRequest) returns (PullAccountAppRelationResponse);
+  rpc PullAccountAppInfoRelation(PullAccountAppInfoRelationRequest) returns (PullAccountAppInfoRelationResponse);
   // `Gebura`
-  rpc SearchApp(SearchAppRequest) returns (SearchAppResponse);
+  rpc SearchAppInfo(SearchAppInfoRequest) returns (SearchAppInfoResponse);
 
   // `Yesod`
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
@@ -67,29 +67,29 @@ message PullAccountResponse {
   librarian.v1.Account account = 1;
 }
 
-message PullAppRequest {
-  librarian.v1.AppID app_id = 1;
+message PullAppInfoRequest {
+  librarian.v1.AppInfoID app_info_id = 1;
 }
 
-message PullAppResponse {
-  librarian.v1.App app = 1;
+message PullAppInfoResponse {
+  librarian.v1.AppInfo app_info = 1;
 }
 
-message PullAccountAppRelationRequest {
+message PullAccountAppInfoRelationRequest {
   librarian.v1.AccountAppRelationType relation_type = 1;
   librarian.v1.AccountID account_id = 2;
 }
 
-message PullAccountAppRelationResponse {
-  repeated librarian.v1.App app_list = 1;
+message PullAccountAppInfoRelationResponse {
+  repeated librarian.v1.AppInfo app_infos = 1;
 }
 
-message SearchAppRequest {
+message SearchAppInfoRequest {
   string name = 1;
 }
 
-message SearchAppResponse {
-  repeated librarian.v1.App app_list = 1;
+message SearchAppInfoResponse {
+  repeated librarian.v1.AppInfo app_infos = 1;
 }
 
 message PullFeedRequest {
