@@ -2943,7 +2943,7 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.SyncAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appIdsList: jspb.Message.toObjectList(msg.getAppIdsList(),
+    appInfoIdsList: jspb.Message.toObjectList(msg.getAppInfoIdsList(),
     librarian_v1_common_pb.AppInfoID.toObject, includeInstance),
     waitData: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
@@ -2985,7 +2985,7 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.deserializeBinaryFromReader = fu
     case 1:
       var value = new librarian_v1_common_pb.AppInfoID;
       reader.readMessage(value,librarian_v1_common_pb.AppInfoID.deserializeBinaryFromReader);
-      msg.addAppIds(value);
+      msg.addAppInfoIds(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -3020,7 +3020,7 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.serializeBinary = func
  */
 proto.librarian.sephirah.v1.SyncAppInfosRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppIdsList();
+  f = message.getAppInfoIdsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3039,10 +3039,10 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.serializeBinaryToWriter = functi
 
 
 /**
- * repeated librarian.v1.AppInfoID app_ids = 1;
+ * repeated librarian.v1.AppInfoID app_info_ids = 1;
  * @return {!Array<!proto.librarian.v1.AppInfoID>}
  */
-proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.getAppIdsList = function() {
+proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.getAppInfoIdsList = function() {
   return /** @type{!Array<!proto.librarian.v1.AppInfoID>} */ (
     jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.AppInfoID, 1));
 };
@@ -3052,7 +3052,7 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.getAppIdsList = functi
  * @param {!Array<!proto.librarian.v1.AppInfoID>} value
  * @return {!proto.librarian.sephirah.v1.SyncAppInfosRequest} returns this
 */
-proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.setAppIdsList = function(value) {
+proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.setAppInfoIdsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -3062,7 +3062,7 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.setAppIdsList = functi
  * @param {number=} opt_index
  * @return {!proto.librarian.v1.AppInfoID}
  */
-proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.addAppIds = function(opt_value, opt_index) {
+proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.addAppInfoIds = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.AppInfoID, opt_index);
 };
 
@@ -3071,8 +3071,8 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.addAppIds = function(o
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.SyncAppInfosRequest} returns this
  */
-proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.clearAppIdsList = function() {
-  return this.setAppIdsList([]);
+proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.clearAppInfoIdsList = function() {
+  return this.setAppInfoIdsList([]);
 };
 
 
@@ -3151,7 +3151,7 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.SyncAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appsList: jspb.Message.toObjectList(msg.getAppsList(),
+    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -3192,7 +3192,7 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.deserializeBinaryFromReader = f
     case 1:
       var value = new librarian_v1_common_pb.AppInfo;
       reader.readMessage(value,librarian_v1_common_pb.AppInfo.deserializeBinaryFromReader);
-      msg.addApps(value);
+      msg.addAppInfos(value);
       break;
     default:
       reader.skipField();
@@ -3223,7 +3223,7 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.serializeBinary = fun
  */
 proto.librarian.sephirah.v1.SyncAppInfosResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppsList();
+  f = message.getAppInfosList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -3235,10 +3235,10 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.serializeBinaryToWriter = funct
 
 
 /**
- * repeated librarian.v1.AppInfo apps = 1;
+ * repeated librarian.v1.AppInfo app_infos = 1;
  * @return {!Array<!proto.librarian.v1.AppInfo>}
  */
-proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.getAppsList = function() {
+proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.getAppInfosList = function() {
   return /** @type{!Array<!proto.librarian.v1.AppInfo>} */ (
     jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.AppInfo, 1));
 };
@@ -3248,7 +3248,7 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.getAppsList = functio
  * @param {!Array<!proto.librarian.v1.AppInfo>} value
  * @return {!proto.librarian.sephirah.v1.SyncAppInfosResponse} returns this
 */
-proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.setAppsList = function(value) {
+proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.setAppInfosList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
@@ -3258,7 +3258,7 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.setAppsList = functio
  * @param {number=} opt_index
  * @return {!proto.librarian.v1.AppInfo}
  */
-proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.addApps = function(opt_value, opt_index) {
+proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.addAppInfos = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.AppInfo, opt_index);
 };
 
@@ -3267,8 +3267,8 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.addApps = function(op
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.SyncAppInfosResponse} returns this
  */
-proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.clearAppsList = function() {
-  return this.setAppsList([]);
+proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.clearAppInfosList = function() {
+  return this.setAppInfosList([]);
 };
 
 

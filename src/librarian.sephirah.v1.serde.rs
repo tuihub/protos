@@ -18614,15 +18614,15 @@ impl serde::Serialize for SyncAppInfosRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.app_ids.is_empty() {
+        if !self.app_info_ids.is_empty() {
             len += 1;
         }
         if self.wait_data.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppInfosRequest", len)?;
-        if !self.app_ids.is_empty() {
-            struct_ser.serialize_field("appIds", &self.app_ids)?;
+        if !self.app_info_ids.is_empty() {
+            struct_ser.serialize_field("appInfoIds", &self.app_info_ids)?;
         }
         if let Some(v) = self.wait_data.as_ref() {
             struct_ser.serialize_field("waitData", v)?;
@@ -18637,15 +18637,15 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_ids",
-            "appIds",
+            "app_info_ids",
+            "appInfoIds",
             "wait_data",
             "waitData",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppIds,
+            AppInfoIds,
             WaitData,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -18668,7 +18668,7 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appIds" | "app_ids" => Ok(GeneratedField::AppIds),
+                            "appInfoIds" | "app_info_ids" => Ok(GeneratedField::AppInfoIds),
                             "waitData" | "wait_data" => Ok(GeneratedField::WaitData),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -18689,15 +18689,15 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_ids__ = None;
+                let mut app_info_ids__ = None;
                 let mut wait_data__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppIds => {
-                            if app_ids__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appIds"));
+                        GeneratedField::AppInfoIds => {
+                            if app_info_ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoIds"));
                             }
-                            app_ids__ = Some(map.next_value()?);
+                            app_info_ids__ = Some(map.next_value()?);
                         }
                         GeneratedField::WaitData => {
                             if wait_data__.is_some() {
@@ -18708,7 +18708,7 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosRequest {
                     }
                 }
                 Ok(SyncAppInfosRequest {
-                    app_ids: app_ids__.unwrap_or_default(),
+                    app_info_ids: app_info_ids__.unwrap_or_default(),
                     wait_data: wait_data__,
                 })
             }
@@ -18724,12 +18724,12 @@ impl serde::Serialize for SyncAppInfosResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.apps.is_empty() {
+        if !self.app_infos.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppInfosResponse", len)?;
-        if !self.apps.is_empty() {
-            struct_ser.serialize_field("apps", &self.apps)?;
+        if !self.app_infos.is_empty() {
+            struct_ser.serialize_field("appInfos", &self.app_infos)?;
         }
         struct_ser.end()
     }
@@ -18741,12 +18741,13 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "apps",
+            "app_infos",
+            "appInfos",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Apps,
+            AppInfos,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -18768,7 +18769,7 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "apps" => Ok(GeneratedField::Apps),
+                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -18788,19 +18789,19 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut apps__ = None;
+                let mut app_infos__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Apps => {
-                            if apps__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("apps"));
+                        GeneratedField::AppInfos => {
+                            if app_infos__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            apps__ = Some(map.next_value()?);
+                            app_infos__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(SyncAppInfosResponse {
-                    apps: apps__.unwrap_or_default(),
+                    app_infos: app_infos__.unwrap_or_default(),
                 })
             }
         }
