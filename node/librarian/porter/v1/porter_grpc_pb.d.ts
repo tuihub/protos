@@ -10,9 +10,9 @@ interface ILibrarianPorterServiceService extends grpc.ServiceDefinition<grpc.Unt
   getPorterInformation: grpc.MethodDefinition<librarian_porter_v1_porter_pb.GetPorterInformationRequest, librarian_porter_v1_porter_pb.GetPorterInformationResponse>;
   enablePorter: grpc.MethodDefinition<librarian_porter_v1_porter_pb.EnablePorterRequest, librarian_porter_v1_porter_pb.EnablePorterResponse>;
   pullAccount: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullAccountRequest, librarian_porter_v1_porter_pb.PullAccountResponse>;
-  pullApp: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullAppRequest, librarian_porter_v1_porter_pb.PullAppResponse>;
-  pullAccountAppRelation: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullAccountAppRelationRequest, librarian_porter_v1_porter_pb.PullAccountAppRelationResponse>;
-  searchApp: grpc.MethodDefinition<librarian_porter_v1_porter_pb.SearchAppRequest, librarian_porter_v1_porter_pb.SearchAppResponse>;
+  pullAppInfo: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullAppInfoRequest, librarian_porter_v1_porter_pb.PullAppInfoResponse>;
+  pullAccountAppInfoRelation: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>;
+  searchAppInfo: grpc.MethodDefinition<librarian_porter_v1_porter_pb.SearchAppInfoRequest, librarian_porter_v1_porter_pb.SearchAppInfoResponse>;
   pullFeed: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
   pushFeedItems: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
 }
@@ -23,9 +23,9 @@ export interface ILibrarianPorterServiceServer extends grpc.UntypedServiceImplem
   getPorterInformation: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.GetPorterInformationRequest, librarian_porter_v1_porter_pb.GetPorterInformationResponse>;
   enablePorter: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.EnablePorterRequest, librarian_porter_v1_porter_pb.EnablePorterResponse>;
   pullAccount: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullAccountRequest, librarian_porter_v1_porter_pb.PullAccountResponse>;
-  pullApp: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullAppRequest, librarian_porter_v1_porter_pb.PullAppResponse>;
-  pullAccountAppRelation: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullAccountAppRelationRequest, librarian_porter_v1_porter_pb.PullAccountAppRelationResponse>;
-  searchApp: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.SearchAppRequest, librarian_porter_v1_porter_pb.SearchAppResponse>;
+  pullAppInfo: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullAppInfoRequest, librarian_porter_v1_porter_pb.PullAppInfoResponse>;
+  pullAccountAppInfoRelation: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>;
+  searchAppInfo: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.SearchAppInfoRequest, librarian_porter_v1_porter_pb.SearchAppInfoResponse>;
   pullFeed: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
   pushFeedItems: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
 }
@@ -41,15 +41,15 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   pullAccount(argument: librarian_porter_v1_porter_pb.PullAccountRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountResponse>): grpc.ClientUnaryCall;
   pullAccount(argument: librarian_porter_v1_porter_pb.PullAccountRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountResponse>): grpc.ClientUnaryCall;
   pullAccount(argument: librarian_porter_v1_porter_pb.PullAccountRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountResponse>): grpc.ClientUnaryCall;
-  pullApp(argument: librarian_porter_v1_porter_pb.PullAppRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAppResponse>): grpc.ClientUnaryCall;
-  pullApp(argument: librarian_porter_v1_porter_pb.PullAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAppResponse>): grpc.ClientUnaryCall;
-  pullApp(argument: librarian_porter_v1_porter_pb.PullAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAppResponse>): grpc.ClientUnaryCall;
-  pullAccountAppRelation(argument: librarian_porter_v1_porter_pb.PullAccountAppRelationRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountAppRelationResponse>): grpc.ClientUnaryCall;
-  pullAccountAppRelation(argument: librarian_porter_v1_porter_pb.PullAccountAppRelationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountAppRelationResponse>): grpc.ClientUnaryCall;
-  pullAccountAppRelation(argument: librarian_porter_v1_porter_pb.PullAccountAppRelationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountAppRelationResponse>): grpc.ClientUnaryCall;
-  searchApp(argument: librarian_porter_v1_porter_pb.SearchAppRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.SearchAppResponse>): grpc.ClientUnaryCall;
-  searchApp(argument: librarian_porter_v1_porter_pb.SearchAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.SearchAppResponse>): grpc.ClientUnaryCall;
-  searchApp(argument: librarian_porter_v1_porter_pb.SearchAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.SearchAppResponse>): grpc.ClientUnaryCall;
+  pullAppInfo(argument: librarian_porter_v1_porter_pb.PullAppInfoRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAppInfoResponse>): grpc.ClientUnaryCall;
+  pullAppInfo(argument: librarian_porter_v1_porter_pb.PullAppInfoRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAppInfoResponse>): grpc.ClientUnaryCall;
+  pullAppInfo(argument: librarian_porter_v1_porter_pb.PullAppInfoRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAppInfoResponse>): grpc.ClientUnaryCall;
+  pullAccountAppInfoRelation(argument: librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>): grpc.ClientUnaryCall;
+  pullAccountAppInfoRelation(argument: librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>): grpc.ClientUnaryCall;
+  pullAccountAppInfoRelation(argument: librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>): grpc.ClientUnaryCall;
+  searchAppInfo(argument: librarian_porter_v1_porter_pb.SearchAppInfoRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
+  searchAppInfo(argument: librarian_porter_v1_porter_pb.SearchAppInfoRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
+  searchAppInfo(argument: librarian_porter_v1_porter_pb.SearchAppInfoRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;

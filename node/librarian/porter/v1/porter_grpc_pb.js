@@ -49,26 +49,26 @@ function deserialize_librarian_porter_v1_GetPorterInformationResponse(buffer_arg
   return librarian_porter_v1_porter_pb.GetPorterInformationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_PullAccountAppRelationRequest(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAccountAppRelationRequest)) {
-    throw new Error('Expected argument of type librarian.porter.v1.PullAccountAppRelationRequest');
+function serialize_librarian_porter_v1_PullAccountAppInfoRelationRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PullAccountAppInfoRelationRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_PullAccountAppRelationRequest(buffer_arg) {
-  return librarian_porter_v1_porter_pb.PullAccountAppRelationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_PullAccountAppInfoRelationRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_PullAccountAppRelationResponse(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAccountAppRelationResponse)) {
-    throw new Error('Expected argument of type librarian.porter.v1.PullAccountAppRelationResponse');
+function serialize_librarian_porter_v1_PullAccountAppInfoRelationResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PullAccountAppInfoRelationResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_PullAccountAppRelationResponse(buffer_arg) {
-  return librarian_porter_v1_porter_pb.PullAccountAppRelationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_PullAccountAppInfoRelationResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_porter_v1_PullAccountRequest(arg) {
@@ -93,26 +93,26 @@ function deserialize_librarian_porter_v1_PullAccountResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.PullAccountResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_PullAppRequest(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAppRequest)) {
-    throw new Error('Expected argument of type librarian.porter.v1.PullAppRequest');
+function serialize_librarian_porter_v1_PullAppInfoRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAppInfoRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PullAppInfoRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_PullAppRequest(buffer_arg) {
-  return librarian_porter_v1_porter_pb.PullAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_PullAppInfoRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PullAppInfoRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_PullAppResponse(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAppResponse)) {
-    throw new Error('Expected argument of type librarian.porter.v1.PullAppResponse');
+function serialize_librarian_porter_v1_PullAppInfoResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.PullAppInfoResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.PullAppInfoResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_PullAppResponse(buffer_arg) {
-  return librarian_porter_v1_porter_pb.PullAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_PullAppInfoResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.PullAppInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_porter_v1_PullFeedRequest(arg) {
@@ -159,26 +159,26 @@ function deserialize_librarian_porter_v1_PushFeedItemsResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.PushFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_SearchAppRequest(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.SearchAppRequest)) {
-    throw new Error('Expected argument of type librarian.porter.v1.SearchAppRequest');
+function serialize_librarian_porter_v1_SearchAppInfoRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.SearchAppInfoRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.SearchAppInfoRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_SearchAppRequest(buffer_arg) {
-  return librarian_porter_v1_porter_pb.SearchAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_SearchAppInfoRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.SearchAppInfoRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_porter_v1_SearchAppResponse(arg) {
-  if (!(arg instanceof librarian_porter_v1_porter_pb.SearchAppResponse)) {
-    throw new Error('Expected argument of type librarian.porter.v1.SearchAppResponse');
+function serialize_librarian_porter_v1_SearchAppInfoResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.SearchAppInfoResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.SearchAppInfoResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_porter_v1_SearchAppResponse(buffer_arg) {
-  return librarian_porter_v1_porter_pb.SearchAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_porter_v1_SearchAppInfoResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.SearchAppInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -218,40 +218,40 @@ pullAccount: {
     responseDeserialize: deserialize_librarian_porter_v1_PullAccountResponse,
   },
   // `Gebura`
-pullApp: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PullApp',
+pullAppInfo: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PullAppInfo',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PullAppRequest,
-    responseType: librarian_porter_v1_porter_pb.PullAppResponse,
-    requestSerialize: serialize_librarian_porter_v1_PullAppRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PullAppRequest,
-    responseSerialize: serialize_librarian_porter_v1_PullAppResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PullAppResponse,
+    requestType: librarian_porter_v1_porter_pb.PullAppInfoRequest,
+    responseType: librarian_porter_v1_porter_pb.PullAppInfoResponse,
+    requestSerialize: serialize_librarian_porter_v1_PullAppInfoRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PullAppInfoRequest,
+    responseSerialize: serialize_librarian_porter_v1_PullAppInfoResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PullAppInfoResponse,
   },
   // `Gebura`
-pullAccountAppRelation: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation',
+pullAccountAppInfoRelation: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PullAccountAppRelationRequest,
-    responseType: librarian_porter_v1_porter_pb.PullAccountAppRelationResponse,
-    requestSerialize: serialize_librarian_porter_v1_PullAccountAppRelationRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationRequest,
-    responseSerialize: serialize_librarian_porter_v1_PullAccountAppRelationResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PullAccountAppRelationResponse,
+    requestType: librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest,
+    responseType: librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse,
+    requestSerialize: serialize_librarian_porter_v1_PullAccountAppInfoRelationRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PullAccountAppInfoRelationRequest,
+    responseSerialize: serialize_librarian_porter_v1_PullAccountAppInfoRelationResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PullAccountAppInfoRelationResponse,
   },
   // `Gebura`
-searchApp: {
-    path: '/librarian.porter.v1.LibrarianPorterService/SearchApp',
+searchAppInfo: {
+    path: '/librarian.porter.v1.LibrarianPorterService/SearchAppInfo',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.SearchAppRequest,
-    responseType: librarian_porter_v1_porter_pb.SearchAppResponse,
-    requestSerialize: serialize_librarian_porter_v1_SearchAppRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_SearchAppRequest,
-    responseSerialize: serialize_librarian_porter_v1_SearchAppResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_SearchAppResponse,
+    requestType: librarian_porter_v1_porter_pb.SearchAppInfoRequest,
+    responseType: librarian_porter_v1_porter_pb.SearchAppInfoResponse,
+    requestSerialize: serialize_librarian_porter_v1_SearchAppInfoRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_SearchAppInfoRequest,
+    responseSerialize: serialize_librarian_porter_v1_SearchAppInfoResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_SearchAppInfoResponse,
   },
   // `Yesod`
 pullFeed: {

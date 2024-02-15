@@ -33,18 +33,18 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       '/librarian.porter.v1.LibrarianPorterService/PullAccount',
       ($0.PullAccountRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.PullAccountResponse.fromBuffer(value));
-  static final _$pullApp = $grpc.ClientMethod<$0.PullAppRequest, $0.PullAppResponse>(
-      '/librarian.porter.v1.LibrarianPorterService/PullApp',
-      ($0.PullAppRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.PullAppResponse.fromBuffer(value));
-  static final _$pullAccountAppRelation = $grpc.ClientMethod<$0.PullAccountAppRelationRequest, $0.PullAccountAppRelationResponse>(
-      '/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation',
-      ($0.PullAccountAppRelationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.PullAccountAppRelationResponse.fromBuffer(value));
-  static final _$searchApp = $grpc.ClientMethod<$0.SearchAppRequest, $0.SearchAppResponse>(
-      '/librarian.porter.v1.LibrarianPorterService/SearchApp',
-      ($0.SearchAppRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.SearchAppResponse.fromBuffer(value));
+  static final _$pullAppInfo = $grpc.ClientMethod<$0.PullAppInfoRequest, $0.PullAppInfoResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/PullAppInfo',
+      ($0.PullAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.PullAppInfoResponse.fromBuffer(value));
+  static final _$pullAccountAppInfoRelation = $grpc.ClientMethod<$0.PullAccountAppInfoRelationRequest, $0.PullAccountAppInfoRelationResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation',
+      ($0.PullAccountAppInfoRelationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.PullAccountAppInfoRelationResponse.fromBuffer(value));
+  static final _$searchAppInfo = $grpc.ClientMethod<$0.SearchAppInfoRequest, $0.SearchAppInfoResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/SearchAppInfo',
+      ($0.SearchAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.SearchAppInfoResponse.fromBuffer(value));
   static final _$pullFeed = $grpc.ClientMethod<$0.PullFeedRequest, $0.PullFeedResponse>(
       '/librarian.porter.v1.LibrarianPorterService/PullFeed',
       ($0.PullFeedRequest value) => value.writeToBuffer(),
@@ -72,16 +72,16 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createUnaryCall(_$pullAccount, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.PullAppResponse> pullApp($0.PullAppRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pullApp, request, options: options);
+  $grpc.ResponseFuture<$0.PullAppInfoResponse> pullAppInfo($0.PullAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pullAppInfo, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.PullAccountAppRelationResponse> pullAccountAppRelation($0.PullAccountAppRelationRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pullAccountAppRelation, request, options: options);
+  $grpc.ResponseFuture<$0.PullAccountAppInfoRelationResponse> pullAccountAppInfoRelation($0.PullAccountAppInfoRelationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pullAccountAppInfoRelation, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.SearchAppResponse> searchApp($0.SearchAppRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$searchApp, request, options: options);
+  $grpc.ResponseFuture<$0.SearchAppInfoResponse> searchAppInfo($0.SearchAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchAppInfo, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PullFeedResponse> pullFeed($0.PullFeedRequest request, {$grpc.CallOptions? options}) {
@@ -119,27 +119,27 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PullAccountRequest.fromBuffer(value),
         ($0.PullAccountResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PullAppRequest, $0.PullAppResponse>(
-        'PullApp',
-        pullApp_Pre,
+    $addMethod($grpc.ServiceMethod<$0.PullAppInfoRequest, $0.PullAppInfoResponse>(
+        'PullAppInfo',
+        pullAppInfo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.PullAppRequest.fromBuffer(value),
-        ($0.PullAppResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PullAccountAppRelationRequest, $0.PullAccountAppRelationResponse>(
-        'PullAccountAppRelation',
-        pullAccountAppRelation_Pre,
+        ($core.List<$core.int> value) => $0.PullAppInfoRequest.fromBuffer(value),
+        ($0.PullAppInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PullAccountAppInfoRelationRequest, $0.PullAccountAppInfoRelationResponse>(
+        'PullAccountAppInfoRelation',
+        pullAccountAppInfoRelation_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.PullAccountAppRelationRequest.fromBuffer(value),
-        ($0.PullAccountAppRelationResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.SearchAppRequest, $0.SearchAppResponse>(
-        'SearchApp',
-        searchApp_Pre,
+        ($core.List<$core.int> value) => $0.PullAccountAppInfoRelationRequest.fromBuffer(value),
+        ($0.PullAccountAppInfoRelationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SearchAppInfoRequest, $0.SearchAppInfoResponse>(
+        'SearchAppInfo',
+        searchAppInfo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.SearchAppRequest.fromBuffer(value),
-        ($0.SearchAppResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.SearchAppInfoRequest.fromBuffer(value),
+        ($0.SearchAppInfoResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PullFeedRequest, $0.PullFeedResponse>(
         'PullFeed',
         pullFeed_Pre,
@@ -168,16 +168,16 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return pullAccount(call, await request);
   }
 
-  $async.Future<$0.PullAppResponse> pullApp_Pre($grpc.ServiceCall call, $async.Future<$0.PullAppRequest> request) async {
-    return pullApp(call, await request);
+  $async.Future<$0.PullAppInfoResponse> pullAppInfo_Pre($grpc.ServiceCall call, $async.Future<$0.PullAppInfoRequest> request) async {
+    return pullAppInfo(call, await request);
   }
 
-  $async.Future<$0.PullAccountAppRelationResponse> pullAccountAppRelation_Pre($grpc.ServiceCall call, $async.Future<$0.PullAccountAppRelationRequest> request) async {
-    return pullAccountAppRelation(call, await request);
+  $async.Future<$0.PullAccountAppInfoRelationResponse> pullAccountAppInfoRelation_Pre($grpc.ServiceCall call, $async.Future<$0.PullAccountAppInfoRelationRequest> request) async {
+    return pullAccountAppInfoRelation(call, await request);
   }
 
-  $async.Future<$0.SearchAppResponse> searchApp_Pre($grpc.ServiceCall call, $async.Future<$0.SearchAppRequest> request) async {
-    return searchApp(call, await request);
+  $async.Future<$0.SearchAppInfoResponse> searchAppInfo_Pre($grpc.ServiceCall call, $async.Future<$0.SearchAppInfoRequest> request) async {
+    return searchAppInfo(call, await request);
   }
 
   $async.Future<$0.PullFeedResponse> pullFeed_Pre($grpc.ServiceCall call, $async.Future<$0.PullFeedRequest> request) async {
@@ -191,9 +191,9 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation($grpc.ServiceCall call, $0.GetPorterInformationRequest request);
   $async.Future<$0.EnablePorterResponse> enablePorter($grpc.ServiceCall call, $0.EnablePorterRequest request);
   $async.Future<$0.PullAccountResponse> pullAccount($grpc.ServiceCall call, $0.PullAccountRequest request);
-  $async.Future<$0.PullAppResponse> pullApp($grpc.ServiceCall call, $0.PullAppRequest request);
-  $async.Future<$0.PullAccountAppRelationResponse> pullAccountAppRelation($grpc.ServiceCall call, $0.PullAccountAppRelationRequest request);
-  $async.Future<$0.SearchAppResponse> searchApp($grpc.ServiceCall call, $0.SearchAppRequest request);
+  $async.Future<$0.PullAppInfoResponse> pullAppInfo($grpc.ServiceCall call, $0.PullAppInfoRequest request);
+  $async.Future<$0.PullAccountAppInfoRelationResponse> pullAccountAppInfoRelation($grpc.ServiceCall call, $0.PullAccountAppInfoRelationRequest request);
+  $async.Future<$0.SearchAppInfoResponse> searchAppInfo($grpc.ServiceCall call, $0.SearchAppInfoRequest request);
   $async.Future<$0.PullFeedResponse> pullFeed($grpc.ServiceCall call, $0.PullFeedRequest request);
   $async.Future<$0.PushFeedItemsResponse> pushFeedItems($grpc.ServiceCall call, $0.PushFeedItemsRequest request);
 }

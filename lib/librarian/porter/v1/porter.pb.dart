@@ -477,22 +477,22 @@ class PullAccountResponse extends $pb.GeneratedMessage {
   $4.Account ensureAccount() => $_ensure(0);
 }
 
-class PullAppRequest extends $pb.GeneratedMessage {
-  factory PullAppRequest({
-    $4.AppID? appId,
+class PullAppInfoRequest extends $pb.GeneratedMessage {
+  factory PullAppInfoRequest({
+    $4.AppInfoID? appInfoId,
   }) {
     final $result = create();
-    if (appId != null) {
-      $result.appId = appId;
+    if (appInfoId != null) {
+      $result.appInfoId = appInfoId;
     }
     return $result;
   }
-  PullAppRequest._() : super();
-  factory PullAppRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PullAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PullAppInfoRequest._() : super();
+  factory PullAppInfoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PullAppInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$4.AppID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $4.AppID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOM<$4.AppInfoID>(1, _omitFieldNames ? '' : 'appInfoId', subBuilder: $4.AppInfoID.create)
     ..hasRequiredFields = false
   ;
 
@@ -500,51 +500,51 @@ class PullAppRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PullAppRequest clone() => PullAppRequest()..mergeFromMessage(this);
+  PullAppInfoRequest clone() => PullAppInfoRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PullAppRequest copyWith(void Function(PullAppRequest) updates) => super.copyWith((message) => updates(message as PullAppRequest)) as PullAppRequest;
+  PullAppInfoRequest copyWith(void Function(PullAppInfoRequest) updates) => super.copyWith((message) => updates(message as PullAppInfoRequest)) as PullAppInfoRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PullAppRequest create() => PullAppRequest._();
-  PullAppRequest createEmptyInstance() => create();
-  static $pb.PbList<PullAppRequest> createRepeated() => $pb.PbList<PullAppRequest>();
+  static PullAppInfoRequest create() => PullAppInfoRequest._();
+  PullAppInfoRequest createEmptyInstance() => create();
+  static $pb.PbList<PullAppInfoRequest> createRepeated() => $pb.PbList<PullAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
-  static PullAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAppRequest>(create);
-  static PullAppRequest? _defaultInstance;
+  static PullAppInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAppInfoRequest>(create);
+  static PullAppInfoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.AppID get appId => $_getN(0);
+  $4.AppInfoID get appInfoId => $_getN(0);
   @$pb.TagNumber(1)
-  set appId($4.AppID v) { setField(1, v); }
+  set appInfoId($4.AppInfoID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasAppId() => $_has(0);
+  $core.bool hasAppInfoId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppId() => clearField(1);
+  void clearAppInfoId() => clearField(1);
   @$pb.TagNumber(1)
-  $4.AppID ensureAppId() => $_ensure(0);
+  $4.AppInfoID ensureAppInfoId() => $_ensure(0);
 }
 
-class PullAppResponse extends $pb.GeneratedMessage {
-  factory PullAppResponse({
-    $4.App? app,
+class PullAppInfoResponse extends $pb.GeneratedMessage {
+  factory PullAppInfoResponse({
+    $4.AppInfo? appInfo,
   }) {
     final $result = create();
-    if (app != null) {
-      $result.app = app;
+    if (appInfo != null) {
+      $result.appInfo = appInfo;
     }
     return $result;
   }
-  PullAppResponse._() : super();
-  factory PullAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PullAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PullAppInfoResponse._() : super();
+  factory PullAppInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PullAppInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$4.App>(1, _omitFieldNames ? '' : 'app', subBuilder: $4.App.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOM<$4.AppInfo>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: $4.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -552,37 +552,37 @@ class PullAppResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PullAppResponse clone() => PullAppResponse()..mergeFromMessage(this);
+  PullAppInfoResponse clone() => PullAppInfoResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PullAppResponse copyWith(void Function(PullAppResponse) updates) => super.copyWith((message) => updates(message as PullAppResponse)) as PullAppResponse;
+  PullAppInfoResponse copyWith(void Function(PullAppInfoResponse) updates) => super.copyWith((message) => updates(message as PullAppInfoResponse)) as PullAppInfoResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PullAppResponse create() => PullAppResponse._();
-  PullAppResponse createEmptyInstance() => create();
-  static $pb.PbList<PullAppResponse> createRepeated() => $pb.PbList<PullAppResponse>();
+  static PullAppInfoResponse create() => PullAppInfoResponse._();
+  PullAppInfoResponse createEmptyInstance() => create();
+  static $pb.PbList<PullAppInfoResponse> createRepeated() => $pb.PbList<PullAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
-  static PullAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAppResponse>(create);
-  static PullAppResponse? _defaultInstance;
+  static PullAppInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAppInfoResponse>(create);
+  static PullAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.App get app => $_getN(0);
+  $4.AppInfo get appInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set app($4.App v) { setField(1, v); }
+  set appInfo($4.AppInfo v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasApp() => $_has(0);
+  $core.bool hasAppInfo() => $_has(0);
   @$pb.TagNumber(1)
-  void clearApp() => clearField(1);
+  void clearAppInfo() => clearField(1);
   @$pb.TagNumber(1)
-  $4.App ensureApp() => $_ensure(0);
+  $4.AppInfo ensureAppInfo() => $_ensure(0);
 }
 
-class PullAccountAppRelationRequest extends $pb.GeneratedMessage {
-  factory PullAccountAppRelationRequest({
+class PullAccountAppInfoRelationRequest extends $pb.GeneratedMessage {
+  factory PullAccountAppInfoRelationRequest({
     $4.AccountAppRelationType? relationType,
     $4.AccountID? accountId,
   }) {
@@ -595,11 +595,11 @@ class PullAccountAppRelationRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  PullAccountAppRelationRequest._() : super();
-  factory PullAccountAppRelationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PullAccountAppRelationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PullAccountAppInfoRelationRequest._() : super();
+  factory PullAccountAppInfoRelationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PullAccountAppInfoRelationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountAppRelationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountAppInfoRelationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..e<$4.AccountAppRelationType>(1, _omitFieldNames ? '' : 'relationType', $pb.PbFieldType.OE, defaultOrMaker: $4.AccountAppRelationType.ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED, valueOf: $4.AccountAppRelationType.valueOf, enumValues: $4.AccountAppRelationType.values)
     ..aOM<$4.AccountID>(2, _omitFieldNames ? '' : 'accountId', subBuilder: $4.AccountID.create)
     ..hasRequiredFields = false
@@ -609,22 +609,22 @@ class PullAccountAppRelationRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PullAccountAppRelationRequest clone() => PullAccountAppRelationRequest()..mergeFromMessage(this);
+  PullAccountAppInfoRelationRequest clone() => PullAccountAppInfoRelationRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PullAccountAppRelationRequest copyWith(void Function(PullAccountAppRelationRequest) updates) => super.copyWith((message) => updates(message as PullAccountAppRelationRequest)) as PullAccountAppRelationRequest;
+  PullAccountAppInfoRelationRequest copyWith(void Function(PullAccountAppInfoRelationRequest) updates) => super.copyWith((message) => updates(message as PullAccountAppInfoRelationRequest)) as PullAccountAppInfoRelationRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PullAccountAppRelationRequest create() => PullAccountAppRelationRequest._();
-  PullAccountAppRelationRequest createEmptyInstance() => create();
-  static $pb.PbList<PullAccountAppRelationRequest> createRepeated() => $pb.PbList<PullAccountAppRelationRequest>();
+  static PullAccountAppInfoRelationRequest create() => PullAccountAppInfoRelationRequest._();
+  PullAccountAppInfoRelationRequest createEmptyInstance() => create();
+  static $pb.PbList<PullAccountAppInfoRelationRequest> createRepeated() => $pb.PbList<PullAccountAppInfoRelationRequest>();
   @$core.pragma('dart2js:noInline')
-  static PullAccountAppRelationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAccountAppRelationRequest>(create);
-  static PullAccountAppRelationRequest? _defaultInstance;
+  static PullAccountAppInfoRelationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAccountAppInfoRelationRequest>(create);
+  static PullAccountAppInfoRelationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.AccountAppRelationType get relationType => $_getN(0);
@@ -647,22 +647,22 @@ class PullAccountAppRelationRequest extends $pb.GeneratedMessage {
   $4.AccountID ensureAccountId() => $_ensure(1);
 }
 
-class PullAccountAppRelationResponse extends $pb.GeneratedMessage {
-  factory PullAccountAppRelationResponse({
-    $core.Iterable<$4.App>? appList,
+class PullAccountAppInfoRelationResponse extends $pb.GeneratedMessage {
+  factory PullAccountAppInfoRelationResponse({
+    $core.Iterable<$4.AppInfo>? appInfos,
   }) {
     final $result = create();
-    if (appList != null) {
-      $result.appList.addAll(appList);
+    if (appInfos != null) {
+      $result.appInfos.addAll(appInfos);
     }
     return $result;
   }
-  PullAccountAppRelationResponse._() : super();
-  factory PullAccountAppRelationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PullAccountAppRelationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PullAccountAppInfoRelationResponse._() : super();
+  factory PullAccountAppInfoRelationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PullAccountAppInfoRelationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountAppRelationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$4.App>(1, _omitFieldNames ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $4.App.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountAppInfoRelationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..pc<$4.AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $4.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -670,29 +670,29 @@ class PullAccountAppRelationResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PullAccountAppRelationResponse clone() => PullAccountAppRelationResponse()..mergeFromMessage(this);
+  PullAccountAppInfoRelationResponse clone() => PullAccountAppInfoRelationResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PullAccountAppRelationResponse copyWith(void Function(PullAccountAppRelationResponse) updates) => super.copyWith((message) => updates(message as PullAccountAppRelationResponse)) as PullAccountAppRelationResponse;
+  PullAccountAppInfoRelationResponse copyWith(void Function(PullAccountAppInfoRelationResponse) updates) => super.copyWith((message) => updates(message as PullAccountAppInfoRelationResponse)) as PullAccountAppInfoRelationResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PullAccountAppRelationResponse create() => PullAccountAppRelationResponse._();
-  PullAccountAppRelationResponse createEmptyInstance() => create();
-  static $pb.PbList<PullAccountAppRelationResponse> createRepeated() => $pb.PbList<PullAccountAppRelationResponse>();
+  static PullAccountAppInfoRelationResponse create() => PullAccountAppInfoRelationResponse._();
+  PullAccountAppInfoRelationResponse createEmptyInstance() => create();
+  static $pb.PbList<PullAccountAppInfoRelationResponse> createRepeated() => $pb.PbList<PullAccountAppInfoRelationResponse>();
   @$core.pragma('dart2js:noInline')
-  static PullAccountAppRelationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAccountAppRelationResponse>(create);
-  static PullAccountAppRelationResponse? _defaultInstance;
+  static PullAccountAppInfoRelationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullAccountAppInfoRelationResponse>(create);
+  static PullAccountAppInfoRelationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.App> get appList => $_getList(0);
+  $core.List<$4.AppInfo> get appInfos => $_getList(0);
 }
 
-class SearchAppRequest extends $pb.GeneratedMessage {
-  factory SearchAppRequest({
+class SearchAppInfoRequest extends $pb.GeneratedMessage {
+  factory SearchAppInfoRequest({
     $core.String? name,
   }) {
     final $result = create();
@@ -701,11 +701,11 @@ class SearchAppRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  SearchAppRequest._() : super();
-  factory SearchAppRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SearchAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SearchAppInfoRequest._() : super();
+  factory SearchAppInfoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchAppInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
@@ -714,22 +714,22 @@ class SearchAppRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SearchAppRequest clone() => SearchAppRequest()..mergeFromMessage(this);
+  SearchAppInfoRequest clone() => SearchAppInfoRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SearchAppRequest copyWith(void Function(SearchAppRequest) updates) => super.copyWith((message) => updates(message as SearchAppRequest)) as SearchAppRequest;
+  SearchAppInfoRequest copyWith(void Function(SearchAppInfoRequest) updates) => super.copyWith((message) => updates(message as SearchAppInfoRequest)) as SearchAppInfoRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SearchAppRequest create() => SearchAppRequest._();
-  SearchAppRequest createEmptyInstance() => create();
-  static $pb.PbList<SearchAppRequest> createRepeated() => $pb.PbList<SearchAppRequest>();
+  static SearchAppInfoRequest create() => SearchAppInfoRequest._();
+  SearchAppInfoRequest createEmptyInstance() => create();
+  static $pb.PbList<SearchAppInfoRequest> createRepeated() => $pb.PbList<SearchAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
-  static SearchAppRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppRequest>(create);
-  static SearchAppRequest? _defaultInstance;
+  static SearchAppInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppInfoRequest>(create);
+  static SearchAppInfoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -741,22 +741,22 @@ class SearchAppRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 }
 
-class SearchAppResponse extends $pb.GeneratedMessage {
-  factory SearchAppResponse({
-    $core.Iterable<$4.App>? appList,
+class SearchAppInfoResponse extends $pb.GeneratedMessage {
+  factory SearchAppInfoResponse({
+    $core.Iterable<$4.AppInfo>? appInfos,
   }) {
     final $result = create();
-    if (appList != null) {
-      $result.appList.addAll(appList);
+    if (appInfos != null) {
+      $result.appInfos.addAll(appInfos);
     }
     return $result;
   }
-  SearchAppResponse._() : super();
-  factory SearchAppResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SearchAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SearchAppInfoResponse._() : super();
+  factory SearchAppInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchAppInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$4.App>(1, _omitFieldNames ? '' : 'appList', $pb.PbFieldType.PM, subBuilder: $4.App.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..pc<$4.AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $4.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -764,25 +764,25 @@ class SearchAppResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SearchAppResponse clone() => SearchAppResponse()..mergeFromMessage(this);
+  SearchAppInfoResponse clone() => SearchAppInfoResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SearchAppResponse copyWith(void Function(SearchAppResponse) updates) => super.copyWith((message) => updates(message as SearchAppResponse)) as SearchAppResponse;
+  SearchAppInfoResponse copyWith(void Function(SearchAppInfoResponse) updates) => super.copyWith((message) => updates(message as SearchAppInfoResponse)) as SearchAppInfoResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SearchAppResponse create() => SearchAppResponse._();
-  SearchAppResponse createEmptyInstance() => create();
-  static $pb.PbList<SearchAppResponse> createRepeated() => $pb.PbList<SearchAppResponse>();
+  static SearchAppInfoResponse create() => SearchAppInfoResponse._();
+  SearchAppInfoResponse createEmptyInstance() => create();
+  static $pb.PbList<SearchAppInfoResponse> createRepeated() => $pb.PbList<SearchAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
-  static SearchAppResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppResponse>(create);
-  static SearchAppResponse? _defaultInstance;
+  static SearchAppInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppInfoResponse>(create);
+  static SearchAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.App> get appList => $_getList(0);
+  $core.List<$4.AppInfo> get appInfos => $_getList(0);
 }
 
 class PullFeedRequest extends $pb.GeneratedMessage {

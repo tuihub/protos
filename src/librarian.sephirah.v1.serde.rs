@@ -1,5 +1,5 @@
 // @generated
-impl serde::Serialize for AddAppPackageRunTimeRequest {
+impl serde::Serialize for AddAppInstRunTimeRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -7,15 +7,15 @@ impl serde::Serialize for AddAppPackageRunTimeRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_package_id.is_some() {
+        if self.app_inst_id.is_some() {
             len += 1;
         }
         if self.time_range.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeRequest", len)?;
-        if let Some(v) = self.app_package_id.as_ref() {
-            struct_ser.serialize_field("appPackageId", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AddAppInstRunTimeRequest", len)?;
+        if let Some(v) = self.app_inst_id.as_ref() {
+            struct_ser.serialize_field("appInstId", v)?;
         }
         if let Some(v) = self.time_range.as_ref() {
             struct_ser.serialize_field("timeRange", v)?;
@@ -23,22 +23,22 @@ impl serde::Serialize for AddAppPackageRunTimeRequest {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeRequest {
+impl<'de> serde::Deserialize<'de> for AddAppInstRunTimeRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package_id",
-            "appPackageId",
+            "app_inst_id",
+            "appInstId",
             "time_range",
             "timeRange",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackageId,
+            AppInstId,
             TimeRange,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -61,7 +61,7 @@ impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
+                            "appInstId" | "app_inst_id" => Ok(GeneratedField::AppInstId),
                             "timeRange" | "time_range" => Ok(GeneratedField::TimeRange),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -72,25 +72,25 @@ impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = AddAppPackageRunTimeRequest;
+            type Value = AddAppInstRunTimeRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.AddAppPackageRunTimeRequest")
+                formatter.write_str("struct librarian.sephirah.v1.AddAppInstRunTimeRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<AddAppPackageRunTimeRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AddAppInstRunTimeRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package_id__ = None;
+                let mut app_inst_id__ = None;
                 let mut time_range__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackageId => {
-                            if app_package_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageId"));
+                        GeneratedField::AppInstId => {
+                            if app_inst_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInstId"));
                             }
-                            app_package_id__ = map.next_value()?;
+                            app_inst_id__ = map.next_value()?;
                         }
                         GeneratedField::TimeRange => {
                             if time_range__.is_some() {
@@ -100,16 +100,16 @@ impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeRequest {
                         }
                     }
                 }
-                Ok(AddAppPackageRunTimeRequest {
-                    app_package_id: app_package_id__,
+                Ok(AddAppInstRunTimeRequest {
+                    app_inst_id: app_inst_id__,
                     time_range: time_range__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.AddAppInstRunTimeRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for AddAppPackageRunTimeResponse {
+impl serde::Serialize for AddAppInstRunTimeResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -117,11 +117,11 @@ impl serde::Serialize for AddAppPackageRunTimeResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AddAppInstRunTimeResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeResponse {
+impl<'de> serde::Deserialize<'de> for AddAppInstRunTimeResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -160,24 +160,24 @@ impl<'de> serde::Deserialize<'de> for AddAppPackageRunTimeResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = AddAppPackageRunTimeResponse;
+            type Value = AddAppInstRunTimeResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.AddAppPackageRunTimeResponse")
+                formatter.write_str("struct librarian.sephirah.v1.AddAppInstRunTimeResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<AddAppPackageRunTimeResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AddAppInstRunTimeResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(AddAppPackageRunTimeResponse {
+                Ok(AddAppInstRunTimeResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.AddAppPackageRunTimeResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.AddAppInstRunTimeResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for AddFeedItemToCollectionRequest {
@@ -361,7 +361,7 @@ impl<'de> serde::Deserialize<'de> for AddFeedItemToCollectionResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.AddFeedItemToCollectionResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for AssignAppPackageRequest {
+impl serde::Serialize for App {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -369,39 +369,62 @@ impl serde::Serialize for AssignAppPackageRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_id.is_some() {
+        if self.id.is_some() {
             len += 1;
         }
-        if self.app_package_id.is_some() {
+        if !self.name.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AssignAppPackageRequest", len)?;
-        if let Some(v) = self.app_id.as_ref() {
-            struct_ser.serialize_field("appId", v)?;
+        if !self.description.is_empty() {
+            len += 1;
         }
-        if let Some(v) = self.app_package_id.as_ref() {
-            struct_ser.serialize_field("appPackageId", v)?;
+        if self.assigned_app_info_id.is_some() {
+            len += 1;
+        }
+        if self.public {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.App", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
+        }
+        if let Some(v) = self.assigned_app_info_id.as_ref() {
+            struct_ser.serialize_field("assignedAppInfoId", v)?;
+        }
+        if self.public {
+            struct_ser.serialize_field("public", &self.public)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for AssignAppPackageRequest {
+impl<'de> serde::Deserialize<'de> for App {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_id",
-            "appId",
-            "app_package_id",
-            "appPackageId",
+            "id",
+            "name",
+            "description",
+            "assigned_app_info_id",
+            "assignedAppInfoId",
+            "public",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppId,
-            AppPackageId,
+            Id,
+            Name,
+            Description,
+            AssignedAppInfoId,
+            Public,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -423,8 +446,11 @@ impl<'de> serde::Deserialize<'de> for AssignAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" | "app_id" => Ok(GeneratedField::AppId),
-                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
+                            "id" => Ok(GeneratedField::Id),
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
+                            "assignedAppInfoId" | "assigned_app_info_id" => Ok(GeneratedField::AssignedAppInfoId),
+                            "public" => Ok(GeneratedField::Public),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -434,44 +460,858 @@ impl<'de> serde::Deserialize<'de> for AssignAppPackageRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = AssignAppPackageRequest;
+            type Value = App;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.AssignAppPackageRequest")
+                formatter.write_str("struct librarian.sephirah.v1.App")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<AssignAppPackageRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<App, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_id__ = None;
-                let mut app_package_id__ = None;
+                let mut id__ = None;
+                let mut name__ = None;
+                let mut description__ = None;
+                let mut assigned_app_info_id__ = None;
+                let mut public__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::AssignedAppInfoId => {
+                            if assigned_app_info_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("assignedAppInfoId"));
+                            }
+                            assigned_app_info_id__ = map.next_value()?;
+                        }
+                        GeneratedField::Public => {
+                            if public__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("public"));
+                            }
+                            public__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(App {
+                    id: id__,
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
+                    assigned_app_info_id: assigned_app_info_id__,
+                    public: public__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.App", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppBinary {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if !self.public_url.is_empty() {
+            len += 1;
+        }
+        if !self.sha256.is_empty() {
+            len += 1;
+        }
+        if !self.token_server_url.is_empty() {
+            len += 1;
+        }
+        if !self.chunks.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary", len)?;
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if !self.public_url.is_empty() {
+            struct_ser.serialize_field("publicUrl", &self.public_url)?;
+        }
+        if !self.sha256.is_empty() {
+            struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
+        }
+        if !self.token_server_url.is_empty() {
+            struct_ser.serialize_field("tokenServerUrl", &self.token_server_url)?;
+        }
+        if !self.chunks.is_empty() {
+            struct_ser.serialize_field("chunks", &self.chunks)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppBinary {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "name",
+            "size_bytes",
+            "sizeBytes",
+            "public_url",
+            "publicUrl",
+            "sha256",
+            "token_server_url",
+            "tokenServerUrl",
+            "chunks",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Name,
+            SizeBytes,
+            PublicUrl,
+            Sha256,
+            TokenServerUrl,
+            Chunks,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "name" => Ok(GeneratedField::Name),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
+                            "sha256" => Ok(GeneratedField::Sha256),
+                            "tokenServerUrl" | "token_server_url" => Ok(GeneratedField::TokenServerUrl),
+                            "chunks" => Ok(GeneratedField::Chunks),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppBinary;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AppBinary")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AppBinary, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut name__ = None;
+                let mut size_bytes__ = None;
+                let mut public_url__ = None;
+                let mut sha256__ = None;
+                let mut token_server_url__ = None;
+                let mut chunks__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::PublicUrl => {
+                            if public_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publicUrl"));
+                            }
+                            public_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Sha256 => {
+                            if sha256__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sha256"));
+                            }
+                            sha256__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::TokenServerUrl => {
+                            if token_server_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tokenServerUrl"));
+                            }
+                            token_server_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Chunks => {
+                            if chunks__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("chunks"));
+                            }
+                            chunks__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(AppBinary {
+                    name: name__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    public_url: public_url__.unwrap_or_default(),
+                    sha256: sha256__.unwrap_or_default(),
+                    token_server_url: token_server_url__.unwrap_or_default(),
+                    chunks: chunks__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinary", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for app_binary::Chunk {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.sequence != 0 {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if !self.public_url.is_empty() {
+            len += 1;
+        }
+        if !self.sha256.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary.Chunk", len)?;
+        if self.sequence != 0 {
+            struct_ser.serialize_field("sequence", ToString::to_string(&self.sequence).as_str())?;
+        }
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if !self.public_url.is_empty() {
+            struct_ser.serialize_field("publicUrl", &self.public_url)?;
+        }
+        if !self.sha256.is_empty() {
+            struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for app_binary::Chunk {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "sequence",
+            "size_bytes",
+            "sizeBytes",
+            "public_url",
+            "publicUrl",
+            "sha256",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Sequence,
+            SizeBytes,
+            PublicUrl,
+            Sha256,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "sequence" => Ok(GeneratedField::Sequence),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
+                            "sha256" => Ok(GeneratedField::Sha256),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = app_binary::Chunk;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AppBinary.Chunk")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<app_binary::Chunk, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut sequence__ = None;
+                let mut size_bytes__ = None;
+                let mut public_url__ = None;
+                let mut sha256__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Sequence => {
+                            if sequence__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sequence"));
+                            }
+                            sequence__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::PublicUrl => {
+                            if public_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publicUrl"));
+                            }
+                            public_url__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Sha256 => {
+                            if sha256__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sha256"));
+                            }
+                            sha256__ = 
+                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
+                        }
+                    }
+                }
+                Ok(app_binary::Chunk {
+                    sequence: sequence__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    public_url: public_url__.unwrap_or_default(),
+                    sha256: sha256__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinary.Chunk", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppCategory {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.app_ids.is_empty() {
+            len += 1;
+        }
+        if !self.app_info_ids.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppCategory", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.app_ids.is_empty() {
+            struct_ser.serialize_field("appIds", &self.app_ids)?;
+        }
+        if !self.app_info_ids.is_empty() {
+            struct_ser.serialize_field("appInfoIds", &self.app_info_ids)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppCategory {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "name",
+            "app_ids",
+            "appIds",
+            "app_info_ids",
+            "appInfoIds",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            Name,
+            AppIds,
+            AppInfoIds,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "name" => Ok(GeneratedField::Name),
+                            "appIds" | "app_ids" => Ok(GeneratedField::AppIds),
+                            "appInfoIds" | "app_info_ids" => Ok(GeneratedField::AppInfoIds),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppCategory;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AppCategory")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AppCategory, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut name__ = None;
+                let mut app_ids__ = None;
+                let mut app_info_ids__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::AppIds => {
+                            if app_ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appIds"));
+                            }
+                            app_ids__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::AppInfoIds => {
+                            if app_info_ids__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoIds"));
+                            }
+                            app_info_ids__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(AppCategory {
+                    id: id__,
+                    name: name__.unwrap_or_default(),
+                    app_ids: app_ids__.unwrap_or_default(),
+                    app_info_ids: app_info_ids__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppCategory", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppInst {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        if self.device_id.is_some() {
+            len += 1;
+        }
+        if self.app_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppInst", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        if let Some(v) = self.device_id.as_ref() {
+            struct_ser.serialize_field("deviceId", v)?;
+        }
+        if let Some(v) = self.app_id.as_ref() {
+            struct_ser.serialize_field("appId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppInst {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "device_id",
+            "deviceId",
+            "app_id",
+            "appId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            DeviceId,
+            AppId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "deviceId" | "device_id" => Ok(GeneratedField::DeviceId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppInst;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AppInst")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AppInst, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut device_id__ = None;
+                let mut app_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                        GeneratedField::DeviceId => {
+                            if device_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceId"));
+                            }
+                            device_id__ = map.next_value()?;
+                        }
                         GeneratedField::AppId => {
                             if app_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
                             app_id__ = map.next_value()?;
                         }
-                        GeneratedField::AppPackageId => {
-                            if app_package_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageId"));
-                            }
-                            app_package_id__ = map.next_value()?;
-                        }
                     }
                 }
-                Ok(AssignAppPackageRequest {
+                Ok(AppInst {
+                    id: id__,
+                    device_id: device_id__,
                     app_id: app_id__,
-                    app_package_id: app_package_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.AssignAppPackageRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppInst", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for AssignAppPackageResponse {
+impl serde::Serialize for AppSaveFileCapacityStrategy {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
+            Self::Fail => "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
+            Self::DeleteOldest => "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppSaveFileCapacityStrategy {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
+            "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
+            "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppSaveFileCapacityStrategy;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(AppSaveFileCapacityStrategy::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(AppSaveFileCapacityStrategy::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED" => Ok(AppSaveFileCapacityStrategy::Unspecified),
+                    "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL" => Ok(AppSaveFileCapacityStrategy::Fail),
+                    "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST" => Ok(AppSaveFileCapacityStrategy::DeleteOldest),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AssignAppRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_info_id.is_some() {
+            len += 1;
+        }
+        if self.app_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AssignAppRequest", len)?;
+        if let Some(v) = self.app_info_id.as_ref() {
+            struct_ser.serialize_field("appInfoId", v)?;
+        }
+        if let Some(v) = self.app_id.as_ref() {
+            struct_ser.serialize_field("appId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AssignAppRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_info_id",
+            "appInfoId",
+            "app_id",
+            "appId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInfoId,
+            AppId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInfoId" | "app_info_id" => Ok(GeneratedField::AppInfoId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AssignAppRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AssignAppRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AssignAppRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_info_id__ = None;
+                let mut app_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppInfoId => {
+                            if app_info_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoId"));
+                            }
+                            app_info_id__ = map.next_value()?;
+                        }
+                        GeneratedField::AppId => {
+                            if app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appId"));
+                            }
+                            app_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(AssignAppRequest {
+                    app_info_id: app_info_id__,
+                    app_id: app_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AssignAppRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AssignAppResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -479,11 +1319,11 @@ impl serde::Serialize for AssignAppPackageResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AssignAppPackageResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AssignAppResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for AssignAppPackageResponse {
+impl<'de> serde::Deserialize<'de> for AssignAppResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -522,24 +1362,24 @@ impl<'de> serde::Deserialize<'de> for AssignAppPackageResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = AssignAppPackageResponse;
+            type Value = AssignAppResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.AssignAppPackageResponse")
+                formatter.write_str("struct librarian.sephirah.v1.AssignAppResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<AssignAppPackageResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<AssignAppResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(AssignAppPackageResponse {
+                Ok(AssignAppResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.AssignAppPackageResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.AssignAppResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ChunkTransferStatus {
@@ -807,7 +1647,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppCategoryResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppCategoryResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for CreateAppPackageRequest {
+impl serde::Serialize for CreateAppInfoRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -815,30 +1655,30 @@ impl serde::Serialize for CreateAppPackageRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_package.is_some() {
+        if self.app_info.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreateAppPackageRequest", len)?;
-        if let Some(v) = self.app_package.as_ref() {
-            struct_ser.serialize_field("appPackage", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreateAppInfoRequest", len)?;
+        if let Some(v) = self.app_info.as_ref() {
+            struct_ser.serialize_field("appInfo", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for CreateAppPackageRequest {
+impl<'de> serde::Deserialize<'de> for CreateAppInfoRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package",
-            "appPackage",
+            "app_info",
+            "appInfo",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackage,
+            AppInfo,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -860,7 +1700,7 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackage" | "app_package" => Ok(GeneratedField::AppPackage),
+                            "appInfo" | "app_info" => Ok(GeneratedField::AppInfo),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -870,36 +1710,36 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = CreateAppPackageRequest;
+            type Value = CreateAppInfoRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.CreateAppPackageRequest")
+                formatter.write_str("struct librarian.sephirah.v1.CreateAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<CreateAppPackageRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<CreateAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package__ = None;
+                let mut app_info__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackage => {
-                            if app_package__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackage"));
+                        GeneratedField::AppInfo => {
+                            if app_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfo"));
                             }
-                            app_package__ = map.next_value()?;
+                            app_info__ = map.next_value()?;
                         }
                     }
                 }
-                Ok(CreateAppPackageRequest {
-                    app_package: app_package__,
+                Ok(CreateAppInfoRequest {
+                    app_info: app_info__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppPackageRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppInfoRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for CreateAppPackageResponse {
+impl serde::Serialize for CreateAppInfoResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -910,14 +1750,14 @@ impl serde::Serialize for CreateAppPackageResponse {
         if self.id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreateAppPackageResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreateAppInfoResponse", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for CreateAppPackageResponse {
+impl<'de> serde::Deserialize<'de> for CreateAppInfoResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -961,13 +1801,13 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = CreateAppPackageResponse;
+            type Value = CreateAppInfoResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.CreateAppPackageResponse")
+                formatter.write_str("struct librarian.sephirah.v1.CreateAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<CreateAppPackageResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<CreateAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -982,12 +1822,195 @@ impl<'de> serde::Deserialize<'de> for CreateAppPackageResponse {
                         }
                     }
                 }
-                Ok(CreateAppPackageResponse {
+                Ok(CreateAppInfoResponse {
                     id: id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppPackageResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppInfoResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for CreateAppInstRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_inst.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreateAppInstRequest", len)?;
+        if let Some(v) = self.app_inst.as_ref() {
+            struct_ser.serialize_field("appInst", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for CreateAppInstRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_inst",
+            "appInst",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInst,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInst" | "app_inst" => Ok(GeneratedField::AppInst),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = CreateAppInstRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.CreateAppInstRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<CreateAppInstRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_inst__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppInst => {
+                            if app_inst__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInst"));
+                            }
+                            app_inst__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(CreateAppInstRequest {
+                    app_inst: app_inst__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppInstRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for CreateAppInstResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreateAppInstResponse", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for CreateAppInstResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = CreateAppInstResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.CreateAppInstResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<CreateAppInstResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(CreateAppInstResponse {
+                    id: id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.CreateAppInstResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for CreateAppRequest {
@@ -2427,7 +3450,7 @@ impl<'de> serde::Deserialize<'de> for DeviceInfo {
         deserializer.deserialize_struct("librarian.sephirah.v1.DeviceInfo", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for DownloadAppPackageBinaryRequest {
+impl serde::Serialize for DownloadAppBinaryRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -2438,14 +3461,14 @@ impl serde::Serialize for DownloadAppPackageBinaryRequest {
         if self.id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppPackageBinaryRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppBinaryRequest", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryRequest {
+impl<'de> serde::Deserialize<'de> for DownloadAppBinaryRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -2489,13 +3512,13 @@ impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = DownloadAppPackageBinaryRequest;
+            type Value = DownloadAppBinaryRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.DownloadAppPackageBinaryRequest")
+                formatter.write_str("struct librarian.sephirah.v1.DownloadAppBinaryRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadAppPackageBinaryRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadAppBinaryRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -2510,15 +3533,15 @@ impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryRequest {
                         }
                     }
                 }
-                Ok(DownloadAppPackageBinaryRequest {
+                Ok(DownloadAppBinaryRequest {
                     id: id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadAppPackageBinaryRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadAppBinaryRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for DownloadAppPackageBinaryResponse {
+impl serde::Serialize for DownloadAppBinaryResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -2526,15 +3549,15 @@ impl serde::Serialize for DownloadAppPackageBinaryResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_package_binary.is_some() {
+        if self.app_binary.is_some() {
             len += 1;
         }
         if !self.token.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppPackageBinaryResponse", len)?;
-        if let Some(v) = self.app_package_binary.as_ref() {
-            struct_ser.serialize_field("appPackageBinary", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppBinaryResponse", len)?;
+        if let Some(v) = self.app_binary.as_ref() {
+            struct_ser.serialize_field("appBinary", v)?;
         }
         if !self.token.is_empty() {
             struct_ser.serialize_field("token", &self.token)?;
@@ -2542,21 +3565,21 @@ impl serde::Serialize for DownloadAppPackageBinaryResponse {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryResponse {
+impl<'de> serde::Deserialize<'de> for DownloadAppBinaryResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package_binary",
-            "appPackageBinary",
+            "app_binary",
+            "appBinary",
             "token",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackageBinary,
+            AppBinary,
             Token,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -2579,7 +3602,7 @@ impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackageBinary" | "app_package_binary" => Ok(GeneratedField::AppPackageBinary),
+                            "appBinary" | "app_binary" => Ok(GeneratedField::AppBinary),
                             "token" => Ok(GeneratedField::Token),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -2590,25 +3613,25 @@ impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = DownloadAppPackageBinaryResponse;
+            type Value = DownloadAppBinaryResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.DownloadAppPackageBinaryResponse")
+                formatter.write_str("struct librarian.sephirah.v1.DownloadAppBinaryResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadAppPackageBinaryResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadAppBinaryResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package_binary__ = None;
+                let mut app_binary__ = None;
                 let mut token__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackageBinary => {
-                            if app_package_binary__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageBinary"));
+                        GeneratedField::AppBinary => {
+                            if app_binary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appBinary"));
                             }
-                            app_package_binary__ = map.next_value()?;
+                            app_binary__ = map.next_value()?;
                         }
                         GeneratedField::Token => {
                             if token__.is_some() {
@@ -2618,13 +3641,197 @@ impl<'de> serde::Deserialize<'de> for DownloadAppPackageBinaryResponse {
                         }
                     }
                 }
-                Ok(DownloadAppPackageBinaryResponse {
-                    app_package_binary: app_package_binary__,
+                Ok(DownloadAppBinaryResponse {
+                    app_binary: app_binary__,
                     token: token__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadAppPackageBinaryResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadAppBinaryResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for DownloadAppSaveFileRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.file_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppSaveFileRequest", len)?;
+        if let Some(v) = self.file_id.as_ref() {
+            struct_ser.serialize_field("fileId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for DownloadAppSaveFileRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "file_id",
+            "fileId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            FileId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = DownloadAppSaveFileRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.DownloadAppSaveFileRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadAppSaveFileRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut file_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::FileId => {
+                            if file_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("fileId"));
+                            }
+                            file_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(DownloadAppSaveFileRequest {
+                    file_id: file_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadAppSaveFileRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for DownloadAppSaveFileResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.download_token.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppSaveFileResponse", len)?;
+        if !self.download_token.is_empty() {
+            struct_ser.serialize_field("downloadToken", &self.download_token)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for DownloadAppSaveFileResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "download_token",
+            "downloadToken",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            DownloadToken,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "downloadToken" | "download_token" => Ok(GeneratedField::DownloadToken),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = DownloadAppSaveFileResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.DownloadAppSaveFileResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadAppSaveFileResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut download_token__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::DownloadToken => {
+                            if download_token__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("downloadToken"));
+                            }
+                            download_token__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(DownloadAppSaveFileResponse {
+                    download_token: download_token__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadAppSaveFileResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for DownloadFileRequest {
@@ -2831,189 +4038,6 @@ impl<'de> serde::Deserialize<'de> for DownloadFileResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.DownloadFileResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for DownloadGameSaveFileRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadGameSaveFileRequest", len)?;
-        if let Some(v) = self.id.as_ref() {
-            struct_ser.serialize_field("id", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DownloadGameSaveFileRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "id",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Id,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "id" => Ok(GeneratedField::Id),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = DownloadGameSaveFileRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.DownloadGameSaveFileRequest")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadGameSaveFileRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut id__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Id => {
-                            if id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("id"));
-                            }
-                            id__ = map.next_value()?;
-                        }
-                    }
-                }
-                Ok(DownloadGameSaveFileRequest {
-                    id: id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadGameSaveFileRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for DownloadGameSaveFileResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.download_token.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadGameSaveFileResponse", len)?;
-        if !self.download_token.is_empty() {
-            struct_ser.serialize_field("downloadToken", &self.download_token)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DownloadGameSaveFileResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "download_token",
-            "downloadToken",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            DownloadToken,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "downloadToken" | "download_token" => Ok(GeneratedField::DownloadToken),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = DownloadGameSaveFileResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.DownloadGameSaveFileResponse")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DownloadGameSaveFileResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut download_token__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::DownloadToken => {
-                            if download_token__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("downloadToken"));
-                            }
-                            download_token__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(DownloadGameSaveFileResponse {
-                    download_token: download_token__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.DownloadGameSaveFileResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for DownloadImageRequest {
@@ -4688,7 +5712,7 @@ impl<'de> serde::Deserialize<'de> for GainUserPrivilegeResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.GainUserPrivilegeResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for GetAppRequest {
+impl serde::Serialize for GetAppInfoRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -4696,30 +5720,229 @@ impl serde::Serialize for GetAppRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_id.is_some() {
+        if self.app_info_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppRequest", len)?;
-        if let Some(v) = self.app_id.as_ref() {
-            struct_ser.serialize_field("appId", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppInfoRequest", len)?;
+        if let Some(v) = self.app_info_id.as_ref() {
+            struct_ser.serialize_field("appInfoId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for GetAppRequest {
+impl<'de> serde::Deserialize<'de> for GetAppInfoRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "app_info_id",
+            "appInfoId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInfoId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInfoId" | "app_info_id" => Ok(GeneratedField::AppInfoId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppInfoRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetAppInfoRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppInfoRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_info_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppInfoId => {
+                            if app_info_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoId"));
+                            }
+                            app_info_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetAppInfoRequest {
+                    app_info_id: app_info_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppInfoRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppInfoResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_info.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppInfoResponse", len)?;
+        if let Some(v) = self.app_info.as_ref() {
+            struct_ser.serialize_field("appInfo", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppInfoResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_info",
+            "appInfo",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInfo,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInfo" | "app_info" => Ok(GeneratedField::AppInfo),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppInfoResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetAppInfoResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppInfoResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_info__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppInfo => {
+                            if app_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfo"));
+                            }
+                            app_info__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetAppInfoResponse {
+                    app_info: app_info__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppInfoResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppSaveFileCapacityRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.entity.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityRequest", len)?;
+        if let Some(v) = self.entity.as_ref() {
+            match v {
+                get_app_save_file_capacity_request::Entity::User(v) => {
+                    struct_ser.serialize_field("user", v)?;
+                }
+                get_app_save_file_capacity_request::Entity::AppId(v) => {
+                    struct_ser.serialize_field("appId", v)?;
+                }
+                get_app_save_file_capacity_request::Entity::AppInstId(v) => {
+                    struct_ser.serialize_field("appInstId", v)?;
+                }
+            }
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "user",
             "app_id",
             "appId",
+            "app_inst_id",
+            "appInstId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            User,
             AppId,
+            AppInstId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -4741,7 +5964,9 @@ impl<'de> serde::Deserialize<'de> for GetAppRequest {
                         E: serde::de::Error,
                     {
                         match value {
+                            "user" => Ok(GeneratedField::User),
                             "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            "appInstId" | "app_inst_id" => Ok(GeneratedField::AppInstId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -4751,36 +5976,50 @@ impl<'de> serde::Deserialize<'de> for GetAppRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = GetAppRequest;
+            type Value = GetAppSaveFileCapacityRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.GetAppRequest")
+                formatter.write_str("struct librarian.sephirah.v1.GetAppSaveFileCapacityRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppSaveFileCapacityRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_id__ = None;
+                let mut entity__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::User => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("user"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(get_app_save_file_capacity_request::Entity::User);
+                        }
                         GeneratedField::AppId => {
-                            if app_id__.is_some() {
+                            if entity__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
-                            app_id__ = map.next_value()?;
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(get_app_save_file_capacity_request::Entity::AppId)
+;
+                        }
+                        GeneratedField::AppInstId => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInstId"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(get_app_save_file_capacity_request::Entity::AppInstId)
+;
                         }
                     }
                 }
-                Ok(GetAppRequest {
-                    app_id: app_id__,
+                Ok(GetAppSaveFileCapacityRequest {
+                    entity: entity__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for GetAppResponse {
+impl serde::Serialize for GetAppSaveFileCapacityResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -4788,29 +6027,48 @@ impl serde::Serialize for GetAppResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app.is_some() {
+        if self.count != 0 {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppResponse", len)?;
-        if let Some(v) = self.app.as_ref() {
-            struct_ser.serialize_field("app", v)?;
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if self.strategy != 0 {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityResponse", len)?;
+        if self.count != 0 {
+            struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
+        }
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if self.strategy != 0 {
+            let v = AppSaveFileCapacityStrategy::from_i32(self.strategy)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.strategy)))?;
+            struct_ser.serialize_field("strategy", &v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for GetAppResponse {
+impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app",
+            "count",
+            "size_bytes",
+            "sizeBytes",
+            "strategy",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            App,
+            Count,
+            SizeBytes,
+            Strategy,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -4832,7 +6090,9 @@ impl<'de> serde::Deserialize<'de> for GetAppResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "app" => Ok(GeneratedField::App),
+                            "count" => Ok(GeneratedField::Count),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "strategy" => Ok(GeneratedField::Strategy),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -4842,33 +6102,53 @@ impl<'de> serde::Deserialize<'de> for GetAppResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = GetAppResponse;
+            type Value = GetAppSaveFileCapacityResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.GetAppResponse")
+                formatter.write_str("struct librarian.sephirah.v1.GetAppSaveFileCapacityResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppSaveFileCapacityResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app__ = None;
+                let mut count__ = None;
+                let mut size_bytes__ = None;
+                let mut strategy__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::App => {
-                            if app__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("app"));
+                        GeneratedField::Count => {
+                            if count__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("count"));
                             }
-                            app__ = map.next_value()?;
+                            count__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::Strategy => {
+                            if strategy__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("strategy"));
+                            }
+                            strategy__ = Some(map.next_value::<AppSaveFileCapacityStrategy>()? as i32);
                         }
                     }
                 }
-                Ok(GetAppResponse {
-                    app: app__,
+                Ok(GetAppSaveFileCapacityResponse {
+                    count: count__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    strategy: strategy__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for GetBatchFeedItemsRequest {
@@ -5053,7 +6333,7 @@ impl<'de> serde::Deserialize<'de> for GetBatchFeedItemsResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.GetBatchFeedItemsResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for GetBoundAppsRequest {
+impl serde::Serialize for GetBoundAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -5064,14 +6344,14 @@ impl serde::Serialize for GetBoundAppsRequest {
         if self.app_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetBoundAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetBoundAppInfosRequest", len)?;
         if let Some(v) = self.app_id.as_ref() {
             struct_ser.serialize_field("appId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for GetBoundAppsRequest {
+impl<'de> serde::Deserialize<'de> for GetBoundAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -5116,13 +6396,13 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = GetBoundAppsRequest;
+            type Value = GetBoundAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.GetBoundAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.GetBoundAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetBoundAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetBoundAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -5137,15 +6417,15 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppsRequest {
                         }
                     }
                 }
-                Ok(GetBoundAppsRequest {
+                Ok(GetBoundAppInfosRequest {
                     app_id: app_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.GetBoundAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetBoundAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for GetBoundAppsResponse {
+impl serde::Serialize for GetBoundAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -5153,29 +6433,30 @@ impl serde::Serialize for GetBoundAppsResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.apps.is_empty() {
+        if !self.app_infos.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetBoundAppsResponse", len)?;
-        if !self.apps.is_empty() {
-            struct_ser.serialize_field("apps", &self.apps)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetBoundAppInfosResponse", len)?;
+        if !self.app_infos.is_empty() {
+            struct_ser.serialize_field("appInfos", &self.app_infos)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for GetBoundAppsResponse {
+impl<'de> serde::Deserialize<'de> for GetBoundAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "apps",
+            "app_infos",
+            "appInfos",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Apps,
+            AppInfos,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5197,7 +6478,7 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppsResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "apps" => Ok(GeneratedField::Apps),
+                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5207,33 +6488,33 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppsResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = GetBoundAppsResponse;
+            type Value = GetBoundAppInfosResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.GetBoundAppsResponse")
+                formatter.write_str("struct librarian.sephirah.v1.GetBoundAppInfosResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetBoundAppsResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetBoundAppInfosResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut apps__ = None;
+                let mut app_infos__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Apps => {
-                            if apps__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("apps"));
+                        GeneratedField::AppInfos => {
+                            if app_infos__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            apps__ = Some(map.next_value()?);
+                            app_infos__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(GetBoundAppsResponse {
-                    apps: apps__.unwrap_or_default(),
+                Ok(GetBoundAppInfosResponse {
+                    app_infos: app_infos__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.GetBoundAppsResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetBoundAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for GetFeedItemRequest {
@@ -5635,7 +6916,7 @@ impl<'de> serde::Deserialize<'de> for GetImageResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.GetImageResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for GetPurchasedAppsRequest {
+impl serde::Serialize for GetPurchasedAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -5646,14 +6927,14 @@ impl serde::Serialize for GetPurchasedAppsRequest {
         if self.source.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetPurchasedAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetPurchasedAppInfosRequest", len)?;
         if let Some(v) = self.source.as_ref() {
             struct_ser.serialize_field("source", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for GetPurchasedAppsRequest {
+impl<'de> serde::Deserialize<'de> for GetPurchasedAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -5697,13 +6978,13 @@ impl<'de> serde::Deserialize<'de> for GetPurchasedAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = GetPurchasedAppsRequest;
+            type Value = GetPurchasedAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.GetPurchasedAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.GetPurchasedAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetPurchasedAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetPurchasedAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -5718,15 +6999,15 @@ impl<'de> serde::Deserialize<'de> for GetPurchasedAppsRequest {
                         }
                     }
                 }
-                Ok(GetPurchasedAppsRequest {
+                Ok(GetPurchasedAppInfosRequest {
                     source: source__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.GetPurchasedAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetPurchasedAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for GetPurchasedAppsResponse {
+impl serde::Serialize for GetPurchasedAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -5734,29 +7015,30 @@ impl serde::Serialize for GetPurchasedAppsResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.apps.is_empty() {
+        if !self.app_infos.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetPurchasedAppsResponse", len)?;
-        if !self.apps.is_empty() {
-            struct_ser.serialize_field("apps", &self.apps)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetPurchasedAppInfosResponse", len)?;
+        if !self.app_infos.is_empty() {
+            struct_ser.serialize_field("appInfos", &self.app_infos)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for GetPurchasedAppsResponse {
+impl<'de> serde::Deserialize<'de> for GetPurchasedAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "apps",
+            "app_infos",
+            "appInfos",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Apps,
+            AppInfos,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5778,7 +7060,7 @@ impl<'de> serde::Deserialize<'de> for GetPurchasedAppsResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "apps" => Ok(GeneratedField::Apps),
+                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5788,33 +7070,33 @@ impl<'de> serde::Deserialize<'de> for GetPurchasedAppsResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = GetPurchasedAppsResponse;
+            type Value = GetPurchasedAppInfosResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.GetPurchasedAppsResponse")
+                formatter.write_str("struct librarian.sephirah.v1.GetPurchasedAppInfosResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetPurchasedAppsResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetPurchasedAppInfosResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut apps__ = None;
+                let mut app_infos__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Apps => {
-                            if apps__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("apps"));
+                        GeneratedField::AppInfos => {
+                            if app_infos__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            apps__ = Some(map.next_value()?);
+                            app_infos__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(GetPurchasedAppsResponse {
-                    apps: apps__.unwrap_or_default(),
+                Ok(GetPurchasedAppInfosResponse {
+                    app_infos: app_infos__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.GetPurchasedAppsResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetPurchasedAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for GetServerInformationRequest {
@@ -7201,265 +8483,7 @@ impl<'de> serde::Deserialize<'de> for ListAppCategoriesResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListAppCategoriesResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ListAppPackagesRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.paging.is_some() {
-            len += 1;
-        }
-        if !self.source_filter.is_empty() {
-            len += 1;
-        }
-        if !self.id_filter.is_empty() {
-            len += 1;
-        }
-        if !self.assigned_app_id_filter.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppPackagesRequest", len)?;
-        if let Some(v) = self.paging.as_ref() {
-            struct_ser.serialize_field("paging", v)?;
-        }
-        if !self.source_filter.is_empty() {
-            let v = self.source_filter.iter().cloned().map(|v| {
-                super::super::v1::AppPackageSource::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
-            struct_ser.serialize_field("sourceFilter", &v)?;
-        }
-        if !self.id_filter.is_empty() {
-            struct_ser.serialize_field("idFilter", &self.id_filter)?;
-        }
-        if !self.assigned_app_id_filter.is_empty() {
-            struct_ser.serialize_field("assignedAppIdFilter", &self.assigned_app_id_filter)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ListAppPackagesRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "paging",
-            "source_filter",
-            "sourceFilter",
-            "id_filter",
-            "idFilter",
-            "assigned_app_id_filter",
-            "assignedAppIdFilter",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Paging,
-            SourceFilter,
-            IdFilter,
-            AssignedAppIdFilter,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "paging" => Ok(GeneratedField::Paging),
-                            "sourceFilter" | "source_filter" => Ok(GeneratedField::SourceFilter),
-                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
-                            "assignedAppIdFilter" | "assigned_app_id_filter" => Ok(GeneratedField::AssignedAppIdFilter),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListAppPackagesRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListAppPackagesRequest")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppPackagesRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut paging__ = None;
-                let mut source_filter__ = None;
-                let mut id_filter__ = None;
-                let mut assigned_app_id_filter__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Paging => {
-                            if paging__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("paging"));
-                            }
-                            paging__ = map.next_value()?;
-                        }
-                        GeneratedField::SourceFilter => {
-                            if source_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sourceFilter"));
-                            }
-                            source_filter__ = Some(map.next_value::<Vec<super::super::v1::AppPackageSource>>()?.into_iter().map(|x| x as i32).collect());
-                        }
-                        GeneratedField::IdFilter => {
-                            if id_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("idFilter"));
-                            }
-                            id_filter__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::AssignedAppIdFilter => {
-                            if assigned_app_id_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("assignedAppIdFilter"));
-                            }
-                            assigned_app_id_filter__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(ListAppPackagesRequest {
-                    paging: paging__,
-                    source_filter: source_filter__.unwrap_or_default(),
-                    id_filter: id_filter__.unwrap_or_default(),
-                    assigned_app_id_filter: assigned_app_id_filter__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppPackagesRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ListAppPackagesResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.paging.is_some() {
-            len += 1;
-        }
-        if !self.app_packages.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppPackagesResponse", len)?;
-        if let Some(v) = self.paging.as_ref() {
-            struct_ser.serialize_field("paging", v)?;
-        }
-        if !self.app_packages.is_empty() {
-            struct_ser.serialize_field("appPackages", &self.app_packages)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ListAppPackagesResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "paging",
-            "app_packages",
-            "appPackages",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Paging,
-            AppPackages,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "paging" => Ok(GeneratedField::Paging),
-                            "appPackages" | "app_packages" => Ok(GeneratedField::AppPackages),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListAppPackagesResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListAppPackagesResponse")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppPackagesResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut paging__ = None;
-                let mut app_packages__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Paging => {
-                            if paging__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("paging"));
-                            }
-                            paging__ = map.next_value()?;
-                        }
-                        GeneratedField::AppPackages => {
-                            if app_packages__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackages"));
-                            }
-                            app_packages__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(ListAppPackagesResponse {
-                    paging: paging__,
-                    app_packages: app_packages__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppPackagesResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ListAppsRequest {
+impl serde::Serialize for ListAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -7485,7 +8509,7 @@ impl serde::Serialize for ListAppsRequest {
         if self.contain_details {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppInfosRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
@@ -7511,7 +8535,7 @@ impl serde::Serialize for ListAppsRequest {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for ListAppsRequest {
+impl<'de> serde::Deserialize<'de> for ListAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -7575,13 +8599,13 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListAppsRequest;
+            type Value = ListAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.ListAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -7631,7 +8655,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                         }
                     }
                 }
-                Ok(ListAppsRequest {
+                Ok(ListAppInfosRequest {
                     paging: paging__,
                     exclude_internal: exclude_internal__.unwrap_or_default(),
                     source_filter: source_filter__.unwrap_or_default(),
@@ -7641,10 +8665,10 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ListAppsResponse {
+impl serde::Serialize for ListAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -7655,20 +8679,20 @@ impl serde::Serialize for ListAppsResponse {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.apps.is_empty() {
+        if !self.app_infos.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppInfosResponse", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.apps.is_empty() {
-            struct_ser.serialize_field("apps", &self.apps)?;
+        if !self.app_infos.is_empty() {
+            struct_ser.serialize_field("appInfos", &self.app_infos)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for ListAppsResponse {
+impl<'de> serde::Deserialize<'de> for ListAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -7676,13 +8700,14 @@ impl<'de> serde::Deserialize<'de> for ListAppsResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "apps",
+            "app_infos",
+            "appInfos",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            Apps,
+            AppInfos,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -7705,7 +8730,806 @@ impl<'de> serde::Deserialize<'de> for ListAppsResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "apps" => Ok(GeneratedField::Apps),
+                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListAppInfosResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppInfosResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppInfosResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut app_infos__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::AppInfos => {
+                            if app_infos__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfos"));
+                            }
+                            app_infos__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListAppInfosResponse {
+                    paging: paging__,
+                    app_infos: app_infos__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppInfosResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListAppInstsRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.device_id_filter.is_empty() {
+            len += 1;
+        }
+        if !self.id_filter.is_empty() {
+            len += 1;
+        }
+        if !self.app_id_filter.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppInstsRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.device_id_filter.is_empty() {
+            struct_ser.serialize_field("deviceIdFilter", &self.device_id_filter)?;
+        }
+        if !self.id_filter.is_empty() {
+            struct_ser.serialize_field("idFilter", &self.id_filter)?;
+        }
+        if !self.app_id_filter.is_empty() {
+            struct_ser.serialize_field("appIdFilter", &self.app_id_filter)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListAppInstsRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "device_id_filter",
+            "deviceIdFilter",
+            "id_filter",
+            "idFilter",
+            "app_id_filter",
+            "appIdFilter",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            DeviceIdFilter,
+            IdFilter,
+            AppIdFilter,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "deviceIdFilter" | "device_id_filter" => Ok(GeneratedField::DeviceIdFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "appIdFilter" | "app_id_filter" => Ok(GeneratedField::AppIdFilter),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListAppInstsRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppInstsRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppInstsRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut device_id_filter__ = None;
+                let mut id_filter__ = None;
+                let mut app_id_filter__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::DeviceIdFilter => {
+                            if device_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceIdFilter"));
+                            }
+                            device_id_filter__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::IdFilter => {
+                            if id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("idFilter"));
+                            }
+                            id_filter__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::AppIdFilter => {
+                            if app_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appIdFilter"));
+                            }
+                            app_id_filter__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListAppInstsRequest {
+                    paging: paging__,
+                    device_id_filter: device_id_filter__.unwrap_or_default(),
+                    id_filter: id_filter__.unwrap_or_default(),
+                    app_id_filter: app_id_filter__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppInstsRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListAppInstsResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.app_insts.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppInstsResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.app_insts.is_empty() {
+            struct_ser.serialize_field("appInsts", &self.app_insts)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListAppInstsResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "app_insts",
+            "appInsts",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            AppInsts,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "appInsts" | "app_insts" => Ok(GeneratedField::AppInsts),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListAppInstsResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppInstsResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppInstsResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut app_insts__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::AppInsts => {
+                            if app_insts__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInsts"));
+                            }
+                            app_insts__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListAppInstsResponse {
+                    paging: paging__,
+                    app_insts: app_insts__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppInstsResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListAppSaveFilesRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppSaveFilesRequest", len)?;
+        if let Some(v) = self.app_id.as_ref() {
+            struct_ser.serialize_field("appId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListAppSaveFilesRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_id",
+            "appId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListAppSaveFilesRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppSaveFilesRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppSaveFilesRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppId => {
+                            if app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appId"));
+                            }
+                            app_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(ListAppSaveFilesRequest {
+                    app_id: app_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppSaveFilesRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListAppSaveFilesResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.results.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppSaveFilesResponse", len)?;
+        if !self.results.is_empty() {
+            struct_ser.serialize_field("results", &self.results)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListAppSaveFilesResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "results",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Results,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "results" => Ok(GeneratedField::Results),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListAppSaveFilesResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppSaveFilesResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppSaveFilesResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut results__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Results => {
+                            if results__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("results"));
+                            }
+                            results__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListAppSaveFilesResponse {
+                    results: results__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppSaveFilesResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for list_app_save_files_response::Result {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.file.is_some() {
+            len += 1;
+        }
+        if self.pinned {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppSaveFilesResponse.Result", len)?;
+        if let Some(v) = self.file.as_ref() {
+            struct_ser.serialize_field("file", v)?;
+        }
+        if self.pinned {
+            struct_ser.serialize_field("pinned", &self.pinned)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for list_app_save_files_response::Result {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "file",
+            "pinned",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            File,
+            Pinned,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "file" => Ok(GeneratedField::File),
+                            "pinned" => Ok(GeneratedField::Pinned),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = list_app_save_files_response::Result;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppSaveFilesResponse.Result")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<list_app_save_files_response::Result, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut file__ = None;
+                let mut pinned__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::File => {
+                            if file__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("file"));
+                            }
+                            file__ = map.next_value()?;
+                        }
+                        GeneratedField::Pinned => {
+                            if pinned__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("pinned"));
+                            }
+                            pinned__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(list_app_save_files_response::Result {
+                    file: file__,
+                    pinned: pinned__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppSaveFilesResponse.Result", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListAppsRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.device_id_filter.is_empty() {
+            len += 1;
+        }
+        if !self.id_filter.is_empty() {
+            len += 1;
+        }
+        if !self.assigned_app_id_filter.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.device_id_filter.is_empty() {
+            struct_ser.serialize_field("deviceIdFilter", &self.device_id_filter)?;
+        }
+        if !self.id_filter.is_empty() {
+            struct_ser.serialize_field("idFilter", &self.id_filter)?;
+        }
+        if !self.assigned_app_id_filter.is_empty() {
+            struct_ser.serialize_field("assignedAppIdFilter", &self.assigned_app_id_filter)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListAppsRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "device_id_filter",
+            "deviceIdFilter",
+            "id_filter",
+            "idFilter",
+            "assigned_app_id_filter",
+            "assignedAppIdFilter",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            DeviceIdFilter,
+            IdFilter,
+            AssignedAppIdFilter,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "deviceIdFilter" | "device_id_filter" => Ok(GeneratedField::DeviceIdFilter),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "assignedAppIdFilter" | "assigned_app_id_filter" => Ok(GeneratedField::AssignedAppIdFilter),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListAppsRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListAppsRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListAppsRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut device_id_filter__ = None;
+                let mut id_filter__ = None;
+                let mut assigned_app_id_filter__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::DeviceIdFilter => {
+                            if device_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceIdFilter"));
+                            }
+                            device_id_filter__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::IdFilter => {
+                            if id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("idFilter"));
+                            }
+                            id_filter__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::AssignedAppIdFilter => {
+                            if assigned_app_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("assignedAppIdFilter"));
+                            }
+                            assigned_app_id_filter__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListAppsRequest {
+                    paging: paging__,
+                    device_id_filter: device_id_filter__.unwrap_or_default(),
+                    id_filter: id_filter__.unwrap_or_default(),
+                    assigned_app_id_filter: assigned_app_id_filter__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListAppsRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListAppsResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.app_packages.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.app_packages.is_empty() {
+            struct_ser.serialize_field("appPackages", &self.app_packages)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListAppsResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "app_packages",
+            "appPackages",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            AppPackages,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "appPackages" | "app_packages" => Ok(GeneratedField::AppPackages),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -7726,7 +9550,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsResponse {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut apps__ = None;
+                let mut app_packages__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -7735,17 +9559,17 @@ impl<'de> serde::Deserialize<'de> for ListAppsResponse {
                             }
                             paging__ = map.next_value()?;
                         }
-                        GeneratedField::Apps => {
-                            if apps__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("apps"));
+                        GeneratedField::AppPackages => {
+                            if app_packages__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appPackages"));
                             }
-                            apps__ = Some(map.next_value()?);
+                            app_packages__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(ListAppsResponse {
                     paging: paging__,
-                    apps: apps__.unwrap_or_default(),
+                    app_packages: app_packages__.unwrap_or_default(),
                 })
             }
         }
@@ -9216,297 +11040,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedPlatformsResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.ListFeedPlatformsResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ListGameSaveFilesRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.app_package_id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesRequest", len)?;
-        if let Some(v) = self.app_package_id.as_ref() {
-            struct_ser.serialize_field("appPackageId", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ListGameSaveFilesRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "app_package_id",
-            "appPackageId",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            AppPackageId,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListGameSaveFilesRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFilesRequest")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListGameSaveFilesRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut app_package_id__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::AppPackageId => {
-                            if app_package_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageId"));
-                            }
-                            app_package_id__ = map.next_value()?;
-                        }
-                    }
-                }
-                Ok(ListGameSaveFilesRequest {
-                    app_package_id: app_package_id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFilesRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ListGameSaveFilesResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.results.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse", len)?;
-        if !self.results.is_empty() {
-            struct_ser.serialize_field("results", &self.results)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ListGameSaveFilesResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "results",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Results,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "results" => Ok(GeneratedField::Results),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ListGameSaveFilesResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFilesResponse")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListGameSaveFilesResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut results__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Results => {
-                            if results__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("results"));
-                            }
-                            results__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(ListGameSaveFilesResponse {
-                    results: results__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for list_game_save_files_response::Result {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.file.is_some() {
-            len += 1;
-        }
-        if self.pinned {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse.Result", len)?;
-        if let Some(v) = self.file.as_ref() {
-            struct_ser.serialize_field("file", v)?;
-        }
-        if self.pinned {
-            struct_ser.serialize_field("pinned", &self.pinned)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for list_game_save_files_response::Result {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "file",
-            "pinned",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            File,
-            Pinned,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "file" => Ok(GeneratedField::File),
-                            "pinned" => Ok(GeneratedField::Pinned),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = list_game_save_files_response::Result;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ListGameSaveFilesResponse.Result")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<list_game_save_files_response::Result, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut file__ = None;
-                let mut pinned__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::File => {
-                            if file__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("file"));
-                            }
-                            file__ = map.next_value()?;
-                        }
-                        GeneratedField::Pinned => {
-                            if pinned__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("pinned"));
-                            }
-                            pinned__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(list_game_save_files_response::Result {
-                    file: file__,
-                    pinned: pinned__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ListGameSaveFilesResponse.Result", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ListImagesRequest {
@@ -10987,7 +12520,7 @@ impl<'de> serde::Deserialize<'de> for ListUsersResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListUsersResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for MergeAppsRequest {
+impl serde::Serialize for MergeAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -11001,7 +12534,7 @@ impl serde::Serialize for MergeAppsRequest {
         if self.merged.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.MergeAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.MergeAppInfosRequest", len)?;
         if let Some(v) = self.base.as_ref() {
             struct_ser.serialize_field("base", v)?;
         }
@@ -11011,7 +12544,7 @@ impl serde::Serialize for MergeAppsRequest {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for MergeAppsRequest {
+impl<'de> serde::Deserialize<'de> for MergeAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -11058,13 +12591,13 @@ impl<'de> serde::Deserialize<'de> for MergeAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = MergeAppsRequest;
+            type Value = MergeAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.MergeAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.MergeAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<MergeAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<MergeAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -11086,16 +12619,16 @@ impl<'de> serde::Deserialize<'de> for MergeAppsRequest {
                         }
                     }
                 }
-                Ok(MergeAppsRequest {
+                Ok(MergeAppInfosRequest {
                     base: base__,
                     merged: merged__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.MergeAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.MergeAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for MergeAppsResponse {
+impl serde::Serialize for MergeAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -11103,11 +12636,11 @@ impl serde::Serialize for MergeAppsResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.MergeAppsResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.MergeAppInfosResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for MergeAppsResponse {
+impl<'de> serde::Deserialize<'de> for MergeAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -11146,24 +12679,24 @@ impl<'de> serde::Deserialize<'de> for MergeAppsResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = MergeAppsResponse;
+            type Value = MergeAppInfosResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.MergeAppsResponse")
+                formatter.write_str("struct librarian.sephirah.v1.MergeAppInfosResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<MergeAppsResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<MergeAppInfosResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(MergeAppsResponse {
+                Ok(MergeAppInfosResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.MergeAppsResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.MergeAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for NotifyFilter {
@@ -12020,7 +13553,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTargetStatus {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
-impl serde::Serialize for PickAppRequest {
+impl serde::Serialize for PickAppInfoRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -12031,14 +13564,14 @@ impl serde::Serialize for PickAppRequest {
         if self.picked.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PickAppRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PickAppInfoRequest", len)?;
         if let Some(v) = self.picked.as_ref() {
             struct_ser.serialize_field("picked", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PickAppRequest {
+impl<'de> serde::Deserialize<'de> for PickAppInfoRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -12082,13 +13615,13 @@ impl<'de> serde::Deserialize<'de> for PickAppRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PickAppRequest;
+            type Value = PickAppInfoRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.PickAppRequest")
+                formatter.write_str("struct librarian.sephirah.v1.PickAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PickAppRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PickAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -12103,15 +13636,15 @@ impl<'de> serde::Deserialize<'de> for PickAppRequest {
                         }
                     }
                 }
-                Ok(PickAppRequest {
+                Ok(PickAppInfoRequest {
                     picked: picked__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.PickAppRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.PickAppInfoRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PickAppResponse {
+impl serde::Serialize for PickAppInfoResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -12119,11 +13652,11 @@ impl serde::Serialize for PickAppResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PickAppResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PickAppInfoResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PickAppResponse {
+impl<'de> serde::Deserialize<'de> for PickAppInfoResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -12162,27 +13695,27 @@ impl<'de> serde::Deserialize<'de> for PickAppResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PickAppResponse;
+            type Value = PickAppInfoResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.PickAppResponse")
+                formatter.write_str("struct librarian.sephirah.v1.PickAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PickAppResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PickAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(PickAppResponse {
+                Ok(PickAppInfoResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.PickAppResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.PickAppInfoResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PinGameSaveFileRequest {
+impl serde::Serialize for PinAppSaveFileRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -12190,29 +13723,30 @@ impl serde::Serialize for PinGameSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.id.is_some() {
+        if self.file_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinGameSaveFileRequest", len)?;
-        if let Some(v) = self.id.as_ref() {
-            struct_ser.serialize_field("id", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinAppSaveFileRequest", len)?;
+        if let Some(v) = self.file_id.as_ref() {
+            struct_ser.serialize_field("fileId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PinGameSaveFileRequest {
+impl<'de> serde::Deserialize<'de> for PinAppSaveFileRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "id",
+            "file_id",
+            "fileId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Id,
+            FileId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -12234,7 +13768,7 @@ impl<'de> serde::Deserialize<'de> for PinGameSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "id" => Ok(GeneratedField::Id),
+                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -12244,36 +13778,36 @@ impl<'de> serde::Deserialize<'de> for PinGameSaveFileRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PinGameSaveFileRequest;
+            type Value = PinAppSaveFileRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.PinGameSaveFileRequest")
+                formatter.write_str("struct librarian.sephirah.v1.PinAppSaveFileRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PinGameSaveFileRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PinAppSaveFileRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut id__ = None;
+                let mut file_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Id => {
-                            if id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("id"));
+                        GeneratedField::FileId => {
+                            if file_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("fileId"));
                             }
-                            id__ = map.next_value()?;
+                            file_id__ = map.next_value()?;
                         }
                     }
                 }
-                Ok(PinGameSaveFileRequest {
-                    id: id__,
+                Ok(PinAppSaveFileRequest {
+                    file_id: file_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.PinGameSaveFileRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.PinAppSaveFileRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PinGameSaveFileResponse {
+impl serde::Serialize for PinAppSaveFileResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -12281,11 +13815,11 @@ impl serde::Serialize for PinGameSaveFileResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinGameSaveFileResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinAppSaveFileResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PinGameSaveFileResponse {
+impl<'de> serde::Deserialize<'de> for PinAppSaveFileResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -12324,24 +13858,24 @@ impl<'de> serde::Deserialize<'de> for PinGameSaveFileResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PinGameSaveFileResponse;
+            type Value = PinAppSaveFileResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.PinGameSaveFileResponse")
+                formatter.write_str("struct librarian.sephirah.v1.PinAppSaveFileResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PinGameSaveFileResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PinAppSaveFileResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(PinGameSaveFileResponse {
+                Ok(PinAppSaveFileResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.PinGameSaveFileResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.PinAppSaveFileResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for Porter {
@@ -13207,7 +14741,7 @@ impl<'de> serde::Deserialize<'de> for PresignedUploadFileStatusResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.PresignedUploadFileStatusResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PurchaseAppRequest {
+impl serde::Serialize for PurchaseAppInfoRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -13218,14 +14752,14 @@ impl serde::Serialize for PurchaseAppRequest {
         if self.app_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PurchaseAppRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PurchaseAppInfoRequest", len)?;
         if let Some(v) = self.app_id.as_ref() {
             struct_ser.serialize_field("appId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PurchaseAppRequest {
+impl<'de> serde::Deserialize<'de> for PurchaseAppInfoRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -13270,13 +14804,13 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PurchaseAppRequest;
+            type Value = PurchaseAppInfoRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.PurchaseAppRequest")
+                formatter.write_str("struct librarian.sephirah.v1.PurchaseAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PurchaseAppRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PurchaseAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -13291,15 +14825,15 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppRequest {
                         }
                     }
                 }
-                Ok(PurchaseAppRequest {
+                Ok(PurchaseAppInfoRequest {
                     app_id: app_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.PurchaseAppRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.PurchaseAppInfoRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for PurchaseAppResponse {
+impl serde::Serialize for PurchaseAppInfoResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -13310,14 +14844,14 @@ impl serde::Serialize for PurchaseAppResponse {
         if self.id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PurchaseAppResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PurchaseAppInfoResponse", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for PurchaseAppResponse {
+impl<'de> serde::Deserialize<'de> for PurchaseAppInfoResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -13361,13 +14895,13 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PurchaseAppResponse;
+            type Value = PurchaseAppInfoResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.PurchaseAppResponse")
+                formatter.write_str("struct librarian.sephirah.v1.PurchaseAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PurchaseAppResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<PurchaseAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -13382,12 +14916,12 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppResponse {
                         }
                     }
                 }
-                Ok(PurchaseAppResponse {
+                Ok(PurchaseAppInfoResponse {
                     id: id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.PurchaseAppResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.PurchaseAppInfoResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ReadFeedItemRequest {
@@ -14100,6 +15634,169 @@ impl<'de> serde::Deserialize<'de> for RemoveAppCategoryResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.RemoveAppCategoryResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for RemoveAppSaveFileRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.file_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveAppSaveFileRequest", len)?;
+        if let Some(v) = self.file_id.as_ref() {
+            struct_ser.serialize_field("fileId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RemoveAppSaveFileRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "file_id",
+            "fileId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            FileId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = RemoveAppSaveFileRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.RemoveAppSaveFileRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<RemoveAppSaveFileRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut file_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::FileId => {
+                            if file_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("fileId"));
+                            }
+                            file_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(RemoveAppSaveFileRequest {
+                    file_id: file_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.RemoveAppSaveFileRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for RemoveAppSaveFileResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveAppSaveFileResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RemoveAppSaveFileResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = RemoveAppSaveFileResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.RemoveAppSaveFileResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<RemoveAppSaveFileResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(RemoveAppSaveFileResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.RemoveAppSaveFileResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for RemoveFeedItemFromCollectionRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -14281,7 +15978,7 @@ impl<'de> serde::Deserialize<'de> for RemoveFeedItemFromCollectionResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for RemoveGameSaveFileRequest {
+impl serde::Serialize for ReportAppBinariesRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -14289,29 +15986,30 @@ impl serde::Serialize for RemoveGameSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.id.is_some() {
+        if !self.app_binaries.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveGameSaveFileRequest", len)?;
-        if let Some(v) = self.id.as_ref() {
-            struct_ser.serialize_field("id", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest", len)?;
+        if !self.app_binaries.is_empty() {
+            struct_ser.serialize_field("appBinaries", &self.app_binaries)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileRequest {
+impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "id",
+            "app_binaries",
+            "appBinaries",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Id,
+            AppBinaries,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -14333,7 +16031,7 @@ impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "id" => Ok(GeneratedField::Id),
+                            "appBinaries" | "app_binaries" => Ok(GeneratedField::AppBinaries),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -14343,36 +16041,36 @@ impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = RemoveGameSaveFileRequest;
+            type Value = ReportAppBinariesRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.RemoveGameSaveFileRequest")
+                formatter.write_str("struct librarian.sephirah.v1.ReportAppBinariesRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RemoveGameSaveFileRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ReportAppBinariesRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut id__ = None;
+                let mut app_binaries__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Id => {
-                            if id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("id"));
+                        GeneratedField::AppBinaries => {
+                            if app_binaries__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appBinaries"));
                             }
-                            id__ = map.next_value()?;
+                            app_binaries__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(RemoveGameSaveFileRequest {
-                    id: id__,
+                Ok(ReportAppBinariesRequest {
+                    app_binaries: app_binaries__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.RemoveGameSaveFileRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for RemoveGameSaveFileResponse {
+impl serde::Serialize for ReportAppBinariesResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -14380,11 +16078,11 @@ impl serde::Serialize for RemoveGameSaveFileResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveGameSaveFileResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppBinariesResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileResponse {
+impl<'de> serde::Deserialize<'de> for ReportAppBinariesResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -14423,301 +16121,27 @@ impl<'de> serde::Deserialize<'de> for RemoveGameSaveFileResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = RemoveGameSaveFileResponse;
+            type Value = ReportAppBinariesResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.RemoveGameSaveFileResponse")
+                formatter.write_str("struct librarian.sephirah.v1.ReportAppBinariesResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RemoveGameSaveFileResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ReportAppBinariesResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(RemoveGameSaveFileResponse {
+                Ok(ReportAppBinariesResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.RemoveGameSaveFileResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppBinariesResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for ReportAppPackagesRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.sentinel_app_package_binaries.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest", len)?;
-        if !self.sentinel_app_package_binaries.is_empty() {
-            struct_ser.serialize_field("sentinelAppPackageBinaries", &self.sentinel_app_package_binaries)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReportAppPackagesRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "sentinel_app_package_binaries",
-            "sentinelAppPackageBinaries",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            SentinelAppPackageBinaries,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "sentinelAppPackageBinaries" | "sentinel_app_package_binaries" => Ok(GeneratedField::SentinelAppPackageBinaries),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ReportAppPackagesRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ReportAppPackagesRequest")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ReportAppPackagesRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut sentinel_app_package_binaries__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::SentinelAppPackageBinaries => {
-                            if sentinel_app_package_binaries__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sentinelAppPackageBinaries"));
-                            }
-                            sentinel_app_package_binaries__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(ReportAppPackagesRequest {
-                    sentinel_app_package_binaries: sentinel_app_package_binaries__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for report_app_packages_request::SentinelAppPackageBinary {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.id != 0 {
-            len += 1;
-        }
-        if self.app_package_binary.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary", len)?;
-        if self.id != 0 {
-            struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
-        }
-        if let Some(v) = self.app_package_binary.as_ref() {
-            struct_ser.serialize_field("appPackageBinary", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for report_app_packages_request::SentinelAppPackageBinary {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "id",
-            "app_package_binary",
-            "appPackageBinary",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Id,
-            AppPackageBinary,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "id" => Ok(GeneratedField::Id),
-                            "appPackageBinary" | "app_package_binary" => Ok(GeneratedField::AppPackageBinary),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = report_app_packages_request::SentinelAppPackageBinary;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<report_app_packages_request::SentinelAppPackageBinary, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut id__ = None;
-                let mut app_package_binary__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Id => {
-                            if id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("id"));
-                            }
-                            id__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
-                            ;
-                        }
-                        GeneratedField::AppPackageBinary => {
-                            if app_package_binary__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageBinary"));
-                            }
-                            app_package_binary__ = map.next_value()?;
-                        }
-                    }
-                }
-                Ok(report_app_packages_request::SentinelAppPackageBinary {
-                    id: id__.unwrap_or_default(),
-                    app_package_binary: app_package_binary__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppPackagesRequest.SentinelAppPackageBinary", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ReportAppPackagesResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppPackagesResponse", len)?;
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ReportAppPackagesResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ReportAppPackagesResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ReportAppPackagesResponse")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ReportAppPackagesResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
-                }
-                Ok(ReportAppPackagesResponse {
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppPackagesResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for SearchAppsRequest {
+impl serde::Serialize for SearchAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -14728,20 +16152,20 @@ impl serde::Serialize for SearchAppsRequest {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.keywords.is_empty() {
+        if !self.query.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SearchAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SearchAppInfosRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.keywords.is_empty() {
-            struct_ser.serialize_field("keywords", &self.keywords)?;
+        if !self.query.is_empty() {
+            struct_ser.serialize_field("query", &self.query)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SearchAppsRequest {
+impl<'de> serde::Deserialize<'de> for SearchAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -14749,13 +16173,13 @@ impl<'de> serde::Deserialize<'de> for SearchAppsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "keywords",
+            "query",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            Keywords,
+            Query,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -14778,7 +16202,7 @@ impl<'de> serde::Deserialize<'de> for SearchAppsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "keywords" => Ok(GeneratedField::Keywords),
+                            "query" => Ok(GeneratedField::Query),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -14788,18 +16212,18 @@ impl<'de> serde::Deserialize<'de> for SearchAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SearchAppsRequest;
+            type Value = SearchAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SearchAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.SearchAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut keywords__ = None;
+                let mut query__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -14808,24 +16232,24 @@ impl<'de> serde::Deserialize<'de> for SearchAppsRequest {
                             }
                             paging__ = map.next_value()?;
                         }
-                        GeneratedField::Keywords => {
-                            if keywords__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("keywords"));
+                        GeneratedField::Query => {
+                            if query__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("query"));
                             }
-                            keywords__ = Some(map.next_value()?);
+                            query__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(SearchAppsRequest {
+                Ok(SearchAppInfosRequest {
                     paging: paging__,
-                    keywords: keywords__.unwrap_or_default(),
+                    query: query__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SearchAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SearchAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SearchAppsResponse {
+impl serde::Serialize for SearchAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -14836,20 +16260,20 @@ impl serde::Serialize for SearchAppsResponse {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.apps.is_empty() {
+        if !self.app_infos.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SearchAppsResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SearchAppInfosResponse", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.apps.is_empty() {
-            struct_ser.serialize_field("apps", &self.apps)?;
+        if !self.app_infos.is_empty() {
+            struct_ser.serialize_field("appInfos", &self.app_infos)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
+impl<'de> serde::Deserialize<'de> for SearchAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -14857,13 +16281,14 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "apps",
+            "app_infos",
+            "appInfos",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            Apps,
+            AppInfos,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -14886,7 +16311,7 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "apps" => Ok(GeneratedField::Apps),
+                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -14896,18 +16321,18 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SearchAppsResponse;
+            type Value = SearchAppInfosResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SearchAppsResponse")
+                formatter.write_str("struct librarian.sephirah.v1.SearchAppInfosResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppsResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfosResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut apps__ = None;
+                let mut app_infos__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -14916,21 +16341,21 @@ impl<'de> serde::Deserialize<'de> for SearchAppsResponse {
                             }
                             paging__ = map.next_value()?;
                         }
-                        GeneratedField::Apps => {
-                            if apps__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("apps"));
+                        GeneratedField::AppInfos => {
+                            if app_infos__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            apps__ = Some(map.next_value()?);
+                            app_infos__ = Some(map.next_value()?);
                         }
                     }
                 }
-                Ok(SearchAppsResponse {
+                Ok(SearchAppInfosResponse {
                     paging: paging__,
-                    apps: apps__.unwrap_or_default(),
+                    app_infos: app_infos__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SearchAppsResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SearchAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for SearchImagesRequest {
@@ -15676,7 +17101,7 @@ impl<'de> serde::Deserialize<'de> for ServerProtocolSummary {
         deserializer.deserialize_struct("librarian.sephirah.v1.ServerProtocolSummary", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SetSaveFileRotationRequest {
+impl serde::Serialize for SetAppSaveFileCapacityRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -15684,57 +17109,72 @@ impl serde::Serialize for SetSaveFileRotationRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.entity_id.is_some() {
-            len += 1;
-        }
-        if self.valid_scope != 0 {
-            len += 1;
-        }
         if self.count != 0 {
             len += 1;
         }
-        if self.enabled {
+        if self.size_bytes != 0 {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetSaveFileRotationRequest", len)?;
-        if let Some(v) = self.entity_id.as_ref() {
-            struct_ser.serialize_field("entityId", v)?;
+        if self.strategy != 0 {
+            len += 1;
         }
-        if self.valid_scope != 0 {
-            let v = ValidScope::from_i32(self.valid_scope)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.valid_scope)))?;
-            struct_ser.serialize_field("validScope", &v)?;
+        if self.entity.is_some() {
+            len += 1;
         }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityRequest", len)?;
         if self.count != 0 {
             struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
         }
-        if self.enabled {
-            struct_ser.serialize_field("enabled", &self.enabled)?;
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if self.strategy != 0 {
+            let v = AppSaveFileCapacityStrategy::from_i32(self.strategy)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.strategy)))?;
+            struct_ser.serialize_field("strategy", &v)?;
+        }
+        if let Some(v) = self.entity.as_ref() {
+            match v {
+                set_app_save_file_capacity_request::Entity::User(v) => {
+                    struct_ser.serialize_field("user", v)?;
+                }
+                set_app_save_file_capacity_request::Entity::AppId(v) => {
+                    struct_ser.serialize_field("appId", v)?;
+                }
+                set_app_save_file_capacity_request::Entity::AppInstId(v) => {
+                    struct_ser.serialize_field("appInstId", v)?;
+                }
+            }
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
+impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "entity_id",
-            "entityId",
-            "valid_scope",
-            "validScope",
             "count",
-            "enabled",
+            "size_bytes",
+            "sizeBytes",
+            "strategy",
+            "user",
+            "app_id",
+            "appId",
+            "app_inst_id",
+            "appInstId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            EntityId,
-            ValidScope,
             Count,
-            Enabled,
+            SizeBytes,
+            Strategy,
+            User,
+            AppId,
+            AppInstId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -15756,10 +17196,12 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "entityId" | "entity_id" => Ok(GeneratedField::EntityId),
-                            "validScope" | "valid_scope" => Ok(GeneratedField::ValidScope),
                             "count" => Ok(GeneratedField::Count),
-                            "enabled" => Ok(GeneratedField::Enabled),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "strategy" => Ok(GeneratedField::Strategy),
+                            "user" => Ok(GeneratedField::User),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            "appInstId" | "app_inst_id" => Ok(GeneratedField::AppInstId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -15769,34 +17211,22 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SetSaveFileRotationRequest;
+            type Value = SetAppSaveFileCapacityRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SetSaveFileRotationRequest")
+                formatter.write_str("struct librarian.sephirah.v1.SetAppSaveFileCapacityRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetSaveFileRotationRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetAppSaveFileCapacityRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut entity_id__ = None;
-                let mut valid_scope__ = None;
                 let mut count__ = None;
-                let mut enabled__ = None;
+                let mut size_bytes__ = None;
+                let mut strategy__ = None;
+                let mut entity__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::EntityId => {
-                            if entity_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("entityId"));
-                            }
-                            entity_id__ = map.next_value()?;
-                        }
-                        GeneratedField::ValidScope => {
-                            if valid_scope__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("validScope"));
-                            }
-                            valid_scope__ = Some(map.next_value::<ValidScope>()? as i32);
-                        }
                         GeneratedField::Count => {
                             if count__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("count"));
@@ -15805,209 +17235,54 @@ impl<'de> serde::Deserialize<'de> for SetSaveFileRotationRequest {
                                 Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::Enabled => {
-                            if enabled__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("enabled"));
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
                             }
-                            enabled__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(SetSaveFileRotationRequest {
-                    entity_id: entity_id__,
-                    valid_scope: valid_scope__.unwrap_or_default(),
-                    count: count__.unwrap_or_default(),
-                    enabled: enabled__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SetSaveFileRotationRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for SetSaveFileRotationResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetSaveFileRotationResponse", len)?;
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SetSaveFileRotationResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SetSaveFileRotationResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SetSaveFileRotationResponse")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetSaveFileRotationResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
-                }
-                Ok(SetSaveFileRotationResponse {
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SetSaveFileRotationResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for SetUserSaveFileCapacityRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.user_id.is_some() {
-            len += 1;
-        }
-        if self.capacity_bytes.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityRequest", len)?;
-        if let Some(v) = self.user_id.as_ref() {
-            struct_ser.serialize_field("userId", v)?;
-        }
-        if let Some(v) = self.capacity_bytes.as_ref() {
-            struct_ser.serialize_field("capacityBytes", ToString::to_string(&v).as_str())?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SetUserSaveFileCapacityRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "user_id",
-            "userId",
-            "capacity_bytes",
-            "capacityBytes",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            UserId,
-            CapacityBytes,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "userId" | "user_id" => Ok(GeneratedField::UserId),
-                            "capacityBytes" | "capacity_bytes" => Ok(GeneratedField::CapacityBytes),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SetUserSaveFileCapacityRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SetUserSaveFileCapacityRequest")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetUserSaveFileCapacityRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut user_id__ = None;
-                let mut capacity_bytes__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::UserId => {
-                            if user_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("userId"));
-                            }
-                            user_id__ = map.next_value()?;
-                        }
-                        GeneratedField::CapacityBytes => {
-                            if capacity_bytes__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("capacityBytes"));
-                            }
-                            capacity_bytes__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
+                        GeneratedField::Strategy => {
+                            if strategy__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("strategy"));
+                            }
+                            strategy__ = Some(map.next_value::<AppSaveFileCapacityStrategy>()? as i32);
+                        }
+                        GeneratedField::User => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("user"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(set_app_save_file_capacity_request::Entity::User);
+                        }
+                        GeneratedField::AppId => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appId"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(set_app_save_file_capacity_request::Entity::AppId)
+;
+                        }
+                        GeneratedField::AppInstId => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInstId"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(set_app_save_file_capacity_request::Entity::AppInstId)
+;
+                        }
                     }
                 }
-                Ok(SetUserSaveFileCapacityRequest {
-                    user_id: user_id__,
-                    capacity_bytes: capacity_bytes__,
+                Ok(SetAppSaveFileCapacityRequest {
+                    count: count__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    strategy: strategy__.unwrap_or_default(),
+                    entity: entity__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SetUserSaveFileCapacityResponse {
+impl serde::Serialize for SetAppSaveFileCapacityResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16015,11 +17290,11 @@ impl serde::Serialize for SetUserSaveFileCapacityResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SetUserSaveFileCapacityResponse {
+impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -16058,24 +17333,24 @@ impl<'de> serde::Deserialize<'de> for SetUserSaveFileCapacityResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SetUserSaveFileCapacityResponse;
+            type Value = SetAppSaveFileCapacityResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SetUserSaveFileCapacityResponse")
+                formatter.write_str("struct librarian.sephirah.v1.SetAppSaveFileCapacityResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetUserSaveFileCapacityResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetAppSaveFileCapacityResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(SetUserSaveFileCapacityResponse {
+                Ok(SetAppSaveFileCapacityResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SetUserSaveFileCapacityResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for SimpleDownloadFileRequest {
@@ -16428,7 +17703,7 @@ impl<'de> serde::Deserialize<'de> for SimpleUploadFileResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.SimpleUploadFileResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SumAppPackageRunTimeRequest {
+impl serde::Serialize for SumAppInstRunTimeRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16436,15 +17711,15 @@ impl serde::Serialize for SumAppPackageRunTimeRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_package_id.is_some() {
+        if self.app_inst_id.is_some() {
             len += 1;
         }
         if self.time_aggregation.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SumAppPackageRunTimeRequest", len)?;
-        if let Some(v) = self.app_package_id.as_ref() {
-            struct_ser.serialize_field("appPackageId", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SumAppInstRunTimeRequest", len)?;
+        if let Some(v) = self.app_inst_id.as_ref() {
+            struct_ser.serialize_field("appInstId", v)?;
         }
         if let Some(v) = self.time_aggregation.as_ref() {
             struct_ser.serialize_field("timeAggregation", v)?;
@@ -16452,22 +17727,22 @@ impl serde::Serialize for SumAppPackageRunTimeRequest {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeRequest {
+impl<'de> serde::Deserialize<'de> for SumAppInstRunTimeRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package_id",
-            "appPackageId",
+            "app_inst_id",
+            "appInstId",
             "time_aggregation",
             "timeAggregation",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackageId,
+            AppInstId,
             TimeAggregation,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -16490,7 +17765,7 @@ impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
+                            "appInstId" | "app_inst_id" => Ok(GeneratedField::AppInstId),
                             "timeAggregation" | "time_aggregation" => Ok(GeneratedField::TimeAggregation),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -16501,25 +17776,25 @@ impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SumAppPackageRunTimeRequest;
+            type Value = SumAppInstRunTimeRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SumAppPackageRunTimeRequest")
+                formatter.write_str("struct librarian.sephirah.v1.SumAppInstRunTimeRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SumAppPackageRunTimeRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SumAppInstRunTimeRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package_id__ = None;
+                let mut app_inst_id__ = None;
                 let mut time_aggregation__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackageId => {
-                            if app_package_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageId"));
+                        GeneratedField::AppInstId => {
+                            if app_inst_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInstId"));
                             }
-                            app_package_id__ = map.next_value()?;
+                            app_inst_id__ = map.next_value()?;
                         }
                         GeneratedField::TimeAggregation => {
                             if time_aggregation__.is_some() {
@@ -16529,16 +17804,16 @@ impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeRequest {
                         }
                     }
                 }
-                Ok(SumAppPackageRunTimeRequest {
-                    app_package_id: app_package_id__,
+                Ok(SumAppInstRunTimeRequest {
+                    app_inst_id: app_inst_id__,
                     time_aggregation: time_aggregation__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SumAppPackageRunTimeRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SumAppInstRunTimeRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SumAppPackageRunTimeResponse {
+impl serde::Serialize for SumAppInstRunTimeResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16549,14 +17824,14 @@ impl serde::Serialize for SumAppPackageRunTimeResponse {
         if !self.run_time_groups.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SumAppPackageRunTimeResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SumAppInstRunTimeResponse", len)?;
         if !self.run_time_groups.is_empty() {
             struct_ser.serialize_field("runTimeGroups", &self.run_time_groups)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeResponse {
+impl<'de> serde::Deserialize<'de> for SumAppInstRunTimeResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -16601,13 +17876,13 @@ impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SumAppPackageRunTimeResponse;
+            type Value = SumAppInstRunTimeResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SumAppPackageRunTimeResponse")
+                formatter.write_str("struct librarian.sephirah.v1.SumAppInstRunTimeResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SumAppPackageRunTimeResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SumAppInstRunTimeResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -16622,15 +17897,15 @@ impl<'de> serde::Deserialize<'de> for SumAppPackageRunTimeResponse {
                         }
                     }
                 }
-                Ok(SumAppPackageRunTimeResponse {
+                Ok(SumAppInstRunTimeResponse {
                     run_time_groups: run_time_groups__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SumAppPackageRunTimeResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SumAppInstRunTimeResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for sum_app_package_run_time_response::Group {
+impl serde::Serialize for sum_app_inst_run_time_response::Group {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16644,7 +17919,7 @@ impl serde::Serialize for sum_app_package_run_time_response::Group {
         if self.duration.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SumAppPackageRunTimeResponse.Group", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SumAppInstRunTimeResponse.Group", len)?;
         if let Some(v) = self.time_range.as_ref() {
             struct_ser.serialize_field("timeRange", v)?;
         }
@@ -16654,7 +17929,7 @@ impl serde::Serialize for sum_app_package_run_time_response::Group {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for sum_app_package_run_time_response::Group {
+impl<'de> serde::Deserialize<'de> for sum_app_inst_run_time_response::Group {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -16702,13 +17977,13 @@ impl<'de> serde::Deserialize<'de> for sum_app_package_run_time_response::Group {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = sum_app_package_run_time_response::Group;
+            type Value = sum_app_inst_run_time_response::Group;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SumAppPackageRunTimeResponse.Group")
+                formatter.write_str("struct librarian.sephirah.v1.SumAppInstRunTimeResponse.Group")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<sum_app_package_run_time_response::Group, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<sum_app_inst_run_time_response::Group, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -16730,16 +18005,16 @@ impl<'de> serde::Deserialize<'de> for sum_app_package_run_time_response::Group {
                         }
                     }
                 }
-                Ok(sum_app_package_run_time_response::Group {
+                Ok(sum_app_inst_run_time_response::Group {
                     time_range: time_range__,
                     duration: duration__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SumAppPackageRunTimeResponse.Group", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SumAppInstRunTimeResponse.Group", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SyncAccountAppsRequest {
+impl serde::Serialize for SyncAccountAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16750,14 +18025,14 @@ impl serde::Serialize for SyncAccountAppsRequest {
         if self.account_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAccountAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAccountAppInfosRequest", len)?;
         if let Some(v) = self.account_id.as_ref() {
             struct_ser.serialize_field("accountId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SyncAccountAppsRequest {
+impl<'de> serde::Deserialize<'de> for SyncAccountAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -16802,13 +18077,13 @@ impl<'de> serde::Deserialize<'de> for SyncAccountAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SyncAccountAppsRequest;
+            type Value = SyncAccountAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SyncAccountAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.SyncAccountAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAccountAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAccountAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -16823,15 +18098,15 @@ impl<'de> serde::Deserialize<'de> for SyncAccountAppsRequest {
                         }
                     }
                 }
-                Ok(SyncAccountAppsRequest {
+                Ok(SyncAccountAppInfosRequest {
                     account_id: account_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAccountAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAccountAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SyncAccountAppsResponse {
+impl serde::Serialize for SyncAccountAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16839,11 +18114,11 @@ impl serde::Serialize for SyncAccountAppsResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAccountAppsResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAccountAppInfosResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SyncAccountAppsResponse {
+impl<'de> serde::Deserialize<'de> for SyncAccountAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -16882,27 +18157,27 @@ impl<'de> serde::Deserialize<'de> for SyncAccountAppsResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SyncAccountAppsResponse;
+            type Value = SyncAccountAppInfosResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SyncAccountAppsResponse")
+                formatter.write_str("struct librarian.sephirah.v1.SyncAccountAppInfosResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAccountAppsResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAccountAppInfosResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(SyncAccountAppsResponse {
+                Ok(SyncAccountAppInfosResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAccountAppsResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAccountAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SyncAppsRequest {
+impl serde::Serialize for SyncAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -16916,7 +18191,7 @@ impl serde::Serialize for SyncAppsRequest {
         if self.wait_data.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppsRequest", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppInfosRequest", len)?;
         if !self.app_ids.is_empty() {
             struct_ser.serialize_field("appIds", &self.app_ids)?;
         }
@@ -16926,7 +18201,7 @@ impl serde::Serialize for SyncAppsRequest {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SyncAppsRequest {
+impl<'de> serde::Deserialize<'de> for SyncAppInfosRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -16975,13 +18250,13 @@ impl<'de> serde::Deserialize<'de> for SyncAppsRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SyncAppsRequest;
+            type Value = SyncAppInfosRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SyncAppsRequest")
+                formatter.write_str("struct librarian.sephirah.v1.SyncAppInfosRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAppsRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAppInfosRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -17003,16 +18278,16 @@ impl<'de> serde::Deserialize<'de> for SyncAppsRequest {
                         }
                     }
                 }
-                Ok(SyncAppsRequest {
+                Ok(SyncAppInfosRequest {
                     app_ids: app_ids__.unwrap_or_default(),
                     wait_data: wait_data__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAppsRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAppInfosRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for SyncAppsResponse {
+impl serde::Serialize for SyncAppInfosResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17023,14 +18298,14 @@ impl serde::Serialize for SyncAppsResponse {
         if !self.apps.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppsResponse", len)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SyncAppInfosResponse", len)?;
         if !self.apps.is_empty() {
             struct_ser.serialize_field("apps", &self.apps)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
+impl<'de> serde::Deserialize<'de> for SyncAppInfosResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -17074,13 +18349,13 @@ impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SyncAppsResponse;
+            type Value = SyncAppInfosResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SyncAppsResponse")
+                formatter.write_str("struct librarian.sephirah.v1.SyncAppInfosResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAppsResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SyncAppInfosResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -17095,12 +18370,12 @@ impl<'de> serde::Deserialize<'de> for SyncAppsResponse {
                         }
                     }
                 }
-                Ok(SyncAppsResponse {
+                Ok(SyncAppInfosResponse {
                     apps: apps__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAppsResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.SyncAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for SystemType {
@@ -17191,7 +18466,7 @@ impl<'de> serde::Deserialize<'de> for SystemType {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
-impl serde::Serialize for UnAssignAppPackageRequest {
+impl serde::Serialize for UnAssignAppRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17199,30 +18474,30 @@ impl serde::Serialize for UnAssignAppPackageRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_package_id.is_some() {
+        if self.app_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnAssignAppPackageRequest", len)?;
-        if let Some(v) = self.app_package_id.as_ref() {
-            struct_ser.serialize_field("appPackageId", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnAssignAppRequest", len)?;
+        if let Some(v) = self.app_id.as_ref() {
+            struct_ser.serialize_field("appId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for UnAssignAppPackageRequest {
+impl<'de> serde::Deserialize<'de> for UnAssignAppRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package_id",
-            "appPackageId",
+            "app_id",
+            "appId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackageId,
+            AppId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17244,7 +18519,7 @@ impl<'de> serde::Deserialize<'de> for UnAssignAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17254,36 +18529,36 @@ impl<'de> serde::Deserialize<'de> for UnAssignAppPackageRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UnAssignAppPackageRequest;
+            type Value = UnAssignAppRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UnAssignAppPackageRequest")
+                formatter.write_str("struct librarian.sephirah.v1.UnAssignAppRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnAssignAppPackageRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnAssignAppRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package_id__ = None;
+                let mut app_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackageId => {
-                            if app_package_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageId"));
+                        GeneratedField::AppId => {
+                            if app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appId"));
                             }
-                            app_package_id__ = map.next_value()?;
+                            app_id__ = map.next_value()?;
                         }
                     }
                 }
-                Ok(UnAssignAppPackageRequest {
-                    app_package_id: app_package_id__,
+                Ok(UnAssignAppRequest {
+                    app_id: app_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UnAssignAppPackageRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.UnAssignAppRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for UnAssignAppPackageResponse {
+impl serde::Serialize for UnAssignAppResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17291,11 +18566,11 @@ impl serde::Serialize for UnAssignAppPackageResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnAssignAppPackageResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnAssignAppResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for UnAssignAppPackageResponse {
+impl<'de> serde::Deserialize<'de> for UnAssignAppResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -17334,24 +18609,24 @@ impl<'de> serde::Deserialize<'de> for UnAssignAppPackageResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UnAssignAppPackageResponse;
+            type Value = UnAssignAppResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UnAssignAppPackageResponse")
+                formatter.write_str("struct librarian.sephirah.v1.UnAssignAppResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnAssignAppPackageResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnAssignAppResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(UnAssignAppPackageResponse {
+                Ok(UnAssignAppResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UnAssignAppPackageResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.UnAssignAppResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for UnLinkAccountRequest {
@@ -17517,7 +18792,7 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.UnLinkAccountResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for UnpinGameSaveFileRequest {
+impl serde::Serialize for UnpinAppSaveFileRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17525,29 +18800,30 @@ impl serde::Serialize for UnpinGameSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.id.is_some() {
+        if self.file_id.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinGameSaveFileRequest", len)?;
-        if let Some(v) = self.id.as_ref() {
-            struct_ser.serialize_field("id", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinAppSaveFileRequest", len)?;
+        if let Some(v) = self.file_id.as_ref() {
+            struct_ser.serialize_field("fileId", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileRequest {
+impl<'de> serde::Deserialize<'de> for UnpinAppSaveFileRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "id",
+            "file_id",
+            "fileId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Id,
+            FileId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17569,7 +18845,7 @@ impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "id" => Ok(GeneratedField::Id),
+                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17579,36 +18855,36 @@ impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UnpinGameSaveFileRequest;
+            type Value = UnpinAppSaveFileRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UnpinGameSaveFileRequest")
+                formatter.write_str("struct librarian.sephirah.v1.UnpinAppSaveFileRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnpinGameSaveFileRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnpinAppSaveFileRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut id__ = None;
+                let mut file_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::Id => {
-                            if id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("id"));
+                        GeneratedField::FileId => {
+                            if file_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("fileId"));
                             }
-                            id__ = map.next_value()?;
+                            file_id__ = map.next_value()?;
                         }
                     }
                 }
-                Ok(UnpinGameSaveFileRequest {
-                    id: id__,
+                Ok(UnpinAppSaveFileRequest {
+                    file_id: file_id__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UnpinGameSaveFileRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.UnpinAppSaveFileRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for UnpinGameSaveFileResponse {
+impl serde::Serialize for UnpinAppSaveFileResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17616,11 +18892,11 @@ impl serde::Serialize for UnpinGameSaveFileResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinGameSaveFileResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinAppSaveFileResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileResponse {
+impl<'de> serde::Deserialize<'de> for UnpinAppSaveFileResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -17659,24 +18935,24 @@ impl<'de> serde::Deserialize<'de> for UnpinGameSaveFileResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UnpinGameSaveFileResponse;
+            type Value = UnpinAppSaveFileResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UnpinGameSaveFileResponse")
+                formatter.write_str("struct librarian.sephirah.v1.UnpinAppSaveFileResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnpinGameSaveFileResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UnpinAppSaveFileResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(UnpinGameSaveFileResponse {
+                Ok(UnpinAppSaveFileResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UnpinGameSaveFileResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.UnpinAppSaveFileResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for UpdateAppCategoryRequest {
@@ -17842,7 +19118,7 @@ impl<'de> serde::Deserialize<'de> for UpdateAppCategoryResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppCategoryResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for UpdateAppPackageRequest {
+impl serde::Serialize for UpdateAppInfoRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17850,30 +19126,30 @@ impl serde::Serialize for UpdateAppPackageRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_package.is_some() {
+        if self.app_info.is_some() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateAppPackageRequest", len)?;
-        if let Some(v) = self.app_package.as_ref() {
-            struct_ser.serialize_field("appPackage", v)?;
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateAppInfoRequest", len)?;
+        if let Some(v) = self.app_info.as_ref() {
+            struct_ser.serialize_field("appInfo", v)?;
         }
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for UpdateAppPackageRequest {
+impl<'de> serde::Deserialize<'de> for UpdateAppInfoRequest {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_package",
-            "appPackage",
+            "app_info",
+            "appInfo",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppPackage,
+            AppInfo,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17895,7 +19171,7 @@ impl<'de> serde::Deserialize<'de> for UpdateAppPackageRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appPackage" | "app_package" => Ok(GeneratedField::AppPackage),
+                            "appInfo" | "app_info" => Ok(GeneratedField::AppInfo),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17905,36 +19181,36 @@ impl<'de> serde::Deserialize<'de> for UpdateAppPackageRequest {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UpdateAppPackageRequest;
+            type Value = UpdateAppInfoRequest;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UpdateAppPackageRequest")
+                formatter.write_str("struct librarian.sephirah.v1.UpdateAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateAppPackageRequest, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_package__ = None;
+                let mut app_info__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppPackage => {
-                            if app_package__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackage"));
+                        GeneratedField::AppInfo => {
+                            if app_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfo"));
                             }
-                            app_package__ = map.next_value()?;
+                            app_info__ = map.next_value()?;
                         }
                     }
                 }
-                Ok(UpdateAppPackageRequest {
-                    app_package: app_package__,
+                Ok(UpdateAppInfoRequest {
+                    app_info: app_info__,
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppPackageRequest", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppInfoRequest", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for UpdateAppPackageResponse {
+impl serde::Serialize for UpdateAppInfoResponse {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -17942,11 +19218,11 @@ impl serde::Serialize for UpdateAppPackageResponse {
     {
         use serde::ser::SerializeStruct;
         let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateAppPackageResponse", len)?;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateAppInfoResponse", len)?;
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for UpdateAppPackageResponse {
+impl<'de> serde::Deserialize<'de> for UpdateAppInfoResponse {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -17985,24 +19261,187 @@ impl<'de> serde::Deserialize<'de> for UpdateAppPackageResponse {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UpdateAppPackageResponse;
+            type Value = UpdateAppInfoResponse;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UpdateAppPackageResponse")
+                formatter.write_str("struct librarian.sephirah.v1.UpdateAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateAppPackageResponse, V::Error>
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 while map.next_key::<GeneratedField>()?.is_some() {
                     let _ = map.next_value::<serde::de::IgnoredAny>()?;
                 }
-                Ok(UpdateAppPackageResponse {
+                Ok(UpdateAppInfoResponse {
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppPackageResponse", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppInfoResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UpdateAppInstRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_inst.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateAppInstRequest", len)?;
+        if let Some(v) = self.app_inst.as_ref() {
+            struct_ser.serialize_field("appInst", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UpdateAppInstRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_inst",
+            "appInst",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInst,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInst" | "app_inst" => Ok(GeneratedField::AppInst),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UpdateAppInstRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UpdateAppInstRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateAppInstRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_inst__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppInst => {
+                            if app_inst__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInst"));
+                            }
+                            app_inst__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(UpdateAppInstRequest {
+                    app_inst: app_inst__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppInstRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UpdateAppInstResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateAppInstResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UpdateAppInstResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UpdateAppInstResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UpdateAppInstResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateAppInstResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(UpdateAppInstResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateAppInstResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for UpdateAppRequest {
@@ -19552,6 +20991,208 @@ impl<'de> serde::Deserialize<'de> for UpdateUserResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.UpdateUserResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for UploadAppSaveFileRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.file_metadata.is_some() {
+            len += 1;
+        }
+        if self.app_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UploadAppSaveFileRequest", len)?;
+        if let Some(v) = self.file_metadata.as_ref() {
+            struct_ser.serialize_field("fileMetadata", v)?;
+        }
+        if let Some(v) = self.app_id.as_ref() {
+            struct_ser.serialize_field("appId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UploadAppSaveFileRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "file_metadata",
+            "fileMetadata",
+            "app_id",
+            "appId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            FileMetadata,
+            AppId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "fileMetadata" | "file_metadata" => Ok(GeneratedField::FileMetadata),
+                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UploadAppSaveFileRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UploadAppSaveFileRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UploadAppSaveFileRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut file_metadata__ = None;
+                let mut app_id__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::FileMetadata => {
+                            if file_metadata__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("fileMetadata"));
+                            }
+                            file_metadata__ = map.next_value()?;
+                        }
+                        GeneratedField::AppId => {
+                            if app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appId"));
+                            }
+                            app_id__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(UploadAppSaveFileRequest {
+                    file_metadata: file_metadata__,
+                    app_id: app_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UploadAppSaveFileRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UploadAppSaveFileResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.upload_token.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UploadAppSaveFileResponse", len)?;
+        if !self.upload_token.is_empty() {
+            struct_ser.serialize_field("uploadToken", &self.upload_token)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UploadAppSaveFileResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "upload_token",
+            "uploadToken",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            UploadToken,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "uploadToken" | "upload_token" => Ok(GeneratedField::UploadToken),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UploadAppSaveFileResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UploadAppSaveFileResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UploadAppSaveFileResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut upload_token__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::UploadToken => {
+                            if upload_token__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("uploadToken"));
+                            }
+                            upload_token__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(UploadAppSaveFileResponse {
+                    upload_token: upload_token__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UploadAppSaveFileResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for UploadFileRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -19998,208 +21639,6 @@ impl<'de> serde::Deserialize<'de> for upload_file_response::FileStatus {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.UploadFileResponse.FileStatus", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for UploadGameSaveFileRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.file_metadata.is_some() {
-            len += 1;
-        }
-        if self.app_package_id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UploadGameSaveFileRequest", len)?;
-        if let Some(v) = self.file_metadata.as_ref() {
-            struct_ser.serialize_field("fileMetadata", v)?;
-        }
-        if let Some(v) = self.app_package_id.as_ref() {
-            struct_ser.serialize_field("appPackageId", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for UploadGameSaveFileRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "file_metadata",
-            "fileMetadata",
-            "app_package_id",
-            "appPackageId",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            FileMetadata,
-            AppPackageId,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "fileMetadata" | "file_metadata" => Ok(GeneratedField::FileMetadata),
-                            "appPackageId" | "app_package_id" => Ok(GeneratedField::AppPackageId),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UploadGameSaveFileRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UploadGameSaveFileRequest")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UploadGameSaveFileRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut file_metadata__ = None;
-                let mut app_package_id__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::FileMetadata => {
-                            if file_metadata__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("fileMetadata"));
-                            }
-                            file_metadata__ = map.next_value()?;
-                        }
-                        GeneratedField::AppPackageId => {
-                            if app_package_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appPackageId"));
-                            }
-                            app_package_id__ = map.next_value()?;
-                        }
-                    }
-                }
-                Ok(UploadGameSaveFileRequest {
-                    file_metadata: file_metadata__,
-                    app_package_id: app_package_id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UploadGameSaveFileRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for UploadGameSaveFileResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.upload_token.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UploadGameSaveFileResponse", len)?;
-        if !self.upload_token.is_empty() {
-            struct_ser.serialize_field("uploadToken", &self.upload_token)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for UploadGameSaveFileResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "upload_token",
-            "uploadToken",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            UploadToken,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "uploadToken" | "upload_token" => Ok(GeneratedField::UploadToken),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = UploadGameSaveFileResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.UploadGameSaveFileResponse")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UploadGameSaveFileResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut upload_token__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::UploadToken => {
-                            if upload_token__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("uploadToken"));
-                            }
-                            upload_token__ = Some(map.next_value()?);
-                        }
-                    }
-                }
-                Ok(UploadGameSaveFileResponse {
-                    upload_token: upload_token__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.UploadGameSaveFileResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for UploadImageRequest {
@@ -20897,85 +22336,6 @@ impl<'de> serde::Deserialize<'de> for UserType {
                     "USER_TYPE_NORMAL" => Ok(UserType::Normal),
                     "USER_TYPE_SENTINEL" => Ok(UserType::Sentinel),
                     "USER_TYPE_PORTER" => Ok(UserType::Porter),
-                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
-                }
-            }
-        }
-        deserializer.deserialize_any(GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ValidScope {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        let variant = match self {
-            Self::Unspecified => "VALID_SCOPE_UNSPECIFIED",
-            Self::Account => "VALID_SCOPE_ACCOUNT",
-            Self::App => "VALID_SCOPE_APP",
-            Self::AppPackage => "VALID_SCOPE_APP_PACKAGE",
-        };
-        serializer.serialize_str(variant)
-    }
-}
-impl<'de> serde::Deserialize<'de> for ValidScope {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "VALID_SCOPE_UNSPECIFIED",
-            "VALID_SCOPE_ACCOUNT",
-            "VALID_SCOPE_APP",
-            "VALID_SCOPE_APP_PACKAGE",
-        ];
-
-        struct GeneratedVisitor;
-
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ValidScope;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(formatter, "expected one of: {:?}", &FIELDS)
-            }
-
-            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(ValidScope::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
-                    })
-            }
-
-            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                use std::convert::TryFrom;
-                i32::try_from(v)
-                    .ok()
-                    .and_then(ValidScope::from_i32)
-                    .ok_or_else(|| {
-                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
-                    })
-            }
-
-            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
-            where
-                E: serde::de::Error,
-            {
-                match value {
-                    "VALID_SCOPE_UNSPECIFIED" => Ok(ValidScope::Unspecified),
-                    "VALID_SCOPE_ACCOUNT" => Ok(ValidScope::Account),
-                    "VALID_SCOPE_APP" => Ok(ValidScope::App),
-                    "VALID_SCOPE_APP_PACKAGE" => Ok(ValidScope::AppPackage),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

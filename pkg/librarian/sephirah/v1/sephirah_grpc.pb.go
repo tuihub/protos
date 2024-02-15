@@ -49,35 +49,38 @@ const (
 	LibrarianSephirahService_SearchImages_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages"
 	LibrarianSephirahService_GetImage_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/GetImage"
 	LibrarianSephirahService_DownloadImage_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage"
+	LibrarianSephirahService_CreateAppInfo_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppInfo"
+	LibrarianSephirahService_UpdateAppInfo_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppInfo"
+	LibrarianSephirahService_ListAppInfos_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppInfos"
+	LibrarianSephirahService_MergeAppInfos_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/MergeAppInfos"
+	LibrarianSephirahService_PickAppInfo_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/PickAppInfo"
+	LibrarianSephirahService_SyncAppInfos_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAppInfos"
+	LibrarianSephirahService_SyncAccountAppInfos_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountAppInfos"
+	LibrarianSephirahService_SearchAppInfos_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos"
+	LibrarianSephirahService_GetAppInfo_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppInfo"
+	LibrarianSephirahService_GetBoundAppInfos_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GetBoundAppInfos"
+	LibrarianSephirahService_PurchaseAppInfo_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseAppInfo"
+	LibrarianSephirahService_GetPurchasedAppInfos_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedAppInfos"
 	LibrarianSephirahService_CreateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
 	LibrarianSephirahService_UpdateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
 	LibrarianSephirahService_ListApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
-	LibrarianSephirahService_MergeApps_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/MergeApps"
-	LibrarianSephirahService_PickApp_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/PickApp"
-	LibrarianSephirahService_SyncApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/SyncApps"
-	LibrarianSephirahService_SyncAccountApps_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps"
-	LibrarianSephirahService_SearchApps_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/SearchApps"
-	LibrarianSephirahService_GetApp_FullMethodName                       = "/librarian.sephirah.v1.LibrarianSephirahService/GetApp"
-	LibrarianSephirahService_GetBoundApps_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/GetBoundApps"
-	LibrarianSephirahService_PurchaseApp_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp"
-	LibrarianSephirahService_GetPurchasedApps_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps"
-	LibrarianSephirahService_CreateAppPackage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage"
-	LibrarianSephirahService_UpdateAppPackage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage"
-	LibrarianSephirahService_ListAppPackages_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackages"
-	LibrarianSephirahService_AssignAppPackage_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage"
-	LibrarianSephirahService_UnAssignAppPackage_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage"
-	LibrarianSephirahService_ReportAppPackages_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages"
-	LibrarianSephirahService_DownloadAppPackageBinary_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppPackageBinary"
-	LibrarianSephirahService_AddAppPackageRunTime_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime"
-	LibrarianSephirahService_SumAppPackageRunTime_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime"
-	LibrarianSephirahService_UploadGameSaveFile_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile"
-	LibrarianSephirahService_DownloadGameSaveFile_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile"
-	LibrarianSephirahService_ListGameSaveFiles_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles"
-	LibrarianSephirahService_RemoveGameSaveFile_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveGameSaveFile"
-	LibrarianSephirahService_PinGameSaveFile_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/PinGameSaveFile"
-	LibrarianSephirahService_UnpinGameSaveFile_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile"
-	LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity"
-	LibrarianSephirahService_SetSaveFileRotation_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation"
+	LibrarianSephirahService_AssignApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/AssignApp"
+	LibrarianSephirahService_UnAssignApp_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignApp"
+	LibrarianSephirahService_ReportAppBinaries_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppBinaries"
+	LibrarianSephirahService_DownloadAppBinary_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppBinary"
+	LibrarianSephirahService_CreateAppInst_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppInst"
+	LibrarianSephirahService_UpdateAppInst_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppInst"
+	LibrarianSephirahService_ListAppInsts_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppInsts"
+	LibrarianSephirahService_AddAppInstRunTime_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppInstRunTime"
+	LibrarianSephirahService_SumAppInstRunTime_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppInstRunTime"
+	LibrarianSephirahService_UploadAppSaveFile_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UploadAppSaveFile"
+	LibrarianSephirahService_DownloadAppSaveFile_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppSaveFile"
+	LibrarianSephirahService_ListAppSaveFiles_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppSaveFiles"
+	LibrarianSephirahService_RemoveAppSaveFile_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveAppSaveFile"
+	LibrarianSephirahService_PinAppSaveFile_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/PinAppSaveFile"
+	LibrarianSephirahService_UnpinAppSaveFile_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/UnpinAppSaveFile"
+	LibrarianSephirahService_SetAppSaveFileCapacity_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacity"
+	LibrarianSephirahService_GetAppSaveFileCapacity_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity"
 	LibrarianSephirahService_ListAppCategories_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories"
 	LibrarianSephirahService_CreateAppCategory_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory"
 	LibrarianSephirahService_UpdateAppCategory_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory"
@@ -184,75 +187,81 @@ type LibrarianSephirahServiceClient interface {
 	// `Chesed` `Normal`
 	DownloadImage(ctx context.Context, in *DownloadImageRequest, opts ...grpc.CallOption) (*DownloadImageResponse, error)
 	// `Gebura` `Admin`
-	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
+	CreateAppInfo(ctx context.Context, in *CreateAppInfoRequest, opts ...grpc.CallOption) (*CreateAppInfoResponse, error)
 	// `Gebura` `Admin`
-	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
-	// `Gebura` `Admin` Used to manage apps
-	ListApps(ctx context.Context, in *ListAppsRequest, opts ...grpc.CallOption) (*ListAppsResponse, error)
+	UpdateAppInfo(ctx context.Context, in *UpdateAppInfoRequest, opts ...grpc.CallOption) (*UpdateAppInfoResponse, error)
+	// `Gebura` `Admin` Used to manage app info
+	ListAppInfos(ctx context.Context, in *ListAppInfosRequest, opts ...grpc.CallOption) (*ListAppInfosResponse, error)
 	// `Gebura` `Admin` Merge two apps
-	MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error)
+	MergeAppInfos(ctx context.Context, in *MergeAppInfosRequest, opts ...grpc.CallOption) (*MergeAppInfosResponse, error)
 	// `Gebura` `Admin` Pick one app out from merged
-	PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error)
-	// `Gebura` `Normal` Asynchronous update apps.
+	PickAppInfo(ctx context.Context, in *PickAppInfoRequest, opts ...grpc.CallOption) (*PickAppInfoResponse, error)
+	// `Gebura` `Normal` Asynchronous update app infos.
 	// Request on INTERNAL app applies to all bound external apps.
 	// Create an INTERNAL app when requested external app does not exist
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
-	SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error)
+	SyncAppInfos(ctx context.Context, in *SyncAppInfosRequest, opts ...grpc.CallOption) (*SyncAppInfosResponse, error)
 	// `Gebura` `Normal` Asynchronously update apps associated with an account.
 	// Create an INTERNAL app when associated external app does not exist.
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
-	SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error)
+	SyncAccountAppInfos(ctx context.Context, in *SyncAccountAppInfosRequest, opts ...grpc.CallOption) (*SyncAccountAppInfosResponse, error)
 	// `Gebura` `Normal`
-	SearchApps(ctx context.Context, in *SearchAppsRequest, opts ...grpc.CallOption) (*SearchAppsResponse, error)
+	SearchAppInfos(ctx context.Context, in *SearchAppInfosRequest, opts ...grpc.CallOption) (*SearchAppInfosResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
-	GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error)
+	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
 	// `Gebura` `Normal` Original bound apps info of required app
-	GetBoundApps(ctx context.Context, in *GetBoundAppsRequest, opts ...grpc.CallOption) (*GetBoundAppsResponse, error)
+	GetBoundAppInfos(ctx context.Context, in *GetBoundAppInfosRequest, opts ...grpc.CallOption) (*GetBoundAppInfosResponse, error)
 	// `Gebura` `Normal`
-	PurchaseApp(ctx context.Context, in *PurchaseAppRequest, opts ...grpc.CallOption) (*PurchaseAppResponse, error)
+	PurchaseAppInfo(ctx context.Context, in *PurchaseAppInfoRequest, opts ...grpc.CallOption) (*PurchaseAppInfoResponse, error)
 	// `Gebura` `Normal`
 	// Default get user purchased apps
 	// Use `source` to get purchase info from bound account
 	// only support steam
-	GetPurchasedApps(ctx context.Context, in *GetPurchasedAppsRequest, opts ...grpc.CallOption) (*GetPurchasedAppsResponse, error)
+	GetPurchasedAppInfos(ctx context.Context, in *GetPurchasedAppInfosRequest, opts ...grpc.CallOption) (*GetPurchasedAppInfosResponse, error)
 	// `Gebura` `Normal`
-	CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error)
+	CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error)
 	// `Gebura` `Normal`
-	UpdateAppPackage(ctx context.Context, in *UpdateAppPackageRequest, opts ...grpc.CallOption) (*UpdateAppPackageResponse, error)
+	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	// `Gebura` `Normal`
-	ListAppPackages(ctx context.Context, in *ListAppPackagesRequest, opts ...grpc.CallOption) (*ListAppPackagesResponse, error)
+	ListApps(ctx context.Context, in *ListAppsRequest, opts ...grpc.CallOption) (*ListAppsResponse, error)
 	// `Gebura` `Normal`
-	AssignAppPackage(ctx context.Context, in *AssignAppPackageRequest, opts ...grpc.CallOption) (*AssignAppPackageResponse, error)
+	AssignApp(ctx context.Context, in *AssignAppRequest, opts ...grpc.CallOption) (*AssignAppResponse, error)
 	// `Gebura` `Normal`
-	UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error)
+	UnAssignApp(ctx context.Context, in *UnAssignAppRequest, opts ...grpc.CallOption) (*UnAssignAppResponse, error)
 	// `Gebura` `Sentinel`
 	// Full update, changes are handled by librarian
-	ReportAppPackages(ctx context.Context, in *ReportAppPackagesRequest, opts ...grpc.CallOption) (*ReportAppPackagesResponse, error)
+	ReportAppBinaries(ctx context.Context, in *ReportAppBinariesRequest, opts ...grpc.CallOption) (*ReportAppBinariesResponse, error)
 	// `Gebura` `Normal`
-	DownloadAppPackageBinary(ctx context.Context, in *DownloadAppPackageBinaryRequest, opts ...grpc.CallOption) (*DownloadAppPackageBinaryResponse, error)
+	DownloadAppBinary(ctx context.Context, in *DownloadAppBinaryRequest, opts ...grpc.CallOption) (*DownloadAppBinaryResponse, error)
 	// `Gebura` `Normal`
-	AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error)
+	CreateAppInst(ctx context.Context, in *CreateAppInstRequest, opts ...grpc.CallOption) (*CreateAppInstResponse, error)
+	// `Gebura` `Normal`
+	UpdateAppInst(ctx context.Context, in *UpdateAppInstRequest, opts ...grpc.CallOption) (*UpdateAppInstResponse, error)
+	// `Gebura` `Normal`
+	ListAppInsts(ctx context.Context, in *ListAppInstsRequest, opts ...grpc.CallOption) (*ListAppInstsResponse, error)
+	// `Gebura` `Normal`
+	AddAppInstRunTime(ctx context.Context, in *AddAppInstRunTimeRequest, opts ...grpc.CallOption) (*AddAppInstRunTimeResponse, error)
 	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
-	SumAppPackageRunTime(ctx context.Context, in *SumAppPackageRunTimeRequest, opts ...grpc.CallOption) (*SumAppPackageRunTimeResponse, error)
+	SumAppInstRunTime(ctx context.Context, in *SumAppInstRunTimeRequest, opts ...grpc.CallOption) (*SumAppInstRunTimeResponse, error)
 	// `Gebura` `Normal`
-	UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error)
+	UploadAppSaveFile(ctx context.Context, in *UploadAppSaveFileRequest, opts ...grpc.CallOption) (*UploadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error)
+	DownloadAppSaveFile(ctx context.Context, in *DownloadAppSaveFileRequest, opts ...grpc.CallOption) (*DownloadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListGameSaveFiles(ctx context.Context, in *ListGameSaveFilesRequest, opts ...grpc.CallOption) (*ListGameSaveFilesResponse, error)
+	ListAppSaveFiles(ctx context.Context, in *ListAppSaveFilesRequest, opts ...grpc.CallOption) (*ListAppSaveFilesResponse, error)
 	// `Gebura` `Normal`
-	RemoveGameSaveFile(ctx context.Context, in *RemoveGameSaveFileRequest, opts ...grpc.CallOption) (*RemoveGameSaveFileResponse, error)
+	RemoveAppSaveFile(ctx context.Context, in *RemoveAppSaveFileRequest, opts ...grpc.CallOption) (*RemoveAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	PinGameSaveFile(ctx context.Context, in *PinGameSaveFileRequest, opts ...grpc.CallOption) (*PinGameSaveFileResponse, error)
+	PinAppSaveFile(ctx context.Context, in *PinAppSaveFileRequest, opts ...grpc.CallOption) (*PinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	UnpinGameSaveFile(ctx context.Context, in *UnpinGameSaveFileRequest, opts ...grpc.CallOption) (*UnpinGameSaveFileResponse, error)
-	// `Gebura` `Admin`
-	SetUserSaveFileCapacity(ctx context.Context, in *SetUserSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetUserSaveFileCapacityResponse, error)
+	UnpinAppSaveFile(ctx context.Context, in *UnpinAppSaveFileRequest, opts ...grpc.CallOption) (*UnpinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	SetSaveFileRotation(ctx context.Context, in *SetSaveFileRotationRequest, opts ...grpc.CallOption) (*SetSaveFileRotationResponse, error)
+	SetAppSaveFileCapacity(ctx context.Context, in *SetAppSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetAppSaveFileCapacityResponse, error)
+	// `Gebura` `Normal`
+	GetAppSaveFileCapacity(ctx context.Context, in *GetAppSaveFileCapacityRequest, opts ...grpc.CallOption) (*GetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
 	ListAppCategories(ctx context.Context, in *ListAppCategoriesRequest, opts ...grpc.CallOption) (*ListAppCategoriesResponse, error)
 	// `Gebura` `Normal`
@@ -674,6 +683,114 @@ func (c *librarianSephirahServiceClient) DownloadImage(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateAppInfo(ctx context.Context, in *CreateAppInfoRequest, opts ...grpc.CallOption) (*CreateAppInfoResponse, error) {
+	out := new(CreateAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateAppInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateAppInfo(ctx context.Context, in *UpdateAppInfoRequest, opts ...grpc.CallOption) (*UpdateAppInfoResponse, error) {
+	out := new(UpdateAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListAppInfos(ctx context.Context, in *ListAppInfosRequest, opts ...grpc.CallOption) (*ListAppInfosResponse, error) {
+	out := new(ListAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) MergeAppInfos(ctx context.Context, in *MergeAppInfosRequest, opts ...grpc.CallOption) (*MergeAppInfosResponse, error) {
+	out := new(MergeAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_MergeAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) PickAppInfo(ctx context.Context, in *PickAppInfoRequest, opts ...grpc.CallOption) (*PickAppInfoResponse, error) {
+	out := new(PickAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PickAppInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SyncAppInfos(ctx context.Context, in *SyncAppInfosRequest, opts ...grpc.CallOption) (*SyncAppInfosResponse, error) {
+	out := new(SyncAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SyncAccountAppInfos(ctx context.Context, in *SyncAccountAppInfosRequest, opts ...grpc.CallOption) (*SyncAccountAppInfosResponse, error) {
+	out := new(SyncAccountAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncAccountAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) SearchAppInfos(ctx context.Context, in *SearchAppInfosRequest, opts ...grpc.CallOption) (*SearchAppInfosResponse, error) {
+	out := new(SearchAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SearchAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error) {
+	out := new(GetAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetAppInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetBoundAppInfos(ctx context.Context, in *GetBoundAppInfosRequest, opts ...grpc.CallOption) (*GetBoundAppInfosResponse, error) {
+	out := new(GetBoundAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetBoundAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) PurchaseAppInfo(ctx context.Context, in *PurchaseAppInfoRequest, opts ...grpc.CallOption) (*PurchaseAppInfoResponse, error) {
+	out := new(PurchaseAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PurchaseAppInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) GetPurchasedAppInfos(ctx context.Context, in *GetPurchasedAppInfosRequest, opts ...grpc.CallOption) (*GetPurchasedAppInfosResponse, error) {
+	out := new(GetPurchasedAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetPurchasedAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) CreateApp(ctx context.Context, in *CreateAppRequest, opts ...grpc.CallOption) (*CreateAppResponse, error) {
 	out := new(CreateAppResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateApp_FullMethodName, in, out, opts...)
@@ -701,234 +818,153 @@ func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, in *ListA
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) MergeApps(ctx context.Context, in *MergeAppsRequest, opts ...grpc.CallOption) (*MergeAppsResponse, error) {
-	out := new(MergeAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_MergeApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) AssignApp(ctx context.Context, in *AssignAppRequest, opts ...grpc.CallOption) (*AssignAppResponse, error) {
+	out := new(AssignAppResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_AssignApp_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) PickApp(ctx context.Context, in *PickAppRequest, opts ...grpc.CallOption) (*PickAppResponse, error) {
-	out := new(PickAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_PickApp_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) UnAssignApp(ctx context.Context, in *UnAssignAppRequest, opts ...grpc.CallOption) (*UnAssignAppResponse, error) {
+	out := new(UnAssignAppResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UnAssignApp_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) SyncApps(ctx context.Context, in *SyncAppsRequest, opts ...grpc.CallOption) (*SyncAppsResponse, error) {
-	out := new(SyncAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ReportAppBinaries(ctx context.Context, in *ReportAppBinariesRequest, opts ...grpc.CallOption) (*ReportAppBinariesResponse, error) {
+	out := new(ReportAppBinariesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ReportAppBinaries_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) SyncAccountApps(ctx context.Context, in *SyncAccountAppsRequest, opts ...grpc.CallOption) (*SyncAccountAppsResponse, error) {
-	out := new(SyncAccountAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SyncAccountApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) DownloadAppBinary(ctx context.Context, in *DownloadAppBinaryRequest, opts ...grpc.CallOption) (*DownloadAppBinaryResponse, error) {
+	out := new(DownloadAppBinaryResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_DownloadAppBinary_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) SearchApps(ctx context.Context, in *SearchAppsRequest, opts ...grpc.CallOption) (*SearchAppsResponse, error) {
-	out := new(SearchAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SearchApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) CreateAppInst(ctx context.Context, in *CreateAppInstRequest, opts ...grpc.CallOption) (*CreateAppInstResponse, error) {
+	out := new(CreateAppInstResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateAppInst_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GetApp(ctx context.Context, in *GetAppRequest, opts ...grpc.CallOption) (*GetAppResponse, error) {
-	out := new(GetAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetApp_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) UpdateAppInst(ctx context.Context, in *UpdateAppInstRequest, opts ...grpc.CallOption) (*UpdateAppInstResponse, error) {
+	out := new(UpdateAppInstResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppInst_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GetBoundApps(ctx context.Context, in *GetBoundAppsRequest, opts ...grpc.CallOption) (*GetBoundAppsResponse, error) {
-	out := new(GetBoundAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetBoundApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ListAppInsts(ctx context.Context, in *ListAppInstsRequest, opts ...grpc.CallOption) (*ListAppInstsResponse, error) {
+	out := new(ListAppInstsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppInsts_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) PurchaseApp(ctx context.Context, in *PurchaseAppRequest, opts ...grpc.CallOption) (*PurchaseAppResponse, error) {
-	out := new(PurchaseAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_PurchaseApp_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) AddAppInstRunTime(ctx context.Context, in *AddAppInstRunTimeRequest, opts ...grpc.CallOption) (*AddAppInstRunTimeResponse, error) {
+	out := new(AddAppInstRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddAppInstRunTime_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GetPurchasedApps(ctx context.Context, in *GetPurchasedAppsRequest, opts ...grpc.CallOption) (*GetPurchasedAppsResponse, error) {
-	out := new(GetPurchasedAppsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetPurchasedApps_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) SumAppInstRunTime(ctx context.Context, in *SumAppInstRunTimeRequest, opts ...grpc.CallOption) (*SumAppInstRunTimeResponse, error) {
+	out := new(SumAppInstRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SumAppInstRunTime_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) CreateAppPackage(ctx context.Context, in *CreateAppPackageRequest, opts ...grpc.CallOption) (*CreateAppPackageResponse, error) {
-	out := new(CreateAppPackageResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateAppPackage_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) UploadAppSaveFile(ctx context.Context, in *UploadAppSaveFileRequest, opts ...grpc.CallOption) (*UploadAppSaveFileResponse, error) {
+	out := new(UploadAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UploadAppSaveFile_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) UpdateAppPackage(ctx context.Context, in *UpdateAppPackageRequest, opts ...grpc.CallOption) (*UpdateAppPackageResponse, error) {
-	out := new(UpdateAppPackageResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppPackage_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) DownloadAppSaveFile(ctx context.Context, in *DownloadAppSaveFileRequest, opts ...grpc.CallOption) (*DownloadAppSaveFileResponse, error) {
+	out := new(DownloadAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_DownloadAppSaveFile_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ListAppPackages(ctx context.Context, in *ListAppPackagesRequest, opts ...grpc.CallOption) (*ListAppPackagesResponse, error) {
-	out := new(ListAppPackagesResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppPackages_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ListAppSaveFiles(ctx context.Context, in *ListAppSaveFilesRequest, opts ...grpc.CallOption) (*ListAppSaveFilesResponse, error) {
+	out := new(ListAppSaveFilesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppSaveFiles_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) AssignAppPackage(ctx context.Context, in *AssignAppPackageRequest, opts ...grpc.CallOption) (*AssignAppPackageResponse, error) {
-	out := new(AssignAppPackageResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_AssignAppPackage_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) RemoveAppSaveFile(ctx context.Context, in *RemoveAppSaveFileRequest, opts ...grpc.CallOption) (*RemoveAppSaveFileResponse, error) {
+	out := new(RemoveAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveAppSaveFile_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) UnAssignAppPackage(ctx context.Context, in *UnAssignAppPackageRequest, opts ...grpc.CallOption) (*UnAssignAppPackageResponse, error) {
-	out := new(UnAssignAppPackageResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UnAssignAppPackage_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) PinAppSaveFile(ctx context.Context, in *PinAppSaveFileRequest, opts ...grpc.CallOption) (*PinAppSaveFileResponse, error) {
+	out := new(PinAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PinAppSaveFile_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ReportAppPackages(ctx context.Context, in *ReportAppPackagesRequest, opts ...grpc.CallOption) (*ReportAppPackagesResponse, error) {
-	out := new(ReportAppPackagesResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ReportAppPackages_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) UnpinAppSaveFile(ctx context.Context, in *UnpinAppSaveFileRequest, opts ...grpc.CallOption) (*UnpinAppSaveFileResponse, error) {
+	out := new(UnpinAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UnpinAppSaveFile_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) DownloadAppPackageBinary(ctx context.Context, in *DownloadAppPackageBinaryRequest, opts ...grpc.CallOption) (*DownloadAppPackageBinaryResponse, error) {
-	out := new(DownloadAppPackageBinaryResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_DownloadAppPackageBinary_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) SetAppSaveFileCapacity(ctx context.Context, in *SetAppSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetAppSaveFileCapacityResponse, error) {
+	out := new(SetAppSaveFileCapacityResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SetAppSaveFileCapacity_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) AddAppPackageRunTime(ctx context.Context, in *AddAppPackageRunTimeRequest, opts ...grpc.CallOption) (*AddAppPackageRunTimeResponse, error) {
-	out := new(AddAppPackageRunTimeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddAppPackageRunTime_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) SumAppPackageRunTime(ctx context.Context, in *SumAppPackageRunTimeRequest, opts ...grpc.CallOption) (*SumAppPackageRunTimeResponse, error) {
-	out := new(SumAppPackageRunTimeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SumAppPackageRunTime_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) UploadGameSaveFile(ctx context.Context, in *UploadGameSaveFileRequest, opts ...grpc.CallOption) (*UploadGameSaveFileResponse, error) {
-	out := new(UploadGameSaveFileResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UploadGameSaveFile_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) DownloadGameSaveFile(ctx context.Context, in *DownloadGameSaveFileRequest, opts ...grpc.CallOption) (*DownloadGameSaveFileResponse, error) {
-	out := new(DownloadGameSaveFileResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_DownloadGameSaveFile_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) ListGameSaveFiles(ctx context.Context, in *ListGameSaveFilesRequest, opts ...grpc.CallOption) (*ListGameSaveFilesResponse, error) {
-	out := new(ListGameSaveFilesResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListGameSaveFiles_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) RemoveGameSaveFile(ctx context.Context, in *RemoveGameSaveFileRequest, opts ...grpc.CallOption) (*RemoveGameSaveFileResponse, error) {
-	out := new(RemoveGameSaveFileResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveGameSaveFile_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) PinGameSaveFile(ctx context.Context, in *PinGameSaveFileRequest, opts ...grpc.CallOption) (*PinGameSaveFileResponse, error) {
-	out := new(PinGameSaveFileResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_PinGameSaveFile_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) UnpinGameSaveFile(ctx context.Context, in *UnpinGameSaveFileRequest, opts ...grpc.CallOption) (*UnpinGameSaveFileResponse, error) {
-	out := new(UnpinGameSaveFileResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UnpinGameSaveFile_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) SetUserSaveFileCapacity(ctx context.Context, in *SetUserSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetUserSaveFileCapacityResponse, error) {
-	out := new(SetUserSaveFileCapacityResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) SetSaveFileRotation(ctx context.Context, in *SetSaveFileRotationRequest, opts ...grpc.CallOption) (*SetSaveFileRotationResponse, error) {
-	out := new(SetSaveFileRotationResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SetSaveFileRotation_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) GetAppSaveFileCapacity(ctx context.Context, in *GetAppSaveFileCapacityRequest, opts ...grpc.CallOption) (*GetAppSaveFileCapacityResponse, error) {
+	out := new(GetAppSaveFileCapacityResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetAppSaveFileCapacity_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1247,75 +1283,81 @@ type LibrarianSephirahServiceServer interface {
 	// `Chesed` `Normal`
 	DownloadImage(context.Context, *DownloadImageRequest) (*DownloadImageResponse, error)
 	// `Gebura` `Admin`
-	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
+	CreateAppInfo(context.Context, *CreateAppInfoRequest) (*CreateAppInfoResponse, error)
 	// `Gebura` `Admin`
-	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
-	// `Gebura` `Admin` Used to manage apps
-	ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error)
+	UpdateAppInfo(context.Context, *UpdateAppInfoRequest) (*UpdateAppInfoResponse, error)
+	// `Gebura` `Admin` Used to manage app info
+	ListAppInfos(context.Context, *ListAppInfosRequest) (*ListAppInfosResponse, error)
 	// `Gebura` `Admin` Merge two apps
-	MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error)
+	MergeAppInfos(context.Context, *MergeAppInfosRequest) (*MergeAppInfosResponse, error)
 	// `Gebura` `Admin` Pick one app out from merged
-	PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error)
-	// `Gebura` `Normal` Asynchronous update apps.
+	PickAppInfo(context.Context, *PickAppInfoRequest) (*PickAppInfoResponse, error)
+	// `Gebura` `Normal` Asynchronous update app infos.
 	// Request on INTERNAL app applies to all bound external apps.
 	// Create an INTERNAL app when requested external app does not exist
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
-	SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error)
+	SyncAppInfos(context.Context, *SyncAppInfosRequest) (*SyncAppInfosResponse, error)
 	// `Gebura` `Normal` Asynchronously update apps associated with an account.
 	// Create an INTERNAL app when associated external app does not exist.
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
-	SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error)
+	SyncAccountAppInfos(context.Context, *SyncAccountAppInfosRequest) (*SyncAccountAppInfosResponse, error)
 	// `Gebura` `Normal`
-	SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error)
+	SearchAppInfos(context.Context, *SearchAppInfosRequest) (*SearchAppInfosResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
-	GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error)
+	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
 	// `Gebura` `Normal` Original bound apps info of required app
-	GetBoundApps(context.Context, *GetBoundAppsRequest) (*GetBoundAppsResponse, error)
+	GetBoundAppInfos(context.Context, *GetBoundAppInfosRequest) (*GetBoundAppInfosResponse, error)
 	// `Gebura` `Normal`
-	PurchaseApp(context.Context, *PurchaseAppRequest) (*PurchaseAppResponse, error)
+	PurchaseAppInfo(context.Context, *PurchaseAppInfoRequest) (*PurchaseAppInfoResponse, error)
 	// `Gebura` `Normal`
 	// Default get user purchased apps
 	// Use `source` to get purchase info from bound account
 	// only support steam
-	GetPurchasedApps(context.Context, *GetPurchasedAppsRequest) (*GetPurchasedAppsResponse, error)
+	GetPurchasedAppInfos(context.Context, *GetPurchasedAppInfosRequest) (*GetPurchasedAppInfosResponse, error)
 	// `Gebura` `Normal`
-	CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error)
+	CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error)
 	// `Gebura` `Normal`
-	UpdateAppPackage(context.Context, *UpdateAppPackageRequest) (*UpdateAppPackageResponse, error)
+	UpdateApp(context.Context, *UpdateAppRequest) (*UpdateAppResponse, error)
 	// `Gebura` `Normal`
-	ListAppPackages(context.Context, *ListAppPackagesRequest) (*ListAppPackagesResponse, error)
+	ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error)
 	// `Gebura` `Normal`
-	AssignAppPackage(context.Context, *AssignAppPackageRequest) (*AssignAppPackageResponse, error)
+	AssignApp(context.Context, *AssignAppRequest) (*AssignAppResponse, error)
 	// `Gebura` `Normal`
-	UnAssignAppPackage(context.Context, *UnAssignAppPackageRequest) (*UnAssignAppPackageResponse, error)
+	UnAssignApp(context.Context, *UnAssignAppRequest) (*UnAssignAppResponse, error)
 	// `Gebura` `Sentinel`
 	// Full update, changes are handled by librarian
-	ReportAppPackages(context.Context, *ReportAppPackagesRequest) (*ReportAppPackagesResponse, error)
+	ReportAppBinaries(context.Context, *ReportAppBinariesRequest) (*ReportAppBinariesResponse, error)
 	// `Gebura` `Normal`
-	DownloadAppPackageBinary(context.Context, *DownloadAppPackageBinaryRequest) (*DownloadAppPackageBinaryResponse, error)
+	DownloadAppBinary(context.Context, *DownloadAppBinaryRequest) (*DownloadAppBinaryResponse, error)
 	// `Gebura` `Normal`
-	AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error)
+	CreateAppInst(context.Context, *CreateAppInstRequest) (*CreateAppInstResponse, error)
+	// `Gebura` `Normal`
+	UpdateAppInst(context.Context, *UpdateAppInstRequest) (*UpdateAppInstResponse, error)
+	// `Gebura` `Normal`
+	ListAppInsts(context.Context, *ListAppInstsRequest) (*ListAppInstsResponse, error)
+	// `Gebura` `Normal`
+	AddAppInstRunTime(context.Context, *AddAppInstRunTimeRequest) (*AddAppInstRunTimeResponse, error)
 	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
-	SumAppPackageRunTime(context.Context, *SumAppPackageRunTimeRequest) (*SumAppPackageRunTimeResponse, error)
+	SumAppInstRunTime(context.Context, *SumAppInstRunTimeRequest) (*SumAppInstRunTimeResponse, error)
 	// `Gebura` `Normal`
-	UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error)
+	UploadAppSaveFile(context.Context, *UploadAppSaveFileRequest) (*UploadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error)
+	DownloadAppSaveFile(context.Context, *DownloadAppSaveFileRequest) (*DownloadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListGameSaveFiles(context.Context, *ListGameSaveFilesRequest) (*ListGameSaveFilesResponse, error)
+	ListAppSaveFiles(context.Context, *ListAppSaveFilesRequest) (*ListAppSaveFilesResponse, error)
 	// `Gebura` `Normal`
-	RemoveGameSaveFile(context.Context, *RemoveGameSaveFileRequest) (*RemoveGameSaveFileResponse, error)
+	RemoveAppSaveFile(context.Context, *RemoveAppSaveFileRequest) (*RemoveAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	PinGameSaveFile(context.Context, *PinGameSaveFileRequest) (*PinGameSaveFileResponse, error)
+	PinAppSaveFile(context.Context, *PinAppSaveFileRequest) (*PinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	UnpinGameSaveFile(context.Context, *UnpinGameSaveFileRequest) (*UnpinGameSaveFileResponse, error)
-	// `Gebura` `Admin`
-	SetUserSaveFileCapacity(context.Context, *SetUserSaveFileCapacityRequest) (*SetUserSaveFileCapacityResponse, error)
+	UnpinAppSaveFile(context.Context, *UnpinAppSaveFileRequest) (*UnpinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	SetSaveFileRotation(context.Context, *SetSaveFileRotationRequest) (*SetSaveFileRotationResponse, error)
+	SetAppSaveFileCapacity(context.Context, *SetAppSaveFileCapacityRequest) (*SetAppSaveFileCapacityResponse, error)
+	// `Gebura` `Normal`
+	GetAppSaveFileCapacity(context.Context, *GetAppSaveFileCapacityRequest) (*GetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
 	ListAppCategories(context.Context, *ListAppCategoriesRequest) (*ListAppCategoriesResponse, error)
 	// `Gebura` `Normal`
@@ -1465,6 +1507,42 @@ func (UnimplementedLibrarianSephirahServiceServer) GetImage(context.Context, *Ge
 func (UnimplementedLibrarianSephirahServiceServer) DownloadImage(context.Context, *DownloadImageRequest) (*DownloadImageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DownloadImage not implemented")
 }
+func (UnimplementedLibrarianSephirahServiceServer) CreateAppInfo(context.Context, *CreateAppInfoRequest) (*CreateAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppInfo not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateAppInfo(context.Context, *UpdateAppInfoRequest) (*UpdateAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppInfo not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListAppInfos(context.Context, *ListAppInfosRequest) (*ListAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) MergeAppInfos(context.Context, *MergeAppInfosRequest) (*MergeAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method MergeAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) PickAppInfo(context.Context, *PickAppInfoRequest) (*PickAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PickAppInfo not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SyncAppInfos(context.Context, *SyncAppInfosRequest) (*SyncAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SyncAccountAppInfos(context.Context, *SyncAccountAppInfosRequest) (*SyncAccountAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SyncAccountAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SearchAppInfos(context.Context, *SearchAppInfosRequest) (*SearchAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfo not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetBoundAppInfos(context.Context, *GetBoundAppInfosRequest) (*GetBoundAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBoundAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) PurchaseAppInfo(context.Context, *PurchaseAppInfoRequest) (*PurchaseAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PurchaseAppInfo not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) GetPurchasedAppInfos(context.Context, *GetPurchasedAppInfosRequest) (*GetPurchasedAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPurchasedAppInfos not implemented")
+}
 func (UnimplementedLibrarianSephirahServiceServer) CreateApp(context.Context, *CreateAppRequest) (*CreateAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApp not implemented")
 }
@@ -1474,83 +1552,56 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateApp(context.Context, *U
 func (UnimplementedLibrarianSephirahServiceServer) ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApps not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) MergeApps(context.Context, *MergeAppsRequest) (*MergeAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method MergeApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) AssignApp(context.Context, *AssignAppRequest) (*AssignAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AssignApp not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) PickApp(context.Context, *PickAppRequest) (*PickAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PickApp not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UnAssignApp(context.Context, *UnAssignAppRequest) (*UnAssignAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnAssignApp not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) SyncApps(context.Context, *SyncAppsRequest) (*SyncAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SyncApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ReportAppBinaries(context.Context, *ReportAppBinariesRequest) (*ReportAppBinariesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReportAppBinaries not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) SyncAccountApps(context.Context, *SyncAccountAppsRequest) (*SyncAccountAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SyncAccountApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) DownloadAppBinary(context.Context, *DownloadAppBinaryRequest) (*DownloadAppBinaryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadAppBinary not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) SearchApps(context.Context, *SearchAppsRequest) (*SearchAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SearchApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) CreateAppInst(context.Context, *CreateAppInstRequest) (*CreateAppInstResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAppInst not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GetApp(context.Context, *GetAppRequest) (*GetAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetApp not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UpdateAppInst(context.Context, *UpdateAppInstRequest) (*UpdateAppInstResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppInst not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GetBoundApps(context.Context, *GetBoundAppsRequest) (*GetBoundAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBoundApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListAppInsts(context.Context, *ListAppInstsRequest) (*ListAppInstsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAppInsts not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) PurchaseApp(context.Context, *PurchaseAppRequest) (*PurchaseAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PurchaseApp not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) AddAppInstRunTime(context.Context, *AddAppInstRunTimeRequest) (*AddAppInstRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddAppInstRunTime not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GetPurchasedApps(context.Context, *GetPurchasedAppsRequest) (*GetPurchasedAppsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPurchasedApps not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) SumAppInstRunTime(context.Context, *SumAppInstRunTimeRequest) (*SumAppInstRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SumAppInstRunTime not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) CreateAppPackage(context.Context, *CreateAppPackageRequest) (*CreateAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UploadAppSaveFile(context.Context, *UploadAppSaveFileRequest) (*UploadAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadAppSaveFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) UpdateAppPackage(context.Context, *UpdateAppPackageRequest) (*UpdateAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) DownloadAppSaveFile(context.Context, *DownloadAppSaveFileRequest) (*DownloadAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DownloadAppSaveFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ListAppPackages(context.Context, *ListAppPackagesRequest) (*ListAppPackagesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListAppPackages not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListAppSaveFiles(context.Context, *ListAppSaveFilesRequest) (*ListAppSaveFilesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAppSaveFiles not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) AssignAppPackage(context.Context, *AssignAppPackageRequest) (*AssignAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AssignAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) RemoveAppSaveFile(context.Context, *RemoveAppSaveFileRequest) (*RemoveAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveAppSaveFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) UnAssignAppPackage(context.Context, *UnAssignAppPackageRequest) (*UnAssignAppPackageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UnAssignAppPackage not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) PinAppSaveFile(context.Context, *PinAppSaveFileRequest) (*PinAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PinAppSaveFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ReportAppPackages(context.Context, *ReportAppPackagesRequest) (*ReportAppPackagesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReportAppPackages not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UnpinAppSaveFile(context.Context, *UnpinAppSaveFileRequest) (*UnpinAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UnpinAppSaveFile not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) DownloadAppPackageBinary(context.Context, *DownloadAppPackageBinaryRequest) (*DownloadAppPackageBinaryResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DownloadAppPackageBinary not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) SetAppSaveFileCapacity(context.Context, *SetAppSaveFileCapacityRequest) (*SetAppSaveFileCapacityResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetAppSaveFileCapacity not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) AddAppPackageRunTime(context.Context, *AddAppPackageRunTimeRequest) (*AddAppPackageRunTimeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddAppPackageRunTime not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) SumAppPackageRunTime(context.Context, *SumAppPackageRunTimeRequest) (*SumAppPackageRunTimeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SumAppPackageRunTime not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) UploadGameSaveFile(context.Context, *UploadGameSaveFileRequest) (*UploadGameSaveFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UploadGameSaveFile not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) DownloadGameSaveFile(context.Context, *DownloadGameSaveFileRequest) (*DownloadGameSaveFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DownloadGameSaveFile not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) ListGameSaveFiles(context.Context, *ListGameSaveFilesRequest) (*ListGameSaveFilesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListGameSaveFiles not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) RemoveGameSaveFile(context.Context, *RemoveGameSaveFileRequest) (*RemoveGameSaveFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveGameSaveFile not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) PinGameSaveFile(context.Context, *PinGameSaveFileRequest) (*PinGameSaveFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PinGameSaveFile not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) UnpinGameSaveFile(context.Context, *UnpinGameSaveFileRequest) (*UnpinGameSaveFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UnpinGameSaveFile not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) SetUserSaveFileCapacity(context.Context, *SetUserSaveFileCapacityRequest) (*SetUserSaveFileCapacityResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetUserSaveFileCapacity not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) SetSaveFileRotation(context.Context, *SetSaveFileRotationRequest) (*SetSaveFileRotationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SetSaveFileRotation not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) GetAppSaveFileCapacity(context.Context, *GetAppSaveFileCapacityRequest) (*GetAppSaveFileCapacityResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAppSaveFileCapacity not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListAppCategories(context.Context, *ListAppCategoriesRequest) (*ListAppCategoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAppCategories not implemented")
@@ -2211,6 +2262,222 @@ func _LibrarianSephirahService_DownloadImage_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_CreateAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateAppInfo(ctx, req.(*CreateAppInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateAppInfo(ctx, req.(*UpdateAppInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListAppInfos(ctx, req.(*ListAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_MergeAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MergeAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).MergeAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_MergeAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).MergeAppInfos(ctx, req.(*MergeAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_PickAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PickAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).PickAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_PickAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).PickAppInfo(ctx, req.(*PickAppInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SyncAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SyncAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SyncAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SyncAppInfos(ctx, req.(*SyncAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SyncAccountAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncAccountAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SyncAccountAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SyncAccountAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SyncAccountAppInfos(ctx, req.(*SyncAccountAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SearchAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SearchAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SearchAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SearchAppInfos(ctx, req.(*SearchAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetAppInfo(ctx, req.(*GetAppInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetBoundAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBoundAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetBoundAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetBoundAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetBoundAppInfos(ctx, req.(*GetBoundAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_PurchaseAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PurchaseAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).PurchaseAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_PurchaseAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).PurchaseAppInfo(ctx, req.(*PurchaseAppInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_GetPurchasedAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPurchasedAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).GetPurchasedAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_GetPurchasedAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).GetPurchasedAppInfos(ctx, req.(*GetPurchasedAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_CreateApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateAppRequest)
 	if err := dec(in); err != nil {
@@ -2265,470 +2532,308 @@ func _LibrarianSephirahService_ListApps_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_MergeApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MergeAppsRequest)
+func _LibrarianSephirahService_AssignApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AssignAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).MergeApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).AssignApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_MergeApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_AssignApp_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).MergeApps(ctx, req.(*MergeAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).AssignApp(ctx, req.(*AssignAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_PickApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PickAppRequest)
+func _LibrarianSephirahService_UnAssignApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnAssignAppRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).PickApp(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UnAssignApp(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_PickApp_FullMethodName,
+		FullMethod: LibrarianSephirahService_UnAssignApp_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).PickApp(ctx, req.(*PickAppRequest))
+		return srv.(LibrarianSephirahServiceServer).UnAssignApp(ctx, req.(*UnAssignAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_SyncApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SyncAppsRequest)
+func _LibrarianSephirahService_ReportAppBinaries_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportAppBinariesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ReportAppBinaries(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_SyncApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_ReportAppBinaries_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SyncApps(ctx, req.(*SyncAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).ReportAppBinaries(ctx, req.(*ReportAppBinariesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_SyncAccountApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SyncAccountAppsRequest)
+func _LibrarianSephirahService_DownloadAppBinary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadAppBinaryRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).DownloadAppBinary(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_SyncAccountApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_DownloadAppBinary_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SyncAccountApps(ctx, req.(*SyncAccountAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).DownloadAppBinary(ctx, req.(*DownloadAppBinaryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_SearchApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SearchAppsRequest)
+func _LibrarianSephirahService_CreateAppInst_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAppInstRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SearchApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).CreateAppInst(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_SearchApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_CreateAppInst_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SearchApps(ctx, req.(*SearchAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).CreateAppInst(ctx, req.(*CreateAppInstRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GetApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetAppRequest)
+func _LibrarianSephirahService_UpdateAppInst_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppInstRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GetApp(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UpdateAppInst(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GetApp_FullMethodName,
+		FullMethod: LibrarianSephirahService_UpdateAppInst_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GetApp(ctx, req.(*GetAppRequest))
+		return srv.(LibrarianSephirahServiceServer).UpdateAppInst(ctx, req.(*UpdateAppInstRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GetBoundApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBoundAppsRequest)
+func _LibrarianSephirahService_ListAppInsts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAppInstsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GetBoundApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListAppInsts(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GetBoundApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_ListAppInsts_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GetBoundApps(ctx, req.(*GetBoundAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).ListAppInsts(ctx, req.(*ListAppInstsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_PurchaseApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PurchaseAppRequest)
+func _LibrarianSephirahService_AddAppInstRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddAppInstRunTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).PurchaseApp(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).AddAppInstRunTime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_PurchaseApp_FullMethodName,
+		FullMethod: LibrarianSephirahService_AddAppInstRunTime_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).PurchaseApp(ctx, req.(*PurchaseAppRequest))
+		return srv.(LibrarianSephirahServiceServer).AddAppInstRunTime(ctx, req.(*AddAppInstRunTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GetPurchasedApps_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPurchasedAppsRequest)
+func _LibrarianSephirahService_SumAppInstRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SumAppInstRunTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GetPurchasedApps(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).SumAppInstRunTime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GetPurchasedApps_FullMethodName,
+		FullMethod: LibrarianSephirahService_SumAppInstRunTime_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GetPurchasedApps(ctx, req.(*GetPurchasedAppsRequest))
+		return srv.(LibrarianSephirahServiceServer).SumAppInstRunTime(ctx, req.(*SumAppInstRunTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_CreateAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppPackageRequest)
+func _LibrarianSephirahService_UploadAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadAppSaveFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).CreateAppPackage(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UploadAppSaveFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_CreateAppPackage_FullMethodName,
+		FullMethod: LibrarianSephirahService_UploadAppSaveFile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).CreateAppPackage(ctx, req.(*CreateAppPackageRequest))
+		return srv.(LibrarianSephirahServiceServer).UploadAppSaveFile(ctx, req.(*UploadAppSaveFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_UpdateAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppPackageRequest)
+func _LibrarianSephirahService_DownloadAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DownloadAppSaveFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UpdateAppPackage(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).DownloadAppSaveFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_UpdateAppPackage_FullMethodName,
+		FullMethod: LibrarianSephirahService_DownloadAppSaveFile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UpdateAppPackage(ctx, req.(*UpdateAppPackageRequest))
+		return srv.(LibrarianSephirahServiceServer).DownloadAppSaveFile(ctx, req.(*DownloadAppSaveFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ListAppPackages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListAppPackagesRequest)
+func _LibrarianSephirahService_ListAppSaveFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListAppSaveFilesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListAppPackages(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListAppSaveFiles(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListAppPackages_FullMethodName,
+		FullMethod: LibrarianSephirahService_ListAppSaveFiles_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListAppPackages(ctx, req.(*ListAppPackagesRequest))
+		return srv.(LibrarianSephirahServiceServer).ListAppSaveFiles(ctx, req.(*ListAppSaveFilesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_AssignAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AssignAppPackageRequest)
+func _LibrarianSephirahService_RemoveAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveAppSaveFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).AssignAppPackage(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).RemoveAppSaveFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_AssignAppPackage_FullMethodName,
+		FullMethod: LibrarianSephirahService_RemoveAppSaveFile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).AssignAppPackage(ctx, req.(*AssignAppPackageRequest))
+		return srv.(LibrarianSephirahServiceServer).RemoveAppSaveFile(ctx, req.(*RemoveAppSaveFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_UnAssignAppPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnAssignAppPackageRequest)
+func _LibrarianSephirahService_PinAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PinAppSaveFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UnAssignAppPackage(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).PinAppSaveFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_UnAssignAppPackage_FullMethodName,
+		FullMethod: LibrarianSephirahService_PinAppSaveFile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UnAssignAppPackage(ctx, req.(*UnAssignAppPackageRequest))
+		return srv.(LibrarianSephirahServiceServer).PinAppSaveFile(ctx, req.(*PinAppSaveFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ReportAppPackages_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReportAppPackagesRequest)
+func _LibrarianSephirahService_UnpinAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnpinAppSaveFileRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ReportAppPackages(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UnpinAppSaveFile(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_ReportAppPackages_FullMethodName,
+		FullMethod: LibrarianSephirahService_UnpinAppSaveFile_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ReportAppPackages(ctx, req.(*ReportAppPackagesRequest))
+		return srv.(LibrarianSephirahServiceServer).UnpinAppSaveFile(ctx, req.(*UnpinAppSaveFileRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_DownloadAppPackageBinary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DownloadAppPackageBinaryRequest)
+func _LibrarianSephirahService_SetAppSaveFileCapacity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetAppSaveFileCapacityRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).DownloadAppPackageBinary(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).SetAppSaveFileCapacity(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_DownloadAppPackageBinary_FullMethodName,
+		FullMethod: LibrarianSephirahService_SetAppSaveFileCapacity_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).DownloadAppPackageBinary(ctx, req.(*DownloadAppPackageBinaryRequest))
+		return srv.(LibrarianSephirahServiceServer).SetAppSaveFileCapacity(ctx, req.(*SetAppSaveFileCapacityRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_AddAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddAppPackageRunTimeRequest)
+func _LibrarianSephirahService_GetAppSaveFileCapacity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAppSaveFileCapacityRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).AddAppPackageRunTime(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).GetAppSaveFileCapacity(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_AddAppPackageRunTime_FullMethodName,
+		FullMethod: LibrarianSephirahService_GetAppSaveFileCapacity_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).AddAppPackageRunTime(ctx, req.(*AddAppPackageRunTimeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_SumAppPackageRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SumAppPackageRunTimeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SumAppPackageRunTime(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SumAppPackageRunTime_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SumAppPackageRunTime(ctx, req.(*SumAppPackageRunTimeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_UploadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UploadGameSaveFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UploadGameSaveFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_UploadGameSaveFile_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UploadGameSaveFile(ctx, req.(*UploadGameSaveFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_DownloadGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DownloadGameSaveFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).DownloadGameSaveFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_DownloadGameSaveFile_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).DownloadGameSaveFile(ctx, req.(*DownloadGameSaveFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_ListGameSaveFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListGameSaveFilesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListGameSaveFiles(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListGameSaveFiles_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListGameSaveFiles(ctx, req.(*ListGameSaveFilesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_RemoveGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveGameSaveFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).RemoveGameSaveFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_RemoveGameSaveFile_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).RemoveGameSaveFile(ctx, req.(*RemoveGameSaveFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_PinGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PinGameSaveFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).PinGameSaveFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_PinGameSaveFile_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).PinGameSaveFile(ctx, req.(*PinGameSaveFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_UnpinGameSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnpinGameSaveFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UnpinGameSaveFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_UnpinGameSaveFile_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UnpinGameSaveFile(ctx, req.(*UnpinGameSaveFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_SetUserSaveFileCapacity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetUserSaveFileCapacityRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SetUserSaveFileCapacity(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SetUserSaveFileCapacity_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SetUserSaveFileCapacity(ctx, req.(*SetUserSaveFileCapacityRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_SetSaveFileRotation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetSaveFileRotationRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SetSaveFileRotation(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SetSaveFileRotation_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SetSaveFileRotation(ctx, req.(*SetSaveFileRotationRequest))
+		return srv.(LibrarianSephirahServiceServer).GetAppSaveFileCapacity(ctx, req.(*GetAppSaveFileCapacityRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3313,6 +3418,54 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_DownloadImage_Handler,
 		},
 		{
+			MethodName: "CreateAppInfo",
+			Handler:    _LibrarianSephirahService_CreateAppInfo_Handler,
+		},
+		{
+			MethodName: "UpdateAppInfo",
+			Handler:    _LibrarianSephirahService_UpdateAppInfo_Handler,
+		},
+		{
+			MethodName: "ListAppInfos",
+			Handler:    _LibrarianSephirahService_ListAppInfos_Handler,
+		},
+		{
+			MethodName: "MergeAppInfos",
+			Handler:    _LibrarianSephirahService_MergeAppInfos_Handler,
+		},
+		{
+			MethodName: "PickAppInfo",
+			Handler:    _LibrarianSephirahService_PickAppInfo_Handler,
+		},
+		{
+			MethodName: "SyncAppInfos",
+			Handler:    _LibrarianSephirahService_SyncAppInfos_Handler,
+		},
+		{
+			MethodName: "SyncAccountAppInfos",
+			Handler:    _LibrarianSephirahService_SyncAccountAppInfos_Handler,
+		},
+		{
+			MethodName: "SearchAppInfos",
+			Handler:    _LibrarianSephirahService_SearchAppInfos_Handler,
+		},
+		{
+			MethodName: "GetAppInfo",
+			Handler:    _LibrarianSephirahService_GetAppInfo_Handler,
+		},
+		{
+			MethodName: "GetBoundAppInfos",
+			Handler:    _LibrarianSephirahService_GetBoundAppInfos_Handler,
+		},
+		{
+			MethodName: "PurchaseAppInfo",
+			Handler:    _LibrarianSephirahService_PurchaseAppInfo_Handler,
+		},
+		{
+			MethodName: "GetPurchasedAppInfos",
+			Handler:    _LibrarianSephirahService_GetPurchasedAppInfos_Handler,
+		},
+		{
 			MethodName: "CreateApp",
 			Handler:    _LibrarianSephirahService_CreateApp_Handler,
 		},
@@ -3325,108 +3478,72 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_ListApps_Handler,
 		},
 		{
-			MethodName: "MergeApps",
-			Handler:    _LibrarianSephirahService_MergeApps_Handler,
+			MethodName: "AssignApp",
+			Handler:    _LibrarianSephirahService_AssignApp_Handler,
 		},
 		{
-			MethodName: "PickApp",
-			Handler:    _LibrarianSephirahService_PickApp_Handler,
+			MethodName: "UnAssignApp",
+			Handler:    _LibrarianSephirahService_UnAssignApp_Handler,
 		},
 		{
-			MethodName: "SyncApps",
-			Handler:    _LibrarianSephirahService_SyncApps_Handler,
+			MethodName: "ReportAppBinaries",
+			Handler:    _LibrarianSephirahService_ReportAppBinaries_Handler,
 		},
 		{
-			MethodName: "SyncAccountApps",
-			Handler:    _LibrarianSephirahService_SyncAccountApps_Handler,
+			MethodName: "DownloadAppBinary",
+			Handler:    _LibrarianSephirahService_DownloadAppBinary_Handler,
 		},
 		{
-			MethodName: "SearchApps",
-			Handler:    _LibrarianSephirahService_SearchApps_Handler,
+			MethodName: "CreateAppInst",
+			Handler:    _LibrarianSephirahService_CreateAppInst_Handler,
 		},
 		{
-			MethodName: "GetApp",
-			Handler:    _LibrarianSephirahService_GetApp_Handler,
+			MethodName: "UpdateAppInst",
+			Handler:    _LibrarianSephirahService_UpdateAppInst_Handler,
 		},
 		{
-			MethodName: "GetBoundApps",
-			Handler:    _LibrarianSephirahService_GetBoundApps_Handler,
+			MethodName: "ListAppInsts",
+			Handler:    _LibrarianSephirahService_ListAppInsts_Handler,
 		},
 		{
-			MethodName: "PurchaseApp",
-			Handler:    _LibrarianSephirahService_PurchaseApp_Handler,
+			MethodName: "AddAppInstRunTime",
+			Handler:    _LibrarianSephirahService_AddAppInstRunTime_Handler,
 		},
 		{
-			MethodName: "GetPurchasedApps",
-			Handler:    _LibrarianSephirahService_GetPurchasedApps_Handler,
+			MethodName: "SumAppInstRunTime",
+			Handler:    _LibrarianSephirahService_SumAppInstRunTime_Handler,
 		},
 		{
-			MethodName: "CreateAppPackage",
-			Handler:    _LibrarianSephirahService_CreateAppPackage_Handler,
+			MethodName: "UploadAppSaveFile",
+			Handler:    _LibrarianSephirahService_UploadAppSaveFile_Handler,
 		},
 		{
-			MethodName: "UpdateAppPackage",
-			Handler:    _LibrarianSephirahService_UpdateAppPackage_Handler,
+			MethodName: "DownloadAppSaveFile",
+			Handler:    _LibrarianSephirahService_DownloadAppSaveFile_Handler,
 		},
 		{
-			MethodName: "ListAppPackages",
-			Handler:    _LibrarianSephirahService_ListAppPackages_Handler,
+			MethodName: "ListAppSaveFiles",
+			Handler:    _LibrarianSephirahService_ListAppSaveFiles_Handler,
 		},
 		{
-			MethodName: "AssignAppPackage",
-			Handler:    _LibrarianSephirahService_AssignAppPackage_Handler,
+			MethodName: "RemoveAppSaveFile",
+			Handler:    _LibrarianSephirahService_RemoveAppSaveFile_Handler,
 		},
 		{
-			MethodName: "UnAssignAppPackage",
-			Handler:    _LibrarianSephirahService_UnAssignAppPackage_Handler,
+			MethodName: "PinAppSaveFile",
+			Handler:    _LibrarianSephirahService_PinAppSaveFile_Handler,
 		},
 		{
-			MethodName: "ReportAppPackages",
-			Handler:    _LibrarianSephirahService_ReportAppPackages_Handler,
+			MethodName: "UnpinAppSaveFile",
+			Handler:    _LibrarianSephirahService_UnpinAppSaveFile_Handler,
 		},
 		{
-			MethodName: "DownloadAppPackageBinary",
-			Handler:    _LibrarianSephirahService_DownloadAppPackageBinary_Handler,
+			MethodName: "SetAppSaveFileCapacity",
+			Handler:    _LibrarianSephirahService_SetAppSaveFileCapacity_Handler,
 		},
 		{
-			MethodName: "AddAppPackageRunTime",
-			Handler:    _LibrarianSephirahService_AddAppPackageRunTime_Handler,
-		},
-		{
-			MethodName: "SumAppPackageRunTime",
-			Handler:    _LibrarianSephirahService_SumAppPackageRunTime_Handler,
-		},
-		{
-			MethodName: "UploadGameSaveFile",
-			Handler:    _LibrarianSephirahService_UploadGameSaveFile_Handler,
-		},
-		{
-			MethodName: "DownloadGameSaveFile",
-			Handler:    _LibrarianSephirahService_DownloadGameSaveFile_Handler,
-		},
-		{
-			MethodName: "ListGameSaveFiles",
-			Handler:    _LibrarianSephirahService_ListGameSaveFiles_Handler,
-		},
-		{
-			MethodName: "RemoveGameSaveFile",
-			Handler:    _LibrarianSephirahService_RemoveGameSaveFile_Handler,
-		},
-		{
-			MethodName: "PinGameSaveFile",
-			Handler:    _LibrarianSephirahService_PinGameSaveFile_Handler,
-		},
-		{
-			MethodName: "UnpinGameSaveFile",
-			Handler:    _LibrarianSephirahService_UnpinGameSaveFile_Handler,
-		},
-		{
-			MethodName: "SetUserSaveFileCapacity",
-			Handler:    _LibrarianSephirahService_SetUserSaveFileCapacity_Handler,
-		},
-		{
-			MethodName: "SetSaveFileRotation",
-			Handler:    _LibrarianSephirahService_SetSaveFileRotation_Handler,
+			MethodName: "GetAppSaveFileCapacity",
+			Handler:    _LibrarianSephirahService_GetAppSaveFileCapacity_Handler,
 		},
 		{
 			MethodName: "ListAppCategories",

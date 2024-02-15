@@ -537,14 +537,14 @@ class AccountID extends $pb.GeneratedMessage {
   void clearPlatformAccountId() => clearField(2);
 }
 
-class App extends $pb.GeneratedMessage {
-  factory App({
+class AppInfo extends $pb.GeneratedMessage {
+  factory AppInfo({
     InternalID? id,
     $core.bool? internal,
     $core.String? source,
     $core.String? sourceAppId,
     $core.String? sourceUrl,
-    AppDetails? details,
+    AppInfoDetails? details,
     $core.String? name,
     AppType? type,
     $core.String? shortDescription,
@@ -599,17 +599,17 @@ class App extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  App._() : super();
-  factory App.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory App.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AppInfo._() : super();
+  factory AppInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'App', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
     ..aOB(2, _omitFieldNames ? '' : 'internal')
     ..aOS(3, _omitFieldNames ? '' : 'source')
     ..aOS(4, _omitFieldNames ? '' : 'sourceAppId')
     ..aOS(5, _omitFieldNames ? '' : 'sourceUrl')
-    ..aOM<AppDetails>(6, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
+    ..aOM<AppInfoDetails>(6, _omitFieldNames ? '' : 'details', subBuilder: AppInfoDetails.create)
     ..aOS(7, _omitFieldNames ? '' : 'name')
     ..e<AppType>(8, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..aOS(9, _omitFieldNames ? '' : 'shortDescription')
@@ -625,22 +625,22 @@ class App extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  App clone() => App()..mergeFromMessage(this);
+  AppInfo clone() => AppInfo()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  App copyWith(void Function(App) updates) => super.copyWith((message) => updates(message as App)) as App;
+  AppInfo copyWith(void Function(AppInfo) updates) => super.copyWith((message) => updates(message as AppInfo)) as AppInfo;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static App create() => App._();
-  App createEmptyInstance() => create();
-  static $pb.PbList<App> createRepeated() => $pb.PbList<App>();
+  static AppInfo create() => AppInfo._();
+  AppInfo createEmptyInstance() => create();
+  static $pb.PbList<AppInfo> createRepeated() => $pb.PbList<AppInfo>();
   @$core.pragma('dart2js:noInline')
-  static App getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<App>(create);
-  static App? _defaultInstance;
+  static AppInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfo>(create);
+  static AppInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   InternalID get id => $_getN(0);
@@ -692,15 +692,15 @@ class App extends $pb.GeneratedMessage {
   void clearSourceUrl() => clearField(5);
 
   @$pb.TagNumber(6)
-  AppDetails get details => $_getN(5);
+  AppInfoDetails get details => $_getN(5);
   @$pb.TagNumber(6)
-  set details(AppDetails v) { setField(6, v); }
+  set details(AppInfoDetails v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasDetails() => $_has(5);
   @$pb.TagNumber(6)
   void clearDetails() => clearField(6);
   @$pb.TagNumber(6)
-  AppDetails ensureDetails() => $_ensure(5);
+  AppInfoDetails ensureDetails() => $_ensure(5);
 
   @$pb.TagNumber(7)
   $core.String get name => $_getSZ(6);
@@ -766,10 +766,10 @@ class App extends $pb.GeneratedMessage {
 }
 
 /// Mixed info of bound apps
-class AppMixed extends $pb.GeneratedMessage {
-  factory AppMixed({
+class AppInfoMixed extends $pb.GeneratedMessage {
+  factory AppInfoMixed({
     InternalID? id,
-    AppDetails? details,
+    AppInfoDetails? details,
     $core.String? name,
     AppType? type,
     $core.String? shortDescription,
@@ -812,13 +812,13 @@ class AppMixed extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  AppMixed._() : super();
-  factory AppMixed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppMixed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AppInfoMixed._() : super();
+  factory AppInfoMixed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppInfoMixed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppMixed', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppInfoMixed', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
-    ..aOM<AppDetails>(6, _omitFieldNames ? '' : 'details', subBuilder: AppDetails.create)
+    ..aOM<AppInfoDetails>(6, _omitFieldNames ? '' : 'details', subBuilder: AppInfoDetails.create)
     ..aOS(7, _omitFieldNames ? '' : 'name')
     ..e<AppType>(8, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..aOS(9, _omitFieldNames ? '' : 'shortDescription')
@@ -834,22 +834,22 @@ class AppMixed extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AppMixed clone() => AppMixed()..mergeFromMessage(this);
+  AppInfoMixed clone() => AppInfoMixed()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AppMixed copyWith(void Function(AppMixed) updates) => super.copyWith((message) => updates(message as AppMixed)) as AppMixed;
+  AppInfoMixed copyWith(void Function(AppInfoMixed) updates) => super.copyWith((message) => updates(message as AppInfoMixed)) as AppInfoMixed;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AppMixed create() => AppMixed._();
-  AppMixed createEmptyInstance() => create();
-  static $pb.PbList<AppMixed> createRepeated() => $pb.PbList<AppMixed>();
+  static AppInfoMixed create() => AppInfoMixed._();
+  AppInfoMixed createEmptyInstance() => create();
+  static $pb.PbList<AppInfoMixed> createRepeated() => $pb.PbList<AppInfoMixed>();
   @$core.pragma('dart2js:noInline')
-  static AppMixed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppMixed>(create);
-  static AppMixed? _defaultInstance;
+  static AppInfoMixed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfoMixed>(create);
+  static AppInfoMixed? _defaultInstance;
 
   /// internal app id
   @$pb.TagNumber(1)
@@ -864,15 +864,15 @@ class AppMixed extends $pb.GeneratedMessage {
   InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(6)
-  AppDetails get details => $_getN(1);
+  AppInfoDetails get details => $_getN(1);
   @$pb.TagNumber(6)
-  set details(AppDetails v) { setField(6, v); }
+  set details(AppInfoDetails v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasDetails() => $_has(1);
   @$pb.TagNumber(6)
   void clearDetails() => clearField(6);
   @$pb.TagNumber(6)
-  AppDetails ensureDetails() => $_ensure(1);
+  AppInfoDetails ensureDetails() => $_ensure(1);
 
   @$pb.TagNumber(7)
   $core.String get name => $_getSZ(2);
@@ -937,8 +937,8 @@ class AppMixed extends $pb.GeneratedMessage {
   $core.List<$core.String> get altNames => $_getList(9);
 }
 
-class AppID extends $pb.GeneratedMessage {
-  factory AppID({
+class AppInfoID extends $pb.GeneratedMessage {
+  factory AppInfoID({
     $core.bool? internal,
     $core.String? source,
     $core.String? sourceAppId,
@@ -955,11 +955,11 @@ class AppID extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  AppID._() : super();
-  factory AppID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AppInfoID._() : super();
+  factory AppInfoID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppInfoID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppID', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppInfoID', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'internal')
     ..aOS(2, _omitFieldNames ? '' : 'source')
     ..aOS(3, _omitFieldNames ? '' : 'sourceAppId')
@@ -970,22 +970,22 @@ class AppID extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AppID clone() => AppID()..mergeFromMessage(this);
+  AppInfoID clone() => AppInfoID()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AppID copyWith(void Function(AppID) updates) => super.copyWith((message) => updates(message as AppID)) as AppID;
+  AppInfoID copyWith(void Function(AppInfoID) updates) => super.copyWith((message) => updates(message as AppInfoID)) as AppInfoID;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AppID create() => AppID._();
-  AppID createEmptyInstance() => create();
-  static $pb.PbList<AppID> createRepeated() => $pb.PbList<AppID>();
+  static AppInfoID create() => AppInfoID._();
+  AppInfoID createEmptyInstance() => create();
+  static $pb.PbList<AppInfoID> createRepeated() => $pb.PbList<AppInfoID>();
   @$core.pragma('dart2js:noInline')
-  static AppID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppID>(create);
-  static AppID? _defaultInstance;
+  static AppInfoID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfoID>(create);
+  static AppInfoID? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get internal => $_getBF(0);
@@ -1016,8 +1016,8 @@ class AppID extends $pb.GeneratedMessage {
   void clearSourceAppId() => clearField(3);
 }
 
-class AppDetails extends $pb.GeneratedMessage {
-  factory AppDetails({
+class AppInfoDetails extends $pb.GeneratedMessage {
+  factory AppInfoDetails({
     $core.String? description,
     $core.String? releaseDate,
     $core.String? developer,
@@ -1046,11 +1046,11 @@ class AppDetails extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  AppDetails._() : super();
-  factory AppDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AppInfoDetails._() : super();
+  factory AppInfoDetails.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AppInfoDetails.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppInfoDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'description')
     ..aOS(2, _omitFieldNames ? '' : 'releaseDate')
     ..aOS(3, _omitFieldNames ? '' : 'developer')
@@ -1064,22 +1064,22 @@ class AppDetails extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AppDetails clone() => AppDetails()..mergeFromMessage(this);
+  AppInfoDetails clone() => AppInfoDetails()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AppDetails copyWith(void Function(AppDetails) updates) => super.copyWith((message) => updates(message as AppDetails)) as AppDetails;
+  AppInfoDetails copyWith(void Function(AppInfoDetails) updates) => super.copyWith((message) => updates(message as AppInfoDetails)) as AppInfoDetails;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AppDetails create() => AppDetails._();
-  AppDetails createEmptyInstance() => create();
-  static $pb.PbList<AppDetails> createRepeated() => $pb.PbList<AppDetails>();
+  static AppInfoDetails create() => AppInfoDetails._();
+  AppInfoDetails createEmptyInstance() => create();
+  static $pb.PbList<AppInfoDetails> createRepeated() => $pb.PbList<AppInfoDetails>();
   @$core.pragma('dart2js:noInline')
-  static AppDetails getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppDetails>(create);
-  static AppDetails? _defaultInstance;
+  static AppInfoDetails getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfoDetails>(create);
+  static AppInfoDetails? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get description => $_getSZ(0);
@@ -1128,466 +1128,6 @@ class AppDetails extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<$core.String> get imageUrls => $_getList(5);
-}
-
-class AppPackage extends $pb.GeneratedMessage {
-  factory AppPackage({
-    InternalID? id,
-    AppPackageSource? source,
-    InternalID? sourceId,
-    $core.String? name,
-    $core.String? description,
-    AppPackageBinary? binary,
-    $core.bool? public,
-    InternalID? assignedAppId,
-    InternalID? groupId,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (source != null) {
-      $result.source = source;
-    }
-    if (sourceId != null) {
-      $result.sourceId = sourceId;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (binary != null) {
-      $result.binary = binary;
-    }
-    if (public != null) {
-      $result.public = public;
-    }
-    if (assignedAppId != null) {
-      $result.assignedAppId = assignedAppId;
-    }
-    if (groupId != null) {
-      $result.groupId = groupId;
-    }
-    return $result;
-  }
-  AppPackage._() : super();
-  factory AppPackage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppPackage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppPackage', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
-    ..e<AppPackageSource>(2, _omitFieldNames ? '' : 'source', $pb.PbFieldType.OE, defaultOrMaker: AppPackageSource.APP_PACKAGE_SOURCE_UNSPECIFIED, valueOf: AppPackageSource.valueOf, enumValues: AppPackageSource.values)
-    ..aOM<InternalID>(3, _omitFieldNames ? '' : 'sourceId', subBuilder: InternalID.create)
-    ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..aOS(5, _omitFieldNames ? '' : 'description')
-    ..aOM<AppPackageBinary>(6, _omitFieldNames ? '' : 'binary', subBuilder: AppPackageBinary.create)
-    ..aOB(7, _omitFieldNames ? '' : 'public')
-    ..aOM<InternalID>(8, _omitFieldNames ? '' : 'assignedAppId', subBuilder: InternalID.create)
-    ..aOM<InternalID>(9, _omitFieldNames ? '' : 'groupId', subBuilder: InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AppPackage clone() => AppPackage()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AppPackage copyWith(void Function(AppPackage) updates) => super.copyWith((message) => updates(message as AppPackage)) as AppPackage;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AppPackage create() => AppPackage._();
-  AppPackage createEmptyInstance() => create();
-  static $pb.PbList<AppPackage> createRepeated() => $pb.PbList<AppPackage>();
-  @$core.pragma('dart2js:noInline')
-  static AppPackage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppPackage>(create);
-  static AppPackage? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  InternalID get id => $_getN(0);
-  @$pb.TagNumber(1)
-  set id(InternalID v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-  @$pb.TagNumber(1)
-  InternalID ensureId() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  AppPackageSource get source => $_getN(1);
-  @$pb.TagNumber(2)
-  set source(AppPackageSource v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSource() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSource() => clearField(2);
-
-  /// For sentinel, use sentinel id.
-  /// For manual, use device id
-  @$pb.TagNumber(3)
-  InternalID get sourceId => $_getN(2);
-  @$pb.TagNumber(3)
-  set sourceId(InternalID v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasSourceId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearSourceId() => clearField(3);
-  @$pb.TagNumber(3)
-  InternalID ensureSourceId() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  $core.String get name => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set name($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasName() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearName() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearDescription() => clearField(5);
-
-  @$pb.TagNumber(6)
-  AppPackageBinary get binary => $_getN(5);
-  @$pb.TagNumber(6)
-  set binary(AppPackageBinary v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasBinary() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearBinary() => clearField(6);
-  @$pb.TagNumber(6)
-  AppPackageBinary ensureBinary() => $_ensure(5);
-
-  /// false by default
-  @$pb.TagNumber(7)
-  $core.bool get public => $_getBF(6);
-  @$pb.TagNumber(7)
-  set public($core.bool v) { $_setBool(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasPublic() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearPublic() => clearField(7);
-
-  /// Only used in response
-  /// Available when assigned to an app
-  @$pb.TagNumber(8)
-  InternalID get assignedAppId => $_getN(7);
-  @$pb.TagNumber(8)
-  set assignedAppId(InternalID v) { setField(8, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasAssignedAppId() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearAssignedAppId() => clearField(8);
-  @$pb.TagNumber(8)
-  InternalID ensureAssignedAppId() => $_ensure(7);
-
-  /// Server should generate new group id when it is 0 in create or update request.
-  @$pb.TagNumber(9)
-  InternalID get groupId => $_getN(8);
-  @$pb.TagNumber(9)
-  set groupId(InternalID v) { setField(9, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasGroupId() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearGroupId() => clearField(9);
-  @$pb.TagNumber(9)
-  InternalID ensureGroupId() => $_ensure(8);
-}
-
-class AppPackageBinary_Chunk extends $pb.GeneratedMessage {
-  factory AppPackageBinary_Chunk({
-    $fixnum.Int64? sequence,
-    $fixnum.Int64? sizeBytes,
-    $core.String? publicUrl,
-    $core.List<$core.int>? sha256,
-  }) {
-    final $result = create();
-    if (sequence != null) {
-      $result.sequence = sequence;
-    }
-    if (sizeBytes != null) {
-      $result.sizeBytes = sizeBytes;
-    }
-    if (publicUrl != null) {
-      $result.publicUrl = publicUrl;
-    }
-    if (sha256 != null) {
-      $result.sha256 = sha256;
-    }
-    return $result;
-  }
-  AppPackageBinary_Chunk._() : super();
-  factory AppPackageBinary_Chunk.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppPackageBinary_Chunk.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppPackageBinary.Chunk', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'sequence')
-    ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
-    ..aOS(3, _omitFieldNames ? '' : 'publicUrl')
-    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AppPackageBinary_Chunk clone() => AppPackageBinary_Chunk()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AppPackageBinary_Chunk copyWith(void Function(AppPackageBinary_Chunk) updates) => super.copyWith((message) => updates(message as AppPackageBinary_Chunk)) as AppPackageBinary_Chunk;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AppPackageBinary_Chunk create() => AppPackageBinary_Chunk._();
-  AppPackageBinary_Chunk createEmptyInstance() => create();
-  static $pb.PbList<AppPackageBinary_Chunk> createRepeated() => $pb.PbList<AppPackageBinary_Chunk>();
-  @$core.pragma('dart2js:noInline')
-  static AppPackageBinary_Chunk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppPackageBinary_Chunk>(create);
-  static AppPackageBinary_Chunk? _defaultInstance;
-
-  /// Starts from 1
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get sequence => $_getI64(0);
-  @$pb.TagNumber(1)
-  set sequence($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasSequence() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearSequence() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get sizeBytes => $_getI64(1);
-  @$pb.TagNumber(2)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSizeBytes() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSizeBytes() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get publicUrl => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set publicUrl($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasPublicUrl() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPublicUrl() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.List<$core.int> get sha256 => $_getN(3);
-  @$pb.TagNumber(4)
-  set sha256($core.List<$core.int> v) { $_setBytes(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasSha256() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSha256() => clearField(4);
-}
-
-class AppPackageBinary extends $pb.GeneratedMessage {
-  factory AppPackageBinary({
-    $core.String? name,
-    $fixnum.Int64? sizeBytes,
-    $core.String? publicUrl,
-    $core.List<$core.int>? sha256,
-    $core.String? tokenServerUrl,
-    $core.Iterable<AppPackageBinary_Chunk>? chunks,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (sizeBytes != null) {
-      $result.sizeBytes = sizeBytes;
-    }
-    if (publicUrl != null) {
-      $result.publicUrl = publicUrl;
-    }
-    if (sha256 != null) {
-      $result.sha256 = sha256;
-    }
-    if (tokenServerUrl != null) {
-      $result.tokenServerUrl = tokenServerUrl;
-    }
-    if (chunks != null) {
-      $result.chunks.addAll(chunks);
-    }
-    return $result;
-  }
-  AppPackageBinary._() : super();
-  factory AppPackageBinary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppPackageBinary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppPackageBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
-    ..aOS(3, _omitFieldNames ? '' : 'publicUrl')
-    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
-    ..aOS(5, _omitFieldNames ? '' : 'tokenServerUrl')
-    ..pc<AppPackageBinary_Chunk>(6, _omitFieldNames ? '' : 'chunks', $pb.PbFieldType.PM, subBuilder: AppPackageBinary_Chunk.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AppPackageBinary clone() => AppPackageBinary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AppPackageBinary copyWith(void Function(AppPackageBinary) updates) => super.copyWith((message) => updates(message as AppPackageBinary)) as AppPackageBinary;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AppPackageBinary create() => AppPackageBinary._();
-  AppPackageBinary createEmptyInstance() => create();
-  static $pb.PbList<AppPackageBinary> createRepeated() => $pb.PbList<AppPackageBinary>();
-  @$core.pragma('dart2js:noInline')
-  static AppPackageBinary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppPackageBinary>(create);
-  static AppPackageBinary? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $fixnum.Int64 get sizeBytes => $_getI64(1);
-  @$pb.TagNumber(2)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSizeBytes() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSizeBytes() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get publicUrl => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set publicUrl($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasPublicUrl() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPublicUrl() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.List<$core.int> get sha256 => $_getN(3);
-  @$pb.TagNumber(4)
-  set sha256($core.List<$core.int> v) { $_setBytes(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasSha256() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSha256() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get tokenServerUrl => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set tokenServerUrl($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasTokenServerUrl() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearTokenServerUrl() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.List<AppPackageBinary_Chunk> get chunks => $_getList(5);
-}
-
-class AppCategory extends $pb.GeneratedMessage {
-  factory AppCategory({
-    InternalID? id,
-    $core.String? name,
-    $core.Iterable<InternalID>? appIds,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (appIds != null) {
-      $result.appIds.addAll(appIds);
-    }
-    return $result;
-  }
-  AppCategory._() : super();
-  factory AppCategory.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AppCategory.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppCategory', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..pc<InternalID>(3, _omitFieldNames ? '' : 'appIds', $pb.PbFieldType.PM, subBuilder: InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AppCategory clone() => AppCategory()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AppCategory copyWith(void Function(AppCategory) updates) => super.copyWith((message) => updates(message as AppCategory)) as AppCategory;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AppCategory create() => AppCategory._();
-  AppCategory createEmptyInstance() => create();
-  static $pb.PbList<AppCategory> createRepeated() => $pb.PbList<AppCategory>();
-  @$core.pragma('dart2js:noInline')
-  static AppCategory getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppCategory>(create);
-  static AppCategory? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  InternalID get id => $_getN(0);
-  @$pb.TagNumber(1)
-  set id(InternalID v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-  @$pb.TagNumber(1)
-  InternalID ensureId() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearName() => clearField(2);
-
-  /// Full update
-  @$pb.TagNumber(3)
-  $core.List<InternalID> get appIds => $_getList(2);
 }
 
 class Feed extends $pb.GeneratedMessage {

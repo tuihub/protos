@@ -43,23 +43,6 @@ class AppType extends $pb.ProtobufEnum {
   const AppType._($core.int v, $core.String n) : super(v, n);
 }
 
-class AppPackageSource extends $pb.ProtobufEnum {
-  static const AppPackageSource APP_PACKAGE_SOURCE_UNSPECIFIED = AppPackageSource._(0, _omitEnumNames ? '' : 'APP_PACKAGE_SOURCE_UNSPECIFIED');
-  static const AppPackageSource APP_PACKAGE_SOURCE_MANUAL = AppPackageSource._(1, _omitEnumNames ? '' : 'APP_PACKAGE_SOURCE_MANUAL');
-  static const AppPackageSource APP_PACKAGE_SOURCE_SENTINEL = AppPackageSource._(2, _omitEnumNames ? '' : 'APP_PACKAGE_SOURCE_SENTINEL');
-
-  static const $core.List<AppPackageSource> values = <AppPackageSource> [
-    APP_PACKAGE_SOURCE_UNSPECIFIED,
-    APP_PACKAGE_SOURCE_MANUAL,
-    APP_PACKAGE_SOURCE_SENTINEL,
-  ];
-
-  static final $core.Map<$core.int, AppPackageSource> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static AppPackageSource? valueOf($core.int value) => _byValue[value];
-
-  const AppPackageSource._($core.int v, $core.String n) : super(v, n);
-}
-
 class TimeAggregation_AggregationType extends $pb.ProtobufEnum {
   static const TimeAggregation_AggregationType AGGREGATION_TYPE_UNSPECIFIED = TimeAggregation_AggregationType._(0, _omitEnumNames ? '' : 'AGGREGATION_TYPE_UNSPECIFIED');
   static const TimeAggregation_AggregationType AGGREGATION_TYPE_OVERALL = TimeAggregation_AggregationType._(1, _omitEnumNames ? '' : 'AGGREGATION_TYPE_OVERALL');

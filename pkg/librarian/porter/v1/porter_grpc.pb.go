@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LibrarianPorterService_GetPorterInformation_FullMethodName   = "/librarian.porter.v1.LibrarianPorterService/GetPorterInformation"
-	LibrarianPorterService_EnablePorter_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/EnablePorter"
-	LibrarianPorterService_PullAccount_FullMethodName            = "/librarian.porter.v1.LibrarianPorterService/PullAccount"
-	LibrarianPorterService_PullApp_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullApp"
-	LibrarianPorterService_PullAccountAppRelation_FullMethodName = "/librarian.porter.v1.LibrarianPorterService/PullAccountAppRelation"
-	LibrarianPorterService_SearchApp_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/SearchApp"
-	LibrarianPorterService_PullFeed_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
-	LibrarianPorterService_PushFeedItems_FullMethodName          = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
+	LibrarianPorterService_GetPorterInformation_FullMethodName       = "/librarian.porter.v1.LibrarianPorterService/GetPorterInformation"
+	LibrarianPorterService_EnablePorter_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/EnablePorter"
+	LibrarianPorterService_PullAccount_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullAccount"
+	LibrarianPorterService_PullAppInfo_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullAppInfo"
+	LibrarianPorterService_PullAccountAppInfoRelation_FullMethodName = "/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation"
+	LibrarianPorterService_SearchAppInfo_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/SearchAppInfo"
+	LibrarianPorterService_PullFeed_FullMethodName                   = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
+	LibrarianPorterService_PushFeedItems_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
 )
 
 // LibrarianPorterServiceClient is the client API for LibrarianPorterService service.
@@ -38,11 +38,11 @@ type LibrarianPorterServiceClient interface {
 	// `Tiphereth`
 	PullAccount(ctx context.Context, in *PullAccountRequest, opts ...grpc.CallOption) (*PullAccountResponse, error)
 	// `Gebura`
-	PullApp(ctx context.Context, in *PullAppRequest, opts ...grpc.CallOption) (*PullAppResponse, error)
+	PullAppInfo(ctx context.Context, in *PullAppInfoRequest, opts ...grpc.CallOption) (*PullAppInfoResponse, error)
 	// `Gebura`
-	PullAccountAppRelation(ctx context.Context, in *PullAccountAppRelationRequest, opts ...grpc.CallOption) (*PullAccountAppRelationResponse, error)
+	PullAccountAppInfoRelation(ctx context.Context, in *PullAccountAppInfoRelationRequest, opts ...grpc.CallOption) (*PullAccountAppInfoRelationResponse, error)
 	// `Gebura`
-	SearchApp(ctx context.Context, in *SearchAppRequest, opts ...grpc.CallOption) (*SearchAppResponse, error)
+	SearchAppInfo(ctx context.Context, in *SearchAppInfoRequest, opts ...grpc.CallOption) (*SearchAppInfoResponse, error)
 	// `Yesod`
 	PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error)
 	// `Yesod`
@@ -84,27 +84,27 @@ func (c *librarianPorterServiceClient) PullAccount(ctx context.Context, in *Pull
 	return out, nil
 }
 
-func (c *librarianPorterServiceClient) PullApp(ctx context.Context, in *PullAppRequest, opts ...grpc.CallOption) (*PullAppResponse, error) {
-	out := new(PullAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PullApp_FullMethodName, in, out, opts...)
+func (c *librarianPorterServiceClient) PullAppInfo(ctx context.Context, in *PullAppInfoRequest, opts ...grpc.CallOption) (*PullAppInfoResponse, error) {
+	out := new(PullAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAppInfo_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianPorterServiceClient) PullAccountAppRelation(ctx context.Context, in *PullAccountAppRelationRequest, opts ...grpc.CallOption) (*PullAccountAppRelationResponse, error) {
-	out := new(PullAccountAppRelationResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAccountAppRelation_FullMethodName, in, out, opts...)
+func (c *librarianPorterServiceClient) PullAccountAppInfoRelation(ctx context.Context, in *PullAccountAppInfoRelationRequest, opts ...grpc.CallOption) (*PullAccountAppInfoRelationResponse, error) {
+	out := new(PullAccountAppInfoRelationResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PullAccountAppInfoRelation_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianPorterServiceClient) SearchApp(ctx context.Context, in *SearchAppRequest, opts ...grpc.CallOption) (*SearchAppResponse, error) {
-	out := new(SearchAppResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_SearchApp_FullMethodName, in, out, opts...)
+func (c *librarianPorterServiceClient) SearchAppInfo(ctx context.Context, in *SearchAppInfoRequest, opts ...grpc.CallOption) (*SearchAppInfoResponse, error) {
+	out := new(SearchAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_SearchAppInfo_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -138,11 +138,11 @@ type LibrarianPorterServiceServer interface {
 	// `Tiphereth`
 	PullAccount(context.Context, *PullAccountRequest) (*PullAccountResponse, error)
 	// `Gebura`
-	PullApp(context.Context, *PullAppRequest) (*PullAppResponse, error)
+	PullAppInfo(context.Context, *PullAppInfoRequest) (*PullAppInfoResponse, error)
 	// `Gebura`
-	PullAccountAppRelation(context.Context, *PullAccountAppRelationRequest) (*PullAccountAppRelationResponse, error)
+	PullAccountAppInfoRelation(context.Context, *PullAccountAppInfoRelationRequest) (*PullAccountAppInfoRelationResponse, error)
 	// `Gebura`
-	SearchApp(context.Context, *SearchAppRequest) (*SearchAppResponse, error)
+	SearchAppInfo(context.Context, *SearchAppInfoRequest) (*SearchAppInfoResponse, error)
 	// `Yesod`
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
 	// `Yesod`
@@ -163,14 +163,14 @@ func (UnimplementedLibrarianPorterServiceServer) EnablePorter(context.Context, *
 func (UnimplementedLibrarianPorterServiceServer) PullAccount(context.Context, *PullAccountRequest) (*PullAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullAccount not implemented")
 }
-func (UnimplementedLibrarianPorterServiceServer) PullApp(context.Context, *PullAppRequest) (*PullAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PullApp not implemented")
+func (UnimplementedLibrarianPorterServiceServer) PullAppInfo(context.Context, *PullAppInfoRequest) (*PullAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PullAppInfo not implemented")
 }
-func (UnimplementedLibrarianPorterServiceServer) PullAccountAppRelation(context.Context, *PullAccountAppRelationRequest) (*PullAccountAppRelationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PullAccountAppRelation not implemented")
+func (UnimplementedLibrarianPorterServiceServer) PullAccountAppInfoRelation(context.Context, *PullAccountAppInfoRelationRequest) (*PullAccountAppInfoRelationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PullAccountAppInfoRelation not implemented")
 }
-func (UnimplementedLibrarianPorterServiceServer) SearchApp(context.Context, *SearchAppRequest) (*SearchAppResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SearchApp not implemented")
+func (UnimplementedLibrarianPorterServiceServer) SearchAppInfo(context.Context, *SearchAppInfoRequest) (*SearchAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchAppInfo not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullFeed not implemented")
@@ -246,56 +246,56 @@ func _LibrarianPorterService_PullAccount_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianPorterService_PullApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PullAppRequest)
+func _LibrarianPorterService_PullAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PullAppInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianPorterServiceServer).PullApp(ctx, in)
+		return srv.(LibrarianPorterServiceServer).PullAppInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianPorterService_PullApp_FullMethodName,
+		FullMethod: LibrarianPorterService_PullAppInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianPorterServiceServer).PullApp(ctx, req.(*PullAppRequest))
+		return srv.(LibrarianPorterServiceServer).PullAppInfo(ctx, req.(*PullAppInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianPorterService_PullAccountAppRelation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PullAccountAppRelationRequest)
+func _LibrarianPorterService_PullAccountAppInfoRelation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PullAccountAppInfoRelationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianPorterServiceServer).PullAccountAppRelation(ctx, in)
+		return srv.(LibrarianPorterServiceServer).PullAccountAppInfoRelation(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianPorterService_PullAccountAppRelation_FullMethodName,
+		FullMethod: LibrarianPorterService_PullAccountAppInfoRelation_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianPorterServiceServer).PullAccountAppRelation(ctx, req.(*PullAccountAppRelationRequest))
+		return srv.(LibrarianPorterServiceServer).PullAccountAppInfoRelation(ctx, req.(*PullAccountAppInfoRelationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianPorterService_SearchApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SearchAppRequest)
+func _LibrarianPorterService_SearchAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchAppInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianPorterServiceServer).SearchApp(ctx, in)
+		return srv.(LibrarianPorterServiceServer).SearchAppInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianPorterService_SearchApp_FullMethodName,
+		FullMethod: LibrarianPorterService_SearchAppInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianPorterServiceServer).SearchApp(ctx, req.(*SearchAppRequest))
+		return srv.(LibrarianPorterServiceServer).SearchAppInfo(ctx, req.(*SearchAppInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -356,16 +356,16 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianPorterService_PullAccount_Handler,
 		},
 		{
-			MethodName: "PullApp",
-			Handler:    _LibrarianPorterService_PullApp_Handler,
+			MethodName: "PullAppInfo",
+			Handler:    _LibrarianPorterService_PullAppInfo_Handler,
 		},
 		{
-			MethodName: "PullAccountAppRelation",
-			Handler:    _LibrarianPorterService_PullAccountAppRelation_Handler,
+			MethodName: "PullAccountAppInfoRelation",
+			Handler:    _LibrarianPorterService_PullAccountAppInfoRelation_Handler,
 		},
 		{
-			MethodName: "SearchApp",
-			Handler:    _LibrarianPorterService_SearchApp_Handler,
+			MethodName: "SearchAppInfo",
+			Handler:    _LibrarianPorterService_SearchAppInfo_Handler,
 		},
 		{
 			MethodName: "PullFeed",

@@ -13,23 +13,21 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class ValidScope extends $pb.ProtobufEnum {
-  static const ValidScope VALID_SCOPE_UNSPECIFIED = ValidScope._(0, _omitEnumNames ? '' : 'VALID_SCOPE_UNSPECIFIED');
-  static const ValidScope VALID_SCOPE_ACCOUNT = ValidScope._(1, _omitEnumNames ? '' : 'VALID_SCOPE_ACCOUNT');
-  static const ValidScope VALID_SCOPE_APP = ValidScope._(2, _omitEnumNames ? '' : 'VALID_SCOPE_APP');
-  static const ValidScope VALID_SCOPE_APP_PACKAGE = ValidScope._(3, _omitEnumNames ? '' : 'VALID_SCOPE_APP_PACKAGE');
+class AppSaveFileCapacityStrategy extends $pb.ProtobufEnum {
+  static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED = AppSaveFileCapacityStrategy._(0, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED');
+  static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL = AppSaveFileCapacityStrategy._(1, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL');
+  static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST = AppSaveFileCapacityStrategy._(2, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST');
 
-  static const $core.List<ValidScope> values = <ValidScope> [
-    VALID_SCOPE_UNSPECIFIED,
-    VALID_SCOPE_ACCOUNT,
-    VALID_SCOPE_APP,
-    VALID_SCOPE_APP_PACKAGE,
+  static const $core.List<AppSaveFileCapacityStrategy> values = <AppSaveFileCapacityStrategy> [
+    APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED,
+    APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL,
+    APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST,
   ];
 
-  static final $core.Map<$core.int, ValidScope> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static ValidScope? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, AppSaveFileCapacityStrategy> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AppSaveFileCapacityStrategy? valueOf($core.int value) => _byValue[value];
 
-  const ValidScope._($core.int v, $core.String n) : super(v, n);
+  const AppSaveFileCapacityStrategy._($core.int v, $core.String n) : super(v, n);
 }
 
 

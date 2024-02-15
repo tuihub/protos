@@ -147,6 +147,54 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage',
       ($3.DownloadImageRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.DownloadImageResponse.fromBuffer(value));
+  static final _$createAppInfo = $grpc.ClientMethod<$4.CreateAppInfoRequest, $4.CreateAppInfoResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppInfo',
+      ($4.CreateAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateAppInfoResponse.fromBuffer(value));
+  static final _$updateAppInfo = $grpc.ClientMethod<$4.UpdateAppInfoRequest, $4.UpdateAppInfoResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppInfo',
+      ($4.UpdateAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UpdateAppInfoResponse.fromBuffer(value));
+  static final _$listAppInfos = $grpc.ClientMethod<$4.ListAppInfosRequest, $4.ListAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListAppInfos',
+      ($4.ListAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListAppInfosResponse.fromBuffer(value));
+  static final _$mergeAppInfos = $grpc.ClientMethod<$4.MergeAppInfosRequest, $4.MergeAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/MergeAppInfos',
+      ($4.MergeAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.MergeAppInfosResponse.fromBuffer(value));
+  static final _$pickAppInfo = $grpc.ClientMethod<$4.PickAppInfoRequest, $4.PickAppInfoResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PickAppInfo',
+      ($4.PickAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.PickAppInfoResponse.fromBuffer(value));
+  static final _$syncAppInfos = $grpc.ClientMethod<$4.SyncAppInfosRequest, $4.SyncAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SyncAppInfos',
+      ($4.SyncAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SyncAppInfosResponse.fromBuffer(value));
+  static final _$syncAccountAppInfos = $grpc.ClientMethod<$4.SyncAccountAppInfosRequest, $4.SyncAccountAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountAppInfos',
+      ($4.SyncAccountAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SyncAccountAppInfosResponse.fromBuffer(value));
+  static final _$searchAppInfos = $grpc.ClientMethod<$4.SearchAppInfosRequest, $4.SearchAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos',
+      ($4.SearchAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SearchAppInfosResponse.fromBuffer(value));
+  static final _$getAppInfo = $grpc.ClientMethod<$4.GetAppInfoRequest, $4.GetAppInfoResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetAppInfo',
+      ($4.GetAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetAppInfoResponse.fromBuffer(value));
+  static final _$getBoundAppInfos = $grpc.ClientMethod<$4.GetBoundAppInfosRequest, $4.GetBoundAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetBoundAppInfos',
+      ($4.GetBoundAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetBoundAppInfosResponse.fromBuffer(value));
+  static final _$purchaseAppInfo = $grpc.ClientMethod<$4.PurchaseAppInfoRequest, $4.PurchaseAppInfoResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PurchaseAppInfo',
+      ($4.PurchaseAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.PurchaseAppInfoResponse.fromBuffer(value));
+  static final _$getPurchasedAppInfos = $grpc.ClientMethod<$4.GetPurchasedAppInfosRequest, $4.GetPurchasedAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedAppInfos',
+      ($4.GetPurchasedAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetPurchasedAppInfosResponse.fromBuffer(value));
   static final _$createApp = $grpc.ClientMethod<$4.CreateAppRequest, $4.CreateAppResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateApp',
       ($4.CreateAppRequest value) => value.writeToBuffer(),
@@ -159,110 +207,74 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/ListApps',
       ($4.ListAppsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.ListAppsResponse.fromBuffer(value));
-  static final _$mergeApps = $grpc.ClientMethod<$4.MergeAppsRequest, $4.MergeAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/MergeApps',
-      ($4.MergeAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.MergeAppsResponse.fromBuffer(value));
-  static final _$pickApp = $grpc.ClientMethod<$4.PickAppRequest, $4.PickAppResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/PickApp',
-      ($4.PickAppRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.PickAppResponse.fromBuffer(value));
-  static final _$syncApps = $grpc.ClientMethod<$4.SyncAppsRequest, $4.SyncAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SyncApps',
-      ($4.SyncAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SyncAppsResponse.fromBuffer(value));
-  static final _$syncAccountApps = $grpc.ClientMethod<$4.SyncAccountAppsRequest, $4.SyncAccountAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountApps',
-      ($4.SyncAccountAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SyncAccountAppsResponse.fromBuffer(value));
-  static final _$searchApps = $grpc.ClientMethod<$4.SearchAppsRequest, $4.SearchAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SearchApps',
-      ($4.SearchAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SearchAppsResponse.fromBuffer(value));
-  static final _$getApp = $grpc.ClientMethod<$4.GetAppRequest, $4.GetAppResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/GetApp',
-      ($4.GetAppRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.GetAppResponse.fromBuffer(value));
-  static final _$getBoundApps = $grpc.ClientMethod<$4.GetBoundAppsRequest, $4.GetBoundAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/GetBoundApps',
-      ($4.GetBoundAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.GetBoundAppsResponse.fromBuffer(value));
-  static final _$purchaseApp = $grpc.ClientMethod<$4.PurchaseAppRequest, $4.PurchaseAppResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/PurchaseApp',
-      ($4.PurchaseAppRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.PurchaseAppResponse.fromBuffer(value));
-  static final _$getPurchasedApps = $grpc.ClientMethod<$4.GetPurchasedAppsRequest, $4.GetPurchasedAppsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/GetPurchasedApps',
-      ($4.GetPurchasedAppsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.GetPurchasedAppsResponse.fromBuffer(value));
-  static final _$createAppPackage = $grpc.ClientMethod<$4.CreateAppPackageRequest, $4.CreateAppPackageResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppPackage',
-      ($4.CreateAppPackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.CreateAppPackageResponse.fromBuffer(value));
-  static final _$updateAppPackage = $grpc.ClientMethod<$4.UpdateAppPackageRequest, $4.UpdateAppPackageResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppPackage',
-      ($4.UpdateAppPackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.UpdateAppPackageResponse.fromBuffer(value));
-  static final _$listAppPackages = $grpc.ClientMethod<$4.ListAppPackagesRequest, $4.ListAppPackagesResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/ListAppPackages',
-      ($4.ListAppPackagesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ListAppPackagesResponse.fromBuffer(value));
-  static final _$assignAppPackage = $grpc.ClientMethod<$4.AssignAppPackageRequest, $4.AssignAppPackageResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/AssignAppPackage',
-      ($4.AssignAppPackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.AssignAppPackageResponse.fromBuffer(value));
-  static final _$unAssignAppPackage = $grpc.ClientMethod<$4.UnAssignAppPackageRequest, $4.UnAssignAppPackageResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UnAssignAppPackage',
-      ($4.UnAssignAppPackageRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.UnAssignAppPackageResponse.fromBuffer(value));
-  static final _$reportAppPackages = $grpc.ClientMethod<$4.ReportAppPackagesRequest, $4.ReportAppPackagesResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppPackages',
-      ($4.ReportAppPackagesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ReportAppPackagesResponse.fromBuffer(value));
-  static final _$downloadAppPackageBinary = $grpc.ClientMethod<$4.DownloadAppPackageBinaryRequest, $4.DownloadAppPackageBinaryResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppPackageBinary',
-      ($4.DownloadAppPackageBinaryRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.DownloadAppPackageBinaryResponse.fromBuffer(value));
-  static final _$addAppPackageRunTime = $grpc.ClientMethod<$4.AddAppPackageRunTimeRequest, $4.AddAppPackageRunTimeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/AddAppPackageRunTime',
-      ($4.AddAppPackageRunTimeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.AddAppPackageRunTimeResponse.fromBuffer(value));
-  static final _$sumAppPackageRunTime = $grpc.ClientMethod<$4.SumAppPackageRunTimeRequest, $4.SumAppPackageRunTimeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SumAppPackageRunTime',
-      ($4.SumAppPackageRunTimeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SumAppPackageRunTimeResponse.fromBuffer(value));
-  static final _$uploadGameSaveFile = $grpc.ClientMethod<$4.UploadGameSaveFileRequest, $4.UploadGameSaveFileResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UploadGameSaveFile',
-      ($4.UploadGameSaveFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.UploadGameSaveFileResponse.fromBuffer(value));
-  static final _$downloadGameSaveFile = $grpc.ClientMethod<$4.DownloadGameSaveFileRequest, $4.DownloadGameSaveFileResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/DownloadGameSaveFile',
-      ($4.DownloadGameSaveFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.DownloadGameSaveFileResponse.fromBuffer(value));
-  static final _$listGameSaveFiles = $grpc.ClientMethod<$4.ListGameSaveFilesRequest, $4.ListGameSaveFilesResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/ListGameSaveFiles',
-      ($4.ListGameSaveFilesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ListGameSaveFilesResponse.fromBuffer(value));
-  static final _$removeGameSaveFile = $grpc.ClientMethod<$4.RemoveGameSaveFileRequest, $4.RemoveGameSaveFileResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/RemoveGameSaveFile',
-      ($4.RemoveGameSaveFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.RemoveGameSaveFileResponse.fromBuffer(value));
-  static final _$pinGameSaveFile = $grpc.ClientMethod<$4.PinGameSaveFileRequest, $4.PinGameSaveFileResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/PinGameSaveFile',
-      ($4.PinGameSaveFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.PinGameSaveFileResponse.fromBuffer(value));
-  static final _$unpinGameSaveFile = $grpc.ClientMethod<$4.UnpinGameSaveFileRequest, $4.UnpinGameSaveFileResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UnpinGameSaveFile',
-      ($4.UnpinGameSaveFileRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.UnpinGameSaveFileResponse.fromBuffer(value));
-  static final _$setUserSaveFileCapacity = $grpc.ClientMethod<$4.SetUserSaveFileCapacityRequest, $4.SetUserSaveFileCapacityResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SetUserSaveFileCapacity',
-      ($4.SetUserSaveFileCapacityRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SetUserSaveFileCapacityResponse.fromBuffer(value));
-  static final _$setSaveFileRotation = $grpc.ClientMethod<$4.SetSaveFileRotationRequest, $4.SetSaveFileRotationResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SetSaveFileRotation',
-      ($4.SetSaveFileRotationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SetSaveFileRotationResponse.fromBuffer(value));
+  static final _$assignApp = $grpc.ClientMethod<$4.AssignAppRequest, $4.AssignAppResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/AssignApp',
+      ($4.AssignAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.AssignAppResponse.fromBuffer(value));
+  static final _$unAssignApp = $grpc.ClientMethod<$4.UnAssignAppRequest, $4.UnAssignAppResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UnAssignApp',
+      ($4.UnAssignAppRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UnAssignAppResponse.fromBuffer(value));
+  static final _$reportAppBinaries = $grpc.ClientMethod<$4.ReportAppBinariesRequest, $4.ReportAppBinariesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppBinaries',
+      ($4.ReportAppBinariesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ReportAppBinariesResponse.fromBuffer(value));
+  static final _$downloadAppBinary = $grpc.ClientMethod<$4.DownloadAppBinaryRequest, $4.DownloadAppBinaryResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppBinary',
+      ($4.DownloadAppBinaryRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DownloadAppBinaryResponse.fromBuffer(value));
+  static final _$createAppInst = $grpc.ClientMethod<$4.CreateAppInstRequest, $4.CreateAppInstResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppInst',
+      ($4.CreateAppInstRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateAppInstResponse.fromBuffer(value));
+  static final _$updateAppInst = $grpc.ClientMethod<$4.UpdateAppInstRequest, $4.UpdateAppInstResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppInst',
+      ($4.UpdateAppInstRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UpdateAppInstResponse.fromBuffer(value));
+  static final _$listAppInsts = $grpc.ClientMethod<$4.ListAppInstsRequest, $4.ListAppInstsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListAppInsts',
+      ($4.ListAppInstsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListAppInstsResponse.fromBuffer(value));
+  static final _$addAppInstRunTime = $grpc.ClientMethod<$4.AddAppInstRunTimeRequest, $4.AddAppInstRunTimeResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/AddAppInstRunTime',
+      ($4.AddAppInstRunTimeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.AddAppInstRunTimeResponse.fromBuffer(value));
+  static final _$sumAppInstRunTime = $grpc.ClientMethod<$4.SumAppInstRunTimeRequest, $4.SumAppInstRunTimeResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SumAppInstRunTime',
+      ($4.SumAppInstRunTimeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SumAppInstRunTimeResponse.fromBuffer(value));
+  static final _$uploadAppSaveFile = $grpc.ClientMethod<$4.UploadAppSaveFileRequest, $4.UploadAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UploadAppSaveFile',
+      ($4.UploadAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UploadAppSaveFileResponse.fromBuffer(value));
+  static final _$downloadAppSaveFile = $grpc.ClientMethod<$4.DownloadAppSaveFileRequest, $4.DownloadAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppSaveFile',
+      ($4.DownloadAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DownloadAppSaveFileResponse.fromBuffer(value));
+  static final _$listAppSaveFiles = $grpc.ClientMethod<$4.ListAppSaveFilesRequest, $4.ListAppSaveFilesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListAppSaveFiles',
+      ($4.ListAppSaveFilesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListAppSaveFilesResponse.fromBuffer(value));
+  static final _$removeAppSaveFile = $grpc.ClientMethod<$4.RemoveAppSaveFileRequest, $4.RemoveAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RemoveAppSaveFile',
+      ($4.RemoveAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.RemoveAppSaveFileResponse.fromBuffer(value));
+  static final _$pinAppSaveFile = $grpc.ClientMethod<$4.PinAppSaveFileRequest, $4.PinAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PinAppSaveFile',
+      ($4.PinAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.PinAppSaveFileResponse.fromBuffer(value));
+  static final _$unpinAppSaveFile = $grpc.ClientMethod<$4.UnpinAppSaveFileRequest, $4.UnpinAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UnpinAppSaveFile',
+      ($4.UnpinAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UnpinAppSaveFileResponse.fromBuffer(value));
+  static final _$setAppSaveFileCapacity = $grpc.ClientMethod<$4.SetAppSaveFileCapacityRequest, $4.SetAppSaveFileCapacityResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacity',
+      ($4.SetAppSaveFileCapacityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SetAppSaveFileCapacityResponse.fromBuffer(value));
+  static final _$getAppSaveFileCapacity = $grpc.ClientMethod<$4.GetAppSaveFileCapacityRequest, $4.GetAppSaveFileCapacityResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity',
+      ($4.GetAppSaveFileCapacityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityResponse.fromBuffer(value));
   static final _$listAppCategories = $grpc.ClientMethod<$4.ListAppCategoriesRequest, $4.ListAppCategoriesResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories',
       ($4.ListAppCategoriesRequest value) => value.writeToBuffer(),
@@ -494,6 +506,54 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$downloadImage, request, options: options);
   }
 
+  $grpc.ResponseFuture<$4.CreateAppInfoResponse> createAppInfo($4.CreateAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createAppInfo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateAppInfoResponse> updateAppInfo($4.UpdateAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateAppInfo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ListAppInfosResponse> listAppInfos($4.ListAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.MergeAppInfosResponse> mergeAppInfos($4.MergeAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$mergeAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.PickAppInfoResponse> pickAppInfo($4.PickAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pickAppInfo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SyncAppInfosResponse> syncAppInfos($4.SyncAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SyncAccountAppInfosResponse> syncAccountAppInfos($4.SyncAccountAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$syncAccountAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SearchAppInfosResponse> searchAppInfos($4.SearchAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetAppInfoResponse> getAppInfo($4.GetAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAppInfo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetBoundAppInfosResponse> getBoundAppInfos($4.GetBoundAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getBoundAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.PurchaseAppInfoResponse> purchaseAppInfo($4.PurchaseAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$purchaseAppInfo, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetPurchasedAppInfosResponse> getPurchasedAppInfos($4.GetPurchasedAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getPurchasedAppInfos, request, options: options);
+  }
+
   $grpc.ResponseFuture<$4.CreateAppResponse> createApp($4.CreateAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createApp, request, options: options);
   }
@@ -506,108 +566,72 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listApps, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.MergeAppsResponse> mergeApps($4.MergeAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$mergeApps, request, options: options);
+  $grpc.ResponseFuture<$4.AssignAppResponse> assignApp($4.AssignAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$assignApp, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.PickAppResponse> pickApp($4.PickAppRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pickApp, request, options: options);
+  $grpc.ResponseFuture<$4.UnAssignAppResponse> unAssignApp($4.UnAssignAppRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$unAssignApp, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.SyncAppsResponse> syncApps($4.SyncAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$syncApps, request, options: options);
+  $grpc.ResponseFuture<$4.ReportAppBinariesResponse> reportAppBinaries($4.ReportAppBinariesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$reportAppBinaries, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.SyncAccountAppsResponse> syncAccountApps($4.SyncAccountAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$syncAccountApps, request, options: options);
+  $grpc.ResponseFuture<$4.DownloadAppBinaryResponse> downloadAppBinary($4.DownloadAppBinaryRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$downloadAppBinary, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.SearchAppsResponse> searchApps($4.SearchAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$searchApps, request, options: options);
+  $grpc.ResponseFuture<$4.CreateAppInstResponse> createAppInst($4.CreateAppInstRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createAppInst, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.GetAppResponse> getApp($4.GetAppRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getApp, request, options: options);
+  $grpc.ResponseFuture<$4.UpdateAppInstResponse> updateAppInst($4.UpdateAppInstRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateAppInst, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.GetBoundAppsResponse> getBoundApps($4.GetBoundAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getBoundApps, request, options: options);
+  $grpc.ResponseFuture<$4.ListAppInstsResponse> listAppInsts($4.ListAppInstsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listAppInsts, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.PurchaseAppResponse> purchaseApp($4.PurchaseAppRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$purchaseApp, request, options: options);
+  $grpc.ResponseFuture<$4.AddAppInstRunTimeResponse> addAppInstRunTime($4.AddAppInstRunTimeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addAppInstRunTime, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.GetPurchasedAppsResponse> getPurchasedApps($4.GetPurchasedAppsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getPurchasedApps, request, options: options);
+  $grpc.ResponseFuture<$4.SumAppInstRunTimeResponse> sumAppInstRunTime($4.SumAppInstRunTimeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sumAppInstRunTime, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.CreateAppPackageResponse> createAppPackage($4.CreateAppPackageRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createAppPackage, request, options: options);
+  $grpc.ResponseFuture<$4.UploadAppSaveFileResponse> uploadAppSaveFile($4.UploadAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$uploadAppSaveFile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.UpdateAppPackageResponse> updateAppPackage($4.UpdateAppPackageRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateAppPackage, request, options: options);
+  $grpc.ResponseFuture<$4.DownloadAppSaveFileResponse> downloadAppSaveFile($4.DownloadAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$downloadAppSaveFile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.ListAppPackagesResponse> listAppPackages($4.ListAppPackagesRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listAppPackages, request, options: options);
+  $grpc.ResponseFuture<$4.ListAppSaveFilesResponse> listAppSaveFiles($4.ListAppSaveFilesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listAppSaveFiles, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.AssignAppPackageResponse> assignAppPackage($4.AssignAppPackageRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$assignAppPackage, request, options: options);
+  $grpc.ResponseFuture<$4.RemoveAppSaveFileResponse> removeAppSaveFile($4.RemoveAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeAppSaveFile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.UnAssignAppPackageResponse> unAssignAppPackage($4.UnAssignAppPackageRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$unAssignAppPackage, request, options: options);
+  $grpc.ResponseFuture<$4.PinAppSaveFileResponse> pinAppSaveFile($4.PinAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pinAppSaveFile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.ReportAppPackagesResponse> reportAppPackages($4.ReportAppPackagesRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$reportAppPackages, request, options: options);
+  $grpc.ResponseFuture<$4.UnpinAppSaveFileResponse> unpinAppSaveFile($4.UnpinAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$unpinAppSaveFile, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary($4.DownloadAppPackageBinaryRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$downloadAppPackageBinary, request, options: options);
+  $grpc.ResponseFuture<$4.SetAppSaveFileCapacityResponse> setAppSaveFileCapacity($4.SetAppSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setAppSaveFileCapacity, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime($4.AddAppPackageRunTimeRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$addAppPackageRunTime, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime($4.SumAppPackageRunTimeRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$sumAppPackageRunTime, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.UploadGameSaveFileResponse> uploadGameSaveFile($4.UploadGameSaveFileRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$uploadGameSaveFile, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.DownloadGameSaveFileResponse> downloadGameSaveFile($4.DownloadGameSaveFileRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$downloadGameSaveFile, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.ListGameSaveFilesResponse> listGameSaveFiles($4.ListGameSaveFilesRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listGameSaveFiles, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.RemoveGameSaveFileResponse> removeGameSaveFile($4.RemoveGameSaveFileRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$removeGameSaveFile, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.PinGameSaveFileResponse> pinGameSaveFile($4.PinGameSaveFileRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pinGameSaveFile, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.UnpinGameSaveFileResponse> unpinGameSaveFile($4.UnpinGameSaveFileRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$unpinGameSaveFile, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.SetUserSaveFileCapacityResponse> setUserSaveFileCapacity($4.SetUserSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$setUserSaveFileCapacity, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.SetSaveFileRotationResponse> setSaveFileRotation($4.SetSaveFileRotationRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$setSaveFileRotation, request, options: options);
+  $grpc.ResponseFuture<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($4.GetAppSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAppSaveFileCapacity, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.ListAppCategoriesResponse> listAppCategories($4.ListAppCategoriesRequest request, {$grpc.CallOptions? options}) {
@@ -930,6 +954,90 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $3.DownloadImageRequest.fromBuffer(value),
         ($3.DownloadImageResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateAppInfoRequest, $4.CreateAppInfoResponse>(
+        'CreateAppInfo',
+        createAppInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.CreateAppInfoRequest.fromBuffer(value),
+        ($4.CreateAppInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateAppInfoRequest, $4.UpdateAppInfoResponse>(
+        'UpdateAppInfo',
+        updateAppInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.UpdateAppInfoRequest.fromBuffer(value),
+        ($4.UpdateAppInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListAppInfosRequest, $4.ListAppInfosResponse>(
+        'ListAppInfos',
+        listAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.ListAppInfosRequest.fromBuffer(value),
+        ($4.ListAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.MergeAppInfosRequest, $4.MergeAppInfosResponse>(
+        'MergeAppInfos',
+        mergeAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.MergeAppInfosRequest.fromBuffer(value),
+        ($4.MergeAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.PickAppInfoRequest, $4.PickAppInfoResponse>(
+        'PickAppInfo',
+        pickAppInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.PickAppInfoRequest.fromBuffer(value),
+        ($4.PickAppInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SyncAppInfosRequest, $4.SyncAppInfosResponse>(
+        'SyncAppInfos',
+        syncAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SyncAppInfosRequest.fromBuffer(value),
+        ($4.SyncAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SyncAccountAppInfosRequest, $4.SyncAccountAppInfosResponse>(
+        'SyncAccountAppInfos',
+        syncAccountAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SyncAccountAppInfosRequest.fromBuffer(value),
+        ($4.SyncAccountAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SearchAppInfosRequest, $4.SearchAppInfosResponse>(
+        'SearchAppInfos',
+        searchAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SearchAppInfosRequest.fromBuffer(value),
+        ($4.SearchAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetAppInfoRequest, $4.GetAppInfoResponse>(
+        'GetAppInfo',
+        getAppInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetAppInfoRequest.fromBuffer(value),
+        ($4.GetAppInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetBoundAppInfosRequest, $4.GetBoundAppInfosResponse>(
+        'GetBoundAppInfos',
+        getBoundAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetBoundAppInfosRequest.fromBuffer(value),
+        ($4.GetBoundAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.PurchaseAppInfoRequest, $4.PurchaseAppInfoResponse>(
+        'PurchaseAppInfo',
+        purchaseAppInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.PurchaseAppInfoRequest.fromBuffer(value),
+        ($4.PurchaseAppInfoResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetPurchasedAppInfosRequest, $4.GetPurchasedAppInfosResponse>(
+        'GetPurchasedAppInfos',
+        getPurchasedAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetPurchasedAppInfosRequest.fromBuffer(value),
+        ($4.GetPurchasedAppInfosResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.CreateAppRequest, $4.CreateAppResponse>(
         'CreateApp',
         createApp_Pre,
@@ -951,188 +1059,125 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.ListAppsRequest.fromBuffer(value),
         ($4.ListAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.MergeAppsRequest, $4.MergeAppsResponse>(
-        'MergeApps',
-        mergeApps_Pre,
+    $addMethod($grpc.ServiceMethod<$4.AssignAppRequest, $4.AssignAppResponse>(
+        'AssignApp',
+        assignApp_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.MergeAppsRequest.fromBuffer(value),
-        ($4.MergeAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.PickAppRequest, $4.PickAppResponse>(
-        'PickApp',
-        pickApp_Pre,
+        ($core.List<$core.int> value) => $4.AssignAppRequest.fromBuffer(value),
+        ($4.AssignAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UnAssignAppRequest, $4.UnAssignAppResponse>(
+        'UnAssignApp',
+        unAssignApp_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.PickAppRequest.fromBuffer(value),
-        ($4.PickAppResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SyncAppsRequest, $4.SyncAppsResponse>(
-        'SyncApps',
-        syncApps_Pre,
+        ($core.List<$core.int> value) => $4.UnAssignAppRequest.fromBuffer(value),
+        ($4.UnAssignAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ReportAppBinariesRequest, $4.ReportAppBinariesResponse>(
+        'ReportAppBinaries',
+        reportAppBinaries_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.SyncAppsRequest.fromBuffer(value),
-        ($4.SyncAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SyncAccountAppsRequest, $4.SyncAccountAppsResponse>(
-        'SyncAccountApps',
-        syncAccountApps_Pre,
+        ($core.List<$core.int> value) => $4.ReportAppBinariesRequest.fromBuffer(value),
+        ($4.ReportAppBinariesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.DownloadAppBinaryRequest, $4.DownloadAppBinaryResponse>(
+        'DownloadAppBinary',
+        downloadAppBinary_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.SyncAccountAppsRequest.fromBuffer(value),
-        ($4.SyncAccountAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SearchAppsRequest, $4.SearchAppsResponse>(
-        'SearchApps',
-        searchApps_Pre,
+        ($core.List<$core.int> value) => $4.DownloadAppBinaryRequest.fromBuffer(value),
+        ($4.DownloadAppBinaryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateAppInstRequest, $4.CreateAppInstResponse>(
+        'CreateAppInst',
+        createAppInst_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.SearchAppsRequest.fromBuffer(value),
-        ($4.SearchAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.GetAppRequest, $4.GetAppResponse>(
-        'GetApp',
-        getApp_Pre,
+        ($core.List<$core.int> value) => $4.CreateAppInstRequest.fromBuffer(value),
+        ($4.CreateAppInstResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateAppInstRequest, $4.UpdateAppInstResponse>(
+        'UpdateAppInst',
+        updateAppInst_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.GetAppRequest.fromBuffer(value),
-        ($4.GetAppResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.GetBoundAppsRequest, $4.GetBoundAppsResponse>(
-        'GetBoundApps',
-        getBoundApps_Pre,
+        ($core.List<$core.int> value) => $4.UpdateAppInstRequest.fromBuffer(value),
+        ($4.UpdateAppInstResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListAppInstsRequest, $4.ListAppInstsResponse>(
+        'ListAppInsts',
+        listAppInsts_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.GetBoundAppsRequest.fromBuffer(value),
-        ($4.GetBoundAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.PurchaseAppRequest, $4.PurchaseAppResponse>(
-        'PurchaseApp',
-        purchaseApp_Pre,
+        ($core.List<$core.int> value) => $4.ListAppInstsRequest.fromBuffer(value),
+        ($4.ListAppInstsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.AddAppInstRunTimeRequest, $4.AddAppInstRunTimeResponse>(
+        'AddAppInstRunTime',
+        addAppInstRunTime_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.PurchaseAppRequest.fromBuffer(value),
-        ($4.PurchaseAppResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.GetPurchasedAppsRequest, $4.GetPurchasedAppsResponse>(
-        'GetPurchasedApps',
-        getPurchasedApps_Pre,
+        ($core.List<$core.int> value) => $4.AddAppInstRunTimeRequest.fromBuffer(value),
+        ($4.AddAppInstRunTimeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SumAppInstRunTimeRequest, $4.SumAppInstRunTimeResponse>(
+        'SumAppInstRunTime',
+        sumAppInstRunTime_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.GetPurchasedAppsRequest.fromBuffer(value),
-        ($4.GetPurchasedAppsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.CreateAppPackageRequest, $4.CreateAppPackageResponse>(
-        'CreateAppPackage',
-        createAppPackage_Pre,
+        ($core.List<$core.int> value) => $4.SumAppInstRunTimeRequest.fromBuffer(value),
+        ($4.SumAppInstRunTimeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UploadAppSaveFileRequest, $4.UploadAppSaveFileResponse>(
+        'UploadAppSaveFile',
+        uploadAppSaveFile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.CreateAppPackageRequest.fromBuffer(value),
-        ($4.CreateAppPackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UpdateAppPackageRequest, $4.UpdateAppPackageResponse>(
-        'UpdateAppPackage',
-        updateAppPackage_Pre,
+        ($core.List<$core.int> value) => $4.UploadAppSaveFileRequest.fromBuffer(value),
+        ($4.UploadAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.DownloadAppSaveFileRequest, $4.DownloadAppSaveFileResponse>(
+        'DownloadAppSaveFile',
+        downloadAppSaveFile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.UpdateAppPackageRequest.fromBuffer(value),
-        ($4.UpdateAppPackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListAppPackagesRequest, $4.ListAppPackagesResponse>(
-        'ListAppPackages',
-        listAppPackages_Pre,
+        ($core.List<$core.int> value) => $4.DownloadAppSaveFileRequest.fromBuffer(value),
+        ($4.DownloadAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListAppSaveFilesRequest, $4.ListAppSaveFilesResponse>(
+        'ListAppSaveFiles',
+        listAppSaveFiles_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.ListAppPackagesRequest.fromBuffer(value),
-        ($4.ListAppPackagesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.AssignAppPackageRequest, $4.AssignAppPackageResponse>(
-        'AssignAppPackage',
-        assignAppPackage_Pre,
+        ($core.List<$core.int> value) => $4.ListAppSaveFilesRequest.fromBuffer(value),
+        ($4.ListAppSaveFilesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.RemoveAppSaveFileRequest, $4.RemoveAppSaveFileResponse>(
+        'RemoveAppSaveFile',
+        removeAppSaveFile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.AssignAppPackageRequest.fromBuffer(value),
-        ($4.AssignAppPackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UnAssignAppPackageRequest, $4.UnAssignAppPackageResponse>(
-        'UnAssignAppPackage',
-        unAssignAppPackage_Pre,
+        ($core.List<$core.int> value) => $4.RemoveAppSaveFileRequest.fromBuffer(value),
+        ($4.RemoveAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.PinAppSaveFileRequest, $4.PinAppSaveFileResponse>(
+        'PinAppSaveFile',
+        pinAppSaveFile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.UnAssignAppPackageRequest.fromBuffer(value),
-        ($4.UnAssignAppPackageResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ReportAppPackagesRequest, $4.ReportAppPackagesResponse>(
-        'ReportAppPackages',
-        reportAppPackages_Pre,
+        ($core.List<$core.int> value) => $4.PinAppSaveFileRequest.fromBuffer(value),
+        ($4.PinAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UnpinAppSaveFileRequest, $4.UnpinAppSaveFileResponse>(
+        'UnpinAppSaveFile',
+        unpinAppSaveFile_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.ReportAppPackagesRequest.fromBuffer(value),
-        ($4.ReportAppPackagesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.DownloadAppPackageBinaryRequest, $4.DownloadAppPackageBinaryResponse>(
-        'DownloadAppPackageBinary',
-        downloadAppPackageBinary_Pre,
+        ($core.List<$core.int> value) => $4.UnpinAppSaveFileRequest.fromBuffer(value),
+        ($4.UnpinAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SetAppSaveFileCapacityRequest, $4.SetAppSaveFileCapacityResponse>(
+        'SetAppSaveFileCapacity',
+        setAppSaveFileCapacity_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.DownloadAppPackageBinaryRequest.fromBuffer(value),
-        ($4.DownloadAppPackageBinaryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.AddAppPackageRunTimeRequest, $4.AddAppPackageRunTimeResponse>(
-        'AddAppPackageRunTime',
-        addAppPackageRunTime_Pre,
+        ($core.List<$core.int> value) => $4.SetAppSaveFileCapacityRequest.fromBuffer(value),
+        ($4.SetAppSaveFileCapacityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetAppSaveFileCapacityRequest, $4.GetAppSaveFileCapacityResponse>(
+        'GetAppSaveFileCapacity',
+        getAppSaveFileCapacity_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.AddAppPackageRunTimeRequest.fromBuffer(value),
-        ($4.AddAppPackageRunTimeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SumAppPackageRunTimeRequest, $4.SumAppPackageRunTimeResponse>(
-        'SumAppPackageRunTime',
-        sumAppPackageRunTime_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.SumAppPackageRunTimeRequest.fromBuffer(value),
-        ($4.SumAppPackageRunTimeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UploadGameSaveFileRequest, $4.UploadGameSaveFileResponse>(
-        'UploadGameSaveFile',
-        uploadGameSaveFile_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.UploadGameSaveFileRequest.fromBuffer(value),
-        ($4.UploadGameSaveFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.DownloadGameSaveFileRequest, $4.DownloadGameSaveFileResponse>(
-        'DownloadGameSaveFile',
-        downloadGameSaveFile_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.DownloadGameSaveFileRequest.fromBuffer(value),
-        ($4.DownloadGameSaveFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListGameSaveFilesRequest, $4.ListGameSaveFilesResponse>(
-        'ListGameSaveFiles',
-        listGameSaveFiles_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.ListGameSaveFilesRequest.fromBuffer(value),
-        ($4.ListGameSaveFilesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.RemoveGameSaveFileRequest, $4.RemoveGameSaveFileResponse>(
-        'RemoveGameSaveFile',
-        removeGameSaveFile_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.RemoveGameSaveFileRequest.fromBuffer(value),
-        ($4.RemoveGameSaveFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.PinGameSaveFileRequest, $4.PinGameSaveFileResponse>(
-        'PinGameSaveFile',
-        pinGameSaveFile_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.PinGameSaveFileRequest.fromBuffer(value),
-        ($4.PinGameSaveFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UnpinGameSaveFileRequest, $4.UnpinGameSaveFileResponse>(
-        'UnpinGameSaveFile',
-        unpinGameSaveFile_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.UnpinGameSaveFileRequest.fromBuffer(value),
-        ($4.UnpinGameSaveFileResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SetUserSaveFileCapacityRequest, $4.SetUserSaveFileCapacityResponse>(
-        'SetUserSaveFileCapacity',
-        setUserSaveFileCapacity_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.SetUserSaveFileCapacityRequest.fromBuffer(value),
-        ($4.SetUserSaveFileCapacityResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SetSaveFileRotationRequest, $4.SetSaveFileRotationResponse>(
-        'SetSaveFileRotation',
-        setSaveFileRotation_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.SetSaveFileRotationRequest.fromBuffer(value),
-        ($4.SetSaveFileRotationResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityRequest.fromBuffer(value),
+        ($4.GetAppSaveFileCapacityResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.ListAppCategoriesRequest, $4.ListAppCategoriesResponse>(
         'ListAppCategories',
         listAppCategories_Pre,
@@ -1425,6 +1470,54 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return downloadImage(call, await request);
   }
 
+  $async.Future<$4.CreateAppInfoResponse> createAppInfo_Pre($grpc.ServiceCall call, $async.Future<$4.CreateAppInfoRequest> request) async {
+    return createAppInfo(call, await request);
+  }
+
+  $async.Future<$4.UpdateAppInfoResponse> updateAppInfo_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateAppInfoRequest> request) async {
+    return updateAppInfo(call, await request);
+  }
+
+  $async.Future<$4.ListAppInfosResponse> listAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppInfosRequest> request) async {
+    return listAppInfos(call, await request);
+  }
+
+  $async.Future<$4.MergeAppInfosResponse> mergeAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.MergeAppInfosRequest> request) async {
+    return mergeAppInfos(call, await request);
+  }
+
+  $async.Future<$4.PickAppInfoResponse> pickAppInfo_Pre($grpc.ServiceCall call, $async.Future<$4.PickAppInfoRequest> request) async {
+    return pickAppInfo(call, await request);
+  }
+
+  $async.Future<$4.SyncAppInfosResponse> syncAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAppInfosRequest> request) async {
+    return syncAppInfos(call, await request);
+  }
+
+  $async.Future<$4.SyncAccountAppInfosResponse> syncAccountAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAccountAppInfosRequest> request) async {
+    return syncAccountAppInfos(call, await request);
+  }
+
+  $async.Future<$4.SearchAppInfosResponse> searchAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.SearchAppInfosRequest> request) async {
+    return searchAppInfos(call, await request);
+  }
+
+  $async.Future<$4.GetAppInfoResponse> getAppInfo_Pre($grpc.ServiceCall call, $async.Future<$4.GetAppInfoRequest> request) async {
+    return getAppInfo(call, await request);
+  }
+
+  $async.Future<$4.GetBoundAppInfosResponse> getBoundAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.GetBoundAppInfosRequest> request) async {
+    return getBoundAppInfos(call, await request);
+  }
+
+  $async.Future<$4.PurchaseAppInfoResponse> purchaseAppInfo_Pre($grpc.ServiceCall call, $async.Future<$4.PurchaseAppInfoRequest> request) async {
+    return purchaseAppInfo(call, await request);
+  }
+
+  $async.Future<$4.GetPurchasedAppInfosResponse> getPurchasedAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.GetPurchasedAppInfosRequest> request) async {
+    return getPurchasedAppInfos(call, await request);
+  }
+
   $async.Future<$4.CreateAppResponse> createApp_Pre($grpc.ServiceCall call, $async.Future<$4.CreateAppRequest> request) async {
     return createApp(call, await request);
   }
@@ -1437,108 +1530,72 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listApps(call, await request);
   }
 
-  $async.Future<$4.MergeAppsResponse> mergeApps_Pre($grpc.ServiceCall call, $async.Future<$4.MergeAppsRequest> request) async {
-    return mergeApps(call, await request);
+  $async.Future<$4.AssignAppResponse> assignApp_Pre($grpc.ServiceCall call, $async.Future<$4.AssignAppRequest> request) async {
+    return assignApp(call, await request);
   }
 
-  $async.Future<$4.PickAppResponse> pickApp_Pre($grpc.ServiceCall call, $async.Future<$4.PickAppRequest> request) async {
-    return pickApp(call, await request);
+  $async.Future<$4.UnAssignAppResponse> unAssignApp_Pre($grpc.ServiceCall call, $async.Future<$4.UnAssignAppRequest> request) async {
+    return unAssignApp(call, await request);
   }
 
-  $async.Future<$4.SyncAppsResponse> syncApps_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAppsRequest> request) async {
-    return syncApps(call, await request);
+  $async.Future<$4.ReportAppBinariesResponse> reportAppBinaries_Pre($grpc.ServiceCall call, $async.Future<$4.ReportAppBinariesRequest> request) async {
+    return reportAppBinaries(call, await request);
   }
 
-  $async.Future<$4.SyncAccountAppsResponse> syncAccountApps_Pre($grpc.ServiceCall call, $async.Future<$4.SyncAccountAppsRequest> request) async {
-    return syncAccountApps(call, await request);
+  $async.Future<$4.DownloadAppBinaryResponse> downloadAppBinary_Pre($grpc.ServiceCall call, $async.Future<$4.DownloadAppBinaryRequest> request) async {
+    return downloadAppBinary(call, await request);
   }
 
-  $async.Future<$4.SearchAppsResponse> searchApps_Pre($grpc.ServiceCall call, $async.Future<$4.SearchAppsRequest> request) async {
-    return searchApps(call, await request);
+  $async.Future<$4.CreateAppInstResponse> createAppInst_Pre($grpc.ServiceCall call, $async.Future<$4.CreateAppInstRequest> request) async {
+    return createAppInst(call, await request);
   }
 
-  $async.Future<$4.GetAppResponse> getApp_Pre($grpc.ServiceCall call, $async.Future<$4.GetAppRequest> request) async {
-    return getApp(call, await request);
+  $async.Future<$4.UpdateAppInstResponse> updateAppInst_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateAppInstRequest> request) async {
+    return updateAppInst(call, await request);
   }
 
-  $async.Future<$4.GetBoundAppsResponse> getBoundApps_Pre($grpc.ServiceCall call, $async.Future<$4.GetBoundAppsRequest> request) async {
-    return getBoundApps(call, await request);
+  $async.Future<$4.ListAppInstsResponse> listAppInsts_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppInstsRequest> request) async {
+    return listAppInsts(call, await request);
   }
 
-  $async.Future<$4.PurchaseAppResponse> purchaseApp_Pre($grpc.ServiceCall call, $async.Future<$4.PurchaseAppRequest> request) async {
-    return purchaseApp(call, await request);
+  $async.Future<$4.AddAppInstRunTimeResponse> addAppInstRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.AddAppInstRunTimeRequest> request) async {
+    return addAppInstRunTime(call, await request);
   }
 
-  $async.Future<$4.GetPurchasedAppsResponse> getPurchasedApps_Pre($grpc.ServiceCall call, $async.Future<$4.GetPurchasedAppsRequest> request) async {
-    return getPurchasedApps(call, await request);
+  $async.Future<$4.SumAppInstRunTimeResponse> sumAppInstRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.SumAppInstRunTimeRequest> request) async {
+    return sumAppInstRunTime(call, await request);
   }
 
-  $async.Future<$4.CreateAppPackageResponse> createAppPackage_Pre($grpc.ServiceCall call, $async.Future<$4.CreateAppPackageRequest> request) async {
-    return createAppPackage(call, await request);
+  $async.Future<$4.UploadAppSaveFileResponse> uploadAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.UploadAppSaveFileRequest> request) async {
+    return uploadAppSaveFile(call, await request);
   }
 
-  $async.Future<$4.UpdateAppPackageResponse> updateAppPackage_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateAppPackageRequest> request) async {
-    return updateAppPackage(call, await request);
+  $async.Future<$4.DownloadAppSaveFileResponse> downloadAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.DownloadAppSaveFileRequest> request) async {
+    return downloadAppSaveFile(call, await request);
   }
 
-  $async.Future<$4.ListAppPackagesResponse> listAppPackages_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppPackagesRequest> request) async {
-    return listAppPackages(call, await request);
+  $async.Future<$4.ListAppSaveFilesResponse> listAppSaveFiles_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppSaveFilesRequest> request) async {
+    return listAppSaveFiles(call, await request);
   }
 
-  $async.Future<$4.AssignAppPackageResponse> assignAppPackage_Pre($grpc.ServiceCall call, $async.Future<$4.AssignAppPackageRequest> request) async {
-    return assignAppPackage(call, await request);
+  $async.Future<$4.RemoveAppSaveFileResponse> removeAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.RemoveAppSaveFileRequest> request) async {
+    return removeAppSaveFile(call, await request);
   }
 
-  $async.Future<$4.UnAssignAppPackageResponse> unAssignAppPackage_Pre($grpc.ServiceCall call, $async.Future<$4.UnAssignAppPackageRequest> request) async {
-    return unAssignAppPackage(call, await request);
+  $async.Future<$4.PinAppSaveFileResponse> pinAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.PinAppSaveFileRequest> request) async {
+    return pinAppSaveFile(call, await request);
   }
 
-  $async.Future<$4.ReportAppPackagesResponse> reportAppPackages_Pre($grpc.ServiceCall call, $async.Future<$4.ReportAppPackagesRequest> request) async {
-    return reportAppPackages(call, await request);
+  $async.Future<$4.UnpinAppSaveFileResponse> unpinAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.UnpinAppSaveFileRequest> request) async {
+    return unpinAppSaveFile(call, await request);
   }
 
-  $async.Future<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary_Pre($grpc.ServiceCall call, $async.Future<$4.DownloadAppPackageBinaryRequest> request) async {
-    return downloadAppPackageBinary(call, await request);
+  $async.Future<$4.SetAppSaveFileCapacityResponse> setAppSaveFileCapacity_Pre($grpc.ServiceCall call, $async.Future<$4.SetAppSaveFileCapacityRequest> request) async {
+    return setAppSaveFileCapacity(call, await request);
   }
 
-  $async.Future<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.AddAppPackageRunTimeRequest> request) async {
-    return addAppPackageRunTime(call, await request);
-  }
-
-  $async.Future<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.SumAppPackageRunTimeRequest> request) async {
-    return sumAppPackageRunTime(call, await request);
-  }
-
-  $async.Future<$4.UploadGameSaveFileResponse> uploadGameSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.UploadGameSaveFileRequest> request) async {
-    return uploadGameSaveFile(call, await request);
-  }
-
-  $async.Future<$4.DownloadGameSaveFileResponse> downloadGameSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.DownloadGameSaveFileRequest> request) async {
-    return downloadGameSaveFile(call, await request);
-  }
-
-  $async.Future<$4.ListGameSaveFilesResponse> listGameSaveFiles_Pre($grpc.ServiceCall call, $async.Future<$4.ListGameSaveFilesRequest> request) async {
-    return listGameSaveFiles(call, await request);
-  }
-
-  $async.Future<$4.RemoveGameSaveFileResponse> removeGameSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.RemoveGameSaveFileRequest> request) async {
-    return removeGameSaveFile(call, await request);
-  }
-
-  $async.Future<$4.PinGameSaveFileResponse> pinGameSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.PinGameSaveFileRequest> request) async {
-    return pinGameSaveFile(call, await request);
-  }
-
-  $async.Future<$4.UnpinGameSaveFileResponse> unpinGameSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.UnpinGameSaveFileRequest> request) async {
-    return unpinGameSaveFile(call, await request);
-  }
-
-  $async.Future<$4.SetUserSaveFileCapacityResponse> setUserSaveFileCapacity_Pre($grpc.ServiceCall call, $async.Future<$4.SetUserSaveFileCapacityRequest> request) async {
-    return setUserSaveFileCapacity(call, await request);
-  }
-
-  $async.Future<$4.SetSaveFileRotationResponse> setSaveFileRotation_Pre($grpc.ServiceCall call, $async.Future<$4.SetSaveFileRotationRequest> request) async {
-    return setSaveFileRotation(call, await request);
+  $async.Future<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity_Pre($grpc.ServiceCall call, $async.Future<$4.GetAppSaveFileCapacityRequest> request) async {
+    return getAppSaveFileCapacity(call, await request);
   }
 
   $async.Future<$4.ListAppCategoriesResponse> listAppCategories_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppCategoriesRequest> request) async {
@@ -1675,35 +1732,38 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$3.SearchImagesResponse> searchImages($grpc.ServiceCall call, $3.SearchImagesRequest request);
   $async.Future<$3.GetImageResponse> getImage($grpc.ServiceCall call, $3.GetImageRequest request);
   $async.Future<$3.DownloadImageResponse> downloadImage($grpc.ServiceCall call, $3.DownloadImageRequest request);
+  $async.Future<$4.CreateAppInfoResponse> createAppInfo($grpc.ServiceCall call, $4.CreateAppInfoRequest request);
+  $async.Future<$4.UpdateAppInfoResponse> updateAppInfo($grpc.ServiceCall call, $4.UpdateAppInfoRequest request);
+  $async.Future<$4.ListAppInfosResponse> listAppInfos($grpc.ServiceCall call, $4.ListAppInfosRequest request);
+  $async.Future<$4.MergeAppInfosResponse> mergeAppInfos($grpc.ServiceCall call, $4.MergeAppInfosRequest request);
+  $async.Future<$4.PickAppInfoResponse> pickAppInfo($grpc.ServiceCall call, $4.PickAppInfoRequest request);
+  $async.Future<$4.SyncAppInfosResponse> syncAppInfos($grpc.ServiceCall call, $4.SyncAppInfosRequest request);
+  $async.Future<$4.SyncAccountAppInfosResponse> syncAccountAppInfos($grpc.ServiceCall call, $4.SyncAccountAppInfosRequest request);
+  $async.Future<$4.SearchAppInfosResponse> searchAppInfos($grpc.ServiceCall call, $4.SearchAppInfosRequest request);
+  $async.Future<$4.GetAppInfoResponse> getAppInfo($grpc.ServiceCall call, $4.GetAppInfoRequest request);
+  $async.Future<$4.GetBoundAppInfosResponse> getBoundAppInfos($grpc.ServiceCall call, $4.GetBoundAppInfosRequest request);
+  $async.Future<$4.PurchaseAppInfoResponse> purchaseAppInfo($grpc.ServiceCall call, $4.PurchaseAppInfoRequest request);
+  $async.Future<$4.GetPurchasedAppInfosResponse> getPurchasedAppInfos($grpc.ServiceCall call, $4.GetPurchasedAppInfosRequest request);
   $async.Future<$4.CreateAppResponse> createApp($grpc.ServiceCall call, $4.CreateAppRequest request);
   $async.Future<$4.UpdateAppResponse> updateApp($grpc.ServiceCall call, $4.UpdateAppRequest request);
   $async.Future<$4.ListAppsResponse> listApps($grpc.ServiceCall call, $4.ListAppsRequest request);
-  $async.Future<$4.MergeAppsResponse> mergeApps($grpc.ServiceCall call, $4.MergeAppsRequest request);
-  $async.Future<$4.PickAppResponse> pickApp($grpc.ServiceCall call, $4.PickAppRequest request);
-  $async.Future<$4.SyncAppsResponse> syncApps($grpc.ServiceCall call, $4.SyncAppsRequest request);
-  $async.Future<$4.SyncAccountAppsResponse> syncAccountApps($grpc.ServiceCall call, $4.SyncAccountAppsRequest request);
-  $async.Future<$4.SearchAppsResponse> searchApps($grpc.ServiceCall call, $4.SearchAppsRequest request);
-  $async.Future<$4.GetAppResponse> getApp($grpc.ServiceCall call, $4.GetAppRequest request);
-  $async.Future<$4.GetBoundAppsResponse> getBoundApps($grpc.ServiceCall call, $4.GetBoundAppsRequest request);
-  $async.Future<$4.PurchaseAppResponse> purchaseApp($grpc.ServiceCall call, $4.PurchaseAppRequest request);
-  $async.Future<$4.GetPurchasedAppsResponse> getPurchasedApps($grpc.ServiceCall call, $4.GetPurchasedAppsRequest request);
-  $async.Future<$4.CreateAppPackageResponse> createAppPackage($grpc.ServiceCall call, $4.CreateAppPackageRequest request);
-  $async.Future<$4.UpdateAppPackageResponse> updateAppPackage($grpc.ServiceCall call, $4.UpdateAppPackageRequest request);
-  $async.Future<$4.ListAppPackagesResponse> listAppPackages($grpc.ServiceCall call, $4.ListAppPackagesRequest request);
-  $async.Future<$4.AssignAppPackageResponse> assignAppPackage($grpc.ServiceCall call, $4.AssignAppPackageRequest request);
-  $async.Future<$4.UnAssignAppPackageResponse> unAssignAppPackage($grpc.ServiceCall call, $4.UnAssignAppPackageRequest request);
-  $async.Future<$4.ReportAppPackagesResponse> reportAppPackages($grpc.ServiceCall call, $4.ReportAppPackagesRequest request);
-  $async.Future<$4.DownloadAppPackageBinaryResponse> downloadAppPackageBinary($grpc.ServiceCall call, $4.DownloadAppPackageBinaryRequest request);
-  $async.Future<$4.AddAppPackageRunTimeResponse> addAppPackageRunTime($grpc.ServiceCall call, $4.AddAppPackageRunTimeRequest request);
-  $async.Future<$4.SumAppPackageRunTimeResponse> sumAppPackageRunTime($grpc.ServiceCall call, $4.SumAppPackageRunTimeRequest request);
-  $async.Future<$4.UploadGameSaveFileResponse> uploadGameSaveFile($grpc.ServiceCall call, $4.UploadGameSaveFileRequest request);
-  $async.Future<$4.DownloadGameSaveFileResponse> downloadGameSaveFile($grpc.ServiceCall call, $4.DownloadGameSaveFileRequest request);
-  $async.Future<$4.ListGameSaveFilesResponse> listGameSaveFiles($grpc.ServiceCall call, $4.ListGameSaveFilesRequest request);
-  $async.Future<$4.RemoveGameSaveFileResponse> removeGameSaveFile($grpc.ServiceCall call, $4.RemoveGameSaveFileRequest request);
-  $async.Future<$4.PinGameSaveFileResponse> pinGameSaveFile($grpc.ServiceCall call, $4.PinGameSaveFileRequest request);
-  $async.Future<$4.UnpinGameSaveFileResponse> unpinGameSaveFile($grpc.ServiceCall call, $4.UnpinGameSaveFileRequest request);
-  $async.Future<$4.SetUserSaveFileCapacityResponse> setUserSaveFileCapacity($grpc.ServiceCall call, $4.SetUserSaveFileCapacityRequest request);
-  $async.Future<$4.SetSaveFileRotationResponse> setSaveFileRotation($grpc.ServiceCall call, $4.SetSaveFileRotationRequest request);
+  $async.Future<$4.AssignAppResponse> assignApp($grpc.ServiceCall call, $4.AssignAppRequest request);
+  $async.Future<$4.UnAssignAppResponse> unAssignApp($grpc.ServiceCall call, $4.UnAssignAppRequest request);
+  $async.Future<$4.ReportAppBinariesResponse> reportAppBinaries($grpc.ServiceCall call, $4.ReportAppBinariesRequest request);
+  $async.Future<$4.DownloadAppBinaryResponse> downloadAppBinary($grpc.ServiceCall call, $4.DownloadAppBinaryRequest request);
+  $async.Future<$4.CreateAppInstResponse> createAppInst($grpc.ServiceCall call, $4.CreateAppInstRequest request);
+  $async.Future<$4.UpdateAppInstResponse> updateAppInst($grpc.ServiceCall call, $4.UpdateAppInstRequest request);
+  $async.Future<$4.ListAppInstsResponse> listAppInsts($grpc.ServiceCall call, $4.ListAppInstsRequest request);
+  $async.Future<$4.AddAppInstRunTimeResponse> addAppInstRunTime($grpc.ServiceCall call, $4.AddAppInstRunTimeRequest request);
+  $async.Future<$4.SumAppInstRunTimeResponse> sumAppInstRunTime($grpc.ServiceCall call, $4.SumAppInstRunTimeRequest request);
+  $async.Future<$4.UploadAppSaveFileResponse> uploadAppSaveFile($grpc.ServiceCall call, $4.UploadAppSaveFileRequest request);
+  $async.Future<$4.DownloadAppSaveFileResponse> downloadAppSaveFile($grpc.ServiceCall call, $4.DownloadAppSaveFileRequest request);
+  $async.Future<$4.ListAppSaveFilesResponse> listAppSaveFiles($grpc.ServiceCall call, $4.ListAppSaveFilesRequest request);
+  $async.Future<$4.RemoveAppSaveFileResponse> removeAppSaveFile($grpc.ServiceCall call, $4.RemoveAppSaveFileRequest request);
+  $async.Future<$4.PinAppSaveFileResponse> pinAppSaveFile($grpc.ServiceCall call, $4.PinAppSaveFileRequest request);
+  $async.Future<$4.UnpinAppSaveFileResponse> unpinAppSaveFile($grpc.ServiceCall call, $4.UnpinAppSaveFileRequest request);
+  $async.Future<$4.SetAppSaveFileCapacityResponse> setAppSaveFileCapacity($grpc.ServiceCall call, $4.SetAppSaveFileCapacityRequest request);
+  $async.Future<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($grpc.ServiceCall call, $4.GetAppSaveFileCapacityRequest request);
   $async.Future<$4.ListAppCategoriesResponse> listAppCategories($grpc.ServiceCall call, $4.ListAppCategoriesRequest request);
   $async.Future<$4.CreateAppCategoryResponse> createAppCategory($grpc.ServiceCall call, $4.CreateAppCategoryRequest request);
   $async.Future<$4.UpdateAppCategoryResponse> updateAppCategory($grpc.ServiceCall call, $4.UpdateAppCategoryRequest request);

@@ -121,83 +121,85 @@ final $typed_data.Uint8List pullAccountResponseDescriptor = $convert.base64Decod
     'ChNQdWxsQWNjb3VudFJlc3BvbnNlEi8KB2FjY291bnQYASABKAsyFS5saWJyYXJpYW4udjEuQW'
     'Njb3VudFIHYWNjb3VudA==');
 
-@$core.Deprecated('Use pullAppRequestDescriptor instead')
-const PullAppRequest$json = {
-  '1': 'PullAppRequest',
+@$core.Deprecated('Use pullAppInfoRequestDescriptor instead')
+const PullAppInfoRequest$json = {
+  '1': 'PullAppInfoRequest',
   '2': [
-    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppID', '10': 'appId'},
+    {'1': 'app_info_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppInfoID', '10': 'appInfoId'},
   ],
 };
 
-/// Descriptor for `PullAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullAppRequestDescriptor = $convert.base64Decode(
-    'Cg5QdWxsQXBwUmVxdWVzdBIqCgZhcHBfaWQYASABKAsyEy5saWJyYXJpYW4udjEuQXBwSURSBW'
-    'FwcElk');
+/// Descriptor for `PullAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pullAppInfoRequestDescriptor = $convert.base64Decode(
+    'ChJQdWxsQXBwSW5mb1JlcXVlc3QSNwoLYXBwX2luZm9faWQYASABKAsyFy5saWJyYXJpYW4udj'
+    'EuQXBwSW5mb0lEUglhcHBJbmZvSWQ=');
 
-@$core.Deprecated('Use pullAppResponseDescriptor instead')
-const PullAppResponse$json = {
-  '1': 'PullAppResponse',
+@$core.Deprecated('Use pullAppInfoResponseDescriptor instead')
+const PullAppInfoResponse$json = {
+  '1': 'PullAppInfoResponse',
   '2': [
-    {'1': 'app', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.App', '10': 'app'},
+    {'1': 'app_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppInfo', '10': 'appInfo'},
   ],
 };
 
-/// Descriptor for `PullAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullAppResponseDescriptor = $convert.base64Decode(
-    'Cg9QdWxsQXBwUmVzcG9uc2USIwoDYXBwGAEgASgLMhEubGlicmFyaWFuLnYxLkFwcFIDYXBw');
+/// Descriptor for `PullAppInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pullAppInfoResponseDescriptor = $convert.base64Decode(
+    'ChNQdWxsQXBwSW5mb1Jlc3BvbnNlEjAKCGFwcF9pbmZvGAEgASgLMhUubGlicmFyaWFuLnYxLk'
+    'FwcEluZm9SB2FwcEluZm8=');
 
-@$core.Deprecated('Use pullAccountAppRelationRequestDescriptor instead')
-const PullAccountAppRelationRequest$json = {
-  '1': 'PullAccountAppRelationRequest',
+@$core.Deprecated('Use pullAccountAppInfoRelationRequestDescriptor instead')
+const PullAccountAppInfoRelationRequest$json = {
+  '1': 'PullAccountAppInfoRelationRequest',
   '2': [
     {'1': 'relation_type', '3': 1, '4': 1, '5': 14, '6': '.librarian.v1.AccountAppRelationType', '10': 'relationType'},
     {'1': 'account_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.AccountID', '10': 'accountId'},
   ],
 };
 
-/// Descriptor for `PullAccountAppRelationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullAccountAppRelationRequestDescriptor = $convert.base64Decode(
-    'Ch1QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVxdWVzdBJJCg1yZWxhdGlvbl90eXBlGAEgASgOMi'
-    'QubGlicmFyaWFuLnYxLkFjY291bnRBcHBSZWxhdGlvblR5cGVSDHJlbGF0aW9uVHlwZRI2Cgph'
-    'Y2NvdW50X2lkGAIgASgLMhcubGlicmFyaWFuLnYxLkFjY291bnRJRFIJYWNjb3VudElk');
+/// Descriptor for `PullAccountAppInfoRelationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pullAccountAppInfoRelationRequestDescriptor = $convert.base64Decode(
+    'CiFQdWxsQWNjb3VudEFwcEluZm9SZWxhdGlvblJlcXVlc3QSSQoNcmVsYXRpb25fdHlwZRgBIA'
+    'EoDjIkLmxpYnJhcmlhbi52MS5BY2NvdW50QXBwUmVsYXRpb25UeXBlUgxyZWxhdGlvblR5cGUS'
+    'NgoKYWNjb3VudF9pZBgCIAEoCzIXLmxpYnJhcmlhbi52MS5BY2NvdW50SURSCWFjY291bnRJZA'
+    '==');
 
-@$core.Deprecated('Use pullAccountAppRelationResponseDescriptor instead')
-const PullAccountAppRelationResponse$json = {
-  '1': 'PullAccountAppRelationResponse',
+@$core.Deprecated('Use pullAccountAppInfoRelationResponseDescriptor instead')
+const PullAccountAppInfoRelationResponse$json = {
+  '1': 'PullAccountAppInfoRelationResponse',
   '2': [
-    {'1': 'app_list', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'appList'},
+    {'1': 'app_infos', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppInfo', '10': 'appInfos'},
   ],
 };
 
-/// Descriptor for `PullAccountAppRelationResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pullAccountAppRelationResponseDescriptor = $convert.base64Decode(
-    'Ch5QdWxsQWNjb3VudEFwcFJlbGF0aW9uUmVzcG9uc2USLAoIYXBwX2xpc3QYASADKAsyES5saW'
-    'JyYXJpYW4udjEuQXBwUgdhcHBMaXN0');
+/// Descriptor for `PullAccountAppInfoRelationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pullAccountAppInfoRelationResponseDescriptor = $convert.base64Decode(
+    'CiJQdWxsQWNjb3VudEFwcEluZm9SZWxhdGlvblJlc3BvbnNlEjIKCWFwcF9pbmZvcxgBIAMoCz'
+    'IVLmxpYnJhcmlhbi52MS5BcHBJbmZvUghhcHBJbmZvcw==');
 
-@$core.Deprecated('Use searchAppRequestDescriptor instead')
-const SearchAppRequest$json = {
-  '1': 'SearchAppRequest',
+@$core.Deprecated('Use searchAppInfoRequestDescriptor instead')
+const SearchAppInfoRequest$json = {
+  '1': 'SearchAppInfoRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
-/// Descriptor for `SearchAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List searchAppRequestDescriptor = $convert.base64Decode(
-    'ChBTZWFyY2hBcHBSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWU=');
+/// Descriptor for `SearchAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchAppInfoRequestDescriptor = $convert.base64Decode(
+    'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
 
-@$core.Deprecated('Use searchAppResponseDescriptor instead')
-const SearchAppResponse$json = {
-  '1': 'SearchAppResponse',
+@$core.Deprecated('Use searchAppInfoResponseDescriptor instead')
+const SearchAppInfoResponse$json = {
+  '1': 'SearchAppInfoResponse',
   '2': [
-    {'1': 'app_list', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.App', '10': 'appList'},
+    {'1': 'app_infos', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppInfo', '10': 'appInfos'},
   ],
 };
 
-/// Descriptor for `SearchAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List searchAppResponseDescriptor = $convert.base64Decode(
-    'ChFTZWFyY2hBcHBSZXNwb25zZRIsCghhcHBfbGlzdBgBIAMoCzIRLmxpYnJhcmlhbi52MS5BcH'
-    'BSB2FwcExpc3Q=');
+/// Descriptor for `SearchAppInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchAppInfoResponseDescriptor = $convert.base64Decode(
+    'ChVTZWFyY2hBcHBJbmZvUmVzcG9uc2USMgoJYXBwX2luZm9zGAEgAygLMhUubGlicmFyaWFuLn'
+    'YxLkFwcEluZm9SCGFwcEluZm9z');
 
 @$core.Deprecated('Use pullFeedRequestDescriptor instead')
 const PullFeedRequest$json = {

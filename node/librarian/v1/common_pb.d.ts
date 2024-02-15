@@ -206,7 +206,7 @@ export namespace AccountID {
   }
 }
 
-export class App extends jspb.Message {
+export class AppInfo extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
   getId(): InternalID | undefined;
@@ -228,8 +228,8 @@ export class App extends jspb.Message {
 
   hasDetails(): boolean;
   clearDetails(): void;
-  getDetails(): AppDetails | undefined;
-  setDetails(value?: AppDetails): void;
+  getDetails(): AppInfoDetails | undefined;
+  setDetails(value?: AppInfoDetails): void;
 
   getName(): string;
   setName(value: string): void;
@@ -260,23 +260,23 @@ export class App extends jspb.Message {
   addAltNames(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): App.AsObject;
-  static toObject(includeInstance: boolean, msg: App): App.AsObject;
+  toObject(includeInstance?: boolean): AppInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: AppInfo): AppInfo.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: App, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): App;
-  static deserializeBinaryFromReader(message: App, reader: jspb.BinaryReader): App;
+  static serializeBinaryToWriter(message: AppInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppInfo;
+  static deserializeBinaryFromReader(message: AppInfo, reader: jspb.BinaryReader): AppInfo;
 }
 
-export namespace App {
+export namespace AppInfo {
   export type AsObject = {
     id?: InternalID.AsObject,
     internal: boolean,
     source: string,
     sourceAppId: string,
     sourceUrl: string,
-    details?: AppDetails.AsObject,
+    details?: AppInfoDetails.AsObject,
     name: string,
     type: AppTypeMap[keyof AppTypeMap],
     shortDescription: string,
@@ -288,7 +288,7 @@ export namespace App {
   }
 }
 
-export class AppMixed extends jspb.Message {
+export class AppInfoMixed extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
   getId(): InternalID | undefined;
@@ -296,8 +296,8 @@ export class AppMixed extends jspb.Message {
 
   hasDetails(): boolean;
   clearDetails(): void;
-  getDetails(): AppDetails | undefined;
-  setDetails(value?: AppDetails): void;
+  getDetails(): AppInfoDetails | undefined;
+  setDetails(value?: AppInfoDetails): void;
 
   getName(): string;
   setName(value: string): void;
@@ -328,19 +328,19 @@ export class AppMixed extends jspb.Message {
   addAltNames(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppMixed.AsObject;
-  static toObject(includeInstance: boolean, msg: AppMixed): AppMixed.AsObject;
+  toObject(includeInstance?: boolean): AppInfoMixed.AsObject;
+  static toObject(includeInstance: boolean, msg: AppInfoMixed): AppInfoMixed.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppMixed, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppMixed;
-  static deserializeBinaryFromReader(message: AppMixed, reader: jspb.BinaryReader): AppMixed;
+  static serializeBinaryToWriter(message: AppInfoMixed, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppInfoMixed;
+  static deserializeBinaryFromReader(message: AppInfoMixed, reader: jspb.BinaryReader): AppInfoMixed;
 }
 
-export namespace AppMixed {
+export namespace AppInfoMixed {
   export type AsObject = {
     id?: InternalID.AsObject,
-    details?: AppDetails.AsObject,
+    details?: AppInfoDetails.AsObject,
     name: string,
     type: AppTypeMap[keyof AppTypeMap],
     shortDescription: string,
@@ -352,7 +352,7 @@ export namespace AppMixed {
   }
 }
 
-export class AppID extends jspb.Message {
+export class AppInfoID extends jspb.Message {
   getInternal(): boolean;
   setInternal(value: boolean): void;
 
@@ -363,16 +363,16 @@ export class AppID extends jspb.Message {
   setSourceAppId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppID.AsObject;
-  static toObject(includeInstance: boolean, msg: AppID): AppID.AsObject;
+  toObject(includeInstance?: boolean): AppInfoID.AsObject;
+  static toObject(includeInstance: boolean, msg: AppInfoID): AppInfoID.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppID, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppID;
-  static deserializeBinaryFromReader(message: AppID, reader: jspb.BinaryReader): AppID;
+  static serializeBinaryToWriter(message: AppInfoID, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppInfoID;
+  static deserializeBinaryFromReader(message: AppInfoID, reader: jspb.BinaryReader): AppInfoID;
 }
 
-export namespace AppID {
+export namespace AppInfoID {
   export type AsObject = {
     internal: boolean,
     source: string,
@@ -380,7 +380,7 @@ export namespace AppID {
   }
 }
 
-export class AppDetails extends jspb.Message {
+export class AppInfoDetails extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
@@ -402,16 +402,16 @@ export class AppDetails extends jspb.Message {
   addImageUrls(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppDetails.AsObject;
-  static toObject(includeInstance: boolean, msg: AppDetails): AppDetails.AsObject;
+  toObject(includeInstance?: boolean): AppInfoDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: AppInfoDetails): AppInfoDetails.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppDetails, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppDetails;
-  static deserializeBinaryFromReader(message: AppDetails, reader: jspb.BinaryReader): AppDetails;
+  static serializeBinaryToWriter(message: AppInfoDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppInfoDetails;
+  static deserializeBinaryFromReader(message: AppInfoDetails, reader: jspb.BinaryReader): AppInfoDetails;
 }
 
-export namespace AppDetails {
+export namespace AppInfoDetails {
   export type AsObject = {
     description: string,
     releaseDate: string,
@@ -419,178 +419,6 @@ export namespace AppDetails {
     publisher: string,
     version: string,
     imageUrlsList: Array<string>,
-  }
-}
-
-export class AppPackage extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): InternalID | undefined;
-  setId(value?: InternalID): void;
-
-  getSource(): AppPackageSourceMap[keyof AppPackageSourceMap];
-  setSource(value: AppPackageSourceMap[keyof AppPackageSourceMap]): void;
-
-  hasSourceId(): boolean;
-  clearSourceId(): void;
-  getSourceId(): InternalID | undefined;
-  setSourceId(value?: InternalID): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  hasBinary(): boolean;
-  clearBinary(): void;
-  getBinary(): AppPackageBinary | undefined;
-  setBinary(value?: AppPackageBinary): void;
-
-  getPublic(): boolean;
-  setPublic(value: boolean): void;
-
-  hasAssignedAppId(): boolean;
-  clearAssignedAppId(): void;
-  getAssignedAppId(): InternalID | undefined;
-  setAssignedAppId(value?: InternalID): void;
-
-  hasGroupId(): boolean;
-  clearGroupId(): void;
-  getGroupId(): InternalID | undefined;
-  setGroupId(value?: InternalID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppPackage.AsObject;
-  static toObject(includeInstance: boolean, msg: AppPackage): AppPackage.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppPackage, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppPackage;
-  static deserializeBinaryFromReader(message: AppPackage, reader: jspb.BinaryReader): AppPackage;
-}
-
-export namespace AppPackage {
-  export type AsObject = {
-    id?: InternalID.AsObject,
-    source: AppPackageSourceMap[keyof AppPackageSourceMap],
-    sourceId?: InternalID.AsObject,
-    name: string,
-    description: string,
-    binary?: AppPackageBinary.AsObject,
-    pb_public: boolean,
-    assignedAppId?: InternalID.AsObject,
-    groupId?: InternalID.AsObject,
-  }
-}
-
-export class AppPackageBinary extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getSizeBytes(): number;
-  setSizeBytes(value: number): void;
-
-  getPublicUrl(): string;
-  setPublicUrl(value: string): void;
-
-  getSha256(): Uint8Array | string;
-  getSha256_asU8(): Uint8Array;
-  getSha256_asB64(): string;
-  setSha256(value: Uint8Array | string): void;
-
-  getTokenServerUrl(): string;
-  setTokenServerUrl(value: string): void;
-
-  clearChunksList(): void;
-  getChunksList(): Array<AppPackageBinary.Chunk>;
-  setChunksList(value: Array<AppPackageBinary.Chunk>): void;
-  addChunks(value?: AppPackageBinary.Chunk, index?: number): AppPackageBinary.Chunk;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppPackageBinary.AsObject;
-  static toObject(includeInstance: boolean, msg: AppPackageBinary): AppPackageBinary.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppPackageBinary, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppPackageBinary;
-  static deserializeBinaryFromReader(message: AppPackageBinary, reader: jspb.BinaryReader): AppPackageBinary;
-}
-
-export namespace AppPackageBinary {
-  export type AsObject = {
-    name: string,
-    sizeBytes: number,
-    publicUrl: string,
-    sha256: Uint8Array | string,
-    tokenServerUrl: string,
-    chunksList: Array<AppPackageBinary.Chunk.AsObject>,
-  }
-
-  export class Chunk extends jspb.Message {
-    getSequence(): number;
-    setSequence(value: number): void;
-
-    getSizeBytes(): number;
-    setSizeBytes(value: number): void;
-
-    getPublicUrl(): string;
-    setPublicUrl(value: string): void;
-
-    getSha256(): Uint8Array | string;
-    getSha256_asU8(): Uint8Array;
-    getSha256_asB64(): string;
-    setSha256(value: Uint8Array | string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Chunk.AsObject;
-    static toObject(includeInstance: boolean, msg: Chunk): Chunk.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Chunk, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Chunk;
-    static deserializeBinaryFromReader(message: Chunk, reader: jspb.BinaryReader): Chunk;
-  }
-
-  export namespace Chunk {
-    export type AsObject = {
-      sequence: number,
-      sizeBytes: number,
-      publicUrl: string,
-      sha256: Uint8Array | string,
-    }
-  }
-}
-
-export class AppCategory extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): InternalID | undefined;
-  setId(value?: InternalID): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  clearAppIdsList(): void;
-  getAppIdsList(): Array<InternalID>;
-  setAppIdsList(value: Array<InternalID>): void;
-  addAppIds(value?: InternalID, index?: number): InternalID;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppCategory.AsObject;
-  static toObject(includeInstance: boolean, msg: AppCategory): AppCategory.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AppCategory, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppCategory;
-  static deserializeBinaryFromReader(message: AppCategory, reader: jspb.BinaryReader): AppCategory;
-}
-
-export namespace AppCategory {
-  export type AsObject = {
-    id?: InternalID.AsObject,
-    name: string,
-    appIdsList: Array<InternalID.AsObject>,
   }
 }
 
@@ -827,12 +655,4 @@ export interface AppTypeMap {
 }
 
 export const AppType: AppTypeMap;
-
-export interface AppPackageSourceMap {
-  APP_PACKAGE_SOURCE_UNSPECIFIED: 0;
-  APP_PACKAGE_SOURCE_MANUAL: 1;
-  APP_PACKAGE_SOURCE_SENTINEL: 2;
-}
-
-export const AppPackageSource: AppPackageSourceMap;
 
