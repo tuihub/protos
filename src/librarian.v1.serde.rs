@@ -1412,6 +1412,9 @@ impl serde::Serialize for AppPackage {
         if self.assigned_app_id.is_some() {
             len += 1;
         }
+        if self.group_id.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.AppPackage", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -1439,6 +1442,9 @@ impl serde::Serialize for AppPackage {
         if let Some(v) = self.assigned_app_id.as_ref() {
             struct_ser.serialize_field("assignedAppId", v)?;
         }
+        if let Some(v) = self.group_id.as_ref() {
+            struct_ser.serialize_field("groupId", v)?;
+        }
         struct_ser.end()
     }
 }
@@ -1459,6 +1465,8 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             "public",
             "assigned_app_id",
             "assignedAppId",
+            "group_id",
+            "groupId",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1471,6 +1479,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
             Binary,
             Public,
             AssignedAppId,
+            GroupId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1500,6 +1509,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             "binary" => Ok(GeneratedField::Binary),
                             "public" => Ok(GeneratedField::Public),
                             "assignedAppId" | "assigned_app_id" => Ok(GeneratedField::AssignedAppId),
+                            "groupId" | "group_id" => Ok(GeneratedField::GroupId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1527,6 +1537,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                 let mut binary__ = None;
                 let mut public__ = None;
                 let mut assigned_app_id__ = None;
+                let mut group_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1577,6 +1588,12 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                             }
                             assigned_app_id__ = map.next_value()?;
                         }
+                        GeneratedField::GroupId => {
+                            if group_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("groupId"));
+                            }
+                            group_id__ = map.next_value()?;
+                        }
                     }
                 }
                 Ok(AppPackage {
@@ -1588,6 +1605,7 @@ impl<'de> serde::Deserialize<'de> for AppPackage {
                     binary: binary__,
                     public: public__.unwrap_or_default(),
                     assigned_app_id: assigned_app_id__,
+                    group_id: group_id__,
                 })
             }
         }

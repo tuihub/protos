@@ -294,6 +294,7 @@ const AppPackage$json = {
     {'1': 'binary', '3': 6, '4': 1, '5': 11, '6': '.librarian.v1.AppPackageBinary', '10': 'binary'},
     {'1': 'public', '3': 7, '4': 1, '5': 8, '10': 'public'},
     {'1': 'assigned_app_id', '3': 8, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'assignedAppId', '17': true},
+    {'1': 'group_id', '3': 9, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'groupId'},
   ],
   '8': [
     {'1': '_assigned_app_id'},
@@ -308,8 +309,8 @@ final $typed_data.Uint8List appPackageDescriptor = $convert.base64Decode(
     'IKBG5hbWUYBCABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YBSABKAlSC2Rlc2NyaXB0aW9uEjYK'
     'BmJpbmFyeRgGIAEoCzIeLmxpYnJhcmlhbi52MS5BcHBQYWNrYWdlQmluYXJ5UgZiaW5hcnkSFg'
     'oGcHVibGljGAcgASgIUgZwdWJsaWMSRQoPYXNzaWduZWRfYXBwX2lkGAggASgLMhgubGlicmFy'
-    'aWFuLnYxLkludGVybmFsSURIAFINYXNzaWduZWRBcHBJZIgBAUISChBfYXNzaWduZWRfYXBwX2'
-    'lk');
+    'aWFuLnYxLkludGVybmFsSURIAFINYXNzaWduZWRBcHBJZIgBARIzCghncm91cF9pZBgJIAEoCz'
+    'IYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgdncm91cElkQhIKEF9hc3NpZ25lZF9hcHBfaWQ=');
 
 @$core.Deprecated('Use appPackageBinaryDescriptor instead')
 const AppPackageBinary$json = {

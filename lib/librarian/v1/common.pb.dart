@@ -1140,6 +1140,7 @@ class AppPackage extends $pb.GeneratedMessage {
     AppPackageBinary? binary,
     $core.bool? public,
     InternalID? assignedAppId,
+    InternalID? groupId,
   }) {
     final $result = create();
     if (id != null) {
@@ -1166,6 +1167,9 @@ class AppPackage extends $pb.GeneratedMessage {
     if (assignedAppId != null) {
       $result.assignedAppId = assignedAppId;
     }
+    if (groupId != null) {
+      $result.groupId = groupId;
+    }
     return $result;
   }
   AppPackage._() : super();
@@ -1181,6 +1185,7 @@ class AppPackage extends $pb.GeneratedMessage {
     ..aOM<AppPackageBinary>(6, _omitFieldNames ? '' : 'binary', subBuilder: AppPackageBinary.create)
     ..aOB(7, _omitFieldNames ? '' : 'public')
     ..aOM<InternalID>(8, _omitFieldNames ? '' : 'assignedAppId', subBuilder: InternalID.create)
+    ..aOM<InternalID>(9, _omitFieldNames ? '' : 'groupId', subBuilder: InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1225,6 +1230,8 @@ class AppPackage extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSource() => clearField(2);
 
+  /// For sentinel, use sentinel id.
+  /// For manual, use device id
   @$pb.TagNumber(3)
   InternalID get sourceId => $_getN(2);
   @$pb.TagNumber(3)
@@ -1287,6 +1294,18 @@ class AppPackage extends $pb.GeneratedMessage {
   void clearAssignedAppId() => clearField(8);
   @$pb.TagNumber(8)
   InternalID ensureAssignedAppId() => $_ensure(7);
+
+  /// Server should generate new group id when it is 0 in create or update request.
+  @$pb.TagNumber(9)
+  InternalID get groupId => $_getN(8);
+  @$pb.TagNumber(9)
+  set groupId(InternalID v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasGroupId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearGroupId() => clearField(9);
+  @$pb.TagNumber(9)
+  InternalID ensureGroupId() => $_ensure(8);
 }
 
 class AppPackageBinary_Chunk extends $pb.GeneratedMessage {

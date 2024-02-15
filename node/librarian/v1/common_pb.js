@@ -3444,7 +3444,8 @@ proto.librarian.v1.AppPackage.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 5, ""),
     binary: (f = msg.getBinary()) && proto.librarian.v1.AppPackageBinary.toObject(includeInstance, f),
     pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    assignedAppId: (f = msg.getAssignedAppId()) && proto.librarian.v1.InternalID.toObject(includeInstance, f)
+    assignedAppId: (f = msg.getAssignedAppId()) && proto.librarian.v1.InternalID.toObject(includeInstance, f),
+    groupId: (f = msg.getGroupId()) && proto.librarian.v1.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3516,6 +3517,11 @@ proto.librarian.v1.AppPackage.deserializeBinaryFromReader = function(msg, reader
       var value = new proto.librarian.v1.InternalID;
       reader.readMessage(value,proto.librarian.v1.InternalID.deserializeBinaryFromReader);
       msg.setAssignedAppId(value);
+      break;
+    case 9:
+      var value = new proto.librarian.v1.InternalID;
+      reader.readMessage(value,proto.librarian.v1.InternalID.deserializeBinaryFromReader);
+      msg.setGroupId(value);
       break;
     default:
       reader.skipField();
@@ -3602,6 +3608,14 @@ proto.librarian.v1.AppPackage.serializeBinaryToWriter = function(message, writer
   if (f != null) {
     writer.writeMessage(
       8,
+      f,
+      proto.librarian.v1.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getGroupId();
+  if (f != null) {
+    writer.writeMessage(
+      9,
       f,
       proto.librarian.v1.InternalID.serializeBinaryToWriter
     );
@@ -3826,6 +3840,43 @@ proto.librarian.v1.AppPackage.prototype.clearAssignedAppId = function() {
  */
 proto.librarian.v1.AppPackage.prototype.hasAssignedAppId = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional InternalID group_id = 9;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.v1.AppPackage.prototype.getGroupId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.v1.InternalID, 9));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.v1.AppPackage} returns this
+*/
+proto.librarian.v1.AppPackage.prototype.setGroupId = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.v1.AppPackage} returns this
+ */
+proto.librarian.v1.AppPackage.prototype.clearGroupId = function() {
+  return this.setGroupId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.v1.AppPackage.prototype.hasGroupId = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
