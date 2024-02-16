@@ -45,7 +45,7 @@ const PorterFeatureSummary$json = {
   '1': 'PorterFeatureSummary',
   '2': [
     {'1': 'supported_accounts', '3': 1, '4': 3, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary.Account', '10': 'supportedAccounts'},
-    {'1': 'supported_app_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppSources'},
+    {'1': 'supported_app_info_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppInfoSources'},
     {'1': 'supported_feed_sources', '3': 3, '4': 3, '5': 9, '10': 'supportedFeedSources'},
     {'1': 'supported_notify_destinations', '3': 4, '4': 3, '5': 9, '10': 'supportedNotifyDestinations'},
   ],
@@ -65,12 +65,12 @@ const PorterFeatureSummary_Account$json = {
 final $typed_data.Uint8List porterFeatureSummaryDescriptor = $convert.base64Decode(
     'ChRQb3J0ZXJGZWF0dXJlU3VtbWFyeRJgChJzdXBwb3J0ZWRfYWNjb3VudHMYASADKAsyMS5saW'
     'JyYXJpYW4ucG9ydGVyLnYxLlBvcnRlckZlYXR1cmVTdW1tYXJ5LkFjY291bnRSEXN1cHBvcnRl'
-    'ZEFjY291bnRzEjIKFXN1cHBvcnRlZF9hcHBfc291cmNlcxgCIAMoCVITc3VwcG9ydGVkQXBwU2'
-    '91cmNlcxI0ChZzdXBwb3J0ZWRfZmVlZF9zb3VyY2VzGAMgAygJUhRzdXBwb3J0ZWRGZWVkU291'
-    'cmNlcxJCCh1zdXBwb3J0ZWRfbm90aWZ5X2Rlc3RpbmF0aW9ucxgEIAMoCVIbc3VwcG9ydGVkTm'
-    '90aWZ5RGVzdGluYXRpb25zGnkKB0FjY291bnQSGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3Jt'
-    'ElIKEmFwcF9yZWxhdGlvbl90eXBlcxgCIAMoDjIkLmxpYnJhcmlhbi52MS5BY2NvdW50QXBwUm'
-    'VsYXRpb25UeXBlUhBhcHBSZWxhdGlvblR5cGVz');
+    'ZEFjY291bnRzEjsKGnN1cHBvcnRlZF9hcHBfaW5mb19zb3VyY2VzGAIgAygJUhdzdXBwb3J0ZW'
+    'RBcHBJbmZvU291cmNlcxI0ChZzdXBwb3J0ZWRfZmVlZF9zb3VyY2VzGAMgAygJUhRzdXBwb3J0'
+    'ZWRGZWVkU291cmNlcxJCCh1zdXBwb3J0ZWRfbm90aWZ5X2Rlc3RpbmF0aW9ucxgEIAMoCVIbc3'
+    'VwcG9ydGVkTm90aWZ5RGVzdGluYXRpb25zGnkKB0FjY291bnQSGgoIcGxhdGZvcm0YASABKAlS'
+    'CHBsYXRmb3JtElIKEmFwcF9yZWxhdGlvbl90eXBlcxgCIAMoDjIkLmxpYnJhcmlhbi52MS5BY2'
+    'NvdW50QXBwUmVsYXRpb25UeXBlUhBhcHBSZWxhdGlvblR5cGVz');
 
 @$core.Deprecated('Use enablePorterRequestDescriptor instead')
 const EnablePorterRequest$json = {

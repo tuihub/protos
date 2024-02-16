@@ -28,23 +28,24 @@ namespace TuiHub.Protos.Librarian.V1 {
             "IGdvb2dsZS9wcm90b2J1Zi9kZXNjcmlwdG9yLnByb3RvKn0KGFdlbGxLbm93",
             "bkFjY291bnRQbGF0Zm9ybRIwCidXRUxMX0tOT1dOX0FDQ09VTlRfUExBVEZP",
             "Uk1fVU5TUEVDSUZJRUQQABoDwj4AEi8KIVdFTExfS05PV05fQUNDT1VOVF9Q",
-            "TEFURk9STV9TVEVBTRABGgjCPgVzdGVhbSrDAQoSV2VsbEtub3duQXBwU291",
-            "cmNlEioKIVdFTExfS05PV05fQVBQX1NPVVJDRV9VTlNQRUNJRklFRBAAGgPC",
-            "PgASKQobV0VMTF9LTk9XTl9BUFBfU09VUkNFX1NURUFNEAIaCMI+BXN0ZWFt",
-            "EicKGldFTExfS05PV05fQVBQX1NPVVJDRV9WTkRCEAMaB8I+BHZuZGISLQod",
-            "V0VMTF9LTk9XTl9BUFBfU09VUkNFX0JBTkdVTUkQBBoKwj4HYmFuZ3VtaSpq",
-            "ChNXZWxsS25vd25GZWVkU291cmNlEisKIldFTExfS05PV05fRkVFRF9TT1VS",
-            "Q0VfVU5TUEVDSUZJRUQQABoDwj4AEiYKGldFTExfS05PV05fRkVFRF9TT1VS",
-            "Q0VfUlNTEAEaBsI+A3JzcyqJAQoaV2VsbEtub3duTm90aWZ5RGVzdGluYXRp",
-            "b24SMgopV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJT05fVU5TUEVDSUZJ",
-            "RUQQABoDwj4AEjcKJldFTExfS05PV05fTk9USUZZX0RFU1RJTkFUSU9OX1RF",
-            "TEVHUkFNEAEaC8I+CHRlbGVncmFtOj8KCXRvX3N0cmluZxIhLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbnVtVmFsdWVPcHRpb25zGOgHIAEoCVIIdG9TdHJpbmdCS1os",
-            "Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vdjE7djGq",
-            "AhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5WMWIGcHJvdG8z"));
+            "TEFURk9STV9TVEVBTRABGgjCPgVzdGVhbSrbAQoWV2VsbEtub3duQXBwSW5m",
+            "b1NvdXJjZRIvCiZXRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9VTlNQRUNJ",
+            "RklFRBAAGgPCPgASLgogV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfU1RF",
+            "QU0QAhoIwj4Fc3RlYW0SLAofV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0Vf",
+            "Vk5EQhADGgfCPgR2bmRiEjIKIldFTExfS05PV05fQVBQX0lORk9fU09VUkNF",
+            "X0JBTkdVTUkQBBoKwj4HYmFuZ3VtaSpqChNXZWxsS25vd25GZWVkU291cmNl",
+            "EisKIldFTExfS05PV05fRkVFRF9TT1VSQ0VfVU5TUEVDSUZJRUQQABoDwj4A",
+            "EiYKGldFTExfS05PV05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+A3JzcyqJAQoa",
+            "V2VsbEtub3duTm90aWZ5RGVzdGluYXRpb24SMgopV0VMTF9LTk9XTl9OT1RJ",
+            "RllfREVTVElOQVRJT05fVU5TUEVDSUZJRUQQABoDwj4AEjcKJldFTExfS05P",
+            "V05fTk9USUZZX0RFU1RJTkFUSU9OX1RFTEVHUkFNEAEaC8I+CHRlbGVncmFt",
+            "Oj8KCXRvX3N0cmluZxIhLmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVPcHRp",
+            "b25zGOgHIAEoCVIIdG9TdHJpbmdCS1osZ2l0aHViLmNvbS90dWlodWIvcHJv",
+            "dG9zL3BrZy9saWJyYXJpYW4vdjE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJh",
+            "cmlhbi5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), }, new pb::Extension[] { WellknownExtensions.ToString_ }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), }, new pb::Extension[] { WellknownExtensions.ToString_ }, null));
     }
     #endregion
 
@@ -61,11 +62,11 @@ namespace TuiHub.Protos.Librarian.V1 {
     [pbr::OriginalName("WELL_KNOWN_ACCOUNT_PLATFORM_STEAM")] Steam = 1,
   }
 
-  public enum WellKnownAppSource {
-    [pbr::OriginalName("WELL_KNOWN_APP_SOURCE_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("WELL_KNOWN_APP_SOURCE_STEAM")] Steam = 2,
-    [pbr::OriginalName("WELL_KNOWN_APP_SOURCE_VNDB")] Vndb = 3,
-    [pbr::OriginalName("WELL_KNOWN_APP_SOURCE_BANGUMI")] Bangumi = 4,
+  public enum WellKnownAppInfoSource {
+    [pbr::OriginalName("WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("WELL_KNOWN_APP_INFO_SOURCE_STEAM")] Steam = 2,
+    [pbr::OriginalName("WELL_KNOWN_APP_INFO_SOURCE_VNDB")] Vndb = 3,
+    [pbr::OriginalName("WELL_KNOWN_APP_INFO_SOURCE_BANGUMI")] Bangumi = 4,
   }
 
   public enum WellKnownFeedSource {

@@ -1583,7 +1583,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Admin` Merge two apps
+      /// `Gebura` `Admin` Merge two app infos
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1595,7 +1595,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Admin` Pick one app out from merged
+      /// `Gebura` `Admin` Pick one app info out from merged
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1608,8 +1608,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
       /// <summary>
       /// `Gebura` `Normal` Asynchronous update app infos.
-      /// Request on INTERNAL app applies to all bound external apps.
-      /// Create an INTERNAL app when requested external app does not exist
+      /// Request on INTERNAL app info applies to all bound external app infos.
+      /// Create an INTERNAL app info when requested external app info does not exist
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -1623,8 +1623,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist.
+      /// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+      /// Create an INTERNAL app info when associated external app info does not exist.
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -3906,7 +3906,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Admin` Merge two apps
+      /// `Gebura` `Admin` Merge two app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3919,7 +3919,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return MergeAppInfos(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Admin` Merge two apps
+      /// `Gebura` `Admin` Merge two app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3930,7 +3930,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_MergeAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Admin` Merge two apps
+      /// `Gebura` `Admin` Merge two app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3943,7 +3943,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return MergeAppInfosAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Admin` Merge two apps
+      /// `Gebura` `Admin` Merge two app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3954,7 +3954,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_MergeAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Admin` Pick one app out from merged
+      /// `Gebura` `Admin` Pick one app info out from merged
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3967,7 +3967,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return PickAppInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Admin` Pick one app out from merged
+      /// `Gebura` `Admin` Pick one app info out from merged
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3978,7 +3978,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_PickAppInfo, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Admin` Pick one app out from merged
+      /// `Gebura` `Admin` Pick one app info out from merged
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3991,7 +3991,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return PickAppInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Admin` Pick one app out from merged
+      /// `Gebura` `Admin` Pick one app info out from merged
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4003,8 +4003,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Normal` Asynchronous update app infos.
-      /// Request on INTERNAL app applies to all bound external apps.
-      /// Create an INTERNAL app when requested external app does not exist
+      /// Request on INTERNAL app info applies to all bound external app infos.
+      /// Create an INTERNAL app info when requested external app info does not exist
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4020,8 +4020,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Normal` Asynchronous update app infos.
-      /// Request on INTERNAL app applies to all bound external apps.
-      /// Create an INTERNAL app when requested external app does not exist
+      /// Request on INTERNAL app info applies to all bound external app infos.
+      /// Create an INTERNAL app info when requested external app info does not exist
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4035,8 +4035,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Normal` Asynchronous update app infos.
-      /// Request on INTERNAL app applies to all bound external apps.
-      /// Create an INTERNAL app when requested external app does not exist
+      /// Request on INTERNAL app info applies to all bound external app infos.
+      /// Create an INTERNAL app info when requested external app info does not exist
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4052,8 +4052,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       /// <summary>
       /// `Gebura` `Normal` Asynchronous update app infos.
-      /// Request on INTERNAL app applies to all bound external apps.
-      /// Create an INTERNAL app when requested external app does not exist
+      /// Request on INTERNAL app info applies to all bound external app infos.
+      /// Create an INTERNAL app info when requested external app info does not exist
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4066,8 +4066,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SyncAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist.
+      /// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+      /// Create an INTERNAL app info when associated external app info does not exist.
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4082,8 +4082,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SyncAccountAppInfos(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist.
+      /// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+      /// Create an INTERNAL app info when associated external app info does not exist.
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4096,8 +4096,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SyncAccountAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist.
+      /// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+      /// Create an INTERNAL app info when associated external app info does not exist.
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>
@@ -4112,8 +4112,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SyncAccountAppInfosAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal` Asynchronously update apps associated with an account.
-      /// Create an INTERNAL app when associated external app does not exist.
+      /// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+      /// Create an INTERNAL app info when associated external app info does not exist.
       /// Server should implement a sync rate limit to prevent abuse,
       /// when rate limit reached, return without real sync.
       /// </summary>

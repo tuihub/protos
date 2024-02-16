@@ -2433,7 +2433,7 @@ listAppInfos: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppInfosResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppInfosResponse,
   },
-  // `Gebura` `Admin` Merge two apps
+  // `Gebura` `Admin` Merge two app infos
 mergeAppInfos: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/MergeAppInfos',
     requestStream: false,
@@ -2445,7 +2445,7 @@ mergeAppInfos: {
     responseSerialize: serialize_librarian_sephirah_v1_MergeAppInfosResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_MergeAppInfosResponse,
   },
-  // `Gebura` `Admin` Pick one app out from merged
+  // `Gebura` `Admin` Pick one app info out from merged
 pickAppInfo: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/PickAppInfo',
     requestStream: false,
@@ -2458,8 +2458,8 @@ pickAppInfo: {
     responseDeserialize: deserialize_librarian_sephirah_v1_PickAppInfoResponse,
   },
   // `Gebura` `Normal` Asynchronous update app infos.
-// Request on INTERNAL app applies to all bound external apps.
-// Create an INTERNAL app when requested external app does not exist
+// Request on INTERNAL app info applies to all bound external app infos.
+// Create an INTERNAL app info when requested external app info does not exist
 // Server should implement a sync rate limit to prevent abuse,
 // when rate limit reached, return without real sync.
 syncAppInfos: {
@@ -2473,8 +2473,8 @@ syncAppInfos: {
     responseSerialize: serialize_librarian_sephirah_v1_SyncAppInfosResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SyncAppInfosResponse,
   },
-  // `Gebura` `Normal` Asynchronously update apps associated with an account.
-// Create an INTERNAL app when associated external app does not exist.
+  // `Gebura` `Normal` Asynchronously update app infos associated with an account.
+// Create an INTERNAL app info when associated external app info does not exist.
 // Server should implement a sync rate limit to prevent abuse,
 // when rate limit reached, return without real sync.
 syncAccountAppInfos: {

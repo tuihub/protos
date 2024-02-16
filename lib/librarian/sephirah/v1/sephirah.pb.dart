@@ -310,7 +310,7 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
 class ServerFeatureSummary extends $pb.GeneratedMessage {
   factory ServerFeatureSummary({
     $core.Iterable<$core.String>? supportedAccountPlatforms,
-    $core.Iterable<$core.String>? supportedAppSources,
+    $core.Iterable<$core.String>? supportedAppInfoSources,
     $core.Iterable<$core.String>? supportedFeedSources,
     $core.Iterable<$core.String>? supportedNotifyDestinations,
   }) {
@@ -318,8 +318,8 @@ class ServerFeatureSummary extends $pb.GeneratedMessage {
     if (supportedAccountPlatforms != null) {
       $result.supportedAccountPlatforms.addAll(supportedAccountPlatforms);
     }
-    if (supportedAppSources != null) {
-      $result.supportedAppSources.addAll(supportedAppSources);
+    if (supportedAppInfoSources != null) {
+      $result.supportedAppInfoSources.addAll(supportedAppInfoSources);
     }
     if (supportedFeedSources != null) {
       $result.supportedFeedSources.addAll(supportedFeedSources);
@@ -335,7 +335,7 @@ class ServerFeatureSummary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'supportedAccountPlatforms')
-    ..pPS(2, _omitFieldNames ? '' : 'supportedAppSources')
+    ..pPS(2, _omitFieldNames ? '' : 'supportedAppInfoSources')
     ..pPS(3, _omitFieldNames ? '' : 'supportedFeedSources')
     ..pPS(4, _omitFieldNames ? '' : 'supportedNotifyDestinations')
     ..hasRequiredFields = false
@@ -366,7 +366,7 @@ class ServerFeatureSummary extends $pb.GeneratedMessage {
   $core.List<$core.String> get supportedAccountPlatforms => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get supportedAppSources => $_getList(1);
+  $core.List<$core.String> get supportedAppInfoSources => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.List<$core.String> get supportedFeedSources => $_getList(2);

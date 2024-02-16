@@ -1231,7 +1231,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Admin` Merge two apps
+        /** `Gebura` `Admin` Merge two app infos
 */
         pub async fn merge_app_infos(
             &mut self,
@@ -1263,7 +1263,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Admin` Pick one app out from merged
+        /** `Gebura` `Admin` Pick one app info out from merged
 */
         pub async fn pick_app_info(
             &mut self,
@@ -1296,8 +1296,8 @@ pub mod librarian_sephirah_service_client {
             self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Normal` Asynchronous update app infos.
- Request on INTERNAL app applies to all bound external apps.
- Create an INTERNAL app when requested external app does not exist
+ Request on INTERNAL app info applies to all bound external app infos.
+ Create an INTERNAL app info when requested external app info does not exist
  Server should implement a sync rate limit to prevent abuse,
  when rate limit reached, return without real sync.
 */
@@ -1331,8 +1331,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal` Asynchronously update apps associated with an account.
- Create an INTERNAL app when associated external app does not exist.
+        /** `Gebura` `Normal` Asynchronously update app infos associated with an account.
+ Create an INTERNAL app info when associated external app info does not exist.
  Server should implement a sync rate limit to prevent abuse,
  when rate limit reached, return without real sync.
 */
@@ -3350,7 +3350,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListAppInfosResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Admin` Merge two apps
+        /** `Gebura` `Admin` Merge two app infos
 */
         async fn merge_app_infos(
             &self,
@@ -3359,7 +3359,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::MergeAppInfosResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Admin` Pick one app out from merged
+        /** `Gebura` `Admin` Pick one app info out from merged
 */
         async fn pick_app_info(
             &self,
@@ -3369,8 +3369,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
         /** `Gebura` `Normal` Asynchronous update app infos.
- Request on INTERNAL app applies to all bound external apps.
- Create an INTERNAL app when requested external app does not exist
+ Request on INTERNAL app info applies to all bound external app infos.
+ Create an INTERNAL app info when requested external app info does not exist
  Server should implement a sync rate limit to prevent abuse,
  when rate limit reached, return without real sync.
 */
@@ -3381,8 +3381,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SyncAppInfosResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal` Asynchronously update apps associated with an account.
- Create an INTERNAL app when associated external app does not exist.
+        /** `Gebura` `Normal` Asynchronously update app infos associated with an account.
+ Create an INTERNAL app info when associated external app info does not exist.
  Server should implement a sync rate limit to prevent abuse,
  when rate limit reached, return without real sync.
 */

@@ -60,10 +60,10 @@ export class PorterFeatureSummary extends jspb.Message {
   setSupportedAccountsList(value: Array<PorterFeatureSummary.Account>): void;
   addSupportedAccounts(value?: PorterFeatureSummary.Account, index?: number): PorterFeatureSummary.Account;
 
-  clearSupportedAppSourcesList(): void;
-  getSupportedAppSourcesList(): Array<string>;
-  setSupportedAppSourcesList(value: Array<string>): void;
-  addSupportedAppSources(value: string, index?: number): string;
+  clearSupportedAppInfoSourcesList(): void;
+  getSupportedAppInfoSourcesList(): Array<string>;
+  setSupportedAppInfoSourcesList(value: Array<string>): void;
+  addSupportedAppInfoSources(value: string, index?: number): string;
 
   clearSupportedFeedSourcesList(): void;
   getSupportedFeedSourcesList(): Array<string>;
@@ -88,7 +88,7 @@ export class PorterFeatureSummary extends jspb.Message {
 export namespace PorterFeatureSummary {
   export type AsObject = {
     supportedAccountsList: Array<PorterFeatureSummary.Account.AsObject>,
-    supportedAppSourcesList: Array<string>,
+    supportedAppInfoSourcesList: Array<string>,
     supportedFeedSourcesList: Array<string>,
     supportedNotifyDestinationsList: Array<string>,
   }

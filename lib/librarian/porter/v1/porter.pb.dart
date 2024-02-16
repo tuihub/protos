@@ -208,7 +208,7 @@ class PorterFeatureSummary_Account extends $pb.GeneratedMessage {
 class PorterFeatureSummary extends $pb.GeneratedMessage {
   factory PorterFeatureSummary({
     $core.Iterable<PorterFeatureSummary_Account>? supportedAccounts,
-    $core.Iterable<$core.String>? supportedAppSources,
+    $core.Iterable<$core.String>? supportedAppInfoSources,
     $core.Iterable<$core.String>? supportedFeedSources,
     $core.Iterable<$core.String>? supportedNotifyDestinations,
   }) {
@@ -216,8 +216,8 @@ class PorterFeatureSummary extends $pb.GeneratedMessage {
     if (supportedAccounts != null) {
       $result.supportedAccounts.addAll(supportedAccounts);
     }
-    if (supportedAppSources != null) {
-      $result.supportedAppSources.addAll(supportedAppSources);
+    if (supportedAppInfoSources != null) {
+      $result.supportedAppInfoSources.addAll(supportedAppInfoSources);
     }
     if (supportedFeedSources != null) {
       $result.supportedFeedSources.addAll(supportedFeedSources);
@@ -233,7 +233,7 @@ class PorterFeatureSummary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..pc<PorterFeatureSummary_Account>(1, _omitFieldNames ? '' : 'supportedAccounts', $pb.PbFieldType.PM, subBuilder: PorterFeatureSummary_Account.create)
-    ..pPS(2, _omitFieldNames ? '' : 'supportedAppSources')
+    ..pPS(2, _omitFieldNames ? '' : 'supportedAppInfoSources')
     ..pPS(3, _omitFieldNames ? '' : 'supportedFeedSources')
     ..pPS(4, _omitFieldNames ? '' : 'supportedNotifyDestinations')
     ..hasRequiredFields = false
@@ -264,7 +264,7 @@ class PorterFeatureSummary extends $pb.GeneratedMessage {
   $core.List<PorterFeatureSummary_Account> get supportedAccounts => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get supportedAppSources => $_getList(1);
+  $core.List<$core.String> get supportedAppInfoSources => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.List<$core.String> get supportedFeedSources => $_getList(2);

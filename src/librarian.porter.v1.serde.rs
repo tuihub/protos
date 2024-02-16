@@ -408,7 +408,7 @@ impl serde::Serialize for PorterFeatureSummary {
         if !self.supported_accounts.is_empty() {
             len += 1;
         }
-        if !self.supported_app_sources.is_empty() {
+        if !self.supported_app_info_sources.is_empty() {
             len += 1;
         }
         if !self.supported_feed_sources.is_empty() {
@@ -421,8 +421,8 @@ impl serde::Serialize for PorterFeatureSummary {
         if !self.supported_accounts.is_empty() {
             struct_ser.serialize_field("supportedAccounts", &self.supported_accounts)?;
         }
-        if !self.supported_app_sources.is_empty() {
-            struct_ser.serialize_field("supportedAppSources", &self.supported_app_sources)?;
+        if !self.supported_app_info_sources.is_empty() {
+            struct_ser.serialize_field("supportedAppInfoSources", &self.supported_app_info_sources)?;
         }
         if !self.supported_feed_sources.is_empty() {
             struct_ser.serialize_field("supportedFeedSources", &self.supported_feed_sources)?;
@@ -442,8 +442,8 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
         const FIELDS: &[&str] = &[
             "supported_accounts",
             "supportedAccounts",
-            "supported_app_sources",
-            "supportedAppSources",
+            "supported_app_info_sources",
+            "supportedAppInfoSources",
             "supported_feed_sources",
             "supportedFeedSources",
             "supported_notify_destinations",
@@ -453,7 +453,7 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             SupportedAccounts,
-            SupportedAppSources,
+            SupportedAppInfoSources,
             SupportedFeedSources,
             SupportedNotifyDestinations,
         }
@@ -478,7 +478,7 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                     {
                         match value {
                             "supportedAccounts" | "supported_accounts" => Ok(GeneratedField::SupportedAccounts),
-                            "supportedAppSources" | "supported_app_sources" => Ok(GeneratedField::SupportedAppSources),
+                            "supportedAppInfoSources" | "supported_app_info_sources" => Ok(GeneratedField::SupportedAppInfoSources),
                             "supportedFeedSources" | "supported_feed_sources" => Ok(GeneratedField::SupportedFeedSources),
                             "supportedNotifyDestinations" | "supported_notify_destinations" => Ok(GeneratedField::SupportedNotifyDestinations),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -501,7 +501,7 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut supported_accounts__ = None;
-                let mut supported_app_sources__ = None;
+                let mut supported_app_info_sources__ = None;
                 let mut supported_feed_sources__ = None;
                 let mut supported_notify_destinations__ = None;
                 while let Some(k) = map.next_key()? {
@@ -512,11 +512,11 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                             }
                             supported_accounts__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedAppSources => {
-                            if supported_app_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedAppSources"));
+                        GeneratedField::SupportedAppInfoSources => {
+                            if supported_app_info_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("supportedAppInfoSources"));
                             }
-                            supported_app_sources__ = Some(map.next_value()?);
+                            supported_app_info_sources__ = Some(map.next_value()?);
                         }
                         GeneratedField::SupportedFeedSources => {
                             if supported_feed_sources__.is_some() {
@@ -534,7 +534,7 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                 }
                 Ok(PorterFeatureSummary {
                     supported_accounts: supported_accounts__.unwrap_or_default(),
-                    supported_app_sources: supported_app_sources__.unwrap_or_default(),
+                    supported_app_info_sources: supported_app_info_sources__.unwrap_or_default(),
                     supported_feed_sources: supported_feed_sources__.unwrap_or_default(),
                     supported_notify_destinations: supported_notify_destinations__.unwrap_or_default(),
                 })

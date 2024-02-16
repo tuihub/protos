@@ -663,7 +663,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearInternal() => clearField(2);
 
-  /// WellKnownAppSource
+  /// WellKnownAppInfoSource
   @$pb.TagNumber(3)
   $core.String get source => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -996,7 +996,7 @@ class AppInfoID extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearInternal() => clearField(1);
 
-  /// WellKnownAppSource
+  /// WellKnownAppInfoSource
   @$pb.TagNumber(2)
   $core.String get source => $_getSZ(1);
   @$pb.TagNumber(2)

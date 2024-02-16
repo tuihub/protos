@@ -983,7 +983,7 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.toObject = function(o
 proto.librarian.sephirah.v1.ServerFeatureSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
     supportedAccountPlatformsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    supportedAppSourcesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    supportedAppInfoSourcesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     supportedFeedSourcesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     supportedNotifyDestinationsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
@@ -1028,7 +1028,7 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.deserializeBinaryFromReader = f
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addSupportedAppSources(value);
+      msg.addSupportedAppInfoSources(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -1074,7 +1074,7 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getSupportedAppSourcesList();
+  f = message.getSupportedAppInfoSourcesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -1136,10 +1136,10 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedAccount
 
 
 /**
- * repeated string supported_app_sources = 2;
+ * repeated string supported_app_info_sources = 2;
  * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedAppSourcesList = function() {
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedAppInfoSourcesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
@@ -1148,7 +1148,7 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedAppSource
  * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedAppSourcesList = function(value) {
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedAppInfoSourcesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -1158,7 +1158,7 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedAppSource
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAppSources = function(value, opt_index) {
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAppInfoSources = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
@@ -1167,8 +1167,8 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAppSource
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedAppSourcesList = function() {
-  return this.setSupportedAppSourcesList([]);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedAppInfoSourcesList = function() {
+  return this.setSupportedAppInfoSourcesList([]);
 };
 
 

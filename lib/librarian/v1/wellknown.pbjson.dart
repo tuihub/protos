@@ -28,23 +28,23 @@ final $typed_data.Uint8List wellKnownAccountPlatformDescriptor = $convert.base64
     'JNX1VOU1BFQ0lGSUVEEAAaA8I+ABIvCiFXRUxMX0tOT1dOX0FDQ09VTlRfUExBVEZPUk1fU1RF'
     'QU0QARoIwj4Fc3RlYW0=');
 
-@$core.Deprecated('Use wellKnownAppSourceDescriptor instead')
-const WellKnownAppSource$json = {
-  '1': 'WellKnownAppSource',
+@$core.Deprecated('Use wellKnownAppInfoSourceDescriptor instead')
+const WellKnownAppInfoSource$json = {
+  '1': 'WellKnownAppInfoSource',
   '2': [
-    {'1': 'WELL_KNOWN_APP_SOURCE_UNSPECIFIED', '2': 0, '3': {}},
-    {'1': 'WELL_KNOWN_APP_SOURCE_STEAM', '2': 2, '3': {}},
-    {'1': 'WELL_KNOWN_APP_SOURCE_VNDB', '2': 3, '3': {}},
-    {'1': 'WELL_KNOWN_APP_SOURCE_BANGUMI', '2': 4, '3': {}},
+    {'1': 'WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED', '2': 0, '3': {}},
+    {'1': 'WELL_KNOWN_APP_INFO_SOURCE_STEAM', '2': 2, '3': {}},
+    {'1': 'WELL_KNOWN_APP_INFO_SOURCE_VNDB', '2': 3, '3': {}},
+    {'1': 'WELL_KNOWN_APP_INFO_SOURCE_BANGUMI', '2': 4, '3': {}},
   ],
 };
 
-/// Descriptor for `WellKnownAppSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List wellKnownAppSourceDescriptor = $convert.base64Decode(
-    'ChJXZWxsS25vd25BcHBTb3VyY2USKgohV0VMTF9LTk9XTl9BUFBfU09VUkNFX1VOU1BFQ0lGSU'
-    'VEEAAaA8I+ABIpChtXRUxMX0tOT1dOX0FQUF9TT1VSQ0VfU1RFQU0QAhoIwj4Fc3RlYW0SJwoa'
-    'V0VMTF9LTk9XTl9BUFBfU09VUkNFX1ZOREIQAxoHwj4Edm5kYhItCh1XRUxMX0tOT1dOX0FQUF'
-    '9TT1VSQ0VfQkFOR1VNSRAEGgrCPgdiYW5ndW1p');
+/// Descriptor for `WellKnownAppInfoSource`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List wellKnownAppInfoSourceDescriptor = $convert.base64Decode(
+    'ChZXZWxsS25vd25BcHBJbmZvU291cmNlEi8KJldFTExfS05PV05fQVBQX0lORk9fU09VUkNFX1'
+    'VOU1BFQ0lGSUVEEAAaA8I+ABIuCiBXRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9TVEVBTRAC'
+    'GgjCPgVzdGVhbRIsCh9XRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9WTkRCEAMaB8I+BHZuZG'
+    'ISMgoiV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfQkFOR1VNSRAEGgrCPgdiYW5ndW1p');
 
 @$core.Deprecated('Use wellKnownFeedSourceDescriptor instead')
 const WellKnownFeedSource$json = {

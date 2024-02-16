@@ -606,7 +606,7 @@ type AppInfo struct {
 	Id *InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// ignore `source` and `source_app_id` when `internal` is true
 	Internal bool `protobuf:"varint,2,opt,name=internal,proto3" json:"internal,omitempty"`
-	// WellKnownAppSource
+	// WellKnownAppInfoSource
 	Source           string          `protobuf:"bytes,3,opt,name=source,proto3" json:"source,omitempty"`
 	SourceAppId      string          `protobuf:"bytes,4,opt,name=source_app_id,json=sourceAppId,proto3" json:"source_app_id,omitempty"`
 	SourceUrl        *string         `protobuf:"bytes,5,opt,name=source_url,json=sourceUrl,proto3,oneof" json:"source_url,omitempty"`
@@ -882,7 +882,7 @@ type AppInfoID struct {
 	unknownFields protoimpl.UnknownFields
 
 	Internal bool `protobuf:"varint,1,opt,name=internal,proto3" json:"internal,omitempty"`
-	// WellKnownAppSource
+	// WellKnownAppInfoSource
 	Source      string `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"`
 	SourceAppId string `protobuf:"bytes,3,opt,name=source_app_id,json=sourceAppId,proto3" json:"source_app_id,omitempty"`
 }

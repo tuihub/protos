@@ -13,14 +13,14 @@ export interface WellKnownAccountPlatformMap {
 
 export const WellKnownAccountPlatform: WellKnownAccountPlatformMap;
 
-export interface WellKnownAppSourceMap {
-  WELL_KNOWN_APP_SOURCE_UNSPECIFIED: 0;
-  WELL_KNOWN_APP_SOURCE_STEAM: 2;
-  WELL_KNOWN_APP_SOURCE_VNDB: 3;
-  WELL_KNOWN_APP_SOURCE_BANGUMI: 4;
+export interface WellKnownAppInfoSourceMap {
+  WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED: 0;
+  WELL_KNOWN_APP_INFO_SOURCE_STEAM: 2;
+  WELL_KNOWN_APP_INFO_SOURCE_VNDB: 3;
+  WELL_KNOWN_APP_INFO_SOURCE_BANGUMI: 4;
 }
 
-export const WellKnownAppSource: WellKnownAppSourceMap;
+export const WellKnownAppInfoSource: WellKnownAppInfoSourceMap;
 
 export interface WellKnownFeedSourceMap {
   WELL_KNOWN_FEED_SOURCE_UNSPECIFIED: 0;

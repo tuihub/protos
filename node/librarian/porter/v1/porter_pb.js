@@ -802,7 +802,7 @@ proto.librarian.porter.v1.PorterFeatureSummary.toObject = function(includeInstan
   var f, obj = {
     supportedAccountsList: jspb.Message.toObjectList(msg.getSupportedAccountsList(),
     proto.librarian.porter.v1.PorterFeatureSummary.Account.toObject, includeInstance),
-    supportedAppSourcesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    supportedAppInfoSourcesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     supportedFeedSourcesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     supportedNotifyDestinationsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
@@ -848,7 +848,7 @@ proto.librarian.porter.v1.PorterFeatureSummary.deserializeBinaryFromReader = fun
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addSupportedAppSources(value);
+      msg.addSupportedAppInfoSources(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -895,7 +895,7 @@ proto.librarian.porter.v1.PorterFeatureSummary.serializeBinaryToWriter = functio
       proto.librarian.porter.v1.PorterFeatureSummary.Account.serializeBinaryToWriter
     );
   }
-  f = message.getSupportedAppSourcesList();
+  f = message.getSupportedAppInfoSourcesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -1146,10 +1146,10 @@ proto.librarian.porter.v1.PorterFeatureSummary.prototype.clearSupportedAccountsL
 
 
 /**
- * repeated string supported_app_sources = 2;
+ * repeated string supported_app_info_sources = 2;
  * @return {!Array<string>}
  */
-proto.librarian.porter.v1.PorterFeatureSummary.prototype.getSupportedAppSourcesList = function() {
+proto.librarian.porter.v1.PorterFeatureSummary.prototype.getSupportedAppInfoSourcesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
@@ -1158,7 +1158,7 @@ proto.librarian.porter.v1.PorterFeatureSummary.prototype.getSupportedAppSourcesL
  * @param {!Array<string>} value
  * @return {!proto.librarian.porter.v1.PorterFeatureSummary} returns this
  */
-proto.librarian.porter.v1.PorterFeatureSummary.prototype.setSupportedAppSourcesList = function(value) {
+proto.librarian.porter.v1.PorterFeatureSummary.prototype.setSupportedAppInfoSourcesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -1168,7 +1168,7 @@ proto.librarian.porter.v1.PorterFeatureSummary.prototype.setSupportedAppSourcesL
  * @param {number=} opt_index
  * @return {!proto.librarian.porter.v1.PorterFeatureSummary} returns this
  */
-proto.librarian.porter.v1.PorterFeatureSummary.prototype.addSupportedAppSources = function(value, opt_index) {
+proto.librarian.porter.v1.PorterFeatureSummary.prototype.addSupportedAppInfoSources = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
@@ -1177,8 +1177,8 @@ proto.librarian.porter.v1.PorterFeatureSummary.prototype.addSupportedAppSources 
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.porter.v1.PorterFeatureSummary} returns this
  */
-proto.librarian.porter.v1.PorterFeatureSummary.prototype.clearSupportedAppSourcesList = function() {
-  return this.setSupportedAppSourcesList([]);
+proto.librarian.porter.v1.PorterFeatureSummary.prototype.clearSupportedAppInfoSourcesList = function() {
+  return this.setSupportedAppInfoSourcesList([]);
 };
 
 

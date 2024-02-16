@@ -24,7 +24,7 @@ var global =
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
 goog.exportSymbol('proto.librarian.v1.WellKnownAccountPlatform', null, global);
-goog.exportSymbol('proto.librarian.v1.WellKnownAppSource', null, global);
+goog.exportSymbol('proto.librarian.v1.WellKnownAppInfoSource', null, global);
 goog.exportSymbol('proto.librarian.v1.WellKnownFeedSource', null, global);
 goog.exportSymbol('proto.librarian.v1.WellKnownNotifyDestination', null, global);
 goog.exportSymbol('proto.librarian.v1.toString', null, global);
@@ -39,11 +39,11 @@ proto.librarian.v1.WellKnownAccountPlatform = {
 /**
  * @enum {number}
  */
-proto.librarian.v1.WellKnownAppSource = {
-  WELL_KNOWN_APP_SOURCE_UNSPECIFIED: 0,
-  WELL_KNOWN_APP_SOURCE_STEAM: 2,
-  WELL_KNOWN_APP_SOURCE_VNDB: 3,
-  WELL_KNOWN_APP_SOURCE_BANGUMI: 4
+proto.librarian.v1.WellKnownAppInfoSource = {
+  WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED: 0,
+  WELL_KNOWN_APP_INFO_SOURCE_STEAM: 2,
+  WELL_KNOWN_APP_INFO_SOURCE_VNDB: 3,
+  WELL_KNOWN_APP_INFO_SOURCE_BANGUMI: 4
 };
 
 /**

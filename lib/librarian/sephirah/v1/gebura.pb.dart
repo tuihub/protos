@@ -986,11 +986,11 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
 
 class GetBoundAppInfosRequest extends $pb.GeneratedMessage {
   factory GetBoundAppInfosRequest({
-    $7.InternalID? appId,
+    $7.InternalID? appInfoId,
   }) {
     final $result = create();
-    if (appId != null) {
-      $result.appId = appId;
+    if (appInfoId != null) {
+      $result.appInfoId = appInfoId;
     }
     return $result;
   }
@@ -999,7 +999,7 @@ class GetBoundAppInfosRequest extends $pb.GeneratedMessage {
   factory GetBoundAppInfosRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBoundAppInfosRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'appInfoId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1025,15 +1025,15 @@ class GetBoundAppInfosRequest extends $pb.GeneratedMessage {
   static GetBoundAppInfosRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get appId => $_getN(0);
+  $7.InternalID get appInfoId => $_getN(0);
   @$pb.TagNumber(1)
-  set appId($7.InternalID v) { setField(1, v); }
+  set appInfoId($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasAppId() => $_has(0);
+  $core.bool hasAppInfoId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppId() => clearField(1);
+  void clearAppInfoId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureAppId() => $_ensure(0);
+  $7.InternalID ensureAppInfoId() => $_ensure(0);
 }
 
 class GetBoundAppInfosResponse extends $pb.GeneratedMessage {
@@ -1082,11 +1082,11 @@ class GetBoundAppInfosResponse extends $pb.GeneratedMessage {
 
 class PurchaseAppInfoRequest extends $pb.GeneratedMessage {
   factory PurchaseAppInfoRequest({
-    $7.AppInfoID? appId,
+    $7.AppInfoID? appInfoId,
   }) {
     final $result = create();
-    if (appId != null) {
-      $result.appId = appId;
+    if (appInfoId != null) {
+      $result.appInfoId = appInfoId;
     }
     return $result;
   }
@@ -1095,7 +1095,7 @@ class PurchaseAppInfoRequest extends $pb.GeneratedMessage {
   factory PurchaseAppInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PurchaseAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.AppInfoID>(1, _omitFieldNames ? '' : 'appId', subBuilder: $7.AppInfoID.create)
+    ..aOM<$7.AppInfoID>(1, _omitFieldNames ? '' : 'appInfoId', subBuilder: $7.AppInfoID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1123,15 +1123,15 @@ class PurchaseAppInfoRequest extends $pb.GeneratedMessage {
   /// When `internal` is true, `source_app_id` must be valid InternalID.
   /// When `internal` is false, Server should create that app and return no matter the source is supported.
   @$pb.TagNumber(1)
-  $7.AppInfoID get appId => $_getN(0);
+  $7.AppInfoID get appInfoId => $_getN(0);
   @$pb.TagNumber(1)
-  set appId($7.AppInfoID v) { setField(1, v); }
+  set appInfoId($7.AppInfoID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasAppId() => $_has(0);
+  $core.bool hasAppInfoId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppId() => clearField(1);
+  void clearAppInfoId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.AppInfoID ensureAppId() => $_ensure(0);
+  $7.AppInfoID ensureAppInfoId() => $_ensure(0);
 }
 
 class PurchaseAppInfoResponse extends $pb.GeneratedMessage {
@@ -1473,22 +1473,18 @@ class UpdateAppResponse extends $pb.GeneratedMessage {
 class ListAppsRequest extends $pb.GeneratedMessage {
   factory ListAppsRequest({
     $7.PagingRequest? paging,
-    $core.Iterable<$7.InternalID>? deviceIdFilter,
     $core.Iterable<$7.InternalID>? idFilter,
-    $core.Iterable<$7.InternalID>? assignedAppIdFilter,
+    $core.Iterable<$7.InternalID>? assignedAppInfoIdFilter,
   }) {
     final $result = create();
     if (paging != null) {
       $result.paging = paging;
     }
-    if (deviceIdFilter != null) {
-      $result.deviceIdFilter.addAll(deviceIdFilter);
-    }
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
     }
-    if (assignedAppIdFilter != null) {
-      $result.assignedAppIdFilter.addAll(assignedAppIdFilter);
+    if (assignedAppInfoIdFilter != null) {
+      $result.assignedAppInfoIdFilter.addAll(assignedAppInfoIdFilter);
     }
     return $result;
   }
@@ -1498,9 +1494,8 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(4, _omitFieldNames ? '' : 'assignedAppIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(4, _omitFieldNames ? '' : 'assignedAppInfoIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1536,14 +1531,11 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.PagingRequest ensurePaging() => $_ensure(0);
 
-  @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get deviceIdFilter => $_getList(1);
-
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get idFilter => $_getList(2);
+  $core.List<$7.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(4)
-  $core.List<$7.InternalID> get assignedAppIdFilter => $_getList(3);
+  $core.List<$7.InternalID> get assignedAppInfoIdFilter => $_getList(2);
 }
 
 class ListAppsResponse extends $pb.GeneratedMessage {

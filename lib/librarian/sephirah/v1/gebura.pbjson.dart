@@ -273,14 +273,14 @@ final $typed_data.Uint8List getAppInfoResponseDescriptor = $convert.base64Decode
 const GetBoundAppInfosRequest$json = {
   '1': 'GetBoundAppInfosRequest',
   '2': [
-    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
+    {'1': 'app_info_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appInfoId'},
   ],
 };
 
 /// Descriptor for `GetBoundAppInfosRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getBoundAppInfosRequestDescriptor = $convert.base64Decode(
-    'ChdHZXRCb3VuZEFwcEluZm9zUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udj'
-    'EuSW50ZXJuYWxJRFIFYXBwSWQ=');
+    'ChdHZXRCb3VuZEFwcEluZm9zUmVxdWVzdBI4CgthcHBfaW5mb19pZBgBIAEoCzIYLmxpYnJhcm'
+    'lhbi52MS5JbnRlcm5hbElEUglhcHBJbmZvSWQ=');
 
 @$core.Deprecated('Use getBoundAppInfosResponseDescriptor instead')
 const GetBoundAppInfosResponse$json = {
@@ -299,14 +299,14 @@ final $typed_data.Uint8List getBoundAppInfosResponseDescriptor = $convert.base64
 const PurchaseAppInfoRequest$json = {
   '1': 'PurchaseAppInfoRequest',
   '2': [
-    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppInfoID', '10': 'appId'},
+    {'1': 'app_info_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.AppInfoID', '10': 'appInfoId'},
   ],
 };
 
 /// Descriptor for `PurchaseAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List purchaseAppInfoRequestDescriptor = $convert.base64Decode(
-    'ChZQdXJjaGFzZUFwcEluZm9SZXF1ZXN0Ei4KBmFwcF9pZBgBIAEoCzIXLmxpYnJhcmlhbi52MS'
-    '5BcHBJbmZvSURSBWFwcElk');
+    'ChZQdXJjaGFzZUFwcEluZm9SZXF1ZXN0EjcKC2FwcF9pbmZvX2lkGAEgASgLMhcubGlicmFyaW'
+    'FuLnYxLkFwcEluZm9JRFIJYXBwSW5mb0lk');
 
 @$core.Deprecated('Use purchaseAppInfoResponseDescriptor instead')
 const PurchaseAppInfoResponse$json = {
@@ -403,19 +403,17 @@ const ListAppsRequest$json = {
   '1': 'ListAppsRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'device_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceIdFilter'},
     {'1': 'id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'assigned_app_id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'assignedAppIdFilter'},
+    {'1': 'assigned_app_info_id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'assignedAppInfoIdFilter'},
   ],
 };
 
 /// Descriptor for `ListAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0QXBwc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
-    'JlcXVlc3RSBnBhZ2luZxJCChBkZXZpY2VfaWRfZmlsdGVyGAIgAygLMhgubGlicmFyaWFuLnYx'
-    'LkludGVybmFsSURSDmRldmljZUlkRmlsdGVyEjUKCWlkX2ZpbHRlchgDIAMoCzIYLmxpYnJhcm'
-    'lhbi52MS5JbnRlcm5hbElEUghpZEZpbHRlchJNChZhc3NpZ25lZF9hcHBfaWRfZmlsdGVyGAQg'
-    'AygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSE2Fzc2lnbmVkQXBwSWRGaWx0ZXI=');
+    'JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu'
+    'YWxJRFIIaWRGaWx0ZXISVgobYXNzaWduZWRfYXBwX2luZm9faWRfZmlsdGVyGAQgAygLMhgubG'
+    'licmFyaWFuLnYxLkludGVybmFsSURSF2Fzc2lnbmVkQXBwSW5mb0lkRmlsdGVy');
 
 @$core.Deprecated('Use listAppsResponseDescriptor instead')
 const ListAppsResponse$json = {

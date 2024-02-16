@@ -6341,12 +6341,12 @@ impl serde::Serialize for GetBoundAppInfosRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_id.is_some() {
+        if self.app_info_id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetBoundAppInfosRequest", len)?;
-        if let Some(v) = self.app_id.as_ref() {
-            struct_ser.serialize_field("appId", v)?;
+        if let Some(v) = self.app_info_id.as_ref() {
+            struct_ser.serialize_field("appInfoId", v)?;
         }
         struct_ser.end()
     }
@@ -6358,13 +6358,13 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppInfosRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_id",
-            "appId",
+            "app_info_id",
+            "appInfoId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppId,
+            AppInfoId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -6386,7 +6386,7 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppInfosRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            "appInfoId" | "app_info_id" => Ok(GeneratedField::AppInfoId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6406,19 +6406,19 @@ impl<'de> serde::Deserialize<'de> for GetBoundAppInfosRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_id__ = None;
+                let mut app_info_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppId => {
-                            if app_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appId"));
+                        GeneratedField::AppInfoId => {
+                            if app_info_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoId"));
                             }
-                            app_id__ = map.next_value()?;
+                            app_info_id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(GetBoundAppInfosRequest {
-                    app_id: app_id__,
+                    app_info_id: app_info_id__,
                 })
             }
         }
@@ -9559,27 +9559,21 @@ impl serde::Serialize for ListAppsRequest {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.device_id_filter.is_empty() {
-            len += 1;
-        }
         if !self.id_filter.is_empty() {
             len += 1;
         }
-        if !self.assigned_app_id_filter.is_empty() {
+        if !self.assigned_app_info_id_filter.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.device_id_filter.is_empty() {
-            struct_ser.serialize_field("deviceIdFilter", &self.device_id_filter)?;
-        }
         if !self.id_filter.is_empty() {
             struct_ser.serialize_field("idFilter", &self.id_filter)?;
         }
-        if !self.assigned_app_id_filter.is_empty() {
-            struct_ser.serialize_field("assignedAppIdFilter", &self.assigned_app_id_filter)?;
+        if !self.assigned_app_info_id_filter.is_empty() {
+            struct_ser.serialize_field("assignedAppInfoIdFilter", &self.assigned_app_info_id_filter)?;
         }
         struct_ser.end()
     }
@@ -9592,20 +9586,17 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "device_id_filter",
-            "deviceIdFilter",
             "id_filter",
             "idFilter",
-            "assigned_app_id_filter",
-            "assignedAppIdFilter",
+            "assigned_app_info_id_filter",
+            "assignedAppInfoIdFilter",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            DeviceIdFilter,
             IdFilter,
-            AssignedAppIdFilter,
+            AssignedAppInfoIdFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -9628,9 +9619,8 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "deviceIdFilter" | "device_id_filter" => Ok(GeneratedField::DeviceIdFilter),
                             "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
-                            "assignedAppIdFilter" | "assigned_app_id_filter" => Ok(GeneratedField::AssignedAppIdFilter),
+                            "assignedAppInfoIdFilter" | "assigned_app_info_id_filter" => Ok(GeneratedField::AssignedAppInfoIdFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -9651,9 +9641,8 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut device_id_filter__ = None;
                 let mut id_filter__ = None;
-                let mut assigned_app_id_filter__ = None;
+                let mut assigned_app_info_id_filter__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -9662,31 +9651,24 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                             }
                             paging__ = map.next_value()?;
                         }
-                        GeneratedField::DeviceIdFilter => {
-                            if device_id_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("deviceIdFilter"));
-                            }
-                            device_id_filter__ = Some(map.next_value()?);
-                        }
                         GeneratedField::IdFilter => {
                             if id_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("idFilter"));
                             }
                             id_filter__ = Some(map.next_value()?);
                         }
-                        GeneratedField::AssignedAppIdFilter => {
-                            if assigned_app_id_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("assignedAppIdFilter"));
+                        GeneratedField::AssignedAppInfoIdFilter => {
+                            if assigned_app_info_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("assignedAppInfoIdFilter"));
                             }
-                            assigned_app_id_filter__ = Some(map.next_value()?);
+                            assigned_app_info_id_filter__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(ListAppsRequest {
                     paging: paging__,
-                    device_id_filter: device_id_filter__.unwrap_or_default(),
                     id_filter: id_filter__.unwrap_or_default(),
-                    assigned_app_id_filter: assigned_app_id_filter__.unwrap_or_default(),
+                    assigned_app_info_id_filter: assigned_app_info_id_filter__.unwrap_or_default(),
                 })
             }
         }
@@ -14975,12 +14957,12 @@ impl serde::Serialize for PurchaseAppInfoRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.app_id.is_some() {
+        if self.app_info_id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PurchaseAppInfoRequest", len)?;
-        if let Some(v) = self.app_id.as_ref() {
-            struct_ser.serialize_field("appId", v)?;
+        if let Some(v) = self.app_info_id.as_ref() {
+            struct_ser.serialize_field("appInfoId", v)?;
         }
         struct_ser.end()
     }
@@ -14992,13 +14974,13 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppInfoRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_id",
-            "appId",
+            "app_info_id",
+            "appInfoId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppId,
+            AppInfoId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -15020,7 +15002,7 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppInfoRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appId" | "app_id" => Ok(GeneratedField::AppId),
+                            "appInfoId" | "app_info_id" => Ok(GeneratedField::AppInfoId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -15040,19 +15022,19 @@ impl<'de> serde::Deserialize<'de> for PurchaseAppInfoRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_id__ = None;
+                let mut app_info_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::AppId => {
-                            if app_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appId"));
+                        GeneratedField::AppInfoId => {
+                            if app_info_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoId"));
                             }
-                            app_id__ = map.next_value()?;
+                            app_info_id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(PurchaseAppInfoRequest {
-                    app_id: app_id__,
+                    app_info_id: app_info_id__,
                 })
             }
         }
@@ -16939,7 +16921,7 @@ impl serde::Serialize for ServerFeatureSummary {
         if !self.supported_account_platforms.is_empty() {
             len += 1;
         }
-        if !self.supported_app_sources.is_empty() {
+        if !self.supported_app_info_sources.is_empty() {
             len += 1;
         }
         if !self.supported_feed_sources.is_empty() {
@@ -16952,8 +16934,8 @@ impl serde::Serialize for ServerFeatureSummary {
         if !self.supported_account_platforms.is_empty() {
             struct_ser.serialize_field("supportedAccountPlatforms", &self.supported_account_platforms)?;
         }
-        if !self.supported_app_sources.is_empty() {
-            struct_ser.serialize_field("supportedAppSources", &self.supported_app_sources)?;
+        if !self.supported_app_info_sources.is_empty() {
+            struct_ser.serialize_field("supportedAppInfoSources", &self.supported_app_info_sources)?;
         }
         if !self.supported_feed_sources.is_empty() {
             struct_ser.serialize_field("supportedFeedSources", &self.supported_feed_sources)?;
@@ -16973,8 +16955,8 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
         const FIELDS: &[&str] = &[
             "supported_account_platforms",
             "supportedAccountPlatforms",
-            "supported_app_sources",
-            "supportedAppSources",
+            "supported_app_info_sources",
+            "supportedAppInfoSources",
             "supported_feed_sources",
             "supportedFeedSources",
             "supported_notify_destinations",
@@ -16984,7 +16966,7 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             SupportedAccountPlatforms,
-            SupportedAppSources,
+            SupportedAppInfoSources,
             SupportedFeedSources,
             SupportedNotifyDestinations,
         }
@@ -17009,7 +16991,7 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
                     {
                         match value {
                             "supportedAccountPlatforms" | "supported_account_platforms" => Ok(GeneratedField::SupportedAccountPlatforms),
-                            "supportedAppSources" | "supported_app_sources" => Ok(GeneratedField::SupportedAppSources),
+                            "supportedAppInfoSources" | "supported_app_info_sources" => Ok(GeneratedField::SupportedAppInfoSources),
                             "supportedFeedSources" | "supported_feed_sources" => Ok(GeneratedField::SupportedFeedSources),
                             "supportedNotifyDestinations" | "supported_notify_destinations" => Ok(GeneratedField::SupportedNotifyDestinations),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -17032,7 +17014,7 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut supported_account_platforms__ = None;
-                let mut supported_app_sources__ = None;
+                let mut supported_app_info_sources__ = None;
                 let mut supported_feed_sources__ = None;
                 let mut supported_notify_destinations__ = None;
                 while let Some(k) = map.next_key()? {
@@ -17043,11 +17025,11 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
                             }
                             supported_account_platforms__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedAppSources => {
-                            if supported_app_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedAppSources"));
+                        GeneratedField::SupportedAppInfoSources => {
+                            if supported_app_info_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("supportedAppInfoSources"));
                             }
-                            supported_app_sources__ = Some(map.next_value()?);
+                            supported_app_info_sources__ = Some(map.next_value()?);
                         }
                         GeneratedField::SupportedFeedSources => {
                             if supported_feed_sources__.is_some() {
@@ -17065,7 +17047,7 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
                 }
                 Ok(ServerFeatureSummary {
                     supported_account_platforms: supported_account_platforms__.unwrap_or_default(),
-                    supported_app_sources: supported_app_sources__.unwrap_or_default(),
+                    supported_app_info_sources: supported_app_info_sources__.unwrap_or_default(),
                     supported_feed_sources: supported_feed_sources__.unwrap_or_default(),
                     supported_notify_destinations: supported_notify_destinations__.unwrap_or_default(),
                 })

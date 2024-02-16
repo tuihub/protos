@@ -82,7 +82,7 @@ const ServerFeatureSummary$json = {
   '1': 'ServerFeatureSummary',
   '2': [
     {'1': 'supported_account_platforms', '3': 1, '4': 3, '5': 9, '10': 'supportedAccountPlatforms'},
-    {'1': 'supported_app_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppSources'},
+    {'1': 'supported_app_info_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppInfoSources'},
     {'1': 'supported_feed_sources', '3': 3, '4': 3, '5': 9, '10': 'supportedFeedSources'},
     {'1': 'supported_notify_destinations', '3': 4, '4': 3, '5': 9, '10': 'supportedNotifyDestinations'},
   ],
@@ -91,10 +91,10 @@ const ServerFeatureSummary$json = {
 /// Descriptor for `ServerFeatureSummary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List serverFeatureSummaryDescriptor = $convert.base64Decode(
     'ChRTZXJ2ZXJGZWF0dXJlU3VtbWFyeRI+ChtzdXBwb3J0ZWRfYWNjb3VudF9wbGF0Zm9ybXMYAS'
-    'ADKAlSGXN1cHBvcnRlZEFjY291bnRQbGF0Zm9ybXMSMgoVc3VwcG9ydGVkX2FwcF9zb3VyY2Vz'
-    'GAIgAygJUhNzdXBwb3J0ZWRBcHBTb3VyY2VzEjQKFnN1cHBvcnRlZF9mZWVkX3NvdXJjZXMYAy'
-    'ADKAlSFHN1cHBvcnRlZEZlZWRTb3VyY2VzEkIKHXN1cHBvcnRlZF9ub3RpZnlfZGVzdGluYXRp'
-    'b25zGAQgAygJUhtzdXBwb3J0ZWROb3RpZnlEZXN0aW5hdGlvbnM=');
+    'ADKAlSGXN1cHBvcnRlZEFjY291bnRQbGF0Zm9ybXMSOwoac3VwcG9ydGVkX2FwcF9pbmZvX3Nv'
+    'dXJjZXMYAiADKAlSF3N1cHBvcnRlZEFwcEluZm9Tb3VyY2VzEjQKFnN1cHBvcnRlZF9mZWVkX3'
+    'NvdXJjZXMYAyADKAlSFHN1cHBvcnRlZEZlZWRTb3VyY2VzEkIKHXN1cHBvcnRlZF9ub3RpZnlf'
+    'ZGVzdGluYXRpb25zGAQgAygJUhtzdXBwb3J0ZWROb3RpZnlEZXN0aW5hdGlvbnM=');
 
 @$core.Deprecated('Use serverInstanceSummaryDescriptor instead')
 const ServerInstanceSummary$json = {

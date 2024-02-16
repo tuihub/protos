@@ -2021,7 +2021,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     public const int SourceFieldNumber = 3;
     private string source_ = "";
     /// <summary>
-    /// WellKnownAppSource
+    /// WellKnownAppInfoSource
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3217,7 +3217,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     public const int SourceFieldNumber = 2;
     private string source_ = "";
     /// <summary>
-    /// WellKnownAppSource
+    /// WellKnownAppInfoSource
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

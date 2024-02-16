@@ -126,10 +126,10 @@ export class ServerFeatureSummary extends jspb.Message {
   setSupportedAccountPlatformsList(value: Array<string>): void;
   addSupportedAccountPlatforms(value: string, index?: number): string;
 
-  clearSupportedAppSourcesList(): void;
-  getSupportedAppSourcesList(): Array<string>;
-  setSupportedAppSourcesList(value: Array<string>): void;
-  addSupportedAppSources(value: string, index?: number): string;
+  clearSupportedAppInfoSourcesList(): void;
+  getSupportedAppInfoSourcesList(): Array<string>;
+  setSupportedAppInfoSourcesList(value: Array<string>): void;
+  addSupportedAppInfoSources(value: string, index?: number): string;
 
   clearSupportedFeedSourcesList(): void;
   getSupportedFeedSourcesList(): Array<string>;
@@ -154,7 +154,7 @@ export class ServerFeatureSummary extends jspb.Message {
 export namespace ServerFeatureSummary {
   export type AsObject = {
     supportedAccountPlatformsList: Array<string>,
-    supportedAppSourcesList: Array<string>,
+    supportedAppInfoSourcesList: Array<string>,
     supportedFeedSourcesList: Array<string>,
     supportedNotifyDestinationsList: Array<string>,
   }

@@ -28,23 +28,23 @@ class WellKnownAccountPlatform extends $pb.ProtobufEnum {
   const WellKnownAccountPlatform._($core.int v, $core.String n) : super(v, n);
 }
 
-class WellKnownAppSource extends $pb.ProtobufEnum {
-  static const WellKnownAppSource WELL_KNOWN_APP_SOURCE_UNSPECIFIED = WellKnownAppSource._(0, _omitEnumNames ? '' : 'WELL_KNOWN_APP_SOURCE_UNSPECIFIED');
-  static const WellKnownAppSource WELL_KNOWN_APP_SOURCE_STEAM = WellKnownAppSource._(2, _omitEnumNames ? '' : 'WELL_KNOWN_APP_SOURCE_STEAM');
-  static const WellKnownAppSource WELL_KNOWN_APP_SOURCE_VNDB = WellKnownAppSource._(3, _omitEnumNames ? '' : 'WELL_KNOWN_APP_SOURCE_VNDB');
-  static const WellKnownAppSource WELL_KNOWN_APP_SOURCE_BANGUMI = WellKnownAppSource._(4, _omitEnumNames ? '' : 'WELL_KNOWN_APP_SOURCE_BANGUMI');
+class WellKnownAppInfoSource extends $pb.ProtobufEnum {
+  static const WellKnownAppInfoSource WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED = WellKnownAppInfoSource._(0, _omitEnumNames ? '' : 'WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED');
+  static const WellKnownAppInfoSource WELL_KNOWN_APP_INFO_SOURCE_STEAM = WellKnownAppInfoSource._(2, _omitEnumNames ? '' : 'WELL_KNOWN_APP_INFO_SOURCE_STEAM');
+  static const WellKnownAppInfoSource WELL_KNOWN_APP_INFO_SOURCE_VNDB = WellKnownAppInfoSource._(3, _omitEnumNames ? '' : 'WELL_KNOWN_APP_INFO_SOURCE_VNDB');
+  static const WellKnownAppInfoSource WELL_KNOWN_APP_INFO_SOURCE_BANGUMI = WellKnownAppInfoSource._(4, _omitEnumNames ? '' : 'WELL_KNOWN_APP_INFO_SOURCE_BANGUMI');
 
-  static const $core.List<WellKnownAppSource> values = <WellKnownAppSource> [
-    WELL_KNOWN_APP_SOURCE_UNSPECIFIED,
-    WELL_KNOWN_APP_SOURCE_STEAM,
-    WELL_KNOWN_APP_SOURCE_VNDB,
-    WELL_KNOWN_APP_SOURCE_BANGUMI,
+  static const $core.List<WellKnownAppInfoSource> values = <WellKnownAppInfoSource> [
+    WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED,
+    WELL_KNOWN_APP_INFO_SOURCE_STEAM,
+    WELL_KNOWN_APP_INFO_SOURCE_VNDB,
+    WELL_KNOWN_APP_INFO_SOURCE_BANGUMI,
   ];
 
-  static final $core.Map<$core.int, WellKnownAppSource> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static WellKnownAppSource? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, WellKnownAppInfoSource> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static WellKnownAppInfoSource? valueOf($core.int value) => _byValue[value];
 
-  const WellKnownAppSource._($core.int v, $core.String n) : super(v, n);
+  const WellKnownAppInfoSource._($core.int v, $core.String n) : super(v, n);
 }
 
 class WellKnownFeedSource extends $pb.ProtobufEnum {

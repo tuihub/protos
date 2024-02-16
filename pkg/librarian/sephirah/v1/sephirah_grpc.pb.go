@@ -198,18 +198,18 @@ type LibrarianSephirahServiceClient interface {
 	UpdateAppInfo(ctx context.Context, in *UpdateAppInfoRequest, opts ...grpc.CallOption) (*UpdateAppInfoResponse, error)
 	// `Gebura` `Admin` Used to manage app info
 	ListAppInfos(ctx context.Context, in *ListAppInfosRequest, opts ...grpc.CallOption) (*ListAppInfosResponse, error)
-	// `Gebura` `Admin` Merge two apps
+	// `Gebura` `Admin` Merge two app infos
 	MergeAppInfos(ctx context.Context, in *MergeAppInfosRequest, opts ...grpc.CallOption) (*MergeAppInfosResponse, error)
-	// `Gebura` `Admin` Pick one app out from merged
+	// `Gebura` `Admin` Pick one app info out from merged
 	PickAppInfo(ctx context.Context, in *PickAppInfoRequest, opts ...grpc.CallOption) (*PickAppInfoResponse, error)
 	// `Gebura` `Normal` Asynchronous update app infos.
-	// Request on INTERNAL app applies to all bound external apps.
-	// Create an INTERNAL app when requested external app does not exist
+	// Request on INTERNAL app info applies to all bound external app infos.
+	// Create an INTERNAL app info when requested external app info does not exist
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAppInfos(ctx context.Context, in *SyncAppInfosRequest, opts ...grpc.CallOption) (*SyncAppInfosResponse, error)
-	// `Gebura` `Normal` Asynchronously update apps associated with an account.
-	// Create an INTERNAL app when associated external app does not exist.
+	// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+	// Create an INTERNAL app info when associated external app info does not exist.
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAccountAppInfos(ctx context.Context, in *SyncAccountAppInfosRequest, opts ...grpc.CallOption) (*SyncAccountAppInfosResponse, error)
@@ -1316,18 +1316,18 @@ type LibrarianSephirahServiceServer interface {
 	UpdateAppInfo(context.Context, *UpdateAppInfoRequest) (*UpdateAppInfoResponse, error)
 	// `Gebura` `Admin` Used to manage app info
 	ListAppInfos(context.Context, *ListAppInfosRequest) (*ListAppInfosResponse, error)
-	// `Gebura` `Admin` Merge two apps
+	// `Gebura` `Admin` Merge two app infos
 	MergeAppInfos(context.Context, *MergeAppInfosRequest) (*MergeAppInfosResponse, error)
-	// `Gebura` `Admin` Pick one app out from merged
+	// `Gebura` `Admin` Pick one app info out from merged
 	PickAppInfo(context.Context, *PickAppInfoRequest) (*PickAppInfoResponse, error)
 	// `Gebura` `Normal` Asynchronous update app infos.
-	// Request on INTERNAL app applies to all bound external apps.
-	// Create an INTERNAL app when requested external app does not exist
+	// Request on INTERNAL app info applies to all bound external app infos.
+	// Create an INTERNAL app info when requested external app info does not exist
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAppInfos(context.Context, *SyncAppInfosRequest) (*SyncAppInfosResponse, error)
-	// `Gebura` `Normal` Asynchronously update apps associated with an account.
-	// Create an INTERNAL app when associated external app does not exist.
+	// `Gebura` `Normal` Asynchronously update app infos associated with an account.
+	// Create an INTERNAL app info when associated external app info does not exist.
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAccountAppInfos(context.Context, *SyncAccountAppInfosRequest) (*SyncAccountAppInfosResponse, error)

@@ -2890,38 +2890,38 @@ impl<'de> serde::Deserialize<'de> for WellKnownAccountPlatform {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
-impl serde::Serialize for WellKnownAppSource {
+impl serde::Serialize for WellKnownAppInfoSource {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
         S: serde::Serializer,
     {
         let variant = match self {
-            Self::Unspecified => "WELL_KNOWN_APP_SOURCE_UNSPECIFIED",
-            Self::Steam => "WELL_KNOWN_APP_SOURCE_STEAM",
-            Self::Vndb => "WELL_KNOWN_APP_SOURCE_VNDB",
-            Self::Bangumi => "WELL_KNOWN_APP_SOURCE_BANGUMI",
+            Self::Unspecified => "WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED",
+            Self::Steam => "WELL_KNOWN_APP_INFO_SOURCE_STEAM",
+            Self::Vndb => "WELL_KNOWN_APP_INFO_SOURCE_VNDB",
+            Self::Bangumi => "WELL_KNOWN_APP_INFO_SOURCE_BANGUMI",
         };
         serializer.serialize_str(variant)
     }
 }
-impl<'de> serde::Deserialize<'de> for WellKnownAppSource {
+impl<'de> serde::Deserialize<'de> for WellKnownAppInfoSource {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "WELL_KNOWN_APP_SOURCE_UNSPECIFIED",
-            "WELL_KNOWN_APP_SOURCE_STEAM",
-            "WELL_KNOWN_APP_SOURCE_VNDB",
-            "WELL_KNOWN_APP_SOURCE_BANGUMI",
+            "WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED",
+            "WELL_KNOWN_APP_INFO_SOURCE_STEAM",
+            "WELL_KNOWN_APP_INFO_SOURCE_VNDB",
+            "WELL_KNOWN_APP_INFO_SOURCE_BANGUMI",
         ];
 
         struct GeneratedVisitor;
 
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = WellKnownAppSource;
+            type Value = WellKnownAppInfoSource;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
                 write!(formatter, "expected one of: {:?}", &FIELDS)
@@ -2934,7 +2934,7 @@ impl<'de> serde::Deserialize<'de> for WellKnownAppSource {
                 use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(WellKnownAppSource::from_i32)
+                    .and_then(WellKnownAppInfoSource::from_i32)
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -2947,7 +2947,7 @@ impl<'de> serde::Deserialize<'de> for WellKnownAppSource {
                 use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(WellKnownAppSource::from_i32)
+                    .and_then(WellKnownAppInfoSource::from_i32)
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -2958,10 +2958,10 @@ impl<'de> serde::Deserialize<'de> for WellKnownAppSource {
                 E: serde::de::Error,
             {
                 match value {
-                    "WELL_KNOWN_APP_SOURCE_UNSPECIFIED" => Ok(WellKnownAppSource::Unspecified),
-                    "WELL_KNOWN_APP_SOURCE_STEAM" => Ok(WellKnownAppSource::Steam),
-                    "WELL_KNOWN_APP_SOURCE_VNDB" => Ok(WellKnownAppSource::Vndb),
-                    "WELL_KNOWN_APP_SOURCE_BANGUMI" => Ok(WellKnownAppSource::Bangumi),
+                    "WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED" => Ok(WellKnownAppInfoSource::Unspecified),
+                    "WELL_KNOWN_APP_INFO_SOURCE_STEAM" => Ok(WellKnownAppInfoSource::Steam),
+                    "WELL_KNOWN_APP_INFO_SOURCE_VNDB" => Ok(WellKnownAppInfoSource::Vndb),
+                    "WELL_KNOWN_APP_INFO_SOURCE_BANGUMI" => Ok(WellKnownAppInfoSource::Bangumi),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

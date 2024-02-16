@@ -4805,7 +4805,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.GetBoundAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4845,7 +4845,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.deserializeBinaryFromReader 
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setAppId(value);
+      msg.setAppInfoId(value);
       break;
     default:
       reader.skipField();
@@ -4876,7 +4876,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.serializeBinary = 
  */
 proto.librarian.sephirah.v1.GetBoundAppInfosRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppId();
+  f = message.getAppInfoId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -4888,10 +4888,10 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.serializeBinaryToWriter = fu
 
 
 /**
- * optional librarian.v1.InternalID app_id = 1;
+ * optional librarian.v1.InternalID app_info_id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.getAppId = function() {
+proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.getAppInfoId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -4901,7 +4901,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.getAppId = functio
  * @param {?proto.librarian.v1.InternalID|undefined} value
  * @return {!proto.librarian.sephirah.v1.GetBoundAppInfosRequest} returns this
 */
-proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.setAppId = function(value) {
+proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.setAppInfoId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -4910,8 +4910,8 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.setAppId = functio
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.GetBoundAppInfosRequest} returns this
  */
-proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.clearAppId = function() {
-  return this.setAppId(undefined);
+proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.clearAppInfoId = function() {
+  return this.setAppInfoId(undefined);
 };
 
 
@@ -4919,7 +4919,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.clearAppId = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.hasAppId = function() {
+proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.hasAppInfoId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -5116,7 +5116,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.PurchaseAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.AppInfoID.toObject(includeInstance, f)
+    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.AppInfoID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5156,7 +5156,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.deserializeBinaryFromReader =
     case 1:
       var value = new librarian_v1_common_pb.AppInfoID;
       reader.readMessage(value,librarian_v1_common_pb.AppInfoID.deserializeBinaryFromReader);
-      msg.setAppId(value);
+      msg.setAppInfoId(value);
       break;
     default:
       reader.skipField();
@@ -5187,7 +5187,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.serializeBinary = f
  */
 proto.librarian.sephirah.v1.PurchaseAppInfoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppId();
+  f = message.getAppInfoId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -5199,10 +5199,10 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.serializeBinaryToWriter = fun
 
 
 /**
- * optional librarian.v1.AppInfoID app_id = 1;
+ * optional librarian.v1.AppInfoID app_info_id = 1;
  * @return {?proto.librarian.v1.AppInfoID}
  */
-proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.getAppId = function() {
+proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.getAppInfoId = function() {
   return /** @type{?proto.librarian.v1.AppInfoID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.AppInfoID, 1));
 };
@@ -5212,7 +5212,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.getAppId = function
  * @param {?proto.librarian.v1.AppInfoID|undefined} value
  * @return {!proto.librarian.sephirah.v1.PurchaseAppInfoRequest} returns this
 */
-proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.setAppId = function(value) {
+proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.setAppInfoId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -5221,8 +5221,8 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.setAppId = function
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.PurchaseAppInfoRequest} returns this
  */
-proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.clearAppId = function() {
-  return this.setAppId(undefined);
+proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.clearAppInfoId = function() {
+  return this.setAppInfoId(undefined);
 };
 
 
@@ -5230,7 +5230,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.clearAppId = functi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.hasAppId = function() {
+proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.hasAppInfoId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -6254,7 +6254,7 @@ proto.librarian.sephirah.v1.UpdateAppResponse.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListAppsRequest.repeatedFields_ = [2,3,4];
+proto.librarian.sephirah.v1.ListAppsRequest.repeatedFields_ = [3,4];
 
 
 
@@ -6288,11 +6288,9 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.toObject = function(opt_in
 proto.librarian.sephirah.v1.ListAppsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    deviceIdFilterList: jspb.Message.toObjectList(msg.getDeviceIdFilterList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance),
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    assignedAppIdFilterList: jspb.Message.toObjectList(msg.getAssignedAppIdFilterList(),
+    assignedAppInfoIdFilterList: jspb.Message.toObjectList(msg.getAssignedAppInfoIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -6335,11 +6333,6 @@ proto.librarian.sephirah.v1.ListAppsRequest.deserializeBinaryFromReader = functi
       reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
       msg.setPaging(value);
       break;
-    case 2:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addDeviceIdFilter(value);
-      break;
     case 3:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
@@ -6348,7 +6341,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.deserializeBinaryFromReader = functi
     case 4:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addAssignedAppIdFilter(value);
+      msg.addAssignedAppInfoIdFilter(value);
       break;
     default:
       reader.skipField();
@@ -6387,14 +6380,6 @@ proto.librarian.sephirah.v1.ListAppsRequest.serializeBinaryToWriter = function(m
       librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
     );
   }
-  f = message.getDeviceIdFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
   f = message.getIdFilterList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
@@ -6403,7 +6388,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.serializeBinaryToWriter = function(m
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getAssignedAppIdFilterList();
+  f = message.getAssignedAppInfoIdFilterList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -6452,44 +6437,6 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.hasPaging = function() {
 
 
 /**
- * repeated librarian.v1.InternalID device_id_filter = 2;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.getDeviceIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.setDeviceIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.addDeviceIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearDeviceIdFilterList = function() {
-  return this.setDeviceIdFilterList([]);
-};
-
-
-/**
  * repeated librarian.v1.InternalID id_filter = 3;
  * @return {!Array<!proto.librarian.v1.InternalID>}
  */
@@ -6528,10 +6475,10 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearIdFilterList = functi
 
 
 /**
- * repeated librarian.v1.InternalID assigned_app_id_filter = 4;
+ * repeated librarian.v1.InternalID assigned_app_info_id_filter = 4;
  * @return {!Array<!proto.librarian.v1.InternalID>}
  */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.getAssignedAppIdFilterList = function() {
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.getAssignedAppInfoIdFilterList = function() {
   return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
     jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 4));
 };
@@ -6541,7 +6488,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.getAssignedAppIdFilterList
  * @param {!Array<!proto.librarian.v1.InternalID>} value
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
 */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.setAssignedAppIdFilterList = function(value) {
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.setAssignedAppInfoIdFilterList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -6551,7 +6498,7 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.setAssignedAppIdFilterList
  * @param {number=} opt_index
  * @return {!proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.addAssignedAppIdFilter = function(opt_value, opt_index) {
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.addAssignedAppInfoIdFilter = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.librarian.v1.InternalID, opt_index);
 };
 
@@ -6560,8 +6507,8 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.addAssignedAppIdFilter = f
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
  */
-proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearAssignedAppIdFilterList = function() {
-  return this.setAssignedAppIdFilterList([]);
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearAssignedAppInfoIdFilterList = function() {
+  return this.setAssignedAppInfoIdFilterList([]);
 };
 
 
