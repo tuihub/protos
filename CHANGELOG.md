@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1](https://github.com/tuihub/protos/compare/v0.4.0...v0.4.1) (2024-02-16)
+
+
+### Bug Fixes
+
+* **gebura:** update field names ([92e81a9](https://github.com/tuihub/protos/commit/92e81a9ab98e38ef32713a8799b0c536419128b4))
+* **gebura:** update SyncAppInfos ([c0220b7](https://github.com/tuihub/protos/commit/c0220b7e263ecb05425928c0c9cce1277682ac5b))
+
 ## [0.4.0](https://github.com/tuihub/protos/compare/v0.3.10...v0.4.0) (2024-02-15)
 
 
