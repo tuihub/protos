@@ -16,11 +16,11 @@ enum WellKnownAccountPlatform {
   WELL_KNOWN_ACCOUNT_PLATFORM_STEAM = 1 [(to_string) = "steam"];
 }
 
-enum WellKnownAppSource {
-  WELL_KNOWN_APP_SOURCE_UNSPECIFIED = 0 [(to_string) = ""];
-  WELL_KNOWN_APP_SOURCE_STEAM = 2 [(to_string) = "steam"];
-  WELL_KNOWN_APP_SOURCE_VNDB = 3 [(to_string) = "vndb"];
-  WELL_KNOWN_APP_SOURCE_BANGUMI = 4 [(to_string) = "bangumi"];
+enum WellKnownAppInfoSource {
+  WELL_KNOWN_APP_INFO_SOURCE_UNSPECIFIED = 0 [(to_string) = ""];
+  WELL_KNOWN_APP_INFO_SOURCE_STEAM = 2 [(to_string) = "steam"];
+  WELL_KNOWN_APP_INFO_SOURCE_VNDB = 3 [(to_string) = "vndb"];
+  WELL_KNOWN_APP_INFO_SOURCE_BANGUMI = 4 [(to_string) = "bangumi"];
 }
 
 enum WellKnownFeedSource {

@@ -80,7 +80,7 @@ message AppInfo {
   InternalID id = 1;
   // ignore `source` and `source_app_id` when `internal` is true
   bool internal = 2;
-  // WellKnownAppSource
+  // WellKnownAppInfoSource
   string source = 3;
   string source_app_id = 4;
   optional string source_url = 5;
@@ -120,7 +120,7 @@ message AppInfoMixed {
 
 message AppInfoID {
   bool internal = 1;
-  // WellKnownAppSource
+  // WellKnownAppInfoSource
   string source = 2;
   string source_app_id = 3;
 }

@@ -92,7 +92,7 @@ message GetAppInfoResponse {
 }
 
 message GetBoundAppInfosRequest {
-  librarian.v1.InternalID app_id = 1;
+  librarian.v1.InternalID app_info_id = 1;
 }
 
 message GetBoundAppInfosResponse {
@@ -102,7 +102,7 @@ message GetBoundAppInfosResponse {
 message PurchaseAppInfoRequest {
   // When `internal` is true, `source_app_id` must be valid InternalID.
   // When `internal` is false, Server should create that app and return no matter the source is supported.
-  librarian.v1.AppInfoID app_id = 1;
+  librarian.v1.AppInfoID app_info_id = 1;
 }
 
 message PurchaseAppInfoResponse {
@@ -134,9 +134,8 @@ message UpdateAppResponse {}
 
 message ListAppsRequest {
   librarian.v1.PagingRequest paging = 1;
-  repeated librarian.v1.InternalID device_id_filter = 2;
   repeated librarian.v1.InternalID id_filter = 3;
-  repeated librarian.v1.InternalID assigned_app_id_filter = 4;
+  repeated librarian.v1.InternalID assigned_app_info_id_filter = 4;
 }
 
 message ListAppsResponse {

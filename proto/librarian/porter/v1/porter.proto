@@ -45,7 +45,7 @@ message PorterFeatureSummary {
     repeated librarian.v1.AccountAppRelationType app_relation_types = 2;
   }
   repeated Account supported_accounts = 1;
-  repeated string supported_app_sources = 2;
+  repeated string supported_app_info_sources = 2;
   repeated string supported_feed_sources = 3;
   repeated string supported_notify_destinations = 4;
 }
