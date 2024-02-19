@@ -134,13 +134,16 @@ message UpdateAppResponse {}
 
 message ListAppsRequest {
   librarian.v1.PagingRequest paging = 1;
+  // List owned apps by default.
+  // Used to get other's **public** apps.
+  repeated librarian.v1.InternalID owner_id_filter = 2;
   repeated librarian.v1.InternalID id_filter = 3;
   repeated librarian.v1.InternalID assigned_app_info_id_filter = 4;
 }
 
 message ListAppsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated App app_packages = 2;
+  repeated App apps = 2;
 }
 
 message ReportAppBinariesRequest {
