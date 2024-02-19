@@ -403,6 +403,7 @@ const ListAppsRequest$json = {
   '1': 'ListAppsRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'owner_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ownerIdFilter'},
     {'1': 'id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
     {'1': 'assigned_app_info_id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'assignedAppInfoIdFilter'},
   ],
@@ -411,24 +412,26 @@ const ListAppsRequest$json = {
 /// Descriptor for `ListAppsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0QXBwc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
-    'JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu'
-    'YWxJRFIIaWRGaWx0ZXISVgobYXNzaWduZWRfYXBwX2luZm9faWRfZmlsdGVyGAQgAygLMhgubG'
-    'licmFyaWFuLnYxLkludGVybmFsSURSF2Fzc2lnbmVkQXBwSW5mb0lkRmlsdGVy');
+    'JlcXVlc3RSBnBhZ2luZxJACg9vd25lcl9pZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEu'
+    'SW50ZXJuYWxJRFINb3duZXJJZEZpbHRlchI1CglpZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW'
+    '4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISVgobYXNzaWduZWRfYXBwX2luZm9faWRfZmlsdGVy'
+    'GAQgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSF2Fzc2lnbmVkQXBwSW5mb0lkRmlsdG'
+    'Vy');
 
 @$core.Deprecated('Use listAppsResponseDescriptor instead')
 const ListAppsResponse$json = {
   '1': 'ListAppsResponse',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'app_packages', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.App', '10': 'appPackages'},
+    {'1': 'apps', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.App', '10': 'apps'},
   ],
 };
 
 /// Descriptor for `ListAppsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
     'ChBMaXN0QXBwc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbm'
-    'dSZXNwb25zZVIGcGFnaW5nEj0KDGFwcF9wYWNrYWdlcxgCIAMoCzIaLmxpYnJhcmlhbi5zZXBo'
-    'aXJhaC52MS5BcHBSC2FwcFBhY2thZ2Vz');
+    'dSZXNwb25zZVIGcGFnaW5nEi4KBGFwcHMYAiADKAsyGi5saWJyYXJpYW4uc2VwaGlyYWgudjEu'
+    'QXBwUgRhcHBz');
 
 @$core.Deprecated('Use reportAppBinariesRequestDescriptor instead')
 const ReportAppBinariesRequest$json = {

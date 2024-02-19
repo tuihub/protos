@@ -490,6 +490,82 @@ class RegisterDeviceResponse extends $pb.GeneratedMessage {
   $7.InternalID ensureDeviceId() => $_ensure(0);
 }
 
+class ListRegisteredDevicesRequest extends $pb.GeneratedMessage {
+  factory ListRegisteredDevicesRequest() => create();
+  ListRegisteredDevicesRequest._() : super();
+  factory ListRegisteredDevicesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRegisteredDevicesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegisteredDevicesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRegisteredDevicesRequest clone() => ListRegisteredDevicesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRegisteredDevicesRequest copyWith(void Function(ListRegisteredDevicesRequest) updates) => super.copyWith((message) => updates(message as ListRegisteredDevicesRequest)) as ListRegisteredDevicesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRegisteredDevicesRequest create() => ListRegisteredDevicesRequest._();
+  ListRegisteredDevicesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListRegisteredDevicesRequest> createRepeated() => $pb.PbList<ListRegisteredDevicesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListRegisteredDevicesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRegisteredDevicesRequest>(create);
+  static ListRegisteredDevicesRequest? _defaultInstance;
+}
+
+class ListRegisteredDevicesResponse extends $pb.GeneratedMessage {
+  factory ListRegisteredDevicesResponse({
+    $core.Iterable<DeviceInfo>? devices,
+  }) {
+    final $result = create();
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
+    return $result;
+  }
+  ListRegisteredDevicesResponse._() : super();
+  factory ListRegisteredDevicesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListRegisteredDevicesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegisteredDevicesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<DeviceInfo>(1, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: DeviceInfo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListRegisteredDevicesResponse clone() => ListRegisteredDevicesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListRegisteredDevicesResponse copyWith(void Function(ListRegisteredDevicesResponse) updates) => super.copyWith((message) => updates(message as ListRegisteredDevicesResponse)) as ListRegisteredDevicesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListRegisteredDevicesResponse create() => ListRegisteredDevicesResponse._();
+  ListRegisteredDevicesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListRegisteredDevicesResponse> createRepeated() => $pb.PbList<ListRegisteredDevicesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListRegisteredDevicesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRegisteredDevicesResponse>(create);
+  static ListRegisteredDevicesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<DeviceInfo> get devices => $_getList(0);
+}
+
 class ListUserSessionsRequest extends $pb.GeneratedMessage {
   factory ListUserSessionsRequest() => create();
   ListUserSessionsRequest._() : super();

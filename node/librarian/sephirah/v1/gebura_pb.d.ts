@@ -652,6 +652,11 @@ export class ListAppsRequest extends jspb.Message {
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
+  clearOwnerIdFilterList(): void;
+  getOwnerIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setOwnerIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addOwnerIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
   clearIdFilterList(): void;
   getIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
   setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
@@ -675,6 +680,7 @@ export class ListAppsRequest extends jspb.Message {
 export namespace ListAppsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    ownerIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     assignedAppInfoIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
@@ -686,10 +692,10 @@ export class ListAppsResponse extends jspb.Message {
   getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
 
-  clearAppPackagesList(): void;
-  getAppPackagesList(): Array<App>;
-  setAppPackagesList(value: Array<App>): void;
-  addAppPackages(value?: App, index?: number): App;
+  clearAppsList(): void;
+  getAppsList(): Array<App>;
+  setAppsList(value: Array<App>): void;
+  addApps(value?: App, index?: number): App;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppsResponse.AsObject;
@@ -704,7 +710,7 @@ export class ListAppsResponse extends jspb.Message {
 export namespace ListAppsResponse {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingResponse.AsObject,
-    appPackagesList: Array<App.AsObject>,
+    appsList: Array<App.AsObject>,
   }
 }
 

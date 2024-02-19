@@ -6254,7 +6254,7 @@ proto.librarian.sephirah.v1.UpdateAppResponse.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListAppsRequest.repeatedFields_ = [3,4];
+proto.librarian.sephirah.v1.ListAppsRequest.repeatedFields_ = [2,3,4];
 
 
 
@@ -6288,6 +6288,8 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.toObject = function(opt_in
 proto.librarian.sephirah.v1.ListAppsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    ownerIdFilterList: jspb.Message.toObjectList(msg.getOwnerIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
     assignedAppInfoIdFilterList: jspb.Message.toObjectList(msg.getAssignedAppInfoIdFilterList(),
@@ -6332,6 +6334,11 @@ proto.librarian.sephirah.v1.ListAppsRequest.deserializeBinaryFromReader = functi
       var value = new librarian_v1_common_pb.PagingRequest;
       reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
       msg.setPaging(value);
+      break;
+    case 2:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addOwnerIdFilter(value);
       break;
     case 3:
       var value = new librarian_v1_common_pb.InternalID;
@@ -6378,6 +6385,14 @@ proto.librarian.sephirah.v1.ListAppsRequest.serializeBinaryToWriter = function(m
       1,
       f,
       librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getOwnerIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
   f = message.getIdFilterList();
@@ -6433,6 +6448,44 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearPaging = function() {
  */
 proto.librarian.sephirah.v1.ListAppsRequest.prototype.hasPaging = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated librarian.v1.InternalID owner_id_filter = 2;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.getOwnerIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.setOwnerIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.addOwnerIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListAppsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListAppsRequest.prototype.clearOwnerIdFilterList = function() {
+  return this.setOwnerIdFilterList([]);
 };
 
 
@@ -6552,7 +6605,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.toObject = function(opt_i
 proto.librarian.sephirah.v1.ListAppsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    appPackagesList: jspb.Message.toObjectList(msg.getAppPackagesList(),
+    appsList: jspb.Message.toObjectList(msg.getAppsList(),
     proto.librarian.sephirah.v1.App.toObject, includeInstance)
   };
 
@@ -6598,7 +6651,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.deserializeBinaryFromReader = funct
     case 2:
       var value = new proto.librarian.sephirah.v1.App;
       reader.readMessage(value,proto.librarian.sephirah.v1.App.deserializeBinaryFromReader);
-      msg.addAppPackages(value);
+      msg.addApps(value);
       break;
     default:
       reader.skipField();
@@ -6637,7 +6690,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.serializeBinaryToWriter = function(
       librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
     );
   }
-  f = message.getAppPackagesList();
+  f = message.getAppsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -6686,10 +6739,10 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.hasPaging = function() {
 
 
 /**
- * repeated App app_packages = 2;
+ * repeated App apps = 2;
  * @return {!Array<!proto.librarian.sephirah.v1.App>}
  */
-proto.librarian.sephirah.v1.ListAppsResponse.prototype.getAppPackagesList = function() {
+proto.librarian.sephirah.v1.ListAppsResponse.prototype.getAppsList = function() {
   return /** @type{!Array<!proto.librarian.sephirah.v1.App>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.App, 2));
 };
@@ -6699,7 +6752,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.getAppPackagesList = func
  * @param {!Array<!proto.librarian.sephirah.v1.App>} value
  * @return {!proto.librarian.sephirah.v1.ListAppsResponse} returns this
 */
-proto.librarian.sephirah.v1.ListAppsResponse.prototype.setAppPackagesList = function(value) {
+proto.librarian.sephirah.v1.ListAppsResponse.prototype.setAppsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -6709,7 +6762,7 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.setAppPackagesList = func
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.App}
  */
-proto.librarian.sephirah.v1.ListAppsResponse.prototype.addAppPackages = function(opt_value, opt_index) {
+proto.librarian.sephirah.v1.ListAppsResponse.prototype.addApps = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.App, opt_index);
 };
 
@@ -6718,8 +6771,8 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.addAppPackages = function
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ListAppsResponse} returns this
  */
-proto.librarian.sephirah.v1.ListAppsResponse.prototype.clearAppPackagesList = function() {
-  return this.setAppPackagesList([]);
+proto.librarian.sephirah.v1.ListAppsResponse.prototype.clearAppsList = function() {
+  return this.setAppsList([]);
 };
 
 

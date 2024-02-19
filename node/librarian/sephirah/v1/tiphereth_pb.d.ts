@@ -191,6 +191,44 @@ export namespace RegisterDeviceResponse {
   }
 }
 
+export class ListRegisteredDevicesRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRegisteredDevicesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRegisteredDevicesRequest): ListRegisteredDevicesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRegisteredDevicesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRegisteredDevicesRequest;
+  static deserializeBinaryFromReader(message: ListRegisteredDevicesRequest, reader: jspb.BinaryReader): ListRegisteredDevicesRequest;
+}
+
+export namespace ListRegisteredDevicesRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListRegisteredDevicesResponse extends jspb.Message {
+  clearDevicesList(): void;
+  getDevicesList(): Array<DeviceInfo>;
+  setDevicesList(value: Array<DeviceInfo>): void;
+  addDevices(value?: DeviceInfo, index?: number): DeviceInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListRegisteredDevicesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListRegisteredDevicesResponse): ListRegisteredDevicesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListRegisteredDevicesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListRegisteredDevicesResponse;
+  static deserializeBinaryFromReader(message: ListRegisteredDevicesResponse, reader: jspb.BinaryReader): ListRegisteredDevicesResponse;
+}
+
+export namespace ListRegisteredDevicesResponse {
+  export type AsObject = {
+    devicesList: Array<DeviceInfo.AsObject>,
+  }
+}
+
 export class ListUserSessionsRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserSessionsRequest.AsObject;

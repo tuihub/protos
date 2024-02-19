@@ -24,6 +24,7 @@ const (
 	LibrarianSephirahService_RefreshToken_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
 	LibrarianSephirahService_GainUserPrivilege_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege"
 	LibrarianSephirahService_RegisterDevice_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice"
+	LibrarianSephirahService_ListRegisteredDevices_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/ListRegisteredDevices"
 	LibrarianSephirahService_ListUserSessions_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions"
 	LibrarianSephirahService_DeleteUserSession_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession"
 	LibrarianSephirahService_CreateUser_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/CreateUser"
@@ -128,9 +129,12 @@ type LibrarianSephirahServiceClient interface {
 	// The server could add extra limits to non-registered device
 	RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error)
 	// `Tiphereth` `Normal`
+	ListRegisteredDevices(ctx context.Context, in *ListRegisteredDevicesRequest, opts ...grpc.CallOption) (*ListRegisteredDevicesResponse, error)
+	// `Tiphereth` `Normal`
 	ListUserSessions(ctx context.Context, in *ListUserSessionsRequest, opts ...grpc.CallOption) (*ListUserSessionsResponse, error)
 	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
-	// NOTE: This can also be used to logout on server side.
+	// NOTE: This can also be used to log out at server side.
+	// NOTE2: Delete session will not affect device registration.
 	DeleteUserSession(ctx context.Context, in *DeleteUserSessionRequest, opts ...grpc.CallOption) (*DeleteUserSessionResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
@@ -369,6 +373,15 @@ func (c *librarianSephirahServiceClient) GainUserPrivilege(ctx context.Context, 
 func (c *librarianSephirahServiceClient) RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error) {
 	out := new(RegisterDeviceResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_RegisterDevice_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListRegisteredDevices(ctx context.Context, in *ListRegisteredDevicesRequest, opts ...grpc.CallOption) (*ListRegisteredDevicesResponse, error) {
+	out := new(ListRegisteredDevicesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListRegisteredDevices_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1246,9 +1259,12 @@ type LibrarianSephirahServiceServer interface {
 	// The server could add extra limits to non-registered device
 	RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error)
 	// `Tiphereth` `Normal`
+	ListRegisteredDevices(context.Context, *ListRegisteredDevicesRequest) (*ListRegisteredDevicesResponse, error)
+	// `Tiphereth` `Normal`
 	ListUserSessions(context.Context, *ListUserSessionsRequest) (*ListUserSessionsResponse, error)
 	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
-	// NOTE: This can also be used to logout on server side.
+	// NOTE: This can also be used to log out at server side.
+	// NOTE2: Delete session will not affect device registration.
 	DeleteUserSession(context.Context, *DeleteUserSessionRequest) (*DeleteUserSessionResponse, error)
 	// `Tiphereth` `Admin` `Normal limited`
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
@@ -1459,6 +1475,9 @@ func (UnimplementedLibrarianSephirahServiceServer) GainUserPrivilege(context.Con
 }
 func (UnimplementedLibrarianSephirahServiceServer) RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterDevice not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListRegisteredDevices(context.Context, *ListRegisteredDevicesRequest) (*ListRegisteredDevicesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListRegisteredDevices not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListUserSessions(context.Context, *ListUserSessionsRequest) (*ListUserSessionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUserSessions not implemented")
@@ -1815,6 +1834,24 @@ func _LibrarianSephirahService_RegisterDevice_Handler(srv interface{}, ctx conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).RegisterDevice(ctx, req.(*RegisterDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListRegisteredDevices_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListRegisteredDevicesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListRegisteredDevices(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListRegisteredDevices_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListRegisteredDevices(ctx, req.(*ListRegisteredDevicesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3402,6 +3439,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterDevice",
 			Handler:    _LibrarianSephirahService_RegisterDevice_Handler,
+		},
+		{
+			MethodName: "ListRegisteredDevices",
+			Handler:    _LibrarianSephirahService_ListRegisteredDevices_Handler,
 		},
 		{
 			MethodName: "ListUserSessions",

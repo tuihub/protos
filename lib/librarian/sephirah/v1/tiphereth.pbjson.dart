@@ -202,6 +202,28 @@ final $typed_data.Uint8List registerDeviceResponseDescriptor = $convert.base64De
     'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
     '52MS5JbnRlcm5hbElEUghkZXZpY2VJZA==');
 
+@$core.Deprecated('Use listRegisteredDevicesRequestDescriptor instead')
+const ListRegisteredDevicesRequest$json = {
+  '1': 'ListRegisteredDevicesRequest',
+};
+
+/// Descriptor for `ListRegisteredDevicesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRegisteredDevicesRequestDescriptor = $convert.base64Decode(
+    'ChxMaXN0UmVnaXN0ZXJlZERldmljZXNSZXF1ZXN0');
+
+@$core.Deprecated('Use listRegisteredDevicesResponseDescriptor instead')
+const ListRegisteredDevicesResponse$json = {
+  '1': 'ListRegisteredDevicesResponse',
+  '2': [
+    {'1': 'devices', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.DeviceInfo', '10': 'devices'},
+  ],
+};
+
+/// Descriptor for `ListRegisteredDevicesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listRegisteredDevicesResponseDescriptor = $convert.base64Decode(
+    'Ch1MaXN0UmVnaXN0ZXJlZERldmljZXNSZXNwb25zZRI7CgdkZXZpY2VzGAEgAygLMiEubGlicm'
+    'FyaWFuLnNlcGhpcmFoLnYxLkRldmljZUluZm9SB2RldmljZXM=');
+
 @$core.Deprecated('Use listUserSessionsRequestDescriptor instead')
 const ListUserSessionsRequest$json = {
   '1': 'ListUserSessionsRequest',

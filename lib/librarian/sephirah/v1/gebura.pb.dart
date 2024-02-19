@@ -1473,12 +1473,16 @@ class UpdateAppResponse extends $pb.GeneratedMessage {
 class ListAppsRequest extends $pb.GeneratedMessage {
   factory ListAppsRequest({
     $7.PagingRequest? paging,
+    $core.Iterable<$7.InternalID>? ownerIdFilter,
     $core.Iterable<$7.InternalID>? idFilter,
     $core.Iterable<$7.InternalID>? assignedAppInfoIdFilter,
   }) {
     final $result = create();
     if (paging != null) {
       $result.paging = paging;
+    }
+    if (ownerIdFilter != null) {
+      $result.ownerIdFilter.addAll(ownerIdFilter);
     }
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
@@ -1494,6 +1498,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'ownerIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..pc<$7.InternalID>(4, _omitFieldNames ? '' : 'assignedAppInfoIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
@@ -1531,24 +1536,29 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.PagingRequest ensurePaging() => $_ensure(0);
 
+  /// List owned apps by default.
+  /// Used to get other's **public** apps.
+  @$pb.TagNumber(2)
+  $core.List<$7.InternalID> get ownerIdFilter => $_getList(1);
+
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get idFilter => $_getList(1);
+  $core.List<$7.InternalID> get idFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$7.InternalID> get assignedAppInfoIdFilter => $_getList(2);
+  $core.List<$7.InternalID> get assignedAppInfoIdFilter => $_getList(3);
 }
 
 class ListAppsResponse extends $pb.GeneratedMessage {
   factory ListAppsResponse({
     $7.PagingResponse? paging,
-    $core.Iterable<App>? appPackages,
+    $core.Iterable<App>? apps,
   }) {
     final $result = create();
     if (paging != null) {
       $result.paging = paging;
     }
-    if (appPackages != null) {
-      $result.appPackages.addAll(appPackages);
+    if (apps != null) {
+      $result.apps.addAll(apps);
     }
     return $result;
   }
@@ -1558,7 +1568,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
-    ..pc<App>(2, _omitFieldNames ? '' : 'appPackages', $pb.PbFieldType.PM, subBuilder: App.create)
+    ..pc<App>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM, subBuilder: App.create)
     ..hasRequiredFields = false
   ;
 
@@ -1595,7 +1605,7 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   $7.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<App> get appPackages => $_getList(1);
+  $core.List<App> get apps => $_getList(1);
 }
 
 class ReportAppBinariesRequest extends $pb.GeneratedMessage {
