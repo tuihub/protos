@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.2](https://github.com/tuihub/protos/compare/v0.4.1...v0.4.2) (2024-02-19)
+
+
+### Bug Fixes
+
+* **gebura:** update ListApps ([3b96c6a](https://github.com/tuihub/protos/commit/3b96c6afed5f66d28ed197108a8064c4de753b1a))
+* **tiphereth:** add ListRegisteredDevices ([9ae385b](https://github.com/tuihub/protos/commit/9ae385b2935f11b5230b92f1c2682ca7274d260d))
+
 ## [0.4.1](https://github.com/tuihub/protos/compare/v0.4.0...v0.4.1) (2024-02-16)
 
 
