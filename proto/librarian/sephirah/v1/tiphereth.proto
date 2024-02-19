@@ -48,6 +48,11 @@ message RegisterDeviceResponse {
   librarian.v1.InternalID device_id = 1;
 }
 
+message ListRegisteredDevicesRequest {}
+message ListRegisteredDevicesResponse {
+  repeated DeviceInfo devices = 1;
+}
+
 message ListUserSessionsRequest {}
 message ListUserSessionsResponse {
   repeated UserSession sessions = 1;
