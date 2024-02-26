@@ -121,7 +121,7 @@ const SearchIDRequest$json = {
   '1': 'SearchIDRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'keyword', '3': 2, '4': 1, '5': 9, '10': 'keyword'},
+    {'1': 'query', '3': 2, '4': 1, '5': 9, '10': 'query'},
     {'1': 'index', '3': 3, '4': 1, '5': 14, '6': '.librarian.searcher.v1.Index', '10': 'index'},
   ],
 };
@@ -129,8 +129,8 @@ const SearchIDRequest$json = {
 /// Descriptor for `SearchIDRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchIDRequestDescriptor = $convert.base64Decode(
     'Cg9TZWFyY2hJRFJlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
-    'JlcXVlc3RSBnBhZ2luZxIYCgdrZXl3b3JkGAIgASgJUgdrZXl3b3JkEjIKBWluZGV4GAMgASgO'
-    'MhwubGlicmFyaWFuLnNlYXJjaGVyLnYxLkluZGV4UgVpbmRleA==');
+    'JlcXVlc3RSBnBhZ2luZxIUCgVxdWVyeRgCIAEoCVIFcXVlcnkSMgoFaW5kZXgYAyABKA4yHC5s'
+    'aWJyYXJpYW4uc2VhcmNoZXIudjEuSW5kZXhSBWluZGV4');
 
 @$core.Deprecated('Use searchIDResponseDescriptor instead')
 const SearchIDResponse$json = {
@@ -157,4 +157,29 @@ final $typed_data.Uint8List searchIDResponseDescriptor = $convert.base64Decode(
     'dSZXNwb25zZVIGcGFnaW5nEkYKBnJlc3VsdBgCIAMoCzIuLmxpYnJhcmlhbi5zZWFyY2hlci52'
     'MS5TZWFyY2hJRFJlc3BvbnNlLlJlc3VsdFIGcmVzdWx0GkYKBlJlc3VsdBIoCgJpZBgBIAEoCz'
     'IYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRyYW5rGAIgASgDUgRyYW5r');
+
+@$core.Deprecated('Use searchAppInfoRequestDescriptor instead')
+const SearchAppInfoRequest$json = {
+  '1': 'SearchAppInfoRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+  ],
+};
+
+/// Descriptor for `SearchAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchAppInfoRequestDescriptor = $convert.base64Decode(
+    'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+
+@$core.Deprecated('Use searchAppInfoResponseDescriptor instead')
+const SearchAppInfoResponse$json = {
+  '1': 'SearchAppInfoResponse',
+  '2': [
+    {'1': 'app_infos', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.AppInfo', '10': 'appInfos'},
+  ],
+};
+
+/// Descriptor for `SearchAppInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchAppInfoResponseDescriptor = $convert.base64Decode(
+    'ChVTZWFyY2hBcHBJbmZvUmVzcG9uc2USMgoJYXBwX2luZm9zGAEgAygLMhUubGlicmFyaWFuLn'
+    'YxLkFwcEluZm9SCGFwcEluZm9z');
 

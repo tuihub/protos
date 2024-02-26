@@ -71,6 +71,28 @@ function deserialize_librarian_searcher_v1_NewIDResponse(buffer_arg) {
   return librarian_searcher_v1_searcher_pb.NewIDResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_searcher_v1_SearchAppInfoRequest(arg) {
+  if (!(arg instanceof librarian_searcher_v1_searcher_pb.SearchAppInfoRequest)) {
+    throw new Error('Expected argument of type librarian.searcher.v1.SearchAppInfoRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_searcher_v1_SearchAppInfoRequest(buffer_arg) {
+  return librarian_searcher_v1_searcher_pb.SearchAppInfoRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_searcher_v1_SearchAppInfoResponse(arg) {
+  if (!(arg instanceof librarian_searcher_v1_searcher_pb.SearchAppInfoResponse)) {
+    throw new Error('Expected argument of type librarian.searcher.v1.SearchAppInfoResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_searcher_v1_SearchAppInfoResponse(buffer_arg) {
+  return librarian_searcher_v1_searcher_pb.SearchAppInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_searcher_v1_SearchIDRequest(arg) {
   if (!(arg instanceof librarian_searcher_v1_searcher_pb.SearchIDRequest)) {
     throw new Error('Expected argument of type librarian.searcher.v1.SearchIDRequest');
@@ -145,6 +167,18 @@ var LibrarianSearcherServiceService = exports.LibrarianSearcherServiceService = 
     requestDeserialize: deserialize_librarian_searcher_v1_SearchIDRequest,
     responseSerialize: serialize_librarian_searcher_v1_SearchIDResponse,
     responseDeserialize: deserialize_librarian_searcher_v1_SearchIDResponse,
+  },
+  // SearchAppInfo searches Game ID Connector datasets
+searchAppInfo: {
+    path: '/librarian.searcher.v1.LibrarianSearcherService/SearchAppInfo',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_searcher_v1_searcher_pb.SearchAppInfoRequest,
+    responseType: librarian_searcher_v1_searcher_pb.SearchAppInfoResponse,
+    requestSerialize: serialize_librarian_searcher_v1_SearchAppInfoRequest,
+    requestDeserialize: deserialize_librarian_searcher_v1_SearchAppInfoRequest,
+    responseSerialize: serialize_librarian_searcher_v1_SearchAppInfoResponse,
+    responseDeserialize: deserialize_librarian_searcher_v1_SearchAppInfoResponse,
   },
 };
 

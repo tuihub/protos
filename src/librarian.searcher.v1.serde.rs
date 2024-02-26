@@ -717,6 +717,189 @@ impl<'de> serde::Deserialize<'de> for NewIdResponse {
         deserializer.deserialize_struct("librarian.searcher.v1.NewIDResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for SearchAppInfoRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.SearchAppInfoRequest", len)?;
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SearchAppInfoRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "name",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Name,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "name" => Ok(GeneratedField::Name),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SearchAppInfoRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.searcher.v1.SearchAppInfoRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfoRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut name__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(SearchAppInfoRequest {
+                    name: name__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.searcher.v1.SearchAppInfoRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SearchAppInfoResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.app_infos.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.SearchAppInfoResponse", len)?;
+        if !self.app_infos.is_empty() {
+            struct_ser.serialize_field("appInfos", &self.app_infos)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SearchAppInfoResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_infos",
+            "appInfos",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInfos,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SearchAppInfoResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.searcher.v1.SearchAppInfoResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfoResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_infos__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::AppInfos => {
+                            if app_infos__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfos"));
+                            }
+                            app_infos__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(SearchAppInfoResponse {
+                    app_infos: app_infos__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.searcher.v1.SearchAppInfoResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for SearchIdRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -728,7 +911,7 @@ impl serde::Serialize for SearchIdRequest {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.keyword.is_empty() {
+        if !self.query.is_empty() {
             len += 1;
         }
         if self.index != 0 {
@@ -738,8 +921,8 @@ impl serde::Serialize for SearchIdRequest {
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.keyword.is_empty() {
-            struct_ser.serialize_field("keyword", &self.keyword)?;
+        if !self.query.is_empty() {
+            struct_ser.serialize_field("query", &self.query)?;
         }
         if self.index != 0 {
             let v = Index::from_i32(self.index)
@@ -757,14 +940,14 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "keyword",
+            "query",
             "index",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            Keyword,
+            Query,
             Index,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -788,7 +971,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "keyword" => Ok(GeneratedField::Keyword),
+                            "query" => Ok(GeneratedField::Query),
                             "index" => Ok(GeneratedField::Index),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -810,7 +993,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut keyword__ = None;
+                let mut query__ = None;
                 let mut index__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
@@ -820,11 +1003,11 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                             }
                             paging__ = map.next_value()?;
                         }
-                        GeneratedField::Keyword => {
-                            if keyword__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("keyword"));
+                        GeneratedField::Query => {
+                            if query__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("query"));
                             }
-                            keyword__ = Some(map.next_value()?);
+                            query__ = Some(map.next_value()?);
                         }
                         GeneratedField::Index => {
                             if index__.is_some() {
@@ -836,7 +1019,7 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                 }
                 Ok(SearchIdRequest {
                     paging: paging__,
-                    keyword: keyword__.unwrap_or_default(),
+                    query: query__.unwrap_or_default(),
                     index: index__.unwrap_or_default(),
                 })
             }

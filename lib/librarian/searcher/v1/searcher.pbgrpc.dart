@@ -37,6 +37,10 @@ class LibrarianSearcherServiceClient extends $grpc.Client {
       '/librarian.searcher.v1.LibrarianSearcherService/SearchID',
       ($0.SearchIDRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.SearchIDResponse.fromBuffer(value));
+  static final _$searchAppInfo = $grpc.ClientMethod<$0.SearchAppInfoRequest, $0.SearchAppInfoResponse>(
+      '/librarian.searcher.v1.LibrarianSearcherService/SearchAppInfo',
+      ($0.SearchAppInfoRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.SearchAppInfoResponse.fromBuffer(value));
 
   LibrarianSearcherServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -58,6 +62,10 @@ class LibrarianSearcherServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.SearchIDResponse> searchID($0.SearchIDRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchID, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SearchAppInfoResponse> searchAppInfo($0.SearchAppInfoRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchAppInfo, request, options: options);
   }
 }
 
@@ -94,6 +102,13 @@ abstract class LibrarianSearcherServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.SearchIDRequest.fromBuffer(value),
         ($0.SearchIDResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SearchAppInfoRequest, $0.SearchAppInfoResponse>(
+        'SearchAppInfo',
+        searchAppInfo_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.SearchAppInfoRequest.fromBuffer(value),
+        ($0.SearchAppInfoResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.NewIDResponse> newID_Pre($grpc.ServiceCall call, $async.Future<$0.NewIDRequest> request) async {
@@ -112,8 +127,13 @@ abstract class LibrarianSearcherServiceBase extends $grpc.Service {
     return searchID(call, await request);
   }
 
+  $async.Future<$0.SearchAppInfoResponse> searchAppInfo_Pre($grpc.ServiceCall call, $async.Future<$0.SearchAppInfoRequest> request) async {
+    return searchAppInfo(call, await request);
+  }
+
   $async.Future<$0.NewIDResponse> newID($grpc.ServiceCall call, $0.NewIDRequest request);
   $async.Future<$0.NewBatchIDsResponse> newBatchIDs($grpc.ServiceCall call, $0.NewBatchIDsRequest request);
   $async.Future<$0.DescribeIDResponse> describeID($grpc.ServiceCall call, $0.DescribeIDRequest request);
   $async.Future<$0.SearchIDResponse> searchID($grpc.ServiceCall call, $0.SearchIDRequest request);
+  $async.Future<$0.SearchAppInfoResponse> searchAppInfo($grpc.ServiceCall call, $0.SearchAppInfoRequest request);
 }

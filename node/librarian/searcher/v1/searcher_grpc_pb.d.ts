@@ -11,6 +11,7 @@ interface ILibrarianSearcherServiceService extends grpc.ServiceDefinition<grpc.U
   newBatchIDs: grpc.MethodDefinition<librarian_searcher_v1_searcher_pb.NewBatchIDsRequest, librarian_searcher_v1_searcher_pb.NewBatchIDsResponse>;
   describeID: grpc.MethodDefinition<librarian_searcher_v1_searcher_pb.DescribeIDRequest, librarian_searcher_v1_searcher_pb.DescribeIDResponse>;
   searchID: grpc.MethodDefinition<librarian_searcher_v1_searcher_pb.SearchIDRequest, librarian_searcher_v1_searcher_pb.SearchIDResponse>;
+  searchAppInfo: grpc.MethodDefinition<librarian_searcher_v1_searcher_pb.SearchAppInfoRequest, librarian_searcher_v1_searcher_pb.SearchAppInfoResponse>;
 }
 
 export const LibrarianSearcherServiceService: ILibrarianSearcherServiceService;
@@ -20,6 +21,7 @@ export interface ILibrarianSearcherServiceServer extends grpc.UntypedServiceImpl
   newBatchIDs: grpc.handleUnaryCall<librarian_searcher_v1_searcher_pb.NewBatchIDsRequest, librarian_searcher_v1_searcher_pb.NewBatchIDsResponse>;
   describeID: grpc.handleUnaryCall<librarian_searcher_v1_searcher_pb.DescribeIDRequest, librarian_searcher_v1_searcher_pb.DescribeIDResponse>;
   searchID: grpc.handleUnaryCall<librarian_searcher_v1_searcher_pb.SearchIDRequest, librarian_searcher_v1_searcher_pb.SearchIDResponse>;
+  searchAppInfo: grpc.handleUnaryCall<librarian_searcher_v1_searcher_pb.SearchAppInfoRequest, librarian_searcher_v1_searcher_pb.SearchAppInfoResponse>;
 }
 
 export class LibrarianSearcherServiceClient extends grpc.Client {
@@ -36,4 +38,7 @@ export class LibrarianSearcherServiceClient extends grpc.Client {
   searchID(argument: librarian_searcher_v1_searcher_pb.SearchIDRequest, callback: grpc.requestCallback<librarian_searcher_v1_searcher_pb.SearchIDResponse>): grpc.ClientUnaryCall;
   searchID(argument: librarian_searcher_v1_searcher_pb.SearchIDRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_searcher_v1_searcher_pb.SearchIDResponse>): grpc.ClientUnaryCall;
   searchID(argument: librarian_searcher_v1_searcher_pb.SearchIDRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_searcher_v1_searcher_pb.SearchIDResponse>): grpc.ClientUnaryCall;
+  searchAppInfo(argument: librarian_searcher_v1_searcher_pb.SearchAppInfoRequest, callback: grpc.requestCallback<librarian_searcher_v1_searcher_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
+  searchAppInfo(argument: librarian_searcher_v1_searcher_pb.SearchAppInfoRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_searcher_v1_searcher_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
+  searchAppInfo(argument: librarian_searcher_v1_searcher_pb.SearchAppInfoRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_searcher_v1_searcher_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
 }

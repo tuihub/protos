@@ -148,8 +148,8 @@ export class SearchIDRequest extends jspb.Message {
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
-  getKeyword(): string;
-  setKeyword(value: string): void;
+  getQuery(): string;
+  setQuery(value: string): void;
 
   getIndex(): IndexMap[keyof IndexMap];
   setIndex(value: IndexMap[keyof IndexMap]): void;
@@ -167,7 +167,7 @@ export class SearchIDRequest extends jspb.Message {
 export namespace SearchIDRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
-    keyword: string,
+    query: string,
     index: IndexMap[keyof IndexMap],
   }
 }
@@ -223,6 +223,48 @@ export namespace SearchIDResponse {
       id?: librarian_v1_common_pb.InternalID.AsObject,
       rank: number,
     }
+  }
+}
+
+export class SearchAppInfoRequest extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchAppInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchAppInfoRequest): SearchAppInfoRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchAppInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchAppInfoRequest;
+  static deserializeBinaryFromReader(message: SearchAppInfoRequest, reader: jspb.BinaryReader): SearchAppInfoRequest;
+}
+
+export namespace SearchAppInfoRequest {
+  export type AsObject = {
+    name: string,
+  }
+}
+
+export class SearchAppInfoResponse extends jspb.Message {
+  clearAppInfosList(): void;
+  getAppInfosList(): Array<librarian_v1_common_pb.AppInfo>;
+  setAppInfosList(value: Array<librarian_v1_common_pb.AppInfo>): void;
+  addAppInfos(value?: librarian_v1_common_pb.AppInfo, index?: number): librarian_v1_common_pb.AppInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SearchAppInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SearchAppInfoResponse): SearchAppInfoResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SearchAppInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SearchAppInfoResponse;
+  static deserializeBinaryFromReader(message: SearchAppInfoResponse, reader: jspb.BinaryReader): SearchAppInfoResponse;
+}
+
+export namespace SearchAppInfoResponse {
+  export type AsObject = {
+    appInfosList: Array<librarian_v1_common_pb.AppInfo.AsObject>,
   }
 }
 

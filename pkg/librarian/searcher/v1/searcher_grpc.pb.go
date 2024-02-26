@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LibrarianSearcherService_NewID_FullMethodName       = "/librarian.searcher.v1.LibrarianSearcherService/NewID"
-	LibrarianSearcherService_NewBatchIDs_FullMethodName = "/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs"
-	LibrarianSearcherService_DescribeID_FullMethodName  = "/librarian.searcher.v1.LibrarianSearcherService/DescribeID"
-	LibrarianSearcherService_SearchID_FullMethodName    = "/librarian.searcher.v1.LibrarianSearcherService/SearchID"
+	LibrarianSearcherService_NewID_FullMethodName         = "/librarian.searcher.v1.LibrarianSearcherService/NewID"
+	LibrarianSearcherService_NewBatchIDs_FullMethodName   = "/librarian.searcher.v1.LibrarianSearcherService/NewBatchIDs"
+	LibrarianSearcherService_DescribeID_FullMethodName    = "/librarian.searcher.v1.LibrarianSearcherService/DescribeID"
+	LibrarianSearcherService_SearchID_FullMethodName      = "/librarian.searcher.v1.LibrarianSearcherService/SearchID"
+	LibrarianSearcherService_SearchAppInfo_FullMethodName = "/librarian.searcher.v1.LibrarianSearcherService/SearchAppInfo"
 )
 
 // LibrarianSearcherServiceClient is the client API for LibrarianSearcherService service.
@@ -33,6 +34,8 @@ type LibrarianSearcherServiceClient interface {
 	NewBatchIDs(ctx context.Context, in *NewBatchIDsRequest, opts ...grpc.CallOption) (*NewBatchIDsResponse, error)
 	DescribeID(ctx context.Context, in *DescribeIDRequest, opts ...grpc.CallOption) (*DescribeIDResponse, error)
 	SearchID(ctx context.Context, in *SearchIDRequest, opts ...grpc.CallOption) (*SearchIDResponse, error)
+	// SearchAppInfo searches Game ID Connector datasets
+	SearchAppInfo(ctx context.Context, in *SearchAppInfoRequest, opts ...grpc.CallOption) (*SearchAppInfoResponse, error)
 }
 
 type librarianSearcherServiceClient struct {
@@ -79,6 +82,15 @@ func (c *librarianSearcherServiceClient) SearchID(ctx context.Context, in *Searc
 	return out, nil
 }
 
+func (c *librarianSearcherServiceClient) SearchAppInfo(ctx context.Context, in *SearchAppInfoRequest, opts ...grpc.CallOption) (*SearchAppInfoResponse, error) {
+	out := new(SearchAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianSearcherService_SearchAppInfo_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianSearcherServiceServer is the server API for LibrarianSearcherService service.
 // All implementations must embed UnimplementedLibrarianSearcherServiceServer
 // for forward compatibility
@@ -87,6 +99,8 @@ type LibrarianSearcherServiceServer interface {
 	NewBatchIDs(context.Context, *NewBatchIDsRequest) (*NewBatchIDsResponse, error)
 	DescribeID(context.Context, *DescribeIDRequest) (*DescribeIDResponse, error)
 	SearchID(context.Context, *SearchIDRequest) (*SearchIDResponse, error)
+	// SearchAppInfo searches Game ID Connector datasets
+	SearchAppInfo(context.Context, *SearchAppInfoRequest) (*SearchAppInfoResponse, error)
 	mustEmbedUnimplementedLibrarianSearcherServiceServer()
 }
 
@@ -105,6 +119,9 @@ func (UnimplementedLibrarianSearcherServiceServer) DescribeID(context.Context, *
 }
 func (UnimplementedLibrarianSearcherServiceServer) SearchID(context.Context, *SearchIDRequest) (*SearchIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchID not implemented")
+}
+func (UnimplementedLibrarianSearcherServiceServer) SearchAppInfo(context.Context, *SearchAppInfoRequest) (*SearchAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchAppInfo not implemented")
 }
 func (UnimplementedLibrarianSearcherServiceServer) mustEmbedUnimplementedLibrarianSearcherServiceServer() {
 }
@@ -192,6 +209,24 @@ func _LibrarianSearcherService_SearchID_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSearcherService_SearchAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSearcherServiceServer).SearchAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSearcherService_SearchAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSearcherServiceServer).SearchAppInfo(ctx, req.(*SearchAppInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianSearcherService_ServiceDesc is the grpc.ServiceDesc for LibrarianSearcherService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -214,6 +249,10 @@ var LibrarianSearcherService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SearchID",
 			Handler:    _LibrarianSearcherService_SearchID_Handler,
+		},
+		{
+			MethodName: "SearchAppInfo",
+			Handler:    _LibrarianSearcherService_SearchAppInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

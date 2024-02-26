@@ -70,6 +70,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest> __Marshaller_librarian_searcher_v1_SearchIDRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse> __Marshaller_librarian_searcher_v1_SearchIDResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest> __Marshaller_librarian_searcher_v1_SearchAppInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse> __Marshaller_librarian_searcher_v1_SearchAppInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.NewIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse> __Method_NewID = new grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.NewIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewIDResponse>(
@@ -103,6 +107,14 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         __Marshaller_librarian_searcher_v1_SearchIDRequest,
         __Marshaller_librarian_searcher_v1_SearchIDResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest, global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse> __Method_SearchAppInfo = new grpc::Method<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest, global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SearchAppInfo",
+        __Marshaller_librarian_searcher_v1_SearchAppInfoRequest,
+        __Marshaller_librarian_searcher_v1_SearchAppInfoResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -133,6 +145,18 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse> SearchID(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// SearchAppInfo searches Game ID Connector datasets
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse> SearchAppInfo(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -246,6 +270,54 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_SearchID, null, options, request);
       }
+      /// <summary>
+      /// SearchAppInfo searches Game ID Connector datasets
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse SearchAppInfo(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SearchAppInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// SearchAppInfo searches Game ID Connector datasets
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse SearchAppInfo(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SearchAppInfo, null, options, request);
+      }
+      /// <summary>
+      /// SearchAppInfo searches Game ID Connector datasets
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse> SearchAppInfoAsync(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SearchAppInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// SearchAppInfo searches Game ID Connector datasets
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse> SearchAppInfoAsync(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SearchAppInfo, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override LibrarianSearcherServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -263,7 +335,8 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
           .AddMethod(__Method_NewID, serviceImpl.NewID)
           .AddMethod(__Method_NewBatchIDs, serviceImpl.NewBatchIDs)
           .AddMethod(__Method_DescribeID, serviceImpl.DescribeID)
-          .AddMethod(__Method_SearchID, serviceImpl.SearchID).Build();
+          .AddMethod(__Method_SearchID, serviceImpl.SearchID)
+          .AddMethod(__Method_SearchAppInfo, serviceImpl.SearchAppInfo).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -277,6 +350,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       serviceBinder.AddMethod(__Method_NewBatchIDs, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsRequest, global::TuiHub.Protos.Librarian.Searcher.V1.NewBatchIDsResponse>(serviceImpl.NewBatchIDs));
       serviceBinder.AddMethod(__Method_DescribeID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse>(serviceImpl.DescribeID));
       serviceBinder.AddMethod(__Method_SearchID, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest, global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse>(serviceImpl.SearchID));
+      serviceBinder.AddMethod(__Method_SearchAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest, global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse>(serviceImpl.SearchAppInfo));
     }
 
   }
