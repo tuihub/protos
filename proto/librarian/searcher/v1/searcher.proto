@@ -20,6 +20,8 @@ service LibrarianSearcherService {
   rpc NewBatchIDs(NewBatchIDsRequest) returns (NewBatchIDsResponse);
   rpc DescribeID(DescribeIDRequest) returns (DescribeIDResponse);
   rpc SearchID(SearchIDRequest) returns (SearchIDResponse);
+  // SearchAppInfo searches Game ID Connector datasets
+  rpc SearchAppInfo(SearchAppInfoRequest) returns (SearchAppInfoResponse);
 }
 
 message NewIDRequest {}
@@ -51,7 +53,7 @@ message DescribeIDResponse {}
 
 message SearchIDRequest {
   librarian.v1.PagingRequest paging = 1;
-  string keyword = 2;
+  string query = 2;
   Index index = 3;
 }
 
@@ -70,4 +72,12 @@ enum Index {
   INDEX_GENERAL = 1;
   INDEX_GEBURA_APP = 2;
   INDEX_CHESED_IMAGE = 3;
+}
+
+message SearchAppInfoRequest {
+  string name = 1;
+}
+
+message SearchAppInfoResponse {
+  repeated librarian.v1.AppInfo app_infos = 1;
 }
