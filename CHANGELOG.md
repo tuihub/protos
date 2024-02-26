@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/tuihub/protos/compare/v0.4.2...v0.4.3) (2024-02-26)
+
+
+### Features
+
+* **gebura:** add SearchNewAppInfos ([cd44ad4](https://github.com/tuihub/protos/commit/cd44ad46a949668fe3d034b7bd9136d0a025e2a7))
+* **searcher:** add SearchAppInfo ([391fd4b](https://github.com/tuihub/protos/commit/391fd4b4079e895e82c9b759947c6ef64d73be0d))
+
 ## [0.4.2](https://github.com/tuihub/protos/compare/v0.4.1...v0.4.2) (2024-02-19)
 
 
