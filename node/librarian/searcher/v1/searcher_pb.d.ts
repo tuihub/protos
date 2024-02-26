@@ -230,6 +230,11 @@ export class SearchAppInfoRequest extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
+  hasSource(): boolean;
+  clearSource(): void;
+  getSource(): string;
+  setSource(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchAppInfoRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SearchAppInfoRequest): SearchAppInfoRequest.AsObject;
@@ -243,6 +248,7 @@ export class SearchAppInfoRequest extends jspb.Message {
 export namespace SearchAppInfoRequest {
   export type AsObject = {
     name: string,
+    source: string,
   }
 }
 

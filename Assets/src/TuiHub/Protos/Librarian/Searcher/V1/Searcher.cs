@@ -45,26 +45,27 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             "cmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEkYKBnJlc3VsdBgCIAMo",
             "CzIuLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlc3BvbnNlLlJl",
             "c3VsdFIGcmVzdWx0GkYKBlJlc3VsdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgJpZBISCgRyYW5rGAIgASgDUgRyYW5rIioKFFNl",
-            "YXJjaEFwcEluZm9SZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUiSwoVU2Vh",
-            "cmNoQXBwSW5mb1Jlc3BvbnNlEjIKCWFwcF9pbmZvcxgBIAMoCzIVLmxpYnJh",
-            "cmlhbi52MS5BcHBJbmZvUghhcHBJbmZvcypfCgVJbmRleBIVChFJTkRFWF9V",
-            "TlNQRUNJRklFRBAAEhEKDUlOREVYX0dFTkVSQUwQARIUChBJTkRFWF9HRUJV",
-            "UkFfQVBQEAISFgoSSU5ERVhfQ0hFU0VEX0lNQUdFEAMygAQKGExpYnJhcmlh",
-            "blNlYXJjaGVyU2VydmljZRJSCgVOZXdJRBIjLmxpYnJhcmlhbi5zZWFyY2hl",
-            "ci52MS5OZXdJRFJlcXVlc3QaJC5saWJyYXJpYW4uc2VhcmNoZXIudjEuTmV3",
-            "SURSZXNwb25zZRJkCgtOZXdCYXRjaElEcxIpLmxpYnJhcmlhbi5zZWFyY2hl",
-            "ci52MS5OZXdCYXRjaElEc1JlcXVlc3QaKi5saWJyYXJpYW4uc2VhcmNoZXIu",
-            "djEuTmV3QmF0Y2hJRHNSZXNwb25zZRJhCgpEZXNjcmliZUlEEigubGlicmFy",
-            "aWFuLnNlYXJjaGVyLnYxLkRlc2NyaWJlSURSZXF1ZXN0GikubGlicmFyaWFu",
-            "LnNlYXJjaGVyLnYxLkRlc2NyaWJlSURSZXNwb25zZRJbCghTZWFyY2hJRBIm",
-            "LmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hJRFJlcXVlc3QaJy5saWJy",
-            "YXJpYW4uc2VhcmNoZXIudjEuU2VhcmNoSURSZXNwb25zZRJqCg1TZWFyY2hB",
-            "cHBJbmZvEisubGlicmFyaWFuLnNlYXJjaGVyLnYxLlNlYXJjaEFwcEluZm9S",
-            "ZXF1ZXN0GiwubGlicmFyaWFuLnNlYXJjaGVyLnYxLlNlYXJjaEFwcEluZm9S",
-            "ZXNwb25zZUJdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJh",
-            "cmlhbi9zZWFyY2hlci92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFu",
-            "LlNlYXJjaGVyLlYxYgZwcm90bzM="));
+            "bi52MS5JbnRlcm5hbElEUgJpZBISCgRyYW5rGAIgASgDUgRyYW5rIlIKFFNl",
+            "YXJjaEFwcEluZm9SZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSGwoGc291",
+            "cmNlGAIgASgJSABSBnNvdXJjZYgBAUIJCgdfc291cmNlIksKFVNlYXJjaEFw",
+            "cEluZm9SZXNwb25zZRIyCglhcHBfaW5mb3MYASADKAsyFS5saWJyYXJpYW4u",
+            "djEuQXBwSW5mb1IIYXBwSW5mb3MqXwoFSW5kZXgSFQoRSU5ERVhfVU5TUEVD",
+            "SUZJRUQQABIRCg1JTkRFWF9HRU5FUkFMEAESFAoQSU5ERVhfR0VCVVJBX0FQ",
+            "UBACEhYKEklOREVYX0NIRVNFRF9JTUFHRRADMoAEChhMaWJyYXJpYW5TZWFy",
+            "Y2hlclNlcnZpY2USUgoFTmV3SUQSIy5saWJyYXJpYW4uc2VhcmNoZXIudjEu",
+            "TmV3SURSZXF1ZXN0GiQubGlicmFyaWFuLnNlYXJjaGVyLnYxLk5ld0lEUmVz",
+            "cG9uc2USZAoLTmV3QmF0Y2hJRHMSKS5saWJyYXJpYW4uc2VhcmNoZXIudjEu",
+            "TmV3QmF0Y2hJRHNSZXF1ZXN0GioubGlicmFyaWFuLnNlYXJjaGVyLnYxLk5l",
+            "d0JhdGNoSURzUmVzcG9uc2USYQoKRGVzY3JpYmVJRBIoLmxpYnJhcmlhbi5z",
+            "ZWFyY2hlci52MS5EZXNjcmliZUlEUmVxdWVzdBopLmxpYnJhcmlhbi5zZWFy",
+            "Y2hlci52MS5EZXNjcmliZUlEUmVzcG9uc2USWwoIU2VhcmNoSUQSJi5saWJy",
+            "YXJpYW4uc2VhcmNoZXIudjEuU2VhcmNoSURSZXF1ZXN0GicubGlicmFyaWFu",
+            "LnNlYXJjaGVyLnYxLlNlYXJjaElEUmVzcG9uc2USagoNU2VhcmNoQXBwSW5m",
+            "bxIrLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hBcHBJbmZvUmVxdWVz",
+            "dBosLmxpYnJhcmlhbi5zZWFyY2hlci52MS5TZWFyY2hBcHBJbmZvUmVzcG9u",
+            "c2VCXVo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4v",
+            "c2VhcmNoZXIvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZWFy",
+            "Y2hlci5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Searcher.V1.Index), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -76,7 +77,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.DescribeIDResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDRequest.Parser, new[]{ "Paging", "Query", "Index" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Parser, new[]{ "Paging", "Result" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result), global::TuiHub.Protos.Librarian.Searcher.V1.SearchIDResponse.Types.Result.Parser, new[]{ "Id", "Rank" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest), global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoRequest.Parser, new[]{ "Name", "Source" }, new[]{ "Source" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse), global::TuiHub.Protos.Librarian.Searcher.V1.SearchAppInfoResponse.Parser, new[]{ "AppInfos" }, null, null, null, null)
           }));
     }
@@ -2060,6 +2061,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SearchAppInfoRequest(SearchAppInfoRequest other) : this() {
       name_ = other.name_;
+      source_ = other.source_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2081,6 +2083,32 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
     }
 
+    /// <summary>Field number for the "source" field.</summary>
+    public const int SourceFieldNumber = 2;
+    private readonly static string SourceDefaultValue = "";
+
+    private string source_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Source {
+      get { return source_ ?? SourceDefaultValue; }
+      set {
+        source_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "source" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasSource {
+      get { return source_ != null; }
+    }
+    /// <summary>Clears the value of the "source" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSource() {
+      source_ = null;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -2097,6 +2125,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Source != other.Source) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2105,6 +2134,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (HasSource) hash ^= Source.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2127,6 +2157,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (HasSource) {
+        output.WriteRawTag(18);
+        output.WriteString(Source);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2141,6 +2175,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (HasSource) {
+        output.WriteRawTag(18);
+        output.WriteString(Source);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2153,6 +2191,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (HasSource) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Source);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2168,6 +2209,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.HasSource) {
+        Source = other.Source;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2188,6 +2232,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             Name = input.ReadString();
             break;
           }
+          case 18: {
+            Source = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2205,6 +2253,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Source = input.ReadString();
             break;
           }
         }

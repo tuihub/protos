@@ -243,6 +243,37 @@ final $typed_data.Uint8List searchAppInfosResponseDescriptor = $convert.base64De
     '5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEjcKCWFwcF9pbmZvcxgCIAMoCzIaLmxpYnJhcmlhbi52'
     'MS5BcHBJbmZvTWl4ZWRSCGFwcEluZm9z');
 
+@$core.Deprecated('Use searchNewAppInfosRequestDescriptor instead')
+const SearchNewAppInfosRequest$json = {
+  '1': 'SearchNewAppInfosRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'source_filter', '3': 3, '4': 3, '5': 9, '10': 'sourceFilter'},
+  ],
+};
+
+/// Descriptor for `SearchNewAppInfosRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchNewAppInfosRequestDescriptor = $convert.base64Decode(
+    'ChhTZWFyY2hOZXdBcHBJbmZvc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLn'
+    'YxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxISCgRuYW1lGAIgASgJUgRuYW1lEiMKDXNvdXJjZV9m'
+    'aWx0ZXIYAyADKAlSDHNvdXJjZUZpbHRlcg==');
+
+@$core.Deprecated('Use searchNewAppInfosResponseDescriptor instead')
+const SearchNewAppInfosResponse$json = {
+  '1': 'SearchNewAppInfosResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'app_infos', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.AppInfo', '10': 'appInfos'},
+  ],
+};
+
+/// Descriptor for `SearchNewAppInfosResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List searchNewAppInfosResponseDescriptor = $convert.base64Decode(
+    'ChlTZWFyY2hOZXdBcHBJbmZvc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi'
+    '52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEjIKCWFwcF9pbmZvcxgCIAMoCzIVLmxpYnJhcmlh'
+    'bi52MS5BcHBJbmZvUghhcHBJbmZvcw==');
+
 @$core.Deprecated('Use getAppInfoRequestDescriptor instead')
 const GetAppInfoRequest$json = {
   '1': 'GetAppInfoRequest',

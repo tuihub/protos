@@ -191,6 +191,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos',
       ($4.SearchAppInfosRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.SearchAppInfosResponse.fromBuffer(value));
+  static final _$searchNewAppInfos = $grpc.ClientMethod<$4.SearchNewAppInfosRequest, $4.SearchNewAppInfosResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SearchNewAppInfos',
+      ($4.SearchNewAppInfosRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SearchNewAppInfosResponse.fromBuffer(value));
   static final _$getAppInfo = $grpc.ClientMethod<$4.GetAppInfoRequest, $4.GetAppInfoResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/GetAppInfo',
       ($4.GetAppInfoRequest value) => value.writeToBuffer(),
@@ -560,6 +564,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.SearchAppInfosResponse> searchAppInfos($4.SearchAppInfosRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchAppInfos, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SearchNewAppInfosResponse> searchNewAppInfos($4.SearchNewAppInfosRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$searchNewAppInfos, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.GetAppInfoResponse> getAppInfo($4.GetAppInfoRequest request, {$grpc.CallOptions? options}) {
@@ -1055,6 +1063,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.SearchAppInfosRequest.fromBuffer(value),
         ($4.SearchAppInfosResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SearchNewAppInfosRequest, $4.SearchNewAppInfosResponse>(
+        'SearchNewAppInfos',
+        searchNewAppInfos_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SearchNewAppInfosRequest.fromBuffer(value),
+        ($4.SearchNewAppInfosResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.GetAppInfoRequest, $4.GetAppInfoResponse>(
         'GetAppInfo',
         getAppInfo_Pre,
@@ -1559,6 +1574,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return searchAppInfos(call, await request);
   }
 
+  $async.Future<$4.SearchNewAppInfosResponse> searchNewAppInfos_Pre($grpc.ServiceCall call, $async.Future<$4.SearchNewAppInfosRequest> request) async {
+    return searchNewAppInfos(call, await request);
+  }
+
   $async.Future<$4.GetAppInfoResponse> getAppInfo_Pre($grpc.ServiceCall call, $async.Future<$4.GetAppInfoRequest> request) async {
     return getAppInfo(call, await request);
   }
@@ -1800,6 +1819,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.SyncAppInfosResponse> syncAppInfos($grpc.ServiceCall call, $4.SyncAppInfosRequest request);
   $async.Future<$4.SyncAccountAppInfosResponse> syncAccountAppInfos($grpc.ServiceCall call, $4.SyncAccountAppInfosRequest request);
   $async.Future<$4.SearchAppInfosResponse> searchAppInfos($grpc.ServiceCall call, $4.SearchAppInfosRequest request);
+  $async.Future<$4.SearchNewAppInfosResponse> searchNewAppInfos($grpc.ServiceCall call, $4.SearchNewAppInfosRequest request);
   $async.Future<$4.GetAppInfoResponse> getAppInfo($grpc.ServiceCall call, $4.GetAppInfoRequest request);
   $async.Future<$4.GetBoundAppInfosResponse> getBoundAppInfos($grpc.ServiceCall call, $4.GetBoundAppInfosRequest request);
   $async.Future<$4.PurchaseAppInfoResponse> purchaseAppInfo($grpc.ServiceCall call, $4.PurchaseAppInfoRequest request);

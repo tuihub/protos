@@ -1795,7 +1795,8 @@ proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.toObject = function(o
  */
 proto.librarian.searcher.v1.SearchAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    source: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1836,6 +1837,10 @@ proto.librarian.searcher.v1.SearchAppInfoRequest.deserializeBinaryFromReader = f
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSource(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1872,6 +1877,13 @@ proto.librarian.searcher.v1.SearchAppInfoRequest.serializeBinaryToWriter = funct
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1890,6 +1902,42 @@ proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.getName = function() 
  */
 proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string source = 2;
+ * @return {string}
+ */
+proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.getSource = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.searcher.v1.SearchAppInfoRequest} returns this
+ */
+proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.setSource = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.searcher.v1.SearchAppInfoRequest} returns this
+ */
+proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.clearSource = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.hasSource = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

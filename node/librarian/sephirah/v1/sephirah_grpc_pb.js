@@ -1463,6 +1463,28 @@ function deserialize_librarian_sephirah_v1_SearchImagesResponse(buffer_arg) {
   return librarian_sephirah_v1_chesed_pb.SearchImagesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_SearchNewAppInfosRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SearchNewAppInfosRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SearchNewAppInfosRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SearchNewAppInfosResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SearchNewAppInfosResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SearchNewAppInfosResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_SetAppSaveFileCapacityRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.SetAppSaveFileCapacityRequest');
@@ -2523,7 +2545,7 @@ syncAccountAppInfos: {
     responseSerialize: serialize_librarian_sephirah_v1_SyncAccountAppInfosResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SyncAccountAppInfosResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `Normal` Search app infos that already exist in server
 searchAppInfos: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos',
     requestStream: false,
@@ -2534,6 +2556,18 @@ searchAppInfos: {
     requestDeserialize: deserialize_librarian_sephirah_v1_SearchAppInfosRequest,
     responseSerialize: serialize_librarian_sephirah_v1_SearchAppInfosResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SearchAppInfosResponse,
+  },
+  // `Gebura` `Normal` Search new app infos from external
+searchNewAppInfos: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchNewAppInfos',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SearchNewAppInfosRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SearchNewAppInfosRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SearchNewAppInfosResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SearchNewAppInfosResponse,
   },
   // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 // e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL

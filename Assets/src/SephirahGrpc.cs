@@ -219,6 +219,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse> __Marshaller_librarian_sephirah_v1_SearchAppInfosResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest> __Marshaller_librarian_sephirah_v1_SearchNewAppInfosRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse> __Marshaller_librarian_sephirah_v1_SearchNewAppInfosResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoRequest> __Marshaller_librarian_sephirah_v1_GetAppInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoResponse> __Marshaller_librarian_sephirah_v1_GetAppInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoResponse.Parser));
@@ -746,6 +750,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "SearchAppInfos",
         __Marshaller_librarian_sephirah_v1_SearchAppInfosRequest,
         __Marshaller_librarian_sephirah_v1_SearchAppInfosResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse> __Method_SearchNewAppInfos = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SearchNewAppInfos",
+        __Marshaller_librarian_sephirah_v1_SearchNewAppInfosRequest,
+        __Marshaller_librarian_sephirah_v1_SearchNewAppInfosResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoResponse> __Method_GetAppInfo = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoResponse>(
@@ -1663,13 +1675,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Search app infos that already exist in server
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse> SearchAppInfos(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Normal` Search new app infos from external
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse> SearchNewAppInfos(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -4203,7 +4227,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SyncAccountAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Search app infos that already exist in server
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4216,7 +4240,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchAppInfos(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Search app infos that already exist in server
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4227,7 +4251,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SearchAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Search app infos that already exist in server
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4240,7 +4264,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchAppInfosAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `Normal` Search app infos that already exist in server
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4249,6 +4273,54 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse> SearchAppInfosAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SearchAppInfos, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal` Search new app infos from external
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse SearchNewAppInfos(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SearchNewAppInfos(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal` Search new app infos from external
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse SearchNewAppInfos(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SearchNewAppInfos, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal` Search new app infos from external
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse> SearchNewAppInfosAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SearchNewAppInfosAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal` Search new app infos from external
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse> SearchNewAppInfosAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SearchNewAppInfos, null, options, request);
       }
       /// <summary>
       /// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
@@ -6725,6 +6797,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_SyncAppInfos, serviceImpl.SyncAppInfos)
           .AddMethod(__Method_SyncAccountAppInfos, serviceImpl.SyncAccountAppInfos)
           .AddMethod(__Method_SearchAppInfos, serviceImpl.SearchAppInfos)
+          .AddMethod(__Method_SearchNewAppInfos, serviceImpl.SearchNewAppInfos)
           .AddMethod(__Method_GetAppInfo, serviceImpl.GetAppInfo)
           .AddMethod(__Method_GetBoundAppInfos, serviceImpl.GetBoundAppInfos)
           .AddMethod(__Method_PurchaseAppInfo, serviceImpl.PurchaseAppInfo)
@@ -6825,6 +6898,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_SyncAppInfos, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncAppInfosResponse>(serviceImpl.SyncAppInfos));
       serviceBinder.AddMethod(__Method_SyncAccountAppInfos, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SyncAccountAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SyncAccountAppInfosResponse>(serviceImpl.SyncAccountAppInfos));
       serviceBinder.AddMethod(__Method_SearchAppInfos, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse>(serviceImpl.SearchAppInfos));
+      serviceBinder.AddMethod(__Method_SearchNewAppInfos, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SearchNewAppInfosResponse>(serviceImpl.SearchNewAppInfos));
       serviceBinder.AddMethod(__Method_GetAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppInfoResponse>(serviceImpl.GetAppInfo));
       serviceBinder.AddMethod(__Method_GetBoundAppInfos, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetBoundAppInfosRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetBoundAppInfosResponse>(serviceImpl.GetBoundAppInfos));
       serviceBinder.AddMethod(__Method_PurchaseAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PurchaseAppInfoRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PurchaseAppInfoResponse>(serviceImpl.PurchaseAppInfo));

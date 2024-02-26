@@ -163,12 +163,17 @@ const SearchAppInfoRequest$json = {
   '1': 'SearchAppInfoRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'source', '17': true},
+  ],
+  '8': [
+    {'1': '_source'},
   ],
 };
 
 /// Descriptor for `SearchAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchAppInfoRequestDescriptor = $convert.base64Decode(
-    'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1l');
+    'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEhsKBnNvdXJjZRgCIA'
+    'EoCUgAUgZzb3VyY2WIAQFCCQoHX3NvdXJjZQ==');
 
 @$core.Deprecated('Use searchAppInfoResponseDescriptor instead')
 const SearchAppInfoResponse$json = {

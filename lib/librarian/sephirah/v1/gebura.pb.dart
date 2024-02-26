@@ -880,6 +880,140 @@ class SearchAppInfosResponse extends $pb.GeneratedMessage {
   $core.List<$7.AppInfoMixed> get appInfos => $_getList(1);
 }
 
+class SearchNewAppInfosRequest extends $pb.GeneratedMessage {
+  factory SearchNewAppInfosRequest({
+    $7.PagingRequest? paging,
+    $core.String? name,
+    $core.Iterable<$core.String>? sourceFilter,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (sourceFilter != null) {
+      $result.sourceFilter.addAll(sourceFilter);
+    }
+    return $result;
+  }
+  SearchNewAppInfosRequest._() : super();
+  factory SearchNewAppInfosRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchNewAppInfosRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchNewAppInfosRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..pPS(3, _omitFieldNames ? '' : 'sourceFilter')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchNewAppInfosRequest clone() => SearchNewAppInfosRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchNewAppInfosRequest copyWith(void Function(SearchNewAppInfosRequest) updates) => super.copyWith((message) => updates(message as SearchNewAppInfosRequest)) as SearchNewAppInfosRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchNewAppInfosRequest create() => SearchNewAppInfosRequest._();
+  SearchNewAppInfosRequest createEmptyInstance() => create();
+  static $pb.PbList<SearchNewAppInfosRequest> createRepeated() => $pb.PbList<SearchNewAppInfosRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SearchNewAppInfosRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchNewAppInfosRequest>(create);
+  static SearchNewAppInfosRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get sourceFilter => $_getList(2);
+}
+
+class SearchNewAppInfosResponse extends $pb.GeneratedMessage {
+  factory SearchNewAppInfosResponse({
+    $7.PagingResponse? paging,
+    $core.Iterable<$7.AppInfo>? appInfos,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (appInfos != null) {
+      $result.appInfos.addAll(appInfos);
+    }
+    return $result;
+  }
+  SearchNewAppInfosResponse._() : super();
+  factory SearchNewAppInfosResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SearchNewAppInfosResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchNewAppInfosResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<$7.AppInfo>(2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $7.AppInfo.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SearchNewAppInfosResponse clone() => SearchNewAppInfosResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SearchNewAppInfosResponse copyWith(void Function(SearchNewAppInfosResponse) updates) => super.copyWith((message) => updates(message as SearchNewAppInfosResponse)) as SearchNewAppInfosResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SearchNewAppInfosResponse create() => SearchNewAppInfosResponse._();
+  SearchNewAppInfosResponse createEmptyInstance() => create();
+  static $pb.PbList<SearchNewAppInfosResponse> createRepeated() => $pb.PbList<SearchNewAppInfosResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SearchNewAppInfosResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchNewAppInfosResponse>(create);
+  static SearchNewAppInfosResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$7.AppInfo> get appInfos => $_getList(1);
+}
+
 class GetAppInfoRequest extends $pb.GeneratedMessage {
   factory GetAppInfoRequest({
     $7.InternalID? appInfoId,

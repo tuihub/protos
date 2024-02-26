@@ -532,10 +532,14 @@ class SearchIDResponse extends $pb.GeneratedMessage {
 class SearchAppInfoRequest extends $pb.GeneratedMessage {
   factory SearchAppInfoRequest({
     $core.String? name,
+    $core.String? source,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
+    }
+    if (source != null) {
+      $result.source = source;
     }
     return $result;
   }
@@ -545,6 +549,7 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'source')
     ..hasRequiredFields = false
   ;
 
@@ -577,6 +582,15 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
   void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get source => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set source($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSource() => clearField(2);
 }
 
 class SearchAppInfoResponse extends $pb.GeneratedMessage {

@@ -4,14 +4,6 @@ pub mod librarian_sephirah_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
-    /**
- Sephirah contains the core logic and currently divided into the following modules:
- 1. `Tiphereth` handles account data and provides permission verification
- 2. `Gebura` handles application data
- 3. `Binah` handles file transfer
- 4. `Yesod` handles feed data
- 5. `Netzach` handles notifications
-*/
     #[derive(Debug, Clone)]
     pub struct LibrarianSephirahServiceClient<T> {
         inner: tonic::client::Grpc<T>,
@@ -1399,7 +1391,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `Normal` Search app infos that already exist in server
 */
         pub async fn search_app_infos(
             &mut self,
@@ -1427,6 +1419,38 @@ pub mod librarian_sephirah_service_client {
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
                         "SearchAppInfos",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Normal` Search new app infos from external
+*/
+        pub async fn search_new_app_infos(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SearchNewAppInfosRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SearchNewAppInfosResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/SearchNewAppInfos",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "SearchNewAppInfos",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -3436,13 +3460,22 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SyncAccountAppInfosResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `Normal` Search app infos that already exist in server
 */
         async fn search_app_infos(
             &self,
             request: tonic::Request<super::SearchAppInfosRequest>,
         ) -> std::result::Result<
             tonic::Response<super::SearchAppInfosResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Normal` Search new app infos from external
+*/
+        async fn search_new_app_infos(
+            &self,
+            request: tonic::Request<super::SearchNewAppInfosRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::SearchNewAppInfosResponse>,
             tonic::Status,
         >;
         /** `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
@@ -3887,14 +3920,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
     }
-    /**
- Sephirah contains the core logic and currently divided into the following modules:
- 1. `Tiphereth` handles account data and provides permission verification
- 2. `Gebura` handles application data
- 3. `Binah` handles file transfer
- 4. `Yesod` handles feed data
- 5. `Netzach` handles notifications
-*/
     #[derive(Debug)]
     pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
         inner: _Inner<T>,
@@ -5862,6 +5887,52 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = SearchAppInfosSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/SearchNewAppInfos" => {
+                    #[allow(non_camel_case_types)]
+                    struct SearchNewAppInfosSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::SearchNewAppInfosRequest>
+                    for SearchNewAppInfosSvc<T> {
+                        type Response = super::SearchNewAppInfosResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SearchNewAppInfosRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).search_new_app_infos(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = SearchNewAppInfosSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

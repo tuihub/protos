@@ -60,6 +60,7 @@ const (
 	LibrarianSephirahService_SyncAppInfos_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAppInfos"
 	LibrarianSephirahService_SyncAccountAppInfos_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/SyncAccountAppInfos"
 	LibrarianSephirahService_SearchAppInfos_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos"
+	LibrarianSephirahService_SearchNewAppInfos_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/SearchNewAppInfos"
 	LibrarianSephirahService_GetAppInfo_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppInfo"
 	LibrarianSephirahService_GetBoundAppInfos_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GetBoundAppInfos"
 	LibrarianSephirahService_PurchaseAppInfo_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/PurchaseAppInfo"
@@ -217,8 +218,10 @@ type LibrarianSephirahServiceClient interface {
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAccountAppInfos(ctx context.Context, in *SyncAccountAppInfosRequest, opts ...grpc.CallOption) (*SyncAccountAppInfosResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `Normal` Search app infos that already exist in server
 	SearchAppInfos(ctx context.Context, in *SearchAppInfosRequest, opts ...grpc.CallOption) (*SearchAppInfosResponse, error)
+	// `Gebura` `Normal` Search new app infos from external
+	SearchNewAppInfos(ctx context.Context, in *SearchNewAppInfosRequest, opts ...grpc.CallOption) (*SearchNewAppInfosResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
 	GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error)
@@ -792,6 +795,15 @@ func (c *librarianSephirahServiceClient) SearchAppInfos(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) SearchNewAppInfos(ctx context.Context, in *SearchNewAppInfosRequest, opts ...grpc.CallOption) (*SearchNewAppInfosResponse, error) {
+	out := new(SearchNewAppInfosResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SearchNewAppInfos_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) GetAppInfo(ctx context.Context, in *GetAppInfoRequest, opts ...grpc.CallOption) (*GetAppInfoResponse, error) {
 	out := new(GetAppInfoResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_GetAppInfo_FullMethodName, in, out, opts...)
@@ -1347,8 +1359,10 @@ type LibrarianSephirahServiceServer interface {
 	// Server should implement a sync rate limit to prevent abuse,
 	// when rate limit reached, return without real sync.
 	SyncAccountAppInfos(context.Context, *SyncAccountAppInfosRequest) (*SyncAccountAppInfosResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `Normal` Search app infos that already exist in server
 	SearchAppInfos(context.Context, *SearchAppInfosRequest) (*SearchAppInfosResponse, error)
+	// `Gebura` `Normal` Search new app infos from external
+	SearchNewAppInfos(context.Context, *SearchNewAppInfosRequest) (*SearchNewAppInfosResponse, error)
 	// `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
 	// e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
 	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
@@ -1583,6 +1597,9 @@ func (UnimplementedLibrarianSephirahServiceServer) SyncAccountAppInfos(context.C
 }
 func (UnimplementedLibrarianSephirahServiceServer) SearchAppInfos(context.Context, *SearchAppInfosRequest) (*SearchAppInfosResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchAppInfos not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) SearchNewAppInfos(context.Context, *SearchNewAppInfosRequest) (*SearchNewAppInfosResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SearchNewAppInfos not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppInfo not implemented")
@@ -2509,6 +2526,24 @@ func _LibrarianSephirahService_SearchAppInfos_Handler(srv interface{}, ctx conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).SearchAppInfos(ctx, req.(*SearchAppInfosRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_SearchNewAppInfos_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SearchNewAppInfosRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).SearchNewAppInfos(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_SearchNewAppInfos_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).SearchNewAppInfos(ctx, req.(*SearchNewAppInfosRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3567,6 +3602,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SearchAppInfos",
 			Handler:    _LibrarianSephirahService_SearchAppInfos_Handler,
+		},
+		{
+			MethodName: "SearchNewAppInfos",
+			Handler:    _LibrarianSephirahService_SearchNewAppInfos_Handler,
 		},
 		{
 			MethodName: "GetAppInfo",

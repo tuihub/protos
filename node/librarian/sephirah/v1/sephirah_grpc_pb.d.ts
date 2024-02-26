@@ -54,6 +54,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   syncAppInfos: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SyncAppInfosRequest, librarian_sephirah_v1_gebura_pb.SyncAppInfosResponse>;
   syncAccountAppInfos: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SyncAccountAppInfosRequest, librarian_sephirah_v1_gebura_pb.SyncAccountAppInfosResponse>;
   searchAppInfos: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest, librarian_sephirah_v1_gebura_pb.SearchAppInfosResponse>;
+  searchNewAppInfos: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest, librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse>;
   getAppInfo: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.GetAppInfoRequest, librarian_sephirah_v1_gebura_pb.GetAppInfoResponse>;
   getBoundAppInfos: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.GetBoundAppInfosRequest, librarian_sephirah_v1_gebura_pb.GetBoundAppInfosResponse>;
   purchaseAppInfo: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.PurchaseAppInfoRequest, librarian_sephirah_v1_gebura_pb.PurchaseAppInfoResponse>;
@@ -150,6 +151,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   syncAppInfos: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SyncAppInfosRequest, librarian_sephirah_v1_gebura_pb.SyncAppInfosResponse>;
   syncAccountAppInfos: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SyncAccountAppInfosRequest, librarian_sephirah_v1_gebura_pb.SyncAccountAppInfosResponse>;
   searchAppInfos: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest, librarian_sephirah_v1_gebura_pb.SearchAppInfosResponse>;
+  searchNewAppInfos: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest, librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse>;
   getAppInfo: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.GetAppInfoRequest, librarian_sephirah_v1_gebura_pb.GetAppInfoResponse>;
   getBoundAppInfos: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.GetBoundAppInfosRequest, librarian_sephirah_v1_gebura_pb.GetBoundAppInfosResponse>;
   purchaseAppInfo: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.PurchaseAppInfoRequest, librarian_sephirah_v1_gebura_pb.PurchaseAppInfoResponse>;
@@ -323,6 +325,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   searchAppInfos(argument: librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchAppInfosResponse>): grpc.ClientUnaryCall;
   searchAppInfos(argument: librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchAppInfosResponse>): grpc.ClientUnaryCall;
   searchAppInfos(argument: librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchAppInfosResponse>): grpc.ClientUnaryCall;
+  searchNewAppInfos(argument: librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse>): grpc.ClientUnaryCall;
+  searchNewAppInfos(argument: librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse>): grpc.ClientUnaryCall;
+  searchNewAppInfos(argument: librarian_sephirah_v1_gebura_pb.SearchNewAppInfosRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse>): grpc.ClientUnaryCall;
   getAppInfo(argument: librarian_sephirah_v1_gebura_pb.GetAppInfoRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.GetAppInfoResponse>): grpc.ClientUnaryCall;
   getAppInfo(argument: librarian_sephirah_v1_gebura_pb.GetAppInfoRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.GetAppInfoResponse>): grpc.ClientUnaryCall;
   getAppInfo(argument: librarian_sephirah_v1_gebura_pb.GetAppInfoRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.GetAppInfoResponse>): grpc.ClientUnaryCall;
