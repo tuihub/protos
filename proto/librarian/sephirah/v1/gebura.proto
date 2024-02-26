@@ -83,6 +83,16 @@ message SearchAppInfosResponse {
   repeated librarian.v1.AppInfoMixed app_infos = 2;
 }
 
+message SearchNewAppInfosRequest {
+  librarian.v1.PagingRequest paging = 1;
+  string name = 2;
+  repeated string source_filter = 3;
+}
+message SearchNewAppInfosResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated librarian.v1.AppInfo app_infos = 2;
+}
+
 message GetAppInfoRequest {
   librarian.v1.InternalID app_info_id = 1;
 }

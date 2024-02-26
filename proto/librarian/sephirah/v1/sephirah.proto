@@ -131,8 +131,10 @@ service LibrarianSephirahService {
   // Server should implement a sync rate limit to prevent abuse,
   // when rate limit reached, return without real sync.
   rpc SyncAccountAppInfos(SyncAccountAppInfosRequest) returns (SyncAccountAppInfosResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `Normal` Search app infos that already exist in server
   rpc SearchAppInfos(SearchAppInfosRequest) returns (SearchAppInfosResponse);
+  // `Gebura` `Normal` Search new app infos from external
+  rpc SearchNewAppInfos(SearchNewAppInfosRequest) returns (SearchNewAppInfosResponse);
   // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
   // e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
   rpc GetAppInfo(GetAppInfoRequest) returns (GetAppInfoResponse);

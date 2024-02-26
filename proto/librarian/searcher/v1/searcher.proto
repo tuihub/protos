@@ -76,6 +76,7 @@ enum Index {
 
 message SearchAppInfoRequest {
   string name = 1;
+  optional string source = 2;
 }
 
 message SearchAppInfoResponse {
