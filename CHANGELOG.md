@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/tuihub/protos/compare/v0.4.3...v0.4.4) (2024-02-27)
+
+
+### Bug Fixes
+
+* **gebura:** add id in AppBinary ([2b33ef0](https://github.com/tuihub/protos/commit/2b33ef0d87a41069e484e9440b3bd82f37c8368f))
+
 ## [0.4.3](https://github.com/tuihub/protos/compare/v0.4.2...v0.4.3) (2024-02-26)
 
 
