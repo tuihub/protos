@@ -1827,6 +1827,11 @@ export namespace App {
 }
 
 export class AppBinary extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -1861,6 +1866,7 @@ export class AppBinary extends jspb.Message {
 
 export namespace AppBinary {
   export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     sizeBytes: number,
     publicUrl: string,

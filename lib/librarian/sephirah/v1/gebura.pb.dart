@@ -4267,6 +4267,7 @@ class AppBinary_Chunk extends $pb.GeneratedMessage {
 
 class AppBinary extends $pb.GeneratedMessage {
   factory AppBinary({
+    $7.InternalID? id,
     $core.String? name,
     $fixnum.Int64? sizeBytes,
     $core.String? publicUrl,
@@ -4275,6 +4276,9 @@ class AppBinary extends $pb.GeneratedMessage {
     $core.Iterable<AppBinary_Chunk>? chunks,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (name != null) {
       $result.name = name;
     }
@@ -4300,12 +4304,13 @@ class AppBinary extends $pb.GeneratedMessage {
   factory AppBinary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
-    ..aOS(3, _omitFieldNames ? '' : 'publicUrl')
-    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
-    ..aOS(5, _omitFieldNames ? '' : 'tokenServerUrl')
-    ..pc<AppBinary_Chunk>(6, _omitFieldNames ? '' : 'chunks', $pb.PbFieldType.PM, subBuilder: AppBinary_Chunk.create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
+    ..aOS(4, _omitFieldNames ? '' : 'publicUrl')
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
+    ..aOS(6, _omitFieldNames ? '' : 'tokenServerUrl')
+    ..pc<AppBinary_Chunk>(7, _omitFieldNames ? '' : 'chunks', $pb.PbFieldType.PM, subBuilder: AppBinary_Chunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -4331,52 +4336,63 @@ class AppBinary extends $pb.GeneratedMessage {
   static AppBinary? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get sizeBytes => $_getI64(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSizeBytes() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSizeBytes() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get publicUrl => $_getSZ(2);
+  $fixnum.Int64 get sizeBytes => $_getI64(2);
   @$pb.TagNumber(3)
-  set publicUrl($core.String v) { $_setString(2, v); }
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasPublicUrl() => $_has(2);
+  $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPublicUrl() => clearField(3);
+  void clearSizeBytes() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.int> get sha256 => $_getN(3);
+  $core.String get publicUrl => $_getSZ(3);
   @$pb.TagNumber(4)
-  set sha256($core.List<$core.int> v) { $_setBytes(3, v); }
+  set publicUrl($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasSha256() => $_has(3);
+  $core.bool hasPublicUrl() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSha256() => clearField(4);
+  void clearPublicUrl() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get tokenServerUrl => $_getSZ(4);
+  $core.List<$core.int> get sha256 => $_getN(4);
   @$pb.TagNumber(5)
-  set tokenServerUrl($core.String v) { $_setString(4, v); }
+  set sha256($core.List<$core.int> v) { $_setBytes(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasTokenServerUrl() => $_has(4);
+  $core.bool hasSha256() => $_has(4);
   @$pb.TagNumber(5)
-  void clearTokenServerUrl() => clearField(5);
+  void clearSha256() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<AppBinary_Chunk> get chunks => $_getList(5);
+  $core.String get tokenServerUrl => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set tokenServerUrl($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasTokenServerUrl() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTokenServerUrl() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<AppBinary_Chunk> get chunks => $_getList(6);
 }
 
 class AppCategory extends $pb.GeneratedMessage {

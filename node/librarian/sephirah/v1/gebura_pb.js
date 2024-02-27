@@ -14526,7 +14526,7 @@ proto.librarian.sephirah.v1.App.prototype.setPublic = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.AppBinary.repeatedFields_ = [6];
+proto.librarian.sephirah.v1.AppBinary.repeatedFields_ = [7];
 
 
 
@@ -14559,11 +14559,12 @@ proto.librarian.sephirah.v1.AppBinary.prototype.toObject = function(opt_includeI
  */
 proto.librarian.sephirah.v1.AppBinary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    publicUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    publicUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
     sha256: msg.getSha256_asB64(),
-    tokenServerUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    tokenServerUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
     chunksList: jspb.Message.toObjectList(msg.getChunksList(),
     proto.librarian.sephirah.v1.AppBinary.Chunk.toObject, includeInstance)
   };
@@ -14603,26 +14604,31 @@ proto.librarian.sephirah.v1.AppBinary.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSizeBytes(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setPublicUrl(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setSha256(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setTokenServerUrl(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.librarian.sephirah.v1.AppBinary.Chunk;
       reader.readMessage(value,proto.librarian.sephirah.v1.AppBinary.Chunk.deserializeBinaryFromReader);
       msg.addChunks(value);
@@ -14656,45 +14662,53 @@ proto.librarian.sephirah.v1.AppBinary.prototype.serializeBinary = function() {
  */
 proto.librarian.sephirah.v1.AppBinary.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
   f = message.getSizeBytes();
   if (f !== 0) {
     writer.writeInt64(
-      2,
+      3,
       f
     );
   }
   f = message.getPublicUrl();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      4,
       f
     );
   }
   f = message.getSha256_asU8();
   if (f.length > 0) {
     writer.writeBytes(
-      4,
+      5,
       f
     );
   }
   f = message.getTokenServerUrl();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      6,
       f
     );
   }
   f = message.getChunksList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.librarian.sephirah.v1.AppBinary.Chunk.serializeBinaryToWriter
     );
@@ -14947,11 +14961,48 @@ proto.librarian.sephirah.v1.AppBinary.Chunk.prototype.setSha256 = function(value
 
 
 /**
- * optional string name = 1;
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.AppBinary.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
+*/
+proto.librarian.sephirah.v1.AppBinary.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
+ */
+proto.librarian.sephirah.v1.AppBinary.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.AppBinary.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string name = 2;
  * @return {string}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -14960,16 +15011,16 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getName = function() {
  * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional int64 size_bytes = 2;
+ * optional int64 size_bytes = 3;
  * @return {number}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.getSizeBytes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -14978,16 +15029,16 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getSizeBytes = function() {
  * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.setSizeBytes = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional string public_url = 3;
+ * optional string public_url = 4;
  * @return {string}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.getPublicUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -14996,21 +15047,21 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getPublicUrl = function() {
  * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.setPublicUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional bytes sha256 = 4;
+ * optional bytes sha256 = 5;
  * @return {!(string|Uint8Array)}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.getSha256 = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * optional bytes sha256 = 4;
+ * optional bytes sha256 = 5;
  * This is a type-conversion wrapper around `getSha256()`
  * @return {string}
  */
@@ -15021,7 +15072,7 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getSha256_asB64 = function() {
 
 
 /**
- * optional bytes sha256 = 4;
+ * optional bytes sha256 = 5;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getSha256()`
@@ -15038,16 +15089,16 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getSha256_asU8 = function() {
  * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.setSha256 = function(value) {
-  return jspb.Message.setProto3BytesField(this, 4, value);
+  return jspb.Message.setProto3BytesField(this, 5, value);
 };
 
 
 /**
- * optional string token_server_url = 5;
+ * optional string token_server_url = 6;
  * @return {string}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.getTokenServerUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -15056,17 +15107,17 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getTokenServerUrl = function() {
  * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.setTokenServerUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * repeated Chunk chunks = 6;
+ * repeated Chunk chunks = 7;
  * @return {!Array<!proto.librarian.sephirah.v1.AppBinary.Chunk>}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.getChunksList = function() {
   return /** @type{!Array<!proto.librarian.sephirah.v1.AppBinary.Chunk>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.AppBinary.Chunk, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.AppBinary.Chunk, 7));
 };
 
 
@@ -15075,7 +15126,7 @@ proto.librarian.sephirah.v1.AppBinary.prototype.getChunksList = function() {
  * @return {!proto.librarian.sephirah.v1.AppBinary} returns this
 */
 proto.librarian.sephirah.v1.AppBinary.prototype.setChunksList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -15085,7 +15136,7 @@ proto.librarian.sephirah.v1.AppBinary.prototype.setChunksList = function(value) 
  * @return {!proto.librarian.sephirah.v1.AppBinary.Chunk}
  */
 proto.librarian.sephirah.v1.AppBinary.prototype.addChunks = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.librarian.sephirah.v1.AppBinary.Chunk, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.librarian.sephirah.v1.AppBinary.Chunk, opt_index);
 };
 
 

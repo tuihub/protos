@@ -529,6 +529,9 @@ impl serde::Serialize for AppBinary {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
         if !self.name.is_empty() {
             len += 1;
         }
@@ -548,6 +551,9 @@ impl serde::Serialize for AppBinary {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
@@ -576,6 +582,7 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "id",
             "name",
             "size_bytes",
             "sizeBytes",
@@ -589,6 +596,7 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Id,
             Name,
             SizeBytes,
             PublicUrl,
@@ -616,6 +624,7 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                         E: serde::de::Error,
                     {
                         match value {
+                            "id" => Ok(GeneratedField::Id),
                             "name" => Ok(GeneratedField::Name),
                             "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
                             "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
@@ -641,6 +650,7 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut id__ = None;
                 let mut name__ = None;
                 let mut size_bytes__ = None;
                 let mut public_url__ = None;
@@ -649,6 +659,12 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                 let mut chunks__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
                         GeneratedField::Name => {
                             if name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("name"));
@@ -692,6 +708,7 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                     }
                 }
                 Ok(AppBinary {
+                    id: id__,
                     name: name__.unwrap_or_default(),
                     size_bytes: size_bytes__.unwrap_or_default(),
                     public_url: public_url__.unwrap_or_default(),

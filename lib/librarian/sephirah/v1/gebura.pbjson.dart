@@ -1054,12 +1054,13 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
 const AppBinary$json = {
   '1': 'AppBinary',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
-    {'1': 'public_url', '3': 3, '4': 1, '5': 9, '10': 'publicUrl'},
-    {'1': 'sha256', '3': 4, '4': 1, '5': 12, '10': 'sha256'},
-    {'1': 'token_server_url', '3': 5, '4': 1, '5': 9, '10': 'tokenServerUrl'},
-    {'1': 'chunks', '3': 6, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinary.Chunk', '10': 'chunks'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'public_url', '3': 4, '4': 1, '5': 9, '10': 'publicUrl'},
+    {'1': 'sha256', '3': 5, '4': 1, '5': 12, '10': 'sha256'},
+    {'1': 'token_server_url', '3': 6, '4': 1, '5': 9, '10': 'tokenServerUrl'},
+    {'1': 'chunks', '3': 7, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinary.Chunk', '10': 'chunks'},
   ],
   '3': [AppBinary_Chunk$json],
 };
@@ -1077,13 +1078,14 @@ const AppBinary_Chunk$json = {
 
 /// Descriptor for `AppBinary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appBinaryDescriptor = $convert.base64Decode(
-    'CglBcHBCaW5hcnkSEgoEbmFtZRgBIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAIgASgDUglzaX'
-    'plQnl0ZXMSHQoKcHVibGljX3VybBgDIAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgEIAEoDFIG'
-    'c2hhMjU2EigKEHRva2VuX3NlcnZlcl91cmwYBSABKAlSDnRva2VuU2VydmVyVXJsEj4KBmNodW'
-    '5rcxgGIAMoCzImLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnkuQ2h1bmtSBmNodW5r'
-    'cxp5CgVDaHVuaxIaCghzZXF1ZW5jZRgBIAEoA1IIc2VxdWVuY2USHQoKc2l6ZV9ieXRlcxgCIA'
-    'EoA1IJc2l6ZUJ5dGVzEh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYY'
-    'BCABKAxSBnNoYTI1Ng==');
+    'CglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEg'
+    'oEbmFtZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0ZXMSHQoKcHVi'
+    'bGljX3VybBgEIAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgFIAEoDFIGc2hhMjU2EigKEHRva2'
+    'VuX3NlcnZlcl91cmwYBiABKAlSDnRva2VuU2VydmVyVXJsEj4KBmNodW5rcxgHIAMoCzImLmxp'
+    'YnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnkuQ2h1bmtSBmNodW5rcxp5CgVDaHVuaxIaCg'
+    'hzZXF1ZW5jZRgBIAEoA1IIc2VxdWVuY2USHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVz'
+    'Eh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYYBCABKAxSBnNoYTI1Ng'
+    '==');
 
 @$core.Deprecated('Use appCategoryDescriptor instead')
 const AppCategory$json = {
