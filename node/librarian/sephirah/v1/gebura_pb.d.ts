@@ -1628,6 +1628,376 @@ export namespace SetAppSaveFileCapacityResponse {
   }
 }
 
+export class CreateSharedAppSaveRequest extends jspb.Message {
+  hasSharedAppSave(): boolean;
+  clearSharedAppSave(): void;
+  getSharedAppSave(): SharedAppSave | undefined;
+  setSharedAppSave(value?: SharedAppSave): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSharedAppSaveRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSharedAppSaveRequest): CreateSharedAppSaveRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSharedAppSaveRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSharedAppSaveRequest;
+  static deserializeBinaryFromReader(message: CreateSharedAppSaveRequest, reader: jspb.BinaryReader): CreateSharedAppSaveRequest;
+}
+
+export namespace CreateSharedAppSaveRequest {
+  export type AsObject = {
+    sharedAppSave?: SharedAppSave.AsObject,
+  }
+}
+
+export class CreateSharedAppSaveResponse extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSharedAppSaveResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSharedAppSaveResponse): CreateSharedAppSaveResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSharedAppSaveResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSharedAppSaveResponse;
+  static deserializeBinaryFromReader(message: CreateSharedAppSaveResponse, reader: jspb.BinaryReader): CreateSharedAppSaveResponse;
+}
+
+export namespace CreateSharedAppSaveResponse {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class UpdateSharedAppSaveRequest extends jspb.Message {
+  hasSharedAppSave(): boolean;
+  clearSharedAppSave(): void;
+  getSharedAppSave(): SharedAppSave | undefined;
+  setSharedAppSave(value?: SharedAppSave): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSharedAppSaveRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSharedAppSaveRequest): UpdateSharedAppSaveRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSharedAppSaveRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSharedAppSaveRequest;
+  static deserializeBinaryFromReader(message: UpdateSharedAppSaveRequest, reader: jspb.BinaryReader): UpdateSharedAppSaveRequest;
+}
+
+export namespace UpdateSharedAppSaveRequest {
+  export type AsObject = {
+    sharedAppSave?: SharedAppSave.AsObject,
+  }
+}
+
+export class UpdateSharedAppSaveResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSharedAppSaveResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSharedAppSaveResponse): UpdateSharedAppSaveResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSharedAppSaveResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSharedAppSaveResponse;
+  static deserializeBinaryFromReader(message: UpdateSharedAppSaveResponse, reader: jspb.BinaryReader): UpdateSharedAppSaveResponse;
+}
+
+export namespace UpdateSharedAppSaveResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListSharedAppSavesRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  clearIdFilterList(): void;
+  getIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  clearAppInfoIdFilterList(): void;
+  getAppInfoIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setAppInfoIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addAppInfoIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSharedAppSavesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSharedAppSavesRequest): ListSharedAppSavesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSharedAppSavesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSharedAppSavesRequest;
+  static deserializeBinaryFromReader(message: ListSharedAppSavesRequest, reader: jspb.BinaryReader): ListSharedAppSavesRequest;
+}
+
+export namespace ListSharedAppSavesRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    appInfoIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+  }
+}
+
+export class ListSharedAppSavesResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearSharedAppSavesList(): void;
+  getSharedAppSavesList(): Array<SharedAppSave>;
+  setSharedAppSavesList(value: Array<SharedAppSave>): void;
+  addSharedAppSaves(value?: SharedAppSave, index?: number): SharedAppSave;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSharedAppSavesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSharedAppSavesResponse): ListSharedAppSavesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSharedAppSavesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSharedAppSavesResponse;
+  static deserializeBinaryFromReader(message: ListSharedAppSavesResponse, reader: jspb.BinaryReader): ListSharedAppSavesResponse;
+}
+
+export namespace ListSharedAppSavesResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    sharedAppSavesList: Array<SharedAppSave.AsObject>,
+  }
+}
+
+export class RemoveSharedAppSaveRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveSharedAppSaveRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveSharedAppSaveRequest): RemoveSharedAppSaveRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveSharedAppSaveRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveSharedAppSaveRequest;
+  static deserializeBinaryFromReader(message: RemoveSharedAppSaveRequest, reader: jspb.BinaryReader): RemoveSharedAppSaveRequest;
+}
+
+export namespace RemoveSharedAppSaveRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class RemoveSharedAppSaveResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveSharedAppSaveResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveSharedAppSaveResponse): RemoveSharedAppSaveResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveSharedAppSaveResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveSharedAppSaveResponse;
+  static deserializeBinaryFromReader(message: RemoveSharedAppSaveResponse, reader: jspb.BinaryReader): RemoveSharedAppSaveResponse;
+}
+
+export namespace RemoveSharedAppSaveResponse {
+  export type AsObject = {
+  }
+}
+
+export class CreateSharedAppSaveFileRequest extends jspb.Message {
+  hasSharedAppSaveFile(): boolean;
+  clearSharedAppSaveFile(): void;
+  getSharedAppSaveFile(): SharedAppSaveFile | undefined;
+  setSharedAppSaveFile(value?: SharedAppSaveFile): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSharedAppSaveFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSharedAppSaveFileRequest): CreateSharedAppSaveFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSharedAppSaveFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSharedAppSaveFileRequest;
+  static deserializeBinaryFromReader(message: CreateSharedAppSaveFileRequest, reader: jspb.BinaryReader): CreateSharedAppSaveFileRequest;
+}
+
+export namespace CreateSharedAppSaveFileRequest {
+  export type AsObject = {
+    sharedAppSaveFile?: SharedAppSaveFile.AsObject,
+  }
+}
+
+export class CreateSharedAppSaveFileResponse extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateSharedAppSaveFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateSharedAppSaveFileResponse): CreateSharedAppSaveFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateSharedAppSaveFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateSharedAppSaveFileResponse;
+  static deserializeBinaryFromReader(message: CreateSharedAppSaveFileResponse, reader: jspb.BinaryReader): CreateSharedAppSaveFileResponse;
+}
+
+export namespace CreateSharedAppSaveFileResponse {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class UpdateSharedAppSaveFileRequest extends jspb.Message {
+  hasSharedAppSaveFile(): boolean;
+  clearSharedAppSaveFile(): void;
+  getSharedAppSaveFile(): SharedAppSaveFile | undefined;
+  setSharedAppSaveFile(value?: SharedAppSaveFile): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSharedAppSaveFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSharedAppSaveFileRequest): UpdateSharedAppSaveFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSharedAppSaveFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSharedAppSaveFileRequest;
+  static deserializeBinaryFromReader(message: UpdateSharedAppSaveFileRequest, reader: jspb.BinaryReader): UpdateSharedAppSaveFileRequest;
+}
+
+export namespace UpdateSharedAppSaveFileRequest {
+  export type AsObject = {
+    sharedAppSaveFile?: SharedAppSaveFile.AsObject,
+  }
+}
+
+export class UpdateSharedAppSaveFileResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSharedAppSaveFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSharedAppSaveFileResponse): UpdateSharedAppSaveFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSharedAppSaveFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSharedAppSaveFileResponse;
+  static deserializeBinaryFromReader(message: UpdateSharedAppSaveFileResponse, reader: jspb.BinaryReader): UpdateSharedAppSaveFileResponse;
+}
+
+export namespace UpdateSharedAppSaveFileResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListSharedAppSaveFilesRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  clearIdFilterList(): void;
+  getIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  clearSharedAppSaveIdFilterList(): void;
+  getSharedAppSaveIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setSharedAppSaveIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addSharedAppSaveIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  clearUserIdFilterList(): void;
+  getUserIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setUserIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addUserIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSharedAppSaveFilesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSharedAppSaveFilesRequest): ListSharedAppSaveFilesRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSharedAppSaveFilesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSharedAppSaveFilesRequest;
+  static deserializeBinaryFromReader(message: ListSharedAppSaveFilesRequest, reader: jspb.BinaryReader): ListSharedAppSaveFilesRequest;
+}
+
+export namespace ListSharedAppSaveFilesRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    sharedAppSaveIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    userIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+  }
+}
+
+export class ListSharedAppSaveFilesResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearSharedAppSaveFilesList(): void;
+  getSharedAppSaveFilesList(): Array<SharedAppSaveFile>;
+  setSharedAppSaveFilesList(value: Array<SharedAppSaveFile>): void;
+  addSharedAppSaveFiles(value?: SharedAppSaveFile, index?: number): SharedAppSaveFile;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSharedAppSaveFilesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSharedAppSaveFilesResponse): ListSharedAppSaveFilesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSharedAppSaveFilesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSharedAppSaveFilesResponse;
+  static deserializeBinaryFromReader(message: ListSharedAppSaveFilesResponse, reader: jspb.BinaryReader): ListSharedAppSaveFilesResponse;
+}
+
+export namespace ListSharedAppSaveFilesResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    sharedAppSaveFilesList: Array<SharedAppSaveFile.AsObject>,
+  }
+}
+
+export class RemoveSharedAppSaveFileRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveSharedAppSaveFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveSharedAppSaveFileRequest): RemoveSharedAppSaveFileRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveSharedAppSaveFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveSharedAppSaveFileRequest;
+  static deserializeBinaryFromReader(message: RemoveSharedAppSaveFileRequest, reader: jspb.BinaryReader): RemoveSharedAppSaveFileRequest;
+}
+
+export namespace RemoveSharedAppSaveFileRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class RemoveSharedAppSaveFileResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RemoveSharedAppSaveFileResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RemoveSharedAppSaveFileResponse): RemoveSharedAppSaveFileResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RemoveSharedAppSaveFileResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RemoveSharedAppSaveFileResponse;
+  static deserializeBinaryFromReader(message: RemoveSharedAppSaveFileResponse, reader: jspb.BinaryReader): RemoveSharedAppSaveFileResponse;
+}
+
+export namespace RemoveSharedAppSaveFileResponse {
+  export type AsObject = {
+  }
+}
+
 export class ListAppCategoriesRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppCategoriesRequest.AsObject;
@@ -1979,6 +2349,94 @@ export namespace AppInst {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     deviceId?: librarian_v1_common_pb.InternalID.AsObject,
     appId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class SharedAppSave extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasAppInfoId(): boolean;
+  clearAppInfoId(): void;
+  getAppInfoId(): librarian_v1_common_pb.InternalID | undefined;
+  setAppInfoId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SharedAppSave.AsObject;
+  static toObject(includeInstance: boolean, msg: SharedAppSave): SharedAppSave.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SharedAppSave, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SharedAppSave;
+  static deserializeBinaryFromReader(message: SharedAppSave, reader: jspb.BinaryReader): SharedAppSave;
+}
+
+export namespace SharedAppSave {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    name: string,
+    description: string,
+    appInfoId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class SharedAppSaveFile extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getPublic(): boolean;
+  setPublic(value: boolean): void;
+
+  hasSharedAppSaveId(): boolean;
+  clearSharedAppSaveId(): void;
+  getSharedAppSaveId(): librarian_v1_common_pb.InternalID | undefined;
+  setSharedAppSaveId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasFileMetadataId(): boolean;
+  clearFileMetadataId(): void;
+  getFileMetadataId(): librarian_v1_common_pb.InternalID | undefined;
+  setFileMetadataId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): librarian_v1_common_pb.InternalID | undefined;
+  setUserId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SharedAppSaveFile.AsObject;
+  static toObject(includeInstance: boolean, msg: SharedAppSaveFile): SharedAppSaveFile.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SharedAppSaveFile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SharedAppSaveFile;
+  static deserializeBinaryFromReader(message: SharedAppSaveFile, reader: jspb.BinaryReader): SharedAppSaveFile;
+}
+
+export namespace SharedAppSaveFile {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    name: string,
+    description: string,
+    pb_public: boolean,
+    sharedAppSaveId?: librarian_v1_common_pb.InternalID.AsObject,
+    fileMetadataId?: librarian_v1_common_pb.InternalID.AsObject,
+    userId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 

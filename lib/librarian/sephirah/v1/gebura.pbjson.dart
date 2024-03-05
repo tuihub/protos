@@ -935,6 +935,216 @@ const SetAppSaveFileCapacityResponse$json = {
 final $typed_data.Uint8List setAppSaveFileCapacityResponseDescriptor = $convert.base64Decode(
     'Ch5TZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVzcG9uc2U=');
 
+@$core.Deprecated('Use createSharedAppSaveRequestDescriptor instead')
+const CreateSharedAppSaveRequest$json = {
+  '1': 'CreateSharedAppSaveRequest',
+  '2': [
+    {'1': 'shared_app_save', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.SharedAppSave', '10': 'sharedAppSave'},
+  ],
+};
+
+/// Descriptor for `CreateSharedAppSaveRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSharedAppSaveRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVTaGFyZWRBcHBTYXZlUmVxdWVzdBJMCg9zaGFyZWRfYXBwX3NhdmUYASABKAsyJC'
+    '5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2ZVINc2hhcmVkQXBwU2F2ZQ==');
+
+@$core.Deprecated('Use createSharedAppSaveResponseDescriptor instead')
+const CreateSharedAppSaveResponse$json = {
+  '1': 'CreateSharedAppSaveResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateSharedAppSaveResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSharedAppSaveResponseDescriptor = $convert.base64Decode(
+    'ChtDcmVhdGVTaGFyZWRBcHBTYXZlUmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udj'
+    'EuSW50ZXJuYWxJRFICaWQ=');
+
+@$core.Deprecated('Use updateSharedAppSaveRequestDescriptor instead')
+const UpdateSharedAppSaveRequest$json = {
+  '1': 'UpdateSharedAppSaveRequest',
+  '2': [
+    {'1': 'shared_app_save', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.SharedAppSave', '10': 'sharedAppSave'},
+  ],
+};
+
+/// Descriptor for `UpdateSharedAppSaveRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSharedAppSaveRequestDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVTaGFyZWRBcHBTYXZlUmVxdWVzdBJMCg9zaGFyZWRfYXBwX3NhdmUYASABKAsyJC'
+    '5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2ZVINc2hhcmVkQXBwU2F2ZQ==');
+
+@$core.Deprecated('Use updateSharedAppSaveResponseDescriptor instead')
+const UpdateSharedAppSaveResponse$json = {
+  '1': 'UpdateSharedAppSaveResponse',
+};
+
+/// Descriptor for `UpdateSharedAppSaveResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSharedAppSaveResponseDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVTaGFyZWRBcHBTYXZlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use listSharedAppSavesRequestDescriptor instead')
+const ListSharedAppSavesRequest$json = {
+  '1': 'ListSharedAppSavesRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {'1': 'app_info_id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appInfoIdFilter'},
+  ],
+};
+
+/// Descriptor for `ListSharedAppSavesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSharedAppSavesRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0U2hhcmVkQXBwU2F2ZXNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi'
+    '52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSNQoJaWRfZmlsdGVyGAIgAygLMhgubGlicmFyaWFu'
+    'LnYxLkludGVybmFsSURSCGlkRmlsdGVyEkUKEmFwcF9pbmZvX2lkX2ZpbHRlchgDIAMoCzIYLm'
+    'xpYnJhcmlhbi52MS5JbnRlcm5hbElEUg9hcHBJbmZvSWRGaWx0ZXI=');
+
+@$core.Deprecated('Use listSharedAppSavesResponseDescriptor instead')
+const ListSharedAppSavesResponse$json = {
+  '1': 'ListSharedAppSavesResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'shared_app_saves', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SharedAppSave', '10': 'sharedAppSaves'},
+  ],
+};
+
+/// Descriptor for `ListSharedAppSavesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSharedAppSavesResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0U2hhcmVkQXBwU2F2ZXNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW'
+    '4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJOChBzaGFyZWRfYXBwX3NhdmVzGAIgAygLMiQu'
+    'bGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVSDnNoYXJlZEFwcFNhdmVz');
+
+@$core.Deprecated('Use removeSharedAppSaveRequestDescriptor instead')
+const RemoveSharedAppSaveRequest$json = {
+  '1': 'RemoveSharedAppSaveRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RemoveSharedAppSaveRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeSharedAppSaveRequestDescriptor = $convert.base64Decode(
+    'ChpSZW1vdmVTaGFyZWRBcHBTYXZlUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS'
+    '5JbnRlcm5hbElEUgJpZA==');
+
+@$core.Deprecated('Use removeSharedAppSaveResponseDescriptor instead')
+const RemoveSharedAppSaveResponse$json = {
+  '1': 'RemoveSharedAppSaveResponse',
+};
+
+/// Descriptor for `RemoveSharedAppSaveResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeSharedAppSaveResponseDescriptor = $convert.base64Decode(
+    'ChtSZW1vdmVTaGFyZWRBcHBTYXZlUmVzcG9uc2U=');
+
+@$core.Deprecated('Use createSharedAppSaveFileRequestDescriptor instead')
+const CreateSharedAppSaveFileRequest$json = {
+  '1': 'CreateSharedAppSaveFileRequest',
+  '2': [
+    {'1': 'shared_app_save_file', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.SharedAppSaveFile', '10': 'sharedAppSaveFile'},
+  ],
+};
+
+/// Descriptor for `CreateSharedAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSharedAppSaveFileRequestDescriptor = $convert.base64Decode(
+    'Ch5DcmVhdGVTaGFyZWRBcHBTYXZlRmlsZVJlcXVlc3QSWQoUc2hhcmVkX2FwcF9zYXZlX2ZpbG'
+    'UYASABKAsyKC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2ZUZpbGVSEXNoYXJl'
+    'ZEFwcFNhdmVGaWxl');
+
+@$core.Deprecated('Use createSharedAppSaveFileResponseDescriptor instead')
+const CreateSharedAppSaveFileResponse$json = {
+  '1': 'CreateSharedAppSaveFileResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateSharedAppSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSharedAppSaveFileResponseDescriptor = $convert.base64Decode(
+    'Ch9DcmVhdGVTaGFyZWRBcHBTYXZlRmlsZVJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaW'
+    'FuLnYxLkludGVybmFsSURSAmlk');
+
+@$core.Deprecated('Use updateSharedAppSaveFileRequestDescriptor instead')
+const UpdateSharedAppSaveFileRequest$json = {
+  '1': 'UpdateSharedAppSaveFileRequest',
+  '2': [
+    {'1': 'shared_app_save_file', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.SharedAppSaveFile', '10': 'sharedAppSaveFile'},
+  ],
+};
+
+/// Descriptor for `UpdateSharedAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSharedAppSaveFileRequestDescriptor = $convert.base64Decode(
+    'Ch5VcGRhdGVTaGFyZWRBcHBTYXZlRmlsZVJlcXVlc3QSWQoUc2hhcmVkX2FwcF9zYXZlX2ZpbG'
+    'UYASABKAsyKC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2ZUZpbGVSEXNoYXJl'
+    'ZEFwcFNhdmVGaWxl');
+
+@$core.Deprecated('Use updateSharedAppSaveFileResponseDescriptor instead')
+const UpdateSharedAppSaveFileResponse$json = {
+  '1': 'UpdateSharedAppSaveFileResponse',
+};
+
+/// Descriptor for `UpdateSharedAppSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSharedAppSaveFileResponseDescriptor = $convert.base64Decode(
+    'Ch9VcGRhdGVTaGFyZWRBcHBTYXZlRmlsZVJlc3BvbnNl');
+
+@$core.Deprecated('Use listSharedAppSaveFilesRequestDescriptor instead')
+const ListSharedAppSaveFilesRequest$json = {
+  '1': 'ListSharedAppSaveFilesRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {'1': 'shared_app_save_id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sharedAppSaveIdFilter'},
+    {'1': 'user_id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userIdFilter'},
+  ],
+};
+
+/// Descriptor for `ListSharedAppSaveFilesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSharedAppSaveFilesRequestDescriptor = $convert.base64Decode(
+    'Ch1MaXN0U2hhcmVkQXBwU2F2ZUZpbGVzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYX'
+    'JpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEjUKCWlkX2ZpbHRlchgCIAMoCzIYLmxpYnJh'
+    'cmlhbi52MS5JbnRlcm5hbElEUghpZEZpbHRlchJSChlzaGFyZWRfYXBwX3NhdmVfaWRfZmlsdG'
+    'VyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSFXNoYXJlZEFwcFNhdmVJZEZpbHRl'
+    'chI+Cg51c2VyX2lkX2ZpbHRlchgEIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgx1c2'
+    'VySWRGaWx0ZXI=');
+
+@$core.Deprecated('Use listSharedAppSaveFilesResponseDescriptor instead')
+const ListSharedAppSaveFilesResponse$json = {
+  '1': 'ListSharedAppSaveFilesResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'shared_app_save_files', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SharedAppSaveFile', '10': 'sharedAppSaveFiles'},
+  ],
+};
+
+/// Descriptor for `ListSharedAppSaveFilesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSharedAppSaveFilesResponseDescriptor = $convert.base64Decode(
+    'Ch5MaXN0U2hhcmVkQXBwU2F2ZUZpbGVzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicm'
+    'FyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSWwoVc2hhcmVkX2FwcF9zYXZlX2ZpbGVz'
+    'GAIgAygLMigubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVGaWxlUhJzaGFyZW'
+    'RBcHBTYXZlRmlsZXM=');
+
+@$core.Deprecated('Use removeSharedAppSaveFileRequestDescriptor instead')
+const RemoveSharedAppSaveFileRequest$json = {
+  '1': 'RemoveSharedAppSaveFileRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `RemoveSharedAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeSharedAppSaveFileRequestDescriptor = $convert.base64Decode(
+    'Ch5SZW1vdmVTaGFyZWRBcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW'
+    '4udjEuSW50ZXJuYWxJRFICaWQ=');
+
+@$core.Deprecated('Use removeSharedAppSaveFileResponseDescriptor instead')
+const RemoveSharedAppSaveFileResponse$json = {
+  '1': 'RemoveSharedAppSaveFileResponse',
+};
+
+/// Descriptor for `RemoveSharedAppSaveFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeSharedAppSaveFileResponseDescriptor = $convert.base64Decode(
+    'Ch9SZW1vdmVTaGFyZWRBcHBTYXZlRmlsZVJlc3BvbnNl');
+
 @$core.Deprecated('Use listAppCategoriesRequestDescriptor instead')
 const ListAppCategoriesRequest$json = {
   '1': 'ListAppCategoriesRequest',
@@ -1120,4 +1330,49 @@ final $typed_data.Uint8List appInstDescriptor = $convert.base64Decode(
     'CgdBcHBJbnN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEjUKCW'
     'RldmljZV9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghkZXZpY2VJZBIvCgZh'
     'cHBfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQ=');
+
+@$core.Deprecated('Use sharedAppSaveDescriptor instead')
+const SharedAppSave$json = {
+  '1': 'SharedAppSave',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'app_info_id', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appInfoId'},
+  ],
+};
+
+/// Descriptor for `SharedAppSave`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sharedAppSaveDescriptor = $convert.base64Decode(
+    'Cg1TaGFyZWRBcHBTYXZlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAm'
+    'lkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9u'
+    'EjgKC2FwcF9pbmZvX2lkGAQgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCWFwcEluZm'
+    '9JZA==');
+
+@$core.Deprecated('Use sharedAppSaveFileDescriptor instead')
+const SharedAppSaveFile$json = {
+  '1': 'SharedAppSaveFile',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'public', '3': 4, '4': 1, '5': 8, '10': 'public'},
+    {'1': 'shared_app_save_id', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sharedAppSaveId'},
+    {'1': 'file_metadata_id', '3': 6, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'fileMetadataId'},
+    {'1': 'user_id', '3': 7, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'userId', '17': true},
+  ],
+  '8': [
+    {'1': '_user_id'},
+  ],
+};
+
+/// Descriptor for `SharedAppSaveFile`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sharedAppSaveFileDescriptor = $convert.base64Decode(
+    'ChFTaGFyZWRBcHBTYXZlRmlsZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
+    'lEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlw'
+    'dGlvbhIWCgZwdWJsaWMYBCABKAhSBnB1YmxpYxJFChJzaGFyZWRfYXBwX3NhdmVfaWQYBSABKA'
+    'syGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIPc2hhcmVkQXBwU2F2ZUlkEkIKEGZpbGVfbWV0'
+    'YWRhdGFfaWQYBiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOZmlsZU1ldGFkYXRhSW'
+    'QSNgoHdXNlcl9pZBgHIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSBnVzZXJJZIgB'
+    'AUIKCghfdXNlcl9pZA==');
 

@@ -85,6 +85,14 @@ const (
 	LibrarianSephirahService_UnpinAppSaveFile_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/UnpinAppSaveFile"
 	LibrarianSephirahService_SetAppSaveFileCapacity_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacity"
 	LibrarianSephirahService_GetAppSaveFileCapacity_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity"
+	LibrarianSephirahService_CreateSharedAppSave_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSave"
+	LibrarianSephirahService_UpdateSharedAppSave_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSave"
+	LibrarianSephirahService_ListSharedAppSaves_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaves"
+	LibrarianSephirahService_RemoveSharedAppSave_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSave"
+	LibrarianSephirahService_CreateSharedAppSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSaveFile"
+	LibrarianSephirahService_UpdateSharedAppSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSaveFile"
+	LibrarianSephirahService_ListSharedAppSaveFiles_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaveFiles"
+	LibrarianSephirahService_RemoveSharedAppSaveFile_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSaveFile"
 	LibrarianSephirahService_ListAppCategories_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories"
 	LibrarianSephirahService_CreateAppCategory_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory"
 	LibrarianSephirahService_UpdateAppCategory_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory"
@@ -275,6 +283,22 @@ type LibrarianSephirahServiceClient interface {
 	SetAppSaveFileCapacity(ctx context.Context, in *SetAppSaveFileCapacityRequest, opts ...grpc.CallOption) (*SetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
 	GetAppSaveFileCapacity(ctx context.Context, in *GetAppSaveFileCapacityRequest, opts ...grpc.CallOption) (*GetAppSaveFileCapacityResponse, error)
+	// `Gebura` `Admin`
+	CreateSharedAppSave(ctx context.Context, in *CreateSharedAppSaveRequest, opts ...grpc.CallOption) (*CreateSharedAppSaveResponse, error)
+	// `Gebura` `Admin`
+	UpdateSharedAppSave(ctx context.Context, in *UpdateSharedAppSaveRequest, opts ...grpc.CallOption) (*UpdateSharedAppSaveResponse, error)
+	// `Gebura` `Normal`
+	ListSharedAppSaves(ctx context.Context, in *ListSharedAppSavesRequest, opts ...grpc.CallOption) (*ListSharedAppSavesResponse, error)
+	// `Gebura` `Admin`
+	RemoveSharedAppSave(ctx context.Context, in *RemoveSharedAppSaveRequest, opts ...grpc.CallOption) (*RemoveSharedAppSaveResponse, error)
+	// `Gebura` `Admin` `Normal limited`
+	CreateSharedAppSaveFile(ctx context.Context, in *CreateSharedAppSaveFileRequest, opts ...grpc.CallOption) (*CreateSharedAppSaveFileResponse, error)
+	// `Gebura` `Admin` `Normal limited`
+	UpdateSharedAppSaveFile(ctx context.Context, in *UpdateSharedAppSaveFileRequest, opts ...grpc.CallOption) (*UpdateSharedAppSaveFileResponse, error)
+	// `Gebura` `Normal`
+	ListSharedAppSaveFiles(ctx context.Context, in *ListSharedAppSaveFilesRequest, opts ...grpc.CallOption) (*ListSharedAppSaveFilesResponse, error)
+	// `Gebura` `Admin` `Normal limited`
+	RemoveSharedAppSaveFile(ctx context.Context, in *RemoveSharedAppSaveFileRequest, opts ...grpc.CallOption) (*RemoveSharedAppSaveFileResponse, error)
 	// `Gebura` `Normal`
 	ListAppCategories(ctx context.Context, in *ListAppCategoriesRequest, opts ...grpc.CallOption) (*ListAppCategoriesResponse, error)
 	// `Gebura` `Normal`
@@ -1020,6 +1044,78 @@ func (c *librarianSephirahServiceClient) GetAppSaveFileCapacity(ctx context.Cont
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateSharedAppSave(ctx context.Context, in *CreateSharedAppSaveRequest, opts ...grpc.CallOption) (*CreateSharedAppSaveResponse, error) {
+	out := new(CreateSharedAppSaveResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateSharedAppSave_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateSharedAppSave(ctx context.Context, in *UpdateSharedAppSaveRequest, opts ...grpc.CallOption) (*UpdateSharedAppSaveResponse, error) {
+	out := new(UpdateSharedAppSaveResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateSharedAppSave_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListSharedAppSaves(ctx context.Context, in *ListSharedAppSavesRequest, opts ...grpc.CallOption) (*ListSharedAppSavesResponse, error) {
+	out := new(ListSharedAppSavesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListSharedAppSaves_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) RemoveSharedAppSave(ctx context.Context, in *RemoveSharedAppSaveRequest, opts ...grpc.CallOption) (*RemoveSharedAppSaveResponse, error) {
+	out := new(RemoveSharedAppSaveResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveSharedAppSave_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) CreateSharedAppSaveFile(ctx context.Context, in *CreateSharedAppSaveFileRequest, opts ...grpc.CallOption) (*CreateSharedAppSaveFileResponse, error) {
+	out := new(CreateSharedAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateSharedAppSaveFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateSharedAppSaveFile(ctx context.Context, in *UpdateSharedAppSaveFileRequest, opts ...grpc.CallOption) (*UpdateSharedAppSaveFileResponse, error) {
+	out := new(UpdateSharedAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateSharedAppSaveFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListSharedAppSaveFiles(ctx context.Context, in *ListSharedAppSaveFilesRequest, opts ...grpc.CallOption) (*ListSharedAppSaveFilesResponse, error) {
+	out := new(ListSharedAppSaveFilesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListSharedAppSaveFiles_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) RemoveSharedAppSaveFile(ctx context.Context, in *RemoveSharedAppSaveFileRequest, opts ...grpc.CallOption) (*RemoveSharedAppSaveFileResponse, error) {
+	out := new(RemoveSharedAppSaveFileResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveSharedAppSaveFile_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) ListAppCategories(ctx context.Context, in *ListAppCategoriesRequest, opts ...grpc.CallOption) (*ListAppCategoriesResponse, error) {
 	out := new(ListAppCategoriesResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppCategories_FullMethodName, in, out, opts...)
@@ -1416,6 +1512,22 @@ type LibrarianSephirahServiceServer interface {
 	SetAppSaveFileCapacity(context.Context, *SetAppSaveFileCapacityRequest) (*SetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
 	GetAppSaveFileCapacity(context.Context, *GetAppSaveFileCapacityRequest) (*GetAppSaveFileCapacityResponse, error)
+	// `Gebura` `Admin`
+	CreateSharedAppSave(context.Context, *CreateSharedAppSaveRequest) (*CreateSharedAppSaveResponse, error)
+	// `Gebura` `Admin`
+	UpdateSharedAppSave(context.Context, *UpdateSharedAppSaveRequest) (*UpdateSharedAppSaveResponse, error)
+	// `Gebura` `Normal`
+	ListSharedAppSaves(context.Context, *ListSharedAppSavesRequest) (*ListSharedAppSavesResponse, error)
+	// `Gebura` `Admin`
+	RemoveSharedAppSave(context.Context, *RemoveSharedAppSaveRequest) (*RemoveSharedAppSaveResponse, error)
+	// `Gebura` `Admin` `Normal limited`
+	CreateSharedAppSaveFile(context.Context, *CreateSharedAppSaveFileRequest) (*CreateSharedAppSaveFileResponse, error)
+	// `Gebura` `Admin` `Normal limited`
+	UpdateSharedAppSaveFile(context.Context, *UpdateSharedAppSaveFileRequest) (*UpdateSharedAppSaveFileResponse, error)
+	// `Gebura` `Normal`
+	ListSharedAppSaveFiles(context.Context, *ListSharedAppSaveFilesRequest) (*ListSharedAppSaveFilesResponse, error)
+	// `Gebura` `Admin` `Normal limited`
+	RemoveSharedAppSaveFile(context.Context, *RemoveSharedAppSaveFileRequest) (*RemoveSharedAppSaveFileResponse, error)
 	// `Gebura` `Normal`
 	ListAppCategories(context.Context, *ListAppCategoriesRequest) (*ListAppCategoriesResponse, error)
 	// `Gebura` `Normal`
@@ -1672,6 +1784,30 @@ func (UnimplementedLibrarianSephirahServiceServer) SetAppSaveFileCapacity(contex
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetAppSaveFileCapacity(context.Context, *GetAppSaveFileCapacityRequest) (*GetAppSaveFileCapacityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAppSaveFileCapacity not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateSharedAppSave(context.Context, *CreateSharedAppSaveRequest) (*CreateSharedAppSaveResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSharedAppSave not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateSharedAppSave(context.Context, *UpdateSharedAppSaveRequest) (*UpdateSharedAppSaveResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSharedAppSave not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListSharedAppSaves(context.Context, *ListSharedAppSavesRequest) (*ListSharedAppSavesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListSharedAppSaves not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) RemoveSharedAppSave(context.Context, *RemoveSharedAppSaveRequest) (*RemoveSharedAppSaveResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveSharedAppSave not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateSharedAppSaveFile(context.Context, *CreateSharedAppSaveFileRequest) (*CreateSharedAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSharedAppSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateSharedAppSaveFile(context.Context, *UpdateSharedAppSaveFileRequest) (*UpdateSharedAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSharedAppSaveFile not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListSharedAppSaveFiles(context.Context, *ListSharedAppSaveFilesRequest) (*ListSharedAppSaveFilesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListSharedAppSaveFiles not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) RemoveSharedAppSaveFile(context.Context, *RemoveSharedAppSaveFileRequest) (*RemoveSharedAppSaveFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveSharedAppSaveFile not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListAppCategories(context.Context, *ListAppCategoriesRequest) (*ListAppCategoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAppCategories not implemented")
@@ -2980,6 +3116,150 @@ func _LibrarianSephirahService_GetAppSaveFileCapacity_Handler(srv interface{}, c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_CreateSharedAppSave_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSharedAppSaveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateSharedAppSave(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateSharedAppSave_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateSharedAppSave(ctx, req.(*CreateSharedAppSaveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateSharedAppSave_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSharedAppSaveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateSharedAppSave(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateSharedAppSave_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateSharedAppSave(ctx, req.(*UpdateSharedAppSaveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListSharedAppSaves_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSharedAppSavesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListSharedAppSaves(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListSharedAppSaves_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListSharedAppSaves(ctx, req.(*ListSharedAppSavesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_RemoveSharedAppSave_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveSharedAppSaveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).RemoveSharedAppSave(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_RemoveSharedAppSave_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).RemoveSharedAppSave(ctx, req.(*RemoveSharedAppSaveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_CreateSharedAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateSharedAppSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateSharedAppSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateSharedAppSaveFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateSharedAppSaveFile(ctx, req.(*CreateSharedAppSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateSharedAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSharedAppSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateSharedAppSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateSharedAppSaveFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateSharedAppSaveFile(ctx, req.(*UpdateSharedAppSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListSharedAppSaveFiles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListSharedAppSaveFilesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListSharedAppSaveFiles(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListSharedAppSaveFiles_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListSharedAppSaveFiles(ctx, req.(*ListSharedAppSaveFilesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_RemoveSharedAppSaveFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveSharedAppSaveFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).RemoveSharedAppSaveFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_RemoveSharedAppSaveFile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).RemoveSharedAppSaveFile(ctx, req.(*RemoveSharedAppSaveFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_ListAppCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListAppCategoriesRequest)
 	if err := dec(in); err != nil {
@@ -3702,6 +3982,38 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAppSaveFileCapacity",
 			Handler:    _LibrarianSephirahService_GetAppSaveFileCapacity_Handler,
+		},
+		{
+			MethodName: "CreateSharedAppSave",
+			Handler:    _LibrarianSephirahService_CreateSharedAppSave_Handler,
+		},
+		{
+			MethodName: "UpdateSharedAppSave",
+			Handler:    _LibrarianSephirahService_UpdateSharedAppSave_Handler,
+		},
+		{
+			MethodName: "ListSharedAppSaves",
+			Handler:    _LibrarianSephirahService_ListSharedAppSaves_Handler,
+		},
+		{
+			MethodName: "RemoveSharedAppSave",
+			Handler:    _LibrarianSephirahService_RemoveSharedAppSave_Handler,
+		},
+		{
+			MethodName: "CreateSharedAppSaveFile",
+			Handler:    _LibrarianSephirahService_CreateSharedAppSaveFile_Handler,
+		},
+		{
+			MethodName: "UpdateSharedAppSaveFile",
+			Handler:    _LibrarianSephirahService_UpdateSharedAppSaveFile_Handler,
+		},
+		{
+			MethodName: "ListSharedAppSaveFiles",
+			Handler:    _LibrarianSephirahService_ListSharedAppSaveFiles_Handler,
+		},
+		{
+			MethodName: "RemoveSharedAppSaveFile",
+			Handler:    _LibrarianSephirahService_RemoveSharedAppSaveFile_Handler,
 		},
 		{
 			MethodName: "ListAppCategories",

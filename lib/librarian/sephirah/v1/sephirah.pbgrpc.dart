@@ -291,6 +291,38 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity',
       ($4.GetAppSaveFileCapacityRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityResponse.fromBuffer(value));
+  static final _$createSharedAppSave = $grpc.ClientMethod<$4.CreateSharedAppSaveRequest, $4.CreateSharedAppSaveResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSave',
+      ($4.CreateSharedAppSaveRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateSharedAppSaveResponse.fromBuffer(value));
+  static final _$updateSharedAppSave = $grpc.ClientMethod<$4.UpdateSharedAppSaveRequest, $4.UpdateSharedAppSaveResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSave',
+      ($4.UpdateSharedAppSaveRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UpdateSharedAppSaveResponse.fromBuffer(value));
+  static final _$listSharedAppSaves = $grpc.ClientMethod<$4.ListSharedAppSavesRequest, $4.ListSharedAppSavesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaves',
+      ($4.ListSharedAppSavesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListSharedAppSavesResponse.fromBuffer(value));
+  static final _$removeSharedAppSave = $grpc.ClientMethod<$4.RemoveSharedAppSaveRequest, $4.RemoveSharedAppSaveResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSave',
+      ($4.RemoveSharedAppSaveRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.RemoveSharedAppSaveResponse.fromBuffer(value));
+  static final _$createSharedAppSaveFile = $grpc.ClientMethod<$4.CreateSharedAppSaveFileRequest, $4.CreateSharedAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSaveFile',
+      ($4.CreateSharedAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.CreateSharedAppSaveFileResponse.fromBuffer(value));
+  static final _$updateSharedAppSaveFile = $grpc.ClientMethod<$4.UpdateSharedAppSaveFileRequest, $4.UpdateSharedAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSaveFile',
+      ($4.UpdateSharedAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.UpdateSharedAppSaveFileResponse.fromBuffer(value));
+  static final _$listSharedAppSaveFiles = $grpc.ClientMethod<$4.ListSharedAppSaveFilesRequest, $4.ListSharedAppSaveFilesResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaveFiles',
+      ($4.ListSharedAppSaveFilesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ListSharedAppSaveFilesResponse.fromBuffer(value));
+  static final _$removeSharedAppSaveFile = $grpc.ClientMethod<$4.RemoveSharedAppSaveFileRequest, $4.RemoveSharedAppSaveFileResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSaveFile',
+      ($4.RemoveSharedAppSaveFileRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.RemoveSharedAppSaveFileResponse.fromBuffer(value));
   static final _$listAppCategories = $grpc.ClientMethod<$4.ListAppCategoriesRequest, $4.ListAppCategoriesResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories',
       ($4.ListAppCategoriesRequest value) => value.writeToBuffer(),
@@ -664,6 +696,38 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($4.GetAppSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppSaveFileCapacity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.CreateSharedAppSaveResponse> createSharedAppSave($4.CreateSharedAppSaveRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createSharedAppSave, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateSharedAppSaveResponse> updateSharedAppSave($4.UpdateSharedAppSaveRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateSharedAppSave, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ListSharedAppSavesResponse> listSharedAppSaves($4.ListSharedAppSavesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listSharedAppSaves, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.RemoveSharedAppSaveResponse> removeSharedAppSave($4.RemoveSharedAppSaveRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeSharedAppSave, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.CreateSharedAppSaveFileResponse> createSharedAppSaveFile($4.CreateSharedAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createSharedAppSaveFile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.UpdateSharedAppSaveFileResponse> updateSharedAppSaveFile($4.UpdateSharedAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateSharedAppSaveFile, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ListSharedAppSaveFilesResponse> listSharedAppSaveFiles($4.ListSharedAppSaveFilesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listSharedAppSaveFiles, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.RemoveSharedAppSaveFileResponse> removeSharedAppSaveFile($4.RemoveSharedAppSaveFileRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeSharedAppSaveFile, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.ListAppCategoriesResponse> listAppCategories($4.ListAppCategoriesRequest request, {$grpc.CallOptions? options}) {
@@ -1238,6 +1302,62 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityRequest.fromBuffer(value),
         ($4.GetAppSaveFileCapacityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateSharedAppSaveRequest, $4.CreateSharedAppSaveResponse>(
+        'CreateSharedAppSave',
+        createSharedAppSave_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.CreateSharedAppSaveRequest.fromBuffer(value),
+        ($4.CreateSharedAppSaveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateSharedAppSaveRequest, $4.UpdateSharedAppSaveResponse>(
+        'UpdateSharedAppSave',
+        updateSharedAppSave_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.UpdateSharedAppSaveRequest.fromBuffer(value),
+        ($4.UpdateSharedAppSaveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListSharedAppSavesRequest, $4.ListSharedAppSavesResponse>(
+        'ListSharedAppSaves',
+        listSharedAppSaves_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.ListSharedAppSavesRequest.fromBuffer(value),
+        ($4.ListSharedAppSavesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.RemoveSharedAppSaveRequest, $4.RemoveSharedAppSaveResponse>(
+        'RemoveSharedAppSave',
+        removeSharedAppSave_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.RemoveSharedAppSaveRequest.fromBuffer(value),
+        ($4.RemoveSharedAppSaveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.CreateSharedAppSaveFileRequest, $4.CreateSharedAppSaveFileResponse>(
+        'CreateSharedAppSaveFile',
+        createSharedAppSaveFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.CreateSharedAppSaveFileRequest.fromBuffer(value),
+        ($4.CreateSharedAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.UpdateSharedAppSaveFileRequest, $4.UpdateSharedAppSaveFileResponse>(
+        'UpdateSharedAppSaveFile',
+        updateSharedAppSaveFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.UpdateSharedAppSaveFileRequest.fromBuffer(value),
+        ($4.UpdateSharedAppSaveFileResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ListSharedAppSaveFilesRequest, $4.ListSharedAppSaveFilesResponse>(
+        'ListSharedAppSaveFiles',
+        listSharedAppSaveFiles_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.ListSharedAppSaveFilesRequest.fromBuffer(value),
+        ($4.ListSharedAppSaveFilesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.RemoveSharedAppSaveFileRequest, $4.RemoveSharedAppSaveFileResponse>(
+        'RemoveSharedAppSaveFile',
+        removeSharedAppSaveFile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.RemoveSharedAppSaveFileRequest.fromBuffer(value),
+        ($4.RemoveSharedAppSaveFileResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.ListAppCategoriesRequest, $4.ListAppCategoriesResponse>(
         'ListAppCategories',
         listAppCategories_Pre,
@@ -1674,6 +1794,38 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return getAppSaveFileCapacity(call, await request);
   }
 
+  $async.Future<$4.CreateSharedAppSaveResponse> createSharedAppSave_Pre($grpc.ServiceCall call, $async.Future<$4.CreateSharedAppSaveRequest> request) async {
+    return createSharedAppSave(call, await request);
+  }
+
+  $async.Future<$4.UpdateSharedAppSaveResponse> updateSharedAppSave_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateSharedAppSaveRequest> request) async {
+    return updateSharedAppSave(call, await request);
+  }
+
+  $async.Future<$4.ListSharedAppSavesResponse> listSharedAppSaves_Pre($grpc.ServiceCall call, $async.Future<$4.ListSharedAppSavesRequest> request) async {
+    return listSharedAppSaves(call, await request);
+  }
+
+  $async.Future<$4.RemoveSharedAppSaveResponse> removeSharedAppSave_Pre($grpc.ServiceCall call, $async.Future<$4.RemoveSharedAppSaveRequest> request) async {
+    return removeSharedAppSave(call, await request);
+  }
+
+  $async.Future<$4.CreateSharedAppSaveFileResponse> createSharedAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.CreateSharedAppSaveFileRequest> request) async {
+    return createSharedAppSaveFile(call, await request);
+  }
+
+  $async.Future<$4.UpdateSharedAppSaveFileResponse> updateSharedAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateSharedAppSaveFileRequest> request) async {
+    return updateSharedAppSaveFile(call, await request);
+  }
+
+  $async.Future<$4.ListSharedAppSaveFilesResponse> listSharedAppSaveFiles_Pre($grpc.ServiceCall call, $async.Future<$4.ListSharedAppSaveFilesRequest> request) async {
+    return listSharedAppSaveFiles(call, await request);
+  }
+
+  $async.Future<$4.RemoveSharedAppSaveFileResponse> removeSharedAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.RemoveSharedAppSaveFileRequest> request) async {
+    return removeSharedAppSaveFile(call, await request);
+  }
+
   $async.Future<$4.ListAppCategoriesResponse> listAppCategories_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppCategoriesRequest> request) async {
     return listAppCategories(call, await request);
   }
@@ -1844,6 +1996,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.UnpinAppSaveFileResponse> unpinAppSaveFile($grpc.ServiceCall call, $4.UnpinAppSaveFileRequest request);
   $async.Future<$4.SetAppSaveFileCapacityResponse> setAppSaveFileCapacity($grpc.ServiceCall call, $4.SetAppSaveFileCapacityRequest request);
   $async.Future<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($grpc.ServiceCall call, $4.GetAppSaveFileCapacityRequest request);
+  $async.Future<$4.CreateSharedAppSaveResponse> createSharedAppSave($grpc.ServiceCall call, $4.CreateSharedAppSaveRequest request);
+  $async.Future<$4.UpdateSharedAppSaveResponse> updateSharedAppSave($grpc.ServiceCall call, $4.UpdateSharedAppSaveRequest request);
+  $async.Future<$4.ListSharedAppSavesResponse> listSharedAppSaves($grpc.ServiceCall call, $4.ListSharedAppSavesRequest request);
+  $async.Future<$4.RemoveSharedAppSaveResponse> removeSharedAppSave($grpc.ServiceCall call, $4.RemoveSharedAppSaveRequest request);
+  $async.Future<$4.CreateSharedAppSaveFileResponse> createSharedAppSaveFile($grpc.ServiceCall call, $4.CreateSharedAppSaveFileRequest request);
+  $async.Future<$4.UpdateSharedAppSaveFileResponse> updateSharedAppSaveFile($grpc.ServiceCall call, $4.UpdateSharedAppSaveFileRequest request);
+  $async.Future<$4.ListSharedAppSaveFilesResponse> listSharedAppSaveFiles($grpc.ServiceCall call, $4.ListSharedAppSaveFilesRequest request);
+  $async.Future<$4.RemoveSharedAppSaveFileResponse> removeSharedAppSaveFile($grpc.ServiceCall call, $4.RemoveSharedAppSaveFileRequest request);
   $async.Future<$4.ListAppCategoriesResponse> listAppCategories($grpc.ServiceCall call, $4.ListAppCategoriesRequest request);
   $async.Future<$4.CreateAppCategoryResponse> createAppCategory($grpc.ServiceCall call, $4.CreateAppCategoryRequest request);
   $async.Future<$4.UpdateAppCategoryResponse> updateAppCategory($grpc.ServiceCall call, $4.UpdateAppCategoryRequest request);

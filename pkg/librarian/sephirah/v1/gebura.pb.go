@@ -3410,6 +3410,781 @@ func (*SetAppSaveFileCapacityResponse) Descriptor() ([]byte, []int) {
 	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{65}
 }
 
+type CreateSharedAppSaveRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SharedAppSave *SharedAppSave `protobuf:"bytes,1,opt,name=shared_app_save,json=sharedAppSave,proto3" json:"shared_app_save,omitempty"`
+}
+
+func (x *CreateSharedAppSaveRequest) Reset() {
+	*x = CreateSharedAppSaveRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[66]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateSharedAppSaveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSharedAppSaveRequest) ProtoMessage() {}
+
+func (x *CreateSharedAppSaveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[66]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSharedAppSaveRequest.ProtoReflect.Descriptor instead.
+func (*CreateSharedAppSaveRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *CreateSharedAppSaveRequest) GetSharedAppSave() *SharedAppSave {
+	if x != nil {
+		return x.SharedAppSave
+	}
+	return nil
+}
+
+type CreateSharedAppSaveResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id *v1.InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *CreateSharedAppSaveResponse) Reset() {
+	*x = CreateSharedAppSaveResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[67]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateSharedAppSaveResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSharedAppSaveResponse) ProtoMessage() {}
+
+func (x *CreateSharedAppSaveResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[67]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSharedAppSaveResponse.ProtoReflect.Descriptor instead.
+func (*CreateSharedAppSaveResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *CreateSharedAppSaveResponse) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+type UpdateSharedAppSaveRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SharedAppSave *SharedAppSave `protobuf:"bytes,1,opt,name=shared_app_save,json=sharedAppSave,proto3" json:"shared_app_save,omitempty"`
+}
+
+func (x *UpdateSharedAppSaveRequest) Reset() {
+	*x = UpdateSharedAppSaveRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[68]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSharedAppSaveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSharedAppSaveRequest) ProtoMessage() {}
+
+func (x *UpdateSharedAppSaveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[68]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSharedAppSaveRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSharedAppSaveRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *UpdateSharedAppSaveRequest) GetSharedAppSave() *SharedAppSave {
+	if x != nil {
+		return x.SharedAppSave
+	}
+	return nil
+}
+
+type UpdateSharedAppSaveResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *UpdateSharedAppSaveResponse) Reset() {
+	*x = UpdateSharedAppSaveResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[69]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSharedAppSaveResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSharedAppSaveResponse) ProtoMessage() {}
+
+func (x *UpdateSharedAppSaveResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[69]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSharedAppSaveResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSharedAppSaveResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{69}
+}
+
+type ListSharedAppSavesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Paging          *v1.PagingRequest `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
+	IdFilter        []*v1.InternalID  `protobuf:"bytes,2,rep,name=id_filter,json=idFilter,proto3" json:"id_filter,omitempty"`
+	AppInfoIdFilter []*v1.InternalID  `protobuf:"bytes,3,rep,name=app_info_id_filter,json=appInfoIdFilter,proto3" json:"app_info_id_filter,omitempty"`
+}
+
+func (x *ListSharedAppSavesRequest) Reset() {
+	*x = ListSharedAppSavesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[70]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSharedAppSavesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSharedAppSavesRequest) ProtoMessage() {}
+
+func (x *ListSharedAppSavesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[70]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSharedAppSavesRequest.ProtoReflect.Descriptor instead.
+func (*ListSharedAppSavesRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *ListSharedAppSavesRequest) GetPaging() *v1.PagingRequest {
+	if x != nil {
+		return x.Paging
+	}
+	return nil
+}
+
+func (x *ListSharedAppSavesRequest) GetIdFilter() []*v1.InternalID {
+	if x != nil {
+		return x.IdFilter
+	}
+	return nil
+}
+
+func (x *ListSharedAppSavesRequest) GetAppInfoIdFilter() []*v1.InternalID {
+	if x != nil {
+		return x.AppInfoIdFilter
+	}
+	return nil
+}
+
+type ListSharedAppSavesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Paging         *v1.PagingResponse `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
+	SharedAppSaves []*SharedAppSave   `protobuf:"bytes,2,rep,name=shared_app_saves,json=sharedAppSaves,proto3" json:"shared_app_saves,omitempty"`
+}
+
+func (x *ListSharedAppSavesResponse) Reset() {
+	*x = ListSharedAppSavesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[71]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSharedAppSavesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSharedAppSavesResponse) ProtoMessage() {}
+
+func (x *ListSharedAppSavesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[71]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSharedAppSavesResponse.ProtoReflect.Descriptor instead.
+func (*ListSharedAppSavesResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *ListSharedAppSavesResponse) GetPaging() *v1.PagingResponse {
+	if x != nil {
+		return x.Paging
+	}
+	return nil
+}
+
+func (x *ListSharedAppSavesResponse) GetSharedAppSaves() []*SharedAppSave {
+	if x != nil {
+		return x.SharedAppSaves
+	}
+	return nil
+}
+
+type RemoveSharedAppSaveRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id *v1.InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *RemoveSharedAppSaveRequest) Reset() {
+	*x = RemoveSharedAppSaveRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[72]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RemoveSharedAppSaveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSharedAppSaveRequest) ProtoMessage() {}
+
+func (x *RemoveSharedAppSaveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[72]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSharedAppSaveRequest.ProtoReflect.Descriptor instead.
+func (*RemoveSharedAppSaveRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *RemoveSharedAppSaveRequest) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+type RemoveSharedAppSaveResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *RemoveSharedAppSaveResponse) Reset() {
+	*x = RemoveSharedAppSaveResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[73]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RemoveSharedAppSaveResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSharedAppSaveResponse) ProtoMessage() {}
+
+func (x *RemoveSharedAppSaveResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[73]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSharedAppSaveResponse.ProtoReflect.Descriptor instead.
+func (*RemoveSharedAppSaveResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{73}
+}
+
+type CreateSharedAppSaveFileRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// `Normal` will always create non-public SharedAppSaveFile
+	SharedAppSaveFile *SharedAppSaveFile `protobuf:"bytes,1,opt,name=shared_app_save_file,json=sharedAppSaveFile,proto3" json:"shared_app_save_file,omitempty"`
+}
+
+func (x *CreateSharedAppSaveFileRequest) Reset() {
+	*x = CreateSharedAppSaveFileRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[74]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateSharedAppSaveFileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSharedAppSaveFileRequest) ProtoMessage() {}
+
+func (x *CreateSharedAppSaveFileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[74]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSharedAppSaveFileRequest.ProtoReflect.Descriptor instead.
+func (*CreateSharedAppSaveFileRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *CreateSharedAppSaveFileRequest) GetSharedAppSaveFile() *SharedAppSaveFile {
+	if x != nil {
+		return x.SharedAppSaveFile
+	}
+	return nil
+}
+
+type CreateSharedAppSaveFileResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id *v1.InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *CreateSharedAppSaveFileResponse) Reset() {
+	*x = CreateSharedAppSaveFileResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[75]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateSharedAppSaveFileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateSharedAppSaveFileResponse) ProtoMessage() {}
+
+func (x *CreateSharedAppSaveFileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[75]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateSharedAppSaveFileResponse.ProtoReflect.Descriptor instead.
+func (*CreateSharedAppSaveFileResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *CreateSharedAppSaveFileResponse) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+type UpdateSharedAppSaveFileRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// `Normal` can't set public field
+	SharedAppSaveFile *SharedAppSaveFile `protobuf:"bytes,1,opt,name=shared_app_save_file,json=sharedAppSaveFile,proto3" json:"shared_app_save_file,omitempty"`
+}
+
+func (x *UpdateSharedAppSaveFileRequest) Reset() {
+	*x = UpdateSharedAppSaveFileRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[76]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSharedAppSaveFileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSharedAppSaveFileRequest) ProtoMessage() {}
+
+func (x *UpdateSharedAppSaveFileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[76]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSharedAppSaveFileRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSharedAppSaveFileRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *UpdateSharedAppSaveFileRequest) GetSharedAppSaveFile() *SharedAppSaveFile {
+	if x != nil {
+		return x.SharedAppSaveFile
+	}
+	return nil
+}
+
+type UpdateSharedAppSaveFileResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *UpdateSharedAppSaveFileResponse) Reset() {
+	*x = UpdateSharedAppSaveFileResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[77]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateSharedAppSaveFileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSharedAppSaveFileResponse) ProtoMessage() {}
+
+func (x *UpdateSharedAppSaveFileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[77]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSharedAppSaveFileResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSharedAppSaveFileResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{77}
+}
+
+type ListSharedAppSaveFilesRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Paging                *v1.PagingRequest `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
+	IdFilter              []*v1.InternalID  `protobuf:"bytes,2,rep,name=id_filter,json=idFilter,proto3" json:"id_filter,omitempty"`
+	SharedAppSaveIdFilter []*v1.InternalID  `protobuf:"bytes,3,rep,name=shared_app_save_id_filter,json=sharedAppSaveIdFilter,proto3" json:"shared_app_save_id_filter,omitempty"`
+	UserIdFilter          []*v1.InternalID  `protobuf:"bytes,4,rep,name=user_id_filter,json=userIdFilter,proto3" json:"user_id_filter,omitempty"`
+}
+
+func (x *ListSharedAppSaveFilesRequest) Reset() {
+	*x = ListSharedAppSaveFilesRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[78]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSharedAppSaveFilesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSharedAppSaveFilesRequest) ProtoMessage() {}
+
+func (x *ListSharedAppSaveFilesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[78]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSharedAppSaveFilesRequest.ProtoReflect.Descriptor instead.
+func (*ListSharedAppSaveFilesRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *ListSharedAppSaveFilesRequest) GetPaging() *v1.PagingRequest {
+	if x != nil {
+		return x.Paging
+	}
+	return nil
+}
+
+func (x *ListSharedAppSaveFilesRequest) GetIdFilter() []*v1.InternalID {
+	if x != nil {
+		return x.IdFilter
+	}
+	return nil
+}
+
+func (x *ListSharedAppSaveFilesRequest) GetSharedAppSaveIdFilter() []*v1.InternalID {
+	if x != nil {
+		return x.SharedAppSaveIdFilter
+	}
+	return nil
+}
+
+func (x *ListSharedAppSaveFilesRequest) GetUserIdFilter() []*v1.InternalID {
+	if x != nil {
+		return x.UserIdFilter
+	}
+	return nil
+}
+
+type ListSharedAppSaveFilesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Paging             *v1.PagingResponse   `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
+	SharedAppSaveFiles []*SharedAppSaveFile `protobuf:"bytes,2,rep,name=shared_app_save_files,json=sharedAppSaveFiles,proto3" json:"shared_app_save_files,omitempty"`
+}
+
+func (x *ListSharedAppSaveFilesResponse) Reset() {
+	*x = ListSharedAppSaveFilesResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[79]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListSharedAppSaveFilesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListSharedAppSaveFilesResponse) ProtoMessage() {}
+
+func (x *ListSharedAppSaveFilesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[79]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListSharedAppSaveFilesResponse.ProtoReflect.Descriptor instead.
+func (*ListSharedAppSaveFilesResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *ListSharedAppSaveFilesResponse) GetPaging() *v1.PagingResponse {
+	if x != nil {
+		return x.Paging
+	}
+	return nil
+}
+
+func (x *ListSharedAppSaveFilesResponse) GetSharedAppSaveFiles() []*SharedAppSaveFile {
+	if x != nil {
+		return x.SharedAppSaveFiles
+	}
+	return nil
+}
+
+type RemoveSharedAppSaveFileRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// `Normal` can only remove owned SharedAppSaveFile
+	Id *v1.InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *RemoveSharedAppSaveFileRequest) Reset() {
+	*x = RemoveSharedAppSaveFileRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[80]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RemoveSharedAppSaveFileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSharedAppSaveFileRequest) ProtoMessage() {}
+
+func (x *RemoveSharedAppSaveFileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[80]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSharedAppSaveFileRequest.ProtoReflect.Descriptor instead.
+func (*RemoveSharedAppSaveFileRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *RemoveSharedAppSaveFileRequest) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+type RemoveSharedAppSaveFileResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *RemoveSharedAppSaveFileResponse) Reset() {
+	*x = RemoveSharedAppSaveFileResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[81]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RemoveSharedAppSaveFileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveSharedAppSaveFileResponse) ProtoMessage() {}
+
+func (x *RemoveSharedAppSaveFileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[81]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveSharedAppSaveFileResponse.ProtoReflect.Descriptor instead.
+func (*RemoveSharedAppSaveFileResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{81}
+}
+
 type ListAppCategoriesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3419,7 +4194,7 @@ type ListAppCategoriesRequest struct {
 func (x *ListAppCategoriesRequest) Reset() {
 	*x = ListAppCategoriesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[66]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[82]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3432,7 +4207,7 @@ func (x *ListAppCategoriesRequest) String() string {
 func (*ListAppCategoriesRequest) ProtoMessage() {}
 
 func (x *ListAppCategoriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[66]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[82]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3445,7 +4220,7 @@ func (x *ListAppCategoriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAppCategoriesRequest.ProtoReflect.Descriptor instead.
 func (*ListAppCategoriesRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{66}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{82}
 }
 
 type ListAppCategoriesResponse struct {
@@ -3459,7 +4234,7 @@ type ListAppCategoriesResponse struct {
 func (x *ListAppCategoriesResponse) Reset() {
 	*x = ListAppCategoriesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[67]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[83]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3472,7 +4247,7 @@ func (x *ListAppCategoriesResponse) String() string {
 func (*ListAppCategoriesResponse) ProtoMessage() {}
 
 func (x *ListAppCategoriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[67]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[83]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3485,7 +4260,7 @@ func (x *ListAppCategoriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAppCategoriesResponse.ProtoReflect.Descriptor instead.
 func (*ListAppCategoriesResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{67}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{83}
 }
 
 func (x *ListAppCategoriesResponse) GetAppCategories() []*AppCategory {
@@ -3506,7 +4281,7 @@ type CreateAppCategoryRequest struct {
 func (x *CreateAppCategoryRequest) Reset() {
 	*x = CreateAppCategoryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[68]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[84]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3519,7 +4294,7 @@ func (x *CreateAppCategoryRequest) String() string {
 func (*CreateAppCategoryRequest) ProtoMessage() {}
 
 func (x *CreateAppCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[68]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[84]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3532,7 +4307,7 @@ func (x *CreateAppCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppCategoryRequest.ProtoReflect.Descriptor instead.
 func (*CreateAppCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{68}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{84}
 }
 
 func (x *CreateAppCategoryRequest) GetAppCategory() *AppCategory {
@@ -3553,7 +4328,7 @@ type CreateAppCategoryResponse struct {
 func (x *CreateAppCategoryResponse) Reset() {
 	*x = CreateAppCategoryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[69]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[85]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3566,7 +4341,7 @@ func (x *CreateAppCategoryResponse) String() string {
 func (*CreateAppCategoryResponse) ProtoMessage() {}
 
 func (x *CreateAppCategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[69]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[85]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3579,7 +4354,7 @@ func (x *CreateAppCategoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAppCategoryResponse.ProtoReflect.Descriptor instead.
 func (*CreateAppCategoryResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{69}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{85}
 }
 
 func (x *CreateAppCategoryResponse) GetId() *v1.InternalID {
@@ -3600,7 +4375,7 @@ type UpdateAppCategoryRequest struct {
 func (x *UpdateAppCategoryRequest) Reset() {
 	*x = UpdateAppCategoryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[70]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[86]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3613,7 +4388,7 @@ func (x *UpdateAppCategoryRequest) String() string {
 func (*UpdateAppCategoryRequest) ProtoMessage() {}
 
 func (x *UpdateAppCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[70]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[86]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3626,7 +4401,7 @@ func (x *UpdateAppCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppCategoryRequest.ProtoReflect.Descriptor instead.
 func (*UpdateAppCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{70}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{86}
 }
 
 func (x *UpdateAppCategoryRequest) GetAppCategory() *AppCategory {
@@ -3645,7 +4420,7 @@ type UpdateAppCategoryResponse struct {
 func (x *UpdateAppCategoryResponse) Reset() {
 	*x = UpdateAppCategoryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[71]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[87]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3658,7 +4433,7 @@ func (x *UpdateAppCategoryResponse) String() string {
 func (*UpdateAppCategoryResponse) ProtoMessage() {}
 
 func (x *UpdateAppCategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[71]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[87]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3671,7 +4446,7 @@ func (x *UpdateAppCategoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateAppCategoryResponse.ProtoReflect.Descriptor instead.
 func (*UpdateAppCategoryResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{71}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{87}
 }
 
 type RemoveAppCategoryRequest struct {
@@ -3685,7 +4460,7 @@ type RemoveAppCategoryRequest struct {
 func (x *RemoveAppCategoryRequest) Reset() {
 	*x = RemoveAppCategoryRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[72]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[88]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3698,7 +4473,7 @@ func (x *RemoveAppCategoryRequest) String() string {
 func (*RemoveAppCategoryRequest) ProtoMessage() {}
 
 func (x *RemoveAppCategoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[72]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[88]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3711,7 +4486,7 @@ func (x *RemoveAppCategoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveAppCategoryRequest.ProtoReflect.Descriptor instead.
 func (*RemoveAppCategoryRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{72}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{88}
 }
 
 func (x *RemoveAppCategoryRequest) GetId() *v1.InternalID {
@@ -3730,7 +4505,7 @@ type RemoveAppCategoryResponse struct {
 func (x *RemoveAppCategoryResponse) Reset() {
 	*x = RemoveAppCategoryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[73]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[89]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3743,7 +4518,7 @@ func (x *RemoveAppCategoryResponse) String() string {
 func (*RemoveAppCategoryResponse) ProtoMessage() {}
 
 func (x *RemoveAppCategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[73]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[89]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3756,7 +4531,7 @@ func (x *RemoveAppCategoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveAppCategoryResponse.ProtoReflect.Descriptor instead.
 func (*RemoveAppCategoryResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{73}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{89}
 }
 
 type App struct {
@@ -3777,7 +4552,7 @@ type App struct {
 func (x *App) Reset() {
 	*x = App{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[74]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[90]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3790,7 +4565,7 @@ func (x *App) String() string {
 func (*App) ProtoMessage() {}
 
 func (x *App) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[74]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[90]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3803,7 +4578,7 @@ func (x *App) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use App.ProtoReflect.Descriptor instead.
 func (*App) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{74}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{90}
 }
 
 func (x *App) GetId() *v1.InternalID {
@@ -3858,7 +4633,7 @@ type AppBinary struct {
 func (x *AppBinary) Reset() {
 	*x = AppBinary{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[75]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[91]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3871,7 +4646,7 @@ func (x *AppBinary) String() string {
 func (*AppBinary) ProtoMessage() {}
 
 func (x *AppBinary) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[75]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[91]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3884,7 +4659,7 @@ func (x *AppBinary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppBinary.ProtoReflect.Descriptor instead.
 func (*AppBinary) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{75}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{91}
 }
 
 func (x *AppBinary) GetId() *v1.InternalID {
@@ -3952,7 +4727,7 @@ type AppCategory struct {
 func (x *AppCategory) Reset() {
 	*x = AppCategory{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[76]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[92]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -3965,7 +4740,7 @@ func (x *AppCategory) String() string {
 func (*AppCategory) ProtoMessage() {}
 
 func (x *AppCategory) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[76]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[92]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3978,7 +4753,7 @@ func (x *AppCategory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppCategory.ProtoReflect.Descriptor instead.
 func (*AppCategory) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{76}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{92}
 }
 
 func (x *AppCategory) GetId() *v1.InternalID {
@@ -4022,7 +4797,7 @@ type AppInst struct {
 func (x *AppInst) Reset() {
 	*x = AppInst{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[77]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[93]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4035,7 +4810,7 @@ func (x *AppInst) String() string {
 func (*AppInst) ProtoMessage() {}
 
 func (x *AppInst) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[77]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[93]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4048,7 +4823,7 @@ func (x *AppInst) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppInst.ProtoReflect.Descriptor instead.
 func (*AppInst) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{77}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{93}
 }
 
 func (x *AppInst) GetId() *v1.InternalID {
@@ -4072,6 +4847,172 @@ func (x *AppInst) GetAppId() *v1.InternalID {
 	return nil
 }
 
+type SharedAppSave struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id          *v1.InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string         `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string         `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	AppInfoId   *v1.InternalID `protobuf:"bytes,4,opt,name=app_info_id,json=appInfoId,proto3" json:"app_info_id,omitempty"`
+}
+
+func (x *SharedAppSave) Reset() {
+	*x = SharedAppSave{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[94]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SharedAppSave) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SharedAppSave) ProtoMessage() {}
+
+func (x *SharedAppSave) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[94]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SharedAppSave.ProtoReflect.Descriptor instead.
+func (*SharedAppSave) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *SharedAppSave) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+func (x *SharedAppSave) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *SharedAppSave) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *SharedAppSave) GetAppInfoId() *v1.InternalID {
+	if x != nil {
+		return x.AppInfoId
+	}
+	return nil
+}
+
+type SharedAppSaveFile struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id              *v1.InternalID `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name            string         `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description     string         `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Public          bool           `protobuf:"varint,4,opt,name=public,proto3" json:"public,omitempty"`
+	SharedAppSaveId *v1.InternalID `protobuf:"bytes,5,opt,name=shared_app_save_id,json=sharedAppSaveId,proto3" json:"shared_app_save_id,omitempty"`
+	FileMetadataId  *v1.InternalID `protobuf:"bytes,6,opt,name=file_metadata_id,json=fileMetadataId,proto3" json:"file_metadata_id,omitempty"`
+	UserId          *v1.InternalID `protobuf:"bytes,7,opt,name=user_id,json=userId,proto3,oneof" json:"user_id,omitempty"`
+}
+
+func (x *SharedAppSaveFile) Reset() {
+	*x = SharedAppSaveFile{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[95]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SharedAppSaveFile) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SharedAppSaveFile) ProtoMessage() {}
+
+func (x *SharedAppSaveFile) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[95]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SharedAppSaveFile.ProtoReflect.Descriptor instead.
+func (*SharedAppSaveFile) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *SharedAppSaveFile) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+func (x *SharedAppSaveFile) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *SharedAppSaveFile) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *SharedAppSaveFile) GetPublic() bool {
+	if x != nil {
+		return x.Public
+	}
+	return false
+}
+
+func (x *SharedAppSaveFile) GetSharedAppSaveId() *v1.InternalID {
+	if x != nil {
+		return x.SharedAppSaveId
+	}
+	return nil
+}
+
+func (x *SharedAppSaveFile) GetFileMetadataId() *v1.InternalID {
+	if x != nil {
+		return x.FileMetadataId
+	}
+	return nil
+}
+
+func (x *SharedAppSaveFile) GetUserId() *v1.InternalID {
+	if x != nil {
+		return x.UserId
+	}
+	return nil
+}
+
 type SumAppInstRunTimeResponse_Group struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -4084,7 +5025,7 @@ type SumAppInstRunTimeResponse_Group struct {
 func (x *SumAppInstRunTimeResponse_Group) Reset() {
 	*x = SumAppInstRunTimeResponse_Group{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[78]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[96]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4097,7 +5038,7 @@ func (x *SumAppInstRunTimeResponse_Group) String() string {
 func (*SumAppInstRunTimeResponse_Group) ProtoMessage() {}
 
 func (x *SumAppInstRunTimeResponse_Group) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[78]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[96]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4139,7 +5080,7 @@ type ListAppSaveFilesResponse_Result struct {
 func (x *ListAppSaveFilesResponse_Result) Reset() {
 	*x = ListAppSaveFilesResponse_Result{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[79]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[97]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4152,7 +5093,7 @@ func (x *ListAppSaveFilesResponse_Result) String() string {
 func (*ListAppSaveFilesResponse_Result) ProtoMessage() {}
 
 func (x *ListAppSaveFilesResponse_Result) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[79]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[97]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4197,7 +5138,7 @@ type AppBinary_Chunk struct {
 func (x *AppBinary_Chunk) Reset() {
 	*x = AppBinary_Chunk{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[80]
+		mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[98]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -4210,7 +5151,7 @@ func (x *AppBinary_Chunk) String() string {
 func (*AppBinary_Chunk) ProtoMessage() {}
 
 func (x *AppBinary_Chunk) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[80]
+	mi := &file_librarian_sephirah_v1_gebura_proto_msgTypes[98]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4223,7 +5164,7 @@ func (x *AppBinary_Chunk) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppBinary_Chunk.ProtoReflect.Descriptor instead.
 func (*AppBinary_Chunk) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{75, 0}
+	return file_librarian_sephirah_v1_gebura_proto_rawDescGZIP(), []int{91, 0}
 }
 
 func (x *AppBinary_Chunk) GetSequence() int64 {
@@ -4669,118 +5610,259 @@ var file_librarian_sephirah_v1_gebura_proto_rawDesc = []byte{
 	0x79, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x52, 0x08, 0x73, 0x74, 0x72, 0x61, 0x74,
 	0x65, 0x67, 0x79, 0x22, 0x20, 0x0a, 0x1e, 0x53, 0x65, 0x74, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76,
 	0x65, 0x46, 0x69, 0x6c, 0x65, 0x43, 0x61, 0x70, 0x61, 0x63, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1a, 0x0a, 0x18, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70,
-	0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x22, 0x66, 0x0a, 0x19, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65,
-	0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x49,
-	0x0a, 0x0e, 0x61, 0x70, 0x70, 0x5f, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73,
-	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
-	0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41,
-	0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x43,
-	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x22, 0x61, 0x0a, 0x18, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x45, 0x0a, 0x0c, 0x61, 0x70, 0x70, 0x5f, 0x63, 0x61, 0x74,
-	0x65, 0x67, 0x6f, 0x72, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x69,
-	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68,
-	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52,
-	0x0b, 0x61, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x22, 0x45, 0x0a, 0x19,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72,
-	0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x6a, 0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53,
+	0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x4c, 0x0a, 0x0f, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x5f, 0x61, 0x70,
+	0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6c,
+	0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61,
+	0x68, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61,
+	0x76, 0x65, 0x52, 0x0d, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76,
+	0x65, 0x22, 0x47, 0x0a, 0x1b, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65,
+	0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c,
+	0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65,
+	0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x22, 0x6a, 0x0a, 0x1a, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76,
+	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x4c, 0x0a, 0x0f, 0x73, 0x68, 0x61, 0x72,
+	0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x24, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65,
+	0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64,
+	0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x52, 0x0d, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41,
+	0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x22, 0x1d, 0x0a, 0x1b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xce, 0x01, 0x0a, 0x19, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x68,
+	0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x52, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x12, 0x35, 0x0a, 0x09, 0x69, 0x64, 0x5f, 0x66,
+	0x69, 0x6c, 0x74, 0x65, 0x72, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72,
+	0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x08, 0x69, 0x64, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12,
+	0x45, 0x0a, 0x12, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x69, 0x64, 0x5f, 0x66,
+	0x69, 0x6c, 0x74, 0x65, 0x72, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72,
+	0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x0f, 0x61, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x49, 0x64,
+	0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x22, 0xa2, 0x01, 0x0a, 0x1a, 0x4c, 0x69, 0x73, 0x74, 0x53,
+	0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x73, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x34, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
+	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x52, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x12, 0x4e, 0x0a, 0x10, 0x73,
+	0x68, 0x61, 0x72, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x73, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
+	0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68,
+	0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x52, 0x0e, 0x73, 0x68, 0x61,
+	0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x73, 0x22, 0x46, 0x0a, 0x1a, 0x52,
+	0x65, 0x6d, 0x6f, 0x76, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61,
+	0x76, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
 	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52,
-	0x02, 0x69, 0x64, 0x22, 0x61, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70,
-	0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x45, 0x0a, 0x0c, 0x61, 0x70, 0x70, 0x5f, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
-	0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70,
-	0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x43, 0x61,
-	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x22, 0x1b, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x44, 0x0a, 0x18, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x41, 0x70, 0x70,
-	0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69,
-	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72,
-	0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x22, 0x1b, 0x0a, 0x19, 0x52, 0x65, 0x6d,
-	0x6f, 0x76, 0x65, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xe6, 0x01, 0x0a, 0x03, 0x41, 0x70, 0x70, 0x12, 0x28,
-	0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62,
-	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e,
-	0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b,
-	0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x4e,
-	0x0a, 0x14, 0x61, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x69,
-	0x6e, 0x66, 0x6f, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c,
-	0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65,
-	0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x48, 0x00, 0x52, 0x11, 0x61, 0x73, 0x73, 0x69, 0x67, 0x6e,
-	0x65, 0x64, 0x41, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x49, 0x64, 0x88, 0x01, 0x01, 0x12, 0x16,
-	0x0a, 0x06, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06,
-	0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x42, 0x17, 0x0a, 0x15, 0x5f, 0x61, 0x73, 0x73, 0x69, 0x67,
-	0x6e, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x69, 0x64, 0x22,
-	0x84, 0x03, 0x0a, 0x09, 0x41, 0x70, 0x70, 0x42, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x12, 0x28, 0x0a,
-	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72,
-	0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
-	0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73,
-	0x69, 0x7a, 0x65, 0x5f, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52,
-	0x09, 0x73, 0x69, 0x7a, 0x65, 0x42, 0x79, 0x74, 0x65, 0x73, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x75,
-	0x62, 0x6c, 0x69, 0x63, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x55, 0x72, 0x6c, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x68, 0x61,
-	0x32, 0x35, 0x36, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x06, 0x73, 0x68, 0x61, 0x32, 0x35,
-	0x36, 0x12, 0x28, 0x0a, 0x10, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65,
-	0x72, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x74, 0x6f, 0x6b,
-	0x65, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x55, 0x72, 0x6c, 0x12, 0x3e, 0x0a, 0x06, 0x63,
-	0x68, 0x75, 0x6e, 0x6b, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6c, 0x69,
-	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68,
-	0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x42, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x2e, 0x43, 0x68,
-	0x75, 0x6e, 0x6b, 0x52, 0x06, 0x63, 0x68, 0x75, 0x6e, 0x6b, 0x73, 0x1a, 0x79, 0x0a, 0x05, 0x43,
-	0x68, 0x75, 0x6e, 0x6b, 0x12, 0x1a, 0x0a, 0x08, 0x73, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x65,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x73, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x65,
-	0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x69, 0x7a, 0x65, 0x5f, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x73, 0x69, 0x7a, 0x65, 0x42, 0x79, 0x74, 0x65, 0x73, 0x12,
-	0x1d, 0x0a, 0x0a, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x03, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x55, 0x72, 0x6c, 0x12, 0x16,
-	0x0a, 0x06, 0x73, 0x68, 0x61, 0x32, 0x35, 0x36, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x06,
-	0x73, 0x68, 0x61, 0x32, 0x35, 0x36, 0x22, 0xba, 0x01, 0x0a, 0x0b, 0x41, 0x70, 0x70, 0x43, 0x61,
-	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x02, 0x69, 0x64, 0x22, 0x1d, 0x0a, 0x1b, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x53, 0x68, 0x61,
+	0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x7b, 0x0a, 0x1e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x68, 0x61, 0x72,
+	0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x59, 0x0a, 0x14, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x5f, 0x61,
+	0x70, 0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73,
+	0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68, 0x61, 0x72, 0x65,
+	0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x11, 0x73, 0x68,
+	0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x22,
+	0x4b, 0x0a, 0x1f, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41,
+	0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18,
+	0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e,
+	0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x22, 0x7b, 0x0a, 0x1e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53,
+	0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x59,
+	0x0a, 0x14, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x61, 0x76,
+	0x65, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6c,
+	0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61,
+	0x68, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61,
+	0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x11, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70,
+	0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x22, 0x21, 0x0a, 0x1f, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65,
+	0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x9f, 0x02, 0x0a,
+	0x1d, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61,
+	0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33,
+	0x0a, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b,
+	0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61,
+	0x67, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x06, 0x70, 0x61, 0x67,
+	0x69, 0x6e, 0x67, 0x12, 0x35, 0x0a, 0x09, 0x69, 0x64, 0x5f, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72,
+	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
+	0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44,
+	0x52, 0x08, 0x69, 0x64, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12, 0x52, 0x0a, 0x19, 0x73, 0x68,
+	0x61, 0x72, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x5f, 0x69, 0x64,
+	0x5f, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e,
+	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74,
+	0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x15, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41,
+	0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x49, 0x64, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12, 0x3e,
+	0x0a, 0x0e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x5f, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72,
+	0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
+	0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44,
+	0x52, 0x0c, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x22, 0xb3,
+	0x01, 0x0a, 0x1e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70,
+	0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x34, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1c, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31,
+	0x2e, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52,
+	0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x12, 0x5b, 0x0a, 0x15, 0x73, 0x68, 0x61, 0x72, 0x65,
+	0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x73,
+	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
+	0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x53,
+	0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65,
+	0x52, 0x12, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46,
+	0x69, 0x6c, 0x65, 0x73, 0x22, 0x4a, 0x0a, 0x1e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x53, 0x68,
+	0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76,
 	0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64,
-	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
-	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x31, 0x0a, 0x07, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x64, 0x73, 0x18,
-	0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
-	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52,
-	0x06, 0x61, 0x70, 0x70, 0x49, 0x64, 0x73, 0x12, 0x3a, 0x0a, 0x0c, 0x61, 0x70, 0x70, 0x5f, 0x69,
-	0x6e, 0x66, 0x6f, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e,
-	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74,
-	0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x0a, 0x61, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f,
-	0x49, 0x64, 0x73, 0x22, 0x9b, 0x01, 0x0a, 0x07, 0x41, 0x70, 0x70, 0x49, 0x6e, 0x73, 0x74, 0x12,
-	0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69,
-	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72,
-	0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x35, 0x0a, 0x09, 0x64, 0x65, 0x76,
-	0x69, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c,
-	0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65,
-	0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x64,
-	0x12, 0x2f, 0x0a, 0x06, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
+	0x22, 0x21, 0x0a, 0x1f, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64,
+	0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1a, 0x0a, 0x18, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x43, 0x61,
+	0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22,
+	0x66, 0x0a, 0x19, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f,
+	0x72, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x49, 0x0a, 0x0e,
+	0x61, 0x70, 0x70, 0x5f, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x18, 0x01,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e,
+	0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70,
+	0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x43, 0x61, 0x74,
+	0x65, 0x67, 0x6f, 0x72, 0x69, 0x65, 0x73, 0x22, 0x61, 0x0a, 0x18, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x45, 0x0a, 0x0c, 0x61, 0x70, 0x70, 0x5f, 0x63, 0x61, 0x74, 0x65, 0x67,
+	0x6f, 0x72, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x69, 0x62, 0x72,
+	0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76,
+	0x31, 0x2e, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x0b, 0x61,
+	0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x22, 0x45, 0x0a, 0x19, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69,
+	0x64, 0x22, 0x61, 0x0a, 0x18, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x43, 0x61,
+	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x45, 0x0a,
+	0x0c, 0x61, 0x70, 0x70, 0x5f, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
+	0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x70, 0x43,
+	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65,
+	0x67, 0x6f, 0x72, 0x79, 0x22, 0x1b, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70,
+	0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x44, 0x0a, 0x18, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x41, 0x70, 0x70, 0x43, 0x61,
+	0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x28, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72,
+	0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x22, 0x1b, 0x0a, 0x19, 0x52, 0x65, 0x6d, 0x6f, 0x76,
+	0x65, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0xe6, 0x01, 0x0a, 0x03, 0x41, 0x70, 0x70, 0x12, 0x28, 0x0a, 0x02,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61,
+	0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c,
+	0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x4e, 0x0a, 0x14,
+	0x61, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e, 0x66,
+	0x6f, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62,
+	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e,
+	0x61, 0x6c, 0x49, 0x44, 0x48, 0x00, 0x52, 0x11, 0x61, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x65, 0x64,
+	0x41, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x49, 0x64, 0x88, 0x01, 0x01, 0x12, 0x16, 0x0a, 0x06,
+	0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x08, 0x52, 0x06, 0x70, 0x75,
+	0x62, 0x6c, 0x69, 0x63, 0x42, 0x17, 0x0a, 0x15, 0x5f, 0x61, 0x73, 0x73, 0x69, 0x67, 0x6e, 0x65,
+	0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x69, 0x64, 0x22, 0x84, 0x03,
+	0x0a, 0x09, 0x41, 0x70, 0x70, 0x42, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x12, 0x28, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72,
+	0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49,
+	0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x73, 0x69, 0x7a,
+	0x65, 0x5f, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x73,
+	0x69, 0x7a, 0x65, 0x42, 0x79, 0x74, 0x65, 0x73, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x75, 0x62, 0x6c,
+	0x69, 0x63, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x75,
+	0x62, 0x6c, 0x69, 0x63, 0x55, 0x72, 0x6c, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x68, 0x61, 0x32, 0x35,
+	0x36, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x06, 0x73, 0x68, 0x61, 0x32, 0x35, 0x36, 0x12,
+	0x28, 0x0a, 0x10, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x5f,
+	0x75, 0x72, 0x6c, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
+	0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x55, 0x72, 0x6c, 0x12, 0x3e, 0x0a, 0x06, 0x63, 0x68, 0x75,
+	0x6e, 0x6b, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x6c, 0x69, 0x62, 0x72,
+	0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76,
+	0x31, 0x2e, 0x41, 0x70, 0x70, 0x42, 0x69, 0x6e, 0x61, 0x72, 0x79, 0x2e, 0x43, 0x68, 0x75, 0x6e,
+	0x6b, 0x52, 0x06, 0x63, 0x68, 0x75, 0x6e, 0x6b, 0x73, 0x1a, 0x79, 0x0a, 0x05, 0x43, 0x68, 0x75,
+	0x6e, 0x6b, 0x12, 0x1a, 0x0a, 0x08, 0x73, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x73, 0x65, 0x71, 0x75, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x1d,
+	0x0a, 0x0a, 0x73, 0x69, 0x7a, 0x65, 0x5f, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x03, 0x52, 0x09, 0x73, 0x69, 0x7a, 0x65, 0x42, 0x79, 0x74, 0x65, 0x73, 0x12, 0x1d, 0x0a,
+	0x0a, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x09, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x55, 0x72, 0x6c, 0x12, 0x16, 0x0a, 0x06,
+	0x73, 0x68, 0x61, 0x32, 0x35, 0x36, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x06, 0x73, 0x68,
+	0x61, 0x32, 0x35, 0x36, 0x22, 0xba, 0x01, 0x0a, 0x0b, 0x41, 0x70, 0x70, 0x43, 0x61, 0x74, 0x65,
+	0x67, 0x6f, 0x72, 0x79, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
-	0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x05, 0x61, 0x70, 0x70, 0x49,
-	0x64, 0x2a, 0xab, 0x01, 0x0a, 0x1b, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c,
-	0x65, 0x43, 0x61, 0x70, 0x61, 0x63, 0x69, 0x74, 0x79, 0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67,
-	0x79, 0x12, 0x2f, 0x0a, 0x2b, 0x41, 0x50, 0x50, 0x5f, 0x53, 0x41, 0x56, 0x45, 0x5f, 0x46, 0x49,
-	0x4c, 0x45, 0x5f, 0x43, 0x41, 0x50, 0x41, 0x43, 0x49, 0x54, 0x59, 0x5f, 0x53, 0x54, 0x52, 0x41,
-	0x54, 0x45, 0x47, 0x59, 0x5f, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44,
-	0x10, 0x00, 0x12, 0x28, 0x0a, 0x24, 0x41, 0x50, 0x50, 0x5f, 0x53, 0x41, 0x56, 0x45, 0x5f, 0x46,
-	0x49, 0x4c, 0x45, 0x5f, 0x43, 0x41, 0x50, 0x41, 0x43, 0x49, 0x54, 0x59, 0x5f, 0x53, 0x54, 0x52,
-	0x41, 0x54, 0x45, 0x47, 0x59, 0x5f, 0x46, 0x41, 0x49, 0x4c, 0x10, 0x01, 0x12, 0x31, 0x0a, 0x2d,
-	0x41, 0x50, 0x50, 0x5f, 0x53, 0x41, 0x56, 0x45, 0x5f, 0x46, 0x49, 0x4c, 0x45, 0x5f, 0x43, 0x41,
-	0x50, 0x41, 0x43, 0x49, 0x54, 0x59, 0x5f, 0x53, 0x54, 0x52, 0x41, 0x54, 0x45, 0x47, 0x59, 0x5f,
-	0x44, 0x45, 0x4c, 0x45, 0x54, 0x45, 0x5f, 0x4f, 0x4c, 0x44, 0x45, 0x53, 0x54, 0x10, 0x02, 0x42,
-	0x5d, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x75,
-	0x69, 0x68, 0x75, 0x62, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x70, 0x6b, 0x67, 0x2f,
-	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2f, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72,
-	0x61, 0x68, 0x2f, 0x76, 0x31, 0x3b, 0x76, 0x31, 0xaa, 0x02, 0x23, 0x54, 0x75, 0x69, 0x48, 0x75,
-	0x62, 0x2e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2e, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
-	0x61, 0x6e, 0x2e, 0x53, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x56, 0x31, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12,
+	0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61,
+	0x6d, 0x65, 0x12, 0x31, 0x0a, 0x07, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x03, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
+	0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x06, 0x61,
+	0x70, 0x70, 0x49, 0x64, 0x73, 0x12, 0x3a, 0x0a, 0x0c, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e, 0x66,
+	0x6f, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72,
+	0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x0a, 0x61, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x49, 0x64,
+	0x73, 0x22, 0x9b, 0x01, 0x0a, 0x07, 0x41, 0x70, 0x70, 0x49, 0x6e, 0x73, 0x74, 0x12, 0x28, 0x0a,
+	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72,
+	0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61,
+	0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x35, 0x0a, 0x09, 0x64, 0x65, 0x76, 0x69, 0x63,
+	0x65, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62,
+	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e,
+	0x61, 0x6c, 0x49, 0x44, 0x52, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2f,
+	0x0a, 0x06, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18,
+	0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e,
+	0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x05, 0x61, 0x70, 0x70, 0x49, 0x64, 0x22,
+	0xa9, 0x01, 0x0a, 0x0d, 0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76,
+	0x65, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e,
+	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74,
+	0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x38, 0x0a, 0x0b, 0x61, 0x70, 0x70, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x5f, 0x69, 0x64,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
+	0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44,
+	0x52, 0x09, 0x61, 0x70, 0x70, 0x49, 0x6e, 0x66, 0x6f, 0x49, 0x64, 0x22, 0xda, 0x02, 0x0a, 0x11,
+	0x53, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c,
+	0x65, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e,
+	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74,
+	0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x16, 0x0a, 0x06, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x08, 0x52, 0x06, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x12, 0x45, 0x0a, 0x12, 0x73, 0x68, 0x61,
+	0x72, 0x65, 0x64, 0x5f, 0x61, 0x70, 0x70, 0x5f, 0x73, 0x61, 0x76, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
+	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52,
+	0x0f, 0x73, 0x68, 0x61, 0x72, 0x65, 0x64, 0x41, 0x70, 0x70, 0x53, 0x61, 0x76, 0x65, 0x49, 0x64,
+	0x12, 0x42, 0x0a, 0x10, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74,
+	0x61, 0x5f, 0x69, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62,
+	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e,
+	0x61, 0x6c, 0x49, 0x44, 0x52, 0x0e, 0x66, 0x69, 0x6c, 0x65, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61,
+	0x74, 0x61, 0x49, 0x64, 0x12, 0x36, 0x0a, 0x07, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18,
+	0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
+	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x48,
+	0x00, 0x52, 0x06, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x88, 0x01, 0x01, 0x42, 0x0a, 0x0a, 0x08,
+	0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x2a, 0xab, 0x01, 0x0a, 0x1b, 0x41, 0x70, 0x70,
+	0x53, 0x61, 0x76, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x43, 0x61, 0x70, 0x61, 0x63, 0x69, 0x74, 0x79,
+	0x53, 0x74, 0x72, 0x61, 0x74, 0x65, 0x67, 0x79, 0x12, 0x2f, 0x0a, 0x2b, 0x41, 0x50, 0x50, 0x5f,
+	0x53, 0x41, 0x56, 0x45, 0x5f, 0x46, 0x49, 0x4c, 0x45, 0x5f, 0x43, 0x41, 0x50, 0x41, 0x43, 0x49,
+	0x54, 0x59, 0x5f, 0x53, 0x54, 0x52, 0x41, 0x54, 0x45, 0x47, 0x59, 0x5f, 0x55, 0x4e, 0x53, 0x50,
+	0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x28, 0x0a, 0x24, 0x41, 0x50, 0x50,
+	0x5f, 0x53, 0x41, 0x56, 0x45, 0x5f, 0x46, 0x49, 0x4c, 0x45, 0x5f, 0x43, 0x41, 0x50, 0x41, 0x43,
+	0x49, 0x54, 0x59, 0x5f, 0x53, 0x54, 0x52, 0x41, 0x54, 0x45, 0x47, 0x59, 0x5f, 0x46, 0x41, 0x49,
+	0x4c, 0x10, 0x01, 0x12, 0x31, 0x0a, 0x2d, 0x41, 0x50, 0x50, 0x5f, 0x53, 0x41, 0x56, 0x45, 0x5f,
+	0x46, 0x49, 0x4c, 0x45, 0x5f, 0x43, 0x41, 0x50, 0x41, 0x43, 0x49, 0x54, 0x59, 0x5f, 0x53, 0x54,
+	0x52, 0x41, 0x54, 0x45, 0x47, 0x59, 0x5f, 0x44, 0x45, 0x4c, 0x45, 0x54, 0x45, 0x5f, 0x4f, 0x4c,
+	0x44, 0x45, 0x53, 0x54, 0x10, 0x02, 0x42, 0x5d, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x75, 0x69, 0x68, 0x75, 0x62, 0x2f, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x73, 0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e,
+	0x2f, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2f, 0x76, 0x31, 0x3b, 0x76, 0x31, 0xaa,
+	0x02, 0x23, 0x54, 0x75, 0x69, 0x48, 0x75, 0x62, 0x2e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2e,
+	0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x53, 0x65, 0x70, 0x68, 0x69, 0x72,
+	0x61, 0x68, 0x2e, 0x56, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4796,7 +5878,7 @@ func file_librarian_sephirah_v1_gebura_proto_rawDescGZIP() []byte {
 }
 
 var file_librarian_sephirah_v1_gebura_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_librarian_sephirah_v1_gebura_proto_msgTypes = make([]protoimpl.MessageInfo, 81)
+var file_librarian_sephirah_v1_gebura_proto_msgTypes = make([]protoimpl.MessageInfo, 99)
 var file_librarian_sephirah_v1_gebura_proto_goTypes = []interface{}{
 	(AppSaveFileCapacityStrategy)(0),        // 0: librarian.sephirah.v1.AppSaveFileCapacityStrategy
 	(*CreateAppInfoRequest)(nil),            // 1: librarian.sephirah.v1.CreateAppInfoRequest
@@ -4865,128 +5947,171 @@ var file_librarian_sephirah_v1_gebura_proto_goTypes = []interface{}{
 	(*GetAppSaveFileCapacityRequest)(nil),   // 64: librarian.sephirah.v1.GetAppSaveFileCapacityRequest
 	(*GetAppSaveFileCapacityResponse)(nil),  // 65: librarian.sephirah.v1.GetAppSaveFileCapacityResponse
 	(*SetAppSaveFileCapacityResponse)(nil),  // 66: librarian.sephirah.v1.SetAppSaveFileCapacityResponse
-	(*ListAppCategoriesRequest)(nil),        // 67: librarian.sephirah.v1.ListAppCategoriesRequest
-	(*ListAppCategoriesResponse)(nil),       // 68: librarian.sephirah.v1.ListAppCategoriesResponse
-	(*CreateAppCategoryRequest)(nil),        // 69: librarian.sephirah.v1.CreateAppCategoryRequest
-	(*CreateAppCategoryResponse)(nil),       // 70: librarian.sephirah.v1.CreateAppCategoryResponse
-	(*UpdateAppCategoryRequest)(nil),        // 71: librarian.sephirah.v1.UpdateAppCategoryRequest
-	(*UpdateAppCategoryResponse)(nil),       // 72: librarian.sephirah.v1.UpdateAppCategoryResponse
-	(*RemoveAppCategoryRequest)(nil),        // 73: librarian.sephirah.v1.RemoveAppCategoryRequest
-	(*RemoveAppCategoryResponse)(nil),       // 74: librarian.sephirah.v1.RemoveAppCategoryResponse
-	(*App)(nil),                             // 75: librarian.sephirah.v1.App
-	(*AppBinary)(nil),                       // 76: librarian.sephirah.v1.AppBinary
-	(*AppCategory)(nil),                     // 77: librarian.sephirah.v1.AppCategory
-	(*AppInst)(nil),                         // 78: librarian.sephirah.v1.AppInst
-	(*SumAppInstRunTimeResponse_Group)(nil), // 79: librarian.sephirah.v1.SumAppInstRunTimeResponse.Group
-	(*ListAppSaveFilesResponse_Result)(nil), // 80: librarian.sephirah.v1.ListAppSaveFilesResponse.Result
-	(*AppBinary_Chunk)(nil),                 // 81: librarian.sephirah.v1.AppBinary.Chunk
-	(*v1.AppInfo)(nil),                      // 82: librarian.v1.AppInfo
-	(*v1.InternalID)(nil),                   // 83: librarian.v1.InternalID
-	(*v1.PagingRequest)(nil),                // 84: librarian.v1.PagingRequest
-	(v1.AppType)(0),                         // 85: librarian.v1.AppType
-	(*v1.PagingResponse)(nil),               // 86: librarian.v1.PagingResponse
-	(*v1.AppInfoID)(nil),                    // 87: librarian.v1.AppInfoID
-	(*v1.AccountID)(nil),                    // 88: librarian.v1.AccountID
-	(*v1.AppInfoMixed)(nil),                 // 89: librarian.v1.AppInfoMixed
-	(*v1.TimeRange)(nil),                    // 90: librarian.v1.TimeRange
-	(*v1.TimeAggregation)(nil),              // 91: librarian.v1.TimeAggregation
-	(*FileMetadata)(nil),                    // 92: librarian.sephirah.v1.FileMetadata
-	(*durationpb.Duration)(nil),             // 93: google.protobuf.Duration
+	(*CreateSharedAppSaveRequest)(nil),      // 67: librarian.sephirah.v1.CreateSharedAppSaveRequest
+	(*CreateSharedAppSaveResponse)(nil),     // 68: librarian.sephirah.v1.CreateSharedAppSaveResponse
+	(*UpdateSharedAppSaveRequest)(nil),      // 69: librarian.sephirah.v1.UpdateSharedAppSaveRequest
+	(*UpdateSharedAppSaveResponse)(nil),     // 70: librarian.sephirah.v1.UpdateSharedAppSaveResponse
+	(*ListSharedAppSavesRequest)(nil),       // 71: librarian.sephirah.v1.ListSharedAppSavesRequest
+	(*ListSharedAppSavesResponse)(nil),      // 72: librarian.sephirah.v1.ListSharedAppSavesResponse
+	(*RemoveSharedAppSaveRequest)(nil),      // 73: librarian.sephirah.v1.RemoveSharedAppSaveRequest
+	(*RemoveSharedAppSaveResponse)(nil),     // 74: librarian.sephirah.v1.RemoveSharedAppSaveResponse
+	(*CreateSharedAppSaveFileRequest)(nil),  // 75: librarian.sephirah.v1.CreateSharedAppSaveFileRequest
+	(*CreateSharedAppSaveFileResponse)(nil), // 76: librarian.sephirah.v1.CreateSharedAppSaveFileResponse
+	(*UpdateSharedAppSaveFileRequest)(nil),  // 77: librarian.sephirah.v1.UpdateSharedAppSaveFileRequest
+	(*UpdateSharedAppSaveFileResponse)(nil), // 78: librarian.sephirah.v1.UpdateSharedAppSaveFileResponse
+	(*ListSharedAppSaveFilesRequest)(nil),   // 79: librarian.sephirah.v1.ListSharedAppSaveFilesRequest
+	(*ListSharedAppSaveFilesResponse)(nil),  // 80: librarian.sephirah.v1.ListSharedAppSaveFilesResponse
+	(*RemoveSharedAppSaveFileRequest)(nil),  // 81: librarian.sephirah.v1.RemoveSharedAppSaveFileRequest
+	(*RemoveSharedAppSaveFileResponse)(nil), // 82: librarian.sephirah.v1.RemoveSharedAppSaveFileResponse
+	(*ListAppCategoriesRequest)(nil),        // 83: librarian.sephirah.v1.ListAppCategoriesRequest
+	(*ListAppCategoriesResponse)(nil),       // 84: librarian.sephirah.v1.ListAppCategoriesResponse
+	(*CreateAppCategoryRequest)(nil),        // 85: librarian.sephirah.v1.CreateAppCategoryRequest
+	(*CreateAppCategoryResponse)(nil),       // 86: librarian.sephirah.v1.CreateAppCategoryResponse
+	(*UpdateAppCategoryRequest)(nil),        // 87: librarian.sephirah.v1.UpdateAppCategoryRequest
+	(*UpdateAppCategoryResponse)(nil),       // 88: librarian.sephirah.v1.UpdateAppCategoryResponse
+	(*RemoveAppCategoryRequest)(nil),        // 89: librarian.sephirah.v1.RemoveAppCategoryRequest
+	(*RemoveAppCategoryResponse)(nil),       // 90: librarian.sephirah.v1.RemoveAppCategoryResponse
+	(*App)(nil),                             // 91: librarian.sephirah.v1.App
+	(*AppBinary)(nil),                       // 92: librarian.sephirah.v1.AppBinary
+	(*AppCategory)(nil),                     // 93: librarian.sephirah.v1.AppCategory
+	(*AppInst)(nil),                         // 94: librarian.sephirah.v1.AppInst
+	(*SharedAppSave)(nil),                   // 95: librarian.sephirah.v1.SharedAppSave
+	(*SharedAppSaveFile)(nil),               // 96: librarian.sephirah.v1.SharedAppSaveFile
+	(*SumAppInstRunTimeResponse_Group)(nil), // 97: librarian.sephirah.v1.SumAppInstRunTimeResponse.Group
+	(*ListAppSaveFilesResponse_Result)(nil), // 98: librarian.sephirah.v1.ListAppSaveFilesResponse.Result
+	(*AppBinary_Chunk)(nil),                 // 99: librarian.sephirah.v1.AppBinary.Chunk
+	(*v1.AppInfo)(nil),                      // 100: librarian.v1.AppInfo
+	(*v1.InternalID)(nil),                   // 101: librarian.v1.InternalID
+	(*v1.PagingRequest)(nil),                // 102: librarian.v1.PagingRequest
+	(v1.AppType)(0),                         // 103: librarian.v1.AppType
+	(*v1.PagingResponse)(nil),               // 104: librarian.v1.PagingResponse
+	(*v1.AppInfoID)(nil),                    // 105: librarian.v1.AppInfoID
+	(*v1.AccountID)(nil),                    // 106: librarian.v1.AccountID
+	(*v1.AppInfoMixed)(nil),                 // 107: librarian.v1.AppInfoMixed
+	(*v1.TimeRange)(nil),                    // 108: librarian.v1.TimeRange
+	(*v1.TimeAggregation)(nil),              // 109: librarian.v1.TimeAggregation
+	(*FileMetadata)(nil),                    // 110: librarian.sephirah.v1.FileMetadata
+	(*durationpb.Duration)(nil),             // 111: google.protobuf.Duration
 }
 var file_librarian_sephirah_v1_gebura_proto_depIdxs = []int32{
-	82, // 0: librarian.sephirah.v1.CreateAppInfoRequest.app_info:type_name -> librarian.v1.AppInfo
-	83, // 1: librarian.sephirah.v1.CreateAppInfoResponse.id:type_name -> librarian.v1.InternalID
-	82, // 2: librarian.sephirah.v1.UpdateAppInfoRequest.app_info:type_name -> librarian.v1.AppInfo
-	84, // 3: librarian.sephirah.v1.ListAppInfosRequest.paging:type_name -> librarian.v1.PagingRequest
-	85, // 4: librarian.sephirah.v1.ListAppInfosRequest.type_filter:type_name -> librarian.v1.AppType
-	83, // 5: librarian.sephirah.v1.ListAppInfosRequest.id_filter:type_name -> librarian.v1.InternalID
-	86, // 6: librarian.sephirah.v1.ListAppInfosResponse.paging:type_name -> librarian.v1.PagingResponse
-	82, // 7: librarian.sephirah.v1.ListAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
-	87, // 8: librarian.sephirah.v1.SyncAppInfosRequest.app_info_ids:type_name -> librarian.v1.AppInfoID
-	82, // 9: librarian.sephirah.v1.SyncAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
-	82, // 10: librarian.sephirah.v1.MergeAppInfosRequest.base:type_name -> librarian.v1.AppInfo
-	83, // 11: librarian.sephirah.v1.MergeAppInfosRequest.merged:type_name -> librarian.v1.InternalID
-	83, // 12: librarian.sephirah.v1.PickAppInfoRequest.picked:type_name -> librarian.v1.InternalID
-	88, // 13: librarian.sephirah.v1.SyncAccountAppInfosRequest.account_id:type_name -> librarian.v1.AccountID
-	84, // 14: librarian.sephirah.v1.SearchAppInfosRequest.paging:type_name -> librarian.v1.PagingRequest
-	86, // 15: librarian.sephirah.v1.SearchAppInfosResponse.paging:type_name -> librarian.v1.PagingResponse
-	89, // 16: librarian.sephirah.v1.SearchAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfoMixed
-	84, // 17: librarian.sephirah.v1.SearchNewAppInfosRequest.paging:type_name -> librarian.v1.PagingRequest
-	86, // 18: librarian.sephirah.v1.SearchNewAppInfosResponse.paging:type_name -> librarian.v1.PagingResponse
-	82, // 19: librarian.sephirah.v1.SearchNewAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
-	83, // 20: librarian.sephirah.v1.GetAppInfoRequest.app_info_id:type_name -> librarian.v1.InternalID
-	82, // 21: librarian.sephirah.v1.GetAppInfoResponse.app_info:type_name -> librarian.v1.AppInfo
-	83, // 22: librarian.sephirah.v1.GetBoundAppInfosRequest.app_info_id:type_name -> librarian.v1.InternalID
-	82, // 23: librarian.sephirah.v1.GetBoundAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
-	87, // 24: librarian.sephirah.v1.PurchaseAppInfoRequest.app_info_id:type_name -> librarian.v1.AppInfoID
-	83, // 25: librarian.sephirah.v1.PurchaseAppInfoResponse.id:type_name -> librarian.v1.InternalID
-	89, // 26: librarian.sephirah.v1.GetPurchasedAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfoMixed
-	75, // 27: librarian.sephirah.v1.CreateAppRequest.app:type_name -> librarian.sephirah.v1.App
-	83, // 28: librarian.sephirah.v1.CreateAppResponse.id:type_name -> librarian.v1.InternalID
-	75, // 29: librarian.sephirah.v1.UpdateAppRequest.app:type_name -> librarian.sephirah.v1.App
-	84, // 30: librarian.sephirah.v1.ListAppsRequest.paging:type_name -> librarian.v1.PagingRequest
-	83, // 31: librarian.sephirah.v1.ListAppsRequest.owner_id_filter:type_name -> librarian.v1.InternalID
-	83, // 32: librarian.sephirah.v1.ListAppsRequest.id_filter:type_name -> librarian.v1.InternalID
-	83, // 33: librarian.sephirah.v1.ListAppsRequest.assigned_app_info_id_filter:type_name -> librarian.v1.InternalID
-	86, // 34: librarian.sephirah.v1.ListAppsResponse.paging:type_name -> librarian.v1.PagingResponse
-	75, // 35: librarian.sephirah.v1.ListAppsResponse.apps:type_name -> librarian.sephirah.v1.App
-	76, // 36: librarian.sephirah.v1.ReportAppBinariesRequest.app_binaries:type_name -> librarian.sephirah.v1.AppBinary
-	83, // 37: librarian.sephirah.v1.AssignAppRequest.app_info_id:type_name -> librarian.v1.InternalID
-	83, // 38: librarian.sephirah.v1.AssignAppRequest.app_id:type_name -> librarian.v1.InternalID
-	83, // 39: librarian.sephirah.v1.UnAssignAppRequest.app_id:type_name -> librarian.v1.InternalID
-	83, // 40: librarian.sephirah.v1.DownloadAppBinaryRequest.id:type_name -> librarian.v1.InternalID
-	76, // 41: librarian.sephirah.v1.DownloadAppBinaryResponse.app_binary:type_name -> librarian.sephirah.v1.AppBinary
-	78, // 42: librarian.sephirah.v1.CreateAppInstRequest.app_inst:type_name -> librarian.sephirah.v1.AppInst
-	83, // 43: librarian.sephirah.v1.CreateAppInstResponse.id:type_name -> librarian.v1.InternalID
-	78, // 44: librarian.sephirah.v1.UpdateAppInstRequest.app_inst:type_name -> librarian.sephirah.v1.AppInst
-	84, // 45: librarian.sephirah.v1.ListAppInstsRequest.paging:type_name -> librarian.v1.PagingRequest
-	83, // 46: librarian.sephirah.v1.ListAppInstsRequest.device_id_filter:type_name -> librarian.v1.InternalID
-	83, // 47: librarian.sephirah.v1.ListAppInstsRequest.id_filter:type_name -> librarian.v1.InternalID
-	83, // 48: librarian.sephirah.v1.ListAppInstsRequest.app_id_filter:type_name -> librarian.v1.InternalID
-	86, // 49: librarian.sephirah.v1.ListAppInstsResponse.paging:type_name -> librarian.v1.PagingResponse
-	78, // 50: librarian.sephirah.v1.ListAppInstsResponse.app_insts:type_name -> librarian.sephirah.v1.AppInst
-	83, // 51: librarian.sephirah.v1.AddAppInstRunTimeRequest.app_inst_id:type_name -> librarian.v1.InternalID
-	90, // 52: librarian.sephirah.v1.AddAppInstRunTimeRequest.time_range:type_name -> librarian.v1.TimeRange
-	83, // 53: librarian.sephirah.v1.SumAppInstRunTimeRequest.app_inst_id:type_name -> librarian.v1.InternalID
-	91, // 54: librarian.sephirah.v1.SumAppInstRunTimeRequest.time_aggregation:type_name -> librarian.v1.TimeAggregation
-	79, // 55: librarian.sephirah.v1.SumAppInstRunTimeResponse.run_time_groups:type_name -> librarian.sephirah.v1.SumAppInstRunTimeResponse.Group
-	92, // 56: librarian.sephirah.v1.UploadAppSaveFileRequest.file_metadata:type_name -> librarian.sephirah.v1.FileMetadata
-	83, // 57: librarian.sephirah.v1.UploadAppSaveFileRequest.app_id:type_name -> librarian.v1.InternalID
-	83, // 58: librarian.sephirah.v1.DownloadAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
-	83, // 59: librarian.sephirah.v1.ListAppSaveFilesRequest.app_id:type_name -> librarian.v1.InternalID
-	80, // 60: librarian.sephirah.v1.ListAppSaveFilesResponse.results:type_name -> librarian.sephirah.v1.ListAppSaveFilesResponse.Result
-	83, // 61: librarian.sephirah.v1.RemoveAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
-	83, // 62: librarian.sephirah.v1.PinAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
-	83, // 63: librarian.sephirah.v1.UnpinAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
-	83, // 64: librarian.sephirah.v1.SetAppSaveFileCapacityRequest.app_id:type_name -> librarian.v1.InternalID
-	83, // 65: librarian.sephirah.v1.SetAppSaveFileCapacityRequest.app_inst_id:type_name -> librarian.v1.InternalID
-	0,  // 66: librarian.sephirah.v1.SetAppSaveFileCapacityRequest.strategy:type_name -> librarian.sephirah.v1.AppSaveFileCapacityStrategy
-	83, // 67: librarian.sephirah.v1.GetAppSaveFileCapacityRequest.app_id:type_name -> librarian.v1.InternalID
-	83, // 68: librarian.sephirah.v1.GetAppSaveFileCapacityRequest.app_inst_id:type_name -> librarian.v1.InternalID
-	0,  // 69: librarian.sephirah.v1.GetAppSaveFileCapacityResponse.strategy:type_name -> librarian.sephirah.v1.AppSaveFileCapacityStrategy
-	77, // 70: librarian.sephirah.v1.ListAppCategoriesResponse.app_categories:type_name -> librarian.sephirah.v1.AppCategory
-	77, // 71: librarian.sephirah.v1.CreateAppCategoryRequest.app_category:type_name -> librarian.sephirah.v1.AppCategory
-	83, // 72: librarian.sephirah.v1.CreateAppCategoryResponse.id:type_name -> librarian.v1.InternalID
-	77, // 73: librarian.sephirah.v1.UpdateAppCategoryRequest.app_category:type_name -> librarian.sephirah.v1.AppCategory
-	83, // 74: librarian.sephirah.v1.RemoveAppCategoryRequest.id:type_name -> librarian.v1.InternalID
-	83, // 75: librarian.sephirah.v1.App.id:type_name -> librarian.v1.InternalID
-	83, // 76: librarian.sephirah.v1.App.assigned_app_info_id:type_name -> librarian.v1.InternalID
-	83, // 77: librarian.sephirah.v1.AppBinary.id:type_name -> librarian.v1.InternalID
-	81, // 78: librarian.sephirah.v1.AppBinary.chunks:type_name -> librarian.sephirah.v1.AppBinary.Chunk
-	83, // 79: librarian.sephirah.v1.AppCategory.id:type_name -> librarian.v1.InternalID
-	83, // 80: librarian.sephirah.v1.AppCategory.app_ids:type_name -> librarian.v1.InternalID
-	83, // 81: librarian.sephirah.v1.AppCategory.app_info_ids:type_name -> librarian.v1.InternalID
-	83, // 82: librarian.sephirah.v1.AppInst.id:type_name -> librarian.v1.InternalID
-	83, // 83: librarian.sephirah.v1.AppInst.device_id:type_name -> librarian.v1.InternalID
-	83, // 84: librarian.sephirah.v1.AppInst.app_id:type_name -> librarian.v1.InternalID
-	90, // 85: librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.time_range:type_name -> librarian.v1.TimeRange
-	93, // 86: librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.duration:type_name -> google.protobuf.Duration
-	92, // 87: librarian.sephirah.v1.ListAppSaveFilesResponse.Result.file:type_name -> librarian.sephirah.v1.FileMetadata
-	88, // [88:88] is the sub-list for method output_type
-	88, // [88:88] is the sub-list for method input_type
-	88, // [88:88] is the sub-list for extension type_name
-	88, // [88:88] is the sub-list for extension extendee
-	0,  // [0:88] is the sub-list for field type_name
+	100, // 0: librarian.sephirah.v1.CreateAppInfoRequest.app_info:type_name -> librarian.v1.AppInfo
+	101, // 1: librarian.sephirah.v1.CreateAppInfoResponse.id:type_name -> librarian.v1.InternalID
+	100, // 2: librarian.sephirah.v1.UpdateAppInfoRequest.app_info:type_name -> librarian.v1.AppInfo
+	102, // 3: librarian.sephirah.v1.ListAppInfosRequest.paging:type_name -> librarian.v1.PagingRequest
+	103, // 4: librarian.sephirah.v1.ListAppInfosRequest.type_filter:type_name -> librarian.v1.AppType
+	101, // 5: librarian.sephirah.v1.ListAppInfosRequest.id_filter:type_name -> librarian.v1.InternalID
+	104, // 6: librarian.sephirah.v1.ListAppInfosResponse.paging:type_name -> librarian.v1.PagingResponse
+	100, // 7: librarian.sephirah.v1.ListAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
+	105, // 8: librarian.sephirah.v1.SyncAppInfosRequest.app_info_ids:type_name -> librarian.v1.AppInfoID
+	100, // 9: librarian.sephirah.v1.SyncAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
+	100, // 10: librarian.sephirah.v1.MergeAppInfosRequest.base:type_name -> librarian.v1.AppInfo
+	101, // 11: librarian.sephirah.v1.MergeAppInfosRequest.merged:type_name -> librarian.v1.InternalID
+	101, // 12: librarian.sephirah.v1.PickAppInfoRequest.picked:type_name -> librarian.v1.InternalID
+	106, // 13: librarian.sephirah.v1.SyncAccountAppInfosRequest.account_id:type_name -> librarian.v1.AccountID
+	102, // 14: librarian.sephirah.v1.SearchAppInfosRequest.paging:type_name -> librarian.v1.PagingRequest
+	104, // 15: librarian.sephirah.v1.SearchAppInfosResponse.paging:type_name -> librarian.v1.PagingResponse
+	107, // 16: librarian.sephirah.v1.SearchAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfoMixed
+	102, // 17: librarian.sephirah.v1.SearchNewAppInfosRequest.paging:type_name -> librarian.v1.PagingRequest
+	104, // 18: librarian.sephirah.v1.SearchNewAppInfosResponse.paging:type_name -> librarian.v1.PagingResponse
+	100, // 19: librarian.sephirah.v1.SearchNewAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
+	101, // 20: librarian.sephirah.v1.GetAppInfoRequest.app_info_id:type_name -> librarian.v1.InternalID
+	100, // 21: librarian.sephirah.v1.GetAppInfoResponse.app_info:type_name -> librarian.v1.AppInfo
+	101, // 22: librarian.sephirah.v1.GetBoundAppInfosRequest.app_info_id:type_name -> librarian.v1.InternalID
+	100, // 23: librarian.sephirah.v1.GetBoundAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfo
+	105, // 24: librarian.sephirah.v1.PurchaseAppInfoRequest.app_info_id:type_name -> librarian.v1.AppInfoID
+	101, // 25: librarian.sephirah.v1.PurchaseAppInfoResponse.id:type_name -> librarian.v1.InternalID
+	107, // 26: librarian.sephirah.v1.GetPurchasedAppInfosResponse.app_infos:type_name -> librarian.v1.AppInfoMixed
+	91,  // 27: librarian.sephirah.v1.CreateAppRequest.app:type_name -> librarian.sephirah.v1.App
+	101, // 28: librarian.sephirah.v1.CreateAppResponse.id:type_name -> librarian.v1.InternalID
+	91,  // 29: librarian.sephirah.v1.UpdateAppRequest.app:type_name -> librarian.sephirah.v1.App
+	102, // 30: librarian.sephirah.v1.ListAppsRequest.paging:type_name -> librarian.v1.PagingRequest
+	101, // 31: librarian.sephirah.v1.ListAppsRequest.owner_id_filter:type_name -> librarian.v1.InternalID
+	101, // 32: librarian.sephirah.v1.ListAppsRequest.id_filter:type_name -> librarian.v1.InternalID
+	101, // 33: librarian.sephirah.v1.ListAppsRequest.assigned_app_info_id_filter:type_name -> librarian.v1.InternalID
+	104, // 34: librarian.sephirah.v1.ListAppsResponse.paging:type_name -> librarian.v1.PagingResponse
+	91,  // 35: librarian.sephirah.v1.ListAppsResponse.apps:type_name -> librarian.sephirah.v1.App
+	92,  // 36: librarian.sephirah.v1.ReportAppBinariesRequest.app_binaries:type_name -> librarian.sephirah.v1.AppBinary
+	101, // 37: librarian.sephirah.v1.AssignAppRequest.app_info_id:type_name -> librarian.v1.InternalID
+	101, // 38: librarian.sephirah.v1.AssignAppRequest.app_id:type_name -> librarian.v1.InternalID
+	101, // 39: librarian.sephirah.v1.UnAssignAppRequest.app_id:type_name -> librarian.v1.InternalID
+	101, // 40: librarian.sephirah.v1.DownloadAppBinaryRequest.id:type_name -> librarian.v1.InternalID
+	92,  // 41: librarian.sephirah.v1.DownloadAppBinaryResponse.app_binary:type_name -> librarian.sephirah.v1.AppBinary
+	94,  // 42: librarian.sephirah.v1.CreateAppInstRequest.app_inst:type_name -> librarian.sephirah.v1.AppInst
+	101, // 43: librarian.sephirah.v1.CreateAppInstResponse.id:type_name -> librarian.v1.InternalID
+	94,  // 44: librarian.sephirah.v1.UpdateAppInstRequest.app_inst:type_name -> librarian.sephirah.v1.AppInst
+	102, // 45: librarian.sephirah.v1.ListAppInstsRequest.paging:type_name -> librarian.v1.PagingRequest
+	101, // 46: librarian.sephirah.v1.ListAppInstsRequest.device_id_filter:type_name -> librarian.v1.InternalID
+	101, // 47: librarian.sephirah.v1.ListAppInstsRequest.id_filter:type_name -> librarian.v1.InternalID
+	101, // 48: librarian.sephirah.v1.ListAppInstsRequest.app_id_filter:type_name -> librarian.v1.InternalID
+	104, // 49: librarian.sephirah.v1.ListAppInstsResponse.paging:type_name -> librarian.v1.PagingResponse
+	94,  // 50: librarian.sephirah.v1.ListAppInstsResponse.app_insts:type_name -> librarian.sephirah.v1.AppInst
+	101, // 51: librarian.sephirah.v1.AddAppInstRunTimeRequest.app_inst_id:type_name -> librarian.v1.InternalID
+	108, // 52: librarian.sephirah.v1.AddAppInstRunTimeRequest.time_range:type_name -> librarian.v1.TimeRange
+	101, // 53: librarian.sephirah.v1.SumAppInstRunTimeRequest.app_inst_id:type_name -> librarian.v1.InternalID
+	109, // 54: librarian.sephirah.v1.SumAppInstRunTimeRequest.time_aggregation:type_name -> librarian.v1.TimeAggregation
+	97,  // 55: librarian.sephirah.v1.SumAppInstRunTimeResponse.run_time_groups:type_name -> librarian.sephirah.v1.SumAppInstRunTimeResponse.Group
+	110, // 56: librarian.sephirah.v1.UploadAppSaveFileRequest.file_metadata:type_name -> librarian.sephirah.v1.FileMetadata
+	101, // 57: librarian.sephirah.v1.UploadAppSaveFileRequest.app_id:type_name -> librarian.v1.InternalID
+	101, // 58: librarian.sephirah.v1.DownloadAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
+	101, // 59: librarian.sephirah.v1.ListAppSaveFilesRequest.app_id:type_name -> librarian.v1.InternalID
+	98,  // 60: librarian.sephirah.v1.ListAppSaveFilesResponse.results:type_name -> librarian.sephirah.v1.ListAppSaveFilesResponse.Result
+	101, // 61: librarian.sephirah.v1.RemoveAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
+	101, // 62: librarian.sephirah.v1.PinAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
+	101, // 63: librarian.sephirah.v1.UnpinAppSaveFileRequest.file_id:type_name -> librarian.v1.InternalID
+	101, // 64: librarian.sephirah.v1.SetAppSaveFileCapacityRequest.app_id:type_name -> librarian.v1.InternalID
+	101, // 65: librarian.sephirah.v1.SetAppSaveFileCapacityRequest.app_inst_id:type_name -> librarian.v1.InternalID
+	0,   // 66: librarian.sephirah.v1.SetAppSaveFileCapacityRequest.strategy:type_name -> librarian.sephirah.v1.AppSaveFileCapacityStrategy
+	101, // 67: librarian.sephirah.v1.GetAppSaveFileCapacityRequest.app_id:type_name -> librarian.v1.InternalID
+	101, // 68: librarian.sephirah.v1.GetAppSaveFileCapacityRequest.app_inst_id:type_name -> librarian.v1.InternalID
+	0,   // 69: librarian.sephirah.v1.GetAppSaveFileCapacityResponse.strategy:type_name -> librarian.sephirah.v1.AppSaveFileCapacityStrategy
+	95,  // 70: librarian.sephirah.v1.CreateSharedAppSaveRequest.shared_app_save:type_name -> librarian.sephirah.v1.SharedAppSave
+	101, // 71: librarian.sephirah.v1.CreateSharedAppSaveResponse.id:type_name -> librarian.v1.InternalID
+	95,  // 72: librarian.sephirah.v1.UpdateSharedAppSaveRequest.shared_app_save:type_name -> librarian.sephirah.v1.SharedAppSave
+	102, // 73: librarian.sephirah.v1.ListSharedAppSavesRequest.paging:type_name -> librarian.v1.PagingRequest
+	101, // 74: librarian.sephirah.v1.ListSharedAppSavesRequest.id_filter:type_name -> librarian.v1.InternalID
+	101, // 75: librarian.sephirah.v1.ListSharedAppSavesRequest.app_info_id_filter:type_name -> librarian.v1.InternalID
+	104, // 76: librarian.sephirah.v1.ListSharedAppSavesResponse.paging:type_name -> librarian.v1.PagingResponse
+	95,  // 77: librarian.sephirah.v1.ListSharedAppSavesResponse.shared_app_saves:type_name -> librarian.sephirah.v1.SharedAppSave
+	101, // 78: librarian.sephirah.v1.RemoveSharedAppSaveRequest.id:type_name -> librarian.v1.InternalID
+	96,  // 79: librarian.sephirah.v1.CreateSharedAppSaveFileRequest.shared_app_save_file:type_name -> librarian.sephirah.v1.SharedAppSaveFile
+	101, // 80: librarian.sephirah.v1.CreateSharedAppSaveFileResponse.id:type_name -> librarian.v1.InternalID
+	96,  // 81: librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.shared_app_save_file:type_name -> librarian.sephirah.v1.SharedAppSaveFile
+	102, // 82: librarian.sephirah.v1.ListSharedAppSaveFilesRequest.paging:type_name -> librarian.v1.PagingRequest
+	101, // 83: librarian.sephirah.v1.ListSharedAppSaveFilesRequest.id_filter:type_name -> librarian.v1.InternalID
+	101, // 84: librarian.sephirah.v1.ListSharedAppSaveFilesRequest.shared_app_save_id_filter:type_name -> librarian.v1.InternalID
+	101, // 85: librarian.sephirah.v1.ListSharedAppSaveFilesRequest.user_id_filter:type_name -> librarian.v1.InternalID
+	104, // 86: librarian.sephirah.v1.ListSharedAppSaveFilesResponse.paging:type_name -> librarian.v1.PagingResponse
+	96,  // 87: librarian.sephirah.v1.ListSharedAppSaveFilesResponse.shared_app_save_files:type_name -> librarian.sephirah.v1.SharedAppSaveFile
+	101, // 88: librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.id:type_name -> librarian.v1.InternalID
+	93,  // 89: librarian.sephirah.v1.ListAppCategoriesResponse.app_categories:type_name -> librarian.sephirah.v1.AppCategory
+	93,  // 90: librarian.sephirah.v1.CreateAppCategoryRequest.app_category:type_name -> librarian.sephirah.v1.AppCategory
+	101, // 91: librarian.sephirah.v1.CreateAppCategoryResponse.id:type_name -> librarian.v1.InternalID
+	93,  // 92: librarian.sephirah.v1.UpdateAppCategoryRequest.app_category:type_name -> librarian.sephirah.v1.AppCategory
+	101, // 93: librarian.sephirah.v1.RemoveAppCategoryRequest.id:type_name -> librarian.v1.InternalID
+	101, // 94: librarian.sephirah.v1.App.id:type_name -> librarian.v1.InternalID
+	101, // 95: librarian.sephirah.v1.App.assigned_app_info_id:type_name -> librarian.v1.InternalID
+	101, // 96: librarian.sephirah.v1.AppBinary.id:type_name -> librarian.v1.InternalID
+	99,  // 97: librarian.sephirah.v1.AppBinary.chunks:type_name -> librarian.sephirah.v1.AppBinary.Chunk
+	101, // 98: librarian.sephirah.v1.AppCategory.id:type_name -> librarian.v1.InternalID
+	101, // 99: librarian.sephirah.v1.AppCategory.app_ids:type_name -> librarian.v1.InternalID
+	101, // 100: librarian.sephirah.v1.AppCategory.app_info_ids:type_name -> librarian.v1.InternalID
+	101, // 101: librarian.sephirah.v1.AppInst.id:type_name -> librarian.v1.InternalID
+	101, // 102: librarian.sephirah.v1.AppInst.device_id:type_name -> librarian.v1.InternalID
+	101, // 103: librarian.sephirah.v1.AppInst.app_id:type_name -> librarian.v1.InternalID
+	101, // 104: librarian.sephirah.v1.SharedAppSave.id:type_name -> librarian.v1.InternalID
+	101, // 105: librarian.sephirah.v1.SharedAppSave.app_info_id:type_name -> librarian.v1.InternalID
+	101, // 106: librarian.sephirah.v1.SharedAppSaveFile.id:type_name -> librarian.v1.InternalID
+	101, // 107: librarian.sephirah.v1.SharedAppSaveFile.shared_app_save_id:type_name -> librarian.v1.InternalID
+	101, // 108: librarian.sephirah.v1.SharedAppSaveFile.file_metadata_id:type_name -> librarian.v1.InternalID
+	101, // 109: librarian.sephirah.v1.SharedAppSaveFile.user_id:type_name -> librarian.v1.InternalID
+	108, // 110: librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.time_range:type_name -> librarian.v1.TimeRange
+	111, // 111: librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.duration:type_name -> google.protobuf.Duration
+	110, // 112: librarian.sephirah.v1.ListAppSaveFilesResponse.Result.file:type_name -> librarian.sephirah.v1.FileMetadata
+	113, // [113:113] is the sub-list for method output_type
+	113, // [113:113] is the sub-list for method input_type
+	113, // [113:113] is the sub-list for extension type_name
+	113, // [113:113] is the sub-list for extension extendee
+	0,   // [0:113] is the sub-list for field type_name
 }
 
 func init() { file_librarian_sephirah_v1_gebura_proto_init() }
@@ -5789,7 +6914,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListAppCategoriesRequest); i {
+			switch v := v.(*CreateSharedAppSaveRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5801,7 +6926,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListAppCategoriesResponse); i {
+			switch v := v.(*CreateSharedAppSaveResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5813,7 +6938,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppCategoryRequest); i {
+			switch v := v.(*UpdateSharedAppSaveRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5825,7 +6950,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateAppCategoryResponse); i {
+			switch v := v.(*UpdateSharedAppSaveResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5837,7 +6962,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateAppCategoryRequest); i {
+			switch v := v.(*ListSharedAppSavesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5849,7 +6974,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateAppCategoryResponse); i {
+			switch v := v.(*ListSharedAppSavesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5861,7 +6986,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[72].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RemoveAppCategoryRequest); i {
+			switch v := v.(*RemoveSharedAppSaveRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5873,7 +6998,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[73].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RemoveAppCategoryResponse); i {
+			switch v := v.(*RemoveSharedAppSaveResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5885,7 +7010,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[74].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*App); i {
+			switch v := v.(*CreateSharedAppSaveFileRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5897,7 +7022,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[75].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppBinary); i {
+			switch v := v.(*CreateSharedAppSaveFileResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5909,7 +7034,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[76].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppCategory); i {
+			switch v := v.(*UpdateSharedAppSaveFileRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5921,7 +7046,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[77].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppInst); i {
+			switch v := v.(*UpdateSharedAppSaveFileResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5933,7 +7058,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[78].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SumAppInstRunTimeResponse_Group); i {
+			switch v := v.(*ListSharedAppSaveFilesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5945,7 +7070,7 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[79].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListAppSaveFilesResponse_Result); i {
+			switch v := v.(*ListSharedAppSaveFilesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -5957,6 +7082,222 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_gebura_proto_msgTypes[80].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RemoveSharedAppSaveFileRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[81].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RemoveSharedAppSaveFileResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[82].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListAppCategoriesRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[83].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListAppCategoriesResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[84].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppCategoryRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[85].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateAppCategoryResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[86].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppCategoryRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[87].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateAppCategoryResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[88].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RemoveAppCategoryRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[89].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RemoveAppCategoryResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[90].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*App); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[91].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppBinary); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[92].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppCategory); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[93].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AppInst); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[94].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SharedAppSave); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[95].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SharedAppSaveFile); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[96].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SumAppInstRunTimeResponse_Group); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[97].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListAppSaveFilesResponse_Result); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_gebura_proto_msgTypes[98].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AppBinary_Chunk); i {
 			case 0:
 				return &v.state
@@ -5981,14 +7322,15 @@ func file_librarian_sephirah_v1_gebura_proto_init() {
 		(*GetAppSaveFileCapacityRequest_AppId)(nil),
 		(*GetAppSaveFileCapacityRequest_AppInstId)(nil),
 	}
-	file_librarian_sephirah_v1_gebura_proto_msgTypes[74].OneofWrappers = []interface{}{}
+	file_librarian_sephirah_v1_gebura_proto_msgTypes[90].OneofWrappers = []interface{}{}
+	file_librarian_sephirah_v1_gebura_proto_msgTypes[95].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_librarian_sephirah_v1_gebura_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   81,
+			NumMessages:   99,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

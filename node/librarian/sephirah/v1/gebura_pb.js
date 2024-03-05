@@ -45,6 +45,10 @@ goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppInstRequest', null, glob
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppInstResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.CreateSharedAppSaveRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.CreateSharedAppSaveResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.DownloadAppBinaryRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.DownloadAppBinaryResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.DownloadAppSaveFileRequest', null, global);
@@ -69,6 +73,10 @@ goog.exportSymbol('proto.librarian.sephirah.v1.ListAppSaveFilesResponse', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppsRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppsResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.ListSharedAppSavesRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.ListSharedAppSavesResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.MergeAppInfosRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.MergeAppInfosResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.PickAppInfoRequest', null, global);
@@ -81,6 +89,10 @@ goog.exportSymbol('proto.librarian.sephirah.v1.RemoveAppCategoryRequest', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.RemoveAppCategoryResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.RemoveAppSaveFileRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.RemoveAppSaveFileResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ReportAppBinariesRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ReportAppBinariesResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SearchAppInfosRequest', null, global);
@@ -90,6 +102,8 @@ goog.exportSymbol('proto.librarian.sephirah.v1.SearchNewAppInfosResponse', null,
 goog.exportSymbol('proto.librarian.sephirah.v1.SetAppSaveFileCapacityRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SetAppSaveFileCapacityRequest.EntityCase', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SetAppSaveFileCapacityResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.SharedAppSave', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.SharedAppSaveFile', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SumAppInstRunTimeRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SumAppInstRunTimeResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group', null, global);
@@ -109,6 +123,10 @@ goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppInstRequest', null, glob
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppInstResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UploadAppSaveFileRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UploadAppSaveFileResponse', null, global);
 /**
@@ -1549,6 +1567,342 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.CreateSharedAppSaveRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.displayName = 'proto.librarian.sephirah.v1.CreateSharedAppSaveRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.CreateSharedAppSaveResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.displayName = 'proto.librarian.sephirah.v1.CreateSharedAppSaveResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.displayName = 'proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.displayName = 'proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListSharedAppSavesRequest.repeatedFields_, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.ListSharedAppSavesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.ListSharedAppSavesRequest.displayName = 'proto.librarian.sephirah.v1.ListSharedAppSavesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListSharedAppSavesResponse.repeatedFields_, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.ListSharedAppSavesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.ListSharedAppSavesResponse.displayName = 'proto.librarian.sephirah.v1.ListSharedAppSavesResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.displayName = 'proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.displayName = 'proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.displayName = 'proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.displayName = 'proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.displayName = 'proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.displayName = 'proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.repeatedFields_, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.displayName = 'proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.repeatedFields_, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.displayName = 'proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.displayName = 'proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.displayName = 'proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.librarian.sephirah.v1.ListAppCategoriesRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1811,6 +2165,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.librarian.sephirah.v1.AppInst.displayName = 'proto.librarian.sephirah.v1.AppInst';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.SharedAppSave = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.SharedAppSave, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.SharedAppSave.displayName = 'proto.librarian.sephirah.v1.SharedAppSave';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.SharedAppSaveFile, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.SharedAppSaveFile.displayName = 'proto.librarian.sephirah.v1.SharedAppSaveFile';
 }
 
 
@@ -13177,6 +13573,2621 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sharedAppSave: (f = msg.getSharedAppSave()) && proto.librarian.sephirah.v1.SharedAppSave.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.CreateSharedAppSaveRequest;
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.librarian.sephirah.v1.SharedAppSave;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SharedAppSave.deserializeBinaryFromReader);
+      msg.setSharedAppSave(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSharedAppSave();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.librarian.sephirah.v1.SharedAppSave.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SharedAppSave shared_app_save = 1;
+ * @return {?proto.librarian.sephirah.v1.SharedAppSave}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.getSharedAppSave = function() {
+  return /** @type{?proto.librarian.sephirah.v1.SharedAppSave} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.SharedAppSave, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.sephirah.v1.SharedAppSave|undefined} value
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest} returns this
+*/
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.setSharedAppSave = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveRequest} returns this
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.clearSharedAppSave = function() {
+  return this.setSharedAppSave(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.hasSharedAppSave = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.CreateSharedAppSaveResponse;
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse} returns this
+*/
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveResponse} returns this
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sharedAppSave: (f = msg.getSharedAppSave()) && proto.librarian.sephirah.v1.SharedAppSave.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest;
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.librarian.sephirah.v1.SharedAppSave;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SharedAppSave.deserializeBinaryFromReader);
+      msg.setSharedAppSave(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSharedAppSave();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.librarian.sephirah.v1.SharedAppSave.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SharedAppSave shared_app_save = 1;
+ * @return {?proto.librarian.sephirah.v1.SharedAppSave}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.getSharedAppSave = function() {
+  return /** @type{?proto.librarian.sephirah.v1.SharedAppSave} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.SharedAppSave, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.sephirah.v1.SharedAppSave|undefined} value
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest} returns this
+*/
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.setSharedAppSave = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest} returns this
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.clearSharedAppSave = function() {
+  return this.setSharedAppSave(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.hasSharedAppSave = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse;
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.repeatedFields_ = [2,3];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.ListSharedAppSavesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+    appInfoIdFilterList: jspb.Message.toObjectList(msg.getAppInfoIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.ListSharedAppSavesRequest;
+  return proto.librarian.sephirah.v1.ListSharedAppSavesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addIdFilter(value);
+      break;
+    case 3:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addAppInfoIdFilter(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.ListSharedAppSavesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getAppInfoIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated librarian.v1.InternalID id_filter = 2;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.getIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.setIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.addIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.clearIdFilterList = function() {
+  return this.setIdFilterList([]);
+};
+
+
+/**
+ * repeated librarian.v1.InternalID app_info_id_filter = 3;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.getAppInfoIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.setAppInfoIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.addAppInfoIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.clearAppInfoIdFilterList = function() {
+  return this.setAppInfoIdFilterList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.ListSharedAppSavesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+    sharedAppSavesList: jspb.Message.toObjectList(msg.getSharedAppSavesList(),
+    proto.librarian.sephirah.v1.SharedAppSave.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.ListSharedAppSavesResponse;
+  return proto.librarian.sephirah.v1.ListSharedAppSavesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.PagingResponse;
+      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
+      var value = new proto.librarian.sephirah.v1.SharedAppSave;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SharedAppSave.deserializeBinaryFromReader);
+      msg.addSharedAppSaves(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.ListSharedAppSavesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
+    );
+  }
+  f = message.getSharedAppSavesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.librarian.sephirah.v1.SharedAppSave.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.PagingResponse paging = 1;
+ * @return {?proto.librarian.v1.PagingResponse}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingResponse} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingResponse|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated SharedAppSave shared_app_saves = 2;
+ * @return {!Array<!proto.librarian.sephirah.v1.SharedAppSave>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.getSharedAppSavesList = function() {
+  return /** @type{!Array<!proto.librarian.sephirah.v1.SharedAppSave>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.SharedAppSave, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.sephirah.v1.SharedAppSave>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.setSharedAppSavesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.SharedAppSave=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.addSharedAppSaves = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.SharedAppSave, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSavesResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.clearSharedAppSavesList = function() {
+  return this.setSharedAppSavesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest;
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest} returns this
+*/
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest} returns this
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse;
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sharedAppSaveFile: (f = msg.getSharedAppSaveFile()) && proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest;
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.librarian.sephirah.v1.SharedAppSaveFile;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SharedAppSaveFile.deserializeBinaryFromReader);
+      msg.setSharedAppSaveFile(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSharedAppSaveFile();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.librarian.sephirah.v1.SharedAppSaveFile.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SharedAppSaveFile shared_app_save_file = 1;
+ * @return {?proto.librarian.sephirah.v1.SharedAppSaveFile}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.getSharedAppSaveFile = function() {
+  return /** @type{?proto.librarian.sephirah.v1.SharedAppSaveFile} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.SharedAppSaveFile, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.sephirah.v1.SharedAppSaveFile|undefined} value
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest} returns this
+*/
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.setSharedAppSaveFile = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest} returns this
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.clearSharedAppSaveFile = function() {
+  return this.setSharedAppSaveFile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.hasSharedAppSaveFile = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse;
+  return proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse} returns this
+*/
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse} returns this
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    sharedAppSaveFile: (f = msg.getSharedAppSaveFile()) && proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest;
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.librarian.sephirah.v1.SharedAppSaveFile;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SharedAppSaveFile.deserializeBinaryFromReader);
+      msg.setSharedAppSaveFile(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSharedAppSaveFile();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.librarian.sephirah.v1.SharedAppSaveFile.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SharedAppSaveFile shared_app_save_file = 1;
+ * @return {?proto.librarian.sephirah.v1.SharedAppSaveFile}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.getSharedAppSaveFile = function() {
+  return /** @type{?proto.librarian.sephirah.v1.SharedAppSaveFile} */ (
+    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.SharedAppSaveFile, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.sephirah.v1.SharedAppSaveFile|undefined} value
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest} returns this
+*/
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.setSharedAppSaveFile = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest} returns this
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.clearSharedAppSaveFile = function() {
+  return this.setSharedAppSaveFile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.hasSharedAppSaveFile = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse;
+  return proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.UpdateSharedAppSaveFileResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.repeatedFields_ = [2,3,4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+    sharedAppSaveIdFilterList: jspb.Message.toObjectList(msg.getSharedAppSaveIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+    userIdFilterList: jspb.Message.toObjectList(msg.getUserIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest;
+  return proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addIdFilter(value);
+      break;
+    case 3:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addSharedAppSaveIdFilter(value);
+      break;
+    case 4:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addUserIdFilter(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getSharedAppSaveIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated librarian.v1.InternalID id_filter = 2;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.getIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.setIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.addIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.clearIdFilterList = function() {
+  return this.setIdFilterList([]);
+};
+
+
+/**
+ * repeated librarian.v1.InternalID shared_app_save_id_filter = 3;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.getSharedAppSaveIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.setSharedAppSaveIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.addSharedAppSaveIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.clearSharedAppSaveIdFilterList = function() {
+  return this.setSharedAppSaveIdFilterList([]);
+};
+
+
+/**
+ * repeated librarian.v1.InternalID user_id_filter = 4;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.getUserIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.setUserIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.addUserIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.clearUserIdFilterList = function() {
+  return this.setUserIdFilterList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+    sharedAppSaveFilesList: jspb.Message.toObjectList(msg.getSharedAppSaveFilesList(),
+    proto.librarian.sephirah.v1.SharedAppSaveFile.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse;
+  return proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.PagingResponse;
+      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
+      var value = new proto.librarian.sephirah.v1.SharedAppSaveFile;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SharedAppSaveFile.deserializeBinaryFromReader);
+      msg.addSharedAppSaveFiles(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
+    );
+  }
+  f = message.getSharedAppSaveFilesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.librarian.sephirah.v1.SharedAppSaveFile.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.PagingResponse paging = 1;
+ * @return {?proto.librarian.v1.PagingResponse}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingResponse} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingResponse|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated SharedAppSaveFile shared_app_save_files = 2;
+ * @return {!Array<!proto.librarian.sephirah.v1.SharedAppSaveFile>}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.getSharedAppSaveFilesList = function() {
+  return /** @type{!Array<!proto.librarian.sephirah.v1.SharedAppSaveFile>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.SharedAppSaveFile, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.sephirah.v1.SharedAppSaveFile>} value
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.setSharedAppSaveFilesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.SharedAppSaveFile=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile}
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.addSharedAppSaveFiles = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.SharedAppSaveFile, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.clearSharedAppSaveFilesList = function() {
+  return this.setSharedAppSaveFilesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest;
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest} returns this
+*/
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest} returns this
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse;
+  return proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.RemoveSharedAppSaveFileResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.librarian.sephirah.v1.ListAppCategoriesRequest.prototype.toObject = function(opt_includeInstance) {
   return proto.librarian.sephirah.v1.ListAppCategoriesRequest.toObject(opt_includeInstance, this);
 };
@@ -15693,6 +18704,662 @@ proto.librarian.sephirah.v1.AppInst.prototype.clearAppId = function() {
  */
 proto.librarian.sephirah.v1.AppInst.prototype.hasAppId = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.SharedAppSave.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.SharedAppSave} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.SharedAppSave.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.SharedAppSave;
+  return proto.librarian.sephirah.v1.SharedAppSave.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.SharedAppSave} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setAppInfoId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.SharedAppSave.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.SharedAppSave} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.SharedAppSave.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getAppInfoId();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave} returns this
+*/
+proto.librarian.sephirah.v1.SharedAppSave.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional librarian.v1.InternalID app_info_id = 4;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.getAppInfoId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 4));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave} returns this
+*/
+proto.librarian.sephirah.v1.SharedAppSave.prototype.setAppInfoId = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSave} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.clearAppInfoId = function() {
+  return this.setAppInfoId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSave.prototype.hasAppInfoId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.librarian.sephirah.v1.SharedAppSaveFile} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    sharedAppSaveId: (f = msg.getSharedAppSaveId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    fileMetadataId: (f = msg.getFileMetadataId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.librarian.sephirah.v1.SharedAppSaveFile;
+  return proto.librarian.sephirah.v1.SharedAppSaveFile.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.librarian.sephirah.v1.SharedAppSaveFile} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPublic(value);
+      break;
+    case 5:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setSharedAppSaveId(value);
+      break;
+    case 6:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setFileMetadataId(value);
+      break;
+    case 7:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setUserId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.librarian.sephirah.v1.SharedAppSaveFile.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.librarian.sephirah.v1.SharedAppSaveFile} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getPublic();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = message.getSharedAppSaveId();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getFileMetadataId();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getUserId();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+*/
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bool public = 4;
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getPublic = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setPublic = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
+};
+
+
+/**
+ * optional librarian.v1.InternalID shared_app_save_id = 5;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getSharedAppSaveId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 5));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+*/
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setSharedAppSaveId = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.clearSharedAppSaveId = function() {
+  return this.setSharedAppSaveId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.hasSharedAppSaveId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional librarian.v1.InternalID file_metadata_id = 6;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getFileMetadataId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 6));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+*/
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setFileMetadataId = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.clearFileMetadataId = function() {
+  return this.setFileMetadataId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.hasFileMetadataId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional librarian.v1.InternalID user_id = 7;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.getUserId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 7));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+*/
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.setUserId = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SharedAppSaveFile} returns this
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.clearUserId = function() {
+  return this.setUserId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.hasUserId = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

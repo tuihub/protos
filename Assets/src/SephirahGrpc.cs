@@ -319,6 +319,38 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse> __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest> __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest> __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse> __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest> __Marshaller_librarian_sephirah_v1_ListSharedAppSavesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse> __Marshaller_librarian_sephirah_v1_ListSharedAppSavesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest> __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse> __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest> __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse> __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest> __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse> __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest> __Marshaller_librarian_sephirah_v1_ListSharedAppSaveFilesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse> __Marshaller_librarian_sephirah_v1_ListSharedAppSaveFilesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest> __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveFileRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse> __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveFileResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest> __Marshaller_librarian_sephirah_v1_ListAppCategoriesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse> __Marshaller_librarian_sephirah_v1_ListAppCategoriesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse.Parser));
@@ -950,6 +982,70 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "GetAppSaveFileCapacity",
         __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityRequest,
         __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> __Method_CreateSharedAppSave = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateSharedAppSave",
+        __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveRequest,
+        __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse> __Method_UpdateSharedAppSave = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateSharedAppSave",
+        __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveRequest,
+        __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse> __Method_ListSharedAppSaves = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListSharedAppSaves",
+        __Marshaller_librarian_sephirah_v1_ListSharedAppSavesRequest,
+        __Marshaller_librarian_sephirah_v1_ListSharedAppSavesResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse> __Method_RemoveSharedAppSave = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RemoveSharedAppSave",
+        __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveRequest,
+        __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse> __Method_CreateSharedAppSaveFile = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateSharedAppSaveFile",
+        __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveFileRequest,
+        __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveFileResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse> __Method_UpdateSharedAppSaveFile = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateSharedAppSaveFile",
+        __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveFileRequest,
+        __Marshaller_librarian_sephirah_v1_UpdateSharedAppSaveFileResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse> __Method_ListSharedAppSaveFiles = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListSharedAppSaveFiles",
+        __Marshaller_librarian_sephirah_v1_ListSharedAppSaveFilesRequest,
+        __Marshaller_librarian_sephirah_v1_ListSharedAppSaveFilesResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse> __Method_RemoveSharedAppSaveFile = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RemoveSharedAppSaveFile",
+        __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveFileRequest,
+        __Marshaller_librarian_sephirah_v1_RemoveSharedAppSaveFileResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse> __Method_ListAppCategories = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse>(
@@ -1987,6 +2083,102 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse> GetAppSaveFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> CreateSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse> UpdateSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse> ListSharedAppSaves(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse> RemoveSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse> CreateSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse> UpdateSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse> ListSharedAppSaveFiles(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse> RemoveSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -5495,6 +5687,390 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetAppSaveFileCapacity, null, options, request);
       }
       /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse CreateSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateSharedAppSave(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse CreateSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateSharedAppSave, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> CreateSharedAppSaveAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateSharedAppSaveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> CreateSharedAppSaveAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateSharedAppSave, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse UpdateSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateSharedAppSave(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse UpdateSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateSharedAppSave, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse> UpdateSharedAppSaveAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateSharedAppSaveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse> UpdateSharedAppSaveAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateSharedAppSave, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse ListSharedAppSaves(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSharedAppSaves(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse ListSharedAppSaves(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListSharedAppSaves, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse> ListSharedAppSavesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSharedAppSavesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse> ListSharedAppSavesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListSharedAppSaves, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse RemoveSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RemoveSharedAppSave(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse RemoveSharedAppSave(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RemoveSharedAppSave, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse> RemoveSharedAppSaveAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RemoveSharedAppSaveAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse> RemoveSharedAppSaveAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RemoveSharedAppSave, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse CreateSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateSharedAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse CreateSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateSharedAppSaveFile, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse> CreateSharedAppSaveFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateSharedAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse> CreateSharedAppSaveFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateSharedAppSaveFile, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse UpdateSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateSharedAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse UpdateSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateSharedAppSaveFile, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse> UpdateSharedAppSaveFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateSharedAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse> UpdateSharedAppSaveFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateSharedAppSaveFile, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse ListSharedAppSaveFiles(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSharedAppSaveFiles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse ListSharedAppSaveFiles(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListSharedAppSaveFiles, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse> ListSharedAppSaveFilesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSharedAppSaveFilesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse> ListSharedAppSaveFilesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListSharedAppSaveFiles, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse RemoveSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RemoveSharedAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse RemoveSharedAppSaveFile(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RemoveSharedAppSaveFile, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse> RemoveSharedAppSaveFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RemoveSharedAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse> RemoveSharedAppSaveFileAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RemoveSharedAppSaveFile, null, options, request);
+      }
+      /// <summary>
       /// `Gebura` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -6822,6 +7398,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_UnpinAppSaveFile, serviceImpl.UnpinAppSaveFile)
           .AddMethod(__Method_SetAppSaveFileCapacity, serviceImpl.SetAppSaveFileCapacity)
           .AddMethod(__Method_GetAppSaveFileCapacity, serviceImpl.GetAppSaveFileCapacity)
+          .AddMethod(__Method_CreateSharedAppSave, serviceImpl.CreateSharedAppSave)
+          .AddMethod(__Method_UpdateSharedAppSave, serviceImpl.UpdateSharedAppSave)
+          .AddMethod(__Method_ListSharedAppSaves, serviceImpl.ListSharedAppSaves)
+          .AddMethod(__Method_RemoveSharedAppSave, serviceImpl.RemoveSharedAppSave)
+          .AddMethod(__Method_CreateSharedAppSaveFile, serviceImpl.CreateSharedAppSaveFile)
+          .AddMethod(__Method_UpdateSharedAppSaveFile, serviceImpl.UpdateSharedAppSaveFile)
+          .AddMethod(__Method_ListSharedAppSaveFiles, serviceImpl.ListSharedAppSaveFiles)
+          .AddMethod(__Method_RemoveSharedAppSaveFile, serviceImpl.RemoveSharedAppSaveFile)
           .AddMethod(__Method_ListAppCategories, serviceImpl.ListAppCategories)
           .AddMethod(__Method_CreateAppCategory, serviceImpl.CreateAppCategory)
           .AddMethod(__Method_UpdateAppCategory, serviceImpl.UpdateAppCategory)
@@ -6923,6 +7507,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_UnpinAppSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileResponse>(serviceImpl.UnpinAppSaveFile));
       serviceBinder.AddMethod(__Method_SetAppSaveFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityResponse>(serviceImpl.SetAppSaveFileCapacity));
       serviceBinder.AddMethod(__Method_GetAppSaveFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse>(serviceImpl.GetAppSaveFileCapacity));
+      serviceBinder.AddMethod(__Method_CreateSharedAppSave, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse>(serviceImpl.CreateSharedAppSave));
+      serviceBinder.AddMethod(__Method_UpdateSharedAppSave, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse>(serviceImpl.UpdateSharedAppSave));
+      serviceBinder.AddMethod(__Method_ListSharedAppSaves, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse>(serviceImpl.ListSharedAppSaves));
+      serviceBinder.AddMethod(__Method_RemoveSharedAppSave, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveResponse>(serviceImpl.RemoveSharedAppSave));
+      serviceBinder.AddMethod(__Method_CreateSharedAppSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveFileResponse>(serviceImpl.CreateSharedAppSaveFile));
+      serviceBinder.AddMethod(__Method_UpdateSharedAppSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveFileResponse>(serviceImpl.UpdateSharedAppSaveFile));
+      serviceBinder.AddMethod(__Method_ListSharedAppSaveFiles, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSaveFilesResponse>(serviceImpl.ListSharedAppSaveFiles));
+      serviceBinder.AddMethod(__Method_RemoveSharedAppSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveSharedAppSaveFileResponse>(serviceImpl.RemoveSharedAppSaveFile));
       serviceBinder.AddMethod(__Method_ListAppCategories, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse>(serviceImpl.ListAppCategories));
       serviceBinder.AddMethod(__Method_CreateAppCategory, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryResponse>(serviceImpl.CreateAppCategory));
       serviceBinder.AddMethod(__Method_UpdateAppCategory, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryResponse>(serviceImpl.UpdateAppCategory));

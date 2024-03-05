@@ -3711,6 +3711,817 @@ class SetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
   static SetAppSaveFileCapacityResponse? _defaultInstance;
 }
 
+class CreateSharedAppSaveRequest extends $pb.GeneratedMessage {
+  factory CreateSharedAppSaveRequest({
+    SharedAppSave? sharedAppSave,
+  }) {
+    final $result = create();
+    if (sharedAppSave != null) {
+      $result.sharedAppSave = sharedAppSave;
+    }
+    return $result;
+  }
+  CreateSharedAppSaveRequest._() : super();
+  factory CreateSharedAppSaveRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSharedAppSaveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSharedAppSaveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<SharedAppSave>(1, _omitFieldNames ? '' : 'sharedAppSave', subBuilder: SharedAppSave.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveRequest clone() => CreateSharedAppSaveRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveRequest copyWith(void Function(CreateSharedAppSaveRequest) updates) => super.copyWith((message) => updates(message as CreateSharedAppSaveRequest)) as CreateSharedAppSaveRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveRequest create() => CreateSharedAppSaveRequest._();
+  CreateSharedAppSaveRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSharedAppSaveRequest> createRepeated() => $pb.PbList<CreateSharedAppSaveRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSharedAppSaveRequest>(create);
+  static CreateSharedAppSaveRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SharedAppSave get sharedAppSave => $_getN(0);
+  @$pb.TagNumber(1)
+  set sharedAppSave(SharedAppSave v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSharedAppSave() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSharedAppSave() => clearField(1);
+  @$pb.TagNumber(1)
+  SharedAppSave ensureSharedAppSave() => $_ensure(0);
+}
+
+class CreateSharedAppSaveResponse extends $pb.GeneratedMessage {
+  factory CreateSharedAppSaveResponse({
+    $7.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  CreateSharedAppSaveResponse._() : super();
+  factory CreateSharedAppSaveResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSharedAppSaveResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSharedAppSaveResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveResponse clone() => CreateSharedAppSaveResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveResponse copyWith(void Function(CreateSharedAppSaveResponse) updates) => super.copyWith((message) => updates(message as CreateSharedAppSaveResponse)) as CreateSharedAppSaveResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveResponse create() => CreateSharedAppSaveResponse._();
+  CreateSharedAppSaveResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSharedAppSaveResponse> createRepeated() => $pb.PbList<CreateSharedAppSaveResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSharedAppSaveResponse>(create);
+  static CreateSharedAppSaveResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class UpdateSharedAppSaveRequest extends $pb.GeneratedMessage {
+  factory UpdateSharedAppSaveRequest({
+    SharedAppSave? sharedAppSave,
+  }) {
+    final $result = create();
+    if (sharedAppSave != null) {
+      $result.sharedAppSave = sharedAppSave;
+    }
+    return $result;
+  }
+  UpdateSharedAppSaveRequest._() : super();
+  factory UpdateSharedAppSaveRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSharedAppSaveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSharedAppSaveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<SharedAppSave>(1, _omitFieldNames ? '' : 'sharedAppSave', subBuilder: SharedAppSave.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveRequest clone() => UpdateSharedAppSaveRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveRequest copyWith(void Function(UpdateSharedAppSaveRequest) updates) => super.copyWith((message) => updates(message as UpdateSharedAppSaveRequest)) as UpdateSharedAppSaveRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveRequest create() => UpdateSharedAppSaveRequest._();
+  UpdateSharedAppSaveRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSharedAppSaveRequest> createRepeated() => $pb.PbList<UpdateSharedAppSaveRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSharedAppSaveRequest>(create);
+  static UpdateSharedAppSaveRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SharedAppSave get sharedAppSave => $_getN(0);
+  @$pb.TagNumber(1)
+  set sharedAppSave(SharedAppSave v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSharedAppSave() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSharedAppSave() => clearField(1);
+  @$pb.TagNumber(1)
+  SharedAppSave ensureSharedAppSave() => $_ensure(0);
+}
+
+class UpdateSharedAppSaveResponse extends $pb.GeneratedMessage {
+  factory UpdateSharedAppSaveResponse() => create();
+  UpdateSharedAppSaveResponse._() : super();
+  factory UpdateSharedAppSaveResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSharedAppSaveResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSharedAppSaveResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveResponse clone() => UpdateSharedAppSaveResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveResponse copyWith(void Function(UpdateSharedAppSaveResponse) updates) => super.copyWith((message) => updates(message as UpdateSharedAppSaveResponse)) as UpdateSharedAppSaveResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveResponse create() => UpdateSharedAppSaveResponse._();
+  UpdateSharedAppSaveResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSharedAppSaveResponse> createRepeated() => $pb.PbList<UpdateSharedAppSaveResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSharedAppSaveResponse>(create);
+  static UpdateSharedAppSaveResponse? _defaultInstance;
+}
+
+class ListSharedAppSavesRequest extends $pb.GeneratedMessage {
+  factory ListSharedAppSavesRequest({
+    $7.PagingRequest? paging,
+    $core.Iterable<$7.InternalID>? idFilter,
+    $core.Iterable<$7.InternalID>? appInfoIdFilter,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (idFilter != null) {
+      $result.idFilter.addAll(idFilter);
+    }
+    if (appInfoIdFilter != null) {
+      $result.appInfoIdFilter.addAll(appInfoIdFilter);
+    }
+    return $result;
+  }
+  ListSharedAppSavesRequest._() : super();
+  factory ListSharedAppSavesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSharedAppSavesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSharedAppSavesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'appInfoIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSavesRequest clone() => ListSharedAppSavesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSavesRequest copyWith(void Function(ListSharedAppSavesRequest) updates) => super.copyWith((message) => updates(message as ListSharedAppSavesRequest)) as ListSharedAppSavesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSavesRequest create() => ListSharedAppSavesRequest._();
+  ListSharedAppSavesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSharedAppSavesRequest> createRepeated() => $pb.PbList<ListSharedAppSavesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSavesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSharedAppSavesRequest>(create);
+  static ListSharedAppSavesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$7.InternalID> get idFilter => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$7.InternalID> get appInfoIdFilter => $_getList(2);
+}
+
+class ListSharedAppSavesResponse extends $pb.GeneratedMessage {
+  factory ListSharedAppSavesResponse({
+    $7.PagingResponse? paging,
+    $core.Iterable<SharedAppSave>? sharedAppSaves,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (sharedAppSaves != null) {
+      $result.sharedAppSaves.addAll(sharedAppSaves);
+    }
+    return $result;
+  }
+  ListSharedAppSavesResponse._() : super();
+  factory ListSharedAppSavesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSharedAppSavesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSharedAppSavesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<SharedAppSave>(2, _omitFieldNames ? '' : 'sharedAppSaves', $pb.PbFieldType.PM, subBuilder: SharedAppSave.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSavesResponse clone() => ListSharedAppSavesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSavesResponse copyWith(void Function(ListSharedAppSavesResponse) updates) => super.copyWith((message) => updates(message as ListSharedAppSavesResponse)) as ListSharedAppSavesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSavesResponse create() => ListSharedAppSavesResponse._();
+  ListSharedAppSavesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSharedAppSavesResponse> createRepeated() => $pb.PbList<ListSharedAppSavesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSavesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSharedAppSavesResponse>(create);
+  static ListSharedAppSavesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SharedAppSave> get sharedAppSaves => $_getList(1);
+}
+
+class RemoveSharedAppSaveRequest extends $pb.GeneratedMessage {
+  factory RemoveSharedAppSaveRequest({
+    $7.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  RemoveSharedAppSaveRequest._() : super();
+  factory RemoveSharedAppSaveRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveSharedAppSaveRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSharedAppSaveRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveRequest clone() => RemoveSharedAppSaveRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveRequest copyWith(void Function(RemoveSharedAppSaveRequest) updates) => super.copyWith((message) => updates(message as RemoveSharedAppSaveRequest)) as RemoveSharedAppSaveRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveRequest create() => RemoveSharedAppSaveRequest._();
+  RemoveSharedAppSaveRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveSharedAppSaveRequest> createRepeated() => $pb.PbList<RemoveSharedAppSaveRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSharedAppSaveRequest>(create);
+  static RemoveSharedAppSaveRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class RemoveSharedAppSaveResponse extends $pb.GeneratedMessage {
+  factory RemoveSharedAppSaveResponse() => create();
+  RemoveSharedAppSaveResponse._() : super();
+  factory RemoveSharedAppSaveResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveSharedAppSaveResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSharedAppSaveResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveResponse clone() => RemoveSharedAppSaveResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveResponse copyWith(void Function(RemoveSharedAppSaveResponse) updates) => super.copyWith((message) => updates(message as RemoveSharedAppSaveResponse)) as RemoveSharedAppSaveResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveResponse create() => RemoveSharedAppSaveResponse._();
+  RemoveSharedAppSaveResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveSharedAppSaveResponse> createRepeated() => $pb.PbList<RemoveSharedAppSaveResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSharedAppSaveResponse>(create);
+  static RemoveSharedAppSaveResponse? _defaultInstance;
+}
+
+class CreateSharedAppSaveFileRequest extends $pb.GeneratedMessage {
+  factory CreateSharedAppSaveFileRequest({
+    SharedAppSaveFile? sharedAppSaveFile,
+  }) {
+    final $result = create();
+    if (sharedAppSaveFile != null) {
+      $result.sharedAppSaveFile = sharedAppSaveFile;
+    }
+    return $result;
+  }
+  CreateSharedAppSaveFileRequest._() : super();
+  factory CreateSharedAppSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSharedAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSharedAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<SharedAppSaveFile>(1, _omitFieldNames ? '' : 'sharedAppSaveFile', subBuilder: SharedAppSaveFile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveFileRequest clone() => CreateSharedAppSaveFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveFileRequest copyWith(void Function(CreateSharedAppSaveFileRequest) updates) => super.copyWith((message) => updates(message as CreateSharedAppSaveFileRequest)) as CreateSharedAppSaveFileRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveFileRequest create() => CreateSharedAppSaveFileRequest._();
+  CreateSharedAppSaveFileRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSharedAppSaveFileRequest> createRepeated() => $pb.PbList<CreateSharedAppSaveFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSharedAppSaveFileRequest>(create);
+  static CreateSharedAppSaveFileRequest? _defaultInstance;
+
+  /// `Normal` will always create non-public SharedAppSaveFile
+  @$pb.TagNumber(1)
+  SharedAppSaveFile get sharedAppSaveFile => $_getN(0);
+  @$pb.TagNumber(1)
+  set sharedAppSaveFile(SharedAppSaveFile v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSharedAppSaveFile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSharedAppSaveFile() => clearField(1);
+  @$pb.TagNumber(1)
+  SharedAppSaveFile ensureSharedAppSaveFile() => $_ensure(0);
+}
+
+class CreateSharedAppSaveFileResponse extends $pb.GeneratedMessage {
+  factory CreateSharedAppSaveFileResponse({
+    $7.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  CreateSharedAppSaveFileResponse._() : super();
+  factory CreateSharedAppSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSharedAppSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSharedAppSaveFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveFileResponse clone() => CreateSharedAppSaveFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSharedAppSaveFileResponse copyWith(void Function(CreateSharedAppSaveFileResponse) updates) => super.copyWith((message) => updates(message as CreateSharedAppSaveFileResponse)) as CreateSharedAppSaveFileResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveFileResponse create() => CreateSharedAppSaveFileResponse._();
+  CreateSharedAppSaveFileResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSharedAppSaveFileResponse> createRepeated() => $pb.PbList<CreateSharedAppSaveFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSharedAppSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSharedAppSaveFileResponse>(create);
+  static CreateSharedAppSaveFileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class UpdateSharedAppSaveFileRequest extends $pb.GeneratedMessage {
+  factory UpdateSharedAppSaveFileRequest({
+    SharedAppSaveFile? sharedAppSaveFile,
+  }) {
+    final $result = create();
+    if (sharedAppSaveFile != null) {
+      $result.sharedAppSaveFile = sharedAppSaveFile;
+    }
+    return $result;
+  }
+  UpdateSharedAppSaveFileRequest._() : super();
+  factory UpdateSharedAppSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSharedAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSharedAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<SharedAppSaveFile>(1, _omitFieldNames ? '' : 'sharedAppSaveFile', subBuilder: SharedAppSaveFile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveFileRequest clone() => UpdateSharedAppSaveFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveFileRequest copyWith(void Function(UpdateSharedAppSaveFileRequest) updates) => super.copyWith((message) => updates(message as UpdateSharedAppSaveFileRequest)) as UpdateSharedAppSaveFileRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveFileRequest create() => UpdateSharedAppSaveFileRequest._();
+  UpdateSharedAppSaveFileRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSharedAppSaveFileRequest> createRepeated() => $pb.PbList<UpdateSharedAppSaveFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSharedAppSaveFileRequest>(create);
+  static UpdateSharedAppSaveFileRequest? _defaultInstance;
+
+  /// `Normal` can't set public field
+  @$pb.TagNumber(1)
+  SharedAppSaveFile get sharedAppSaveFile => $_getN(0);
+  @$pb.TagNumber(1)
+  set sharedAppSaveFile(SharedAppSaveFile v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSharedAppSaveFile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSharedAppSaveFile() => clearField(1);
+  @$pb.TagNumber(1)
+  SharedAppSaveFile ensureSharedAppSaveFile() => $_ensure(0);
+}
+
+class UpdateSharedAppSaveFileResponse extends $pb.GeneratedMessage {
+  factory UpdateSharedAppSaveFileResponse() => create();
+  UpdateSharedAppSaveFileResponse._() : super();
+  factory UpdateSharedAppSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSharedAppSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSharedAppSaveFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveFileResponse clone() => UpdateSharedAppSaveFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSharedAppSaveFileResponse copyWith(void Function(UpdateSharedAppSaveFileResponse) updates) => super.copyWith((message) => updates(message as UpdateSharedAppSaveFileResponse)) as UpdateSharedAppSaveFileResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveFileResponse create() => UpdateSharedAppSaveFileResponse._();
+  UpdateSharedAppSaveFileResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSharedAppSaveFileResponse> createRepeated() => $pb.PbList<UpdateSharedAppSaveFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSharedAppSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSharedAppSaveFileResponse>(create);
+  static UpdateSharedAppSaveFileResponse? _defaultInstance;
+}
+
+class ListSharedAppSaveFilesRequest extends $pb.GeneratedMessage {
+  factory ListSharedAppSaveFilesRequest({
+    $7.PagingRequest? paging,
+    $core.Iterable<$7.InternalID>? idFilter,
+    $core.Iterable<$7.InternalID>? sharedAppSaveIdFilter,
+    $core.Iterable<$7.InternalID>? userIdFilter,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (idFilter != null) {
+      $result.idFilter.addAll(idFilter);
+    }
+    if (sharedAppSaveIdFilter != null) {
+      $result.sharedAppSaveIdFilter.addAll(sharedAppSaveIdFilter);
+    }
+    if (userIdFilter != null) {
+      $result.userIdFilter.addAll(userIdFilter);
+    }
+    return $result;
+  }
+  ListSharedAppSaveFilesRequest._() : super();
+  factory ListSharedAppSaveFilesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSharedAppSaveFilesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSharedAppSaveFilesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
+    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'sharedAppSaveIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$7.InternalID>(4, _omitFieldNames ? '' : 'userIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSaveFilesRequest clone() => ListSharedAppSaveFilesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSaveFilesRequest copyWith(void Function(ListSharedAppSaveFilesRequest) updates) => super.copyWith((message) => updates(message as ListSharedAppSaveFilesRequest)) as ListSharedAppSaveFilesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSaveFilesRequest create() => ListSharedAppSaveFilesRequest._();
+  ListSharedAppSaveFilesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSharedAppSaveFilesRequest> createRepeated() => $pb.PbList<ListSharedAppSaveFilesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSaveFilesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSharedAppSaveFilesRequest>(create);
+  static ListSharedAppSaveFilesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$7.InternalID> get idFilter => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$7.InternalID> get sharedAppSaveIdFilter => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<$7.InternalID> get userIdFilter => $_getList(3);
+}
+
+class ListSharedAppSaveFilesResponse extends $pb.GeneratedMessage {
+  factory ListSharedAppSaveFilesResponse({
+    $7.PagingResponse? paging,
+    $core.Iterable<SharedAppSaveFile>? sharedAppSaveFiles,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (sharedAppSaveFiles != null) {
+      $result.sharedAppSaveFiles.addAll(sharedAppSaveFiles);
+    }
+    return $result;
+  }
+  ListSharedAppSaveFilesResponse._() : super();
+  factory ListSharedAppSaveFilesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSharedAppSaveFilesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSharedAppSaveFilesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..pc<SharedAppSaveFile>(2, _omitFieldNames ? '' : 'sharedAppSaveFiles', $pb.PbFieldType.PM, subBuilder: SharedAppSaveFile.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSaveFilesResponse clone() => ListSharedAppSaveFilesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSharedAppSaveFilesResponse copyWith(void Function(ListSharedAppSaveFilesResponse) updates) => super.copyWith((message) => updates(message as ListSharedAppSaveFilesResponse)) as ListSharedAppSaveFilesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSaveFilesResponse create() => ListSharedAppSaveFilesResponse._();
+  ListSharedAppSaveFilesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSharedAppSaveFilesResponse> createRepeated() => $pb.PbList<ListSharedAppSaveFilesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSharedAppSaveFilesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSharedAppSaveFilesResponse>(create);
+  static ListSharedAppSaveFilesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($7.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SharedAppSaveFile> get sharedAppSaveFiles => $_getList(1);
+}
+
+class RemoveSharedAppSaveFileRequest extends $pb.GeneratedMessage {
+  factory RemoveSharedAppSaveFileRequest({
+    $7.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  RemoveSharedAppSaveFileRequest._() : super();
+  factory RemoveSharedAppSaveFileRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveSharedAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSharedAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveFileRequest clone() => RemoveSharedAppSaveFileRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveFileRequest copyWith(void Function(RemoveSharedAppSaveFileRequest) updates) => super.copyWith((message) => updates(message as RemoveSharedAppSaveFileRequest)) as RemoveSharedAppSaveFileRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveFileRequest create() => RemoveSharedAppSaveFileRequest._();
+  RemoveSharedAppSaveFileRequest createEmptyInstance() => create();
+  static $pb.PbList<RemoveSharedAppSaveFileRequest> createRepeated() => $pb.PbList<RemoveSharedAppSaveFileRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSharedAppSaveFileRequest>(create);
+  static RemoveSharedAppSaveFileRequest? _defaultInstance;
+
+  /// `Normal` can only remove owned SharedAppSaveFile
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+}
+
+class RemoveSharedAppSaveFileResponse extends $pb.GeneratedMessage {
+  factory RemoveSharedAppSaveFileResponse() => create();
+  RemoveSharedAppSaveFileResponse._() : super();
+  factory RemoveSharedAppSaveFileResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RemoveSharedAppSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveSharedAppSaveFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveFileResponse clone() => RemoveSharedAppSaveFileResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RemoveSharedAppSaveFileResponse copyWith(void Function(RemoveSharedAppSaveFileResponse) updates) => super.copyWith((message) => updates(message as RemoveSharedAppSaveFileResponse)) as RemoveSharedAppSaveFileResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveFileResponse create() => RemoveSharedAppSaveFileResponse._();
+  RemoveSharedAppSaveFileResponse createEmptyInstance() => create();
+  static $pb.PbList<RemoveSharedAppSaveFileResponse> createRepeated() => $pb.PbList<RemoveSharedAppSaveFileResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RemoveSharedAppSaveFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemoveSharedAppSaveFileResponse>(create);
+  static RemoveSharedAppSaveFileResponse? _defaultInstance;
+}
+
 class ListAppCategoriesRequest extends $pb.GeneratedMessage {
   factory ListAppCategoriesRequest() => create();
   ListAppCategoriesRequest._() : super();
@@ -4561,6 +5372,244 @@ class AppInst extends $pb.GeneratedMessage {
   void clearAppId() => clearField(3);
   @$pb.TagNumber(3)
   $7.InternalID ensureAppId() => $_ensure(2);
+}
+
+class SharedAppSave extends $pb.GeneratedMessage {
+  factory SharedAppSave({
+    $7.InternalID? id,
+    $core.String? name,
+    $core.String? description,
+    $7.InternalID? appInfoId,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (appInfoId != null) {
+      $result.appInfoId = appInfoId;
+    }
+    return $result;
+  }
+  SharedAppSave._() : super();
+  factory SharedAppSave.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SharedAppSave.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SharedAppSave', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOM<$7.InternalID>(4, _omitFieldNames ? '' : 'appInfoId', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SharedAppSave clone() => SharedAppSave()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SharedAppSave copyWith(void Function(SharedAppSave) updates) => super.copyWith((message) => updates(message as SharedAppSave)) as SharedAppSave;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SharedAppSave create() => SharedAppSave._();
+  SharedAppSave createEmptyInstance() => create();
+  static $pb.PbList<SharedAppSave> createRepeated() => $pb.PbList<SharedAppSave>();
+  @$core.pragma('dart2js:noInline')
+  static SharedAppSave getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SharedAppSave>(create);
+  static SharedAppSave? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $7.InternalID get appInfoId => $_getN(3);
+  @$pb.TagNumber(4)
+  set appInfoId($7.InternalID v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAppInfoId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAppInfoId() => clearField(4);
+  @$pb.TagNumber(4)
+  $7.InternalID ensureAppInfoId() => $_ensure(3);
+}
+
+class SharedAppSaveFile extends $pb.GeneratedMessage {
+  factory SharedAppSaveFile({
+    $7.InternalID? id,
+    $core.String? name,
+    $core.String? description,
+    $core.bool? public,
+    $7.InternalID? sharedAppSaveId,
+    $7.InternalID? fileMetadataId,
+    $7.InternalID? userId,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (public != null) {
+      $result.public = public;
+    }
+    if (sharedAppSaveId != null) {
+      $result.sharedAppSaveId = sharedAppSaveId;
+    }
+    if (fileMetadataId != null) {
+      $result.fileMetadataId = fileMetadataId;
+    }
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    return $result;
+  }
+  SharedAppSaveFile._() : super();
+  factory SharedAppSaveFile.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SharedAppSaveFile.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SharedAppSaveFile', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOB(4, _omitFieldNames ? '' : 'public')
+    ..aOM<$7.InternalID>(5, _omitFieldNames ? '' : 'sharedAppSaveId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(6, _omitFieldNames ? '' : 'fileMetadataId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(7, _omitFieldNames ? '' : 'userId', subBuilder: $7.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SharedAppSaveFile clone() => SharedAppSaveFile()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SharedAppSaveFile copyWith(void Function(SharedAppSaveFile) updates) => super.copyWith((message) => updates(message as SharedAppSaveFile)) as SharedAppSaveFile;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SharedAppSaveFile create() => SharedAppSaveFile._();
+  SharedAppSaveFile createEmptyInstance() => create();
+  static $pb.PbList<SharedAppSaveFile> createRepeated() => $pb.PbList<SharedAppSaveFile>();
+  @$core.pragma('dart2js:noInline')
+  static SharedAppSaveFile getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SharedAppSaveFile>(create);
+  static SharedAppSaveFile? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $7.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($7.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $7.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get public => $_getBF(3);
+  @$pb.TagNumber(4)
+  set public($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasPublic() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPublic() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $7.InternalID get sharedAppSaveId => $_getN(4);
+  @$pb.TagNumber(5)
+  set sharedAppSaveId($7.InternalID v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSharedAppSaveId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSharedAppSaveId() => clearField(5);
+  @$pb.TagNumber(5)
+  $7.InternalID ensureSharedAppSaveId() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $7.InternalID get fileMetadataId => $_getN(5);
+  @$pb.TagNumber(6)
+  set fileMetadataId($7.InternalID v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasFileMetadataId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFileMetadataId() => clearField(6);
+  @$pb.TagNumber(6)
+  $7.InternalID ensureFileMetadataId() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $7.InternalID get userId => $_getN(6);
+  @$pb.TagNumber(7)
+  set userId($7.InternalID v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasUserId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUserId() => clearField(7);
+  @$pb.TagNumber(7)
+  $7.InternalID ensureUserId() => $_ensure(6);
 }
 
 

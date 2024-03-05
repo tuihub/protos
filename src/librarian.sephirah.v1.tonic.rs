@@ -2228,6 +2228,262 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Gebura` `Admin`
+*/
+        pub async fn create_shared_app_save(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CreateSharedAppSaveRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CreateSharedAppSaveResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSave",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateSharedAppSave",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Admin`
+*/
+        pub async fn update_shared_app_save(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UpdateSharedAppSaveRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateSharedAppSaveResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSave",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateSharedAppSave",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Normal`
+*/
+        pub async fn list_shared_app_saves(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListSharedAppSavesRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListSharedAppSavesResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaves",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListSharedAppSaves",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Admin`
+*/
+        pub async fn remove_shared_app_save(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RemoveSharedAppSaveRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveSharedAppSaveResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSave",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RemoveSharedAppSave",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Admin` `Normal limited`
+*/
+        pub async fn create_shared_app_save_file(
+            &mut self,
+            request: impl tonic::IntoRequest<super::CreateSharedAppSaveFileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CreateSharedAppSaveFileResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSaveFile",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "CreateSharedAppSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Admin` `Normal limited`
+*/
+        pub async fn update_shared_app_save_file(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UpdateSharedAppSaveFileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateSharedAppSaveFileResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSaveFile",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateSharedAppSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Normal`
+*/
+        pub async fn list_shared_app_save_files(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListSharedAppSaveFilesRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListSharedAppSaveFilesResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaveFiles",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListSharedAppSaveFiles",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Admin` `Normal limited`
+*/
+        pub async fn remove_shared_app_save_file(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RemoveSharedAppSaveFileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveSharedAppSaveFileResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSaveFile",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RemoveSharedAppSaveFile",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /** `Gebura` `Normal`
 */
         pub async fn list_app_categories(
@@ -2772,8 +3028,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn get_feed_item(
             &mut self,
             request: impl tonic::IntoRequest<super::GetFeedItemRequest>,
@@ -2804,8 +3058,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn get_batch_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GetBatchFeedItemsRequest>,
@@ -3699,6 +3951,78 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetAppSaveFileCapacityResponse>,
             tonic::Status,
         >;
+        /** `Gebura` `Admin`
+*/
+        async fn create_shared_app_save(
+            &self,
+            request: tonic::Request<super::CreateSharedAppSaveRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CreateSharedAppSaveResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Admin`
+*/
+        async fn update_shared_app_save(
+            &self,
+            request: tonic::Request<super::UpdateSharedAppSaveRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateSharedAppSaveResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Normal`
+*/
+        async fn list_shared_app_saves(
+            &self,
+            request: tonic::Request<super::ListSharedAppSavesRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListSharedAppSavesResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Admin`
+*/
+        async fn remove_shared_app_save(
+            &self,
+            request: tonic::Request<super::RemoveSharedAppSaveRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveSharedAppSaveResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Admin` `Normal limited`
+*/
+        async fn create_shared_app_save_file(
+            &self,
+            request: tonic::Request<super::CreateSharedAppSaveFileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::CreateSharedAppSaveFileResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Admin` `Normal limited`
+*/
+        async fn update_shared_app_save_file(
+            &self,
+            request: tonic::Request<super::UpdateSharedAppSaveFileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateSharedAppSaveFileResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Normal`
+*/
+        async fn list_shared_app_save_files(
+            &self,
+            request: tonic::Request<super::ListSharedAppSaveFilesRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListSharedAppSaveFilesResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Admin` `Normal limited`
+*/
+        async fn remove_shared_app_save_file(
+            &self,
+            request: tonic::Request<super::RemoveSharedAppSaveFileRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RemoveSharedAppSaveFileResponse>,
+            tonic::Status,
+        >;
         /** `Gebura` `Normal`
 */
         async fn list_app_categories(
@@ -3852,8 +4176,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GroupFeedItemsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn get_feed_item(
             &self,
             request: tonic::Request<super::GetFeedItemRequest>,
@@ -3861,8 +4183,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetFeedItemResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn get_batch_feed_items(
             &self,
             request: tonic::Request<super::GetBatchFeedItemsRequest>,
@@ -7037,6 +7357,396 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = GetAppSaveFileCapacitySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSave" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateSharedAppSaveSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::CreateSharedAppSaveRequest>
+                    for CreateSharedAppSaveSvc<T> {
+                        type Response = super::CreateSharedAppSaveResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::CreateSharedAppSaveRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).create_shared_app_save(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateSharedAppSaveSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSave" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateSharedAppSaveSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::UpdateSharedAppSaveRequest>
+                    for UpdateSharedAppSaveSvc<T> {
+                        type Response = super::UpdateSharedAppSaveResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UpdateSharedAppSaveRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_shared_app_save(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateSharedAppSaveSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaves" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListSharedAppSavesSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListSharedAppSavesRequest>
+                    for ListSharedAppSavesSvc<T> {
+                        type Response = super::ListSharedAppSavesResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListSharedAppSavesRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_shared_app_saves(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListSharedAppSavesSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSave" => {
+                    #[allow(non_camel_case_types)]
+                    struct RemoveSharedAppSaveSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::RemoveSharedAppSaveRequest>
+                    for RemoveSharedAppSaveSvc<T> {
+                        type Response = super::RemoveSharedAppSaveResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RemoveSharedAppSaveRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).remove_shared_app_save(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = RemoveSharedAppSaveSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSaveFile" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateSharedAppSaveFileSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::CreateSharedAppSaveFileRequest>
+                    for CreateSharedAppSaveFileSvc<T> {
+                        type Response = super::CreateSharedAppSaveFileResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::CreateSharedAppSaveFileRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).create_shared_app_save_file(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateSharedAppSaveFileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSharedAppSaveFile" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateSharedAppSaveFileSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::UpdateSharedAppSaveFileRequest>
+                    for UpdateSharedAppSaveFileSvc<T> {
+                        type Response = super::UpdateSharedAppSaveFileResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::UpdateSharedAppSaveFileRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_shared_app_save_file(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateSharedAppSaveFileSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListSharedAppSaveFiles" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListSharedAppSaveFilesSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListSharedAppSaveFilesRequest>
+                    for ListSharedAppSaveFilesSvc<T> {
+                        type Response = super::ListSharedAppSaveFilesResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListSharedAppSaveFilesRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_shared_app_save_files(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListSharedAppSaveFilesSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/RemoveSharedAppSaveFile" => {
+                    #[allow(non_camel_case_types)]
+                    struct RemoveSharedAppSaveFileSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::RemoveSharedAppSaveFileRequest>
+                    for RemoveSharedAppSaveFileSvc<T> {
+                        type Response = super::RemoveSharedAppSaveFileResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::RemoveSharedAppSaveFileRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).remove_shared_app_save_file(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = RemoveSharedAppSaveFileSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
