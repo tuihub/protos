@@ -194,6 +194,23 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc GetAppSaveFileCapacity(GetAppSaveFileCapacityRequest) returns (GetAppSaveFileCapacityResponse);
 
+  // `Gebura` `Admin`
+  rpc CreateSharedAppSave(CreateSharedAppSaveRequest) returns (CreateSharedAppSaveResponse);
+  // `Gebura` `Admin`
+  rpc UpdateSharedAppSave(UpdateSharedAppSaveRequest) returns (UpdateSharedAppSaveResponse);
+  // `Gebura` `Normal`
+  rpc ListSharedAppSaves(ListSharedAppSavesRequest) returns (ListSharedAppSavesResponse);
+  // `Gebura` `Admin`
+  rpc RemoveSharedAppSave(RemoveSharedAppSaveRequest) returns (RemoveSharedAppSaveResponse);
+  // `Gebura` `Admin` `Normal limited`
+  rpc CreateSharedAppSaveFile(CreateSharedAppSaveFileRequest) returns (CreateSharedAppSaveFileResponse);
+  // `Gebura` `Admin` `Normal limited`
+  rpc UpdateSharedAppSaveFile(UpdateSharedAppSaveFileRequest) returns (UpdateSharedAppSaveFileResponse);
+  // `Gebura` `Normal`
+  rpc ListSharedAppSaveFiles(ListSharedAppSaveFilesRequest) returns (ListSharedAppSaveFilesResponse);
+  // `Gebura` `Admin` `Normal limited`
+  rpc RemoveSharedAppSaveFile(RemoveSharedAppSaveFileRequest) returns (RemoveSharedAppSaveFileResponse);
+
   // `Gebura` `Normal`
   rpc ListAppCategories(ListAppCategoriesRequest) returns (ListAppCategoriesResponse);
   // `Gebura` `Normal`

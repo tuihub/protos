@@ -313,6 +313,72 @@ message GetAppSaveFileCapacityResponse {
 
 message SetAppSaveFileCapacityResponse {}
 
+message CreateSharedAppSaveRequest {
+  SharedAppSave shared_app_save = 1;
+}
+
+message CreateSharedAppSaveResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateSharedAppSaveRequest {
+  SharedAppSave shared_app_save = 1;
+}
+
+message UpdateSharedAppSaveResponse {}
+
+message ListSharedAppSavesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+  repeated librarian.v1.InternalID app_info_id_filter = 3;
+}
+
+message ListSharedAppSavesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated SharedAppSave shared_app_saves = 2;
+}
+
+message RemoveSharedAppSaveRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message RemoveSharedAppSaveResponse {}
+
+message CreateSharedAppSaveFileRequest {
+  // `Normal` will always create non-public SharedAppSaveFile
+  SharedAppSaveFile shared_app_save_file = 1;
+}
+
+message CreateSharedAppSaveFileResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateSharedAppSaveFileRequest {
+  // `Normal` can't set public field
+  SharedAppSaveFile shared_app_save_file = 1;
+}
+
+message UpdateSharedAppSaveFileResponse {}
+
+message ListSharedAppSaveFilesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+  repeated librarian.v1.InternalID shared_app_save_id_filter = 3;
+  repeated librarian.v1.InternalID user_id_filter = 4;
+}
+
+message ListSharedAppSaveFilesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated SharedAppSaveFile shared_app_save_files = 2;
+}
+
+message RemoveSharedAppSaveFileRequest {
+  // `Normal` can only remove owned SharedAppSaveFile
+  librarian.v1.InternalID id = 1;
+}
+
+message RemoveSharedAppSaveFileResponse {}
+
 message ListAppCategoriesRequest {}
 
 message ListAppCategoriesResponse {
@@ -381,4 +447,21 @@ message AppInst {
   librarian.v1.InternalID id = 1;
   librarian.v1.InternalID device_id = 2;
   librarian.v1.InternalID app_id = 3;
+}
+
+message SharedAppSave {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+  librarian.v1.InternalID app_info_id = 4;
+}
+
+message SharedAppSaveFile {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+  bool public = 4;
+  librarian.v1.InternalID shared_app_save_id = 5;
+  librarian.v1.InternalID file_metadata_id = 6;
+  optional librarian.v1.InternalID user_id = 7;
 }
