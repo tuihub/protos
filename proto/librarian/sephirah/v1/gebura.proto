@@ -282,7 +282,20 @@ message SetAppSaveFileCapacityRequest {
   oneof entity {
     bool user = 1;
     librarian.v1.InternalID app_id = 2;
-    librarian.v1.InternalID app_inst_id = 3;
+  }
+  // negative value means use default
+  int64 count = 4;
+  // negative value means use default
+  int64 size_bytes = 5;
+  // unspecified means use default
+  AppSaveFileCapacityStrategy strategy = 6;
+}
+
+message SetAppSaveFileCapacityResponse {}
+
+message SetAppSaveFileCapacityDefaultRequest {
+  oneof entity {
+    bool app = 1;
   }
   // negative value means no limit
   int64 count = 4;
@@ -291,17 +304,19 @@ message SetAppSaveFileCapacityRequest {
   AppSaveFileCapacityStrategy strategy = 6;
 }
 
+message SetAppSaveFileCapacityDefaultResponse {}
+
 enum AppSaveFileCapacityStrategy {
   APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED = 0;
   APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL = 1;
   APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST = 2;
+  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED = 3;
 }
 
 message GetAppSaveFileCapacityRequest {
   oneof entity {
     bool user = 1;
     librarian.v1.InternalID app_id = 2;
-    librarian.v1.InternalID app_inst_id = 3;
   }
 }
 
@@ -311,7 +326,17 @@ message GetAppSaveFileCapacityResponse {
   AppSaveFileCapacityStrategy strategy = 3;
 }
 
-message SetAppSaveFileCapacityResponse {}
+message GetAppSaveFileCapacityDefaultRequest {
+  oneof entity {
+    bool app = 1;
+  }
+}
+
+message GetAppSaveFileCapacityDefaultResponse {
+  int64 count = 1;
+  int64 size_bytes = 2;
+  AppSaveFileCapacityStrategy strategy = 3;
+}
 
 message CreateSharedAppSaveRequest {
   SharedAppSave shared_app_save = 1;

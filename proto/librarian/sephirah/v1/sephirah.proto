@@ -193,6 +193,10 @@ service LibrarianSephirahService {
   rpc SetAppSaveFileCapacity(SetAppSaveFileCapacityRequest) returns (SetAppSaveFileCapacityResponse);
   // `Gebura` `Normal`
   rpc GetAppSaveFileCapacity(GetAppSaveFileCapacityRequest) returns (GetAppSaveFileCapacityResponse);
+  // `Gebura` `Normal`
+  rpc SetAppSaveFileCapacityDefault(SetAppSaveFileCapacityDefaultRequest) returns (SetAppSaveFileCapacityDefaultResponse);
+  // `Gebura` `Normal`
+  rpc GetAppSaveFileCapacityDefault(GetAppSaveFileCapacityDefaultRequest) returns (GetAppSaveFileCapacityDefaultResponse);
 
   // `Gebura` `Admin`
   rpc CreateSharedAppSave(CreateSharedAppSaveRequest) returns (CreateSharedAppSaveResponse);
