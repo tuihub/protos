@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.5](https://github.com/tuihub/protos/compare/v0.4.4...v0.4.5) (2024-03-06)
+
+
+### Features
+
+* **gebura:** add SetAppSaveFileCapacityDefault ([0fe3658](https://github.com/tuihub/protos/commit/0fe36581ca78811afa4f88b1af9f175fae5435db))
+* **gebura:** add SharedAppSave ([e758a74](https://github.com/tuihub/protos/commit/e758a74f9271ff23dc87042d92cfe5065e91be95))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#131](https://github.com/tuihub/protos/issues/131)) ([b2b1cd4](https://github.com/tuihub/protos/commit/b2b1cd489d3de0e28dad91ec643b7e3e6e6bf9e1))
+
 ## [0.4.4](https://github.com/tuihub/protos/compare/v0.4.3...v0.4.4) (2024-02-27)
 
 
