@@ -1499,11 +1499,6 @@ export class SetAppSaveFileCapacityRequest extends jspb.Message {
   getAppId(): librarian_v1_common_pb.InternalID | undefined;
   setAppId(value?: librarian_v1_common_pb.InternalID): void;
 
-  hasAppInstId(): boolean;
-  clearAppInstId(): void;
-  getAppInstId(): librarian_v1_common_pb.InternalID | undefined;
-  setAppInstId(value?: librarian_v1_common_pb.InternalID): void;
-
   getCount(): number;
   setCount(value: number): void;
 
@@ -1528,7 +1523,6 @@ export namespace SetAppSaveFileCapacityRequest {
   export type AsObject = {
     user: boolean,
     appId?: librarian_v1_common_pb.InternalID.AsObject,
-    appInstId?: librarian_v1_common_pb.InternalID.AsObject,
     count: number,
     sizeBytes: number,
     strategy: AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap],
@@ -1538,7 +1532,78 @@ export namespace SetAppSaveFileCapacityRequest {
     ENTITY_NOT_SET = 0,
     USER = 1,
     APP_ID = 2,
-    APP_INST_ID = 3,
+  }
+}
+
+export class SetAppSaveFileCapacityResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAppSaveFileCapacityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAppSaveFileCapacityResponse): SetAppSaveFileCapacityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAppSaveFileCapacityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAppSaveFileCapacityResponse;
+  static deserializeBinaryFromReader(message: SetAppSaveFileCapacityResponse, reader: jspb.BinaryReader): SetAppSaveFileCapacityResponse;
+}
+
+export namespace SetAppSaveFileCapacityResponse {
+  export type AsObject = {
+  }
+}
+
+export class SetAppSaveFileCapacityDefaultRequest extends jspb.Message {
+  hasApp(): boolean;
+  clearApp(): void;
+  getApp(): boolean;
+  setApp(value: boolean): void;
+
+  getCount(): number;
+  setCount(value: number): void;
+
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
+
+  getStrategy(): AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap];
+  setStrategy(value: AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap]): void;
+
+  getEntityCase(): SetAppSaveFileCapacityDefaultRequest.EntityCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAppSaveFileCapacityDefaultRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAppSaveFileCapacityDefaultRequest): SetAppSaveFileCapacityDefaultRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAppSaveFileCapacityDefaultRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAppSaveFileCapacityDefaultRequest;
+  static deserializeBinaryFromReader(message: SetAppSaveFileCapacityDefaultRequest, reader: jspb.BinaryReader): SetAppSaveFileCapacityDefaultRequest;
+}
+
+export namespace SetAppSaveFileCapacityDefaultRequest {
+  export type AsObject = {
+    app: boolean,
+    count: number,
+    sizeBytes: number,
+    strategy: AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap],
+  }
+
+  export enum EntityCase {
+    ENTITY_NOT_SET = 0,
+    APP = 1,
+  }
+}
+
+export class SetAppSaveFileCapacityDefaultResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SetAppSaveFileCapacityDefaultResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SetAppSaveFileCapacityDefaultResponse): SetAppSaveFileCapacityDefaultResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SetAppSaveFileCapacityDefaultResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SetAppSaveFileCapacityDefaultResponse;
+  static deserializeBinaryFromReader(message: SetAppSaveFileCapacityDefaultResponse, reader: jspb.BinaryReader): SetAppSaveFileCapacityDefaultResponse;
+}
+
+export namespace SetAppSaveFileCapacityDefaultResponse {
+  export type AsObject = {
   }
 }
 
@@ -1552,11 +1617,6 @@ export class GetAppSaveFileCapacityRequest extends jspb.Message {
   clearAppId(): void;
   getAppId(): librarian_v1_common_pb.InternalID | undefined;
   setAppId(value?: librarian_v1_common_pb.InternalID): void;
-
-  hasAppInstId(): boolean;
-  clearAppInstId(): void;
-  getAppInstId(): librarian_v1_common_pb.InternalID | undefined;
-  setAppInstId(value?: librarian_v1_common_pb.InternalID): void;
 
   getEntityCase(): GetAppSaveFileCapacityRequest.EntityCase;
   serializeBinary(): Uint8Array;
@@ -1573,14 +1633,12 @@ export namespace GetAppSaveFileCapacityRequest {
   export type AsObject = {
     user: boolean,
     appId?: librarian_v1_common_pb.InternalID.AsObject,
-    appInstId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 
   export enum EntityCase {
     ENTITY_NOT_SET = 0,
     USER = 1,
     APP_ID = 2,
-    APP_INST_ID = 3,
   }
 }
 
@@ -1612,19 +1670,59 @@ export namespace GetAppSaveFileCapacityResponse {
   }
 }
 
-export class SetAppSaveFileCapacityResponse extends jspb.Message {
+export class GetAppSaveFileCapacityDefaultRequest extends jspb.Message {
+  hasApp(): boolean;
+  clearApp(): void;
+  getApp(): boolean;
+  setApp(value: boolean): void;
+
+  getEntityCase(): GetAppSaveFileCapacityDefaultRequest.EntityCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SetAppSaveFileCapacityResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SetAppSaveFileCapacityResponse): SetAppSaveFileCapacityResponse.AsObject;
+  toObject(includeInstance?: boolean): GetAppSaveFileCapacityDefaultRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppSaveFileCapacityDefaultRequest): GetAppSaveFileCapacityDefaultRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SetAppSaveFileCapacityResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SetAppSaveFileCapacityResponse;
-  static deserializeBinaryFromReader(message: SetAppSaveFileCapacityResponse, reader: jspb.BinaryReader): SetAppSaveFileCapacityResponse;
+  static serializeBinaryToWriter(message: GetAppSaveFileCapacityDefaultRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppSaveFileCapacityDefaultRequest;
+  static deserializeBinaryFromReader(message: GetAppSaveFileCapacityDefaultRequest, reader: jspb.BinaryReader): GetAppSaveFileCapacityDefaultRequest;
 }
 
-export namespace SetAppSaveFileCapacityResponse {
+export namespace GetAppSaveFileCapacityDefaultRequest {
   export type AsObject = {
+    app: boolean,
+  }
+
+  export enum EntityCase {
+    ENTITY_NOT_SET = 0,
+    APP = 1,
+  }
+}
+
+export class GetAppSaveFileCapacityDefaultResponse extends jspb.Message {
+  getCount(): number;
+  setCount(value: number): void;
+
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
+
+  getStrategy(): AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap];
+  setStrategy(value: AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAppSaveFileCapacityDefaultResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAppSaveFileCapacityDefaultResponse): GetAppSaveFileCapacityDefaultResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetAppSaveFileCapacityDefaultResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAppSaveFileCapacityDefaultResponse;
+  static deserializeBinaryFromReader(message: GetAppSaveFileCapacityDefaultResponse, reader: jspb.BinaryReader): GetAppSaveFileCapacityDefaultResponse;
+}
+
+export namespace GetAppSaveFileCapacityDefaultResponse {
+  export type AsObject = {
+    count: number,
+    sizeBytes: number,
+    strategy: AppSaveFileCapacityStrategyMap[keyof AppSaveFileCapacityStrategyMap],
   }
 }
 
@@ -2444,6 +2542,7 @@ export interface AppSaveFileCapacityStrategyMap {
   APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED: 0;
   APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL: 1;
   APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST: 2;
+  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED: 3;
 }
 
 export const AppSaveFileCapacityStrategy: AppSaveFileCapacityStrategyMap;

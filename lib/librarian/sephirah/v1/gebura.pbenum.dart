@@ -17,11 +17,13 @@ class AppSaveFileCapacityStrategy extends $pb.ProtobufEnum {
   static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED = AppSaveFileCapacityStrategy._(0, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED');
   static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL = AppSaveFileCapacityStrategy._(1, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL');
   static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST = AppSaveFileCapacityStrategy._(2, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST');
+  static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED = AppSaveFileCapacityStrategy._(3, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED');
 
   static const $core.List<AppSaveFileCapacityStrategy> values = <AppSaveFileCapacityStrategy> [
     APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED,
     APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL,
     APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST,
+    APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED,
   ];
 
   static final $core.Map<$core.int, AppSaveFileCapacityStrategy> _byValue = $pb.ProtobufEnum.initByValue(values);

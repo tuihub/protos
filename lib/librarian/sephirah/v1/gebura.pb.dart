@@ -3362,7 +3362,6 @@ class UnpinAppSaveFileResponse extends $pb.GeneratedMessage {
 enum SetAppSaveFileCapacityRequest_Entity {
   user, 
   appId, 
-  appInstId, 
   notSet
 }
 
@@ -3370,7 +3369,6 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   factory SetAppSaveFileCapacityRequest({
     $core.bool? user,
     $7.InternalID? appId,
-    $7.InternalID? appInstId,
     $fixnum.Int64? count,
     $fixnum.Int64? sizeBytes,
     AppSaveFileCapacityStrategy? strategy,
@@ -3381,9 +3379,6 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
     }
     if (appId != null) {
       $result.appId = appId;
-    }
-    if (appInstId != null) {
-      $result.appInstId = appInstId;
     }
     if (count != null) {
       $result.count = count;
@@ -3403,14 +3398,12 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, SetAppSaveFileCapacityRequest_Entity> _SetAppSaveFileCapacityRequest_EntityByTag = {
     1 : SetAppSaveFileCapacityRequest_Entity.user,
     2 : SetAppSaveFileCapacityRequest_Entity.appId,
-    3 : SetAppSaveFileCapacityRequest_Entity.appInstId,
     0 : SetAppSaveFileCapacityRequest_Entity.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAppSaveFileCapacityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3])
+    ..oo(0, [1, 2])
     ..aOB(1, _omitFieldNames ? '' : 'user')
     ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(3, _omitFieldNames ? '' : 'appInstId', subBuilder: $7.InternalID.create)
     ..aInt64(4, _omitFieldNames ? '' : 'count')
     ..aInt64(5, _omitFieldNames ? '' : 'sizeBytes')
     ..e<AppSaveFileCapacityStrategy>(6, _omitFieldNames ? '' : 'strategy', $pb.PbFieldType.OE, defaultOrMaker: AppSaveFileCapacityStrategy.APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED, valueOf: AppSaveFileCapacityStrategy.valueOf, enumValues: AppSaveFileCapacityStrategy.values)
@@ -3461,51 +3454,211 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.InternalID ensureAppId() => $_ensure(1);
 
-  @$pb.TagNumber(3)
-  $7.InternalID get appInstId => $_getN(2);
-  @$pb.TagNumber(3)
-  set appInstId($7.InternalID v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasAppInstId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearAppInstId() => clearField(3);
-  @$pb.TagNumber(3)
-  $7.InternalID ensureAppInstId() => $_ensure(2);
+  /// negative value means use default
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get count => $_getI64(2);
+  @$pb.TagNumber(4)
+  set count($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCount() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearCount() => clearField(4);
+
+  /// negative value means use default
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get sizeBytes => $_getI64(3);
+  @$pb.TagNumber(5)
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSizeBytes() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearSizeBytes() => clearField(5);
+
+  /// unspecified means use default
+  @$pb.TagNumber(6)
+  AppSaveFileCapacityStrategy get strategy => $_getN(4);
+  @$pb.TagNumber(6)
+  set strategy(AppSaveFileCapacityStrategy v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasStrategy() => $_has(4);
+  @$pb.TagNumber(6)
+  void clearStrategy() => clearField(6);
+}
+
+class SetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
+  factory SetAppSaveFileCapacityResponse() => create();
+  SetAppSaveFileCapacityResponse._() : super();
+  factory SetAppSaveFileCapacityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetAppSaveFileCapacityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAppSaveFileCapacityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetAppSaveFileCapacityResponse clone() => SetAppSaveFileCapacityResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetAppSaveFileCapacityResponse copyWith(void Function(SetAppSaveFileCapacityResponse) updates) => super.copyWith((message) => updates(message as SetAppSaveFileCapacityResponse)) as SetAppSaveFileCapacityResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetAppSaveFileCapacityResponse create() => SetAppSaveFileCapacityResponse._();
+  SetAppSaveFileCapacityResponse createEmptyInstance() => create();
+  static $pb.PbList<SetAppSaveFileCapacityResponse> createRepeated() => $pb.PbList<SetAppSaveFileCapacityResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetAppSaveFileCapacityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetAppSaveFileCapacityResponse>(create);
+  static SetAppSaveFileCapacityResponse? _defaultInstance;
+}
+
+enum SetAppSaveFileCapacityDefaultRequest_Entity {
+  app, 
+  notSet
+}
+
+class SetAppSaveFileCapacityDefaultRequest extends $pb.GeneratedMessage {
+  factory SetAppSaveFileCapacityDefaultRequest({
+    $core.bool? app,
+    $fixnum.Int64? count,
+    $fixnum.Int64? sizeBytes,
+    AppSaveFileCapacityStrategy? strategy,
+  }) {
+    final $result = create();
+    if (app != null) {
+      $result.app = app;
+    }
+    if (count != null) {
+      $result.count = count;
+    }
+    if (sizeBytes != null) {
+      $result.sizeBytes = sizeBytes;
+    }
+    if (strategy != null) {
+      $result.strategy = strategy;
+    }
+    return $result;
+  }
+  SetAppSaveFileCapacityDefaultRequest._() : super();
+  factory SetAppSaveFileCapacityDefaultRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetAppSaveFileCapacityDefaultRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, SetAppSaveFileCapacityDefaultRequest_Entity> _SetAppSaveFileCapacityDefaultRequest_EntityByTag = {
+    1 : SetAppSaveFileCapacityDefaultRequest_Entity.app,
+    0 : SetAppSaveFileCapacityDefaultRequest_Entity.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAppSaveFileCapacityDefaultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..oo(0, [1])
+    ..aOB(1, _omitFieldNames ? '' : 'app')
+    ..aInt64(4, _omitFieldNames ? '' : 'count')
+    ..aInt64(5, _omitFieldNames ? '' : 'sizeBytes')
+    ..e<AppSaveFileCapacityStrategy>(6, _omitFieldNames ? '' : 'strategy', $pb.PbFieldType.OE, defaultOrMaker: AppSaveFileCapacityStrategy.APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED, valueOf: AppSaveFileCapacityStrategy.valueOf, enumValues: AppSaveFileCapacityStrategy.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetAppSaveFileCapacityDefaultRequest clone() => SetAppSaveFileCapacityDefaultRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetAppSaveFileCapacityDefaultRequest copyWith(void Function(SetAppSaveFileCapacityDefaultRequest) updates) => super.copyWith((message) => updates(message as SetAppSaveFileCapacityDefaultRequest)) as SetAppSaveFileCapacityDefaultRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetAppSaveFileCapacityDefaultRequest create() => SetAppSaveFileCapacityDefaultRequest._();
+  SetAppSaveFileCapacityDefaultRequest createEmptyInstance() => create();
+  static $pb.PbList<SetAppSaveFileCapacityDefaultRequest> createRepeated() => $pb.PbList<SetAppSaveFileCapacityDefaultRequest>();
+  @$core.pragma('dart2js:noInline')
+  static SetAppSaveFileCapacityDefaultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetAppSaveFileCapacityDefaultRequest>(create);
+  static SetAppSaveFileCapacityDefaultRequest? _defaultInstance;
+
+  SetAppSaveFileCapacityDefaultRequest_Entity whichEntity() => _SetAppSaveFileCapacityDefaultRequest_EntityByTag[$_whichOneof(0)]!;
+  void clearEntity() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  $core.bool get app => $_getBF(0);
+  @$pb.TagNumber(1)
+  set app($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApp() => clearField(1);
 
   /// negative value means no limit
   @$pb.TagNumber(4)
-  $fixnum.Int64 get count => $_getI64(3);
+  $fixnum.Int64 get count => $_getI64(1);
   @$pb.TagNumber(4)
-  set count($fixnum.Int64 v) { $_setInt64(3, v); }
+  set count($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(4)
-  $core.bool hasCount() => $_has(3);
+  $core.bool hasCount() => $_has(1);
   @$pb.TagNumber(4)
   void clearCount() => clearField(4);
 
   /// negative value means no limit
   @$pb.TagNumber(5)
-  $fixnum.Int64 get sizeBytes => $_getI64(4);
+  $fixnum.Int64 get sizeBytes => $_getI64(2);
   @$pb.TagNumber(5)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(4, v); }
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(5)
-  $core.bool hasSizeBytes() => $_has(4);
+  $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(5)
   void clearSizeBytes() => clearField(5);
 
   @$pb.TagNumber(6)
-  AppSaveFileCapacityStrategy get strategy => $_getN(5);
+  AppSaveFileCapacityStrategy get strategy => $_getN(3);
   @$pb.TagNumber(6)
   set strategy(AppSaveFileCapacityStrategy v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasStrategy() => $_has(5);
+  $core.bool hasStrategy() => $_has(3);
   @$pb.TagNumber(6)
   void clearStrategy() => clearField(6);
+}
+
+class SetAppSaveFileCapacityDefaultResponse extends $pb.GeneratedMessage {
+  factory SetAppSaveFileCapacityDefaultResponse() => create();
+  SetAppSaveFileCapacityDefaultResponse._() : super();
+  factory SetAppSaveFileCapacityDefaultResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SetAppSaveFileCapacityDefaultResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAppSaveFileCapacityDefaultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SetAppSaveFileCapacityDefaultResponse clone() => SetAppSaveFileCapacityDefaultResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SetAppSaveFileCapacityDefaultResponse copyWith(void Function(SetAppSaveFileCapacityDefaultResponse) updates) => super.copyWith((message) => updates(message as SetAppSaveFileCapacityDefaultResponse)) as SetAppSaveFileCapacityDefaultResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetAppSaveFileCapacityDefaultResponse create() => SetAppSaveFileCapacityDefaultResponse._();
+  SetAppSaveFileCapacityDefaultResponse createEmptyInstance() => create();
+  static $pb.PbList<SetAppSaveFileCapacityDefaultResponse> createRepeated() => $pb.PbList<SetAppSaveFileCapacityDefaultResponse>();
+  @$core.pragma('dart2js:noInline')
+  static SetAppSaveFileCapacityDefaultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetAppSaveFileCapacityDefaultResponse>(create);
+  static SetAppSaveFileCapacityDefaultResponse? _defaultInstance;
 }
 
 enum GetAppSaveFileCapacityRequest_Entity {
   user, 
   appId, 
-  appInstId, 
   notSet
 }
 
@@ -3513,7 +3666,6 @@ class GetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   factory GetAppSaveFileCapacityRequest({
     $core.bool? user,
     $7.InternalID? appId,
-    $7.InternalID? appInstId,
   }) {
     final $result = create();
     if (user != null) {
@@ -3521,9 +3673,6 @@ class GetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
     }
     if (appId != null) {
       $result.appId = appId;
-    }
-    if (appInstId != null) {
-      $result.appInstId = appInstId;
     }
     return $result;
   }
@@ -3534,14 +3683,12 @@ class GetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, GetAppSaveFileCapacityRequest_Entity> _GetAppSaveFileCapacityRequest_EntityByTag = {
     1 : GetAppSaveFileCapacityRequest_Entity.user,
     2 : GetAppSaveFileCapacityRequest_Entity.appId,
-    3 : GetAppSaveFileCapacityRequest_Entity.appInstId,
     0 : GetAppSaveFileCapacityRequest_Entity.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppSaveFileCapacityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3])
+    ..oo(0, [1, 2])
     ..aOB(1, _omitFieldNames ? '' : 'user')
     ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'appId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(3, _omitFieldNames ? '' : 'appInstId', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -3588,17 +3735,6 @@ class GetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   void clearAppId() => clearField(2);
   @$pb.TagNumber(2)
   $7.InternalID ensureAppId() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $7.InternalID get appInstId => $_getN(2);
-  @$pb.TagNumber(3)
-  set appInstId($7.InternalID v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasAppInstId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearAppInstId() => clearField(3);
-  @$pb.TagNumber(3)
-  $7.InternalID ensureAppInstId() => $_ensure(2);
 }
 
 class GetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
@@ -3679,13 +3815,32 @@ class GetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
   void clearStrategy() => clearField(3);
 }
 
-class SetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
-  factory SetAppSaveFileCapacityResponse() => create();
-  SetAppSaveFileCapacityResponse._() : super();
-  factory SetAppSaveFileCapacityResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SetAppSaveFileCapacityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+enum GetAppSaveFileCapacityDefaultRequest_Entity {
+  app, 
+  notSet
+}
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetAppSaveFileCapacityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+class GetAppSaveFileCapacityDefaultRequest extends $pb.GeneratedMessage {
+  factory GetAppSaveFileCapacityDefaultRequest({
+    $core.bool? app,
+  }) {
+    final $result = create();
+    if (app != null) {
+      $result.app = app;
+    }
+    return $result;
+  }
+  GetAppSaveFileCapacityDefaultRequest._() : super();
+  factory GetAppSaveFileCapacityDefaultRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppSaveFileCapacityDefaultRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, GetAppSaveFileCapacityDefaultRequest_Entity> _GetAppSaveFileCapacityDefaultRequest_EntityByTag = {
+    1 : GetAppSaveFileCapacityDefaultRequest_Entity.app,
+    0 : GetAppSaveFileCapacityDefaultRequest_Entity.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppSaveFileCapacityDefaultRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..oo(0, [1])
+    ..aOB(1, _omitFieldNames ? '' : 'app')
     ..hasRequiredFields = false
   ;
 
@@ -3693,22 +3848,112 @@ class SetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SetAppSaveFileCapacityResponse clone() => SetAppSaveFileCapacityResponse()..mergeFromMessage(this);
+  GetAppSaveFileCapacityDefaultRequest clone() => GetAppSaveFileCapacityDefaultRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SetAppSaveFileCapacityResponse copyWith(void Function(SetAppSaveFileCapacityResponse) updates) => super.copyWith((message) => updates(message as SetAppSaveFileCapacityResponse)) as SetAppSaveFileCapacityResponse;
+  GetAppSaveFileCapacityDefaultRequest copyWith(void Function(GetAppSaveFileCapacityDefaultRequest) updates) => super.copyWith((message) => updates(message as GetAppSaveFileCapacityDefaultRequest)) as GetAppSaveFileCapacityDefaultRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SetAppSaveFileCapacityResponse create() => SetAppSaveFileCapacityResponse._();
-  SetAppSaveFileCapacityResponse createEmptyInstance() => create();
-  static $pb.PbList<SetAppSaveFileCapacityResponse> createRepeated() => $pb.PbList<SetAppSaveFileCapacityResponse>();
+  static GetAppSaveFileCapacityDefaultRequest create() => GetAppSaveFileCapacityDefaultRequest._();
+  GetAppSaveFileCapacityDefaultRequest createEmptyInstance() => create();
+  static $pb.PbList<GetAppSaveFileCapacityDefaultRequest> createRepeated() => $pb.PbList<GetAppSaveFileCapacityDefaultRequest>();
   @$core.pragma('dart2js:noInline')
-  static SetAppSaveFileCapacityResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SetAppSaveFileCapacityResponse>(create);
-  static SetAppSaveFileCapacityResponse? _defaultInstance;
+  static GetAppSaveFileCapacityDefaultRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppSaveFileCapacityDefaultRequest>(create);
+  static GetAppSaveFileCapacityDefaultRequest? _defaultInstance;
+
+  GetAppSaveFileCapacityDefaultRequest_Entity whichEntity() => _GetAppSaveFileCapacityDefaultRequest_EntityByTag[$_whichOneof(0)]!;
+  void clearEntity() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  $core.bool get app => $_getBF(0);
+  @$pb.TagNumber(1)
+  set app($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasApp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearApp() => clearField(1);
+}
+
+class GetAppSaveFileCapacityDefaultResponse extends $pb.GeneratedMessage {
+  factory GetAppSaveFileCapacityDefaultResponse({
+    $fixnum.Int64? count,
+    $fixnum.Int64? sizeBytes,
+    AppSaveFileCapacityStrategy? strategy,
+  }) {
+    final $result = create();
+    if (count != null) {
+      $result.count = count;
+    }
+    if (sizeBytes != null) {
+      $result.sizeBytes = sizeBytes;
+    }
+    if (strategy != null) {
+      $result.strategy = strategy;
+    }
+    return $result;
+  }
+  GetAppSaveFileCapacityDefaultResponse._() : super();
+  factory GetAppSaveFileCapacityDefaultResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAppSaveFileCapacityDefaultResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppSaveFileCapacityDefaultResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'count')
+    ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
+    ..e<AppSaveFileCapacityStrategy>(3, _omitFieldNames ? '' : 'strategy', $pb.PbFieldType.OE, defaultOrMaker: AppSaveFileCapacityStrategy.APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED, valueOf: AppSaveFileCapacityStrategy.valueOf, enumValues: AppSaveFileCapacityStrategy.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAppSaveFileCapacityDefaultResponse clone() => GetAppSaveFileCapacityDefaultResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAppSaveFileCapacityDefaultResponse copyWith(void Function(GetAppSaveFileCapacityDefaultResponse) updates) => super.copyWith((message) => updates(message as GetAppSaveFileCapacityDefaultResponse)) as GetAppSaveFileCapacityDefaultResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAppSaveFileCapacityDefaultResponse create() => GetAppSaveFileCapacityDefaultResponse._();
+  GetAppSaveFileCapacityDefaultResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAppSaveFileCapacityDefaultResponse> createRepeated() => $pb.PbList<GetAppSaveFileCapacityDefaultResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAppSaveFileCapacityDefaultResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppSaveFileCapacityDefaultResponse>(create);
+  static GetAppSaveFileCapacityDefaultResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get count => $_getI64(0);
+  @$pb.TagNumber(1)
+  set count($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCount() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get sizeBytes => $_getI64(1);
+  @$pb.TagNumber(2)
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSizeBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSizeBytes() => clearField(2);
+
+  @$pb.TagNumber(3)
+  AppSaveFileCapacityStrategy get strategy => $_getN(2);
+  @$pb.TagNumber(3)
+  set strategy(AppSaveFileCapacityStrategy v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStrategy() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStrategy() => clearField(3);
 }
 
 class CreateSharedAppSaveRequest extends $pb.GeneratedMessage {

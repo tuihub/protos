@@ -1152,6 +1152,7 @@ impl serde::Serialize for AppSaveFileCapacityStrategy {
             Self::Unspecified => "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
             Self::Fail => "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
             Self::DeleteOldest => "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST",
+            Self::DeleteOldestUntilSatisfied => "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED",
         };
         serializer.serialize_str(variant)
     }
@@ -1166,6 +1167,7 @@ impl<'de> serde::Deserialize<'de> for AppSaveFileCapacityStrategy {
             "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
             "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
             "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST",
+            "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED",
         ];
 
         struct GeneratedVisitor;
@@ -1211,6 +1213,7 @@ impl<'de> serde::Deserialize<'de> for AppSaveFileCapacityStrategy {
                     "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED" => Ok(AppSaveFileCapacityStrategy::Unspecified),
                     "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL" => Ok(AppSaveFileCapacityStrategy::Fail),
                     "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST" => Ok(AppSaveFileCapacityStrategy::DeleteOldest),
+                    "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED" => Ok(AppSaveFileCapacityStrategy::DeleteOldestUntilSatisfied),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
@@ -6279,6 +6282,233 @@ impl<'de> serde::Deserialize<'de> for GetAppInfoResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.GetAppInfoResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for GetAppSaveFileCapacityDefaultRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.entity.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityDefaultRequest", len)?;
+        if let Some(v) = self.entity.as_ref() {
+            match v {
+                get_app_save_file_capacity_default_request::Entity::App(v) => {
+                    struct_ser.serialize_field("app", v)?;
+                }
+            }
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityDefaultRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            App,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "app" => Ok(GeneratedField::App),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppSaveFileCapacityDefaultRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetAppSaveFileCapacityDefaultRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppSaveFileCapacityDefaultRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut entity__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::App => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("app"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(get_app_save_file_capacity_default_request::Entity::App);
+                        }
+                    }
+                }
+                Ok(GetAppSaveFileCapacityDefaultRequest {
+                    entity: entity__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityDefaultRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppSaveFileCapacityDefaultResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.count != 0 {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if self.strategy != 0 {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse", len)?;
+        if self.count != 0 {
+            struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
+        }
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if self.strategy != 0 {
+            let v = AppSaveFileCapacityStrategy::from_i32(self.strategy)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.strategy)))?;
+            struct_ser.serialize_field("strategy", &v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityDefaultResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "count",
+            "size_bytes",
+            "sizeBytes",
+            "strategy",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Count,
+            SizeBytes,
+            Strategy,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "count" => Ok(GeneratedField::Count),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "strategy" => Ok(GeneratedField::Strategy),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppSaveFileCapacityDefaultResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetAppSaveFileCapacityDefaultResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut count__ = None;
+                let mut size_bytes__ = None;
+                let mut strategy__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Count => {
+                            if count__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("count"));
+                            }
+                            count__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::Strategy => {
+                            if strategy__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("strategy"));
+                            }
+                            strategy__ = Some(map.next_value::<AppSaveFileCapacityStrategy>()? as i32);
+                        }
+                    }
+                }
+                Ok(GetAppSaveFileCapacityDefaultResponse {
+                    count: count__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    strategy: strategy__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for GetAppSaveFileCapacityRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -6299,9 +6529,6 @@ impl serde::Serialize for GetAppSaveFileCapacityRequest {
                 get_app_save_file_capacity_request::Entity::AppId(v) => {
                     struct_ser.serialize_field("appId", v)?;
                 }
-                get_app_save_file_capacity_request::Entity::AppInstId(v) => {
-                    struct_ser.serialize_field("appInstId", v)?;
-                }
             }
         }
         struct_ser.end()
@@ -6317,15 +6544,12 @@ impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityRequest {
             "user",
             "app_id",
             "appId",
-            "app_inst_id",
-            "appInstId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             User,
             AppId,
-            AppInstId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -6349,7 +6573,6 @@ impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityRequest {
                         match value {
                             "user" => Ok(GeneratedField::User),
                             "appId" | "app_id" => Ok(GeneratedField::AppId),
-                            "appInstId" | "app_inst_id" => Ok(GeneratedField::AppInstId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -6383,13 +6606,6 @@ impl<'de> serde::Deserialize<'de> for GetAppSaveFileCapacityRequest {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
                             entity__ = map.next_value::<::std::option::Option<_>>()?.map(get_app_save_file_capacity_request::Entity::AppId)
-;
-                        }
-                        GeneratedField::AppInstId => {
-                            if entity__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appInstId"));
-                            }
-                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(get_app_save_file_capacity_request::Entity::AppInstId)
 ;
                         }
                     }
@@ -18920,6 +19136,230 @@ impl<'de> serde::Deserialize<'de> for ServerProtocolSummary {
         deserializer.deserialize_struct("librarian.sephirah.v1.ServerProtocolSummary", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for SetAppSaveFileCapacityDefaultRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.count != 0 {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if self.strategy != 0 {
+            len += 1;
+        }
+        if self.entity.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest", len)?;
+        if self.count != 0 {
+            struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
+        }
+        if self.size_bytes != 0 {
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if self.strategy != 0 {
+            let v = AppSaveFileCapacityStrategy::from_i32(self.strategy)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.strategy)))?;
+            struct_ser.serialize_field("strategy", &v)?;
+        }
+        if let Some(v) = self.entity.as_ref() {
+            match v {
+                set_app_save_file_capacity_default_request::Entity::App(v) => {
+                    struct_ser.serialize_field("app", v)?;
+                }
+            }
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityDefaultRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "count",
+            "size_bytes",
+            "sizeBytes",
+            "strategy",
+            "app",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Count,
+            SizeBytes,
+            Strategy,
+            App,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "count" => Ok(GeneratedField::Count),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "strategy" => Ok(GeneratedField::Strategy),
+                            "app" => Ok(GeneratedField::App),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SetAppSaveFileCapacityDefaultRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetAppSaveFileCapacityDefaultRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut count__ = None;
+                let mut size_bytes__ = None;
+                let mut strategy__ = None;
+                let mut entity__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Count => {
+                            if count__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("count"));
+                            }
+                            count__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::Strategy => {
+                            if strategy__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("strategy"));
+                            }
+                            strategy__ = Some(map.next_value::<AppSaveFileCapacityStrategy>()? as i32);
+                        }
+                        GeneratedField::App => {
+                            if entity__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("app"));
+                            }
+                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(set_app_save_file_capacity_default_request::Entity::App);
+                        }
+                    }
+                }
+                Ok(SetAppSaveFileCapacityDefaultRequest {
+                    count: count__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    strategy: strategy__.unwrap_or_default(),
+                    entity: entity__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SetAppSaveFileCapacityDefaultResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityDefaultResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SetAppSaveFileCapacityDefaultResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SetAppSaveFileCapacityDefaultResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(SetAppSaveFileCapacityDefaultResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for SetAppSaveFileCapacityRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -18960,9 +19400,6 @@ impl serde::Serialize for SetAppSaveFileCapacityRequest {
                 set_app_save_file_capacity_request::Entity::AppId(v) => {
                     struct_ser.serialize_field("appId", v)?;
                 }
-                set_app_save_file_capacity_request::Entity::AppInstId(v) => {
-                    struct_ser.serialize_field("appInstId", v)?;
-                }
             }
         }
         struct_ser.end()
@@ -18982,8 +19419,6 @@ impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityRequest {
             "user",
             "app_id",
             "appId",
-            "app_inst_id",
-            "appInstId",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -18993,7 +19428,6 @@ impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityRequest {
             Strategy,
             User,
             AppId,
-            AppInstId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -19020,7 +19454,6 @@ impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityRequest {
                             "strategy" => Ok(GeneratedField::Strategy),
                             "user" => Ok(GeneratedField::User),
                             "appId" | "app_id" => Ok(GeneratedField::AppId),
-                            "appInstId" | "app_inst_id" => Ok(GeneratedField::AppInstId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -19079,13 +19512,6 @@ impl<'de> serde::Deserialize<'de> for SetAppSaveFileCapacityRequest {
                                 return Err(serde::de::Error::duplicate_field("appId"));
                             }
                             entity__ = map.next_value::<::std::option::Option<_>>()?.map(set_app_save_file_capacity_request::Entity::AppId)
-;
-                        }
-                        GeneratedField::AppInstId => {
-                            if entity__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appInstId"));
-                            }
-                            entity__ = map.next_value::<::std::option::Option<_>>()?.map(set_app_save_file_capacity_request::Entity::AppInstId)
 ;
                         }
                     }

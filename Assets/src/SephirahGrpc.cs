@@ -319,6 +319,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse> __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest> __Marshaller_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse> __Marshaller_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest> __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse> __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest> __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> __Marshaller_librarian_sephirah_v1_CreateSharedAppSaveResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse.Parser));
@@ -982,6 +990,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "GetAppSaveFileCapacity",
         __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityRequest,
         __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse> __Method_SetAppSaveFileCapacityDefault = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SetAppSaveFileCapacityDefault",
+        __Marshaller_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultRequest,
+        __Marshaller_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse> __Method_GetAppSaveFileCapacityDefault = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetAppSaveFileCapacityDefault",
+        __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultRequest,
+        __Marshaller_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse> __Method_CreateSharedAppSave = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse>(
@@ -2083,6 +2107,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse> GetAppSaveFileCapacity(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse> SetAppSaveFileCapacityDefault(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse> GetAppSaveFileCapacityDefault(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -5687,6 +5735,102 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetAppSaveFileCapacity, null, options, request);
       }
       /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse SetAppSaveFileCapacityDefault(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetAppSaveFileCapacityDefault(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse SetAppSaveFileCapacityDefault(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SetAppSaveFileCapacityDefault, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse> SetAppSaveFileCapacityDefaultAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetAppSaveFileCapacityDefaultAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse> SetAppSaveFileCapacityDefaultAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SetAppSaveFileCapacityDefault, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse GetAppSaveFileCapacityDefault(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAppSaveFileCapacityDefault(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse GetAppSaveFileCapacityDefault(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetAppSaveFileCapacityDefault, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse> GetAppSaveFileCapacityDefaultAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAppSaveFileCapacityDefaultAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse> GetAppSaveFileCapacityDefaultAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetAppSaveFileCapacityDefault, null, options, request);
+      }
+      /// <summary>
       /// `Gebura` `Admin`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -7398,6 +7542,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_UnpinAppSaveFile, serviceImpl.UnpinAppSaveFile)
           .AddMethod(__Method_SetAppSaveFileCapacity, serviceImpl.SetAppSaveFileCapacity)
           .AddMethod(__Method_GetAppSaveFileCapacity, serviceImpl.GetAppSaveFileCapacity)
+          .AddMethod(__Method_SetAppSaveFileCapacityDefault, serviceImpl.SetAppSaveFileCapacityDefault)
+          .AddMethod(__Method_GetAppSaveFileCapacityDefault, serviceImpl.GetAppSaveFileCapacityDefault)
           .AddMethod(__Method_CreateSharedAppSave, serviceImpl.CreateSharedAppSave)
           .AddMethod(__Method_UpdateSharedAppSave, serviceImpl.UpdateSharedAppSave)
           .AddMethod(__Method_ListSharedAppSaves, serviceImpl.ListSharedAppSaves)
@@ -7507,6 +7653,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_UnpinAppSaveFile, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileResponse>(serviceImpl.UnpinAppSaveFile));
       serviceBinder.AddMethod(__Method_SetAppSaveFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityResponse>(serviceImpl.SetAppSaveFileCapacity));
       serviceBinder.AddMethod(__Method_GetAppSaveFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse>(serviceImpl.GetAppSaveFileCapacity));
+      serviceBinder.AddMethod(__Method_SetAppSaveFileCapacityDefault, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityDefaultResponse>(serviceImpl.SetAppSaveFileCapacityDefault));
+      serviceBinder.AddMethod(__Method_GetAppSaveFileCapacityDefault, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityDefaultResponse>(serviceImpl.GetAppSaveFileCapacityDefault));
       serviceBinder.AddMethod(__Method_CreateSharedAppSave, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateSharedAppSaveResponse>(serviceImpl.CreateSharedAppSave));
       serviceBinder.AddMethod(__Method_UpdateSharedAppSave, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSharedAppSaveResponse>(serviceImpl.UpdateSharedAppSave));
       serviceBinder.AddMethod(__Method_ListSharedAppSaves, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSharedAppSavesResponse>(serviceImpl.ListSharedAppSaves));

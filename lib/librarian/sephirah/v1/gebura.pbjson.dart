@@ -20,6 +20,7 @@ const AppSaveFileCapacityStrategy$json = {
     {'1': 'APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED', '2': 0},
     {'1': 'APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL', '2': 1},
     {'1': 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST', '2': 2},
+    {'1': 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED', '2': 3},
   ],
 };
 
@@ -28,7 +29,8 @@ final $typed_data.Uint8List appSaveFileCapacityStrategyDescriptor = $convert.bas
     'ChtBcHBTYXZlRmlsZUNhcGFjaXR5U3RyYXRlZ3kSLworQVBQX1NBVkVfRklMRV9DQVBBQ0lUWV'
     '9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEigKJEFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRF'
     'R1lfRkFJTBABEjEKLUFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfREVMRVRFX09MRE'
-    'VTVBAC');
+    'VTVBACEkEKPUFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfREVMRVRFX09MREVTVF9V'
+    'TlRJTF9TQVRJU0ZJRUQQAw==');
 
 @$core.Deprecated('Use createAppInfoRequestDescriptor instead')
 const CreateAppInfoRequest$json = {
@@ -871,7 +873,6 @@ const SetAppSaveFileCapacityRequest$json = {
   '2': [
     {'1': 'user', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'user'},
     {'1': 'app_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'appId'},
-    {'1': 'app_inst_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'appInstId'},
     {'1': 'count', '3': 4, '4': 1, '5': 3, '10': 'count'},
     {'1': 'size_bytes', '3': 5, '4': 1, '5': 3, '10': 'sizeBytes'},
     {'1': 'strategy', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.AppSaveFileCapacityStrategy', '10': 'strategy'},
@@ -884,11 +885,49 @@ const SetAppSaveFileCapacityRequest$json = {
 /// Descriptor for `SetAppSaveFileCapacityRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List setAppSaveFileCapacityRequestDescriptor = $convert.base64Decode(
     'Ch1TZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVxdWVzdBIUCgR1c2VyGAEgASgISABSBHVzZXISMQ'
-    'oGYXBwX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIFYXBwSWQSOgoLYXBw'
-    'X2luc3RfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUglhcHBJbnN0SWQSFA'
-    'oFY291bnQYBCABKANSBWNvdW50Eh0KCnNpemVfYnl0ZXMYBSABKANSCXNpemVCeXRlcxJOCghz'
-    'dHJhdGVneRgGIAEoDjIyLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBTYXZlRmlsZUNhcGFjaX'
-    'R5U3RyYXRlZ3lSCHN0cmF0ZWd5QggKBmVudGl0eQ==');
+    'oGYXBwX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIFYXBwSWQSFAoFY291'
+    'bnQYBCABKANSBWNvdW50Eh0KCnNpemVfYnl0ZXMYBSABKANSCXNpemVCeXRlcxJOCghzdHJhdG'
+    'VneRgGIAEoDjIyLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBTYXZlRmlsZUNhcGFjaXR5U3Ry'
+    'YXRlZ3lSCHN0cmF0ZWd5QggKBmVudGl0eQ==');
+
+@$core.Deprecated('Use setAppSaveFileCapacityResponseDescriptor instead')
+const SetAppSaveFileCapacityResponse$json = {
+  '1': 'SetAppSaveFileCapacityResponse',
+};
+
+/// Descriptor for `SetAppSaveFileCapacityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setAppSaveFileCapacityResponseDescriptor = $convert.base64Decode(
+    'Ch5TZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVzcG9uc2U=');
+
+@$core.Deprecated('Use setAppSaveFileCapacityDefaultRequestDescriptor instead')
+const SetAppSaveFileCapacityDefaultRequest$json = {
+  '1': 'SetAppSaveFileCapacityDefaultRequest',
+  '2': [
+    {'1': 'app', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'app'},
+    {'1': 'count', '3': 4, '4': 1, '5': 3, '10': 'count'},
+    {'1': 'size_bytes', '3': 5, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'strategy', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.AppSaveFileCapacityStrategy', '10': 'strategy'},
+  ],
+  '8': [
+    {'1': 'entity'},
+  ],
+};
+
+/// Descriptor for `SetAppSaveFileCapacityDefaultRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setAppSaveFileCapacityDefaultRequestDescriptor = $convert.base64Decode(
+    'CiRTZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVsdFJlcXVlc3QSEgoDYXBwGAEgASgISABSA2'
+    'FwcBIUCgVjb3VudBgEIAEoA1IFY291bnQSHQoKc2l6ZV9ieXRlcxgFIAEoA1IJc2l6ZUJ5dGVz'
+    'Ek4KCHN0cmF0ZWd5GAYgASgOMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcFNhdmVGaWxlQ2'
+    'FwYWNpdHlTdHJhdGVneVIIc3RyYXRlZ3lCCAoGZW50aXR5');
+
+@$core.Deprecated('Use setAppSaveFileCapacityDefaultResponseDescriptor instead')
+const SetAppSaveFileCapacityDefaultResponse$json = {
+  '1': 'SetAppSaveFileCapacityDefaultResponse',
+};
+
+/// Descriptor for `SetAppSaveFileCapacityDefaultResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setAppSaveFileCapacityDefaultResponseDescriptor = $convert.base64Decode(
+    'CiVTZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVsdFJlc3BvbnNl');
 
 @$core.Deprecated('Use getAppSaveFileCapacityRequestDescriptor instead')
 const GetAppSaveFileCapacityRequest$json = {
@@ -896,7 +935,6 @@ const GetAppSaveFileCapacityRequest$json = {
   '2': [
     {'1': 'user', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'user'},
     {'1': 'app_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'appId'},
-    {'1': 'app_inst_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'appInstId'},
   ],
   '8': [
     {'1': 'entity'},
@@ -906,9 +944,8 @@ const GetAppSaveFileCapacityRequest$json = {
 /// Descriptor for `GetAppSaveFileCapacityRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAppSaveFileCapacityRequestDescriptor = $convert.base64Decode(
     'Ch1HZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVxdWVzdBIUCgR1c2VyGAEgASgISABSBHVzZXISMQ'
-    'oGYXBwX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIFYXBwSWQSOgoLYXBw'
-    'X2luc3RfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUglhcHBJbnN0SWRCCA'
-    'oGZW50aXR5');
+    'oGYXBwX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIFYXBwSWRCCAoGZW50'
+    'aXR5');
 
 @$core.Deprecated('Use getAppSaveFileCapacityResponseDescriptor instead')
 const GetAppSaveFileCapacityResponse$json = {
@@ -926,14 +963,38 @@ final $typed_data.Uint8List getAppSaveFileCapacityResponseDescriptor = $convert.
     '0KCnNpemVfYnl0ZXMYAiABKANSCXNpemVCeXRlcxJOCghzdHJhdGVneRgDIAEoDjIyLmxpYnJh'
     'cmlhbi5zZXBoaXJhaC52MS5BcHBTYXZlRmlsZUNhcGFjaXR5U3RyYXRlZ3lSCHN0cmF0ZWd5');
 
-@$core.Deprecated('Use setAppSaveFileCapacityResponseDescriptor instead')
-const SetAppSaveFileCapacityResponse$json = {
-  '1': 'SetAppSaveFileCapacityResponse',
+@$core.Deprecated('Use getAppSaveFileCapacityDefaultRequestDescriptor instead')
+const GetAppSaveFileCapacityDefaultRequest$json = {
+  '1': 'GetAppSaveFileCapacityDefaultRequest',
+  '2': [
+    {'1': 'app', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'app'},
+  ],
+  '8': [
+    {'1': 'entity'},
+  ],
 };
 
-/// Descriptor for `SetAppSaveFileCapacityResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List setAppSaveFileCapacityResponseDescriptor = $convert.base64Decode(
-    'Ch5TZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVzcG9uc2U=');
+/// Descriptor for `GetAppSaveFileCapacityDefaultRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppSaveFileCapacityDefaultRequestDescriptor = $convert.base64Decode(
+    'CiRHZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVsdFJlcXVlc3QSEgoDYXBwGAEgASgISABSA2'
+    'FwcEIICgZlbnRpdHk=');
+
+@$core.Deprecated('Use getAppSaveFileCapacityDefaultResponseDescriptor instead')
+const GetAppSaveFileCapacityDefaultResponse$json = {
+  '1': 'GetAppSaveFileCapacityDefaultResponse',
+  '2': [
+    {'1': 'count', '3': 1, '4': 1, '5': 3, '10': 'count'},
+    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'strategy', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.AppSaveFileCapacityStrategy', '10': 'strategy'},
+  ],
+};
+
+/// Descriptor for `GetAppSaveFileCapacityDefaultResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAppSaveFileCapacityDefaultResponseDescriptor = $convert.base64Decode(
+    'CiVHZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVsdFJlc3BvbnNlEhQKBWNvdW50GAEgASgDUg'
+    'Vjb3VudBIdCgpzaXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMSTgoIc3RyYXRlZ3kYAyABKA4y'
+    'Mi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwU2F2ZUZpbGVDYXBhY2l0eVN0cmF0ZWd5UghzdH'
+    'JhdGVneQ==');
 
 @$core.Deprecated('Use createSharedAppSaveRequestDescriptor instead')
 const CreateSharedAppSaveRequest$json = {

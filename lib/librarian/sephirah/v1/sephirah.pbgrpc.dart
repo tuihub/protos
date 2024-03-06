@@ -291,6 +291,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity',
       ($4.GetAppSaveFileCapacityRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityResponse.fromBuffer(value));
+  static final _$setAppSaveFileCapacityDefault = $grpc.ClientMethod<$4.SetAppSaveFileCapacityDefaultRequest, $4.SetAppSaveFileCapacityDefaultResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacityDefault',
+      ($4.SetAppSaveFileCapacityDefaultRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SetAppSaveFileCapacityDefaultResponse.fromBuffer(value));
+  static final _$getAppSaveFileCapacityDefault = $grpc.ClientMethod<$4.GetAppSaveFileCapacityDefaultRequest, $4.GetAppSaveFileCapacityDefaultResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacityDefault',
+      ($4.GetAppSaveFileCapacityDefaultRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityDefaultResponse.fromBuffer(value));
   static final _$createSharedAppSave = $grpc.ClientMethod<$4.CreateSharedAppSaveRequest, $4.CreateSharedAppSaveResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateSharedAppSave',
       ($4.CreateSharedAppSaveRequest value) => value.writeToBuffer(),
@@ -696,6 +704,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($4.GetAppSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppSaveFileCapacity, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.SetAppSaveFileCapacityDefaultResponse> setAppSaveFileCapacityDefault($4.SetAppSaveFileCapacityDefaultRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$setAppSaveFileCapacityDefault, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetAppSaveFileCapacityDefaultResponse> getAppSaveFileCapacityDefault($4.GetAppSaveFileCapacityDefaultRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAppSaveFileCapacityDefault, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.CreateSharedAppSaveResponse> createSharedAppSave($4.CreateSharedAppSaveRequest request, {$grpc.CallOptions? options}) {
@@ -1302,6 +1318,20 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityRequest.fromBuffer(value),
         ($4.GetAppSaveFileCapacityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SetAppSaveFileCapacityDefaultRequest, $4.SetAppSaveFileCapacityDefaultResponse>(
+        'SetAppSaveFileCapacityDefault',
+        setAppSaveFileCapacityDefault_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.SetAppSaveFileCapacityDefaultRequest.fromBuffer(value),
+        ($4.SetAppSaveFileCapacityDefaultResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetAppSaveFileCapacityDefaultRequest, $4.GetAppSaveFileCapacityDefaultResponse>(
+        'GetAppSaveFileCapacityDefault',
+        getAppSaveFileCapacityDefault_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetAppSaveFileCapacityDefaultRequest.fromBuffer(value),
+        ($4.GetAppSaveFileCapacityDefaultResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.CreateSharedAppSaveRequest, $4.CreateSharedAppSaveResponse>(
         'CreateSharedAppSave',
         createSharedAppSave_Pre,
@@ -1794,6 +1824,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return getAppSaveFileCapacity(call, await request);
   }
 
+  $async.Future<$4.SetAppSaveFileCapacityDefaultResponse> setAppSaveFileCapacityDefault_Pre($grpc.ServiceCall call, $async.Future<$4.SetAppSaveFileCapacityDefaultRequest> request) async {
+    return setAppSaveFileCapacityDefault(call, await request);
+  }
+
+  $async.Future<$4.GetAppSaveFileCapacityDefaultResponse> getAppSaveFileCapacityDefault_Pre($grpc.ServiceCall call, $async.Future<$4.GetAppSaveFileCapacityDefaultRequest> request) async {
+    return getAppSaveFileCapacityDefault(call, await request);
+  }
+
   $async.Future<$4.CreateSharedAppSaveResponse> createSharedAppSave_Pre($grpc.ServiceCall call, $async.Future<$4.CreateSharedAppSaveRequest> request) async {
     return createSharedAppSave(call, await request);
   }
@@ -1996,6 +2034,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.UnpinAppSaveFileResponse> unpinAppSaveFile($grpc.ServiceCall call, $4.UnpinAppSaveFileRequest request);
   $async.Future<$4.SetAppSaveFileCapacityResponse> setAppSaveFileCapacity($grpc.ServiceCall call, $4.SetAppSaveFileCapacityRequest request);
   $async.Future<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($grpc.ServiceCall call, $4.GetAppSaveFileCapacityRequest request);
+  $async.Future<$4.SetAppSaveFileCapacityDefaultResponse> setAppSaveFileCapacityDefault($grpc.ServiceCall call, $4.SetAppSaveFileCapacityDefaultRequest request);
+  $async.Future<$4.GetAppSaveFileCapacityDefaultResponse> getAppSaveFileCapacityDefault($grpc.ServiceCall call, $4.GetAppSaveFileCapacityDefaultRequest request);
   $async.Future<$4.CreateSharedAppSaveResponse> createSharedAppSave($grpc.ServiceCall call, $4.CreateSharedAppSaveRequest request);
   $async.Future<$4.UpdateSharedAppSaveResponse> updateSharedAppSave($grpc.ServiceCall call, $4.UpdateSharedAppSaveRequest request);
   $async.Future<$4.ListSharedAppSavesResponse> listSharedAppSaves($grpc.ServiceCall call, $4.ListSharedAppSavesRequest request);

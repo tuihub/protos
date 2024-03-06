@@ -473,6 +473,28 @@ function deserialize_librarian_sephirah_v1_GetAppInfoResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.GetAppInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityDefaultRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppSaveFileCapacityDefaultRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityDefaultRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityDefaultResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityDefaultResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_GetAppSaveFileCapacityRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.GetAppSaveFileCapacityRequest');
@@ -1615,6 +1637,28 @@ function serialize_librarian_sephirah_v1_SearchNewAppInfosResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_SearchNewAppInfosResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.SearchNewAppInfosResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityDefaultRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityDefaultRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityDefaultResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityDefaultResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_SetAppSaveFileCapacityRequest(arg) {
@@ -3037,6 +3081,30 @@ getAppSaveFileCapacity: {
     requestDeserialize: deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityRequest,
     responseSerialize: serialize_librarian_sephirah_v1_GetAppSaveFileCapacityResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityResponse,
+  },
+  // `Gebura` `Normal`
+setAppSaveFileCapacityDefault: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacityDefault',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityDefaultRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.SetAppSaveFileCapacityDefaultResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_SetAppSaveFileCapacityDefaultResponse,
+  },
+  // `Gebura` `Normal`
+getAppSaveFileCapacityDefault: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacityDefault',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityDefaultRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.GetAppSaveFileCapacityDefaultResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityDefaultResponse,
   },
   // `Gebura` `Admin`
 createSharedAppSave: {
