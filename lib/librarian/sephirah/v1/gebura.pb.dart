@@ -2845,11 +2845,11 @@ class UploadAppSaveFileResponse extends $pb.GeneratedMessage {
 
 class DownloadAppSaveFileRequest extends $pb.GeneratedMessage {
   factory DownloadAppSaveFileRequest({
-    $7.InternalID? fileId,
+    $7.InternalID? id,
   }) {
     final $result = create();
-    if (fileId != null) {
-      $result.fileId = fileId;
+    if (id != null) {
+      $result.id = id;
     }
     return $result;
   }
@@ -2858,7 +2858,7 @@ class DownloadAppSaveFileRequest extends $pb.GeneratedMessage {
   factory DownloadAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'fileId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -2884,15 +2884,15 @@ class DownloadAppSaveFileRequest extends $pb.GeneratedMessage {
   static DownloadAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get fileId => $_getN(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set fileId($7.InternalID v) { setField(1, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFileId() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileId() => clearField(1);
+  void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFileId() => $_ensure(0);
+  $7.InternalID ensureId() => $_ensure(0);
 }
 
 class DownloadAppSaveFileResponse extends $pb.GeneratedMessage {
@@ -2999,10 +2999,14 @@ class ListAppSaveFilesRequest extends $pb.GeneratedMessage {
 
 class ListAppSaveFilesResponse_Result extends $pb.GeneratedMessage {
   factory ListAppSaveFilesResponse_Result({
+    $7.InternalID? id,
     $9.FileMetadata? file,
     $core.bool? pinned,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (file != null) {
       $result.file = file;
     }
@@ -3016,8 +3020,9 @@ class ListAppSaveFilesResponse_Result extends $pb.GeneratedMessage {
   factory ListAppSaveFilesResponse_Result.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListAppSaveFilesResponse.Result', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$9.FileMetadata>(1, _omitFieldNames ? '' : 'file', subBuilder: $9.FileMetadata.create)
-    ..aOB(2, _omitFieldNames ? '' : 'pinned')
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$9.FileMetadata>(2, _omitFieldNames ? '' : 'file', subBuilder: $9.FileMetadata.create)
+    ..aOB(3, _omitFieldNames ? '' : 'pinned')
     ..hasRequiredFields = false
   ;
 
@@ -3043,24 +3048,35 @@ class ListAppSaveFilesResponse_Result extends $pb.GeneratedMessage {
   static ListAppSaveFilesResponse_Result? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $9.FileMetadata get file => $_getN(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set file($9.FileMetadata v) { setField(1, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFile() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFile() => clearField(1);
+  void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $9.FileMetadata ensureFile() => $_ensure(0);
+  $7.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.bool get pinned => $_getBF(1);
+  $9.FileMetadata get file => $_getN(1);
   @$pb.TagNumber(2)
-  set pinned($core.bool v) { $_setBool(1, v); }
+  set file($9.FileMetadata v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPinned() => $_has(1);
+  $core.bool hasFile() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPinned() => clearField(2);
+  void clearFile() => clearField(2);
+  @$pb.TagNumber(2)
+  $9.FileMetadata ensureFile() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get pinned => $_getBF(2);
+  @$pb.TagNumber(3)
+  set pinned($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPinned() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPinned() => clearField(3);
 }
 
 class ListAppSaveFilesResponse extends $pb.GeneratedMessage {
@@ -3109,11 +3125,11 @@ class ListAppSaveFilesResponse extends $pb.GeneratedMessage {
 
 class RemoveAppSaveFileRequest extends $pb.GeneratedMessage {
   factory RemoveAppSaveFileRequest({
-    $7.InternalID? fileId,
+    $7.InternalID? id,
   }) {
     final $result = create();
-    if (fileId != null) {
-      $result.fileId = fileId;
+    if (id != null) {
+      $result.id = id;
     }
     return $result;
   }
@@ -3122,7 +3138,7 @@ class RemoveAppSaveFileRequest extends $pb.GeneratedMessage {
   factory RemoveAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'fileId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -3148,15 +3164,15 @@ class RemoveAppSaveFileRequest extends $pb.GeneratedMessage {
   static RemoveAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get fileId => $_getN(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set fileId($7.InternalID v) { setField(1, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFileId() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileId() => clearField(1);
+  void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFileId() => $_ensure(0);
+  $7.InternalID ensureId() => $_ensure(0);
 }
 
 class RemoveAppSaveFileResponse extends $pb.GeneratedMessage {
@@ -3193,11 +3209,11 @@ class RemoveAppSaveFileResponse extends $pb.GeneratedMessage {
 
 class PinAppSaveFileRequest extends $pb.GeneratedMessage {
   factory PinAppSaveFileRequest({
-    $7.InternalID? fileId,
+    $7.InternalID? id,
   }) {
     final $result = create();
-    if (fileId != null) {
-      $result.fileId = fileId;
+    if (id != null) {
+      $result.id = id;
     }
     return $result;
   }
@@ -3206,7 +3222,7 @@ class PinAppSaveFileRequest extends $pb.GeneratedMessage {
   factory PinAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PinAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'fileId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -3232,15 +3248,15 @@ class PinAppSaveFileRequest extends $pb.GeneratedMessage {
   static PinAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get fileId => $_getN(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set fileId($7.InternalID v) { setField(1, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFileId() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileId() => clearField(1);
+  void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFileId() => $_ensure(0);
+  $7.InternalID ensureId() => $_ensure(0);
 }
 
 class PinAppSaveFileResponse extends $pb.GeneratedMessage {
@@ -3277,11 +3293,11 @@ class PinAppSaveFileResponse extends $pb.GeneratedMessage {
 
 class UnpinAppSaveFileRequest extends $pb.GeneratedMessage {
   factory UnpinAppSaveFileRequest({
-    $7.InternalID? fileId,
+    $7.InternalID? id,
   }) {
     final $result = create();
-    if (fileId != null) {
-      $result.fileId = fileId;
+    if (id != null) {
+      $result.id = id;
     }
     return $result;
   }
@@ -3290,7 +3306,7 @@ class UnpinAppSaveFileRequest extends $pb.GeneratedMessage {
   factory UnpinAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UnpinAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'fileId', subBuilder: $7.InternalID.create)
+    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -3316,15 +3332,15 @@ class UnpinAppSaveFileRequest extends $pb.GeneratedMessage {
   static UnpinAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get fileId => $_getN(0);
+  $7.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set fileId($7.InternalID v) { setField(1, v); }
+  set id($7.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFileId() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileId() => clearField(1);
+  void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFileId() => $_ensure(0);
+  $7.InternalID ensureId() => $_ensure(0);
 }
 
 class UnpinAppSaveFileResponse extends $pb.GeneratedMessage {

@@ -4044,12 +4044,12 @@ impl serde::Serialize for DownloadAppSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.file_id.is_some() {
+        if self.id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppSaveFileRequest", len)?;
-        if let Some(v) = self.file_id.as_ref() {
-            struct_ser.serialize_field("fileId", v)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
@@ -4061,13 +4061,12 @@ impl<'de> serde::Deserialize<'de> for DownloadAppSaveFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "file_id",
-            "fileId",
+            "id",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            FileId,
+            Id,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -4089,7 +4088,7 @@ impl<'de> serde::Deserialize<'de> for DownloadAppSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
+                            "id" => Ok(GeneratedField::Id),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -4109,19 +4108,19 @@ impl<'de> serde::Deserialize<'de> for DownloadAppSaveFileRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut file_id__ = None;
+                let mut id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::FileId => {
-                            if file_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("fileId"));
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            file_id__ = map.next_value()?;
+                            id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(DownloadAppSaveFileRequest {
-                    file_id: file_id__,
+                    id: id__,
                 })
             }
         }
@@ -10047,6 +10046,9 @@ impl serde::Serialize for list_app_save_files_response::Result {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
         if self.file.is_some() {
             len += 1;
         }
@@ -10054,6 +10056,9 @@ impl serde::Serialize for list_app_save_files_response::Result {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppSaveFilesResponse.Result", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
         if let Some(v) = self.file.as_ref() {
             struct_ser.serialize_field("file", v)?;
         }
@@ -10070,12 +10075,14 @@ impl<'de> serde::Deserialize<'de> for list_app_save_files_response::Result {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "id",
             "file",
             "pinned",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Id,
             File,
             Pinned,
         }
@@ -10099,6 +10106,7 @@ impl<'de> serde::Deserialize<'de> for list_app_save_files_response::Result {
                         E: serde::de::Error,
                     {
                         match value {
+                            "id" => Ok(GeneratedField::Id),
                             "file" => Ok(GeneratedField::File),
                             "pinned" => Ok(GeneratedField::Pinned),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -10120,10 +10128,17 @@ impl<'de> serde::Deserialize<'de> for list_app_save_files_response::Result {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut id__ = None;
                 let mut file__ = None;
                 let mut pinned__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
                         GeneratedField::File => {
                             if file__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("file"));
@@ -10139,6 +10154,7 @@ impl<'de> serde::Deserialize<'de> for list_app_save_files_response::Result {
                     }
                 }
                 Ok(list_app_save_files_response::Result {
+                    id: id__,
                     file: file__,
                     pinned: pinned__.unwrap_or_default(),
                 })
@@ -15199,12 +15215,12 @@ impl serde::Serialize for PinAppSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.file_id.is_some() {
+        if self.id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PinAppSaveFileRequest", len)?;
-        if let Some(v) = self.file_id.as_ref() {
-            struct_ser.serialize_field("fileId", v)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
@@ -15216,13 +15232,12 @@ impl<'de> serde::Deserialize<'de> for PinAppSaveFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "file_id",
-            "fileId",
+            "id",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            FileId,
+            Id,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -15244,7 +15259,7 @@ impl<'de> serde::Deserialize<'de> for PinAppSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
+                            "id" => Ok(GeneratedField::Id),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -15264,19 +15279,19 @@ impl<'de> serde::Deserialize<'de> for PinAppSaveFileRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut file_id__ = None;
+                let mut id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::FileId => {
-                            if file_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("fileId"));
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            file_id__ = map.next_value()?;
+                            id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(PinAppSaveFileRequest {
-                    file_id: file_id__,
+                    id: id__,
                 })
             }
         }
@@ -17118,12 +17133,12 @@ impl serde::Serialize for RemoveAppSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.file_id.is_some() {
+        if self.id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RemoveAppSaveFileRequest", len)?;
-        if let Some(v) = self.file_id.as_ref() {
-            struct_ser.serialize_field("fileId", v)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
@@ -17135,13 +17150,12 @@ impl<'de> serde::Deserialize<'de> for RemoveAppSaveFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "file_id",
-            "fileId",
+            "id",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            FileId,
+            Id,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17163,7 +17177,7 @@ impl<'de> serde::Deserialize<'de> for RemoveAppSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
+                            "id" => Ok(GeneratedField::Id),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17183,19 +17197,19 @@ impl<'de> serde::Deserialize<'de> for RemoveAppSaveFileRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut file_id__ = None;
+                let mut id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::FileId => {
-                            if file_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("fileId"));
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            file_id__ = map.next_value()?;
+                            id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(RemoveAppSaveFileRequest {
-                    file_id: file_id__,
+                    id: id__,
                 })
             }
         }
@@ -21588,12 +21602,12 @@ impl serde::Serialize for UnpinAppSaveFileRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.file_id.is_some() {
+        if self.id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UnpinAppSaveFileRequest", len)?;
-        if let Some(v) = self.file_id.as_ref() {
-            struct_ser.serialize_field("fileId", v)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
         }
         struct_ser.end()
     }
@@ -21605,13 +21619,12 @@ impl<'de> serde::Deserialize<'de> for UnpinAppSaveFileRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "file_id",
-            "fileId",
+            "id",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            FileId,
+            Id,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -21633,7 +21646,7 @@ impl<'de> serde::Deserialize<'de> for UnpinAppSaveFileRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileId" | "file_id" => Ok(GeneratedField::FileId),
+                            "id" => Ok(GeneratedField::Id),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -21653,19 +21666,19 @@ impl<'de> serde::Deserialize<'de> for UnpinAppSaveFileRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut file_id__ = None;
+                let mut id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::FileId => {
-                            if file_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("fileId"));
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            file_id__ = map.next_value()?;
+                            id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(UnpinAppSaveFileRequest {
-                    file_id: file_id__,
+                    id: id__,
                 })
             }
         }

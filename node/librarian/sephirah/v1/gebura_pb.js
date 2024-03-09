@@ -11215,7 +11215,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileId: (f = msg.getFileId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11255,7 +11255,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.deserializeBinaryFromRead
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setFileId(value);
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -11286,7 +11286,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.serializeBinary
  */
 proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFileId();
+  f = message.getId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -11298,10 +11298,10 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.serializeBinaryToWriter =
 
 
 /**
- * optional librarian.v1.InternalID file_id = 1;
+ * optional librarian.v1.InternalID id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.getFileId = function() {
+proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.getId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -11311,7 +11311,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.getFileId = fun
  * @param {?proto.librarian.v1.InternalID|undefined} value
  * @return {!proto.librarian.sephirah.v1.DownloadAppSaveFileRequest} returns this
 */
-proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.setFileId = function(value) {
+proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.setId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -11320,8 +11320,8 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.setFileId = fun
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.DownloadAppSaveFileRequest} returns this
  */
-proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.clearFileId = function() {
-  return this.setFileId(undefined);
+proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.clearId = function() {
+  return this.setId(undefined);
 };
 
 
@@ -11329,7 +11329,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.clearFileId = f
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.hasFileId = function() {
+proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -11769,8 +11769,9 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.toObject =
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     file: (f = msg.getFile()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
-    pinned: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    pinned: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -11808,11 +11809,16 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setId(value);
+      break;
+    case 2:
       var value = new librarian_sephirah_v1_base_pb.FileMetadata;
       reader.readMessage(value,librarian_sephirah_v1_base_pb.FileMetadata.deserializeBinaryFromReader);
       msg.setFile(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPinned(value);
       break;
@@ -11845,10 +11851,18 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.serializeB
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFile();
+  f = message.getId();
   if (f != null) {
     writer.writeMessage(
       1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getFile();
+  if (f != null) {
+    writer.writeMessage(
+      2,
       f,
       librarian_sephirah_v1_base_pb.FileMetadata.serializeBinaryToWriter
     );
@@ -11856,7 +11870,7 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.serializeBinaryToWri
   f = message.getPinned();
   if (f) {
     writer.writeBool(
-      2,
+      3,
       f
     );
   }
@@ -11864,12 +11878,49 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.serializeBinaryToWri
 
 
 /**
- * optional FileMetadata file = 1;
+ * optional librarian.v1.InternalID id = 1;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.getId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result} returns this
+*/
+proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.setId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result} returns this
+ */
+proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.clearId = function() {
+  return this.setId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional FileMetadata file = 2;
  * @return {?proto.librarian.sephirah.v1.FileMetadata}
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.getFile = function() {
   return /** @type{?proto.librarian.sephirah.v1.FileMetadata} */ (
-    jspb.Message.getWrapperField(this, librarian_sephirah_v1_base_pb.FileMetadata, 1));
+    jspb.Message.getWrapperField(this, librarian_sephirah_v1_base_pb.FileMetadata, 2));
 };
 
 
@@ -11878,7 +11929,7 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.getFile = 
  * @return {!proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result} returns this
 */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.setFile = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -11896,16 +11947,16 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.clearFile 
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.hasFile = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional bool pinned = 2;
+ * optional bool pinned = 3;
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.getPinned = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
@@ -11914,7 +11965,7 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.getPinned 
  * @return {!proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result} returns this
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.setPinned = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -11988,7 +12039,7 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileId: (f = msg.getFileId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12028,7 +12079,7 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.deserializeBinaryFromReader
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setFileId(value);
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -12059,7 +12110,7 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.serializeBinary =
  */
 proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFileId();
+  f = message.getId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -12071,10 +12122,10 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.serializeBinaryToWriter = f
 
 
 /**
- * optional librarian.v1.InternalID file_id = 1;
+ * optional librarian.v1.InternalID id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.getFileId = function() {
+proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.getId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -12084,7 +12135,7 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.getFileId = funct
  * @param {?proto.librarian.v1.InternalID|undefined} value
  * @return {!proto.librarian.sephirah.v1.RemoveAppSaveFileRequest} returns this
 */
-proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.setFileId = function(value) {
+proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.setId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -12093,8 +12144,8 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.setFileId = funct
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.RemoveAppSaveFileRequest} returns this
  */
-proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.clearFileId = function() {
-  return this.setFileId(undefined);
+proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.clearId = function() {
+  return this.setId(undefined);
 };
 
 
@@ -12102,7 +12153,7 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.clearFileId = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.hasFileId = function() {
+proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -12240,7 +12291,7 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.PinAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileId: (f = msg.getFileId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12280,7 +12331,7 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.deserializeBinaryFromReader = 
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setFileId(value);
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -12311,7 +12362,7 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.serializeBinary = fu
  */
 proto.librarian.sephirah.v1.PinAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFileId();
+  f = message.getId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -12323,10 +12374,10 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.serializeBinaryToWriter = func
 
 
 /**
- * optional librarian.v1.InternalID file_id = 1;
+ * optional librarian.v1.InternalID id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.getFileId = function() {
+proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.getId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -12336,7 +12387,7 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.getFileId = function
  * @param {?proto.librarian.v1.InternalID|undefined} value
  * @return {!proto.librarian.sephirah.v1.PinAppSaveFileRequest} returns this
 */
-proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.setFileId = function(value) {
+proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.setId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -12345,8 +12396,8 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.setFileId = function
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.PinAppSaveFileRequest} returns this
  */
-proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.clearFileId = function() {
-  return this.setFileId(undefined);
+proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.clearId = function() {
+  return this.setId(undefined);
 };
 
 
@@ -12354,7 +12405,7 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.clearFileId = functi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.hasFileId = function() {
+proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -12492,7 +12543,7 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileId: (f = msg.getFileId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12532,7 +12583,7 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.deserializeBinaryFromReader 
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setFileId(value);
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -12563,7 +12614,7 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.serializeBinary = 
  */
 proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFileId();
+  f = message.getId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -12575,10 +12626,10 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.serializeBinaryToWriter = fu
 
 
 /**
- * optional librarian.v1.InternalID file_id = 1;
+ * optional librarian.v1.InternalID id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.getFileId = function() {
+proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.getId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -12588,7 +12639,7 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.getFileId = functi
  * @param {?proto.librarian.v1.InternalID|undefined} value
  * @return {!proto.librarian.sephirah.v1.UnpinAppSaveFileRequest} returns this
 */
-proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.setFileId = function(value) {
+proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.setId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -12597,8 +12648,8 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.setFileId = functi
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.UnpinAppSaveFileRequest} returns this
  */
-proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.clearFileId = function() {
-  return this.setFileId(undefined);
+proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.clearId = function() {
+  return this.setId(undefined);
 };
 
 
@@ -12606,7 +12657,7 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.clearFileId = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.hasFileId = function() {
+proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

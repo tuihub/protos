@@ -741,14 +741,14 @@ final $typed_data.Uint8List uploadAppSaveFileResponseDescriptor = $convert.base6
 const DownloadAppSaveFileRequest$json = {
   '1': 'DownloadAppSaveFileRequest',
   '2': [
-    {'1': 'file_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'fileId'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
   ],
 };
 
 /// Descriptor for `DownloadAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List downloadAppSaveFileRequestDescriptor = $convert.base64Decode(
-    'ChpEb3dubG9hZEFwcFNhdmVGaWxlUmVxdWVzdBIxCgdmaWxlX2lkGAEgASgLMhgubGlicmFyaW'
-    'FuLnYxLkludGVybmFsSURSBmZpbGVJZA==');
+    'ChpEb3dubG9hZEFwcFNhdmVGaWxlUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS'
+    '5JbnRlcm5hbElEUgJpZA==');
 
 @$core.Deprecated('Use downloadAppSaveFileResponseDescriptor instead')
 const DownloadAppSaveFileResponse$json = {
@@ -789,30 +789,32 @@ const ListAppSaveFilesResponse$json = {
 const ListAppSaveFilesResponse_Result$json = {
   '1': 'Result',
   '2': [
-    {'1': 'file', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FileMetadata', '10': 'file'},
-    {'1': 'pinned', '3': 2, '4': 1, '5': 8, '10': 'pinned'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'file', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FileMetadata', '10': 'file'},
+    {'1': 'pinned', '3': 3, '4': 1, '5': 8, '10': 'pinned'},
   ],
 };
 
 /// Descriptor for `ListAppSaveFilesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listAppSaveFilesResponseDescriptor = $convert.base64Decode(
     'ChhMaXN0QXBwU2F2ZUZpbGVzUmVzcG9uc2USUAoHcmVzdWx0cxgBIAMoCzI2LmxpYnJhcmlhbi'
-    '5zZXBoaXJhaC52MS5MaXN0QXBwU2F2ZUZpbGVzUmVzcG9uc2UuUmVzdWx0UgdyZXN1bHRzGlkK'
-    'BlJlc3VsdBI3CgRmaWxlGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZG'
-    'F0YVIEZmlsZRIWCgZwaW5uZWQYAiABKAhSBnBpbm5lZA==');
+    '5zZXBoaXJhaC52MS5MaXN0QXBwU2F2ZUZpbGVzUmVzcG9uc2UuUmVzdWx0UgdyZXN1bHRzGoMB'
+    'CgZSZXN1bHQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSNwoEZm'
+    'lsZRgCIAEoCzIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlTWV0YWRhdGFSBGZpbGUSFgoG'
+    'cGlubmVkGAMgASgIUgZwaW5uZWQ=');
 
 @$core.Deprecated('Use removeAppSaveFileRequestDescriptor instead')
 const RemoveAppSaveFileRequest$json = {
   '1': 'RemoveAppSaveFileRequest',
   '2': [
-    {'1': 'file_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'fileId'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
   ],
 };
 
 /// Descriptor for `RemoveAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List removeAppSaveFileRequestDescriptor = $convert.base64Decode(
-    'ChhSZW1vdmVBcHBTYXZlRmlsZVJlcXVlc3QSMQoHZmlsZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
-    '52MS5JbnRlcm5hbElEUgZmaWxlSWQ=');
+    'ChhSZW1vdmVBcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW'
+    '50ZXJuYWxJRFICaWQ=');
 
 @$core.Deprecated('Use removeAppSaveFileResponseDescriptor instead')
 const RemoveAppSaveFileResponse$json = {
@@ -827,14 +829,14 @@ final $typed_data.Uint8List removeAppSaveFileResponseDescriptor = $convert.base6
 const PinAppSaveFileRequest$json = {
   '1': 'PinAppSaveFileRequest',
   '2': [
-    {'1': 'file_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'fileId'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
   ],
 };
 
 /// Descriptor for `PinAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pinAppSaveFileRequestDescriptor = $convert.base64Decode(
-    'ChVQaW5BcHBTYXZlRmlsZVJlcXVlc3QSMQoHZmlsZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS'
-    '5JbnRlcm5hbElEUgZmaWxlSWQ=');
+    'ChVQaW5BcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZX'
+    'JuYWxJRFICaWQ=');
 
 @$core.Deprecated('Use pinAppSaveFileResponseDescriptor instead')
 const PinAppSaveFileResponse$json = {
@@ -849,14 +851,14 @@ final $typed_data.Uint8List pinAppSaveFileResponseDescriptor = $convert.base64De
 const UnpinAppSaveFileRequest$json = {
   '1': 'UnpinAppSaveFileRequest',
   '2': [
-    {'1': 'file_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'fileId'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
   ],
 };
 
 /// Descriptor for `UnpinAppSaveFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List unpinAppSaveFileRequestDescriptor = $convert.base64Decode(
-    'ChdVbnBpbkFwcFNhdmVGaWxlUmVxdWVzdBIxCgdmaWxlX2lkGAEgASgLMhgubGlicmFyaWFuLn'
-    'YxLkludGVybmFsSURSBmZpbGVJZA==');
+    'ChdVbnBpbkFwcFNhdmVGaWxlUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5Jbn'
+    'Rlcm5hbElEUgJpZA==');
 
 @$core.Deprecated('Use unpinAppSaveFileResponseDescriptor instead')
 const UnpinAppSaveFileResponse$json = {

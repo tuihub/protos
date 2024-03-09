@@ -1263,10 +1263,10 @@ export namespace UploadAppSaveFileResponse {
 }
 
 export class DownloadAppSaveFileRequest extends jspb.Message {
-  hasFileId(): boolean;
-  clearFileId(): void;
-  getFileId(): librarian_v1_common_pb.InternalID | undefined;
-  setFileId(value?: librarian_v1_common_pb.InternalID): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DownloadAppSaveFileRequest.AsObject;
@@ -1280,7 +1280,7 @@ export class DownloadAppSaveFileRequest extends jspb.Message {
 
 export namespace DownloadAppSaveFileRequest {
   export type AsObject = {
-    fileId?: librarian_v1_common_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -1348,6 +1348,11 @@ export namespace ListAppSaveFilesResponse {
   }
 
   export class Result extends jspb.Message {
+    hasId(): boolean;
+    clearId(): void;
+    getId(): librarian_v1_common_pb.InternalID | undefined;
+    setId(value?: librarian_v1_common_pb.InternalID): void;
+
     hasFile(): boolean;
     clearFile(): void;
     getFile(): librarian_sephirah_v1_base_pb.FileMetadata | undefined;
@@ -1368,6 +1373,7 @@ export namespace ListAppSaveFilesResponse {
 
   export namespace Result {
     export type AsObject = {
+      id?: librarian_v1_common_pb.InternalID.AsObject,
       file?: librarian_sephirah_v1_base_pb.FileMetadata.AsObject,
       pinned: boolean,
     }
@@ -1375,10 +1381,10 @@ export namespace ListAppSaveFilesResponse {
 }
 
 export class RemoveAppSaveFileRequest extends jspb.Message {
-  hasFileId(): boolean;
-  clearFileId(): void;
-  getFileId(): librarian_v1_common_pb.InternalID | undefined;
-  setFileId(value?: librarian_v1_common_pb.InternalID): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RemoveAppSaveFileRequest.AsObject;
@@ -1392,7 +1398,7 @@ export class RemoveAppSaveFileRequest extends jspb.Message {
 
 export namespace RemoveAppSaveFileRequest {
   export type AsObject = {
-    fileId?: librarian_v1_common_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -1413,10 +1419,10 @@ export namespace RemoveAppSaveFileResponse {
 }
 
 export class PinAppSaveFileRequest extends jspb.Message {
-  hasFileId(): boolean;
-  clearFileId(): void;
-  getFileId(): librarian_v1_common_pb.InternalID | undefined;
-  setFileId(value?: librarian_v1_common_pb.InternalID): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PinAppSaveFileRequest.AsObject;
@@ -1430,7 +1436,7 @@ export class PinAppSaveFileRequest extends jspb.Message {
 
 export namespace PinAppSaveFileRequest {
   export type AsObject = {
-    fileId?: librarian_v1_common_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -1451,10 +1457,10 @@ export namespace PinAppSaveFileResponse {
 }
 
 export class UnpinAppSaveFileRequest extends jspb.Message {
-  hasFileId(): boolean;
-  clearFileId(): void;
-  getFileId(): librarian_v1_common_pb.InternalID | undefined;
-  setFileId(value?: librarian_v1_common_pb.InternalID): void;
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnpinAppSaveFileRequest.AsObject;
@@ -1468,7 +1474,7 @@ export class UnpinAppSaveFileRequest extends jspb.Message {
 
 export namespace UnpinAppSaveFileRequest {
   export type AsObject = {
-    fileId?: librarian_v1_common_pb.InternalID.AsObject,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 

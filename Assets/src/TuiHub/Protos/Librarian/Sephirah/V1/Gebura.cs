@@ -138,139 +138,139 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "IAEoCzIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlTWV0YWRhdGFSDGZp",
             "bGVNZXRhZGF0YRIvCgZhcHBfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50",
             "ZXJuYWxJRFIFYXBwSWQiPgoZVXBsb2FkQXBwU2F2ZUZpbGVSZXNwb25zZRIh",
-            "Cgx1cGxvYWRfdG9rZW4YASABKAlSC3VwbG9hZFRva2VuIk8KGkRvd25sb2Fk",
-            "QXBwU2F2ZUZpbGVSZXF1ZXN0EjEKB2ZpbGVfaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFIGZmlsZUlkIkQKG0Rvd25sb2FkQXBwU2F2ZUZp",
-            "bGVSZXNwb25zZRIlCg5kb3dubG9hZF90b2tlbhgCIAEoCVINZG93bmxvYWRU",
-            "b2tlbiJKChdMaXN0QXBwU2F2ZUZpbGVzUmVxdWVzdBIvCgZhcHBfaWQYASAB",
-            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQixwEKGExpc3RB",
-            "cHBTYXZlRmlsZXNSZXNwb25zZRJQCgdyZXN1bHRzGAEgAygLMjYubGlicmFy",
-            "aWFuLnNlcGhpcmFoLnYxLkxpc3RBcHBTYXZlRmlsZXNSZXNwb25zZS5SZXN1",
-            "bHRSB3Jlc3VsdHMaWQoGUmVzdWx0EjcKBGZpbGUYASABKAsyIy5saWJyYXJp",
-            "YW4uc2VwaGlyYWgudjEuRmlsZU1ldGFkYXRhUgRmaWxlEhYKBnBpbm5lZBgC",
-            "IAEoCFIGcGlubmVkIk0KGFJlbW92ZUFwcFNhdmVGaWxlUmVxdWVzdBIxCgdm",
-            "aWxlX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBmZpbGVJ",
-            "ZCIbChlSZW1vdmVBcHBTYXZlRmlsZVJlc3BvbnNlIkoKFVBpbkFwcFNhdmVG",
-            "aWxlUmVxdWVzdBIxCgdmaWxlX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLklu",
-            "dGVybmFsSURSBmZpbGVJZCIYChZQaW5BcHBTYXZlRmlsZVJlc3BvbnNlIkwK",
-            "F1VucGluQXBwU2F2ZUZpbGVSZXF1ZXN0EjEKB2ZpbGVfaWQYASABKAsyGC5s",
-            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGZmlsZUlkIhoKGFVucGluQXBwU2F2",
-            "ZUZpbGVSZXNwb25zZSL3AQodU2V0QXBwU2F2ZUZpbGVDYXBhY2l0eVJlcXVl",
-            "c3QSFAoEdXNlchgBIAEoCEgAUgR1c2VyEjEKBmFwcF9pZBgCIAEoCzIYLmxp",
-            "YnJhcmlhbi52MS5JbnRlcm5hbElESABSBWFwcElkEhQKBWNvdW50GAQgASgD",
-            "UgVjb3VudBIdCgpzaXplX2J5dGVzGAUgASgDUglzaXplQnl0ZXMSTgoIc3Ry",
-            "YXRlZ3kYBiABKA4yMi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwU2F2ZUZp",
-            "bGVDYXBhY2l0eVN0cmF0ZWd5UghzdHJhdGVneUIICgZlbnRpdHkiIAoeU2V0",
-            "QXBwU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNlIskBCiRTZXRBcHBTYXZlRmls",
-            "ZUNhcGFjaXR5RGVmYXVsdFJlcXVlc3QSEgoDYXBwGAEgASgISABSA2FwcBIU",
-            "CgVjb3VudBgEIAEoA1IFY291bnQSHQoKc2l6ZV9ieXRlcxgFIAEoA1IJc2l6",
-            "ZUJ5dGVzEk4KCHN0cmF0ZWd5GAYgASgOMjIubGlicmFyaWFuLnNlcGhpcmFo",
-            "LnYxLkFwcFNhdmVGaWxlQ2FwYWNpdHlTdHJhdGVneVIIc3RyYXRlZ3lCCAoG",
-            "ZW50aXR5IicKJVNldEFwcFNhdmVGaWxlQ2FwYWNpdHlEZWZhdWx0UmVzcG9u",
-            "c2UicgodR2V0QXBwU2F2ZUZpbGVDYXBhY2l0eVJlcXVlc3QSFAoEdXNlchgB",
-            "IAEoCEgAUgR1c2VyEjEKBmFwcF9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5J",
-            "bnRlcm5hbElESABSBWFwcElkQggKBmVudGl0eSKlAQoeR2V0QXBwU2F2ZUZp",
-            "bGVDYXBhY2l0eVJlc3BvbnNlEhQKBWNvdW50GAEgASgDUgVjb3VudBIdCgpz",
-            "aXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMSTgoIc3RyYXRlZ3kYAyABKA4y",
-            "Mi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwU2F2ZUZpbGVDYXBhY2l0eVN0",
-            "cmF0ZWd5UghzdHJhdGVneSJECiRHZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVm",
-            "YXVsdFJlcXVlc3QSEgoDYXBwGAEgASgISABSA2FwcEIICgZlbnRpdHkirAEK",
-            "JUdldEFwcFNhdmVGaWxlQ2FwYWNpdHlEZWZhdWx0UmVzcG9uc2USFAoFY291",
-            "bnQYASABKANSBWNvdW50Eh0KCnNpemVfYnl0ZXMYAiABKANSCXNpemVCeXRl",
-            "cxJOCghzdHJhdGVneRgDIAEoDjIyLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5B",
-            "cHBTYXZlRmlsZUNhcGFjaXR5U3RyYXRlZ3lSCHN0cmF0ZWd5ImoKGkNyZWF0",
-            "ZVNoYXJlZEFwcFNhdmVSZXF1ZXN0EkwKD3NoYXJlZF9hcHBfc2F2ZRgBIAEo",
-            "CzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TaGFyZWRBcHBTYXZlUg1zaGFy",
-            "ZWRBcHBTYXZlIkcKG0NyZWF0ZVNoYXJlZEFwcFNhdmVSZXNwb25zZRIoCgJp",
-            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCJqChpVcGRh",
-            "dGVTaGFyZWRBcHBTYXZlUmVxdWVzdBJMCg9zaGFyZWRfYXBwX3NhdmUYASAB",
-            "KAsyJC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2ZVINc2hh",
-            "cmVkQXBwU2F2ZSIdChtVcGRhdGVTaGFyZWRBcHBTYXZlUmVzcG9uc2UizgEK",
-            "GUxpc3RTaGFyZWRBcHBTYXZlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsu",
-            "bGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0",
-            "ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXIS",
-            "RQoSYXBwX2luZm9faWRfZmlsdGVyGAMgAygLMhgubGlicmFyaWFuLnYxLklu",
-            "dGVybmFsSURSD2FwcEluZm9JZEZpbHRlciKiAQoaTGlzdFNoYXJlZEFwcFNh",
-            "dmVzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBh",
-            "Z2luZ1Jlc3BvbnNlUgZwYWdpbmcSTgoQc2hhcmVkX2FwcF9zYXZlcxgCIAMo",
-            "CzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TaGFyZWRBcHBTYXZlUg5zaGFy",
-            "ZWRBcHBTYXZlcyJGChpSZW1vdmVTaGFyZWRBcHBTYXZlUmVxdWVzdBIoCgJp",
-            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIdChtSZW1v",
-            "dmVTaGFyZWRBcHBTYXZlUmVzcG9uc2UiewoeQ3JlYXRlU2hhcmVkQXBwU2F2",
-            "ZUZpbGVSZXF1ZXN0ElkKFHNoYXJlZF9hcHBfc2F2ZV9maWxlGAEgASgLMigu",
-            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVGaWxlUhFzaGFy",
-            "ZWRBcHBTYXZlRmlsZSJLCh9DcmVhdGVTaGFyZWRBcHBTYXZlRmlsZVJlc3Bv",
-            "bnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlk",
-            "InsKHlVwZGF0ZVNoYXJlZEFwcFNhdmVGaWxlUmVxdWVzdBJZChRzaGFyZWRf",
-            "YXBwX3NhdmVfZmlsZRgBIAEoCzIoLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5T",
-            "aGFyZWRBcHBTYXZlRmlsZVIRc2hhcmVkQXBwU2F2ZUZpbGUiIQofVXBkYXRl",
-            "U2hhcmVkQXBwU2F2ZUZpbGVSZXNwb25zZSKfAgodTGlzdFNoYXJlZEFwcFNh",
-            "dmVGaWxlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYx",
-            "LlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5s",
-            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISUgoZc2hhcmVkX2Fw",
-            "cF9zYXZlX2lkX2ZpbHRlchgDIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
-            "bElEUhVzaGFyZWRBcHBTYXZlSWRGaWx0ZXISPgoOdXNlcl9pZF9maWx0ZXIY",
-            "BCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMdXNlcklkRmlsdGVy",
-            "IrMBCh5MaXN0U2hhcmVkQXBwU2F2ZUZpbGVzUmVzcG9uc2USNAoGcGFnaW5n",
-            "GAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcS",
-            "WwoVc2hhcmVkX2FwcF9zYXZlX2ZpbGVzGAIgAygLMigubGlicmFyaWFuLnNl",
-            "cGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVGaWxlUhJzaGFyZWRBcHBTYXZlRmls",
-            "ZXMiSgoeUmVtb3ZlU2hhcmVkQXBwU2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEg",
-            "ASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIiEKH1JlbW92ZVNo",
-            "YXJlZEFwcFNhdmVGaWxlUmVzcG9uc2UiGgoYTGlzdEFwcENhdGVnb3JpZXNS",
-            "ZXF1ZXN0ImYKGUxpc3RBcHBDYXRlZ29yaWVzUmVzcG9uc2USSQoOYXBwX2Nh",
-            "dGVnb3JpZXMYASADKAsyIi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwQ2F0",
-            "ZWdvcnlSDWFwcENhdGVnb3JpZXMiYQoYQ3JlYXRlQXBwQ2F0ZWdvcnlSZXF1",
-            "ZXN0EkUKDGFwcF9jYXRlZ29yeRgBIAEoCzIiLmxpYnJhcmlhbi5zZXBoaXJh",
-            "aC52MS5BcHBDYXRlZ29yeVILYXBwQ2F0ZWdvcnkiRQoZQ3JlYXRlQXBwQ2F0",
-            "ZWdvcnlSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRl",
-            "cm5hbElEUgJpZCJhChhVcGRhdGVBcHBDYXRlZ29yeVJlcXVlc3QSRQoMYXBw",
-            "X2NhdGVnb3J5GAEgASgLMiIubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcENh",
-            "dGVnb3J5UgthcHBDYXRlZ29yeSIbChlVcGRhdGVBcHBDYXRlZ29yeVJlc3Bv",
-            "bnNlIkQKGFJlbW92ZUFwcENhdGVnb3J5UmVxdWVzdBIoCgJpZBgBIAEoCzIY",
-            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIbChlSZW1vdmVBcHBDYXRl",
-            "Z29yeVJlc3BvbnNlIuYBCgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4u",
-            "djEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNj",
-            "cmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24STgoUYXNzaWduZWRfYXBwX2lu",
-            "Zm9faWQYBCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUhFhc3Np",
-            "Z25lZEFwcEluZm9JZIgBARIWCgZwdWJsaWMYCiABKAhSBnB1YmxpY0IXChVf",
-            "YXNzaWduZWRfYXBwX2luZm9faWQihAMKCUFwcEJpbmFyeRIoCgJpZBgBIAEo",
-            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJ",
-            "UgRuYW1lEh0KCnNpemVfYnl0ZXMYAyABKANSCXNpemVCeXRlcxIdCgpwdWJs",
-            "aWNfdXJsGAQgASgJUglwdWJsaWNVcmwSFgoGc2hhMjU2GAUgASgMUgZzaGEy",
-            "NTYSKAoQdG9rZW5fc2VydmVyX3VybBgGIAEoCVIOdG9rZW5TZXJ2ZXJVcmwS",
-            "PgoGY2h1bmtzGAcgAygLMiYubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcEJp",
-            "bmFyeS5DaHVua1IGY2h1bmtzGnkKBUNodW5rEhoKCHNlcXVlbmNlGAEgASgD",
-            "UghzZXF1ZW5jZRIdCgpzaXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMSHQoK",
-            "cHVibGljX3VybBgDIAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgEIAEoDFIG",
-            "c2hhMjU2IroBCgtBcHBDYXRlZ29yeRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEjEKB2Fw",
-            "cF9pZHMYAyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGYXBwSWRz",
-            "EjoKDGFwcF9pbmZvX2lkcxgEIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
-            "bElEUgphcHBJbmZvSWRzIpsBCgdBcHBJbnN0EigKAmlkGAEgASgLMhgubGli",
-            "cmFyaWFuLnYxLkludGVybmFsSURSAmlkEjUKCWRldmljZV9pZBgCIAEoCzIY",
-            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghkZXZpY2VJZBIvCgZhcHBfaWQY",
-            "AyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQiqQEKDVNo",
-            "YXJlZEFwcFNhdmUSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgD",
-            "IAEoCVILZGVzY3JpcHRpb24SOAoLYXBwX2luZm9faWQYBCABKAsyGC5saWJy",
-            "YXJpYW4udjEuSW50ZXJuYWxJRFIJYXBwSW5mb0lkItoCChFTaGFyZWRBcHBT",
-            "YXZlRmlsZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
-            "UgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJ",
-            "UgtkZXNjcmlwdGlvbhIWCgZwdWJsaWMYBCABKAhSBnB1YmxpYxJFChJzaGFy",
-            "ZWRfYXBwX3NhdmVfaWQYBSABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
-            "RFIPc2hhcmVkQXBwU2F2ZUlkEkIKEGZpbGVfbWV0YWRhdGFfaWQYBiABKAsy",
-            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOZmlsZU1ldGFkYXRhSWQSNgoH",
-            "dXNlcl9pZBgHIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSBnVz",
-            "ZXJJZIgBAUIKCghfdXNlcl9pZCruAQobQXBwU2F2ZUZpbGVDYXBhY2l0eVN0",
-            "cmF0ZWd5Ei8KK0FQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfVU5T",
-            "UEVDSUZJRUQQABIoCiRBUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFURUdZ",
-            "X0ZBSUwQARIxCi1BUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFURUdZX0RF",
-            "TEVURV9PTERFU1QQAhJBCj1BUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFU",
-            "RUdZX0RFTEVURV9PTERFU1RfVU5USUxfU0FUSVNGSUVEEANCXVo1Z2l0aHVi",
-            "LmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7",
-            "djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIGcHJv",
-            "dG8z"));
+            "Cgx1cGxvYWRfdG9rZW4YASABKAlSC3VwbG9hZFRva2VuIkYKGkRvd25sb2Fk",
+            "QXBwU2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURSAmlkIkQKG0Rvd25sb2FkQXBwU2F2ZUZpbGVSZXNwb25z",
+            "ZRIlCg5kb3dubG9hZF90b2tlbhgCIAEoCVINZG93bmxvYWRUb2tlbiJKChdM",
+            "aXN0QXBwU2F2ZUZpbGVzUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQi8gEKGExpc3RBcHBTYXZlRmls",
+            "ZXNSZXNwb25zZRJQCgdyZXN1bHRzGAEgAygLMjYubGlicmFyaWFuLnNlcGhp",
+            "cmFoLnYxLkxpc3RBcHBTYXZlRmlsZXNSZXNwb25zZS5SZXN1bHRSB3Jlc3Vs",
+            "dHMagwEKBlJlc3VsdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRl",
+            "cm5hbElEUgJpZBI3CgRmaWxlGAIgASgLMiMubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLkZpbGVNZXRhZGF0YVIEZmlsZRIWCgZwaW5uZWQYAyABKAhSBnBpbm5l",
+            "ZCJEChhSZW1vdmVBcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5s",
+            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiGwoZUmVtb3ZlQXBwU2F2ZUZp",
+            "bGVSZXNwb25zZSJBChVQaW5BcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASAB",
+            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiGAoWUGluQXBwU2F2",
+            "ZUZpbGVSZXNwb25zZSJDChdVbnBpbkFwcFNhdmVGaWxlUmVxdWVzdBIoCgJp",
+            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIaChhVbnBp",
+            "bkFwcFNhdmVGaWxlUmVzcG9uc2Ui9wEKHVNldEFwcFNhdmVGaWxlQ2FwYWNp",
+            "dHlSZXF1ZXN0EhQKBHVzZXIYASABKAhIAFIEdXNlchIxCgZhcHBfaWQYAiAB",
+            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUgVhcHBJZBIUCgVjb3Vu",
+            "dBgEIAEoA1IFY291bnQSHQoKc2l6ZV9ieXRlcxgFIAEoA1IJc2l6ZUJ5dGVz",
+            "Ek4KCHN0cmF0ZWd5GAYgASgOMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFw",
+            "cFNhdmVGaWxlQ2FwYWNpdHlTdHJhdGVneVIIc3RyYXRlZ3lCCAoGZW50aXR5",
+            "IiAKHlNldEFwcFNhdmVGaWxlQ2FwYWNpdHlSZXNwb25zZSLJAQokU2V0QXBw",
+            "U2F2ZUZpbGVDYXBhY2l0eURlZmF1bHRSZXF1ZXN0EhIKA2FwcBgBIAEoCEgA",
+            "UgNhcHASFAoFY291bnQYBCABKANSBWNvdW50Eh0KCnNpemVfYnl0ZXMYBSAB",
+            "KANSCXNpemVCeXRlcxJOCghzdHJhdGVneRgGIAEoDjIyLmxpYnJhcmlhbi5z",
+            "ZXBoaXJhaC52MS5BcHBTYXZlRmlsZUNhcGFjaXR5U3RyYXRlZ3lSCHN0cmF0",
+            "ZWd5QggKBmVudGl0eSInCiVTZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVs",
+            "dFJlc3BvbnNlInIKHUdldEFwcFNhdmVGaWxlQ2FwYWNpdHlSZXF1ZXN0EhQK",
+            "BHVzZXIYASABKAhIAFIEdXNlchIxCgZhcHBfaWQYAiABKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJREgAUgVhcHBJZEIICgZlbnRpdHkipQEKHkdldEFw",
+            "cFNhdmVGaWxlQ2FwYWNpdHlSZXNwb25zZRIUCgVjb3VudBgBIAEoA1IFY291",
+            "bnQSHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEk4KCHN0cmF0ZWd5",
+            "GAMgASgOMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcFNhdmVGaWxlQ2Fw",
+            "YWNpdHlTdHJhdGVneVIIc3RyYXRlZ3kiRAokR2V0QXBwU2F2ZUZpbGVDYXBh",
+            "Y2l0eURlZmF1bHRSZXF1ZXN0EhIKA2FwcBgBIAEoCEgAUgNhcHBCCAoGZW50",
+            "aXR5IqwBCiVHZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVsdFJlc3BvbnNl",
+            "EhQKBWNvdW50GAEgASgDUgVjb3VudBIdCgpzaXplX2J5dGVzGAIgASgDUglz",
+            "aXplQnl0ZXMSTgoIc3RyYXRlZ3kYAyABKA4yMi5saWJyYXJpYW4uc2VwaGly",
+            "YWgudjEuQXBwU2F2ZUZpbGVDYXBhY2l0eVN0cmF0ZWd5UghzdHJhdGVneSJq",
+            "ChpDcmVhdGVTaGFyZWRBcHBTYXZlUmVxdWVzdBJMCg9zaGFyZWRfYXBwX3Nh",
+            "dmUYASABKAsyJC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2",
+            "ZVINc2hhcmVkQXBwU2F2ZSJHChtDcmVhdGVTaGFyZWRBcHBTYXZlUmVzcG9u",
+            "c2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQi",
+            "agoaVXBkYXRlU2hhcmVkQXBwU2F2ZVJlcXVlc3QSTAoPc2hhcmVkX2FwcF9z",
+            "YXZlGAEgASgLMiQubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNh",
+            "dmVSDXNoYXJlZEFwcFNhdmUiHQobVXBkYXRlU2hhcmVkQXBwU2F2ZVJlc3Bv",
+            "bnNlIs4BChlMaXN0U2hhcmVkQXBwU2F2ZXNSZXF1ZXN0EjMKBnBhZ2luZxgB",
+            "IAEoCzIbLmxpYnJhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSNQoJ",
+            "aWRfZmlsdGVyGAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCGlk",
+            "RmlsdGVyEkUKEmFwcF9pbmZvX2lkX2ZpbHRlchgDIAMoCzIYLmxpYnJhcmlh",
+            "bi52MS5JbnRlcm5hbElEUg9hcHBJbmZvSWRGaWx0ZXIiogEKGkxpc3RTaGFy",
+            "ZWRBcHBTYXZlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlh",
+            "bi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEk4KEHNoYXJlZF9hcHBfc2F2",
+            "ZXMYAiADKAsyJC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVkQXBwU2F2",
+            "ZVIOc2hhcmVkQXBwU2F2ZXMiRgoaUmVtb3ZlU2hhcmVkQXBwU2F2ZVJlcXVl",
+            "c3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQi",
+            "HQobUmVtb3ZlU2hhcmVkQXBwU2F2ZVJlc3BvbnNlInsKHkNyZWF0ZVNoYXJl",
+            "ZEFwcFNhdmVGaWxlUmVxdWVzdBJZChRzaGFyZWRfYXBwX3NhdmVfZmlsZRgB",
+            "IAEoCzIoLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TaGFyZWRBcHBTYXZlRmls",
+            "ZVIRc2hhcmVkQXBwU2F2ZUZpbGUiSwofQ3JlYXRlU2hhcmVkQXBwU2F2ZUZp",
+            "bGVSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
+            "bElEUgJpZCJ7Ch5VcGRhdGVTaGFyZWRBcHBTYXZlRmlsZVJlcXVlc3QSWQoU",
+            "c2hhcmVkX2FwcF9zYXZlX2ZpbGUYASABKAsyKC5saWJyYXJpYW4uc2VwaGly",
+            "YWgudjEuU2hhcmVkQXBwU2F2ZUZpbGVSEXNoYXJlZEFwcFNhdmVGaWxlIiEK",
+            "H1VwZGF0ZVNoYXJlZEFwcFNhdmVGaWxlUmVzcG9uc2UinwIKHUxpc3RTaGFy",
+            "ZWRBcHBTYXZlRmlsZXNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJh",
+            "cmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSNQoJaWRfZmlsdGVyGAIg",
+            "AygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCGlkRmlsdGVyElIKGXNo",
+            "YXJlZF9hcHBfc2F2ZV9pZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW4udjEu",
+            "SW50ZXJuYWxJRFIVc2hhcmVkQXBwU2F2ZUlkRmlsdGVyEj4KDnVzZXJfaWRf",
+            "ZmlsdGVyGAQgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDHVzZXJJ",
+            "ZEZpbHRlciKzAQoeTGlzdFNoYXJlZEFwcFNhdmVGaWxlc1Jlc3BvbnNlEjQK",
+            "BnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIG",
+            "cGFnaW5nElsKFXNoYXJlZF9hcHBfc2F2ZV9maWxlcxgCIAMoCzIoLmxpYnJh",
+            "cmlhbi5zZXBoaXJhaC52MS5TaGFyZWRBcHBTYXZlRmlsZVISc2hhcmVkQXBw",
+            "U2F2ZUZpbGVzIkoKHlJlbW92ZVNoYXJlZEFwcFNhdmVGaWxlUmVxdWVzdBIo",
+            "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIhCh9S",
+            "ZW1vdmVTaGFyZWRBcHBTYXZlRmlsZVJlc3BvbnNlIhoKGExpc3RBcHBDYXRl",
+            "Z29yaWVzUmVxdWVzdCJmChlMaXN0QXBwQ2F0ZWdvcmllc1Jlc3BvbnNlEkkK",
+            "DmFwcF9jYXRlZ29yaWVzGAEgAygLMiIubGlicmFyaWFuLnNlcGhpcmFoLnYx",
+            "LkFwcENhdGVnb3J5Ug1hcHBDYXRlZ29yaWVzImEKGENyZWF0ZUFwcENhdGVn",
+            "b3J5UmVxdWVzdBJFCgxhcHBfY2F0ZWdvcnkYASABKAsyIi5saWJyYXJpYW4u",
+            "c2VwaGlyYWgudjEuQXBwQ2F0ZWdvcnlSC2FwcENhdGVnb3J5IkUKGUNyZWF0",
+            "ZUFwcENhdGVnb3J5UmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4u",
+            "djEuSW50ZXJuYWxJRFICaWQiYQoYVXBkYXRlQXBwQ2F0ZWdvcnlSZXF1ZXN0",
+            "EkUKDGFwcF9jYXRlZ29yeRgBIAEoCzIiLmxpYnJhcmlhbi5zZXBoaXJhaC52",
+            "MS5BcHBDYXRlZ29yeVILYXBwQ2F0ZWdvcnkiGwoZVXBkYXRlQXBwQ2F0ZWdv",
+            "cnlSZXNwb25zZSJEChhSZW1vdmVBcHBDYXRlZ29yeVJlcXVlc3QSKAoCaWQY",
+            "ASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiGwoZUmVtb3Zl",
+            "QXBwQ2F0ZWdvcnlSZXNwb25zZSLmAQoDQXBwEigKAmlkGAEgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUS",
+            "IAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEk4KFGFzc2lnbmVk",
+            "X2FwcF9pbmZvX2lkGAQgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURI",
+            "AFIRYXNzaWduZWRBcHBJbmZvSWSIAQESFgoGcHVibGljGAogASgIUgZwdWJs",
+            "aWNCFwoVX2Fzc2lnbmVkX2FwcF9pbmZvX2lkIoQDCglBcHBCaW5hcnkSKAoC",
+            "aWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFt",
+            "ZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0ZXMS",
+            "HQoKcHVibGljX3VybBgEIAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgFIAEo",
+            "DFIGc2hhMjU2EigKEHRva2VuX3NlcnZlcl91cmwYBiABKAlSDnRva2VuU2Vy",
+            "dmVyVXJsEj4KBmNodW5rcxgHIAMoCzImLmxpYnJhcmlhbi5zZXBoaXJhaC52",
+            "MS5BcHBCaW5hcnkuQ2h1bmtSBmNodW5rcxp5CgVDaHVuaxIaCghzZXF1ZW5j",
+            "ZRgBIAEoA1IIc2VxdWVuY2USHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5",
+            "dGVzEh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYY",
+            "BCABKAxSBnNoYTI1NiK6AQoLQXBwQ2F0ZWdvcnkSKAoCaWQYASABKAsyGC5s",
+            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFt",
+            "ZRIxCgdhcHBfaWRzGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
+            "BmFwcElkcxI6CgxhcHBfaW5mb19pZHMYBCADKAsyGC5saWJyYXJpYW4udjEu",
+            "SW50ZXJuYWxJRFIKYXBwSW5mb0lkcyKbAQoHQXBwSW5zdBIoCgJpZBgBIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBI1CglkZXZpY2VfaWQY",
+            "AiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIZGV2aWNlSWQSLwoG",
+            "YXBwX2lkGAMgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBWFwcElk",
+            "IqkBCg1TaGFyZWRBcHBTYXZlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3Jp",
+            "cHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjgKC2FwcF9pbmZvX2lkGAQgASgL",
+            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCWFwcEluZm9JZCLaAgoRU2hh",
+            "cmVkQXBwU2F2ZUZpbGUSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
+            "ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlv",
+            "bhgDIAEoCVILZGVzY3JpcHRpb24SFgoGcHVibGljGAQgASgIUgZwdWJsaWMS",
+            "RQoSc2hhcmVkX2FwcF9zYXZlX2lkGAUgASgLMhgubGlicmFyaWFuLnYxLklu",
+            "dGVybmFsSURSD3NoYXJlZEFwcFNhdmVJZBJCChBmaWxlX21ldGFkYXRhX2lk",
+            "GAYgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDmZpbGVNZXRhZGF0",
+            "YUlkEjYKB3VzZXJfaWQYByABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
+            "REgAUgZ1c2VySWSIAQFCCgoIX3VzZXJfaWQq7gEKG0FwcFNhdmVGaWxlQ2Fw",
+            "YWNpdHlTdHJhdGVneRIvCitBUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFU",
+            "RUdZX1VOU1BFQ0lGSUVEEAASKAokQVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9T",
+            "VFJBVEVHWV9GQUlMEAESMQotQVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9TVFJB",
+            "VEVHWV9ERUxFVEVfT0xERVNUEAISQQo9QVBQX1NBVkVfRklMRV9DQVBBQ0lU",
+            "WV9TVFJBVEVHWV9ERUxFVEVfT0xERVNUX1VOVElMX1NBVElTRklFRBADQl1a",
+            "NWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhp",
+            "cmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWgu",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -326,15 +326,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppInstRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppInstRunTimeResponse.Parser, new[]{ "RunTimeGroups" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppInstRunTimeResponse.Types.Group), global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppInstRunTimeResponse.Types.Group.Parser, new[]{ "TimeRange", "Duration" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileRequest.Parser, new[]{ "FileMetadata", "AppId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileResponse.Parser, new[]{ "UploadToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileRequest.Parser, new[]{ "FileId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileResponse.Parser, new[]{ "DownloadToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesRequest.Parser, new[]{ "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Parser, new[]{ "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result.Parser, new[]{ "File", "Pinned" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppSaveFileRequest.Parser, new[]{ "FileId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Parser, new[]{ "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result.Parser, new[]{ "Id", "File", "Pinned" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppSaveFileResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileRequest.Parser, new[]{ "FileId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest.Parser, new[]{ "FileId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityRequest.Parser, new[]{ "User", "AppId", "Count", "SizeBytes", "Strategy" }, new[]{ "Entity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityResponse.Parser, null, null, null, null, null),
@@ -11290,7 +11290,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DownloadAppSaveFileRequest(DownloadAppSaveFileRequest other) : this() {
-      fileId_ = other.fileId_ != null ? other.fileId_.Clone() : null;
+      id_ = other.id_ != null ? other.id_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -11300,15 +11300,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new DownloadAppSaveFileRequest(this);
     }
 
-    /// <summary>Field number for the "file_id" field.</summary>
-    public const int FileIdFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.V1.InternalID fileId_;
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID FileId {
-      get { return fileId_; }
+    public global::TuiHub.Protos.Librarian.V1.InternalID Id {
+      get { return id_; }
       set {
-        fileId_ = value;
+        id_ = value;
       }
     }
 
@@ -11327,7 +11327,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(FileId, other.FileId)) return false;
+      if (!object.Equals(Id, other.Id)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -11335,7 +11335,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (fileId_ != null) hash ^= FileId.GetHashCode();
+      if (id_ != null) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -11354,9 +11354,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -11368,9 +11368,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -11382,8 +11382,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (fileId_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FileId);
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -11397,11 +11397,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      if (other.fileId_ != null) {
-        if (fileId_ == null) {
-          FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+      if (other.id_ != null) {
+        if (id_ == null) {
+          Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
-        FileId.MergeFrom(other.FileId);
+        Id.MergeFrom(other.Id);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -11419,10 +11419,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -11441,10 +11441,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -12056,6 +12056,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Result(Result other) : this() {
+          id_ = other.id_ != null ? other.id_.Clone() : null;
           file_ = other.file_ != null ? other.file_.Clone() : null;
           pinned_ = other.pinned_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -12067,8 +12068,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           return new Result(this);
         }
 
+        /// <summary>Field number for the "id" field.</summary>
+        public const int IdFieldNumber = 1;
+        private global::TuiHub.Protos.Librarian.V1.InternalID id_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::TuiHub.Protos.Librarian.V1.InternalID Id {
+          get { return id_; }
+          set {
+            id_ = value;
+          }
+        }
+
         /// <summary>Field number for the "file" field.</summary>
-        public const int FileFieldNumber = 1;
+        public const int FileFieldNumber = 2;
         private global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata file_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12080,7 +12093,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
 
         /// <summary>Field number for the "pinned" field.</summary>
-        public const int PinnedFieldNumber = 2;
+        public const int PinnedFieldNumber = 3;
         private bool pinned_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12106,6 +12119,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           if (ReferenceEquals(other, this)) {
             return true;
           }
+          if (!object.Equals(Id, other.Id)) return false;
           if (!object.Equals(File, other.File)) return false;
           if (Pinned != other.Pinned) return false;
           return Equals(_unknownFields, other._unknownFields);
@@ -12115,6 +12129,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
+          if (id_ != null) hash ^= Id.GetHashCode();
           if (file_ != null) hash ^= File.GetHashCode();
           if (Pinned != false) hash ^= Pinned.GetHashCode();
           if (_unknownFields != null) {
@@ -12135,12 +12150,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (file_ != null) {
+          if (id_ != null) {
             output.WriteRawTag(10);
+            output.WriteMessage(Id);
+          }
+          if (file_ != null) {
+            output.WriteRawTag(18);
             output.WriteMessage(File);
           }
           if (Pinned != false) {
-            output.WriteRawTag(16);
+            output.WriteRawTag(24);
             output.WriteBool(Pinned);
           }
           if (_unknownFields != null) {
@@ -12153,12 +12172,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (file_ != null) {
+          if (id_ != null) {
             output.WriteRawTag(10);
+            output.WriteMessage(Id);
+          }
+          if (file_ != null) {
+            output.WriteRawTag(18);
             output.WriteMessage(File);
           }
           if (Pinned != false) {
-            output.WriteRawTag(16);
+            output.WriteRawTag(24);
             output.WriteBool(Pinned);
           }
           if (_unknownFields != null) {
@@ -12171,6 +12194,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
+          if (id_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
+          }
           if (file_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(File);
           }
@@ -12188,6 +12214,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         public void MergeFrom(Result other) {
           if (other == null) {
             return;
+          }
+          if (other.id_ != null) {
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            Id.MergeFrom(other.Id);
           }
           if (other.file_ != null) {
             if (file_ == null) {
@@ -12214,13 +12246,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 10: {
+                if (id_ == null) {
+                  Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+                }
+                input.ReadMessage(Id);
+                break;
+              }
+              case 18: {
                 if (file_ == null) {
                   File = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
                 }
                 input.ReadMessage(File);
                 break;
               }
-              case 16: {
+              case 24: {
                 Pinned = input.ReadBool();
                 break;
               }
@@ -12240,13 +12279,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 10: {
+                if (id_ == null) {
+                  Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+                }
+                input.ReadMessage(Id);
+                break;
+              }
+              case 18: {
                 if (file_ == null) {
                   File = new global::TuiHub.Protos.Librarian.Sephirah.V1.FileMetadata();
                 }
                 input.ReadMessage(File);
                 break;
               }
-              case 16: {
+              case 24: {
                 Pinned = input.ReadBool();
                 break;
               }
@@ -12296,7 +12342,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveAppSaveFileRequest(RemoveAppSaveFileRequest other) : this() {
-      fileId_ = other.fileId_ != null ? other.fileId_.Clone() : null;
+      id_ = other.id_ != null ? other.id_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -12306,15 +12352,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new RemoveAppSaveFileRequest(this);
     }
 
-    /// <summary>Field number for the "file_id" field.</summary>
-    public const int FileIdFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.V1.InternalID fileId_;
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID FileId {
-      get { return fileId_; }
+    public global::TuiHub.Protos.Librarian.V1.InternalID Id {
+      get { return id_; }
       set {
-        fileId_ = value;
+        id_ = value;
       }
     }
 
@@ -12333,7 +12379,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(FileId, other.FileId)) return false;
+      if (!object.Equals(Id, other.Id)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -12341,7 +12387,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (fileId_ != null) hash ^= FileId.GetHashCode();
+      if (id_ != null) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -12360,9 +12406,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -12374,9 +12420,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -12388,8 +12434,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (fileId_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FileId);
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -12403,11 +12449,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      if (other.fileId_ != null) {
-        if (fileId_ == null) {
-          FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+      if (other.id_ != null) {
+        if (id_ == null) {
+          Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
-        FileId.MergeFrom(other.FileId);
+        Id.MergeFrom(other.Id);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -12425,10 +12471,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -12447,10 +12493,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -12646,7 +12692,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PinAppSaveFileRequest(PinAppSaveFileRequest other) : this() {
-      fileId_ = other.fileId_ != null ? other.fileId_.Clone() : null;
+      id_ = other.id_ != null ? other.id_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -12656,15 +12702,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new PinAppSaveFileRequest(this);
     }
 
-    /// <summary>Field number for the "file_id" field.</summary>
-    public const int FileIdFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.V1.InternalID fileId_;
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID FileId {
-      get { return fileId_; }
+    public global::TuiHub.Protos.Librarian.V1.InternalID Id {
+      get { return id_; }
       set {
-        fileId_ = value;
+        id_ = value;
       }
     }
 
@@ -12683,7 +12729,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(FileId, other.FileId)) return false;
+      if (!object.Equals(Id, other.Id)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -12691,7 +12737,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (fileId_ != null) hash ^= FileId.GetHashCode();
+      if (id_ != null) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -12710,9 +12756,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -12724,9 +12770,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -12738,8 +12784,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (fileId_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FileId);
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -12753,11 +12799,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      if (other.fileId_ != null) {
-        if (fileId_ == null) {
-          FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+      if (other.id_ != null) {
+        if (id_ == null) {
+          Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
-        FileId.MergeFrom(other.FileId);
+        Id.MergeFrom(other.Id);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -12775,10 +12821,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -12797,10 +12843,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -12996,7 +13042,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UnpinAppSaveFileRequest(UnpinAppSaveFileRequest other) : this() {
-      fileId_ = other.fileId_ != null ? other.fileId_.Clone() : null;
+      id_ = other.id_ != null ? other.id_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -13006,15 +13052,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new UnpinAppSaveFileRequest(this);
     }
 
-    /// <summary>Field number for the "file_id" field.</summary>
-    public const int FileIdFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.V1.InternalID fileId_;
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID FileId {
-      get { return fileId_; }
+    public global::TuiHub.Protos.Librarian.V1.InternalID Id {
+      get { return id_; }
       set {
-        fileId_ = value;
+        id_ = value;
       }
     }
 
@@ -13033,7 +13079,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(FileId, other.FileId)) return false;
+      if (!object.Equals(Id, other.Id)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -13041,7 +13087,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (fileId_ != null) hash ^= FileId.GetHashCode();
+      if (id_ != null) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -13060,9 +13106,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -13074,9 +13120,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (fileId_ != null) {
+      if (id_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(FileId);
+        output.WriteMessage(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -13088,8 +13134,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (fileId_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FileId);
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -13103,11 +13149,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      if (other.fileId_ != null) {
-        if (fileId_ == null) {
-          FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+      if (other.id_ != null) {
+        if (id_ == null) {
+          Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
-        FileId.MergeFrom(other.FileId);
+        Id.MergeFrom(other.Id);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -13125,10 +13171,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
@@ -13147,10 +13193,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (fileId_ == null) {
-              FileId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(FileId);
+            input.ReadMessage(Id);
             break;
           }
         }
