@@ -288,6 +288,7 @@ message SetAppSaveFileCapacityRequest {
   // negative value means use default
   int64 size_bytes = 5;
   // unspecified means use default
+  // strategies of smaller scopes have higher priority when multiple scopes reach limit
   AppSaveFileCapacityStrategy strategy = 6;
 }
 
