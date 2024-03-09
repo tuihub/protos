@@ -241,7 +241,7 @@ message UploadAppSaveFileResponse {
 }
 
 message DownloadAppSaveFileRequest {
-  librarian.v1.InternalID file_id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message DownloadAppSaveFileResponse {
@@ -254,26 +254,27 @@ message ListAppSaveFilesRequest {
 
 message ListAppSaveFilesResponse {
   message Result {
-    FileMetadata file = 1;
-    bool pinned = 2;
+    librarian.v1.InternalID id = 1;
+    FileMetadata file = 2;
+    bool pinned = 3;
   }
   repeated Result results = 1;
 }
 
 message RemoveAppSaveFileRequest {
-  librarian.v1.InternalID file_id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message RemoveAppSaveFileResponse {}
 
 message PinAppSaveFileRequest {
-  librarian.v1.InternalID file_id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message PinAppSaveFileResponse {}
 
 message UnpinAppSaveFileRequest {
-  librarian.v1.InternalID file_id = 1;
+  librarian.v1.InternalID id = 1;
 }
 
 message UnpinAppSaveFileResponse {}
