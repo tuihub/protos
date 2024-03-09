@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.6](https://github.com/tuihub/protos/compare/v0.4.5...v0.4.6) (2024-03-09)
+
+
+### Bug Fixes
+
+* **gebura:** use internal id for AppSaveFile ([e0ccb7f](https://github.com/tuihub/protos/commit/e0ccb7fd937e221c660c3cfc95aa1fdc080e90c2))
+
 ## [0.4.5](https://github.com/tuihub/protos/compare/v0.4.4...v0.4.5) (2024-03-06)
 
 
