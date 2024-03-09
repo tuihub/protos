@@ -3111,6 +3111,7 @@ type SetAppSaveFileCapacityRequest struct {
 	// negative value means use default
 	SizeBytes int64 `protobuf:"varint,5,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
 	// unspecified means use default
+	// strategies of smaller scopes have higher priority when multiple scopes reach limit
 	Strategy AppSaveFileCapacityStrategy `protobuf:"varint,6,opt,name=strategy,proto3,enum=librarian.sephirah.v1.AppSaveFileCapacityStrategy" json:"strategy,omitempty"`
 }
 

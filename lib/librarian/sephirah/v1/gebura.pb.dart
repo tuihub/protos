@@ -3475,6 +3475,7 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
   void clearSizeBytes() => clearField(5);
 
   /// unspecified means use default
+  /// strategies of smaller scopes have higher priority when multiple scopes reach limit
   @$pb.TagNumber(6)
   AppSaveFileCapacityStrategy get strategy => $_getN(4);
   @$pb.TagNumber(6)

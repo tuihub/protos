@@ -13440,6 +13440,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     private global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy strategy_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified;
     /// <summary>
     /// unspecified means use default
+    /// strategies of smaller scopes have higher priority when multiple scopes reach limit
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
