@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.7](https://github.com/tuihub/protos/compare/v0.4.6...v0.4.7) (2024-03-11)
+
+
+### Features
+
+* **tiphereth:** add RegisterUser ([1279631](https://github.com/tuihub/protos/commit/1279631065358d16b0239ceb82320ec3016c23e4))
+
 ## [0.4.6](https://github.com/tuihub/protos/compare/v0.4.5...v0.4.6) (2024-03-09)
 
 
