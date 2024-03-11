@@ -176,6 +176,65 @@ final $typed_data.Uint8List gainUserPrivilegeResponseDescriptor = $convert.base6
     'ChlHYWluVXNlclByaXZpbGVnZVJlc3BvbnNlEiEKDGFjY2Vzc190b2tlbhgBIAEoCVILYWNjZX'
     'NzVG9rZW4=');
 
+@$core.Deprecated('Use registerUserRequestDescriptor instead')
+const RegisterUserRequest$json = {
+  '1': 'RegisterUserRequest',
+  '2': [
+    {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
+    {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
+    {'1': 'captcha', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.RegisterUserRequest.Captcha', '9': 0, '10': 'captcha', '17': true},
+  ],
+  '3': [RegisterUserRequest_Captcha$json],
+  '8': [
+    {'1': '_captcha'},
+  ],
+};
+
+@$core.Deprecated('Use registerUserRequestDescriptor instead')
+const RegisterUserRequest_Captcha$json = {
+  '1': 'Captcha',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `RegisterUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerUserRequestDescriptor = $convert.base64Decode(
+    'ChNSZWdpc3RlclVzZXJSZXF1ZXN0EhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIaCghwYX'
+    'Nzd29yZBgCIAEoCVIIcGFzc3dvcmQSUQoHY2FwdGNoYRgDIAEoCzIyLmxpYnJhcmlhbi5zZXBo'
+    'aXJhaC52MS5SZWdpc3RlclVzZXJSZXF1ZXN0LkNhcHRjaGFIAFIHY2FwdGNoYYgBARovCgdDYX'
+    'B0Y2hhEg4KAmlkGAEgASgJUgJpZBIUCgV2YWx1ZRgCIAEoCVIFdmFsdWVCCgoIX2NhcHRjaGE=');
+
+@$core.Deprecated('Use registerUserResponseDescriptor instead')
+const RegisterUserResponse$json = {
+  '1': 'RegisterUserResponse',
+  '2': [
+    {'1': 'captcha', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.RegisterUserResponse.ImageCaptcha', '9': 0, '10': 'captcha'},
+    {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'refreshToken'},
+  ],
+  '3': [RegisterUserResponse_ImageCaptcha$json],
+  '8': [
+    {'1': 'stage'},
+  ],
+};
+
+@$core.Deprecated('Use registerUserResponseDescriptor instead')
+const RegisterUserResponse_ImageCaptcha$json = {
+  '1': 'ImageCaptcha',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'image', '3': 2, '4': 1, '5': 12, '10': 'image'},
+  ],
+};
+
+/// Descriptor for `RegisterUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerUserResponseDescriptor = $convert.base64Decode(
+    'ChRSZWdpc3RlclVzZXJSZXNwb25zZRJUCgdjYXB0Y2hhGAEgASgLMjgubGlicmFyaWFuLnNlcG'
+    'hpcmFoLnYxLlJlZ2lzdGVyVXNlclJlc3BvbnNlLkltYWdlQ2FwdGNoYUgAUgdjYXB0Y2hhEiUK'
+    'DXJlZnJlc2hfdG9rZW4YAiABKAlIAFIMcmVmcmVzaFRva2VuGjQKDEltYWdlQ2FwdGNoYRIOCg'
+    'JpZBgBIAEoCVICaWQSFAoFaW1hZ2UYAiABKAxSBWltYWdlQgcKBXN0YWdl');
+
 @$core.Deprecated('Use registerDeviceRequestDescriptor instead')
 const RegisterDeviceRequest$json = {
   '1': 'RegisterDeviceRequest',

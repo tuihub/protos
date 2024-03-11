@@ -386,6 +386,297 @@ class GainUserPrivilegeResponse extends $pb.GeneratedMessage {
   void clearAccessToken() => clearField(1);
 }
 
+class RegisterUserRequest_Captcha extends $pb.GeneratedMessage {
+  factory RegisterUserRequest_Captcha({
+    $core.String? id,
+    $core.String? value,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
+  RegisterUserRequest_Captcha._() : super();
+  factory RegisterUserRequest_Captcha.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterUserRequest_Captcha.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterUserRequest.Captcha', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterUserRequest_Captcha clone() => RegisterUserRequest_Captcha()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterUserRequest_Captcha copyWith(void Function(RegisterUserRequest_Captcha) updates) => super.copyWith((message) => updates(message as RegisterUserRequest_Captcha)) as RegisterUserRequest_Captcha;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserRequest_Captcha create() => RegisterUserRequest_Captcha._();
+  RegisterUserRequest_Captcha createEmptyInstance() => create();
+  static $pb.PbList<RegisterUserRequest_Captcha> createRepeated() => $pb.PbList<RegisterUserRequest_Captcha>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserRequest_Captcha getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterUserRequest_Captcha>(create);
+  static RegisterUserRequest_Captcha? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+}
+
+class RegisterUserRequest extends $pb.GeneratedMessage {
+  factory RegisterUserRequest({
+    $core.String? username,
+    $core.String? password,
+    RegisterUserRequest_Captcha? captcha,
+  }) {
+    final $result = create();
+    if (username != null) {
+      $result.username = username;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    if (captcha != null) {
+      $result.captcha = captcha;
+    }
+    return $result;
+  }
+  RegisterUserRequest._() : super();
+  factory RegisterUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'username')
+    ..aOS(2, _omitFieldNames ? '' : 'password')
+    ..aOM<RegisterUserRequest_Captcha>(3, _omitFieldNames ? '' : 'captcha', subBuilder: RegisterUserRequest_Captcha.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterUserRequest clone() => RegisterUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterUserRequest copyWith(void Function(RegisterUserRequest) updates) => super.copyWith((message) => updates(message as RegisterUserRequest)) as RegisterUserRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserRequest create() => RegisterUserRequest._();
+  RegisterUserRequest createEmptyInstance() => create();
+  static $pb.PbList<RegisterUserRequest> createRepeated() => $pb.PbList<RegisterUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterUserRequest>(create);
+  static RegisterUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get username => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set username($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUsername() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUsername() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get password => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set password($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPassword() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPassword() => clearField(2);
+
+  @$pb.TagNumber(3)
+  RegisterUserRequest_Captcha get captcha => $_getN(2);
+  @$pb.TagNumber(3)
+  set captcha(RegisterUserRequest_Captcha v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCaptcha() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCaptcha() => clearField(3);
+  @$pb.TagNumber(3)
+  RegisterUserRequest_Captcha ensureCaptcha() => $_ensure(2);
+}
+
+class RegisterUserResponse_ImageCaptcha extends $pb.GeneratedMessage {
+  factory RegisterUserResponse_ImageCaptcha({
+    $core.String? id,
+    $core.List<$core.int>? image,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (image != null) {
+      $result.image = image;
+    }
+    return $result;
+  }
+  RegisterUserResponse_ImageCaptcha._() : super();
+  factory RegisterUserResponse_ImageCaptcha.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterUserResponse_ImageCaptcha.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterUserResponse.ImageCaptcha', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'image', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterUserResponse_ImageCaptcha clone() => RegisterUserResponse_ImageCaptcha()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterUserResponse_ImageCaptcha copyWith(void Function(RegisterUserResponse_ImageCaptcha) updates) => super.copyWith((message) => updates(message as RegisterUserResponse_ImageCaptcha)) as RegisterUserResponse_ImageCaptcha;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserResponse_ImageCaptcha create() => RegisterUserResponse_ImageCaptcha._();
+  RegisterUserResponse_ImageCaptcha createEmptyInstance() => create();
+  static $pb.PbList<RegisterUserResponse_ImageCaptcha> createRepeated() => $pb.PbList<RegisterUserResponse_ImageCaptcha>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserResponse_ImageCaptcha getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterUserResponse_ImageCaptcha>(create);
+  static RegisterUserResponse_ImageCaptcha? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get image => $_getN(1);
+  @$pb.TagNumber(2)
+  set image($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasImage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearImage() => clearField(2);
+}
+
+enum RegisterUserResponse_Stage {
+  captcha, 
+  refreshToken, 
+  notSet
+}
+
+class RegisterUserResponse extends $pb.GeneratedMessage {
+  factory RegisterUserResponse({
+    RegisterUserResponse_ImageCaptcha? captcha,
+    $core.String? refreshToken,
+  }) {
+    final $result = create();
+    if (captcha != null) {
+      $result.captcha = captcha;
+    }
+    if (refreshToken != null) {
+      $result.refreshToken = refreshToken;
+    }
+    return $result;
+  }
+  RegisterUserResponse._() : super();
+  factory RegisterUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory RegisterUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, RegisterUserResponse_Stage> _RegisterUserResponse_StageByTag = {
+    1 : RegisterUserResponse_Stage.captcha,
+    2 : RegisterUserResponse_Stage.refreshToken,
+    0 : RegisterUserResponse_Stage.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<RegisterUserResponse_ImageCaptcha>(1, _omitFieldNames ? '' : 'captcha', subBuilder: RegisterUserResponse_ImageCaptcha.create)
+    ..aOS(2, _omitFieldNames ? '' : 'refreshToken')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  RegisterUserResponse clone() => RegisterUserResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  RegisterUserResponse copyWith(void Function(RegisterUserResponse) updates) => super.copyWith((message) => updates(message as RegisterUserResponse)) as RegisterUserResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserResponse create() => RegisterUserResponse._();
+  RegisterUserResponse createEmptyInstance() => create();
+  static $pb.PbList<RegisterUserResponse> createRepeated() => $pb.PbList<RegisterUserResponse>();
+  @$core.pragma('dart2js:noInline')
+  static RegisterUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RegisterUserResponse>(create);
+  static RegisterUserResponse? _defaultInstance;
+
+  RegisterUserResponse_Stage whichStage() => _RegisterUserResponse_StageByTag[$_whichOneof(0)]!;
+  void clearStage() => clearField($_whichOneof(0));
+
+  /// If captcha required
+  @$pb.TagNumber(1)
+  RegisterUserResponse_ImageCaptcha get captcha => $_getN(0);
+  @$pb.TagNumber(1)
+  set captcha(RegisterUserResponse_ImageCaptcha v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCaptcha() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaptcha() => clearField(1);
+  @$pb.TagNumber(1)
+  RegisterUserResponse_ImageCaptcha ensureCaptcha() => $_ensure(0);
+
+  /// If register success
+  @$pb.TagNumber(2)
+  $core.String get refreshToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set refreshToken($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRefreshToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRefreshToken() => clearField(2);
+}
+
 class RegisterDeviceRequest extends $pb.GeneratedMessage {
   factory RegisterDeviceRequest({
     DeviceInfo? deviceInfo,

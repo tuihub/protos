@@ -147,6 +147,121 @@ export namespace GainUserPrivilegeResponse {
   }
 }
 
+export class RegisterUserRequest extends jspb.Message {
+  getUsername(): string;
+  setUsername(value: string): void;
+
+  getPassword(): string;
+  setPassword(value: string): void;
+
+  hasCaptcha(): boolean;
+  clearCaptcha(): void;
+  getCaptcha(): RegisterUserRequest.Captcha | undefined;
+  setCaptcha(value?: RegisterUserRequest.Captcha): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RegisterUserRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RegisterUserRequest): RegisterUserRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RegisterUserRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RegisterUserRequest;
+  static deserializeBinaryFromReader(message: RegisterUserRequest, reader: jspb.BinaryReader): RegisterUserRequest;
+}
+
+export namespace RegisterUserRequest {
+  export type AsObject = {
+    username: string,
+    password: string,
+    captcha?: RegisterUserRequest.Captcha.AsObject,
+  }
+
+  export class Captcha extends jspb.Message {
+    getId(): string;
+    setId(value: string): void;
+
+    getValue(): string;
+    setValue(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Captcha.AsObject;
+    static toObject(includeInstance: boolean, msg: Captcha): Captcha.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Captcha, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Captcha;
+    static deserializeBinaryFromReader(message: Captcha, reader: jspb.BinaryReader): Captcha;
+  }
+
+  export namespace Captcha {
+    export type AsObject = {
+      id: string,
+      value: string,
+    }
+  }
+}
+
+export class RegisterUserResponse extends jspb.Message {
+  hasCaptcha(): boolean;
+  clearCaptcha(): void;
+  getCaptcha(): RegisterUserResponse.ImageCaptcha | undefined;
+  setCaptcha(value?: RegisterUserResponse.ImageCaptcha): void;
+
+  hasRefreshToken(): boolean;
+  clearRefreshToken(): void;
+  getRefreshToken(): string;
+  setRefreshToken(value: string): void;
+
+  getStageCase(): RegisterUserResponse.StageCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RegisterUserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RegisterUserResponse): RegisterUserResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RegisterUserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RegisterUserResponse;
+  static deserializeBinaryFromReader(message: RegisterUserResponse, reader: jspb.BinaryReader): RegisterUserResponse;
+}
+
+export namespace RegisterUserResponse {
+  export type AsObject = {
+    captcha?: RegisterUserResponse.ImageCaptcha.AsObject,
+    refreshToken: string,
+  }
+
+  export class ImageCaptcha extends jspb.Message {
+    getId(): string;
+    setId(value: string): void;
+
+    getImage(): Uint8Array | string;
+    getImage_asU8(): Uint8Array;
+    getImage_asB64(): string;
+    setImage(value: Uint8Array | string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ImageCaptcha.AsObject;
+    static toObject(includeInstance: boolean, msg: ImageCaptcha): ImageCaptcha.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ImageCaptcha, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ImageCaptcha;
+    static deserializeBinaryFromReader(message: ImageCaptcha, reader: jspb.BinaryReader): ImageCaptcha;
+  }
+
+  export namespace ImageCaptcha {
+    export type AsObject = {
+      id: string,
+      image: Uint8Array | string,
+    }
+  }
+
+  export enum StageCase {
+    STAGE_NOT_SET = 0,
+    CAPTCHA = 1,
+    REFRESH_TOKEN = 2,
+  }
+}
+
 export class RegisterDeviceRequest extends jspb.Message {
   hasDeviceInfo(): boolean;
   clearDeviceInfo(): void;

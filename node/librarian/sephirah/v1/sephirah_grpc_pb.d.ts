@@ -17,6 +17,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   getToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>;
   refreshToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.RefreshTokenRequest, librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse>;
   gainUserPrivilege: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>;
+  registerUser: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest, librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse>;
   registerDevice: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>;
   listRegisteredDevices: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListRegisteredDevicesRequest, librarian_sephirah_v1_tiphereth_pb.ListRegisteredDevicesResponse>;
   listUserSessions: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>;
@@ -124,6 +125,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   getToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>;
   refreshToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.RefreshTokenRequest, librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse>;
   gainUserPrivilege: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>;
+  registerUser: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest, librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse>;
   registerDevice: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>;
   listRegisteredDevices: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListRegisteredDevicesRequest, librarian_sephirah_v1_tiphereth_pb.ListRegisteredDevicesResponse>;
   listUserSessions: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListUserSessionsRequest, librarian_sephirah_v1_tiphereth_pb.ListUserSessionsResponse>;
@@ -238,6 +240,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   gainUserPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>): grpc.ClientUnaryCall;
   gainUserPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>): grpc.ClientUnaryCall;
   gainUserPrivilege(argument: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>): grpc.ClientUnaryCall;
+  registerUser(argument: librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse>): grpc.ClientUnaryCall;
+  registerUser(argument: librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse>): grpc.ClientUnaryCall;
+  registerUser(argument: librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse>): grpc.ClientUnaryCall;
   registerDevice(argument: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>): grpc.ClientUnaryCall;
   registerDevice(argument: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>): grpc.ClientUnaryCall;
   registerDevice(argument: librarian_sephirah_v1_tiphereth_pb.RegisterDeviceRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse>): grpc.ClientUnaryCall;

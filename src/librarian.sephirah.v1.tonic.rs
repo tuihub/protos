@@ -214,6 +214,38 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Tiphereth` Self register as a new normal user
+*/
+        pub async fn register_user(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RegisterUserRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterUserResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "RegisterUser",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /** `Tiphereth` `Normal` Client should register device after the first login
  and store the device_id locally.
  The server could add extra limits to non-registered device
@@ -3405,6 +3437,15 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GainUserPrivilegeResponse>,
             tonic::Status,
         >;
+        /** `Tiphereth` Self register as a new normal user
+*/
+        async fn register_user(
+            &self,
+            request: tonic::Request<super::RegisterUserRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterUserResponse>,
+            tonic::Status,
+        >;
         /** `Tiphereth` `Normal` Client should register device after the first login
  and store the device_id locally.
  The server could add extra limits to non-registered device
@@ -4567,6 +4608,52 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = GainUserPrivilegeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser" => {
+                    #[allow(non_camel_case_types)]
+                    struct RegisterUserSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::RegisterUserRequest>
+                    for RegisterUserSvc<T> {
+                        type Response = super::RegisterUserResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RegisterUserRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).register_user(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = RegisterUserSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

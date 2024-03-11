@@ -23,6 +23,7 @@ const (
 	LibrarianSephirahService_GetToken_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
 	LibrarianSephirahService_RefreshToken_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
 	LibrarianSephirahService_GainUserPrivilege_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege"
+	LibrarianSephirahService_RegisterUser_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser"
 	LibrarianSephirahService_RegisterDevice_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice"
 	LibrarianSephirahService_ListRegisteredDevices_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListRegisteredDevices"
 	LibrarianSephirahService_ListUserSessions_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions"
@@ -135,6 +136,8 @@ type LibrarianSephirahServiceClient interface {
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
 	GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error)
+	// `Tiphereth` Self register as a new normal user
+	RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error)
 	// `Tiphereth` `Normal` Client should register device after the first login
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
@@ -397,6 +400,15 @@ func (c *librarianSephirahServiceClient) RefreshToken(ctx context.Context, in *R
 func (c *librarianSephirahServiceClient) GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error) {
 	out := new(GainUserPrivilegeResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_GainUserPrivilege_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error) {
+	out := new(RegisterUserResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_RegisterUser_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1386,6 +1398,8 @@ type LibrarianSephirahServiceServer interface {
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
 	GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error)
+	// `Tiphereth` Self register as a new normal user
+	RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error)
 	// `Tiphereth` `Normal` Client should register device after the first login
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
@@ -1626,6 +1640,9 @@ func (UnimplementedLibrarianSephirahServiceServer) RefreshToken(context.Context,
 }
 func (UnimplementedLibrarianSephirahServiceServer) GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GainUserPrivilege not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterUser not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterDevice not implemented")
@@ -2003,6 +2020,24 @@ func _LibrarianSephirahService_GainUserPrivilege_Handler(srv interface{}, ctx co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).GainUserPrivilege(ctx, req.(*GainUserPrivilegeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_RegisterUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).RegisterUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_RegisterUser_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).RegisterUser(ctx, req.(*RegisterUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3820,6 +3855,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GainUserPrivilege",
 			Handler:    _LibrarianSephirahService_GainUserPrivilege_Handler,
+		},
+		{
+			MethodName: "RegisterUser",
+			Handler:    _LibrarianSephirahService_RegisterUser_Handler,
 		},
 		{
 			MethodName: "RegisterDevice",

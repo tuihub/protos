@@ -1441,6 +1441,28 @@ function deserialize_librarian_sephirah_v1_RegisterDeviceResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.RegisterDeviceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_RegisterUserRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RegisterUserRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RegisterUserRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_RegisterUserResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RegisterUserResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RegisterUserResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_RemoveAppCategoryRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.RemoveAppCategoryRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.RemoveAppCategoryRequest');
@@ -2311,6 +2333,18 @@ gainUserPrivilege: {
     requestDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeRequest,
     responseSerialize: serialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
+  },
+  // `Tiphereth` Self register as a new normal user
+registerUser: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.RegisterUserRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.RegisterUserResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_RegisterUserRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_RegisterUserRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_RegisterUserResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_RegisterUserResponse,
   },
   // `Tiphereth` `Normal` Client should register device after the first login
 // and store the device_id locally.
