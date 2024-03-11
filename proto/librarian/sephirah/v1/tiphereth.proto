@@ -41,6 +41,29 @@ message GainUserPrivilegeResponse {
   string access_token = 1;
 }
 
+message RegisterUserRequest {
+  string username = 1;
+  string password = 2;
+  message Captcha {
+    string id = 1;
+    string value = 2;
+  }
+  optional Captcha captcha = 3;
+}
+
+message RegisterUserResponse {
+  message ImageCaptcha {
+    string id = 1;
+    bytes image = 2;
+  }
+  oneof stage {
+    // If captcha required
+    ImageCaptcha captcha = 1;
+    // If register success
+    string refresh_token = 2;
+  }
+}
+
 message RegisterDeviceRequest {
   DeviceInfo device_info = 1;
 }
