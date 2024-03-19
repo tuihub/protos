@@ -6,6 +6,7 @@ import "google/protobuf/timestamp.proto";
 import "librarian/sephirah/v1/binah.proto";
 import "librarian/sephirah/v1/chesed.proto";
 import "librarian/sephirah/v1/gebura.proto";
+import "librarian/sephirah/v1/hokma.proto";
 import "librarian/sephirah/v1/netzach.proto";
 import "librarian/sephirah/v1/tiphereth.proto";
 import "librarian/sephirah/v1/yesod.proto";
@@ -273,6 +274,13 @@ service LibrarianSephirahService {
   rpc RemoveFeedItemFromCollection(RemoveFeedItemFromCollectionRequest) returns (RemoveFeedItemFromCollectionResponse);
   // `Yesod` `Normal`
   rpc ListCollectionItems(ListCollectionItemsRequest) returns (ListCollectionItemsResponse);
+
+  // `Hokma` `Normal`
+  rpc CreateTag(CreateTagRequest) returns (CreateTagResponse);
+  // `Hokma` `Normal`
+  rpc UpdateTag(UpdateTagRequest) returns (UpdateTagResponse);
+  // `Hokma` `Normal`
+  rpc ListTags(ListTagsRequest) returns (ListTagsResponse);
 }
 
 message GetServerInformationRequest {}
