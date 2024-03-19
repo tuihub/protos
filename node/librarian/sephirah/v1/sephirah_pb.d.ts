@@ -6,6 +6,7 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 import * as librarian_sephirah_v1_binah_pb from "../../../librarian/sephirah/v1/binah_pb";
 import * as librarian_sephirah_v1_chesed_pb from "../../../librarian/sephirah/v1/chesed_pb";
 import * as librarian_sephirah_v1_gebura_pb from "../../../librarian/sephirah/v1/gebura_pb";
+import * as librarian_sephirah_v1_hokma_pb from "../../../librarian/sephirah/v1/hokma_pb";
 import * as librarian_sephirah_v1_netzach_pb from "../../../librarian/sephirah/v1/netzach_pb";
 import * as librarian_sephirah_v1_tiphereth_pb from "../../../librarian/sephirah/v1/tiphereth_pb";
 import * as librarian_sephirah_v1_yesod_pb from "../../../librarian/sephirah/v1/yesod_pb";

@@ -29,6 +29,8 @@ var librarian_sephirah_v1_chesed_pb = require('../../../librarian/sephirah/v1/ch
 goog.object.extend(proto, librarian_sephirah_v1_chesed_pb);
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_gebura_pb);
+var librarian_sephirah_v1_hokma_pb = require('../../../librarian/sephirah/v1/hokma_pb.js');
+goog.object.extend(proto, librarian_sephirah_v1_hokma_pb);
 var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_netzach_pb);
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');

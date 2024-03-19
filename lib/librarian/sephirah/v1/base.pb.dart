@@ -14,20 +14,20 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $8;
-import '../../v1/common.pb.dart' as $7;
+import '../../../google/protobuf/timestamp.pb.dart' as $9;
+import '../../v1/common.pb.dart' as $8;
 import 'base.pbenum.dart';
 
 export 'base.pbenum.dart';
 
 class FileMetadata extends $pb.GeneratedMessage {
   factory FileMetadata({
-    $7.InternalID? id,
+    $8.InternalID? id,
     $core.String? name,
     $fixnum.Int64? sizeBytes,
     FileType? type,
     $core.List<$core.int>? sha256,
-    $8.Timestamp? createTime,
+    $9.Timestamp? createTime,
   }) {
     final $result = create();
     if (id != null) {
@@ -55,12 +55,12 @@ class FileMetadata extends $pb.GeneratedMessage {
   factory FileMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FileMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
     ..e<FileType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
     ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
-    ..aOM<$8.Timestamp>(6, _omitFieldNames ? '' : 'createTime', subBuilder: $8.Timestamp.create)
+    ..aOM<$9.Timestamp>(6, _omitFieldNames ? '' : 'createTime', subBuilder: $9.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -86,15 +86,15 @@ class FileMetadata extends $pb.GeneratedMessage {
   static FileMetadata? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -133,15 +133,15 @@ class FileMetadata extends $pb.GeneratedMessage {
   void clearSha256() => clearField(5);
 
   @$pb.TagNumber(6)
-  $8.Timestamp get createTime => $_getN(5);
+  $9.Timestamp get createTime => $_getN(5);
   @$pb.TagNumber(6)
-  set createTime($8.Timestamp v) { setField(6, v); }
+  set createTime($9.Timestamp v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCreateTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreateTime() => clearField(6);
   @$pb.TagNumber(6)
-  $8.Timestamp ensureCreateTime() => $_ensure(5);
+  $9.Timestamp ensureCreateTime() => $_ensure(5);
 }
 
 

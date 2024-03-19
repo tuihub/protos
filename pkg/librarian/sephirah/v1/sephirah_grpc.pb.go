@@ -122,6 +122,9 @@ const (
 	LibrarianSephirahService_AddFeedItemToCollection_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/AddFeedItemToCollection"
 	LibrarianSephirahService_RemoveFeedItemFromCollection_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveFeedItemFromCollection"
 	LibrarianSephirahService_ListCollectionItems_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListCollectionItems"
+	LibrarianSephirahService_CreateTag_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/CreateTag"
+	LibrarianSephirahService_UpdateTag_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateTag"
+	LibrarianSephirahService_ListTags_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/ListTags"
 )
 
 // LibrarianSephirahServiceClient is the client API for LibrarianSephirahService service.
@@ -360,6 +363,12 @@ type LibrarianSephirahServiceClient interface {
 	RemoveFeedItemFromCollection(ctx context.Context, in *RemoveFeedItemFromCollectionRequest, opts ...grpc.CallOption) (*RemoveFeedItemFromCollectionResponse, error)
 	// `Yesod` `Normal`
 	ListCollectionItems(ctx context.Context, in *ListCollectionItemsRequest, opts ...grpc.CallOption) (*ListCollectionItemsResponse, error)
+	// `Hokma` `Normal`
+	CreateTag(ctx context.Context, in *CreateTagRequest, opts ...grpc.CallOption) (*CreateTagResponse, error)
+	// `Hokma` `Normal`
+	UpdateTag(ctx context.Context, in *UpdateTagRequest, opts ...grpc.CallOption) (*UpdateTagResponse, error)
+	// `Hokma` `Normal`
+	ListTags(ctx context.Context, in *ListTagsRequest, opts ...grpc.CallOption) (*ListTagsResponse, error)
 }
 
 type librarianSephirahServiceClient struct {
@@ -1386,6 +1395,33 @@ func (c *librarianSephirahServiceClient) ListCollectionItems(ctx context.Context
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateTag(ctx context.Context, in *CreateTagRequest, opts ...grpc.CallOption) (*CreateTagResponse, error) {
+	out := new(CreateTagResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateTag_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateTag(ctx context.Context, in *UpdateTagRequest, opts ...grpc.CallOption) (*UpdateTagResponse, error) {
+	out := new(UpdateTagResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateTag_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListTags(ctx context.Context, in *ListTagsRequest, opts ...grpc.CallOption) (*ListTagsResponse, error) {
+	out := new(ListTagsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListTags_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianSephirahServiceServer is the server API for LibrarianSephirahService service.
 // All implementations must embed UnimplementedLibrarianSephirahServiceServer
 // for forward compatibility
@@ -1622,6 +1658,12 @@ type LibrarianSephirahServiceServer interface {
 	RemoveFeedItemFromCollection(context.Context, *RemoveFeedItemFromCollectionRequest) (*RemoveFeedItemFromCollectionResponse, error)
 	// `Yesod` `Normal`
 	ListCollectionItems(context.Context, *ListCollectionItemsRequest) (*ListCollectionItemsResponse, error)
+	// `Hokma` `Normal`
+	CreateTag(context.Context, *CreateTagRequest) (*CreateTagResponse, error)
+	// `Hokma` `Normal`
+	UpdateTag(context.Context, *UpdateTagRequest) (*UpdateTagResponse, error)
+	// `Hokma` `Normal`
+	ListTags(context.Context, *ListTagsRequest) (*ListTagsResponse, error)
 	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
@@ -1937,6 +1979,15 @@ func (UnimplementedLibrarianSephirahServiceServer) RemoveFeedItemFromCollection(
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListCollectionItems(context.Context, *ListCollectionItemsRequest) (*ListCollectionItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCollectionItems not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateTag(context.Context, *CreateTagRequest) (*CreateTagResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateTag not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateTag(context.Context, *UpdateTagRequest) (*UpdateTagResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateTag not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListTags(context.Context, *ListTagsRequest) (*ListTagsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListTags not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
@@ -3833,6 +3884,60 @@ func _LibrarianSephirahService_ListCollectionItems_Handler(srv interface{}, ctx 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_CreateTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateTag(ctx, req.(*CreateTagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateTag(ctx, req.(*UpdateTagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListTags_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTagsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListTags(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListTags_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListTags(ctx, req.(*ListTagsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianSephirahService_ServiceDesc is the grpc.ServiceDesc for LibrarianSephirahService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -4235,6 +4340,18 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListCollectionItems",
 			Handler:    _LibrarianSephirahService_ListCollectionItems_Handler,
+		},
+		{
+			MethodName: "CreateTag",
+			Handler:    _LibrarianSephirahService_CreateTag_Handler,
+		},
+		{
+			MethodName: "UpdateTag",
+			Handler:    _LibrarianSephirahService_UpdateTag_Handler,
+		},
+		{
+			MethodName: "ListTags",
+			Handler:    _LibrarianSephirahService_ListTags_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

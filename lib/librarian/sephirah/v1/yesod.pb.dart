@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/duration.pb.dart' as $10;
-import '../../../google/protobuf/timestamp.pb.dart' as $8;
-import '../../v1/common.pb.dart' as $7;
+import '../../../google/protobuf/duration.pb.dart' as $11;
+import '../../../google/protobuf/timestamp.pb.dart' as $9;
+import '../../v1/common.pb.dart' as $8;
 import 'yesod.pbenum.dart';
 
 export 'yesod.pbenum.dart';
@@ -75,7 +75,7 @@ class CreateFeedConfigRequest extends $pb.GeneratedMessage {
 
 class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   factory CreateFeedConfigResponse({
-    $7.InternalID? id,
+    $8.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -88,7 +88,7 @@ class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   factory CreateFeedConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFeedConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -114,15 +114,15 @@ class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   static CreateFeedConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 }
 
 class UpdateFeedConfigRequest extends $pb.GeneratedMessage {
@@ -211,9 +211,9 @@ class UpdateFeedConfigResponse extends $pb.GeneratedMessage {
 
 class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   factory ListFeedConfigsRequest({
-    $7.PagingRequest? paging,
-    $core.Iterable<$7.InternalID>? idFilter,
-    $core.Iterable<$7.InternalID>? authorIdFilter,
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? idFilter,
+    $core.Iterable<$8.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? sourceFilter,
     $core.Iterable<FeedConfigStatus>? statusFilter,
     $core.Iterable<$core.String>? categoryFilter,
@@ -244,9 +244,9 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   factory ListFeedConfigsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pPS(4, _omitFieldNames ? '' : 'sourceFilter')
     ..pc<FeedConfigStatus>(5, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
     ..pPS(6, _omitFieldNames ? '' : 'categoryFilter')
@@ -275,21 +275,21 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   static ListFeedConfigsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
+  $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get idFilter => $_getList(1);
+  $core.List<$8.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
 
   /// WellKnownFeedSource
   @$pb.TagNumber(4)
@@ -304,7 +304,7 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
 
 class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   factory ListFeedConfigsResponse_FeedWithConfig({
-    $7.Feed? feed,
+    $8.Feed? feed,
     FeedConfig? config,
   }) {
     final $result = create();
@@ -321,7 +321,7 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   factory ListFeedConfigsResponse_FeedWithConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsResponse.FeedWithConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.Feed>(1, _omitFieldNames ? '' : 'feed', subBuilder: $7.Feed.create)
+    ..aOM<$8.Feed>(1, _omitFieldNames ? '' : 'feed', subBuilder: $8.Feed.create)
     ..aOM<FeedConfig>(2, _omitFieldNames ? '' : 'config', subBuilder: FeedConfig.create)
     ..hasRequiredFields = false
   ;
@@ -348,15 +348,15 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   static ListFeedConfigsResponse_FeedWithConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.Feed get feed => $_getN(0);
+  $8.Feed get feed => $_getN(0);
   @$pb.TagNumber(1)
-  set feed($7.Feed v) { setField(1, v); }
+  set feed($8.Feed v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeed() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeed() => clearField(1);
   @$pb.TagNumber(1)
-  $7.Feed ensureFeed() => $_ensure(0);
+  $8.Feed ensureFeed() => $_ensure(0);
 
   @$pb.TagNumber(2)
   FeedConfig get config => $_getN(1);
@@ -372,7 +372,7 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
 
 class ListFeedConfigsResponse extends $pb.GeneratedMessage {
   factory ListFeedConfigsResponse({
-    $7.PagingResponse? paging,
+    $8.PagingResponse? paging,
     $core.Iterable<ListFeedConfigsResponse_FeedWithConfig>? feedsWithConfig,
   }) {
     final $result = create();
@@ -389,7 +389,7 @@ class ListFeedConfigsResponse extends $pb.GeneratedMessage {
   factory ListFeedConfigsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
     ..pc<ListFeedConfigsResponse_FeedWithConfig>(2, _omitFieldNames ? '' : 'feedsWithConfig', $pb.PbFieldType.PM, subBuilder: ListFeedConfigsResponse_FeedWithConfig.create)
     ..hasRequiredFields = false
   ;
@@ -416,15 +416,15 @@ class ListFeedConfigsResponse extends $pb.GeneratedMessage {
   static ListFeedConfigsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
+  $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
+  $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ListFeedConfigsResponse_FeedWithConfig> get feedsWithConfig => $_getList(1);
@@ -584,12 +584,12 @@ class ListFeedPlatformsResponse extends $pb.GeneratedMessage {
 
 class ListFeedItemsRequest extends $pb.GeneratedMessage {
   factory ListFeedItemsRequest({
-    $7.PagingRequest? paging,
-    $core.Iterable<$7.InternalID>? feedIdFilter,
-    $core.Iterable<$7.InternalID>? authorIdFilter,
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? feedIdFilter,
+    $core.Iterable<$8.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
-    $7.TimeRange? publishTimeRange,
+    $8.TimeRange? publishTimeRange,
   }) {
     final $result = create();
     if (paging != null) {
@@ -617,12 +617,12 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   factory ListFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
-    ..aOM<$7.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
+    ..aOM<$8.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $8.TimeRange.create)
     ..hasRequiredFields = false
   ;
 
@@ -648,21 +648,21 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   static ListFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
+  $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get feedIdFilter => $_getList(1);
+  $core.List<$8.InternalID> get feedIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
@@ -671,20 +671,20 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get categoryFilter => $_getList(4);
 
   @$pb.TagNumber(6)
-  $7.TimeRange get publishTimeRange => $_getN(5);
+  $8.TimeRange get publishTimeRange => $_getN(5);
   @$pb.TagNumber(6)
-  set publishTimeRange($7.TimeRange v) { setField(6, v); }
+  set publishTimeRange($8.TimeRange v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPublishTimeRange() => $_has(5);
   @$pb.TagNumber(6)
   void clearPublishTimeRange() => clearField(6);
   @$pb.TagNumber(6)
-  $7.TimeRange ensurePublishTimeRange() => $_ensure(5);
+  $8.TimeRange ensurePublishTimeRange() => $_ensure(5);
 }
 
 class ListFeedItemsResponse extends $pb.GeneratedMessage {
   factory ListFeedItemsResponse({
-    $7.PagingResponse? paging,
+    $8.PagingResponse? paging,
     $core.Iterable<FeedItemDigest>? items,
   }) {
     final $result = create();
@@ -701,7 +701,7 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
   factory ListFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
     ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
     ..hasRequiredFields = false
   ;
@@ -728,15 +728,15 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
   static ListFeedItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
+  $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
+  $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<FeedItemDigest> get items => $_getList(1);
@@ -744,9 +744,9 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
 
 class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   factory GroupFeedItemsRequest({
-    $7.TimeAggregation? publishTimeAggregation,
-    $core.Iterable<$7.InternalID>? feedIdFilter,
-    $core.Iterable<$7.InternalID>? authorIdFilter,
+    $8.TimeAggregation? publishTimeAggregation,
+    $core.Iterable<$8.InternalID>? feedIdFilter,
+    $core.Iterable<$8.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
     $core.int? groupSize,
@@ -777,9 +777,9 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   factory GroupFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.TimeAggregation>(1, _omitFieldNames ? '' : 'publishTimeAggregation', subBuilder: $7.TimeAggregation.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOM<$8.TimeAggregation>(1, _omitFieldNames ? '' : 'publishTimeAggregation', subBuilder: $8.TimeAggregation.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'groupSize', $pb.PbFieldType.O3)
@@ -808,21 +808,21 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   static GroupFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.TimeAggregation get publishTimeAggregation => $_getN(0);
+  $8.TimeAggregation get publishTimeAggregation => $_getN(0);
   @$pb.TagNumber(1)
-  set publishTimeAggregation($7.TimeAggregation v) { setField(1, v); }
+  set publishTimeAggregation($8.TimeAggregation v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPublishTimeAggregation() => $_has(0);
   @$pb.TagNumber(1)
   void clearPublishTimeAggregation() => clearField(1);
   @$pb.TagNumber(1)
-  $7.TimeAggregation ensurePublishTimeAggregation() => $_ensure(0);
+  $8.TimeAggregation ensurePublishTimeAggregation() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get feedIdFilter => $_getList(1);
+  $core.List<$8.InternalID> get feedIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
@@ -843,7 +843,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
 
 class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
   factory GroupFeedItemsResponse_FeedItemsGroup({
-    $7.TimeRange? timeRange,
+    $8.TimeRange? timeRange,
     $core.Iterable<FeedItemDigest>? items,
   }) {
     final $result = create();
@@ -860,7 +860,7 @@ class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
   factory GroupFeedItemsResponse_FeedItemsGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupFeedItemsResponse.FeedItemsGroup', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $7.TimeRange.create)
+    ..aOM<$8.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $8.TimeRange.create)
     ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
     ..hasRequiredFields = false
   ;
@@ -887,15 +887,15 @@ class GroupFeedItemsResponse_FeedItemsGroup extends $pb.GeneratedMessage {
   static GroupFeedItemsResponse_FeedItemsGroup? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.TimeRange get timeRange => $_getN(0);
+  $8.TimeRange get timeRange => $_getN(0);
   @$pb.TagNumber(1)
-  set timeRange($7.TimeRange v) { setField(1, v); }
+  set timeRange($8.TimeRange v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTimeRange() => $_has(0);
   @$pb.TagNumber(1)
   void clearTimeRange() => clearField(1);
   @$pb.TagNumber(1)
-  $7.TimeRange ensureTimeRange() => $_ensure(0);
+  $8.TimeRange ensureTimeRange() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<FeedItemDigest> get items => $_getList(1);
@@ -947,7 +947,7 @@ class GroupFeedItemsResponse extends $pb.GeneratedMessage {
 
 class GetFeedItemRequest extends $pb.GeneratedMessage {
   factory GetFeedItemRequest({
-    $7.InternalID? id,
+    $8.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -960,7 +960,7 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
   factory GetFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeedItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -986,20 +986,20 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
   static GetFeedItemRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 }
 
 class GetFeedItemResponse extends $pb.GeneratedMessage {
   factory GetFeedItemResponse({
-    $7.FeedItem? item,
+    $8.FeedItem? item,
   }) {
     final $result = create();
     if (item != null) {
@@ -1012,7 +1012,7 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   factory GetFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeedItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $7.FeedItem.create)
+    ..aOM<$8.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $8.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1038,20 +1038,20 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   static GetFeedItemResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.FeedItem get item => $_getN(0);
+  $8.FeedItem get item => $_getN(0);
   @$pb.TagNumber(1)
-  set item($7.FeedItem v) { setField(1, v); }
+  set item($8.FeedItem v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasItem() => $_has(0);
   @$pb.TagNumber(1)
   void clearItem() => clearField(1);
   @$pb.TagNumber(1)
-  $7.FeedItem ensureItem() => $_ensure(0);
+  $8.FeedItem ensureItem() => $_ensure(0);
 }
 
 class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
   factory GetBatchFeedItemsRequest({
-    $core.Iterable<$7.InternalID>? ids,
+    $core.Iterable<$8.InternalID>? ids,
   }) {
     final $result = create();
     if (ids != null) {
@@ -1064,7 +1064,7 @@ class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
   factory GetBatchFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBatchFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.InternalID>(1, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..pc<$8.InternalID>(1, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1090,12 +1090,12 @@ class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
   static GetBatchFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$7.InternalID> get ids => $_getList(0);
+  $core.List<$8.InternalID> get ids => $_getList(0);
 }
 
 class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   factory GetBatchFeedItemsResponse({
-    $core.Iterable<$7.FeedItem>? items,
+    $core.Iterable<$8.FeedItem>? items,
   }) {
     final $result = create();
     if (items != null) {
@@ -1108,7 +1108,7 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   factory GetBatchFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBatchFeedItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$7.FeedItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $7.FeedItem.create)
+    ..pc<$8.FeedItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $8.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1134,12 +1134,12 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   static GetBatchFeedItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$7.FeedItem> get items => $_getList(0);
+  $core.List<$8.FeedItem> get items => $_getList(0);
 }
 
 class ReadFeedItemRequest extends $pb.GeneratedMessage {
   factory ReadFeedItemRequest({
-    $7.InternalID? id,
+    $8.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -1152,7 +1152,7 @@ class ReadFeedItemRequest extends $pb.GeneratedMessage {
   factory ReadFeedItemRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReadFeedItemRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1178,15 +1178,15 @@ class ReadFeedItemRequest extends $pb.GeneratedMessage {
   static ReadFeedItemRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 }
 
 class ReadFeedItemResponse extends $pb.GeneratedMessage {
@@ -1467,8 +1467,8 @@ class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
 
 class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   factory AddFeedItemToCollectionRequest({
-    $7.InternalID? feedItemId,
-    $7.InternalID? collectionId,
+    $8.InternalID? feedItemId,
+    $8.InternalID? collectionId,
   }) {
     final $result = create();
     if (feedItemId != null) {
@@ -1484,8 +1484,8 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   factory AddFeedItemToCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFeedItemToCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'feedItemId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'collectionId', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'feedItemId', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'collectionId', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1511,27 +1511,27 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   static AddFeedItemToCollectionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get feedItemId => $_getN(0);
+  $8.InternalID get feedItemId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedItemId($7.InternalID v) { setField(1, v); }
+  set feedItemId($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedItemId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeedItemId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFeedItemId() => $_ensure(0);
+  $8.InternalID ensureFeedItemId() => $_ensure(0);
 
   /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
-  $7.InternalID get collectionId => $_getN(1);
+  $8.InternalID get collectionId => $_getN(1);
   @$pb.TagNumber(2)
-  set collectionId($7.InternalID v) { setField(2, v); }
+  set collectionId($8.InternalID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCollectionId() => $_has(1);
   @$pb.TagNumber(2)
   void clearCollectionId() => clearField(2);
   @$pb.TagNumber(2)
-  $7.InternalID ensureCollectionId() => $_ensure(1);
+  $8.InternalID ensureCollectionId() => $_ensure(1);
 }
 
 class AddFeedItemToCollectionResponse extends $pb.GeneratedMessage {
@@ -1568,8 +1568,8 @@ class AddFeedItemToCollectionResponse extends $pb.GeneratedMessage {
 
 class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   factory RemoveFeedItemFromCollectionRequest({
-    $7.InternalID? feedItemId,
-    $7.InternalID? collectionId,
+    $8.InternalID? feedItemId,
+    $8.InternalID? collectionId,
   }) {
     final $result = create();
     if (feedItemId != null) {
@@ -1585,8 +1585,8 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   factory RemoveFeedItemFromCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemoveFeedItemFromCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'feedItemId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'collectionId', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'feedItemId', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'collectionId', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1612,27 +1612,27 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   static RemoveFeedItemFromCollectionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get feedItemId => $_getN(0);
+  $8.InternalID get feedItemId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedItemId($7.InternalID v) { setField(1, v); }
+  set feedItemId($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedItemId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeedItemId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFeedItemId() => $_ensure(0);
+  $8.InternalID ensureFeedItemId() => $_ensure(0);
 
   /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
-  $7.InternalID get collectionId => $_getN(1);
+  $8.InternalID get collectionId => $_getN(1);
   @$pb.TagNumber(2)
-  set collectionId($7.InternalID v) { setField(2, v); }
+  set collectionId($8.InternalID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCollectionId() => $_has(1);
   @$pb.TagNumber(2)
   void clearCollectionId() => clearField(2);
   @$pb.TagNumber(2)
-  $7.InternalID ensureCollectionId() => $_ensure(1);
+  $8.InternalID ensureCollectionId() => $_ensure(1);
 }
 
 class RemoveFeedItemFromCollectionResponse extends $pb.GeneratedMessage {
@@ -1669,12 +1669,12 @@ class RemoveFeedItemFromCollectionResponse extends $pb.GeneratedMessage {
 
 class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   factory ListCollectionItemsRequest({
-    $7.PagingRequest? paging,
-    $core.Iterable<$7.InternalID>? collectionIdFilter,
-    $core.Iterable<$7.InternalID>? authorIdFilter,
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? collectionIdFilter,
+    $core.Iterable<$8.InternalID>? authorIdFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
-    $7.TimeRange? publishTimeRange,
+    $8.TimeRange? publishTimeRange,
   }) {
     final $result = create();
     if (paging != null) {
@@ -1702,12 +1702,12 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   factory ListCollectionItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCollectionItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'collectionIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
-    ..pc<$7.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'collectionIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
-    ..aOM<$7.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $7.TimeRange.create)
+    ..aOM<$8.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $8.TimeRange.create)
     ..hasRequiredFields = false
   ;
 
@@ -1733,22 +1733,22 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   static ListCollectionItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
+  $8.PagingRequest ensurePaging() => $_ensure(0);
 
   /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get collectionIdFilter => $_getList(1);
+  $core.List<$8.InternalID> get collectionIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
@@ -1757,20 +1757,20 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get categoryFilter => $_getList(4);
 
   @$pb.TagNumber(6)
-  $7.TimeRange get publishTimeRange => $_getN(5);
+  $8.TimeRange get publishTimeRange => $_getN(5);
   @$pb.TagNumber(6)
-  set publishTimeRange($7.TimeRange v) { setField(6, v); }
+  set publishTimeRange($8.TimeRange v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPublishTimeRange() => $_has(5);
   @$pb.TagNumber(6)
   void clearPublishTimeRange() => clearField(6);
   @$pb.TagNumber(6)
-  $7.TimeRange ensurePublishTimeRange() => $_ensure(5);
+  $8.TimeRange ensurePublishTimeRange() => $_ensure(5);
 }
 
 class ListCollectionItemsResponse extends $pb.GeneratedMessage {
   factory ListCollectionItemsResponse({
-    $7.PagingResponse? paging,
+    $8.PagingResponse? paging,
     $core.Iterable<FeedItemDigest>? items,
   }) {
     final $result = create();
@@ -1787,7 +1787,7 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
   factory ListCollectionItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCollectionItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
     ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
     ..hasRequiredFields = false
   ;
@@ -1814,15 +1814,15 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
   static ListCollectionItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
+  $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
+  $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<FeedItemDigest> get items => $_getList(1);
@@ -1830,15 +1830,15 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
 
 class FeedConfig extends $pb.GeneratedMessage {
   factory FeedConfig({
-    $7.InternalID? id,
+    $8.InternalID? id,
     $core.String? name,
     $core.String? feedUrl,
-    $7.InternalID? authorAccount,
+    $8.InternalID? authorAccount,
     $core.String? source,
     FeedConfigStatus? status,
-    $10.Duration? pullInterval,
+    $11.Duration? pullInterval,
     $core.String? category,
-    $8.Timestamp? latestUpdateTime,
+    $9.Timestamp? latestUpdateTime,
     $core.bool? hideItems,
   }) {
     final $result = create();
@@ -1879,15 +1879,15 @@ class FeedConfig extends $pb.GeneratedMessage {
   factory FeedConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'feedUrl')
-    ..aOM<$7.InternalID>(4, _omitFieldNames ? '' : 'authorAccount', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(4, _omitFieldNames ? '' : 'authorAccount', subBuilder: $8.InternalID.create)
     ..aOS(5, _omitFieldNames ? '' : 'source')
     ..e<FeedConfigStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
-    ..aOM<$10.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $10.Duration.create)
+    ..aOM<$11.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $11.Duration.create)
     ..aOS(8, _omitFieldNames ? '' : 'category')
-    ..aOM<$8.Timestamp>(9, _omitFieldNames ? '' : 'latestUpdateTime', subBuilder: $8.Timestamp.create)
+    ..aOM<$9.Timestamp>(9, _omitFieldNames ? '' : 'latestUpdateTime', subBuilder: $9.Timestamp.create)
     ..aOB(10, _omitFieldNames ? '' : 'hideItems')
     ..hasRequiredFields = false
   ;
@@ -1914,15 +1914,15 @@ class FeedConfig extends $pb.GeneratedMessage {
   static FeedConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -1944,15 +1944,15 @@ class FeedConfig extends $pb.GeneratedMessage {
 
   /// Not used when source is FEED_CONFIG_SOURCE_COMMON
   @$pb.TagNumber(4)
-  $7.InternalID get authorAccount => $_getN(3);
+  $8.InternalID get authorAccount => $_getN(3);
   @$pb.TagNumber(4)
-  set authorAccount($7.InternalID v) { setField(4, v); }
+  set authorAccount($8.InternalID v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasAuthorAccount() => $_has(3);
   @$pb.TagNumber(4)
   void clearAuthorAccount() => clearField(4);
   @$pb.TagNumber(4)
-  $7.InternalID ensureAuthorAccount() => $_ensure(3);
+  $8.InternalID ensureAuthorAccount() => $_ensure(3);
 
   /// WellKnownFeedSource
   @$pb.TagNumber(5)
@@ -1974,15 +1974,15 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 
   @$pb.TagNumber(7)
-  $10.Duration get pullInterval => $_getN(6);
+  $11.Duration get pullInterval => $_getN(6);
   @$pb.TagNumber(7)
-  set pullInterval($10.Duration v) { setField(7, v); }
+  set pullInterval($11.Duration v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasPullInterval() => $_has(6);
   @$pb.TagNumber(7)
   void clearPullInterval() => clearField(7);
   @$pb.TagNumber(7)
-  $10.Duration ensurePullInterval() => $_ensure(6);
+  $11.Duration ensurePullInterval() => $_ensure(6);
 
   @$pb.TagNumber(8)
   $core.String get category => $_getSZ(7);
@@ -1995,15 +1995,15 @@ class FeedConfig extends $pb.GeneratedMessage {
 
   /// response only
   @$pb.TagNumber(9)
-  $8.Timestamp get latestUpdateTime => $_getN(8);
+  $9.Timestamp get latestUpdateTime => $_getN(8);
   @$pb.TagNumber(9)
-  set latestUpdateTime($8.Timestamp v) { setField(9, v); }
+  set latestUpdateTime($9.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasLatestUpdateTime() => $_has(8);
   @$pb.TagNumber(9)
   void clearLatestUpdateTime() => clearField(9);
   @$pb.TagNumber(9)
-  $8.Timestamp ensureLatestUpdateTime() => $_ensure(8);
+  $9.Timestamp ensureLatestUpdateTime() => $_ensure(8);
 
   /// If ture, exclude items from ListFeedItemsResponse
   @$pb.TagNumber(10)
@@ -2019,11 +2019,11 @@ class FeedConfig extends $pb.GeneratedMessage {
 /// Digest information generated from origin item data
 class FeedItemDigest extends $pb.GeneratedMessage {
   factory FeedItemDigest({
-    $7.InternalID? feedId,
-    $7.InternalID? itemId,
+    $8.InternalID? feedId,
+    $8.InternalID? itemId,
     $core.String? avatarUrl,
     $core.String? authors,
-    $8.Timestamp? publishedParsedTime,
+    $9.Timestamp? publishedParsedTime,
     $core.String? title,
     $core.String? shortDescription,
     $core.Iterable<$core.String>? imageUrls,
@@ -2076,11 +2076,11 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   factory FeedItemDigest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItemDigest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'feedId', subBuilder: $7.InternalID.create)
-    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'itemId', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'feedId', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'itemId', subBuilder: $8.InternalID.create)
     ..aOS(3, _omitFieldNames ? '' : 'avatarUrl')
     ..aOS(4, _omitFieldNames ? '' : 'authors')
-    ..aOM<$8.Timestamp>(5, _omitFieldNames ? '' : 'publishedParsedTime', subBuilder: $8.Timestamp.create)
+    ..aOM<$9.Timestamp>(5, _omitFieldNames ? '' : 'publishedParsedTime', subBuilder: $9.Timestamp.create)
     ..aOS(6, _omitFieldNames ? '' : 'title')
     ..aOS(7, _omitFieldNames ? '' : 'shortDescription')
     ..pPS(8, _omitFieldNames ? '' : 'imageUrls')
@@ -2113,26 +2113,26 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   static FeedItemDigest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get feedId => $_getN(0);
+  $8.InternalID get feedId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedId($7.InternalID v) { setField(1, v); }
+  set feedId($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedId() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeedId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureFeedId() => $_ensure(0);
+  $8.InternalID ensureFeedId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $7.InternalID get itemId => $_getN(1);
+  $8.InternalID get itemId => $_getN(1);
   @$pb.TagNumber(2)
-  set itemId($7.InternalID v) { setField(2, v); }
+  set itemId($8.InternalID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasItemId() => $_has(1);
   @$pb.TagNumber(2)
   void clearItemId() => clearField(2);
   @$pb.TagNumber(2)
-  $7.InternalID ensureItemId() => $_ensure(1);
+  $8.InternalID ensureItemId() => $_ensure(1);
 
   /// `FeedItem.image.url`
   @$pb.TagNumber(3)
@@ -2156,15 +2156,15 @@ class FeedItemDigest extends $pb.GeneratedMessage {
 
   /// `FeedItem.published_parsed`
   @$pb.TagNumber(5)
-  $8.Timestamp get publishedParsedTime => $_getN(4);
+  $9.Timestamp get publishedParsedTime => $_getN(4);
   @$pb.TagNumber(5)
-  set publishedParsedTime($8.Timestamp v) { setField(5, v); }
+  set publishedParsedTime($9.Timestamp v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasPublishedParsedTime() => $_has(4);
   @$pb.TagNumber(5)
   void clearPublishedParsedTime() => clearField(5);
   @$pb.TagNumber(5)
-  $8.Timestamp ensurePublishedParsedTime() => $_ensure(4);
+  $9.Timestamp ensurePublishedParsedTime() => $_ensure(4);
 
   /// `FeedItem.title`
   @$pb.TagNumber(6)
@@ -2237,7 +2237,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
 /// check ListCollectionItems api for the use case.
 class FeedItemCollection extends $pb.GeneratedMessage {
   factory FeedItemCollection({
-    $7.InternalID? id,
+    $8.InternalID? id,
     $core.String? name,
     $core.String? description,
     $core.String? category,
@@ -2262,7 +2262,7 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   factory FeedItemCollection.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItemCollection', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOS(4, _omitFieldNames ? '' : 'category')
@@ -2291,15 +2291,15 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   static FeedItemCollection? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);

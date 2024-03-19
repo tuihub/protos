@@ -14,16 +14,16 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $7;
-import 'base.pbenum.dart' as $9;
+import '../../v1/common.pb.dart' as $8;
+import 'base.pbenum.dart' as $10;
 import 'binah.pbenum.dart';
 
 export 'binah.pbenum.dart';
 
 class SetFileCapacityRequest extends $pb.GeneratedMessage {
   factory SetFileCapacityRequest({
-    $7.InternalID? userId,
-    $9.FileType? fileType,
+    $8.InternalID? userId,
+    $10.FileType? fileType,
     $fixnum.Int64? sizeBytes,
   }) {
     final $result = create();
@@ -43,8 +43,8 @@ class SetFileCapacityRequest extends $pb.GeneratedMessage {
   factory SetFileCapacityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SetFileCapacityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $7.InternalID.create)
-    ..e<$9.FileType>(2, _omitFieldNames ? '' : 'fileType', $pb.PbFieldType.OE, defaultOrMaker: $9.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $9.FileType.valueOf, enumValues: $9.FileType.values)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $8.InternalID.create)
+    ..e<$10.FileType>(2, _omitFieldNames ? '' : 'fileType', $pb.PbFieldType.OE, defaultOrMaker: $10.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $10.FileType.valueOf, enumValues: $10.FileType.values)
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
     ..hasRequiredFields = false
   ;
@@ -71,20 +71,20 @@ class SetFileCapacityRequest extends $pb.GeneratedMessage {
   static SetFileCapacityRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get userId => $_getN(0);
+  $8.InternalID get userId => $_getN(0);
   @$pb.TagNumber(1)
-  set userId($7.InternalID v) { setField(1, v); }
+  set userId($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
   void clearUserId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureUserId() => $_ensure(0);
+  $8.InternalID ensureUserId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $9.FileType get fileType => $_getN(1);
+  $10.FileType get fileType => $_getN(1);
   @$pb.TagNumber(2)
-  set fileType($9.FileType v) { setField(2, v); }
+  set fileType($10.FileType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFileType() => $_has(1);
   @$pb.TagNumber(2)
@@ -134,8 +134,8 @@ class SetFileCapacityResponse extends $pb.GeneratedMessage {
 
 class GetFileCapacityRequest extends $pb.GeneratedMessage {
   factory GetFileCapacityRequest({
-    $7.InternalID? userId,
-    $9.FileType? fileType,
+    $8.InternalID? userId,
+    $10.FileType? fileType,
   }) {
     final $result = create();
     if (userId != null) {
@@ -151,8 +151,8 @@ class GetFileCapacityRequest extends $pb.GeneratedMessage {
   factory GetFileCapacityRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFileCapacityRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $7.InternalID.create)
-    ..e<$9.FileType>(2, _omitFieldNames ? '' : 'fileType', $pb.PbFieldType.OE, defaultOrMaker: $9.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $9.FileType.valueOf, enumValues: $9.FileType.values)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $8.InternalID.create)
+    ..e<$10.FileType>(2, _omitFieldNames ? '' : 'fileType', $pb.PbFieldType.OE, defaultOrMaker: $10.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $10.FileType.valueOf, enumValues: $10.FileType.values)
     ..hasRequiredFields = false
   ;
 
@@ -179,20 +179,20 @@ class GetFileCapacityRequest extends $pb.GeneratedMessage {
 
   /// Only admin can get the file capacity of other users
   @$pb.TagNumber(1)
-  $7.InternalID get userId => $_getN(0);
+  $8.InternalID get userId => $_getN(0);
   @$pb.TagNumber(1)
-  set userId($7.InternalID v) { setField(1, v); }
+  set userId($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
   void clearUserId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureUserId() => $_ensure(0);
+  $8.InternalID ensureUserId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $9.FileType get fileType => $_getN(1);
+  $10.FileType get fileType => $_getN(1);
   @$pb.TagNumber(2)
-  set fileType($9.FileType v) { setField(2, v); }
+  set fileType($10.FileType v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFileType() => $_has(1);
   @$pb.TagNumber(2)

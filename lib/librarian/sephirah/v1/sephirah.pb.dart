@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $8;
+import '../../../google/protobuf/timestamp.pb.dart' as $9;
 
 class GetServerInformationRequest extends $pb.GeneratedMessage {
   factory GetServerInformationRequest() => create();
@@ -51,7 +51,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   factory GetServerInformationResponse({
     ServerBinarySummary? serverBinarySummary,
     ServerProtocolSummary? protocolSummary,
-    $8.Timestamp? currentTime,
+    $9.Timestamp? currentTime,
     ServerFeatureSummary? featureSummary,
     ServerInstanceSummary? serverInstanceSummary,
   }) {
@@ -80,7 +80,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
     ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
-    ..aOM<$8.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $8.Timestamp.create)
+    ..aOM<$9.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $9.Timestamp.create)
     ..aOM<ServerFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: ServerFeatureSummary.create)
     ..aOM<ServerInstanceSummary>(5, _omitFieldNames ? '' : 'serverInstanceSummary', subBuilder: ServerInstanceSummary.create)
     ..hasRequiredFields = false
@@ -134,15 +134,15 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   /// The time that server received the request,
   /// note that there is a transmission delay between server and client.
   @$pb.TagNumber(3)
-  $8.Timestamp get currentTime => $_getN(2);
+  $9.Timestamp get currentTime => $_getN(2);
   @$pb.TagNumber(3)
-  set currentTime($8.Timestamp v) { setField(3, v); }
+  set currentTime($9.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCurrentTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearCurrentTime() => clearField(3);
   @$pb.TagNumber(3)
-  $8.Timestamp ensureCurrentTime() => $_ensure(2);
+  $9.Timestamp ensureCurrentTime() => $_ensure(2);
 
   /// Valid when accessToken is provided.
   @$pb.TagNumber(4)

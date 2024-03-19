@@ -13,7 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $7;
+import '../../v1/common.pb.dart' as $8;
 import 'netzach.pbenum.dart';
 
 export 'netzach.pbenum.dart';
@@ -72,7 +72,7 @@ class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
 
 class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
   factory CreateNotifyTargetResponse({
-    $7.InternalID? id,
+    $8.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -85,7 +85,7 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
   factory CreateNotifyTargetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifyTargetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -111,15 +111,15 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
   static CreateNotifyTargetResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 }
 
 class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
@@ -208,8 +208,8 @@ class UpdateNotifyTargetResponse extends $pb.GeneratedMessage {
 
 class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   factory ListNotifyTargetsRequest({
-    $7.PagingRequest? paging,
-    $core.Iterable<$7.InternalID>? idFilter,
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? idFilter,
     $core.Iterable<$core.String>? destinationFilter,
     $core.Iterable<NotifyTargetStatus>? statusFilter,
   }) {
@@ -233,8 +233,8 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   factory ListNotifyTargetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pPS(3, _omitFieldNames ? '' : 'destinationFilter')
     ..pc<NotifyTargetStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values, defaultEnumValue: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
@@ -262,18 +262,18 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   static ListNotifyTargetsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
+  $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get idFilter => $_getList(1);
+  $core.List<$8.InternalID> get idFilter => $_getList(1);
 
   /// WellKnownNotifyDestination
   @$pb.TagNumber(3)
@@ -285,7 +285,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
 
 class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
   factory ListNotifyTargetsResponse({
-    $7.PagingResponse? paging,
+    $8.PagingResponse? paging,
     $core.Iterable<NotifyTarget>? targets,
   }) {
     final $result = create();
@@ -302,7 +302,7 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
   factory ListNotifyTargetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
     ..pc<NotifyTarget>(2, _omitFieldNames ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyTarget.create)
     ..hasRequiredFields = false
   ;
@@ -329,15 +329,15 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
   static ListNotifyTargetsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
+  $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
+  $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<NotifyTarget> get targets => $_getList(1);
@@ -397,7 +397,7 @@ class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
 
 class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
   factory CreateNotifyFlowResponse({
-    $7.InternalID? id,
+    $8.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -410,7 +410,7 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
   factory CreateNotifyFlowResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifyFlowResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -436,15 +436,15 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
   static CreateNotifyFlowResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 }
 
 class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
@@ -533,8 +533,8 @@ class UpdateNotifyFlowResponse extends $pb.GeneratedMessage {
 
 class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
   factory ListNotifyFlowsRequest({
-    $7.PagingRequest? paging,
-    $core.Iterable<$7.InternalID>? idFilter,
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? idFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -550,8 +550,8 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
   factory ListNotifyFlowsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyFlowsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingRequest.create)
-    ..pc<$7.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $7.InternalID.create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -577,23 +577,23 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
   static ListNotifyFlowsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingRequest get paging => $_getN(0);
+  $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingRequest ensurePaging() => $_ensure(0);
+  $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get idFilter => $_getList(1);
+  $core.List<$8.InternalID> get idFilter => $_getList(1);
 }
 
 class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   factory ListNotifyFlowsResponse({
-    $7.PagingResponse? paging,
+    $8.PagingResponse? paging,
     $core.Iterable<NotifyFlow>? flows,
   }) {
     final $result = create();
@@ -610,7 +610,7 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   factory ListNotifyFlowsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyFlowsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $7.PagingResponse.create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
     ..pc<NotifyFlow>(2, _omitFieldNames ? '' : 'flows', $pb.PbFieldType.PM, subBuilder: NotifyFlow.create)
     ..hasRequiredFields = false
   ;
@@ -637,15 +637,15 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   static ListNotifyFlowsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.PagingResponse get paging => $_getN(0);
+  $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($7.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
-  $7.PagingResponse ensurePaging() => $_ensure(0);
+  $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<NotifyFlow> get flows => $_getList(1);
@@ -653,7 +653,7 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
 
 class NotifyTarget extends $pb.GeneratedMessage {
   factory NotifyTarget({
-    $7.InternalID? id,
+    $8.InternalID? id,
     $core.String? name,
     $core.String? description,
     $core.String? destination,
@@ -686,7 +686,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
   factory NotifyTarget.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyTarget', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOS(4, _omitFieldNames ? '' : 'destination')
@@ -717,15 +717,15 @@ class NotifyTarget extends $pb.GeneratedMessage {
   static NotifyTarget? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -776,7 +776,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
 
 class NotifyFlow extends $pb.GeneratedMessage {
   factory NotifyFlow({
-    $7.InternalID? id,
+    $8.InternalID? id,
     $core.String? name,
     $core.String? description,
     $core.Iterable<NotifyFlowSource>? sources,
@@ -809,7 +809,7 @@ class NotifyFlow extends $pb.GeneratedMessage {
   factory NotifyFlow.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlow', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$7.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..pc<NotifyFlowSource>(4, _omitFieldNames ? '' : 'sources', $pb.PbFieldType.PM, subBuilder: NotifyFlowSource.create)
@@ -840,15 +840,15 @@ class NotifyFlow extends $pb.GeneratedMessage {
   static NotifyFlow? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.InternalID get id => $_getN(0);
+  $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($7.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
   @$pb.TagNumber(1)
-  $7.InternalID ensureId() => $_ensure(0);
+  $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -887,7 +887,7 @@ class NotifyFlow extends $pb.GeneratedMessage {
 class NotifyFlowSource extends $pb.GeneratedMessage {
   factory NotifyFlowSource({
     NotifyFilter? filter,
-    $7.InternalID? sourceId,
+    $8.InternalID? sourceId,
   }) {
     final $result = create();
     if (filter != null) {
@@ -904,7 +904,7 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
-    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'sourceId', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sourceId', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -942,21 +942,21 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
 
   /// must be FeedConfigID or FeedItemCollectionID
   @$pb.TagNumber(2)
-  $7.InternalID get sourceId => $_getN(1);
+  $8.InternalID get sourceId => $_getN(1);
   @$pb.TagNumber(2)
-  set sourceId($7.InternalID v) { setField(2, v); }
+  set sourceId($8.InternalID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSourceId() => $_has(1);
   @$pb.TagNumber(2)
   void clearSourceId() => clearField(2);
   @$pb.TagNumber(2)
-  $7.InternalID ensureSourceId() => $_ensure(1);
+  $8.InternalID ensureSourceId() => $_ensure(1);
 }
 
 class NotifyFlowTarget extends $pb.GeneratedMessage {
   factory NotifyFlowTarget({
     NotifyFilter? filter,
-    $7.InternalID? targetId,
+    $8.InternalID? targetId,
     $core.String? channelId,
   }) {
     final $result = create();
@@ -977,7 +977,7 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowTarget', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
-    ..aOM<$7.InternalID>(2, _omitFieldNames ? '' : 'targetId', subBuilder: $7.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'targetId', subBuilder: $8.InternalID.create)
     ..aOS(3, _omitFieldNames ? '' : 'channelId')
     ..hasRequiredFields = false
   ;
@@ -1016,15 +1016,15 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
 
   /// must be NotifyTargetID
   @$pb.TagNumber(2)
-  $7.InternalID get targetId => $_getN(1);
+  $8.InternalID get targetId => $_getN(1);
   @$pb.TagNumber(2)
-  set targetId($7.InternalID v) { setField(2, v); }
+  set targetId($8.InternalID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTargetId() => $_has(1);
   @$pb.TagNumber(2)
   void clearTargetId() => clearField(2);
   @$pb.TagNumber(2)
-  $7.InternalID ensureTargetId() => $_ensure(1);
+  $8.InternalID ensureTargetId() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get channelId => $_getSZ(2);

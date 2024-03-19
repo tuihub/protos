@@ -7,6 +7,7 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 var librarian_sephirah_v1_binah_pb = require('../../../librarian/sephirah/v1/binah_pb.js');
 var librarian_sephirah_v1_chesed_pb = require('../../../librarian/sephirah/v1/chesed_pb.js');
 var librarian_sephirah_v1_gebura_pb = require('../../../librarian/sephirah/v1/gebura_pb.js');
+var librarian_sephirah_v1_hokma_pb = require('../../../librarian/sephirah/v1/hokma_pb.js');
 var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
 var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
@@ -295,6 +296,28 @@ function serialize_librarian_sephirah_v1_CreateSharedAppSaveResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_CreateSharedAppSaveResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.CreateSharedAppSaveResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateTagRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_hokma_pb.CreateTagRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateTagRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateTagRequest(buffer_arg) {
+  return librarian_sephirah_v1_hokma_pb.CreateTagRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreateTagResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_hokma_pb.CreateTagResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreateTagResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreateTagResponse(buffer_arg) {
+  return librarian_sephirah_v1_hokma_pb.CreateTagResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_CreateUserRequest(arg) {
@@ -1175,6 +1198,28 @@ function serialize_librarian_sephirah_v1_ListSharedAppSavesResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_ListSharedAppSavesResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListSharedAppSavesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListTagsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_hokma_pb.ListTagsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListTagsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListTagsRequest(buffer_arg) {
+  return librarian_sephirah_v1_hokma_pb.ListTagsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListTagsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_hokma_pb.ListTagsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListTagsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListTagsResponse(buffer_arg) {
+  return librarian_sephirah_v1_hokma_pb.ListTagsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListUserSessionsRequest(arg) {
@@ -2187,6 +2232,28 @@ function serialize_librarian_sephirah_v1_UpdateSharedAppSaveResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UpdateSharedAppSaveResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.UpdateSharedAppSaveResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateTagRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_hokma_pb.UpdateTagRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateTagRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateTagRequest(buffer_arg) {
+  return librarian_sephirah_v1_hokma_pb.UpdateTagRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateTagResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_hokma_pb.UpdateTagResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateTagResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateTagResponse(buffer_arg) {
+  return librarian_sephirah_v1_hokma_pb.UpdateTagResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UpdateUserRequest(arg) {
@@ -3547,6 +3614,42 @@ listCollectionItems: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListCollectionItemsRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListCollectionItemsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListCollectionItemsResponse,
+  },
+  // `Hokma` `Normal`
+createTag: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateTag',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_hokma_pb.CreateTagRequest,
+    responseType: librarian_sephirah_v1_hokma_pb.CreateTagResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_CreateTagRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_CreateTagRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_CreateTagResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_CreateTagResponse,
+  },
+  // `Hokma` `Normal`
+updateTag: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateTag',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_hokma_pb.UpdateTagRequest,
+    responseType: librarian_sephirah_v1_hokma_pb.UpdateTagResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdateTagRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateTagRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdateTagResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateTagResponse,
+  },
+  // `Hokma` `Normal`
+listTags: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListTags',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_hokma_pb.ListTagsRequest,
+    responseType: librarian_sephirah_v1_hokma_pb.ListTagsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListTagsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListTagsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListTagsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListTagsResponse,
   },
 };
 
