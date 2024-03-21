@@ -113,9 +113,14 @@ message UpdateFeedItemCollectionRequest {
 }
 message UpdateFeedItemCollectionResponse {}
 
-message ListFeedItemCollectionsRequest {}
+message ListFeedItemCollectionsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID id_filter = 2;
+  repeated string category_filter = 3;
+}
 message ListFeedItemCollectionsResponse {
-  repeated FeedItemCollection collections = 1;
+  librarian.v1.PagingResponse paging = 1;
+  repeated FeedItemCollection collections = 2;
 }
 
 message AddFeedItemToCollectionRequest {
@@ -136,7 +141,7 @@ message ListFeedItemsInCollectionRequest {
   librarian.v1.PagingRequest paging = 1;
   // id 0 is regarded as the default collection id
   repeated librarian.v1.InternalID collection_id_filter = 2;
-  repeated librarian.v1.InternalID author_id_filter = 3;
+  repeated string author_filter = 3;
   repeated string publish_platform_filter = 4;
   repeated string category_filter = 5;
   librarian.v1.TimeRange publish_time_range = 6;
