@@ -737,7 +737,7 @@ proto.librarian.sephirah.v1.UpdateTagResponse.serializeBinaryToWriter = function
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListTagsRequest.repeatedFields_ = [2];
+proto.librarian.sephirah.v1.ListTagsRequest.repeatedFields_ = [2,3];
 
 
 
@@ -772,6 +772,8 @@ proto.librarian.sephirah.v1.ListTagsRequest.toObject = function(includeInstance,
   var f, obj = {
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+    creatorIdFilterList: jspb.Message.toObjectList(msg.getCreatorIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -819,6 +821,11 @@ proto.librarian.sephirah.v1.ListTagsRequest.deserializeBinaryFromReader = functi
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.addIdFilter(value);
       break;
+    case 3:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addCreatorIdFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -860,6 +867,14 @@ proto.librarian.sephirah.v1.ListTagsRequest.serializeBinaryToWriter = function(m
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreatorIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
@@ -939,6 +954,44 @@ proto.librarian.sephirah.v1.ListTagsRequest.prototype.addIdFilter = function(opt
  */
 proto.librarian.sephirah.v1.ListTagsRequest.prototype.clearIdFilterList = function() {
   return this.setIdFilterList([]);
+};
+
+
+/**
+ * repeated librarian.v1.InternalID creator_id_filter = 3;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListTagsRequest.prototype.getCreatorIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListTagsRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListTagsRequest.prototype.setCreatorIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListTagsRequest.prototype.addCreatorIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListTagsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListTagsRequest.prototype.clearCreatorIdFilterList = function() {
+  return this.setCreatorIdFilterList([]);
 };
 
 
@@ -1187,7 +1240,9 @@ proto.librarian.sephirah.v1.Tag.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    creatorId: (f = msg.getCreatorId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -1237,6 +1292,15 @@ proto.librarian.sephirah.v1.Tag.deserializeBinaryFromReader = function(msg, read
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
+    case 4:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setCreatorId(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPublic(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1285,6 +1349,21 @@ proto.librarian.sephirah.v1.Tag.serializeBinaryToWriter = function(message, writ
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getCreatorId();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getPublic();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -1361,6 +1440,61 @@ proto.librarian.sephirah.v1.Tag.prototype.getDescription = function() {
  */
 proto.librarian.sephirah.v1.Tag.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional librarian.v1.InternalID creator_id = 4;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.Tag.prototype.getCreatorId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 4));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.Tag} returns this
+*/
+proto.librarian.sephirah.v1.Tag.prototype.setCreatorId = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.Tag} returns this
+ */
+proto.librarian.sephirah.v1.Tag.prototype.clearCreatorId = function() {
+  return this.setCreatorId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.Tag.prototype.hasCreatorId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool public = 5;
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.Tag.prototype.getPublic = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.librarian.sephirah.v1.Tag} returns this
+ */
+proto.librarian.sephirah.v1.Tag.prototype.setPublic = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

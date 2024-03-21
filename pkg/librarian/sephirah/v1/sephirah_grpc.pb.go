@@ -121,7 +121,7 @@ const (
 	LibrarianSephirahService_ListFeedItemCollections_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemCollections"
 	LibrarianSephirahService_AddFeedItemToCollection_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/AddFeedItemToCollection"
 	LibrarianSephirahService_RemoveFeedItemFromCollection_FullMethodName  = "/librarian.sephirah.v1.LibrarianSephirahService/RemoveFeedItemFromCollection"
-	LibrarianSephirahService_ListCollectionItems_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/ListCollectionItems"
+	LibrarianSephirahService_ListFeedItemsInCollection_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection"
 	LibrarianSephirahService_CreateTag_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/CreateTag"
 	LibrarianSephirahService_UpdateTag_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateTag"
 	LibrarianSephirahService_ListTags_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/ListTags"
@@ -362,7 +362,7 @@ type LibrarianSephirahServiceClient interface {
 	// `Yesod` `Normal`
 	RemoveFeedItemFromCollection(ctx context.Context, in *RemoveFeedItemFromCollectionRequest, opts ...grpc.CallOption) (*RemoveFeedItemFromCollectionResponse, error)
 	// `Yesod` `Normal`
-	ListCollectionItems(ctx context.Context, in *ListCollectionItemsRequest, opts ...grpc.CallOption) (*ListCollectionItemsResponse, error)
+	ListFeedItemsInCollection(ctx context.Context, in *ListFeedItemsInCollectionRequest, opts ...grpc.CallOption) (*ListFeedItemsInCollectionResponse, error)
 	// `Hokma` `Normal`
 	CreateTag(ctx context.Context, in *CreateTagRequest, opts ...grpc.CallOption) (*CreateTagResponse, error)
 	// `Hokma` `Normal`
@@ -1386,9 +1386,9 @@ func (c *librarianSephirahServiceClient) RemoveFeedItemFromCollection(ctx contex
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) ListCollectionItems(ctx context.Context, in *ListCollectionItemsRequest, opts ...grpc.CallOption) (*ListCollectionItemsResponse, error) {
-	out := new(ListCollectionItemsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListCollectionItems_FullMethodName, in, out, opts...)
+func (c *librarianSephirahServiceClient) ListFeedItemsInCollection(ctx context.Context, in *ListFeedItemsInCollectionRequest, opts ...grpc.CallOption) (*ListFeedItemsInCollectionResponse, error) {
+	out := new(ListFeedItemsInCollectionResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeedItemsInCollection_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1657,7 +1657,7 @@ type LibrarianSephirahServiceServer interface {
 	// `Yesod` `Normal`
 	RemoveFeedItemFromCollection(context.Context, *RemoveFeedItemFromCollectionRequest) (*RemoveFeedItemFromCollectionResponse, error)
 	// `Yesod` `Normal`
-	ListCollectionItems(context.Context, *ListCollectionItemsRequest) (*ListCollectionItemsResponse, error)
+	ListFeedItemsInCollection(context.Context, *ListFeedItemsInCollectionRequest) (*ListFeedItemsInCollectionResponse, error)
 	// `Hokma` `Normal`
 	CreateTag(context.Context, *CreateTagRequest) (*CreateTagResponse, error)
 	// `Hokma` `Normal`
@@ -1977,8 +1977,8 @@ func (UnimplementedLibrarianSephirahServiceServer) AddFeedItemToCollection(conte
 func (UnimplementedLibrarianSephirahServiceServer) RemoveFeedItemFromCollection(context.Context, *RemoveFeedItemFromCollectionRequest) (*RemoveFeedItemFromCollectionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveFeedItemFromCollection not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) ListCollectionItems(context.Context, *ListCollectionItemsRequest) (*ListCollectionItemsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListCollectionItems not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) ListFeedItemsInCollection(context.Context, *ListFeedItemsInCollectionRequest) (*ListFeedItemsInCollectionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeedItemsInCollection not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreateTag(context.Context, *CreateTagRequest) (*CreateTagResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateTag not implemented")
@@ -3866,20 +3866,20 @@ func _LibrarianSephirahService_RemoveFeedItemFromCollection_Handler(srv interfac
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_ListCollectionItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCollectionItemsRequest)
+func _LibrarianSephirahService_ListFeedItemsInCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeedItemsInCollectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListCollectionItems(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).ListFeedItemsInCollection(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListCollectionItems_FullMethodName,
+		FullMethod: LibrarianSephirahService_ListFeedItemsInCollection_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListCollectionItems(ctx, req.(*ListCollectionItemsRequest))
+		return srv.(LibrarianSephirahServiceServer).ListFeedItemsInCollection(ctx, req.(*ListFeedItemsInCollectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4338,8 +4338,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_RemoveFeedItemFromCollection_Handler,
 		},
 		{
-			MethodName: "ListCollectionItems",
-			Handler:    _LibrarianSephirahService_ListCollectionItems_Handler,
+			MethodName: "ListFeedItemsInCollection",
+			Handler:    _LibrarianSephirahService_ListFeedItemsInCollection_Handler,
 		},
 		{
 			MethodName: "CreateTag",

@@ -892,28 +892,6 @@ function deserialize_librarian_sephirah_v1_ListAppsResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.ListAppsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_ListCollectionItemsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListCollectionItemsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListCollectionItemsRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_ListCollectionItemsRequest(buffer_arg) {
-  return librarian_sephirah_v1_yesod_pb.ListCollectionItemsRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_ListCollectionItemsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListCollectionItemsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.ListCollectionItemsResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_ListCollectionItemsResponse(buffer_arg) {
-  return librarian_sephirah_v1_yesod_pb.ListCollectionItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_ListFeedCategoriesRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedCategoriesRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedCategoriesRequest');
@@ -978,6 +956,28 @@ function serialize_librarian_sephirah_v1_ListFeedItemCollectionsResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_ListFeedItemCollectionsResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.ListFeedItemCollectionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListFeedItemsInCollectionRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemsInCollectionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListFeedItemsInCollectionRequest(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListFeedItemsInCollectionResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListFeedItemsInCollectionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListFeedItemsInCollectionResponse(buffer_arg) {
+  return librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListFeedItemsRequest(arg) {
@@ -3604,16 +3604,16 @@ removeFeedItemFromCollection: {
     responseDeserialize: deserialize_librarian_sephirah_v1_RemoveFeedItemFromCollectionResponse,
   },
   // `Yesod` `Normal`
-listCollectionItems: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListCollectionItems',
+listFeedItemsInCollection: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_yesod_pb.ListCollectionItemsRequest,
-    responseType: librarian_sephirah_v1_yesod_pb.ListCollectionItemsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_ListCollectionItemsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_ListCollectionItemsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_ListCollectionItemsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_ListCollectionItemsResponse,
+    requestType: librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest,
+    responseType: librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListFeedItemsInCollectionRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemsInCollectionRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListFeedItemsInCollectionResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemsInCollectionResponse,
   },
   // `Hokma` `Normal`
 createTag: {

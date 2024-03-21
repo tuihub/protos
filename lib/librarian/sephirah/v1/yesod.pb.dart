@@ -586,7 +586,7 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   factory ListFeedItemsRequest({
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? feedIdFilter,
-    $core.Iterable<$8.InternalID>? authorIdFilter,
+    $core.Iterable<$core.String>? authorFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
     $8.TimeRange? publishTimeRange,
@@ -598,8 +598,8 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
     if (feedIdFilter != null) {
       $result.feedIdFilter.addAll(feedIdFilter);
     }
-    if (authorIdFilter != null) {
-      $result.authorIdFilter.addAll(authorIdFilter);
+    if (authorFilter != null) {
+      $result.authorFilter.addAll(authorFilter);
     }
     if (publishPlatformFilter != null) {
       $result.publishPlatformFilter.addAll(publishPlatformFilter);
@@ -619,7 +619,7 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pPS(3, _omitFieldNames ? '' : 'authorFilter')
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
     ..aOM<$8.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $8.TimeRange.create)
@@ -662,7 +662,7 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$8.InternalID> get feedIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$core.String> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
@@ -746,7 +746,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   factory GroupFeedItemsRequest({
     $8.TimeAggregation? publishTimeAggregation,
     $core.Iterable<$8.InternalID>? feedIdFilter,
-    $core.Iterable<$8.InternalID>? authorIdFilter,
+    $core.Iterable<$core.String>? authorFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
     $core.int? groupSize,
@@ -758,8 +758,8 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     if (feedIdFilter != null) {
       $result.feedIdFilter.addAll(feedIdFilter);
     }
-    if (authorIdFilter != null) {
-      $result.authorIdFilter.addAll(authorIdFilter);
+    if (authorFilter != null) {
+      $result.authorFilter.addAll(authorFilter);
     }
     if (publishPlatformFilter != null) {
       $result.publishPlatformFilter.addAll(publishPlatformFilter);
@@ -779,7 +779,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.TimeAggregation>(1, _omitFieldNames ? '' : 'publishTimeAggregation', subBuilder: $8.TimeAggregation.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'feedIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pPS(3, _omitFieldNames ? '' : 'authorFilter')
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'groupSize', $pb.PbFieldType.O3)
@@ -822,7 +822,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
   $core.List<$8.InternalID> get feedIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$core.String> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
@@ -1667,8 +1667,8 @@ class RemoveFeedItemFromCollectionResponse extends $pb.GeneratedMessage {
   static RemoveFeedItemFromCollectionResponse? _defaultInstance;
 }
 
-class ListCollectionItemsRequest extends $pb.GeneratedMessage {
-  factory ListCollectionItemsRequest({
+class ListFeedItemsInCollectionRequest extends $pb.GeneratedMessage {
+  factory ListFeedItemsInCollectionRequest({
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? collectionIdFilter,
     $core.Iterable<$8.InternalID>? authorIdFilter,
@@ -1697,11 +1697,11 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ListCollectionItemsRequest._() : super();
-  factory ListCollectionItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListCollectionItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ListFeedItemsInCollectionRequest._() : super();
+  factory ListFeedItemsInCollectionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedItemsInCollectionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCollectionItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsInCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'collectionIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
@@ -1715,22 +1715,22 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListCollectionItemsRequest clone() => ListCollectionItemsRequest()..mergeFromMessage(this);
+  ListFeedItemsInCollectionRequest clone() => ListFeedItemsInCollectionRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListCollectionItemsRequest copyWith(void Function(ListCollectionItemsRequest) updates) => super.copyWith((message) => updates(message as ListCollectionItemsRequest)) as ListCollectionItemsRequest;
+  ListFeedItemsInCollectionRequest copyWith(void Function(ListFeedItemsInCollectionRequest) updates) => super.copyWith((message) => updates(message as ListFeedItemsInCollectionRequest)) as ListFeedItemsInCollectionRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListCollectionItemsRequest create() => ListCollectionItemsRequest._();
-  ListCollectionItemsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListCollectionItemsRequest> createRepeated() => $pb.PbList<ListCollectionItemsRequest>();
+  static ListFeedItemsInCollectionRequest create() => ListFeedItemsInCollectionRequest._();
+  ListFeedItemsInCollectionRequest createEmptyInstance() => create();
+  static $pb.PbList<ListFeedItemsInCollectionRequest> createRepeated() => $pb.PbList<ListFeedItemsInCollectionRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListCollectionItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCollectionItemsRequest>(create);
-  static ListCollectionItemsRequest? _defaultInstance;
+  static ListFeedItemsInCollectionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemsInCollectionRequest>(create);
+  static ListFeedItemsInCollectionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
@@ -1768,8 +1768,8 @@ class ListCollectionItemsRequest extends $pb.GeneratedMessage {
   $8.TimeRange ensurePublishTimeRange() => $_ensure(5);
 }
 
-class ListCollectionItemsResponse extends $pb.GeneratedMessage {
-  factory ListCollectionItemsResponse({
+class ListFeedItemsInCollectionResponse extends $pb.GeneratedMessage {
+  factory ListFeedItemsInCollectionResponse({
     $8.PagingResponse? paging,
     $core.Iterable<FeedItemDigest>? items,
   }) {
@@ -1782,11 +1782,11 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ListCollectionItemsResponse._() : super();
-  factory ListCollectionItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListCollectionItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ListFeedItemsInCollectionResponse._() : super();
+  factory ListFeedItemsInCollectionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListFeedItemsInCollectionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListCollectionItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsInCollectionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
     ..pc<FeedItemDigest>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItemDigest.create)
     ..hasRequiredFields = false
@@ -1796,22 +1796,22 @@ class ListCollectionItemsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ListCollectionItemsResponse clone() => ListCollectionItemsResponse()..mergeFromMessage(this);
+  ListFeedItemsInCollectionResponse clone() => ListFeedItemsInCollectionResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListCollectionItemsResponse copyWith(void Function(ListCollectionItemsResponse) updates) => super.copyWith((message) => updates(message as ListCollectionItemsResponse)) as ListCollectionItemsResponse;
+  ListFeedItemsInCollectionResponse copyWith(void Function(ListFeedItemsInCollectionResponse) updates) => super.copyWith((message) => updates(message as ListFeedItemsInCollectionResponse)) as ListFeedItemsInCollectionResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ListCollectionItemsResponse create() => ListCollectionItemsResponse._();
-  ListCollectionItemsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListCollectionItemsResponse> createRepeated() => $pb.PbList<ListCollectionItemsResponse>();
+  static ListFeedItemsInCollectionResponse create() => ListFeedItemsInCollectionResponse._();
+  ListFeedItemsInCollectionResponse createEmptyInstance() => create();
+  static $pb.PbList<ListFeedItemsInCollectionResponse> createRepeated() => $pb.PbList<ListFeedItemsInCollectionResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListCollectionItemsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListCollectionItemsResponse>(create);
-  static ListCollectionItemsResponse? _defaultInstance;
+  static ListFeedItemsInCollectionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemsInCollectionResponse>(create);
+  static ListFeedItemsInCollectionResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
@@ -2233,7 +2233,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
 }
 
 /// Server must maintain a default collection, without requirement of create
-/// the default collection have its id, but sometimes client can use id 0 to specify the default collection.
+/// the default collection can have its id, but client can use id 0 to specify the default collection.
 /// check ListCollectionItems api for the use case.
 class FeedItemCollection extends $pb.GeneratedMessage {
   factory FeedItemCollection({

@@ -207,6 +207,7 @@ class ListTagsRequest extends $pb.GeneratedMessage {
   factory ListTagsRequest({
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? idFilter,
+    $core.Iterable<$8.InternalID>? creatorIdFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -214,6 +215,9 @@ class ListTagsRequest extends $pb.GeneratedMessage {
     }
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
+    }
+    if (creatorIdFilter != null) {
+      $result.creatorIdFilter.addAll(creatorIdFilter);
     }
     return $result;
   }
@@ -224,6 +228,7 @@ class ListTagsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListTagsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'creatorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -261,6 +266,10 @@ class ListTagsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$8.InternalID> get idFilter => $_getList(1);
+
+  /// If not set, default to current user
+  @$pb.TagNumber(3)
+  $core.List<$8.InternalID> get creatorIdFilter => $_getList(2);
 }
 
 class ListTagsResponse extends $pb.GeneratedMessage {
@@ -328,6 +337,8 @@ class Tag extends $pb.GeneratedMessage {
     $8.InternalID? id,
     $core.String? name,
     $core.String? description,
+    $8.InternalID? creatorId,
+    $core.bool? public,
   }) {
     final $result = create();
     if (id != null) {
@@ -339,6 +350,12 @@ class Tag extends $pb.GeneratedMessage {
     if (description != null) {
       $result.description = description;
     }
+    if (creatorId != null) {
+      $result.creatorId = creatorId;
+    }
+    if (public != null) {
+      $result.public = public;
+    }
     return $result;
   }
   Tag._() : super();
@@ -349,6 +366,8 @@ class Tag extends $pb.GeneratedMessage {
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOM<$8.InternalID>(4, _omitFieldNames ? '' : 'creatorId', subBuilder: $8.InternalID.create)
+    ..aOB(5, _omitFieldNames ? '' : 'public')
     ..hasRequiredFields = false
   ;
 
@@ -384,6 +403,8 @@ class Tag extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
+  /// name is unique to each creator.
+  /// name cannot be changed
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -401,6 +422,27 @@ class Tag extends $pb.GeneratedMessage {
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
   void clearDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $8.InternalID get creatorId => $_getN(3);
+  @$pb.TagNumber(4)
+  set creatorId($8.InternalID v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCreatorId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatorId() => clearField(4);
+  @$pb.TagNumber(4)
+  $8.InternalID ensureCreatorId() => $_ensure(3);
+
+  /// false by default
+  @$pb.TagNumber(5)
+  $core.bool get public => $_getBF(4);
+  @$pb.TagNumber(5)
+  set public($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPublic() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPublic() => clearField(5);
 }
 
 

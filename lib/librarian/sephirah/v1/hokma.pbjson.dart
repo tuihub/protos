@@ -67,6 +67,7 @@ const ListTagsRequest$json = {
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {'1': 'creator_id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'creatorIdFilter'},
   ],
 };
 
@@ -74,7 +75,8 @@ const ListTagsRequest$json = {
 final $typed_data.Uint8List listTagsRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0VGFnc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
     'JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu'
-    'YWxJRFIIaWRGaWx0ZXI=');
+    'YWxJRFIIaWRGaWx0ZXISRAoRY3JlYXRvcl9pZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW4udj'
+    'EuSW50ZXJuYWxJRFIPY3JlYXRvcklkRmlsdGVy');
 
 @$core.Deprecated('Use listTagsResponseDescriptor instead')
 const ListTagsResponse$json = {
@@ -98,11 +100,15 @@ const Tag$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'creator_id', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'creatorId'},
+    {'1': 'public', '3': 5, '4': 1, '5': 8, '10': 'public'},
   ],
 };
 
 /// Descriptor for `Tag`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List tagDescriptor = $convert.base64Decode(
     'CgNUYWcSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZR'
-    'gCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24=');
+    'gCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SNwoKY3JlYXRv'
+    'cl9pZBgEIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgljcmVhdG9ySWQSFgoGcHVibG'
+    'ljGAUgASgIUgZwdWJsaWM=');
 

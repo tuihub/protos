@@ -97,6 +97,11 @@ export class ListTagsRequest extends jspb.Message {
   setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
+  clearCreatorIdFilterList(): void;
+  getCreatorIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setCreatorIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addCreatorIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTagsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListTagsRequest): ListTagsRequest.AsObject;
@@ -111,6 +116,7 @@ export namespace ListTagsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    creatorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 
@@ -154,6 +160,14 @@ export class Tag extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  hasCreatorId(): boolean;
+  clearCreatorId(): void;
+  getCreatorId(): librarian_v1_common_pb.InternalID | undefined;
+  setCreatorId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getPublic(): boolean;
+  setPublic(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Tag.AsObject;
   static toObject(includeInstance: boolean, msg: Tag): Tag.AsObject;
@@ -169,6 +183,8 @@ export namespace Tag {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     description: string,
+    creatorId?: librarian_v1_common_pb.InternalID.AsObject,
+    pb_public: boolean,
   }
 }
 

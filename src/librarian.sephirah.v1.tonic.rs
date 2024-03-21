@@ -3366,11 +3366,11 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_collection_items(
+        pub async fn list_feed_items_in_collection(
             &mut self,
-            request: impl tonic::IntoRequest<super::ListCollectionItemsRequest>,
+            request: impl tonic::IntoRequest<super::ListFeedItemsInCollectionRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ListCollectionItemsResponse>,
+            tonic::Response<super::ListFeedItemsInCollectionResponse>,
             tonic::Status,
         > {
             self.inner
@@ -3384,14 +3384,14 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListCollectionItems",
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
-                        "ListCollectionItems",
+                        "ListFeedItemsInCollection",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -4449,11 +4449,11 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::RemoveFeedItemFromCollectionResponse>,
             tonic::Status,
         >;
-        async fn list_collection_items(
+        async fn list_feed_items_in_collection(
             &self,
-            request: tonic::Request<super::ListCollectionItemsRequest>,
+            request: tonic::Request<super::ListFeedItemsInCollectionRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ListCollectionItemsResponse>,
+            tonic::Response<super::ListFeedItemsInCollectionResponse>,
             tonic::Status,
         >;
         async fn create_tag(
@@ -9325,27 +9325,30 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/ListCollectionItems" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection" => {
                     #[allow(non_camel_case_types)]
-                    struct ListCollectionItemsSvc<T: LibrarianSephirahService>(
+                    struct ListFeedItemsInCollectionSvc<T: LibrarianSephirahService>(
                         pub Arc<T>,
                     );
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListCollectionItemsRequest>
-                    for ListCollectionItemsSvc<T> {
-                        type Response = super::ListCollectionItemsResponse;
+                    > tonic::server::UnaryService<
+                        super::ListFeedItemsInCollectionRequest,
+                    > for ListFeedItemsInCollectionSvc<T> {
+                        type Response = super::ListFeedItemsInCollectionResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ListCollectionItemsRequest>,
+                            request: tonic::Request<
+                                super::ListFeedItemsInCollectionRequest,
+                            >,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_collection_items(request).await
+                                (*inner).list_feed_items_in_collection(request).await
                             };
                             Box::pin(fut)
                         }
@@ -9357,7 +9360,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListCollectionItemsSvc(inner);
+                        let method = ListFeedItemsInCollectionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
