@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.9](https://github.com/tuihub/protos/compare/v0.4.8...v0.4.9) (2024-03-21)
+
+
+### Features
+
+* **yesod:** update list feed item collection ([71afc8c](https://github.com/tuihub/protos/commit/71afc8cd42b02ee051510b628f2fca982ad1cebe))
+
 ## [0.4.8](https://github.com/tuihub/protos/compare/v0.4.7...v0.4.8) (2024-03-21)
 
 
