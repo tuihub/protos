@@ -273,7 +273,7 @@ service LibrarianSephirahService {
   // `Yesod` `Normal`
   rpc RemoveFeedItemFromCollection(RemoveFeedItemFromCollectionRequest) returns (RemoveFeedItemFromCollectionResponse);
   // `Yesod` `Normal`
-  rpc ListCollectionItems(ListCollectionItemsRequest) returns (ListCollectionItemsResponse);
+  rpc ListFeedItemsInCollection(ListFeedItemsInCollectionRequest) returns (ListFeedItemsInCollectionResponse);
 
   // `Hokma` `Normal`
   rpc CreateTag(CreateTagRequest) returns (CreateTagResponse);

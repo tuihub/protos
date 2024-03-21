@@ -53,7 +53,7 @@ message ListFeedPlatformsResponse {
 message ListFeedItemsRequest {
   librarian.v1.PagingRequest paging = 1;
   repeated librarian.v1.InternalID feed_id_filter = 2;
-  repeated librarian.v1.InternalID author_id_filter = 3;
+  repeated string author_filter = 3;
   repeated string publish_platform_filter = 4;
   repeated string category_filter = 5;
   librarian.v1.TimeRange publish_time_range = 6;
@@ -67,7 +67,7 @@ message ListFeedItemsResponse {
 message GroupFeedItemsRequest {
   librarian.v1.TimeAggregation publish_time_aggregation = 1;
   repeated librarian.v1.InternalID feed_id_filter = 2;
-  repeated librarian.v1.InternalID author_id_filter = 3;
+  repeated string author_filter = 3;
   repeated string publish_platform_filter = 4;
   repeated string category_filter = 5;
   // NULL means no limit
@@ -132,7 +132,7 @@ message RemoveFeedItemFromCollectionRequest {
 }
 message RemoveFeedItemFromCollectionResponse {}
 
-message ListCollectionItemsRequest {
+message ListFeedItemsInCollectionRequest {
   librarian.v1.PagingRequest paging = 1;
   // id 0 is regarded as the default collection id
   repeated librarian.v1.InternalID collection_id_filter = 2;
@@ -142,7 +142,7 @@ message ListCollectionItemsRequest {
   librarian.v1.TimeRange publish_time_range = 6;
 }
 
-message ListCollectionItemsResponse {
+message ListFeedItemsInCollectionResponse {
   librarian.v1.PagingResponse paging = 1;
   repeated FeedItemDigest items = 2;
 }
@@ -198,7 +198,7 @@ message FeedItemDigest {
 }
 
 // Server must maintain a default collection, without requirement of create
-// the default collection have its id, but sometimes client can use id 0 to specify the default collection.
+// the default collection can have its id, but client can use id 0 to specify the default collection.
 // check ListCollectionItems api for the use case.
 message FeedItemCollection {
   librarian.v1.InternalID id = 1;
