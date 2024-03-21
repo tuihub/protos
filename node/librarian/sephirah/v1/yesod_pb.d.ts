@@ -657,6 +657,21 @@ export namespace UpdateFeedItemCollectionResponse {
 }
 
 export class ListFeedItemCollectionsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  clearIdFilterList(): void;
+  getIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
+  clearCategoryFilterList(): void;
+  getCategoryFilterList(): Array<string>;
+  setCategoryFilterList(value: Array<string>): void;
+  addCategoryFilter(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeedItemCollectionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListFeedItemCollectionsRequest): ListFeedItemCollectionsRequest.AsObject;
@@ -669,10 +684,18 @@ export class ListFeedItemCollectionsRequest extends jspb.Message {
 
 export namespace ListFeedItemCollectionsRequest {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    categoryFilterList: Array<string>,
   }
 }
 
 export class ListFeedItemCollectionsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
   clearCollectionsList(): void;
   getCollectionsList(): Array<FeedItemCollection>;
   setCollectionsList(value: Array<FeedItemCollection>): void;
@@ -690,6 +713,7 @@ export class ListFeedItemCollectionsResponse extends jspb.Message {
 
 export namespace ListFeedItemCollectionsResponse {
   export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
     collectionsList: Array<FeedItemCollection.AsObject>,
   }
 }
@@ -793,10 +817,10 @@ export class ListFeedItemsInCollectionRequest extends jspb.Message {
   setCollectionIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addCollectionIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
-  clearAuthorIdFilterList(): void;
-  getAuthorIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
-  setAuthorIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
-  addAuthorIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+  clearAuthorFilterList(): void;
+  getAuthorFilterList(): Array<string>;
+  setAuthorFilterList(value: Array<string>): void;
+  addAuthorFilter(value: string, index?: number): string;
 
   clearPublishPlatformFilterList(): void;
   getPublishPlatformFilterList(): Array<string>;
@@ -827,7 +851,7 @@ export namespace ListFeedItemsInCollectionRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     collectionIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    authorFilterList: Array<string>,
     publishPlatformFilterList: Array<string>,
     categoryFilterList: Array<string>,
     publishTimeRange?: librarian_v1_common_pb.TimeRange.AsObject,

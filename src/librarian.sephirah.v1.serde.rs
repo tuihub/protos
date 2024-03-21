@@ -11169,8 +11169,26 @@ impl serde::Serialize for ListFeedItemCollectionsRequest {
         S: serde::Serializer,
     {
         use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListFeedItemCollectionsRequest", len)?;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.id_filter.is_empty() {
+            len += 1;
+        }
+        if !self.category_filter.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListFeedItemCollectionsRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.id_filter.is_empty() {
+            struct_ser.serialize_field("idFilter", &self.id_filter)?;
+        }
+        if !self.category_filter.is_empty() {
+            struct_ser.serialize_field("categoryFilter", &self.category_filter)?;
+        }
         struct_ser.end()
     }
 }
@@ -11181,10 +11199,18 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
+            "id_filter",
+            "idFilter",
+            "category_filter",
+            "categoryFilter",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
+            IdFilter,
+            CategoryFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -11205,7 +11231,12 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsRequest {
                     where
                         E: serde::de::Error,
                     {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
+                            "categoryFilter" | "category_filter" => Ok(GeneratedField::CategoryFilter),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
                     }
                 }
                 deserializer.deserialize_identifier(GeneratedVisitor)
@@ -11223,10 +11254,35 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                let mut paging__ = None;
+                let mut id_filter__ = None;
+                let mut category_filter__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::IdFilter => {
+                            if id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("idFilter"));
+                            }
+                            id_filter__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::CategoryFilter => {
+                            if category_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("categoryFilter"));
+                            }
+                            category_filter__ = Some(map.next_value()?);
+                        }
+                    }
                 }
                 Ok(ListFeedItemCollectionsRequest {
+                    paging: paging__,
+                    id_filter: id_filter__.unwrap_or_default(),
+                    category_filter: category_filter__.unwrap_or_default(),
                 })
             }
         }
@@ -11241,10 +11297,16 @@ impl serde::Serialize for ListFeedItemCollectionsResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
         if !self.collections.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListFeedItemCollectionsResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
         if !self.collections.is_empty() {
             struct_ser.serialize_field("collections", &self.collections)?;
         }
@@ -11258,11 +11320,13 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
             "collections",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
             Collections,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -11285,6 +11349,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsResponse {
                         E: serde::de::Error,
                     {
                         match value {
+                            "paging" => Ok(GeneratedField::Paging),
                             "collections" => Ok(GeneratedField::Collections),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -11305,9 +11370,16 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut paging__ = None;
                 let mut collections__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
                         GeneratedField::Collections => {
                             if collections__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("collections"));
@@ -11317,6 +11389,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemCollectionsResponse {
                     }
                 }
                 Ok(ListFeedItemCollectionsResponse {
+                    paging: paging__,
                     collections: collections__.unwrap_or_default(),
                 })
             }
@@ -11338,7 +11411,7 @@ impl serde::Serialize for ListFeedItemsInCollectionRequest {
         if !self.collection_id_filter.is_empty() {
             len += 1;
         }
-        if !self.author_id_filter.is_empty() {
+        if !self.author_filter.is_empty() {
             len += 1;
         }
         if !self.publish_platform_filter.is_empty() {
@@ -11357,8 +11430,8 @@ impl serde::Serialize for ListFeedItemsInCollectionRequest {
         if !self.collection_id_filter.is_empty() {
             struct_ser.serialize_field("collectionIdFilter", &self.collection_id_filter)?;
         }
-        if !self.author_id_filter.is_empty() {
-            struct_ser.serialize_field("authorIdFilter", &self.author_id_filter)?;
+        if !self.author_filter.is_empty() {
+            struct_ser.serialize_field("authorFilter", &self.author_filter)?;
         }
         if !self.publish_platform_filter.is_empty() {
             struct_ser.serialize_field("publishPlatformFilter", &self.publish_platform_filter)?;
@@ -11382,8 +11455,8 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsInCollectionRequest {
             "paging",
             "collection_id_filter",
             "collectionIdFilter",
-            "author_id_filter",
-            "authorIdFilter",
+            "author_filter",
+            "authorFilter",
             "publish_platform_filter",
             "publishPlatformFilter",
             "category_filter",
@@ -11396,7 +11469,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsInCollectionRequest {
         enum GeneratedField {
             Paging,
             CollectionIdFilter,
-            AuthorIdFilter,
+            AuthorFilter,
             PublishPlatformFilter,
             CategoryFilter,
             PublishTimeRange,
@@ -11423,7 +11496,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsInCollectionRequest {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
                             "collectionIdFilter" | "collection_id_filter" => Ok(GeneratedField::CollectionIdFilter),
-                            "authorIdFilter" | "author_id_filter" => Ok(GeneratedField::AuthorIdFilter),
+                            "authorFilter" | "author_filter" => Ok(GeneratedField::AuthorFilter),
                             "publishPlatformFilter" | "publish_platform_filter" => Ok(GeneratedField::PublishPlatformFilter),
                             "categoryFilter" | "category_filter" => Ok(GeneratedField::CategoryFilter),
                             "publishTimeRange" | "publish_time_range" => Ok(GeneratedField::PublishTimeRange),
@@ -11448,7 +11521,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsInCollectionRequest {
             {
                 let mut paging__ = None;
                 let mut collection_id_filter__ = None;
-                let mut author_id_filter__ = None;
+                let mut author_filter__ = None;
                 let mut publish_platform_filter__ = None;
                 let mut category_filter__ = None;
                 let mut publish_time_range__ = None;
@@ -11466,11 +11539,11 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsInCollectionRequest {
                             }
                             collection_id_filter__ = Some(map.next_value()?);
                         }
-                        GeneratedField::AuthorIdFilter => {
-                            if author_id_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("authorIdFilter"));
+                        GeneratedField::AuthorFilter => {
+                            if author_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("authorFilter"));
                             }
-                            author_id_filter__ = Some(map.next_value()?);
+                            author_filter__ = Some(map.next_value()?);
                         }
                         GeneratedField::PublishPlatformFilter => {
                             if publish_platform_filter__.is_some() {
@@ -11495,7 +11568,7 @@ impl<'de> serde::Deserialize<'de> for ListFeedItemsInCollectionRequest {
                 Ok(ListFeedItemsInCollectionRequest {
                     paging: paging__,
                     collection_id_filter: collection_id_filter__.unwrap_or_default(),
-                    author_id_filter: author_id_filter__.unwrap_or_default(),
+                    author_filter: author_filter__.unwrap_or_default(),
                     publish_platform_filter: publish_platform_filter__.unwrap_or_default(),
                     category_filter: category_filter__.unwrap_or_default(),
                     publish_time_range: publish_time_range__,

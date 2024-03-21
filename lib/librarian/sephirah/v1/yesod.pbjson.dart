@@ -383,24 +383,34 @@ final $typed_data.Uint8List updateFeedItemCollectionResponseDescriptor = $conver
 @$core.Deprecated('Use listFeedItemCollectionsRequestDescriptor instead')
 const ListFeedItemCollectionsRequest$json = {
   '1': 'ListFeedItemCollectionsRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {'1': 'category_filter', '3': 3, '4': 3, '5': 9, '10': 'categoryFilter'},
+  ],
 };
 
 /// Descriptor for `ListFeedItemCollectionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listFeedItemCollectionsRequestDescriptor = $convert.base64Decode(
-    'Ch5MaXN0RmVlZEl0ZW1Db2xsZWN0aW9uc1JlcXVlc3Q=');
+    'Ch5MaXN0RmVlZEl0ZW1Db2xsZWN0aW9uc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicm'
+    'FyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJy'
+    'YXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISJwoPY2F0ZWdvcnlfZmlsdGVyGAMgAygJUg'
+    '5jYXRlZ29yeUZpbHRlcg==');
 
 @$core.Deprecated('Use listFeedItemCollectionsResponseDescriptor instead')
 const ListFeedItemCollectionsResponse$json = {
   '1': 'ListFeedItemCollectionsResponse',
   '2': [
-    {'1': 'collections', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.FeedItemCollection', '10': 'collections'},
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'collections', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.FeedItemCollection', '10': 'collections'},
   ],
 };
 
 /// Descriptor for `ListFeedItemCollectionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listFeedItemCollectionsResponseDescriptor = $convert.base64Decode(
-    'Ch9MaXN0RmVlZEl0ZW1Db2xsZWN0aW9uc1Jlc3BvbnNlEksKC2NvbGxlY3Rpb25zGAEgAygLMi'
-    'kubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZlZWRJdGVtQ29sbGVjdGlvblILY29sbGVjdGlvbnM=');
+    'Ch9MaXN0RmVlZEl0ZW1Db2xsZWN0aW9uc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYn'
+    'Jhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEksKC2NvbGxlY3Rpb25zGAIgAygLMiku'
+    'bGlicmFyaWFuLnNlcGhpcmFoLnYxLkZlZWRJdGVtQ29sbGVjdGlvblILY29sbGVjdGlvbnM=');
 
 @$core.Deprecated('Use addFeedItemToCollectionRequestDescriptor instead')
 const AddFeedItemToCollectionRequest$json = {
@@ -456,7 +466,7 @@ const ListFeedItemsInCollectionRequest$json = {
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     {'1': 'collection_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'collectionIdFilter'},
-    {'1': 'author_id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'authorIdFilter'},
+    {'1': 'author_filter', '3': 3, '4': 3, '5': 9, '10': 'authorFilter'},
     {'1': 'publish_platform_filter', '3': 4, '4': 3, '5': 9, '10': 'publishPlatformFilter'},
     {'1': 'category_filter', '3': 5, '4': 3, '5': 9, '10': 'categoryFilter'},
     {'1': 'publish_time_range', '3': 6, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'publishTimeRange'},
@@ -467,12 +477,11 @@ const ListFeedItemsInCollectionRequest$json = {
 final $typed_data.Uint8List listFeedItemsInCollectionRequestDescriptor = $convert.base64Decode(
     'CiBMaXN0RmVlZEl0ZW1zSW5Db2xsZWN0aW9uUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saW'
     'JyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEkoKFGNvbGxlY3Rpb25faWRfZmlsdGVy'
-    'GAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSEmNvbGxlY3Rpb25JZEZpbHRlchJCCh'
-    'BhdXRob3JfaWRfZmlsdGVyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDmF1dGhv'
-    'cklkRmlsdGVyEjYKF3B1Ymxpc2hfcGxhdGZvcm1fZmlsdGVyGAQgAygJUhVwdWJsaXNoUGxhdG'
-    'Zvcm1GaWx0ZXISJwoPY2F0ZWdvcnlfZmlsdGVyGAUgAygJUg5jYXRlZ29yeUZpbHRlchJFChJw'
-    'dWJsaXNoX3RpbWVfcmFuZ2UYBiABKAsyFy5saWJyYXJpYW4udjEuVGltZVJhbmdlUhBwdWJsaX'
-    'NoVGltZVJhbmdl');
+    'GAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSEmNvbGxlY3Rpb25JZEZpbHRlchIjCg'
+    '1hdXRob3JfZmlsdGVyGAMgAygJUgxhdXRob3JGaWx0ZXISNgoXcHVibGlzaF9wbGF0Zm9ybV9m'
+    'aWx0ZXIYBCADKAlSFXB1Ymxpc2hQbGF0Zm9ybUZpbHRlchInCg9jYXRlZ29yeV9maWx0ZXIYBS'
+    'ADKAlSDmNhdGVnb3J5RmlsdGVyEkUKEnB1Ymxpc2hfdGltZV9yYW5nZRgGIAEoCzIXLmxpYnJh'
+    'cmlhbi52MS5UaW1lUmFuZ2VSEHB1Ymxpc2hUaW1lUmFuZ2U=');
 
 @$core.Deprecated('Use listFeedItemsInCollectionResponseDescriptor instead')
 const ListFeedItemsInCollectionResponse$json = {

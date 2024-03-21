@@ -622,7 +622,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -5512,6 +5512,13 @@ proto.librarian.sephirah.v1.UpdateFeedItemCollectionResponse.serializeBinaryToWr
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.repeatedFields_ = [2,3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5543,7 +5550,10 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+    categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5580,6 +5590,20 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.deserializeBinaryFrom
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new librarian_v1_common_pb.PagingRequest;
+      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addIdFilter(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addCategoryFilter(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5609,6 +5633,141 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.serializeBi
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getCategoryFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional librarian.v1.PagingRequest paging = 1;
+ * @return {?proto.librarian.v1.PagingRequest}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated librarian.v1.InternalID id_filter = 2;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.getIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+*/
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.setIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.addIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.clearIdFilterList = function() {
+  return this.setIdFilterList([]);
+};
+
+
+/**
+ * repeated string category_filter = 3;
+ * @return {!Array<string>}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.getCategoryFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.setCategoryFilterList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.addCategoryFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.clearCategoryFilterList = function() {
+  return this.setCategoryFilterList([]);
 };
 
 
@@ -5618,7 +5777,7 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.serializeBinaryToWrit
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.repeatedFields_ = [1];
+proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.repeatedFields_ = [2];
 
 
 
@@ -5651,6 +5810,7 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.toObject =
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
     collectionsList: jspb.Message.toObjectList(msg.getCollectionsList(),
     proto.librarian.sephirah.v1.FeedItemCollection.toObject, includeInstance)
   };
@@ -5690,6 +5850,11 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.deserializeBinaryFro
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_common_pb.PagingResponse;
+      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
+      msg.setPaging(value);
+      break;
+    case 2:
       var value = new proto.librarian.sephirah.v1.FeedItemCollection;
       reader.readMessage(value,proto.librarian.sephirah.v1.FeedItemCollection.deserializeBinaryFromReader);
       msg.addCollections(value);
@@ -5723,10 +5888,18 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.serializeB
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getPaging();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
+    );
+  }
   f = message.getCollectionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.librarian.sephirah.v1.FeedItemCollection.serializeBinaryToWriter
     );
@@ -5735,12 +5908,49 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.serializeBinaryToWri
 
 
 /**
- * repeated FeedItemCollection collections = 1;
+ * optional librarian.v1.PagingResponse paging = 1;
+ * @return {?proto.librarian.v1.PagingResponse}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.getPaging = function() {
+  return /** @type{?proto.librarian.v1.PagingResponse} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PagingResponse|undefined} value
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse} returns this
+*/
+proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.setPaging = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse} returns this
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.clearPaging = function() {
+  return this.setPaging(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.hasPaging = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated FeedItemCollection collections = 2;
  * @return {!Array<!proto.librarian.sephirah.v1.FeedItemCollection>}
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.getCollectionsList = function() {
   return /** @type{!Array<!proto.librarian.sephirah.v1.FeedItemCollection>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.FeedItemCollection, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.FeedItemCollection, 2));
 };
 
 
@@ -5749,7 +5959,7 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.getCollect
  * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse} returns this
 */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.setCollectionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -5759,7 +5969,7 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.setCollect
  * @return {!proto.librarian.sephirah.v1.FeedItemCollection}
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.addCollections = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.sephirah.v1.FeedItemCollection, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.FeedItemCollection, opt_index);
 };
 
 
@@ -6420,8 +6630,7 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.toObject = function
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     collectionIdFilterList: jspb.Message.toObjectList(msg.getCollectionIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    authorIdFilterList: jspb.Message.toObjectList(msg.getAuthorIdFilterList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+    authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
@@ -6472,9 +6681,8 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.deserializeBinaryFr
       msg.addCollectionIdFilter(value);
       break;
     case 3:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addAuthorIdFilter(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addAuthorFilter(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -6534,12 +6742,11 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.serializeBinaryToWr
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getAuthorIdFilterList();
+  f = message.getAuthorFilterList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
+    writer.writeRepeatedString(
       3,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+      f
     );
   }
   f = message.getPublishPlatformFilterList();
@@ -6643,31 +6850,30 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.clearColl
 
 
 /**
- * repeated librarian.v1.InternalID author_id_filter = 3;
- * @return {!Array<!proto.librarian.v1.InternalID>}
+ * repeated string author_filter = 3;
+ * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.getAuthorIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 3));
+proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.getAuthorFilterList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.setAuthorIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+ */
+proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.setAuthorFilterList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
- * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {string} value
  * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
+ * @return {!proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest} returns this
  */
-proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.addAuthorIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.InternalID, opt_index);
+proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.addAuthorFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
@@ -6675,8 +6881,8 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.addAuthor
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest} returns this
  */
-proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.clearAuthorIdFilterList = function() {
-  return this.setAuthorIdFilterList([]);
+proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.clearAuthorFilterList = function() {
+  return this.setAuthorFilterList([]);
 };
 
 

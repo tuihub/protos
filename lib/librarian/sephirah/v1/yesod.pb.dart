@@ -1390,12 +1390,31 @@ class UpdateFeedItemCollectionResponse extends $pb.GeneratedMessage {
 }
 
 class ListFeedItemCollectionsRequest extends $pb.GeneratedMessage {
-  factory ListFeedItemCollectionsRequest() => create();
+  factory ListFeedItemCollectionsRequest({
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? idFilter,
+    $core.Iterable<$core.String>? categoryFilter,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (idFilter != null) {
+      $result.idFilter.addAll(idFilter);
+    }
+    if (categoryFilter != null) {
+      $result.categoryFilter.addAll(categoryFilter);
+    }
+    return $result;
+  }
   ListFeedItemCollectionsRequest._() : super();
   factory ListFeedItemCollectionsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListFeedItemCollectionsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemCollectionsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pPS(3, _omitFieldNames ? '' : 'categoryFilter')
     ..hasRequiredFields = false
   ;
 
@@ -1419,13 +1438,34 @@ class ListFeedItemCollectionsRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static ListFeedItemCollectionsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListFeedItemCollectionsRequest>(create);
   static ListFeedItemCollectionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$8.InternalID> get idFilter => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get categoryFilter => $_getList(2);
 }
 
 class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
   factory ListFeedItemCollectionsResponse({
+    $8.PagingResponse? paging,
     $core.Iterable<FeedItemCollection>? collections,
   }) {
     final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
     if (collections != null) {
       $result.collections.addAll(collections);
     }
@@ -1436,7 +1476,8 @@ class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
   factory ListFeedItemCollectionsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemCollectionsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<FeedItemCollection>(1, _omitFieldNames ? '' : 'collections', $pb.PbFieldType.PM, subBuilder: FeedItemCollection.create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
+    ..pc<FeedItemCollection>(2, _omitFieldNames ? '' : 'collections', $pb.PbFieldType.PM, subBuilder: FeedItemCollection.create)
     ..hasRequiredFields = false
   ;
 
@@ -1462,7 +1503,18 @@ class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
   static ListFeedItemCollectionsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<FeedItemCollection> get collections => $_getList(0);
+  $8.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<FeedItemCollection> get collections => $_getList(1);
 }
 
 class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
@@ -1671,7 +1723,7 @@ class ListFeedItemsInCollectionRequest extends $pb.GeneratedMessage {
   factory ListFeedItemsInCollectionRequest({
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? collectionIdFilter,
-    $core.Iterable<$8.InternalID>? authorIdFilter,
+    $core.Iterable<$core.String>? authorFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
     $8.TimeRange? publishTimeRange,
@@ -1683,8 +1735,8 @@ class ListFeedItemsInCollectionRequest extends $pb.GeneratedMessage {
     if (collectionIdFilter != null) {
       $result.collectionIdFilter.addAll(collectionIdFilter);
     }
-    if (authorIdFilter != null) {
-      $result.authorIdFilter.addAll(authorIdFilter);
+    if (authorFilter != null) {
+      $result.authorFilter.addAll(authorFilter);
     }
     if (publishPlatformFilter != null) {
       $result.publishPlatformFilter.addAll(publishPlatformFilter);
@@ -1704,7 +1756,7 @@ class ListFeedItemsInCollectionRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedItemsInCollectionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'collectionIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pPS(3, _omitFieldNames ? '' : 'authorFilter')
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
     ..aOM<$8.TimeRange>(6, _omitFieldNames ? '' : 'publishTimeRange', subBuilder: $8.TimeRange.create)
@@ -1748,7 +1800,7 @@ class ListFeedItemsInCollectionRequest extends $pb.GeneratedMessage {
   $core.List<$8.InternalID> get collectionIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
+  $core.List<$core.String> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get publishPlatformFilter => $_getList(3);
