@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.8](https://github.com/tuihub/protos/compare/v0.4.7...v0.4.8) (2024-03-21)
+
+
+### Features
+
+* **hokma:** add tag creator ([42f7b47](https://github.com/tuihub/protos/commit/42f7b47daa96df7bad611961b5e4670984d23212))
+* **hokma:** initial define ([833c148](https://github.com/tuihub/protos/commit/833c14821aa898fa2c9e5edf6ecf0cb2601e7149))
+* **yesod:** update message and field name ([9a2657c](https://github.com/tuihub/protos/commit/9a2657c0aa15093720d9e6f9e19d850ef6c1101b))
+
+
+### Bug Fixes
+
+* **deps:** update module google.golang.org/protobuf to v1.33.0 [security] ([#136](https://github.com/tuihub/protos/issues/136)) ([2f617f6](https://github.com/tuihub/protos/commit/2f617f6f00f640a18b29e3f3494c4101ee8e7f79))
+
 ## [0.4.7](https://github.com/tuihub/protos/compare/v0.4.6...v0.4.7) (2024-03-11)
 
 
