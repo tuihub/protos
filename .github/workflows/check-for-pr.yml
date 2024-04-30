@@ -37,7 +37,7 @@ jobs:
         uses: arduino/setup-protoc@v2
 
       - name: Setup bufbuild  
-        uses: bufbuild/buf-setup-action@v1.29.0
+        uses: bufbuild/buf-setup-action@v1.31.0
 
       - name: Check
         run: make check
