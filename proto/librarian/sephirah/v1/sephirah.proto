@@ -240,6 +240,11 @@ service LibrarianSephirahService {
   // `Netzach` `Normal`
   rpc ListNotifyFlows(ListNotifyFlowsRequest) returns (ListNotifyFlowsResponse);
 
+  // `Netzach` `Admin` `Normal limited`
+  rpc ListSystemNotifications(ListSystemNotificationsRequest) returns (ListSystemNotificationsResponse);
+  // `Netzach` `Normal`
+  rpc UpdateSystemNotification(UpdateSystemNotificationRequest) returns (UpdateSystemNotificationResponse);
+
   // `Yesod` `Normal`
   rpc CreateFeedConfig(CreateFeedConfigRequest) returns (CreateFeedConfigResponse);
   // `Yesod` `Normal`

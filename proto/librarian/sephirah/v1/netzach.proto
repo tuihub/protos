@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.sephirah.v1;
 
+import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
@@ -74,8 +75,13 @@ message NotifyFlow {
 
 message NotifyFlowSource {
   NotifyFilter filter = 1;
-  // must be FeedConfigID or FeedItemCollectionID
-  librarian.v1.InternalID source_id = 2;
+  oneof source {
+    // must be FeedConfigID
+    librarian.v1.InternalID feed_config_id = 2;
+    // must be FeedItemCollectionID
+    librarian.v1.InternalID feed_item_collection_id = 3;
+    SystemNotificationFilter system_notification = 4;
+  }
 }
 
 message NotifyFlowTarget {
@@ -100,4 +106,60 @@ enum NotifyFlowStatus {
   NOTIFY_FLOW_STATUS_UNSPECIFIED = 0;
   NOTIFY_FLOW_STATUS_ACTIVE = 1;
   NOTIFY_FLOW_STATUS_SUSPEND = 2;
+}
+
+message ListSystemNotificationsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated SystemNotificationType type_filter = 2;
+  repeated SystemNotificationLevel level_filter = 3;
+  repeated SystemNotificationStatus status_filter = 4;
+}
+
+message ListSystemNotificationsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated SystemNotification notifications = 2;
+}
+
+message UpdateSystemNotificationRequest {
+  librarian.v1.InternalID id = 1;
+  SystemNotificationStatus status = 2;
+}
+
+message UpdateSystemNotificationResponse {}
+
+message SystemNotification {
+  librarian.v1.InternalID id = 1;
+  SystemNotificationType type = 2;
+  SystemNotificationLevel level = 3;
+  SystemNotificationStatus status = 4;
+  string title = 5;
+  // plain text
+  string message = 6;
+  google.protobuf.Timestamp create_time = 7;
+}
+
+message SystemNotificationFilter {
+  repeated SystemNotificationType type_filter = 1;
+  repeated SystemNotificationLevel level_filter = 2;
+}
+
+enum SystemNotificationLevel {
+  SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED = 0;
+  SYSTEM_NOTIFICATION_LEVEL_ERROR = 1;
+  SYSTEM_NOTIFICATION_LEVEL_WARNING = 2;
+  SYSTEM_NOTIFICATION_LEVEL_INFO = 3;
+}
+
+enum SystemNotificationType {
+  SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED = 0;
+  // Limited to admin user
+  SYSTEM_NOTIFICATION_TYPE_SYSTEM = 1;
+  SYSTEM_NOTIFICATION_TYPE_USER = 2;
+}
+
+enum SystemNotificationStatus {
+  SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED = 0;
+  SYSTEM_NOTIFICATION_STATUS_UNREAD = 1;
+  SYSTEM_NOTIFICATION_STATUS_READ = 2;
+  SYSTEM_NOTIFICATION_STATUS_DISMISS = 3;
 }
