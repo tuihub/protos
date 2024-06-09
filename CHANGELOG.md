@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.10](https://github.com/tuihub/protos/compare/v0.4.9...v0.4.10) (2024-06-09)
+
+
+### Features
+
+* **netzach:** add system notification ([6a6243c](https://github.com/tuihub/protos/commit/6a6243c368346413526f8a28b9a1a16e8a2479ba))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#139](https://github.com/tuihub/protos/issues/139)) ([39cfa38](https://github.com/tuihub/protos/commit/39cfa38424622790e7e059886f2cb85f07851bc3))
+* **deps:** update all non-major dependencies ([#141](https://github.com/tuihub/protos/issues/141)) ([bf3d32b](https://github.com/tuihub/protos/commit/bf3d32b4a4bda305a4f9ace391c3de63710a438b))
+
 ## [0.4.9](https://github.com/tuihub/protos/compare/v0.4.8...v0.4.9) (2024-03-21)
 
 
