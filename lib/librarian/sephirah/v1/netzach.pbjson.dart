@@ -45,6 +45,58 @@ final $typed_data.Uint8List notifyFlowStatusDescriptor = $convert.base64Decode(
     '0KGU5PVElGWV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxPV19TVEFUVVNfU1VT'
     'UEVORBAC');
 
+@$core.Deprecated('Use systemNotificationLevelDescriptor instead')
+const SystemNotificationLevel$json = {
+  '1': 'SystemNotificationLevel',
+  '2': [
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED', '2': 0},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_ERROR', '2': 1},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_WARNING', '2': 2},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_INFO', '2': 3},
+  ],
+};
+
+/// Descriptor for `SystemNotificationLevel`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List systemNotificationLevelDescriptor = $convert.base64Decode(
+    'ChdTeXN0ZW1Ob3RpZmljYXRpb25MZXZlbBIpCiVTWVNURU1fTk9USUZJQ0FUSU9OX0xFVkVMX1'
+    'VOU1BFQ0lGSUVEEAASIwofU1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9FUlJPUhABEiUKIVNZ'
+    'U1RFTV9OT1RJRklDQVRJT05fTEVWRUxfV0FSTklORxACEiIKHlNZU1RFTV9OT1RJRklDQVRJT0'
+    '5fTEVWRUxfSU5GTxAD');
+
+@$core.Deprecated('Use systemNotificationTypeDescriptor instead')
+const SystemNotificationType$json = {
+  '1': 'SystemNotificationType',
+  '2': [
+    {'1': 'SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'SYSTEM_NOTIFICATION_TYPE_SYSTEM', '2': 1},
+    {'1': 'SYSTEM_NOTIFICATION_TYPE_USER', '2': 2},
+  ],
+};
+
+/// Descriptor for `SystemNotificationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List systemNotificationTypeDescriptor = $convert.base64Decode(
+    'ChZTeXN0ZW1Ob3RpZmljYXRpb25UeXBlEigKJFNZU1RFTV9OT1RJRklDQVRJT05fVFlQRV9VTl'
+    'NQRUNJRklFRBAAEiMKH1NZU1RFTV9OT1RJRklDQVRJT05fVFlQRV9TWVNURU0QARIhCh1TWVNU'
+    'RU1fTk9USUZJQ0FUSU9OX1RZUEVfVVNFUhAC');
+
+@$core.Deprecated('Use systemNotificationStatusDescriptor instead')
+const SystemNotificationStatus$json = {
+  '1': 'SystemNotificationStatus',
+  '2': [
+    {'1': 'SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'SYSTEM_NOTIFICATION_STATUS_UNREAD', '2': 1},
+    {'1': 'SYSTEM_NOTIFICATION_STATUS_READ', '2': 2},
+    {'1': 'SYSTEM_NOTIFICATION_STATUS_DISMISS', '2': 3},
+  ],
+};
+
+/// Descriptor for `SystemNotificationStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List systemNotificationStatusDescriptor = $convert.base64Decode(
+    'ChhTeXN0ZW1Ob3RpZmljYXRpb25TdGF0dXMSKgomU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVV'
+    'NfVU5TUEVDSUZJRUQQABIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJFQUQQARIj'
+    'Ch9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISJgoiU1lTVEVNX05PVElGSUNBVE'
+    'lPTl9TVEFUVVNfRElTTUlTUxAD');
+
 @$core.Deprecated('Use createNotifyTargetRequestDescriptor instead')
 const CreateNotifyTargetRequest$json = {
   '1': 'CreateNotifyTargetRequest',
@@ -253,15 +305,24 @@ const NotifyFlowSource$json = {
   '1': 'NotifyFlowSource',
   '2': [
     {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.NotifyFilter', '10': 'filter'},
-    {'1': 'source_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sourceId'},
+    {'1': 'feed_config_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'feedConfigId'},
+    {'1': 'feed_item_collection_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'feedItemCollectionId'},
+    {'1': 'system_notification', '3': 4, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.SystemNotificationFilter', '9': 0, '10': 'systemNotification'},
+  ],
+  '8': [
+    {'1': 'source'},
   ],
 };
 
 /// Descriptor for `NotifyFlowSource`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List notifyFlowSourceDescriptor = $convert.base64Decode(
     'ChBOb3RpZnlGbG93U291cmNlEjsKBmZpbHRlchgBIAEoCzIjLmxpYnJhcmlhbi5zZXBoaXJhaC'
-    '52MS5Ob3RpZnlGaWx0ZXJSBmZpbHRlchI1Cglzb3VyY2VfaWQYAiABKAsyGC5saWJyYXJpYW4u'
-    'djEuSW50ZXJuYWxJRFIIc291cmNlSWQ=');
+    '52MS5Ob3RpZnlGaWx0ZXJSBmZpbHRlchJACg5mZWVkX2NvbmZpZ19pZBgCIAEoCzIYLmxpYnJh'
+    'cmlhbi52MS5JbnRlcm5hbElESABSDGZlZWRDb25maWdJZBJRChdmZWVkX2l0ZW1fY29sbGVjdG'
+    'lvbl9pZBgDIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSFGZlZWRJdGVtQ29sbGVj'
+    'dGlvbklkEmIKE3N5c3RlbV9ub3RpZmljYXRpb24YBCABKAsyLy5saWJyYXJpYW4uc2VwaGlyYW'
+    'gudjEuU3lzdGVtTm90aWZpY2F0aW9uRmlsdGVySABSEnN5c3RlbU5vdGlmaWNhdGlvbkIICgZz'
+    'b3VyY2U=');
 
 @$core.Deprecated('Use notifyFlowTargetDescriptor instead')
 const NotifyFlowTarget$json = {
@@ -292,4 +353,105 @@ const NotifyFilter$json = {
 final $typed_data.Uint8List notifyFilterDescriptor = $convert.base64Decode(
     'CgxOb3RpZnlGaWx0ZXISKQoQZXhjbHVkZV9rZXl3b3JkcxgBIAMoCVIPZXhjbHVkZUtleXdvcm'
     'RzEikKEGluY2x1ZGVfa2V5d29yZHMYAiADKAlSD2luY2x1ZGVLZXl3b3Jkcw==');
+
+@$core.Deprecated('Use listSystemNotificationsRequestDescriptor instead')
+const ListSystemNotificationsRequest$json = {
+  '1': 'ListSystemNotificationsRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'type_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationType', '10': 'typeFilter'},
+    {'1': 'level_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationLevel', '10': 'levelFilter'},
+    {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationStatus', '10': 'statusFilter'},
+  ],
+};
+
+/// Descriptor for `ListSystemNotificationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSystemNotificationsRequestDescriptor = $convert.base64Decode(
+    'Ch5MaXN0U3lzdGVtTm90aWZpY2F0aW9uc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicm'
+    'FyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxJOCgt0eXBlX2ZpbHRlchgCIAMoDjItLmxp'
+    'YnJhcmlhbi5zZXBoaXJhaC52MS5TeXN0ZW1Ob3RpZmljYXRpb25UeXBlUgp0eXBlRmlsdGVyEl'
+    'EKDGxldmVsX2ZpbHRlchgDIAMoDjIuLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TeXN0ZW1Ob3Rp'
+    'ZmljYXRpb25MZXZlbFILbGV2ZWxGaWx0ZXISVAoNc3RhdHVzX2ZpbHRlchgEIAMoDjIvLmxpYn'
+    'Jhcmlhbi5zZXBoaXJhaC52MS5TeXN0ZW1Ob3RpZmljYXRpb25TdGF0dXNSDHN0YXR1c0ZpbHRl'
+    'cg==');
+
+@$core.Deprecated('Use listSystemNotificationsResponseDescriptor instead')
+const ListSystemNotificationsResponse$json = {
+  '1': 'ListSystemNotificationsResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'notifications', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SystemNotification', '10': 'notifications'},
+  ],
+};
+
+/// Descriptor for `ListSystemNotificationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listSystemNotificationsResponseDescriptor = $convert.base64Decode(
+    'Ch9MaXN0U3lzdGVtTm90aWZpY2F0aW9uc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYn'
+    'Jhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEk8KDW5vdGlmaWNhdGlvbnMYAiADKAsy'
+    'KS5saWJyYXJpYW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2F0aW9uUg1ub3RpZmljYXRpb2'
+    '5z');
+
+@$core.Deprecated('Use updateSystemNotificationRequestDescriptor instead')
+const UpdateSystemNotificationRequest$json = {
+  '1': 'UpdateSystemNotificationRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationStatus', '10': 'status'},
+  ],
+};
+
+/// Descriptor for `UpdateSystemNotificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSystemNotificationRequestDescriptor = $convert.base64Decode(
+    'Ch9VcGRhdGVTeXN0ZW1Ob3RpZmljYXRpb25SZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaW'
+    'FuLnYxLkludGVybmFsSURSAmlkEkcKBnN0YXR1cxgCIAEoDjIvLmxpYnJhcmlhbi5zZXBoaXJh'
+    'aC52MS5TeXN0ZW1Ob3RpZmljYXRpb25TdGF0dXNSBnN0YXR1cw==');
+
+@$core.Deprecated('Use updateSystemNotificationResponseDescriptor instead')
+const UpdateSystemNotificationResponse$json = {
+  '1': 'UpdateSystemNotificationResponse',
+};
+
+/// Descriptor for `UpdateSystemNotificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateSystemNotificationResponseDescriptor = $convert.base64Decode(
+    'CiBVcGRhdGVTeXN0ZW1Ob3RpZmljYXRpb25SZXNwb25zZQ==');
+
+@$core.Deprecated('Use systemNotificationDescriptor instead')
+const SystemNotification$json = {
+  '1': 'SystemNotification',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationType', '10': 'type'},
+    {'1': 'level', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationLevel', '10': 'level'},
+    {'1': 'status', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationStatus', '10': 'status'},
+    {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'message', '3': 6, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'create_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
+  ],
+};
+
+/// Descriptor for `SystemNotification`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List systemNotificationDescriptor = $convert.base64Decode(
+    'ChJTeXN0ZW1Ob3RpZmljYXRpb24SKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYW'
+    'xJRFICaWQSQQoEdHlwZRgCIAEoDjItLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TeXN0ZW1Ob3Rp'
+    'ZmljYXRpb25UeXBlUgR0eXBlEkQKBWxldmVsGAMgASgOMi4ubGlicmFyaWFuLnNlcGhpcmFoLn'
+    'YxLlN5c3RlbU5vdGlmaWNhdGlvbkxldmVsUgVsZXZlbBJHCgZzdGF0dXMYBCABKA4yLy5saWJy'
+    'YXJpYW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2F0aW9uU3RhdHVzUgZzdGF0dXMSFAoFdG'
+    'l0bGUYBSABKAlSBXRpdGxlEhgKB21lc3NhZ2UYBiABKAlSB21lc3NhZ2USOwoLY3JlYXRlX3Rp'
+    'bWUYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1l');
+
+@$core.Deprecated('Use systemNotificationFilterDescriptor instead')
+const SystemNotificationFilter$json = {
+  '1': 'SystemNotificationFilter',
+  '2': [
+    {'1': 'type_filter', '3': 1, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationType', '10': 'typeFilter'},
+    {'1': 'level_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationLevel', '10': 'levelFilter'},
+  ],
+};
+
+/// Descriptor for `SystemNotificationFilter`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List systemNotificationFilterDescriptor = $convert.base64Decode(
+    'ChhTeXN0ZW1Ob3RpZmljYXRpb25GaWx0ZXISTgoLdHlwZV9maWx0ZXIYASADKA4yLS5saWJyYX'
+    'JpYW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2F0aW9uVHlwZVIKdHlwZUZpbHRlchJRCgxs'
+    'ZXZlbF9maWx0ZXIYAiADKA4yLi5saWJyYXJpYW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2'
+    'F0aW9uTGV2ZWxSC2xldmVsRmlsdGVy');
 

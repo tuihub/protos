@@ -13862,6 +13862,271 @@ impl<'de> serde::Deserialize<'de> for ListSharedAppSavesResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListSharedAppSavesResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ListSystemNotificationsRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.type_filter.is_empty() {
+            len += 1;
+        }
+        if !self.level_filter.is_empty() {
+            len += 1;
+        }
+        if !self.status_filter.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListSystemNotificationsRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.type_filter.is_empty() {
+            let v = self.type_filter.iter().cloned().map(|v| {
+                SystemNotificationType::from_i32(v)
+                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("typeFilter", &v)?;
+        }
+        if !self.level_filter.is_empty() {
+            let v = self.level_filter.iter().cloned().map(|v| {
+                SystemNotificationLevel::from_i32(v)
+                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("levelFilter", &v)?;
+        }
+        if !self.status_filter.is_empty() {
+            let v = self.status_filter.iter().cloned().map(|v| {
+                SystemNotificationStatus::from_i32(v)
+                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("statusFilter", &v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListSystemNotificationsRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "type_filter",
+            "typeFilter",
+            "level_filter",
+            "levelFilter",
+            "status_filter",
+            "statusFilter",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            TypeFilter,
+            LevelFilter,
+            StatusFilter,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
+                            "levelFilter" | "level_filter" => Ok(GeneratedField::LevelFilter),
+                            "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListSystemNotificationsRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListSystemNotificationsRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListSystemNotificationsRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut type_filter__ = None;
+                let mut level_filter__ = None;
+                let mut status_filter__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::TypeFilter => {
+                            if type_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("typeFilter"));
+                            }
+                            type_filter__ = Some(map.next_value::<Vec<SystemNotificationType>>()?.into_iter().map(|x| x as i32).collect());
+                        }
+                        GeneratedField::LevelFilter => {
+                            if level_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("levelFilter"));
+                            }
+                            level_filter__ = Some(map.next_value::<Vec<SystemNotificationLevel>>()?.into_iter().map(|x| x as i32).collect());
+                        }
+                        GeneratedField::StatusFilter => {
+                            if status_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("statusFilter"));
+                            }
+                            status_filter__ = Some(map.next_value::<Vec<SystemNotificationStatus>>()?.into_iter().map(|x| x as i32).collect());
+                        }
+                    }
+                }
+                Ok(ListSystemNotificationsRequest {
+                    paging: paging__,
+                    type_filter: type_filter__.unwrap_or_default(),
+                    level_filter: level_filter__.unwrap_or_default(),
+                    status_filter: status_filter__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListSystemNotificationsRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListSystemNotificationsResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.notifications.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListSystemNotificationsResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.notifications.is_empty() {
+            struct_ser.serialize_field("notifications", &self.notifications)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListSystemNotificationsResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "notifications",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            Notifications,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "notifications" => Ok(GeneratedField::Notifications),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListSystemNotificationsResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListSystemNotificationsResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListSystemNotificationsResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut notifications__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map.next_value()?;
+                        }
+                        GeneratedField::Notifications => {
+                            if notifications__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("notifications"));
+                            }
+                            notifications__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListSystemNotificationsResponse {
+                    paging: paging__,
+                    notifications: notifications__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListSystemNotificationsResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for ListTagsRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -14980,15 +15245,25 @@ impl serde::Serialize for NotifyFlowSource {
         if self.filter.is_some() {
             len += 1;
         }
-        if self.source_id.is_some() {
+        if self.source.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.NotifyFlowSource", len)?;
         if let Some(v) = self.filter.as_ref() {
             struct_ser.serialize_field("filter", v)?;
         }
-        if let Some(v) = self.source_id.as_ref() {
-            struct_ser.serialize_field("sourceId", v)?;
+        if let Some(v) = self.source.as_ref() {
+            match v {
+                notify_flow_source::Source::FeedConfigId(v) => {
+                    struct_ser.serialize_field("feedConfigId", v)?;
+                }
+                notify_flow_source::Source::FeedItemCollectionId(v) => {
+                    struct_ser.serialize_field("feedItemCollectionId", v)?;
+                }
+                notify_flow_source::Source::SystemNotification(v) => {
+                    struct_ser.serialize_field("systemNotification", v)?;
+                }
+            }
         }
         struct_ser.end()
     }
@@ -15001,14 +15276,20 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
     {
         const FIELDS: &[&str] = &[
             "filter",
-            "source_id",
-            "sourceId",
+            "feed_config_id",
+            "feedConfigId",
+            "feed_item_collection_id",
+            "feedItemCollectionId",
+            "system_notification",
+            "systemNotification",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Filter,
-            SourceId,
+            FeedConfigId,
+            FeedItemCollectionId,
+            SystemNotification,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -15031,7 +15312,9 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                     {
                         match value {
                             "filter" => Ok(GeneratedField::Filter),
-                            "sourceId" | "source_id" => Ok(GeneratedField::SourceId),
+                            "feedConfigId" | "feed_config_id" => Ok(GeneratedField::FeedConfigId),
+                            "feedItemCollectionId" | "feed_item_collection_id" => Ok(GeneratedField::FeedItemCollectionId),
+                            "systemNotification" | "system_notification" => Ok(GeneratedField::SystemNotification),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -15052,7 +15335,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut filter__ = None;
-                let mut source_id__ = None;
+                let mut source__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Filter => {
@@ -15061,17 +15344,32 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                             }
                             filter__ = map.next_value()?;
                         }
-                        GeneratedField::SourceId => {
-                            if source_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sourceId"));
+                        GeneratedField::FeedConfigId => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedConfigId"));
                             }
-                            source_id__ = map.next_value()?;
+                            source__ = map.next_value::<::std::option::Option<_>>()?.map(notify_flow_source::Source::FeedConfigId)
+;
+                        }
+                        GeneratedField::FeedItemCollectionId => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedItemCollectionId"));
+                            }
+                            source__ = map.next_value::<::std::option::Option<_>>()?.map(notify_flow_source::Source::FeedItemCollectionId)
+;
+                        }
+                        GeneratedField::SystemNotification => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("systemNotification"));
+                            }
+                            source__ = map.next_value::<::std::option::Option<_>>()?.map(notify_flow_source::Source::SystemNotification)
+;
                         }
                     }
                 }
                 Ok(NotifyFlowSource {
                     filter: filter__,
-                    source_id: source_id__,
+                    source: source__,
                 })
             }
         }
@@ -22122,6 +22420,558 @@ impl<'de> serde::Deserialize<'de> for SyncAppInfosResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.SyncAppInfosResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for SystemNotification {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        if self.r#type != 0 {
+            len += 1;
+        }
+        if self.level != 0 {
+            len += 1;
+        }
+        if self.status != 0 {
+            len += 1;
+        }
+        if !self.title.is_empty() {
+            len += 1;
+        }
+        if !self.message.is_empty() {
+            len += 1;
+        }
+        if self.create_time.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SystemNotification", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        if self.r#type != 0 {
+            let v = SystemNotificationType::from_i32(self.r#type)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
+            struct_ser.serialize_field("type", &v)?;
+        }
+        if self.level != 0 {
+            let v = SystemNotificationLevel::from_i32(self.level)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.level)))?;
+            struct_ser.serialize_field("level", &v)?;
+        }
+        if self.status != 0 {
+            let v = SystemNotificationStatus::from_i32(self.status)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
+            struct_ser.serialize_field("status", &v)?;
+        }
+        if !self.title.is_empty() {
+            struct_ser.serialize_field("title", &self.title)?;
+        }
+        if !self.message.is_empty() {
+            struct_ser.serialize_field("message", &self.message)?;
+        }
+        if let Some(v) = self.create_time.as_ref() {
+            struct_ser.serialize_field("createTime", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SystemNotification {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "type",
+            "level",
+            "status",
+            "title",
+            "message",
+            "create_time",
+            "createTime",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            Type,
+            Level,
+            Status,
+            Title,
+            Message,
+            CreateTime,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "type" => Ok(GeneratedField::Type),
+                            "level" => Ok(GeneratedField::Level),
+                            "status" => Ok(GeneratedField::Status),
+                            "title" => Ok(GeneratedField::Title),
+                            "message" => Ok(GeneratedField::Message),
+                            "createTime" | "create_time" => Ok(GeneratedField::CreateTime),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SystemNotification;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SystemNotification")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SystemNotification, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut r#type__ = None;
+                let mut level__ = None;
+                let mut status__ = None;
+                let mut title__ = None;
+                let mut message__ = None;
+                let mut create_time__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                        GeneratedField::Type => {
+                            if r#type__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("type"));
+                            }
+                            r#type__ = Some(map.next_value::<SystemNotificationType>()? as i32);
+                        }
+                        GeneratedField::Level => {
+                            if level__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("level"));
+                            }
+                            level__ = Some(map.next_value::<SystemNotificationLevel>()? as i32);
+                        }
+                        GeneratedField::Status => {
+                            if status__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("status"));
+                            }
+                            status__ = Some(map.next_value::<SystemNotificationStatus>()? as i32);
+                        }
+                        GeneratedField::Title => {
+                            if title__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("title"));
+                            }
+                            title__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Message => {
+                            if message__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("message"));
+                            }
+                            message__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::CreateTime => {
+                            if create_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("createTime"));
+                            }
+                            create_time__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(SystemNotification {
+                    id: id__,
+                    r#type: r#type__.unwrap_or_default(),
+                    level: level__.unwrap_or_default(),
+                    status: status__.unwrap_or_default(),
+                    title: title__.unwrap_or_default(),
+                    message: message__.unwrap_or_default(),
+                    create_time: create_time__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SystemNotification", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SystemNotificationFilter {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.type_filter.is_empty() {
+            len += 1;
+        }
+        if !self.level_filter.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SystemNotificationFilter", len)?;
+        if !self.type_filter.is_empty() {
+            let v = self.type_filter.iter().cloned().map(|v| {
+                SystemNotificationType::from_i32(v)
+                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("typeFilter", &v)?;
+        }
+        if !self.level_filter.is_empty() {
+            let v = self.level_filter.iter().cloned().map(|v| {
+                SystemNotificationLevel::from_i32(v)
+                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("levelFilter", &v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for SystemNotificationFilter {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "type_filter",
+            "typeFilter",
+            "level_filter",
+            "levelFilter",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            TypeFilter,
+            LevelFilter,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
+                            "levelFilter" | "level_filter" => Ok(GeneratedField::LevelFilter),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SystemNotificationFilter;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.SystemNotificationFilter")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<SystemNotificationFilter, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut type_filter__ = None;
+                let mut level_filter__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::TypeFilter => {
+                            if type_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("typeFilter"));
+                            }
+                            type_filter__ = Some(map.next_value::<Vec<SystemNotificationType>>()?.into_iter().map(|x| x as i32).collect());
+                        }
+                        GeneratedField::LevelFilter => {
+                            if level_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("levelFilter"));
+                            }
+                            level_filter__ = Some(map.next_value::<Vec<SystemNotificationLevel>>()?.into_iter().map(|x| x as i32).collect());
+                        }
+                    }
+                }
+                Ok(SystemNotificationFilter {
+                    type_filter: type_filter__.unwrap_or_default(),
+                    level_filter: level_filter__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.SystemNotificationFilter", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SystemNotificationLevel {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED",
+            Self::Error => "SYSTEM_NOTIFICATION_LEVEL_ERROR",
+            Self::Warning => "SYSTEM_NOTIFICATION_LEVEL_WARNING",
+            Self::Info => "SYSTEM_NOTIFICATION_LEVEL_INFO",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for SystemNotificationLevel {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED",
+            "SYSTEM_NOTIFICATION_LEVEL_ERROR",
+            "SYSTEM_NOTIFICATION_LEVEL_WARNING",
+            "SYSTEM_NOTIFICATION_LEVEL_INFO",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SystemNotificationLevel;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemNotificationLevel::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemNotificationLevel::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED" => Ok(SystemNotificationLevel::Unspecified),
+                    "SYSTEM_NOTIFICATION_LEVEL_ERROR" => Ok(SystemNotificationLevel::Error),
+                    "SYSTEM_NOTIFICATION_LEVEL_WARNING" => Ok(SystemNotificationLevel::Warning),
+                    "SYSTEM_NOTIFICATION_LEVEL_INFO" => Ok(SystemNotificationLevel::Info),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SystemNotificationStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED",
+            Self::Unread => "SYSTEM_NOTIFICATION_STATUS_UNREAD",
+            Self::Read => "SYSTEM_NOTIFICATION_STATUS_READ",
+            Self::Dismiss => "SYSTEM_NOTIFICATION_STATUS_DISMISS",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for SystemNotificationStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED",
+            "SYSTEM_NOTIFICATION_STATUS_UNREAD",
+            "SYSTEM_NOTIFICATION_STATUS_READ",
+            "SYSTEM_NOTIFICATION_STATUS_DISMISS",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SystemNotificationStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemNotificationStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemNotificationStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED" => Ok(SystemNotificationStatus::Unspecified),
+                    "SYSTEM_NOTIFICATION_STATUS_UNREAD" => Ok(SystemNotificationStatus::Unread),
+                    "SYSTEM_NOTIFICATION_STATUS_READ" => Ok(SystemNotificationStatus::Read),
+                    "SYSTEM_NOTIFICATION_STATUS_DISMISS" => Ok(SystemNotificationStatus::Dismiss),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for SystemNotificationType {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED",
+            Self::System => "SYSTEM_NOTIFICATION_TYPE_SYSTEM",
+            Self::User => "SYSTEM_NOTIFICATION_TYPE_USER",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for SystemNotificationType {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED",
+            "SYSTEM_NOTIFICATION_TYPE_SYSTEM",
+            "SYSTEM_NOTIFICATION_TYPE_USER",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = SystemNotificationType;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemNotificationType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(SystemNotificationType::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED" => Ok(SystemNotificationType::Unspecified),
+                    "SYSTEM_NOTIFICATION_TYPE_SYSTEM" => Ok(SystemNotificationType::System),
+                    "SYSTEM_NOTIFICATION_TYPE_USER" => Ok(SystemNotificationType::User),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
 impl serde::Serialize for SystemType {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -25039,6 +25889,187 @@ impl<'de> serde::Deserialize<'de> for UpdateSharedAppSaveResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.UpdateSharedAppSaveResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UpdateSystemNotificationRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.id.is_some() {
+            len += 1;
+        }
+        if self.status != 0 {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateSystemNotificationRequest", len)?;
+        if let Some(v) = self.id.as_ref() {
+            struct_ser.serialize_field("id", v)?;
+        }
+        if self.status != 0 {
+            let v = SystemNotificationStatus::from_i32(self.status)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
+            struct_ser.serialize_field("status", &v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UpdateSystemNotificationRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "status",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            Status,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "status" => Ok(GeneratedField::Status),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UpdateSystemNotificationRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UpdateSystemNotificationRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateSystemNotificationRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut status__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = map.next_value()?;
+                        }
+                        GeneratedField::Status => {
+                            if status__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("status"));
+                            }
+                            status__ = Some(map.next_value::<SystemNotificationStatus>()? as i32);
+                        }
+                    }
+                }
+                Ok(UpdateSystemNotificationRequest {
+                    id: id__,
+                    status: status__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateSystemNotificationRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for UpdateSystemNotificationResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdateSystemNotificationResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for UpdateSystemNotificationResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = UpdateSystemNotificationResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.UpdateSystemNotificationResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateSystemNotificationResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(UpdateSystemNotificationResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.UpdateSystemNotificationResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for UpdateTagRequest {

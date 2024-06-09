@@ -403,6 +403,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> __Marshaller_librarian_sephirah_v1_ListNotifyFlowsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest> __Marshaller_librarian_sephirah_v1_ListSystemNotificationsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse> __Marshaller_librarian_sephirah_v1_ListSystemNotificationsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest> __Marshaller_librarian_sephirah_v1_UpdateSystemNotificationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse> __Marshaller_librarian_sephirah_v1_UpdateSystemNotificationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest> __Marshaller_librarian_sephirah_v1_CreateFeedConfigRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse> __Marshaller_librarian_sephirah_v1_CreateFeedConfigResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse.Parser));
@@ -1174,6 +1182,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "ListNotifyFlows",
         __Marshaller_librarian_sephirah_v1_ListNotifyFlowsRequest,
         __Marshaller_librarian_sephirah_v1_ListNotifyFlowsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse> __Method_ListSystemNotifications = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListSystemNotifications",
+        __Marshaller_librarian_sephirah_v1_ListSystemNotificationsRequest,
+        __Marshaller_librarian_sephirah_v1_ListSystemNotificationsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse> __Method_UpdateSystemNotification = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateSystemNotification",
+        __Marshaller_librarian_sephirah_v1_UpdateSystemNotificationRequest,
+        __Marshaller_librarian_sephirah_v1_UpdateSystemNotificationResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse> __Method_CreateFeedConfig = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse>(
@@ -2407,6 +2431,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse> ListNotifyFlows(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse> ListSystemNotifications(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse> UpdateSystemNotification(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -6839,6 +6887,102 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListNotifyFlows, null, options, request);
       }
       /// <summary>
+      /// `Netzach` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse ListSystemNotifications(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSystemNotifications(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse ListSystemNotifications(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListSystemNotifications, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse> ListSystemNotificationsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListSystemNotificationsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Admin` `Normal limited`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse> ListSystemNotificationsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListSystemNotifications, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse UpdateSystemNotification(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateSystemNotification(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse UpdateSystemNotification(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateSystemNotification, null, options, request);
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse> UpdateSystemNotificationAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateSystemNotificationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Netzach` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse> UpdateSystemNotificationAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateSystemNotification, null, options, request);
+      }
+      /// <summary>
       /// `Yesod` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -7851,6 +7995,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_CreateNotifyFlow, serviceImpl.CreateNotifyFlow)
           .AddMethod(__Method_UpdateNotifyFlow, serviceImpl.UpdateNotifyFlow)
           .AddMethod(__Method_ListNotifyFlows, serviceImpl.ListNotifyFlows)
+          .AddMethod(__Method_ListSystemNotifications, serviceImpl.ListSystemNotifications)
+          .AddMethod(__Method_UpdateSystemNotification, serviceImpl.UpdateSystemNotification)
           .AddMethod(__Method_CreateFeedConfig, serviceImpl.CreateFeedConfig)
           .AddMethod(__Method_UpdateFeedConfig, serviceImpl.UpdateFeedConfig)
           .AddMethod(__Method_ListFeedConfigs, serviceImpl.ListFeedConfigs)
@@ -7966,6 +8112,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_CreateNotifyFlow, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse>(serviceImpl.CreateNotifyFlow));
       serviceBinder.AddMethod(__Method_UpdateNotifyFlow, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse>(serviceImpl.UpdateNotifyFlow));
       serviceBinder.AddMethod(__Method_ListNotifyFlows, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse>(serviceImpl.ListNotifyFlows));
+      serviceBinder.AddMethod(__Method_ListSystemNotifications, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse>(serviceImpl.ListSystemNotifications));
+      serviceBinder.AddMethod(__Method_UpdateSystemNotification, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse>(serviceImpl.UpdateSystemNotification));
       serviceBinder.AddMethod(__Method_CreateFeedConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateFeedConfigResponse>(serviceImpl.CreateFeedConfig));
       serviceBinder.AddMethod(__Method_UpdateFeedConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateFeedConfigRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateFeedConfigResponse>(serviceImpl.UpdateFeedConfig));
       serviceBinder.AddMethod(__Method_ListFeedConfigs, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedConfigsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedConfigsResponse>(serviceImpl.ListFeedConfigs));

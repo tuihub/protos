@@ -47,5 +47,60 @@ class NotifyFlowStatus extends $pb.ProtobufEnum {
   const NotifyFlowStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+class SystemNotificationLevel extends $pb.ProtobufEnum {
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED = SystemNotificationLevel._(0, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_ERROR = SystemNotificationLevel._(1, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_ERROR');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_WARNING = SystemNotificationLevel._(2, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_WARNING');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_INFO = SystemNotificationLevel._(3, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_INFO');
+
+  static const $core.List<SystemNotificationLevel> values = <SystemNotificationLevel> [
+    SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED,
+    SYSTEM_NOTIFICATION_LEVEL_ERROR,
+    SYSTEM_NOTIFICATION_LEVEL_WARNING,
+    SYSTEM_NOTIFICATION_LEVEL_INFO,
+  ];
+
+  static final $core.Map<$core.int, SystemNotificationLevel> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SystemNotificationLevel? valueOf($core.int value) => _byValue[value];
+
+  const SystemNotificationLevel._($core.int v, $core.String n) : super(v, n);
+}
+
+class SystemNotificationType extends $pb.ProtobufEnum {
+  static const SystemNotificationType SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED = SystemNotificationType._(0, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED');
+  static const SystemNotificationType SYSTEM_NOTIFICATION_TYPE_SYSTEM = SystemNotificationType._(1, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_TYPE_SYSTEM');
+  static const SystemNotificationType SYSTEM_NOTIFICATION_TYPE_USER = SystemNotificationType._(2, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_TYPE_USER');
+
+  static const $core.List<SystemNotificationType> values = <SystemNotificationType> [
+    SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED,
+    SYSTEM_NOTIFICATION_TYPE_SYSTEM,
+    SYSTEM_NOTIFICATION_TYPE_USER,
+  ];
+
+  static final $core.Map<$core.int, SystemNotificationType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SystemNotificationType? valueOf($core.int value) => _byValue[value];
+
+  const SystemNotificationType._($core.int v, $core.String n) : super(v, n);
+}
+
+class SystemNotificationStatus extends $pb.ProtobufEnum {
+  static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED = SystemNotificationStatus._(0, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED');
+  static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_UNREAD = SystemNotificationStatus._(1, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_UNREAD');
+  static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_READ = SystemNotificationStatus._(2, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_READ');
+  static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_DISMISS = SystemNotificationStatus._(3, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_DISMISS');
+
+  static const $core.List<SystemNotificationStatus> values = <SystemNotificationStatus> [
+    SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED,
+    SYSTEM_NOTIFICATION_STATUS_UNREAD,
+    SYSTEM_NOTIFICATION_STATUS_READ,
+    SYSTEM_NOTIFICATION_STATUS_DISMISS,
+  ];
+
+  static final $core.Map<$core.int, SystemNotificationStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static SystemNotificationStatus? valueOf($core.int value) => _byValue[value];
+
+  const SystemNotificationStatus._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

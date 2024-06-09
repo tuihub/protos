@@ -1200,6 +1200,28 @@ function deserialize_librarian_sephirah_v1_ListSharedAppSavesResponse(buffer_arg
   return librarian_sephirah_v1_gebura_pb.ListSharedAppSavesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListSystemNotificationsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListSystemNotificationsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListSystemNotificationsRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListSystemNotificationsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListSystemNotificationsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListSystemNotificationsResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListTagsRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_hokma_pb.ListTagsRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListTagsRequest');
@@ -2232,6 +2254,28 @@ function serialize_librarian_sephirah_v1_UpdateSharedAppSaveResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_UpdateSharedAppSaveResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.UpdateSharedAppSaveResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateSystemNotificationRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateSystemNotificationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateSystemNotificationRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_UpdateSystemNotificationResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdateSystemNotificationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_UpdateSystemNotificationResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UpdateTagRequest(arg) {
@@ -3422,6 +3466,30 @@ listNotifyFlows: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
+  },
+  // `Netzach` `Admin` `Normal limited`
+listSystemNotifications: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListSystemNotificationsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListSystemNotificationsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListSystemNotificationsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListSystemNotificationsResponse,
+  },
+  // `Netzach` `Normal`
+updateSystemNotification: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateSystemNotification',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdateSystemNotificationRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdateSystemNotificationRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdateSystemNotificationResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdateSystemNotificationResponse,
   },
   // `Yesod` `Normal`
 createFeedConfig: {

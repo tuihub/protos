@@ -2,6 +2,7 @@
 // file: librarian/sephirah/v1/netzach.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
 
 export class CreateNotifyTargetRequest extends jspb.Message {
@@ -386,11 +387,22 @@ export class NotifyFlowSource extends jspb.Message {
   getFilter(): NotifyFilter | undefined;
   setFilter(value?: NotifyFilter): void;
 
-  hasSourceId(): boolean;
-  clearSourceId(): void;
-  getSourceId(): librarian_v1_common_pb.InternalID | undefined;
-  setSourceId(value?: librarian_v1_common_pb.InternalID): void;
+  hasFeedConfigId(): boolean;
+  clearFeedConfigId(): void;
+  getFeedConfigId(): librarian_v1_common_pb.InternalID | undefined;
+  setFeedConfigId(value?: librarian_v1_common_pb.InternalID): void;
 
+  hasFeedItemCollectionId(): boolean;
+  clearFeedItemCollectionId(): void;
+  getFeedItemCollectionId(): librarian_v1_common_pb.InternalID | undefined;
+  setFeedItemCollectionId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasSystemNotification(): boolean;
+  clearSystemNotification(): void;
+  getSystemNotification(): SystemNotificationFilter | undefined;
+  setSystemNotification(value?: SystemNotificationFilter): void;
+
+  getSourceCase(): NotifyFlowSource.SourceCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyFlowSource.AsObject;
   static toObject(includeInstance: boolean, msg: NotifyFlowSource): NotifyFlowSource.AsObject;
@@ -404,7 +416,16 @@ export class NotifyFlowSource extends jspb.Message {
 export namespace NotifyFlowSource {
   export type AsObject = {
     filter?: NotifyFilter.AsObject,
-    sourceId?: librarian_v1_common_pb.InternalID.AsObject,
+    feedConfigId?: librarian_v1_common_pb.InternalID.AsObject,
+    feedItemCollectionId?: librarian_v1_common_pb.InternalID.AsObject,
+    systemNotification?: SystemNotificationFilter.AsObject,
+  }
+
+  export enum SourceCase {
+    SOURCE_NOT_SET = 0,
+    FEED_CONFIG_ID = 2,
+    FEED_ITEM_COLLECTION_ID = 3,
+    SYSTEM_NOTIFICATION = 4,
   }
 }
 
@@ -468,6 +489,192 @@ export namespace NotifyFilter {
   }
 }
 
+export class ListSystemNotificationsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  clearTypeFilterList(): void;
+  getTypeFilterList(): Array<SystemNotificationTypeMap[keyof SystemNotificationTypeMap]>;
+  setTypeFilterList(value: Array<SystemNotificationTypeMap[keyof SystemNotificationTypeMap]>): void;
+  addTypeFilter(value: SystemNotificationTypeMap[keyof SystemNotificationTypeMap], index?: number): SystemNotificationTypeMap[keyof SystemNotificationTypeMap];
+
+  clearLevelFilterList(): void;
+  getLevelFilterList(): Array<SystemNotificationLevelMap[keyof SystemNotificationLevelMap]>;
+  setLevelFilterList(value: Array<SystemNotificationLevelMap[keyof SystemNotificationLevelMap]>): void;
+  addLevelFilter(value: SystemNotificationLevelMap[keyof SystemNotificationLevelMap], index?: number): SystemNotificationLevelMap[keyof SystemNotificationLevelMap];
+
+  clearStatusFilterList(): void;
+  getStatusFilterList(): Array<SystemNotificationStatusMap[keyof SystemNotificationStatusMap]>;
+  setStatusFilterList(value: Array<SystemNotificationStatusMap[keyof SystemNotificationStatusMap]>): void;
+  addStatusFilter(value: SystemNotificationStatusMap[keyof SystemNotificationStatusMap], index?: number): SystemNotificationStatusMap[keyof SystemNotificationStatusMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSystemNotificationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSystemNotificationsRequest): ListSystemNotificationsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSystemNotificationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSystemNotificationsRequest;
+  static deserializeBinaryFromReader(message: ListSystemNotificationsRequest, reader: jspb.BinaryReader): ListSystemNotificationsRequest;
+}
+
+export namespace ListSystemNotificationsRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    typeFilterList: Array<SystemNotificationTypeMap[keyof SystemNotificationTypeMap]>,
+    levelFilterList: Array<SystemNotificationLevelMap[keyof SystemNotificationLevelMap]>,
+    statusFilterList: Array<SystemNotificationStatusMap[keyof SystemNotificationStatusMap]>,
+  }
+}
+
+export class ListSystemNotificationsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearNotificationsList(): void;
+  getNotificationsList(): Array<SystemNotification>;
+  setNotificationsList(value: Array<SystemNotification>): void;
+  addNotifications(value?: SystemNotification, index?: number): SystemNotification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListSystemNotificationsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSystemNotificationsResponse): ListSystemNotificationsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListSystemNotificationsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSystemNotificationsResponse;
+  static deserializeBinaryFromReader(message: ListSystemNotificationsResponse, reader: jspb.BinaryReader): ListSystemNotificationsResponse;
+}
+
+export namespace ListSystemNotificationsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    notificationsList: Array<SystemNotification.AsObject>,
+  }
+}
+
+export class UpdateSystemNotificationRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getStatus(): SystemNotificationStatusMap[keyof SystemNotificationStatusMap];
+  setStatus(value: SystemNotificationStatusMap[keyof SystemNotificationStatusMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSystemNotificationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSystemNotificationRequest): UpdateSystemNotificationRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSystemNotificationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSystemNotificationRequest;
+  static deserializeBinaryFromReader(message: UpdateSystemNotificationRequest, reader: jspb.BinaryReader): UpdateSystemNotificationRequest;
+}
+
+export namespace UpdateSystemNotificationRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    status: SystemNotificationStatusMap[keyof SystemNotificationStatusMap],
+  }
+}
+
+export class UpdateSystemNotificationResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateSystemNotificationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateSystemNotificationResponse): UpdateSystemNotificationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateSystemNotificationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateSystemNotificationResponse;
+  static deserializeBinaryFromReader(message: UpdateSystemNotificationResponse, reader: jspb.BinaryReader): UpdateSystemNotificationResponse;
+}
+
+export namespace UpdateSystemNotificationResponse {
+  export type AsObject = {
+  }
+}
+
+export class SystemNotification extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getType(): SystemNotificationTypeMap[keyof SystemNotificationTypeMap];
+  setType(value: SystemNotificationTypeMap[keyof SystemNotificationTypeMap]): void;
+
+  getLevel(): SystemNotificationLevelMap[keyof SystemNotificationLevelMap];
+  setLevel(value: SystemNotificationLevelMap[keyof SystemNotificationLevelMap]): void;
+
+  getStatus(): SystemNotificationStatusMap[keyof SystemNotificationStatusMap];
+  setStatus(value: SystemNotificationStatusMap[keyof SystemNotificationStatusMap]): void;
+
+  getTitle(): string;
+  setTitle(value: string): void;
+
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  hasCreateTime(): boolean;
+  clearCreateTime(): void;
+  getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SystemNotification.AsObject;
+  static toObject(includeInstance: boolean, msg: SystemNotification): SystemNotification.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SystemNotification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SystemNotification;
+  static deserializeBinaryFromReader(message: SystemNotification, reader: jspb.BinaryReader): SystemNotification;
+}
+
+export namespace SystemNotification {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    type: SystemNotificationTypeMap[keyof SystemNotificationTypeMap],
+    level: SystemNotificationLevelMap[keyof SystemNotificationLevelMap],
+    status: SystemNotificationStatusMap[keyof SystemNotificationStatusMap],
+    title: string,
+    message: string,
+    createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+  }
+}
+
+export class SystemNotificationFilter extends jspb.Message {
+  clearTypeFilterList(): void;
+  getTypeFilterList(): Array<SystemNotificationTypeMap[keyof SystemNotificationTypeMap]>;
+  setTypeFilterList(value: Array<SystemNotificationTypeMap[keyof SystemNotificationTypeMap]>): void;
+  addTypeFilter(value: SystemNotificationTypeMap[keyof SystemNotificationTypeMap], index?: number): SystemNotificationTypeMap[keyof SystemNotificationTypeMap];
+
+  clearLevelFilterList(): void;
+  getLevelFilterList(): Array<SystemNotificationLevelMap[keyof SystemNotificationLevelMap]>;
+  setLevelFilterList(value: Array<SystemNotificationLevelMap[keyof SystemNotificationLevelMap]>): void;
+  addLevelFilter(value: SystemNotificationLevelMap[keyof SystemNotificationLevelMap], index?: number): SystemNotificationLevelMap[keyof SystemNotificationLevelMap];
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SystemNotificationFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: SystemNotificationFilter): SystemNotificationFilter.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SystemNotificationFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SystemNotificationFilter;
+  static deserializeBinaryFromReader(message: SystemNotificationFilter, reader: jspb.BinaryReader): SystemNotificationFilter;
+}
+
+export namespace SystemNotificationFilter {
+  export type AsObject = {
+    typeFilterList: Array<SystemNotificationTypeMap[keyof SystemNotificationTypeMap]>,
+    levelFilterList: Array<SystemNotificationLevelMap[keyof SystemNotificationLevelMap]>,
+  }
+}
+
 export interface NotifyTargetStatusMap {
   NOTIFY_TARGET_STATUS_UNSPECIFIED: 0;
   NOTIFY_TARGET_STATUS_ACTIVE: 1;
@@ -483,4 +690,30 @@ export interface NotifyFlowStatusMap {
 }
 
 export const NotifyFlowStatus: NotifyFlowStatusMap;
+
+export interface SystemNotificationLevelMap {
+  SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED: 0;
+  SYSTEM_NOTIFICATION_LEVEL_ERROR: 1;
+  SYSTEM_NOTIFICATION_LEVEL_WARNING: 2;
+  SYSTEM_NOTIFICATION_LEVEL_INFO: 3;
+}
+
+export const SystemNotificationLevel: SystemNotificationLevelMap;
+
+export interface SystemNotificationTypeMap {
+  SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED: 0;
+  SYSTEM_NOTIFICATION_TYPE_SYSTEM: 1;
+  SYSTEM_NOTIFICATION_TYPE_USER: 2;
+}
+
+export const SystemNotificationType: SystemNotificationTypeMap;
+
+export interface SystemNotificationStatusMap {
+  SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED: 0;
+  SYSTEM_NOTIFICATION_STATUS_UNREAD: 1;
+  SYSTEM_NOTIFICATION_STATUS_READ: 2;
+  SYSTEM_NOTIFICATION_STATUS_DISMISS: 3;
+}
+
+export const SystemNotificationStatus: SystemNotificationStatusMap;
 

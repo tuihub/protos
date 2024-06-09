@@ -2900,6 +2900,70 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Netzach` `Admin` `Normal limited`
+*/
+        pub async fn list_system_notifications(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListSystemNotificationsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListSystemNotificationsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListSystemNotifications",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Netzach` `Normal`
+*/
+        pub async fn update_system_notification(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UpdateSystemNotificationRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateSystemNotificationResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSystemNotification",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdateSystemNotification",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         /** `Yesod` `Normal`
 */
         pub async fn create_feed_config(
@@ -4326,6 +4390,24 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<super::ListNotifyFlowsRequest>,
         ) -> std::result::Result<
             tonic::Response<super::ListNotifyFlowsResponse>,
+            tonic::Status,
+        >;
+        /** `Netzach` `Admin` `Normal limited`
+*/
+        async fn list_system_notifications(
+            &self,
+            request: tonic::Request<super::ListSystemNotificationsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListSystemNotificationsResponse>,
+            tonic::Status,
+        >;
+        /** `Netzach` `Normal`
+*/
+        async fn update_system_notification(
+            &self,
+            request: tonic::Request<super::UpdateSystemNotificationRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdateSystemNotificationResponse>,
             tonic::Status,
         >;
         /** `Yesod` `Normal`
@@ -8597,6 +8679,106 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ListNotifyFlowsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListSystemNotificationsSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListSystemNotificationsRequest>
+                    for ListSystemNotificationsSvc<T> {
+                        type Response = super::ListSystemNotificationsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::ListSystemNotificationsRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_system_notifications(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListSystemNotificationsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSystemNotification" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateSystemNotificationSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::UpdateSystemNotificationRequest>
+                    for UpdateSystemNotificationSvc<T> {
+                        type Response = super::UpdateSystemNotificationResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::UpdateSystemNotificationRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_system_notification(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateSystemNotificationSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

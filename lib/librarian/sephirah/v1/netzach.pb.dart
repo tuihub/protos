@@ -13,6 +13,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../../google/protobuf/timestamp.pb.dart' as $9;
 import '../../v1/common.pb.dart' as $8;
 import 'netzach.pbenum.dart';
 
@@ -884,17 +885,32 @@ class NotifyFlow extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 }
 
+enum NotifyFlowSource_Source {
+  feedConfigId, 
+  feedItemCollectionId, 
+  systemNotification, 
+  notSet
+}
+
 class NotifyFlowSource extends $pb.GeneratedMessage {
   factory NotifyFlowSource({
     NotifyFilter? filter,
-    $8.InternalID? sourceId,
+    $8.InternalID? feedConfigId,
+    $8.InternalID? feedItemCollectionId,
+    SystemNotificationFilter? systemNotification,
   }) {
     final $result = create();
     if (filter != null) {
       $result.filter = filter;
     }
-    if (sourceId != null) {
-      $result.sourceId = sourceId;
+    if (feedConfigId != null) {
+      $result.feedConfigId = feedConfigId;
+    }
+    if (feedItemCollectionId != null) {
+      $result.feedItemCollectionId = feedItemCollectionId;
+    }
+    if (systemNotification != null) {
+      $result.systemNotification = systemNotification;
     }
     return $result;
   }
@@ -902,9 +918,18 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   factory NotifyFlowSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NotifyFlowSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
+  static const $core.Map<$core.int, NotifyFlowSource_Source> _NotifyFlowSource_SourceByTag = {
+    2 : NotifyFlowSource_Source.feedConfigId,
+    3 : NotifyFlowSource_Source.feedItemCollectionId,
+    4 : NotifyFlowSource_Source.systemNotification,
+    0 : NotifyFlowSource_Source.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..oo(0, [2, 3, 4])
     ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sourceId', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'feedConfigId', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(3, _omitFieldNames ? '' : 'feedItemCollectionId', subBuilder: $8.InternalID.create)
+    ..aOM<SystemNotificationFilter>(4, _omitFieldNames ? '' : 'systemNotification', subBuilder: SystemNotificationFilter.create)
     ..hasRequiredFields = false
   ;
 
@@ -929,6 +954,9 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   static NotifyFlowSource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NotifyFlowSource>(create);
   static NotifyFlowSource? _defaultInstance;
 
+  NotifyFlowSource_Source whichSource() => _NotifyFlowSource_SourceByTag[$_whichOneof(0)]!;
+  void clearSource() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
   NotifyFilter get filter => $_getN(0);
   @$pb.TagNumber(1)
@@ -940,17 +968,40 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFilter ensureFilter() => $_ensure(0);
 
-  /// must be FeedConfigID or FeedItemCollectionID
+  /// must be FeedConfigID
   @$pb.TagNumber(2)
-  $8.InternalID get sourceId => $_getN(1);
+  $8.InternalID get feedConfigId => $_getN(1);
   @$pb.TagNumber(2)
-  set sourceId($8.InternalID v) { setField(2, v); }
+  set feedConfigId($8.InternalID v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSourceId() => $_has(1);
+  $core.bool hasFeedConfigId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceId() => clearField(2);
+  void clearFeedConfigId() => clearField(2);
   @$pb.TagNumber(2)
-  $8.InternalID ensureSourceId() => $_ensure(1);
+  $8.InternalID ensureFeedConfigId() => $_ensure(1);
+
+  /// must be FeedItemCollectionID
+  @$pb.TagNumber(3)
+  $8.InternalID get feedItemCollectionId => $_getN(2);
+  @$pb.TagNumber(3)
+  set feedItemCollectionId($8.InternalID v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFeedItemCollectionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFeedItemCollectionId() => clearField(3);
+  @$pb.TagNumber(3)
+  $8.InternalID ensureFeedItemCollectionId() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  SystemNotificationFilter get systemNotification => $_getN(3);
+  @$pb.TagNumber(4)
+  set systemNotification(SystemNotificationFilter v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSystemNotification() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSystemNotification() => clearField(4);
+  @$pb.TagNumber(4)
+  SystemNotificationFilter ensureSystemNotification() => $_ensure(3);
 }
 
 class NotifyFlowTarget extends $pb.GeneratedMessage {
@@ -1086,6 +1137,431 @@ class NotifyFilter extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get includeKeywords => $_getList(1);
+}
+
+class ListSystemNotificationsRequest extends $pb.GeneratedMessage {
+  factory ListSystemNotificationsRequest({
+    $8.PagingRequest? paging,
+    $core.Iterable<SystemNotificationType>? typeFilter,
+    $core.Iterable<SystemNotificationLevel>? levelFilter,
+    $core.Iterable<SystemNotificationStatus>? statusFilter,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (typeFilter != null) {
+      $result.typeFilter.addAll(typeFilter);
+    }
+    if (levelFilter != null) {
+      $result.levelFilter.addAll(levelFilter);
+    }
+    if (statusFilter != null) {
+      $result.statusFilter.addAll(statusFilter);
+    }
+    return $result;
+  }
+  ListSystemNotificationsRequest._() : super();
+  factory ListSystemNotificationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSystemNotificationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemNotificationsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<SystemNotificationType>(2, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationType.valueOf, enumValues: SystemNotificationType.values, defaultEnumValue: SystemNotificationType.SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED)
+    ..pc<SystemNotificationLevel>(3, _omitFieldNames ? '' : 'levelFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationLevel.valueOf, enumValues: SystemNotificationLevel.values, defaultEnumValue: SystemNotificationLevel.SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED)
+    ..pc<SystemNotificationStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationStatus.valueOf, enumValues: SystemNotificationStatus.values, defaultEnumValue: SystemNotificationStatus.SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSystemNotificationsRequest clone() => ListSystemNotificationsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSystemNotificationsRequest copyWith(void Function(ListSystemNotificationsRequest) updates) => super.copyWith((message) => updates(message as ListSystemNotificationsRequest)) as ListSystemNotificationsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSystemNotificationsRequest create() => ListSystemNotificationsRequest._();
+  ListSystemNotificationsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListSystemNotificationsRequest> createRepeated() => $pb.PbList<ListSystemNotificationsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListSystemNotificationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSystemNotificationsRequest>(create);
+  static ListSystemNotificationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SystemNotificationType> get typeFilter => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<SystemNotificationLevel> get levelFilter => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<SystemNotificationStatus> get statusFilter => $_getList(3);
+}
+
+class ListSystemNotificationsResponse extends $pb.GeneratedMessage {
+  factory ListSystemNotificationsResponse({
+    $8.PagingResponse? paging,
+    $core.Iterable<SystemNotification>? notifications,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (notifications != null) {
+      $result.notifications.addAll(notifications);
+    }
+    return $result;
+  }
+  ListSystemNotificationsResponse._() : super();
+  factory ListSystemNotificationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListSystemNotificationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSystemNotificationsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
+    ..pc<SystemNotification>(2, _omitFieldNames ? '' : 'notifications', $pb.PbFieldType.PM, subBuilder: SystemNotification.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListSystemNotificationsResponse clone() => ListSystemNotificationsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListSystemNotificationsResponse copyWith(void Function(ListSystemNotificationsResponse) updates) => super.copyWith((message) => updates(message as ListSystemNotificationsResponse)) as ListSystemNotificationsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSystemNotificationsResponse create() => ListSystemNotificationsResponse._();
+  ListSystemNotificationsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListSystemNotificationsResponse> createRepeated() => $pb.PbList<ListSystemNotificationsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListSystemNotificationsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListSystemNotificationsResponse>(create);
+  static ListSystemNotificationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SystemNotification> get notifications => $_getList(1);
+}
+
+class UpdateSystemNotificationRequest extends $pb.GeneratedMessage {
+  factory UpdateSystemNotificationRequest({
+    $8.InternalID? id,
+    SystemNotificationStatus? status,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  UpdateSystemNotificationRequest._() : super();
+  factory UpdateSystemNotificationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSystemNotificationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSystemNotificationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..e<SystemNotificationStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SystemNotificationStatus.SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED, valueOf: SystemNotificationStatus.valueOf, enumValues: SystemNotificationStatus.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSystemNotificationRequest clone() => UpdateSystemNotificationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSystemNotificationRequest copyWith(void Function(UpdateSystemNotificationRequest) updates) => super.copyWith((message) => updates(message as UpdateSystemNotificationRequest)) as UpdateSystemNotificationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSystemNotificationRequest create() => UpdateSystemNotificationRequest._();
+  UpdateSystemNotificationRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateSystemNotificationRequest> createRepeated() => $pb.PbList<UpdateSystemNotificationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSystemNotificationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSystemNotificationRequest>(create);
+  static UpdateSystemNotificationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SystemNotificationStatus get status => $_getN(1);
+  @$pb.TagNumber(2)
+  set status(SystemNotificationStatus v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => clearField(2);
+}
+
+class UpdateSystemNotificationResponse extends $pb.GeneratedMessage {
+  factory UpdateSystemNotificationResponse() => create();
+  UpdateSystemNotificationResponse._() : super();
+  factory UpdateSystemNotificationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateSystemNotificationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSystemNotificationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateSystemNotificationResponse clone() => UpdateSystemNotificationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateSystemNotificationResponse copyWith(void Function(UpdateSystemNotificationResponse) updates) => super.copyWith((message) => updates(message as UpdateSystemNotificationResponse)) as UpdateSystemNotificationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSystemNotificationResponse create() => UpdateSystemNotificationResponse._();
+  UpdateSystemNotificationResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateSystemNotificationResponse> createRepeated() => $pb.PbList<UpdateSystemNotificationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSystemNotificationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateSystemNotificationResponse>(create);
+  static UpdateSystemNotificationResponse? _defaultInstance;
+}
+
+class SystemNotification extends $pb.GeneratedMessage {
+  factory SystemNotification({
+    $8.InternalID? id,
+    SystemNotificationType? type,
+    SystemNotificationLevel? level,
+    SystemNotificationStatus? status,
+    $core.String? title,
+    $core.String? message,
+    $9.Timestamp? createTime,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (level != null) {
+      $result.level = level;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (title != null) {
+      $result.title = title;
+    }
+    if (message != null) {
+      $result.message = message;
+    }
+    if (createTime != null) {
+      $result.createTime = createTime;
+    }
+    return $result;
+  }
+  SystemNotification._() : super();
+  factory SystemNotification.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SystemNotification.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemNotification', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..e<SystemNotificationType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: SystemNotificationType.SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED, valueOf: SystemNotificationType.valueOf, enumValues: SystemNotificationType.values)
+    ..e<SystemNotificationLevel>(3, _omitFieldNames ? '' : 'level', $pb.PbFieldType.OE, defaultOrMaker: SystemNotificationLevel.SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED, valueOf: SystemNotificationLevel.valueOf, enumValues: SystemNotificationLevel.values)
+    ..e<SystemNotificationStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SystemNotificationStatus.SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED, valueOf: SystemNotificationStatus.valueOf, enumValues: SystemNotificationStatus.values)
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'message')
+    ..aOM<$9.Timestamp>(7, _omitFieldNames ? '' : 'createTime', subBuilder: $9.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SystemNotification clone() => SystemNotification()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SystemNotification copyWith(void Function(SystemNotification) updates) => super.copyWith((message) => updates(message as SystemNotification)) as SystemNotification;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SystemNotification create() => SystemNotification._();
+  SystemNotification createEmptyInstance() => create();
+  static $pb.PbList<SystemNotification> createRepeated() => $pb.PbList<SystemNotification>();
+  @$core.pragma('dart2js:noInline')
+  static SystemNotification getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SystemNotification>(create);
+  static SystemNotification? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SystemNotificationType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(SystemNotificationType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  SystemNotificationLevel get level => $_getN(2);
+  @$pb.TagNumber(3)
+  set level(SystemNotificationLevel v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLevel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLevel() => clearField(3);
+
+  @$pb.TagNumber(4)
+  SystemNotificationStatus get status => $_getN(3);
+  @$pb.TagNumber(4)
+  set status(SystemNotificationStatus v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => clearField(5);
+
+  /// plain text
+  @$pb.TagNumber(6)
+  $core.String get message => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set message($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMessage() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMessage() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $9.Timestamp get createTime => $_getN(6);
+  @$pb.TagNumber(7)
+  set createTime($9.Timestamp v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCreateTime() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreateTime() => clearField(7);
+  @$pb.TagNumber(7)
+  $9.Timestamp ensureCreateTime() => $_ensure(6);
+}
+
+class SystemNotificationFilter extends $pb.GeneratedMessage {
+  factory SystemNotificationFilter({
+    $core.Iterable<SystemNotificationType>? typeFilter,
+    $core.Iterable<SystemNotificationLevel>? levelFilter,
+  }) {
+    final $result = create();
+    if (typeFilter != null) {
+      $result.typeFilter.addAll(typeFilter);
+    }
+    if (levelFilter != null) {
+      $result.levelFilter.addAll(levelFilter);
+    }
+    return $result;
+  }
+  SystemNotificationFilter._() : super();
+  factory SystemNotificationFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SystemNotificationFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemNotificationFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pc<SystemNotificationType>(1, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationType.valueOf, enumValues: SystemNotificationType.values, defaultEnumValue: SystemNotificationType.SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED)
+    ..pc<SystemNotificationLevel>(2, _omitFieldNames ? '' : 'levelFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationLevel.valueOf, enumValues: SystemNotificationLevel.values, defaultEnumValue: SystemNotificationLevel.SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SystemNotificationFilter clone() => SystemNotificationFilter()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SystemNotificationFilter copyWith(void Function(SystemNotificationFilter) updates) => super.copyWith((message) => updates(message as SystemNotificationFilter)) as SystemNotificationFilter;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SystemNotificationFilter create() => SystemNotificationFilter._();
+  SystemNotificationFilter createEmptyInstance() => create();
+  static $pb.PbList<SystemNotificationFilter> createRepeated() => $pb.PbList<SystemNotificationFilter>();
+  @$core.pragma('dart2js:noInline')
+  static SystemNotificationFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SystemNotificationFilter>(create);
+  static SystemNotificationFilter? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<SystemNotificationType> get typeFilter => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<SystemNotificationLevel> get levelFilter => $_getList(1);
 }
 
 
