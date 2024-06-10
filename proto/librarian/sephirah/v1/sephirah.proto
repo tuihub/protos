@@ -296,7 +296,9 @@ service LibrarianSephirahService {
   rpc ListTags(ListTagsRequest) returns (ListTagsResponse);
 }
 
-message GetServerInformationRequest {}
+message GetServerInformationRequest {
+  optional bool with_status_report = 1;
+}
 message GetServerInformationResponse {
   // For manual inspection only, the client may display but should not parse the response.
   ServerBinarySummary server_binary_summary = 1;
@@ -309,6 +311,9 @@ message GetServerInformationResponse {
   optional ServerFeatureSummary feature_summary = 4;
   // For showing to user, customizable by server owner.
   ServerInstanceSummary server_instance_summary = 5;
+  // Plain text status report for manual inspection.
+  // Content is specific to server implementation.
+  optional string status_report = 6;
 }
 
 message ServerBinarySummary {
