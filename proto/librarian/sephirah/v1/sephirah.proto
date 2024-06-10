@@ -25,6 +25,14 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 service LibrarianSephirahService {
   // Allow anonymous call, use accessToken to get complete information
   rpc GetServerInformation(GetServerInformationRequest) returns (GetServerInformationResponse);
+  // `Normal` Client can use this to subscribe to server events.
+  //
+  // Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+  // Otherwise, client should treat the connection as failed.
+  //
+  // Server can close the stream at any time, client should reconnect if needed **with backoff**.
+  // Only used to improve real-time experience, no guarantee of delivery.
+  rpc ListenServerEvent(ListenServerEventRequest) returns (stream ListenServerEventResponse);
   // `Tiphereth` `Normal` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
   // `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
@@ -336,4 +344,21 @@ message ServerInstanceSummary {
   string website_url = 3;
   string logo_url = 4;
   string background_url = 5;
+}
+
+message ListenServerEventRequest {}
+
+message ListenServerEventResponse {
+  ServerEvent event = 1;
+  google.protobuf.Timestamp occur_time = 2;
+  // Specific event payload, see `ServerEvent` for details.
+  string payload = 3;
+}
+
+enum ServerEvent {
+  SERVER_EVENT_UNSPECIFIED = 0;
+  // New event listener connected, no payload.
+  SERVER_EVENT_LISTENER_CONNECTED = 1;
+  // `Netzach` New server notification created, no payload.
+  SERVER_EVENT_SYSTEM_NOTIFICATION_UPDATED = 2;
 }
