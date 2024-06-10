@@ -86,8 +86,6 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
-        /** Allow anonymous call, use accessToken to get complete information
-*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -117,6 +115,44 @@ pub mod librarian_sephirah_service_client {
                     ),
                 );
             self.inner.unary(req, path, codec).await
+        }
+        /** `Normal` Client can use this to subscribe to server events.
+
+ Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+ Otherwise, client should treat the connection as failed.
+
+ Server can close the stream at any time, client should reconnect if needed **with backoff**.
+ Only used to improve real-time experience, no guarantee of delivery.
+*/
+        pub async fn listen_server_event(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListenServerEventRequest>,
+        ) -> std::result::Result<
+            tonic::Response<tonic::codec::Streaming<super::ListenServerEventResponse>>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListenServerEvent",
+                    ),
+                );
+            self.inner.server_streaming(req, path, codec).await
         }
         /** `Tiphereth` `Normal` Login via password and get two token
 */
@@ -3220,6 +3256,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn get_batch_feed_items(
             &mut self,
             request: impl tonic::IntoRequest<super::GetBatchFeedItemsRequest>,
@@ -3250,6 +3288,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn read_feed_item(
             &mut self,
             request: impl tonic::IntoRequest<super::ReadFeedItemRequest>,
@@ -3280,6 +3320,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn create_feed_item_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateFeedItemCollectionRequest>,
@@ -3310,6 +3352,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn update_feed_item_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateFeedItemCollectionRequest>,
@@ -3340,6 +3384,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn list_feed_item_collections(
             &mut self,
             request: impl tonic::IntoRequest<super::ListFeedItemCollectionsRequest>,
@@ -3370,6 +3416,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn add_feed_item_to_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::AddFeedItemToCollectionRequest>,
@@ -3559,13 +3607,35 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
-        /** Allow anonymous call, use accessToken to get complete information
-*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
         ) -> std::result::Result<
             tonic::Response<super::GetServerInformationResponse>,
+            tonic::Status,
+        >;
+        /// Server streaming response type for the ListenServerEvent method.
+        type ListenServerEventStream: futures_core::Stream<
+                Item = std::result::Result<
+                    super::ListenServerEventResponse,
+                    tonic::Status,
+                >,
+            >
+            + Send
+            + 'static;
+        /** `Normal` Client can use this to subscribe to server events.
+
+ Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+ Otherwise, client should treat the connection as failed.
+
+ Server can close the stream at any time, client should reconnect if needed **with backoff**.
+ Only used to improve real-time experience, no guarantee of delivery.
+*/
+        async fn listen_server_event(
+            &self,
+            request: tonic::Request<super::ListenServerEventRequest>,
+        ) -> std::result::Result<
+            tonic::Response<Self::ListenServerEventStream>,
             tonic::Status,
         >;
         /** `Tiphereth` `Normal` Login via password and get two token
@@ -4482,6 +4552,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetFeedItemResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn get_batch_feed_items(
             &self,
             request: tonic::Request<super::GetBatchFeedItemsRequest>,
@@ -4489,6 +4561,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetBatchFeedItemsResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn read_feed_item(
             &self,
             request: tonic::Request<super::ReadFeedItemRequest>,
@@ -4496,6 +4570,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ReadFeedItemResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn create_feed_item_collection(
             &self,
             request: tonic::Request<super::CreateFeedItemCollectionRequest>,
@@ -4503,6 +4579,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateFeedItemCollectionResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn update_feed_item_collection(
             &self,
             request: tonic::Request<super::UpdateFeedItemCollectionRequest>,
@@ -4510,6 +4588,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateFeedItemCollectionResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn list_feed_item_collections(
             &self,
             request: tonic::Request<super::ListFeedItemCollectionsRequest>,
@@ -4517,6 +4597,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedItemCollectionsResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn add_feed_item_to_collection(
             &self,
             request: tonic::Request<super::AddFeedItemToCollectionRequest>,
@@ -4684,6 +4766,54 @@ pub mod librarian_sephirah_service_server {
                                 max_encoding_message_size,
                             );
                         let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListenServerEventSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::ServerStreamingService<
+                        super::ListenServerEventRequest,
+                    > for ListenServerEventSvc<T> {
+                        type Response = super::ListenServerEventResponse;
+                        type ResponseStream = T::ListenServerEventStream;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::ResponseStream>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListenServerEventRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).listen_server_event(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListenServerEventSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.server_streaming(method, req).await;
                         Ok(res)
                     };
                     Box::pin(fut)

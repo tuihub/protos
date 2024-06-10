@@ -1288,6 +1288,28 @@ function deserialize_librarian_sephirah_v1_ListUsersResponse(buffer_arg) {
   return librarian_sephirah_v1_tiphereth_pb.ListUsersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListenServerEventRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListenServerEventRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListenServerEventRequest(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListenServerEventResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListenServerEventResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListenServerEventResponse(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_MergeAppInfosRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.MergeAppInfosRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.MergeAppInfosRequest');
@@ -2408,6 +2430,24 @@ getServerInformation: {
     requestDeserialize: deserialize_librarian_sephirah_v1_GetServerInformationRequest,
     responseSerialize: serialize_librarian_sephirah_v1_GetServerInformationResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetServerInformationResponse,
+  },
+  // `Normal` Client can use this to subscribe to server events.
+//
+// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+// Otherwise, client should treat the connection as failed.
+//
+// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+// Only used to improve real-time experience, no guarantee of delivery.
+listenServerEvent: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent',
+    requestStream: false,
+    responseStream: true,
+    requestType: librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest,
+    responseType: librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListenServerEventRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListenServerEventRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListenServerEventResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListenServerEventResponse,
   },
   // `Tiphereth` `Normal` Login via password and get two token
 getToken: {

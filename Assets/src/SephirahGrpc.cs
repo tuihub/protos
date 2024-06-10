@@ -59,6 +59,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse> __Marshaller_librarian_sephirah_v1_GetServerInformationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest> __Marshaller_librarian_sephirah_v1_ListenServerEventRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse> __Marshaller_librarian_sephirah_v1_ListenServerEventResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest> __Marshaller_librarian_sephirah_v1_GetTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse> __Marshaller_librarian_sephirah_v1_GetTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse.Parser));
@@ -494,6 +498,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "GetServerInformation",
         __Marshaller_librarian_sephirah_v1_GetServerInformationRequest,
         __Marshaller_librarian_sephirah_v1_GetServerInformationResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse> __Method_ListenServerEvent = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "ListenServerEvent",
+        __Marshaller_librarian_sephirah_v1_ListenServerEventRequest,
+        __Marshaller_librarian_sephirah_v1_ListenServerEventResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse> __Method_GetToken = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse>(
@@ -1369,6 +1381,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse> GetServerInformation(global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Normal` Client can use this to subscribe to server events.
+      ///
+      /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+      /// Otherwise, client should treat the connection as failed.
+      ///
+      /// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+      /// Only used to improve real-time experience, no guarantee of delivery.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="responseStream">Used for sending responses back to the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>A task indicating completion of the handler.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task ListenServerEvent(global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest request, grpc::IServerStreamWriter<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2763,6 +2794,42 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse> GetServerInformationAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetServerInformation, null, options, request);
+      }
+      /// <summary>
+      /// `Normal` Client can use this to subscribe to server events.
+      ///
+      /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+      /// Otherwise, client should treat the connection as failed.
+      ///
+      /// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+      /// Only used to improve real-time experience, no guarantee of delivery.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse> ListenServerEvent(global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListenServerEvent(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Normal` Client can use this to subscribe to server events.
+      ///
+      /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+      /// Otherwise, client should treat the connection as failed.
+      ///
+      /// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+      /// Only used to improve real-time experience, no guarantee of delivery.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse> ListenServerEvent(global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_ListenServerEvent, null, options, request);
       }
       /// <summary>
       /// `Tiphereth` `Normal` Login via password and get two token
@@ -7909,6 +7976,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_GetServerInformation, serviceImpl.GetServerInformation)
+          .AddMethod(__Method_ListenServerEvent, serviceImpl.ListenServerEvent)
           .AddMethod(__Method_GetToken, serviceImpl.GetToken)
           .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
           .AddMethod(__Method_GainUserPrivilege, serviceImpl.GainUserPrivilege)
@@ -8026,6 +8094,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianSephirahServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetServerInformation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse>(serviceImpl.GetServerInformation));
+      serviceBinder.AddMethod(__Method_ListenServerEvent, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse>(serviceImpl.ListenServerEvent));
       serviceBinder.AddMethod(__Method_GetToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse>(serviceImpl.GetToken));
       serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenResponse>(serviceImpl.RefreshToken));
       serviceBinder.AddMethod(__Method_GainUserPrivilege, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse>(serviceImpl.GainUserPrivilege));

@@ -14,14 +14,26 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
+import 'sephirah.pbenum.dart';
+
+export 'sephirah.pbenum.dart';
 
 class GetServerInformationRequest extends $pb.GeneratedMessage {
-  factory GetServerInformationRequest() => create();
+  factory GetServerInformationRequest({
+    $core.bool? withStatusReport,
+  }) {
+    final $result = create();
+    if (withStatusReport != null) {
+      $result.withStatusReport = withStatusReport;
+    }
+    return $result;
+  }
   GetServerInformationRequest._() : super();
   factory GetServerInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetServerInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'withStatusReport')
     ..hasRequiredFields = false
   ;
 
@@ -45,6 +57,15 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static GetServerInformationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetServerInformationRequest>(create);
   static GetServerInformationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get withStatusReport => $_getBF(0);
+  @$pb.TagNumber(1)
+  set withStatusReport($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasWithStatusReport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWithStatusReport() => clearField(1);
 }
 
 class GetServerInformationResponse extends $pb.GeneratedMessage {
@@ -54,6 +75,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     $9.Timestamp? currentTime,
     ServerFeatureSummary? featureSummary,
     ServerInstanceSummary? serverInstanceSummary,
+    $core.String? statusReport,
   }) {
     final $result = create();
     if (serverBinarySummary != null) {
@@ -71,6 +93,9 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     if (serverInstanceSummary != null) {
       $result.serverInstanceSummary = serverInstanceSummary;
     }
+    if (statusReport != null) {
+      $result.statusReport = statusReport;
+    }
     return $result;
   }
   GetServerInformationResponse._() : super();
@@ -83,6 +108,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ..aOM<$9.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $9.Timestamp.create)
     ..aOM<ServerFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: ServerFeatureSummary.create)
     ..aOM<ServerInstanceSummary>(5, _omitFieldNames ? '' : 'serverInstanceSummary', subBuilder: ServerInstanceSummary.create)
+    ..aOS(6, _omitFieldNames ? '' : 'statusReport')
     ..hasRequiredFields = false
   ;
 
@@ -167,6 +193,17 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   void clearServerInstanceSummary() => clearField(5);
   @$pb.TagNumber(5)
   ServerInstanceSummary ensureServerInstanceSummary() => $_ensure(4);
+
+  /// Plain text status report for manual inspection.
+  /// Content is specific to server implementation.
+  @$pb.TagNumber(6)
+  $core.String get statusReport => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set statusReport($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasStatusReport() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatusReport() => clearField(6);
 }
 
 class ServerBinarySummary extends $pb.GeneratedMessage {
@@ -479,6 +516,119 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   $core.bool hasBackgroundUrl() => $_has(4);
   @$pb.TagNumber(5)
   void clearBackgroundUrl() => clearField(5);
+}
+
+class ListenServerEventRequest extends $pb.GeneratedMessage {
+  factory ListenServerEventRequest() => create();
+  ListenServerEventRequest._() : super();
+  factory ListenServerEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListenServerEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListenServerEventRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListenServerEventRequest clone() => ListenServerEventRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListenServerEventRequest copyWith(void Function(ListenServerEventRequest) updates) => super.copyWith((message) => updates(message as ListenServerEventRequest)) as ListenServerEventRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListenServerEventRequest create() => ListenServerEventRequest._();
+  ListenServerEventRequest createEmptyInstance() => create();
+  static $pb.PbList<ListenServerEventRequest> createRepeated() => $pb.PbList<ListenServerEventRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListenServerEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListenServerEventRequest>(create);
+  static ListenServerEventRequest? _defaultInstance;
+}
+
+class ListenServerEventResponse extends $pb.GeneratedMessage {
+  factory ListenServerEventResponse({
+    ServerEvent? event,
+    $9.Timestamp? occurTime,
+    $core.String? payload,
+  }) {
+    final $result = create();
+    if (event != null) {
+      $result.event = event;
+    }
+    if (occurTime != null) {
+      $result.occurTime = occurTime;
+    }
+    if (payload != null) {
+      $result.payload = payload;
+    }
+    return $result;
+  }
+  ListenServerEventResponse._() : super();
+  factory ListenServerEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListenServerEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListenServerEventResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..e<ServerEvent>(1, _omitFieldNames ? '' : 'event', $pb.PbFieldType.OE, defaultOrMaker: ServerEvent.SERVER_EVENT_UNSPECIFIED, valueOf: ServerEvent.valueOf, enumValues: ServerEvent.values)
+    ..aOM<$9.Timestamp>(2, _omitFieldNames ? '' : 'occurTime', subBuilder: $9.Timestamp.create)
+    ..aOS(3, _omitFieldNames ? '' : 'payload')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListenServerEventResponse clone() => ListenServerEventResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListenServerEventResponse copyWith(void Function(ListenServerEventResponse) updates) => super.copyWith((message) => updates(message as ListenServerEventResponse)) as ListenServerEventResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListenServerEventResponse create() => ListenServerEventResponse._();
+  ListenServerEventResponse createEmptyInstance() => create();
+  static $pb.PbList<ListenServerEventResponse> createRepeated() => $pb.PbList<ListenServerEventResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListenServerEventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListenServerEventResponse>(create);
+  static ListenServerEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ServerEvent get event => $_getN(0);
+  @$pb.TagNumber(1)
+  set event(ServerEvent v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEvent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEvent() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $9.Timestamp get occurTime => $_getN(1);
+  @$pb.TagNumber(2)
+  set occurTime($9.Timestamp v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasOccurTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOccurTime() => clearField(2);
+  @$pb.TagNumber(2)
+  $9.Timestamp ensureOccurTime() => $_ensure(1);
+
+  /// Specific event payload, see `ServerEvent` for details.
+  @$pb.TagNumber(3)
+  $core.String get payload => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set payload($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPayload() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPayload() => clearField(3);
 }
 
 

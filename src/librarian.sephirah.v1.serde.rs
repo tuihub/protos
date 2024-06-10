@@ -8112,8 +8112,14 @@ impl serde::Serialize for GetServerInformationRequest {
         S: serde::Serializer,
     {
         use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetServerInformationRequest", len)?;
+        let mut len = 0;
+        if self.with_status_report.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetServerInformationRequest", len)?;
+        if let Some(v) = self.with_status_report.as_ref() {
+            struct_ser.serialize_field("withStatusReport", v)?;
+        }
         struct_ser.end()
     }
 }
@@ -8124,10 +8130,13 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "with_status_report",
+            "withStatusReport",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            WithStatusReport,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -8148,7 +8157,10 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationRequest {
                     where
                         E: serde::de::Error,
                     {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                        match value {
+                            "withStatusReport" | "with_status_report" => Ok(GeneratedField::WithStatusReport),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
                     }
                 }
                 deserializer.deserialize_identifier(GeneratedVisitor)
@@ -8166,10 +8178,19 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                let mut with_status_report__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::WithStatusReport => {
+                            if with_status_report__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("withStatusReport"));
+                            }
+                            with_status_report__ = map.next_value()?;
+                        }
+                    }
                 }
                 Ok(GetServerInformationRequest {
+                    with_status_report: with_status_report__,
                 })
             }
         }
@@ -8199,6 +8220,9 @@ impl serde::Serialize for GetServerInformationResponse {
         if self.server_instance_summary.is_some() {
             len += 1;
         }
+        if self.status_report.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetServerInformationResponse", len)?;
         if let Some(v) = self.server_binary_summary.as_ref() {
             struct_ser.serialize_field("serverBinarySummary", v)?;
@@ -8214,6 +8238,9 @@ impl serde::Serialize for GetServerInformationResponse {
         }
         if let Some(v) = self.server_instance_summary.as_ref() {
             struct_ser.serialize_field("serverInstanceSummary", v)?;
+        }
+        if let Some(v) = self.status_report.as_ref() {
+            struct_ser.serialize_field("statusReport", v)?;
         }
         struct_ser.end()
     }
@@ -8235,6 +8262,8 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
             "featureSummary",
             "server_instance_summary",
             "serverInstanceSummary",
+            "status_report",
+            "statusReport",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -8244,6 +8273,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
             CurrentTime,
             FeatureSummary,
             ServerInstanceSummary,
+            StatusReport,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -8270,6 +8300,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                             "currentTime" | "current_time" => Ok(GeneratedField::CurrentTime),
                             "featureSummary" | "feature_summary" => Ok(GeneratedField::FeatureSummary),
                             "serverInstanceSummary" | "server_instance_summary" => Ok(GeneratedField::ServerInstanceSummary),
+                            "statusReport" | "status_report" => Ok(GeneratedField::StatusReport),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -8294,6 +8325,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                 let mut current_time__ = None;
                 let mut feature_summary__ = None;
                 let mut server_instance_summary__ = None;
+                let mut status_report__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::ServerBinarySummary => {
@@ -8326,6 +8358,12 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                             }
                             server_instance_summary__ = map.next_value()?;
                         }
+                        GeneratedField::StatusReport => {
+                            if status_report__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("statusReport"));
+                            }
+                            status_report__ = map.next_value()?;
+                        }
                     }
                 }
                 Ok(GetServerInformationResponse {
@@ -8334,6 +8372,7 @@ impl<'de> serde::Deserialize<'de> for GetServerInformationResponse {
                     current_time: current_time__,
                     feature_summary: feature_summary__,
                     server_instance_summary: server_instance_summary__,
+                    status_report: status_report__,
                 })
             }
         }
@@ -14767,6 +14806,205 @@ impl<'de> serde::Deserialize<'de> for ListUsersResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListUsersResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ListenServerEventRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListenServerEventRequest", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListenServerEventRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListenServerEventRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListenServerEventRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListenServerEventRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(ListenServerEventRequest {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListenServerEventRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListenServerEventResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.event != 0 {
+            len += 1;
+        }
+        if self.occur_time.is_some() {
+            len += 1;
+        }
+        if !self.payload.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListenServerEventResponse", len)?;
+        if self.event != 0 {
+            let v = ServerEvent::from_i32(self.event)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.event)))?;
+            struct_ser.serialize_field("event", &v)?;
+        }
+        if let Some(v) = self.occur_time.as_ref() {
+            struct_ser.serialize_field("occurTime", v)?;
+        }
+        if !self.payload.is_empty() {
+            struct_ser.serialize_field("payload", &self.payload)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListenServerEventResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "event",
+            "occur_time",
+            "occurTime",
+            "payload",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Event,
+            OccurTime,
+            Payload,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "event" => Ok(GeneratedField::Event),
+                            "occurTime" | "occur_time" => Ok(GeneratedField::OccurTime),
+                            "payload" => Ok(GeneratedField::Payload),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListenServerEventResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListenServerEventResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ListenServerEventResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut event__ = None;
+                let mut occur_time__ = None;
+                let mut payload__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Event => {
+                            if event__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("event"));
+                            }
+                            event__ = Some(map.next_value::<ServerEvent>()? as i32);
+                        }
+                        GeneratedField::OccurTime => {
+                            if occur_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("occurTime"));
+                            }
+                            occur_time__ = map.next_value()?;
+                        }
+                        GeneratedField::Payload => {
+                            if payload__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("payload"));
+                            }
+                            payload__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListenServerEventResponse {
+                    event: event__.unwrap_or_default(),
+                    occur_time: occur_time__,
+                    payload: payload__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListenServerEventResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for MergeAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -19989,6 +20227,82 @@ impl<'de> serde::Deserialize<'de> for ServerBinarySummary {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.ServerBinarySummary", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ServerEvent {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "SERVER_EVENT_UNSPECIFIED",
+            Self::ListenerConnected => "SERVER_EVENT_LISTENER_CONNECTED",
+            Self::SystemNotificationUpdated => "SERVER_EVENT_SYSTEM_NOTIFICATION_UPDATED",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for ServerEvent {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "SERVER_EVENT_UNSPECIFIED",
+            "SERVER_EVENT_LISTENER_CONNECTED",
+            "SERVER_EVENT_SYSTEM_NOTIFICATION_UPDATED",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ServerEvent;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(ServerEvent::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(ServerEvent::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "SERVER_EVENT_UNSPECIFIED" => Ok(ServerEvent::Unspecified),
+                    "SERVER_EVENT_LISTENER_CONNECTED" => Ok(ServerEvent::ListenerConnected),
+                    "SERVER_EVENT_SYSTEM_NOTIFICATION_UPDATED" => Ok(ServerEvent::SystemNotificationUpdated),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for ServerFeatureSummary {

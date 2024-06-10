@@ -32,6 +32,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation',
       ($0.GetServerInformationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetServerInformationResponse.fromBuffer(value));
+  static final _$listenServerEvent = $grpc.ClientMethod<$0.ListenServerEventRequest, $0.ListenServerEventResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent',
+      ($0.ListenServerEventRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.ListenServerEventResponse.fromBuffer(value));
   static final _$getToken = $grpc.ClientMethod<$1.GetTokenRequest, $1.GetTokenResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/GetToken',
       ($1.GetTokenRequest value) => value.writeToBuffer(),
@@ -469,6 +473,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetServerInformationResponse> getServerInformation($0.GetServerInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getServerInformation, request, options: options);
+  }
+
+  $grpc.ResponseStream<$0.ListenServerEventResponse> listenServerEvent($0.ListenServerEventRequest request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$listenServerEvent, $async.Stream.fromIterable([request]), options: options);
   }
 
   $grpc.ResponseFuture<$1.GetTokenResponse> getToken($1.GetTokenRequest request, {$grpc.CallOptions? options}) {
@@ -912,6 +920,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetServerInformationRequest.fromBuffer(value),
         ($0.GetServerInformationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListenServerEventRequest, $0.ListenServerEventResponse>(
+        'ListenServerEvent',
+        listenServerEvent_Pre,
+        false,
+        true,
+        ($core.List<$core.int> value) => $0.ListenServerEventRequest.fromBuffer(value),
+        ($0.ListenServerEventResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.GetTokenRequest, $1.GetTokenResponse>(
         'GetToken',
         getToken_Pre,
@@ -1667,6 +1682,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return getServerInformation(call, await request);
   }
 
+  $async.Stream<$0.ListenServerEventResponse> listenServerEvent_Pre($grpc.ServiceCall call, $async.Future<$0.ListenServerEventRequest> request) async* {
+    yield* listenServerEvent(call, await request);
+  }
+
   $async.Future<$1.GetTokenResponse> getToken_Pre($grpc.ServiceCall call, $async.Future<$1.GetTokenRequest> request) async {
     return getToken(call, await request);
   }
@@ -2084,6 +2103,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.GetServerInformationResponse> getServerInformation($grpc.ServiceCall call, $0.GetServerInformationRequest request);
+  $async.Stream<$0.ListenServerEventResponse> listenServerEvent($grpc.ServiceCall call, $0.ListenServerEventRequest request);
   $async.Future<$1.GetTokenResponse> getToken($grpc.ServiceCall call, $1.GetTokenRequest request);
   $async.Future<$1.RefreshTokenResponse> refreshToken($grpc.ServiceCall call, $1.RefreshTokenRequest request);
   $async.Future<$1.GainUserPrivilegeResponse> gainUserPrivilege($grpc.ServiceCall call, $1.GainUserPrivilegeRequest request);

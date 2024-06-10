@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion8
 
 const (
 	LibrarianSephirahService_GetServerInformation_FullMethodName          = "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation"
+	LibrarianSephirahService_ListenServerEvent_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent"
 	LibrarianSephirahService_GetToken_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
 	LibrarianSephirahService_RefreshToken_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
 	LibrarianSephirahService_GainUserPrivilege_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege"
@@ -142,6 +143,14 @@ const (
 type LibrarianSephirahServiceClient interface {
 	// Allow anonymous call, use accessToken to get complete information
 	GetServerInformation(ctx context.Context, in *GetServerInformationRequest, opts ...grpc.CallOption) (*GetServerInformationResponse, error)
+	// `Normal` Client can use this to subscribe to server events.
+	//
+	// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+	// Otherwise, client should treat the connection as failed.
+	//
+	// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+	// Only used to improve real-time experience, no guarantee of delivery.
+	ListenServerEvent(ctx context.Context, in *ListenServerEventRequest, opts ...grpc.CallOption) (LibrarianSephirahService_ListenServerEventClient, error)
 	// `Tiphereth` `Normal` Login via password and get two token
 	GetToken(ctx context.Context, in *GetTokenRequest, opts ...grpc.CallOption) (*GetTokenResponse, error)
 	// `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
@@ -402,6 +411,39 @@ func (c *librarianSephirahServiceClient) GetServerInformation(ctx context.Contex
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) ListenServerEvent(ctx context.Context, in *ListenServerEventRequest, opts ...grpc.CallOption) (LibrarianSephirahService_ListenServerEventClient, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[0], LibrarianSephirahService_ListenServerEvent_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &librarianSephirahServiceListenServerEventClient{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type LibrarianSephirahService_ListenServerEventClient interface {
+	Recv() (*ListenServerEventResponse, error)
+	grpc.ClientStream
+}
+
+type librarianSephirahServiceListenServerEventClient struct {
+	grpc.ClientStream
+}
+
+func (x *librarianSephirahServiceListenServerEventClient) Recv() (*ListenServerEventResponse, error) {
+	m := new(ListenServerEventResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 func (c *librarianSephirahServiceClient) GetToken(ctx context.Context, in *GetTokenRequest, opts ...grpc.CallOption) (*GetTokenResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetTokenResponse)
@@ -604,7 +646,7 @@ func (c *librarianSephirahServiceClient) GetFileCapacity(ctx context.Context, in
 
 func (c *librarianSephirahServiceClient) UploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_UploadFileClient, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[0], LibrarianSephirahService_UploadFile_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[1], LibrarianSephirahService_UploadFile_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -636,7 +678,7 @@ func (x *librarianSephirahServiceUploadFileClient) Recv() (*UploadFileResponse, 
 
 func (c *librarianSephirahServiceClient) DownloadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_DownloadFileClient, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[1], LibrarianSephirahService_DownloadFile_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[2], LibrarianSephirahService_DownloadFile_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -668,7 +710,7 @@ func (x *librarianSephirahServiceDownloadFileClient) Recv() (*DownloadFileRespon
 
 func (c *librarianSephirahServiceClient) SimpleUploadFile(ctx context.Context, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleUploadFileClient, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[2], LibrarianSephirahService_SimpleUploadFile_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[3], LibrarianSephirahService_SimpleUploadFile_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -700,7 +742,7 @@ func (x *librarianSephirahServiceSimpleUploadFileClient) Recv() (*SimpleUploadFi
 
 func (c *librarianSephirahServiceClient) SimpleDownloadFile(ctx context.Context, in *SimpleDownloadFileRequest, opts ...grpc.CallOption) (LibrarianSephirahService_SimpleDownloadFileClient, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[3], LibrarianSephirahService_SimpleDownloadFile_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &LibrarianSephirahService_ServiceDesc.Streams[4], LibrarianSephirahService_SimpleDownloadFile_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1574,6 +1616,14 @@ func (c *librarianSephirahServiceClient) ListTags(ctx context.Context, in *ListT
 type LibrarianSephirahServiceServer interface {
 	// Allow anonymous call, use accessToken to get complete information
 	GetServerInformation(context.Context, *GetServerInformationRequest) (*GetServerInformationResponse, error)
+	// `Normal` Client can use this to subscribe to server events.
+	//
+	// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+	// Otherwise, client should treat the connection as failed.
+	//
+	// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+	// Only used to improve real-time experience, no guarantee of delivery.
+	ListenServerEvent(*ListenServerEventRequest, LibrarianSephirahService_ListenServerEventServer) error
 	// `Tiphereth` `Normal` Login via password and get two token
 	GetToken(context.Context, *GetTokenRequest) (*GetTokenResponse, error)
 	// `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
@@ -1823,6 +1873,9 @@ type UnimplementedLibrarianSephirahServiceServer struct {
 
 func (UnimplementedLibrarianSephirahServiceServer) GetServerInformation(context.Context, *GetServerInformationRequest) (*GetServerInformationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetServerInformation not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListenServerEvent(*ListenServerEventRequest, LibrarianSephirahService_ListenServerEventServer) error {
+	return status.Errorf(codes.Unimplemented, "method ListenServerEvent not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) GetToken(context.Context, *GetTokenRequest) (*GetTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetToken not implemented")
@@ -2175,6 +2228,27 @@ func _LibrarianSephirahService_GetServerInformation_Handler(srv interface{}, ctx
 		return srv.(LibrarianSephirahServiceServer).GetServerInformation(ctx, req.(*GetServerInformationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListenServerEvent_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(ListenServerEventRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(LibrarianSephirahServiceServer).ListenServerEvent(m, &librarianSephirahServiceListenServerEventServer{ServerStream: stream})
+}
+
+type LibrarianSephirahService_ListenServerEventServer interface {
+	Send(*ListenServerEventResponse) error
+	grpc.ServerStream
+}
+
+type librarianSephirahServiceListenServerEventServer struct {
+	grpc.ServerStream
+}
+
+func (x *librarianSephirahServiceListenServerEventServer) Send(m *ListenServerEventResponse) error {
+	return x.ServerStream.SendMsg(m)
 }
 
 func _LibrarianSephirahService_GetToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -4555,6 +4629,11 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "ListenServerEvent",
+			Handler:       _LibrarianSephirahService_ListenServerEvent_Handler,
+			ServerStreams: true,
+		},
 		{
 			StreamName:    "UploadFile",
 			Handler:       _LibrarianSephirahService_UploadFile_Handler,

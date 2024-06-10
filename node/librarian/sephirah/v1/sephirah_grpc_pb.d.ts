@@ -15,6 +15,7 @@ import * as grpc from "@grpc/grpc-js";
 
 interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   getServerInformation: grpc.MethodDefinition<librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest, librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse>;
+  listenServerEvent: grpc.MethodDefinition<librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest, librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse>;
   getToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>;
   refreshToken: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.RefreshTokenRequest, librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse>;
   gainUserPrivilege: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>;
@@ -128,6 +129,7 @@ export const LibrarianSephirahServiceService: ILibrarianSephirahServiceService;
 
 export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImplementation {
   getServerInformation: grpc.handleUnaryCall<librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest, librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse>;
+  listenServerEvent: grpc.handleServerStreamingCall<librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest, librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse>;
   getToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>;
   refreshToken: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.RefreshTokenRequest, librarian_sephirah_v1_tiphereth_pb.RefreshTokenResponse>;
   gainUserPrivilege: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest, librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse>;
@@ -242,6 +244,8 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   getServerInformation(argument: librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest, callback: grpc.requestCallback<librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse>): grpc.ClientUnaryCall;
   getServerInformation(argument: librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse>): grpc.ClientUnaryCall;
   getServerInformation(argument: librarian_sephirah_v1_sephirah_pb.GetServerInformationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_sephirah_pb.GetServerInformationResponse>): grpc.ClientUnaryCall;
+  listenServerEvent(argument: librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest, metadataOrOptions?: grpc.Metadata | grpc.CallOptions | null): grpc.ClientReadableStream<librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse>;
+  listenServerEvent(argument: librarian_sephirah_v1_sephirah_pb.ListenServerEventRequest, metadata?: grpc.Metadata | null, options?: grpc.CallOptions | null): grpc.ClientReadableStream<librarian_sephirah_v1_sephirah_pb.ListenServerEventResponse>;
   getToken(argument: librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>): grpc.ClientUnaryCall;
   getToken(argument: librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>): grpc.ClientUnaryCall;
   getToken(argument: librarian_sephirah_v1_tiphereth_pb.GetTokenRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.GetTokenResponse>): grpc.ClientUnaryCall;
