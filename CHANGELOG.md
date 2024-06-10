@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.11](https://github.com/tuihub/protos/compare/v0.4.10...v0.4.11) (2024-06-10)
+
+
+### Features
+
+* add `ListenServerEvent` ([9d4d53b](https://github.com/tuihub/protos/commit/9d4d53b77bfb2a1015879e2595f8850d378b5533))
+* add `status_report` to `GetServerInformation` ([b0a4649](https://github.com/tuihub/protos/commit/b0a4649fa88d8cca8cd2bc04b32ba52782b94055))
+
 ## [0.4.10](https://github.com/tuihub/protos/compare/v0.4.9...v0.4.10) (2024-06-09)
 
 
