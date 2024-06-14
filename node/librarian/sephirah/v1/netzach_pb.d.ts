@@ -617,13 +617,18 @@ export class SystemNotification extends jspb.Message {
   getTitle(): string;
   setTitle(value: string): void;
 
-  getMessage(): string;
-  setMessage(value: string): void;
+  getContent(): string;
+  setContent(value: string): void;
 
   hasCreateTime(): boolean;
   clearCreateTime(): void;
   getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasUpdateTime(): boolean;
+  clearUpdateTime(): void;
+  getUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SystemNotification.AsObject;
@@ -642,8 +647,9 @@ export namespace SystemNotification {
     level: SystemNotificationLevelMap[keyof SystemNotificationLevelMap],
     status: SystemNotificationStatusMap[keyof SystemNotificationStatusMap],
     title: string,
-    message: string,
+    content: string,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
@@ -713,7 +719,7 @@ export interface SystemNotificationStatusMap {
   SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED: 0;
   SYSTEM_NOTIFICATION_STATUS_UNREAD: 1;
   SYSTEM_NOTIFICATION_STATUS_READ: 2;
-  SYSTEM_NOTIFICATION_STATUS_DISMISS: 3;
+  SYSTEM_NOTIFICATION_STATUS_DISMISSED: 3;
 }
 
 export const SystemNotificationStatus: SystemNotificationStatusMap;

@@ -87,7 +87,7 @@ const SystemNotificationStatus$json = {
     {'1': 'SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED', '2': 0},
     {'1': 'SYSTEM_NOTIFICATION_STATUS_UNREAD', '2': 1},
     {'1': 'SYSTEM_NOTIFICATION_STATUS_READ', '2': 2},
-    {'1': 'SYSTEM_NOTIFICATION_STATUS_DISMISS', '2': 3},
+    {'1': 'SYSTEM_NOTIFICATION_STATUS_DISMISSED', '2': 3},
   ],
 };
 
@@ -95,8 +95,8 @@ const SystemNotificationStatus$json = {
 final $typed_data.Uint8List systemNotificationStatusDescriptor = $convert.base64Decode(
     'ChhTeXN0ZW1Ob3RpZmljYXRpb25TdGF0dXMSKgomU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVV'
     'NfVU5TUEVDSUZJRUQQABIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJFQUQQARIj'
-    'Ch9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISJgoiU1lTVEVNX05PVElGSUNBVE'
-    'lPTl9TVEFUVVNfRElTTUlTUxAD');
+    'Ch9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISKAokU1lTVEVNX05PVElGSUNBVE'
+    'lPTl9TVEFUVVNfRElTTUlTU0VEEAM=');
 
 @$core.Deprecated('Use createNotifyTargetRequestDescriptor instead')
 const CreateNotifyTargetRequest$json = {
@@ -425,8 +425,9 @@ const SystemNotification$json = {
     {'1': 'level', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationLevel', '10': 'level'},
     {'1': 'status', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.SystemNotificationStatus', '10': 'status'},
     {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'message', '3': 6, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'content', '3': 6, '4': 1, '5': 9, '10': 'content'},
     {'1': 'create_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
+    {'1': 'update_time', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updateTime'},
   ],
 };
 
@@ -437,8 +438,9 @@ final $typed_data.Uint8List systemNotificationDescriptor = $convert.base64Decode
     'ZmljYXRpb25UeXBlUgR0eXBlEkQKBWxldmVsGAMgASgOMi4ubGlicmFyaWFuLnNlcGhpcmFoLn'
     'YxLlN5c3RlbU5vdGlmaWNhdGlvbkxldmVsUgVsZXZlbBJHCgZzdGF0dXMYBCABKA4yLy5saWJy'
     'YXJpYW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2F0aW9uU3RhdHVzUgZzdGF0dXMSFAoFdG'
-    'l0bGUYBSABKAlSBXRpdGxlEhgKB21lc3NhZ2UYBiABKAlSB21lc3NhZ2USOwoLY3JlYXRlX3Rp'
-    'bWUYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1l');
+    'l0bGUYBSABKAlSBXRpdGxlEhgKB2NvbnRlbnQYBiABKAlSB2NvbnRlbnQSOwoLY3JlYXRlX3Rp'
+    'bWUYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1lEjsKC3VwZG'
+    'F0ZV90aW1lGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKdXBkYXRlVGltZQ==');
 
 @$core.Deprecated('Use systemNotificationFilterDescriptor instead')
 const SystemNotificationFilter$json = {

@@ -4853,8 +4853,9 @@ proto.librarian.sephirah.v1.SystemNotification.toObject = function(includeInstan
     level: jspb.Message.getFieldWithDefault(msg, 3, 0),
     status: jspb.Message.getFieldWithDefault(msg, 4, 0),
     title: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    content: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4914,12 +4915,17 @@ proto.librarian.sephirah.v1.SystemNotification.deserializeBinaryFromReader = fun
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMessage(value);
+      msg.setContent(value);
       break;
     case 7:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setCreateTime(value);
+      break;
+    case 8:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setUpdateTime(value);
       break;
     default:
       reader.skipField();
@@ -4986,7 +4992,7 @@ proto.librarian.sephirah.v1.SystemNotification.serializeBinaryToWriter = functio
       f
     );
   }
-  f = message.getMessage();
+  f = message.getContent();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -4997,6 +5003,14 @@ proto.librarian.sephirah.v1.SystemNotification.serializeBinaryToWriter = functio
   if (f != null) {
     writer.writeMessage(
       7,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateTime();
+  if (f != null) {
+    writer.writeMessage(
+      8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -5114,10 +5128,10 @@ proto.librarian.sephirah.v1.SystemNotification.prototype.setTitle = function(val
 
 
 /**
- * optional string message = 6;
+ * optional string content = 6;
  * @return {string}
  */
-proto.librarian.sephirah.v1.SystemNotification.prototype.getMessage = function() {
+proto.librarian.sephirah.v1.SystemNotification.prototype.getContent = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -5126,7 +5140,7 @@ proto.librarian.sephirah.v1.SystemNotification.prototype.getMessage = function()
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.SystemNotification} returns this
  */
-proto.librarian.sephirah.v1.SystemNotification.prototype.setMessage = function(value) {
+proto.librarian.sephirah.v1.SystemNotification.prototype.setContent = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -5165,6 +5179,43 @@ proto.librarian.sephirah.v1.SystemNotification.prototype.clearCreateTime = funct
  */
 proto.librarian.sephirah.v1.SystemNotification.prototype.hasCreateTime = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp update_time = 8;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.librarian.sephirah.v1.SystemNotification.prototype.getUpdateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.sephirah.v1.SystemNotification} returns this
+*/
+proto.librarian.sephirah.v1.SystemNotification.prototype.setUpdateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.SystemNotification} returns this
+ */
+proto.librarian.sephirah.v1.SystemNotification.prototype.clearUpdateTime = function() {
+  return this.setUpdateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.SystemNotification.prototype.hasUpdateTime = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -5422,7 +5473,7 @@ proto.librarian.sephirah.v1.SystemNotificationStatus = {
   SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED: 0,
   SYSTEM_NOTIFICATION_STATUS_UNREAD: 1,
   SYSTEM_NOTIFICATION_STATUS_READ: 2,
-  SYSTEM_NOTIFICATION_STATUS_DISMISS: 3
+  SYSTEM_NOTIFICATION_STATUS_DISMISSED: 3
 };
 
 goog.object.extend(exports, proto.librarian.sephirah.v1);

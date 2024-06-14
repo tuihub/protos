@@ -89,13 +89,13 @@ class SystemNotificationStatus extends $pb.ProtobufEnum {
   static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED = SystemNotificationStatus._(0, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED');
   static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_UNREAD = SystemNotificationStatus._(1, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_UNREAD');
   static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_READ = SystemNotificationStatus._(2, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_READ');
-  static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_DISMISS = SystemNotificationStatus._(3, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_DISMISS');
+  static const SystemNotificationStatus SYSTEM_NOTIFICATION_STATUS_DISMISSED = SystemNotificationStatus._(3, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_STATUS_DISMISSED');
 
   static const $core.List<SystemNotificationStatus> values = <SystemNotificationStatus> [
     SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED,
     SYSTEM_NOTIFICATION_STATUS_UNREAD,
     SYSTEM_NOTIFICATION_STATUS_READ,
-    SYSTEM_NOTIFICATION_STATUS_DISMISS,
+    SYSTEM_NOTIFICATION_STATUS_DISMISSED,
   ];
 
   static final $core.Map<$core.int, SystemNotificationStatus> _byValue = $pb.ProtobufEnum.initByValue(values);

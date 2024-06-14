@@ -1380,8 +1380,9 @@ class SystemNotification extends $pb.GeneratedMessage {
     SystemNotificationLevel? level,
     SystemNotificationStatus? status,
     $core.String? title,
-    $core.String? message,
+    $core.String? content,
     $9.Timestamp? createTime,
+    $9.Timestamp? updateTime,
   }) {
     final $result = create();
     if (id != null) {
@@ -1399,11 +1400,14 @@ class SystemNotification extends $pb.GeneratedMessage {
     if (title != null) {
       $result.title = title;
     }
-    if (message != null) {
-      $result.message = message;
+    if (content != null) {
+      $result.content = content;
     }
     if (createTime != null) {
       $result.createTime = createTime;
+    }
+    if (updateTime != null) {
+      $result.updateTime = updateTime;
     }
     return $result;
   }
@@ -1417,8 +1421,9 @@ class SystemNotification extends $pb.GeneratedMessage {
     ..e<SystemNotificationLevel>(3, _omitFieldNames ? '' : 'level', $pb.PbFieldType.OE, defaultOrMaker: SystemNotificationLevel.SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED, valueOf: SystemNotificationLevel.valueOf, enumValues: SystemNotificationLevel.values)
     ..e<SystemNotificationStatus>(4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: SystemNotificationStatus.SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED, valueOf: SystemNotificationStatus.valueOf, enumValues: SystemNotificationStatus.values)
     ..aOS(5, _omitFieldNames ? '' : 'title')
-    ..aOS(6, _omitFieldNames ? '' : 'message')
+    ..aOS(6, _omitFieldNames ? '' : 'content')
     ..aOM<$9.Timestamp>(7, _omitFieldNames ? '' : 'createTime', subBuilder: $9.Timestamp.create)
+    ..aOM<$9.Timestamp>(8, _omitFieldNames ? '' : 'updateTime', subBuilder: $9.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -1492,13 +1497,13 @@ class SystemNotification extends $pb.GeneratedMessage {
 
   /// plain text
   @$pb.TagNumber(6)
-  $core.String get message => $_getSZ(5);
+  $core.String get content => $_getSZ(5);
   @$pb.TagNumber(6)
-  set message($core.String v) { $_setString(5, v); }
+  set content($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasMessage() => $_has(5);
+  $core.bool hasContent() => $_has(5);
   @$pb.TagNumber(6)
-  void clearMessage() => clearField(6);
+  void clearContent() => clearField(6);
 
   @$pb.TagNumber(7)
   $9.Timestamp get createTime => $_getN(6);
@@ -1510,6 +1515,17 @@ class SystemNotification extends $pb.GeneratedMessage {
   void clearCreateTime() => clearField(7);
   @$pb.TagNumber(7)
   $9.Timestamp ensureCreateTime() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $9.Timestamp get updateTime => $_getN(7);
+  @$pb.TagNumber(8)
+  set updateTime($9.Timestamp v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasUpdateTime() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpdateTime() => clearField(8);
+  @$pb.TagNumber(8)
+  $9.Timestamp ensureUpdateTime() => $_ensure(7);
 }
 
 class SystemNotificationFilter extends $pb.GeneratedMessage {

@@ -22874,10 +22874,13 @@ impl serde::Serialize for SystemNotification {
         if !self.title.is_empty() {
             len += 1;
         }
-        if !self.message.is_empty() {
+        if !self.content.is_empty() {
             len += 1;
         }
         if self.create_time.is_some() {
+            len += 1;
+        }
+        if self.update_time.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SystemNotification", len)?;
@@ -22902,11 +22905,14 @@ impl serde::Serialize for SystemNotification {
         if !self.title.is_empty() {
             struct_ser.serialize_field("title", &self.title)?;
         }
-        if !self.message.is_empty() {
-            struct_ser.serialize_field("message", &self.message)?;
+        if !self.content.is_empty() {
+            struct_ser.serialize_field("content", &self.content)?;
         }
         if let Some(v) = self.create_time.as_ref() {
             struct_ser.serialize_field("createTime", v)?;
+        }
+        if let Some(v) = self.update_time.as_ref() {
+            struct_ser.serialize_field("updateTime", v)?;
         }
         struct_ser.end()
     }
@@ -22923,9 +22929,11 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
             "level",
             "status",
             "title",
-            "message",
+            "content",
             "create_time",
             "createTime",
+            "update_time",
+            "updateTime",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -22935,8 +22943,9 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
             Level,
             Status,
             Title,
-            Message,
+            Content,
             CreateTime,
+            UpdateTime,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -22963,8 +22972,9 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
                             "level" => Ok(GeneratedField::Level),
                             "status" => Ok(GeneratedField::Status),
                             "title" => Ok(GeneratedField::Title),
-                            "message" => Ok(GeneratedField::Message),
+                            "content" => Ok(GeneratedField::Content),
                             "createTime" | "create_time" => Ok(GeneratedField::CreateTime),
+                            "updateTime" | "update_time" => Ok(GeneratedField::UpdateTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -22989,8 +22999,9 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
                 let mut level__ = None;
                 let mut status__ = None;
                 let mut title__ = None;
-                let mut message__ = None;
+                let mut content__ = None;
                 let mut create_time__ = None;
+                let mut update_time__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -23023,17 +23034,23 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
                             }
                             title__ = Some(map.next_value()?);
                         }
-                        GeneratedField::Message => {
-                            if message__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("message"));
+                        GeneratedField::Content => {
+                            if content__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("content"));
                             }
-                            message__ = Some(map.next_value()?);
+                            content__ = Some(map.next_value()?);
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
                             create_time__ = map.next_value()?;
+                        }
+                        GeneratedField::UpdateTime => {
+                            if update_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("updateTime"));
+                            }
+                            update_time__ = map.next_value()?;
                         }
                     }
                 }
@@ -23043,8 +23060,9 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
                     level: level__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     title: title__.unwrap_or_default(),
-                    message: message__.unwrap_or_default(),
+                    content: content__.unwrap_or_default(),
                     create_time: create_time__,
+                    update_time: update_time__,
                 })
             }
         }
@@ -23261,7 +23279,7 @@ impl serde::Serialize for SystemNotificationStatus {
             Self::Unspecified => "SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED",
             Self::Unread => "SYSTEM_NOTIFICATION_STATUS_UNREAD",
             Self::Read => "SYSTEM_NOTIFICATION_STATUS_READ",
-            Self::Dismiss => "SYSTEM_NOTIFICATION_STATUS_DISMISS",
+            Self::Dismissed => "SYSTEM_NOTIFICATION_STATUS_DISMISSED",
         };
         serializer.serialize_str(variant)
     }
@@ -23276,7 +23294,7 @@ impl<'de> serde::Deserialize<'de> for SystemNotificationStatus {
             "SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED",
             "SYSTEM_NOTIFICATION_STATUS_UNREAD",
             "SYSTEM_NOTIFICATION_STATUS_READ",
-            "SYSTEM_NOTIFICATION_STATUS_DISMISS",
+            "SYSTEM_NOTIFICATION_STATUS_DISMISSED",
         ];
 
         struct GeneratedVisitor;
@@ -23322,7 +23340,7 @@ impl<'de> serde::Deserialize<'de> for SystemNotificationStatus {
                     "SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED" => Ok(SystemNotificationStatus::Unspecified),
                     "SYSTEM_NOTIFICATION_STATUS_UNREAD" => Ok(SystemNotificationStatus::Unread),
                     "SYSTEM_NOTIFICATION_STATUS_READ" => Ok(SystemNotificationStatus::Read),
-                    "SYSTEM_NOTIFICATION_STATUS_DISMISS" => Ok(SystemNotificationStatus::Dismiss),
+                    "SYSTEM_NOTIFICATION_STATUS_DISMISSED" => Ok(SystemNotificationStatus::Dismissed),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

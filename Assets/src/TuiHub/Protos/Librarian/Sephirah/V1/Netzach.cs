@@ -95,39 +95,41 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSRwoGc3RhdHVzGAIg",
             "ASgOMi8ubGlicmFyaWFuLnNlcGhpcmFoLnYxLlN5c3RlbU5vdGlmaWNhdGlv",
             "blN0YXR1c1IGc3RhdHVzIiIKIFVwZGF0ZVN5c3RlbU5vdGlmaWNhdGlvblJl",
-            "c3BvbnNlIv0CChJTeXN0ZW1Ob3RpZmljYXRpb24SKAoCaWQYASABKAsyGC5s",
+            "c3BvbnNlIroDChJTeXN0ZW1Ob3RpZmljYXRpb24SKAoCaWQYASABKAsyGC5s",
             "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSQQoEdHlwZRgCIAEoDjItLmxp",
             "YnJhcmlhbi5zZXBoaXJhaC52MS5TeXN0ZW1Ob3RpZmljYXRpb25UeXBlUgR0",
             "eXBlEkQKBWxldmVsGAMgASgOMi4ubGlicmFyaWFuLnNlcGhpcmFoLnYxLlN5",
             "c3RlbU5vdGlmaWNhdGlvbkxldmVsUgVsZXZlbBJHCgZzdGF0dXMYBCABKA4y",
             "Ly5saWJyYXJpYW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2F0aW9uU3Rh",
-            "dHVzUgZzdGF0dXMSFAoFdGl0bGUYBSABKAlSBXRpdGxlEhgKB21lc3NhZ2UY",
-            "BiABKAlSB21lc3NhZ2USOwoLY3JlYXRlX3RpbWUYByABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1lIr0BChhTeXN0ZW1Ob3Rp",
-            "ZmljYXRpb25GaWx0ZXISTgoLdHlwZV9maWx0ZXIYASADKA4yLS5saWJyYXJp",
-            "YW4uc2VwaGlyYWgudjEuU3lzdGVtTm90aWZpY2F0aW9uVHlwZVIKdHlwZUZp",
-            "bHRlchJRCgxsZXZlbF9maWx0ZXIYAiADKA4yLi5saWJyYXJpYW4uc2VwaGly",
-            "YWgudjEuU3lzdGVtTm90aWZpY2F0aW9uTGV2ZWxSC2xldmVsRmlsdGVyKn0K",
-            "Ek5vdGlmeVRhcmdldFN0YXR1cxIkCiBOT1RJRllfVEFSR0VUX1NUQVRVU19V",
-            "TlNQRUNJRklFRBAAEh8KG05PVElGWV9UQVJHRVRfU1RBVFVTX0FDVElWRRAB",
-            "EiAKHE5PVElGWV9UQVJHRVRfU1RBVFVTX1NVU1BFTkQQAip1ChBOb3RpZnlG",
-            "bG93U3RhdHVzEiIKHk5PVElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAA",
-            "Eh0KGU5PVElGWV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxP",
-            "V19TVEFUVVNfU1VTUEVORBACKtsBChdTeXN0ZW1Ob3RpZmljYXRpb25MZXZl",
-            "bBIpCiVTWVNURU1fTk9USUZJQ0FUSU9OX0xFVkVMX1VOU1BFQ0lGSUVEEAAS",
-            "JQohU1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9PTkdPSU5HEAESIwofU1lT",
-            "VEVNX05PVElGSUNBVElPTl9MRVZFTF9FUlJPUhACEiUKIVNZU1RFTV9OT1RJ",
-            "RklDQVRJT05fTEVWRUxfV0FSTklORxADEiIKHlNZU1RFTV9OT1RJRklDQVRJ",
-            "T05fTEVWRUxfSU5GTxAEKooBChZTeXN0ZW1Ob3RpZmljYXRpb25UeXBlEigK",
-            "JFNZU1RFTV9OT1RJRklDQVRJT05fVFlQRV9VTlNQRUNJRklFRBAAEiMKH1NZ",
-            "U1RFTV9OT1RJRklDQVRJT05fVFlQRV9TWVNURU0QARIhCh1TWVNURU1fTk9U",
-            "SUZJQ0FUSU9OX1RZUEVfVVNFUhACKroBChhTeXN0ZW1Ob3RpZmljYXRpb25T",
-            "dGF0dXMSKgomU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVVNfVU5TUEVDSUZJ",
-            "RUQQABIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJFQUQQARIj",
-            "Ch9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISJgoiU1lTVEVN",
-            "X05PVElGSUNBVElPTl9TVEFUVVNfRElTTUlTUxADQl1aNWdpdGh1Yi5jb20v",
-            "dHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIj",
-            "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
+            "dHVzUgZzdGF0dXMSFAoFdGl0bGUYBSABKAlSBXRpdGxlEhgKB2NvbnRlbnQY",
+            "BiABKAlSB2NvbnRlbnQSOwoLY3JlYXRlX3RpbWUYByABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wUgpjcmVhdGVUaW1lEjsKC3VwZGF0ZV90aW1l",
+            "GAggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKdXBkYXRlVGlt",
+            "ZSK9AQoYU3lzdGVtTm90aWZpY2F0aW9uRmlsdGVyEk4KC3R5cGVfZmlsdGVy",
+            "GAEgAygOMi0ubGlicmFyaWFuLnNlcGhpcmFoLnYxLlN5c3RlbU5vdGlmaWNh",
+            "dGlvblR5cGVSCnR5cGVGaWx0ZXISUQoMbGV2ZWxfZmlsdGVyGAIgAygOMi4u",
+            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLlN5c3RlbU5vdGlmaWNhdGlvbkxldmVs",
+            "UgtsZXZlbEZpbHRlcip9ChJOb3RpZnlUYXJnZXRTdGF0dXMSJAogTk9USUZZ",
+            "X1RBUkdFVF9TVEFUVVNfVU5TUEVDSUZJRUQQABIfChtOT1RJRllfVEFSR0VU",
+            "X1NUQVRVU19BQ1RJVkUQARIgChxOT1RJRllfVEFSR0VUX1NUQVRVU19TVVNQ",
+            "RU5EEAIqdQoQTm90aWZ5Rmxvd1N0YXR1cxIiCh5OT1RJRllfRkxPV19TVEFU",
+            "VVNfVU5TUEVDSUZJRUQQABIdChlOT1RJRllfRkxPV19TVEFUVVNfQUNUSVZF",
+            "EAESHgoaTk9USUZZX0ZMT1dfU1RBVFVTX1NVU1BFTkQQAirbAQoXU3lzdGVt",
+            "Tm90aWZpY2F0aW9uTGV2ZWwSKQolU1lTVEVNX05PVElGSUNBVElPTl9MRVZF",
+            "TF9VTlNQRUNJRklFRBAAEiUKIVNZU1RFTV9OT1RJRklDQVRJT05fTEVWRUxf",
+            "T05HT0lORxABEiMKH1NZU1RFTV9OT1RJRklDQVRJT05fTEVWRUxfRVJST1IQ",
+            "AhIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX0xFVkVMX1dBUk5JTkcQAxIiCh5T",
+            "WVNURU1fTk9USUZJQ0FUSU9OX0xFVkVMX0lORk8QBCqKAQoWU3lzdGVtTm90",
+            "aWZpY2F0aW9uVHlwZRIoCiRTWVNURU1fTk9USUZJQ0FUSU9OX1RZUEVfVU5T",
+            "UEVDSUZJRUQQABIjCh9TWVNURU1fTk9USUZJQ0FUSU9OX1RZUEVfU1lTVEVN",
+            "EAESIQodU1lTVEVNX05PVElGSUNBVElPTl9UWVBFX1VTRVIQAiq8AQoYU3lz",
+            "dGVtTm90aWZpY2F0aW9uU3RhdHVzEioKJlNZU1RFTV9OT1RJRklDQVRJT05f",
+            "U1RBVFVTX1VOU1BFQ0lGSUVEEAASJQohU1lTVEVNX05PVElGSUNBVElPTl9T",
+            "VEFUVVNfVU5SRUFEEAESIwofU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVVNf",
+            "UkVBRBACEigKJFNZU1RFTV9OT1RJRklDQVRJT05fU1RBVFVTX0RJU01JU1NF",
+            "RBADQl1aNWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFu",
+            "L3NlcGhpcmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2Vw",
+            "aGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -152,7 +154,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse.Parser, new[]{ "Paging", "Notifications" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest.Parser, new[]{ "Id", "Status" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification), global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification.Parser, new[]{ "Id", "Type", "Level", "Status", "Title", "Message", "CreateTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification), global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification.Parser, new[]{ "Id", "Type", "Level", "Status", "Title", "Content", "CreateTime", "UpdateTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationFilter), global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationFilter.Parser, new[]{ "TypeFilter", "LevelFilter" }, null, null, null, null)
           }));
     }
@@ -193,7 +195,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [pbr::OriginalName("SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("SYSTEM_NOTIFICATION_STATUS_UNREAD")] Unread = 1,
     [pbr::OriginalName("SYSTEM_NOTIFICATION_STATUS_READ")] Read = 2,
-    [pbr::OriginalName("SYSTEM_NOTIFICATION_STATUS_DISMISS")] Dismiss = 3,
+    [pbr::OriginalName("SYSTEM_NOTIFICATION_STATUS_DISMISSED")] Dismissed = 3,
   }
 
   #endregion
@@ -5201,8 +5203,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       level_ = other.level_;
       status_ = other.status_;
       title_ = other.title_;
-      message_ = other.message_;
+      content_ = other.content_;
       createTime_ = other.createTime_ != null ? other.createTime_.Clone() : null;
+      updateTime_ = other.updateTime_ != null ? other.updateTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5272,18 +5275,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 6;
-    private string message_ = "";
+    /// <summary>Field number for the "content" field.</summary>
+    public const int ContentFieldNumber = 6;
+    private string content_ = "";
     /// <summary>
     /// plain text
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Message {
-      get { return message_; }
+    public string Content {
+      get { return content_; }
       set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -5296,6 +5299,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       get { return createTime_; }
       set {
         createTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "update_time" field.</summary>
+    public const int UpdateTimeFieldNumber = 8;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp updateTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp UpdateTime {
+      get { return updateTime_; }
+      set {
+        updateTime_ = value;
       }
     }
 
@@ -5319,8 +5334,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Level != other.Level) return false;
       if (Status != other.Status) return false;
       if (Title != other.Title) return false;
-      if (Message != other.Message) return false;
+      if (Content != other.Content) return false;
       if (!object.Equals(CreateTime, other.CreateTime)) return false;
+      if (!object.Equals(UpdateTime, other.UpdateTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5333,8 +5349,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified) hash ^= Level.GetHashCode();
       if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) hash ^= Status.GetHashCode();
       if (Title.Length != 0) hash ^= Title.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (Content.Length != 0) hash ^= Content.GetHashCode();
       if (createTime_ != null) hash ^= CreateTime.GetHashCode();
+      if (updateTime_ != null) hash ^= UpdateTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5373,13 +5390,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(42);
         output.WriteString(Title);
       }
-      if (Message.Length != 0) {
+      if (Content.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(Message);
+        output.WriteString(Content);
       }
       if (createTime_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(CreateTime);
+      }
+      if (updateTime_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(UpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -5411,13 +5432,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(42);
         output.WriteString(Title);
       }
-      if (Message.Length != 0) {
+      if (Content.Length != 0) {
         output.WriteRawTag(50);
-        output.WriteString(Message);
+        output.WriteString(Content);
       }
       if (createTime_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(CreateTime);
+      }
+      if (updateTime_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(UpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -5444,11 +5469,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Title.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
       }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      if (Content.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
       }
       if (createTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateTime);
+      }
+      if (updateTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdateTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5480,14 +5508,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Title.Length != 0) {
         Title = other.Title;
       }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
+      if (other.Content.Length != 0) {
+        Content = other.Content;
       }
       if (other.createTime_ != null) {
         if (createTime_ == null) {
           CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         CreateTime.MergeFrom(other.CreateTime);
+      }
+      if (other.updateTime_ != null) {
+        if (updateTime_ == null) {
+          UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        UpdateTime.MergeFrom(other.UpdateTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5528,7 +5562,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 50: {
-            Message = input.ReadString();
+            Content = input.ReadString();
             break;
           }
           case 58: {
@@ -5536,6 +5570,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
               CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CreateTime);
+            break;
+          }
+          case 66: {
+            if (updateTime_ == null) {
+              UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdateTime);
             break;
           }
         }
@@ -5577,7 +5618,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 50: {
-            Message = input.ReadString();
+            Content = input.ReadString();
             break;
           }
           case 58: {
@@ -5585,6 +5626,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
               CreateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(CreateTime);
+            break;
+          }
+          case 66: {
+            if (updateTime_ == null) {
+              UpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdateTime);
             break;
           }
         }
