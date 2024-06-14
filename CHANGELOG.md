@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.12](https://github.com/tuihub/protos/compare/v0.4.11...v0.4.12) (2024-06-14)
+
+
+### Features
+
+* add feed pull status ([b58d302](https://github.com/tuihub/protos/commit/b58d3026a7e6f411f41728c664391cf1666f9eb1))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @grpc/grpc-js to v1.10.9 [security] ([#143](https://github.com/tuihub/protos/issues/143)) ([189b095](https://github.com/tuihub/protos/commit/189b095df4f4b281cd074646f2830fa14264bdd2))
+
 ## [0.4.11](https://github.com/tuihub/protos/compare/v0.4.10...v0.4.11) (2024-06-10)
 
 
