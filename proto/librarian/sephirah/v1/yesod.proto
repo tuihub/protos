@@ -163,16 +163,27 @@ message FeedConfig {
   FeedConfigStatus status = 6;
   google.protobuf.Duration pull_interval = 7;
   string category = 8;
-  // response only
-  optional google.protobuf.Timestamp latest_update_time = 9;
   // If ture, exclude items from ListFeedItemsResponse
-  bool hide_items = 10;
+  bool hide_items = 9;
+  // response only
+  optional google.protobuf.Timestamp latest_pull_time = 10;
+  // response only
+  optional FeedConfigPullStatus latest_pull_status = 11;
+  // response only
+  optional string latest_pull_message = 12;
 }
 
 enum FeedConfigStatus {
   FEED_CONFIG_STATUS_UNSPECIFIED = 0;
   FEED_CONFIG_STATUS_ACTIVE = 1;
   FEED_CONFIG_STATUS_SUSPEND = 2;
+}
+
+enum FeedConfigPullStatus {
+  FEED_CONFIG_PULL_STATUS_UNSPECIFIED = 0;
+  FEED_CONFIG_PULL_STATUS_PROCESSING = 1;
+  FEED_CONFIG_PULL_STATUS_SUCCESS = 2;
+  FEED_CONFIG_PULL_STATUS_FAILED = 3;
 }
 
 // Digest information generated from origin item data
