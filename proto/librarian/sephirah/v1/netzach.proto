@@ -134,8 +134,9 @@ message SystemNotification {
   SystemNotificationStatus status = 4;
   string title = 5;
   // plain text
-  string message = 6;
+  string content = 6;
   google.protobuf.Timestamp create_time = 7;
+  google.protobuf.Timestamp update_time = 8;
 }
 
 message SystemNotificationFilter {
@@ -162,5 +163,5 @@ enum SystemNotificationStatus {
   SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED = 0;
   SYSTEM_NOTIFICATION_STATUS_UNREAD = 1;
   SYSTEM_NOTIFICATION_STATUS_READ = 2;
-  SYSTEM_NOTIFICATION_STATUS_DISMISS = 3;
+  SYSTEM_NOTIFICATION_STATUS_DISMISSED = 3;
 }
