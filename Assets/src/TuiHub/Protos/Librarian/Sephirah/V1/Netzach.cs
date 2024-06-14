@@ -113,21 +113,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "EiAKHE5PVElGWV9UQVJHRVRfU1RBVFVTX1NVU1BFTkQQAip1ChBOb3RpZnlG",
             "bG93U3RhdHVzEiIKHk5PVElGWV9GTE9XX1NUQVRVU19VTlNQRUNJRklFRBAA",
             "Eh0KGU5PVElGWV9GTE9XX1NUQVRVU19BQ1RJVkUQARIeChpOT1RJRllfRkxP",
-            "V19TVEFUVVNfU1VTUEVORBACKrQBChdTeXN0ZW1Ob3RpZmljYXRpb25MZXZl",
+            "V19TVEFUVVNfU1VTUEVORBACKtsBChdTeXN0ZW1Ob3RpZmljYXRpb25MZXZl",
             "bBIpCiVTWVNURU1fTk9USUZJQ0FUSU9OX0xFVkVMX1VOU1BFQ0lGSUVEEAAS",
-            "IwofU1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9FUlJPUhABEiUKIVNZU1RF",
-            "TV9OT1RJRklDQVRJT05fTEVWRUxfV0FSTklORxACEiIKHlNZU1RFTV9OT1RJ",
-            "RklDQVRJT05fTEVWRUxfSU5GTxADKooBChZTeXN0ZW1Ob3RpZmljYXRpb25U",
-            "eXBlEigKJFNZU1RFTV9OT1RJRklDQVRJT05fVFlQRV9VTlNQRUNJRklFRBAA",
-            "EiMKH1NZU1RFTV9OT1RJRklDQVRJT05fVFlQRV9TWVNURU0QARIhCh1TWVNU",
-            "RU1fTk9USUZJQ0FUSU9OX1RZUEVfVVNFUhACKroBChhTeXN0ZW1Ob3RpZmlj",
-            "YXRpb25TdGF0dXMSKgomU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVVNfVU5T",
-            "UEVDSUZJRUQQABIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJF",
-            "QUQQARIjCh9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISJgoi",
-            "U1lTVEVNX05PVElGSUNBVElPTl9TVEFUVVNfRElTTUlTUxADQl1aNWdpdGh1",
-            "Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3Yx",
-            "O3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnBy",
-            "b3RvMw=="));
+            "JQohU1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9PTkdPSU5HEAESIwofU1lT",
+            "VEVNX05PVElGSUNBVElPTl9MRVZFTF9FUlJPUhACEiUKIVNZU1RFTV9OT1RJ",
+            "RklDQVRJT05fTEVWRUxfV0FSTklORxADEiIKHlNZU1RFTV9OT1RJRklDQVRJ",
+            "T05fTEVWRUxfSU5GTxAEKooBChZTeXN0ZW1Ob3RpZmljYXRpb25UeXBlEigK",
+            "JFNZU1RFTV9OT1RJRklDQVRJT05fVFlQRV9VTlNQRUNJRklFRBAAEiMKH1NZ",
+            "U1RFTV9OT1RJRklDQVRJT05fVFlQRV9TWVNURU0QARIhCh1TWVNURU1fTk9U",
+            "SUZJQ0FUSU9OX1RZUEVfVVNFUhACKroBChhTeXN0ZW1Ob3RpZmljYXRpb25T",
+            "dGF0dXMSKgomU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVVNfVU5TUEVDSUZJ",
+            "RUQQABIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJFQUQQARIj",
+            "Ch9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISJgoiU1lTVEVN",
+            "X05PVElGSUNBVElPTl9TVEFUVVNfRElTTUlTUxADQl1aNWdpdGh1Yi5jb20v",
+            "dHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIj",
+            "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -174,9 +174,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
   public enum SystemNotificationLevel {
     [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_ERROR")] Error = 1,
-    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_WARNING")] Warning = 2,
-    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_INFO")] Info = 3,
+    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_ONGOING")] Ongoing = 1,
+    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_ERROR")] Error = 2,
+    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_WARNING")] Warning = 3,
+    [pbr::OriginalName("SYSTEM_NOTIFICATION_LEVEL_INFO")] Info = 4,
   }
 
   public enum SystemNotificationType {

@@ -49,12 +49,14 @@ class NotifyFlowStatus extends $pb.ProtobufEnum {
 
 class SystemNotificationLevel extends $pb.ProtobufEnum {
   static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED = SystemNotificationLevel._(0, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED');
-  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_ERROR = SystemNotificationLevel._(1, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_ERROR');
-  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_WARNING = SystemNotificationLevel._(2, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_WARNING');
-  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_INFO = SystemNotificationLevel._(3, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_INFO');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_ONGOING = SystemNotificationLevel._(1, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_ONGOING');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_ERROR = SystemNotificationLevel._(2, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_ERROR');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_WARNING = SystemNotificationLevel._(3, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_WARNING');
+  static const SystemNotificationLevel SYSTEM_NOTIFICATION_LEVEL_INFO = SystemNotificationLevel._(4, _omitEnumNames ? '' : 'SYSTEM_NOTIFICATION_LEVEL_INFO');
 
   static const $core.List<SystemNotificationLevel> values = <SystemNotificationLevel> [
     SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED,
+    SYSTEM_NOTIFICATION_LEVEL_ONGOING,
     SYSTEM_NOTIFICATION_LEVEL_ERROR,
     SYSTEM_NOTIFICATION_LEVEL_WARNING,
     SYSTEM_NOTIFICATION_LEVEL_INFO,

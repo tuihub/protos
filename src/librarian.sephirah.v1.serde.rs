@@ -4913,10 +4913,16 @@ impl serde::Serialize for FeedConfig {
         if !self.category.is_empty() {
             len += 1;
         }
-        if self.latest_update_time.is_some() {
+        if self.hide_items {
             len += 1;
         }
-        if self.hide_items {
+        if self.latest_pull_time.is_some() {
+            len += 1;
+        }
+        if self.latest_pull_status.is_some() {
+            len += 1;
+        }
+        if self.latest_pull_message.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedConfig", len)?;
@@ -4946,11 +4952,19 @@ impl serde::Serialize for FeedConfig {
         if !self.category.is_empty() {
             struct_ser.serialize_field("category", &self.category)?;
         }
-        if let Some(v) = self.latest_update_time.as_ref() {
-            struct_ser.serialize_field("latestUpdateTime", v)?;
-        }
         if self.hide_items {
             struct_ser.serialize_field("hideItems", &self.hide_items)?;
+        }
+        if let Some(v) = self.latest_pull_time.as_ref() {
+            struct_ser.serialize_field("latestPullTime", v)?;
+        }
+        if let Some(v) = self.latest_pull_status.as_ref() {
+            let v = FeedConfigPullStatus::from_i32(*v)
+                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", *v)))?;
+            struct_ser.serialize_field("latestPullStatus", &v)?;
+        }
+        if let Some(v) = self.latest_pull_message.as_ref() {
+            struct_ser.serialize_field("latestPullMessage", v)?;
         }
         struct_ser.end()
     }
@@ -4973,10 +4987,14 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             "pull_interval",
             "pullInterval",
             "category",
-            "latest_update_time",
-            "latestUpdateTime",
             "hide_items",
             "hideItems",
+            "latest_pull_time",
+            "latestPullTime",
+            "latest_pull_status",
+            "latestPullStatus",
+            "latest_pull_message",
+            "latestPullMessage",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -4989,8 +5007,10 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             Status,
             PullInterval,
             Category,
-            LatestUpdateTime,
             HideItems,
+            LatestPullTime,
+            LatestPullStatus,
+            LatestPullMessage,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5020,8 +5040,10 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             "status" => Ok(GeneratedField::Status),
                             "pullInterval" | "pull_interval" => Ok(GeneratedField::PullInterval),
                             "category" => Ok(GeneratedField::Category),
-                            "latestUpdateTime" | "latest_update_time" => Ok(GeneratedField::LatestUpdateTime),
                             "hideItems" | "hide_items" => Ok(GeneratedField::HideItems),
+                            "latestPullTime" | "latest_pull_time" => Ok(GeneratedField::LatestPullTime),
+                            "latestPullStatus" | "latest_pull_status" => Ok(GeneratedField::LatestPullStatus),
+                            "latestPullMessage" | "latest_pull_message" => Ok(GeneratedField::LatestPullMessage),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5049,8 +5071,10 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                 let mut status__ = None;
                 let mut pull_interval__ = None;
                 let mut category__ = None;
-                let mut latest_update_time__ = None;
                 let mut hide_items__ = None;
+                let mut latest_pull_time__ = None;
+                let mut latest_pull_status__ = None;
+                let mut latest_pull_message__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -5101,17 +5125,29 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             }
                             category__ = Some(map.next_value()?);
                         }
-                        GeneratedField::LatestUpdateTime => {
-                            if latest_update_time__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("latestUpdateTime"));
-                            }
-                            latest_update_time__ = map.next_value()?;
-                        }
                         GeneratedField::HideItems => {
                             if hide_items__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("hideItems"));
                             }
                             hide_items__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::LatestPullTime => {
+                            if latest_pull_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("latestPullTime"));
+                            }
+                            latest_pull_time__ = map.next_value()?;
+                        }
+                        GeneratedField::LatestPullStatus => {
+                            if latest_pull_status__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("latestPullStatus"));
+                            }
+                            latest_pull_status__ = map.next_value::<::std::option::Option<FeedConfigPullStatus>>()?.map(|x| x as i32);
+                        }
+                        GeneratedField::LatestPullMessage => {
+                            if latest_pull_message__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("latestPullMessage"));
+                            }
+                            latest_pull_message__ = map.next_value()?;
                         }
                     }
                 }
@@ -5124,12 +5160,93 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                     status: status__.unwrap_or_default(),
                     pull_interval: pull_interval__,
                     category: category__.unwrap_or_default(),
-                    latest_update_time: latest_update_time__,
                     hide_items: hide_items__.unwrap_or_default(),
+                    latest_pull_time: latest_pull_time__,
+                    latest_pull_status: latest_pull_status__,
+                    latest_pull_message: latest_pull_message__,
                 })
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.FeedConfig", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for FeedConfigPullStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "FEED_CONFIG_PULL_STATUS_UNSPECIFIED",
+            Self::Processing => "FEED_CONFIG_PULL_STATUS_PROCESSING",
+            Self::Success => "FEED_CONFIG_PULL_STATUS_SUCCESS",
+            Self::Failed => "FEED_CONFIG_PULL_STATUS_FAILED",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeedConfigPullStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "FEED_CONFIG_PULL_STATUS_UNSPECIFIED",
+            "FEED_CONFIG_PULL_STATUS_PROCESSING",
+            "FEED_CONFIG_PULL_STATUS_SUCCESS",
+            "FEED_CONFIG_PULL_STATUS_FAILED",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeedConfigPullStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FeedConfigPullStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(FeedConfigPullStatus::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "FEED_CONFIG_PULL_STATUS_UNSPECIFIED" => Ok(FeedConfigPullStatus::Unspecified),
+                    "FEED_CONFIG_PULL_STATUS_PROCESSING" => Ok(FeedConfigPullStatus::Processing),
+                    "FEED_CONFIG_PULL_STATUS_SUCCESS" => Ok(FeedConfigPullStatus::Success),
+                    "FEED_CONFIG_PULL_STATUS_FAILED" => Ok(FeedConfigPullStatus::Failed),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for FeedConfigStatus {
@@ -23060,6 +23177,7 @@ impl serde::Serialize for SystemNotificationLevel {
     {
         let variant = match self {
             Self::Unspecified => "SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED",
+            Self::Ongoing => "SYSTEM_NOTIFICATION_LEVEL_ONGOING",
             Self::Error => "SYSTEM_NOTIFICATION_LEVEL_ERROR",
             Self::Warning => "SYSTEM_NOTIFICATION_LEVEL_WARNING",
             Self::Info => "SYSTEM_NOTIFICATION_LEVEL_INFO",
@@ -23075,6 +23193,7 @@ impl<'de> serde::Deserialize<'de> for SystemNotificationLevel {
     {
         const FIELDS: &[&str] = &[
             "SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED",
+            "SYSTEM_NOTIFICATION_LEVEL_ONGOING",
             "SYSTEM_NOTIFICATION_LEVEL_ERROR",
             "SYSTEM_NOTIFICATION_LEVEL_WARNING",
             "SYSTEM_NOTIFICATION_LEVEL_INFO",
@@ -23121,6 +23240,7 @@ impl<'de> serde::Deserialize<'de> for SystemNotificationLevel {
             {
                 match value {
                     "SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED" => Ok(SystemNotificationLevel::Unspecified),
+                    "SYSTEM_NOTIFICATION_LEVEL_ONGOING" => Ok(SystemNotificationLevel::Ongoing),
                     "SYSTEM_NOTIFICATION_LEVEL_ERROR" => Ok(SystemNotificationLevel::Error),
                     "SYSTEM_NOTIFICATION_LEVEL_WARNING" => Ok(SystemNotificationLevel::Warning),
                     "SYSTEM_NOTIFICATION_LEVEL_INFO" => Ok(SystemNotificationLevel::Info),

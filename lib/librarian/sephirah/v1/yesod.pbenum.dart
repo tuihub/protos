@@ -30,5 +30,24 @@ class FeedConfigStatus extends $pb.ProtobufEnum {
   const FeedConfigStatus._($core.int v, $core.String n) : super(v, n);
 }
 
+class FeedConfigPullStatus extends $pb.ProtobufEnum {
+  static const FeedConfigPullStatus FEED_CONFIG_PULL_STATUS_UNSPECIFIED = FeedConfigPullStatus._(0, _omitEnumNames ? '' : 'FEED_CONFIG_PULL_STATUS_UNSPECIFIED');
+  static const FeedConfigPullStatus FEED_CONFIG_PULL_STATUS_PROCESSING = FeedConfigPullStatus._(1, _omitEnumNames ? '' : 'FEED_CONFIG_PULL_STATUS_PROCESSING');
+  static const FeedConfigPullStatus FEED_CONFIG_PULL_STATUS_SUCCESS = FeedConfigPullStatus._(2, _omitEnumNames ? '' : 'FEED_CONFIG_PULL_STATUS_SUCCESS');
+  static const FeedConfigPullStatus FEED_CONFIG_PULL_STATUS_FAILED = FeedConfigPullStatus._(3, _omitEnumNames ? '' : 'FEED_CONFIG_PULL_STATUS_FAILED');
+
+  static const $core.List<FeedConfigPullStatus> values = <FeedConfigPullStatus> [
+    FEED_CONFIG_PULL_STATUS_UNSPECIFIED,
+    FEED_CONFIG_PULL_STATUS_PROCESSING,
+    FEED_CONFIG_PULL_STATUS_SUCCESS,
+    FEED_CONFIG_PULL_STATUS_FAILED,
+  ];
+
+  static final $core.Map<$core.int, FeedConfigPullStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static FeedConfigPullStatus? valueOf($core.int value) => _byValue[value];
+
+  const FeedConfigPullStatus._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

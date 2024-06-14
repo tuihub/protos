@@ -1890,8 +1890,10 @@ class FeedConfig extends $pb.GeneratedMessage {
     FeedConfigStatus? status,
     $11.Duration? pullInterval,
     $core.String? category,
-    $9.Timestamp? latestUpdateTime,
     $core.bool? hideItems,
+    $9.Timestamp? latestPullTime,
+    FeedConfigPullStatus? latestPullStatus,
+    $core.String? latestPullMessage,
   }) {
     final $result = create();
     if (id != null) {
@@ -1918,11 +1920,17 @@ class FeedConfig extends $pb.GeneratedMessage {
     if (category != null) {
       $result.category = category;
     }
-    if (latestUpdateTime != null) {
-      $result.latestUpdateTime = latestUpdateTime;
-    }
     if (hideItems != null) {
       $result.hideItems = hideItems;
+    }
+    if (latestPullTime != null) {
+      $result.latestPullTime = latestPullTime;
+    }
+    if (latestPullStatus != null) {
+      $result.latestPullStatus = latestPullStatus;
+    }
+    if (latestPullMessage != null) {
+      $result.latestPullMessage = latestPullMessage;
     }
     return $result;
   }
@@ -1939,8 +1947,10 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..e<FeedConfigStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
     ..aOM<$11.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $11.Duration.create)
     ..aOS(8, _omitFieldNames ? '' : 'category')
-    ..aOM<$9.Timestamp>(9, _omitFieldNames ? '' : 'latestUpdateTime', subBuilder: $9.Timestamp.create)
-    ..aOB(10, _omitFieldNames ? '' : 'hideItems')
+    ..aOB(9, _omitFieldNames ? '' : 'hideItems')
+    ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'latestPullTime', subBuilder: $9.Timestamp.create)
+    ..e<FeedConfigPullStatus>(11, _omitFieldNames ? '' : 'latestPullStatus', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigPullStatus.FEED_CONFIG_PULL_STATUS_UNSPECIFIED, valueOf: FeedConfigPullStatus.valueOf, enumValues: FeedConfigPullStatus.values)
+    ..aOS(12, _omitFieldNames ? '' : 'latestPullMessage')
     ..hasRequiredFields = false
   ;
 
@@ -2045,27 +2055,47 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearCategory() => clearField(8);
 
-  /// response only
-  @$pb.TagNumber(9)
-  $9.Timestamp get latestUpdateTime => $_getN(8);
-  @$pb.TagNumber(9)
-  set latestUpdateTime($9.Timestamp v) { setField(9, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasLatestUpdateTime() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearLatestUpdateTime() => clearField(9);
-  @$pb.TagNumber(9)
-  $9.Timestamp ensureLatestUpdateTime() => $_ensure(8);
-
   /// If ture, exclude items from ListFeedItemsResponse
+  @$pb.TagNumber(9)
+  $core.bool get hideItems => $_getBF(8);
+  @$pb.TagNumber(9)
+  set hideItems($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasHideItems() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHideItems() => clearField(9);
+
+  /// response only
   @$pb.TagNumber(10)
-  $core.bool get hideItems => $_getBF(9);
+  $9.Timestamp get latestPullTime => $_getN(9);
   @$pb.TagNumber(10)
-  set hideItems($core.bool v) { $_setBool(9, v); }
+  set latestPullTime($9.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasHideItems() => $_has(9);
+  $core.bool hasLatestPullTime() => $_has(9);
   @$pb.TagNumber(10)
-  void clearHideItems() => clearField(10);
+  void clearLatestPullTime() => clearField(10);
+  @$pb.TagNumber(10)
+  $9.Timestamp ensureLatestPullTime() => $_ensure(9);
+
+  /// response only
+  @$pb.TagNumber(11)
+  FeedConfigPullStatus get latestPullStatus => $_getN(10);
+  @$pb.TagNumber(11)
+  set latestPullStatus(FeedConfigPullStatus v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasLatestPullStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLatestPullStatus() => clearField(11);
+
+  /// response only
+  @$pb.TagNumber(12)
+  $core.String get latestPullMessage => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set latestPullMessage($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasLatestPullMessage() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLatestPullMessage() => clearField(12);
 }
 
 /// Digest information generated from origin item data

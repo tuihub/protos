@@ -917,13 +917,23 @@ export class FeedConfig extends jspb.Message {
   getCategory(): string;
   setCategory(value: string): void;
 
-  hasLatestUpdateTime(): boolean;
-  clearLatestUpdateTime(): void;
-  getLatestUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setLatestUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
-
   getHideItems(): boolean;
   setHideItems(value: boolean): void;
+
+  hasLatestPullTime(): boolean;
+  clearLatestPullTime(): void;
+  getLatestPullTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setLatestPullTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasLatestPullStatus(): boolean;
+  clearLatestPullStatus(): void;
+  getLatestPullStatus(): FeedConfigPullStatusMap[keyof FeedConfigPullStatusMap];
+  setLatestPullStatus(value: FeedConfigPullStatusMap[keyof FeedConfigPullStatusMap]): void;
+
+  hasLatestPullMessage(): boolean;
+  clearLatestPullMessage(): void;
+  getLatestPullMessage(): string;
+  setLatestPullMessage(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
@@ -945,8 +955,10 @@ export namespace FeedConfig {
     status: FeedConfigStatusMap[keyof FeedConfigStatusMap],
     pullInterval?: google_protobuf_duration_pb.Duration.AsObject,
     category: string,
-    latestUpdateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     hideItems: boolean,
+    latestPullTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    latestPullStatus: FeedConfigPullStatusMap[keyof FeedConfigPullStatusMap],
+    latestPullMessage: string,
   }
 }
 
@@ -1063,4 +1075,13 @@ export interface FeedConfigStatusMap {
 }
 
 export const FeedConfigStatus: FeedConfigStatusMap;
+
+export interface FeedConfigPullStatusMap {
+  FEED_CONFIG_PULL_STATUS_UNSPECIFIED: 0;
+  FEED_CONFIG_PULL_STATUS_PROCESSING: 1;
+  FEED_CONFIG_PULL_STATUS_SUCCESS: 2;
+  FEED_CONFIG_PULL_STATUS_FAILED: 3;
+}
+
+export const FeedConfigPullStatus: FeedConfigPullStatusMap;
 

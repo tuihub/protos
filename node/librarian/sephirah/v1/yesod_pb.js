@@ -34,6 +34,7 @@ goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedConfigResponse', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedItemCollectionRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedItemCollectionResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfig', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfigPullStatus', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedConfigStatus', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedItemCollection', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.FeedItemDigest', null, global);
@@ -7248,8 +7249,10 @@ proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg)
     status: jspb.Message.getFieldWithDefault(msg, 6, 0),
     pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     category: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    latestUpdateTime: (f = msg.getLatestUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    hideItems: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+    hideItems: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    latestPullTime: (f = msg.getLatestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    latestPullStatus: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    latestPullMessage: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -7322,13 +7325,21 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       msg.setCategory(value);
       break;
     case 9:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setLatestUpdateTime(value);
-      break;
-    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setHideItems(value);
+      break;
+    case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setLatestPullTime(value);
+      break;
+    case 11:
+      var value = /** @type {!proto.librarian.sephirah.v1.FeedConfigPullStatus} */ (reader.readEnum());
+      msg.setLatestPullStatus(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLatestPullMessage(value);
       break;
     default:
       reader.skipField();
@@ -7418,18 +7429,32 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getLatestUpdateTime();
+  f = message.getHideItems();
+  if (f) {
+    writer.writeBool(
+      9,
+      f
+    );
+  }
+  f = message.getLatestPullTime();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getHideItems();
-  if (f) {
-    writer.writeBool(
-      10,
+  f = /** @type {!proto.librarian.sephirah.v1.FeedConfigPullStatus} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeEnum(
+      11,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeString(
+      12,
       f
     );
   }
@@ -7638,48 +7663,11 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.setCategory = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp latest_update_time = 9;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getLatestUpdateTime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 9));
-};
-
-
-/**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
- * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
-*/
-proto.librarian.sephirah.v1.FeedConfig.prototype.setLatestUpdateTime = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.clearLatestUpdateTime = function() {
-  return this.setLatestUpdateTime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestUpdateTime = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional bool hide_items = 10;
+ * optional bool hide_items = 9;
  * @return {boolean}
  */
 proto.librarian.sephirah.v1.FeedConfig.prototype.getHideItems = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
 
@@ -7688,7 +7676,116 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.getHideItems = function() {
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
 proto.librarian.sephirah.v1.FeedConfig.prototype.setHideItems = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 10, value);
+  return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp latest_pull_time = 10;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.getLatestPullTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+*/
+proto.librarian.sephirah.v1.FeedConfig.prototype.setLatestPullTime = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearLatestPullTime = function() {
+  return this.setLatestPullTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullTime = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional FeedConfigPullStatus latest_pull_status = 11;
+ * @return {!proto.librarian.sephirah.v1.FeedConfigPullStatus}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.getLatestPullStatus = function() {
+  return /** @type {!proto.librarian.sephirah.v1.FeedConfigPullStatus} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.FeedConfigPullStatus} value
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.setLatestPullStatus = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearLatestPullStatus = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullStatus = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string latest_pull_message = 12;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.getLatestPullMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.setLatestPullMessage = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearLatestPullMessage = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullMessage = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
@@ -8489,6 +8586,16 @@ proto.librarian.sephirah.v1.FeedConfigStatus = {
   FEED_CONFIG_STATUS_UNSPECIFIED: 0,
   FEED_CONFIG_STATUS_ACTIVE: 1,
   FEED_CONFIG_STATUS_SUSPEND: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.librarian.sephirah.v1.FeedConfigPullStatus = {
+  FEED_CONFIG_PULL_STATUS_UNSPECIFIED: 0,
+  FEED_CONFIG_PULL_STATUS_PROCESSING: 1,
+  FEED_CONFIG_PULL_STATUS_SUCCESS: 2,
+  FEED_CONFIG_PULL_STATUS_FAILED: 3
 };
 
 goog.object.extend(exports, proto.librarian.sephirah.v1);

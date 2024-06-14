@@ -50,18 +50,19 @@ const SystemNotificationLevel$json = {
   '1': 'SystemNotificationLevel',
   '2': [
     {'1': 'SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED', '2': 0},
-    {'1': 'SYSTEM_NOTIFICATION_LEVEL_ERROR', '2': 1},
-    {'1': 'SYSTEM_NOTIFICATION_LEVEL_WARNING', '2': 2},
-    {'1': 'SYSTEM_NOTIFICATION_LEVEL_INFO', '2': 3},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_ONGOING', '2': 1},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_ERROR', '2': 2},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_WARNING', '2': 3},
+    {'1': 'SYSTEM_NOTIFICATION_LEVEL_INFO', '2': 4},
   ],
 };
 
 /// Descriptor for `SystemNotificationLevel`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List systemNotificationLevelDescriptor = $convert.base64Decode(
     'ChdTeXN0ZW1Ob3RpZmljYXRpb25MZXZlbBIpCiVTWVNURU1fTk9USUZJQ0FUSU9OX0xFVkVMX1'
-    'VOU1BFQ0lGSUVEEAASIwofU1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9FUlJPUhABEiUKIVNZ'
-    'U1RFTV9OT1RJRklDQVRJT05fTEVWRUxfV0FSTklORxACEiIKHlNZU1RFTV9OT1RJRklDQVRJT0'
-    '5fTEVWRUxfSU5GTxAD');
+    'VOU1BFQ0lGSUVEEAASJQohU1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9PTkdPSU5HEAESIwof'
+    'U1lTVEVNX05PVElGSUNBVElPTl9MRVZFTF9FUlJPUhACEiUKIVNZU1RFTV9OT1RJRklDQVRJT0'
+    '5fTEVWRUxfV0FSTklORxADEiIKHlNZU1RFTV9OT1RJRklDQVRJT05fTEVWRUxfSU5GTxAE');
 
 @$core.Deprecated('Use systemNotificationTypeDescriptor instead')
 const SystemNotificationType$json = {

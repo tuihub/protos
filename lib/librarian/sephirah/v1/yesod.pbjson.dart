@@ -29,6 +29,24 @@ final $typed_data.Uint8List feedConfigStatusDescriptor = $convert.base64Decode(
     '0KGUZFRURfQ09ORklHX1NUQVRVU19BQ1RJVkUQARIeChpGRUVEX0NPTkZJR19TVEFUVVNfU1VT'
     'UEVORBAC');
 
+@$core.Deprecated('Use feedConfigPullStatusDescriptor instead')
+const FeedConfigPullStatus$json = {
+  '1': 'FeedConfigPullStatus',
+  '2': [
+    {'1': 'FEED_CONFIG_PULL_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'FEED_CONFIG_PULL_STATUS_PROCESSING', '2': 1},
+    {'1': 'FEED_CONFIG_PULL_STATUS_SUCCESS', '2': 2},
+    {'1': 'FEED_CONFIG_PULL_STATUS_FAILED', '2': 3},
+  ],
+};
+
+/// Descriptor for `FeedConfigPullStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List feedConfigPullStatusDescriptor = $convert.base64Decode(
+    'ChRGZWVkQ29uZmlnUHVsbFN0YXR1cxInCiNGRUVEX0NPTkZJR19QVUxMX1NUQVRVU19VTlNQRU'
+    'NJRklFRBAAEiYKIkZFRURfQ09ORklHX1BVTExfU1RBVFVTX1BST0NFU1NJTkcQARIjCh9GRUVE'
+    'X0NPTkZJR19QVUxMX1NUQVRVU19TVUNDRVNTEAISIgoeRkVFRF9DT05GSUdfUFVMTF9TVEFUVV'
+    'NfRkFJTEVEEAM=');
+
 @$core.Deprecated('Use createFeedConfigRequestDescriptor instead')
 const CreateFeedConfigRequest$json = {
   '1': 'CreateFeedConfigRequest',
@@ -510,11 +528,15 @@ const FeedConfig$json = {
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigStatus', '10': 'status'},
     {'1': 'pull_interval', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'pullInterval'},
     {'1': 'category', '3': 8, '4': 1, '5': 9, '10': 'category'},
-    {'1': 'latest_update_time', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'latestUpdateTime', '17': true},
-    {'1': 'hide_items', '3': 10, '4': 1, '5': 8, '10': 'hideItems'},
+    {'1': 'hide_items', '3': 9, '4': 1, '5': 8, '10': 'hideItems'},
+    {'1': 'latest_pull_time', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'latestPullTime', '17': true},
+    {'1': 'latest_pull_status', '3': 11, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigPullStatus', '9': 1, '10': 'latestPullStatus', '17': true},
+    {'1': 'latest_pull_message', '3': 12, '4': 1, '5': 9, '9': 2, '10': 'latestPullMessage', '17': true},
   ],
   '8': [
-    {'1': '_latest_update_time'},
+    {'1': '_latest_pull_time'},
+    {'1': '_latest_pull_status'},
+    {'1': '_latest_pull_message'},
   ],
 };
 
@@ -526,9 +548,13 @@ final $typed_data.Uint8List feedConfigDescriptor = $convert.base64Decode(
     'IWCgZzb3VyY2UYBSABKAlSBnNvdXJjZRI/CgZzdGF0dXMYBiABKA4yJy5saWJyYXJpYW4uc2Vw'
     'aGlyYWgudjEuRmVlZENvbmZpZ1N0YXR1c1IGc3RhdHVzEj4KDXB1bGxfaW50ZXJ2YWwYByABKA'
     'syGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SDHB1bGxJbnRlcnZhbBIaCghjYXRlZ29yeRgI'
-    'IAEoCVIIY2F0ZWdvcnkSTQoSbGF0ZXN0X3VwZGF0ZV90aW1lGAkgASgLMhouZ29vZ2xlLnByb3'
-    'RvYnVmLlRpbWVzdGFtcEgAUhBsYXRlc3RVcGRhdGVUaW1liAEBEh0KCmhpZGVfaXRlbXMYCiAB'
-    'KAhSCWhpZGVJdGVtc0IVChNfbGF0ZXN0X3VwZGF0ZV90aW1l');
+    'IAEoCVIIY2F0ZWdvcnkSHQoKaGlkZV9pdGVtcxgJIAEoCFIJaGlkZUl0ZW1zEkkKEGxhdGVzdF'
+    '9wdWxsX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSDmxhdGVzdFB1'
+    'bGxUaW1liAEBEl4KEmxhdGVzdF9wdWxsX3N0YXR1cxgLIAEoDjIrLmxpYnJhcmlhbi5zZXBoaX'
+    'JhaC52MS5GZWVkQ29uZmlnUHVsbFN0YXR1c0gBUhBsYXRlc3RQdWxsU3RhdHVziAEBEjMKE2xh'
+    'dGVzdF9wdWxsX21lc3NhZ2UYDCABKAlIAlIRbGF0ZXN0UHVsbE1lc3NhZ2WIAQFCEwoRX2xhdG'
+    'VzdF9wdWxsX3RpbWVCFQoTX2xhdGVzdF9wdWxsX3N0YXR1c0IWChRfbGF0ZXN0X3B1bGxfbWVz'
+    'c2FnZQ==');
 
 @$core.Deprecated('Use feedItemDigestDescriptor instead')
 const FeedItemDigest$json = {
