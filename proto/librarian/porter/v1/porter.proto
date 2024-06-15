@@ -52,11 +52,14 @@ message PorterFeatureSummary {
 
 message EnablePorterRequest {
   // Identifier of sephirah. can be randomly generated.
-  // porter can only be enabled by on sephirah.
+  // porter can only be enabled by one sephirah.
   // redundancy requests from enabler must return success.
   int64 sephirah_id = 1;
-  // Porter should refresh token before response to verify reverse call is available.
-  string refresh_token = 2;
+  // Used to perform reverse call.
+  // If not needed, porter should ignore it.
+  // If needed, porter should refresh token before response to verify reverse call is available.
+  // Enabler can send empty token as default, and resend request with token if needed.
+  optional string refresh_token = 2;
 }
 message EnablePorterResponse {}
 
