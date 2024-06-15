@@ -1370,8 +1370,8 @@ proto.librarian.porter.v1.EnablePorterRequest.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getRefreshToken();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeString(
       2,
       f
@@ -1412,7 +1412,25 @@ proto.librarian.porter.v1.EnablePorterRequest.prototype.getRefreshToken = functi
  * @return {!proto.librarian.porter.v1.EnablePorterRequest} returns this
  */
 proto.librarian.porter.v1.EnablePorterRequest.prototype.setRefreshToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.porter.v1.EnablePorterRequest} returns this
+ */
+proto.librarian.porter.v1.EnablePorterRequest.prototype.clearRefreshToken = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.EnablePorterRequest.prototype.hasRefreshToken = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

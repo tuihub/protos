@@ -124,6 +124,8 @@ export class EnablePorterRequest extends jspb.Message {
   getSephirahId(): number;
   setSephirahId(value: number): void;
 
+  hasRefreshToken(): boolean;
+  clearRefreshToken(): void;
   getRefreshToken(): string;
   setRefreshToken(value: string): void;
 

@@ -77,14 +77,18 @@ const EnablePorterRequest$json = {
   '1': 'EnablePorterRequest',
   '2': [
     {'1': 'sephirah_id', '3': 1, '4': 1, '5': 3, '10': 'sephirahId'},
-    {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '10': 'refreshToken'},
+    {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'refreshToken', '17': true},
+  ],
+  '8': [
+    {'1': '_refresh_token'},
   ],
 };
 
 /// Descriptor for `EnablePorterRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List enablePorterRequestDescriptor = $convert.base64Decode(
     'ChNFbmFibGVQb3J0ZXJSZXF1ZXN0Eh8KC3NlcGhpcmFoX2lkGAEgASgDUgpzZXBoaXJhaElkEi'
-    'MKDXJlZnJlc2hfdG9rZW4YAiABKAlSDHJlZnJlc2hUb2tlbg==');
+    'gKDXJlZnJlc2hfdG9rZW4YAiABKAlIAFIMcmVmcmVzaFRva2VuiAEBQhAKDl9yZWZyZXNoX3Rv'
+    'a2Vu');
 
 @$core.Deprecated('Use enablePorterResponseDescriptor instead')
 const EnablePorterResponse$json = {

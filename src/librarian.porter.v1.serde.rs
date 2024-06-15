@@ -10,15 +10,15 @@ impl serde::Serialize for EnablePorterRequest {
         if self.sephirah_id != 0 {
             len += 1;
         }
-        if !self.refresh_token.is_empty() {
+        if self.refresh_token.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.EnablePorterRequest", len)?;
         if self.sephirah_id != 0 {
             struct_ser.serialize_field("sephirahId", ToString::to_string(&self.sephirah_id).as_str())?;
         }
-        if !self.refresh_token.is_empty() {
-            struct_ser.serialize_field("refreshToken", &self.refresh_token)?;
+        if let Some(v) = self.refresh_token.as_ref() {
+            struct_ser.serialize_field("refreshToken", v)?;
         }
         struct_ser.end()
     }
@@ -98,13 +98,13 @@ impl<'de> serde::Deserialize<'de> for EnablePorterRequest {
                             if refresh_token__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("refreshToken"));
                             }
-                            refresh_token__ = Some(map.next_value()?);
+                            refresh_token__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(EnablePorterRequest {
                     sephirah_id: sephirah_id__.unwrap_or_default(),
-                    refresh_token: refresh_token__.unwrap_or_default(),
+                    refresh_token: refresh_token__,
                 })
             }
         }

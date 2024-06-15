@@ -319,7 +319,7 @@ class EnablePorterRequest extends $pb.GeneratedMessage {
   static EnablePorterRequest? _defaultInstance;
 
   /// Identifier of sephirah. can be randomly generated.
-  /// porter can only be enabled by on sephirah.
+  /// porter can only be enabled by one sephirah.
   /// redundancy requests from enabler must return success.
   @$pb.TagNumber(1)
   $fixnum.Int64 get sephirahId => $_getI64(0);
@@ -330,7 +330,10 @@ class EnablePorterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSephirahId() => clearField(1);
 
-  /// Porter should refresh token before response to verify reverse call is available.
+  /// Used to perform reverse call.
+  /// If not needed, porter should ignore it.
+  /// If needed, porter should refresh token before response to verify reverse call is available.
+  /// Enabler can send empty token as default, and resend request with token if needed.
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
   @$pb.TagNumber(2)
