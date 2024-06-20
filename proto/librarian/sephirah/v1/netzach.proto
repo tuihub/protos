@@ -75,13 +75,8 @@ message NotifyFlow {
 
 message NotifyFlowSource {
   NotifyFilter filter = 1;
-  oneof source {
-    // must be FeedConfigID
-    librarian.v1.InternalID feed_config_id = 2;
-    // must be FeedItemCollectionID
-    librarian.v1.InternalID feed_item_collection_id = 3;
-    SystemNotificationFilter system_notification = 4;
-  }
+  // must be FeedItemCollectionID
+  librarian.v1.InternalID source_id = 2;
 }
 
 message NotifyFlowTarget {
@@ -137,11 +132,6 @@ message SystemNotification {
   string content = 6;
   google.protobuf.Timestamp create_time = 7;
   google.protobuf.Timestamp update_time = 8;
-}
-
-message SystemNotificationFilter {
-  repeated SystemNotificationType type_filter = 1;
-  repeated SystemNotificationLevel level_filter = 2;
 }
 
 enum SystemNotificationLevel {

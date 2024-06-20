@@ -3,6 +3,7 @@ syntax = "proto3";
 package librarian.porter.v1;
 
 import "librarian/v1/common.proto";
+import "librarian/v1/wellknown.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
@@ -25,6 +26,8 @@ service LibrarianPorterService {
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
   // `Yesod`
   rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
+  // `Yesod`
+  rpc ExecFeedItemAction(ExecFeedItemActionRequest) returns (ExecFeedItemActionResponse);
 }
 
 message GetPorterInformationRequest {}
@@ -40,14 +43,11 @@ message GetPorterInformationResponse {
 }
 
 message PorterFeatureSummary {
-  message Account {
-    string platform = 1;
-    repeated librarian.v1.AccountAppRelationType app_relation_types = 2;
-  }
-  repeated Account supported_accounts = 1;
-  repeated string supported_app_info_sources = 2;
-  repeated string supported_feed_sources = 3;
-  repeated string supported_notify_destinations = 4;
+  repeated librarian.v1.FeatureFlag account_platforms = 1;
+  repeated librarian.v1.FeatureFlag app_info_sources = 2;
+  repeated librarian.v1.FeatureFlag feed_sources = 3;
+  repeated librarian.v1.FeatureFlag notify_destinations = 4;
+  repeated librarian.v1.FeatureFlag feed_item_actions = 5;
 }
 
 message EnablePorterRequest {
@@ -114,3 +114,13 @@ message PushFeedItemsRequest {
 }
 
 message PushFeedItemsResponse {}
+
+message ExecFeedItemActionRequest {
+  // WellKnownFeedItemAction
+  librarian.v1.FeatureRequest action = 1;
+  librarian.v1.FeedItem item = 3;
+}
+
+message ExecFeedItemActionResponse {
+  librarian.v1.FeedItem item = 1;
+}

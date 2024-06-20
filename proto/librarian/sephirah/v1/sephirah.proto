@@ -10,6 +10,7 @@ import "librarian/sephirah/v1/hokma.proto";
 import "librarian/sephirah/v1/netzach.proto";
 import "librarian/sephirah/v1/tiphereth.proto";
 import "librarian/sephirah/v1/yesod.proto";
+import "librarian/v1/wellknown.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
@@ -337,10 +338,11 @@ message ServerProtocolSummary {
 }
 
 message ServerFeatureSummary {
-  repeated string supported_account_platforms = 1;
-  repeated string supported_app_info_sources = 2;
-  repeated string supported_feed_sources = 3;
-  repeated string supported_notify_destinations = 4;
+  repeated librarian.v1.FeatureFlag account_platforms = 1;
+  repeated librarian.v1.FeatureFlag app_info_sources = 2;
+  repeated librarian.v1.FeatureFlag feed_sources = 3;
+  repeated librarian.v1.FeatureFlag notify_destinations = 4;
+  repeated librarian.v1.FeatureFlag feed_item_actions = 5;
 }
 
 message ServerInstanceSummary {

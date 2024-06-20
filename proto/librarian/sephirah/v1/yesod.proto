@@ -5,6 +5,7 @@ package librarian.sephirah.v1;
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
+import "librarian/v1/wellknown.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
@@ -221,4 +222,8 @@ message FeedItemCollection {
   string name = 2;
   string description = 3;
   string category = 4;
+  // Auto copy source feed items to this collection
+  optional librarian.v1.InternalID source_feed = 5;
+  // WellKnownFeedItemAction
+  repeated librarian.v1.FeatureRequest actions = 6;
 }

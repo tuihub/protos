@@ -11,6 +11,34 @@ extend google.protobuf.EnumValueOptions {
   string to_string = 1000;
 }
 
+// FeatureFlag is used to identify features.
+// It will also be sent to clients for UI display.
+message FeatureFlag {
+  // Global identifier to each feature.
+  // It is recommended to use ASCII characters only.
+  string id = 1;
+  // Region is used to group feature providers,
+  // same feature provider in same region can be randomly called.
+  // Leave empty to use default region.
+  string region = 2;
+  // Human-readable name
+  string name = 3;
+  // Human-readable description
+  string description = 4;
+  // Customized JSON schema for feature
+  string config_json_schema = 5;
+}
+
+// FeatureRequest is used to deliver feature-related request parameters.
+message FeatureRequest {
+  // See `FeatureFlag.id`
+  string id = 1;
+  // See `FeatureFlag.region`
+  string region = 2;
+  // Configuration JSON, must be validated by schema
+  string config_json = 3;
+}
+
 enum WellKnownAccountPlatform {
   WELL_KNOWN_ACCOUNT_PLATFORM_UNSPECIFIED = 0 [(to_string) = ""];
   WELL_KNOWN_ACCOUNT_PLATFORM_STEAM = 1 [(to_string) = "steam"];
@@ -31,4 +59,10 @@ enum WellKnownFeedSource {
 enum WellKnownNotifyDestination {
   WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED = 0 [(to_string) = ""];
   WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM = 1 [(to_string) = "telegram"];
+}
+
+enum WellKnownFeedItemAction {
+  WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED = 0 [(to_string) = ""];
+  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER = 1 [(to_string) = "builtin_filter"];
+  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER = 2 [(to_string) = "builtin_description_shorter"];
 }
