@@ -37,6 +37,8 @@ var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1
 goog.object.extend(proto, librarian_sephirah_v1_tiphereth_pb);
 var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_yesod_pb);
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
+goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.GetServerInformationRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.GetServerInformationResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListenServerEventRequest', null, global);
@@ -1091,7 +1093,7 @@ proto.librarian.sephirah.v1.ServerProtocolSummary.prototype.setVersion = functio
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.repeatedFields_ = [1,2,3,4];
+proto.librarian.sephirah.v1.ServerFeatureSummary.repeatedFields_ = [1,2,3,4,5];
 
 
 
@@ -1124,10 +1126,16 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.ServerFeatureSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    supportedAccountPlatformsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    supportedAppInfoSourcesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    supportedFeedSourcesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    supportedNotifyDestinationsList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    accountPlatformsList: jspb.Message.toObjectList(msg.getAccountPlatformsList(),
+    librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
+    appInfoSourcesList: jspb.Message.toObjectList(msg.getAppInfoSourcesList(),
+    librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
+    feedSourcesList: jspb.Message.toObjectList(msg.getFeedSourcesList(),
+    librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
+    notifyDestinationsList: jspb.Message.toObjectList(msg.getNotifyDestinationsList(),
+    librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
+    feedItemActionsList: jspb.Message.toObjectList(msg.getFeedItemActionsList(),
+    librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1165,20 +1173,29 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSupportedAccountPlatforms(value);
+      var value = new librarian_v1_wellknown_pb.FeatureFlag;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureFlag.deserializeBinaryFromReader);
+      msg.addAccountPlatforms(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSupportedAppInfoSources(value);
+      var value = new librarian_v1_wellknown_pb.FeatureFlag;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureFlag.deserializeBinaryFromReader);
+      msg.addAppInfoSources(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSupportedFeedSources(value);
+      var value = new librarian_v1_wellknown_pb.FeatureFlag;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureFlag.deserializeBinaryFromReader);
+      msg.addFeedSources(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSupportedNotifyDestinations(value);
+      var value = new librarian_v1_wellknown_pb.FeatureFlag;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureFlag.deserializeBinaryFromReader);
+      msg.addNotifyDestinations(value);
+      break;
+    case 5:
+      var value = new librarian_v1_wellknown_pb.FeatureFlag;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureFlag.deserializeBinaryFromReader);
+      msg.addFeedItemActions(value);
       break;
     default:
       reader.skipField();
@@ -1209,62 +1226,75 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.serializeBinary = fun
  */
 proto.librarian.sephirah.v1.ServerFeatureSummary.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSupportedAccountPlatformsList();
+  f = message.getAccountPlatformsList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedMessage(
       1,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureFlag.serializeBinaryToWriter
     );
   }
-  f = message.getSupportedAppInfoSourcesList();
+  f = message.getAppInfoSourcesList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedMessage(
       2,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureFlag.serializeBinaryToWriter
     );
   }
-  f = message.getSupportedFeedSourcesList();
+  f = message.getFeedSourcesList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedMessage(
       3,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureFlag.serializeBinaryToWriter
     );
   }
-  f = message.getSupportedNotifyDestinationsList();
+  f = message.getNotifyDestinationsList();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeRepeatedMessage(
       4,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureFlag.serializeBinaryToWriter
+    );
+  }
+  f = message.getFeedItemActionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      librarian_v1_wellknown_pb.FeatureFlag.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated string supported_account_platforms = 1;
- * @return {!Array<string>}
+ * repeated librarian.v1.FeatureFlag account_platforms = 1;
+ * @return {!Array<!proto.librarian.v1.FeatureFlag>}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedAccountPlatformsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getAccountPlatformsList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureFlag>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.FeatureFlag, 1));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<!proto.librarian.v1.FeatureFlag>} value
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
- */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedAccountPlatformsList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+*/
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setAccountPlatformsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.librarian.v1.FeatureFlag=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
+ * @return {!proto.librarian.v1.FeatureFlag}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAccountPlatforms = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addAccountPlatforms = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.FeatureFlag, opt_index);
 };
 
 
@@ -1272,36 +1302,37 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAccountPl
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedAccountPlatformsList = function() {
-  return this.setSupportedAccountPlatformsList([]);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearAccountPlatformsList = function() {
+  return this.setAccountPlatformsList([]);
 };
 
 
 /**
- * repeated string supported_app_info_sources = 2;
- * @return {!Array<string>}
+ * repeated librarian.v1.FeatureFlag app_info_sources = 2;
+ * @return {!Array<!proto.librarian.v1.FeatureFlag>}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedAppInfoSourcesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getAppInfoSourcesList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureFlag>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.FeatureFlag, 2));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<!proto.librarian.v1.FeatureFlag>} value
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
- */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedAppInfoSourcesList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+*/
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setAppInfoSourcesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.librarian.v1.FeatureFlag=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
+ * @return {!proto.librarian.v1.FeatureFlag}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAppInfoSources = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addAppInfoSources = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.FeatureFlag, opt_index);
 };
 
 
@@ -1309,36 +1340,37 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedAppInfoSo
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedAppInfoSourcesList = function() {
-  return this.setSupportedAppInfoSourcesList([]);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearAppInfoSourcesList = function() {
+  return this.setAppInfoSourcesList([]);
 };
 
 
 /**
- * repeated string supported_feed_sources = 3;
- * @return {!Array<string>}
+ * repeated librarian.v1.FeatureFlag feed_sources = 3;
+ * @return {!Array<!proto.librarian.v1.FeatureFlag>}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedFeedSourcesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getFeedSourcesList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureFlag>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.FeatureFlag, 3));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<!proto.librarian.v1.FeatureFlag>} value
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
- */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedFeedSourcesList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
+*/
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setFeedSourcesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.librarian.v1.FeatureFlag=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
+ * @return {!proto.librarian.v1.FeatureFlag}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedFeedSources = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addFeedSources = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.FeatureFlag, opt_index);
 };
 
 
@@ -1346,36 +1378,37 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedFeedSourc
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedFeedSourcesList = function() {
-  return this.setSupportedFeedSourcesList([]);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearFeedSourcesList = function() {
+  return this.setFeedSourcesList([]);
 };
 
 
 /**
- * repeated string supported_notify_destinations = 4;
- * @return {!Array<string>}
+ * repeated librarian.v1.FeatureFlag notify_destinations = 4;
+ * @return {!Array<!proto.librarian.v1.FeatureFlag>}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getSupportedNotifyDestinationsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getNotifyDestinationsList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureFlag>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.FeatureFlag, 4));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * @param {!Array<!proto.librarian.v1.FeatureFlag>} value
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
- */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setSupportedNotifyDestinationsList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+*/
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setNotifyDestinationsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
 /**
- * @param {string} value
+ * @param {!proto.librarian.v1.FeatureFlag=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
+ * @return {!proto.librarian.v1.FeatureFlag}
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedNotifyDestinations = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addNotifyDestinations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.librarian.v1.FeatureFlag, opt_index);
 };
 
 
@@ -1383,8 +1416,46 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addSupportedNotifyDes
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearSupportedNotifyDestinationsList = function() {
-  return this.setSupportedNotifyDestinationsList([]);
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearNotifyDestinationsList = function() {
+  return this.setNotifyDestinationsList([]);
+};
+
+
+/**
+ * repeated librarian.v1.FeatureFlag feed_item_actions = 5;
+ * @return {!Array<!proto.librarian.v1.FeatureFlag>}
+ */
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.getFeedItemActionsList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureFlag>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.FeatureFlag, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.FeatureFlag>} value
+ * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
+*/
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.setFeedItemActionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.FeatureFlag=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.FeatureFlag}
+ */
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.addFeedItemActions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.librarian.v1.FeatureFlag, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ServerFeatureSummary} returns this
+ */
+proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.clearFeedItemActionsList = function() {
+  return this.setFeedItemActionsList([]);
 };
 
 

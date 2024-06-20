@@ -86,6 +86,8 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        /** Allow anonymous call, use accessToken to get complete information
+*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -3448,6 +3450,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        /** `Yesod` `Normal`
+*/
         pub async fn remove_feed_item_from_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::RemoveFeedItemFromCollectionRequest>,
@@ -3607,6 +3611,8 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
+        /** Allow anonymous call, use accessToken to get complete information
+*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -4606,6 +4612,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::AddFeedItemToCollectionResponse>,
             tonic::Status,
         >;
+        /** `Yesod` `Normal`
+*/
         async fn remove_feed_item_from_collection(
             &self,
             request: tonic::Request<super::RemoveFeedItemFromCollectionRequest>,

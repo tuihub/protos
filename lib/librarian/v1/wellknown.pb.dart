@@ -15,6 +15,204 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 export 'wellknown.pbenum.dart';
 
+/// FeatureFlag is used to identify features.
+/// It will also be sent to clients for UI display.
+class FeatureFlag extends $pb.GeneratedMessage {
+  factory FeatureFlag({
+    $core.String? id,
+    $core.String? region,
+    $core.String? name,
+    $core.String? description,
+    $core.String? configJsonSchema,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (region != null) {
+      $result.region = region;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (configJsonSchema != null) {
+      $result.configJsonSchema = configJsonSchema;
+    }
+    return $result;
+  }
+  FeatureFlag._() : super();
+  factory FeatureFlag.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeatureFlag.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureFlag', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'region')
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'description')
+    ..aOS(5, _omitFieldNames ? '' : 'configJsonSchema')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FeatureFlag clone() => FeatureFlag()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FeatureFlag copyWith(void Function(FeatureFlag) updates) => super.copyWith((message) => updates(message as FeatureFlag)) as FeatureFlag;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FeatureFlag create() => FeatureFlag._();
+  FeatureFlag createEmptyInstance() => create();
+  static $pb.PbList<FeatureFlag> createRepeated() => $pb.PbList<FeatureFlag>();
+  @$core.pragma('dart2js:noInline')
+  static FeatureFlag getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeatureFlag>(create);
+  static FeatureFlag? _defaultInstance;
+
+  /// Global identifier to each feature.
+  /// It is recommended to use ASCII characters only.
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  /// Region is used to group feature providers,
+  /// same feature provider in same region can be randomly called.
+  /// Leave empty to use default region.
+  @$pb.TagNumber(2)
+  $core.String get region => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set region($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRegion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegion() => clearField(2);
+
+  /// Human-readable name
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  /// Human-readable description
+  @$pb.TagNumber(4)
+  $core.String get description => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set description($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDescription() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDescription() => clearField(4);
+
+  /// Customized JSON schema for feature
+  @$pb.TagNumber(5)
+  $core.String get configJsonSchema => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set configJsonSchema($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasConfigJsonSchema() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConfigJsonSchema() => clearField(5);
+}
+
+/// FeatureRequest is used to deliver feature-related request parameters.
+class FeatureRequest extends $pb.GeneratedMessage {
+  factory FeatureRequest({
+    $core.String? id,
+    $core.String? region,
+    $core.String? configJson,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (region != null) {
+      $result.region = region;
+    }
+    if (configJson != null) {
+      $result.configJson = configJson;
+    }
+    return $result;
+  }
+  FeatureRequest._() : super();
+  factory FeatureRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeatureRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'region')
+    ..aOS(3, _omitFieldNames ? '' : 'configJson')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FeatureRequest clone() => FeatureRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FeatureRequest copyWith(void Function(FeatureRequest) updates) => super.copyWith((message) => updates(message as FeatureRequest)) as FeatureRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FeatureRequest create() => FeatureRequest._();
+  FeatureRequest createEmptyInstance() => create();
+  static $pb.PbList<FeatureRequest> createRepeated() => $pb.PbList<FeatureRequest>();
+  @$core.pragma('dart2js:noInline')
+  static FeatureRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeatureRequest>(create);
+  static FeatureRequest? _defaultInstance;
+
+  /// See `FeatureFlag.id`
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  /// See `FeatureFlag.region`
+  @$pb.TagNumber(2)
+  $core.String get region => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set region($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRegion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegion() => clearField(2);
+
+  /// Configuration JSON, must be validated by schema
+  @$pb.TagNumber(3)
+  $core.String get configJson => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set configJson($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasConfigJson() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConfigJson() => clearField(3);
+}
+
 class Wellknown {
   static final toString_1000 = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.EnumValueOptions', _omitFieldNames ? '' : 'toString_1000', 1000, $pb.PbFieldType.OS);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {

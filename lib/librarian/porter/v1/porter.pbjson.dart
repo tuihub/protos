@@ -44,33 +44,23 @@ final $typed_data.Uint8List getPorterInformationResponseDescriptor = $convert.ba
 const PorterFeatureSummary$json = {
   '1': 'PorterFeatureSummary',
   '2': [
-    {'1': 'supported_accounts', '3': 1, '4': 3, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary.Account', '10': 'supportedAccounts'},
-    {'1': 'supported_app_info_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppInfoSources'},
-    {'1': 'supported_feed_sources', '3': 3, '4': 3, '5': 9, '10': 'supportedFeedSources'},
-    {'1': 'supported_notify_destinations', '3': 4, '4': 3, '5': 9, '10': 'supportedNotifyDestinations'},
-  ],
-  '3': [PorterFeatureSummary_Account$json],
-};
-
-@$core.Deprecated('Use porterFeatureSummaryDescriptor instead')
-const PorterFeatureSummary_Account$json = {
-  '1': 'Account',
-  '2': [
-    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
-    {'1': 'app_relation_types', '3': 2, '4': 3, '5': 14, '6': '.librarian.v1.AccountAppRelationType', '10': 'appRelationTypes'},
+    {'1': 'account_platforms', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'accountPlatforms'},
+    {'1': 'app_info_sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'appInfoSources'},
+    {'1': 'feed_sources', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSources'},
+    {'1': 'notify_destinations', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifyDestinations'},
+    {'1': 'feed_item_actions', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedItemActions'},
   ],
 };
 
 /// Descriptor for `PorterFeatureSummary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List porterFeatureSummaryDescriptor = $convert.base64Decode(
-    'ChRQb3J0ZXJGZWF0dXJlU3VtbWFyeRJgChJzdXBwb3J0ZWRfYWNjb3VudHMYASADKAsyMS5saW'
-    'JyYXJpYW4ucG9ydGVyLnYxLlBvcnRlckZlYXR1cmVTdW1tYXJ5LkFjY291bnRSEXN1cHBvcnRl'
-    'ZEFjY291bnRzEjsKGnN1cHBvcnRlZF9hcHBfaW5mb19zb3VyY2VzGAIgAygJUhdzdXBwb3J0ZW'
-    'RBcHBJbmZvU291cmNlcxI0ChZzdXBwb3J0ZWRfZmVlZF9zb3VyY2VzGAMgAygJUhRzdXBwb3J0'
-    'ZWRGZWVkU291cmNlcxJCCh1zdXBwb3J0ZWRfbm90aWZ5X2Rlc3RpbmF0aW9ucxgEIAMoCVIbc3'
-    'VwcG9ydGVkTm90aWZ5RGVzdGluYXRpb25zGnkKB0FjY291bnQSGgoIcGxhdGZvcm0YASABKAlS'
-    'CHBsYXRmb3JtElIKEmFwcF9yZWxhdGlvbl90eXBlcxgCIAMoDjIkLmxpYnJhcmlhbi52MS5BY2'
-    'NvdW50QXBwUmVsYXRpb25UeXBlUhBhcHBSZWxhdGlvblR5cGVz');
+    'ChRQb3J0ZXJGZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZLmxpYn'
+    'Jhcmlhbi52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJDChBhcHBfaW5mb19zb3Vy'
+    'Y2VzGAIgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8Cg'
+    'xmZWVkX3NvdXJjZXMYAyADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3Vy'
+    'Y2VzEkoKE25vdGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZU'
+    'ZsYWdSEm5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9ucxgFIAMoCzIZLmxp'
+    'YnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1BY3Rpb25z');
 
 @$core.Deprecated('Use enablePorterRequestDescriptor instead')
 const EnablePorterRequest$json = {
@@ -260,4 +250,32 @@ const PushFeedItemsResponse$json = {
 /// Descriptor for `PushFeedItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pushFeedItemsResponseDescriptor = $convert.base64Decode(
     'ChVQdXNoRmVlZEl0ZW1zUmVzcG9uc2U=');
+
+@$core.Deprecated('Use execFeedItemActionRequestDescriptor instead')
+const ExecFeedItemActionRequest$json = {
+  '1': 'ExecFeedItemActionRequest',
+  '2': [
+    {'1': 'action', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'action'},
+    {'1': 'item', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'item'},
+  ],
+};
+
+/// Descriptor for `ExecFeedItemActionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List execFeedItemActionRequestDescriptor = $convert.base64Decode(
+    'ChlFeGVjRmVlZEl0ZW1BY3Rpb25SZXF1ZXN0EjQKBmFjdGlvbhgBIAEoCzIcLmxpYnJhcmlhbi'
+    '52MS5GZWF0dXJlUmVxdWVzdFIGYWN0aW9uEioKBGl0ZW0YAyABKAsyFi5saWJyYXJpYW4udjEu'
+    'RmVlZEl0ZW1SBGl0ZW0=');
+
+@$core.Deprecated('Use execFeedItemActionResponseDescriptor instead')
+const ExecFeedItemActionResponse$json = {
+  '1': 'ExecFeedItemActionResponse',
+  '2': [
+    {'1': 'item', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'item'},
+  ],
+};
+
+/// Descriptor for `ExecFeedItemActionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List execFeedItemActionResponseDescriptor = $convert.base64Decode(
+    'ChpFeGVjRmVlZEl0ZW1BY3Rpb25SZXNwb25zZRIqCgRpdGVtGAEgASgLMhYubGlicmFyaWFuLn'
+    'YxLkZlZWRJdGVtUgRpdGVt');
 

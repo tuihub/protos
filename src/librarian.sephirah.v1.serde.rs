@@ -5345,6 +5345,12 @@ impl serde::Serialize for FeedItemCollection {
         if !self.category.is_empty() {
             len += 1;
         }
+        if self.source_feed.is_some() {
+            len += 1;
+        }
+        if !self.actions.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedItemCollection", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -5357,6 +5363,12 @@ impl serde::Serialize for FeedItemCollection {
         }
         if !self.category.is_empty() {
             struct_ser.serialize_field("category", &self.category)?;
+        }
+        if let Some(v) = self.source_feed.as_ref() {
+            struct_ser.serialize_field("sourceFeed", v)?;
+        }
+        if !self.actions.is_empty() {
+            struct_ser.serialize_field("actions", &self.actions)?;
         }
         struct_ser.end()
     }
@@ -5372,6 +5384,9 @@ impl<'de> serde::Deserialize<'de> for FeedItemCollection {
             "name",
             "description",
             "category",
+            "source_feed",
+            "sourceFeed",
+            "actions",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -5380,6 +5395,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemCollection {
             Name,
             Description,
             Category,
+            SourceFeed,
+            Actions,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5405,6 +5422,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemCollection {
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "category" => Ok(GeneratedField::Category),
+                            "sourceFeed" | "source_feed" => Ok(GeneratedField::SourceFeed),
+                            "actions" => Ok(GeneratedField::Actions),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5428,6 +5447,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemCollection {
                 let mut name__ = None;
                 let mut description__ = None;
                 let mut category__ = None;
+                let mut source_feed__ = None;
+                let mut actions__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -5454,6 +5475,18 @@ impl<'de> serde::Deserialize<'de> for FeedItemCollection {
                             }
                             category__ = Some(map.next_value()?);
                         }
+                        GeneratedField::SourceFeed => {
+                            if source_feed__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceFeed"));
+                            }
+                            source_feed__ = map.next_value()?;
+                        }
+                        GeneratedField::Actions => {
+                            if actions__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("actions"));
+                            }
+                            actions__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(FeedItemCollection {
@@ -5461,6 +5494,8 @@ impl<'de> serde::Deserialize<'de> for FeedItemCollection {
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     category: category__.unwrap_or_default(),
+                    source_feed: source_feed__,
+                    actions: actions__.unwrap_or_default(),
                 })
             }
         }
@@ -15600,25 +15635,15 @@ impl serde::Serialize for NotifyFlowSource {
         if self.filter.is_some() {
             len += 1;
         }
-        if self.source.is_some() {
+        if self.source_id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.NotifyFlowSource", len)?;
         if let Some(v) = self.filter.as_ref() {
             struct_ser.serialize_field("filter", v)?;
         }
-        if let Some(v) = self.source.as_ref() {
-            match v {
-                notify_flow_source::Source::FeedConfigId(v) => {
-                    struct_ser.serialize_field("feedConfigId", v)?;
-                }
-                notify_flow_source::Source::FeedItemCollectionId(v) => {
-                    struct_ser.serialize_field("feedItemCollectionId", v)?;
-                }
-                notify_flow_source::Source::SystemNotification(v) => {
-                    struct_ser.serialize_field("systemNotification", v)?;
-                }
-            }
+        if let Some(v) = self.source_id.as_ref() {
+            struct_ser.serialize_field("sourceId", v)?;
         }
         struct_ser.end()
     }
@@ -15631,20 +15656,14 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
     {
         const FIELDS: &[&str] = &[
             "filter",
-            "feed_config_id",
-            "feedConfigId",
-            "feed_item_collection_id",
-            "feedItemCollectionId",
-            "system_notification",
-            "systemNotification",
+            "source_id",
+            "sourceId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Filter,
-            FeedConfigId,
-            FeedItemCollectionId,
-            SystemNotification,
+            SourceId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -15667,9 +15686,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                     {
                         match value {
                             "filter" => Ok(GeneratedField::Filter),
-                            "feedConfigId" | "feed_config_id" => Ok(GeneratedField::FeedConfigId),
-                            "feedItemCollectionId" | "feed_item_collection_id" => Ok(GeneratedField::FeedItemCollectionId),
-                            "systemNotification" | "system_notification" => Ok(GeneratedField::SystemNotification),
+                            "sourceId" | "source_id" => Ok(GeneratedField::SourceId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -15690,7 +15707,7 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut filter__ = None;
-                let mut source__ = None;
+                let mut source_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Filter => {
@@ -15699,32 +15716,17 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowSource {
                             }
                             filter__ = map.next_value()?;
                         }
-                        GeneratedField::FeedConfigId => {
-                            if source__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("feedConfigId"));
+                        GeneratedField::SourceId => {
+                            if source_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceId"));
                             }
-                            source__ = map.next_value::<::std::option::Option<_>>()?.map(notify_flow_source::Source::FeedConfigId)
-;
-                        }
-                        GeneratedField::FeedItemCollectionId => {
-                            if source__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("feedItemCollectionId"));
-                            }
-                            source__ = map.next_value::<::std::option::Option<_>>()?.map(notify_flow_source::Source::FeedItemCollectionId)
-;
-                        }
-                        GeneratedField::SystemNotification => {
-                            if source__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("systemNotification"));
-                            }
-                            source__ = map.next_value::<::std::option::Option<_>>()?.map(notify_flow_source::Source::SystemNotification)
-;
+                            source_id__ = map.next_value()?;
                         }
                     }
                 }
                 Ok(NotifyFlowSource {
                     filter: filter__,
-                    source: source__,
+                    source_id: source_id__,
                 })
             }
         }
@@ -20430,30 +20432,36 @@ impl serde::Serialize for ServerFeatureSummary {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.supported_account_platforms.is_empty() {
+        if !self.account_platforms.is_empty() {
             len += 1;
         }
-        if !self.supported_app_info_sources.is_empty() {
+        if !self.app_info_sources.is_empty() {
             len += 1;
         }
-        if !self.supported_feed_sources.is_empty() {
+        if !self.feed_sources.is_empty() {
             len += 1;
         }
-        if !self.supported_notify_destinations.is_empty() {
+        if !self.notify_destinations.is_empty() {
+            len += 1;
+        }
+        if !self.feed_item_actions.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ServerFeatureSummary", len)?;
-        if !self.supported_account_platforms.is_empty() {
-            struct_ser.serialize_field("supportedAccountPlatforms", &self.supported_account_platforms)?;
+        if !self.account_platforms.is_empty() {
+            struct_ser.serialize_field("accountPlatforms", &self.account_platforms)?;
         }
-        if !self.supported_app_info_sources.is_empty() {
-            struct_ser.serialize_field("supportedAppInfoSources", &self.supported_app_info_sources)?;
+        if !self.app_info_sources.is_empty() {
+            struct_ser.serialize_field("appInfoSources", &self.app_info_sources)?;
         }
-        if !self.supported_feed_sources.is_empty() {
-            struct_ser.serialize_field("supportedFeedSources", &self.supported_feed_sources)?;
+        if !self.feed_sources.is_empty() {
+            struct_ser.serialize_field("feedSources", &self.feed_sources)?;
         }
-        if !self.supported_notify_destinations.is_empty() {
-            struct_ser.serialize_field("supportedNotifyDestinations", &self.supported_notify_destinations)?;
+        if !self.notify_destinations.is_empty() {
+            struct_ser.serialize_field("notifyDestinations", &self.notify_destinations)?;
+        }
+        if !self.feed_item_actions.is_empty() {
+            struct_ser.serialize_field("feedItemActions", &self.feed_item_actions)?;
         }
         struct_ser.end()
     }
@@ -20465,22 +20473,25 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "supported_account_platforms",
-            "supportedAccountPlatforms",
-            "supported_app_info_sources",
-            "supportedAppInfoSources",
-            "supported_feed_sources",
-            "supportedFeedSources",
-            "supported_notify_destinations",
-            "supportedNotifyDestinations",
+            "account_platforms",
+            "accountPlatforms",
+            "app_info_sources",
+            "appInfoSources",
+            "feed_sources",
+            "feedSources",
+            "notify_destinations",
+            "notifyDestinations",
+            "feed_item_actions",
+            "feedItemActions",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            SupportedAccountPlatforms,
-            SupportedAppInfoSources,
-            SupportedFeedSources,
-            SupportedNotifyDestinations,
+            AccountPlatforms,
+            AppInfoSources,
+            FeedSources,
+            NotifyDestinations,
+            FeedItemActions,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -20502,10 +20513,11 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
                         E: serde::de::Error,
                     {
                         match value {
-                            "supportedAccountPlatforms" | "supported_account_platforms" => Ok(GeneratedField::SupportedAccountPlatforms),
-                            "supportedAppInfoSources" | "supported_app_info_sources" => Ok(GeneratedField::SupportedAppInfoSources),
-                            "supportedFeedSources" | "supported_feed_sources" => Ok(GeneratedField::SupportedFeedSources),
-                            "supportedNotifyDestinations" | "supported_notify_destinations" => Ok(GeneratedField::SupportedNotifyDestinations),
+                            "accountPlatforms" | "account_platforms" => Ok(GeneratedField::AccountPlatforms),
+                            "appInfoSources" | "app_info_sources" => Ok(GeneratedField::AppInfoSources),
+                            "feedSources" | "feed_sources" => Ok(GeneratedField::FeedSources),
+                            "notifyDestinations" | "notify_destinations" => Ok(GeneratedField::NotifyDestinations),
+                            "feedItemActions" | "feed_item_actions" => Ok(GeneratedField::FeedItemActions),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -20525,43 +20537,51 @@ impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut supported_account_platforms__ = None;
-                let mut supported_app_info_sources__ = None;
-                let mut supported_feed_sources__ = None;
-                let mut supported_notify_destinations__ = None;
+                let mut account_platforms__ = None;
+                let mut app_info_sources__ = None;
+                let mut feed_sources__ = None;
+                let mut notify_destinations__ = None;
+                let mut feed_item_actions__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::SupportedAccountPlatforms => {
-                            if supported_account_platforms__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedAccountPlatforms"));
+                        GeneratedField::AccountPlatforms => {
+                            if account_platforms__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("accountPlatforms"));
                             }
-                            supported_account_platforms__ = Some(map.next_value()?);
+                            account_platforms__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedAppInfoSources => {
-                            if supported_app_info_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedAppInfoSources"));
+                        GeneratedField::AppInfoSources => {
+                            if app_info_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoSources"));
                             }
-                            supported_app_info_sources__ = Some(map.next_value()?);
+                            app_info_sources__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedFeedSources => {
-                            if supported_feed_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedFeedSources"));
+                        GeneratedField::FeedSources => {
+                            if feed_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedSources"));
                             }
-                            supported_feed_sources__ = Some(map.next_value()?);
+                            feed_sources__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedNotifyDestinations => {
-                            if supported_notify_destinations__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedNotifyDestinations"));
+                        GeneratedField::NotifyDestinations => {
+                            if notify_destinations__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("notifyDestinations"));
                             }
-                            supported_notify_destinations__ = Some(map.next_value()?);
+                            notify_destinations__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::FeedItemActions => {
+                            if feed_item_actions__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedItemActions"));
+                            }
+                            feed_item_actions__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(ServerFeatureSummary {
-                    supported_account_platforms: supported_account_platforms__.unwrap_or_default(),
-                    supported_app_info_sources: supported_app_info_sources__.unwrap_or_default(),
-                    supported_feed_sources: supported_feed_sources__.unwrap_or_default(),
-                    supported_notify_destinations: supported_notify_destinations__.unwrap_or_default(),
+                    account_platforms: account_platforms__.unwrap_or_default(),
+                    app_info_sources: app_info_sources__.unwrap_or_default(),
+                    feed_sources: feed_sources__.unwrap_or_default(),
+                    notify_destinations: notify_destinations__.unwrap_or_default(),
+                    feed_item_actions: feed_item_actions__.unwrap_or_default(),
                 })
             }
         }
@@ -23067,124 +23087,6 @@ impl<'de> serde::Deserialize<'de> for SystemNotification {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.SystemNotification", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for SystemNotificationFilter {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.type_filter.is_empty() {
-            len += 1;
-        }
-        if !self.level_filter.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SystemNotificationFilter", len)?;
-        if !self.type_filter.is_empty() {
-            let v = self.type_filter.iter().cloned().map(|v| {
-                SystemNotificationType::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
-            struct_ser.serialize_field("typeFilter", &v)?;
-        }
-        if !self.level_filter.is_empty() {
-            let v = self.level_filter.iter().cloned().map(|v| {
-                SystemNotificationLevel::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
-            struct_ser.serialize_field("levelFilter", &v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for SystemNotificationFilter {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "type_filter",
-            "typeFilter",
-            "level_filter",
-            "levelFilter",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            TypeFilter,
-            LevelFilter,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "typeFilter" | "type_filter" => Ok(GeneratedField::TypeFilter),
-                            "levelFilter" | "level_filter" => Ok(GeneratedField::LevelFilter),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = SystemNotificationFilter;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.SystemNotificationFilter")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SystemNotificationFilter, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut type_filter__ = None;
-                let mut level_filter__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::TypeFilter => {
-                            if type_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("typeFilter"));
-                            }
-                            type_filter__ = Some(map.next_value::<Vec<SystemNotificationType>>()?.into_iter().map(|x| x as i32).collect());
-                        }
-                        GeneratedField::LevelFilter => {
-                            if level_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("levelFilter"));
-                            }
-                            level_filter__ = Some(map.next_value::<Vec<SystemNotificationLevel>>()?.into_iter().map(|x| x as i32).collect());
-                        }
-                    }
-                }
-                Ok(SystemNotificationFilter {
-                    type_filter: type_filter__.unwrap_or_default(),
-                    level_filter: level_filter__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.SystemNotificationFilter", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for SystemNotificationLevel {

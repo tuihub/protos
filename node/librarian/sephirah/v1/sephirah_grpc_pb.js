@@ -11,6 +11,7 @@ var librarian_sephirah_v1_hokma_pb = require('../../../librarian/sephirah/v1/hok
 var librarian_sephirah_v1_netzach_pb = require('../../../librarian/sephirah/v1/netzach_pb.js');
 var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1/tiphereth_pb.js');
 var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 
 function serialize_librarian_sephirah_v1_AddAppInstRunTimeRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.AddAppInstRunTimeRequest)) {

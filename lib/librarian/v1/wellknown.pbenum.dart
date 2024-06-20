@@ -77,5 +77,22 @@ class WellKnownNotifyDestination extends $pb.ProtobufEnum {
   const WellKnownNotifyDestination._($core.int v, $core.String n) : super(v, n);
 }
 
+class WellKnownFeedItemAction extends $pb.ProtobufEnum {
+  static const WellKnownFeedItemAction WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED = WellKnownFeedItemAction._(0, _omitEnumNames ? '' : 'WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED');
+  static const WellKnownFeedItemAction WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER = WellKnownFeedItemAction._(1, _omitEnumNames ? '' : 'WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER');
+  static const WellKnownFeedItemAction WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER = WellKnownFeedItemAction._(2, _omitEnumNames ? '' : 'WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER');
+
+  static const $core.List<WellKnownFeedItemAction> values = <WellKnownFeedItemAction> [
+    WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED,
+    WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER,
+    WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER,
+  ];
+
+  static final $core.Map<$core.int, WellKnownFeedItemAction> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static WellKnownFeedItemAction? valueOf($core.int value) => _byValue[value];
+
+  const WellKnownFeedItemAction._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

@@ -10,6 +10,7 @@ import * as librarian_sephirah_v1_hokma_pb from "../../../librarian/sephirah/v1/
 import * as librarian_sephirah_v1_netzach_pb from "../../../librarian/sephirah/v1/netzach_pb";
 import * as librarian_sephirah_v1_tiphereth_pb from "../../../librarian/sephirah/v1/tiphereth_pb";
 import * as librarian_sephirah_v1_yesod_pb from "../../../librarian/sephirah/v1/yesod_pb";
+import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
 export class GetServerInformationRequest extends jspb.Message {
   hasWithStatusReport(): boolean;
@@ -134,25 +135,30 @@ export namespace ServerProtocolSummary {
 }
 
 export class ServerFeatureSummary extends jspb.Message {
-  clearSupportedAccountPlatformsList(): void;
-  getSupportedAccountPlatformsList(): Array<string>;
-  setSupportedAccountPlatformsList(value: Array<string>): void;
-  addSupportedAccountPlatforms(value: string, index?: number): string;
+  clearAccountPlatformsList(): void;
+  getAccountPlatformsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setAccountPlatformsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addAccountPlatforms(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
 
-  clearSupportedAppInfoSourcesList(): void;
-  getSupportedAppInfoSourcesList(): Array<string>;
-  setSupportedAppInfoSourcesList(value: Array<string>): void;
-  addSupportedAppInfoSources(value: string, index?: number): string;
+  clearAppInfoSourcesList(): void;
+  getAppInfoSourcesList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setAppInfoSourcesList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addAppInfoSources(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
 
-  clearSupportedFeedSourcesList(): void;
-  getSupportedFeedSourcesList(): Array<string>;
-  setSupportedFeedSourcesList(value: Array<string>): void;
-  addSupportedFeedSources(value: string, index?: number): string;
+  clearFeedSourcesList(): void;
+  getFeedSourcesList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setFeedSourcesList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addFeedSources(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
 
-  clearSupportedNotifyDestinationsList(): void;
-  getSupportedNotifyDestinationsList(): Array<string>;
-  setSupportedNotifyDestinationsList(value: Array<string>): void;
-  addSupportedNotifyDestinations(value: string, index?: number): string;
+  clearNotifyDestinationsList(): void;
+  getNotifyDestinationsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setNotifyDestinationsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addNotifyDestinations(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
+
+  clearFeedItemActionsList(): void;
+  getFeedItemActionsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setFeedItemActionsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addFeedItemActions(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServerFeatureSummary.AsObject;
@@ -166,10 +172,11 @@ export class ServerFeatureSummary extends jspb.Message {
 
 export namespace ServerFeatureSummary {
   export type AsObject = {
-    supportedAccountPlatformsList: Array<string>,
-    supportedAppInfoSourcesList: Array<string>,
-    supportedFeedSourcesList: Array<string>,
-    supportedNotifyDestinationsList: Array<string>,
+    accountPlatformsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
+    appInfoSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
+    feedSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
+    notifyDestinationsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
+    feedItemActionsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
   }
 }
 

@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
+import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
 export class CreateFeedConfigRequest extends jspb.Message {
   hasConfig(): boolean;
@@ -1049,6 +1050,16 @@ export class FeedItemCollection extends jspb.Message {
   getCategory(): string;
   setCategory(value: string): void;
 
+  hasSourceFeed(): boolean;
+  clearSourceFeed(): void;
+  getSourceFeed(): librarian_v1_common_pb.InternalID | undefined;
+  setSourceFeed(value?: librarian_v1_common_pb.InternalID): void;
+
+  clearActionsList(): void;
+  getActionsList(): Array<librarian_v1_wellknown_pb.FeatureRequest>;
+  setActionsList(value: Array<librarian_v1_wellknown_pb.FeatureRequest>): void;
+  addActions(value?: librarian_v1_wellknown_pb.FeatureRequest, index?: number): librarian_v1_wellknown_pb.FeatureRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItemCollection.AsObject;
   static toObject(includeInstance: boolean, msg: FeedItemCollection): FeedItemCollection.AsObject;
@@ -1065,6 +1076,8 @@ export namespace FeedItemCollection {
     name: string,
     description: string,
     category: string,
+    sourceFeed?: librarian_v1_common_pb.InternalID.AsObject,
+    actionsList: Array<librarian_v1_wellknown_pb.FeatureRequest.AsObject>,
   }
 }
 

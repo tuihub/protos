@@ -107,20 +107,23 @@ final $typed_data.Uint8List serverProtocolSummaryDescriptor = $convert.base64Dec
 const ServerFeatureSummary$json = {
   '1': 'ServerFeatureSummary',
   '2': [
-    {'1': 'supported_account_platforms', '3': 1, '4': 3, '5': 9, '10': 'supportedAccountPlatforms'},
-    {'1': 'supported_app_info_sources', '3': 2, '4': 3, '5': 9, '10': 'supportedAppInfoSources'},
-    {'1': 'supported_feed_sources', '3': 3, '4': 3, '5': 9, '10': 'supportedFeedSources'},
-    {'1': 'supported_notify_destinations', '3': 4, '4': 3, '5': 9, '10': 'supportedNotifyDestinations'},
+    {'1': 'account_platforms', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'accountPlatforms'},
+    {'1': 'app_info_sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'appInfoSources'},
+    {'1': 'feed_sources', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSources'},
+    {'1': 'notify_destinations', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifyDestinations'},
+    {'1': 'feed_item_actions', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedItemActions'},
   ],
 };
 
 /// Descriptor for `ServerFeatureSummary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List serverFeatureSummaryDescriptor = $convert.base64Decode(
-    'ChRTZXJ2ZXJGZWF0dXJlU3VtbWFyeRI+ChtzdXBwb3J0ZWRfYWNjb3VudF9wbGF0Zm9ybXMYAS'
-    'ADKAlSGXN1cHBvcnRlZEFjY291bnRQbGF0Zm9ybXMSOwoac3VwcG9ydGVkX2FwcF9pbmZvX3Nv'
-    'dXJjZXMYAiADKAlSF3N1cHBvcnRlZEFwcEluZm9Tb3VyY2VzEjQKFnN1cHBvcnRlZF9mZWVkX3'
-    'NvdXJjZXMYAyADKAlSFHN1cHBvcnRlZEZlZWRTb3VyY2VzEkIKHXN1cHBvcnRlZF9ub3RpZnlf'
-    'ZGVzdGluYXRpb25zGAQgAygJUhtzdXBwb3J0ZWROb3RpZnlEZXN0aW5hdGlvbnM=');
+    'ChRTZXJ2ZXJGZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZLmxpYn'
+    'Jhcmlhbi52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJDChBhcHBfaW5mb19zb3Vy'
+    'Y2VzGAIgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8Cg'
+    'xmZWVkX3NvdXJjZXMYAyADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3Vy'
+    'Y2VzEkoKE25vdGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZU'
+    'ZsYWdSEm5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9ucxgFIAMoCzIZLmxp'
+    'YnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1BY3Rpb25z');
 
 @$core.Deprecated('Use serverInstanceSummaryDescriptor instead')
 const ServerInstanceSummary$json = {

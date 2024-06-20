@@ -182,6 +182,205 @@ impl<'de> serde::Deserialize<'de> for EnablePorterResponse {
         deserializer.deserialize_struct("librarian.porter.v1.EnablePorterResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ExecFeedItemActionRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.action.is_some() {
+            len += 1;
+        }
+        if self.item.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.ExecFeedItemActionRequest", len)?;
+        if let Some(v) = self.action.as_ref() {
+            struct_ser.serialize_field("action", v)?;
+        }
+        if let Some(v) = self.item.as_ref() {
+            struct_ser.serialize_field("item", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ExecFeedItemActionRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "action",
+            "item",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Action,
+            Item,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "action" => Ok(GeneratedField::Action),
+                            "item" => Ok(GeneratedField::Item),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ExecFeedItemActionRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.ExecFeedItemActionRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ExecFeedItemActionRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut action__ = None;
+                let mut item__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Action => {
+                            if action__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("action"));
+                            }
+                            action__ = map.next_value()?;
+                        }
+                        GeneratedField::Item => {
+                            if item__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("item"));
+                            }
+                            item__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(ExecFeedItemActionRequest {
+                    action: action__,
+                    item: item__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.ExecFeedItemActionRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ExecFeedItemActionResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.item.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.ExecFeedItemActionResponse", len)?;
+        if let Some(v) = self.item.as_ref() {
+            struct_ser.serialize_field("item", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ExecFeedItemActionResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "item",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Item,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "item" => Ok(GeneratedField::Item),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ExecFeedItemActionResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.ExecFeedItemActionResponse")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<ExecFeedItemActionResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut item__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Item => {
+                            if item__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("item"));
+                            }
+                            item__ = map.next_value()?;
+                        }
+                    }
+                }
+                Ok(ExecFeedItemActionResponse {
+                    item: item__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.ExecFeedItemActionResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for GetPorterInformationRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -405,30 +604,36 @@ impl serde::Serialize for PorterFeatureSummary {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.supported_accounts.is_empty() {
+        if !self.account_platforms.is_empty() {
             len += 1;
         }
-        if !self.supported_app_info_sources.is_empty() {
+        if !self.app_info_sources.is_empty() {
             len += 1;
         }
-        if !self.supported_feed_sources.is_empty() {
+        if !self.feed_sources.is_empty() {
             len += 1;
         }
-        if !self.supported_notify_destinations.is_empty() {
+        if !self.notify_destinations.is_empty() {
+            len += 1;
+        }
+        if !self.feed_item_actions.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PorterFeatureSummary", len)?;
-        if !self.supported_accounts.is_empty() {
-            struct_ser.serialize_field("supportedAccounts", &self.supported_accounts)?;
+        if !self.account_platforms.is_empty() {
+            struct_ser.serialize_field("accountPlatforms", &self.account_platforms)?;
         }
-        if !self.supported_app_info_sources.is_empty() {
-            struct_ser.serialize_field("supportedAppInfoSources", &self.supported_app_info_sources)?;
+        if !self.app_info_sources.is_empty() {
+            struct_ser.serialize_field("appInfoSources", &self.app_info_sources)?;
         }
-        if !self.supported_feed_sources.is_empty() {
-            struct_ser.serialize_field("supportedFeedSources", &self.supported_feed_sources)?;
+        if !self.feed_sources.is_empty() {
+            struct_ser.serialize_field("feedSources", &self.feed_sources)?;
         }
-        if !self.supported_notify_destinations.is_empty() {
-            struct_ser.serialize_field("supportedNotifyDestinations", &self.supported_notify_destinations)?;
+        if !self.notify_destinations.is_empty() {
+            struct_ser.serialize_field("notifyDestinations", &self.notify_destinations)?;
+        }
+        if !self.feed_item_actions.is_empty() {
+            struct_ser.serialize_field("feedItemActions", &self.feed_item_actions)?;
         }
         struct_ser.end()
     }
@@ -440,22 +645,25 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "supported_accounts",
-            "supportedAccounts",
-            "supported_app_info_sources",
-            "supportedAppInfoSources",
-            "supported_feed_sources",
-            "supportedFeedSources",
-            "supported_notify_destinations",
-            "supportedNotifyDestinations",
+            "account_platforms",
+            "accountPlatforms",
+            "app_info_sources",
+            "appInfoSources",
+            "feed_sources",
+            "feedSources",
+            "notify_destinations",
+            "notifyDestinations",
+            "feed_item_actions",
+            "feedItemActions",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            SupportedAccounts,
-            SupportedAppInfoSources,
-            SupportedFeedSources,
-            SupportedNotifyDestinations,
+            AccountPlatforms,
+            AppInfoSources,
+            FeedSources,
+            NotifyDestinations,
+            FeedItemActions,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -477,10 +685,11 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                         E: serde::de::Error,
                     {
                         match value {
-                            "supportedAccounts" | "supported_accounts" => Ok(GeneratedField::SupportedAccounts),
-                            "supportedAppInfoSources" | "supported_app_info_sources" => Ok(GeneratedField::SupportedAppInfoSources),
-                            "supportedFeedSources" | "supported_feed_sources" => Ok(GeneratedField::SupportedFeedSources),
-                            "supportedNotifyDestinations" | "supported_notify_destinations" => Ok(GeneratedField::SupportedNotifyDestinations),
+                            "accountPlatforms" | "account_platforms" => Ok(GeneratedField::AccountPlatforms),
+                            "appInfoSources" | "app_info_sources" => Ok(GeneratedField::AppInfoSources),
+                            "feedSources" | "feed_sources" => Ok(GeneratedField::FeedSources),
+                            "notifyDestinations" | "notify_destinations" => Ok(GeneratedField::NotifyDestinations),
+                            "feedItemActions" | "feed_item_actions" => Ok(GeneratedField::FeedItemActions),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -500,160 +709,55 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut supported_accounts__ = None;
-                let mut supported_app_info_sources__ = None;
-                let mut supported_feed_sources__ = None;
-                let mut supported_notify_destinations__ = None;
+                let mut account_platforms__ = None;
+                let mut app_info_sources__ = None;
+                let mut feed_sources__ = None;
+                let mut notify_destinations__ = None;
+                let mut feed_item_actions__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
-                        GeneratedField::SupportedAccounts => {
-                            if supported_accounts__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedAccounts"));
+                        GeneratedField::AccountPlatforms => {
+                            if account_platforms__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("accountPlatforms"));
                             }
-                            supported_accounts__ = Some(map.next_value()?);
+                            account_platforms__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedAppInfoSources => {
-                            if supported_app_info_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedAppInfoSources"));
+                        GeneratedField::AppInfoSources => {
+                            if app_info_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfoSources"));
                             }
-                            supported_app_info_sources__ = Some(map.next_value()?);
+                            app_info_sources__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedFeedSources => {
-                            if supported_feed_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedFeedSources"));
+                        GeneratedField::FeedSources => {
+                            if feed_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedSources"));
                             }
-                            supported_feed_sources__ = Some(map.next_value()?);
+                            feed_sources__ = Some(map.next_value()?);
                         }
-                        GeneratedField::SupportedNotifyDestinations => {
-                            if supported_notify_destinations__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("supportedNotifyDestinations"));
+                        GeneratedField::NotifyDestinations => {
+                            if notify_destinations__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("notifyDestinations"));
                             }
-                            supported_notify_destinations__ = Some(map.next_value()?);
+                            notify_destinations__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::FeedItemActions => {
+                            if feed_item_actions__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("feedItemActions"));
+                            }
+                            feed_item_actions__ = Some(map.next_value()?);
                         }
                     }
                 }
                 Ok(PorterFeatureSummary {
-                    supported_accounts: supported_accounts__.unwrap_or_default(),
-                    supported_app_info_sources: supported_app_info_sources__.unwrap_or_default(),
-                    supported_feed_sources: supported_feed_sources__.unwrap_or_default(),
-                    supported_notify_destinations: supported_notify_destinations__.unwrap_or_default(),
+                    account_platforms: account_platforms__.unwrap_or_default(),
+                    app_info_sources: app_info_sources__.unwrap_or_default(),
+                    feed_sources: feed_sources__.unwrap_or_default(),
+                    notify_destinations: notify_destinations__.unwrap_or_default(),
+                    feed_item_actions: feed_item_actions__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.porter.v1.PorterFeatureSummary", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for porter_feature_summary::Account {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.platform.is_empty() {
-            len += 1;
-        }
-        if !self.app_relation_types.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PorterFeatureSummary.Account", len)?;
-        if !self.platform.is_empty() {
-            struct_ser.serialize_field("platform", &self.platform)?;
-        }
-        if !self.app_relation_types.is_empty() {
-            let v = self.app_relation_types.iter().cloned().map(|v| {
-                super::super::v1::AccountAppRelationType::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
-            struct_ser.serialize_field("appRelationTypes", &v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for porter_feature_summary::Account {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "platform",
-            "app_relation_types",
-            "appRelationTypes",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Platform,
-            AppRelationTypes,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "platform" => Ok(GeneratedField::Platform),
-                            "appRelationTypes" | "app_relation_types" => Ok(GeneratedField::AppRelationTypes),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = porter_feature_summary::Account;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PorterFeatureSummary.Account")
-            }
-
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<porter_feature_summary::Account, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut platform__ = None;
-                let mut app_relation_types__ = None;
-                while let Some(k) = map.next_key()? {
-                    match k {
-                        GeneratedField::Platform => {
-                            if platform__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("platform"));
-                            }
-                            platform__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::AppRelationTypes => {
-                            if app_relation_types__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appRelationTypes"));
-                            }
-                            app_relation_types__ = Some(map.next_value::<Vec<super::super::v1::AccountAppRelationType>>()?.into_iter().map(|x| x as i32).collect());
-                        }
-                    }
-                }
-                Ok(porter_feature_summary::Account {
-                    platform: platform__.unwrap_or_default(),
-                    app_relation_types: app_relation_types__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PorterFeatureSummary.Account", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for PullAccountAppInfoRelationRequest {

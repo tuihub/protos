@@ -4,6 +4,7 @@
 var grpc = require('@grpc/grpc-js');
 var librarian_porter_v1_porter_pb = require('../../../librarian/porter/v1/porter_pb.js');
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 
 function serialize_librarian_porter_v1_EnablePorterRequest(arg) {
   if (!(arg instanceof librarian_porter_v1_porter_pb.EnablePorterRequest)) {
@@ -25,6 +26,28 @@ function serialize_librarian_porter_v1_EnablePorterResponse(arg) {
 
 function deserialize_librarian_porter_v1_EnablePorterResponse(buffer_arg) {
   return librarian_porter_v1_porter_pb.EnablePorterResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_ExecFeedItemActionRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.ExecFeedItemActionRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.ExecFeedItemActionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_ExecFeedItemActionRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.ExecFeedItemActionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_ExecFeedItemActionResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.ExecFeedItemActionResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.ExecFeedItemActionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_ExecFeedItemActionResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.ExecFeedItemActionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_porter_v1_GetPorterInformationRequest(arg) {
@@ -276,6 +299,18 @@ pushFeedItems: {
     requestDeserialize: deserialize_librarian_porter_v1_PushFeedItemsRequest,
     responseSerialize: serialize_librarian_porter_v1_PushFeedItemsResponse,
     responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemsResponse,
+  },
+  // `Yesod`
+execFeedItemAction: {
+    path: '/librarian.porter.v1.LibrarianPorterService/ExecFeedItemAction',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest,
+    responseType: librarian_porter_v1_porter_pb.ExecFeedItemActionResponse,
+    requestSerialize: serialize_librarian_porter_v1_ExecFeedItemActionRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_ExecFeedItemActionRequest,
+    responseSerialize: serialize_librarian_porter_v1_ExecFeedItemActionResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_ExecFeedItemActionResponse,
   },
 };
 

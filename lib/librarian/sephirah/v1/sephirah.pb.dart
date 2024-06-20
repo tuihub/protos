@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
+import '../../v1/wellknown.pb.dart' as $12;
 import 'sephirah.pbenum.dart';
 
 export 'sephirah.pbenum.dart';
@@ -346,23 +347,27 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
 
 class ServerFeatureSummary extends $pb.GeneratedMessage {
   factory ServerFeatureSummary({
-    $core.Iterable<$core.String>? supportedAccountPlatforms,
-    $core.Iterable<$core.String>? supportedAppInfoSources,
-    $core.Iterable<$core.String>? supportedFeedSources,
-    $core.Iterable<$core.String>? supportedNotifyDestinations,
+    $core.Iterable<$12.FeatureFlag>? accountPlatforms,
+    $core.Iterable<$12.FeatureFlag>? appInfoSources,
+    $core.Iterable<$12.FeatureFlag>? feedSources,
+    $core.Iterable<$12.FeatureFlag>? notifyDestinations,
+    $core.Iterable<$12.FeatureFlag>? feedItemActions,
   }) {
     final $result = create();
-    if (supportedAccountPlatforms != null) {
-      $result.supportedAccountPlatforms.addAll(supportedAccountPlatforms);
+    if (accountPlatforms != null) {
+      $result.accountPlatforms.addAll(accountPlatforms);
     }
-    if (supportedAppInfoSources != null) {
-      $result.supportedAppInfoSources.addAll(supportedAppInfoSources);
+    if (appInfoSources != null) {
+      $result.appInfoSources.addAll(appInfoSources);
     }
-    if (supportedFeedSources != null) {
-      $result.supportedFeedSources.addAll(supportedFeedSources);
+    if (feedSources != null) {
+      $result.feedSources.addAll(feedSources);
     }
-    if (supportedNotifyDestinations != null) {
-      $result.supportedNotifyDestinations.addAll(supportedNotifyDestinations);
+    if (notifyDestinations != null) {
+      $result.notifyDestinations.addAll(notifyDestinations);
+    }
+    if (feedItemActions != null) {
+      $result.feedItemActions.addAll(feedItemActions);
     }
     return $result;
   }
@@ -371,10 +376,11 @@ class ServerFeatureSummary extends $pb.GeneratedMessage {
   factory ServerFeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'supportedAccountPlatforms')
-    ..pPS(2, _omitFieldNames ? '' : 'supportedAppInfoSources')
-    ..pPS(3, _omitFieldNames ? '' : 'supportedFeedSources')
-    ..pPS(4, _omitFieldNames ? '' : 'supportedNotifyDestinations')
+    ..pc<$12.FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
+    ..pc<$12.FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
+    ..pc<$12.FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
+    ..pc<$12.FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
+    ..pc<$12.FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
     ..hasRequiredFields = false
   ;
 
@@ -400,16 +406,19 @@ class ServerFeatureSummary extends $pb.GeneratedMessage {
   static ServerFeatureSummary? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get supportedAccountPlatforms => $_getList(0);
+  $core.List<$12.FeatureFlag> get accountPlatforms => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get supportedAppInfoSources => $_getList(1);
+  $core.List<$12.FeatureFlag> get appInfoSources => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get supportedFeedSources => $_getList(2);
+  $core.List<$12.FeatureFlag> get feedSources => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get supportedNotifyDestinations => $_getList(3);
+  $core.List<$12.FeatureFlag> get notifyDestinations => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<$12.FeatureFlag> get feedItemActions => $_getList(4);
 }
 
 class ServerInstanceSummary extends $pb.GeneratedMessage {

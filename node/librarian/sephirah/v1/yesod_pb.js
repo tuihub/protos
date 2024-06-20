@@ -27,6 +27,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
+goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.AddFeedItemToCollectionRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AddFeedItemToCollectionResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateFeedConfigRequest', null, global);
@@ -833,7 +835,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.FeedItemCollection = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.FeedItemCollection.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.FeedItemCollection, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8339,6 +8341,13 @@ proto.librarian.sephirah.v1.FeedItemDigest.prototype.setReadCount = function(val
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -8373,7 +8382,10 @@ proto.librarian.sephirah.v1.FeedItemCollection.toObject = function(includeInstan
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 4, "")
+    category: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    sourceFeed: (f = msg.getSourceFeed()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+    actionsList: jspb.Message.toObjectList(msg.getActionsList(),
+    librarian_v1_wellknown_pb.FeatureRequest.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -8426,6 +8438,16 @@ proto.librarian.sephirah.v1.FeedItemCollection.deserializeBinaryFromReader = fun
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setCategory(value);
+      break;
+    case 5:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setSourceFeed(value);
+      break;
+    case 6:
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.addActions(value);
       break;
     default:
       reader.skipField();
@@ -8483,6 +8505,22 @@ proto.librarian.sephirah.v1.FeedItemCollection.serializeBinaryToWriter = functio
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getSourceFeed();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getActionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
     );
   }
 };
@@ -8576,6 +8614,81 @@ proto.librarian.sephirah.v1.FeedItemCollection.prototype.getCategory = function(
  */
 proto.librarian.sephirah.v1.FeedItemCollection.prototype.setCategory = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional librarian.v1.InternalID source_feed = 5;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.getSourceFeed = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 5));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemCollection} returns this
+*/
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.setSourceFeed = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.FeedItemCollection} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.clearSourceFeed = function() {
+  return this.setSourceFeed(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.hasSourceFeed = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated librarian.v1.FeatureRequest actions = 6;
+ * @return {!Array<!proto.librarian.v1.FeatureRequest>}
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.getActionsList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureRequest>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.FeatureRequest>} value
+ * @return {!proto.librarian.sephirah.v1.FeedItemCollection} returns this
+*/
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.setActionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.FeatureRequest=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.FeatureRequest}
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.addActions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.librarian.v1.FeatureRequest, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.FeedItemCollection} returns this
+ */
+proto.librarian.sephirah.v1.FeedItemCollection.prototype.clearActionsList = function() {
+  return this.setActionsList([]);
 };
 
 

@@ -27,6 +27,7 @@ const (
 	LibrarianPorterService_SearchAppInfo_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/SearchAppInfo"
 	LibrarianPorterService_PullFeed_FullMethodName                   = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
 	LibrarianPorterService_PushFeedItems_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
+	LibrarianPorterService_ExecFeedItemAction_FullMethodName         = "/librarian.porter.v1.LibrarianPorterService/ExecFeedItemAction"
 )
 
 // LibrarianPorterServiceClient is the client API for LibrarianPorterService service.
@@ -47,6 +48,8 @@ type LibrarianPorterServiceClient interface {
 	PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error)
 	// `Yesod`
 	PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error)
+	// `Yesod`
+	ExecFeedItemAction(ctx context.Context, in *ExecFeedItemActionRequest, opts ...grpc.CallOption) (*ExecFeedItemActionResponse, error)
 }
 
 type librarianPorterServiceClient struct {
@@ -137,6 +140,16 @@ func (c *librarianPorterServiceClient) PushFeedItems(ctx context.Context, in *Pu
 	return out, nil
 }
 
+func (c *librarianPorterServiceClient) ExecFeedItemAction(ctx context.Context, in *ExecFeedItemActionRequest, opts ...grpc.CallOption) (*ExecFeedItemActionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecFeedItemActionResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_ExecFeedItemAction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianPorterServiceServer is the server API for LibrarianPorterService service.
 // All implementations must embed UnimplementedLibrarianPorterServiceServer
 // for forward compatibility
@@ -155,6 +168,8 @@ type LibrarianPorterServiceServer interface {
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
 	// `Yesod`
 	PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error)
+	// `Yesod`
+	ExecFeedItemAction(context.Context, *ExecFeedItemActionRequest) (*ExecFeedItemActionResponse, error)
 	mustEmbedUnimplementedLibrarianPorterServiceServer()
 }
 
@@ -185,6 +200,9 @@ func (UnimplementedLibrarianPorterServiceServer) PullFeed(context.Context, *Pull
 }
 func (UnimplementedLibrarianPorterServiceServer) PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PushFeedItems not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) ExecFeedItemAction(context.Context, *ExecFeedItemActionRequest) (*ExecFeedItemActionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExecFeedItemAction not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) mustEmbedUnimplementedLibrarianPorterServiceServer() {
 }
@@ -344,6 +362,24 @@ func _LibrarianPorterService_PushFeedItems_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianPorterService_ExecFeedItemAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecFeedItemActionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).ExecFeedItemAction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_ExecFeedItemAction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).ExecFeedItemAction(ctx, req.(*ExecFeedItemActionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianPorterService_ServiceDesc is the grpc.ServiceDesc for LibrarianPorterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -382,6 +418,10 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PushFeedItems",
 			Handler:    _LibrarianPorterService_PushFeedItems_Handler,
+		},
+		{
+			MethodName: "ExecFeedItemAction",
+			Handler:    _LibrarianPorterService_ExecFeedItemAction_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -15,6 +15,7 @@ interface ILibrarianPorterServiceService extends grpc.ServiceDefinition<grpc.Unt
   searchAppInfo: grpc.MethodDefinition<librarian_porter_v1_porter_pb.SearchAppInfoRequest, librarian_porter_v1_porter_pb.SearchAppInfoResponse>;
   pullFeed: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
   pushFeedItems: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
+  execFeedItemAction: grpc.MethodDefinition<librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>;
 }
 
 export const LibrarianPorterServiceService: ILibrarianPorterServiceService;
@@ -28,6 +29,7 @@ export interface ILibrarianPorterServiceServer extends grpc.UntypedServiceImplem
   searchAppInfo: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.SearchAppInfoRequest, librarian_porter_v1_porter_pb.SearchAppInfoResponse>;
   pullFeed: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
   pushFeedItems: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
+  execFeedItemAction: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>;
 }
 
 export class LibrarianPorterServiceClient extends grpc.Client {
@@ -56,4 +58,7 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
   pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
   pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
+  execFeedItemAction(argument: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>): grpc.ClientUnaryCall;
+  execFeedItemAction(argument: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>): grpc.ClientUnaryCall;
+  execFeedItemAction(argument: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>): grpc.ClientUnaryCall;
 }

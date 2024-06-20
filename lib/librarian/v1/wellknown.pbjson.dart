@@ -75,3 +75,54 @@ final $typed_data.Uint8List wellKnownNotifyDestinationDescriptor = $convert.base
     '5BVElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ'
     'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0=');
 
+@$core.Deprecated('Use wellKnownFeedItemActionDescriptor instead')
+const WellKnownFeedItemAction$json = {
+  '1': 'WellKnownFeedItemAction',
+  '2': [
+    {'1': 'WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED', '2': 0, '3': {}},
+    {'1': 'WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER', '2': 1, '3': {}},
+    {'1': 'WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER', '2': 2, '3': {}},
+  ],
+};
+
+/// Descriptor for `WellKnownFeedItemAction`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List wellKnownFeedItemActionDescriptor = $convert.base64Decode(
+    'ChdXZWxsS25vd25GZWVkSXRlbUFjdGlvbhIwCidXRUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJT0'
+    '5fVU5TUEVDSUZJRUQQABoDwj4AEkEKKldFTExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9CVUlM'
+    'VElOX0ZJTFRFUhABGhHCPg5idWlsdGluX2ZpbHRlchJbCjdXRUxMX0tOT1dOX0ZFRURfSVRFTV'
+    '9BQ1RJT05fQlVJTFRJTl9ERVNDUklQVElPTl9TSE9SVEVSEAIaHsI+G2J1aWx0aW5fZGVzY3Jp'
+    'cHRpb25fc2hvcnRlcg==');
+
+@$core.Deprecated('Use featureFlagDescriptor instead')
+const FeatureFlag$json = {
+  '1': 'FeatureFlag',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'region', '3': 2, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'config_json_schema', '3': 5, '4': 1, '5': 9, '10': 'configJsonSchema'},
+  ],
+};
+
+/// Descriptor for `FeatureFlag`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List featureFlagDescriptor = $convert.base64Decode(
+    'CgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVICaWQSFgoGcmVnaW9uGAIgASgJUgZyZWdpb24SEg'
+    'oEbmFtZRgDIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoS'
+    'Y29uZmlnX2pzb25fc2NoZW1hGAUgASgJUhBjb25maWdKc29uU2NoZW1h');
+
+@$core.Deprecated('Use featureRequestDescriptor instead')
+const FeatureRequest$json = {
+  '1': 'FeatureRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'region', '3': 2, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'config_json', '3': 3, '4': 1, '5': 9, '10': 'configJson'},
+  ],
+};
+
+/// Descriptor for `FeatureRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List featureRequestDescriptor = $convert.base64Decode(
+    'Cg5GZWF0dXJlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFgoGcmVnaW9uGAIgASgJUgZyZWdpb2'
+    '4SHwoLY29uZmlnX2pzb24YAyABKAlSCmNvbmZpZ0pzb24=');
+

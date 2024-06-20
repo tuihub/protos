@@ -885,32 +885,17 @@ class NotifyFlow extends $pb.GeneratedMessage {
   void clearStatus() => clearField(6);
 }
 
-enum NotifyFlowSource_Source {
-  feedConfigId, 
-  feedItemCollectionId, 
-  systemNotification, 
-  notSet
-}
-
 class NotifyFlowSource extends $pb.GeneratedMessage {
   factory NotifyFlowSource({
     NotifyFilter? filter,
-    $8.InternalID? feedConfigId,
-    $8.InternalID? feedItemCollectionId,
-    SystemNotificationFilter? systemNotification,
+    $8.InternalID? sourceId,
   }) {
     final $result = create();
     if (filter != null) {
       $result.filter = filter;
     }
-    if (feedConfigId != null) {
-      $result.feedConfigId = feedConfigId;
-    }
-    if (feedItemCollectionId != null) {
-      $result.feedItemCollectionId = feedItemCollectionId;
-    }
-    if (systemNotification != null) {
-      $result.systemNotification = systemNotification;
+    if (sourceId != null) {
+      $result.sourceId = sourceId;
     }
     return $result;
   }
@@ -918,18 +903,9 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   factory NotifyFlowSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NotifyFlowSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static const $core.Map<$core.int, NotifyFlowSource_Source> _NotifyFlowSource_SourceByTag = {
-    2 : NotifyFlowSource_Source.feedConfigId,
-    3 : NotifyFlowSource_Source.feedItemCollectionId,
-    4 : NotifyFlowSource_Source.systemNotification,
-    0 : NotifyFlowSource_Source.notSet
-  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..oo(0, [2, 3, 4])
     ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'feedConfigId', subBuilder: $8.InternalID.create)
-    ..aOM<$8.InternalID>(3, _omitFieldNames ? '' : 'feedItemCollectionId', subBuilder: $8.InternalID.create)
-    ..aOM<SystemNotificationFilter>(4, _omitFieldNames ? '' : 'systemNotification', subBuilder: SystemNotificationFilter.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sourceId', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -954,9 +930,6 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   static NotifyFlowSource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NotifyFlowSource>(create);
   static NotifyFlowSource? _defaultInstance;
 
-  NotifyFlowSource_Source whichSource() => _NotifyFlowSource_SourceByTag[$_whichOneof(0)]!;
-  void clearSource() => clearField($_whichOneof(0));
-
   @$pb.TagNumber(1)
   NotifyFilter get filter => $_getN(0);
   @$pb.TagNumber(1)
@@ -968,40 +941,17 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFilter ensureFilter() => $_ensure(0);
 
-  /// must be FeedConfigID
-  @$pb.TagNumber(2)
-  $8.InternalID get feedConfigId => $_getN(1);
-  @$pb.TagNumber(2)
-  set feedConfigId($8.InternalID v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasFeedConfigId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearFeedConfigId() => clearField(2);
-  @$pb.TagNumber(2)
-  $8.InternalID ensureFeedConfigId() => $_ensure(1);
-
   /// must be FeedItemCollectionID
-  @$pb.TagNumber(3)
-  $8.InternalID get feedItemCollectionId => $_getN(2);
-  @$pb.TagNumber(3)
-  set feedItemCollectionId($8.InternalID v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasFeedItemCollectionId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearFeedItemCollectionId() => clearField(3);
-  @$pb.TagNumber(3)
-  $8.InternalID ensureFeedItemCollectionId() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  SystemNotificationFilter get systemNotification => $_getN(3);
-  @$pb.TagNumber(4)
-  set systemNotification(SystemNotificationFilter v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasSystemNotification() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSystemNotification() => clearField(4);
-  @$pb.TagNumber(4)
-  SystemNotificationFilter ensureSystemNotification() => $_ensure(3);
+  @$pb.TagNumber(2)
+  $8.InternalID get sourceId => $_getN(1);
+  @$pb.TagNumber(2)
+  set sourceId($8.InternalID v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceId() => clearField(2);
+  @$pb.TagNumber(2)
+  $8.InternalID ensureSourceId() => $_ensure(1);
 }
 
 class NotifyFlowTarget extends $pb.GeneratedMessage {
@@ -1526,58 +1476,6 @@ class SystemNotification extends $pb.GeneratedMessage {
   void clearUpdateTime() => clearField(8);
   @$pb.TagNumber(8)
   $9.Timestamp ensureUpdateTime() => $_ensure(7);
-}
-
-class SystemNotificationFilter extends $pb.GeneratedMessage {
-  factory SystemNotificationFilter({
-    $core.Iterable<SystemNotificationType>? typeFilter,
-    $core.Iterable<SystemNotificationLevel>? levelFilter,
-  }) {
-    final $result = create();
-    if (typeFilter != null) {
-      $result.typeFilter.addAll(typeFilter);
-    }
-    if (levelFilter != null) {
-      $result.levelFilter.addAll(levelFilter);
-    }
-    return $result;
-  }
-  SystemNotificationFilter._() : super();
-  factory SystemNotificationFilter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SystemNotificationFilter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SystemNotificationFilter', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<SystemNotificationType>(1, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationType.valueOf, enumValues: SystemNotificationType.values, defaultEnumValue: SystemNotificationType.SYSTEM_NOTIFICATION_TYPE_UNSPECIFIED)
-    ..pc<SystemNotificationLevel>(2, _omitFieldNames ? '' : 'levelFilter', $pb.PbFieldType.KE, valueOf: SystemNotificationLevel.valueOf, enumValues: SystemNotificationLevel.values, defaultEnumValue: SystemNotificationLevel.SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  SystemNotificationFilter clone() => SystemNotificationFilter()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SystemNotificationFilter copyWith(void Function(SystemNotificationFilter) updates) => super.copyWith((message) => updates(message as SystemNotificationFilter)) as SystemNotificationFilter;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SystemNotificationFilter create() => SystemNotificationFilter._();
-  SystemNotificationFilter createEmptyInstance() => create();
-  static $pb.PbList<SystemNotificationFilter> createRepeated() => $pb.PbList<SystemNotificationFilter>();
-  @$core.pragma('dart2js:noInline')
-  static SystemNotificationFilter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SystemNotificationFilter>(create);
-  static SystemNotificationFilter? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<SystemNotificationType> get typeFilter => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $core.List<SystemNotificationLevel> get levelFilter => $_getList(1);
 }
 
 

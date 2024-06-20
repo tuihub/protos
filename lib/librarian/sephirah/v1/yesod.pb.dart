@@ -17,6 +17,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../google/protobuf/duration.pb.dart' as $11;
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
 import '../../v1/common.pb.dart' as $8;
+import '../../v1/wellknown.pb.dart' as $12;
 import 'yesod.pbenum.dart';
 
 export 'yesod.pbenum.dart';
@@ -2323,6 +2324,8 @@ class FeedItemCollection extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? description,
     $core.String? category,
+    $8.InternalID? sourceFeed,
+    $core.Iterable<$12.FeatureRequest>? actions,
   }) {
     final $result = create();
     if (id != null) {
@@ -2337,6 +2340,12 @@ class FeedItemCollection extends $pb.GeneratedMessage {
     if (category != null) {
       $result.category = category;
     }
+    if (sourceFeed != null) {
+      $result.sourceFeed = sourceFeed;
+    }
+    if (actions != null) {
+      $result.actions.addAll(actions);
+    }
     return $result;
   }
   FeedItemCollection._() : super();
@@ -2348,6 +2357,8 @@ class FeedItemCollection extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOS(4, _omitFieldNames ? '' : 'category')
+    ..aOM<$8.InternalID>(5, _omitFieldNames ? '' : 'sourceFeed', subBuilder: $8.InternalID.create)
+    ..pc<$12.FeatureRequest>(6, _omitFieldNames ? '' : 'actions', $pb.PbFieldType.PM, subBuilder: $12.FeatureRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -2409,6 +2420,22 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   $core.bool hasCategory() => $_has(3);
   @$pb.TagNumber(4)
   void clearCategory() => clearField(4);
+
+  /// Auto copy source feed items to this collection
+  @$pb.TagNumber(5)
+  $8.InternalID get sourceFeed => $_getN(4);
+  @$pb.TagNumber(5)
+  set sourceFeed($8.InternalID v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSourceFeed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceFeed() => clearField(5);
+  @$pb.TagNumber(5)
+  $8.InternalID ensureSourceFeed() => $_ensure(4);
+
+  /// WellKnownFeedItemAction
+  @$pb.TagNumber(6)
+  $core.List<$12.FeatureRequest> get actions => $_getList(5);
 }
 
 

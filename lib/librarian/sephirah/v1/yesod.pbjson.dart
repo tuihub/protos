@@ -596,6 +596,11 @@ const FeedItemCollection$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'source_feed', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'sourceFeed', '17': true},
+    {'1': 'actions', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'actions'},
+  ],
+  '8': [
+    {'1': '_source_feed'},
   ],
 };
 
@@ -603,5 +608,8 @@ const FeedItemCollection$json = {
 final $typed_data.Uint8List feedItemCollectionDescriptor = $convert.base64Decode(
     'ChJGZWVkSXRlbUNvbGxlY3Rpb24SKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYW'
     'xJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3Jp'
-    'cHRpb24SGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5');
+    'cHRpb24SGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5Ej4KC3NvdXJjZV9mZWVkGAUgASgLMh'
+    'gubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIKc291cmNlRmVlZIgBARI2CgdhY3Rpb25zGAYg'
+    'AygLMhwubGlicmFyaWFuLnYxLkZlYXR1cmVSZXF1ZXN0UgdhY3Rpb25zQg4KDF9zb3VyY2VfZm'
+    'VlZA==');
 

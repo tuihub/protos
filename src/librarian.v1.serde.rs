@@ -1327,6 +1327,292 @@ impl<'de> serde::Deserialize<'de> for AppType {
         deserializer.deserialize_any(GeneratedVisitor)
     }
 }
+impl serde::Serialize for FeatureFlag {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.id.is_empty() {
+            len += 1;
+        }
+        if !self.region.is_empty() {
+            len += 1;
+        }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.description.is_empty() {
+            len += 1;
+        }
+        if !self.config_json_schema.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.FeatureFlag", len)?;
+        if !self.id.is_empty() {
+            struct_ser.serialize_field("id", &self.id)?;
+        }
+        if !self.region.is_empty() {
+            struct_ser.serialize_field("region", &self.region)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
+        }
+        if !self.config_json_schema.is_empty() {
+            struct_ser.serialize_field("configJsonSchema", &self.config_json_schema)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeatureFlag {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "region",
+            "name",
+            "description",
+            "config_json_schema",
+            "configJsonSchema",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            Region,
+            Name,
+            Description,
+            ConfigJsonSchema,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "region" => Ok(GeneratedField::Region),
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
+                            "configJsonSchema" | "config_json_schema" => Ok(GeneratedField::ConfigJsonSchema),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeatureFlag;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.FeatureFlag")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeatureFlag, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut region__ = None;
+                let mut name__ = None;
+                let mut description__ = None;
+                let mut config_json_schema__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Region => {
+                            if region__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("region"));
+                            }
+                            region__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::ConfigJsonSchema => {
+                            if config_json_schema__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("configJsonSchema"));
+                            }
+                            config_json_schema__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(FeatureFlag {
+                    id: id__.unwrap_or_default(),
+                    region: region__.unwrap_or_default(),
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
+                    config_json_schema: config_json_schema__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.FeatureFlag", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for FeatureRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.id.is_empty() {
+            len += 1;
+        }
+        if !self.region.is_empty() {
+            len += 1;
+        }
+        if !self.config_json.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.v1.FeatureRequest", len)?;
+        if !self.id.is_empty() {
+            struct_ser.serialize_field("id", &self.id)?;
+        }
+        if !self.region.is_empty() {
+            struct_ser.serialize_field("region", &self.region)?;
+        }
+        if !self.config_json.is_empty() {
+            struct_ser.serialize_field("configJson", &self.config_json)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for FeatureRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "id",
+            "region",
+            "config_json",
+            "configJson",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Id,
+            Region,
+            ConfigJson,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "id" => Ok(GeneratedField::Id),
+                            "region" => Ok(GeneratedField::Region),
+                            "configJson" | "config_json" => Ok(GeneratedField::ConfigJson),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = FeatureRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.v1.FeatureRequest")
+            }
+
+            fn visit_map<V>(self, mut map: V) -> std::result::Result<FeatureRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut id__ = None;
+                let mut region__ = None;
+                let mut config_json__ = None;
+                while let Some(k) = map.next_key()? {
+                    match k {
+                        GeneratedField::Id => {
+                            if id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("id"));
+                            }
+                            id__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Region => {
+                            if region__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("region"));
+                            }
+                            region__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::ConfigJson => {
+                            if config_json__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("configJson"));
+                            }
+                            config_json__ = Some(map.next_value()?);
+                        }
+                    }
+                }
+                Ok(FeatureRequest {
+                    id: id__.unwrap_or_default(),
+                    region: region__.unwrap_or_default(),
+                    config_json: config_json__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.v1.FeatureRequest", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for Feed {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -2962,6 +3248,82 @@ impl<'de> serde::Deserialize<'de> for WellKnownAppInfoSource {
                     "WELL_KNOWN_APP_INFO_SOURCE_STEAM" => Ok(WellKnownAppInfoSource::Steam),
                     "WELL_KNOWN_APP_INFO_SOURCE_VNDB" => Ok(WellKnownAppInfoSource::Vndb),
                     "WELL_KNOWN_APP_INFO_SOURCE_BANGUMI" => Ok(WellKnownAppInfoSource::Bangumi),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for WellKnownFeedItemAction {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED",
+            Self::BuiltinFilter => "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER",
+            Self::BuiltinDescriptionShorter => "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for WellKnownFeedItemAction {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED",
+            "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER",
+            "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = WellKnownFeedItemAction;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownFeedItemAction::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                use std::convert::TryFrom;
+                i32::try_from(v)
+                    .ok()
+                    .and_then(WellKnownFeedItemAction::from_i32)
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED" => Ok(WellKnownFeedItemAction::Unspecified),
+                    "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER" => Ok(WellKnownFeedItemAction::BuiltinFilter),
+                    "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER" => Ok(WellKnownFeedItemAction::BuiltinDescriptionShorter),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

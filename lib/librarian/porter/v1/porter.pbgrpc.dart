@@ -53,6 +53,10 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
       ($0.PushFeedItemsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.PushFeedItemsResponse.fromBuffer(value));
+  static final _$execFeedItemAction = $grpc.ClientMethod<$0.ExecFeedItemActionRequest, $0.ExecFeedItemActionResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/ExecFeedItemAction',
+      ($0.ExecFeedItemActionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.ExecFeedItemActionResponse.fromBuffer(value));
 
   LibrarianPorterServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -90,6 +94,10 @@ class LibrarianPorterServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.PushFeedItemsResponse> pushFeedItems($0.PushFeedItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pushFeedItems, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExecFeedItemActionResponse> execFeedItemAction($0.ExecFeedItemActionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$execFeedItemAction, request, options: options);
   }
 }
 
@@ -154,6 +162,13 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PushFeedItemsRequest.fromBuffer(value),
         ($0.PushFeedItemsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExecFeedItemActionRequest, $0.ExecFeedItemActionResponse>(
+        'ExecFeedItemAction',
+        execFeedItemAction_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.ExecFeedItemActionRequest.fromBuffer(value),
+        ($0.ExecFeedItemActionResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation_Pre($grpc.ServiceCall call, $async.Future<$0.GetPorterInformationRequest> request) async {
@@ -188,6 +203,10 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return pushFeedItems(call, await request);
   }
 
+  $async.Future<$0.ExecFeedItemActionResponse> execFeedItemAction_Pre($grpc.ServiceCall call, $async.Future<$0.ExecFeedItemActionRequest> request) async {
+    return execFeedItemAction(call, await request);
+  }
+
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation($grpc.ServiceCall call, $0.GetPorterInformationRequest request);
   $async.Future<$0.EnablePorterResponse> enablePorter($grpc.ServiceCall call, $0.EnablePorterRequest request);
   $async.Future<$0.PullAccountResponse> pullAccount($grpc.ServiceCall call, $0.PullAccountRequest request);
@@ -196,4 +215,5 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
   $async.Future<$0.SearchAppInfoResponse> searchAppInfo($grpc.ServiceCall call, $0.SearchAppInfoRequest request);
   $async.Future<$0.PullFeedResponse> pullFeed($grpc.ServiceCall call, $0.PullFeedRequest request);
   $async.Future<$0.PushFeedItemsResponse> pushFeedItems($grpc.ServiceCall call, $0.PushFeedItemsRequest request);
+  $async.Future<$0.ExecFeedItemActionResponse> execFeedItemAction($grpc.ServiceCall call, $0.ExecFeedItemActionRequest request);
 }
