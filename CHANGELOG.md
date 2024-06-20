@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.13](https://github.com/tuihub/protos/compare/v0.4.12...v0.4.13) (2024-06-20)
+
+
+### Features
+
+* standardize feature flags ([98277fb](https://github.com/tuihub/protos/commit/98277fba38163065e767a734c6dd155c7d7fa79c))
+
+
+### Bug Fixes
+
+* edit `SystemNotification` ([56964b3](https://github.com/tuihub/protos/commit/56964b36e94f55c33c81d7ffd85fd5902042c683))
+* **porter:** update `EnablePorter` ([d19ac2e](https://github.com/tuihub/protos/commit/d19ac2ec5b3a4a4c720b7da93c5dec2cd9a8fb24))
+
 ## [0.4.12](https://github.com/tuihub/protos/compare/v0.4.11...v0.4.12) (2024-06-14)
 
 
