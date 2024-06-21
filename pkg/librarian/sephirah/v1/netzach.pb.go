@@ -1053,7 +1053,7 @@ type NotifyFlowSource struct {
 	unknownFields protoimpl.UnknownFields
 
 	Filter *NotifyFilter `protobuf:"bytes,1,opt,name=filter,proto3" json:"filter,omitempty"`
-	// must be FeedItemCollectionID
+	// must be `FeedConfig.id` or `FeedItemCollection.id`
 	SourceId *v1.InternalID `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
 }
 

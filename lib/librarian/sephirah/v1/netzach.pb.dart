@@ -941,7 +941,7 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFilter ensureFilter() => $_ensure(0);
 
-  /// must be FeedItemCollectionID
+  /// must be `FeedConfig.id` or `FeedItemCollection.id`
   @$pb.TagNumber(2)
   $8.InternalID get sourceId => $_getN(1);
   @$pb.TagNumber(2)

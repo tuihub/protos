@@ -112,6 +112,9 @@ const (
 	LibrarianSephirahService_CreateFeedConfig_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig"
 	LibrarianSephirahService_UpdateFeedConfig_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig"
 	LibrarianSephirahService_ListFeedConfigs_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs"
+	LibrarianSephirahService_CreateFeedActionSet_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedActionSet"
+	LibrarianSephirahService_UpdateFeedActionSet_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedActionSet"
+	LibrarianSephirahService_ListFeedActionSets_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedActionSets"
 	LibrarianSephirahService_ListFeedCategories_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedCategories"
 	LibrarianSephirahService_ListFeedPlatforms_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedPlatforms"
 	LibrarianSephirahService_ListFeedItems_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems"
@@ -359,6 +362,12 @@ type LibrarianSephirahServiceClient interface {
 	UpdateFeedConfig(ctx context.Context, in *UpdateFeedConfigRequest, opts ...grpc.CallOption) (*UpdateFeedConfigResponse, error)
 	// `Yesod` `Normal`
 	ListFeedConfigs(ctx context.Context, in *ListFeedConfigsRequest, opts ...grpc.CallOption) (*ListFeedConfigsResponse, error)
+	// `Yesod` `Normal`
+	CreateFeedActionSet(ctx context.Context, in *CreateFeedActionSetRequest, opts ...grpc.CallOption) (*CreateFeedActionSetResponse, error)
+	// `Yesod` `Normal`
+	UpdateFeedActionSet(ctx context.Context, in *UpdateFeedActionSetRequest, opts ...grpc.CallOption) (*UpdateFeedActionSetResponse, error)
+	// `Yesod` `Normal`
+	ListFeedActionSets(ctx context.Context, in *ListFeedActionSetsRequest, opts ...grpc.CallOption) (*ListFeedActionSetsResponse, error)
 	// `Yesod` `Normal`
 	ListFeedCategories(ctx context.Context, in *ListFeedCategoriesRequest, opts ...grpc.CallOption) (*ListFeedCategoriesResponse, error)
 	// `Yesod` `Normal`
@@ -1443,6 +1452,36 @@ func (c *librarianSephirahServiceClient) ListFeedConfigs(ctx context.Context, in
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateFeedActionSet(ctx context.Context, in *CreateFeedActionSetRequest, opts ...grpc.CallOption) (*CreateFeedActionSetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateFeedActionSetResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateFeedActionSet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateFeedActionSet(ctx context.Context, in *UpdateFeedActionSetRequest, opts ...grpc.CallOption) (*UpdateFeedActionSetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateFeedActionSetResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateFeedActionSet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListFeedActionSets(ctx context.Context, in *ListFeedActionSetsRequest, opts ...grpc.CallOption) (*ListFeedActionSetsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListFeedActionSetsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeedActionSets_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) ListFeedCategories(ctx context.Context, in *ListFeedCategoriesRequest, opts ...grpc.CallOption) (*ListFeedCategoriesResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListFeedCategoriesResponse)
@@ -1833,6 +1872,12 @@ type LibrarianSephirahServiceServer interface {
 	// `Yesod` `Normal`
 	ListFeedConfigs(context.Context, *ListFeedConfigsRequest) (*ListFeedConfigsResponse, error)
 	// `Yesod` `Normal`
+	CreateFeedActionSet(context.Context, *CreateFeedActionSetRequest) (*CreateFeedActionSetResponse, error)
+	// `Yesod` `Normal`
+	UpdateFeedActionSet(context.Context, *UpdateFeedActionSetRequest) (*UpdateFeedActionSetResponse, error)
+	// `Yesod` `Normal`
+	ListFeedActionSets(context.Context, *ListFeedActionSetsRequest) (*ListFeedActionSetsResponse, error)
+	// `Yesod` `Normal`
 	ListFeedCategories(context.Context, *ListFeedCategoriesRequest) (*ListFeedCategoriesResponse, error)
 	// `Yesod` `Normal`
 	ListFeedPlatforms(context.Context, *ListFeedPlatformsRequest) (*ListFeedPlatformsResponse, error)
@@ -2149,6 +2194,15 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateFeedConfig(context.Cont
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListFeedConfigs(context.Context, *ListFeedConfigsRequest) (*ListFeedConfigsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFeedConfigs not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) CreateFeedActionSet(context.Context, *CreateFeedActionSetRequest) (*CreateFeedActionSetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFeedActionSet not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateFeedActionSet(context.Context, *UpdateFeedActionSetRequest) (*UpdateFeedActionSetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeedActionSet not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListFeedActionSets(context.Context, *ListFeedActionSetsRequest) (*ListFeedActionSetsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListFeedActionSets not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListFeedCategories(context.Context, *ListFeedCategoriesRequest) (*ListFeedCategoriesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListFeedCategories not implemented")
@@ -3916,6 +3970,60 @@ func _LibrarianSephirahService_ListFeedConfigs_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_CreateFeedActionSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFeedActionSetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateFeedActionSet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateFeedActionSet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateFeedActionSet(ctx, req.(*CreateFeedActionSetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateFeedActionSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFeedActionSetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateFeedActionSet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateFeedActionSet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateFeedActionSet(ctx, req.(*UpdateFeedActionSetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListFeedActionSets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListFeedActionSetsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListFeedActionSets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListFeedActionSets_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListFeedActionSets(ctx, req.(*ListFeedActionSetsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_ListFeedCategories_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListFeedCategoriesRequest)
 	if err := dec(in); err != nil {
@@ -4562,6 +4670,18 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListFeedConfigs",
 			Handler:    _LibrarianSephirahService_ListFeedConfigs_Handler,
+		},
+		{
+			MethodName: "CreateFeedActionSet",
+			Handler:    _LibrarianSephirahService_CreateFeedActionSet_Handler,
+		},
+		{
+			MethodName: "UpdateFeedActionSet",
+			Handler:    _LibrarianSephirahService_UpdateFeedActionSet_Handler,
+		},
+		{
+			MethodName: "ListFeedActionSets",
+			Handler:    _LibrarianSephirahService_ListFeedActionSets_Handler,
 		},
 		{
 			MethodName: "ListFeedCategories",

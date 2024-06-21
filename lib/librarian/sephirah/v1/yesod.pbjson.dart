@@ -146,6 +146,82 @@ final $typed_data.Uint8List listFeedConfigsResponseDescriptor = $convert.base64D
     'aWJyYXJpYW4udjEuRmVlZFIEZmVlZBI5CgZjb25maWcYAiABKAsyIS5saWJyYXJpYW4uc2VwaG'
     'lyYWgudjEuRmVlZENvbmZpZ1IGY29uZmln');
 
+@$core.Deprecated('Use createFeedActionSetRequestDescriptor instead')
+const CreateFeedActionSetRequest$json = {
+  '1': 'CreateFeedActionSetRequest',
+  '2': [
+    {'1': 'action_set', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FeedActionSet', '10': 'actionSet'},
+  ],
+};
+
+/// Descriptor for `CreateFeedActionSetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createFeedActionSetRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVGZWVkQWN0aW9uU2V0UmVxdWVzdBJDCgphY3Rpb25fc2V0GAEgASgLMiQubGlicm'
+    'FyaWFuLnNlcGhpcmFoLnYxLkZlZWRBY3Rpb25TZXRSCWFjdGlvblNldA==');
+
+@$core.Deprecated('Use createFeedActionSetResponseDescriptor instead')
+const CreateFeedActionSetResponse$json = {
+  '1': 'CreateFeedActionSetResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateFeedActionSetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createFeedActionSetResponseDescriptor = $convert.base64Decode(
+    'ChtDcmVhdGVGZWVkQWN0aW9uU2V0UmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udj'
+    'EuSW50ZXJuYWxJRFICaWQ=');
+
+@$core.Deprecated('Use updateFeedActionSetRequestDescriptor instead')
+const UpdateFeedActionSetRequest$json = {
+  '1': 'UpdateFeedActionSetRequest',
+  '2': [
+    {'1': 'action_set', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.FeedActionSet', '10': 'actionSet'},
+  ],
+};
+
+/// Descriptor for `UpdateFeedActionSetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFeedActionSetRequestDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVGZWVkQWN0aW9uU2V0UmVxdWVzdBJDCgphY3Rpb25fc2V0GAEgASgLMiQubGlicm'
+    'FyaWFuLnNlcGhpcmFoLnYxLkZlZWRBY3Rpb25TZXRSCWFjdGlvblNldA==');
+
+@$core.Deprecated('Use updateFeedActionSetResponseDescriptor instead')
+const UpdateFeedActionSetResponse$json = {
+  '1': 'UpdateFeedActionSetResponse',
+};
+
+/// Descriptor for `UpdateFeedActionSetResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFeedActionSetResponseDescriptor = $convert.base64Decode(
+    'ChtVcGRhdGVGZWVkQWN0aW9uU2V0UmVzcG9uc2U=');
+
+@$core.Deprecated('Use listFeedActionSetsRequestDescriptor instead')
+const ListFeedActionSetsRequest$json = {
+  '1': 'ListFeedActionSetsRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+  ],
+};
+
+/// Descriptor for `ListFeedActionSetsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listFeedActionSetsRequestDescriptor = $convert.base64Decode(
+    'ChlMaXN0RmVlZEFjdGlvblNldHNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi'
+    '52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmc=');
+
+@$core.Deprecated('Use listFeedActionSetsResponseDescriptor instead')
+const ListFeedActionSetsResponse$json = {
+  '1': 'ListFeedActionSetsResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'action_sets', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.FeedActionSet', '10': 'actionSets'},
+  ],
+};
+
+/// Descriptor for `ListFeedActionSetsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listFeedActionSetsResponseDescriptor = $convert.base64Decode(
+    'ChpMaXN0RmVlZEFjdGlvblNldHNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW'
+    '4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJFCgthY3Rpb25fc2V0cxgCIAMoCzIkLmxpYnJh'
+    'cmlhbi5zZXBoaXJhaC52MS5GZWVkQWN0aW9uU2V0UgphY3Rpb25TZXRz');
+
 @$core.Deprecated('Use listFeedCategoriesRequestDescriptor instead')
 const ListFeedCategoriesRequest$json = {
   '1': 'ListFeedCategoriesRequest',
@@ -532,6 +608,7 @@ const FeedConfig$json = {
     {'1': 'latest_pull_time', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'latestPullTime', '17': true},
     {'1': 'latest_pull_status', '3': 11, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigPullStatus', '9': 1, '10': 'latestPullStatus', '17': true},
     {'1': 'latest_pull_message', '3': 12, '4': 1, '5': 9, '9': 2, '10': 'latestPullMessage', '17': true},
+    {'1': 'action_set_id', '3': 13, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'actionSetId'},
   ],
   '8': [
     {'1': '_latest_pull_time'},
@@ -552,9 +629,28 @@ final $typed_data.Uint8List feedConfigDescriptor = $convert.base64Decode(
     '9wdWxsX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSDmxhdGVzdFB1'
     'bGxUaW1liAEBEl4KEmxhdGVzdF9wdWxsX3N0YXR1cxgLIAEoDjIrLmxpYnJhcmlhbi5zZXBoaX'
     'JhaC52MS5GZWVkQ29uZmlnUHVsbFN0YXR1c0gBUhBsYXRlc3RQdWxsU3RhdHVziAEBEjMKE2xh'
-    'dGVzdF9wdWxsX21lc3NhZ2UYDCABKAlIAlIRbGF0ZXN0UHVsbE1lc3NhZ2WIAQFCEwoRX2xhdG'
-    'VzdF9wdWxsX3RpbWVCFQoTX2xhdGVzdF9wdWxsX3N0YXR1c0IWChRfbGF0ZXN0X3B1bGxfbWVz'
-    'c2FnZQ==');
+    'dGVzdF9wdWxsX21lc3NhZ2UYDCABKAlIAlIRbGF0ZXN0UHVsbE1lc3NhZ2WIAQESPAoNYWN0aW'
+    '9uX3NldF9pZBgNIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgthY3Rpb25TZXRJZEIT'
+    'ChFfbGF0ZXN0X3B1bGxfdGltZUIVChNfbGF0ZXN0X3B1bGxfc3RhdHVzQhYKFF9sYXRlc3RfcH'
+    'VsbF9tZXNzYWdl');
+
+@$core.Deprecated('Use feedActionSetDescriptor instead')
+const FeedActionSet$json = {
+  '1': 'FeedActionSet',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'actions', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'actions'},
+  ],
+};
+
+/// Descriptor for `FeedActionSet`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List feedActionSetDescriptor = $convert.base64Decode(
+    'Cg1GZWVkQWN0aW9uU2V0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAm'
+    'lkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9u'
+    'EjYKB2FjdGlvbnMYBCADKAsyHC5saWJyYXJpYW4udjEuRmVhdHVyZVJlcXVlc3RSB2FjdGlvbn'
+    'M=');
 
 @$core.Deprecated('Use feedItemDigestDescriptor instead')
 const FeedItemDigest$json = {
@@ -596,11 +692,6 @@ const FeedItemCollection$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
-    {'1': 'source_feed', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'sourceFeed', '17': true},
-    {'1': 'actions', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'actions'},
-  ],
-  '8': [
-    {'1': '_source_feed'},
   ],
 };
 
@@ -608,8 +699,5 @@ const FeedItemCollection$json = {
 final $typed_data.Uint8List feedItemCollectionDescriptor = $convert.base64Decode(
     'ChJGZWVkSXRlbUNvbGxlY3Rpb24SKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYW'
     'xJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3Jp'
-    'cHRpb24SGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5Ej4KC3NvdXJjZV9mZWVkGAUgASgLMh'
-    'gubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIKc291cmNlRmVlZIgBARI2CgdhY3Rpb25zGAYg'
-    'AygLMhwubGlicmFyaWFuLnYxLkZlYXR1cmVSZXF1ZXN0UgdhY3Rpb25zQg4KDF9zb3VyY2VfZm'
-    'VlZA==');
+    'cHRpb24SGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5');
 

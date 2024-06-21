@@ -197,6 +197,138 @@ export namespace ListFeedConfigsResponse {
   }
 }
 
+export class CreateFeedActionSetRequest extends jspb.Message {
+  hasActionSet(): boolean;
+  clearActionSet(): void;
+  getActionSet(): FeedActionSet | undefined;
+  setActionSet(value?: FeedActionSet): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateFeedActionSetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeedActionSetRequest): CreateFeedActionSetRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateFeedActionSetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeedActionSetRequest;
+  static deserializeBinaryFromReader(message: CreateFeedActionSetRequest, reader: jspb.BinaryReader): CreateFeedActionSetRequest;
+}
+
+export namespace CreateFeedActionSetRequest {
+  export type AsObject = {
+    actionSet?: FeedActionSet.AsObject,
+  }
+}
+
+export class CreateFeedActionSetResponse extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateFeedActionSetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateFeedActionSetResponse): CreateFeedActionSetResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CreateFeedActionSetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateFeedActionSetResponse;
+  static deserializeBinaryFromReader(message: CreateFeedActionSetResponse, reader: jspb.BinaryReader): CreateFeedActionSetResponse;
+}
+
+export namespace CreateFeedActionSetResponse {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class UpdateFeedActionSetRequest extends jspb.Message {
+  hasActionSet(): boolean;
+  clearActionSet(): void;
+  getActionSet(): FeedActionSet | undefined;
+  setActionSet(value?: FeedActionSet): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateFeedActionSetRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeedActionSetRequest): UpdateFeedActionSetRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateFeedActionSetRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeedActionSetRequest;
+  static deserializeBinaryFromReader(message: UpdateFeedActionSetRequest, reader: jspb.BinaryReader): UpdateFeedActionSetRequest;
+}
+
+export namespace UpdateFeedActionSetRequest {
+  export type AsObject = {
+    actionSet?: FeedActionSet.AsObject,
+  }
+}
+
+export class UpdateFeedActionSetResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateFeedActionSetResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateFeedActionSetResponse): UpdateFeedActionSetResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdateFeedActionSetResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateFeedActionSetResponse;
+  static deserializeBinaryFromReader(message: UpdateFeedActionSetResponse, reader: jspb.BinaryReader): UpdateFeedActionSetResponse;
+}
+
+export namespace UpdateFeedActionSetResponse {
+  export type AsObject = {
+  }
+}
+
+export class ListFeedActionSetsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFeedActionSetsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedActionSetsRequest): ListFeedActionSetsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFeedActionSetsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedActionSetsRequest;
+  static deserializeBinaryFromReader(message: ListFeedActionSetsRequest, reader: jspb.BinaryReader): ListFeedActionSetsRequest;
+}
+
+export namespace ListFeedActionSetsRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+  }
+}
+
+export class ListFeedActionSetsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearActionSetsList(): void;
+  getActionSetsList(): Array<FeedActionSet>;
+  setActionSetsList(value: Array<FeedActionSet>): void;
+  addActionSets(value?: FeedActionSet, index?: number): FeedActionSet;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListFeedActionSetsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListFeedActionSetsResponse): ListFeedActionSetsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListFeedActionSetsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListFeedActionSetsResponse;
+  static deserializeBinaryFromReader(message: ListFeedActionSetsResponse, reader: jspb.BinaryReader): ListFeedActionSetsResponse;
+}
+
+export namespace ListFeedActionSetsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    actionSetsList: Array<FeedActionSet.AsObject>,
+  }
+}
+
 export class ListFeedCategoriesRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeedCategoriesRequest.AsObject;
@@ -936,6 +1068,11 @@ export class FeedConfig extends jspb.Message {
   getLatestPullMessage(): string;
   setLatestPullMessage(value: string): void;
 
+  hasActionSetId(): boolean;
+  clearActionSetId(): void;
+  getActionSetId(): librarian_v1_common_pb.InternalID | undefined;
+  setActionSetId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
   static toObject(includeInstance: boolean, msg: FeedConfig): FeedConfig.AsObject;
@@ -960,6 +1097,43 @@ export namespace FeedConfig {
     latestPullTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     latestPullStatus: FeedConfigPullStatusMap[keyof FeedConfigPullStatusMap],
     latestPullMessage: string,
+    actionSetId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class FeedActionSet extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  clearActionsList(): void;
+  getActionsList(): Array<librarian_v1_wellknown_pb.FeatureRequest>;
+  setActionsList(value: Array<librarian_v1_wellknown_pb.FeatureRequest>): void;
+  addActions(value?: librarian_v1_wellknown_pb.FeatureRequest, index?: number): librarian_v1_wellknown_pb.FeatureRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeedActionSet.AsObject;
+  static toObject(includeInstance: boolean, msg: FeedActionSet): FeedActionSet.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeedActionSet, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeedActionSet;
+  static deserializeBinaryFromReader(message: FeedActionSet, reader: jspb.BinaryReader): FeedActionSet;
+}
+
+export namespace FeedActionSet {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    name: string,
+    description: string,
+    actionsList: Array<librarian_v1_wellknown_pb.FeatureRequest.AsObject>,
   }
 }
 
@@ -1050,16 +1224,6 @@ export class FeedItemCollection extends jspb.Message {
   getCategory(): string;
   setCategory(value: string): void;
 
-  hasSourceFeed(): boolean;
-  clearSourceFeed(): void;
-  getSourceFeed(): librarian_v1_common_pb.InternalID | undefined;
-  setSourceFeed(value?: librarian_v1_common_pb.InternalID): void;
-
-  clearActionsList(): void;
-  getActionsList(): Array<librarian_v1_wellknown_pb.FeatureRequest>;
-  setActionsList(value: Array<librarian_v1_wellknown_pb.FeatureRequest>): void;
-  addActions(value?: librarian_v1_wellknown_pb.FeatureRequest, index?: number): librarian_v1_wellknown_pb.FeatureRequest;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItemCollection.AsObject;
   static toObject(includeInstance: boolean, msg: FeedItemCollection): FeedItemCollection.AsObject;
@@ -1076,8 +1240,6 @@ export namespace FeedItemCollection {
     name: string,
     description: string,
     category: string,
-    sourceFeed?: librarian_v1_common_pb.InternalID.AsObject,
-    actionsList: Array<librarian_v1_wellknown_pb.FeatureRequest.AsObject>,
   }
 }
 

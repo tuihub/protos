@@ -3444,7 +3444,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public const int SourceIdFieldNumber = 2;
     private global::TuiHub.Protos.Librarian.V1.InternalID sourceId_;
     /// <summary>
-    /// must be FeedItemCollectionID
+    /// must be `FeedConfig.id` or `FeedItemCollection.id`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
