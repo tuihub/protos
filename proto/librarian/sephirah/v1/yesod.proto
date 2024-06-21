@@ -196,7 +196,7 @@ message FeedConfig {
   // response only
   optional string latest_pull_message = 12;
   // `FeedActionSet.id`
-  librarian.v1.InternalID action_set_id = 13;
+  repeated librarian.v1.InternalID action_sets = 13;
 }
 
 enum FeedConfigStatus {
