@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.14](https://github.com/tuihub/protos/compare/v0.4.13...v0.4.14) (2024-06-21)
+
+
+### Features
+
+* update feed action design ([91db07a](https://github.com/tuihub/protos/commit/91db07addd581f59d48f74bb6d47b257c879d3ed))
+
+
+### Bug Fixes
+
+* update FeedConfig ([b1d9e52](https://github.com/tuihub/protos/commit/b1d9e523fc5d7b2b5ce940da9ada878945286bfe))
+
 ## [0.4.13](https://github.com/tuihub/protos/compare/v0.4.12...v0.4.13) (2024-06-20)
 
 
