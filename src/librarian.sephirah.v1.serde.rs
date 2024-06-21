@@ -5250,7 +5250,7 @@ impl serde::Serialize for FeedConfig {
         if self.latest_pull_message.is_some() {
             len += 1;
         }
-        if self.action_set_id.is_some() {
+        if !self.action_sets.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedConfig", len)?;
@@ -5294,8 +5294,8 @@ impl serde::Serialize for FeedConfig {
         if let Some(v) = self.latest_pull_message.as_ref() {
             struct_ser.serialize_field("latestPullMessage", v)?;
         }
-        if let Some(v) = self.action_set_id.as_ref() {
-            struct_ser.serialize_field("actionSetId", v)?;
+        if !self.action_sets.is_empty() {
+            struct_ser.serialize_field("actionSets", &self.action_sets)?;
         }
         struct_ser.end()
     }
@@ -5326,8 +5326,8 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             "latestPullStatus",
             "latest_pull_message",
             "latestPullMessage",
-            "action_set_id",
-            "actionSetId",
+            "action_sets",
+            "actionSets",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -5344,7 +5344,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             LatestPullTime,
             LatestPullStatus,
             LatestPullMessage,
-            ActionSetId,
+            ActionSets,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5378,7 +5378,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             "latestPullTime" | "latest_pull_time" => Ok(GeneratedField::LatestPullTime),
                             "latestPullStatus" | "latest_pull_status" => Ok(GeneratedField::LatestPullStatus),
                             "latestPullMessage" | "latest_pull_message" => Ok(GeneratedField::LatestPullMessage),
-                            "actionSetId" | "action_set_id" => Ok(GeneratedField::ActionSetId),
+                            "actionSets" | "action_sets" => Ok(GeneratedField::ActionSets),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5410,7 +5410,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                 let mut latest_pull_time__ = None;
                 let mut latest_pull_status__ = None;
                 let mut latest_pull_message__ = None;
-                let mut action_set_id__ = None;
+                let mut action_sets__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -5485,11 +5485,11 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             }
                             latest_pull_message__ = map.next_value()?;
                         }
-                        GeneratedField::ActionSetId => {
-                            if action_set_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("actionSetId"));
+                        GeneratedField::ActionSets => {
+                            if action_sets__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("actionSets"));
                             }
-                            action_set_id__ = map.next_value()?;
+                            action_sets__ = Some(map.next_value()?);
                         }
                     }
                 }
@@ -5506,7 +5506,7 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                     latest_pull_time: latest_pull_time__,
                     latest_pull_status: latest_pull_status__,
                     latest_pull_message: latest_pull_message__,
-                    action_set_id: action_set_id__,
+                    action_sets: action_sets__.unwrap_or_default(),
                 })
             }
         }

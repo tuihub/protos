@@ -1068,10 +1068,10 @@ export class FeedConfig extends jspb.Message {
   getLatestPullMessage(): string;
   setLatestPullMessage(value: string): void;
 
-  hasActionSetId(): boolean;
-  clearActionSetId(): void;
-  getActionSetId(): librarian_v1_common_pb.InternalID | undefined;
-  setActionSetId(value?: librarian_v1_common_pb.InternalID): void;
+  clearActionSetsList(): void;
+  getActionSetsList(): Array<librarian_v1_common_pb.InternalID>;
+  setActionSetsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addActionSets(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
@@ -1097,7 +1097,7 @@ export namespace FeedConfig {
     latestPullTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     latestPullStatus: FeedConfigPullStatusMap[keyof FeedConfigPullStatusMap],
     latestPullMessage: string,
-    actionSetId?: librarian_v1_common_pb.InternalID.AsObject,
+    actionSetsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 

@@ -926,7 +926,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.FeedConfig = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.FeedConfig.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.FeedConfig, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8282,6 +8282,13 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionResponse.prototype.clearIte
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.FeedConfig.repeatedFields_ = [13];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -8325,7 +8332,8 @@ proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg)
     latestPullTime: (f = msg.getLatestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     latestPullStatus: jspb.Message.getFieldWithDefault(msg, 11, 0),
     latestPullMessage: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    actionSetId: (f = msg.getActionSetId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+    actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -8417,7 +8425,7 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
     case 13:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setActionSetId(value);
+      msg.addActionSets(value);
       break;
     default:
       reader.skipField();
@@ -8536,9 +8544,9 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getActionSetId();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getActionSetsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       13,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
@@ -8876,39 +8884,40 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullMessage = function
 
 
 /**
- * optional librarian.v1.InternalID action_set_id = 13;
- * @return {?proto.librarian.v1.InternalID}
+ * repeated librarian.v1.InternalID action_sets = 13;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getActionSetId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 13));
+proto.librarian.sephirah.v1.FeedConfig.prototype.getActionSetsList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 13));
 };
 
 
 /**
- * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
 */
-proto.librarian.sephirah.v1.FeedConfig.prototype.setActionSetId = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+proto.librarian.sephirah.v1.FeedConfig.prototype.setActionSetsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 13, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.addActionSets = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.clearActionSetId = function() {
-  return this.setActionSetId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.hasActionSetId = function() {
-  return jspb.Message.getField(this, 13) != null;
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearActionSetsList = function() {
+  return this.setActionSetsList([]);
 };
 
 

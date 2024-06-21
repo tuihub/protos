@@ -608,7 +608,7 @@ const FeedConfig$json = {
     {'1': 'latest_pull_time', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'latestPullTime', '17': true},
     {'1': 'latest_pull_status', '3': 11, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigPullStatus', '9': 1, '10': 'latestPullStatus', '17': true},
     {'1': 'latest_pull_message', '3': 12, '4': 1, '5': 9, '9': 2, '10': 'latestPullMessage', '17': true},
-    {'1': 'action_set_id', '3': 13, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'actionSetId'},
+    {'1': 'action_sets', '3': 13, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'actionSets'},
   ],
   '8': [
     {'1': '_latest_pull_time'},
@@ -629,10 +629,10 @@ final $typed_data.Uint8List feedConfigDescriptor = $convert.base64Decode(
     '9wdWxsX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSDmxhdGVzdFB1'
     'bGxUaW1liAEBEl4KEmxhdGVzdF9wdWxsX3N0YXR1cxgLIAEoDjIrLmxpYnJhcmlhbi5zZXBoaX'
     'JhaC52MS5GZWVkQ29uZmlnUHVsbFN0YXR1c0gBUhBsYXRlc3RQdWxsU3RhdHVziAEBEjMKE2xh'
-    'dGVzdF9wdWxsX21lc3NhZ2UYDCABKAlIAlIRbGF0ZXN0UHVsbE1lc3NhZ2WIAQESPAoNYWN0aW'
-    '9uX3NldF9pZBgNIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgthY3Rpb25TZXRJZEIT'
-    'ChFfbGF0ZXN0X3B1bGxfdGltZUIVChNfbGF0ZXN0X3B1bGxfc3RhdHVzQhYKFF9sYXRlc3RfcH'
-    'VsbF9tZXNzYWdl');
+    'dGVzdF9wdWxsX21lc3NhZ2UYDCABKAlIAlIRbGF0ZXN0UHVsbE1lc3NhZ2WIAQESOQoLYWN0aW'
+    '9uX3NldHMYDSADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKYWN0aW9uU2V0c0ITChFf'
+    'bGF0ZXN0X3B1bGxfdGltZUIVChNfbGF0ZXN0X3B1bGxfc3RhdHVzQhYKFF9sYXRlc3RfcHVsbF'
+    '9tZXNzYWdl');
 
 @$core.Deprecated('Use feedActionSetDescriptor instead')
 const FeedActionSet$json = {

@@ -2195,7 +2195,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     $9.Timestamp? latestPullTime,
     FeedConfigPullStatus? latestPullStatus,
     $core.String? latestPullMessage,
-    $8.InternalID? actionSetId,
+    $core.Iterable<$8.InternalID>? actionSets,
   }) {
     final $result = create();
     if (id != null) {
@@ -2234,8 +2234,8 @@ class FeedConfig extends $pb.GeneratedMessage {
     if (latestPullMessage != null) {
       $result.latestPullMessage = latestPullMessage;
     }
-    if (actionSetId != null) {
-      $result.actionSetId = actionSetId;
+    if (actionSets != null) {
+      $result.actionSets.addAll(actionSets);
     }
     return $result;
   }
@@ -2256,7 +2256,7 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'latestPullTime', subBuilder: $9.Timestamp.create)
     ..e<FeedConfigPullStatus>(11, _omitFieldNames ? '' : 'latestPullStatus', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigPullStatus.FEED_CONFIG_PULL_STATUS_UNSPECIFIED, valueOf: FeedConfigPullStatus.valueOf, enumValues: FeedConfigPullStatus.values)
     ..aOS(12, _omitFieldNames ? '' : 'latestPullMessage')
-    ..aOM<$8.InternalID>(13, _omitFieldNames ? '' : 'actionSetId', subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(13, _omitFieldNames ? '' : 'actionSets', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -2405,15 +2405,7 @@ class FeedConfig extends $pb.GeneratedMessage {
 
   /// `FeedActionSet.id`
   @$pb.TagNumber(13)
-  $8.InternalID get actionSetId => $_getN(12);
-  @$pb.TagNumber(13)
-  set actionSetId($8.InternalID v) { setField(13, v); }
-  @$pb.TagNumber(13)
-  $core.bool hasActionSetId() => $_has(12);
-  @$pb.TagNumber(13)
-  void clearActionSetId() => clearField(13);
-  @$pb.TagNumber(13)
-  $8.InternalID ensureActionSetId() => $_ensure(12);
+  $core.List<$8.InternalID> get actionSets => $_getList(12);
 }
 
 class FeedActionSet extends $pb.GeneratedMessage {
