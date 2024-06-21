@@ -75,7 +75,7 @@ message NotifyFlow {
 
 message NotifyFlowSource {
   NotifyFilter filter = 1;
-  // must be FeedItemCollectionID
+  // must be `FeedConfig.id` or `FeedItemCollection.id`
   librarian.v1.InternalID source_id = 2;
 }
 
