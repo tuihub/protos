@@ -63,6 +63,8 @@ enum WellKnownNotifyDestination {
 
 enum WellKnownFeedItemAction {
   WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED = 0 [(to_string) = ""];
-  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER = 1 [(to_string) = "builtin_filter"];
-  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER = 2 [(to_string) = "builtin_description_shorter"];
+  // filter item by keywords
+  WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER = 1 [(to_string) = "keyword_filter"];
+  // generate description form content
+  WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR = 2 [(to_string) = "description_generator"];
 }

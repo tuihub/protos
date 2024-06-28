@@ -122,5 +122,7 @@ message ExecFeedItemActionRequest {
 }
 
 message ExecFeedItemActionResponse {
-  librarian.v1.FeedItem item = 1;
+  // Return the result of the action.
+  // Leave empty if item should be filtered out.
+  optional librarian.v1.FeedItem item = 1;
 }
