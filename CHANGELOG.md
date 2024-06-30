@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.15](https://github.com/tuihub/protos/compare/v0.4.14...v0.4.15) (2024-06-30)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#148](https://github.com/tuihub/protos/issues/148)) ([b6c7e19](https://github.com/tuihub/protos/commit/b6c7e190d8304f8a8e271083b6042aa4065c759f))
+
 ## [0.4.14](https://github.com/tuihub/protos/compare/v0.4.13...v0.4.14) (2024-06-21)
 
 
