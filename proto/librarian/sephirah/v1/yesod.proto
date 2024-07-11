@@ -179,11 +179,11 @@ message ListFeedItemsInCollectionResponse {
 message FeedConfig {
   librarian.v1.InternalID id = 1;
   string name = 2;
-  string feed_url = 3;
-  // Not used when source is FEED_CONFIG_SOURCE_COMMON
-  librarian.v1.InternalID author_account = 4;
+  string description = 3;
   // WellKnownFeedSource
-  string source = 5;
+  librarian.v1.FeatureRequest source = 4;
+  // `FeedActionSet.id`
+  repeated librarian.v1.InternalID action_sets = 5;
   FeedConfigStatus status = 6;
   google.protobuf.Duration pull_interval = 7;
   string category = 8;
@@ -195,8 +195,6 @@ message FeedConfig {
   optional FeedConfigPullStatus latest_pull_status = 11;
   // response only
   optional string latest_pull_message = 12;
-  // `FeedActionSet.id`
-  repeated librarian.v1.InternalID action_sets = 13;
 }
 
 enum FeedConfigStatus {

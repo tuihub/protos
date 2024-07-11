@@ -4,6 +4,7 @@ package librarian.sephirah.v1;
 
 import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
+import "librarian/v1/wellknown.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
@@ -59,9 +60,8 @@ message NotifyTarget {
   string name = 2;
   string description = 3;
   // WellKnownNotifyDestination
-  string destination = 4;
+  librarian.v1.FeatureRequest destination = 4;
   NotifyTargetStatus status = 5;
-  string token = 6;
 }
 
 message NotifyFlow {
@@ -83,7 +83,6 @@ message NotifyFlowTarget {
   NotifyFilter filter = 1;
   // must be NotifyTargetID
   librarian.v1.InternalID target_id = 2;
-  string channel_id = 3;
 }
 
 message NotifyFilter {
