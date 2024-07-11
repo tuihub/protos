@@ -94,7 +94,7 @@ impl<'de> serde::Deserialize<'de> for Error {
                 formatter.write_str("struct errors.Error")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Error, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Error, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -102,34 +102,34 @@ impl<'de> serde::Deserialize<'de> for Error {
                 let mut reason__ = None;
                 let mut message__ = None;
                 let mut metadata__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Code => {
                             if code__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("code"));
                             }
                             code__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::Reason => {
                             if reason__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("reason"));
                             }
-                            reason__ = Some(map.next_value()?);
+                            reason__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Message => {
                             if message__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("message"));
                             }
-                            message__ = Some(map.next_value()?);
+                            message__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Metadata => {
                             if metadata__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("metadata"));
                             }
                             metadata__ = Some(
-                                map.next_value::<std::collections::HashMap<_, _>>()?
+                                map_.next_value::<std::collections::HashMap<_, _>>()?
                             );
                         }
                     }

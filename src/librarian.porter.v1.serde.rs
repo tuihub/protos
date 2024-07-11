@@ -68,18 +68,18 @@ impl<'de> serde::Deserialize<'de> for DisableContextRequest {
                 formatter.write_str("struct librarian.porter.v1.DisableContextRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DisableContextRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DisableContextRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut context_id__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::ContextId => {
                             if context_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("contextId"));
                             }
-                            context_id__ = map.next_value()?;
+                            context_id__ = map_.next_value()?;
                         }
                     }
                 }
@@ -148,12 +148,12 @@ impl<'de> serde::Deserialize<'de> for DisableContextResponse {
                 formatter.write_str("struct librarian.porter.v1.DisableContextResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DisableContextResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DisableContextResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(DisableContextResponse {
                 })
@@ -241,25 +241,25 @@ impl<'de> serde::Deserialize<'de> for EnableContextRequest {
                 formatter.write_str("struct librarian.porter.v1.EnableContextRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EnableContextRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EnableContextRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut context_id__ = None;
                 let mut context_json__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::ContextId => {
                             if context_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("contextId"));
                             }
-                            context_id__ = map.next_value()?;
+                            context_id__ = map_.next_value()?;
                         }
                         GeneratedField::ContextJson => {
                             if context_json__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("contextJson"));
                             }
-                            context_json__ = Some(map.next_value()?);
+                            context_json__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -329,12 +329,12 @@ impl<'de> serde::Deserialize<'de> for EnableContextResponse {
                 formatter.write_str("struct librarian.porter.v1.EnableContextResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EnableContextResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EnableContextResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(EnableContextResponse {
                 })
@@ -359,6 +359,7 @@ impl serde::Serialize for EnablePorterRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.EnablePorterRequest", len)?;
         if self.sephirah_id != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("sephirahId", ToString::to_string(&self.sephirah_id).as_str())?;
         }
         if let Some(v) = self.refresh_token.as_ref() {
@@ -422,27 +423,27 @@ impl<'de> serde::Deserialize<'de> for EnablePorterRequest {
                 formatter.write_str("struct librarian.porter.v1.EnablePorterRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EnablePorterRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EnablePorterRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut sephirah_id__ = None;
                 let mut refresh_token__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::SephirahId => {
                             if sephirah_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sephirahId"));
                             }
                             sephirah_id__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::RefreshToken => {
                             if refresh_token__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("refreshToken"));
                             }
-                            refresh_token__ = map.next_value()?;
+                            refresh_token__ = map_.next_value()?;
                         }
                     }
                 }
@@ -512,12 +513,12 @@ impl<'de> serde::Deserialize<'de> for EnablePorterResponse {
                 formatter.write_str("struct librarian.porter.v1.EnablePorterResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EnablePorterResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EnablePorterResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(EnablePorterResponse {
                 })
@@ -603,25 +604,25 @@ impl<'de> serde::Deserialize<'de> for ExecFeedItemActionRequest {
                 formatter.write_str("struct librarian.porter.v1.ExecFeedItemActionRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ExecFeedItemActionRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ExecFeedItemActionRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut action__ = None;
                 let mut item__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Action => {
                             if action__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("action"));
                             }
-                            action__ = map.next_value()?;
+                            action__ = map_.next_value()?;
                         }
                         GeneratedField::Item => {
                             if item__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("item"));
                             }
-                            item__ = map.next_value()?;
+                            item__ = map_.next_value()?;
                         }
                     }
                 }
@@ -702,18 +703,18 @@ impl<'de> serde::Deserialize<'de> for ExecFeedItemActionResponse {
                 formatter.write_str("struct librarian.porter.v1.ExecFeedItemActionResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<ExecFeedItemActionResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ExecFeedItemActionResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut item__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Item => {
                             if item__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("item"));
                             }
-                            item__ = map.next_value()?;
+                            item__ = map_.next_value()?;
                         }
                     }
                 }
@@ -782,12 +783,12 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationRequest {
                 formatter.write_str("struct librarian.porter.v1.GetPorterInformationRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetPorterInformationRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetPorterInformationRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(GetPorterInformationRequest {
                 })
@@ -903,7 +904,7 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
                 formatter.write_str("struct librarian.porter.v1.GetPorterInformationResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GetPorterInformationResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetPorterInformationResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -912,37 +913,37 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
                 let mut global_name__ = None;
                 let mut feature_summary__ = None;
                 let mut context_json_schema__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Name => {
                             if name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("name"));
                             }
-                            name__ = Some(map.next_value()?);
+                            name__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Version => {
                             if version__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("version"));
                             }
-                            version__ = Some(map.next_value()?);
+                            version__ = Some(map_.next_value()?);
                         }
                         GeneratedField::GlobalName => {
                             if global_name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("globalName"));
                             }
-                            global_name__ = Some(map.next_value()?);
+                            global_name__ = Some(map_.next_value()?);
                         }
                         GeneratedField::FeatureSummary => {
                             if feature_summary__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("featureSummary"));
                             }
-                            feature_summary__ = map.next_value()?;
+                            feature_summary__ = map_.next_value()?;
                         }
                         GeneratedField::ContextJsonSchema => {
                             if context_json_schema__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("contextJsonSchema"));
                             }
-                            context_json_schema__ = map.next_value()?;
+                            context_json_schema__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1067,7 +1068,7 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                 formatter.write_str("struct librarian.porter.v1.PorterFeatureSummary")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PorterFeatureSummary, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PorterFeatureSummary, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1076,37 +1077,37 @@ impl<'de> serde::Deserialize<'de> for PorterFeatureSummary {
                 let mut feed_sources__ = None;
                 let mut notify_destinations__ = None;
                 let mut feed_item_actions__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AccountPlatforms => {
                             if account_platforms__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountPlatforms"));
                             }
-                            account_platforms__ = Some(map.next_value()?);
+                            account_platforms__ = Some(map_.next_value()?);
                         }
                         GeneratedField::AppInfoSources => {
                             if app_info_sources__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appInfoSources"));
                             }
-                            app_info_sources__ = Some(map.next_value()?);
+                            app_info_sources__ = Some(map_.next_value()?);
                         }
                         GeneratedField::FeedSources => {
                             if feed_sources__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("feedSources"));
                             }
-                            feed_sources__ = Some(map.next_value()?);
+                            feed_sources__ = Some(map_.next_value()?);
                         }
                         GeneratedField::NotifyDestinations => {
                             if notify_destinations__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("notifyDestinations"));
                             }
-                            notify_destinations__ = Some(map.next_value()?);
+                            notify_destinations__ = Some(map_.next_value()?);
                         }
                         GeneratedField::FeedItemActions => {
                             if feed_item_actions__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("feedItemActions"));
                             }
-                            feed_item_actions__ = Some(map.next_value()?);
+                            feed_item_actions__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1138,8 +1139,8 @@ impl serde::Serialize for PullAccountAppInfoRelationRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAccountAppInfoRelationRequest", len)?;
         if self.relation_type != 0 {
-            let v = super::super::v1::AccountAppRelationType::from_i32(self.relation_type)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.relation_type)))?;
+            let v = super::super::v1::AccountAppRelationType::try_from(self.relation_type)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.relation_type)))?;
             struct_ser.serialize_field("relationType", &v)?;
         }
         if let Some(v) = self.account_id.as_ref() {
@@ -1203,25 +1204,25 @@ impl<'de> serde::Deserialize<'de> for PullAccountAppInfoRelationRequest {
                 formatter.write_str("struct librarian.porter.v1.PullAccountAppInfoRelationRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullAccountAppInfoRelationRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountAppInfoRelationRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut relation_type__ = None;
                 let mut account_id__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::RelationType => {
                             if relation_type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("relationType"));
                             }
-                            relation_type__ = Some(map.next_value::<super::super::v1::AccountAppRelationType>()? as i32);
+                            relation_type__ = Some(map_.next_value::<super::super::v1::AccountAppRelationType>()? as i32);
                         }
                         GeneratedField::AccountId => {
                             if account_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountId"));
                             }
-                            account_id__ = map.next_value()?;
+                            account_id__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1303,18 +1304,18 @@ impl<'de> serde::Deserialize<'de> for PullAccountAppInfoRelationResponse {
                 formatter.write_str("struct librarian.porter.v1.PullAccountAppInfoRelationResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullAccountAppInfoRelationResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountAppInfoRelationResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_infos__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AppInfos => {
                             if app_infos__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            app_infos__ = Some(map.next_value()?);
+                            app_infos__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1395,18 +1396,18 @@ impl<'de> serde::Deserialize<'de> for PullAccountRequest {
                 formatter.write_str("struct librarian.porter.v1.PullAccountRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullAccountRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut account_id__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AccountId => {
                             if account_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("accountId"));
                             }
-                            account_id__ = map.next_value()?;
+                            account_id__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1486,18 +1487,18 @@ impl<'de> serde::Deserialize<'de> for PullAccountResponse {
                 formatter.write_str("struct librarian.porter.v1.PullAccountResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullAccountResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut account__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Account => {
                             if account__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("account"));
                             }
-                            account__ = map.next_value()?;
+                            account__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1578,18 +1579,18 @@ impl<'de> serde::Deserialize<'de> for PullAppInfoRequest {
                 formatter.write_str("struct librarian.porter.v1.PullAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullAppInfoRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_info_id__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AppInfoId => {
                             if app_info_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appInfoId"));
                             }
-                            app_info_id__ = map.next_value()?;
+                            app_info_id__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1670,18 +1671,18 @@ impl<'de> serde::Deserialize<'de> for PullAppInfoResponse {
                 formatter.write_str("struct librarian.porter.v1.PullAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullAppInfoResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_info__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AppInfo => {
                             if app_info__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appInfo"));
                             }
-                            app_info__ = map.next_value()?;
+                            app_info__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1761,18 +1762,18 @@ impl<'de> serde::Deserialize<'de> for PullFeedRequest {
                 formatter.write_str("struct librarian.porter.v1.PullFeedRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullFeedRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullFeedRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut source__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Source => {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = map.next_value()?;
+                            source__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1852,18 +1853,18 @@ impl<'de> serde::Deserialize<'de> for PullFeedResponse {
                 formatter.write_str("struct librarian.porter.v1.PullFeedResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PullFeedResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullFeedResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut data__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Data => {
                             if data__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("data"));
                             }
-                            data__ = map.next_value()?;
+                            data__ = map_.next_value()?;
                         }
                     }
                 }
@@ -1952,25 +1953,25 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemsRequest {
                 formatter.write_str("struct librarian.porter.v1.PushFeedItemsRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemsRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PushFeedItemsRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut destination__ = None;
                 let mut items__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Destination => {
                             if destination__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("destination"));
                             }
-                            destination__ = map.next_value()?;
+                            destination__ = map_.next_value()?;
                         }
                         GeneratedField::Items => {
                             if items__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("items"));
                             }
-                            items__ = Some(map.next_value()?);
+                            items__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2040,12 +2041,12 @@ impl<'de> serde::Deserialize<'de> for PushFeedItemsResponse {
                 formatter.write_str("struct librarian.porter.v1.PushFeedItemsResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<PushFeedItemsResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PushFeedItemsResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(PushFeedItemsResponse {
                 })
@@ -2122,18 +2123,18 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoRequest {
                 formatter.write_str("struct librarian.porter.v1.SearchAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfoRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SearchAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut name__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Name => {
                             if name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("name"));
                             }
-                            name__ = Some(map.next_value()?);
+                            name__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2214,18 +2215,18 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoResponse {
                 formatter.write_str("struct librarian.porter.v1.SearchAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfoResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SearchAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_infos__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AppInfos => {
                             if app_infos__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            app_infos__ = Some(map.next_value()?);
+                            app_infos__ = Some(map_.next_value()?);
                         }
                     }
                 }

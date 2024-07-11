@@ -3776,7 +3776,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
         /// Server streaming response type for the ListenServerEvent method.
-        type ListenServerEventStream: futures_core::Stream<
+        type ListenServerEventStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<
                     super::ListenServerEventResponse,
                     tonic::Status,
@@ -4003,7 +4003,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
         /// Server streaming response type for the UploadFile method.
-        type UploadFileStream: futures_core::Stream<
+        type UploadFileStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<super::UploadFileResponse, tonic::Status>,
             >
             + Send
@@ -4015,7 +4015,7 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<tonic::Streaming<super::UploadFileRequest>>,
         ) -> std::result::Result<tonic::Response<Self::UploadFileStream>, tonic::Status>;
         /// Server streaming response type for the DownloadFile method.
-        type DownloadFileStream: futures_core::Stream<
+        type DownloadFileStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<super::DownloadFileResponse, tonic::Status>,
             >
             + Send
@@ -4030,7 +4030,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
         /// Server streaming response type for the SimpleUploadFile method.
-        type SimpleUploadFileStream: futures_core::Stream<
+        type SimpleUploadFileStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<
                     super::SimpleUploadFileResponse,
                     tonic::Status,
@@ -4051,7 +4051,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Status,
         >;
         /// Server streaming response type for the SimpleDownloadFile method.
-        type SimpleDownloadFileStream: futures_core::Stream<
+        type SimpleDownloadFileStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<
                     super::SimpleDownloadFileResponse,
                     tonic::Status,
@@ -4949,7 +4949,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_server_information(request).await
+                                <T as LibrarianSephirahService>::get_server_information(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -4997,7 +5001,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).listen_server_event(request).await
+                                <T as LibrarianSephirahService>::listen_server_event(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5042,7 +5050,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::GetTokenRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).get_token(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::get_token(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -5087,7 +5098,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).refresh_token(request).await
+                                <T as LibrarianSephirahService>::refresh_token(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5133,7 +5148,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).acquire_user_token(request).await
+                                <T as LibrarianSephirahService>::acquire_user_token(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5179,7 +5198,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).register_user(request).await
+                                <T as LibrarianSephirahService>::register_user(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5225,7 +5248,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).register_device(request).await
+                                <T as LibrarianSephirahService>::register_device(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5273,7 +5300,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_registered_devices(request).await
+                                <T as LibrarianSephirahService>::list_registered_devices(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5319,7 +5350,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_user_sessions(request).await
+                                <T as LibrarianSephirahService>::list_user_sessions(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5365,7 +5400,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).delete_user_session(request).await
+                                <T as LibrarianSephirahService>::delete_user_session(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5410,7 +5449,13 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::CreateUserRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).create_user(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::create_user(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -5454,7 +5499,13 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::UpdateUserRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).update_user(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::update_user(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -5498,7 +5549,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::GetUserRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).get_user(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::get_user(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -5542,7 +5596,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::ListUsersRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).list_users(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::list_users(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -5587,7 +5644,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).link_account(request).await
+                                <T as LibrarianSephirahService>::link_account(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5633,7 +5694,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).un_link_account(request).await
+                                <T as LibrarianSephirahService>::un_link_account(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5679,7 +5744,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_link_accounts(request).await
+                                <T as LibrarianSephirahService>::list_link_accounts(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5725,7 +5794,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_porters(request).await
+                                <T as LibrarianSephirahService>::list_porters(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5773,7 +5846,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_porter_status(request).await
+                                <T as LibrarianSephirahService>::update_porter_status(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5821,7 +5898,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_porter_context(request).await
+                                <T as LibrarianSephirahService>::create_porter_context(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5869,7 +5950,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_porter_contexts(request).await
+                                <T as LibrarianSephirahService>::list_porter_contexts(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5917,7 +6002,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_porter_context(request).await
+                                <T as LibrarianSephirahService>::update_porter_context(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -5963,7 +6052,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).set_file_capacity(request).await
+                                <T as LibrarianSephirahService>::set_file_capacity(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6009,7 +6102,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_file_capacity(request).await
+                                <T as LibrarianSephirahService>::get_file_capacity(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6057,7 +6154,13 @@ pub mod librarian_sephirah_service_server {
                             >,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).upload_file(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::upload_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -6105,7 +6208,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).download_file(request).await
+                                <T as LibrarianSephirahService>::download_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6154,7 +6261,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).simple_upload_file(request).await
+                                <T as LibrarianSephirahService>::simple_upload_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6204,7 +6315,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).simple_download_file(request).await
+                                <T as LibrarianSephirahService>::simple_download_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6252,7 +6367,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).presigned_upload_file(request).await
+                                <T as LibrarianSephirahService>::presigned_upload_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6303,7 +6422,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).presigned_upload_file_status(request).await
+                                <T as LibrarianSephirahService>::presigned_upload_file_status(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6351,7 +6474,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).presigned_download_file(request).await
+                                <T as LibrarianSephirahService>::presigned_download_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6397,7 +6524,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).upload_image(request).await
+                                <T as LibrarianSephirahService>::upload_image(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6443,7 +6574,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_image(request).await
+                                <T as LibrarianSephirahService>::update_image(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6488,7 +6623,13 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::ListImagesRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).list_images(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::list_images(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -6533,7 +6674,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).search_images(request).await
+                                <T as LibrarianSephirahService>::search_images(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6578,7 +6723,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::GetImageRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).get_image(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::get_image(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -6623,7 +6771,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).download_image(request).await
+                                <T as LibrarianSephirahService>::download_image(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6669,7 +6821,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_app_info(request).await
+                                <T as LibrarianSephirahService>::create_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6715,7 +6871,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_app_info(request).await
+                                <T as LibrarianSephirahService>::update_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6761,7 +6921,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_app_infos(request).await
+                                <T as LibrarianSephirahService>::list_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6807,7 +6971,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).merge_app_infos(request).await
+                                <T as LibrarianSephirahService>::merge_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6853,7 +7021,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).pick_app_info(request).await
+                                <T as LibrarianSephirahService>::pick_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6899,7 +7071,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).sync_app_infos(request).await
+                                <T as LibrarianSephirahService>::sync_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6947,7 +7123,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).sync_account_app_infos(request).await
+                                <T as LibrarianSephirahService>::sync_account_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -6993,7 +7173,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).search_app_infos(request).await
+                                <T as LibrarianSephirahService>::search_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7039,7 +7223,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).search_new_app_infos(request).await
+                                <T as LibrarianSephirahService>::search_new_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7085,7 +7273,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_app_info(request).await
+                                <T as LibrarianSephirahService>::get_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7131,7 +7323,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_bound_app_infos(request).await
+                                <T as LibrarianSephirahService>::get_bound_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7177,7 +7373,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).purchase_app_info(request).await
+                                <T as LibrarianSephirahService>::purchase_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7225,7 +7425,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_purchased_app_infos(request).await
+                                <T as LibrarianSephirahService>::get_purchased_app_infos(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7270,7 +7474,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::CreateAppRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).create_app(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::create_app(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -7314,7 +7521,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::UpdateAppRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).update_app(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::update_app(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -7358,7 +7568,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::ListAppsRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).list_apps(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::list_apps(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -7402,7 +7615,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::AssignAppRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).assign_app(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::assign_app(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -7447,7 +7663,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).un_assign_app(request).await
+                                <T as LibrarianSephirahService>::un_assign_app(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7493,7 +7713,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).report_app_binaries(request).await
+                                <T as LibrarianSephirahService>::report_app_binaries(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7539,7 +7763,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).download_app_binary(request).await
+                                <T as LibrarianSephirahService>::download_app_binary(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7585,7 +7813,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_app_inst(request).await
+                                <T as LibrarianSephirahService>::create_app_inst(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7631,7 +7863,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_app_inst(request).await
+                                <T as LibrarianSephirahService>::update_app_inst(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7677,7 +7913,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_app_insts(request).await
+                                <T as LibrarianSephirahService>::list_app_insts(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7723,7 +7963,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).add_app_inst_run_time(request).await
+                                <T as LibrarianSephirahService>::add_app_inst_run_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7769,7 +8013,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).sum_app_inst_run_time(request).await
+                                <T as LibrarianSephirahService>::sum_app_inst_run_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7815,7 +8063,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).upload_app_save_file(request).await
+                                <T as LibrarianSephirahService>::upload_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7863,7 +8115,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).download_app_save_file(request).await
+                                <T as LibrarianSephirahService>::download_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7909,7 +8165,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_app_save_files(request).await
+                                <T as LibrarianSephirahService>::list_app_save_files(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -7955,7 +8215,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).remove_app_save_file(request).await
+                                <T as LibrarianSephirahService>::remove_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8001,7 +8265,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).pin_app_save_file(request).await
+                                <T as LibrarianSephirahService>::pin_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8047,7 +8315,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).unpin_app_save_file(request).await
+                                <T as LibrarianSephirahService>::unpin_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8095,7 +8367,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).set_app_save_file_capacity(request).await
+                                <T as LibrarianSephirahService>::set_app_save_file_capacity(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8143,7 +8419,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_app_save_file_capacity(request).await
+                                <T as LibrarianSephirahService>::get_app_save_file_capacity(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8194,7 +8474,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).set_app_save_file_capacity_default(request).await
+                                <T as LibrarianSephirahService>::set_app_save_file_capacity_default(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8245,7 +8529,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_app_save_file_capacity_default(request).await
+                                <T as LibrarianSephirahService>::get_app_save_file_capacity_default(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8293,7 +8581,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_shared_app_save(request).await
+                                <T as LibrarianSephirahService>::create_shared_app_save(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8341,7 +8633,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_shared_app_save(request).await
+                                <T as LibrarianSephirahService>::update_shared_app_save(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8389,7 +8685,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_shared_app_saves(request).await
+                                <T as LibrarianSephirahService>::list_shared_app_saves(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8437,7 +8737,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).remove_shared_app_save(request).await
+                                <T as LibrarianSephirahService>::remove_shared_app_save(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8487,7 +8791,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_shared_app_save_file(request).await
+                                <T as LibrarianSephirahService>::create_shared_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8537,7 +8845,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_shared_app_save_file(request).await
+                                <T as LibrarianSephirahService>::update_shared_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8585,7 +8897,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_shared_app_save_files(request).await
+                                <T as LibrarianSephirahService>::list_shared_app_save_files(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8635,7 +8951,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).remove_shared_app_save_file(request).await
+                                <T as LibrarianSephirahService>::remove_shared_app_save_file(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8681,7 +9001,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_app_categories(request).await
+                                <T as LibrarianSephirahService>::list_app_categories(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8727,7 +9051,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_app_category(request).await
+                                <T as LibrarianSephirahService>::create_app_category(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8773,7 +9101,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_app_category(request).await
+                                <T as LibrarianSephirahService>::update_app_category(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8819,7 +9151,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).remove_app_category(request).await
+                                <T as LibrarianSephirahService>::remove_app_category(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8867,7 +9203,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_notify_target(request).await
+                                <T as LibrarianSephirahService>::create_notify_target(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8915,7 +9255,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_notify_target(request).await
+                                <T as LibrarianSephirahService>::update_notify_target(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -8961,7 +9305,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_notify_targets(request).await
+                                <T as LibrarianSephirahService>::list_notify_targets(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9007,7 +9355,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_notify_flow(request).await
+                                <T as LibrarianSephirahService>::create_notify_flow(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9053,7 +9405,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_notify_flow(request).await
+                                <T as LibrarianSephirahService>::update_notify_flow(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9099,7 +9455,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_notify_flows(request).await
+                                <T as LibrarianSephirahService>::list_notify_flows(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9149,7 +9509,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_system_notifications(request).await
+                                <T as LibrarianSephirahService>::list_system_notifications(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9199,7 +9563,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_system_notification(request).await
+                                <T as LibrarianSephirahService>::update_system_notification(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9245,7 +9613,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_feed_config(request).await
+                                <T as LibrarianSephirahService>::create_feed_config(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9291,7 +9663,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_feed_config(request).await
+                                <T as LibrarianSephirahService>::update_feed_config(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9337,7 +9713,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_configs(request).await
+                                <T as LibrarianSephirahService>::list_feed_configs(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9385,7 +9765,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_feed_action_set(request).await
+                                <T as LibrarianSephirahService>::create_feed_action_set(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9433,7 +9817,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_feed_action_set(request).await
+                                <T as LibrarianSephirahService>::update_feed_action_set(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9481,7 +9869,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_action_sets(request).await
+                                <T as LibrarianSephirahService>::list_feed_action_sets(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9529,7 +9921,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_categories(request).await
+                                <T as LibrarianSephirahService>::list_feed_categories(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9575,7 +9971,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_platforms(request).await
+                                <T as LibrarianSephirahService>::list_feed_platforms(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9621,7 +10021,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_items(request).await
+                                <T as LibrarianSephirahService>::list_feed_items(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9667,7 +10071,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).group_feed_items(request).await
+                                <T as LibrarianSephirahService>::group_feed_items(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9713,7 +10121,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_feed_item(request).await
+                                <T as LibrarianSephirahService>::get_feed_item(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9759,7 +10171,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_batch_feed_items(request).await
+                                <T as LibrarianSephirahService>::get_batch_feed_items(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9805,7 +10221,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).read_feed_item(request).await
+                                <T as LibrarianSephirahService>::read_feed_item(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9855,7 +10275,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_feed_item_collection(request).await
+                                <T as LibrarianSephirahService>::create_feed_item_collection(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9905,7 +10329,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_feed_item_collection(request).await
+                                <T as LibrarianSephirahService>::update_feed_item_collection(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -9955,7 +10383,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_item_collections(request).await
+                                <T as LibrarianSephirahService>::list_feed_item_collections(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -10005,7 +10437,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).add_feed_item_to_collection(request).await
+                                <T as LibrarianSephirahService>::add_feed_item_to_collection(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -10056,7 +10492,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).remove_feed_item_from_collection(request).await
+                                <T as LibrarianSephirahService>::remove_feed_item_from_collection(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -10107,7 +10547,11 @@ pub mod librarian_sephirah_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).list_feed_items_in_collection(request).await
+                                <T as LibrarianSephirahService>::list_feed_items_in_collection(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -10152,7 +10596,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::CreateTagRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).create_tag(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::create_tag(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -10196,7 +10643,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::UpdateTagRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).update_tag(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::update_tag(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -10240,7 +10690,10 @@ pub mod librarian_sephirah_service_server {
                             request: tonic::Request<super::ListTagsRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).list_tags(request).await };
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::list_tags(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }

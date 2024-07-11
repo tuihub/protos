@@ -85,32 +85,32 @@ impl<'de> serde::Deserialize<'de> for Constraint {
                 formatter.write_str("struct buf.validate.r#priv.Constraint")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Constraint, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Constraint, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
                 let mut message__ = None;
                 let mut expression__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Message => {
                             if message__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("message"));
                             }
-                            message__ = Some(map.next_value()?);
+                            message__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Expression => {
                             if expression__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("expression"));
                             }
-                            expression__ = Some(map.next_value()?);
+                            expression__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -192,18 +192,18 @@ impl<'de> serde::Deserialize<'de> for FieldConstraints {
                 formatter.write_str("struct buf.validate.r#priv.FieldConstraints")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FieldConstraints, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FieldConstraints, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut cel__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Cel => {
                             if cel__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("cel"));
                             }
-                            cel__ = Some(map.next_value()?);
+                            cel__ = Some(map_.next_value()?);
                         }
                     }
                 }

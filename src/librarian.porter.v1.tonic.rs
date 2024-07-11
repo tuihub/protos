@@ -603,7 +603,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).get_porter_information(request).await
+                                <T as LibrarianPorterService>::get_porter_information(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -649,7 +653,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).enable_porter(request).await
+                                <T as LibrarianPorterService>::enable_porter(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -695,7 +703,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).enable_context(request).await
+                                <T as LibrarianPorterService>::enable_context(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -741,7 +753,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).disable_context(request).await
+                                <T as LibrarianPorterService>::disable_context(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -787,7 +803,8 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).pull_account(request).await
+                                <T as LibrarianPorterService>::pull_account(&inner, request)
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -833,7 +850,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).pull_app_info(request).await
+                                <T as LibrarianPorterService>::pull_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -884,7 +905,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).pull_account_app_info_relation(request).await
+                                <T as LibrarianPorterService>::pull_account_app_info_relation(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -930,7 +955,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).search_app_info(request).await
+                                <T as LibrarianPorterService>::search_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -975,7 +1004,10 @@ pub mod librarian_porter_service_server {
                             request: tonic::Request<super::PullFeedRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).pull_feed(request).await };
+                            let fut = async move {
+                                <T as LibrarianPorterService>::pull_feed(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -1020,7 +1052,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).push_feed_items(request).await
+                                <T as LibrarianPorterService>::push_feed_items(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -1066,7 +1102,11 @@ pub mod librarian_porter_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).exec_feed_item_action(request).await
+                                <T as LibrarianPorterService>::exec_feed_item_action(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }

@@ -271,7 +271,11 @@ pub mod librarian_miner_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).recognize_image_binary(request).await
+                                <T as LibrarianMinerService>::recognize_image_binary(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -317,7 +321,11 @@ pub mod librarian_miner_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).recognize_image_url(request).await
+                                <T as LibrarianMinerService>::recognize_image_url(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }

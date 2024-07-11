@@ -77,25 +77,25 @@ impl<'de> serde::Deserialize<'de> for AnyRules {
                 formatter.write_str("struct buf.validate.AnyRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<AnyRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<AnyRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::In => {
                             if r#in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
-                            r#in__ = Some(map.next_value()?);
+                            r#in__ = Some(map_.next_value()?);
                         }
                         GeneratedField::NotIn => {
                             if not_in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
-                            not_in__ = Some(map.next_value()?);
+                            not_in__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -176,18 +176,18 @@ impl<'de> serde::Deserialize<'de> for BoolRules {
                 formatter.write_str("struct buf.validate.BoolRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<BoolRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<BoolRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut r#const__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
-                            r#const__ = map.next_value()?;
+                            r#const__ = map_.next_value()?;
                         }
                     }
                 }
@@ -242,27 +242,34 @@ impl serde::Serialize for BytesRules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.BytesRules", len)?;
         if let Some(v) = self.r#const.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("const", pbjson::private::base64::encode(&v).as_str())?;
         }
         if let Some(v) = self.len.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("len", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.min_len.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("minLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_len.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.pattern.as_ref() {
             struct_ser.serialize_field("pattern", v)?;
         }
         if let Some(v) = self.prefix.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("prefix", pbjson::private::base64::encode(&v).as_str())?;
         }
         if let Some(v) = self.suffix.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("suffix", pbjson::private::base64::encode(&v).as_str())?;
         }
         if let Some(v) = self.contains.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("contains", pbjson::private::base64::encode(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -376,7 +383,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                 formatter.write_str("struct buf.validate.BytesRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<BytesRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<BytesRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -391,14 +398,14 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                 let mut r#in__ = None;
                 let mut not_in__ = None;
                 let mut well_known__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Len => {
@@ -406,7 +413,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("len"));
                             }
                             len__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MinLen => {
@@ -414,7 +421,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("minLen"));
                             }
                             min_len__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MaxLen => {
@@ -422,21 +429,21 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("maxLen"));
                             }
                             max_len__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Pattern => {
                             if pattern__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("pattern"));
                             }
-                            pattern__ = map.next_value()?;
+                            pattern__ = map_.next_value()?;
                         }
                         GeneratedField::Prefix => {
                             if prefix__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("prefix"));
                             }
                             prefix__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Suffix => {
@@ -444,7 +451,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("suffix"));
                             }
                             suffix__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Contains => {
@@ -452,7 +459,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("contains"));
                             }
                             contains__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::BytesDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -460,7 +467,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::BytesDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::BytesDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -469,7 +476,7 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::BytesDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::BytesDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -477,19 +484,19 @@ impl<'de> serde::Deserialize<'de> for BytesRules {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ip"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(bytes_rules::WellKnown::Ip);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(bytes_rules::WellKnown::Ip);
                         }
                         GeneratedField::Ipv4 => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ipv4"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(bytes_rules::WellKnown::Ipv4);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(bytes_rules::WellKnown::Ipv4);
                         }
                         GeneratedField::Ipv6 => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ipv6"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(bytes_rules::WellKnown::Ipv6);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(bytes_rules::WellKnown::Ipv6);
                         }
                     }
                 }
@@ -597,32 +604,32 @@ impl<'de> serde::Deserialize<'de> for Constraint {
                 formatter.write_str("struct buf.validate.Constraint")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Constraint, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Constraint, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
                 let mut message__ = None;
                 let mut expression__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = Some(map.next_value()?);
+                            id__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Message => {
                             if message__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("message"));
                             }
-                            message__ = Some(map.next_value()?);
+                            message__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Expression => {
                             if expression__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("expression"));
                             }
-                            expression__ = Some(map.next_value()?);
+                            expression__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -759,7 +766,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                 formatter.write_str("struct buf.validate.DoubleRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DoubleRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DoubleRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -770,14 +777,14 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -785,7 +792,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -793,7 +800,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -801,7 +808,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -809,7 +816,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -817,7 +824,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -826,7 +833,7 @@ impl<'de> serde::Deserialize<'de> for DoubleRules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -969,7 +976,7 @@ impl<'de> serde::Deserialize<'de> for DurationRules {
                 formatter.write_str("struct buf.validate.DurationRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DurationRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DurationRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -980,49 +987,49 @@ impl<'de> serde::Deserialize<'de> for DurationRules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
-                            r#const__ = map.next_value()?;
+                            r#const__ = map_.next_value()?;
                         }
                         GeneratedField::Lt => {
                             if lt__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
-                            lt__ = map.next_value()?;
+                            lt__ = map_.next_value()?;
                         }
                         GeneratedField::Lte => {
                             if lte__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
-                            lte__ = map.next_value()?;
+                            lte__ = map_.next_value()?;
                         }
                         GeneratedField::Gt => {
                             if gt__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
-                            gt__ = map.next_value()?;
+                            gt__ = map_.next_value()?;
                         }
                         GeneratedField::Gte => {
                             if gte__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
-                            gte__ = map.next_value()?;
+                            gte__ = map_.next_value()?;
                         }
                         GeneratedField::In => {
                             if r#in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
-                            r#in__ = Some(map.next_value()?);
+                            r#in__ = Some(map_.next_value()?);
                         }
                         GeneratedField::NotIn => {
                             if not_in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
-                            not_in__ = Some(map.next_value()?);
+                            not_in__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1137,7 +1144,7 @@ impl<'de> serde::Deserialize<'de> for EnumRules {
                 formatter.write_str("struct buf.validate.EnumRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EnumRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EnumRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1145,28 +1152,28 @@ impl<'de> serde::Deserialize<'de> for EnumRules {
                 let mut defined_only__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::DefinedOnly => {
                             if defined_only__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("definedOnly"));
                             }
-                            defined_only__ = map.next_value()?;
+                            defined_only__ = map_.next_value()?;
                         }
                         GeneratedField::In => {
                             if r#in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -1175,7 +1182,7 @@ impl<'de> serde::Deserialize<'de> for EnumRules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -1421,7 +1428,7 @@ impl<'de> serde::Deserialize<'de> for FieldConstraints {
                 formatter.write_str("struct buf.validate.FieldConstraints")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FieldConstraints, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FieldConstraints, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1430,177 +1437,177 @@ impl<'de> serde::Deserialize<'de> for FieldConstraints {
                 let mut required__ = None;
                 let mut ignore_empty__ = None;
                 let mut r#type__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Cel => {
                             if cel__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("cel"));
                             }
-                            cel__ = Some(map.next_value()?);
+                            cel__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Skipped => {
                             if skipped__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("skipped"));
                             }
-                            skipped__ = Some(map.next_value()?);
+                            skipped__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Required => {
                             if required__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("required"));
                             }
-                            required__ = Some(map.next_value()?);
+                            required__ = Some(map_.next_value()?);
                         }
                         GeneratedField::IgnoreEmpty => {
                             if ignore_empty__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ignoreEmpty"));
                             }
-                            ignore_empty__ = Some(map.next_value()?);
+                            ignore_empty__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Float => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("float"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Float)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Float)
 ;
                         }
                         GeneratedField::Double => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("double"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Double)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Double)
 ;
                         }
                         GeneratedField::Int32 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("int32"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Int32)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Int32)
 ;
                         }
                         GeneratedField::Int64 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("int64"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Int64)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Int64)
 ;
                         }
                         GeneratedField::Uint32 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("uint32"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Uint32)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Uint32)
 ;
                         }
                         GeneratedField::Uint64 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("uint64"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Uint64)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Uint64)
 ;
                         }
                         GeneratedField::Sint32 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sint32"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sint32)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sint32)
 ;
                         }
                         GeneratedField::Sint64 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sint64"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sint64)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sint64)
 ;
                         }
                         GeneratedField::Fixed32 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fixed32"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Fixed32)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Fixed32)
 ;
                         }
                         GeneratedField::Fixed64 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fixed64"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Fixed64)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Fixed64)
 ;
                         }
                         GeneratedField::Sfixed32 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sfixed32"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sfixed32)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sfixed32)
 ;
                         }
                         GeneratedField::Sfixed64 => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sfixed64"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sfixed64)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Sfixed64)
 ;
                         }
                         GeneratedField::Bool => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("bool"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Bool)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Bool)
 ;
                         }
                         GeneratedField::String => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("string"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::String)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::String)
 ;
                         }
                         GeneratedField::Bytes => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("bytes"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Bytes)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Bytes)
 ;
                         }
                         GeneratedField::Enum => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("enum"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Enum)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Enum)
 ;
                         }
                         GeneratedField::Repeated => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("repeated"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Repeated)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Repeated)
 ;
                         }
                         GeneratedField::Map => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("map"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Map)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Map)
 ;
                         }
                         GeneratedField::Any => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("any"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Any)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Any)
 ;
                         }
                         GeneratedField::Duration => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("duration"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Duration)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Duration)
 ;
                         }
                         GeneratedField::Timestamp => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("timestamp"));
                             }
-                            r#type__ = map.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Timestamp)
+                            r#type__ = map_.next_value::<::std::option::Option<_>>()?.map(field_constraints::Type::Timestamp)
 ;
                         }
                     }
@@ -1740,7 +1747,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                 formatter.write_str("struct buf.validate.Fixed32Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Fixed32Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Fixed32Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1751,14 +1758,14 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -1766,7 +1773,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -1774,7 +1781,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -1782,7 +1789,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -1790,7 +1797,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -1798,7 +1805,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -1807,7 +1814,7 @@ impl<'de> serde::Deserialize<'de> for Fixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -1858,18 +1865,23 @@ impl serde::Serialize for Fixed64Rules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.Fixed64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -1950,7 +1962,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                 formatter.write_str("struct buf.validate.Fixed64Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Fixed64Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Fixed64Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1961,14 +1973,14 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -1976,7 +1988,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -1984,7 +1996,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -1992,7 +2004,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -2000,7 +2012,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -2008,7 +2020,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2017,7 +2029,7 @@ impl<'de> serde::Deserialize<'de> for Fixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2160,7 +2172,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                 formatter.write_str("struct buf.validate.FloatRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FloatRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FloatRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -2171,14 +2183,14 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -2186,7 +2198,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -2194,7 +2206,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -2202,7 +2214,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -2210,7 +2222,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -2218,7 +2230,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2227,7 +2239,7 @@ impl<'de> serde::Deserialize<'de> for FloatRules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2370,7 +2382,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                 formatter.write_str("struct buf.validate.Int32Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Int32Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Int32Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -2381,14 +2393,14 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -2396,7 +2408,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -2404,7 +2416,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -2412,7 +2424,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -2420,7 +2432,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -2428,7 +2440,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2437,7 +2449,7 @@ impl<'de> serde::Deserialize<'de> for Int32Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2488,18 +2500,23 @@ impl serde::Serialize for Int64Rules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.Int64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -2580,7 +2597,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                 formatter.write_str("struct buf.validate.Int64Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Int64Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Int64Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -2591,14 +2608,14 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -2606,7 +2623,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -2614,7 +2631,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -2622,7 +2639,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -2630,7 +2647,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -2638,7 +2655,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2647,7 +2664,7 @@ impl<'de> serde::Deserialize<'de> for Int64Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -2706,10 +2723,9 @@ impl<'de> serde::Deserialize<'de> for KnownRegex {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(KnownRegex::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -2719,10 +2735,9 @@ impl<'de> serde::Deserialize<'de> for KnownRegex {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(KnownRegex::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -2765,9 +2780,11 @@ impl serde::Serialize for MapRules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.MapRules", len)?;
         if let Some(v) = self.min_pairs.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("minPairs", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_pairs.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxPairs", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.keys.as_ref() {
@@ -2840,7 +2857,7 @@ impl<'de> serde::Deserialize<'de> for MapRules {
                 formatter.write_str("struct buf.validate.MapRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<MapRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<MapRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -2848,14 +2865,14 @@ impl<'de> serde::Deserialize<'de> for MapRules {
                 let mut max_pairs__ = None;
                 let mut keys__ = None;
                 let mut values__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::MinPairs => {
                             if min_pairs__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("minPairs"));
                             }
                             min_pairs__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MaxPairs => {
@@ -2863,20 +2880,20 @@ impl<'de> serde::Deserialize<'de> for MapRules {
                                 return Err(serde::de::Error::duplicate_field("maxPairs"));
                             }
                             max_pairs__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Keys => {
                             if keys__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("keys"));
                             }
-                            keys__ = map.next_value()?;
+                            keys__ = map_.next_value()?;
                         }
                         GeneratedField::Values => {
                             if values__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("values"));
                             }
-                            values__ = map.next_value()?;
+                            values__ = map_.next_value()?;
                         }
                     }
                 }
@@ -2968,25 +2985,25 @@ impl<'de> serde::Deserialize<'de> for MessageConstraints {
                 formatter.write_str("struct buf.validate.MessageConstraints")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<MessageConstraints, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<MessageConstraints, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut disabled__ = None;
                 let mut cel__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Disabled => {
                             if disabled__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("disabled"));
                             }
-                            disabled__ = map.next_value()?;
+                            disabled__ = map_.next_value()?;
                         }
                         GeneratedField::Cel => {
                             if cel__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("cel"));
                             }
-                            cel__ = Some(map.next_value()?);
+                            cel__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -3067,18 +3084,18 @@ impl<'de> serde::Deserialize<'de> for OneofConstraints {
                 formatter.write_str("struct buf.validate.OneofConstraints")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<OneofConstraints, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<OneofConstraints, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut required__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Required => {
                             if required__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("required"));
                             }
-                            required__ = map.next_value()?;
+                            required__ = map_.next_value()?;
                         }
                     }
                 }
@@ -3112,9 +3129,11 @@ impl serde::Serialize for RepeatedRules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.RepeatedRules", len)?;
         if let Some(v) = self.min_items.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("minItems", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_items.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxItems", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.unique.as_ref() {
@@ -3187,7 +3206,7 @@ impl<'de> serde::Deserialize<'de> for RepeatedRules {
                 formatter.write_str("struct buf.validate.RepeatedRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RepeatedRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RepeatedRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -3195,14 +3214,14 @@ impl<'de> serde::Deserialize<'de> for RepeatedRules {
                 let mut max_items__ = None;
                 let mut unique__ = None;
                 let mut items__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::MinItems => {
                             if min_items__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("minItems"));
                             }
                             min_items__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MaxItems => {
@@ -3210,20 +3229,20 @@ impl<'de> serde::Deserialize<'de> for RepeatedRules {
                                 return Err(serde::de::Error::duplicate_field("maxItems"));
                             }
                             max_items__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Unique => {
                             if unique__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("unique"));
                             }
-                            unique__ = map.next_value()?;
+                            unique__ = map_.next_value()?;
                         }
                         GeneratedField::Items => {
                             if items__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("items"));
                             }
-                            items__ = map.next_value()?;
+                            items__ = map_.next_value()?;
                         }
                     }
                 }
@@ -3361,7 +3380,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                 formatter.write_str("struct buf.validate.SFixed32Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SFixed32Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SFixed32Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -3372,14 +3391,14 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -3387,7 +3406,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -3395,7 +3414,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -3403,7 +3422,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -3411,7 +3430,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -3419,7 +3438,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -3428,7 +3447,7 @@ impl<'de> serde::Deserialize<'de> for SFixed32Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -3479,18 +3498,23 @@ impl serde::Serialize for SFixed64Rules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.SFixed64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -3571,7 +3595,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                 formatter.write_str("struct buf.validate.SFixed64Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SFixed64Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SFixed64Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -3582,14 +3606,14 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -3597,7 +3621,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -3605,7 +3629,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -3613,7 +3637,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -3621,7 +3645,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -3629,7 +3653,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -3638,7 +3662,7 @@ impl<'de> serde::Deserialize<'de> for SFixed64Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -3781,7 +3805,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                 formatter.write_str("struct buf.validate.SInt32Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SInt32Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SInt32Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -3792,14 +3816,14 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -3807,7 +3831,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -3815,7 +3839,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -3823,7 +3847,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -3831,7 +3855,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -3839,7 +3863,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -3848,7 +3872,7 @@ impl<'de> serde::Deserialize<'de> for SInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -3899,18 +3923,23 @@ impl serde::Serialize for SInt64Rules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.SInt64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -3991,7 +4020,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                 formatter.write_str("struct buf.validate.SInt64Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SInt64Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SInt64Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -4002,14 +4031,14 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -4017,7 +4046,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -4025,7 +4054,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -4033,7 +4062,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -4041,7 +4070,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -4049,7 +4078,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -4058,7 +4087,7 @@ impl<'de> serde::Deserialize<'de> for SInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -4139,21 +4168,27 @@ impl serde::Serialize for StringRules {
             struct_ser.serialize_field("const", v)?;
         }
         if let Some(v) = self.len.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("len", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.min_len.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("minLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_len.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.len_bytes.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lenBytes", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.min_bytes.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("minBytes", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_bytes.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxBytes", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.pattern.as_ref() {
@@ -4210,8 +4245,8 @@ impl serde::Serialize for StringRules {
                     struct_ser.serialize_field("uuid", v)?;
                 }
                 string_rules::WellKnown::WellKnownRegex(v) => {
-                    let v = KnownRegex::from_i32(*v)
-                        .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", *v)))?;
+                    let v = KnownRegex::try_from(*v)
+                        .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", *v)))?;
                     struct_ser.serialize_field("wellKnownRegex", &v)?;
                 }
             }
@@ -4350,7 +4385,7 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                 formatter.write_str("struct buf.validate.StringRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<StringRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<StringRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -4370,20 +4405,20 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                 let mut not_in__ = None;
                 let mut strict__ = None;
                 let mut well_known__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
-                            r#const__ = map.next_value()?;
+                            r#const__ = map_.next_value()?;
                         }
                         GeneratedField::Len => {
                             if len__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("len"));
                             }
                             len__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MinLen => {
@@ -4391,7 +4426,7 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                                 return Err(serde::de::Error::duplicate_field("minLen"));
                             }
                             min_len__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MaxLen => {
@@ -4399,7 +4434,7 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                                 return Err(serde::de::Error::duplicate_field("maxLen"));
                             }
                             max_len__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::LenBytes => {
@@ -4407,7 +4442,7 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                                 return Err(serde::de::Error::duplicate_field("lenBytes"));
                             }
                             len_bytes__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MinBytes => {
@@ -4415,7 +4450,7 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                                 return Err(serde::de::Error::duplicate_field("minBytes"));
                             }
                             min_bytes__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::MaxBytes => {
@@ -4423,116 +4458,116 @@ impl<'de> serde::Deserialize<'de> for StringRules {
                                 return Err(serde::de::Error::duplicate_field("maxBytes"));
                             }
                             max_bytes__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Pattern => {
                             if pattern__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("pattern"));
                             }
-                            pattern__ = map.next_value()?;
+                            pattern__ = map_.next_value()?;
                         }
                         GeneratedField::Prefix => {
                             if prefix__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("prefix"));
                             }
-                            prefix__ = map.next_value()?;
+                            prefix__ = map_.next_value()?;
                         }
                         GeneratedField::Suffix => {
                             if suffix__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("suffix"));
                             }
-                            suffix__ = map.next_value()?;
+                            suffix__ = map_.next_value()?;
                         }
                         GeneratedField::Contains => {
                             if contains__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("contains"));
                             }
-                            contains__ = map.next_value()?;
+                            contains__ = map_.next_value()?;
                         }
                         GeneratedField::NotContains => {
                             if not_contains__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("notContains"));
                             }
-                            not_contains__ = map.next_value()?;
+                            not_contains__ = map_.next_value()?;
                         }
                         GeneratedField::In => {
                             if r#in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
-                            r#in__ = Some(map.next_value()?);
+                            r#in__ = Some(map_.next_value()?);
                         }
                         GeneratedField::NotIn => {
                             if not_in__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
-                            not_in__ = Some(map.next_value()?);
+                            not_in__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Strict => {
                             if strict__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("strict"));
                             }
-                            strict__ = map.next_value()?;
+                            strict__ = map_.next_value()?;
                         }
                         GeneratedField::Email => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("email"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Email);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Email);
                         }
                         GeneratedField::Hostname => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("hostname"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Hostname);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Hostname);
                         }
                         GeneratedField::Ip => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ip"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Ip);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Ip);
                         }
                         GeneratedField::Ipv4 => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ipv4"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Ipv4);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Ipv4);
                         }
                         GeneratedField::Ipv6 => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ipv6"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Ipv6);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Ipv6);
                         }
                         GeneratedField::Uri => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("uri"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Uri);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Uri);
                         }
                         GeneratedField::UriRef => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("uriRef"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::UriRef);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::UriRef);
                         }
                         GeneratedField::Address => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("address"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Address);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Address);
                         }
                         GeneratedField::Uuid => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("uuid"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Uuid);
+                            well_known__ = map_.next_value::<::std::option::Option<_>>()?.map(string_rules::WellKnown::Uuid);
                         }
                         GeneratedField::WellKnownRegex => {
                             if well_known__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("wellKnownRegex"));
                             }
-                            well_known__ = map.next_value::<::std::option::Option<KnownRegex>>()?.map(|x| string_rules::WellKnown::WellKnownRegex(x as i32));
+                            well_known__ = map_.next_value::<::std::option::Option<KnownRegex>>()?.map(|x| string_rules::WellKnown::WellKnownRegex(x as i32));
                         }
                     }
                 }
@@ -4692,7 +4727,7 @@ impl<'de> serde::Deserialize<'de> for TimestampRules {
                 formatter.write_str("struct buf.validate.TimestampRules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<TimestampRules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<TimestampRules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -4704,55 +4739,55 @@ impl<'de> serde::Deserialize<'de> for TimestampRules {
                 let mut lt_now__ = None;
                 let mut gt_now__ = None;
                 let mut within__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
-                            r#const__ = map.next_value()?;
+                            r#const__ = map_.next_value()?;
                         }
                         GeneratedField::Lt => {
                             if lt__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
-                            lt__ = map.next_value()?;
+                            lt__ = map_.next_value()?;
                         }
                         GeneratedField::Lte => {
                             if lte__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
-                            lte__ = map.next_value()?;
+                            lte__ = map_.next_value()?;
                         }
                         GeneratedField::Gt => {
                             if gt__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
-                            gt__ = map.next_value()?;
+                            gt__ = map_.next_value()?;
                         }
                         GeneratedField::Gte => {
                             if gte__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
-                            gte__ = map.next_value()?;
+                            gte__ = map_.next_value()?;
                         }
                         GeneratedField::LtNow => {
                             if lt_now__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ltNow"));
                             }
-                            lt_now__ = map.next_value()?;
+                            lt_now__ = map_.next_value()?;
                         }
                         GeneratedField::GtNow => {
                             if gt_now__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("gtNow"));
                             }
-                            gt_now__ = map.next_value()?;
+                            gt_now__ = map_.next_value()?;
                         }
                         GeneratedField::Within => {
                             if within__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("within"));
                             }
-                            within__ = map.next_value()?;
+                            within__ = map_.next_value()?;
                         }
                     }
                 }
@@ -4894,7 +4929,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                 formatter.write_str("struct buf.validate.UInt32Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UInt32Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<UInt32Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -4905,14 +4940,14 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -4920,7 +4955,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -4928,7 +4963,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -4936,7 +4971,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -4944,7 +4979,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -4952,7 +4987,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -4961,7 +4996,7 @@ impl<'de> serde::Deserialize<'de> for UInt32Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -5012,18 +5047,23 @@ impl serde::Serialize for UInt64Rules {
         }
         let mut struct_ser = serializer.serialize_struct("buf.validate.UInt64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -5104,7 +5144,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                 formatter.write_str("struct buf.validate.UInt64Rules")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UInt64Rules, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<UInt64Rules, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -5115,14 +5155,14 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                 let mut gte__ = None;
                 let mut r#in__ = None;
                 let mut not_in__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Const => {
                             if r#const__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("const"));
                             }
                             r#const__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lt => {
@@ -5130,7 +5170,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("lt"));
                             }
                             lt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Lte => {
@@ -5138,7 +5178,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("lte"));
                             }
                             lte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gt => {
@@ -5146,7 +5186,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("gt"));
                             }
                             gt__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::Gte => {
@@ -5154,7 +5194,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("gte"));
                             }
                             gte__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                         GeneratedField::In => {
@@ -5162,7 +5202,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("in"));
                             }
                             r#in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -5171,7 +5211,7 @@ impl<'de> serde::Deserialize<'de> for UInt64Rules {
                                 return Err(serde::de::Error::duplicate_field("notIn"));
                             }
                             not_in__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -5279,32 +5319,32 @@ impl<'de> serde::Deserialize<'de> for Violation {
                 formatter.write_str("struct buf.validate.Violation")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Violation, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Violation, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut field_path__ = None;
                 let mut constraint_id__ = None;
                 let mut message__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::FieldPath => {
                             if field_path__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("fieldPath"));
                             }
-                            field_path__ = Some(map.next_value()?);
+                            field_path__ = Some(map_.next_value()?);
                         }
                         GeneratedField::ConstraintId => {
                             if constraint_id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("constraintId"));
                             }
-                            constraint_id__ = Some(map.next_value()?);
+                            constraint_id__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Message => {
                             if message__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("message"));
                             }
-                            message__ = Some(map.next_value()?);
+                            message__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -5386,18 +5426,18 @@ impl<'de> serde::Deserialize<'de> for Violations {
                 formatter.write_str("struct buf.validate.Violations")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Violations, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Violations, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut violations__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Violations => {
                             if violations__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("violations"));
                             }
-                            violations__ = Some(map.next_value()?);
+                            violations__ = Some(map_.next_value()?);
                         }
                     }
                 }

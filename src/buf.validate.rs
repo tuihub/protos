@@ -122,7 +122,7 @@ pub struct OneofConstraints {
     /// message MyMessage {
     ///   oneof value {
     ///     // The field `a` or `b` must be set.
-    ///     option [(buf.validate.oneof).required = true]
+    ///     option \[(buf.validate.oneof).required = true\]
     ///     optional string a = 1;
     ///     optional string b = 2;
     ///   }
@@ -159,7 +159,7 @@ pub struct FieldConstraints {
     /// ```proto
     /// message MyMessage {
     ///   // The field `value` must not be set.
-    ///   optional MyOtherMessage value = 1 [(buf.validate.field).skipped = true];
+    ///   optional MyOtherMessage value = 1 \[(buf.validate.field).skipped = true\];
     /// }
     /// ```
     #[prost(bool, tag="24")]
@@ -171,7 +171,7 @@ pub struct FieldConstraints {
     /// ```proto
     /// message MyMessage {
     ///   // The field `value` must be set.
-    ///   optional MyOtherMessage value = 1 [(buf.validate.field).required = true];
+    ///   optional MyOtherMessage value = 1 \[(buf.validate.field).required = true\];
     /// }
     /// ```
     #[prost(bool, tag="25")]
@@ -183,7 +183,7 @@ pub struct FieldConstraints {
     /// ```proto
     /// message MyRepeated {
     ///   // The field `value` validation rules should be evaluated only if the field isn't empty.
-    ///   repeated string value = 1 [(buf.validate.field).ignore_empty = true];
+    ///   repeated string value = 1 \[(buf.validate.field).ignore_empty = true\];
     /// }
     /// ```
     #[prost(bool, tag="26")]
@@ -254,7 +254,7 @@ pub struct FloatRules {
     /// ```proto
     /// message MyFloat {
     ///   // value must equal 42.0
-    ///    float value = 1 [(buf.validate.field).float.const = 42.0];
+    ///    float value = 1 \[(buf.validate.field).float.const = 42.0\];
     /// }
     /// ```
     #[prost(float, optional, tag="1")]
@@ -266,7 +266,7 @@ pub struct FloatRules {
     /// ```proto
     /// message MyFloat {
     ///   // value must be less than 10.0
-    ///    float value = 1 [(buf.validate.field).float.lt = 10.0];
+    ///    float value = 1 \[(buf.validate.field).float.lt = 10.0\];
     /// }
     /// ```
     #[prost(float, optional, tag="2")]
@@ -278,7 +278,7 @@ pub struct FloatRules {
     /// ```proto
     /// message MyFloat {
     ///   // value must be less than or equal to 10.0
-    ///    float value = 1 [(buf.validate.field).float.lte = 10.0];
+    ///    float value = 1 \[(buf.validate.field).float.lte = 10.0\];
     /// }
     /// ```
     #[prost(float, optional, tag="3")]
@@ -292,13 +292,13 @@ pub struct FloatRules {
     /// ```proto
     /// message MyFloat {
     ///   // value must be greater than 5.0 \[float.gt\]
-    ///   float value = 1 [(buf.validate.field).float.gt = 5.0];
+    ///   float value = 1 \[(buf.validate.field).float.gt = 5.0\];
     ///
     ///   // value must be greater than 5 and less than 10.0 \[float.gt_lt\]
-    ///   float other_value = 2 [(buf.validate.field).float = { gt: 5.0, lt: 10.0 }];
+    ///   float other_value = 2 \[(buf.validate.field).float = { gt: 5.0, lt: 10.0 }\];
     ///
     ///   // value must be greater than 10 or less than 5.0 \[float.gt_lt_exclusive\]
-    ///   float another_value = 3 [(buf.validate.field).float = { gt: 10.0, lt: 5.0 }];
+    ///   float another_value = 3 \[(buf.validate.field).float = { gt: 10.0, lt: 5.0 }\];
     /// }
     /// ```
     #[prost(float, optional, tag="4")]
@@ -312,13 +312,13 @@ pub struct FloatRules {
     /// ```proto
     /// message MyFloat {
     ///   // value must be greater than or equal to 5.0 \[float.gte\]
-    ///   float value = 1 [(buf.validate.field).float.gte = 5.0];
+    ///   float value = 1 \[(buf.validate.field).float.gte = 5.0\];
     ///
     ///   // value must be greater than or equal to 5.0 and less than 10.0 \[float.gte_lt\]
-    ///   float other_value = 2 [(buf.validate.field).float = { gte: 5.0, lt: 10.0 }];
+    ///   float other_value = 2 \[(buf.validate.field).float = { gte: 5.0, lt: 10.0 }\];
     ///
     ///   // value must be greater than or equal to 10.0 or less than 5.0 \[float.gte_lt_exclusive\]
-    ///   float another_value = 3 [(buf.validate.field).float = { gte: 10.0, lt: 5.0 }];
+    ///   float another_value = 3 \[(buf.validate.field).float = { gte: 10.0, lt: 5.0 }\];
     /// }
     /// ```
     #[prost(float, optional, tag="5")]
@@ -329,8 +329,8 @@ pub struct FloatRules {
     ///
     /// ```proto
     /// message MyFloat {
-    ///   // value must be in list [1.0, 2.0, 3.0]
-    ///   repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
+    ///   // value must be in list \[1.0, 2.0, 3.0\]
+    ///   repeated float value = 1 (buf.validate.field).float = { in: \[1.0, 2.0, 3.0\] };
     /// }
     /// ```
     #[prost(float, repeated, packed="false", tag="6")]
@@ -341,8 +341,8 @@ pub struct FloatRules {
     ///
     /// ```proto
     /// message MyFloat {
-    ///   // value must not be in list [1.0, 2.0, 3.0]
-    ///   repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
+    ///   // value must not be in list \[1.0, 2.0, 3.0\]
+    ///   repeated float value = 1 (buf.validate.field).float = { not_in: \[1.0, 2.0, 3.0\] };
     /// }
     /// ```
     #[prost(float, repeated, packed="false", tag="7")]
@@ -359,7 +359,7 @@ pub struct DoubleRules {
     /// ```proto
     /// message MyDouble {
     ///   // value must equal 42.0
-    ///    double value = 1 [(buf.validate.field).double.const = 42.0];
+    ///    double value = 1 \[(buf.validate.field).double.const = 42.0\];
     /// }
     /// ```
     #[prost(double, optional, tag="1")]
@@ -371,7 +371,7 @@ pub struct DoubleRules {
     /// ```proto
     /// message MyDouble {
     ///   // value must be less than 10.0
-    ///    double value = 1 [(buf.validate.field).double.lt = 10.0];
+    ///    double value = 1 \[(buf.validate.field).double.lt = 10.0\];
     /// }
     /// ```
     #[prost(double, optional, tag="2")]
@@ -383,7 +383,7 @@ pub struct DoubleRules {
     /// ```proto
     /// message MyDouble {
     ///   // value must be less than or equal to 10.0
-    ///    double value = 1 [(buf.validate.field).double.lte = 10.0];
+    ///    double value = 1 \[(buf.validate.field).double.lte = 10.0\];
     /// }
     /// ```
     #[prost(double, optional, tag="3")]
@@ -397,13 +397,13 @@ pub struct DoubleRules {
     /// ```proto
     /// message MyDouble {
     ///   // value must be greater than 5.0 \[double.gt\]
-    ///   double value = 1 [(buf.validate.field).double.gt = 5.0];
+    ///   double value = 1 \[(buf.validate.field).double.gt = 5.0\];
     ///
     ///   // value must be greater than 5 and less than 10.0 \[double.gt_lt\]
-    ///   double other_value = 2 [(buf.validate.field).double = { gt: 5.0, lt: 10.0 }];
+    ///   double other_value = 2 \[(buf.validate.field).double = { gt: 5.0, lt: 10.0 }\];
     ///
     ///   // value must be greater than 10 or less than 5.0 \[double.gt_lt_exclusive\]
-    ///   double another_value = 3 [(buf.validate.field).double = { gt: 10.0, lt: 5.0 }];
+    ///   double another_value = 3 \[(buf.validate.field).double = { gt: 10.0, lt: 5.0 }\];
     /// }
     /// ```
     #[prost(double, optional, tag="4")]
@@ -417,13 +417,13 @@ pub struct DoubleRules {
     /// ```proto
     /// message MyDouble {
     ///   // value must be greater than or equal to 5.0 \[double.gte\]
-    ///   double value = 1 [(buf.validate.field).double.gte = 5.0];
+    ///   double value = 1 \[(buf.validate.field).double.gte = 5.0\];
     ///
     ///   // value must be greater than or equal to 5.0 and less than 10.0 \[double.gte_lt\]
-    ///   double other_value = 2 [(buf.validate.field).double = { gte: 5.0, lt: 10.0 }];
+    ///   double other_value = 2 \[(buf.validate.field).double = { gte: 5.0, lt: 10.0 }\];
     ///
     ///   // value must be greater than or equal to 10.0 or less than 5.0 \[double.gte_lt_exclusive\]
-    ///   double another_value = 3 [(buf.validate.field).double = { gte: 10.0, lt: 5.0 }];
+    ///   double another_value = 3 \[(buf.validate.field).double = { gte: 10.0, lt: 5.0 }\];
     /// }
     /// ```
     #[prost(double, optional, tag="5")]
@@ -434,8 +434,8 @@ pub struct DoubleRules {
     ///
     /// ```proto
     /// message MyDouble {
-    ///   // value must be in list [1.0, 2.0, 3.0]
-    ///   repeated double value = 1 (buf.validate.field).double = { in: [1.0, 2.0, 3.0] };
+    ///   // value must be in list \[1.0, 2.0, 3.0\]
+    ///   repeated double value = 1 (buf.validate.field).double = { in: \[1.0, 2.0, 3.0\] };
     /// }
     /// ```
     #[prost(double, repeated, packed="false", tag="6")]
@@ -446,8 +446,8 @@ pub struct DoubleRules {
     ///
     /// ```proto
     /// message MyDouble {
-    ///   // value must not be in list [1.0, 2.0, 3.0]
-    ///   repeated double value = 1 (buf.validate.field).double = { not_in: [1.0, 2.0, 3.0] };
+    ///   // value must not be in list \[1.0, 2.0, 3.0\]
+    ///   repeated double value = 1 (buf.validate.field).double = { not_in: \[1.0, 2.0, 3.0\] };
     /// }
     /// ```
     #[prost(double, repeated, packed="false", tag="7")]
@@ -464,7 +464,7 @@ pub struct Int32Rules {
     /// ```proto
     /// message MyInt32 {
     ///   // value must equal 42
-    ///    int32 value = 1 [(buf.validate.field).int32.const = 42];
+    ///    int32 value = 1 \[(buf.validate.field).int32.const = 42\];
     /// }
     /// ```
     #[prost(int32, optional, tag="1")]
@@ -476,7 +476,7 @@ pub struct Int32Rules {
     /// ```proto
     /// message MyInt32 {
     ///   // value must be less than 10
-    ///    int32 value = 1 [(buf.validate.field).int32.lt = 10];
+    ///    int32 value = 1 \[(buf.validate.field).int32.lt = 10\];
     /// }
     /// ```
     #[prost(int32, optional, tag="2")]
@@ -488,7 +488,7 @@ pub struct Int32Rules {
     /// ```proto
     /// message MyInt32 {
     ///   // value must be less than or equal to 10
-    ///    int32 value = 1 [(buf.validate.field).int32.lte = 10];
+    ///    int32 value = 1 \[(buf.validate.field).int32.lte = 10\];
     /// }
     /// ```
     #[prost(int32, optional, tag="3")]
@@ -502,13 +502,13 @@ pub struct Int32Rules {
     /// ```proto
     /// message MyInt32 {
     ///   // value must be greater than 5 \[int32.gt\]
-    ///   int32 value = 1 [(buf.validate.field).int32.gt = 5];
+    ///   int32 value = 1 \[(buf.validate.field).int32.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[int32.gt_lt\]
-    ///   int32 other_value = 2 [(buf.validate.field).int32 = { gt: 5, lt: 10 }];
+    ///   int32 other_value = 2 \[(buf.validate.field).int32 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[int32.gt_lt_exclusive\]
-    ///   int32 another_value = 3 [(buf.validate.field).int32 = { gt: 10, lt: 5 }];
+    ///   int32 another_value = 3 \[(buf.validate.field).int32 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(int32, optional, tag="4")]
@@ -522,13 +522,13 @@ pub struct Int32Rules {
     /// ```proto
     /// message MyInt32 {
     ///   // value must be greater than or equal to 5 \[int32.gte\]
-    ///   int32 value = 1 [(buf.validate.field).int32.gte = 5];
+    ///   int32 value = 1 \[(buf.validate.field).int32.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[int32.gte_lt\]
-    ///   int32 other_value = 2 [(buf.validate.field).int32 = { gte: 5, lt: 10 }];
+    ///   int32 other_value = 2 \[(buf.validate.field).int32 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[int32.gte_lt_exclusive\]
-    ///   int32 another_value = 3 [(buf.validate.field).int32 = { gte: 10, lt: 5 }];
+    ///   int32 another_value = 3 \[(buf.validate.field).int32 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(int32, optional, tag="5")]
@@ -539,8 +539,8 @@ pub struct Int32Rules {
     ///
     /// ```proto
     /// message MyInt32 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated int32 value = 1 (buf.validate.field).int32 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated int32 value = 1 (buf.validate.field).int32 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(int32, repeated, packed="false", tag="6")]
@@ -551,8 +551,8 @@ pub struct Int32Rules {
     ///
     /// ```proto
     /// message MyInt32 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated int32 value = 1 (buf.validate.field).int32 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated int32 value = 1 (buf.validate.field).int32 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(int32, repeated, packed="false", tag="7")]
@@ -569,7 +569,7 @@ pub struct Int64Rules {
     /// ```proto
     /// message MyInt64 {
     ///   // value must equal 42
-    ///    int64 value = 1 [(buf.validate.field).int64.const = 42];
+    ///    int64 value = 1 \[(buf.validate.field).int64.const = 42\];
     /// }
     /// ```
     #[prost(int64, optional, tag="1")]
@@ -581,7 +581,7 @@ pub struct Int64Rules {
     /// ```proto
     /// message MyInt64 {
     ///   // value must be less than 10
-    ///    int64 value = 1 [(buf.validate.field).int64.lt = 10];
+    ///    int64 value = 1 \[(buf.validate.field).int64.lt = 10\];
     /// }
     /// ```
     #[prost(int64, optional, tag="2")]
@@ -593,7 +593,7 @@ pub struct Int64Rules {
     /// ```proto
     /// message MyInt64 {
     ///   // value must be less than or equal to 10
-    ///    int64 value = 1 [(buf.validate.field).int64.lte = 10];
+    ///    int64 value = 1 \[(buf.validate.field).int64.lte = 10\];
     /// }
     /// ```
     #[prost(int64, optional, tag="3")]
@@ -607,13 +607,13 @@ pub struct Int64Rules {
     /// ```proto
     /// message MyInt64 {
     ///   // value must be greater than 5 \[int64.gt\]
-    ///   int64 value = 1 [(buf.validate.field).int64.gt = 5];
+    ///   int64 value = 1 \[(buf.validate.field).int64.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[int64.gt_lt\]
-    ///   int64 other_value = 2 [(buf.validate.field).int64 = { gt: 5, lt: 10 }];
+    ///   int64 other_value = 2 \[(buf.validate.field).int64 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[int64.gt_lt_exclusive\]
-    ///   int64 another_value = 3 [(buf.validate.field).int64 = { gt: 10, lt: 5 }];
+    ///   int64 another_value = 3 \[(buf.validate.field).int64 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(int64, optional, tag="4")]
@@ -627,13 +627,13 @@ pub struct Int64Rules {
     /// ```proto
     /// message MyInt64 {
     ///   // value must be greater than or equal to 5 \[int64.gte\]
-    ///   int64 value = 1 [(buf.validate.field).int64.gte = 5];
+    ///   int64 value = 1 \[(buf.validate.field).int64.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[int64.gte_lt\]
-    ///   int64 other_value = 2 [(buf.validate.field).int64 = { gte: 5, lt: 10 }];
+    ///   int64 other_value = 2 \[(buf.validate.field).int64 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[int64.gte_lt_exclusive\]
-    ///   int64 another_value = 3 [(buf.validate.field).int64 = { gte: 10, lt: 5 }];
+    ///   int64 another_value = 3 \[(buf.validate.field).int64 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(int64, optional, tag="5")]
@@ -644,8 +644,8 @@ pub struct Int64Rules {
     ///
     /// ```proto
     /// message MyInt64 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated int64 value = 1 (buf.validate.field).int64 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated int64 value = 1 (buf.validate.field).int64 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(int64, repeated, packed="false", tag="6")]
@@ -656,8 +656,8 @@ pub struct Int64Rules {
     ///
     /// ```proto
     /// message MyInt64 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated int64 value = 1 (buf.validate.field).int64 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated int64 value = 1 (buf.validate.field).int64 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(int64, repeated, packed="false", tag="7")]
@@ -674,7 +674,7 @@ pub struct UInt32Rules {
     /// ```proto
     /// message MyUInt32 {
     ///   // value must equal 42
-    ///    uint32 value = 1 [(buf.validate.field).uint32.const = 42];
+    ///    uint32 value = 1 \[(buf.validate.field).uint32.const = 42\];
     /// }
     /// ```
     #[prost(uint32, optional, tag="1")]
@@ -686,7 +686,7 @@ pub struct UInt32Rules {
     /// ```proto
     /// message MyUInt32 {
     ///   // value must be less than 10
-    ///    uint32 value = 1 [(buf.validate.field).uint32.lt = 10];
+    ///    uint32 value = 1 \[(buf.validate.field).uint32.lt = 10\];
     /// }
     /// ```
     #[prost(uint32, optional, tag="2")]
@@ -698,7 +698,7 @@ pub struct UInt32Rules {
     /// ```proto
     /// message MyUInt32 {
     ///   // value must be less than or equal to 10
-    ///    uint32 value = 1 [(buf.validate.field).uint32.lte = 10];
+    ///    uint32 value = 1 \[(buf.validate.field).uint32.lte = 10\];
     /// }
     /// ```
     #[prost(uint32, optional, tag="3")]
@@ -712,13 +712,13 @@ pub struct UInt32Rules {
     /// ```proto
     /// message MyUInt32 {
     ///   // value must be greater than 5 \[uint32.gt\]
-    ///   uint32 value = 1 [(buf.validate.field).uint32.gt = 5];
+    ///   uint32 value = 1 \[(buf.validate.field).uint32.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[uint32.gt_lt\]
-    ///   uint32 other_value = 2 [(buf.validate.field).uint32 = { gt: 5, lt: 10 }];
+    ///   uint32 other_value = 2 \[(buf.validate.field).uint32 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[uint32.gt_lt_exclusive\]
-    ///   uint32 another_value = 3 [(buf.validate.field).uint32 = { gt: 10, lt: 5 }];
+    ///   uint32 another_value = 3 \[(buf.validate.field).uint32 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(uint32, optional, tag="4")]
@@ -732,13 +732,13 @@ pub struct UInt32Rules {
     /// ```proto
     /// message MyUInt32 {
     ///   // value must be greater than or equal to 5 \[uint32.gte\]
-    ///   uint32 value = 1 [(buf.validate.field).uint32.gte = 5];
+    ///   uint32 value = 1 \[(buf.validate.field).uint32.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[uint32.gte_lt\]
-    ///   uint32 other_value = 2 [(buf.validate.field).uint32 = { gte: 5, lt: 10 }];
+    ///   uint32 other_value = 2 \[(buf.validate.field).uint32 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[uint32.gte_lt_exclusive\]
-    ///   uint32 another_value = 3 [(buf.validate.field).uint32 = { gte: 10, lt: 5 }];
+    ///   uint32 another_value = 3 \[(buf.validate.field).uint32 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(uint32, optional, tag="5")]
@@ -749,8 +749,8 @@ pub struct UInt32Rules {
     ///
     /// ```proto
     /// message MyUInt32 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated uint32 value = 1 (buf.validate.field).uint32 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated uint32 value = 1 (buf.validate.field).uint32 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(uint32, repeated, packed="false", tag="6")]
@@ -761,8 +761,8 @@ pub struct UInt32Rules {
     ///
     /// ```proto
     /// message MyUInt32 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated uint32 value = 1 (buf.validate.field).uint32 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated uint32 value = 1 (buf.validate.field).uint32 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(uint32, repeated, packed="false", tag="7")]
@@ -779,7 +779,7 @@ pub struct UInt64Rules {
     /// ```proto
     /// message MyUInt64 {
     ///   // value must equal 42
-    ///    uint64 value = 1 [(buf.validate.field).uint64.const = 42];
+    ///    uint64 value = 1 \[(buf.validate.field).uint64.const = 42\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="1")]
@@ -791,7 +791,7 @@ pub struct UInt64Rules {
     /// ```proto
     /// message MyUInt64 {
     ///   // value must be less than 10
-    ///    uint64 value = 1 [(buf.validate.field).uint64.lt = 10];
+    ///    uint64 value = 1 \[(buf.validate.field).uint64.lt = 10\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="2")]
@@ -803,7 +803,7 @@ pub struct UInt64Rules {
     /// ```proto
     /// message MyUInt64 {
     ///   // value must be less than or equal to 10
-    ///    uint64 value = 1 [(buf.validate.field).uint64.lte = 10];
+    ///    uint64 value = 1 \[(buf.validate.field).uint64.lte = 10\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="3")]
@@ -817,13 +817,13 @@ pub struct UInt64Rules {
     /// ```proto
     /// message MyUInt64 {
     ///   // value must be greater than 5 \[uint64.gt\]
-    ///   uint64 value = 1 [(buf.validate.field).uint64.gt = 5];
+    ///   uint64 value = 1 \[(buf.validate.field).uint64.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[uint64.gt_lt\]
-    ///   uint64 other_value = 2 [(buf.validate.field).uint64 = { gt: 5, lt: 10 }];
+    ///   uint64 other_value = 2 \[(buf.validate.field).uint64 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[uint64.gt_lt_exclusive\]
-    ///   uint64 another_value = 3 [(buf.validate.field).uint64 = { gt: 10, lt: 5 }];
+    ///   uint64 another_value = 3 \[(buf.validate.field).uint64 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="4")]
@@ -837,13 +837,13 @@ pub struct UInt64Rules {
     /// ```proto
     /// message MyUInt64 {
     ///   // value must be greater than or equal to 5 \[uint64.gte\]
-    ///   uint64 value = 1 [(buf.validate.field).uint64.gte = 5];
+    ///   uint64 value = 1 \[(buf.validate.field).uint64.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[uint64.gte_lt\]
-    ///   uint64 other_value = 2 [(buf.validate.field).uint64 = { gte: 5, lt: 10 }];
+    ///   uint64 other_value = 2 \[(buf.validate.field).uint64 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[uint64.gte_lt_exclusive\]
-    ///   uint64 another_value = 3 [(buf.validate.field).uint64 = { gte: 10, lt: 5 }];
+    ///   uint64 another_value = 3 \[(buf.validate.field).uint64 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="5")]
@@ -854,8 +854,8 @@ pub struct UInt64Rules {
     ///
     /// ```proto
     /// message MyUInt64 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated uint64 value = 1 (buf.validate.field).uint64 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(uint64, repeated, packed="false", tag="6")]
@@ -866,8 +866,8 @@ pub struct UInt64Rules {
     ///
     /// ```proto
     /// message MyUInt64 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(uint64, repeated, packed="false", tag="7")]
@@ -883,7 +883,7 @@ pub struct SInt32Rules {
     /// ```proto
     /// message MySInt32 {
     ///   // value must equal 42
-    ///    sint32 value = 1 [(buf.validate.field).sint32.const = 42];
+    ///    sint32 value = 1 \[(buf.validate.field).sint32.const = 42\];
     /// }
     /// ```
     #[prost(sint32, optional, tag="1")]
@@ -895,7 +895,7 @@ pub struct SInt32Rules {
     /// ```proto
     /// message MySInt32 {
     ///   // value must be less than 10
-    ///    sint32 value = 1 [(buf.validate.field).sint32.lt = 10];
+    ///    sint32 value = 1 \[(buf.validate.field).sint32.lt = 10\];
     /// }
     /// ```
     #[prost(sint32, optional, tag="2")]
@@ -907,7 +907,7 @@ pub struct SInt32Rules {
     /// ```proto
     /// message MySInt32 {
     ///   // value must be less than or equal to 10
-    ///    sint32 value = 1 [(buf.validate.field).sint32.lte = 10];
+    ///    sint32 value = 1 \[(buf.validate.field).sint32.lte = 10\];
     /// }
     /// ```
     #[prost(sint32, optional, tag="3")]
@@ -921,13 +921,13 @@ pub struct SInt32Rules {
     /// ```proto
     /// message MySInt32 {
     ///   // value must be greater than 5 \[sint32.gt\]
-    ///   sint32 value = 1 [(buf.validate.field).sint32.gt = 5];
+    ///   sint32 value = 1 \[(buf.validate.field).sint32.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[sint32.gt_lt\]
-    ///   sint32 other_value = 2 [(buf.validate.field).sint32 = { gt: 5, lt: 10 }];
+    ///   sint32 other_value = 2 \[(buf.validate.field).sint32 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[sint32.gt_lt_exclusive\]
-    ///   sint32 another_value = 3 [(buf.validate.field).sint32 = { gt: 10, lt: 5 }];
+    ///   sint32 another_value = 3 \[(buf.validate.field).sint32 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sint32, optional, tag="4")]
@@ -941,13 +941,13 @@ pub struct SInt32Rules {
     /// ```proto
     /// message MySInt32 {
     ///   // value must be greater than or equal to 5 \[sint32.gte\]
-    ///   sint32 value = 1 [(buf.validate.field).sint32.gte = 5];
+    ///   sint32 value = 1 \[(buf.validate.field).sint32.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[sint32.gte_lt\]
-    ///   sint32 other_value = 2 [(buf.validate.field).sint32 = { gte: 5, lt: 10 }];
+    ///   sint32 other_value = 2 \[(buf.validate.field).sint32 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[sint32.gte_lt_exclusive\]
-    ///   sint32 another_value = 3 [(buf.validate.field).sint32 = { gte: 10, lt: 5 }];
+    ///   sint32 another_value = 3 \[(buf.validate.field).sint32 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sint32, optional, tag="5")]
@@ -958,8 +958,8 @@ pub struct SInt32Rules {
     ///
     /// ```proto
     /// message MySInt32 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated sint32 value = 1 (buf.validate.field).sint32 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated sint32 value = 1 (buf.validate.field).sint32 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sint32, repeated, packed="false", tag="6")]
@@ -970,8 +970,8 @@ pub struct SInt32Rules {
     ///
     /// ```proto
     /// message MySInt32 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated sint32 value = 1 (buf.validate.field).sint32 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated sint32 value = 1 (buf.validate.field).sint32 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sint32, repeated, packed="false", tag="7")]
@@ -987,7 +987,7 @@ pub struct SInt64Rules {
     /// ```proto
     /// message MySInt64 {
     ///   // value must equal 42
-    ///    sint64 value = 1 [(buf.validate.field).sint64.const = 42];
+    ///    sint64 value = 1 \[(buf.validate.field).sint64.const = 42\];
     /// }
     /// ```
     #[prost(sint64, optional, tag="1")]
@@ -999,7 +999,7 @@ pub struct SInt64Rules {
     /// ```proto
     /// message MySInt64 {
     ///   // value must be less than 10
-    ///    sint64 value = 1 [(buf.validate.field).sint64.lt = 10];
+    ///    sint64 value = 1 \[(buf.validate.field).sint64.lt = 10\];
     /// }
     /// ```
     #[prost(sint64, optional, tag="2")]
@@ -1011,7 +1011,7 @@ pub struct SInt64Rules {
     /// ```proto
     /// message MySInt64 {
     ///   // value must be less than or equal to 10
-    ///    sint64 value = 1 [(buf.validate.field).sint64.lte = 10];
+    ///    sint64 value = 1 \[(buf.validate.field).sint64.lte = 10\];
     /// }
     /// ```
     #[prost(sint64, optional, tag="3")]
@@ -1025,13 +1025,13 @@ pub struct SInt64Rules {
     /// ```proto
     /// message MySInt64 {
     ///   // value must be greater than 5 \[sint64.gt\]
-    ///   sint64 value = 1 [(buf.validate.field).sint64.gt = 5];
+    ///   sint64 value = 1 \[(buf.validate.field).sint64.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[sint64.gt_lt\]
-    ///   sint64 other_value = 2 [(buf.validate.field).sint64 = { gt: 5, lt: 10 }];
+    ///   sint64 other_value = 2 \[(buf.validate.field).sint64 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[sint64.gt_lt_exclusive\]
-    ///   sint64 another_value = 3 [(buf.validate.field).sint64 = { gt: 10, lt: 5 }];
+    ///   sint64 another_value = 3 \[(buf.validate.field).sint64 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sint64, optional, tag="4")]
@@ -1045,13 +1045,13 @@ pub struct SInt64Rules {
     /// ```proto
     /// message MySInt64 {
     ///   // value must be greater than or equal to 5 \[sint64.gte\]
-    ///   sint64 value = 1 [(buf.validate.field).sint64.gte = 5];
+    ///   sint64 value = 1 \[(buf.validate.field).sint64.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[sint64.gte_lt\]
-    ///   sint64 other_value = 2 [(buf.validate.field).sint64 = { gte: 5, lt: 10 }];
+    ///   sint64 other_value = 2 \[(buf.validate.field).sint64 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[sint64.gte_lt_exclusive\]
-    ///   sint64 another_value = 3 [(buf.validate.field).sint64 = { gte: 10, lt: 5 }];
+    ///   sint64 another_value = 3 \[(buf.validate.field).sint64 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sint64, optional, tag="5")]
@@ -1062,8 +1062,8 @@ pub struct SInt64Rules {
     ///
     /// ```proto
     /// message MySInt64 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated sint64 value = 1 (buf.validate.field).sint64 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated sint64 value = 1 (buf.validate.field).sint64 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sint64, repeated, packed="false", tag="6")]
@@ -1074,8 +1074,8 @@ pub struct SInt64Rules {
     ///
     /// ```proto
     /// message MySInt64 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated sint64 value = 1 (buf.validate.field).sint64 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated sint64 value = 1 (buf.validate.field).sint64 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sint64, repeated, packed="false", tag="7")]
@@ -1091,7 +1091,7 @@ pub struct Fixed32Rules {
     /// ```proto
     /// message MyFixed32 {
     ///   // value must equal 42
-    ///    fixed32 value = 1 [(buf.validate.field).fixed32.const = 42];
+    ///    fixed32 value = 1 \[(buf.validate.field).fixed32.const = 42\];
     /// }
     /// ```
     #[prost(fixed32, optional, tag="1")]
@@ -1103,7 +1103,7 @@ pub struct Fixed32Rules {
     /// ```proto
     /// message MyFixed32 {
     ///   // value must be less than 10
-    ///    fixed32 value = 1 [(buf.validate.field).fixed32.lt = 10];
+    ///    fixed32 value = 1 \[(buf.validate.field).fixed32.lt = 10\];
     /// }
     /// ```
     #[prost(fixed32, optional, tag="2")]
@@ -1115,7 +1115,7 @@ pub struct Fixed32Rules {
     /// ```proto
     /// message MyFixed32 {
     ///   // value must be less than or equal to 10
-    ///    fixed32 value = 1 [(buf.validate.field).fixed32.lte = 10];
+    ///    fixed32 value = 1 \[(buf.validate.field).fixed32.lte = 10\];
     /// }
     /// ```
     #[prost(fixed32, optional, tag="3")]
@@ -1129,13 +1129,13 @@ pub struct Fixed32Rules {
     /// ```proto
     /// message MyFixed32 {
     ///   // value must be greater than 5 \[fixed32.gt\]
-    ///   fixed32 value = 1 [(buf.validate.field).fixed32.gt = 5];
+    ///   fixed32 value = 1 \[(buf.validate.field).fixed32.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[fixed32.gt_lt\]
-    ///   fixed32 other_value = 2 [(buf.validate.field).fixed32 = { gt: 5, lt: 10 }];
+    ///   fixed32 other_value = 2 \[(buf.validate.field).fixed32 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[fixed32.gt_lt_exclusive\]
-    ///   fixed32 another_value = 3 [(buf.validate.field).fixed32 = { gt: 10, lt: 5 }];
+    ///   fixed32 another_value = 3 \[(buf.validate.field).fixed32 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(fixed32, optional, tag="4")]
@@ -1149,13 +1149,13 @@ pub struct Fixed32Rules {
     /// ```proto
     /// message MyFixed32 {
     ///   // value must be greater than or equal to 5 \[fixed32.gte\]
-    ///   fixed32 value = 1 [(buf.validate.field).fixed32.gte = 5];
+    ///   fixed32 value = 1 \[(buf.validate.field).fixed32.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[fixed32.gte_lt\]
-    ///   fixed32 other_value = 2 [(buf.validate.field).fixed32 = { gte: 5, lt: 10 }];
+    ///   fixed32 other_value = 2 \[(buf.validate.field).fixed32 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[fixed32.gte_lt_exclusive\]
-    ///   fixed32 another_value = 3 [(buf.validate.field).fixed32 = { gte: 10, lt: 5 }];
+    ///   fixed32 another_value = 3 \[(buf.validate.field).fixed32 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(fixed32, optional, tag="5")]
@@ -1166,8 +1166,8 @@ pub struct Fixed32Rules {
     ///
     /// ```proto
     /// message MyFixed32 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(fixed32, repeated, packed="false", tag="6")]
@@ -1178,8 +1178,8 @@ pub struct Fixed32Rules {
     ///
     /// ```proto
     /// message MyFixed32 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(fixed32, repeated, packed="false", tag="7")]
@@ -1195,7 +1195,7 @@ pub struct Fixed64Rules {
     /// ```proto
     /// message MyFixed64 {
     ///   // value must equal 42
-    ///    fixed64 value = 1 [(buf.validate.field).fixed64.const = 42];
+    ///    fixed64 value = 1 \[(buf.validate.field).fixed64.const = 42\];
     /// }
     /// ```
     #[prost(fixed64, optional, tag="1")]
@@ -1207,7 +1207,7 @@ pub struct Fixed64Rules {
     /// ```proto
     /// message MyFixed64 {
     ///   // value must be less than 10
-    ///    fixed64 value = 1 [(buf.validate.field).fixed64.lt = 10];
+    ///    fixed64 value = 1 \[(buf.validate.field).fixed64.lt = 10\];
     /// }
     /// ```
     #[prost(fixed64, optional, tag="2")]
@@ -1219,7 +1219,7 @@ pub struct Fixed64Rules {
     /// ```proto
     /// message MyFixed64 {
     ///   // value must be less than or equal to 10
-    ///    fixed64 value = 1 [(buf.validate.field).fixed64.lte = 10];
+    ///    fixed64 value = 1 \[(buf.validate.field).fixed64.lte = 10\];
     /// }
     /// ```
     #[prost(fixed64, optional, tag="3")]
@@ -1233,13 +1233,13 @@ pub struct Fixed64Rules {
     /// ```proto
     /// message MyFixed64 {
     ///   // value must be greater than 5 \[fixed64.gt\]
-    ///   fixed64 value = 1 [(buf.validate.field).fixed64.gt = 5];
+    ///   fixed64 value = 1 \[(buf.validate.field).fixed64.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[fixed64.gt_lt\]
-    ///   fixed64 other_value = 2 [(buf.validate.field).fixed64 = { gt: 5, lt: 10 }];
+    ///   fixed64 other_value = 2 \[(buf.validate.field).fixed64 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[fixed64.gt_lt_exclusive\]
-    ///   fixed64 another_value = 3 [(buf.validate.field).fixed64 = { gt: 10, lt: 5 }];
+    ///   fixed64 another_value = 3 \[(buf.validate.field).fixed64 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(fixed64, optional, tag="4")]
@@ -1253,13 +1253,13 @@ pub struct Fixed64Rules {
     /// ```proto
     /// message MyFixed64 {
     ///   // value must be greater than or equal to 5 \[fixed64.gte\]
-    ///   fixed64 value = 1 [(buf.validate.field).fixed64.gte = 5];
+    ///   fixed64 value = 1 \[(buf.validate.field).fixed64.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[fixed64.gte_lt\]
-    ///   fixed64 other_value = 2 [(buf.validate.field).fixed64 = { gte: 5, lt: 10 }];
+    ///   fixed64 other_value = 2 \[(buf.validate.field).fixed64 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[fixed64.gte_lt_exclusive\]
-    ///   fixed64 another_value = 3 [(buf.validate.field).fixed64 = { gte: 10, lt: 5 }];
+    ///   fixed64 another_value = 3 \[(buf.validate.field).fixed64 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(fixed64, optional, tag="5")]
@@ -1270,8 +1270,8 @@ pub struct Fixed64Rules {
     ///
     /// ```proto
     /// message MyFixed64 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(fixed64, repeated, packed="false", tag="6")]
@@ -1282,8 +1282,8 @@ pub struct Fixed64Rules {
     ///
     /// ```proto
     /// message MyFixed64 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated fixed64 value = 1 (buf.validate.field).fixed64 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(fixed64, repeated, packed="false", tag="7")]
@@ -1299,7 +1299,7 @@ pub struct SFixed32Rules {
     /// ```proto
     /// message MySFixed32 {
     ///   // value must equal 42
-    ///    sfixed32 value = 1 [(buf.validate.field).sfixed32.const = 42];
+    ///    sfixed32 value = 1 \[(buf.validate.field).sfixed32.const = 42\];
     /// }
     /// ```
     #[prost(sfixed32, optional, tag="1")]
@@ -1311,7 +1311,7 @@ pub struct SFixed32Rules {
     /// ```proto
     /// message MySFixed32 {
     ///   // value must be less than 10
-    ///    sfixed32 value = 1 [(buf.validate.field).sfixed32.lt = 10];
+    ///    sfixed32 value = 1 \[(buf.validate.field).sfixed32.lt = 10\];
     /// }
     /// ```
     #[prost(sfixed32, optional, tag="2")]
@@ -1323,7 +1323,7 @@ pub struct SFixed32Rules {
     /// ```proto
     /// message MySFixed32 {
     ///   // value must be less than or equal to 10
-    ///    sfixed32 value = 1 [(buf.validate.field).sfixed32.lte = 10];
+    ///    sfixed32 value = 1 \[(buf.validate.field).sfixed32.lte = 10\];
     /// }
     /// ```
     #[prost(sfixed32, optional, tag="3")]
@@ -1337,13 +1337,13 @@ pub struct SFixed32Rules {
     /// ```proto
     /// message MySFixed32 {
     ///   // value must be greater than 5 \[sfixed32.gt\]
-    ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.gt = 5];
+    ///   sfixed32 value = 1 \[(buf.validate.field).sfixed32.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[sfixed32.gt_lt\]
-    ///   sfixed32 other_value = 2 [(buf.validate.field).sfixed32 = { gt: 5, lt: 10 }];
+    ///   sfixed32 other_value = 2 \[(buf.validate.field).sfixed32 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[sfixed32.gt_lt_exclusive\]
-    ///   sfixed32 another_value = 3 [(buf.validate.field).sfixed32 = { gt: 10, lt: 5 }];
+    ///   sfixed32 another_value = 3 \[(buf.validate.field).sfixed32 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sfixed32, optional, tag="4")]
@@ -1357,13 +1357,13 @@ pub struct SFixed32Rules {
     /// ```proto
     /// message MySFixed32 {
     ///   // value must be greater than or equal to 5 \[sfixed32.gte\]
-    ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.gte = 5];
+    ///   sfixed32 value = 1 \[(buf.validate.field).sfixed32.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[sfixed32.gte_lt\]
-    ///   sfixed32 other_value = 2 [(buf.validate.field).sfixed32 = { gte: 5, lt: 10 }];
+    ///   sfixed32 other_value = 2 \[(buf.validate.field).sfixed32 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[sfixed32.gte_lt_exclusive\]
-    ///   sfixed32 another_value = 3 [(buf.validate.field).sfixed32 = { gte: 10, lt: 5 }];
+    ///   sfixed32 another_value = 3 \[(buf.validate.field).sfixed32 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sfixed32, optional, tag="5")]
@@ -1374,8 +1374,8 @@ pub struct SFixed32Rules {
     ///
     /// ```proto
     /// message MySFixed32 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sfixed32, repeated, packed="false", tag="6")]
@@ -1386,8 +1386,8 @@ pub struct SFixed32Rules {
     ///
     /// ```proto
     /// message MySFixed32 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sfixed32, repeated, packed="false", tag="7")]
@@ -1403,7 +1403,7 @@ pub struct SFixed64Rules {
     /// ```proto
     /// message MySFixed64 {
     ///   // value must equal 42
-    ///    sfixed64 value = 1 [(buf.validate.field).sfixed64.const = 42];
+    ///    sfixed64 value = 1 \[(buf.validate.field).sfixed64.const = 42\];
     /// }
     /// ```
     #[prost(sfixed64, optional, tag="1")]
@@ -1415,7 +1415,7 @@ pub struct SFixed64Rules {
     /// ```proto
     /// message MySFixed64 {
     ///   // value must be less than 10
-    ///    sfixed64 value = 1 [(buf.validate.field).sfixed64.lt = 10];
+    ///    sfixed64 value = 1 \[(buf.validate.field).sfixed64.lt = 10\];
     /// }
     /// ```
     #[prost(sfixed64, optional, tag="2")]
@@ -1427,7 +1427,7 @@ pub struct SFixed64Rules {
     /// ```proto
     /// message MySFixed64 {
     ///   // value must be less than or equal to 10
-    ///    sfixed64 value = 1 [(buf.validate.field).sfixed64.lte = 10];
+    ///    sfixed64 value = 1 \[(buf.validate.field).sfixed64.lte = 10\];
     /// }
     /// ```
     #[prost(sfixed64, optional, tag="3")]
@@ -1441,13 +1441,13 @@ pub struct SFixed64Rules {
     /// ```proto
     /// message MySFixed64 {
     ///   // value must be greater than 5 \[sfixed64.gt\]
-    ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.gt = 5];
+    ///   sfixed64 value = 1 \[(buf.validate.field).sfixed64.gt = 5\];
     ///
     ///   // value must be greater than 5 and less than 10 \[sfixed64.gt_lt\]
-    ///   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gt: 5, lt: 10 }];
+    ///   sfixed64 other_value = 2 \[(buf.validate.field).sfixed64 = { gt: 5, lt: 10 }\];
     ///
     ///   // value must be greater than 10 or less than 5 \[sfixed64.gt_lt_exclusive\]
-    ///   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gt: 10, lt: 5 }];
+    ///   sfixed64 another_value = 3 \[(buf.validate.field).sfixed64 = { gt: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sfixed64, optional, tag="4")]
@@ -1461,13 +1461,13 @@ pub struct SFixed64Rules {
     /// ```proto
     /// message MySFixed64 {
     ///   // value must be greater than or equal to 5 \[sfixed64.gte\]
-    ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.gte = 5];
+    ///   sfixed64 value = 1 \[(buf.validate.field).sfixed64.gte = 5\];
     ///
     ///   // value must be greater than or equal to 5 and less than 10 \[sfixed64.gte_lt\]
-    ///   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gte: 5, lt: 10 }];
+    ///   sfixed64 other_value = 2 \[(buf.validate.field).sfixed64 = { gte: 5, lt: 10 }\];
     ///
     ///   // value must be greater than or equal to 10 or less than 5 \[sfixed64.gte_lt_exclusive\]
-    ///   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gte: 10, lt: 5 }];
+    ///   sfixed64 another_value = 3 \[(buf.validate.field).sfixed64 = { gte: 10, lt: 5 }\];
     /// }
     /// ```
     #[prost(sfixed64, optional, tag="5")]
@@ -1478,8 +1478,8 @@ pub struct SFixed64Rules {
     ///
     /// ```proto
     /// message MySFixed64 {
-    ///   // value must be in list [1, 2, 3]
-    ///   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { in: [1, 2, 3] };
+    ///   // value must be in list \[1, 2, 3\]
+    ///   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sfixed64, repeated, packed="false", tag="6")]
@@ -1490,8 +1490,8 @@ pub struct SFixed64Rules {
     ///
     /// ```proto
     /// message MySFixed64 {
-    ///   // value must not be in list [1, 2, 3]
-    ///   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { not_in: [1, 2, 3] };
+    ///   // value must not be in list \[1, 2, 3\]
+    ///   repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { not_in: \[1, 2, 3\] };
     /// }
     /// ```
     #[prost(sfixed64, repeated, packed="false", tag="7")]
@@ -1508,7 +1508,7 @@ pub struct BoolRules {
     /// ```proto
     /// message MyBool {
     ///   // value must equal true
-    ///    bool value = 1 [(buf.validate.field).bool.const = true];
+    ///    bool value = 1 \[(buf.validate.field).bool.const = true\];
     /// }
     /// ```
     #[prost(bool, optional, tag="1")]
@@ -1525,7 +1525,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value must equal `hello`
-    ///    string value = 1 [(buf.validate.field).string.const = "hello"];
+    ///    string value = 1 \[(buf.validate.field).string.const = "hello"\];
     /// }
     /// ```
     #[prost(string, optional, tag="1")]
@@ -1538,7 +1538,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value length must be 5 characters
-    ///    string value = 1 [(buf.validate.field).string.len = 5];
+    ///    string value = 1 \[(buf.validate.field).string.len = 5\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="19")]
@@ -1551,7 +1551,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value length must be at least 3 characters
-    ///    string value = 1 [(buf.validate.field).string.min_len = 3];
+    ///    string value = 1 \[(buf.validate.field).string.min_len = 3\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="2")]
@@ -1564,7 +1564,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value length must be at most 10 characters
-    ///    string value = 1 [(buf.validate.field).string.max_len = 10];
+    ///    string value = 1 \[(buf.validate.field).string.max_len = 10\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="3")]
@@ -1576,7 +1576,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value length must be 6 bytes
-    ///    string value = 1 [(buf.validate.field).string.len_bytes = 6];
+    ///    string value = 1 \[(buf.validate.field).string.len_bytes = 6\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="20")]
@@ -1588,7 +1588,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value length must be at least 4 bytes
-    ///    string value = 1 [(buf.validate.field).string.min_bytes = 4];
+    ///    string value = 1 \[(buf.validate.field).string.min_bytes = 4\];
     /// }
     ///
     /// ```
@@ -1601,7 +1601,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value length must be at most 8 bytes
-    ///    string value = 1 [(buf.validate.field).string.max_bytes = 8];
+    ///    string value = 1 \[(buf.validate.field).string.max_bytes = 8\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="5")]
@@ -1614,7 +1614,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value does not match regex pattern `^\[a-zA-Z\]//$`
-    ///    string value = 1 [(buf.validate.field).string.pattern = "^\[a-zA-Z]//$"\];
+    ///    string value = 1 \[(buf.validate.field).string.pattern = "^[a-zA-Z\]//$"];
     /// }
     /// ```
     #[prost(string, optional, tag="6")]
@@ -1627,7 +1627,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value does not have prefix `pre`
-    ///    string value = 1 [(buf.validate.field).string.prefix = "pre"];
+    ///    string value = 1 \[(buf.validate.field).string.prefix = "pre"\];
     /// }
     /// ```
     #[prost(string, optional, tag="7")]
@@ -1639,7 +1639,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value does not have suffix `post`
-    ///    string value = 1 [(buf.validate.field).string.suffix = "post"];
+    ///    string value = 1 \[(buf.validate.field).string.suffix = "post"\];
     /// }
     /// ```
     #[prost(string, optional, tag="8")]
@@ -1651,7 +1651,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value does not contain substring `inside`.
-    ///    string value = 1 [(buf.validate.field).string.contains = "inside"];
+    ///    string value = 1 \[(buf.validate.field).string.contains = "inside"\];
     /// }
     /// ```
     #[prost(string, optional, tag="9")]
@@ -1663,7 +1663,7 @@ pub struct StringRules {
     /// ```proto
     /// message MyString {
     ///   // value contains substring `inside`.
-    ///    string value = 1 [(buf.validate.field).string.not_contains = "inside"];
+    ///    string value = 1 \[(buf.validate.field).string.not_contains = "inside"\];
     /// }
     /// ```
     #[prost(string, optional, tag="23")]
@@ -1674,8 +1674,8 @@ pub struct StringRules {
     ///
     /// ```proto
     /// message MyString {
-    ///   // value must be in list ["apple", "banana"]
-    ///   repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+    ///   // value must be in list \["apple", "banana"\]
+    ///   repeated string value = 1 \[(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"\];
     /// }
     /// ```
     #[prost(string, repeated, tag="10")]
@@ -1685,22 +1685,22 @@ pub struct StringRules {
     /// an error message will be generated.
     /// ```proto
     /// message MyString {
-    ///   // value must not be in list ["orange", "grape"]
-    ///   repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+    ///   // value must not be in list \["orange", "grape"\]
+    ///   repeated string value = 1 \[(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"\];
     /// }
     /// ```
     #[prost(string, repeated, tag="11")]
     pub not_in: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
     /// enable strict header validation. By default, this is true, and HTTP header
-    /// validations are \[RFC-compliant\](<https://tools.ietf.org/html/rfc7230#section-3>). Setting to false will enable looser
+    /// validations are [RFC-compliant](<https://tools.ietf.org/html/rfc7230#section-3>). Setting to false will enable looser
     /// validations that only disallow `\r\n\0` characters, which can be used to
     /// bypass header matching rules.
     ///
     /// ```proto
     /// message MyString {
     ///    // The field `value` must have be a valid HTTP headers, but not enforced with strict rules.
-    ///    string value = 1 [(buf.validate.field).string.strict = false];
+    ///    string value = 1 \[(buf.validate.field).string.strict = false\];
     /// }
     /// ```
     #[prost(bool, optional, tag="25")]
@@ -1724,7 +1724,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid email address
-        ///    string value = 1 [(buf.validate.field).string.email = true];
+        ///    string value = 1 \[(buf.validate.field).string.email = true\];
         /// }
         /// ```
         #[prost(bool, tag="12")]
@@ -1737,7 +1737,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid hostname
-        ///    string value = 1 [(buf.validate.field).string.hostname = true];
+        ///    string value = 1 \[(buf.validate.field).string.hostname = true\];
         /// }
         /// ```
         #[prost(bool, tag="13")]
@@ -1750,7 +1750,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid IP address
-        ///    string value = 1 [(buf.validate.field).string.ip = true];
+        ///    string value = 1 \[(buf.validate.field).string.ip = true\];
         /// }
         /// ```
         #[prost(bool, tag="14")]
@@ -1762,7 +1762,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid IPv4 address
-        ///    string value = 1 [(buf.validate.field).string.ipv4 = true];
+        ///    string value = 1 \[(buf.validate.field).string.ipv4 = true\];
         /// }
         /// ```
         #[prost(bool, tag="15")]
@@ -1774,7 +1774,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid IPv6 address
-        ///    string value = 1 [(buf.validate.field).string.ipv6 = true];
+        ///    string value = 1 \[(buf.validate.field).string.ipv6 = true\];
         /// }
         /// ```
         #[prost(bool, tag="16")]
@@ -1786,7 +1786,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid URI
-        ///    string value = 1 [(buf.validate.field).string.uri = true];
+        ///    string value = 1 \[(buf.validate.field).string.uri = true\];
         /// }
         /// ```
         #[prost(bool, tag="17")]
@@ -1798,7 +1798,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid URI
-        ///    string value = 1 [(buf.validate.field).string.uri_ref = true];
+        ///    string value = 1 \[(buf.validate.field).string.uri_ref = true\];
         /// }
         /// ```
         #[prost(bool, tag="18")]
@@ -1812,7 +1812,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid hostname, or ip address
-        ///    string value = 1 [(buf.validate.field).string.address = true];
+        ///    string value = 1 \[(buf.validate.field).string.address = true\];
         /// }
         /// ```
         #[prost(bool, tag="21")]
@@ -1824,7 +1824,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid UUID
-        ///    string value = 1 [(buf.validate.field).string.uuid = true];
+        ///    string value = 1 \[(buf.validate.field).string.uuid = true\];
         /// }
         /// ```
         #[prost(bool, tag="22")]
@@ -1836,7 +1836,7 @@ pub mod string_rules {
         /// ```proto
         /// message MyString {
         ///   // value must be a valid HTTP header value
-        ///    string value = 1 [(buf.validate.field).string.well_known_regex = 2];
+        ///    string value = 1 \[(buf.validate.field).string.well_known_regex = 2\];
         /// }
         /// ```
         ///
@@ -1864,7 +1864,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     ///   // value must be "\x01\x02\x03\x04"
-    ///    bytes value = 1 [(buf.validate.field).bytes.const = "\x01\x02\x03\x04"];
+    ///    bytes value = 1 \[(buf.validate.field).bytes.const = "\x01\x02\x03\x04"\];
     /// }
     /// ```
     #[prost(bytes="bytes", optional, tag="1")]
@@ -1875,7 +1875,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     ///       // value length must be 4 bytes.
-    ///       optional bytes value = 1 [(buf.validate.field).bytes.len = 4];
+    ///       optional bytes value = 1 \[(buf.validate.field).bytes.len = 4\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="13")]
@@ -1887,7 +1887,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     /// // value length must be at least 2 bytes.
-    /// optional bytes value = 1 [(buf.validate.field).bytes.min_len = 2];
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.min_len = 2\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="2")]
@@ -1899,7 +1899,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     /// // value must be at most 6 bytes.
-    /// optional bytes value = 1 [(buf.validate.field).bytes.max_len = 6];
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.max_len = 6\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="3")]
@@ -1913,7 +1913,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     /// // value must match regex pattern "^\[a-zA-Z0-9\]+$".
-    /// optional bytes value = 1 [(buf.validate.field).bytes.pattern = "^\[a-zA-Z0-9]+$"\];
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.pattern = "^[a-zA-Z0-9\]+$"];
     /// }
     /// ```
     #[prost(string, optional, tag="4")]
@@ -1925,7 +1925,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     /// // value does not have prefix \x01\x02
-    /// optional bytes value = 1 [(buf.validate.field).bytes.prefix = "\x01\x02"];
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.prefix = "\x01\x02"\];
     /// }
     /// ```
     #[prost(bytes="bytes", optional, tag="5")]
@@ -1937,7 +1937,7 @@ pub struct BytesRules {
     /// ```proto
     /// message MyBytes {
     /// // value does not have suffix \x03\x04
-    /// optional bytes value = 1 [(buf.validate.field).bytes.suffix = "\x03\x04"];
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.suffix = "\x03\x04"\];
     /// }
     /// ```
     #[prost(bytes="bytes", optional, tag="6")]
@@ -1949,7 +1949,7 @@ pub struct BytesRules {
     /// ```protobuf
     /// message MyBytes {
     /// // value does not contain \x02\x03
-    /// optional bytes value = 1 [(buf.validate.field).bytes.contains = "\x02\x03"];
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.contains = "\x02\x03"\];
     /// }
     /// ```
     #[prost(bytes="bytes", optional, tag="7")]
@@ -1960,8 +1960,8 @@ pub struct BytesRules {
     ///
     /// ```protobuf
     /// message MyBytes {
-    /// // value must in ["\x01\x02", "\x02\x03", "\x03\x04"]
-    /// optional bytes value = 1 [(buf.validate.field).bytes.in = {"\x01\x02", "\x02\x03", "\x03\x04"}];
+    /// // value must in \["\x01\x02", "\x02\x03", "\x03\x04"\]
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.in = {"\x01\x02", "\x02\x03", "\x03\x04"}\];
     /// }
     /// ```
     #[prost(bytes="bytes", repeated, tag="8")]
@@ -1973,8 +1973,8 @@ pub struct BytesRules {
     ///
     /// ```proto
     /// message MyBytes {
-    /// // value must not in ["\x01\x02", "\x02\x03", "\x03\x04"]
-    /// optional bytes value = 1 [(buf.validate.field).bytes.not_in = {"\x01\x02", "\x02\x03", "\x03\x04"}];
+    /// // value must not in \["\x01\x02", "\x02\x03", "\x03\x04"\]
+    /// optional bytes value = 1 \[(buf.validate.field).bytes.not_in = {"\x01\x02", "\x02\x03", "\x03\x04"}\];
     /// }
     /// ```
     #[prost(bytes="bytes", repeated, tag="9")]
@@ -1997,7 +1997,7 @@ pub mod bytes_rules {
         /// ```proto
         /// message MyBytes {
         /// // value must be a valid IP address
-        /// optional bytes value = 1 [(buf.validate.field).bytes.ip = true];
+        /// optional bytes value = 1 \[(buf.validate.field).bytes.ip = true\];
         /// }
         /// ```
         #[prost(bool, tag="10")]
@@ -2008,7 +2008,7 @@ pub mod bytes_rules {
         /// ```proto
         /// message MyBytes {
         /// // value must be a valid IPv4 address
-        /// optional bytes value = 1 [(buf.validate.field).bytes.ipv4 = true];
+        /// optional bytes value = 1 \[(buf.validate.field).bytes.ipv4 = true\];
         /// }
         /// ```
         #[prost(bool, tag="11")]
@@ -2018,7 +2018,7 @@ pub mod bytes_rules {
         /// ```proto
         /// message MyBytes {
         /// // value must be a valid IPv6 address
-        /// optional bytes value = 1 [(buf.validate.field).bytes.ipv6 = true];
+        /// optional bytes value = 1 \[(buf.validate.field).bytes.ipv6 = true\];
         /// }
         /// ```
         #[prost(bool, tag="12")]
@@ -2041,7 +2041,7 @@ pub struct EnumRules {
     ///
     /// message MyMessage {
     ///   // The field `value` must be exactly MY_ENUM_VALUE1.
-    ///    MyEnum value = 1 [(buf.validate.field).enum.const = 1];
+    ///    MyEnum value = 1 \[(buf.validate.field).enum.const = 1\];
     /// }
     /// ```
     #[prost(int32, optional, tag="1")]
@@ -2058,7 +2058,7 @@ pub struct EnumRules {
     ///
     /// message MyMessage {
     ///   // The field `value` must be a defined value of MyEnum.
-    ///    MyEnum value = 1 [(buf.validate.field).enum.defined_only = true];
+    ///    MyEnum value = 1 \[(buf.validate.field).enum.defined_only = true\];
     /// }
     /// ```
     #[prost(bool, optional, tag="2")]
@@ -2076,7 +2076,7 @@ pub struct EnumRules {
     ///
     /// message MyMessage {
     ///   // The field `value` must be equal to one of the specified values.
-    ///    MyEnum value = 1 [(buf.validate.field).enum.in = {1, 2}];
+    ///    MyEnum value = 1 \[(buf.validate.field).enum.in = {1, 2}\];
     /// }
     /// ```
     #[prost(int32, repeated, packed="false", tag="3")]
@@ -2094,7 +2094,7 @@ pub struct EnumRules {
     ///
     /// message MyMessage {
     ///   // The field `value` must not be equal to any of the specified values.
-    ///    MyEnum value = 1 [(buf.validate.field).enum.not_in = {1, 2}];
+    ///    MyEnum value = 1 \[(buf.validate.field).enum.not_in = {1, 2}\];
     /// }
     /// ```
     #[prost(int32, repeated, packed="false", tag="4")]
@@ -2110,7 +2110,7 @@ pub struct RepeatedRules {
     /// ```proto
     /// message MyRepeated {
     ///   // value must contain at least  2 items
-    ///   repeated string value = 1 [(buf.validate.field).repeated.min_items = 2];
+    ///   repeated string value = 1 \[(buf.validate.field).repeated.min_items = 2\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="1")]
@@ -2123,7 +2123,7 @@ pub struct RepeatedRules {
     /// ```proto
     /// message MyRepeated {
     ///   // value must contain no more than 3 item(s)
-    ///   repeated string value = 1 [(buf.validate.field).repeated.max_items = 3];
+    ///   repeated string value = 1 \[(buf.validate.field).repeated.max_items = 3\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="2")]
@@ -2135,7 +2135,7 @@ pub struct RepeatedRules {
     /// ```proto
     /// message MyRepeated {
     /// // repeated value must contain unique items
-    /// repeated string value = 1 [(buf.validate.field).repeated.unique = true];
+    /// repeated string value = 1 \[(buf.validate.field).repeated.unique = true\];
     /// }
     /// ```
     #[prost(bool, optional, tag="3")]
@@ -2167,7 +2167,7 @@ pub struct MapRules {
     /// ```proto
     /// message MyMap {
     ///   // The field `value` must have at least 2 key-value pairs.
-    ///   map<string, string> value = 1 [(buf.validate.field).map.min_pairs = 2];
+    ///   map<string, string> value = 1 \[(buf.validate.field).map.min_pairs = 2\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="1")]
@@ -2178,7 +2178,7 @@ pub struct MapRules {
     /// ```proto
     /// message MyMap {
     ///   // The field `value` must have at most 3 key-value pairs.
-    ///   map<string, string> value = 1 [(buf.validate.field).map.max_pairs = 3];
+    ///   map<string, string> value = 1 \[(buf.validate.field).map.max_pairs = 3\];
     /// }
     /// ```
     #[prost(uint64, optional, tag="2")]
@@ -2227,7 +2227,7 @@ pub struct AnyRules {
     /// ```proto
     /// message MyAny {
     ///   //  The `value` field must have a `type_url` equal to one of the specified values.
-    ///    google.protobuf.Any value = 1 [(buf.validate.field).any.in = ["type.googleapis.com/MyType1", "type.googleapis.com/MyType2"]];
+    ///    google.protobuf.Any value = 1 \[(buf.validate.field).any.in = ["type.googleapis.com/MyType1", "type.googleapis.com/MyType2"]\];
     /// }
     /// ```
     #[prost(string, repeated, tag="2")]
@@ -2237,7 +2237,7 @@ pub struct AnyRules {
     /// ```proto
     /// message MyAny {
     ///   // The field `value` must not have a `type_url` equal to any of the specified values.
-    ///    google.protobuf.Any value = 1 [(buf.validate.field).any.not_in = ["type.googleapis.com/ForbiddenType1", "type.googleapis.com/ForbiddenType2"]];
+    ///    google.protobuf.Any value = 1 \[(buf.validate.field).any.not_in = ["type.googleapis.com/ForbiddenType1", "type.googleapis.com/ForbiddenType2"]\];
     /// }
     /// ```
     #[prost(string, repeated, tag="3")]
@@ -2254,7 +2254,7 @@ pub struct DurationRules {
     /// ```proto
     /// message MyDuration {
     ///   // value must equal 5s
-    ///    google.protobuf.Duration value = 1 [(buf.validate.field).duration.const = "5s"];
+    ///    google.protobuf.Duration value = 1 \[(buf.validate.field).duration.const = "5s"\];
     /// }
     /// ```
     #[prost(message, optional, tag="2")]
@@ -2266,7 +2266,7 @@ pub struct DurationRules {
     /// ```proto
     /// message MyDuration {
     ///   // value must be less than 5s
-    ///    google.protobuf.Duration value = 1 [(buf.validate.field).duration.lt = "5s"];
+    ///    google.protobuf.Duration value = 1 \[(buf.validate.field).duration.lt = "5s"\];
     /// }
     /// ```
     #[prost(message, optional, tag="3")]
@@ -2278,7 +2278,7 @@ pub struct DurationRules {
     /// ```proto
     /// message MyDuration {
     ///   // value must be less than or equal to 10s
-    ///    google.protobuf.Duration value = 1 [(buf.validate.field).duration.lte = "10s"];
+    ///    google.protobuf.Duration value = 1 \[(buf.validate.field).duration.lte = "10s"\];
     /// }
     /// ```
     #[prost(message, optional, tag="4")]
@@ -2292,13 +2292,13 @@ pub struct DurationRules {
     /// ```proto
     /// message MyDuration {
     ///   // duration must be greater than 5s \[duration.gt\]
-    ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.gt = { seconds: 5 }];
+    ///   google.protobuf.Duration value = 1 \[(buf.validate.field).duration.gt = { seconds: 5 }\];
     ///
     ///   // duration must be greater than 5s and less than 10s \[duration.gt_lt\]
-    ///   google.protobuf.Duration another_value = 2 [(buf.validate.field).duration = { gt: { seconds: 5 }, lt: { seconds: 10 } }];
+    ///   google.protobuf.Duration another_value = 2 \[(buf.validate.field).duration = { gt: { seconds: 5 }, lt: { seconds: 10 } }\];
     ///
     ///   // duration must be greater than 10s or less than 5s \[duration.gt_lt_exclusive\]
-    ///   google.protobuf.Duration other_value = 3 [(buf.validate.field).duration = { gt: { seconds: 10 }, lt: { seconds: 5 } }];
+    ///   google.protobuf.Duration other_value = 3 \[(buf.validate.field).duration = { gt: { seconds: 10 }, lt: { seconds: 5 } }\];
     /// }
     /// ```
     #[prost(message, optional, tag="5")]
@@ -2312,13 +2312,13 @@ pub struct DurationRules {
     /// ```proto
     /// message MyDuration {
     ///   // duration must be greater than or equal to 5s \[duration.gte\]
-    ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.gte = { seconds: 5 }];
+    ///   google.protobuf.Duration value = 1 \[(buf.validate.field).duration.gte = { seconds: 5 }\];
     ///
     ///   // duration must be greater than or equal to 5s and less than 10s \[duration.gte_lt\]
-    ///   google.protobuf.Duration another_value = 2 [(buf.validate.field).duration = { gte: { seconds: 5 }, lt: { seconds: 10 } }];
+    ///   google.protobuf.Duration another_value = 2 \[(buf.validate.field).duration = { gte: { seconds: 5 }, lt: { seconds: 10 } }\];
     ///
     ///   // duration must be greater than or equal to 10s or less than 5s \[duration.gte_lt_exclusive\]
-    ///   google.protobuf.Duration other_value = 3 [(buf.validate.field).duration = { gte: { seconds: 10 }, lt: { seconds: 5 } }];
+    ///   google.protobuf.Duration other_value = 3 \[(buf.validate.field).duration = { gte: { seconds: 10 }, lt: { seconds: 5 } }\];
     /// }
     /// ```
     #[prost(message, optional, tag="6")]
@@ -2329,8 +2329,8 @@ pub struct DurationRules {
     ///
     /// ```proto
     /// message MyDuration {
-    ///   // value must be in list [1s, 2s, 3s]
-    ///    google.protobuf.Duration value = 1 [(buf.validate.field).duration.in = ["1s", "2s", "3s"]];
+    ///   // value must be in list \[1s, 2s, 3s\]
+    ///    google.protobuf.Duration value = 1 \[(buf.validate.field).duration.in = ["1s", "2s", "3s"]\];
     /// }
     /// ```
     #[prost(message, repeated, tag="7")]
@@ -2342,8 +2342,8 @@ pub struct DurationRules {
     ///
     /// ```proto
     /// message MyDuration {
-    ///   // value must not be in list [1s, 2s, 3s]
-    ///    google.protobuf.Duration value = 1 [(buf.validate.field).duration.not_in = ["1s", "2s", "3s"]];
+    ///   // value must not be in list \[1s, 2s, 3s\]
+    ///    google.protobuf.Duration value = 1 \[(buf.validate.field).duration.not_in = ["1s", "2s", "3s"]\];
     /// }
     /// ```
     #[prost(message, repeated, tag="8")]
@@ -2358,7 +2358,7 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///   // value must equal 2023-05-03T10:00:00Z
-    ///    google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.const = {seconds: 1727998800}];
+    ///    google.protobuf.Timestamp created_at = 1 \[(buf.validate.field).timestamp.const = {seconds: 1727998800}\];
     /// }
     /// ```
     #[prost(message, optional, tag="2")]
@@ -2368,7 +2368,7 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyDuration {
     ///    // duration must be less than 'P3D' \[duration.lt\]
-    ///    google.protobuf.Duration value = 1 [(buf.validate.field).duration.lt = { seconds: 259200 }];
+    ///    google.protobuf.Duration value = 1 \[(buf.validate.field).duration.lt = { seconds: 259200 }\];
     /// }
     /// ```
     #[prost(message, optional, tag="3")]
@@ -2378,7 +2378,7 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///    // timestamp must be less than or equal to '2023-05-14T00:00:00Z' \[timestamp.lte\]
-    ///    google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.lte = { seconds: 1678867200 }];
+    ///    google.protobuf.Timestamp value = 1 \[(buf.validate.field).timestamp.lte = { seconds: 1678867200 }\];
     /// }
     /// ```
     #[prost(message, optional, tag="4")]
@@ -2392,13 +2392,13 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///   // timestamp must be greater than '2023-01-01T00:00:00Z' \[timestamp.gt\]
-    ///   google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.gt = { seconds: 1672444800 }];
+    ///   google.protobuf.Timestamp value = 1 \[(buf.validate.field).timestamp.gt = { seconds: 1672444800 }\];
     ///
     ///   // timestamp must be greater than '2023-01-01T00:00:00Z' and less than '2023-01-02T00:00:00Z' \[timestamp.gt_lt\]
-    ///   google.protobuf.Timestamp another_value = 2 [(buf.validate.field).timestamp = { gt: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }];
+    ///   google.protobuf.Timestamp another_value = 2 \[(buf.validate.field).timestamp = { gt: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }\];
     ///
     ///   // timestamp must be greater than '2023-01-02T00:00:00Z' or less than '2023-01-01T00:00:00Z' \[timestamp.gt_lt_exclusive\]
-    ///   google.protobuf.Timestamp other_value = 3 [(buf.validate.field).timestamp = { gt: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }];
+    ///   google.protobuf.Timestamp other_value = 3 \[(buf.validate.field).timestamp = { gt: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }\];
     /// }
     /// ```
     #[prost(message, optional, tag="5")]
@@ -2412,13 +2412,13 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///   // timestamp must be greater than or equal to '2023-01-01T00:00:00Z' \[timestamp.gte\]
-    ///   google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.gte = { seconds: 1672444800 }];
+    ///   google.protobuf.Timestamp value = 1 \[(buf.validate.field).timestamp.gte = { seconds: 1672444800 }\];
     ///
     ///   // timestamp must be greater than or equal to '2023-01-01T00:00:00Z' and less than '2023-01-02T00:00:00Z' \[timestamp.gte_lt\]
-    ///   google.protobuf.Timestamp another_value = 2 [(buf.validate.field).timestamp = { gte: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }];
+    ///   google.protobuf.Timestamp another_value = 2 \[(buf.validate.field).timestamp = { gte: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }\];
     ///
     ///   // timestamp must be greater than or equal to '2023-01-02T00:00:00Z' or less than '2023-01-01T00:00:00Z' \[timestamp.gte_lt_exclusive\]
-    ///   google.protobuf.Timestamp other_value = 3 [(buf.validate.field).timestamp = { gte: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }];
+    ///   google.protobuf.Timestamp other_value = 3 \[(buf.validate.field).timestamp = { gte: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }\];
     /// }
     /// ```
     #[prost(message, optional, tag="6")]
@@ -2428,7 +2428,7 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///   // value must be less than now
-    ///    google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.lt_now = true];
+    ///    google.protobuf.Timestamp created_at = 1 \[(buf.validate.field).timestamp.lt_now = true\];
     /// }
     /// ```
     #[prost(bool, optional, tag="7")]
@@ -2438,7 +2438,7 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///   // value must be greater than now
-    ///    google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.gt_now = true];
+    ///    google.protobuf.Timestamp created_at = 1 \[(buf.validate.field).timestamp.gt_now = true\];
     /// }
     /// ```
     #[prost(bool, optional, tag="8")]
@@ -2448,7 +2448,7 @@ pub struct TimestampRules {
     /// ```proto
     /// message MyTimestamp {
     ///   // value must be within 1 hour of now
-    ///    google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.within = {seconds: 3600}];
+    ///    google.protobuf.Timestamp created_at = 1 \[(buf.validate.field).timestamp.within = {seconds: 3600}\];
     /// }
     /// ```
     #[prost(message, optional, tag="9")]

@@ -371,7 +371,10 @@ pub mod librarian_searcher_service_server {
                             request: tonic::Request<super::NewIdRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).new_id(request).await };
+                            let fut = async move {
+                                <T as LibrarianSearcherService>::new_id(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -416,7 +419,11 @@ pub mod librarian_searcher_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).new_batch_i_ds(request).await
+                                <T as LibrarianSearcherService>::new_batch_i_ds(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -461,7 +468,13 @@ pub mod librarian_searcher_service_server {
                             request: tonic::Request<super::DescribeIdRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).describe_id(request).await };
+                            let fut = async move {
+                                <T as LibrarianSearcherService>::describe_id(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -505,7 +518,10 @@ pub mod librarian_searcher_service_server {
                             request: tonic::Request<super::SearchIdRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).search_id(request).await };
+                            let fut = async move {
+                                <T as LibrarianSearcherService>::search_id(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -550,7 +566,11 @@ pub mod librarian_searcher_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).search_app_info(request).await
+                                <T as LibrarianSearcherService>::search_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }

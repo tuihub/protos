@@ -564,7 +564,11 @@ pub mod librarian_mapper_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).insert_vertex(request).await
+                                <T as LibrarianMapperService>::insert_vertex(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -610,7 +614,11 @@ pub mod librarian_mapper_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).delete_vertex(request).await
+                                <T as LibrarianMapperService>::delete_vertex(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -656,7 +664,11 @@ pub mod librarian_mapper_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_vertex(request).await
+                                <T as LibrarianMapperService>::update_vertex(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -701,7 +713,10 @@ pub mod librarian_mapper_service_server {
                             request: tonic::Request<super::InsertEdgeRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).insert_edge(request).await };
+                            let fut = async move {
+                                <T as LibrarianMapperService>::insert_edge(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -745,7 +760,10 @@ pub mod librarian_mapper_service_server {
                             request: tonic::Request<super::DeleteEdgeRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).delete_edge(request).await };
+                            let fut = async move {
+                                <T as LibrarianMapperService>::delete_edge(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -789,7 +807,10 @@ pub mod librarian_mapper_service_server {
                             request: tonic::Request<super::UpdateEdgeRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).update_edge(request).await };
+                            let fut = async move {
+                                <T as LibrarianMapperService>::update_edge(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -834,7 +855,11 @@ pub mod librarian_mapper_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).go_from_vertex(request).await
+                                <T as LibrarianMapperService>::go_from_vertex(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -880,7 +905,11 @@ pub mod librarian_mapper_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).fetch_equal_vertex(request).await
+                                <T as LibrarianMapperService>::fetch_equal_vertex(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -930,7 +959,11 @@ pub mod librarian_mapper_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).fetch_equal_vertex_neighbor(request).await
+                                <T as LibrarianMapperService>::fetch_equal_vertex_neighbor(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
                             };
                             Box::pin(fut)
                         }
@@ -975,7 +1008,10 @@ pub mod librarian_mapper_service_server {
                             request: tonic::Request<super::FindPathRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).find_path(request).await };
+                            let fut = async move {
+                                <T as LibrarianMapperService>::find_path(&inner, request)
+                                    .await
+                            };
                             Box::pin(fut)
                         }
                     }

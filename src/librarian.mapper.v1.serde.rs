@@ -68,18 +68,18 @@ impl<'de> serde::Deserialize<'de> for DeleteEdgeRequest {
                 formatter.write_str("struct librarian.mapper.v1.DeleteEdgeRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DeleteEdgeRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DeleteEdgeRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut edge_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::EdgeList => {
                             if edge_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeList"));
                             }
-                            edge_list__ = Some(map.next_value()?);
+                            edge_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -148,12 +148,12 @@ impl<'de> serde::Deserialize<'de> for DeleteEdgeResponse {
                 formatter.write_str("struct librarian.mapper.v1.DeleteEdgeResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DeleteEdgeResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DeleteEdgeResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(DeleteEdgeResponse {
                 })
@@ -231,19 +231,19 @@ impl<'de> serde::Deserialize<'de> for DeleteVertexRequest {
                 formatter.write_str("struct librarian.mapper.v1.DeleteVertexRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DeleteVertexRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DeleteVertexRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut vid_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::VidList => {
                             if vid_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vidList"));
                             }
                             vid_list__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -314,12 +314,12 @@ impl<'de> serde::Deserialize<'de> for DeleteVertexResponse {
                 formatter.write_str("struct librarian.mapper.v1.DeleteVertexResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DeleteVertexResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DeleteVertexResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(DeleteVertexResponse {
                 })
@@ -350,14 +350,16 @@ impl serde::Serialize for Edge {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.Edge", len)?;
         if self.src_vid != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         if self.dst_vid != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("dstVid", ToString::to_string(&self.dst_vid).as_str())?;
         }
         if self.r#type != 0 {
-            let v = EdgeType::from_i32(self.r#type)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
+            let v = EdgeType::try_from(self.r#type)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
             struct_ser.serialize_field("type", &v)?;
         }
         if let Some(v) = self.prop.as_ref() {
@@ -427,7 +429,7 @@ impl<'de> serde::Deserialize<'de> for Edge {
                 formatter.write_str("struct librarian.mapper.v1.Edge")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Edge, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Edge, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -435,14 +437,14 @@ impl<'de> serde::Deserialize<'de> for Edge {
                 let mut dst_vid__ = None;
                 let mut r#type__ = None;
                 let mut prop__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::SrcVid => {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
                             src_vid__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::DstVid => {
@@ -450,20 +452,20 @@ impl<'de> serde::Deserialize<'de> for Edge {
                                 return Err(serde::de::Error::duplicate_field("dstVid"));
                             }
                             dst_vid__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::Type => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("type"));
                             }
-                            r#type__ = Some(map.next_value::<EdgeType>()? as i32);
+                            r#type__ = Some(map_.next_value::<EdgeType>()? as i32);
                         }
                         GeneratedField::Prop => {
                             if prop__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("prop"));
                             }
-                            prop__ = map.next_value()?;
+                            prop__ = map_.next_value()?;
                         }
                     }
                 }
@@ -509,6 +511,7 @@ impl serde::Serialize for EdgeCommonProp {
             struct_ser.serialize_field("updateTime", v)?;
         }
         if let Some(v) = self.rank.as_ref() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("rank", ToString::to_string(&v).as_str())?;
         }
         struct_ser.end()
@@ -576,7 +579,7 @@ impl<'de> serde::Deserialize<'de> for EdgeCommonProp {
                 formatter.write_str("struct librarian.mapper.v1.EdgeCommonProp")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EdgeCommonProp, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EdgeCommonProp, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -584,32 +587,32 @@ impl<'de> serde::Deserialize<'de> for EdgeCommonProp {
                 let mut create_time__ = None;
                 let mut update_time__ = None;
                 let mut rank__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::OccurTime => {
                             if occur_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("occurTime"));
                             }
-                            occur_time__ = map.next_value()?;
+                            occur_time__ = map_.next_value()?;
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = map.next_value()?;
+                            create_time__ = map_.next_value()?;
                         }
                         GeneratedField::UpdateTime => {
                             if update_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updateTime"));
                             }
-                            update_time__ = map.next_value()?;
+                            update_time__ = map_.next_value()?;
                         }
                         GeneratedField::Rank => {
                             if rank__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("rank"));
                             }
                             rank__ = 
-                                map.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
+                                map_.next_value::<::std::option::Option<::pbjson::private::NumberDeserialize<_>>>()?.map(|x| x.0)
                             ;
                         }
                     }
@@ -666,10 +669,9 @@ impl<'de> serde::Deserialize<'de> for EdgeDirection {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(EdgeDirection::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -679,10 +681,9 @@ impl<'de> serde::Deserialize<'de> for EdgeDirection {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(EdgeDirection::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -783,26 +784,26 @@ impl<'de> serde::Deserialize<'de> for EdgeProp {
                 formatter.write_str("struct librarian.mapper.v1.EdgeProp")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<EdgeProp, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<EdgeProp, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut common__ = None;
                 let mut additional__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Common => {
                             if common__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("common"));
                             }
-                            common__ = map.next_value()?;
+                            common__ = map_.next_value()?;
                         }
                         GeneratedField::Additional => {
                             if additional__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("additional"));
                             }
                             additional__ = Some(
-                                map.next_value::<std::collections::HashMap<_, ::pbjson::private::NumberDeserialize<i64>>>()?
+                                map_.next_value::<std::collections::HashMap<_, ::pbjson::private::NumberDeserialize<i64>>>()?
                                     .into_iter().map(|(k,v)| (k, v.0)).collect()
                             );
                         }
@@ -870,10 +871,9 @@ impl<'de> serde::Deserialize<'de> for EdgeType {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(EdgeType::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -883,10 +883,9 @@ impl<'de> serde::Deserialize<'de> for EdgeType {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(EdgeType::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -933,18 +932,19 @@ impl serde::Serialize for FetchEqualVertexNeighborRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.FetchEqualVertexNeighborRequest", len)?;
         if self.src_vid != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         if !self.edge_type_filter.is_empty() {
             let v = self.edge_type_filter.iter().cloned().map(|v| {
-                EdgeType::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                EdgeType::try_from(v)
+                    .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
                 }).collect::<Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("edgeTypeFilter", &v)?;
         }
         if self.edge_direction != 0 {
-            let v = EdgeDirection::from_i32(self.edge_direction)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.edge_direction)))?;
+            let v = EdgeDirection::try_from(self.edge_direction)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.edge_direction)))?;
             struct_ser.serialize_field("edgeDirection", &v)?;
         }
         struct_ser.end()
@@ -1009,34 +1009,34 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborRequest {
                 formatter.write_str("struct librarian.mapper.v1.FetchEqualVertexNeighborRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FetchEqualVertexNeighborRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FetchEqualVertexNeighborRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut src_vid__ = None;
                 let mut edge_type_filter__ = None;
                 let mut edge_direction__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::SrcVid => {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
                             src_vid__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::EdgeTypeFilter => {
                             if edge_type_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeTypeFilter"));
                             }
-                            edge_type_filter__ = Some(map.next_value::<Vec<EdgeType>>()?.into_iter().map(|x| x as i32).collect());
+                            edge_type_filter__ = Some(map_.next_value::<Vec<EdgeType>>()?.into_iter().map(|x| x as i32).collect());
                         }
                         GeneratedField::EdgeDirection => {
                             if edge_direction__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeDirection"));
                             }
-                            edge_direction__ = Some(map.next_value::<EdgeDirection>()? as i32);
+                            edge_direction__ = Some(map_.next_value::<EdgeDirection>()? as i32);
                         }
                     }
                 }
@@ -1119,18 +1119,18 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexNeighborResponse {
                 formatter.write_str("struct librarian.mapper.v1.FetchEqualVertexNeighborResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FetchEqualVertexNeighborResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FetchEqualVertexNeighborResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut edge_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::EdgeList => {
                             if edge_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeList"));
                             }
-                            edge_list__ = Some(map.next_value()?);
+                            edge_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1155,6 +1155,7 @@ impl serde::Serialize for FetchEqualVertexRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.FetchEqualVertexRequest", len)?;
         if self.src_vid != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         struct_ser.end()
@@ -1211,19 +1212,19 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexRequest {
                 formatter.write_str("struct librarian.mapper.v1.FetchEqualVertexRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FetchEqualVertexRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FetchEqualVertexRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut src_vid__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::SrcVid => {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
                             src_vid__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                     }
@@ -1305,18 +1306,18 @@ impl<'de> serde::Deserialize<'de> for FetchEqualVertexResponse {
                 formatter.write_str("struct librarian.mapper.v1.FetchEqualVertexResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FetchEqualVertexResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FetchEqualVertexResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut vertex_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::VertexList => {
                             if vertex_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vertexList"));
                             }
-                            vertex_list__ = Some(map.next_value()?);
+                            vertex_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1360,17 +1361,18 @@ impl serde::Serialize for FindPathRequest {
         }
         if !self.edge_type_filter.is_empty() {
             let v = self.edge_type_filter.iter().cloned().map(|v| {
-                EdgeType::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                EdgeType::try_from(v)
+                    .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
                 }).collect::<Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("edgeTypeFilter", &v)?;
         }
         if self.edge_direction != 0 {
-            let v = EdgeDirection::from_i32(self.edge_direction)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.edge_direction)))?;
+            let v = EdgeDirection::try_from(self.edge_direction)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.edge_direction)))?;
             struct_ser.serialize_field("edgeDirection", &v)?;
         }
         if self.max_step != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxStep", ToString::to_string(&self.max_step).as_str())?;
         }
         struct_ser.end()
@@ -1443,7 +1445,7 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                 formatter.write_str("struct librarian.mapper.v1.FindPathRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FindPathRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FindPathRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1452,14 +1454,14 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                 let mut edge_type_filter__ = None;
                 let mut edge_direction__ = None;
                 let mut max_step__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::SrcVid => {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
                             src_vid__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -1468,7 +1470,7 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                                 return Err(serde::de::Error::duplicate_field("dstVid"));
                             }
                             dst_vid__ = 
-                                Some(map.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
+                                Some(map_.next_value::<Vec<::pbjson::private::NumberDeserialize<_>>>()?
                                     .into_iter().map(|x| x.0).collect())
                             ;
                         }
@@ -1476,20 +1478,20 @@ impl<'de> serde::Deserialize<'de> for FindPathRequest {
                             if edge_type_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeTypeFilter"));
                             }
-                            edge_type_filter__ = Some(map.next_value::<Vec<EdgeType>>()?.into_iter().map(|x| x as i32).collect());
+                            edge_type_filter__ = Some(map_.next_value::<Vec<EdgeType>>()?.into_iter().map(|x| x as i32).collect());
                         }
                         GeneratedField::EdgeDirection => {
                             if edge_direction__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeDirection"));
                             }
-                            edge_direction__ = Some(map.next_value::<EdgeDirection>()? as i32);
+                            edge_direction__ = Some(map_.next_value::<EdgeDirection>()? as i32);
                         }
                         GeneratedField::MaxStep => {
                             if max_step__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("maxStep"));
                             }
                             max_step__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                     }
@@ -1575,18 +1577,18 @@ impl<'de> serde::Deserialize<'de> for FindPathResponse {
                 formatter.write_str("struct librarian.mapper.v1.FindPathResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<FindPathResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<FindPathResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut path_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::PathList => {
                             if path_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("pathList"));
                             }
-                            path_list__ = Some(map.next_value()?);
+                            path_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1667,18 +1669,18 @@ impl<'de> serde::Deserialize<'de> for find_path_response::SinglePath {
                 formatter.write_str("struct librarian.mapper.v1.FindPathResponse.SinglePath")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<find_path_response::SinglePath, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<find_path_response::SinglePath, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut edge_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::EdgeList => {
                             if edge_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeList"));
                             }
-                            edge_list__ = Some(map.next_value()?);
+                            edge_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1721,30 +1723,35 @@ impl serde::Serialize for GoFromVertexRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.GoFromVertexRequest", len)?;
         if self.src_vid != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         if !self.edge_type_filter.is_empty() {
             let v = self.edge_type_filter.iter().cloned().map(|v| {
-                EdgeType::from_i32(v)
-                    .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                EdgeType::try_from(v)
+                    .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
                 }).collect::<Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("edgeTypeFilter", &v)?;
         }
         if self.edge_direction != 0 {
-            let v = EdgeDirection::from_i32(self.edge_direction)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.edge_direction)))?;
+            let v = EdgeDirection::try_from(self.edge_direction)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.edge_direction)))?;
             struct_ser.serialize_field("edgeDirection", &v)?;
         }
         if self.min_step != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("minStep", ToString::to_string(&self.min_step).as_str())?;
         }
         if self.max_step != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("maxStep", ToString::to_string(&self.max_step).as_str())?;
         }
         if self.limit != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("limit", ToString::to_string(&self.limit).as_str())?;
         }
         if self.offset != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("offset", ToString::to_string(&self.offset).as_str())?;
         }
         struct_ser.end()
@@ -1823,7 +1830,7 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                 formatter.write_str("struct librarian.mapper.v1.GoFromVertexRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GoFromVertexRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GoFromVertexRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -1834,34 +1841,34 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                 let mut max_step__ = None;
                 let mut limit__ = None;
                 let mut offset__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::SrcVid => {
                             if src_vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("srcVid"));
                             }
                             src_vid__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::EdgeTypeFilter => {
                             if edge_type_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeTypeFilter"));
                             }
-                            edge_type_filter__ = Some(map.next_value::<Vec<EdgeType>>()?.into_iter().map(|x| x as i32).collect());
+                            edge_type_filter__ = Some(map_.next_value::<Vec<EdgeType>>()?.into_iter().map(|x| x as i32).collect());
                         }
                         GeneratedField::EdgeDirection => {
                             if edge_direction__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeDirection"));
                             }
-                            edge_direction__ = Some(map.next_value::<EdgeDirection>()? as i32);
+                            edge_direction__ = Some(map_.next_value::<EdgeDirection>()? as i32);
                         }
                         GeneratedField::MinStep => {
                             if min_step__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("minStep"));
                             }
                             min_step__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::MaxStep => {
@@ -1869,7 +1876,7 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                                 return Err(serde::de::Error::duplicate_field("maxStep"));
                             }
                             max_step__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::Limit => {
@@ -1877,7 +1884,7 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                                 return Err(serde::de::Error::duplicate_field("limit"));
                             }
                             limit__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::Offset => {
@@ -1885,7 +1892,7 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexRequest {
                                 return Err(serde::de::Error::duplicate_field("offset"));
                             }
                             offset__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                     }
@@ -1973,18 +1980,18 @@ impl<'de> serde::Deserialize<'de> for GoFromVertexResponse {
                 formatter.write_str("struct librarian.mapper.v1.GoFromVertexResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<GoFromVertexResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GoFromVertexResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut vertex_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::VertexList => {
                             if vertex_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vertexList"));
                             }
-                            vertex_list__ = Some(map.next_value()?);
+                            vertex_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2065,18 +2072,18 @@ impl<'de> serde::Deserialize<'de> for InsertEdgeRequest {
                 formatter.write_str("struct librarian.mapper.v1.InsertEdgeRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<InsertEdgeRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<InsertEdgeRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut edge_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::EdgeList => {
                             if edge_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeList"));
                             }
-                            edge_list__ = Some(map.next_value()?);
+                            edge_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2145,12 +2152,12 @@ impl<'de> serde::Deserialize<'de> for InsertEdgeResponse {
                 formatter.write_str("struct librarian.mapper.v1.InsertEdgeResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<InsertEdgeResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<InsertEdgeResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(InsertEdgeResponse {
                 })
@@ -2228,18 +2235,18 @@ impl<'de> serde::Deserialize<'de> for InsertVertexRequest {
                 formatter.write_str("struct librarian.mapper.v1.InsertVertexRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<InsertVertexRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<InsertVertexRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut vertex_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::VertexList => {
                             if vertex_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vertexList"));
                             }
-                            vertex_list__ = Some(map.next_value()?);
+                            vertex_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2308,12 +2315,12 @@ impl<'de> serde::Deserialize<'de> for InsertVertexResponse {
                 formatter.write_str("struct librarian.mapper.v1.InsertVertexResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<InsertVertexResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<InsertVertexResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(InsertVertexResponse {
                 })
@@ -2391,18 +2398,18 @@ impl<'de> serde::Deserialize<'de> for UpdateEdgeRequest {
                 formatter.write_str("struct librarian.mapper.v1.UpdateEdgeRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateEdgeRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<UpdateEdgeRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut edge_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::EdgeList => {
                             if edge_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("edgeList"));
                             }
-                            edge_list__ = Some(map.next_value()?);
+                            edge_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2471,12 +2478,12 @@ impl<'de> serde::Deserialize<'de> for UpdateEdgeResponse {
                 formatter.write_str("struct librarian.mapper.v1.UpdateEdgeResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateEdgeResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<UpdateEdgeResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(UpdateEdgeResponse {
                 })
@@ -2554,18 +2561,18 @@ impl<'de> serde::Deserialize<'de> for UpdateVertexRequest {
                 formatter.write_str("struct librarian.mapper.v1.UpdateVertexRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateVertexRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<UpdateVertexRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut vertex_list__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::VertexList => {
                             if vertex_list__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vertexList"));
                             }
-                            vertex_list__ = Some(map.next_value()?);
+                            vertex_list__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -2634,12 +2641,12 @@ impl<'de> serde::Deserialize<'de> for UpdateVertexResponse {
                 formatter.write_str("struct librarian.mapper.v1.UpdateVertexResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<UpdateVertexResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<UpdateVertexResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(UpdateVertexResponse {
                 })
@@ -2667,11 +2674,12 @@ impl serde::Serialize for Vertex {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.Vertex", len)?;
         if self.vid != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("vid", ToString::to_string(&self.vid).as_str())?;
         }
         if self.r#type != 0 {
-            let v = VertexType::from_i32(self.r#type)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
+            let v = VertexType::try_from(self.r#type)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
             struct_ser.serialize_field("type", &v)?;
         }
         if let Some(v) = self.prop.as_ref() {
@@ -2736,34 +2744,34 @@ impl<'de> serde::Deserialize<'de> for Vertex {
                 formatter.write_str("struct librarian.mapper.v1.Vertex")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<Vertex, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Vertex, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut vid__ = None;
                 let mut r#type__ = None;
                 let mut prop__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Vid => {
                             if vid__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("vid"));
                             }
                             vid__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::Type => {
                             if r#type__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("type"));
                             }
-                            r#type__ = Some(map.next_value::<VertexType>()? as i32);
+                            r#type__ = Some(map_.next_value::<VertexType>()? as i32);
                         }
                         GeneratedField::Prop => {
                             if prop__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("prop"));
                             }
-                            prop__ = map.next_value()?;
+                            prop__ = map_.next_value()?;
                         }
                     }
                 }
@@ -2866,32 +2874,32 @@ impl<'de> serde::Deserialize<'de> for VertexCommonProp {
                 formatter.write_str("struct librarian.mapper.v1.VertexCommonProp")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<VertexCommonProp, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<VertexCommonProp, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut occur_time__ = None;
                 let mut create_time__ = None;
                 let mut update_time__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::OccurTime => {
                             if occur_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("occurTime"));
                             }
-                            occur_time__ = map.next_value()?;
+                            occur_time__ = map_.next_value()?;
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("createTime"));
                             }
-                            create_time__ = map.next_value()?;
+                            create_time__ = map_.next_value()?;
                         }
                         GeneratedField::UpdateTime => {
                             if update_time__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("updateTime"));
                             }
-                            update_time__ = map.next_value()?;
+                            update_time__ = map_.next_value()?;
                         }
                     }
                 }
@@ -2984,26 +2992,26 @@ impl<'de> serde::Deserialize<'de> for VertexProp {
                 formatter.write_str("struct librarian.mapper.v1.VertexProp")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<VertexProp, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<VertexProp, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut common__ = None;
                 let mut additional__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Common => {
                             if common__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("common"));
                             }
-                            common__ = map.next_value()?;
+                            common__ = map_.next_value()?;
                         }
                         GeneratedField::Additional => {
                             if additional__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("additional"));
                             }
                             additional__ = Some(
-                                map.next_value::<std::collections::HashMap<_, ::pbjson::private::NumberDeserialize<i64>>>()?
+                                map_.next_value::<std::collections::HashMap<_, ::pbjson::private::NumberDeserialize<i64>>>()?
                                     .into_iter().map(|(k,v)| (k, v.0)).collect()
                             );
                         }
@@ -3063,10 +3071,9 @@ impl<'de> serde::Deserialize<'de> for VertexType {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(VertexType::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -3076,10 +3083,9 @@ impl<'de> serde::Deserialize<'de> for VertexType {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(VertexType::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })

@@ -27,13 +27,13 @@ impl serde::Serialize for DescribeIdRequest {
             struct_ser.serialize_field("description", &self.description)?;
         }
         if self.mode != 0 {
-            let v = describe_id_request::DescribeMode::from_i32(self.mode)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.mode)))?;
+            let v = describe_id_request::DescribeMode::try_from(self.mode)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.mode)))?;
             struct_ser.serialize_field("mode", &v)?;
         }
         if self.index != 0 {
-            let v = Index::from_i32(self.index)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.index)))?;
+            let v = Index::try_from(self.index)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.index)))?;
             struct_ser.serialize_field("index", &v)?;
         }
         struct_ser.end()
@@ -98,7 +98,7 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                 formatter.write_str("struct librarian.searcher.v1.DescribeIDRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DescribeIdRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DescribeIdRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
@@ -106,31 +106,31 @@ impl<'de> serde::Deserialize<'de> for DescribeIdRequest {
                 let mut description__ = None;
                 let mut mode__ = None;
                 let mut index__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = map.next_value()?;
+                            id__ = map_.next_value()?;
                         }
                         GeneratedField::Description => {
                             if description__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("description"));
                             }
-                            description__ = Some(map.next_value()?);
+                            description__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Mode => {
                             if mode__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("mode"));
                             }
-                            mode__ = Some(map.next_value::<describe_id_request::DescribeMode>()? as i32);
+                            mode__ = Some(map_.next_value::<describe_id_request::DescribeMode>()? as i32);
                         }
                         GeneratedField::Index => {
                             if index__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("index"));
                             }
-                            index__ = Some(map.next_value::<Index>()? as i32);
+                            index__ = Some(map_.next_value::<Index>()? as i32);
                         }
                     }
                 }
@@ -184,10 +184,9 @@ impl<'de> serde::Deserialize<'de> for describe_id_request::DescribeMode {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(describe_id_request::DescribeMode::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -197,10 +196,9 @@ impl<'de> serde::Deserialize<'de> for describe_id_request::DescribeMode {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(describe_id_request::DescribeMode::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -278,12 +276,12 @@ impl<'de> serde::Deserialize<'de> for DescribeIdResponse {
                 formatter.write_str("struct librarian.searcher.v1.DescribeIDResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<DescribeIdResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DescribeIdResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(DescribeIdResponse {
                 })
@@ -333,10 +331,9 @@ impl<'de> serde::Deserialize<'de> for Index {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(Index::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
                     })
@@ -346,10 +343,9 @@ impl<'de> serde::Deserialize<'de> for Index {
             where
                 E: serde::de::Error,
             {
-                use std::convert::TryFrom;
                 i32::try_from(v)
                     .ok()
-                    .and_then(Index::from_i32)
+                    .and_then(|x| x.try_into().ok())
                     .ok_or_else(|| {
                         serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
                     })
@@ -439,19 +435,19 @@ impl<'de> serde::Deserialize<'de> for NewBatchIDsRequest {
                 formatter.write_str("struct librarian.searcher.v1.NewBatchIDsRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<NewBatchIDsRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<NewBatchIDsRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut num__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Num => {
                             if num__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("num"));
                             }
                             num__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                     }
@@ -532,18 +528,18 @@ impl<'de> serde::Deserialize<'de> for NewBatchIDsResponse {
                 formatter.write_str("struct librarian.searcher.v1.NewBatchIDsResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<NewBatchIDsResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<NewBatchIDsResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut ids__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Ids => {
                             if ids__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("ids"));
                             }
-                            ids__ = Some(map.next_value()?);
+                            ids__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -612,12 +608,12 @@ impl<'de> serde::Deserialize<'de> for NewIdRequest {
                 formatter.write_str("struct librarian.searcher.v1.NewIDRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<NewIdRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<NewIdRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map.next_value::<serde::de::IgnoredAny>()?;
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
                 }
                 Ok(NewIdRequest {
                 })
@@ -694,18 +690,18 @@ impl<'de> serde::Deserialize<'de> for NewIdResponse {
                 formatter.write_str("struct librarian.searcher.v1.NewIDResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<NewIdResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<NewIdResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = map.next_value()?;
+                            id__ = map_.next_value()?;
                         }
                     }
                 }
@@ -794,25 +790,25 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoRequest {
                 formatter.write_str("struct librarian.searcher.v1.SearchAppInfoRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfoRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SearchAppInfoRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut name__ = None;
                 let mut source__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Name => {
                             if name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("name"));
                             }
-                            name__ = Some(map.next_value()?);
+                            name__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Source => {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = map.next_value()?;
+                            source__ = map_.next_value()?;
                         }
                     }
                 }
@@ -894,18 +890,18 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoResponse {
                 formatter.write_str("struct librarian.searcher.v1.SearchAppInfoResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchAppInfoResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SearchAppInfoResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_infos__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AppInfos => {
                             if app_infos__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("appInfos"));
                             }
-                            app_infos__ = Some(map.next_value()?);
+                            app_infos__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -942,8 +938,8 @@ impl serde::Serialize for SearchIdRequest {
             struct_ser.serialize_field("query", &self.query)?;
         }
         if self.index != 0 {
-            let v = Index::from_i32(self.index)
-                .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.index)))?;
+            let v = Index::try_from(self.index)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.index)))?;
             struct_ser.serialize_field("index", &v)?;
         }
         struct_ser.end()
@@ -1005,32 +1001,32 @@ impl<'de> serde::Deserialize<'de> for SearchIdRequest {
                 formatter.write_str("struct librarian.searcher.v1.SearchIDRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchIdRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SearchIdRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
                 let mut query__ = None;
                 let mut index__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Paging => {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = map.next_value()?;
+                            paging__ = map_.next_value()?;
                         }
                         GeneratedField::Query => {
                             if query__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("query"));
                             }
-                            query__ = Some(map.next_value()?);
+                            query__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Index => {
                             if index__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("index"));
                             }
-                            index__ = Some(map.next_value::<Index>()? as i32);
+                            index__ = Some(map_.next_value::<Index>()? as i32);
                         }
                     }
                 }
@@ -1121,25 +1117,25 @@ impl<'de> serde::Deserialize<'de> for SearchIdResponse {
                 formatter.write_str("struct librarian.searcher.v1.SearchIDResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<SearchIdResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<SearchIdResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
                 let mut result__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Paging => {
                             if paging__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("paging"));
                             }
-                            paging__ = map.next_value()?;
+                            paging__ = map_.next_value()?;
                         }
                         GeneratedField::Result => {
                             if result__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("result"));
                             }
-                            result__ = Some(map.next_value()?);
+                            result__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -1171,6 +1167,7 @@ impl serde::Serialize for search_id_response::Result {
             struct_ser.serialize_field("id", v)?;
         }
         if self.rank != 0 {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("rank", ToString::to_string(&self.rank).as_str())?;
         }
         struct_ser.end()
@@ -1229,26 +1226,26 @@ impl<'de> serde::Deserialize<'de> for search_id_response::Result {
                 formatter.write_str("struct librarian.searcher.v1.SearchIDResponse.Result")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<search_id_response::Result, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<search_id_response::Result, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
                 let mut rank__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
                             if id__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
-                            id__ = map.next_value()?;
+                            id__ = map_.next_value()?;
                         }
                         GeneratedField::Rank => {
                             if rank__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("rank"));
                             }
                             rank__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                     }

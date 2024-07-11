@@ -12,6 +12,7 @@ impl serde::Serialize for RecognizeImageBinaryRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.miner.v1.RecognizeImageBinaryRequest", len)?;
         if !self.data.is_empty() {
+            #[allow(clippy::needless_borrow)]
             struct_ser.serialize_field("data", pbjson::private::base64::encode(&self.data).as_str())?;
         }
         struct_ser.end()
@@ -67,19 +68,19 @@ impl<'de> serde::Deserialize<'de> for RecognizeImageBinaryRequest {
                 formatter.write_str("struct librarian.miner.v1.RecognizeImageBinaryRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RecognizeImageBinaryRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RecognizeImageBinaryRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut data__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Data => {
                             if data__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("data"));
                             }
                             data__ = 
-                                Some(map.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
                             ;
                         }
                     }
@@ -160,18 +161,18 @@ impl<'de> serde::Deserialize<'de> for RecognizeImageBinaryResponse {
                 formatter.write_str("struct librarian.miner.v1.RecognizeImageBinaryResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RecognizeImageBinaryResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RecognizeImageBinaryResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut results__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Results => {
                             if results__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("results"));
                             }
-                            results__ = Some(map.next_value()?);
+                            results__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -260,27 +261,27 @@ impl<'de> serde::Deserialize<'de> for RecognizeImageResult {
                 formatter.write_str("struct librarian.miner.v1.RecognizeImageResult")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RecognizeImageResult, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RecognizeImageResult, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut confidence__ = None;
                 let mut text__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Confidence => {
                             if confidence__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("confidence"));
                             }
                             confidence__ = 
-                                Some(map.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
                         GeneratedField::Text => {
                             if text__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("text"));
                             }
-                            text__ = Some(map.next_value()?);
+                            text__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -361,18 +362,18 @@ impl<'de> serde::Deserialize<'de> for RecognizeImageUrlRequest {
                 formatter.write_str("struct librarian.miner.v1.RecognizeImageURLRequest")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RecognizeImageUrlRequest, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RecognizeImageUrlRequest, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut url__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Url => {
                             if url__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("url"));
                             }
-                            url__ = Some(map.next_value()?);
+                            url__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -452,18 +453,18 @@ impl<'de> serde::Deserialize<'de> for RecognizeImageUrlResponse {
                 formatter.write_str("struct librarian.miner.v1.RecognizeImageURLResponse")
             }
 
-            fn visit_map<V>(self, mut map: V) -> std::result::Result<RecognizeImageUrlResponse, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RecognizeImageUrlResponse, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
                 let mut results__ = None;
-                while let Some(k) = map.next_key()? {
+                while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Results => {
                             if results__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("results"));
                             }
-                            results__ = Some(map.next_value()?);
+                            results__ = Some(map_.next_value()?);
                         }
                     }
                 }
