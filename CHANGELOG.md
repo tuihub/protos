@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.16](https://github.com/tuihub/protos/compare/v0.4.15...v0.4.16) (2024-07-11)
+
+
+### Bug Fixes
+
+* update `NotifyTarget` `FeedConfig` ([76b16ac](https://github.com/tuihub/protos/commit/76b16ac9244f61d890c1c8e59911b6b8fccd92d4))
+* update PorterContext ([f6895a9](https://github.com/tuihub/protos/commit/f6895a9bf22b5b286f4aa1d270ceb53c17262581))
+
 ## [0.4.15](https://github.com/tuihub/protos/compare/v0.4.14...v0.4.15) (2024-07-11)
 
 
