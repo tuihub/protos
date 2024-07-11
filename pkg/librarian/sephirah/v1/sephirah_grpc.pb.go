@@ -23,7 +23,7 @@ const (
 	LibrarianSephirahService_ListenServerEvent_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent"
 	LibrarianSephirahService_GetToken_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/GetToken"
 	LibrarianSephirahService_RefreshToken_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken"
-	LibrarianSephirahService_GainUserPrivilege_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege"
+	LibrarianSephirahService_AcquireUserToken_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/AcquireUserToken"
 	LibrarianSephirahService_RegisterUser_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser"
 	LibrarianSephirahService_RegisterDevice_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice"
 	LibrarianSephirahService_ListRegisteredDevices_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/ListRegisteredDevices"
@@ -38,7 +38,9 @@ const (
 	LibrarianSephirahService_ListLinkAccounts_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts"
 	LibrarianSephirahService_ListPorters_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorters"
 	LibrarianSephirahService_UpdatePorterStatus_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus"
-	LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName         = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege"
+	LibrarianSephirahService_CreatePorterContext_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext"
+	LibrarianSephirahService_ListPorterContexts_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts"
+	LibrarianSephirahService_UpdatePorterContext_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext"
 	LibrarianSephirahService_SetFileCapacity_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity"
 	LibrarianSephirahService_GetFileCapacity_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/GetFileCapacity"
 	LibrarianSephirahService_UploadFile_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile"
@@ -158,8 +160,9 @@ type LibrarianSephirahServiceClient interface {
 	GetToken(ctx context.Context, in *GetTokenRequest, opts ...grpc.CallOption) (*GetTokenResponse, error)
 	// `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
-	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
-	GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error)
+	// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+	// This token can be used to perform actions on behalf of the user.
+	AcquireUserToken(ctx context.Context, in *AcquireUserTokenRequest, opts ...grpc.CallOption) (*AcquireUserTokenResponse, error)
 	// `Tiphereth` Self register as a new normal user
 	RegisterUser(ctx context.Context, in *RegisterUserRequest, opts ...grpc.CallOption) (*RegisterUserResponse, error)
 	// `Tiphereth` `Normal` Client should register device after the first login
@@ -195,8 +198,12 @@ type LibrarianSephirahServiceClient interface {
 	ListPorters(ctx context.Context, in *ListPortersRequest, opts ...grpc.CallOption) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error)
-	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
-	UpdatePorterPrivilege(ctx context.Context, in *UpdatePorterPrivilegeRequest, opts ...grpc.CallOption) (*UpdatePorterPrivilegeResponse, error)
+	// `Tiphereth` `Normal`
+	CreatePorterContext(ctx context.Context, in *CreatePorterContextRequest, opts ...grpc.CallOption) (*CreatePorterContextResponse, error)
+	// `Tiphereth` `Normal`
+	ListPorterContexts(ctx context.Context, in *ListPorterContextsRequest, opts ...grpc.CallOption) (*ListPorterContextsResponse, error)
+	// `Tiphereth` `Normal` Set porter context.
+	UpdatePorterContext(ctx context.Context, in *UpdatePorterContextRequest, opts ...grpc.CallOption) (*UpdatePorterContextResponse, error)
 	// `Binah` `Admin`
 	SetFileCapacity(ctx context.Context, in *SetFileCapacityRequest, opts ...grpc.CallOption) (*SetFileCapacityResponse, error)
 	// `Binah` `Admin` `Normal limited`
@@ -473,10 +480,10 @@ func (c *librarianSephirahServiceClient) RefreshToken(ctx context.Context, in *R
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) GainUserPrivilege(ctx context.Context, in *GainUserPrivilegeRequest, opts ...grpc.CallOption) (*GainUserPrivilegeResponse, error) {
+func (c *librarianSephirahServiceClient) AcquireUserToken(ctx context.Context, in *AcquireUserTokenRequest, opts ...grpc.CallOption) (*AcquireUserTokenResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GainUserPrivilegeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_GainUserPrivilege_FullMethodName, in, out, cOpts...)
+	out := new(AcquireUserTokenResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_AcquireUserToken_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -623,10 +630,30 @@ func (c *librarianSephirahServiceClient) UpdatePorterStatus(ctx context.Context,
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) UpdatePorterPrivilege(ctx context.Context, in *UpdatePorterPrivilegeRequest, opts ...grpc.CallOption) (*UpdatePorterPrivilegeResponse, error) {
+func (c *librarianSephirahServiceClient) CreatePorterContext(ctx context.Context, in *CreatePorterContextRequest, opts ...grpc.CallOption) (*CreatePorterContextResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UpdatePorterPrivilegeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName, in, out, cOpts...)
+	out := new(CreatePorterContextResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreatePorterContext_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListPorterContexts(ctx context.Context, in *ListPorterContextsRequest, opts ...grpc.CallOption) (*ListPorterContextsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListPorterContextsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListPorterContexts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdatePorterContext(ctx context.Context, in *UpdatePorterContextRequest, opts ...grpc.CallOption) (*UpdatePorterContextResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdatePorterContextResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdatePorterContext_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1667,8 +1694,9 @@ type LibrarianSephirahServiceServer interface {
 	GetToken(context.Context, *GetTokenRequest) (*GetTokenResponse, error)
 	// `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
-	// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
-	GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error)
+	// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+	// This token can be used to perform actions on behalf of the user.
+	AcquireUserToken(context.Context, *AcquireUserTokenRequest) (*AcquireUserTokenResponse, error)
 	// `Tiphereth` Self register as a new normal user
 	RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error)
 	// `Tiphereth` `Normal` Client should register device after the first login
@@ -1704,8 +1732,12 @@ type LibrarianSephirahServiceServer interface {
 	ListPorters(context.Context, *ListPortersRequest) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error)
-	// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
-	UpdatePorterPrivilege(context.Context, *UpdatePorterPrivilegeRequest) (*UpdatePorterPrivilegeResponse, error)
+	// `Tiphereth` `Normal`
+	CreatePorterContext(context.Context, *CreatePorterContextRequest) (*CreatePorterContextResponse, error)
+	// `Tiphereth` `Normal`
+	ListPorterContexts(context.Context, *ListPorterContextsRequest) (*ListPorterContextsResponse, error)
+	// `Tiphereth` `Normal` Set porter context.
+	UpdatePorterContext(context.Context, *UpdatePorterContextRequest) (*UpdatePorterContextResponse, error)
 	// `Binah` `Admin`
 	SetFileCapacity(context.Context, *SetFileCapacityRequest) (*SetFileCapacityResponse, error)
 	// `Binah` `Admin` `Normal limited`
@@ -1928,8 +1960,8 @@ func (UnimplementedLibrarianSephirahServiceServer) GetToken(context.Context, *Ge
 func (UnimplementedLibrarianSephirahServiceServer) RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) GainUserPrivilege(context.Context, *GainUserPrivilegeRequest) (*GainUserPrivilegeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GainUserPrivilege not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) AcquireUserToken(context.Context, *AcquireUserTokenRequest) (*AcquireUserTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AcquireUserToken not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) RegisterUser(context.Context, *RegisterUserRequest) (*RegisterUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterUser not implemented")
@@ -1973,8 +2005,14 @@ func (UnimplementedLibrarianSephirahServiceServer) ListPorters(context.Context, 
 func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterStatus not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterPrivilege(context.Context, *UpdatePorterPrivilegeRequest) (*UpdatePorterPrivilegeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterPrivilege not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) CreatePorterContext(context.Context, *CreatePorterContextRequest) (*CreatePorterContextResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePorterContext not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListPorterContexts(context.Context, *ListPorterContextsRequest) (*ListPorterContextsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPorterContexts not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterContext(context.Context, *UpdatePorterContextRequest) (*UpdatePorterContextResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterContext not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) SetFileCapacity(context.Context, *SetFileCapacityRequest) (*SetFileCapacityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetFileCapacity not implemented")
@@ -2341,20 +2379,20 @@ func _LibrarianSephirahService_RefreshToken_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_GainUserPrivilege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GainUserPrivilegeRequest)
+func _LibrarianSephirahService_AcquireUserToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcquireUserTokenRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).GainUserPrivilege(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).AcquireUserToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_GainUserPrivilege_FullMethodName,
+		FullMethod: LibrarianSephirahService_AcquireUserToken_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).GainUserPrivilege(ctx, req.(*GainUserPrivilegeRequest))
+		return srv.(LibrarianSephirahServiceServer).AcquireUserToken(ctx, req.(*AcquireUserTokenRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2611,20 +2649,56 @@ func _LibrarianSephirahService_UpdatePorterStatus_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_UpdatePorterPrivilege_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdatePorterPrivilegeRequest)
+func _LibrarianSephirahService_CreatePorterContext_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePorterContextRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UpdatePorterPrivilege(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).CreatePorterContext(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_UpdatePorterPrivilege_FullMethodName,
+		FullMethod: LibrarianSephirahService_CreatePorterContext_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UpdatePorterPrivilege(ctx, req.(*UpdatePorterPrivilegeRequest))
+		return srv.(LibrarianSephirahServiceServer).CreatePorterContext(ctx, req.(*CreatePorterContextRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListPorterContexts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPorterContextsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListPorterContexts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListPorterContexts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListPorterContexts(ctx, req.(*ListPorterContextsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdatePorterContext_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePorterContextRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdatePorterContext(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdatePorterContext_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdatePorterContext(ctx, req.(*UpdatePorterContextRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4332,8 +4406,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_RefreshToken_Handler,
 		},
 		{
-			MethodName: "GainUserPrivilege",
-			Handler:    _LibrarianSephirahService_GainUserPrivilege_Handler,
+			MethodName: "AcquireUserToken",
+			Handler:    _LibrarianSephirahService_AcquireUserToken_Handler,
 		},
 		{
 			MethodName: "RegisterUser",
@@ -4392,8 +4466,16 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_UpdatePorterStatus_Handler,
 		},
 		{
-			MethodName: "UpdatePorterPrivilege",
-			Handler:    _LibrarianSephirahService_UpdatePorterPrivilege_Handler,
+			MethodName: "CreatePorterContext",
+			Handler:    _LibrarianSephirahService_CreatePorterContext_Handler,
+		},
+		{
+			MethodName: "ListPorterContexts",
+			Handler:    _LibrarianSephirahService_ListPorterContexts_Handler,
+		},
+		{
+			MethodName: "UpdatePorterContext",
+			Handler:    _LibrarianSephirahService_UpdatePorterContext_Handler,
 		},
 		{
 			MethodName: "SetFileCapacity",

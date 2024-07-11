@@ -1350,6 +1350,9 @@ impl serde::Serialize for FeatureFlag {
         if !self.config_json_schema.is_empty() {
             len += 1;
         }
+        if self.require_context {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeatureFlag", len)?;
         if !self.id.is_empty() {
             struct_ser.serialize_field("id", &self.id)?;
@@ -1365,6 +1368,9 @@ impl serde::Serialize for FeatureFlag {
         }
         if !self.config_json_schema.is_empty() {
             struct_ser.serialize_field("configJsonSchema", &self.config_json_schema)?;
+        }
+        if self.require_context {
+            struct_ser.serialize_field("requireContext", &self.require_context)?;
         }
         struct_ser.end()
     }
@@ -1382,6 +1388,8 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
             "description",
             "config_json_schema",
             "configJsonSchema",
+            "require_context",
+            "requireContext",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1391,6 +1399,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
             Name,
             Description,
             ConfigJsonSchema,
+            RequireContext,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1417,6 +1426,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "configJsonSchema" | "config_json_schema" => Ok(GeneratedField::ConfigJsonSchema),
+                            "requireContext" | "require_context" => Ok(GeneratedField::RequireContext),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1441,6 +1451,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                 let mut name__ = None;
                 let mut description__ = None;
                 let mut config_json_schema__ = None;
+                let mut require_context__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1473,6 +1484,12 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                             }
                             config_json_schema__ = Some(map.next_value()?);
                         }
+                        GeneratedField::RequireContext => {
+                            if require_context__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("requireContext"));
+                            }
+                            require_context__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(FeatureFlag {
@@ -1481,6 +1498,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     config_json_schema: config_json_schema__.unwrap_or_default(),
+                    require_context: require_context__.unwrap_or_default(),
                 })
             }
         }
@@ -1504,6 +1522,9 @@ impl serde::Serialize for FeatureRequest {
         if !self.config_json.is_empty() {
             len += 1;
         }
+        if self.context_id.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeatureRequest", len)?;
         if !self.id.is_empty() {
             struct_ser.serialize_field("id", &self.id)?;
@@ -1513,6 +1534,9 @@ impl serde::Serialize for FeatureRequest {
         }
         if !self.config_json.is_empty() {
             struct_ser.serialize_field("configJson", &self.config_json)?;
+        }
+        if let Some(v) = self.context_id.as_ref() {
+            struct_ser.serialize_field("contextId", v)?;
         }
         struct_ser.end()
     }
@@ -1528,6 +1552,8 @@ impl<'de> serde::Deserialize<'de> for FeatureRequest {
             "region",
             "config_json",
             "configJson",
+            "context_id",
+            "contextId",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1535,6 +1561,7 @@ impl<'de> serde::Deserialize<'de> for FeatureRequest {
             Id,
             Region,
             ConfigJson,
+            ContextId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1559,6 +1586,7 @@ impl<'de> serde::Deserialize<'de> for FeatureRequest {
                             "id" => Ok(GeneratedField::Id),
                             "region" => Ok(GeneratedField::Region),
                             "configJson" | "config_json" => Ok(GeneratedField::ConfigJson),
+                            "contextId" | "context_id" => Ok(GeneratedField::ContextId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1581,6 +1609,7 @@ impl<'de> serde::Deserialize<'de> for FeatureRequest {
                 let mut id__ = None;
                 let mut region__ = None;
                 let mut config_json__ = None;
+                let mut context_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1601,12 +1630,19 @@ impl<'de> serde::Deserialize<'de> for FeatureRequest {
                             }
                             config_json__ = Some(map.next_value()?);
                         }
+                        GeneratedField::ContextId => {
+                            if context_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("contextId"));
+                            }
+                            context_id__ = map.next_value()?;
+                        }
                     }
                 }
                 Ok(FeatureRequest {
                     id: id__.unwrap_or_default(),
                     region: region__.unwrap_or_default(),
                     config_json: config_json__.unwrap_or_default(),
+                    context_id: context_id__,
                 })
             }
         }
@@ -3263,8 +3299,8 @@ impl serde::Serialize for WellKnownFeedItemAction {
     {
         let variant = match self {
             Self::Unspecified => "WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED",
-            Self::BuiltinFilter => "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER",
-            Self::BuiltinDescriptionShorter => "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER",
+            Self::KeywordFilter => "WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER",
+            Self::DescriptionGenerator => "WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR",
         };
         serializer.serialize_str(variant)
     }
@@ -3277,8 +3313,8 @@ impl<'de> serde::Deserialize<'de> for WellKnownFeedItemAction {
     {
         const FIELDS: &[&str] = &[
             "WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED",
-            "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER",
-            "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER",
+            "WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER",
+            "WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR",
         ];
 
         struct GeneratedVisitor;
@@ -3322,8 +3358,8 @@ impl<'de> serde::Deserialize<'de> for WellKnownFeedItemAction {
             {
                 match value {
                     "WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED" => Ok(WellKnownFeedItemAction::Unspecified),
-                    "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER" => Ok(WellKnownFeedItemAction::BuiltinFilter),
-                    "WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER" => Ok(WellKnownFeedItemAction::BuiltinDescriptionShorter),
+                    "WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER" => Ok(WellKnownFeedItemAction::KeywordFilter),
+                    "WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR" => Ok(WellKnownFeedItemAction::DescriptionGenerator),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

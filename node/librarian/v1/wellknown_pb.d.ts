@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_descriptor_pb from "google-protobuf/google/protobuf/descriptor_pb";
+import * as librarian_v1_common_pb from "../../librarian/v1/common_pb";
 
 export class FeatureFlag extends jspb.Message {
   getId(): string;
@@ -19,6 +20,9 @@ export class FeatureFlag extends jspb.Message {
 
   getConfigJsonSchema(): string;
   setConfigJsonSchema(value: string): void;
+
+  getRequireContext(): boolean;
+  setRequireContext(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureFlag.AsObject;
@@ -37,6 +41,7 @@ export namespace FeatureFlag {
     name: string,
     description: string,
     configJsonSchema: string,
+    requireContext: boolean,
   }
 }
 
@@ -49,6 +54,11 @@ export class FeatureRequest extends jspb.Message {
 
   getConfigJson(): string;
   setConfigJson(value: string): void;
+
+  hasContextId(): boolean;
+  clearContextId(): void;
+  getContextId(): librarian_v1_common_pb.InternalID | undefined;
+  setContextId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureRequest.AsObject;
@@ -65,6 +75,7 @@ export namespace FeatureRequest {
     id: string,
     region: string,
     configJson: string,
+    contextId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
@@ -102,8 +113,8 @@ export const WellKnownNotifyDestination: WellKnownNotifyDestinationMap;
 
 export interface WellKnownFeedItemActionMap {
   WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED: 0;
-  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER: 1;
-  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER: 2;
+  WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER: 1;
+  WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR: 2;
 }
 
 export const WellKnownFeedItemAction: WellKnownFeedItemActionMap;

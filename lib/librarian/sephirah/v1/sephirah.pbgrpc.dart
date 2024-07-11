@@ -44,10 +44,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken',
       ($1.RefreshTokenRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.RefreshTokenResponse.fromBuffer(value));
-  static final _$gainUserPrivilege = $grpc.ClientMethod<$1.GainUserPrivilegeRequest, $1.GainUserPrivilegeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege',
-      ($1.GainUserPrivilegeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GainUserPrivilegeResponse.fromBuffer(value));
+  static final _$acquireUserToken = $grpc.ClientMethod<$1.AcquireUserTokenRequest, $1.AcquireUserTokenResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/AcquireUserToken',
+      ($1.AcquireUserTokenRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AcquireUserTokenResponse.fromBuffer(value));
   static final _$registerUser = $grpc.ClientMethod<$1.RegisterUserRequest, $1.RegisterUserResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser',
       ($1.RegisterUserRequest value) => value.writeToBuffer(),
@@ -104,10 +104,18 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus',
       ($1.UpdatePorterStatusRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.UpdatePorterStatusResponse.fromBuffer(value));
-  static final _$updatePorterPrivilege = $grpc.ClientMethod<$1.UpdatePorterPrivilegeRequest, $1.UpdatePorterPrivilegeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege',
-      ($1.UpdatePorterPrivilegeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.UpdatePorterPrivilegeResponse.fromBuffer(value));
+  static final _$createPorterContext = $grpc.ClientMethod<$1.CreatePorterContextRequest, $1.CreatePorterContextResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext',
+      ($1.CreatePorterContextRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.CreatePorterContextResponse.fromBuffer(value));
+  static final _$listPorterContexts = $grpc.ClientMethod<$1.ListPorterContextsRequest, $1.ListPorterContextsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts',
+      ($1.ListPorterContextsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ListPorterContextsResponse.fromBuffer(value));
+  static final _$updatePorterContext = $grpc.ClientMethod<$1.UpdatePorterContextRequest, $1.UpdatePorterContextResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext',
+      ($1.UpdatePorterContextRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.UpdatePorterContextResponse.fromBuffer(value));
   static final _$setFileCapacity = $grpc.ClientMethod<$2.SetFileCapacityRequest, $2.SetFileCapacityResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/SetFileCapacity',
       ($2.SetFileCapacityRequest value) => value.writeToBuffer(),
@@ -499,8 +507,8 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$refreshToken, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GainUserPrivilegeResponse> gainUserPrivilege($1.GainUserPrivilegeRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$gainUserPrivilege, request, options: options);
+  $grpc.ResponseFuture<$1.AcquireUserTokenResponse> acquireUserToken($1.AcquireUserTokenRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$acquireUserToken, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.RegisterUserResponse> registerUser($1.RegisterUserRequest request, {$grpc.CallOptions? options}) {
@@ -559,8 +567,16 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updatePorterStatus, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.UpdatePorterPrivilegeResponse> updatePorterPrivilege($1.UpdatePorterPrivilegeRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updatePorterPrivilege, request, options: options);
+  $grpc.ResponseFuture<$1.CreatePorterContextResponse> createPorterContext($1.CreatePorterContextRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createPorterContext, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ListPorterContextsResponse> listPorterContexts($1.ListPorterContextsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listPorterContexts, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.UpdatePorterContextResponse> updatePorterContext($1.UpdatePorterContextRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updatePorterContext, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.SetFileCapacityResponse> setFileCapacity($2.SetFileCapacityRequest request, {$grpc.CallOptions? options}) {
@@ -965,13 +981,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.RefreshTokenRequest.fromBuffer(value),
         ($1.RefreshTokenResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GainUserPrivilegeRequest, $1.GainUserPrivilegeResponse>(
-        'GainUserPrivilege',
-        gainUserPrivilege_Pre,
+    $addMethod($grpc.ServiceMethod<$1.AcquireUserTokenRequest, $1.AcquireUserTokenResponse>(
+        'AcquireUserToken',
+        acquireUserToken_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GainUserPrivilegeRequest.fromBuffer(value),
-        ($1.GainUserPrivilegeResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $1.AcquireUserTokenRequest.fromBuffer(value),
+        ($1.AcquireUserTokenResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.RegisterUserRequest, $1.RegisterUserResponse>(
         'RegisterUser',
         registerUser_Pre,
@@ -1070,13 +1086,27 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.UpdatePorterStatusRequest.fromBuffer(value),
         ($1.UpdatePorterStatusResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.UpdatePorterPrivilegeRequest, $1.UpdatePorterPrivilegeResponse>(
-        'UpdatePorterPrivilege',
-        updatePorterPrivilege_Pre,
+    $addMethod($grpc.ServiceMethod<$1.CreatePorterContextRequest, $1.CreatePorterContextResponse>(
+        'CreatePorterContext',
+        createPorterContext_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.UpdatePorterPrivilegeRequest.fromBuffer(value),
-        ($1.UpdatePorterPrivilegeResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $1.CreatePorterContextRequest.fromBuffer(value),
+        ($1.CreatePorterContextResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ListPorterContextsRequest, $1.ListPorterContextsResponse>(
+        'ListPorterContexts',
+        listPorterContexts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.ListPorterContextsRequest.fromBuffer(value),
+        ($1.ListPorterContextsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.UpdatePorterContextRequest, $1.UpdatePorterContextResponse>(
+        'UpdatePorterContext',
+        updatePorterContext_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.UpdatePorterContextRequest.fromBuffer(value),
+        ($1.UpdatePorterContextResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$2.SetFileCapacityRequest, $2.SetFileCapacityResponse>(
         'SetFileCapacity',
         setFileCapacity_Pre,
@@ -1739,8 +1769,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return refreshToken(call, await request);
   }
 
-  $async.Future<$1.GainUserPrivilegeResponse> gainUserPrivilege_Pre($grpc.ServiceCall call, $async.Future<$1.GainUserPrivilegeRequest> request) async {
-    return gainUserPrivilege(call, await request);
+  $async.Future<$1.AcquireUserTokenResponse> acquireUserToken_Pre($grpc.ServiceCall call, $async.Future<$1.AcquireUserTokenRequest> request) async {
+    return acquireUserToken(call, await request);
   }
 
   $async.Future<$1.RegisterUserResponse> registerUser_Pre($grpc.ServiceCall call, $async.Future<$1.RegisterUserRequest> request) async {
@@ -1799,8 +1829,16 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return updatePorterStatus(call, await request);
   }
 
-  $async.Future<$1.UpdatePorterPrivilegeResponse> updatePorterPrivilege_Pre($grpc.ServiceCall call, $async.Future<$1.UpdatePorterPrivilegeRequest> request) async {
-    return updatePorterPrivilege(call, await request);
+  $async.Future<$1.CreatePorterContextResponse> createPorterContext_Pre($grpc.ServiceCall call, $async.Future<$1.CreatePorterContextRequest> request) async {
+    return createPorterContext(call, await request);
+  }
+
+  $async.Future<$1.ListPorterContextsResponse> listPorterContexts_Pre($grpc.ServiceCall call, $async.Future<$1.ListPorterContextsRequest> request) async {
+    return listPorterContexts(call, await request);
+  }
+
+  $async.Future<$1.UpdatePorterContextResponse> updatePorterContext_Pre($grpc.ServiceCall call, $async.Future<$1.UpdatePorterContextRequest> request) async {
+    return updatePorterContext(call, await request);
   }
 
   $async.Future<$2.SetFileCapacityResponse> setFileCapacity_Pre($grpc.ServiceCall call, $async.Future<$2.SetFileCapacityRequest> request) async {
@@ -2163,7 +2201,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Stream<$0.ListenServerEventResponse> listenServerEvent($grpc.ServiceCall call, $0.ListenServerEventRequest request);
   $async.Future<$1.GetTokenResponse> getToken($grpc.ServiceCall call, $1.GetTokenRequest request);
   $async.Future<$1.RefreshTokenResponse> refreshToken($grpc.ServiceCall call, $1.RefreshTokenRequest request);
-  $async.Future<$1.GainUserPrivilegeResponse> gainUserPrivilege($grpc.ServiceCall call, $1.GainUserPrivilegeRequest request);
+  $async.Future<$1.AcquireUserTokenResponse> acquireUserToken($grpc.ServiceCall call, $1.AcquireUserTokenRequest request);
   $async.Future<$1.RegisterUserResponse> registerUser($grpc.ServiceCall call, $1.RegisterUserRequest request);
   $async.Future<$1.RegisterDeviceResponse> registerDevice($grpc.ServiceCall call, $1.RegisterDeviceRequest request);
   $async.Future<$1.ListRegisteredDevicesResponse> listRegisteredDevices($grpc.ServiceCall call, $1.ListRegisteredDevicesRequest request);
@@ -2178,7 +2216,9 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.ListLinkAccountsResponse> listLinkAccounts($grpc.ServiceCall call, $1.ListLinkAccountsRequest request);
   $async.Future<$1.ListPortersResponse> listPorters($grpc.ServiceCall call, $1.ListPortersRequest request);
   $async.Future<$1.UpdatePorterStatusResponse> updatePorterStatus($grpc.ServiceCall call, $1.UpdatePorterStatusRequest request);
-  $async.Future<$1.UpdatePorterPrivilegeResponse> updatePorterPrivilege($grpc.ServiceCall call, $1.UpdatePorterPrivilegeRequest request);
+  $async.Future<$1.CreatePorterContextResponse> createPorterContext($grpc.ServiceCall call, $1.CreatePorterContextRequest request);
+  $async.Future<$1.ListPorterContextsResponse> listPorterContexts($grpc.ServiceCall call, $1.ListPorterContextsRequest request);
+  $async.Future<$1.UpdatePorterContextResponse> updatePorterContext($grpc.ServiceCall call, $1.UpdatePorterContextRequest request);
   $async.Future<$2.SetFileCapacityResponse> setFileCapacity($grpc.ServiceCall call, $2.SetFileCapacityRequest request);
   $async.Future<$2.GetFileCapacityResponse> getFileCapacity($grpc.ServiceCall call, $2.GetFileCapacityRequest request);
   $async.Stream<$2.UploadFileResponse> uploadFile($grpc.ServiceCall call, $async.Stream<$2.UploadFileRequest> request);

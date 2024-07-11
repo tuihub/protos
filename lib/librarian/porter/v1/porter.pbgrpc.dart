@@ -29,6 +29,14 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       '/librarian.porter.v1.LibrarianPorterService/EnablePorter',
       ($0.EnablePorterRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.EnablePorterResponse.fromBuffer(value));
+  static final _$enableContext = $grpc.ClientMethod<$0.EnableContextRequest, $0.EnableContextResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/EnableContext',
+      ($0.EnableContextRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.EnableContextResponse.fromBuffer(value));
+  static final _$disableContext = $grpc.ClientMethod<$0.DisableContextRequest, $0.DisableContextResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/DisableContext',
+      ($0.DisableContextRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.DisableContextResponse.fromBuffer(value));
   static final _$pullAccount = $grpc.ClientMethod<$0.PullAccountRequest, $0.PullAccountResponse>(
       '/librarian.porter.v1.LibrarianPorterService/PullAccount',
       ($0.PullAccountRequest value) => value.writeToBuffer(),
@@ -70,6 +78,14 @@ class LibrarianPorterServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.EnablePorterResponse> enablePorter($0.EnablePorterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$enablePorter, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EnableContextResponse> enableContext($0.EnableContextRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$enableContext, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DisableContextResponse> disableContext($0.DisableContextRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$disableContext, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PullAccountResponse> pullAccount($0.PullAccountRequest request, {$grpc.CallOptions? options}) {
@@ -120,6 +136,20 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.EnablePorterRequest.fromBuffer(value),
         ($0.EnablePorterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EnableContextRequest, $0.EnableContextResponse>(
+        'EnableContext',
+        enableContext_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.EnableContextRequest.fromBuffer(value),
+        ($0.EnableContextResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DisableContextRequest, $0.DisableContextResponse>(
+        'DisableContext',
+        disableContext_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.DisableContextRequest.fromBuffer(value),
+        ($0.DisableContextResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PullAccountRequest, $0.PullAccountResponse>(
         'PullAccount',
         pullAccount_Pre,
@@ -179,6 +209,14 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return enablePorter(call, await request);
   }
 
+  $async.Future<$0.EnableContextResponse> enableContext_Pre($grpc.ServiceCall call, $async.Future<$0.EnableContextRequest> request) async {
+    return enableContext(call, await request);
+  }
+
+  $async.Future<$0.DisableContextResponse> disableContext_Pre($grpc.ServiceCall call, $async.Future<$0.DisableContextRequest> request) async {
+    return disableContext(call, await request);
+  }
+
   $async.Future<$0.PullAccountResponse> pullAccount_Pre($grpc.ServiceCall call, $async.Future<$0.PullAccountRequest> request) async {
     return pullAccount(call, await request);
   }
@@ -209,6 +247,8 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation($grpc.ServiceCall call, $0.GetPorterInformationRequest request);
   $async.Future<$0.EnablePorterResponse> enablePorter($grpc.ServiceCall call, $0.EnablePorterRequest request);
+  $async.Future<$0.EnableContextResponse> enableContext($grpc.ServiceCall call, $0.EnableContextRequest request);
+  $async.Future<$0.DisableContextResponse> disableContext($grpc.ServiceCall call, $0.DisableContextRequest request);
   $async.Future<$0.PullAccountResponse> pullAccount($grpc.ServiceCall call, $0.PullAccountRequest request);
   $async.Future<$0.PullAppInfoResponse> pullAppInfo($grpc.ServiceCall call, $0.PullAppInfoRequest request);
   $async.Future<$0.PullAccountAppInfoRelationResponse> pullAccountAppInfoRelation($grpc.ServiceCall call, $0.PullAccountAppInfoRelationRequest request);

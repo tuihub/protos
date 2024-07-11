@@ -54,6 +54,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse> __Marshaller_librarian_porter_v1_EnablePorterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest> __Marshaller_librarian_porter_v1_EnableContextRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse> __Marshaller_librarian_porter_v1_EnableContextResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest> __Marshaller_librarian_porter_v1_DisableContextRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse> __Marshaller_librarian_porter_v1_DisableContextResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest> __Marshaller_librarian_porter_v1_PullAccountRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse> __Marshaller_librarian_porter_v1_PullAccountResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse.Parser));
@@ -97,6 +105,22 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         "EnablePorter",
         __Marshaller_librarian_porter_v1_EnablePorterRequest,
         __Marshaller_librarian_porter_v1_EnablePorterResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse> __Method_EnableContext = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "EnableContext",
+        __Marshaller_librarian_porter_v1_EnableContextRequest,
+        __Marshaller_librarian_porter_v1_EnableContextResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse> __Method_DisableContext = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DisableContext",
+        __Marshaller_librarian_porter_v1_DisableContextRequest,
+        __Marshaller_librarian_porter_v1_DisableContextResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse> __Method_PullAccount = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse>(
@@ -172,6 +196,18 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse> EnablePorter(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse> EnableContext(global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse> DisableContext(global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -328,6 +364,46 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse> EnablePorterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_EnablePorter, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse EnableContext(global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableContext(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse EnableContext(global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_EnableContext, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse> EnableContextAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableContextAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse> EnableContextAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_EnableContext, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse DisableContext(global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableContext(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse DisableContext(global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DisableContext, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse> DisableContextAsync(global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableContextAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse> DisableContextAsync(global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DisableContext, null, options, request);
       }
       /// <summary>
       /// `Tiphereth`
@@ -681,6 +757,8 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_GetPorterInformation, serviceImpl.GetPorterInformation)
           .AddMethod(__Method_EnablePorter, serviceImpl.EnablePorter)
+          .AddMethod(__Method_EnableContext, serviceImpl.EnableContext)
+          .AddMethod(__Method_DisableContext, serviceImpl.DisableContext)
           .AddMethod(__Method_PullAccount, serviceImpl.PullAccount)
           .AddMethod(__Method_PullAppInfo, serviceImpl.PullAppInfo)
           .AddMethod(__Method_PullAccountAppInfoRelation, serviceImpl.PullAccountAppInfoRelation)
@@ -699,6 +777,8 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     {
       serviceBinder.AddMethod(__Method_GetPorterInformation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.GetPorterInformationRequest, global::TuiHub.Protos.Librarian.Porter.V1.GetPorterInformationResponse>(serviceImpl.GetPorterInformation));
       serviceBinder.AddMethod(__Method_EnablePorter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse>(serviceImpl.EnablePorter));
+      serviceBinder.AddMethod(__Method_EnableContext, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse>(serviceImpl.EnableContext));
+      serviceBinder.AddMethod(__Method_DisableContext, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse>(serviceImpl.DisableContext));
       serviceBinder.AddMethod(__Method_PullAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountResponse>(serviceImpl.PullAccount));
       serviceBinder.AddMethod(__Method_PullAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAppInfoResponse>(serviceImpl.PullAppInfo));
       serviceBinder.AddMethod(__Method_PullAccountAppInfoRelation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppInfoRelationRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullAccountAppInfoRelationResponse>(serviceImpl.PullAccountAppInfoRelation));

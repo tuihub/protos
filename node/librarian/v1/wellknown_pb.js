@@ -23,6 +23,8 @@ var global =
 
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
+var librarian_v1_common_pb = require('../../librarian/v1/common_pb.js');
+goog.object.extend(proto, librarian_v1_common_pb);
 goog.exportSymbol('proto.librarian.v1.FeatureFlag', null, global);
 goog.exportSymbol('proto.librarian.v1.FeatureRequest', null, global);
 goog.exportSymbol('proto.librarian.v1.WellKnownAccountPlatform', null, global);
@@ -109,7 +111,8 @@ proto.librarian.v1.FeatureFlag.toObject = function(includeInstance, msg) {
     region: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    configJsonSchema: jspb.Message.getFieldWithDefault(msg, 5, "")
+    configJsonSchema: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -165,6 +168,10 @@ proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader = function(msg, reade
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setConfigJsonSchema(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRequireContext(value);
       break;
     default:
       reader.skipField();
@@ -227,6 +234,13 @@ proto.librarian.v1.FeatureFlag.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getRequireContext();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -323,6 +337,24 @@ proto.librarian.v1.FeatureFlag.prototype.setConfigJsonSchema = function(value) {
 };
 
 
+/**
+ * optional bool require_context = 6;
+ * @return {boolean}
+ */
+proto.librarian.v1.FeatureFlag.prototype.getRequireContext = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.librarian.v1.FeatureFlag} returns this
+ */
+proto.librarian.v1.FeatureFlag.prototype.setRequireContext = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
 
 
 
@@ -357,7 +389,8 @@ proto.librarian.v1.FeatureRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     region: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    configJson: jspb.Message.getFieldWithDefault(msg, 3, "")
+    configJson: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -405,6 +438,11 @@ proto.librarian.v1.FeatureRequest.deserializeBinaryFromReader = function(msg, re
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setConfigJson(value);
+      break;
+    case 4:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setContextId(value);
       break;
     default:
       reader.skipField();
@@ -454,6 +492,14 @@ proto.librarian.v1.FeatureRequest.serializeBinaryToWriter = function(message, wr
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getContextId();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
 };
@@ -514,6 +560,43 @@ proto.librarian.v1.FeatureRequest.prototype.setConfigJson = function(value) {
 
 
 /**
+ * optional InternalID context_id = 4;
+ * @return {?proto.librarian.v1.InternalID}
+ */
+proto.librarian.v1.FeatureRequest.prototype.getContextId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 4));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.v1.FeatureRequest} returns this
+*/
+proto.librarian.v1.FeatureRequest.prototype.setContextId = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.v1.FeatureRequest} returns this
+ */
+proto.librarian.v1.FeatureRequest.prototype.clearContextId = function() {
+  return this.setContextId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.v1.FeatureRequest.prototype.hasContextId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
  * @enum {number}
  */
 proto.librarian.v1.WellKnownAccountPlatform = {
@@ -552,8 +635,8 @@ proto.librarian.v1.WellKnownNotifyDestination = {
  */
 proto.librarian.v1.WellKnownFeedItemAction = {
   WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED: 0,
-  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER: 1,
-  WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER: 2
+  WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER: 1,
+  WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR: 2
 };
 
 

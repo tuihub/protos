@@ -36,6 +36,11 @@ export class GetPorterInformationResponse extends jspb.Message {
   getFeatureSummary(): PorterFeatureSummary | undefined;
   setFeatureSummary(value?: PorterFeatureSummary): void;
 
+  hasContextJsonSchema(): boolean;
+  clearContextJsonSchema(): void;
+  getContextJsonSchema(): string;
+  setContextJsonSchema(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPorterInformationResponse.AsObject;
   static toObject(includeInstance: boolean, msg: GetPorterInformationResponse): GetPorterInformationResponse.AsObject;
@@ -52,6 +57,7 @@ export namespace GetPorterInformationResponse {
     version: string,
     globalName: string,
     featureSummary?: PorterFeatureSummary.AsObject,
+    contextJsonSchema: string,
   }
 }
 
@@ -139,6 +145,86 @@ export class EnablePorterResponse extends jspb.Message {
 }
 
 export namespace EnablePorterResponse {
+  export type AsObject = {
+  }
+}
+
+export class EnableContextRequest extends jspb.Message {
+  hasContextId(): boolean;
+  clearContextId(): void;
+  getContextId(): librarian_v1_common_pb.InternalID | undefined;
+  setContextId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getContextJson(): string;
+  setContextJson(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableContextRequest): EnableContextRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableContextRequest;
+  static deserializeBinaryFromReader(message: EnableContextRequest, reader: jspb.BinaryReader): EnableContextRequest;
+}
+
+export namespace EnableContextRequest {
+  export type AsObject = {
+    contextId?: librarian_v1_common_pb.InternalID.AsObject,
+    contextJson: string,
+  }
+}
+
+export class EnableContextResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableContextResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableContextResponse): EnableContextResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableContextResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableContextResponse;
+  static deserializeBinaryFromReader(message: EnableContextResponse, reader: jspb.BinaryReader): EnableContextResponse;
+}
+
+export namespace EnableContextResponse {
+  export type AsObject = {
+  }
+}
+
+export class DisableContextRequest extends jspb.Message {
+  hasContextId(): boolean;
+  clearContextId(): void;
+  getContextId(): librarian_v1_common_pb.InternalID | undefined;
+  setContextId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableContextRequest): DisableContextRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableContextRequest;
+  static deserializeBinaryFromReader(message: DisableContextRequest, reader: jspb.BinaryReader): DisableContextRequest;
+}
+
+export namespace DisableContextRequest {
+  export type AsObject = {
+    contextId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class DisableContextResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableContextResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableContextResponse): DisableContextResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableContextResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableContextResponse;
+  static deserializeBinaryFromReader(message: DisableContextResponse, reader: jspb.BinaryReader): DisableContextResponse;
+}
+
+export namespace DisableContextResponse {
   export type AsObject = {
   }
 }
@@ -322,11 +408,10 @@ export namespace SearchAppInfoResponse {
 }
 
 export class PullFeedRequest extends jspb.Message {
-  getSource(): string;
-  setSource(value: string): void;
-
-  getChannelId(): string;
-  setChannelId(value: string): void;
+  hasSource(): boolean;
+  clearSource(): void;
+  getSource(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setSource(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PullFeedRequest.AsObject;
@@ -340,8 +425,7 @@ export class PullFeedRequest extends jspb.Message {
 
 export namespace PullFeedRequest {
   export type AsObject = {
-    source: string,
-    channelId: string,
+    source?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
   }
 }
 
@@ -368,19 +452,15 @@ export namespace PullFeedResponse {
 }
 
 export class PushFeedItemsRequest extends jspb.Message {
-  getDestination(): string;
-  setDestination(value: string): void;
-
-  getChannelId(): string;
-  setChannelId(value: string): void;
+  hasDestination(): boolean;
+  clearDestination(): void;
+  getDestination(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setDestination(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
   clearItemsList(): void;
   getItemsList(): Array<librarian_v1_common_pb.FeedItem>;
   setItemsList(value: Array<librarian_v1_common_pb.FeedItem>): void;
   addItems(value?: librarian_v1_common_pb.FeedItem, index?: number): librarian_v1_common_pb.FeedItem;
-
-  getToken(): string;
-  setToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PushFeedItemsRequest.AsObject;
@@ -394,10 +474,8 @@ export class PushFeedItemsRequest extends jspb.Message {
 
 export namespace PushFeedItemsRequest {
   export type AsObject = {
-    destination: string,
-    channelId: string,
+    destination?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
     itemsList: Array<librarian_v1_common_pb.FeedItem.AsObject>,
-    token: string,
   }
 }
 

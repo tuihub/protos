@@ -21,6 +21,8 @@ const _ = grpc.SupportPackageIsVersion8
 const (
 	LibrarianPorterService_GetPorterInformation_FullMethodName       = "/librarian.porter.v1.LibrarianPorterService/GetPorterInformation"
 	LibrarianPorterService_EnablePorter_FullMethodName               = "/librarian.porter.v1.LibrarianPorterService/EnablePorter"
+	LibrarianPorterService_EnableContext_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/EnableContext"
+	LibrarianPorterService_DisableContext_FullMethodName             = "/librarian.porter.v1.LibrarianPorterService/DisableContext"
 	LibrarianPorterService_PullAccount_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullAccount"
 	LibrarianPorterService_PullAppInfo_FullMethodName                = "/librarian.porter.v1.LibrarianPorterService/PullAppInfo"
 	LibrarianPorterService_PullAccountAppInfoRelation_FullMethodName = "/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation"
@@ -36,6 +38,8 @@ const (
 type LibrarianPorterServiceClient interface {
 	GetPorterInformation(ctx context.Context, in *GetPorterInformationRequest, opts ...grpc.CallOption) (*GetPorterInformationResponse, error)
 	EnablePorter(ctx context.Context, in *EnablePorterRequest, opts ...grpc.CallOption) (*EnablePorterResponse, error)
+	EnableContext(ctx context.Context, in *EnableContextRequest, opts ...grpc.CallOption) (*EnableContextResponse, error)
+	DisableContext(ctx context.Context, in *DisableContextRequest, opts ...grpc.CallOption) (*DisableContextResponse, error)
 	// `Tiphereth`
 	PullAccount(ctx context.Context, in *PullAccountRequest, opts ...grpc.CallOption) (*PullAccountResponse, error)
 	// `Gebura`
@@ -74,6 +78,26 @@ func (c *librarianPorterServiceClient) EnablePorter(ctx context.Context, in *Ena
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(EnablePorterResponse)
 	err := c.cc.Invoke(ctx, LibrarianPorterService_EnablePorter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianPorterServiceClient) EnableContext(ctx context.Context, in *EnableContextRequest, opts ...grpc.CallOption) (*EnableContextResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnableContextResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_EnableContext_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianPorterServiceClient) DisableContext(ctx context.Context, in *DisableContextRequest, opts ...grpc.CallOption) (*DisableContextResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DisableContextResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_DisableContext_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -156,6 +180,8 @@ func (c *librarianPorterServiceClient) ExecFeedItemAction(ctx context.Context, i
 type LibrarianPorterServiceServer interface {
 	GetPorterInformation(context.Context, *GetPorterInformationRequest) (*GetPorterInformationResponse, error)
 	EnablePorter(context.Context, *EnablePorterRequest) (*EnablePorterResponse, error)
+	EnableContext(context.Context, *EnableContextRequest) (*EnableContextResponse, error)
+	DisableContext(context.Context, *DisableContextRequest) (*DisableContextResponse, error)
 	// `Tiphereth`
 	PullAccount(context.Context, *PullAccountRequest) (*PullAccountResponse, error)
 	// `Gebura`
@@ -182,6 +208,12 @@ func (UnimplementedLibrarianPorterServiceServer) GetPorterInformation(context.Co
 }
 func (UnimplementedLibrarianPorterServiceServer) EnablePorter(context.Context, *EnablePorterRequest) (*EnablePorterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EnablePorter not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) EnableContext(context.Context, *EnableContextRequest) (*EnableContextResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableContext not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) DisableContext(context.Context, *DisableContextRequest) (*DisableContextResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableContext not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) PullAccount(context.Context, *PullAccountRequest) (*PullAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullAccount not implemented")
@@ -250,6 +282,42 @@ func _LibrarianPorterService_EnablePorter_Handler(srv interface{}, ctx context.C
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianPorterServiceServer).EnablePorter(ctx, req.(*EnablePorterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianPorterService_EnableContext_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnableContextRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).EnableContext(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_EnableContext_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).EnableContext(ctx, req.(*EnableContextRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianPorterService_DisableContext_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DisableContextRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).DisableContext(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_DisableContext_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).DisableContext(ctx, req.(*DisableContextRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -394,6 +462,14 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EnablePorter",
 			Handler:    _LibrarianPorterService_EnablePorter_Handler,
+		},
+		{
+			MethodName: "EnableContext",
+			Handler:    _LibrarianPorterService_EnableContext_Handler,
+		},
+		{
+			MethodName: "DisableContext",
+			Handler:    _LibrarianPorterService_DisableContext_Handler,
 		},
 		{
 			MethodName: "PullAccount",

@@ -25,40 +25,43 @@ namespace TuiHub.Protos.Librarian.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxsaWJyYXJpYW4vdjEvd2VsbGtub3duLnByb3RvEgxsaWJyYXJpYW4udjEa",
-            "IGdvb2dsZS9wcm90b2J1Zi9kZXNjcmlwdG9yLnByb3RvIpkBCgtGZWF0dXJl",
-            "RmxhZxIOCgJpZBgBIAEoCVICaWQSFgoGcmVnaW9uGAIgASgJUgZyZWdpb24S",
-            "EgoEbmFtZRgDIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVz",
-            "Y3JpcHRpb24SLAoSY29uZmlnX2pzb25fc2NoZW1hGAUgASgJUhBjb25maWdK",
-            "c29uU2NoZW1hIlkKDkZlYXR1cmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIW",
-            "CgZyZWdpb24YAiABKAlSBnJlZ2lvbhIfCgtjb25maWdfanNvbhgDIAEoCVIK",
-            "Y29uZmlnSnNvbip9ChhXZWxsS25vd25BY2NvdW50UGxhdGZvcm0SMAonV0VM",
-            "TF9LTk9XTl9BQ0NPVU5UX1BMQVRGT1JNX1VOU1BFQ0lGSUVEEAAaA8I+ABIv",
-            "CiFXRUxMX0tOT1dOX0FDQ09VTlRfUExBVEZPUk1fU1RFQU0QARoIwj4Fc3Rl",
-            "YW0q2wEKFldlbGxLbm93bkFwcEluZm9Tb3VyY2USLwomV0VMTF9LTk9XTl9B",
-            "UFBfSU5GT19TT1VSQ0VfVU5TUEVDSUZJRUQQABoDwj4AEi4KIFdFTExfS05P",
-            "V05fQVBQX0lORk9fU09VUkNFX1NURUFNEAIaCMI+BXN0ZWFtEiwKH1dFTExf",
-            "S05PV05fQVBQX0lORk9fU09VUkNFX1ZOREIQAxoHwj4Edm5kYhIyCiJXRUxM",
-            "X0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9CQU5HVU1JEAQaCsI+B2Jhbmd1bWkq",
-            "agoTV2VsbEtub3duRmVlZFNvdXJjZRIrCiJXRUxMX0tOT1dOX0ZFRURfU09V",
-            "UkNFX1VOU1BFQ0lGSUVEEAAaA8I+ABImChpXRUxMX0tOT1dOX0ZFRURfU09V",
-            "UkNFX1JTUxABGgbCPgNyc3MqiQEKGldlbGxLbm93bk5vdGlmeURlc3RpbmF0",
-            "aW9uEjIKKVdFTExfS05PV05fTk9USUZZX0RFU1RJTkFUSU9OX1VOU1BFQ0lG",
-            "SUVEEAAaA8I+ABI3CiZXRUxMX0tOT1dOX05PVElGWV9ERVNUSU5BVElPTl9U",
-            "RUxFR1JBTRABGgvCPgh0ZWxlZ3JhbSrrAQoXV2VsbEtub3duRmVlZEl0ZW1B",
-            "Y3Rpb24SMAonV0VMTF9LTk9XTl9GRUVEX0lURU1fQUNUSU9OX1VOU1BFQ0lG",
-            "SUVEEAAaA8I+ABJBCipXRUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fQlVJ",
-            "TFRJTl9GSUxURVIQARoRwj4OYnVpbHRpbl9maWx0ZXISWwo3V0VMTF9LTk9X",
-            "Tl9GRUVEX0lURU1fQUNUSU9OX0JVSUxUSU5fREVTQ1JJUFRJT05fU0hPUlRF",
-            "UhACGh7CPhtidWlsdGluX2Rlc2NyaXB0aW9uX3Nob3J0ZXI6PwoJdG9fc3Ry",
-            "aW5nEiEuZ29vZ2xlLnByb3RvYnVmLkVudW1WYWx1ZU9wdGlvbnMY6AcgASgJ",
-            "Ugh0b1N0cmluZ0JLWixnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xp",
-            "YnJhcmlhbi92MTt2MaoCGlR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlYxYgZw",
-            "cm90bzM="));
+            "IGdvb2dsZS9wcm90b2J1Zi9kZXNjcmlwdG9yLnByb3RvGhlsaWJyYXJpYW4v",
+            "djEvY29tbW9uLnByb3RvIsIBCgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVIC",
+            "aWQSFgoGcmVnaW9uGAIgASgJUgZyZWdpb24SEgoEbmFtZRgDIAEoCVIEbmFt",
+            "ZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoSY29uZmln",
+            "X2pzb25fc2NoZW1hGAUgASgJUhBjb25maWdKc29uU2NoZW1hEicKD3JlcXVp",
+            "cmVfY29udGV4dBgGIAEoCFIOcmVxdWlyZUNvbnRleHQipgEKDkZlYXR1cmVS",
+            "ZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIWCgZyZWdpb24YAiABKAlSBnJlZ2lv",
+            "bhIfCgtjb25maWdfanNvbhgDIAEoCVIKY29uZmlnSnNvbhI8Cgpjb250ZXh0",
+            "X2lkGAQgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIJY29udGV4",
+            "dElkiAEBQg0KC19jb250ZXh0X2lkKn0KGFdlbGxLbm93bkFjY291bnRQbGF0",
+            "Zm9ybRIwCidXRUxMX0tOT1dOX0FDQ09VTlRfUExBVEZPUk1fVU5TUEVDSUZJ",
+            "RUQQABoDwj4AEi8KIVdFTExfS05PV05fQUNDT1VOVF9QTEFURk9STV9TVEVB",
+            "TRABGgjCPgVzdGVhbSrbAQoWV2VsbEtub3duQXBwSW5mb1NvdXJjZRIvCiZX",
+            "RUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9VTlNQRUNJRklFRBAAGgPCPgAS",
+            "LgogV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfU1RFQU0QAhoIwj4Fc3Rl",
+            "YW0SLAofV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfVk5EQhADGgfCPgR2",
+            "bmRiEjIKIldFTExfS05PV05fQVBQX0lORk9fU09VUkNFX0JBTkdVTUkQBBoK",
+            "wj4HYmFuZ3VtaSpqChNXZWxsS25vd25GZWVkU291cmNlEisKIldFTExfS05P",
+            "V05fRkVFRF9TT1VSQ0VfVU5TUEVDSUZJRUQQABoDwj4AEiYKGldFTExfS05P",
+            "V05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+A3JzcyqJAQoaV2VsbEtub3duTm90",
+            "aWZ5RGVzdGluYXRpb24SMgopV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ",
+            "T05fVU5TUEVDSUZJRUQQABoDwj4AEjcKJldFTExfS05PV05fTk9USUZZX0RF",
+            "U1RJTkFUSU9OX1RFTEVHUkFNEAEaC8I+CHRlbGVncmFtKt8BChdXZWxsS25v",
+            "d25GZWVkSXRlbUFjdGlvbhIwCidXRUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJ",
+            "T05fVU5TUEVDSUZJRUQQABoDwj4AEkEKKldFTExfS05PV05fRkVFRF9JVEVN",
+            "X0FDVElPTl9LRVlXT1JEX0ZJTFRFUhABGhHCPg5rZXl3b3JkX2ZpbHRlchJP",
+            "CjFXRUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fREVTQ1JJUFRJT05fR0VO",
+            "RVJBVE9SEAIaGMI+FWRlc2NyaXB0aW9uX2dlbmVyYXRvcjo/Cgl0b19zdHJp",
+            "bmcSIS5nb29nbGUucHJvdG9idWYuRW51bVZhbHVlT3B0aW9ucxjoByABKAlS",
+            "CHRvU3RyaW5nQktaLGdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGli",
+            "cmFyaWFuL3YxO3YxqgIaVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uVjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedItemAction), }, new pb::Extension[] { WellknownExtensions.ToString_ }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Region", "Name", "Description", "ConfigJsonSchema" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureRequest), global::TuiHub.Protos.Librarian.V1.FeatureRequest.Parser, new[]{ "Id", "Region", "ConfigJson" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Region", "Name", "Description", "ConfigJsonSchema", "RequireContext" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureRequest), global::TuiHub.Protos.Librarian.V1.FeatureRequest.Parser, new[]{ "Id", "Region", "ConfigJson", "ContextId" }, new[]{ "ContextId" }, null, null, null)
           }));
     }
     #endregion
@@ -95,8 +98,14 @@ namespace TuiHub.Protos.Librarian.V1 {
 
   public enum WellKnownFeedItemAction {
     [pbr::OriginalName("WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED")] Unspecified = 0,
-    [pbr::OriginalName("WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_FILTER")] BuiltinFilter = 1,
-    [pbr::OriginalName("WELL_KNOWN_FEED_ITEM_ACTION_BUILTIN_DESCRIPTION_SHORTER")] BuiltinDescriptionShorter = 2,
+    /// <summary>
+    /// filter item by keywords
+    /// </summary>
+    [pbr::OriginalName("WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER")] KeywordFilter = 1,
+    /// <summary>
+    /// generate description form content
+    /// </summary>
+    [pbr::OriginalName("WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR")] DescriptionGenerator = 2,
   }
 
   #endregion
@@ -145,6 +154,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       name_ = other.name_;
       description_ = other.description_;
       configJsonSchema_ = other.configJsonSchema_;
+      requireContext_ = other.requireContext_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -232,6 +242,21 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
+    /// <summary>Field number for the "require_context" field.</summary>
+    public const int RequireContextFieldNumber = 6;
+    private bool requireContext_;
+    /// <summary>
+    /// Require context to use this feature
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool RequireContext {
+      get { return requireContext_; }
+      set {
+        requireContext_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -252,6 +277,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if (ConfigJsonSchema != other.ConfigJsonSchema) return false;
+      if (RequireContext != other.RequireContext) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -264,6 +290,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ConfigJsonSchema.Length != 0) hash ^= ConfigJsonSchema.GetHashCode();
+      if (RequireContext != false) hash ^= RequireContext.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -302,6 +329,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(42);
         output.WriteString(ConfigJsonSchema);
       }
+      if (RequireContext != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(RequireContext);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -332,6 +363,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(42);
         output.WriteString(ConfigJsonSchema);
       }
+      if (RequireContext != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(RequireContext);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -356,6 +391,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (ConfigJsonSchema.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ConfigJsonSchema);
+      }
+      if (RequireContext != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -383,6 +421,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (other.ConfigJsonSchema.Length != 0) {
         ConfigJsonSchema = other.ConfigJsonSchema;
+      }
+      if (other.RequireContext != false) {
+        RequireContext = other.RequireContext;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -419,6 +460,10 @@ namespace TuiHub.Protos.Librarian.V1 {
             ConfigJsonSchema = input.ReadString();
             break;
           }
+          case 48: {
+            RequireContext = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -452,6 +497,10 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 42: {
             ConfigJsonSchema = input.ReadString();
+            break;
+          }
+          case 48: {
+            RequireContext = input.ReadBool();
             break;
           }
         }
@@ -501,6 +550,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       id_ = other.id_;
       region_ = other.region_;
       configJson_ = other.configJson_;
+      contextId_ = other.contextId_ != null ? other.contextId_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -555,6 +605,21 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
+    /// <summary>Field number for the "context_id" field.</summary>
+    public const int ContextIdFieldNumber = 4;
+    private global::TuiHub.Protos.Librarian.V1.InternalID contextId_;
+    /// <summary>
+    /// Require if feature needs context
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID ContextId {
+      get { return contextId_; }
+      set {
+        contextId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -573,6 +638,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Id != other.Id) return false;
       if (Region != other.Region) return false;
       if (ConfigJson != other.ConfigJson) return false;
+      if (!object.Equals(ContextId, other.ContextId)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -583,6 +649,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Region.Length != 0) hash ^= Region.GetHashCode();
       if (ConfigJson.Length != 0) hash ^= ConfigJson.GetHashCode();
+      if (contextId_ != null) hash ^= ContextId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -613,6 +680,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(26);
         output.WriteString(ConfigJson);
       }
+      if (contextId_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ContextId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -635,6 +706,10 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(26);
         output.WriteString(ConfigJson);
       }
+      if (contextId_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ContextId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -653,6 +728,9 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (ConfigJson.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ConfigJson);
+      }
+      if (contextId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ContextId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -674,6 +752,12 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (other.ConfigJson.Length != 0) {
         ConfigJson = other.ConfigJson;
+      }
+      if (other.contextId_ != null) {
+        if (contextId_ == null) {
+          ContextId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        ContextId.MergeFrom(other.ContextId);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -702,6 +786,13 @@ namespace TuiHub.Protos.Librarian.V1 {
             ConfigJson = input.ReadString();
             break;
           }
+          case 34: {
+            if (contextId_ == null) {
+              ContextId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(ContextId);
+            break;
+          }
         }
       }
     #endif
@@ -727,6 +818,13 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 26: {
             ConfigJson = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (contextId_ == null) {
+              ContextId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(ContextId);
             break;
           }
         }

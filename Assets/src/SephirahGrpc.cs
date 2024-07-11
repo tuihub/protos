@@ -71,9 +71,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenResponse> __Marshaller_librarian_sephirah_v1_RefreshTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest> __Marshaller_librarian_sephirah_v1_GainUserPrivilegeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest> __Marshaller_librarian_sephirah_v1_AcquireUserTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> __Marshaller_librarian_sephirah_v1_GainUserPrivilegeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse> __Marshaller_librarian_sephirah_v1_AcquireUserTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserRequest> __Marshaller_librarian_sephirah_v1_RegisterUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -131,9 +131,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterStatusResponse> __Marshaller_librarian_sephirah_v1_UpdatePorterStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterStatusResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest> __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest> __Marshaller_librarian_sephirah_v1_CreatePorterContextRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse> __Marshaller_librarian_sephirah_v1_CreatePorterContextResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest> __Marshaller_librarian_sephirah_v1_ListPorterContextsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse> __Marshaller_librarian_sephirah_v1_ListPorterContextsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest> __Marshaller_librarian_sephirah_v1_UpdatePorterContextRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse> __Marshaller_librarian_sephirah_v1_UpdatePorterContextResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest> __Marshaller_librarian_sephirah_v1_SetFileCapacityRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -536,12 +544,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_RefreshTokenResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> __Method_GainUserPrivilege = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse> __Method_AcquireUserToken = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GainUserPrivilege",
-        __Marshaller_librarian_sephirah_v1_GainUserPrivilegeRequest,
-        __Marshaller_librarian_sephirah_v1_GainUserPrivilegeResponse);
+        "AcquireUserToken",
+        __Marshaller_librarian_sephirah_v1_AcquireUserTokenRequest,
+        __Marshaller_librarian_sephirah_v1_AcquireUserTokenResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserResponse> __Method_RegisterUser = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserResponse>(
@@ -656,12 +664,28 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_UpdatePorterStatusResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> __Method_UpdatePorterPrivilege = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse> __Method_CreatePorterContext = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "UpdatePorterPrivilege",
-        __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
-        __Marshaller_librarian_sephirah_v1_UpdatePorterPrivilegeResponse);
+        "CreatePorterContext",
+        __Marshaller_librarian_sephirah_v1_CreatePorterContextRequest,
+        __Marshaller_librarian_sephirah_v1_CreatePorterContextResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse> __Method_ListPorterContexts = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListPorterContexts",
+        __Marshaller_librarian_sephirah_v1_ListPorterContextsRequest,
+        __Marshaller_librarian_sephirah_v1_ListPorterContextsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse> __Method_UpdatePorterContext = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdatePorterContext",
+        __Marshaller_librarian_sephirah_v1_UpdatePorterContextRequest,
+        __Marshaller_librarian_sephirah_v1_UpdatePorterContextResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse> __Method_SetFileCapacity = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse>(
@@ -1465,13 +1489,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+      /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+      /// This token can be used to perform actions on behalf of the user.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> GainUserPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse> AcquireUserToken(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -1652,13 +1677,37 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+      /// `Tiphereth` `Normal`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> UpdatePorterPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse> CreatePorterContext(global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse> ListPorterContexts(global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Tiphereth` `Normal` Set porter context.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse> UpdatePorterContext(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -3000,7 +3049,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+      /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+      /// This token can be used to perform actions on behalf of the user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3008,23 +3058,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse GainUserPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse AcquireUserToken(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GainUserPrivilege(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return AcquireUserToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+      /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+      /// This token can be used to perform actions on behalf of the user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse GainUserPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse AcquireUserToken(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_GainUserPrivilege, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_AcquireUserToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+      /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+      /// This token can be used to perform actions on behalf of the user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3032,20 +3084,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> GainUserPrivilegeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse> AcquireUserTokenAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GainUserPrivilegeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return AcquireUserTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+      /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+      /// This token can be used to perform actions on behalf of the user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse> GainUserPrivilegeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse> AcquireUserTokenAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_GainUserPrivilege, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_AcquireUserToken, null, options, request);
       }
       /// <summary>
       /// `Tiphereth` Self register as a new normal user
@@ -3748,7 +3801,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdatePorterStatus, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+      /// `Tiphereth` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3756,23 +3809,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse UpdatePorterPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse CreatePorterContext(global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return UpdatePorterPrivilege(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return CreatePorterContext(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+      /// `Tiphereth` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse UpdatePorterPrivilege(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse CreatePorterContext(global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_UpdatePorterPrivilege, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_CreatePorterContext, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+      /// `Tiphereth` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3780,20 +3833,116 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> UpdatePorterPrivilegeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse> CreatePorterContextAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return UpdatePorterPrivilegeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return CreatePorterContextAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+      /// `Tiphereth` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse> UpdatePorterPrivilegeAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse> CreatePorterContextAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_UpdatePorterPrivilege, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_CreatePorterContext, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse ListPorterContexts(global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListPorterContexts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse ListPorterContexts(global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListPorterContexts, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse> ListPorterContextsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListPorterContextsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse> ListPorterContextsAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListPorterContexts, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Set porter context.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse UpdatePorterContext(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdatePorterContext(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Set porter context.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse UpdatePorterContext(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdatePorterContext, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Set porter context.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse> UpdatePorterContextAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdatePorterContextAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `Normal` Set porter context.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse> UpdatePorterContextAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdatePorterContext, null, options, request);
       }
       /// <summary>
       /// `Binah` `Admin`
@@ -8195,7 +8344,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_ListenServerEvent, serviceImpl.ListenServerEvent)
           .AddMethod(__Method_GetToken, serviceImpl.GetToken)
           .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
-          .AddMethod(__Method_GainUserPrivilege, serviceImpl.GainUserPrivilege)
+          .AddMethod(__Method_AcquireUserToken, serviceImpl.AcquireUserToken)
           .AddMethod(__Method_RegisterUser, serviceImpl.RegisterUser)
           .AddMethod(__Method_RegisterDevice, serviceImpl.RegisterDevice)
           .AddMethod(__Method_ListRegisteredDevices, serviceImpl.ListRegisteredDevices)
@@ -8210,7 +8359,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_ListLinkAccounts, serviceImpl.ListLinkAccounts)
           .AddMethod(__Method_ListPorters, serviceImpl.ListPorters)
           .AddMethod(__Method_UpdatePorterStatus, serviceImpl.UpdatePorterStatus)
-          .AddMethod(__Method_UpdatePorterPrivilege, serviceImpl.UpdatePorterPrivilege)
+          .AddMethod(__Method_CreatePorterContext, serviceImpl.CreatePorterContext)
+          .AddMethod(__Method_ListPorterContexts, serviceImpl.ListPorterContexts)
+          .AddMethod(__Method_UpdatePorterContext, serviceImpl.UpdatePorterContext)
           .AddMethod(__Method_SetFileCapacity, serviceImpl.SetFileCapacity)
           .AddMethod(__Method_GetFileCapacity, serviceImpl.GetFileCapacity)
           .AddMethod(__Method_UploadFile, serviceImpl.UploadFile)
@@ -8316,7 +8467,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_ListenServerEvent, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse>(serviceImpl.ListenServerEvent));
       serviceBinder.AddMethod(__Method_GetToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetTokenResponse>(serviceImpl.GetToken));
       serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RefreshTokenResponse>(serviceImpl.RefreshToken));
-      serviceBinder.AddMethod(__Method_GainUserPrivilege, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GainUserPrivilegeResponse>(serviceImpl.GainUserPrivilege));
+      serviceBinder.AddMethod(__Method_AcquireUserToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireUserTokenResponse>(serviceImpl.AcquireUserToken));
       serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserResponse>(serviceImpl.RegisterUser));
       serviceBinder.AddMethod(__Method_RegisterDevice, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse>(serviceImpl.RegisterDevice));
       serviceBinder.AddMethod(__Method_ListRegisteredDevices, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListRegisteredDevicesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListRegisteredDevicesResponse>(serviceImpl.ListRegisteredDevices));
@@ -8331,7 +8482,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_ListLinkAccounts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountsResponse>(serviceImpl.ListLinkAccounts));
       serviceBinder.AddMethod(__Method_ListPorters, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPortersRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPortersResponse>(serviceImpl.ListPorters));
       serviceBinder.AddMethod(__Method_UpdatePorterStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterStatusRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterStatusResponse>(serviceImpl.UpdatePorterStatus));
-      serviceBinder.AddMethod(__Method_UpdatePorterPrivilege, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterPrivilegeResponse>(serviceImpl.UpdatePorterPrivilege));
+      serviceBinder.AddMethod(__Method_CreatePorterContext, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreatePorterContextResponse>(serviceImpl.CreatePorterContext));
+      serviceBinder.AddMethod(__Method_ListPorterContexts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListPorterContextsResponse>(serviceImpl.ListPorterContexts));
+      serviceBinder.AddMethod(__Method_UpdatePorterContext, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdatePorterContextResponse>(serviceImpl.UpdatePorterContext));
       serviceBinder.AddMethod(__Method_SetFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.SetFileCapacityResponse>(serviceImpl.SetFileCapacity));
       serviceBinder.AddMethod(__Method_GetFileCapacity, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetFileCapacityResponse>(serviceImpl.GetFileCapacity));
       serviceBinder.AddMethod(__Method_UploadFile, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UploadFileResponse>(serviceImpl.UploadFile));

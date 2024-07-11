@@ -56,6 +56,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
     $core.String? version,
     $core.String? globalName,
     PorterFeatureSummary? featureSummary,
+    $core.String? contextJsonSchema,
   }) {
     final $result = create();
     if (name != null) {
@@ -70,6 +71,9 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
     if (featureSummary != null) {
       $result.featureSummary = featureSummary;
     }
+    if (contextJsonSchema != null) {
+      $result.contextJsonSchema = contextJsonSchema;
+    }
     return $result;
   }
   GetPorterInformationResponse._() : super();
@@ -81,6 +85,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'version')
     ..aOS(3, _omitFieldNames ? '' : 'globalName')
     ..aOM<PorterFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: PorterFeatureSummary.create)
+    ..aOS(5, _omitFieldNames ? '' : 'contextJsonSchema')
     ..hasRequiredFields = false
   ;
 
@@ -136,6 +141,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearGlobalName() => clearField(3);
 
+  /// Supported features.
   @$pb.TagNumber(4)
   PorterFeatureSummary get featureSummary => $_getN(3);
   @$pb.TagNumber(4)
@@ -146,6 +152,19 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   void clearFeatureSummary() => clearField(4);
   @$pb.TagNumber(4)
   PorterFeatureSummary ensureFeatureSummary() => $_ensure(3);
+
+  /// JSON schema for `FeatureRequest.context_json`.
+  /// Leave empty if not needed.
+  /// If needed, all feature requests should deliver `context_json`.
+  /// Can be used to configure third-party token, etc.
+  @$pb.TagNumber(5)
+  $core.String get contextJsonSchema => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contextJsonSchema($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasContextJsonSchema() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContextJsonSchema() => clearField(5);
 }
 
 class PorterFeatureSummary extends $pb.GeneratedMessage {
@@ -214,12 +233,15 @@ class PorterFeatureSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$4.FeatureFlag> get appInfoSources => $_getList(1);
 
+  /// WellKnownFeedSource
   @$pb.TagNumber(3)
   $core.List<$4.FeatureFlag> get feedSources => $_getList(2);
 
+  /// WellKnownNotifyDestination
   @$pb.TagNumber(4)
   $core.List<$4.FeatureFlag> get notifyDestinations => $_getList(3);
 
+  /// WellKnownFeedItemAction
   @$pb.TagNumber(5)
   $core.List<$4.FeatureFlag> get feedItemActions => $_getList(4);
 }
@@ -325,6 +347,190 @@ class EnablePorterResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static EnablePorterResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnablePorterResponse>(create);
   static EnablePorterResponse? _defaultInstance;
+}
+
+class EnableContextRequest extends $pb.GeneratedMessage {
+  factory EnableContextRequest({
+    $5.InternalID? contextId,
+    $core.String? contextJson,
+  }) {
+    final $result = create();
+    if (contextId != null) {
+      $result.contextId = contextId;
+    }
+    if (contextJson != null) {
+      $result.contextJson = contextJson;
+    }
+    return $result;
+  }
+  EnableContextRequest._() : super();
+  factory EnableContextRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EnableContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $5.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'contextJson')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EnableContextRequest clone() => EnableContextRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EnableContextRequest copyWith(void Function(EnableContextRequest) updates) => super.copyWith((message) => updates(message as EnableContextRequest)) as EnableContextRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnableContextRequest create() => EnableContextRequest._();
+  EnableContextRequest createEmptyInstance() => create();
+  static $pb.PbList<EnableContextRequest> createRepeated() => $pb.PbList<EnableContextRequest>();
+  @$core.pragma('dart2js:noInline')
+  static EnableContextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnableContextRequest>(create);
+  static EnableContextRequest? _defaultInstance;
+
+  /// Identifier of context.
+  /// New context can replace old context with same id.
+  @$pb.TagNumber(1)
+  $5.InternalID get contextId => $_getN(0);
+  @$pb.TagNumber(1)
+  set contextId($5.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasContextId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContextId() => clearField(1);
+  @$pb.TagNumber(1)
+  $5.InternalID ensureContextId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get contextJson => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contextJson($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContextJson() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContextJson() => clearField(2);
+}
+
+class EnableContextResponse extends $pb.GeneratedMessage {
+  factory EnableContextResponse() => create();
+  EnableContextResponse._() : super();
+  factory EnableContextResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EnableContextResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableContextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  EnableContextResponse clone() => EnableContextResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  EnableContextResponse copyWith(void Function(EnableContextResponse) updates) => super.copyWith((message) => updates(message as EnableContextResponse)) as EnableContextResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EnableContextResponse create() => EnableContextResponse._();
+  EnableContextResponse createEmptyInstance() => create();
+  static $pb.PbList<EnableContextResponse> createRepeated() => $pb.PbList<EnableContextResponse>();
+  @$core.pragma('dart2js:noInline')
+  static EnableContextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EnableContextResponse>(create);
+  static EnableContextResponse? _defaultInstance;
+}
+
+class DisableContextRequest extends $pb.GeneratedMessage {
+  factory DisableContextRequest({
+    $5.InternalID? contextId,
+  }) {
+    final $result = create();
+    if (contextId != null) {
+      $result.contextId = contextId;
+    }
+    return $result;
+  }
+  DisableContextRequest._() : super();
+  factory DisableContextRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DisableContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $5.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DisableContextRequest clone() => DisableContextRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DisableContextRequest copyWith(void Function(DisableContextRequest) updates) => super.copyWith((message) => updates(message as DisableContextRequest)) as DisableContextRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DisableContextRequest create() => DisableContextRequest._();
+  DisableContextRequest createEmptyInstance() => create();
+  static $pb.PbList<DisableContextRequest> createRepeated() => $pb.PbList<DisableContextRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DisableContextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DisableContextRequest>(create);
+  static DisableContextRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $5.InternalID get contextId => $_getN(0);
+  @$pb.TagNumber(1)
+  set contextId($5.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasContextId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContextId() => clearField(1);
+  @$pb.TagNumber(1)
+  $5.InternalID ensureContextId() => $_ensure(0);
+}
+
+class DisableContextResponse extends $pb.GeneratedMessage {
+  factory DisableContextResponse() => create();
+  DisableContextResponse._() : super();
+  factory DisableContextResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DisableContextResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableContextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DisableContextResponse clone() => DisableContextResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DisableContextResponse copyWith(void Function(DisableContextResponse) updates) => super.copyWith((message) => updates(message as DisableContextResponse)) as DisableContextResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DisableContextResponse create() => DisableContextResponse._();
+  DisableContextResponse createEmptyInstance() => create();
+  static $pb.PbList<DisableContextResponse> createRepeated() => $pb.PbList<DisableContextResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DisableContextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DisableContextResponse>(create);
+  static DisableContextResponse? _defaultInstance;
 }
 
 class PullAccountRequest extends $pb.GeneratedMessage {
@@ -741,15 +947,11 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
 
 class PullFeedRequest extends $pb.GeneratedMessage {
   factory PullFeedRequest({
-    $core.String? source,
-    $core.String? channelId,
+    $4.FeatureRequest? source,
   }) {
     final $result = create();
     if (source != null) {
       $result.source = source;
-    }
-    if (channelId != null) {
-      $result.channelId = channelId;
     }
     return $result;
   }
@@ -758,8 +960,7 @@ class PullFeedRequest extends $pb.GeneratedMessage {
   factory PullFeedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullFeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'source')
-    ..aOS(2, _omitFieldNames ? '' : 'channelId')
+    ..aOM<$4.FeatureRequest>(1, _omitFieldNames ? '' : 'source', subBuilder: $4.FeatureRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -784,24 +985,17 @@ class PullFeedRequest extends $pb.GeneratedMessage {
   static PullFeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PullFeedRequest>(create);
   static PullFeedRequest? _defaultInstance;
 
-  /// WellKnownFeedSource
+  /// `PorterFeatureSummary.feed_sources`
   @$pb.TagNumber(1)
-  $core.String get source => $_getSZ(0);
+  $4.FeatureRequest get source => $_getN(0);
   @$pb.TagNumber(1)
-  set source($core.String v) { $_setString(0, v); }
+  set source($4.FeatureRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
   void clearSource() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get channelId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set channelId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasChannelId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearChannelId() => clearField(2);
+  @$pb.TagNumber(1)
+  $4.FeatureRequest ensureSource() => $_ensure(0);
 }
 
 class PullFeedResponse extends $pb.GeneratedMessage {
@@ -858,23 +1052,15 @@ class PullFeedResponse extends $pb.GeneratedMessage {
 
 class PushFeedItemsRequest extends $pb.GeneratedMessage {
   factory PushFeedItemsRequest({
-    $core.String? destination,
-    $core.String? channelId,
+    $4.FeatureRequest? destination,
     $core.Iterable<$5.FeedItem>? items,
-    $core.String? token,
   }) {
     final $result = create();
     if (destination != null) {
       $result.destination = destination;
     }
-    if (channelId != null) {
-      $result.channelId = channelId;
-    }
     if (items != null) {
       $result.items.addAll(items);
-    }
-    if (token != null) {
-      $result.token = token;
     }
     return $result;
   }
@@ -883,10 +1069,8 @@ class PushFeedItemsRequest extends $pb.GeneratedMessage {
   factory PushFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PushFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'destination')
-    ..aOS(2, _omitFieldNames ? '' : 'channelId')
-    ..pc<$5.FeedItem>(3, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $5.FeedItem.create)
-    ..aOS(4, _omitFieldNames ? '' : 'token')
+    ..aOM<$4.FeatureRequest>(1, _omitFieldNames ? '' : 'destination', subBuilder: $4.FeatureRequest.create)
+    ..pc<$5.FeedItem>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $5.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -911,36 +1095,20 @@ class PushFeedItemsRequest extends $pb.GeneratedMessage {
   static PushFeedItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PushFeedItemsRequest>(create);
   static PushFeedItemsRequest? _defaultInstance;
 
-  /// WellKnownNotifyDestination
+  /// `PorterFeatureSummary.notify_destinations`
   @$pb.TagNumber(1)
-  $core.String get destination => $_getSZ(0);
+  $4.FeatureRequest get destination => $_getN(0);
   @$pb.TagNumber(1)
-  set destination($core.String v) { $_setString(0, v); }
+  set destination($4.FeatureRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDestination() => $_has(0);
   @$pb.TagNumber(1)
   void clearDestination() => clearField(1);
+  @$pb.TagNumber(1)
+  $4.FeatureRequest ensureDestination() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get channelId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set channelId($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasChannelId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearChannelId() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.List<$5.FeedItem> get items => $_getList(2);
-
-  @$pb.TagNumber(4)
-  $core.String get token => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set token($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasToken() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearToken() => clearField(4);
+  $core.List<$5.FeedItem> get items => $_getList(1);
 }
 
 class PushFeedItemsResponse extends $pb.GeneratedMessage {
@@ -1020,7 +1188,7 @@ class ExecFeedItemActionRequest extends $pb.GeneratedMessage {
   static ExecFeedItemActionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExecFeedItemActionRequest>(create);
   static ExecFeedItemActionRequest? _defaultInstance;
 
-  /// WellKnownFeedItemAction
+  /// `PorterFeatureSummary.feed_item_actions`
   @$pb.TagNumber(1)
   $4.FeatureRequest get action => $_getN(0);
   @$pb.TagNumber(1)
@@ -1084,6 +1252,8 @@ class ExecFeedItemActionResponse extends $pb.GeneratedMessage {
   static ExecFeedItemActionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExecFeedItemActionResponse>(create);
   static ExecFeedItemActionResponse? _defaultInstance;
 
+  /// Return the result of the action.
+  /// Leave empty if item should be filtered out.
   @$pb.TagNumber(1)
   $5.FeedItem get item => $_getN(0);
   @$pb.TagNumber(1)

@@ -284,8 +284,8 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   void clearRefreshToken() => clearField(2);
 }
 
-class GainUserPrivilegeRequest extends $pb.GeneratedMessage {
-  factory GainUserPrivilegeRequest({
+class AcquireUserTokenRequest extends $pb.GeneratedMessage {
+  factory AcquireUserTokenRequest({
     $8.InternalID? userId,
   }) {
     final $result = create();
@@ -294,11 +294,11 @@ class GainUserPrivilegeRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GainUserPrivilegeRequest._() : super();
-  factory GainUserPrivilegeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GainUserPrivilegeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AcquireUserTokenRequest._() : super();
+  factory AcquireUserTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AcquireUserTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GainUserPrivilegeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquireUserTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'userId', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
@@ -307,22 +307,22 @@ class GainUserPrivilegeRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GainUserPrivilegeRequest clone() => GainUserPrivilegeRequest()..mergeFromMessage(this);
+  AcquireUserTokenRequest clone() => AcquireUserTokenRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GainUserPrivilegeRequest copyWith(void Function(GainUserPrivilegeRequest) updates) => super.copyWith((message) => updates(message as GainUserPrivilegeRequest)) as GainUserPrivilegeRequest;
+  AcquireUserTokenRequest copyWith(void Function(AcquireUserTokenRequest) updates) => super.copyWith((message) => updates(message as AcquireUserTokenRequest)) as AcquireUserTokenRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GainUserPrivilegeRequest create() => GainUserPrivilegeRequest._();
-  GainUserPrivilegeRequest createEmptyInstance() => create();
-  static $pb.PbList<GainUserPrivilegeRequest> createRepeated() => $pb.PbList<GainUserPrivilegeRequest>();
+  static AcquireUserTokenRequest create() => AcquireUserTokenRequest._();
+  AcquireUserTokenRequest createEmptyInstance() => create();
+  static $pb.PbList<AcquireUserTokenRequest> createRepeated() => $pb.PbList<AcquireUserTokenRequest>();
   @$core.pragma('dart2js:noInline')
-  static GainUserPrivilegeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GainUserPrivilegeRequest>(create);
-  static GainUserPrivilegeRequest? _defaultInstance;
+  static AcquireUserTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcquireUserTokenRequest>(create);
+  static AcquireUserTokenRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.InternalID get userId => $_getN(0);
@@ -336,8 +336,8 @@ class GainUserPrivilegeRequest extends $pb.GeneratedMessage {
   $8.InternalID ensureUserId() => $_ensure(0);
 }
 
-class GainUserPrivilegeResponse extends $pb.GeneratedMessage {
-  factory GainUserPrivilegeResponse({
+class AcquireUserTokenResponse extends $pb.GeneratedMessage {
+  factory AcquireUserTokenResponse({
     $core.String? accessToken,
   }) {
     final $result = create();
@@ -346,11 +346,11 @@ class GainUserPrivilegeResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GainUserPrivilegeResponse._() : super();
-  factory GainUserPrivilegeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GainUserPrivilegeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AcquireUserTokenResponse._() : super();
+  factory AcquireUserTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AcquireUserTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GainUserPrivilegeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AcquireUserTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'accessToken')
     ..hasRequiredFields = false
   ;
@@ -359,22 +359,22 @@ class GainUserPrivilegeResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GainUserPrivilegeResponse clone() => GainUserPrivilegeResponse()..mergeFromMessage(this);
+  AcquireUserTokenResponse clone() => AcquireUserTokenResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GainUserPrivilegeResponse copyWith(void Function(GainUserPrivilegeResponse) updates) => super.copyWith((message) => updates(message as GainUserPrivilegeResponse)) as GainUserPrivilegeResponse;
+  AcquireUserTokenResponse copyWith(void Function(AcquireUserTokenResponse) updates) => super.copyWith((message) => updates(message as AcquireUserTokenResponse)) as AcquireUserTokenResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GainUserPrivilegeResponse create() => GainUserPrivilegeResponse._();
-  GainUserPrivilegeResponse createEmptyInstance() => create();
-  static $pb.PbList<GainUserPrivilegeResponse> createRepeated() => $pb.PbList<GainUserPrivilegeResponse>();
+  static AcquireUserTokenResponse create() => AcquireUserTokenResponse._();
+  AcquireUserTokenResponse createEmptyInstance() => create();
+  static $pb.PbList<AcquireUserTokenResponse> createRepeated() => $pb.PbList<AcquireUserTokenResponse>();
   @$core.pragma('dart2js:noInline')
-  static GainUserPrivilegeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GainUserPrivilegeResponse>(create);
-  static GainUserPrivilegeResponse? _defaultInstance;
+  static AcquireUserTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AcquireUserTokenResponse>(create);
+  static AcquireUserTokenResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
@@ -1949,27 +1949,27 @@ class UpdatePorterStatusResponse extends $pb.GeneratedMessage {
   static UpdatePorterStatusResponse? _defaultInstance;
 }
 
-class UpdatePorterPrivilegeRequest extends $pb.GeneratedMessage {
-  factory UpdatePorterPrivilegeRequest({
+class CreatePorterContextRequest extends $pb.GeneratedMessage {
+  factory CreatePorterContextRequest({
     $8.InternalID? porterId,
-    PorterPrivilege? privilege,
+    PorterContext? context,
   }) {
     final $result = create();
     if (porterId != null) {
       $result.porterId = porterId;
     }
-    if (privilege != null) {
-      $result.privilege = privilege;
+    if (context != null) {
+      $result.context = context;
     }
     return $result;
   }
-  UpdatePorterPrivilegeRequest._() : super();
-  factory UpdatePorterPrivilegeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdatePorterPrivilegeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  CreatePorterContextRequest._() : super();
+  factory CreatePorterContextRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreatePorterContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterPrivilegeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePorterContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
-    ..aOM<PorterPrivilege>(2, _omitFieldNames ? '' : 'privilege', subBuilder: PorterPrivilege.create)
+    ..aOM<PorterContext>(2, _omitFieldNames ? '' : 'context', subBuilder: PorterContext.create)
     ..hasRequiredFields = false
   ;
 
@@ -1977,22 +1977,22 @@ class UpdatePorterPrivilegeRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  UpdatePorterPrivilegeRequest clone() => UpdatePorterPrivilegeRequest()..mergeFromMessage(this);
+  CreatePorterContextRequest clone() => CreatePorterContextRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  UpdatePorterPrivilegeRequest copyWith(void Function(UpdatePorterPrivilegeRequest) updates) => super.copyWith((message) => updates(message as UpdatePorterPrivilegeRequest)) as UpdatePorterPrivilegeRequest;
+  CreatePorterContextRequest copyWith(void Function(CreatePorterContextRequest) updates) => super.copyWith((message) => updates(message as CreatePorterContextRequest)) as CreatePorterContextRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UpdatePorterPrivilegeRequest create() => UpdatePorterPrivilegeRequest._();
-  UpdatePorterPrivilegeRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdatePorterPrivilegeRequest> createRepeated() => $pb.PbList<UpdatePorterPrivilegeRequest>();
+  static CreatePorterContextRequest create() => CreatePorterContextRequest._();
+  CreatePorterContextRequest createEmptyInstance() => create();
+  static $pb.PbList<CreatePorterContextRequest> createRepeated() => $pb.PbList<CreatePorterContextRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdatePorterPrivilegeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePorterPrivilegeRequest>(create);
-  static UpdatePorterPrivilegeRequest? _defaultInstance;
+  static CreatePorterContextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreatePorterContextRequest>(create);
+  static CreatePorterContextRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.InternalID get porterId => $_getN(0);
@@ -2006,65 +2006,33 @@ class UpdatePorterPrivilegeRequest extends $pb.GeneratedMessage {
   $8.InternalID ensurePorterId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  PorterPrivilege get privilege => $_getN(1);
+  PorterContext get context => $_getN(1);
   @$pb.TagNumber(2)
-  set privilege(PorterPrivilege v) { setField(2, v); }
+  set context(PorterContext v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPrivilege() => $_has(1);
+  $core.bool hasContext() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPrivilege() => clearField(2);
+  void clearContext() => clearField(2);
   @$pb.TagNumber(2)
-  PorterPrivilege ensurePrivilege() => $_ensure(1);
+  PorterContext ensureContext() => $_ensure(1);
 }
 
-class UpdatePorterPrivilegeResponse extends $pb.GeneratedMessage {
-  factory UpdatePorterPrivilegeResponse() => create();
-  UpdatePorterPrivilegeResponse._() : super();
-  factory UpdatePorterPrivilegeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdatePorterPrivilegeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterPrivilegeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpdatePorterPrivilegeResponse clone() => UpdatePorterPrivilegeResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpdatePorterPrivilegeResponse copyWith(void Function(UpdatePorterPrivilegeResponse) updates) => super.copyWith((message) => updates(message as UpdatePorterPrivilegeResponse)) as UpdatePorterPrivilegeResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static UpdatePorterPrivilegeResponse create() => UpdatePorterPrivilegeResponse._();
-  UpdatePorterPrivilegeResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdatePorterPrivilegeResponse> createRepeated() => $pb.PbList<UpdatePorterPrivilegeResponse>();
-  @$core.pragma('dart2js:noInline')
-  static UpdatePorterPrivilegeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePorterPrivilegeResponse>(create);
-  static UpdatePorterPrivilegeResponse? _defaultInstance;
-}
-
-class PorterPrivilege extends $pb.GeneratedMessage {
-  factory PorterPrivilege({
-    $core.bool? all,
+class CreatePorterContextResponse extends $pb.GeneratedMessage {
+  factory CreatePorterContextResponse({
+    $8.InternalID? contextId,
   }) {
     final $result = create();
-    if (all != null) {
-      $result.all = all;
+    if (contextId != null) {
+      $result.contextId = contextId;
     }
     return $result;
   }
-  PorterPrivilege._() : super();
-  factory PorterPrivilege.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PorterPrivilege.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  CreatePorterContextResponse._() : super();
+  factory CreatePorterContextResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreatePorterContextResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterPrivilege', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'all')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePorterContextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -2072,31 +2040,327 @@ class PorterPrivilege extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PorterPrivilege clone() => PorterPrivilege()..mergeFromMessage(this);
+  CreatePorterContextResponse clone() => CreatePorterContextResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PorterPrivilege copyWith(void Function(PorterPrivilege) updates) => super.copyWith((message) => updates(message as PorterPrivilege)) as PorterPrivilege;
+  CreatePorterContextResponse copyWith(void Function(CreatePorterContextResponse) updates) => super.copyWith((message) => updates(message as CreatePorterContextResponse)) as CreatePorterContextResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PorterPrivilege create() => PorterPrivilege._();
-  PorterPrivilege createEmptyInstance() => create();
-  static $pb.PbList<PorterPrivilege> createRepeated() => $pb.PbList<PorterPrivilege>();
+  static CreatePorterContextResponse create() => CreatePorterContextResponse._();
+  CreatePorterContextResponse createEmptyInstance() => create();
+  static $pb.PbList<CreatePorterContextResponse> createRepeated() => $pb.PbList<CreatePorterContextResponse>();
   @$core.pragma('dart2js:noInline')
-  static PorterPrivilege getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterPrivilege>(create);
-  static PorterPrivilege? _defaultInstance;
+  static CreatePorterContextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreatePorterContextResponse>(create);
+  static CreatePorterContextResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get all => $_getBF(0);
+  $8.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set all($core.bool v) { $_setBool(0, v); }
+  set contextId($8.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasAll() => $_has(0);
+  $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAll() => clearField(1);
+  void clearContextId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureContextId() => $_ensure(0);
+}
+
+class ListPorterContextsRequest extends $pb.GeneratedMessage {
+  factory ListPorterContextsRequest({
+    $8.PagingRequest? paging,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    return $result;
+  }
+  ListPorterContextsRequest._() : super();
+  factory ListPorterContextsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPorterContextsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPorterContextsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPorterContextsRequest clone() => ListPorterContextsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPorterContextsRequest copyWith(void Function(ListPorterContextsRequest) updates) => super.copyWith((message) => updates(message as ListPorterContextsRequest)) as ListPorterContextsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPorterContextsRequest create() => ListPorterContextsRequest._();
+  ListPorterContextsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPorterContextsRequest> createRepeated() => $pb.PbList<ListPorterContextsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPorterContextsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPorterContextsRequest>(create);
+  static ListPorterContextsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingRequest ensurePaging() => $_ensure(0);
+}
+
+class ListPorterContextsResponse extends $pb.GeneratedMessage {
+  factory ListPorterContextsResponse({
+    $8.PagingResponse? paging,
+    $core.Iterable<PorterContext>? contexts,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (contexts != null) {
+      $result.contexts.addAll(contexts);
+    }
+    return $result;
+  }
+  ListPorterContextsResponse._() : super();
+  factory ListPorterContextsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPorterContextsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPorterContextsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
+    ..pc<PorterContext>(2, _omitFieldNames ? '' : 'contexts', $pb.PbFieldType.PM, subBuilder: PorterContext.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPorterContextsResponse clone() => ListPorterContextsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPorterContextsResponse copyWith(void Function(ListPorterContextsResponse) updates) => super.copyWith((message) => updates(message as ListPorterContextsResponse)) as ListPorterContextsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPorterContextsResponse create() => ListPorterContextsResponse._();
+  ListPorterContextsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPorterContextsResponse> createRepeated() => $pb.PbList<ListPorterContextsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPorterContextsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPorterContextsResponse>(create);
+  static ListPorterContextsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<PorterContext> get contexts => $_getList(1);
+}
+
+class UpdatePorterContextRequest extends $pb.GeneratedMessage {
+  factory UpdatePorterContextRequest({
+    $8.InternalID? porterId,
+    PorterContext? context,
+  }) {
+    final $result = create();
+    if (porterId != null) {
+      $result.porterId = porterId;
+    }
+    if (context != null) {
+      $result.context = context;
+    }
+    return $result;
+  }
+  UpdatePorterContextRequest._() : super();
+  factory UpdatePorterContextRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdatePorterContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
+    ..aOM<PorterContext>(2, _omitFieldNames ? '' : 'context', subBuilder: PorterContext.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdatePorterContextRequest clone() => UpdatePorterContextRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdatePorterContextRequest copyWith(void Function(UpdatePorterContextRequest) updates) => super.copyWith((message) => updates(message as UpdatePorterContextRequest)) as UpdatePorterContextRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdatePorterContextRequest create() => UpdatePorterContextRequest._();
+  UpdatePorterContextRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdatePorterContextRequest> createRepeated() => $pb.PbList<UpdatePorterContextRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdatePorterContextRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePorterContextRequest>(create);
+  static UpdatePorterContextRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get porterId => $_getN(0);
+  @$pb.TagNumber(1)
+  set porterId($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPorterId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPorterId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensurePorterId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  PorterContext get context => $_getN(1);
+  @$pb.TagNumber(2)
+  set context(PorterContext v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContext() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContext() => clearField(2);
+  @$pb.TagNumber(2)
+  PorterContext ensureContext() => $_ensure(1);
+}
+
+class UpdatePorterContextResponse extends $pb.GeneratedMessage {
+  factory UpdatePorterContextResponse() => create();
+  UpdatePorterContextResponse._() : super();
+  factory UpdatePorterContextResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdatePorterContextResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterContextResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdatePorterContextResponse clone() => UpdatePorterContextResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdatePorterContextResponse copyWith(void Function(UpdatePorterContextResponse) updates) => super.copyWith((message) => updates(message as UpdatePorterContextResponse)) as UpdatePorterContextResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdatePorterContextResponse create() => UpdatePorterContextResponse._();
+  UpdatePorterContextResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdatePorterContextResponse> createRepeated() => $pb.PbList<UpdatePorterContextResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdatePorterContextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePorterContextResponse>(create);
+  static UpdatePorterContextResponse? _defaultInstance;
+}
+
+class PorterContext extends $pb.GeneratedMessage {
+  factory PorterContext({
+    $8.InternalID? id,
+    $8.InternalID? porterId,
+    $core.String? contextJson,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (porterId != null) {
+      $result.porterId = porterId;
+    }
+    if (contextJson != null) {
+      $result.contextJson = contextJson;
+    }
+    return $result;
+  }
+  PorterContext._() : super();
+  factory PorterContext.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PorterContext.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterContext', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
+    ..aOS(3, _omitFieldNames ? '' : 'contextJson')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PorterContext clone() => PorterContext()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PorterContext copyWith(void Function(PorterContext) updates) => super.copyWith((message) => updates(message as PorterContext)) as PorterContext;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PorterContext create() => PorterContext._();
+  PorterContext createEmptyInstance() => create();
+  static $pb.PbList<PorterContext> createRepeated() => $pb.PbList<PorterContext>();
+  @$core.pragma('dart2js:noInline')
+  static PorterContext getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterContext>(create);
+  static PorterContext? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $8.InternalID get porterId => $_getN(1);
+  @$pb.TagNumber(2)
+  set porterId($8.InternalID v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPorterId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPorterId() => clearField(2);
+  @$pb.TagNumber(2)
+  $8.InternalID ensurePorterId() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get contextJson => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contextJson($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasContextJson() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContextJson() => clearField(3);
 }
 
 class User extends $pb.GeneratedMessage {

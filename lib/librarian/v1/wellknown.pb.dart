@@ -13,6 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'common.pb.dart' as $2;
+
 export 'wellknown.pbenum.dart';
 
 /// FeatureFlag is used to identify features.
@@ -24,6 +26,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? description,
     $core.String? configJsonSchema,
+    $core.bool? requireContext,
   }) {
     final $result = create();
     if (id != null) {
@@ -41,6 +44,9 @@ class FeatureFlag extends $pb.GeneratedMessage {
     if (configJsonSchema != null) {
       $result.configJsonSchema = configJsonSchema;
     }
+    if (requireContext != null) {
+      $result.requireContext = requireContext;
+    }
     return $result;
   }
   FeatureFlag._() : super();
@@ -53,6 +59,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..aOS(5, _omitFieldNames ? '' : 'configJsonSchema')
+    ..aOB(6, _omitFieldNames ? '' : 'requireContext')
     ..hasRequiredFields = false
   ;
 
@@ -129,6 +136,16 @@ class FeatureFlag extends $pb.GeneratedMessage {
   $core.bool hasConfigJsonSchema() => $_has(4);
   @$pb.TagNumber(5)
   void clearConfigJsonSchema() => clearField(5);
+
+  /// Require context to use this feature
+  @$pb.TagNumber(6)
+  $core.bool get requireContext => $_getBF(5);
+  @$pb.TagNumber(6)
+  set requireContext($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRequireContext() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRequireContext() => clearField(6);
 }
 
 /// FeatureRequest is used to deliver feature-related request parameters.
@@ -137,6 +154,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? region,
     $core.String? configJson,
+    $2.InternalID? contextId,
   }) {
     final $result = create();
     if (id != null) {
@@ -148,6 +166,9 @@ class FeatureRequest extends $pb.GeneratedMessage {
     if (configJson != null) {
       $result.configJson = configJson;
     }
+    if (contextId != null) {
+      $result.contextId = contextId;
+    }
     return $result;
   }
   FeatureRequest._() : super();
@@ -158,6 +179,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'region')
     ..aOS(3, _omitFieldNames ? '' : 'configJson')
+    ..aOM<$2.InternalID>(4, _omitFieldNames ? '' : 'contextId', subBuilder: $2.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -211,6 +233,18 @@ class FeatureRequest extends $pb.GeneratedMessage {
   $core.bool hasConfigJson() => $_has(2);
   @$pb.TagNumber(3)
   void clearConfigJson() => clearField(3);
+
+  /// Require if feature needs context
+  @$pb.TagNumber(4)
+  $2.InternalID get contextId => $_getN(3);
+  @$pb.TagNumber(4)
+  set contextId($2.InternalID v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasContextId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContextId() => clearField(4);
+  @$pb.TagNumber(4)
+  $2.InternalID ensureContextId() => $_ensure(3);
 }
 
 class Wellknown {

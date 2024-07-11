@@ -13,6 +13,28 @@ var librarian_sephirah_v1_tiphereth_pb = require('../../../librarian/sephirah/v1
 var librarian_sephirah_v1_yesod_pb = require('../../../librarian/sephirah/v1/yesod_pb.js');
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 
+function serialize_librarian_sephirah_v1_AcquireUserTokenRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.AcquireUserTokenRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.AcquireUserTokenRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_AcquireUserTokenRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.AcquireUserTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_AcquireUserTokenResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.AcquireUserTokenResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.AcquireUserTokenResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_AcquireUserTokenResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.AcquireUserTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_AddAppInstRunTimeRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.AddAppInstRunTimeRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.AddAppInstRunTimeRequest');
@@ -277,6 +299,28 @@ function deserialize_librarian_sephirah_v1_CreateNotifyTargetResponse(buffer_arg
   return librarian_sephirah_v1_netzach_pb.CreateNotifyTargetResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_CreatePorterContextRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreatePorterContextRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreatePorterContextRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_CreatePorterContextResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.CreatePorterContextResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_CreatePorterContextResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_CreateSharedAppSaveFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.CreateSharedAppSaveFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.CreateSharedAppSaveFileRequest');
@@ -473,28 +517,6 @@ function serialize_librarian_sephirah_v1_DownloadImageResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_DownloadImageResponse(buffer_arg) {
   return librarian_sephirah_v1_chesed_pb.DownloadImageResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_GainUserPrivilegeRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GainUserPrivilegeRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_GainUserPrivilegeRequest(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_GainUserPrivilegeResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.GainUserPrivilegeResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_GainUserPrivilegeResponse(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetAppInfoRequest(arg) {
@@ -1155,6 +1177,28 @@ function serialize_librarian_sephirah_v1_ListNotifyTargetsResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_ListNotifyTargetsResponse(buffer_arg) {
   return librarian_sephirah_v1_netzach_pb.ListNotifyTargetsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListPorterContextsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPorterContextsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListPorterContextsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListPorterContextsRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListPorterContextsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListPorterContextsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPorterContextsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListPorterContextsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListPorterContextsResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListPorterContextsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_ListPortersRequest(arg) {
@@ -2257,26 +2301,26 @@ function deserialize_librarian_sephirah_v1_UpdateNotifyTargetResponse(buffer_arg
   return librarian_sephirah_v1_netzach_pb.UpdateNotifyTargetResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterPrivilegeRequest');
+function serialize_librarian_sephirah_v1_UpdatePorterContextRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterContextRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_UpdatePorterContextRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterPrivilegeResponse');
+function serialize_librarian_sephirah_v1_UpdatePorterContextResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.UpdatePorterContextResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_UpdatePorterContextResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_UpdatePorterStatusRequest(arg) {
@@ -2540,17 +2584,18 @@ refreshToken: {
     responseSerialize: serialize_librarian_sephirah_v1_RefreshTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RefreshTokenResponse,
   },
-  // `Tiphereth` `Porter` Get access_token of another user with allowed privilege
-gainUserPrivilege: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege',
+  // `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+// This token can be used to perform actions on behalf of the user.
+acquireUserToken: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/AcquireUserToken',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeRequest,
-    responseType: librarian_sephirah_v1_tiphereth_pb.GainUserPrivilegeResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_GainUserPrivilegeRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_GainUserPrivilegeResponse,
+    requestType: librarian_sephirah_v1_tiphereth_pb.AcquireUserTokenRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.AcquireUserTokenResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_AcquireUserTokenRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_AcquireUserTokenRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_AcquireUserTokenResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_AcquireUserTokenResponse,
   },
   // `Tiphereth` Self register as a new normal user
 registerUser: {
@@ -2727,17 +2772,41 @@ updatePorterStatus: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
   },
-  // `Tiphereth` `Normal only` Set porter privilege, default none privilege.
-updatePorterPrivilege: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege',
+  // `Tiphereth` `Normal`
+createPorterContext: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeRequest,
-    responseType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterPrivilegeResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterPrivilegeResponse,
+    requestType: librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_CreatePorterContextRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_CreatePorterContextRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_CreatePorterContextResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_CreatePorterContextResponse,
+  },
+  // `Tiphereth` `Normal`
+listPorterContexts: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.ListPorterContextsRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.ListPorterContextsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListPorterContextsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListPorterContextsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListPorterContextsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListPorterContextsResponse,
+  },
+  // `Tiphereth` `Normal` Set porter context.
+updatePorterContext: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_UpdatePorterContextRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterContextRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterContextResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterContextResponse,
   },
   // `Binah` `Admin`
 setFileCapacity: {

@@ -105,43 +105,43 @@ export namespace RefreshTokenResponse {
   }
 }
 
-export class GainUserPrivilegeRequest extends jspb.Message {
+export class AcquireUserTokenRequest extends jspb.Message {
   hasUserId(): boolean;
   clearUserId(): void;
   getUserId(): librarian_v1_common_pb.InternalID | undefined;
   setUserId(value?: librarian_v1_common_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GainUserPrivilegeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GainUserPrivilegeRequest): GainUserPrivilegeRequest.AsObject;
+  toObject(includeInstance?: boolean): AcquireUserTokenRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AcquireUserTokenRequest): AcquireUserTokenRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GainUserPrivilegeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GainUserPrivilegeRequest;
-  static deserializeBinaryFromReader(message: GainUserPrivilegeRequest, reader: jspb.BinaryReader): GainUserPrivilegeRequest;
+  static serializeBinaryToWriter(message: AcquireUserTokenRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AcquireUserTokenRequest;
+  static deserializeBinaryFromReader(message: AcquireUserTokenRequest, reader: jspb.BinaryReader): AcquireUserTokenRequest;
 }
 
-export namespace GainUserPrivilegeRequest {
+export namespace AcquireUserTokenRequest {
   export type AsObject = {
     userId?: librarian_v1_common_pb.InternalID.AsObject,
   }
 }
 
-export class GainUserPrivilegeResponse extends jspb.Message {
+export class AcquireUserTokenResponse extends jspb.Message {
   getAccessToken(): string;
   setAccessToken(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GainUserPrivilegeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GainUserPrivilegeResponse): GainUserPrivilegeResponse.AsObject;
+  toObject(includeInstance?: boolean): AcquireUserTokenResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AcquireUserTokenResponse): AcquireUserTokenResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GainUserPrivilegeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GainUserPrivilegeResponse;
-  static deserializeBinaryFromReader(message: GainUserPrivilegeResponse, reader: jspb.BinaryReader): GainUserPrivilegeResponse;
+  static serializeBinaryToWriter(message: AcquireUserTokenResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AcquireUserTokenResponse;
+  static deserializeBinaryFromReader(message: AcquireUserTokenResponse, reader: jspb.BinaryReader): AcquireUserTokenResponse;
 }
 
-export namespace GainUserPrivilegeResponse {
+export namespace AcquireUserTokenResponse {
   export type AsObject = {
     accessToken: string,
   }
@@ -832,67 +832,181 @@ export namespace UpdatePorterStatusResponse {
   }
 }
 
-export class UpdatePorterPrivilegeRequest extends jspb.Message {
+export class CreatePorterContextRequest extends jspb.Message {
   hasPorterId(): boolean;
   clearPorterId(): void;
   getPorterId(): librarian_v1_common_pb.InternalID | undefined;
   setPorterId(value?: librarian_v1_common_pb.InternalID): void;
 
-  hasPrivilege(): boolean;
-  clearPrivilege(): void;
-  getPrivilege(): PorterPrivilege | undefined;
-  setPrivilege(value?: PorterPrivilege): void;
+  hasContext(): boolean;
+  clearContext(): void;
+  getContext(): PorterContext | undefined;
+  setContext(value?: PorterContext): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdatePorterPrivilegeRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdatePorterPrivilegeRequest): UpdatePorterPrivilegeRequest.AsObject;
+  toObject(includeInstance?: boolean): CreatePorterContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePorterContextRequest): CreatePorterContextRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdatePorterPrivilegeRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdatePorterPrivilegeRequest;
-  static deserializeBinaryFromReader(message: UpdatePorterPrivilegeRequest, reader: jspb.BinaryReader): UpdatePorterPrivilegeRequest;
+  static serializeBinaryToWriter(message: CreatePorterContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePorterContextRequest;
+  static deserializeBinaryFromReader(message: CreatePorterContextRequest, reader: jspb.BinaryReader): CreatePorterContextRequest;
 }
 
-export namespace UpdatePorterPrivilegeRequest {
+export namespace CreatePorterContextRequest {
   export type AsObject = {
     porterId?: librarian_v1_common_pb.InternalID.AsObject,
-    privilege?: PorterPrivilege.AsObject,
+    context?: PorterContext.AsObject,
   }
 }
 
-export class UpdatePorterPrivilegeResponse extends jspb.Message {
+export class CreatePorterContextResponse extends jspb.Message {
+  hasContextId(): boolean;
+  clearContextId(): void;
+  getContextId(): librarian_v1_common_pb.InternalID | undefined;
+  setContextId(value?: librarian_v1_common_pb.InternalID): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdatePorterPrivilegeResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdatePorterPrivilegeResponse): UpdatePorterPrivilegeResponse.AsObject;
+  toObject(includeInstance?: boolean): CreatePorterContextResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreatePorterContextResponse): CreatePorterContextResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdatePorterPrivilegeResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdatePorterPrivilegeResponse;
-  static deserializeBinaryFromReader(message: UpdatePorterPrivilegeResponse, reader: jspb.BinaryReader): UpdatePorterPrivilegeResponse;
+  static serializeBinaryToWriter(message: CreatePorterContextResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreatePorterContextResponse;
+  static deserializeBinaryFromReader(message: CreatePorterContextResponse, reader: jspb.BinaryReader): CreatePorterContextResponse;
 }
 
-export namespace UpdatePorterPrivilegeResponse {
+export namespace CreatePorterContextResponse {
+  export type AsObject = {
+    contextId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class ListPorterContextsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPorterContextsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPorterContextsRequest): ListPorterContextsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPorterContextsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPorterContextsRequest;
+  static deserializeBinaryFromReader(message: ListPorterContextsRequest, reader: jspb.BinaryReader): ListPorterContextsRequest;
+}
+
+export namespace ListPorterContextsRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+  }
+}
+
+export class ListPorterContextsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearContextsList(): void;
+  getContextsList(): Array<PorterContext>;
+  setContextsList(value: Array<PorterContext>): void;
+  addContexts(value?: PorterContext, index?: number): PorterContext;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPorterContextsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPorterContextsResponse): ListPorterContextsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPorterContextsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPorterContextsResponse;
+  static deserializeBinaryFromReader(message: ListPorterContextsResponse, reader: jspb.BinaryReader): ListPorterContextsResponse;
+}
+
+export namespace ListPorterContextsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    contextsList: Array<PorterContext.AsObject>,
+  }
+}
+
+export class UpdatePorterContextRequest extends jspb.Message {
+  hasPorterId(): boolean;
+  clearPorterId(): void;
+  getPorterId(): librarian_v1_common_pb.InternalID | undefined;
+  setPorterId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasContext(): boolean;
+  clearContext(): void;
+  getContext(): PorterContext | undefined;
+  setContext(value?: PorterContext): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePorterContextRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePorterContextRequest): UpdatePorterContextRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePorterContextRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePorterContextRequest;
+  static deserializeBinaryFromReader(message: UpdatePorterContextRequest, reader: jspb.BinaryReader): UpdatePorterContextRequest;
+}
+
+export namespace UpdatePorterContextRequest {
+  export type AsObject = {
+    porterId?: librarian_v1_common_pb.InternalID.AsObject,
+    context?: PorterContext.AsObject,
+  }
+}
+
+export class UpdatePorterContextResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdatePorterContextResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdatePorterContextResponse): UpdatePorterContextResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UpdatePorterContextResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdatePorterContextResponse;
+  static deserializeBinaryFromReader(message: UpdatePorterContextResponse, reader: jspb.BinaryReader): UpdatePorterContextResponse;
+}
+
+export namespace UpdatePorterContextResponse {
   export type AsObject = {
   }
 }
 
-export class PorterPrivilege extends jspb.Message {
-  getAll(): boolean;
-  setAll(value: boolean): void;
+export class PorterContext extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasPorterId(): boolean;
+  clearPorterId(): void;
+  getPorterId(): librarian_v1_common_pb.InternalID | undefined;
+  setPorterId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasContextJson(): boolean;
+  clearContextJson(): void;
+  getContextJson(): string;
+  setContextJson(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PorterPrivilege.AsObject;
-  static toObject(includeInstance: boolean, msg: PorterPrivilege): PorterPrivilege.AsObject;
+  toObject(includeInstance?: boolean): PorterContext.AsObject;
+  static toObject(includeInstance: boolean, msg: PorterContext): PorterContext.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PorterPrivilege, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PorterPrivilege;
-  static deserializeBinaryFromReader(message: PorterPrivilege, reader: jspb.BinaryReader): PorterPrivilege;
+  static serializeBinaryToWriter(message: PorterContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PorterContext;
+  static deserializeBinaryFromReader(message: PorterContext, reader: jspb.BinaryReader): PorterContext;
 }
 
-export namespace PorterPrivilege {
+export namespace PorterContext {
   export type AsObject = {
-    all: boolean,
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    porterId?: librarian_v1_common_pb.InternalID.AsObject,
+    contextJson: string,
   }
 }
 

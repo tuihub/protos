@@ -146,6 +146,66 @@ pub mod librarian_porter_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn enable_context(
+            &mut self,
+            request: impl tonic::IntoRequest<super::EnableContextRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::EnableContextResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/EnableContext",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "EnableContext",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn disable_context(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DisableContextRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DisableContextResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/DisableContext",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "DisableContext",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn pull_account(
             &mut self,
             request: impl tonic::IntoRequest<super::PullAccountRequest>,
@@ -379,6 +439,20 @@ pub mod librarian_porter_service_server {
             tonic::Response<super::EnablePorterResponse>,
             tonic::Status,
         >;
+        async fn enable_context(
+            &self,
+            request: tonic::Request<super::EnableContextRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::EnableContextResponse>,
+            tonic::Status,
+        >;
+        async fn disable_context(
+            &self,
+            request: tonic::Request<super::DisableContextRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DisableContextResponse>,
+            tonic::Status,
+        >;
         async fn pull_account(
             &self,
             request: tonic::Request<super::PullAccountRequest>,
@@ -588,6 +662,98 @@ pub mod librarian_porter_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = EnablePorterSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/EnableContext" => {
+                    #[allow(non_camel_case_types)]
+                    struct EnableContextSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::EnableContextRequest>
+                    for EnableContextSvc<T> {
+                        type Response = super::EnableContextResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::EnableContextRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).enable_context(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = EnableContextSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/DisableContext" => {
+                    #[allow(non_camel_case_types)]
+                    struct DisableContextSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::DisableContextRequest>
+                    for DisableContextSvc<T> {
+                        type Response = super::DisableContextResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DisableContextRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).disable_context(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DisableContextSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

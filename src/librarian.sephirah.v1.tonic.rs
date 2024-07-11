@@ -86,8 +86,6 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
-        /** Allow anonymous call, use accessToken to get complete information
-*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -220,13 +218,14 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+        /** `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+ This token can be used to perform actions on behalf of the user.
 */
-        pub async fn gain_user_privilege(
+        pub async fn acquire_user_token(
             &mut self,
-            request: impl tonic::IntoRequest<super::GainUserPrivilegeRequest>,
+            request: impl tonic::IntoRequest<super::AcquireUserTokenRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::GainUserPrivilegeResponse>,
+            tonic::Response<super::AcquireUserTokenResponse>,
             tonic::Status,
         > {
             self.inner
@@ -240,14 +239,14 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege",
+                "/librarian.sephirah.v1.LibrarianSephirahService/AcquireUserToken",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
-                        "GainUserPrivilege",
+                        "AcquireUserToken",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -707,13 +706,13 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+        /** `Tiphereth` `Normal`
 */
-        pub async fn update_porter_privilege(
+        pub async fn create_porter_context(
             &mut self,
-            request: impl tonic::IntoRequest<super::UpdatePorterPrivilegeRequest>,
+            request: impl tonic::IntoRequest<super::CreatePorterContextRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::UpdatePorterPrivilegeResponse>,
+            tonic::Response<super::CreatePorterContextResponse>,
             tonic::Status,
         > {
             self.inner
@@ -727,14 +726,78 @@ pub mod librarian_sephirah_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege",
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
-                        "UpdatePorterPrivilege",
+                        "CreatePorterContext",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Tiphereth` `Normal`
+*/
+        pub async fn list_porter_contexts(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListPorterContextsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListPorterContextsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListPorterContexts",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Tiphereth` `Normal` Set porter context.
+*/
+        pub async fn update_porter_context(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UpdatePorterContextRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdatePorterContextResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "UpdatePorterContext",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -3546,8 +3609,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn remove_feed_item_from_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::RemoveFeedItemFromCollectionRequest>,
@@ -3707,8 +3768,6 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
-        /** Allow anonymous call, use accessToken to get complete information
-*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -3758,13 +3817,14 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::RefreshTokenResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Porter` Get access_token of another user with allowed privilege
+        /** `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+ This token can be used to perform actions on behalf of the user.
 */
-        async fn gain_user_privilege(
+        async fn acquire_user_token(
             &self,
-            request: tonic::Request<super::GainUserPrivilegeRequest>,
+            request: tonic::Request<super::AcquireUserTokenRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::GainUserPrivilegeResponse>,
+            tonic::Response<super::AcquireUserTokenResponse>,
             tonic::Status,
         >;
         /** `Tiphereth` Self register as a new normal user
@@ -3897,13 +3957,31 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdatePorterStatusResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal only` Set porter privilege, default none privilege.
+        /** `Tiphereth` `Normal`
 */
-        async fn update_porter_privilege(
+        async fn create_porter_context(
             &self,
-            request: tonic::Request<super::UpdatePorterPrivilegeRequest>,
+            request: tonic::Request<super::CreatePorterContextRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::UpdatePorterPrivilegeResponse>,
+            tonic::Response<super::CreatePorterContextResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `Normal`
+*/
+        async fn list_porter_contexts(
+            &self,
+            request: tonic::Request<super::ListPorterContextsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListPorterContextsResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `Normal` Set porter context.
+*/
+        async fn update_porter_context(
+            &self,
+            request: tonic::Request<super::UpdatePorterContextRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::UpdatePorterContextResponse>,
             tonic::Status,
         >;
         /** `Binah` `Admin`
@@ -4735,8 +4813,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::AddFeedItemToCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn remove_feed_item_from_collection(
             &self,
             request: tonic::Request<super::RemoveFeedItemFromCollectionRequest>,
@@ -5039,25 +5115,25 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/GainUserPrivilege" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/AcquireUserToken" => {
                     #[allow(non_camel_case_types)]
-                    struct GainUserPrivilegeSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct AcquireUserTokenSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::GainUserPrivilegeRequest>
-                    for GainUserPrivilegeSvc<T> {
-                        type Response = super::GainUserPrivilegeResponse;
+                    > tonic::server::UnaryService<super::AcquireUserTokenRequest>
+                    for AcquireUserTokenSvc<T> {
+                        type Response = super::AcquireUserTokenResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GainUserPrivilegeRequest>,
+                            request: tonic::Request<super::AcquireUserTokenRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).gain_user_privilege(request).await
+                                (*inner).acquire_user_token(request).await
                             };
                             Box::pin(fut)
                         }
@@ -5069,7 +5145,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = GainUserPrivilegeSvc(inner);
+                        let method = AcquireUserTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -5725,27 +5801,27 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterPrivilege" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext" => {
                     #[allow(non_camel_case_types)]
-                    struct UpdatePorterPrivilegeSvc<T: LibrarianSephirahService>(
+                    struct CreatePorterContextSvc<T: LibrarianSephirahService>(
                         pub Arc<T>,
                     );
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::UpdatePorterPrivilegeRequest>
-                    for UpdatePorterPrivilegeSvc<T> {
-                        type Response = super::UpdatePorterPrivilegeResponse;
+                    > tonic::server::UnaryService<super::CreatePorterContextRequest>
+                    for CreatePorterContextSvc<T> {
+                        type Response = super::CreatePorterContextResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::UpdatePorterPrivilegeRequest>,
+                            request: tonic::Request<super::CreatePorterContextRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_porter_privilege(request).await
+                                (*inner).create_porter_context(request).await
                             };
                             Box::pin(fut)
                         }
@@ -5757,7 +5833,103 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = UpdatePorterPrivilegeSvc(inner);
+                        let method = CreatePorterContextSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListPorterContextsSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListPorterContextsRequest>
+                    for ListPorterContextsSvc<T> {
+                        type Response = super::ListPorterContextsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListPorterContextsRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_porter_contexts(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListPorterContextsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdatePorterContextSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::UpdatePorterContextRequest>
+                    for UpdatePorterContextSvc<T> {
+                        type Response = super::UpdatePorterContextResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UpdatePorterContextRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_porter_context(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdatePorterContextSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

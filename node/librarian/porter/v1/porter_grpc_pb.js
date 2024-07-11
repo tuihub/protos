@@ -6,6 +6,50 @@ var librarian_porter_v1_porter_pb = require('../../../librarian/porter/v1/porter
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 
+function serialize_librarian_porter_v1_DisableContextRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.DisableContextRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.DisableContextRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_DisableContextRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.DisableContextRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_DisableContextResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.DisableContextResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.DisableContextResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_DisableContextResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.DisableContextResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_EnableContextRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.EnableContextRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.EnableContextRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_EnableContextRequest(buffer_arg) {
+  return librarian_porter_v1_porter_pb.EnableContextRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_EnableContextResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_porter_pb.EnableContextResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.EnableContextResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_EnableContextResponse(buffer_arg) {
+  return librarian_porter_v1_porter_pb.EnableContextResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_porter_v1_EnablePorterRequest(arg) {
   if (!(arg instanceof librarian_porter_v1_porter_pb.EnablePorterRequest)) {
     throw new Error('Expected argument of type librarian.porter.v1.EnablePorterRequest');
@@ -227,6 +271,28 @@ var LibrarianPorterServiceService = exports.LibrarianPorterServiceService = {
     requestDeserialize: deserialize_librarian_porter_v1_EnablePorterRequest,
     responseSerialize: serialize_librarian_porter_v1_EnablePorterResponse,
     responseDeserialize: deserialize_librarian_porter_v1_EnablePorterResponse,
+  },
+  enableContext: {
+    path: '/librarian.porter.v1.LibrarianPorterService/EnableContext',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.EnableContextRequest,
+    responseType: librarian_porter_v1_porter_pb.EnableContextResponse,
+    requestSerialize: serialize_librarian_porter_v1_EnableContextRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_EnableContextRequest,
+    responseSerialize: serialize_librarian_porter_v1_EnableContextResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_EnableContextResponse,
+  },
+  disableContext: {
+    path: '/librarian.porter.v1.LibrarianPorterService/DisableContext',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.DisableContextRequest,
+    responseType: librarian_porter_v1_porter_pb.DisableContextResponse,
+    requestSerialize: serialize_librarian_porter_v1_DisableContextRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_DisableContextRequest,
+    responseSerialize: serialize_librarian_porter_v1_DisableContextResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_DisableContextResponse,
   },
   // `Tiphereth`
 pullAccount: {
