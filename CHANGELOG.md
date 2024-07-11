@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.15](https://github.com/tuihub/protos/compare/v0.4.14...v0.4.15) (2024-07-11)
+
+
+### Features
+
+* add porter context ([5ec4ad4](https://github.com/tuihub/protos/commit/5ec4ad471f3b678be05325def1425f9ea3543fd4))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#148](https://github.com/tuihub/protos/issues/148)) ([b6c7e19](https://github.com/tuihub/protos/commit/b6c7e190d8304f8a8e271083b6042aa4065c759f))
+* **deps:** update module google.golang.org/grpc to v1.64.1 [security] ([#150](https://github.com/tuihub/protos/issues/150)) ([c51154e](https://github.com/tuihub/protos/commit/c51154e2eafef9686bbeb861a22553bd29aa49c9))
+* update feed item action ([61cac0d](https://github.com/tuihub/protos/commit/61cac0db30cdef0d6c4a29db253bc0df7e0f7e85))
+
 ## [0.4.14](https://github.com/tuihub/protos/compare/v0.4.13...v0.4.14) (2024-06-21)
 
 
