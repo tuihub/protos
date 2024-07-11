@@ -38,8 +38,9 @@ service LibrarianSephirahService {
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
   // `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
-  // `Tiphereth` `Porter` Get access_token of another user with allowed privilege
-  rpc GainUserPrivilege(GainUserPrivilegeRequest) returns (GainUserPrivilegeResponse);
+  // `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+  // This token can be used to perform actions on behalf of the user.
+  rpc AcquireUserToken(AcquireUserTokenRequest) returns (AcquireUserTokenResponse);
 
   // `Tiphereth` Self register as a new normal user
   rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
@@ -79,8 +80,12 @@ service LibrarianSephirahService {
   rpc ListPorters(ListPortersRequest) returns (ListPortersResponse);
   // `Tiphereth` `Admin`
   rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
-  // `Tiphereth` `Normal only` Set porter privilege, default none privilege.
-  rpc UpdatePorterPrivilege(UpdatePorterPrivilegeRequest) returns (UpdatePorterPrivilegeResponse);
+  // `Tiphereth` `Normal`
+  rpc CreatePorterContext(CreatePorterContextRequest) returns (CreatePorterContextResponse);
+  // `Tiphereth` `Normal`
+  rpc ListPorterContexts(ListPorterContextsRequest) returns (ListPorterContextsResponse);
+  // `Tiphereth` `Normal` Set porter context.
+  rpc UpdatePorterContext(UpdatePorterContextRequest) returns (UpdatePorterContextResponse);
 
   // `Binah` `Admin`
   rpc SetFileCapacity(SetFileCapacityRequest) returns (SetFileCapacityResponse);

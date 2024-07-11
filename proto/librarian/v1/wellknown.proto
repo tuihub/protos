@@ -3,6 +3,7 @@ syntax = "proto3";
 package librarian.v1;
 
 import "google/protobuf/descriptor.proto";
+import "librarian/v1/common.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/v1;v1";
@@ -27,6 +28,8 @@ message FeatureFlag {
   string description = 4;
   // Customized JSON schema for feature
   string config_json_schema = 5;
+  // Require context to use this feature
+  bool require_context = 6;
 }
 
 // FeatureRequest is used to deliver feature-related request parameters.
@@ -37,6 +40,8 @@ message FeatureRequest {
   string region = 2;
   // Configuration JSON, must be validated by schema
   string config_json = 3;
+  // Require if feature needs context
+  optional InternalID context_id = 4;
 }
 
 enum WellKnownAccountPlatform {

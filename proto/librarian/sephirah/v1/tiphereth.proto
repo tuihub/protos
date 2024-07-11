@@ -33,11 +33,11 @@ message RefreshTokenResponse {
   string refresh_token = 2;
 }
 
-message GainUserPrivilegeRequest {
+message AcquireUserTokenRequest {
   librarian.v1.InternalID user_id = 1;
 }
 
-message GainUserPrivilegeResponse {
+message AcquireUserTokenResponse {
   string access_token = 1;
 }
 
@@ -153,14 +153,34 @@ message UpdatePorterStatusRequest {
 }
 message UpdatePorterStatusResponse {}
 
-message UpdatePorterPrivilegeRequest {
+message CreatePorterContextRequest {
   librarian.v1.InternalID porter_id = 1;
-  PorterPrivilege privilege = 2;
+  PorterContext context = 2;
 }
-message UpdatePorterPrivilegeResponse {}
 
-message PorterPrivilege {
-  bool all = 1;
+message CreatePorterContextResponse {
+  librarian.v1.InternalID context_id = 1;
+}
+
+message ListPorterContextsRequest {
+  librarian.v1.PagingRequest paging = 1;
+}
+
+message ListPorterContextsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated PorterContext contexts = 2;
+}
+
+message UpdatePorterContextRequest {
+  librarian.v1.InternalID porter_id = 1;
+  PorterContext context = 2;
+}
+message UpdatePorterContextResponse {}
+
+message PorterContext {
+  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID porter_id = 2;
+  optional string context_json = 3;
 }
 
 message User {
