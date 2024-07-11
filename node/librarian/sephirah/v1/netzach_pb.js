@@ -25,6 +25,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
+goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyFlowRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyFlowResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateNotifyTargetRequest', null, global);
@@ -2601,9 +2603,8 @@ proto.librarian.sephirah.v1.NotifyTarget.toObject = function(includeInstance, ms
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    destination: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    token: jspb.Message.getFieldWithDefault(msg, 6, "")
+    destination: (f = msg.getDestination()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+    status: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -2654,16 +2655,13 @@ proto.librarian.sephirah.v1.NotifyTarget.deserializeBinaryFromReader = function(
       msg.setDescription(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
       msg.setDestination(value);
       break;
     case 5:
       var value = /** @type {!proto.librarian.sephirah.v1.NotifyTargetStatus} */ (reader.readEnum());
       msg.setStatus(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
       break;
     default:
       reader.skipField();
@@ -2717,23 +2715,17 @@ proto.librarian.sephirah.v1.NotifyTarget.serializeBinaryToWriter = function(mess
     );
   }
   f = message.getDestination();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
       5,
-      f
-    );
-  }
-  f = message.getToken();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
       f
     );
   }
@@ -2814,20 +2806,39 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.setDescription = function(val
 
 
 /**
- * optional string destination = 4;
- * @return {string}
+ * optional librarian.v1.FeatureRequest destination = 4;
+ * @return {?proto.librarian.v1.FeatureRequest}
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.getDestination = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
+*/
+proto.librarian.sephirah.v1.NotifyTarget.prototype.setDestination = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
  */
-proto.librarian.sephirah.v1.NotifyTarget.prototype.setDestination = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.librarian.sephirah.v1.NotifyTarget.prototype.clearDestination = function() {
+  return this.setDestination(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.NotifyTarget.prototype.hasDestination = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -2846,24 +2857,6 @@ proto.librarian.sephirah.v1.NotifyTarget.prototype.getStatus = function() {
  */
 proto.librarian.sephirah.v1.NotifyTarget.prototype.setStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 5, value);
-};
-
-
-/**
- * optional string token = 6;
- * @return {string}
- */
-proto.librarian.sephirah.v1.NotifyTarget.prototype.getToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.sephirah.v1.NotifyTarget} returns this
- */
-proto.librarian.sephirah.v1.NotifyTarget.prototype.setToken = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -3456,8 +3449,7 @@ proto.librarian.sephirah.v1.NotifyFlowTarget.prototype.toObject = function(opt_i
 proto.librarian.sephirah.v1.NotifyFlowTarget.toObject = function(includeInstance, msg) {
   var f, obj = {
     filter: (f = msg.getFilter()) && proto.librarian.sephirah.v1.NotifyFilter.toObject(includeInstance, f),
-    targetId: (f = msg.getTargetId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    channelId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    targetId: (f = msg.getTargetId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3504,10 +3496,6 @@ proto.librarian.sephirah.v1.NotifyFlowTarget.deserializeBinaryFromReader = funct
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.setTargetId(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setChannelId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3551,13 +3539,6 @@ proto.librarian.sephirah.v1.NotifyFlowTarget.serializeBinaryToWriter = function(
       2,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getChannelId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
 };
@@ -3634,24 +3615,6 @@ proto.librarian.sephirah.v1.NotifyFlowTarget.prototype.clearTargetId = function(
  */
 proto.librarian.sephirah.v1.NotifyFlowTarget.prototype.hasTargetId = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string channel_id = 3;
- * @return {string}
- */
-proto.librarian.sephirah.v1.NotifyFlowTarget.prototype.getChannelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.sephirah.v1.NotifyFlowTarget} returns this
- */
-proto.librarian.sephirah.v1.NotifyFlowTarget.prototype.setChannelId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -7819,7 +7819,9 @@ proto.librarian.sephirah.v1.PorterContext.toObject = function(includeInstance, m
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     porterId: (f = msg.getPorterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    contextJson: jspb.Message.getFieldWithDefault(msg, 3, "")
+    contextJson: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -7870,6 +7872,14 @@ proto.librarian.sephirah.v1.PorterContext.deserializeBinaryFromReader = function
       var value = /** @type {string} */ (reader.readString());
       msg.setContextJson(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -7919,6 +7929,20 @@ proto.librarian.sephirah.v1.PorterContext.serializeBinaryToWriter = function(mes
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -8032,6 +8056,42 @@ proto.librarian.sephirah.v1.PorterContext.prototype.clearContextJson = function(
  */
 proto.librarian.sephirah.v1.PorterContext.prototype.hasContextJson = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string name = 4;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.PorterContext.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.PorterContext} returns this
+ */
+proto.librarian.sephirah.v1.PorterContext.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.PorterContext.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.PorterContext} returns this
+ */
+proto.librarian.sephirah.v1.PorterContext.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

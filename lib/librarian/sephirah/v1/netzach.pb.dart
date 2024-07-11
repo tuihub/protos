@@ -15,6 +15,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
 import '../../v1/common.pb.dart' as $8;
+import '../../v1/wellknown.pb.dart' as $12;
 import 'netzach.pbenum.dart';
 
 export 'netzach.pbenum.dart';
@@ -657,9 +658,8 @@ class NotifyTarget extends $pb.GeneratedMessage {
     $8.InternalID? id,
     $core.String? name,
     $core.String? description,
-    $core.String? destination,
+    $12.FeatureRequest? destination,
     NotifyTargetStatus? status,
-    $core.String? token,
   }) {
     final $result = create();
     if (id != null) {
@@ -677,9 +677,6 @@ class NotifyTarget extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
-    if (token != null) {
-      $result.token = token;
-    }
     return $result;
   }
   NotifyTarget._() : super();
@@ -690,9 +687,8 @@ class NotifyTarget extends $pb.GeneratedMessage {
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..aOS(4, _omitFieldNames ? '' : 'destination')
+    ..aOM<$12.FeatureRequest>(4, _omitFieldNames ? '' : 'destination', subBuilder: $12.FeatureRequest.create)
     ..e<NotifyTargetStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values)
-    ..aOS(6, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
@@ -748,13 +744,15 @@ class NotifyTarget extends $pb.GeneratedMessage {
 
   /// WellKnownNotifyDestination
   @$pb.TagNumber(4)
-  $core.String get destination => $_getSZ(3);
+  $12.FeatureRequest get destination => $_getN(3);
   @$pb.TagNumber(4)
-  set destination($core.String v) { $_setString(3, v); }
+  set destination($12.FeatureRequest v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDestination() => $_has(3);
   @$pb.TagNumber(4)
   void clearDestination() => clearField(4);
+  @$pb.TagNumber(4)
+  $12.FeatureRequest ensureDestination() => $_ensure(3);
 
   @$pb.TagNumber(5)
   NotifyTargetStatus get status => $_getN(4);
@@ -764,15 +762,6 @@ class NotifyTarget extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(4);
   @$pb.TagNumber(5)
   void clearStatus() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get token => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set token($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasToken() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearToken() => clearField(6);
 }
 
 class NotifyFlow extends $pb.GeneratedMessage {
@@ -958,7 +947,6 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   factory NotifyFlowTarget({
     NotifyFilter? filter,
     $8.InternalID? targetId,
-    $core.String? channelId,
   }) {
     final $result = create();
     if (filter != null) {
@@ -966,9 +954,6 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
     }
     if (targetId != null) {
       $result.targetId = targetId;
-    }
-    if (channelId != null) {
-      $result.channelId = channelId;
     }
     return $result;
   }
@@ -979,7 +964,6 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowTarget', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
     ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'targetId', subBuilder: $8.InternalID.create)
-    ..aOS(3, _omitFieldNames ? '' : 'channelId')
     ..hasRequiredFields = false
   ;
 
@@ -1026,15 +1010,6 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   void clearTargetId() => clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureTargetId() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.String get channelId => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set channelId($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasChannelId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearChannelId() => clearField(3);
 }
 
 class NotifyFilter extends $pb.GeneratedMessage {

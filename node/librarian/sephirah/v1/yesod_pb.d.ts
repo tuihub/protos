@@ -1028,16 +1028,18 @@ export class FeedConfig extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getFeedUrl(): string;
-  setFeedUrl(value: string): void;
+  getDescription(): string;
+  setDescription(value: string): void;
 
-  hasAuthorAccount(): boolean;
-  clearAuthorAccount(): void;
-  getAuthorAccount(): librarian_v1_common_pb.InternalID | undefined;
-  setAuthorAccount(value?: librarian_v1_common_pb.InternalID): void;
+  hasSource(): boolean;
+  clearSource(): void;
+  getSource(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setSource(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
-  getSource(): string;
-  setSource(value: string): void;
+  clearActionSetsList(): void;
+  getActionSetsList(): Array<librarian_v1_common_pb.InternalID>;
+  setActionSetsList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addActionSets(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
   getStatus(): FeedConfigStatusMap[keyof FeedConfigStatusMap];
   setStatus(value: FeedConfigStatusMap[keyof FeedConfigStatusMap]): void;
@@ -1068,11 +1070,6 @@ export class FeedConfig extends jspb.Message {
   getLatestPullMessage(): string;
   setLatestPullMessage(value: string): void;
 
-  clearActionSetsList(): void;
-  getActionSetsList(): Array<librarian_v1_common_pb.InternalID>;
-  setActionSetsList(value: Array<librarian_v1_common_pb.InternalID>): void;
-  addActionSets(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedConfig.AsObject;
   static toObject(includeInstance: boolean, msg: FeedConfig): FeedConfig.AsObject;
@@ -1087,9 +1084,9 @@ export namespace FeedConfig {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
-    feedUrl: string,
-    authorAccount?: librarian_v1_common_pb.InternalID.AsObject,
-    source: string,
+    description: string,
+    source?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
+    actionSetsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     status: FeedConfigStatusMap[keyof FeedConfigStatusMap],
     pullInterval?: google_protobuf_duration_pb.Duration.AsObject,
     category: string,
@@ -1097,7 +1094,6 @@ export namespace FeedConfig {
     latestPullTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     latestPullStatus: FeedConfigPullStatusMap[keyof FeedConfigPullStatusMap],
     latestPullMessage: string,
-    actionSetsList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 

@@ -598,9 +598,9 @@ const FeedConfig$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'feed_url', '3': 3, '4': 1, '5': 9, '10': 'feedUrl'},
-    {'1': 'author_account', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'authorAccount'},
-    {'1': 'source', '3': 5, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'source', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'source'},
+    {'1': 'action_sets', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'actionSets'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigStatus', '10': 'status'},
     {'1': 'pull_interval', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'pullInterval'},
     {'1': 'category', '3': 8, '4': 1, '5': 9, '10': 'category'},
@@ -608,7 +608,6 @@ const FeedConfig$json = {
     {'1': 'latest_pull_time', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'latestPullTime', '17': true},
     {'1': 'latest_pull_status', '3': 11, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigPullStatus', '9': 1, '10': 'latestPullStatus', '17': true},
     {'1': 'latest_pull_message', '3': 12, '4': 1, '5': 9, '9': 2, '10': 'latestPullMessage', '17': true},
-    {'1': 'action_sets', '3': 13, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'actionSets'},
   ],
   '8': [
     {'1': '_latest_pull_time'},
@@ -620,19 +619,18 @@ const FeedConfig$json = {
 /// Descriptor for `FeedConfig`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List feedConfigDescriptor = $convert.base64Decode(
     'CgpGZWVkQ29uZmlnEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEh'
-    'IKBG5hbWUYAiABKAlSBG5hbWUSGQoIZmVlZF91cmwYAyABKAlSB2ZlZWRVcmwSPwoOYXV0aG9y'
-    'X2FjY291bnQYBCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFINYXV0aG9yQWNjb3VudB'
-    'IWCgZzb3VyY2UYBSABKAlSBnNvdXJjZRI/CgZzdGF0dXMYBiABKA4yJy5saWJyYXJpYW4uc2Vw'
-    'aGlyYWgudjEuRmVlZENvbmZpZ1N0YXR1c1IGc3RhdHVzEj4KDXB1bGxfaW50ZXJ2YWwYByABKA'
-    'syGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SDHB1bGxJbnRlcnZhbBIaCghjYXRlZ29yeRgI'
-    'IAEoCVIIY2F0ZWdvcnkSHQoKaGlkZV9pdGVtcxgJIAEoCFIJaGlkZUl0ZW1zEkkKEGxhdGVzdF'
-    '9wdWxsX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSDmxhdGVzdFB1'
-    'bGxUaW1liAEBEl4KEmxhdGVzdF9wdWxsX3N0YXR1cxgLIAEoDjIrLmxpYnJhcmlhbi5zZXBoaX'
-    'JhaC52MS5GZWVkQ29uZmlnUHVsbFN0YXR1c0gBUhBsYXRlc3RQdWxsU3RhdHVziAEBEjMKE2xh'
-    'dGVzdF9wdWxsX21lc3NhZ2UYDCABKAlIAlIRbGF0ZXN0UHVsbE1lc3NhZ2WIAQESOQoLYWN0aW'
-    '9uX3NldHMYDSADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKYWN0aW9uU2V0c0ITChFf'
-    'bGF0ZXN0X3B1bGxfdGltZUIVChNfbGF0ZXN0X3B1bGxfc3RhdHVzQhYKFF9sYXRlc3RfcHVsbF'
-    '9tZXNzYWdl');
+    'IKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjQK'
+    'BnNvdXJjZRgEIAEoCzIcLmxpYnJhcmlhbi52MS5GZWF0dXJlUmVxdWVzdFIGc291cmNlEjkKC2'
+    'FjdGlvbl9zZXRzGAUgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCmFjdGlvblNldHMS'
+    'PwoGc3RhdHVzGAYgASgOMicubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZlZWRDb25maWdTdGF0dX'
+    'NSBnN0YXR1cxI+Cg1wdWxsX2ludGVydmFsGAcgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0'
+    'aW9uUgxwdWxsSW50ZXJ2YWwSGgoIY2F0ZWdvcnkYCCABKAlSCGNhdGVnb3J5Eh0KCmhpZGVfaX'
+    'RlbXMYCSABKAhSCWhpZGVJdGVtcxJJChBsYXRlc3RfcHVsbF90aW1lGAogASgLMhouZ29vZ2xl'
+    'LnByb3RvYnVmLlRpbWVzdGFtcEgAUg5sYXRlc3RQdWxsVGltZYgBARJeChJsYXRlc3RfcHVsbF'
+    '9zdGF0dXMYCyABKA4yKy5saWJyYXJpYW4uc2VwaGlyYWgudjEuRmVlZENvbmZpZ1B1bGxTdGF0'
+    'dXNIAVIQbGF0ZXN0UHVsbFN0YXR1c4gBARIzChNsYXRlc3RfcHVsbF9tZXNzYWdlGAwgASgJSA'
+    'JSEWxhdGVzdFB1bGxNZXNzYWdliAEBQhMKEV9sYXRlc3RfcHVsbF90aW1lQhUKE19sYXRlc3Rf'
+    'cHVsbF9zdGF0dXNCFgoUX2xhdGVzdF9wdWxsX21lc3NhZ2U=');
 
 @$core.Deprecated('Use feedActionSetDescriptor instead')
 const FeedActionSet$json = {

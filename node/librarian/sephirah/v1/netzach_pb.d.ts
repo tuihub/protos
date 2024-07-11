@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
+import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
 export class CreateNotifyTargetRequest extends jspb.Message {
   hasTarget(): boolean;
@@ -305,14 +306,13 @@ export class NotifyTarget extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  getDestination(): string;
-  setDestination(value: string): void;
+  hasDestination(): boolean;
+  clearDestination(): void;
+  getDestination(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setDestination(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
   getStatus(): NotifyTargetStatusMap[keyof NotifyTargetStatusMap];
   setStatus(value: NotifyTargetStatusMap[keyof NotifyTargetStatusMap]): void;
-
-  getToken(): string;
-  setToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyTarget.AsObject;
@@ -329,9 +329,8 @@ export namespace NotifyTarget {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     description: string,
-    destination: string,
+    destination?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
     status: NotifyTargetStatusMap[keyof NotifyTargetStatusMap],
-    token: string,
   }
 }
 
@@ -420,9 +419,6 @@ export class NotifyFlowTarget extends jspb.Message {
   getTargetId(): librarian_v1_common_pb.InternalID | undefined;
   setTargetId(value?: librarian_v1_common_pb.InternalID): void;
 
-  getChannelId(): string;
-  setChannelId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyFlowTarget.AsObject;
   static toObject(includeInstance: boolean, msg: NotifyFlowTarget): NotifyFlowTarget.AsObject;
@@ -437,7 +433,6 @@ export namespace NotifyFlowTarget {
   export type AsObject = {
     filter?: NotifyFilter.AsObject,
     targetId?: librarian_v1_common_pb.InternalID.AsObject,
-    channelId: string,
   }
 }
 

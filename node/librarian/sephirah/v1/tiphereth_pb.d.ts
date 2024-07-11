@@ -992,6 +992,12 @@ export class PorterContext extends jspb.Message {
   getContextJson(): string;
   setContextJson(value: string): void;
 
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PorterContext.AsObject;
   static toObject(includeInstance: boolean, msg: PorterContext): PorterContext.AsObject;
@@ -1007,6 +1013,8 @@ export namespace PorterContext {
     id?: librarian_v1_common_pb.InternalID.AsObject,
     porterId?: librarian_v1_common_pb.InternalID.AsObject,
     contextJson: string,
+    name: string,
+    description: string,
   }
 }
 

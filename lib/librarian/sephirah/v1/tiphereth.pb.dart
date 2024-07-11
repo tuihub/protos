@@ -2286,6 +2286,8 @@ class PorterContext extends $pb.GeneratedMessage {
     $8.InternalID? id,
     $8.InternalID? porterId,
     $core.String? contextJson,
+    $core.String? name,
+    $core.String? description,
   }) {
     final $result = create();
     if (id != null) {
@@ -2297,6 +2299,12 @@ class PorterContext extends $pb.GeneratedMessage {
     if (contextJson != null) {
       $result.contextJson = contextJson;
     }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
     return $result;
   }
   PorterContext._() : super();
@@ -2307,6 +2315,8 @@ class PorterContext extends $pb.GeneratedMessage {
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
     ..aOS(3, _omitFieldNames ? '' : 'contextJson')
+    ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
     ..hasRequiredFields = false
   ;
 
@@ -2361,6 +2371,24 @@ class PorterContext extends $pb.GeneratedMessage {
   $core.bool hasContextJson() => $_has(2);
   @$pb.TagNumber(3)
   void clearContextJson() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get name => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set name($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => clearField(5);
 }
 
 class User extends $pb.GeneratedMessage {

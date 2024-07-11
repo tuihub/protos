@@ -657,6 +657,8 @@ const PorterContext$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'porter_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
     {'1': 'context_json', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'contextJson', '17': true},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
   ],
   '8': [
     {'1': '_context_json'},
@@ -667,8 +669,9 @@ const PorterContext$json = {
 final $typed_data.Uint8List porterContextDescriptor = $convert.base64Decode(
     'Cg1Qb3J0ZXJDb250ZXh0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAm'
     'lkEjUKCXBvcnRlcl9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghwb3J0ZXJJ'
-    'ZBImCgxjb250ZXh0X2pzb24YAyABKAlIAFILY29udGV4dEpzb26IAQFCDwoNX2NvbnRleHRfan'
-    'Nvbg==');
+    'ZBImCgxjb250ZXh0X2pzb24YAyABKAlIAFILY29udGV4dEpzb26IAQESEgoEbmFtZRgEIAEoCV'
+    'IEbmFtZRIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb25CDwoNX2NvbnRleHRfanNv'
+    'bg==');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {

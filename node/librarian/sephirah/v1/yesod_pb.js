@@ -8287,7 +8287,7 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionResponse.prototype.clearIte
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.FeedConfig.repeatedFields_ = [13];
+proto.librarian.sephirah.v1.FeedConfig.repeatedFields_ = [5];
 
 
 
@@ -8322,18 +8322,17 @@ proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg)
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    feedUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    authorAccount: (f = msg.getAuthorAccount()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    source: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    source: (f = msg.getSource()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+    actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
     status: jspb.Message.getFieldWithDefault(msg, 6, 0),
     pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
     category: jspb.Message.getFieldWithDefault(msg, 8, ""),
     hideItems: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     latestPullTime: (f = msg.getLatestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     latestPullStatus: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    latestPullMessage: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance)
+    latestPullMessage: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -8381,16 +8380,17 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFeedUrl(value);
+      msg.setDescription(value);
       break;
     case 4:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setAuthorAccount(value);
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.setSource(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSource(value);
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addActionSets(value);
       break;
     case 6:
       var value = /** @type {!proto.librarian.sephirah.v1.FeedConfigStatus} */ (reader.readEnum());
@@ -8421,11 +8421,6 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setLatestPullMessage(value);
-      break;
-    case 13:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addActionSets(value);
       break;
     default:
       reader.skipField();
@@ -8471,26 +8466,27 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getFeedUrl();
+  f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getAuthorAccount();
+  f = message.getSource();
   if (f != null) {
     writer.writeMessage(
       4,
       f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
     );
   }
-  f = message.getSource();
+  f = message.getActionSetsList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedMessage(
       5,
-      f
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -8542,14 +8538,6 @@ proto.librarian.sephirah.v1.FeedConfig.serializeBinaryToWriter = function(messag
     writer.writeString(
       12,
       f
-    );
-  }
-  f = message.getActionSetsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      13,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
 };
@@ -8611,10 +8599,10 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.setName = function(value) {
 
 
 /**
- * optional string feed_url = 3;
+ * optional string description = 3;
  * @return {string}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getFeedUrl = function() {
+proto.librarian.sephirah.v1.FeedConfig.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -8623,26 +8611,26 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.getFeedUrl = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.setFeedUrl = function(value) {
+proto.librarian.sephirah.v1.FeedConfig.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional librarian.v1.InternalID author_account = 4;
- * @return {?proto.librarian.v1.InternalID}
+ * optional librarian.v1.FeatureRequest source = 4;
+ * @return {?proto.librarian.v1.FeatureRequest}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getAuthorAccount = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 4));
+proto.librarian.sephirah.v1.FeedConfig.prototype.getSource = function() {
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 4));
 };
 
 
 /**
- * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
 */
-proto.librarian.sephirah.v1.FeedConfig.prototype.setAuthorAccount = function(value) {
+proto.librarian.sephirah.v1.FeedConfig.prototype.setSource = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -8651,8 +8639,8 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.setAuthorAccount = function(val
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.clearAuthorAccount = function() {
-  return this.setAuthorAccount(undefined);
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearSource = function() {
+  return this.setSource(undefined);
 };
 
 
@@ -8660,26 +8648,46 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.clearAuthorAccount = function()
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.hasAuthorAccount = function() {
+proto.librarian.sephirah.v1.FeedConfig.prototype.hasSource = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string source = 5;
- * @return {string}
+ * repeated librarian.v1.InternalID action_sets = 5;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getSource = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.librarian.sephirah.v1.FeedConfig.prototype.getActionSetsList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
+*/
+proto.librarian.sephirah.v1.FeedConfig.prototype.setActionSetsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.FeedConfig.prototype.addActionSets = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
  */
-proto.librarian.sephirah.v1.FeedConfig.prototype.setSource = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.librarian.sephirah.v1.FeedConfig.prototype.clearActionSetsList = function() {
+  return this.setActionSetsList([]);
 };
 
 
@@ -8880,44 +8888,6 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.clearLatestPullMessage = functi
  */
 proto.librarian.sephirah.v1.FeedConfig.prototype.hasLatestPullMessage = function() {
   return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * repeated librarian.v1.InternalID action_sets = 13;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.getActionSetsList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 13));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
-*/
-proto.librarian.sephirah.v1.FeedConfig.prototype.setActionSetsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 13, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.addActionSets = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.FeedConfig} returns this
- */
-proto.librarian.sephirah.v1.FeedConfig.prototype.clearActionSetsList = function() {
-  return this.setActionSetsList([]);
 };
 
 

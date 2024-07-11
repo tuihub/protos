@@ -265,9 +265,8 @@ const NotifyTarget$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'destination', '3': 4, '4': 1, '5': 9, '10': 'destination'},
+    {'1': 'destination', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'destination'},
     {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetStatus', '10': 'status'},
-    {'1': 'token', '3': 6, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
@@ -275,9 +274,9 @@ const NotifyTarget$json = {
 final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode(
     'CgxOb3RpZnlUYXJnZXQSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaW'
     'QSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24S'
-    'IAoLZGVzdGluYXRpb24YBCABKAlSC2Rlc3RpbmF0aW9uEkEKBnN0YXR1cxgFIAEoDjIpLmxpYn'
-    'Jhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlUYXJnZXRTdGF0dXNSBnN0YXR1cxIUCgV0b2tlbhgG'
-    'IAEoCVIFdG9rZW4=');
+    'PgoLZGVzdGluYXRpb24YBCABKAsyHC5saWJyYXJpYW4udjEuRmVhdHVyZVJlcXVlc3RSC2Rlc3'
+    'RpbmF0aW9uEkEKBnN0YXR1cxgFIAEoDjIpLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Ob3RpZnlU'
+    'YXJnZXRTdGF0dXNSBnN0YXR1cw==');
 
 @$core.Deprecated('Use notifyFlowDescriptor instead')
 const NotifyFlow$json = {
@@ -322,7 +321,6 @@ const NotifyFlowTarget$json = {
   '2': [
     {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.NotifyFilter', '10': 'filter'},
     {'1': 'target_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'targetId'},
-    {'1': 'channel_id', '3': 3, '4': 1, '5': 9, '10': 'channelId'},
   ],
 };
 
@@ -330,7 +328,7 @@ const NotifyFlowTarget$json = {
 final $typed_data.Uint8List notifyFlowTargetDescriptor = $convert.base64Decode(
     'ChBOb3RpZnlGbG93VGFyZ2V0EjsKBmZpbHRlchgBIAEoCzIjLmxpYnJhcmlhbi5zZXBoaXJhaC'
     '52MS5Ob3RpZnlGaWx0ZXJSBmZpbHRlchI1Cgl0YXJnZXRfaWQYAiABKAsyGC5saWJyYXJpYW4u'
-    'djEuSW50ZXJuYWxJRFIIdGFyZ2V0SWQSHQoKY2hhbm5lbF9pZBgDIAEoCVIJY2hhbm5lbElk');
+    'djEuSW50ZXJuYWxJRFIIdGFyZ2V0SWQ=');
 
 @$core.Deprecated('Use notifyFilterDescriptor instead')
 const NotifyFilter$json = {

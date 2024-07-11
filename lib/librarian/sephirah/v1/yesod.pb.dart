@@ -2185,9 +2185,9 @@ class FeedConfig extends $pb.GeneratedMessage {
   factory FeedConfig({
     $8.InternalID? id,
     $core.String? name,
-    $core.String? feedUrl,
-    $8.InternalID? authorAccount,
-    $core.String? source,
+    $core.String? description,
+    $12.FeatureRequest? source,
+    $core.Iterable<$8.InternalID>? actionSets,
     FeedConfigStatus? status,
     $11.Duration? pullInterval,
     $core.String? category,
@@ -2195,7 +2195,6 @@ class FeedConfig extends $pb.GeneratedMessage {
     $9.Timestamp? latestPullTime,
     FeedConfigPullStatus? latestPullStatus,
     $core.String? latestPullMessage,
-    $core.Iterable<$8.InternalID>? actionSets,
   }) {
     final $result = create();
     if (id != null) {
@@ -2204,14 +2203,14 @@ class FeedConfig extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (feedUrl != null) {
-      $result.feedUrl = feedUrl;
-    }
-    if (authorAccount != null) {
-      $result.authorAccount = authorAccount;
+    if (description != null) {
+      $result.description = description;
     }
     if (source != null) {
       $result.source = source;
+    }
+    if (actionSets != null) {
+      $result.actionSets.addAll(actionSets);
     }
     if (status != null) {
       $result.status = status;
@@ -2234,9 +2233,6 @@ class FeedConfig extends $pb.GeneratedMessage {
     if (latestPullMessage != null) {
       $result.latestPullMessage = latestPullMessage;
     }
-    if (actionSets != null) {
-      $result.actionSets.addAll(actionSets);
-    }
     return $result;
   }
   FeedConfig._() : super();
@@ -2246,9 +2242,9 @@ class FeedConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'feedUrl')
-    ..aOM<$8.InternalID>(4, _omitFieldNames ? '' : 'authorAccount', subBuilder: $8.InternalID.create)
-    ..aOS(5, _omitFieldNames ? '' : 'source')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOM<$12.FeatureRequest>(4, _omitFieldNames ? '' : 'source', subBuilder: $12.FeatureRequest.create)
+    ..pc<$8.InternalID>(5, _omitFieldNames ? '' : 'actionSets', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..e<FeedConfigStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values)
     ..aOM<$11.Duration>(7, _omitFieldNames ? '' : 'pullInterval', subBuilder: $11.Duration.create)
     ..aOS(8, _omitFieldNames ? '' : 'category')
@@ -2256,7 +2252,6 @@ class FeedConfig extends $pb.GeneratedMessage {
     ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'latestPullTime', subBuilder: $9.Timestamp.create)
     ..e<FeedConfigPullStatus>(11, _omitFieldNames ? '' : 'latestPullStatus', $pb.PbFieldType.OE, defaultOrMaker: FeedConfigPullStatus.FEED_CONFIG_PULL_STATUS_UNSPECIFIED, valueOf: FeedConfigPullStatus.valueOf, enumValues: FeedConfigPullStatus.values)
     ..aOS(12, _omitFieldNames ? '' : 'latestPullMessage')
-    ..pc<$8.InternalID>(13, _omitFieldNames ? '' : 'actionSets', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -2302,35 +2297,29 @@ class FeedConfig extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get feedUrl => $_getSZ(2);
+  $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
-  set feedUrl($core.String v) { $_setString(2, v); }
+  set description($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasFeedUrl() => $_has(2);
+  $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearFeedUrl() => clearField(3);
-
-  /// Not used when source is FEED_CONFIG_SOURCE_COMMON
-  @$pb.TagNumber(4)
-  $8.InternalID get authorAccount => $_getN(3);
-  @$pb.TagNumber(4)
-  set authorAccount($8.InternalID v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAuthorAccount() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAuthorAccount() => clearField(4);
-  @$pb.TagNumber(4)
-  $8.InternalID ensureAuthorAccount() => $_ensure(3);
+  void clearDescription() => clearField(3);
 
   /// WellKnownFeedSource
+  @$pb.TagNumber(4)
+  $12.FeatureRequest get source => $_getN(3);
+  @$pb.TagNumber(4)
+  set source($12.FeatureRequest v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSource() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSource() => clearField(4);
+  @$pb.TagNumber(4)
+  $12.FeatureRequest ensureSource() => $_ensure(3);
+
+  /// `FeedActionSet.id`
   @$pb.TagNumber(5)
-  $core.String get source => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set source($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasSource() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearSource() => clearField(5);
+  $core.List<$8.InternalID> get actionSets => $_getList(4);
 
   @$pb.TagNumber(6)
   FeedConfigStatus get status => $_getN(5);
@@ -2402,10 +2391,6 @@ class FeedConfig extends $pb.GeneratedMessage {
   $core.bool hasLatestPullMessage() => $_has(11);
   @$pb.TagNumber(12)
   void clearLatestPullMessage() => clearField(12);
-
-  /// `FeedActionSet.id`
-  @$pb.TagNumber(13)
-  $core.List<$8.InternalID> get actionSets => $_getList(12);
 }
 
 class FeedActionSet extends $pb.GeneratedMessage {

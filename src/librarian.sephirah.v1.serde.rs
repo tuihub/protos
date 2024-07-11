@@ -5605,13 +5605,13 @@ impl serde::Serialize for FeedConfig {
         if !self.name.is_empty() {
             len += 1;
         }
-        if !self.feed_url.is_empty() {
+        if !self.description.is_empty() {
             len += 1;
         }
-        if self.author_account.is_some() {
+        if self.source.is_some() {
             len += 1;
         }
-        if !self.source.is_empty() {
+        if !self.action_sets.is_empty() {
             len += 1;
         }
         if self.status != 0 {
@@ -5635,9 +5635,6 @@ impl serde::Serialize for FeedConfig {
         if self.latest_pull_message.is_some() {
             len += 1;
         }
-        if !self.action_sets.is_empty() {
-            len += 1;
-        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FeedConfig", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -5645,14 +5642,14 @@ impl serde::Serialize for FeedConfig {
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
-        if !self.feed_url.is_empty() {
-            struct_ser.serialize_field("feedUrl", &self.feed_url)?;
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
         }
-        if let Some(v) = self.author_account.as_ref() {
-            struct_ser.serialize_field("authorAccount", v)?;
+        if let Some(v) = self.source.as_ref() {
+            struct_ser.serialize_field("source", v)?;
         }
-        if !self.source.is_empty() {
-            struct_ser.serialize_field("source", &self.source)?;
+        if !self.action_sets.is_empty() {
+            struct_ser.serialize_field("actionSets", &self.action_sets)?;
         }
         if self.status != 0 {
             let v = FeedConfigStatus::from_i32(self.status)
@@ -5679,9 +5676,6 @@ impl serde::Serialize for FeedConfig {
         if let Some(v) = self.latest_pull_message.as_ref() {
             struct_ser.serialize_field("latestPullMessage", v)?;
         }
-        if !self.action_sets.is_empty() {
-            struct_ser.serialize_field("actionSets", &self.action_sets)?;
-        }
         struct_ser.end()
     }
 }
@@ -5694,11 +5688,10 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
         const FIELDS: &[&str] = &[
             "id",
             "name",
-            "feed_url",
-            "feedUrl",
-            "author_account",
-            "authorAccount",
+            "description",
             "source",
+            "action_sets",
+            "actionSets",
             "status",
             "pull_interval",
             "pullInterval",
@@ -5711,17 +5704,15 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             "latestPullStatus",
             "latest_pull_message",
             "latestPullMessage",
-            "action_sets",
-            "actionSets",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
             Name,
-            FeedUrl,
-            AuthorAccount,
+            Description,
             Source,
+            ActionSets,
             Status,
             PullInterval,
             Category,
@@ -5729,7 +5720,6 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             LatestPullTime,
             LatestPullStatus,
             LatestPullMessage,
-            ActionSets,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -5753,9 +5743,9 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "name" => Ok(GeneratedField::Name),
-                            "feedUrl" | "feed_url" => Ok(GeneratedField::FeedUrl),
-                            "authorAccount" | "author_account" => Ok(GeneratedField::AuthorAccount),
+                            "description" => Ok(GeneratedField::Description),
                             "source" => Ok(GeneratedField::Source),
+                            "actionSets" | "action_sets" => Ok(GeneratedField::ActionSets),
                             "status" => Ok(GeneratedField::Status),
                             "pullInterval" | "pull_interval" => Ok(GeneratedField::PullInterval),
                             "category" => Ok(GeneratedField::Category),
@@ -5763,7 +5753,6 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             "latestPullTime" | "latest_pull_time" => Ok(GeneratedField::LatestPullTime),
                             "latestPullStatus" | "latest_pull_status" => Ok(GeneratedField::LatestPullStatus),
                             "latestPullMessage" | "latest_pull_message" => Ok(GeneratedField::LatestPullMessage),
-                            "actionSets" | "action_sets" => Ok(GeneratedField::ActionSets),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -5785,9 +5774,9 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
             {
                 let mut id__ = None;
                 let mut name__ = None;
-                let mut feed_url__ = None;
-                let mut author_account__ = None;
+                let mut description__ = None;
                 let mut source__ = None;
+                let mut action_sets__ = None;
                 let mut status__ = None;
                 let mut pull_interval__ = None;
                 let mut category__ = None;
@@ -5795,7 +5784,6 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                 let mut latest_pull_time__ = None;
                 let mut latest_pull_status__ = None;
                 let mut latest_pull_message__ = None;
-                let mut action_sets__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -5810,23 +5798,23 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             }
                             name__ = Some(map.next_value()?);
                         }
-                        GeneratedField::FeedUrl => {
-                            if feed_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("feedUrl"));
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
                             }
-                            feed_url__ = Some(map.next_value()?);
-                        }
-                        GeneratedField::AuthorAccount => {
-                            if author_account__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("authorAccount"));
-                            }
-                            author_account__ = map.next_value()?;
+                            description__ = Some(map.next_value()?);
                         }
                         GeneratedField::Source => {
                             if source__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("source"));
                             }
-                            source__ = Some(map.next_value()?);
+                            source__ = map.next_value()?;
+                        }
+                        GeneratedField::ActionSets => {
+                            if action_sets__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("actionSets"));
+                            }
+                            action_sets__ = Some(map.next_value()?);
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
@@ -5870,20 +5858,14 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                             }
                             latest_pull_message__ = map.next_value()?;
                         }
-                        GeneratedField::ActionSets => {
-                            if action_sets__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("actionSets"));
-                            }
-                            action_sets__ = Some(map.next_value()?);
-                        }
                     }
                 }
                 Ok(FeedConfig {
                     id: id__,
                     name: name__.unwrap_or_default(),
-                    feed_url: feed_url__.unwrap_or_default(),
-                    author_account: author_account__,
-                    source: source__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
+                    source: source__,
+                    action_sets: action_sets__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     pull_interval: pull_interval__,
                     category: category__.unwrap_or_default(),
@@ -5891,7 +5873,6 @@ impl<'de> serde::Deserialize<'de> for FeedConfig {
                     latest_pull_time: latest_pull_time__,
                     latest_pull_status: latest_pull_status__,
                     latest_pull_message: latest_pull_message__,
-                    action_sets: action_sets__.unwrap_or_default(),
                 })
             }
         }
@@ -16731,18 +16712,12 @@ impl serde::Serialize for NotifyFlowTarget {
         if self.target_id.is_some() {
             len += 1;
         }
-        if !self.channel_id.is_empty() {
-            len += 1;
-        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.NotifyFlowTarget", len)?;
         if let Some(v) = self.filter.as_ref() {
             struct_ser.serialize_field("filter", v)?;
         }
         if let Some(v) = self.target_id.as_ref() {
             struct_ser.serialize_field("targetId", v)?;
-        }
-        if !self.channel_id.is_empty() {
-            struct_ser.serialize_field("channelId", &self.channel_id)?;
         }
         struct_ser.end()
     }
@@ -16757,15 +16732,12 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
             "filter",
             "target_id",
             "targetId",
-            "channel_id",
-            "channelId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Filter,
             TargetId,
-            ChannelId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -16789,7 +16761,6 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
                         match value {
                             "filter" => Ok(GeneratedField::Filter),
                             "targetId" | "target_id" => Ok(GeneratedField::TargetId),
-                            "channelId" | "channel_id" => Ok(GeneratedField::ChannelId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -16811,7 +16782,6 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
             {
                 let mut filter__ = None;
                 let mut target_id__ = None;
-                let mut channel_id__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Filter => {
@@ -16826,18 +16796,11 @@ impl<'de> serde::Deserialize<'de> for NotifyFlowTarget {
                             }
                             target_id__ = map.next_value()?;
                         }
-                        GeneratedField::ChannelId => {
-                            if channel_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("channelId"));
-                            }
-                            channel_id__ = Some(map.next_value()?);
-                        }
                     }
                 }
                 Ok(NotifyFlowTarget {
                     filter: filter__,
                     target_id: target_id__,
-                    channel_id: channel_id__.unwrap_or_default(),
                 })
             }
         }
@@ -16861,13 +16824,10 @@ impl serde::Serialize for NotifyTarget {
         if !self.description.is_empty() {
             len += 1;
         }
-        if !self.destination.is_empty() {
+        if self.destination.is_some() {
             len += 1;
         }
         if self.status != 0 {
-            len += 1;
-        }
-        if !self.token.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.NotifyTarget", len)?;
@@ -16880,16 +16840,13 @@ impl serde::Serialize for NotifyTarget {
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
-        if !self.destination.is_empty() {
-            struct_ser.serialize_field("destination", &self.destination)?;
+        if let Some(v) = self.destination.as_ref() {
+            struct_ser.serialize_field("destination", v)?;
         }
         if self.status != 0 {
             let v = NotifyTargetStatus::from_i32(self.status)
                 .ok_or_else(|| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
             struct_ser.serialize_field("status", &v)?;
-        }
-        if !self.token.is_empty() {
-            struct_ser.serialize_field("token", &self.token)?;
         }
         struct_ser.end()
     }
@@ -16906,7 +16863,6 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
             "description",
             "destination",
             "status",
-            "token",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -16916,7 +16872,6 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
             Description,
             Destination,
             Status,
-            Token,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -16943,7 +16898,6 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             "description" => Ok(GeneratedField::Description),
                             "destination" => Ok(GeneratedField::Destination),
                             "status" => Ok(GeneratedField::Status),
-                            "token" => Ok(GeneratedField::Token),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -16968,7 +16922,6 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                 let mut description__ = None;
                 let mut destination__ = None;
                 let mut status__ = None;
-                let mut token__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -16993,7 +16946,7 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             if destination__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("destination"));
                             }
-                            destination__ = Some(map.next_value()?);
+                            destination__ = map.next_value()?;
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
@@ -17001,21 +16954,14 @@ impl<'de> serde::Deserialize<'de> for NotifyTarget {
                             }
                             status__ = Some(map.next_value::<NotifyTargetStatus>()? as i32);
                         }
-                        GeneratedField::Token => {
-                            if token__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("token"));
-                            }
-                            token__ = Some(map.next_value()?);
-                        }
                     }
                 }
                 Ok(NotifyTarget {
                     id: id__,
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
-                    destination: destination__.unwrap_or_default(),
+                    destination: destination__,
                     status: status__.unwrap_or_default(),
-                    token: token__.unwrap_or_default(),
                 })
             }
         }
@@ -17721,6 +17667,12 @@ impl serde::Serialize for PorterContext {
         if self.context_json.is_some() {
             len += 1;
         }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.description.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PorterContext", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -17730,6 +17682,12 @@ impl serde::Serialize for PorterContext {
         }
         if let Some(v) = self.context_json.as_ref() {
             struct_ser.serialize_field("contextJson", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
         }
         struct_ser.end()
     }
@@ -17746,6 +17704,8 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
             "porterId",
             "context_json",
             "contextJson",
+            "name",
+            "description",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -17753,6 +17713,8 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
             Id,
             PorterId,
             ContextJson,
+            Name,
+            Description,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17777,6 +17739,8 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                             "id" => Ok(GeneratedField::Id),
                             "porterId" | "porter_id" => Ok(GeneratedField::PorterId),
                             "contextJson" | "context_json" => Ok(GeneratedField::ContextJson),
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17799,6 +17763,8 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                 let mut id__ = None;
                 let mut porter_id__ = None;
                 let mut context_json__ = None;
+                let mut name__ = None;
+                let mut description__ = None;
                 while let Some(k) = map.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -17819,12 +17785,26 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                             }
                             context_json__ = map.next_value()?;
                         }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map.next_value()?);
+                        }
                     }
                 }
                 Ok(PorterContext {
                     id: id__,
                     porter_id: porter_id__,
                     context_json: context_json__,
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
                 })
             }
         }
