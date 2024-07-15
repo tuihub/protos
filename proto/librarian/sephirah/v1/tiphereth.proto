@@ -245,6 +245,8 @@ message Porter {
   UserStatus status = 6;
   // Only used in response
   PorterConnectionStatus connection_status = 7;
+  // Only used in response
+  optional string context_json_schema = 8;
 }
 
 enum PorterConnectionStatus {
