@@ -2760,6 +2760,7 @@ class Porter extends $pb.GeneratedMessage {
     $core.String? featureSummary,
     UserStatus? status,
     PorterConnectionStatus? connectionStatus,
+    $core.String? contextJsonSchema,
   }) {
     final $result = create();
     if (id != null) {
@@ -2783,6 +2784,9 @@ class Porter extends $pb.GeneratedMessage {
     if (connectionStatus != null) {
       $result.connectionStatus = connectionStatus;
     }
+    if (contextJsonSchema != null) {
+      $result.contextJsonSchema = contextJsonSchema;
+    }
     return $result;
   }
   Porter._() : super();
@@ -2797,6 +2801,7 @@ class Porter extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'featureSummary')
     ..e<UserStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
     ..e<PorterConnectionStatus>(7, _omitFieldNames ? '' : 'connectionStatus', $pb.PbFieldType.OE, defaultOrMaker: PorterConnectionStatus.PORTER_CONNECTION_STATUS_UNSPECIFIED, valueOf: PorterConnectionStatus.valueOf, enumValues: PorterConnectionStatus.values)
+    ..aOS(8, _omitFieldNames ? '' : 'contextJsonSchema')
     ..hasRequiredFields = false
   ;
 
@@ -2886,6 +2891,16 @@ class Porter extends $pb.GeneratedMessage {
   $core.bool hasConnectionStatus() => $_has(6);
   @$pb.TagNumber(7)
   void clearConnectionStatus() => clearField(7);
+
+  /// Only used in response
+  @$pb.TagNumber(8)
+  $core.String get contextJsonSchema => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set contextJsonSchema($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasContextJsonSchema() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearContextJsonSchema() => clearField(8);
 }
 
 

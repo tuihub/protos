@@ -100,16 +100,6 @@ export class ListFeedConfigsRequest extends jspb.Message {
   setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
-  clearAuthorIdFilterList(): void;
-  getAuthorIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
-  setAuthorIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
-  addAuthorIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
-
-  clearSourceFilterList(): void;
-  getSourceFilterList(): Array<string>;
-  setSourceFilterList(value: Array<string>): void;
-  addSourceFilter(value: string, index?: number): string;
-
   clearStatusFilterList(): void;
   getStatusFilterList(): Array<FeedConfigStatusMap[keyof FeedConfigStatusMap]>;
   setStatusFilterList(value: Array<FeedConfigStatusMap[keyof FeedConfigStatusMap]>): void;
@@ -134,8 +124,6 @@ export namespace ListFeedConfigsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    authorIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    sourceFilterList: Array<string>,
     statusFilterList: Array<FeedConfigStatusMap[keyof FeedConfigStatusMap]>,
     categoryFilterList: Array<string>,
   }

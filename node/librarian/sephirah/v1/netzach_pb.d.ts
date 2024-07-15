@@ -99,11 +99,6 @@ export class ListNotifyTargetsRequest extends jspb.Message {
   setIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
-  clearDestinationFilterList(): void;
-  getDestinationFilterList(): Array<string>;
-  setDestinationFilterList(value: Array<string>): void;
-  addDestinationFilter(value: string, index?: number): string;
-
   clearStatusFilterList(): void;
   getStatusFilterList(): Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>;
   setStatusFilterList(value: Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>): void;
@@ -123,7 +118,6 @@ export namespace ListNotifyTargetsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
-    destinationFilterList: Array<string>,
     statusFilterList: Array<NotifyTargetStatusMap[keyof NotifyTargetStatusMap]>,
   }
 }

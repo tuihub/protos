@@ -748,6 +748,10 @@ const Porter$json = {
     {'1': 'feature_summary', '3': 5, '4': 1, '5': 9, '10': 'featureSummary'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
     {'1': 'connection_status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterConnectionStatus', '10': 'connectionStatus'},
+    {'1': 'context_json_schema', '3': 8, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
+  ],
+  '8': [
+    {'1': '_context_json_schema'},
   ],
 };
 
@@ -758,5 +762,7 @@ final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
     'GAQgASgJUgpnbG9iYWxOYW1lEicKD2ZlYXR1cmVfc3VtbWFyeRgFIAEoCVIOZmVhdHVyZVN1bW'
     '1hcnkSOQoGc3RhdHVzGAYgASgOMiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJTdGF0dXNS'
     'BnN0YXR1cxJaChFjb25uZWN0aW9uX3N0YXR1cxgHIAEoDjItLmxpYnJhcmlhbi5zZXBoaXJhaC'
-    '52MS5Qb3J0ZXJDb25uZWN0aW9uU3RhdHVzUhBjb25uZWN0aW9uU3RhdHVz');
+    '52MS5Qb3J0ZXJDb25uZWN0aW9uU3RhdHVzUhBjb25uZWN0aW9uU3RhdHVzEjMKE2NvbnRleHRf'
+    'anNvbl9zY2hlbWEYCCABKAlIAFIRY29udGV4dEpzb25TY2hlbWGIAQFCFgoUX2NvbnRleHRfan'
+    'Nvbl9zY2hlbWE=');
 

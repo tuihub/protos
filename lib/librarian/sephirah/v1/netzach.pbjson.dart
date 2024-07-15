@@ -152,7 +152,6 @@ const ListNotifyTargetsRequest$json = {
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'destination_filter', '3': 3, '4': 3, '5': 9, '10': 'destinationFilter'},
     {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.NotifyTargetStatus', '10': 'statusFilter'},
   ],
 };
@@ -161,9 +160,8 @@ const ListNotifyTargetsRequest$json = {
 final $typed_data.Uint8List listNotifyTargetsRequestDescriptor = $convert.base64Decode(
     'ChhMaXN0Tm90aWZ5VGFyZ2V0c1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLn'
     'YxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4u'
-    'djEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISLQoSZGVzdGluYXRpb25fZmlsdGVyGAMgAygJUhFkZX'
-    'N0aW5hdGlvbkZpbHRlchJOCg1zdGF0dXNfZmlsdGVyGAQgAygOMikubGlicmFyaWFuLnNlcGhp'
-    'cmFoLnYxLk5vdGlmeVRhcmdldFN0YXR1c1IMc3RhdHVzRmlsdGVy');
+    'djEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISTgoNc3RhdHVzX2ZpbHRlchgEIAMoDjIpLmxpYnJhcm'
+    'lhbi5zZXBoaXJhaC52MS5Ob3RpZnlUYXJnZXRTdGF0dXNSDHN0YXR1c0ZpbHRlcg==');
 
 @$core.Deprecated('Use listNotifyTargetsResponseDescriptor instead')
 const ListNotifyTargetsResponse$json = {

@@ -214,8 +214,6 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   factory ListFeedConfigsRequest({
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? idFilter,
-    $core.Iterable<$8.InternalID>? authorIdFilter,
-    $core.Iterable<$core.String>? sourceFilter,
     $core.Iterable<FeedConfigStatus>? statusFilter,
     $core.Iterable<$core.String>? categoryFilter,
   }) {
@@ -225,12 +223,6 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
     }
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
-    }
-    if (authorIdFilter != null) {
-      $result.authorIdFilter.addAll(authorIdFilter);
-    }
-    if (sourceFilter != null) {
-      $result.sourceFilter.addAll(sourceFilter);
     }
     if (statusFilter != null) {
       $result.statusFilter.addAll(statusFilter);
@@ -247,8 +239,6 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'authorIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pPS(4, _omitFieldNames ? '' : 'sourceFilter')
     ..pc<FeedConfigStatus>(5, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: FeedConfigStatus.valueOf, enumValues: FeedConfigStatus.values, defaultEnumValue: FeedConfigStatus.FEED_CONFIG_STATUS_UNSPECIFIED)
     ..pPS(6, _omitFieldNames ? '' : 'categoryFilter')
     ..hasRequiredFields = false
@@ -289,18 +279,11 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$8.InternalID> get idFilter => $_getList(1);
 
-  @$pb.TagNumber(3)
-  $core.List<$8.InternalID> get authorIdFilter => $_getList(2);
-
-  /// WellKnownFeedSource
-  @$pb.TagNumber(4)
-  $core.List<$core.String> get sourceFilter => $_getList(3);
-
   @$pb.TagNumber(5)
-  $core.List<FeedConfigStatus> get statusFilter => $_getList(4);
+  $core.List<FeedConfigStatus> get statusFilter => $_getList(2);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get categoryFilter => $_getList(5);
+  $core.List<$core.String> get categoryFilter => $_getList(3);
 }
 
 class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {

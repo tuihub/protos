@@ -1076,7 +1076,7 @@ proto.librarian.sephirah.v1.UpdateNotifyTargetResponse.serializeBinaryToWriter =
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.repeatedFields_ = [2,3,4];
+proto.librarian.sephirah.v1.ListNotifyTargetsRequest.repeatedFields_ = [2,4];
 
 
 
@@ -1112,7 +1112,6 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.toObject = function(include
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    destinationFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     statusFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
@@ -1159,10 +1158,6 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.deserializeBinaryFromReader
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.addIdFilter(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addDestinationFilter(value);
       break;
     case 4:
       var values = /** @type {!Array<!proto.librarian.sephirah.v1.NotifyTargetStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
@@ -1213,13 +1208,6 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.serializeBinaryToWriter = f
       2,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getDestinationFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      3,
-      f
     );
   }
   f = message.getStatusFilterList();
@@ -1304,43 +1292,6 @@ proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.addIdFilter = fun
  */
 proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.clearIdFilterList = function() {
   return this.setIdFilterList([]);
-};
-
-
-/**
- * repeated string destination_filter = 3;
- * @return {!Array<string>}
- */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.getDestinationFilterList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.librarian.sephirah.v1.ListNotifyTargetsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.setDestinationFilterList = function(value) {
-  return jspb.Message.setField(this, 3, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.ListNotifyTargetsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.addDestinationFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListNotifyTargetsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListNotifyTargetsRequest.prototype.clearDestinationFilterList = function() {
-  return this.setDestinationFilterList([]);
 };
 
 

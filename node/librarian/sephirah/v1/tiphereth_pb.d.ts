@@ -1172,6 +1172,11 @@ export class Porter extends jspb.Message {
   getConnectionStatus(): PorterConnectionStatusMap[keyof PorterConnectionStatusMap];
   setConnectionStatus(value: PorterConnectionStatusMap[keyof PorterConnectionStatusMap]): void;
 
+  hasContextJsonSchema(): boolean;
+  clearContextJsonSchema(): void;
+  getContextJsonSchema(): string;
+  setContextJsonSchema(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Porter.AsObject;
   static toObject(includeInstance: boolean, msg: Porter): Porter.AsObject;
@@ -1191,6 +1196,7 @@ export namespace Porter {
     featureSummary: string,
     status: UserStatusMap[keyof UserStatusMap],
     connectionStatus: PorterConnectionStatusMap[keyof PorterConnectionStatusMap],
+    contextJsonSchema: string,
   }
 }
 

@@ -9090,7 +9090,8 @@ proto.librarian.sephirah.v1.Porter.toObject = function(includeInstance, msg) {
     globalName: jspb.Message.getFieldWithDefault(msg, 4, ""),
     featureSummary: jspb.Message.getFieldWithDefault(msg, 5, ""),
     status: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -9155,6 +9156,10 @@ proto.librarian.sephirah.v1.Porter.deserializeBinaryFromReader = function(msg, r
     case 7:
       var value = /** @type {!proto.librarian.sephirah.v1.PorterConnectionStatus} */ (reader.readEnum());
       msg.setConnectionStatus(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContextJsonSchema(value);
       break;
     default:
       reader.skipField();
@@ -9232,6 +9237,13 @@ proto.librarian.sephirah.v1.Porter.serializeBinaryToWriter = function(message, w
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -9380,6 +9392,42 @@ proto.librarian.sephirah.v1.Porter.prototype.getConnectionStatus = function() {
  */
 proto.librarian.sephirah.v1.Porter.prototype.setConnectionStatus = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional string context_json_schema = 8;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.Porter.prototype.getContextJsonSchema = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.Porter} returns this
+ */
+proto.librarian.sephirah.v1.Porter.prototype.setContextJsonSchema = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.Porter} returns this
+ */
+proto.librarian.sephirah.v1.Porter.prototype.clearContextJsonSchema = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.Porter.prototype.hasContextJsonSchema = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

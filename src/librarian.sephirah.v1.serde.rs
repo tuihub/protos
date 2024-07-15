@@ -11659,12 +11659,6 @@ impl serde::Serialize for ListFeedConfigsRequest {
         if !self.id_filter.is_empty() {
             len += 1;
         }
-        if !self.author_id_filter.is_empty() {
-            len += 1;
-        }
-        if !self.source_filter.is_empty() {
-            len += 1;
-        }
         if !self.status_filter.is_empty() {
             len += 1;
         }
@@ -11677,12 +11671,6 @@ impl serde::Serialize for ListFeedConfigsRequest {
         }
         if !self.id_filter.is_empty() {
             struct_ser.serialize_field("idFilter", &self.id_filter)?;
-        }
-        if !self.author_id_filter.is_empty() {
-            struct_ser.serialize_field("authorIdFilter", &self.author_id_filter)?;
-        }
-        if !self.source_filter.is_empty() {
-            struct_ser.serialize_field("sourceFilter", &self.source_filter)?;
         }
         if !self.status_filter.is_empty() {
             let v = self.status_filter.iter().cloned().map(|v| {
@@ -11707,10 +11695,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
             "paging",
             "id_filter",
             "idFilter",
-            "author_id_filter",
-            "authorIdFilter",
-            "source_filter",
-            "sourceFilter",
             "status_filter",
             "statusFilter",
             "category_filter",
@@ -11721,8 +11705,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
         enum GeneratedField {
             Paging,
             IdFilter,
-            AuthorIdFilter,
-            SourceFilter,
             StatusFilter,
             CategoryFilter,
         }
@@ -11748,8 +11730,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
                             "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
-                            "authorIdFilter" | "author_id_filter" => Ok(GeneratedField::AuthorIdFilter),
-                            "sourceFilter" | "source_filter" => Ok(GeneratedField::SourceFilter),
                             "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             "categoryFilter" | "category_filter" => Ok(GeneratedField::CategoryFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -11773,8 +11753,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
             {
                 let mut paging__ = None;
                 let mut id_filter__ = None;
-                let mut author_id_filter__ = None;
-                let mut source_filter__ = None;
                 let mut status_filter__ = None;
                 let mut category_filter__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -11790,18 +11768,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
                                 return Err(serde::de::Error::duplicate_field("idFilter"));
                             }
                             id_filter__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::AuthorIdFilter => {
-                            if author_id_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("authorIdFilter"));
-                            }
-                            author_id_filter__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::SourceFilter => {
-                            if source_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sourceFilter"));
-                            }
-                            source_filter__ = Some(map_.next_value()?);
                         }
                         GeneratedField::StatusFilter => {
                             if status_filter__.is_some() {
@@ -11820,8 +11786,6 @@ impl<'de> serde::Deserialize<'de> for ListFeedConfigsRequest {
                 Ok(ListFeedConfigsRequest {
                     paging: paging__,
                     id_filter: id_filter__.unwrap_or_default(),
-                    author_id_filter: author_id_filter__.unwrap_or_default(),
-                    source_filter: source_filter__.unwrap_or_default(),
                     status_filter: status_filter__.unwrap_or_default(),
                     category_filter: category_filter__.unwrap_or_default(),
                 })
@@ -13653,9 +13617,6 @@ impl serde::Serialize for ListNotifyTargetsRequest {
         if !self.id_filter.is_empty() {
             len += 1;
         }
-        if !self.destination_filter.is_empty() {
-            len += 1;
-        }
         if !self.status_filter.is_empty() {
             len += 1;
         }
@@ -13665,9 +13626,6 @@ impl serde::Serialize for ListNotifyTargetsRequest {
         }
         if !self.id_filter.is_empty() {
             struct_ser.serialize_field("idFilter", &self.id_filter)?;
-        }
-        if !self.destination_filter.is_empty() {
-            struct_ser.serialize_field("destinationFilter", &self.destination_filter)?;
         }
         if !self.status_filter.is_empty() {
             let v = self.status_filter.iter().cloned().map(|v| {
@@ -13689,8 +13647,6 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
             "paging",
             "id_filter",
             "idFilter",
-            "destination_filter",
-            "destinationFilter",
             "status_filter",
             "statusFilter",
         ];
@@ -13699,7 +13655,6 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
         enum GeneratedField {
             Paging,
             IdFilter,
-            DestinationFilter,
             StatusFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -13724,7 +13679,6 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
                             "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
-                            "destinationFilter" | "destination_filter" => Ok(GeneratedField::DestinationFilter),
                             "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -13747,7 +13701,6 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
             {
                 let mut paging__ = None;
                 let mut id_filter__ = None;
-                let mut destination_filter__ = None;
                 let mut status_filter__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
@@ -13763,12 +13716,6 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                             }
                             id_filter__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::DestinationFilter => {
-                            if destination_filter__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("destinationFilter"));
-                            }
-                            destination_filter__ = Some(map_.next_value()?);
-                        }
                         GeneratedField::StatusFilter => {
                             if status_filter__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("statusFilter"));
@@ -13780,7 +13727,6 @@ impl<'de> serde::Deserialize<'de> for ListNotifyTargetsRequest {
                 Ok(ListNotifyTargetsRequest {
                     paging: paging__,
                     id_filter: id_filter__.unwrap_or_default(),
-                    destination_filter: destination_filter__.unwrap_or_default(),
                     status_filter: status_filter__.unwrap_or_default(),
                 })
             }
@@ -17397,6 +17343,9 @@ impl serde::Serialize for Porter {
         if self.connection_status != 0 {
             len += 1;
         }
+        if self.context_json_schema.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.Porter", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -17423,6 +17372,9 @@ impl serde::Serialize for Porter {
                 .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.connection_status)))?;
             struct_ser.serialize_field("connectionStatus", &v)?;
         }
+        if let Some(v) = self.context_json_schema.as_ref() {
+            struct_ser.serialize_field("contextJsonSchema", v)?;
+        }
         struct_ser.end()
     }
 }
@@ -17443,6 +17395,8 @@ impl<'de> serde::Deserialize<'de> for Porter {
             "status",
             "connection_status",
             "connectionStatus",
+            "context_json_schema",
+            "contextJsonSchema",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -17454,6 +17408,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
             FeatureSummary,
             Status,
             ConnectionStatus,
+            ContextJsonSchema,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17482,6 +17437,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                             "featureSummary" | "feature_summary" => Ok(GeneratedField::FeatureSummary),
                             "status" => Ok(GeneratedField::Status),
                             "connectionStatus" | "connection_status" => Ok(GeneratedField::ConnectionStatus),
+                            "contextJsonSchema" | "context_json_schema" => Ok(GeneratedField::ContextJsonSchema),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17508,6 +17464,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                 let mut feature_summary__ = None;
                 let mut status__ = None;
                 let mut connection_status__ = None;
+                let mut context_json_schema__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -17552,6 +17509,12 @@ impl<'de> serde::Deserialize<'de> for Porter {
                             }
                             connection_status__ = Some(map_.next_value::<PorterConnectionStatus>()? as i32);
                         }
+                        GeneratedField::ContextJsonSchema => {
+                            if context_json_schema__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("contextJsonSchema"));
+                            }
+                            context_json_schema__ = map_.next_value()?;
+                        }
                     }
                 }
                 Ok(Porter {
@@ -17562,6 +17525,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                     feature_summary: feature_summary__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     connection_status: connection_status__.unwrap_or_default(),
+                    context_json_schema: context_json_schema__,
                 })
             }
         }

@@ -212,7 +212,6 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   factory ListNotifyTargetsRequest({
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? idFilter,
-    $core.Iterable<$core.String>? destinationFilter,
     $core.Iterable<NotifyTargetStatus>? statusFilter,
   }) {
     final $result = create();
@@ -221,9 +220,6 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
     }
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
-    }
-    if (destinationFilter != null) {
-      $result.destinationFilter.addAll(destinationFilter);
     }
     if (statusFilter != null) {
       $result.statusFilter.addAll(statusFilter);
@@ -237,7 +233,6 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifyTargetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pPS(3, _omitFieldNames ? '' : 'destinationFilter')
     ..pc<NotifyTargetStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifyTargetStatus.valueOf, enumValues: NotifyTargetStatus.values, defaultEnumValue: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
@@ -277,12 +272,8 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<$8.InternalID> get idFilter => $_getList(1);
 
-  /// WellKnownNotifyDestination
-  @$pb.TagNumber(3)
-  $core.List<$core.String> get destinationFilter => $_getList(2);
-
   @$pb.TagNumber(4)
-  $core.List<NotifyTargetStatus> get statusFilter => $_getList(3);
+  $core.List<NotifyTargetStatus> get statusFilter => $_getList(2);
 }
 
 class ListNotifyTargetsResponse extends $pb.GeneratedMessage {

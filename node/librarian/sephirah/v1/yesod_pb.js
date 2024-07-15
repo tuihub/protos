@@ -1559,7 +1559,7 @@ proto.librarian.sephirah.v1.UpdateFeedConfigResponse.serializeBinaryToWriter = f
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.repeatedFields_ = [2,3,4,5,6];
+proto.librarian.sephirah.v1.ListFeedConfigsRequest.repeatedFields_ = [2,5,6];
 
 
 
@@ -1595,9 +1595,6 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.toObject = function(includeIn
     paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
     idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    authorIdFilterList: jspb.Message.toObjectList(msg.getAuthorIdFilterList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     statusFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
@@ -1645,15 +1642,6 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.deserializeBinaryFromReader =
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
       msg.addIdFilter(value);
-      break;
-    case 3:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addAuthorIdFilter(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addSourceFilter(value);
       break;
     case 5:
       var values = /** @type {!Array<!proto.librarian.sephirah.v1.FeedConfigStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
@@ -1708,21 +1696,6 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.serializeBinaryToWriter = fun
       2,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getAuthorIdFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      3,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getSourceFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
-      f
     );
   }
   f = message.getStatusFilterList();
@@ -1814,81 +1787,6 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.addIdFilter = funct
  */
 proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.clearIdFilterList = function() {
   return this.setIdFilterList([]);
-};
-
-
-/**
- * repeated librarian.v1.InternalID author_id_filter = 3;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.getAuthorIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 3));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.setAuthorIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.addAuthorIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.clearAuthorIdFilterList = function() {
-  return this.setAuthorIdFilterList([]);
-};
-
-
-/**
- * repeated string source_filter = 4;
- * @return {!Array<string>}
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.getSourceFilterList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/**
- * @param {!Array<string>} value
- * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.setSourceFilterList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.addSourceFilter = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.clearSourceFilterList = function() {
-  return this.setSourceFilterList([]);
 };
 
 

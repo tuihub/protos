@@ -101,8 +101,6 @@ const ListFeedConfigsRequest$json = {
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'author_id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'authorIdFilter'},
-    {'1': 'source_filter', '3': 4, '4': 3, '5': 9, '10': 'sourceFilter'},
     {'1': 'status_filter', '3': 5, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.FeedConfigStatus', '10': 'statusFilter'},
     {'1': 'category_filter', '3': 6, '4': 3, '5': 9, '10': 'categoryFilter'},
   ],
@@ -112,11 +110,9 @@ const ListFeedConfigsRequest$json = {
 final $typed_data.Uint8List listFeedConfigsRequestDescriptor = $convert.base64Decode(
     'ChZMaXN0RmVlZENvbmZpZ3NSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS'
     '5QYWdpbmdSZXF1ZXN0UgZwYWdpbmcSNQoJaWRfZmlsdGVyGAIgAygLMhgubGlicmFyaWFuLnYx'
-    'LkludGVybmFsSURSCGlkRmlsdGVyEkIKEGF1dGhvcl9pZF9maWx0ZXIYAyADKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJRFIOYXV0aG9ySWRGaWx0ZXISIwoNc291cmNlX2ZpbHRlchgEIAMo'
-    'CVIMc291cmNlRmlsdGVyEkwKDXN0YXR1c19maWx0ZXIYBSADKA4yJy5saWJyYXJpYW4uc2VwaG'
-    'lyYWgudjEuRmVlZENvbmZpZ1N0YXR1c1IMc3RhdHVzRmlsdGVyEicKD2NhdGVnb3J5X2ZpbHRl'
-    'chgGIAMoCVIOY2F0ZWdvcnlGaWx0ZXI=');
+    'LkludGVybmFsSURSCGlkRmlsdGVyEkwKDXN0YXR1c19maWx0ZXIYBSADKA4yJy5saWJyYXJpYW'
+    '4uc2VwaGlyYWgudjEuRmVlZENvbmZpZ1N0YXR1c1IMc3RhdHVzRmlsdGVyEicKD2NhdGVnb3J5'
+    'X2ZpbHRlchgGIAMoCVIOY2F0ZWdvcnlGaWx0ZXI=');
 
 @$core.Deprecated('Use listFeedConfigsResponseDescriptor instead')
 const ListFeedConfigsResponse$json = {
