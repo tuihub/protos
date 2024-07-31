@@ -1505,6 +1505,210 @@ class ReadFeedItemResponse extends $pb.GeneratedMessage {
   static ReadFeedItemResponse? _defaultInstance;
 }
 
+class PUpsertFeedRequest extends $pb.GeneratedMessage {
+  factory PUpsertFeedRequest({
+    $8.InternalID? id,
+    $8.Feed? data,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
+  PUpsertFeedRequest._() : super();
+  factory PUpsertFeedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PUpsertFeedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PUpsertFeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..aOM<$8.Feed>(2, _omitFieldNames ? '' : 'data', subBuilder: $8.Feed.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PUpsertFeedRequest clone() => PUpsertFeedRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PUpsertFeedRequest copyWith(void Function(PUpsertFeedRequest) updates) => super.copyWith((message) => updates(message as PUpsertFeedRequest)) as PUpsertFeedRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PUpsertFeedRequest create() => PUpsertFeedRequest._();
+  PUpsertFeedRequest createEmptyInstance() => create();
+  static $pb.PbList<PUpsertFeedRequest> createRepeated() => $pb.PbList<PUpsertFeedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PUpsertFeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PUpsertFeedRequest>(create);
+  static PUpsertFeedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $8.Feed get data => $_getN(1);
+  @$pb.TagNumber(2)
+  set data($8.Feed v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasData() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearData() => clearField(2);
+  @$pb.TagNumber(2)
+  $8.Feed ensureData() => $_ensure(1);
+}
+
+class PUpsertFeedResponse extends $pb.GeneratedMessage {
+  factory PUpsertFeedResponse() => create();
+  PUpsertFeedResponse._() : super();
+  factory PUpsertFeedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PUpsertFeedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PUpsertFeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PUpsertFeedResponse clone() => PUpsertFeedResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PUpsertFeedResponse copyWith(void Function(PUpsertFeedResponse) updates) => super.copyWith((message) => updates(message as PUpsertFeedResponse)) as PUpsertFeedResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PUpsertFeedResponse create() => PUpsertFeedResponse._();
+  PUpsertFeedResponse createEmptyInstance() => create();
+  static $pb.PbList<PUpsertFeedResponse> createRepeated() => $pb.PbList<PUpsertFeedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PUpsertFeedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PUpsertFeedResponse>(create);
+  static PUpsertFeedResponse? _defaultInstance;
+}
+
+class PGetFeedRequest extends $pb.GeneratedMessage {
+  factory PGetFeedRequest({
+    $8.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  PGetFeedRequest._() : super();
+  factory PGetFeedRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PGetFeedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PGetFeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PGetFeedRequest clone() => PGetFeedRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PGetFeedRequest copyWith(void Function(PGetFeedRequest) updates) => super.copyWith((message) => updates(message as PGetFeedRequest)) as PGetFeedRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PGetFeedRequest create() => PGetFeedRequest._();
+  PGetFeedRequest createEmptyInstance() => create();
+  static $pb.PbList<PGetFeedRequest> createRepeated() => $pb.PbList<PGetFeedRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PGetFeedRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PGetFeedRequest>(create);
+  static PGetFeedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+}
+
+class PGetFeedResponse extends $pb.GeneratedMessage {
+  factory PGetFeedResponse({
+    $8.Feed? data,
+  }) {
+    final $result = create();
+    if (data != null) {
+      $result.data = data;
+    }
+    return $result;
+  }
+  PGetFeedResponse._() : super();
+  factory PGetFeedResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PGetFeedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PGetFeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.Feed>(1, _omitFieldNames ? '' : 'data', subBuilder: $8.Feed.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PGetFeedResponse clone() => PGetFeedResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PGetFeedResponse copyWith(void Function(PGetFeedResponse) updates) => super.copyWith((message) => updates(message as PGetFeedResponse)) as PGetFeedResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PGetFeedResponse create() => PGetFeedResponse._();
+  PGetFeedResponse createEmptyInstance() => create();
+  static $pb.PbList<PGetFeedResponse> createRepeated() => $pb.PbList<PGetFeedResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PGetFeedResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PGetFeedResponse>(create);
+  static PGetFeedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.Feed get data => $_getN(0);
+  @$pb.TagNumber(1)
+  set data($8.Feed v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasData() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearData() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.Feed ensureData() => $_ensure(0);
+}
+
 class CreateFeedItemCollectionRequest extends $pb.GeneratedMessage {
   factory CreateFeedItemCollectionRequest({
     FeedItemCollection? collection,

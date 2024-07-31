@@ -89,6 +89,22 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.ExecFeedItemActionRequest> __Marshaller_librarian_porter_v1_ExecFeedItemActionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.ExecFeedItemActionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.ExecFeedItemActionResponse> __Marshaller_librarian_porter_v1_ExecFeedItemActionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.ExecFeedItemActionResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest> __Marshaller_librarian_porter_v1_EnableFeedSetterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse> __Marshaller_librarian_porter_v1_EnableFeedSetterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest> __Marshaller_librarian_porter_v1_DisableFeedSetterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse> __Marshaller_librarian_porter_v1_DisableFeedSetterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest> __Marshaller_librarian_porter_v1_EnableFeedGetterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse> __Marshaller_librarian_porter_v1_EnableFeedGetterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest> __Marshaller_librarian_porter_v1_DisableFeedGetterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse> __Marshaller_librarian_porter_v1_DisableFeedGetterResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.GetPorterInformationRequest, global::TuiHub.Protos.Librarian.Porter.V1.GetPorterInformationResponse> __Method_GetPorterInformation = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.GetPorterInformationRequest, global::TuiHub.Protos.Librarian.Porter.V1.GetPorterInformationResponse>(
@@ -178,6 +194,38 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         __Marshaller_librarian_porter_v1_ExecFeedItemActionRequest,
         __Marshaller_librarian_porter_v1_ExecFeedItemActionResponse);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse> __Method_EnableFeedSetter = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "EnableFeedSetter",
+        __Marshaller_librarian_porter_v1_EnableFeedSetterRequest,
+        __Marshaller_librarian_porter_v1_EnableFeedSetterResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse> __Method_DisableFeedSetter = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DisableFeedSetter",
+        __Marshaller_librarian_porter_v1_DisableFeedSetterRequest,
+        __Marshaller_librarian_porter_v1_DisableFeedSetterResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse> __Method_EnableFeedGetter = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "EnableFeedGetter",
+        __Marshaller_librarian_porter_v1_EnableFeedGetterRequest,
+        __Marshaller_librarian_porter_v1_EnableFeedGetterResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse> __Method_DisableFeedGetter = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DisableFeedGetter",
+        __Marshaller_librarian_porter_v1_DisableFeedGetterRequest,
+        __Marshaller_librarian_porter_v1_DisableFeedGetterResponse);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -194,6 +242,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      /// <summary>
+      /// Used to enable porter and heartbeat.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse> EnablePorter(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::ServerCallContext context)
       {
@@ -296,6 +350,56 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      /// <summary>
+      /// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse> EnableFeedSetter(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse> DisableFeedSetter(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse> EnableFeedGetter(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse> DisableFeedGetter(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Client for LibrarianPorterService</summary>
@@ -345,21 +449,49 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetPorterInformation, null, options, request);
       }
+      /// <summary>
+      /// Used to enable porter and heartbeat.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse EnablePorter(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return EnablePorter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
+      /// <summary>
+      /// Used to enable porter and heartbeat.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse EnablePorter(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_EnablePorter, null, options, request);
       }
+      /// <summary>
+      /// Used to enable porter and heartbeat.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse> EnablePorterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return EnablePorterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
+      /// <summary>
+      /// Used to enable porter and heartbeat.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterResponse> EnablePorterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnablePorterRequest request, grpc::CallOptions options)
       {
@@ -741,6 +873,206 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_ExecFeedItemAction, null, options, request);
       }
+      /// <summary>
+      /// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse EnableFeedSetter(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableFeedSetter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse EnableFeedSetter(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_EnableFeedSetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse> EnableFeedSetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableFeedSetterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse> EnableFeedSetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_EnableFeedSetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse DisableFeedSetter(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableFeedSetter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse DisableFeedSetter(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DisableFeedSetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse> DisableFeedSetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableFeedSetterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse> DisableFeedSetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DisableFeedSetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse EnableFeedGetter(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableFeedGetter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse EnableFeedGetter(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_EnableFeedGetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse> EnableFeedGetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return EnableFeedGetterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+      /// without extra permissions.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse> EnableFeedGetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_EnableFeedGetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse DisableFeedGetter(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableFeedGetter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse DisableFeedGetter(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DisableFeedGetter, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse> DisableFeedGetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DisableFeedGetterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse> DisableFeedGetterAsync(global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DisableFeedGetter, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       protected override LibrarianPorterServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -765,7 +1097,11 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           .AddMethod(__Method_SearchAppInfo, serviceImpl.SearchAppInfo)
           .AddMethod(__Method_PullFeed, serviceImpl.PullFeed)
           .AddMethod(__Method_PushFeedItems, serviceImpl.PushFeedItems)
-          .AddMethod(__Method_ExecFeedItemAction, serviceImpl.ExecFeedItemAction).Build();
+          .AddMethod(__Method_ExecFeedItemAction, serviceImpl.ExecFeedItemAction)
+          .AddMethod(__Method_EnableFeedSetter, serviceImpl.EnableFeedSetter)
+          .AddMethod(__Method_DisableFeedSetter, serviceImpl.DisableFeedSetter)
+          .AddMethod(__Method_EnableFeedGetter, serviceImpl.EnableFeedGetter)
+          .AddMethod(__Method_DisableFeedGetter, serviceImpl.DisableFeedGetter).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -786,6 +1122,10 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       serviceBinder.AddMethod(__Method_PullFeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PullFeedRequest, global::TuiHub.Protos.Librarian.Porter.V1.PullFeedResponse>(serviceImpl.PullFeed));
       serviceBinder.AddMethod(__Method_PushFeedItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemsRequest, global::TuiHub.Protos.Librarian.Porter.V1.PushFeedItemsResponse>(serviceImpl.PushFeedItems));
       serviceBinder.AddMethod(__Method_ExecFeedItemAction, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.ExecFeedItemActionRequest, global::TuiHub.Protos.Librarian.Porter.V1.ExecFeedItemActionResponse>(serviceImpl.ExecFeedItemAction));
+      serviceBinder.AddMethod(__Method_EnableFeedSetter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedSetterResponse>(serviceImpl.EnableFeedSetter));
+      serviceBinder.AddMethod(__Method_DisableFeedSetter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedSetterResponse>(serviceImpl.DisableFeedSetter));
+      serviceBinder.AddMethod(__Method_EnableFeedGetter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableFeedGetterResponse>(serviceImpl.EnableFeedGetter));
+      serviceBinder.AddMethod(__Method_DisableFeedGetter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableFeedGetterResponse>(serviceImpl.DisableFeedGetter));
     }
 
   }

@@ -416,6 +416,126 @@ pub mod librarian_porter_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn enable_feed_setter(
+            &mut self,
+            request: impl tonic::IntoRequest<super::EnableFeedSetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::EnableFeedSetterResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/EnableFeedSetter",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "EnableFeedSetter",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn disable_feed_setter(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DisableFeedSetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DisableFeedSetterResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/DisableFeedSetter",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "DisableFeedSetter",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn enable_feed_getter(
+            &mut self,
+            request: impl tonic::IntoRequest<super::EnableFeedGetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::EnableFeedGetterResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/EnableFeedGetter",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "EnableFeedGetter",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn disable_feed_getter(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DisableFeedGetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DisableFeedGetterResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/DisableFeedGetter",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "DisableFeedGetter",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -500,6 +620,34 @@ pub mod librarian_porter_service_server {
             request: tonic::Request<super::ExecFeedItemActionRequest>,
         ) -> std::result::Result<
             tonic::Response<super::ExecFeedItemActionResponse>,
+            tonic::Status,
+        >;
+        async fn enable_feed_setter(
+            &self,
+            request: tonic::Request<super::EnableFeedSetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::EnableFeedSetterResponse>,
+            tonic::Status,
+        >;
+        async fn disable_feed_setter(
+            &self,
+            request: tonic::Request<super::DisableFeedSetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DisableFeedSetterResponse>,
+            tonic::Status,
+        >;
+        async fn enable_feed_getter(
+            &self,
+            request: tonic::Request<super::EnableFeedGetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::EnableFeedGetterResponse>,
+            tonic::Status,
+        >;
+        async fn disable_feed_getter(
+            &self,
+            request: tonic::Request<super::DisableFeedGetterRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::DisableFeedGetterResponse>,
             tonic::Status,
         >;
     }
@@ -1119,6 +1267,206 @@ pub mod librarian_porter_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ExecFeedItemActionSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/EnableFeedSetter" => {
+                    #[allow(non_camel_case_types)]
+                    struct EnableFeedSetterSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::EnableFeedSetterRequest>
+                    for EnableFeedSetterSvc<T> {
+                        type Response = super::EnableFeedSetterResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::EnableFeedSetterRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianPorterService>::enable_feed_setter(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = EnableFeedSetterSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/DisableFeedSetter" => {
+                    #[allow(non_camel_case_types)]
+                    struct DisableFeedSetterSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::DisableFeedSetterRequest>
+                    for DisableFeedSetterSvc<T> {
+                        type Response = super::DisableFeedSetterResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DisableFeedSetterRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianPorterService>::disable_feed_setter(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DisableFeedSetterSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/EnableFeedGetter" => {
+                    #[allow(non_camel_case_types)]
+                    struct EnableFeedGetterSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::EnableFeedGetterRequest>
+                    for EnableFeedGetterSvc<T> {
+                        type Response = super::EnableFeedGetterResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::EnableFeedGetterRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianPorterService>::enable_feed_getter(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = EnableFeedGetterSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/DisableFeedGetter" => {
+                    #[allow(non_camel_case_types)]
+                    struct DisableFeedGetterSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::DisableFeedGetterRequest>
+                    for DisableFeedGetterSvc<T> {
+                        type Response = super::DisableFeedGetterResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DisableFeedGetterRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianPorterService>::disable_feed_getter(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DisableFeedGetterSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

@@ -22,7 +22,6 @@ export 'wellknown.pbenum.dart';
 class FeatureFlag extends $pb.GeneratedMessage {
   factory FeatureFlag({
     $core.String? id,
-    $core.String? region,
     $core.String? name,
     $core.String? description,
     $core.String? configJsonSchema,
@@ -31,9 +30,6 @@ class FeatureFlag extends $pb.GeneratedMessage {
     final $result = create();
     if (id != null) {
       $result.id = id;
-    }
-    if (region != null) {
-      $result.region = region;
     }
     if (name != null) {
       $result.name = name;
@@ -55,11 +51,10 @@ class FeatureFlag extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureFlag', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'region')
-    ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aOS(4, _omitFieldNames ? '' : 'description')
-    ..aOS(5, _omitFieldNames ? '' : 'configJsonSchema')
-    ..aOB(6, _omitFieldNames ? '' : 'requireContext')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOS(4, _omitFieldNames ? '' : 'configJsonSchema')
+    ..aOB(5, _omitFieldNames ? '' : 'requireContext')
     ..hasRequiredFields = false
   ;
 
@@ -95,57 +90,45 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
-  /// Region is used to group feature providers,
-  /// same feature provider in same region can be randomly called.
-  /// Leave empty to use default region.
-  @$pb.TagNumber(2)
-  $core.String get region => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set region($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRegion() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRegion() => clearField(2);
-
   /// Human-readable name
-  @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
 
   /// Human-readable description
-  @$pb.TagNumber(4)
-  $core.String get description => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set description($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasDescription() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDescription() => clearField(4);
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
 
   /// Customized JSON schema for feature
-  @$pb.TagNumber(5)
-  $core.String get configJsonSchema => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set configJsonSchema($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasConfigJsonSchema() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearConfigJsonSchema() => clearField(5);
+  @$pb.TagNumber(4)
+  $core.String get configJsonSchema => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set configJsonSchema($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasConfigJsonSchema() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConfigJsonSchema() => clearField(4);
 
   /// Require context to use this feature
-  @$pb.TagNumber(6)
-  $core.bool get requireContext => $_getBF(5);
-  @$pb.TagNumber(6)
-  set requireContext($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasRequireContext() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearRequireContext() => clearField(6);
+  @$pb.TagNumber(5)
+  $core.bool get requireContext => $_getBF(4);
+  @$pb.TagNumber(5)
+  set requireContext($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasRequireContext() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequireContext() => clearField(5);
 }
 
 /// FeatureRequest is used to deliver feature-related request parameters.

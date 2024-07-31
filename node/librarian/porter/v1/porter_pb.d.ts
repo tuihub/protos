@@ -31,6 +31,9 @@ export class GetPorterInformationResponse extends jspb.Message {
   getGlobalName(): string;
   setGlobalName(value: string): void;
 
+  getRegion(): string;
+  setRegion(value: string): void;
+
   hasFeatureSummary(): boolean;
   clearFeatureSummary(): void;
   getFeatureSummary(): PorterFeatureSummary | undefined;
@@ -56,6 +59,7 @@ export namespace GetPorterInformationResponse {
     name: string,
     version: string,
     globalName: string,
+    region: string,
     featureSummary?: PorterFeatureSummary.AsObject,
     contextJsonSchema: string,
   }
@@ -87,6 +91,16 @@ export class PorterFeatureSummary extends jspb.Message {
   setFeedItemActionsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
   addFeedItemActions(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
 
+  clearFeedSettersList(): void;
+  getFeedSettersList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setFeedSettersList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addFeedSetters(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
+
+  clearFeedGettersList(): void;
+  getFeedGettersList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
+  setFeedGettersList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
+  addFeedGetters(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PorterFeatureSummary.AsObject;
   static toObject(includeInstance: boolean, msg: PorterFeatureSummary): PorterFeatureSummary.AsObject;
@@ -104,6 +118,8 @@ export namespace PorterFeatureSummary {
     feedSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
     notifyDestinationsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
     feedItemActionsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
+    feedSettersList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
+    feedGettersList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
   }
 }
 
@@ -134,6 +150,9 @@ export namespace EnablePorterRequest {
 }
 
 export class EnablePorterResponse extends jspb.Message {
+  getNeedFullSync(): boolean;
+  setNeedFullSync(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnablePorterResponse.AsObject;
   static toObject(includeInstance: boolean, msg: EnablePorterResponse): EnablePorterResponse.AsObject;
@@ -146,6 +165,7 @@ export class EnablePorterResponse extends jspb.Message {
 
 export namespace EnablePorterResponse {
   export type AsObject = {
+    needFullSync: boolean,
   }
 }
 
@@ -542,6 +562,182 @@ export class ExecFeedItemActionResponse extends jspb.Message {
 export namespace ExecFeedItemActionResponse {
   export type AsObject = {
     item?: librarian_v1_common_pb.FeedItem.AsObject,
+  }
+}
+
+export class EnableFeedSetterRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasSetter(): boolean;
+  clearSetter(): void;
+  getSetter(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setSetter(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
+  hasFeedId(): boolean;
+  clearFeedId(): void;
+  getFeedId(): librarian_v1_common_pb.InternalID | undefined;
+  setFeedId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableFeedSetterRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableFeedSetterRequest): EnableFeedSetterRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableFeedSetterRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableFeedSetterRequest;
+  static deserializeBinaryFromReader(message: EnableFeedSetterRequest, reader: jspb.BinaryReader): EnableFeedSetterRequest;
+}
+
+export namespace EnableFeedSetterRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    setter?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
+    feedId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class EnableFeedSetterResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableFeedSetterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableFeedSetterResponse): EnableFeedSetterResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableFeedSetterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableFeedSetterResponse;
+  static deserializeBinaryFromReader(message: EnableFeedSetterResponse, reader: jspb.BinaryReader): EnableFeedSetterResponse;
+}
+
+export namespace EnableFeedSetterResponse {
+  export type AsObject = {
+  }
+}
+
+export class DisableFeedSetterRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableFeedSetterRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableFeedSetterRequest): DisableFeedSetterRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableFeedSetterRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableFeedSetterRequest;
+  static deserializeBinaryFromReader(message: DisableFeedSetterRequest, reader: jspb.BinaryReader): DisableFeedSetterRequest;
+}
+
+export namespace DisableFeedSetterRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class DisableFeedSetterResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableFeedSetterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableFeedSetterResponse): DisableFeedSetterResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableFeedSetterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableFeedSetterResponse;
+  static deserializeBinaryFromReader(message: DisableFeedSetterResponse, reader: jspb.BinaryReader): DisableFeedSetterResponse;
+}
+
+export namespace DisableFeedSetterResponse {
+  export type AsObject = {
+  }
+}
+
+export class EnableFeedGetterRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasGetter(): boolean;
+  clearGetter(): void;
+  getGetter(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setGetter(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
+  hasFeedId(): boolean;
+  clearFeedId(): void;
+  getFeedId(): librarian_v1_common_pb.InternalID | undefined;
+  setFeedId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableFeedGetterRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableFeedGetterRequest): EnableFeedGetterRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableFeedGetterRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableFeedGetterRequest;
+  static deserializeBinaryFromReader(message: EnableFeedGetterRequest, reader: jspb.BinaryReader): EnableFeedGetterRequest;
+}
+
+export namespace EnableFeedGetterRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    getter?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
+    feedId?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class EnableFeedGetterResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnableFeedGetterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EnableFeedGetterResponse): EnableFeedGetterResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EnableFeedGetterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnableFeedGetterResponse;
+  static deserializeBinaryFromReader(message: EnableFeedGetterResponse, reader: jspb.BinaryReader): EnableFeedGetterResponse;
+}
+
+export namespace EnableFeedGetterResponse {
+  export type AsObject = {
+  }
+}
+
+export class DisableFeedGetterRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableFeedGetterRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableFeedGetterRequest): DisableFeedGetterRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableFeedGetterRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableFeedGetterRequest;
+  static deserializeBinaryFromReader(message: DisableFeedGetterRequest, reader: jspb.BinaryReader): DisableFeedGetterRequest;
+}
+
+export namespace DisableFeedGetterRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class DisableFeedGetterResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DisableFeedGetterResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DisableFeedGetterResponse): DisableFeedGetterResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DisableFeedGetterResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DisableFeedGetterResponse;
+  static deserializeBinaryFromReader(message: DisableFeedGetterResponse, reader: jspb.BinaryReader): DisableFeedGetterResponse;
+}
+
+export namespace DisableFeedGetterResponse {
+  export type AsObject = {
   }
 }
 

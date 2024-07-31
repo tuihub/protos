@@ -125,6 +125,8 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   addFeedItemToCollection: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.AddFeedItemToCollectionRequest, librarian_sephirah_v1_yesod_pb.AddFeedItemToCollectionResponse>;
   removeFeedItemFromCollection: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.RemoveFeedItemFromCollectionRequest, librarian_sephirah_v1_yesod_pb.RemoveFeedItemFromCollectionResponse>;
   listFeedItemsInCollection: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest, librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse>;
+  pUpsertFeed: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.PUpsertFeedRequest, librarian_sephirah_v1_yesod_pb.PUpsertFeedResponse>;
+  pGetFeed: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.PGetFeedRequest, librarian_sephirah_v1_yesod_pb.PGetFeedResponse>;
   createTag: grpc.MethodDefinition<librarian_sephirah_v1_hokma_pb.CreateTagRequest, librarian_sephirah_v1_hokma_pb.CreateTagResponse>;
   updateTag: grpc.MethodDefinition<librarian_sephirah_v1_hokma_pb.UpdateTagRequest, librarian_sephirah_v1_hokma_pb.UpdateTagResponse>;
   listTags: grpc.MethodDefinition<librarian_sephirah_v1_hokma_pb.ListTagsRequest, librarian_sephirah_v1_hokma_pb.ListTagsResponse>;
@@ -244,6 +246,8 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   addFeedItemToCollection: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.AddFeedItemToCollectionRequest, librarian_sephirah_v1_yesod_pb.AddFeedItemToCollectionResponse>;
   removeFeedItemFromCollection: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.RemoveFeedItemFromCollectionRequest, librarian_sephirah_v1_yesod_pb.RemoveFeedItemFromCollectionResponse>;
   listFeedItemsInCollection: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest, librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse>;
+  pUpsertFeed: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.PUpsertFeedRequest, librarian_sephirah_v1_yesod_pb.PUpsertFeedResponse>;
+  pGetFeed: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.PGetFeedRequest, librarian_sephirah_v1_yesod_pb.PGetFeedResponse>;
   createTag: grpc.handleUnaryCall<librarian_sephirah_v1_hokma_pb.CreateTagRequest, librarian_sephirah_v1_hokma_pb.CreateTagResponse>;
   updateTag: grpc.handleUnaryCall<librarian_sephirah_v1_hokma_pb.UpdateTagRequest, librarian_sephirah_v1_hokma_pb.UpdateTagResponse>;
   listTags: grpc.handleUnaryCall<librarian_sephirah_v1_hokma_pb.ListTagsRequest, librarian_sephirah_v1_hokma_pb.ListTagsResponse>;
@@ -579,6 +583,12 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   listFeedItemsInCollection(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse>): grpc.ClientUnaryCall;
   listFeedItemsInCollection(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse>): grpc.ClientUnaryCall;
   listFeedItemsInCollection(argument: librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.ListFeedItemsInCollectionResponse>): grpc.ClientUnaryCall;
+  pUpsertFeed(argument: librarian_sephirah_v1_yesod_pb.PUpsertFeedRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.PUpsertFeedResponse>): grpc.ClientUnaryCall;
+  pUpsertFeed(argument: librarian_sephirah_v1_yesod_pb.PUpsertFeedRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.PUpsertFeedResponse>): grpc.ClientUnaryCall;
+  pUpsertFeed(argument: librarian_sephirah_v1_yesod_pb.PUpsertFeedRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.PUpsertFeedResponse>): grpc.ClientUnaryCall;
+  pGetFeed(argument: librarian_sephirah_v1_yesod_pb.PGetFeedRequest, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.PGetFeedResponse>): grpc.ClientUnaryCall;
+  pGetFeed(argument: librarian_sephirah_v1_yesod_pb.PGetFeedRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.PGetFeedResponse>): grpc.ClientUnaryCall;
+  pGetFeed(argument: librarian_sephirah_v1_yesod_pb.PGetFeedRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_yesod_pb.PGetFeedResponse>): grpc.ClientUnaryCall;
   createTag(argument: librarian_sephirah_v1_hokma_pb.CreateTagRequest, callback: grpc.requestCallback<librarian_sephirah_v1_hokma_pb.CreateTagResponse>): grpc.ClientUnaryCall;
   createTag(argument: librarian_sephirah_v1_hokma_pb.CreateTagRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_hokma_pb.CreateTagResponse>): grpc.ClientUnaryCall;
   createTag(argument: librarian_sephirah_v1_hokma_pb.CreateTagRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_hokma_pb.CreateTagResponse>): grpc.ClientUnaryCall;

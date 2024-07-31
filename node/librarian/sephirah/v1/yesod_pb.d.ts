@@ -701,6 +701,94 @@ export namespace ReadFeedItemResponse {
   }
 }
 
+export class PUpsertFeedRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasData(): boolean;
+  clearData(): void;
+  getData(): librarian_v1_common_pb.Feed | undefined;
+  setData(value?: librarian_v1_common_pb.Feed): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PUpsertFeedRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PUpsertFeedRequest): PUpsertFeedRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PUpsertFeedRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PUpsertFeedRequest;
+  static deserializeBinaryFromReader(message: PUpsertFeedRequest, reader: jspb.BinaryReader): PUpsertFeedRequest;
+}
+
+export namespace PUpsertFeedRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    data?: librarian_v1_common_pb.Feed.AsObject,
+  }
+}
+
+export class PUpsertFeedResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PUpsertFeedResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PUpsertFeedResponse): PUpsertFeedResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PUpsertFeedResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PUpsertFeedResponse;
+  static deserializeBinaryFromReader(message: PUpsertFeedResponse, reader: jspb.BinaryReader): PUpsertFeedResponse;
+}
+
+export namespace PUpsertFeedResponse {
+  export type AsObject = {
+  }
+}
+
+export class PGetFeedRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PGetFeedRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PGetFeedRequest): PGetFeedRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PGetFeedRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PGetFeedRequest;
+  static deserializeBinaryFromReader(message: PGetFeedRequest, reader: jspb.BinaryReader): PGetFeedRequest;
+}
+
+export namespace PGetFeedRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+  }
+}
+
+export class PGetFeedResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): librarian_v1_common_pb.Feed | undefined;
+  setData(value?: librarian_v1_common_pb.Feed): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PGetFeedResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PGetFeedResponse): PGetFeedResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PGetFeedResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PGetFeedResponse;
+  static deserializeBinaryFromReader(message: PGetFeedResponse, reader: jspb.BinaryReader): PGetFeedResponse;
+}
+
+export namespace PGetFeedResponse {
+  export type AsObject = {
+    data?: librarian_v1_common_pb.Feed.AsObject,
+  }
+}
+
 export class CreateFeedItemCollectionRequest extends jspb.Message {
   hasCollection(): boolean;
   clearCollection(): void;

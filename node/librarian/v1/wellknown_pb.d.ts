@@ -9,9 +9,6 @@ export class FeatureFlag extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getRegion(): string;
-  setRegion(value: string): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -37,7 +34,6 @@ export class FeatureFlag extends jspb.Message {
 export namespace FeatureFlag {
   export type AsObject = {
     id: string,
-    region: string,
     name: string,
     description: string,
     configJsonSchema: string,

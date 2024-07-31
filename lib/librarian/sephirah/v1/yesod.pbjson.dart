@@ -426,6 +426,55 @@ const ReadFeedItemResponse$json = {
 final $typed_data.Uint8List readFeedItemResponseDescriptor = $convert.base64Decode(
     'ChRSZWFkRmVlZEl0ZW1SZXNwb25zZQ==');
 
+@$core.Deprecated('Use pUpsertFeedRequestDescriptor instead')
+const PUpsertFeedRequest$json = {
+  '1': 'PUpsertFeedRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'data', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.Feed', '10': 'data'},
+  ],
+};
+
+/// Descriptor for `PUpsertFeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pUpsertFeedRequestDescriptor = $convert.base64Decode(
+    'ChJQVXBzZXJ0RmVlZFJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYW'
+    'xJRFICaWQSJgoEZGF0YRgCIAEoCzISLmxpYnJhcmlhbi52MS5GZWVkUgRkYXRh');
+
+@$core.Deprecated('Use pUpsertFeedResponseDescriptor instead')
+const PUpsertFeedResponse$json = {
+  '1': 'PUpsertFeedResponse',
+};
+
+/// Descriptor for `PUpsertFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pUpsertFeedResponseDescriptor = $convert.base64Decode(
+    'ChNQVXBzZXJ0RmVlZFJlc3BvbnNl');
+
+@$core.Deprecated('Use pGetFeedRequestDescriptor instead')
+const PGetFeedRequest$json = {
+  '1': 'PGetFeedRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `PGetFeedRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pGetFeedRequestDescriptor = $convert.base64Decode(
+    'Cg9QR2V0RmVlZFJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRF'
+    'ICaWQ=');
+
+@$core.Deprecated('Use pGetFeedResponseDescriptor instead')
+const PGetFeedResponse$json = {
+  '1': 'PGetFeedResponse',
+  '2': [
+    {'1': 'data', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.Feed', '10': 'data'},
+  ],
+};
+
+/// Descriptor for `PGetFeedResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pGetFeedResponseDescriptor = $convert.base64Decode(
+    'ChBQR2V0RmVlZFJlc3BvbnNlEiYKBGRhdGEYASABKAsyEi5saWJyYXJpYW4udjEuRmVlZFIEZG'
+    'F0YQ==');
+
 @$core.Deprecated('Use createFeedItemCollectionRequestDescriptor instead')
 const CreateFeedItemCollectionRequest$json = {
   '1': 'CreateFeedItemCollectionRequest',

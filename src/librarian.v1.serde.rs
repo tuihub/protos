@@ -1334,9 +1334,6 @@ impl serde::Serialize for FeatureFlag {
         if !self.id.is_empty() {
             len += 1;
         }
-        if !self.region.is_empty() {
-            len += 1;
-        }
         if !self.name.is_empty() {
             len += 1;
         }
@@ -1352,9 +1349,6 @@ impl serde::Serialize for FeatureFlag {
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeatureFlag", len)?;
         if !self.id.is_empty() {
             struct_ser.serialize_field("id", &self.id)?;
-        }
-        if !self.region.is_empty() {
-            struct_ser.serialize_field("region", &self.region)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -1379,7 +1373,6 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
     {
         const FIELDS: &[&str] = &[
             "id",
-            "region",
             "name",
             "description",
             "config_json_schema",
@@ -1391,7 +1384,6 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
-            Region,
             Name,
             Description,
             ConfigJsonSchema,
@@ -1418,7 +1410,6 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
-                            "region" => Ok(GeneratedField::Region),
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "configJsonSchema" | "config_json_schema" => Ok(GeneratedField::ConfigJsonSchema),
@@ -1443,7 +1434,6 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
-                let mut region__ = None;
                 let mut name__ = None;
                 let mut description__ = None;
                 let mut config_json_schema__ = None;
@@ -1455,12 +1445,6 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
                             id__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::Region => {
-                            if region__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("region"));
-                            }
-                            region__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -1490,7 +1474,6 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                 }
                 Ok(FeatureFlag {
                     id: id__.unwrap_or_default(),
-                    region: region__.unwrap_or_default(),
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     config_json_schema: config_json_schema__.unwrap_or_default(),

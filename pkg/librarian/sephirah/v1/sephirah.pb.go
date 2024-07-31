@@ -729,8 +729,8 @@ var file_librarian_sephirah_v1_sephirah_proto_rawDesc = []byte{
 	0x45, 0x4e, 0x45, 0x52, 0x5f, 0x43, 0x4f, 0x4e, 0x4e, 0x45, 0x43, 0x54, 0x45, 0x44, 0x10, 0x01,
 	0x12, 0x2c, 0x0a, 0x28, 0x53, 0x45, 0x52, 0x56, 0x45, 0x52, 0x5f, 0x45, 0x56, 0x45, 0x4e, 0x54,
 	0x5f, 0x53, 0x59, 0x53, 0x54, 0x45, 0x4d, 0x5f, 0x4e, 0x4f, 0x54, 0x49, 0x46, 0x49, 0x43, 0x41,
-	0x54, 0x49, 0x4f, 0x4e, 0x5f, 0x55, 0x50, 0x44, 0x41, 0x54, 0x45, 0x44, 0x10, 0x02, 0x32, 0xe0,
-	0x68, 0x0a, 0x18, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x53, 0x65, 0x70, 0x68,
+	0x54, 0x49, 0x4f, 0x4e, 0x5f, 0x55, 0x50, 0x44, 0x41, 0x54, 0x45, 0x44, 0x10, 0x02, 0x32, 0xa3,
+	0x6a, 0x0a, 0x18, 0x4c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x53, 0x65, 0x70, 0x68,
 	0x69, 0x72, 0x61, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x7f, 0x0a, 0x14, 0x47,
 	0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x72, 0x6d, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x12, 0x32, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
@@ -1550,31 +1550,43 @@ var file_librarian_sephirah_v1_sephirah_proto_rawDesc = []byte{
 	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e,
 	0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x46, 0x65, 0x65, 0x64, 0x49, 0x74, 0x65, 0x6d, 0x73,
 	0x49, 0x6e, 0x43, 0x6f, 0x6c, 0x6c, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5e, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x61,
-	0x67, 0x12, 0x27, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65,
-	0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x54, 0x61, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6c, 0x69, 0x62,
-	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e,
-	0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5e, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x61,
-	0x67, 0x12, 0x27, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65,
-	0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x54, 0x61, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x6c, 0x69, 0x62,
-	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e,
-	0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5b, 0x0a, 0x08, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x67, 0x73,
-	0x12, 0x26, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70,
-	0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x67,
-	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61,
-	0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31,
-	0x2e, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x42, 0x5d, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x74, 0x75, 0x69, 0x68, 0x75, 0x62, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x70, 0x6b,
-	0x67, 0x2f, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2f, 0x73, 0x65, 0x70, 0x68,
-	0x69, 0x72, 0x61, 0x68, 0x2f, 0x76, 0x31, 0x3b, 0x76, 0x31, 0xaa, 0x02, 0x23, 0x54, 0x75, 0x69,
-	0x48, 0x75, 0x62, 0x2e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2e, 0x4c, 0x69, 0x62, 0x72, 0x61,
-	0x72, 0x69, 0x61, 0x6e, 0x2e, 0x53, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x56, 0x31,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x64, 0x0a, 0x0b, 0x50, 0x55, 0x70, 0x73, 0x65, 0x72, 0x74, 0x46,
+	0x65, 0x65, 0x64, 0x12, 0x29, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
+	0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x55, 0x70, 0x73,
+	0x65, 0x72, 0x74, 0x46, 0x65, 0x65, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a,
+	0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69,
+	0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x55, 0x70, 0x73, 0x65, 0x72, 0x74, 0x46, 0x65,
+	0x65, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5b, 0x0a, 0x08, 0x50, 0x47,
+	0x65, 0x74, 0x46, 0x65, 0x65, 0x64, 0x12, 0x26, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
+	0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x50,
+	0x47, 0x65, 0x74, 0x46, 0x65, 0x65, 0x64, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27,
+	0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69,
+	0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x47, 0x65, 0x74, 0x46, 0x65, 0x65, 0x64, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5e, 0x0a, 0x09, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x54, 0x61, 0x67, 0x12, 0x27, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e,
+	0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e,
+	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72,
+	0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5e, 0x0a, 0x09, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x54, 0x61, 0x67, 0x12, 0x27, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e,
+	0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e,
+	0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72,
+	0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x61, 0x67, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5b, 0x0a, 0x08, 0x4c, 0x69, 0x73, 0x74, 0x54,
+	0x61, 0x67, 0x73, 0x12, 0x26, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e,
+	0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
+	0x54, 0x61, 0x67, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x6c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68,
+	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x54, 0x61, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x42, 0x5d, 0x5a, 0x35, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x74, 0x75, 0x69, 0x68, 0x75, 0x62, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73,
+	0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2f, 0x73,
+	0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2f, 0x76, 0x31, 0x3b, 0x76, 0x31, 0xaa, 0x02, 0x23,
+	0x54, 0x75, 0x69, 0x48, 0x75, 0x62, 0x2e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2e, 0x4c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x53, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68,
+	0x2e, 0x56, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1712,121 +1724,125 @@ var file_librarian_sephirah_v1_sephirah_proto_goTypes = []any{
 	(*AddFeedItemToCollectionRequest)(nil),        // 117: librarian.sephirah.v1.AddFeedItemToCollectionRequest
 	(*RemoveFeedItemFromCollectionRequest)(nil),   // 118: librarian.sephirah.v1.RemoveFeedItemFromCollectionRequest
 	(*ListFeedItemsInCollectionRequest)(nil),      // 119: librarian.sephirah.v1.ListFeedItemsInCollectionRequest
-	(*CreateTagRequest)(nil),                      // 120: librarian.sephirah.v1.CreateTagRequest
-	(*UpdateTagRequest)(nil),                      // 121: librarian.sephirah.v1.UpdateTagRequest
-	(*ListTagsRequest)(nil),                       // 122: librarian.sephirah.v1.ListTagsRequest
-	(*GetTokenResponse)(nil),                      // 123: librarian.sephirah.v1.GetTokenResponse
-	(*RefreshTokenResponse)(nil),                  // 124: librarian.sephirah.v1.RefreshTokenResponse
-	(*AcquireUserTokenResponse)(nil),              // 125: librarian.sephirah.v1.AcquireUserTokenResponse
-	(*RegisterUserResponse)(nil),                  // 126: librarian.sephirah.v1.RegisterUserResponse
-	(*RegisterDeviceResponse)(nil),                // 127: librarian.sephirah.v1.RegisterDeviceResponse
-	(*ListRegisteredDevicesResponse)(nil),         // 128: librarian.sephirah.v1.ListRegisteredDevicesResponse
-	(*ListUserSessionsResponse)(nil),              // 129: librarian.sephirah.v1.ListUserSessionsResponse
-	(*DeleteUserSessionResponse)(nil),             // 130: librarian.sephirah.v1.DeleteUserSessionResponse
-	(*CreateUserResponse)(nil),                    // 131: librarian.sephirah.v1.CreateUserResponse
-	(*UpdateUserResponse)(nil),                    // 132: librarian.sephirah.v1.UpdateUserResponse
-	(*GetUserResponse)(nil),                       // 133: librarian.sephirah.v1.GetUserResponse
-	(*ListUsersResponse)(nil),                     // 134: librarian.sephirah.v1.ListUsersResponse
-	(*LinkAccountResponse)(nil),                   // 135: librarian.sephirah.v1.LinkAccountResponse
-	(*UnLinkAccountResponse)(nil),                 // 136: librarian.sephirah.v1.UnLinkAccountResponse
-	(*ListLinkAccountsResponse)(nil),              // 137: librarian.sephirah.v1.ListLinkAccountsResponse
-	(*ListPortersResponse)(nil),                   // 138: librarian.sephirah.v1.ListPortersResponse
-	(*UpdatePorterStatusResponse)(nil),            // 139: librarian.sephirah.v1.UpdatePorterStatusResponse
-	(*CreatePorterContextResponse)(nil),           // 140: librarian.sephirah.v1.CreatePorterContextResponse
-	(*ListPorterContextsResponse)(nil),            // 141: librarian.sephirah.v1.ListPorterContextsResponse
-	(*UpdatePorterContextResponse)(nil),           // 142: librarian.sephirah.v1.UpdatePorterContextResponse
-	(*SetFileCapacityResponse)(nil),               // 143: librarian.sephirah.v1.SetFileCapacityResponse
-	(*GetFileCapacityResponse)(nil),               // 144: librarian.sephirah.v1.GetFileCapacityResponse
-	(*UploadFileResponse)(nil),                    // 145: librarian.sephirah.v1.UploadFileResponse
-	(*DownloadFileResponse)(nil),                  // 146: librarian.sephirah.v1.DownloadFileResponse
-	(*SimpleUploadFileResponse)(nil),              // 147: librarian.sephirah.v1.SimpleUploadFileResponse
-	(*SimpleDownloadFileResponse)(nil),            // 148: librarian.sephirah.v1.SimpleDownloadFileResponse
-	(*PresignedUploadFileResponse)(nil),           // 149: librarian.sephirah.v1.PresignedUploadFileResponse
-	(*PresignedUploadFileStatusResponse)(nil),     // 150: librarian.sephirah.v1.PresignedUploadFileStatusResponse
-	(*PresignedDownloadFileResponse)(nil),         // 151: librarian.sephirah.v1.PresignedDownloadFileResponse
-	(*UploadImageResponse)(nil),                   // 152: librarian.sephirah.v1.UploadImageResponse
-	(*UpdateImageResponse)(nil),                   // 153: librarian.sephirah.v1.UpdateImageResponse
-	(*ListImagesResponse)(nil),                    // 154: librarian.sephirah.v1.ListImagesResponse
-	(*SearchImagesResponse)(nil),                  // 155: librarian.sephirah.v1.SearchImagesResponse
-	(*GetImageResponse)(nil),                      // 156: librarian.sephirah.v1.GetImageResponse
-	(*DownloadImageResponse)(nil),                 // 157: librarian.sephirah.v1.DownloadImageResponse
-	(*CreateAppInfoResponse)(nil),                 // 158: librarian.sephirah.v1.CreateAppInfoResponse
-	(*UpdateAppInfoResponse)(nil),                 // 159: librarian.sephirah.v1.UpdateAppInfoResponse
-	(*ListAppInfosResponse)(nil),                  // 160: librarian.sephirah.v1.ListAppInfosResponse
-	(*MergeAppInfosResponse)(nil),                 // 161: librarian.sephirah.v1.MergeAppInfosResponse
-	(*PickAppInfoResponse)(nil),                   // 162: librarian.sephirah.v1.PickAppInfoResponse
-	(*SyncAppInfosResponse)(nil),                  // 163: librarian.sephirah.v1.SyncAppInfosResponse
-	(*SyncAccountAppInfosResponse)(nil),           // 164: librarian.sephirah.v1.SyncAccountAppInfosResponse
-	(*SearchAppInfosResponse)(nil),                // 165: librarian.sephirah.v1.SearchAppInfosResponse
-	(*SearchNewAppInfosResponse)(nil),             // 166: librarian.sephirah.v1.SearchNewAppInfosResponse
-	(*GetAppInfoResponse)(nil),                    // 167: librarian.sephirah.v1.GetAppInfoResponse
-	(*GetBoundAppInfosResponse)(nil),              // 168: librarian.sephirah.v1.GetBoundAppInfosResponse
-	(*PurchaseAppInfoResponse)(nil),               // 169: librarian.sephirah.v1.PurchaseAppInfoResponse
-	(*GetPurchasedAppInfosResponse)(nil),          // 170: librarian.sephirah.v1.GetPurchasedAppInfosResponse
-	(*CreateAppResponse)(nil),                     // 171: librarian.sephirah.v1.CreateAppResponse
-	(*UpdateAppResponse)(nil),                     // 172: librarian.sephirah.v1.UpdateAppResponse
-	(*ListAppsResponse)(nil),                      // 173: librarian.sephirah.v1.ListAppsResponse
-	(*AssignAppResponse)(nil),                     // 174: librarian.sephirah.v1.AssignAppResponse
-	(*UnAssignAppResponse)(nil),                   // 175: librarian.sephirah.v1.UnAssignAppResponse
-	(*ReportAppBinariesResponse)(nil),             // 176: librarian.sephirah.v1.ReportAppBinariesResponse
-	(*DownloadAppBinaryResponse)(nil),             // 177: librarian.sephirah.v1.DownloadAppBinaryResponse
-	(*CreateAppInstResponse)(nil),                 // 178: librarian.sephirah.v1.CreateAppInstResponse
-	(*UpdateAppInstResponse)(nil),                 // 179: librarian.sephirah.v1.UpdateAppInstResponse
-	(*ListAppInstsResponse)(nil),                  // 180: librarian.sephirah.v1.ListAppInstsResponse
-	(*AddAppInstRunTimeResponse)(nil),             // 181: librarian.sephirah.v1.AddAppInstRunTimeResponse
-	(*SumAppInstRunTimeResponse)(nil),             // 182: librarian.sephirah.v1.SumAppInstRunTimeResponse
-	(*UploadAppSaveFileResponse)(nil),             // 183: librarian.sephirah.v1.UploadAppSaveFileResponse
-	(*DownloadAppSaveFileResponse)(nil),           // 184: librarian.sephirah.v1.DownloadAppSaveFileResponse
-	(*ListAppSaveFilesResponse)(nil),              // 185: librarian.sephirah.v1.ListAppSaveFilesResponse
-	(*RemoveAppSaveFileResponse)(nil),             // 186: librarian.sephirah.v1.RemoveAppSaveFileResponse
-	(*PinAppSaveFileResponse)(nil),                // 187: librarian.sephirah.v1.PinAppSaveFileResponse
-	(*UnpinAppSaveFileResponse)(nil),              // 188: librarian.sephirah.v1.UnpinAppSaveFileResponse
-	(*SetAppSaveFileCapacityResponse)(nil),        // 189: librarian.sephirah.v1.SetAppSaveFileCapacityResponse
-	(*GetAppSaveFileCapacityResponse)(nil),        // 190: librarian.sephirah.v1.GetAppSaveFileCapacityResponse
-	(*SetAppSaveFileCapacityDefaultResponse)(nil), // 191: librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse
-	(*GetAppSaveFileCapacityDefaultResponse)(nil), // 192: librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse
-	(*CreateSharedAppSaveResponse)(nil),           // 193: librarian.sephirah.v1.CreateSharedAppSaveResponse
-	(*UpdateSharedAppSaveResponse)(nil),           // 194: librarian.sephirah.v1.UpdateSharedAppSaveResponse
-	(*ListSharedAppSavesResponse)(nil),            // 195: librarian.sephirah.v1.ListSharedAppSavesResponse
-	(*RemoveSharedAppSaveResponse)(nil),           // 196: librarian.sephirah.v1.RemoveSharedAppSaveResponse
-	(*CreateSharedAppSaveFileResponse)(nil),       // 197: librarian.sephirah.v1.CreateSharedAppSaveFileResponse
-	(*UpdateSharedAppSaveFileResponse)(nil),       // 198: librarian.sephirah.v1.UpdateSharedAppSaveFileResponse
-	(*ListSharedAppSaveFilesResponse)(nil),        // 199: librarian.sephirah.v1.ListSharedAppSaveFilesResponse
-	(*RemoveSharedAppSaveFileResponse)(nil),       // 200: librarian.sephirah.v1.RemoveSharedAppSaveFileResponse
-	(*ListAppCategoriesResponse)(nil),             // 201: librarian.sephirah.v1.ListAppCategoriesResponse
-	(*CreateAppCategoryResponse)(nil),             // 202: librarian.sephirah.v1.CreateAppCategoryResponse
-	(*UpdateAppCategoryResponse)(nil),             // 203: librarian.sephirah.v1.UpdateAppCategoryResponse
-	(*RemoveAppCategoryResponse)(nil),             // 204: librarian.sephirah.v1.RemoveAppCategoryResponse
-	(*CreateNotifyTargetResponse)(nil),            // 205: librarian.sephirah.v1.CreateNotifyTargetResponse
-	(*UpdateNotifyTargetResponse)(nil),            // 206: librarian.sephirah.v1.UpdateNotifyTargetResponse
-	(*ListNotifyTargetsResponse)(nil),             // 207: librarian.sephirah.v1.ListNotifyTargetsResponse
-	(*CreateNotifyFlowResponse)(nil),              // 208: librarian.sephirah.v1.CreateNotifyFlowResponse
-	(*UpdateNotifyFlowResponse)(nil),              // 209: librarian.sephirah.v1.UpdateNotifyFlowResponse
-	(*ListNotifyFlowsResponse)(nil),               // 210: librarian.sephirah.v1.ListNotifyFlowsResponse
-	(*ListSystemNotificationsResponse)(nil),       // 211: librarian.sephirah.v1.ListSystemNotificationsResponse
-	(*UpdateSystemNotificationResponse)(nil),      // 212: librarian.sephirah.v1.UpdateSystemNotificationResponse
-	(*CreateFeedConfigResponse)(nil),              // 213: librarian.sephirah.v1.CreateFeedConfigResponse
-	(*UpdateFeedConfigResponse)(nil),              // 214: librarian.sephirah.v1.UpdateFeedConfigResponse
-	(*ListFeedConfigsResponse)(nil),               // 215: librarian.sephirah.v1.ListFeedConfigsResponse
-	(*CreateFeedActionSetResponse)(nil),           // 216: librarian.sephirah.v1.CreateFeedActionSetResponse
-	(*UpdateFeedActionSetResponse)(nil),           // 217: librarian.sephirah.v1.UpdateFeedActionSetResponse
-	(*ListFeedActionSetsResponse)(nil),            // 218: librarian.sephirah.v1.ListFeedActionSetsResponse
-	(*ListFeedCategoriesResponse)(nil),            // 219: librarian.sephirah.v1.ListFeedCategoriesResponse
-	(*ListFeedPlatformsResponse)(nil),             // 220: librarian.sephirah.v1.ListFeedPlatformsResponse
-	(*ListFeedItemsResponse)(nil),                 // 221: librarian.sephirah.v1.ListFeedItemsResponse
-	(*GroupFeedItemsResponse)(nil),                // 222: librarian.sephirah.v1.GroupFeedItemsResponse
-	(*GetFeedItemResponse)(nil),                   // 223: librarian.sephirah.v1.GetFeedItemResponse
-	(*GetBatchFeedItemsResponse)(nil),             // 224: librarian.sephirah.v1.GetBatchFeedItemsResponse
-	(*ReadFeedItemResponse)(nil),                  // 225: librarian.sephirah.v1.ReadFeedItemResponse
-	(*CreateFeedItemCollectionResponse)(nil),      // 226: librarian.sephirah.v1.CreateFeedItemCollectionResponse
-	(*UpdateFeedItemCollectionResponse)(nil),      // 227: librarian.sephirah.v1.UpdateFeedItemCollectionResponse
-	(*ListFeedItemCollectionsResponse)(nil),       // 228: librarian.sephirah.v1.ListFeedItemCollectionsResponse
-	(*AddFeedItemToCollectionResponse)(nil),       // 229: librarian.sephirah.v1.AddFeedItemToCollectionResponse
-	(*RemoveFeedItemFromCollectionResponse)(nil),  // 230: librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse
-	(*ListFeedItemsInCollectionResponse)(nil),     // 231: librarian.sephirah.v1.ListFeedItemsInCollectionResponse
-	(*CreateTagResponse)(nil),                     // 232: librarian.sephirah.v1.CreateTagResponse
-	(*UpdateTagResponse)(nil),                     // 233: librarian.sephirah.v1.UpdateTagResponse
-	(*ListTagsResponse)(nil),                      // 234: librarian.sephirah.v1.ListTagsResponse
+	(*PUpsertFeedRequest)(nil),                    // 120: librarian.sephirah.v1.PUpsertFeedRequest
+	(*PGetFeedRequest)(nil),                       // 121: librarian.sephirah.v1.PGetFeedRequest
+	(*CreateTagRequest)(nil),                      // 122: librarian.sephirah.v1.CreateTagRequest
+	(*UpdateTagRequest)(nil),                      // 123: librarian.sephirah.v1.UpdateTagRequest
+	(*ListTagsRequest)(nil),                       // 124: librarian.sephirah.v1.ListTagsRequest
+	(*GetTokenResponse)(nil),                      // 125: librarian.sephirah.v1.GetTokenResponse
+	(*RefreshTokenResponse)(nil),                  // 126: librarian.sephirah.v1.RefreshTokenResponse
+	(*AcquireUserTokenResponse)(nil),              // 127: librarian.sephirah.v1.AcquireUserTokenResponse
+	(*RegisterUserResponse)(nil),                  // 128: librarian.sephirah.v1.RegisterUserResponse
+	(*RegisterDeviceResponse)(nil),                // 129: librarian.sephirah.v1.RegisterDeviceResponse
+	(*ListRegisteredDevicesResponse)(nil),         // 130: librarian.sephirah.v1.ListRegisteredDevicesResponse
+	(*ListUserSessionsResponse)(nil),              // 131: librarian.sephirah.v1.ListUserSessionsResponse
+	(*DeleteUserSessionResponse)(nil),             // 132: librarian.sephirah.v1.DeleteUserSessionResponse
+	(*CreateUserResponse)(nil),                    // 133: librarian.sephirah.v1.CreateUserResponse
+	(*UpdateUserResponse)(nil),                    // 134: librarian.sephirah.v1.UpdateUserResponse
+	(*GetUserResponse)(nil),                       // 135: librarian.sephirah.v1.GetUserResponse
+	(*ListUsersResponse)(nil),                     // 136: librarian.sephirah.v1.ListUsersResponse
+	(*LinkAccountResponse)(nil),                   // 137: librarian.sephirah.v1.LinkAccountResponse
+	(*UnLinkAccountResponse)(nil),                 // 138: librarian.sephirah.v1.UnLinkAccountResponse
+	(*ListLinkAccountsResponse)(nil),              // 139: librarian.sephirah.v1.ListLinkAccountsResponse
+	(*ListPortersResponse)(nil),                   // 140: librarian.sephirah.v1.ListPortersResponse
+	(*UpdatePorterStatusResponse)(nil),            // 141: librarian.sephirah.v1.UpdatePorterStatusResponse
+	(*CreatePorterContextResponse)(nil),           // 142: librarian.sephirah.v1.CreatePorterContextResponse
+	(*ListPorterContextsResponse)(nil),            // 143: librarian.sephirah.v1.ListPorterContextsResponse
+	(*UpdatePorterContextResponse)(nil),           // 144: librarian.sephirah.v1.UpdatePorterContextResponse
+	(*SetFileCapacityResponse)(nil),               // 145: librarian.sephirah.v1.SetFileCapacityResponse
+	(*GetFileCapacityResponse)(nil),               // 146: librarian.sephirah.v1.GetFileCapacityResponse
+	(*UploadFileResponse)(nil),                    // 147: librarian.sephirah.v1.UploadFileResponse
+	(*DownloadFileResponse)(nil),                  // 148: librarian.sephirah.v1.DownloadFileResponse
+	(*SimpleUploadFileResponse)(nil),              // 149: librarian.sephirah.v1.SimpleUploadFileResponse
+	(*SimpleDownloadFileResponse)(nil),            // 150: librarian.sephirah.v1.SimpleDownloadFileResponse
+	(*PresignedUploadFileResponse)(nil),           // 151: librarian.sephirah.v1.PresignedUploadFileResponse
+	(*PresignedUploadFileStatusResponse)(nil),     // 152: librarian.sephirah.v1.PresignedUploadFileStatusResponse
+	(*PresignedDownloadFileResponse)(nil),         // 153: librarian.sephirah.v1.PresignedDownloadFileResponse
+	(*UploadImageResponse)(nil),                   // 154: librarian.sephirah.v1.UploadImageResponse
+	(*UpdateImageResponse)(nil),                   // 155: librarian.sephirah.v1.UpdateImageResponse
+	(*ListImagesResponse)(nil),                    // 156: librarian.sephirah.v1.ListImagesResponse
+	(*SearchImagesResponse)(nil),                  // 157: librarian.sephirah.v1.SearchImagesResponse
+	(*GetImageResponse)(nil),                      // 158: librarian.sephirah.v1.GetImageResponse
+	(*DownloadImageResponse)(nil),                 // 159: librarian.sephirah.v1.DownloadImageResponse
+	(*CreateAppInfoResponse)(nil),                 // 160: librarian.sephirah.v1.CreateAppInfoResponse
+	(*UpdateAppInfoResponse)(nil),                 // 161: librarian.sephirah.v1.UpdateAppInfoResponse
+	(*ListAppInfosResponse)(nil),                  // 162: librarian.sephirah.v1.ListAppInfosResponse
+	(*MergeAppInfosResponse)(nil),                 // 163: librarian.sephirah.v1.MergeAppInfosResponse
+	(*PickAppInfoResponse)(nil),                   // 164: librarian.sephirah.v1.PickAppInfoResponse
+	(*SyncAppInfosResponse)(nil),                  // 165: librarian.sephirah.v1.SyncAppInfosResponse
+	(*SyncAccountAppInfosResponse)(nil),           // 166: librarian.sephirah.v1.SyncAccountAppInfosResponse
+	(*SearchAppInfosResponse)(nil),                // 167: librarian.sephirah.v1.SearchAppInfosResponse
+	(*SearchNewAppInfosResponse)(nil),             // 168: librarian.sephirah.v1.SearchNewAppInfosResponse
+	(*GetAppInfoResponse)(nil),                    // 169: librarian.sephirah.v1.GetAppInfoResponse
+	(*GetBoundAppInfosResponse)(nil),              // 170: librarian.sephirah.v1.GetBoundAppInfosResponse
+	(*PurchaseAppInfoResponse)(nil),               // 171: librarian.sephirah.v1.PurchaseAppInfoResponse
+	(*GetPurchasedAppInfosResponse)(nil),          // 172: librarian.sephirah.v1.GetPurchasedAppInfosResponse
+	(*CreateAppResponse)(nil),                     // 173: librarian.sephirah.v1.CreateAppResponse
+	(*UpdateAppResponse)(nil),                     // 174: librarian.sephirah.v1.UpdateAppResponse
+	(*ListAppsResponse)(nil),                      // 175: librarian.sephirah.v1.ListAppsResponse
+	(*AssignAppResponse)(nil),                     // 176: librarian.sephirah.v1.AssignAppResponse
+	(*UnAssignAppResponse)(nil),                   // 177: librarian.sephirah.v1.UnAssignAppResponse
+	(*ReportAppBinariesResponse)(nil),             // 178: librarian.sephirah.v1.ReportAppBinariesResponse
+	(*DownloadAppBinaryResponse)(nil),             // 179: librarian.sephirah.v1.DownloadAppBinaryResponse
+	(*CreateAppInstResponse)(nil),                 // 180: librarian.sephirah.v1.CreateAppInstResponse
+	(*UpdateAppInstResponse)(nil),                 // 181: librarian.sephirah.v1.UpdateAppInstResponse
+	(*ListAppInstsResponse)(nil),                  // 182: librarian.sephirah.v1.ListAppInstsResponse
+	(*AddAppInstRunTimeResponse)(nil),             // 183: librarian.sephirah.v1.AddAppInstRunTimeResponse
+	(*SumAppInstRunTimeResponse)(nil),             // 184: librarian.sephirah.v1.SumAppInstRunTimeResponse
+	(*UploadAppSaveFileResponse)(nil),             // 185: librarian.sephirah.v1.UploadAppSaveFileResponse
+	(*DownloadAppSaveFileResponse)(nil),           // 186: librarian.sephirah.v1.DownloadAppSaveFileResponse
+	(*ListAppSaveFilesResponse)(nil),              // 187: librarian.sephirah.v1.ListAppSaveFilesResponse
+	(*RemoveAppSaveFileResponse)(nil),             // 188: librarian.sephirah.v1.RemoveAppSaveFileResponse
+	(*PinAppSaveFileResponse)(nil),                // 189: librarian.sephirah.v1.PinAppSaveFileResponse
+	(*UnpinAppSaveFileResponse)(nil),              // 190: librarian.sephirah.v1.UnpinAppSaveFileResponse
+	(*SetAppSaveFileCapacityResponse)(nil),        // 191: librarian.sephirah.v1.SetAppSaveFileCapacityResponse
+	(*GetAppSaveFileCapacityResponse)(nil),        // 192: librarian.sephirah.v1.GetAppSaveFileCapacityResponse
+	(*SetAppSaveFileCapacityDefaultResponse)(nil), // 193: librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse
+	(*GetAppSaveFileCapacityDefaultResponse)(nil), // 194: librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse
+	(*CreateSharedAppSaveResponse)(nil),           // 195: librarian.sephirah.v1.CreateSharedAppSaveResponse
+	(*UpdateSharedAppSaveResponse)(nil),           // 196: librarian.sephirah.v1.UpdateSharedAppSaveResponse
+	(*ListSharedAppSavesResponse)(nil),            // 197: librarian.sephirah.v1.ListSharedAppSavesResponse
+	(*RemoveSharedAppSaveResponse)(nil),           // 198: librarian.sephirah.v1.RemoveSharedAppSaveResponse
+	(*CreateSharedAppSaveFileResponse)(nil),       // 199: librarian.sephirah.v1.CreateSharedAppSaveFileResponse
+	(*UpdateSharedAppSaveFileResponse)(nil),       // 200: librarian.sephirah.v1.UpdateSharedAppSaveFileResponse
+	(*ListSharedAppSaveFilesResponse)(nil),        // 201: librarian.sephirah.v1.ListSharedAppSaveFilesResponse
+	(*RemoveSharedAppSaveFileResponse)(nil),       // 202: librarian.sephirah.v1.RemoveSharedAppSaveFileResponse
+	(*ListAppCategoriesResponse)(nil),             // 203: librarian.sephirah.v1.ListAppCategoriesResponse
+	(*CreateAppCategoryResponse)(nil),             // 204: librarian.sephirah.v1.CreateAppCategoryResponse
+	(*UpdateAppCategoryResponse)(nil),             // 205: librarian.sephirah.v1.UpdateAppCategoryResponse
+	(*RemoveAppCategoryResponse)(nil),             // 206: librarian.sephirah.v1.RemoveAppCategoryResponse
+	(*CreateNotifyTargetResponse)(nil),            // 207: librarian.sephirah.v1.CreateNotifyTargetResponse
+	(*UpdateNotifyTargetResponse)(nil),            // 208: librarian.sephirah.v1.UpdateNotifyTargetResponse
+	(*ListNotifyTargetsResponse)(nil),             // 209: librarian.sephirah.v1.ListNotifyTargetsResponse
+	(*CreateNotifyFlowResponse)(nil),              // 210: librarian.sephirah.v1.CreateNotifyFlowResponse
+	(*UpdateNotifyFlowResponse)(nil),              // 211: librarian.sephirah.v1.UpdateNotifyFlowResponse
+	(*ListNotifyFlowsResponse)(nil),               // 212: librarian.sephirah.v1.ListNotifyFlowsResponse
+	(*ListSystemNotificationsResponse)(nil),       // 213: librarian.sephirah.v1.ListSystemNotificationsResponse
+	(*UpdateSystemNotificationResponse)(nil),      // 214: librarian.sephirah.v1.UpdateSystemNotificationResponse
+	(*CreateFeedConfigResponse)(nil),              // 215: librarian.sephirah.v1.CreateFeedConfigResponse
+	(*UpdateFeedConfigResponse)(nil),              // 216: librarian.sephirah.v1.UpdateFeedConfigResponse
+	(*ListFeedConfigsResponse)(nil),               // 217: librarian.sephirah.v1.ListFeedConfigsResponse
+	(*CreateFeedActionSetResponse)(nil),           // 218: librarian.sephirah.v1.CreateFeedActionSetResponse
+	(*UpdateFeedActionSetResponse)(nil),           // 219: librarian.sephirah.v1.UpdateFeedActionSetResponse
+	(*ListFeedActionSetsResponse)(nil),            // 220: librarian.sephirah.v1.ListFeedActionSetsResponse
+	(*ListFeedCategoriesResponse)(nil),            // 221: librarian.sephirah.v1.ListFeedCategoriesResponse
+	(*ListFeedPlatformsResponse)(nil),             // 222: librarian.sephirah.v1.ListFeedPlatformsResponse
+	(*ListFeedItemsResponse)(nil),                 // 223: librarian.sephirah.v1.ListFeedItemsResponse
+	(*GroupFeedItemsResponse)(nil),                // 224: librarian.sephirah.v1.GroupFeedItemsResponse
+	(*GetFeedItemResponse)(nil),                   // 225: librarian.sephirah.v1.GetFeedItemResponse
+	(*GetBatchFeedItemsResponse)(nil),             // 226: librarian.sephirah.v1.GetBatchFeedItemsResponse
+	(*ReadFeedItemResponse)(nil),                  // 227: librarian.sephirah.v1.ReadFeedItemResponse
+	(*CreateFeedItemCollectionResponse)(nil),      // 228: librarian.sephirah.v1.CreateFeedItemCollectionResponse
+	(*UpdateFeedItemCollectionResponse)(nil),      // 229: librarian.sephirah.v1.UpdateFeedItemCollectionResponse
+	(*ListFeedItemCollectionsResponse)(nil),       // 230: librarian.sephirah.v1.ListFeedItemCollectionsResponse
+	(*AddFeedItemToCollectionResponse)(nil),       // 231: librarian.sephirah.v1.AddFeedItemToCollectionResponse
+	(*RemoveFeedItemFromCollectionResponse)(nil),  // 232: librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse
+	(*ListFeedItemsInCollectionResponse)(nil),     // 233: librarian.sephirah.v1.ListFeedItemsInCollectionResponse
+	(*PUpsertFeedResponse)(nil),                   // 234: librarian.sephirah.v1.PUpsertFeedResponse
+	(*PGetFeedResponse)(nil),                      // 235: librarian.sephirah.v1.PGetFeedResponse
+	(*CreateTagResponse)(nil),                     // 236: librarian.sephirah.v1.CreateTagResponse
+	(*UpdateTagResponse)(nil),                     // 237: librarian.sephirah.v1.UpdateTagResponse
+	(*ListTagsResponse)(nil),                      // 238: librarian.sephirah.v1.ListTagsResponse
 }
 var file_librarian_sephirah_v1_sephirah_proto_depIdxs = []int32{
 	3,   // 0: librarian.sephirah.v1.GetServerInformationResponse.server_binary_summary:type_name -> librarian.sephirah.v1.ServerBinarySummary
@@ -1952,125 +1968,129 @@ var file_librarian_sephirah_v1_sephirah_proto_depIdxs = []int32{
 	117, // 120: librarian.sephirah.v1.LibrarianSephirahService.AddFeedItemToCollection:input_type -> librarian.sephirah.v1.AddFeedItemToCollectionRequest
 	118, // 121: librarian.sephirah.v1.LibrarianSephirahService.RemoveFeedItemFromCollection:input_type -> librarian.sephirah.v1.RemoveFeedItemFromCollectionRequest
 	119, // 122: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemsInCollection:input_type -> librarian.sephirah.v1.ListFeedItemsInCollectionRequest
-	120, // 123: librarian.sephirah.v1.LibrarianSephirahService.CreateTag:input_type -> librarian.sephirah.v1.CreateTagRequest
-	121, // 124: librarian.sephirah.v1.LibrarianSephirahService.UpdateTag:input_type -> librarian.sephirah.v1.UpdateTagRequest
-	122, // 125: librarian.sephirah.v1.LibrarianSephirahService.ListTags:input_type -> librarian.sephirah.v1.ListTagsRequest
-	2,   // 126: librarian.sephirah.v1.LibrarianSephirahService.GetServerInformation:output_type -> librarian.sephirah.v1.GetServerInformationResponse
-	8,   // 127: librarian.sephirah.v1.LibrarianSephirahService.ListenServerEvent:output_type -> librarian.sephirah.v1.ListenServerEventResponse
-	123, // 128: librarian.sephirah.v1.LibrarianSephirahService.GetToken:output_type -> librarian.sephirah.v1.GetTokenResponse
-	124, // 129: librarian.sephirah.v1.LibrarianSephirahService.RefreshToken:output_type -> librarian.sephirah.v1.RefreshTokenResponse
-	125, // 130: librarian.sephirah.v1.LibrarianSephirahService.AcquireUserToken:output_type -> librarian.sephirah.v1.AcquireUserTokenResponse
-	126, // 131: librarian.sephirah.v1.LibrarianSephirahService.RegisterUser:output_type -> librarian.sephirah.v1.RegisterUserResponse
-	127, // 132: librarian.sephirah.v1.LibrarianSephirahService.RegisterDevice:output_type -> librarian.sephirah.v1.RegisterDeviceResponse
-	128, // 133: librarian.sephirah.v1.LibrarianSephirahService.ListRegisteredDevices:output_type -> librarian.sephirah.v1.ListRegisteredDevicesResponse
-	129, // 134: librarian.sephirah.v1.LibrarianSephirahService.ListUserSessions:output_type -> librarian.sephirah.v1.ListUserSessionsResponse
-	130, // 135: librarian.sephirah.v1.LibrarianSephirahService.DeleteUserSession:output_type -> librarian.sephirah.v1.DeleteUserSessionResponse
-	131, // 136: librarian.sephirah.v1.LibrarianSephirahService.CreateUser:output_type -> librarian.sephirah.v1.CreateUserResponse
-	132, // 137: librarian.sephirah.v1.LibrarianSephirahService.UpdateUser:output_type -> librarian.sephirah.v1.UpdateUserResponse
-	133, // 138: librarian.sephirah.v1.LibrarianSephirahService.GetUser:output_type -> librarian.sephirah.v1.GetUserResponse
-	134, // 139: librarian.sephirah.v1.LibrarianSephirahService.ListUsers:output_type -> librarian.sephirah.v1.ListUsersResponse
-	135, // 140: librarian.sephirah.v1.LibrarianSephirahService.LinkAccount:output_type -> librarian.sephirah.v1.LinkAccountResponse
-	136, // 141: librarian.sephirah.v1.LibrarianSephirahService.UnLinkAccount:output_type -> librarian.sephirah.v1.UnLinkAccountResponse
-	137, // 142: librarian.sephirah.v1.LibrarianSephirahService.ListLinkAccounts:output_type -> librarian.sephirah.v1.ListLinkAccountsResponse
-	138, // 143: librarian.sephirah.v1.LibrarianSephirahService.ListPorters:output_type -> librarian.sephirah.v1.ListPortersResponse
-	139, // 144: librarian.sephirah.v1.LibrarianSephirahService.UpdatePorterStatus:output_type -> librarian.sephirah.v1.UpdatePorterStatusResponse
-	140, // 145: librarian.sephirah.v1.LibrarianSephirahService.CreatePorterContext:output_type -> librarian.sephirah.v1.CreatePorterContextResponse
-	141, // 146: librarian.sephirah.v1.LibrarianSephirahService.ListPorterContexts:output_type -> librarian.sephirah.v1.ListPorterContextsResponse
-	142, // 147: librarian.sephirah.v1.LibrarianSephirahService.UpdatePorterContext:output_type -> librarian.sephirah.v1.UpdatePorterContextResponse
-	143, // 148: librarian.sephirah.v1.LibrarianSephirahService.SetFileCapacity:output_type -> librarian.sephirah.v1.SetFileCapacityResponse
-	144, // 149: librarian.sephirah.v1.LibrarianSephirahService.GetFileCapacity:output_type -> librarian.sephirah.v1.GetFileCapacityResponse
-	145, // 150: librarian.sephirah.v1.LibrarianSephirahService.UploadFile:output_type -> librarian.sephirah.v1.UploadFileResponse
-	146, // 151: librarian.sephirah.v1.LibrarianSephirahService.DownloadFile:output_type -> librarian.sephirah.v1.DownloadFileResponse
-	147, // 152: librarian.sephirah.v1.LibrarianSephirahService.SimpleUploadFile:output_type -> librarian.sephirah.v1.SimpleUploadFileResponse
-	148, // 153: librarian.sephirah.v1.LibrarianSephirahService.SimpleDownloadFile:output_type -> librarian.sephirah.v1.SimpleDownloadFileResponse
-	149, // 154: librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFile:output_type -> librarian.sephirah.v1.PresignedUploadFileResponse
-	150, // 155: librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFileStatus:output_type -> librarian.sephirah.v1.PresignedUploadFileStatusResponse
-	151, // 156: librarian.sephirah.v1.LibrarianSephirahService.PresignedDownloadFile:output_type -> librarian.sephirah.v1.PresignedDownloadFileResponse
-	152, // 157: librarian.sephirah.v1.LibrarianSephirahService.UploadImage:output_type -> librarian.sephirah.v1.UploadImageResponse
-	153, // 158: librarian.sephirah.v1.LibrarianSephirahService.UpdateImage:output_type -> librarian.sephirah.v1.UpdateImageResponse
-	154, // 159: librarian.sephirah.v1.LibrarianSephirahService.ListImages:output_type -> librarian.sephirah.v1.ListImagesResponse
-	155, // 160: librarian.sephirah.v1.LibrarianSephirahService.SearchImages:output_type -> librarian.sephirah.v1.SearchImagesResponse
-	156, // 161: librarian.sephirah.v1.LibrarianSephirahService.GetImage:output_type -> librarian.sephirah.v1.GetImageResponse
-	157, // 162: librarian.sephirah.v1.LibrarianSephirahService.DownloadImage:output_type -> librarian.sephirah.v1.DownloadImageResponse
-	158, // 163: librarian.sephirah.v1.LibrarianSephirahService.CreateAppInfo:output_type -> librarian.sephirah.v1.CreateAppInfoResponse
-	159, // 164: librarian.sephirah.v1.LibrarianSephirahService.UpdateAppInfo:output_type -> librarian.sephirah.v1.UpdateAppInfoResponse
-	160, // 165: librarian.sephirah.v1.LibrarianSephirahService.ListAppInfos:output_type -> librarian.sephirah.v1.ListAppInfosResponse
-	161, // 166: librarian.sephirah.v1.LibrarianSephirahService.MergeAppInfos:output_type -> librarian.sephirah.v1.MergeAppInfosResponse
-	162, // 167: librarian.sephirah.v1.LibrarianSephirahService.PickAppInfo:output_type -> librarian.sephirah.v1.PickAppInfoResponse
-	163, // 168: librarian.sephirah.v1.LibrarianSephirahService.SyncAppInfos:output_type -> librarian.sephirah.v1.SyncAppInfosResponse
-	164, // 169: librarian.sephirah.v1.LibrarianSephirahService.SyncAccountAppInfos:output_type -> librarian.sephirah.v1.SyncAccountAppInfosResponse
-	165, // 170: librarian.sephirah.v1.LibrarianSephirahService.SearchAppInfos:output_type -> librarian.sephirah.v1.SearchAppInfosResponse
-	166, // 171: librarian.sephirah.v1.LibrarianSephirahService.SearchNewAppInfos:output_type -> librarian.sephirah.v1.SearchNewAppInfosResponse
-	167, // 172: librarian.sephirah.v1.LibrarianSephirahService.GetAppInfo:output_type -> librarian.sephirah.v1.GetAppInfoResponse
-	168, // 173: librarian.sephirah.v1.LibrarianSephirahService.GetBoundAppInfos:output_type -> librarian.sephirah.v1.GetBoundAppInfosResponse
-	169, // 174: librarian.sephirah.v1.LibrarianSephirahService.PurchaseAppInfo:output_type -> librarian.sephirah.v1.PurchaseAppInfoResponse
-	170, // 175: librarian.sephirah.v1.LibrarianSephirahService.GetPurchasedAppInfos:output_type -> librarian.sephirah.v1.GetPurchasedAppInfosResponse
-	171, // 176: librarian.sephirah.v1.LibrarianSephirahService.CreateApp:output_type -> librarian.sephirah.v1.CreateAppResponse
-	172, // 177: librarian.sephirah.v1.LibrarianSephirahService.UpdateApp:output_type -> librarian.sephirah.v1.UpdateAppResponse
-	173, // 178: librarian.sephirah.v1.LibrarianSephirahService.ListApps:output_type -> librarian.sephirah.v1.ListAppsResponse
-	174, // 179: librarian.sephirah.v1.LibrarianSephirahService.AssignApp:output_type -> librarian.sephirah.v1.AssignAppResponse
-	175, // 180: librarian.sephirah.v1.LibrarianSephirahService.UnAssignApp:output_type -> librarian.sephirah.v1.UnAssignAppResponse
-	176, // 181: librarian.sephirah.v1.LibrarianSephirahService.ReportAppBinaries:output_type -> librarian.sephirah.v1.ReportAppBinariesResponse
-	177, // 182: librarian.sephirah.v1.LibrarianSephirahService.DownloadAppBinary:output_type -> librarian.sephirah.v1.DownloadAppBinaryResponse
-	178, // 183: librarian.sephirah.v1.LibrarianSephirahService.CreateAppInst:output_type -> librarian.sephirah.v1.CreateAppInstResponse
-	179, // 184: librarian.sephirah.v1.LibrarianSephirahService.UpdateAppInst:output_type -> librarian.sephirah.v1.UpdateAppInstResponse
-	180, // 185: librarian.sephirah.v1.LibrarianSephirahService.ListAppInsts:output_type -> librarian.sephirah.v1.ListAppInstsResponse
-	181, // 186: librarian.sephirah.v1.LibrarianSephirahService.AddAppInstRunTime:output_type -> librarian.sephirah.v1.AddAppInstRunTimeResponse
-	182, // 187: librarian.sephirah.v1.LibrarianSephirahService.SumAppInstRunTime:output_type -> librarian.sephirah.v1.SumAppInstRunTimeResponse
-	183, // 188: librarian.sephirah.v1.LibrarianSephirahService.UploadAppSaveFile:output_type -> librarian.sephirah.v1.UploadAppSaveFileResponse
-	184, // 189: librarian.sephirah.v1.LibrarianSephirahService.DownloadAppSaveFile:output_type -> librarian.sephirah.v1.DownloadAppSaveFileResponse
-	185, // 190: librarian.sephirah.v1.LibrarianSephirahService.ListAppSaveFiles:output_type -> librarian.sephirah.v1.ListAppSaveFilesResponse
-	186, // 191: librarian.sephirah.v1.LibrarianSephirahService.RemoveAppSaveFile:output_type -> librarian.sephirah.v1.RemoveAppSaveFileResponse
-	187, // 192: librarian.sephirah.v1.LibrarianSephirahService.PinAppSaveFile:output_type -> librarian.sephirah.v1.PinAppSaveFileResponse
-	188, // 193: librarian.sephirah.v1.LibrarianSephirahService.UnpinAppSaveFile:output_type -> librarian.sephirah.v1.UnpinAppSaveFileResponse
-	189, // 194: librarian.sephirah.v1.LibrarianSephirahService.SetAppSaveFileCapacity:output_type -> librarian.sephirah.v1.SetAppSaveFileCapacityResponse
-	190, // 195: librarian.sephirah.v1.LibrarianSephirahService.GetAppSaveFileCapacity:output_type -> librarian.sephirah.v1.GetAppSaveFileCapacityResponse
-	191, // 196: librarian.sephirah.v1.LibrarianSephirahService.SetAppSaveFileCapacityDefault:output_type -> librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse
-	192, // 197: librarian.sephirah.v1.LibrarianSephirahService.GetAppSaveFileCapacityDefault:output_type -> librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse
-	193, // 198: librarian.sephirah.v1.LibrarianSephirahService.CreateSharedAppSave:output_type -> librarian.sephirah.v1.CreateSharedAppSaveResponse
-	194, // 199: librarian.sephirah.v1.LibrarianSephirahService.UpdateSharedAppSave:output_type -> librarian.sephirah.v1.UpdateSharedAppSaveResponse
-	195, // 200: librarian.sephirah.v1.LibrarianSephirahService.ListSharedAppSaves:output_type -> librarian.sephirah.v1.ListSharedAppSavesResponse
-	196, // 201: librarian.sephirah.v1.LibrarianSephirahService.RemoveSharedAppSave:output_type -> librarian.sephirah.v1.RemoveSharedAppSaveResponse
-	197, // 202: librarian.sephirah.v1.LibrarianSephirahService.CreateSharedAppSaveFile:output_type -> librarian.sephirah.v1.CreateSharedAppSaveFileResponse
-	198, // 203: librarian.sephirah.v1.LibrarianSephirahService.UpdateSharedAppSaveFile:output_type -> librarian.sephirah.v1.UpdateSharedAppSaveFileResponse
-	199, // 204: librarian.sephirah.v1.LibrarianSephirahService.ListSharedAppSaveFiles:output_type -> librarian.sephirah.v1.ListSharedAppSaveFilesResponse
-	200, // 205: librarian.sephirah.v1.LibrarianSephirahService.RemoveSharedAppSaveFile:output_type -> librarian.sephirah.v1.RemoveSharedAppSaveFileResponse
-	201, // 206: librarian.sephirah.v1.LibrarianSephirahService.ListAppCategories:output_type -> librarian.sephirah.v1.ListAppCategoriesResponse
-	202, // 207: librarian.sephirah.v1.LibrarianSephirahService.CreateAppCategory:output_type -> librarian.sephirah.v1.CreateAppCategoryResponse
-	203, // 208: librarian.sephirah.v1.LibrarianSephirahService.UpdateAppCategory:output_type -> librarian.sephirah.v1.UpdateAppCategoryResponse
-	204, // 209: librarian.sephirah.v1.LibrarianSephirahService.RemoveAppCategory:output_type -> librarian.sephirah.v1.RemoveAppCategoryResponse
-	205, // 210: librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyTarget:output_type -> librarian.sephirah.v1.CreateNotifyTargetResponse
-	206, // 211: librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyTarget:output_type -> librarian.sephirah.v1.UpdateNotifyTargetResponse
-	207, // 212: librarian.sephirah.v1.LibrarianSephirahService.ListNotifyTargets:output_type -> librarian.sephirah.v1.ListNotifyTargetsResponse
-	208, // 213: librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyFlow:output_type -> librarian.sephirah.v1.CreateNotifyFlowResponse
-	209, // 214: librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyFlow:output_type -> librarian.sephirah.v1.UpdateNotifyFlowResponse
-	210, // 215: librarian.sephirah.v1.LibrarianSephirahService.ListNotifyFlows:output_type -> librarian.sephirah.v1.ListNotifyFlowsResponse
-	211, // 216: librarian.sephirah.v1.LibrarianSephirahService.ListSystemNotifications:output_type -> librarian.sephirah.v1.ListSystemNotificationsResponse
-	212, // 217: librarian.sephirah.v1.LibrarianSephirahService.UpdateSystemNotification:output_type -> librarian.sephirah.v1.UpdateSystemNotificationResponse
-	213, // 218: librarian.sephirah.v1.LibrarianSephirahService.CreateFeedConfig:output_type -> librarian.sephirah.v1.CreateFeedConfigResponse
-	214, // 219: librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedConfig:output_type -> librarian.sephirah.v1.UpdateFeedConfigResponse
-	215, // 220: librarian.sephirah.v1.LibrarianSephirahService.ListFeedConfigs:output_type -> librarian.sephirah.v1.ListFeedConfigsResponse
-	216, // 221: librarian.sephirah.v1.LibrarianSephirahService.CreateFeedActionSet:output_type -> librarian.sephirah.v1.CreateFeedActionSetResponse
-	217, // 222: librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedActionSet:output_type -> librarian.sephirah.v1.UpdateFeedActionSetResponse
-	218, // 223: librarian.sephirah.v1.LibrarianSephirahService.ListFeedActionSets:output_type -> librarian.sephirah.v1.ListFeedActionSetsResponse
-	219, // 224: librarian.sephirah.v1.LibrarianSephirahService.ListFeedCategories:output_type -> librarian.sephirah.v1.ListFeedCategoriesResponse
-	220, // 225: librarian.sephirah.v1.LibrarianSephirahService.ListFeedPlatforms:output_type -> librarian.sephirah.v1.ListFeedPlatformsResponse
-	221, // 226: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItems:output_type -> librarian.sephirah.v1.ListFeedItemsResponse
-	222, // 227: librarian.sephirah.v1.LibrarianSephirahService.GroupFeedItems:output_type -> librarian.sephirah.v1.GroupFeedItemsResponse
-	223, // 228: librarian.sephirah.v1.LibrarianSephirahService.GetFeedItem:output_type -> librarian.sephirah.v1.GetFeedItemResponse
-	224, // 229: librarian.sephirah.v1.LibrarianSephirahService.GetBatchFeedItems:output_type -> librarian.sephirah.v1.GetBatchFeedItemsResponse
-	225, // 230: librarian.sephirah.v1.LibrarianSephirahService.ReadFeedItem:output_type -> librarian.sephirah.v1.ReadFeedItemResponse
-	226, // 231: librarian.sephirah.v1.LibrarianSephirahService.CreateFeedItemCollection:output_type -> librarian.sephirah.v1.CreateFeedItemCollectionResponse
-	227, // 232: librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedItemCollection:output_type -> librarian.sephirah.v1.UpdateFeedItemCollectionResponse
-	228, // 233: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemCollections:output_type -> librarian.sephirah.v1.ListFeedItemCollectionsResponse
-	229, // 234: librarian.sephirah.v1.LibrarianSephirahService.AddFeedItemToCollection:output_type -> librarian.sephirah.v1.AddFeedItemToCollectionResponse
-	230, // 235: librarian.sephirah.v1.LibrarianSephirahService.RemoveFeedItemFromCollection:output_type -> librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse
-	231, // 236: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemsInCollection:output_type -> librarian.sephirah.v1.ListFeedItemsInCollectionResponse
-	232, // 237: librarian.sephirah.v1.LibrarianSephirahService.CreateTag:output_type -> librarian.sephirah.v1.CreateTagResponse
-	233, // 238: librarian.sephirah.v1.LibrarianSephirahService.UpdateTag:output_type -> librarian.sephirah.v1.UpdateTagResponse
-	234, // 239: librarian.sephirah.v1.LibrarianSephirahService.ListTags:output_type -> librarian.sephirah.v1.ListTagsResponse
-	126, // [126:240] is the sub-list for method output_type
-	12,  // [12:126] is the sub-list for method input_type
+	120, // 123: librarian.sephirah.v1.LibrarianSephirahService.PUpsertFeed:input_type -> librarian.sephirah.v1.PUpsertFeedRequest
+	121, // 124: librarian.sephirah.v1.LibrarianSephirahService.PGetFeed:input_type -> librarian.sephirah.v1.PGetFeedRequest
+	122, // 125: librarian.sephirah.v1.LibrarianSephirahService.CreateTag:input_type -> librarian.sephirah.v1.CreateTagRequest
+	123, // 126: librarian.sephirah.v1.LibrarianSephirahService.UpdateTag:input_type -> librarian.sephirah.v1.UpdateTagRequest
+	124, // 127: librarian.sephirah.v1.LibrarianSephirahService.ListTags:input_type -> librarian.sephirah.v1.ListTagsRequest
+	2,   // 128: librarian.sephirah.v1.LibrarianSephirahService.GetServerInformation:output_type -> librarian.sephirah.v1.GetServerInformationResponse
+	8,   // 129: librarian.sephirah.v1.LibrarianSephirahService.ListenServerEvent:output_type -> librarian.sephirah.v1.ListenServerEventResponse
+	125, // 130: librarian.sephirah.v1.LibrarianSephirahService.GetToken:output_type -> librarian.sephirah.v1.GetTokenResponse
+	126, // 131: librarian.sephirah.v1.LibrarianSephirahService.RefreshToken:output_type -> librarian.sephirah.v1.RefreshTokenResponse
+	127, // 132: librarian.sephirah.v1.LibrarianSephirahService.AcquireUserToken:output_type -> librarian.sephirah.v1.AcquireUserTokenResponse
+	128, // 133: librarian.sephirah.v1.LibrarianSephirahService.RegisterUser:output_type -> librarian.sephirah.v1.RegisterUserResponse
+	129, // 134: librarian.sephirah.v1.LibrarianSephirahService.RegisterDevice:output_type -> librarian.sephirah.v1.RegisterDeviceResponse
+	130, // 135: librarian.sephirah.v1.LibrarianSephirahService.ListRegisteredDevices:output_type -> librarian.sephirah.v1.ListRegisteredDevicesResponse
+	131, // 136: librarian.sephirah.v1.LibrarianSephirahService.ListUserSessions:output_type -> librarian.sephirah.v1.ListUserSessionsResponse
+	132, // 137: librarian.sephirah.v1.LibrarianSephirahService.DeleteUserSession:output_type -> librarian.sephirah.v1.DeleteUserSessionResponse
+	133, // 138: librarian.sephirah.v1.LibrarianSephirahService.CreateUser:output_type -> librarian.sephirah.v1.CreateUserResponse
+	134, // 139: librarian.sephirah.v1.LibrarianSephirahService.UpdateUser:output_type -> librarian.sephirah.v1.UpdateUserResponse
+	135, // 140: librarian.sephirah.v1.LibrarianSephirahService.GetUser:output_type -> librarian.sephirah.v1.GetUserResponse
+	136, // 141: librarian.sephirah.v1.LibrarianSephirahService.ListUsers:output_type -> librarian.sephirah.v1.ListUsersResponse
+	137, // 142: librarian.sephirah.v1.LibrarianSephirahService.LinkAccount:output_type -> librarian.sephirah.v1.LinkAccountResponse
+	138, // 143: librarian.sephirah.v1.LibrarianSephirahService.UnLinkAccount:output_type -> librarian.sephirah.v1.UnLinkAccountResponse
+	139, // 144: librarian.sephirah.v1.LibrarianSephirahService.ListLinkAccounts:output_type -> librarian.sephirah.v1.ListLinkAccountsResponse
+	140, // 145: librarian.sephirah.v1.LibrarianSephirahService.ListPorters:output_type -> librarian.sephirah.v1.ListPortersResponse
+	141, // 146: librarian.sephirah.v1.LibrarianSephirahService.UpdatePorterStatus:output_type -> librarian.sephirah.v1.UpdatePorterStatusResponse
+	142, // 147: librarian.sephirah.v1.LibrarianSephirahService.CreatePorterContext:output_type -> librarian.sephirah.v1.CreatePorterContextResponse
+	143, // 148: librarian.sephirah.v1.LibrarianSephirahService.ListPorterContexts:output_type -> librarian.sephirah.v1.ListPorterContextsResponse
+	144, // 149: librarian.sephirah.v1.LibrarianSephirahService.UpdatePorterContext:output_type -> librarian.sephirah.v1.UpdatePorterContextResponse
+	145, // 150: librarian.sephirah.v1.LibrarianSephirahService.SetFileCapacity:output_type -> librarian.sephirah.v1.SetFileCapacityResponse
+	146, // 151: librarian.sephirah.v1.LibrarianSephirahService.GetFileCapacity:output_type -> librarian.sephirah.v1.GetFileCapacityResponse
+	147, // 152: librarian.sephirah.v1.LibrarianSephirahService.UploadFile:output_type -> librarian.sephirah.v1.UploadFileResponse
+	148, // 153: librarian.sephirah.v1.LibrarianSephirahService.DownloadFile:output_type -> librarian.sephirah.v1.DownloadFileResponse
+	149, // 154: librarian.sephirah.v1.LibrarianSephirahService.SimpleUploadFile:output_type -> librarian.sephirah.v1.SimpleUploadFileResponse
+	150, // 155: librarian.sephirah.v1.LibrarianSephirahService.SimpleDownloadFile:output_type -> librarian.sephirah.v1.SimpleDownloadFileResponse
+	151, // 156: librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFile:output_type -> librarian.sephirah.v1.PresignedUploadFileResponse
+	152, // 157: librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFileStatus:output_type -> librarian.sephirah.v1.PresignedUploadFileStatusResponse
+	153, // 158: librarian.sephirah.v1.LibrarianSephirahService.PresignedDownloadFile:output_type -> librarian.sephirah.v1.PresignedDownloadFileResponse
+	154, // 159: librarian.sephirah.v1.LibrarianSephirahService.UploadImage:output_type -> librarian.sephirah.v1.UploadImageResponse
+	155, // 160: librarian.sephirah.v1.LibrarianSephirahService.UpdateImage:output_type -> librarian.sephirah.v1.UpdateImageResponse
+	156, // 161: librarian.sephirah.v1.LibrarianSephirahService.ListImages:output_type -> librarian.sephirah.v1.ListImagesResponse
+	157, // 162: librarian.sephirah.v1.LibrarianSephirahService.SearchImages:output_type -> librarian.sephirah.v1.SearchImagesResponse
+	158, // 163: librarian.sephirah.v1.LibrarianSephirahService.GetImage:output_type -> librarian.sephirah.v1.GetImageResponse
+	159, // 164: librarian.sephirah.v1.LibrarianSephirahService.DownloadImage:output_type -> librarian.sephirah.v1.DownloadImageResponse
+	160, // 165: librarian.sephirah.v1.LibrarianSephirahService.CreateAppInfo:output_type -> librarian.sephirah.v1.CreateAppInfoResponse
+	161, // 166: librarian.sephirah.v1.LibrarianSephirahService.UpdateAppInfo:output_type -> librarian.sephirah.v1.UpdateAppInfoResponse
+	162, // 167: librarian.sephirah.v1.LibrarianSephirahService.ListAppInfos:output_type -> librarian.sephirah.v1.ListAppInfosResponse
+	163, // 168: librarian.sephirah.v1.LibrarianSephirahService.MergeAppInfos:output_type -> librarian.sephirah.v1.MergeAppInfosResponse
+	164, // 169: librarian.sephirah.v1.LibrarianSephirahService.PickAppInfo:output_type -> librarian.sephirah.v1.PickAppInfoResponse
+	165, // 170: librarian.sephirah.v1.LibrarianSephirahService.SyncAppInfos:output_type -> librarian.sephirah.v1.SyncAppInfosResponse
+	166, // 171: librarian.sephirah.v1.LibrarianSephirahService.SyncAccountAppInfos:output_type -> librarian.sephirah.v1.SyncAccountAppInfosResponse
+	167, // 172: librarian.sephirah.v1.LibrarianSephirahService.SearchAppInfos:output_type -> librarian.sephirah.v1.SearchAppInfosResponse
+	168, // 173: librarian.sephirah.v1.LibrarianSephirahService.SearchNewAppInfos:output_type -> librarian.sephirah.v1.SearchNewAppInfosResponse
+	169, // 174: librarian.sephirah.v1.LibrarianSephirahService.GetAppInfo:output_type -> librarian.sephirah.v1.GetAppInfoResponse
+	170, // 175: librarian.sephirah.v1.LibrarianSephirahService.GetBoundAppInfos:output_type -> librarian.sephirah.v1.GetBoundAppInfosResponse
+	171, // 176: librarian.sephirah.v1.LibrarianSephirahService.PurchaseAppInfo:output_type -> librarian.sephirah.v1.PurchaseAppInfoResponse
+	172, // 177: librarian.sephirah.v1.LibrarianSephirahService.GetPurchasedAppInfos:output_type -> librarian.sephirah.v1.GetPurchasedAppInfosResponse
+	173, // 178: librarian.sephirah.v1.LibrarianSephirahService.CreateApp:output_type -> librarian.sephirah.v1.CreateAppResponse
+	174, // 179: librarian.sephirah.v1.LibrarianSephirahService.UpdateApp:output_type -> librarian.sephirah.v1.UpdateAppResponse
+	175, // 180: librarian.sephirah.v1.LibrarianSephirahService.ListApps:output_type -> librarian.sephirah.v1.ListAppsResponse
+	176, // 181: librarian.sephirah.v1.LibrarianSephirahService.AssignApp:output_type -> librarian.sephirah.v1.AssignAppResponse
+	177, // 182: librarian.sephirah.v1.LibrarianSephirahService.UnAssignApp:output_type -> librarian.sephirah.v1.UnAssignAppResponse
+	178, // 183: librarian.sephirah.v1.LibrarianSephirahService.ReportAppBinaries:output_type -> librarian.sephirah.v1.ReportAppBinariesResponse
+	179, // 184: librarian.sephirah.v1.LibrarianSephirahService.DownloadAppBinary:output_type -> librarian.sephirah.v1.DownloadAppBinaryResponse
+	180, // 185: librarian.sephirah.v1.LibrarianSephirahService.CreateAppInst:output_type -> librarian.sephirah.v1.CreateAppInstResponse
+	181, // 186: librarian.sephirah.v1.LibrarianSephirahService.UpdateAppInst:output_type -> librarian.sephirah.v1.UpdateAppInstResponse
+	182, // 187: librarian.sephirah.v1.LibrarianSephirahService.ListAppInsts:output_type -> librarian.sephirah.v1.ListAppInstsResponse
+	183, // 188: librarian.sephirah.v1.LibrarianSephirahService.AddAppInstRunTime:output_type -> librarian.sephirah.v1.AddAppInstRunTimeResponse
+	184, // 189: librarian.sephirah.v1.LibrarianSephirahService.SumAppInstRunTime:output_type -> librarian.sephirah.v1.SumAppInstRunTimeResponse
+	185, // 190: librarian.sephirah.v1.LibrarianSephirahService.UploadAppSaveFile:output_type -> librarian.sephirah.v1.UploadAppSaveFileResponse
+	186, // 191: librarian.sephirah.v1.LibrarianSephirahService.DownloadAppSaveFile:output_type -> librarian.sephirah.v1.DownloadAppSaveFileResponse
+	187, // 192: librarian.sephirah.v1.LibrarianSephirahService.ListAppSaveFiles:output_type -> librarian.sephirah.v1.ListAppSaveFilesResponse
+	188, // 193: librarian.sephirah.v1.LibrarianSephirahService.RemoveAppSaveFile:output_type -> librarian.sephirah.v1.RemoveAppSaveFileResponse
+	189, // 194: librarian.sephirah.v1.LibrarianSephirahService.PinAppSaveFile:output_type -> librarian.sephirah.v1.PinAppSaveFileResponse
+	190, // 195: librarian.sephirah.v1.LibrarianSephirahService.UnpinAppSaveFile:output_type -> librarian.sephirah.v1.UnpinAppSaveFileResponse
+	191, // 196: librarian.sephirah.v1.LibrarianSephirahService.SetAppSaveFileCapacity:output_type -> librarian.sephirah.v1.SetAppSaveFileCapacityResponse
+	192, // 197: librarian.sephirah.v1.LibrarianSephirahService.GetAppSaveFileCapacity:output_type -> librarian.sephirah.v1.GetAppSaveFileCapacityResponse
+	193, // 198: librarian.sephirah.v1.LibrarianSephirahService.SetAppSaveFileCapacityDefault:output_type -> librarian.sephirah.v1.SetAppSaveFileCapacityDefaultResponse
+	194, // 199: librarian.sephirah.v1.LibrarianSephirahService.GetAppSaveFileCapacityDefault:output_type -> librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse
+	195, // 200: librarian.sephirah.v1.LibrarianSephirahService.CreateSharedAppSave:output_type -> librarian.sephirah.v1.CreateSharedAppSaveResponse
+	196, // 201: librarian.sephirah.v1.LibrarianSephirahService.UpdateSharedAppSave:output_type -> librarian.sephirah.v1.UpdateSharedAppSaveResponse
+	197, // 202: librarian.sephirah.v1.LibrarianSephirahService.ListSharedAppSaves:output_type -> librarian.sephirah.v1.ListSharedAppSavesResponse
+	198, // 203: librarian.sephirah.v1.LibrarianSephirahService.RemoveSharedAppSave:output_type -> librarian.sephirah.v1.RemoveSharedAppSaveResponse
+	199, // 204: librarian.sephirah.v1.LibrarianSephirahService.CreateSharedAppSaveFile:output_type -> librarian.sephirah.v1.CreateSharedAppSaveFileResponse
+	200, // 205: librarian.sephirah.v1.LibrarianSephirahService.UpdateSharedAppSaveFile:output_type -> librarian.sephirah.v1.UpdateSharedAppSaveFileResponse
+	201, // 206: librarian.sephirah.v1.LibrarianSephirahService.ListSharedAppSaveFiles:output_type -> librarian.sephirah.v1.ListSharedAppSaveFilesResponse
+	202, // 207: librarian.sephirah.v1.LibrarianSephirahService.RemoveSharedAppSaveFile:output_type -> librarian.sephirah.v1.RemoveSharedAppSaveFileResponse
+	203, // 208: librarian.sephirah.v1.LibrarianSephirahService.ListAppCategories:output_type -> librarian.sephirah.v1.ListAppCategoriesResponse
+	204, // 209: librarian.sephirah.v1.LibrarianSephirahService.CreateAppCategory:output_type -> librarian.sephirah.v1.CreateAppCategoryResponse
+	205, // 210: librarian.sephirah.v1.LibrarianSephirahService.UpdateAppCategory:output_type -> librarian.sephirah.v1.UpdateAppCategoryResponse
+	206, // 211: librarian.sephirah.v1.LibrarianSephirahService.RemoveAppCategory:output_type -> librarian.sephirah.v1.RemoveAppCategoryResponse
+	207, // 212: librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyTarget:output_type -> librarian.sephirah.v1.CreateNotifyTargetResponse
+	208, // 213: librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyTarget:output_type -> librarian.sephirah.v1.UpdateNotifyTargetResponse
+	209, // 214: librarian.sephirah.v1.LibrarianSephirahService.ListNotifyTargets:output_type -> librarian.sephirah.v1.ListNotifyTargetsResponse
+	210, // 215: librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyFlow:output_type -> librarian.sephirah.v1.CreateNotifyFlowResponse
+	211, // 216: librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyFlow:output_type -> librarian.sephirah.v1.UpdateNotifyFlowResponse
+	212, // 217: librarian.sephirah.v1.LibrarianSephirahService.ListNotifyFlows:output_type -> librarian.sephirah.v1.ListNotifyFlowsResponse
+	213, // 218: librarian.sephirah.v1.LibrarianSephirahService.ListSystemNotifications:output_type -> librarian.sephirah.v1.ListSystemNotificationsResponse
+	214, // 219: librarian.sephirah.v1.LibrarianSephirahService.UpdateSystemNotification:output_type -> librarian.sephirah.v1.UpdateSystemNotificationResponse
+	215, // 220: librarian.sephirah.v1.LibrarianSephirahService.CreateFeedConfig:output_type -> librarian.sephirah.v1.CreateFeedConfigResponse
+	216, // 221: librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedConfig:output_type -> librarian.sephirah.v1.UpdateFeedConfigResponse
+	217, // 222: librarian.sephirah.v1.LibrarianSephirahService.ListFeedConfigs:output_type -> librarian.sephirah.v1.ListFeedConfigsResponse
+	218, // 223: librarian.sephirah.v1.LibrarianSephirahService.CreateFeedActionSet:output_type -> librarian.sephirah.v1.CreateFeedActionSetResponse
+	219, // 224: librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedActionSet:output_type -> librarian.sephirah.v1.UpdateFeedActionSetResponse
+	220, // 225: librarian.sephirah.v1.LibrarianSephirahService.ListFeedActionSets:output_type -> librarian.sephirah.v1.ListFeedActionSetsResponse
+	221, // 226: librarian.sephirah.v1.LibrarianSephirahService.ListFeedCategories:output_type -> librarian.sephirah.v1.ListFeedCategoriesResponse
+	222, // 227: librarian.sephirah.v1.LibrarianSephirahService.ListFeedPlatforms:output_type -> librarian.sephirah.v1.ListFeedPlatformsResponse
+	223, // 228: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItems:output_type -> librarian.sephirah.v1.ListFeedItemsResponse
+	224, // 229: librarian.sephirah.v1.LibrarianSephirahService.GroupFeedItems:output_type -> librarian.sephirah.v1.GroupFeedItemsResponse
+	225, // 230: librarian.sephirah.v1.LibrarianSephirahService.GetFeedItem:output_type -> librarian.sephirah.v1.GetFeedItemResponse
+	226, // 231: librarian.sephirah.v1.LibrarianSephirahService.GetBatchFeedItems:output_type -> librarian.sephirah.v1.GetBatchFeedItemsResponse
+	227, // 232: librarian.sephirah.v1.LibrarianSephirahService.ReadFeedItem:output_type -> librarian.sephirah.v1.ReadFeedItemResponse
+	228, // 233: librarian.sephirah.v1.LibrarianSephirahService.CreateFeedItemCollection:output_type -> librarian.sephirah.v1.CreateFeedItemCollectionResponse
+	229, // 234: librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedItemCollection:output_type -> librarian.sephirah.v1.UpdateFeedItemCollectionResponse
+	230, // 235: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemCollections:output_type -> librarian.sephirah.v1.ListFeedItemCollectionsResponse
+	231, // 236: librarian.sephirah.v1.LibrarianSephirahService.AddFeedItemToCollection:output_type -> librarian.sephirah.v1.AddFeedItemToCollectionResponse
+	232, // 237: librarian.sephirah.v1.LibrarianSephirahService.RemoveFeedItemFromCollection:output_type -> librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse
+	233, // 238: librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemsInCollection:output_type -> librarian.sephirah.v1.ListFeedItemsInCollectionResponse
+	234, // 239: librarian.sephirah.v1.LibrarianSephirahService.PUpsertFeed:output_type -> librarian.sephirah.v1.PUpsertFeedResponse
+	235, // 240: librarian.sephirah.v1.LibrarianSephirahService.PGetFeed:output_type -> librarian.sephirah.v1.PGetFeedResponse
+	236, // 241: librarian.sephirah.v1.LibrarianSephirahService.CreateTag:output_type -> librarian.sephirah.v1.CreateTagResponse
+	237, // 242: librarian.sephirah.v1.LibrarianSephirahService.UpdateTag:output_type -> librarian.sephirah.v1.UpdateTagResponse
+	238, // 243: librarian.sephirah.v1.LibrarianSephirahService.ListTags:output_type -> librarian.sephirah.v1.ListTagsResponse
+	128, // [128:244] is the sub-list for method output_type
+	12,  // [12:128] is the sub-list for method input_type
 	12,  // [12:12] is the sub-list for extension type_name
 	12,  // [12:12] is the sub-list for extension extendee
 	0,   // [0:12] is the sub-list for field type_name

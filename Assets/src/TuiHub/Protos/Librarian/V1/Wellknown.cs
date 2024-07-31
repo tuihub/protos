@@ -26,41 +26,40 @@ namespace TuiHub.Protos.Librarian.V1 {
           string.Concat(
             "ChxsaWJyYXJpYW4vdjEvd2VsbGtub3duLnByb3RvEgxsaWJyYXJpYW4udjEa",
             "IGdvb2dsZS9wcm90b2J1Zi9kZXNjcmlwdG9yLnByb3RvGhlsaWJyYXJpYW4v",
-            "djEvY29tbW9uLnByb3RvIsIBCgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVIC",
-            "aWQSFgoGcmVnaW9uGAIgASgJUgZyZWdpb24SEgoEbmFtZRgDIAEoCVIEbmFt",
-            "ZRIgCgtkZXNjcmlwdGlvbhgEIAEoCVILZGVzY3JpcHRpb24SLAoSY29uZmln",
-            "X2pzb25fc2NoZW1hGAUgASgJUhBjb25maWdKc29uU2NoZW1hEicKD3JlcXVp",
-            "cmVfY29udGV4dBgGIAEoCFIOcmVxdWlyZUNvbnRleHQipgEKDkZlYXR1cmVS",
-            "ZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIWCgZyZWdpb24YAiABKAlSBnJlZ2lv",
-            "bhIfCgtjb25maWdfanNvbhgDIAEoCVIKY29uZmlnSnNvbhI8Cgpjb250ZXh0",
-            "X2lkGAQgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIJY29udGV4",
-            "dElkiAEBQg0KC19jb250ZXh0X2lkKn0KGFdlbGxLbm93bkFjY291bnRQbGF0",
-            "Zm9ybRIwCidXRUxMX0tOT1dOX0FDQ09VTlRfUExBVEZPUk1fVU5TUEVDSUZJ",
-            "RUQQABoDwj4AEi8KIVdFTExfS05PV05fQUNDT1VOVF9QTEFURk9STV9TVEVB",
-            "TRABGgjCPgVzdGVhbSrbAQoWV2VsbEtub3duQXBwSW5mb1NvdXJjZRIvCiZX",
-            "RUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9VTlNQRUNJRklFRBAAGgPCPgAS",
-            "LgogV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfU1RFQU0QAhoIwj4Fc3Rl",
-            "YW0SLAofV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfVk5EQhADGgfCPgR2",
-            "bmRiEjIKIldFTExfS05PV05fQVBQX0lORk9fU09VUkNFX0JBTkdVTUkQBBoK",
-            "wj4HYmFuZ3VtaSpqChNXZWxsS25vd25GZWVkU291cmNlEisKIldFTExfS05P",
-            "V05fRkVFRF9TT1VSQ0VfVU5TUEVDSUZJRUQQABoDwj4AEiYKGldFTExfS05P",
-            "V05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+A3JzcyqJAQoaV2VsbEtub3duTm90",
-            "aWZ5RGVzdGluYXRpb24SMgopV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ",
-            "T05fVU5TUEVDSUZJRUQQABoDwj4AEjcKJldFTExfS05PV05fTk9USUZZX0RF",
-            "U1RJTkFUSU9OX1RFTEVHUkFNEAEaC8I+CHRlbGVncmFtKt8BChdXZWxsS25v",
-            "d25GZWVkSXRlbUFjdGlvbhIwCidXRUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJ",
-            "T05fVU5TUEVDSUZJRUQQABoDwj4AEkEKKldFTExfS05PV05fRkVFRF9JVEVN",
-            "X0FDVElPTl9LRVlXT1JEX0ZJTFRFUhABGhHCPg5rZXl3b3JkX2ZpbHRlchJP",
-            "CjFXRUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fREVTQ1JJUFRJT05fR0VO",
-            "RVJBVE9SEAIaGMI+FWRlc2NyaXB0aW9uX2dlbmVyYXRvcjo/Cgl0b19zdHJp",
-            "bmcSIS5nb29nbGUucHJvdG9idWYuRW51bVZhbHVlT3B0aW9ucxjoByABKAlS",
-            "CHRvU3RyaW5nQktaLGdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGli",
-            "cmFyaWFuL3YxO3YxqgIaVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uVjFiBnBy",
-            "b3RvMw=="));
+            "djEvY29tbW9uLnByb3RvIqoBCgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVIC",
+            "aWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVIL",
+            "ZGVzY3JpcHRpb24SLAoSY29uZmlnX2pzb25fc2NoZW1hGAQgASgJUhBjb25m",
+            "aWdKc29uU2NoZW1hEicKD3JlcXVpcmVfY29udGV4dBgFIAEoCFIOcmVxdWly",
+            "ZUNvbnRleHQipgEKDkZlYXR1cmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIW",
+            "CgZyZWdpb24YAiABKAlSBnJlZ2lvbhIfCgtjb25maWdfanNvbhgDIAEoCVIK",
+            "Y29uZmlnSnNvbhI8Cgpjb250ZXh0X2lkGAQgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURIAFIJY29udGV4dElkiAEBQg0KC19jb250ZXh0X2lkKn0K",
+            "GFdlbGxLbm93bkFjY291bnRQbGF0Zm9ybRIwCidXRUxMX0tOT1dOX0FDQ09V",
+            "TlRfUExBVEZPUk1fVU5TUEVDSUZJRUQQABoDwj4AEi8KIVdFTExfS05PV05f",
+            "QUNDT1VOVF9QTEFURk9STV9TVEVBTRABGgjCPgVzdGVhbSrbAQoWV2VsbEtu",
+            "b3duQXBwSW5mb1NvdXJjZRIvCiZXRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJD",
+            "RV9VTlNQRUNJRklFRBAAGgPCPgASLgogV0VMTF9LTk9XTl9BUFBfSU5GT19T",
+            "T1VSQ0VfU1RFQU0QAhoIwj4Fc3RlYW0SLAofV0VMTF9LTk9XTl9BUFBfSU5G",
+            "T19TT1VSQ0VfVk5EQhADGgfCPgR2bmRiEjIKIldFTExfS05PV05fQVBQX0lO",
+            "Rk9fU09VUkNFX0JBTkdVTUkQBBoKwj4HYmFuZ3VtaSpqChNXZWxsS25vd25G",
+            "ZWVkU291cmNlEisKIldFTExfS05PV05fRkVFRF9TT1VSQ0VfVU5TUEVDSUZJ",
+            "RUQQABoDwj4AEiYKGldFTExfS05PV05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+",
+            "A3JzcyqJAQoaV2VsbEtub3duTm90aWZ5RGVzdGluYXRpb24SMgopV0VMTF9L",
+            "Tk9XTl9OT1RJRllfREVTVElOQVRJT05fVU5TUEVDSUZJRUQQABoDwj4AEjcK",
+            "JldFTExfS05PV05fTk9USUZZX0RFU1RJTkFUSU9OX1RFTEVHUkFNEAEaC8I+",
+            "CHRlbGVncmFtKt8BChdXZWxsS25vd25GZWVkSXRlbUFjdGlvbhIwCidXRUxM",
+            "X0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fVU5TUEVDSUZJRUQQABoDwj4AEkEK",
+            "KldFTExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9LRVlXT1JEX0ZJTFRFUhAB",
+            "GhHCPg5rZXl3b3JkX2ZpbHRlchJPCjFXRUxMX0tOT1dOX0ZFRURfSVRFTV9B",
+            "Q1RJT05fREVTQ1JJUFRJT05fR0VORVJBVE9SEAIaGMI+FWRlc2NyaXB0aW9u",
+            "X2dlbmVyYXRvcjo/Cgl0b19zdHJpbmcSIS5nb29nbGUucHJvdG9idWYuRW51",
+            "bVZhbHVlT3B0aW9ucxjoByABKAlSCHRvU3RyaW5nQktaLGdpdGh1Yi5jb20v",
+            "dHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3YxO3YxqgIaVHVpSHViLlBy",
+            "b3Rvcy5MaWJyYXJpYW4uVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedItemAction), }, new pb::Extension[] { WellknownExtensions.ToString_ }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Region", "Name", "Description", "ConfigJsonSchema", "RequireContext" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Name", "Description", "ConfigJsonSchema", "RequireContext" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureRequest), global::TuiHub.Protos.Librarian.V1.FeatureRequest.Parser, new[]{ "Id", "Region", "ConfigJson", "ContextId" }, new[]{ "ContextId" }, null, null, null)
           }));
     }
@@ -150,7 +149,6 @@ namespace TuiHub.Protos.Librarian.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FeatureFlag(FeatureFlag other) : this() {
       id_ = other.id_;
-      region_ = other.region_;
       name_ = other.name_;
       description_ = other.description_;
       configJsonSchema_ = other.configJsonSchema_;
@@ -180,25 +178,8 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
-    /// <summary>Field number for the "region" field.</summary>
-    public const int RegionFieldNumber = 2;
-    private string region_ = "";
-    /// <summary>
-    /// Region is used to group feature providers,
-    /// same feature provider in same region can be randomly called.
-    /// Leave empty to use default region.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Region {
-      get { return region_; }
-      set {
-        region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 3;
+    public const int NameFieldNumber = 2;
     private string name_ = "";
     /// <summary>
     /// Human-readable name
@@ -213,7 +194,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     }
 
     /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 4;
+    public const int DescriptionFieldNumber = 3;
     private string description_ = "";
     /// <summary>
     /// Human-readable description
@@ -228,7 +209,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     }
 
     /// <summary>Field number for the "config_json_schema" field.</summary>
-    public const int ConfigJsonSchemaFieldNumber = 5;
+    public const int ConfigJsonSchemaFieldNumber = 4;
     private string configJsonSchema_ = "";
     /// <summary>
     /// Customized JSON schema for feature
@@ -243,7 +224,7 @@ namespace TuiHub.Protos.Librarian.V1 {
     }
 
     /// <summary>Field number for the "require_context" field.</summary>
-    public const int RequireContextFieldNumber = 6;
+    public const int RequireContextFieldNumber = 5;
     private bool requireContext_;
     /// <summary>
     /// Require context to use this feature
@@ -273,7 +254,6 @@ namespace TuiHub.Protos.Librarian.V1 {
         return true;
       }
       if (Id != other.Id) return false;
-      if (Region != other.Region) return false;
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if (ConfigJsonSchema != other.ConfigJsonSchema) return false;
@@ -286,7 +266,6 @@ namespace TuiHub.Protos.Librarian.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (Region.Length != 0) hash ^= Region.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ConfigJsonSchema.Length != 0) hash ^= ConfigJsonSchema.GetHashCode();
@@ -313,24 +292,20 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Region.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Region);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (Description.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Description);
       }
       if (ConfigJsonSchema.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(ConfigJsonSchema);
       }
       if (RequireContext != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteBool(RequireContext);
       }
       if (_unknownFields != null) {
@@ -347,24 +322,20 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Region.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Region);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (Description.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteString(Description);
       }
       if (ConfigJsonSchema.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(ConfigJsonSchema);
       }
       if (RequireContext != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteBool(RequireContext);
       }
       if (_unknownFields != null) {
@@ -379,9 +350,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       int size = 0;
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
-      }
-      if (Region.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -409,9 +377,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
       if (other.Id.Length != 0) {
         Id = other.Id;
-      }
-      if (other.Region.Length != 0) {
-        Region = other.Region;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -445,22 +410,18 @@ namespace TuiHub.Protos.Librarian.V1 {
             break;
           }
           case 18: {
-            Region = input.ReadString();
-            break;
-          }
-          case 26: {
             Name = input.ReadString();
             break;
           }
-          case 34: {
+          case 26: {
             Description = input.ReadString();
             break;
           }
-          case 42: {
+          case 34: {
             ConfigJsonSchema = input.ReadString();
             break;
           }
-          case 48: {
+          case 40: {
             RequireContext = input.ReadBool();
             break;
           }
@@ -484,22 +445,18 @@ namespace TuiHub.Protos.Librarian.V1 {
             break;
           }
           case 18: {
-            Region = input.ReadString();
-            break;
-          }
-          case 26: {
             Name = input.ReadString();
             break;
           }
-          case 34: {
+          case 26: {
             Description = input.ReadString();
             break;
           }
-          case 42: {
+          case 34: {
             ConfigJsonSchema = input.ReadString();
             break;
           }
-          case 48: {
+          case 40: {
             RequireContext = input.ReadBool();
             break;
           }

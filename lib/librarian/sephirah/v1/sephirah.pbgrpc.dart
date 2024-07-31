@@ -472,6 +472,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection',
       ($6.ListFeedItemsInCollectionRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.ListFeedItemsInCollectionResponse.fromBuffer(value));
+  static final _$pUpsertFeed = $grpc.ClientMethod<$6.PUpsertFeedRequest, $6.PUpsertFeedResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PUpsertFeed',
+      ($6.PUpsertFeedRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.PUpsertFeedResponse.fromBuffer(value));
+  static final _$pGetFeed = $grpc.ClientMethod<$6.PGetFeedRequest, $6.PGetFeedResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PGetFeed',
+      ($6.PGetFeedRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.PGetFeedResponse.fromBuffer(value));
   static final _$createTag = $grpc.ClientMethod<$7.CreateTagRequest, $7.CreateTagResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreateTag',
       ($7.CreateTagRequest value) => value.writeToBuffer(),
@@ -933,6 +941,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$6.ListFeedItemsInCollectionResponse> listFeedItemsInCollection($6.ListFeedItemsInCollectionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedItemsInCollection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.PUpsertFeedResponse> pUpsertFeed($6.PUpsertFeedRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pUpsertFeed, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.PGetFeedResponse> pGetFeed($6.PGetFeedRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pGetFeed, request, options: options);
   }
 
   $grpc.ResponseFuture<$7.CreateTagResponse> createTag($7.CreateTagRequest request, {$grpc.CallOptions? options}) {
@@ -1730,6 +1746,20 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $6.ListFeedItemsInCollectionRequest.fromBuffer(value),
         ($6.ListFeedItemsInCollectionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.PUpsertFeedRequest, $6.PUpsertFeedResponse>(
+        'PUpsertFeed',
+        pUpsertFeed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.PUpsertFeedRequest.fromBuffer(value),
+        ($6.PUpsertFeedResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.PGetFeedRequest, $6.PGetFeedResponse>(
+        'PGetFeed',
+        pGetFeed_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.PGetFeedRequest.fromBuffer(value),
+        ($6.PGetFeedResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$7.CreateTagRequest, $7.CreateTagResponse>(
         'CreateTag',
         createTag_Pre,
@@ -2185,6 +2215,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listFeedItemsInCollection(call, await request);
   }
 
+  $async.Future<$6.PUpsertFeedResponse> pUpsertFeed_Pre($grpc.ServiceCall call, $async.Future<$6.PUpsertFeedRequest> request) async {
+    return pUpsertFeed(call, await request);
+  }
+
+  $async.Future<$6.PGetFeedResponse> pGetFeed_Pre($grpc.ServiceCall call, $async.Future<$6.PGetFeedRequest> request) async {
+    return pGetFeed(call, await request);
+  }
+
   $async.Future<$7.CreateTagResponse> createTag_Pre($grpc.ServiceCall call, $async.Future<$7.CreateTagRequest> request) async {
     return createTag(call, await request);
   }
@@ -2308,6 +2346,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$6.AddFeedItemToCollectionResponse> addFeedItemToCollection($grpc.ServiceCall call, $6.AddFeedItemToCollectionRequest request);
   $async.Future<$6.RemoveFeedItemFromCollectionResponse> removeFeedItemFromCollection($grpc.ServiceCall call, $6.RemoveFeedItemFromCollectionRequest request);
   $async.Future<$6.ListFeedItemsInCollectionResponse> listFeedItemsInCollection($grpc.ServiceCall call, $6.ListFeedItemsInCollectionRequest request);
+  $async.Future<$6.PUpsertFeedResponse> pUpsertFeed($grpc.ServiceCall call, $6.PUpsertFeedRequest request);
+  $async.Future<$6.PGetFeedResponse> pGetFeed($grpc.ServiceCall call, $6.PGetFeedRequest request);
   $async.Future<$7.CreateTagResponse> createTag($grpc.ServiceCall call, $7.CreateTagRequest request);
   $async.Future<$7.UpdateTagResponse> updateTag($grpc.ServiceCall call, $7.UpdateTagRequest request);
   $async.Future<$7.ListTagsResponse> listTags($grpc.ServiceCall call, $7.ListTagsRequest request);

@@ -499,6 +499,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsInCollectionResponse> __Marshaller_librarian_sephirah_v1_ListFeedItemsInCollectionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsInCollectionResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest> __Marshaller_librarian_sephirah_v1_PUpsertFeedRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse> __Marshaller_librarian_sephirah_v1_PUpsertFeedResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest> __Marshaller_librarian_sephirah_v1_PGetFeedRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse> __Marshaller_librarian_sephirah_v1_PGetFeedResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagRequest> __Marshaller_librarian_sephirah_v1_CreateTagRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagResponse> __Marshaller_librarian_sephirah_v1_CreateTagResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagResponse.Parser));
@@ -1398,6 +1406,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         "ListFeedItemsInCollection",
         __Marshaller_librarian_sephirah_v1_ListFeedItemsInCollectionRequest,
         __Marshaller_librarian_sephirah_v1_ListFeedItemsInCollectionResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse> __Method_PUpsertFeed = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PUpsertFeed",
+        __Marshaller_librarian_sephirah_v1_PUpsertFeedRequest,
+        __Marshaller_librarian_sephirah_v1_PUpsertFeedResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse> __Method_PGetFeed = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PGetFeed",
+        __Marshaller_librarian_sephirah_v1_PGetFeedRequest,
+        __Marshaller_librarian_sephirah_v1_PGetFeedResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagResponse> __Method_CreateTag = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagResponse>(
@@ -2799,6 +2823,30 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsInCollectionResponse> ListFeedItemsInCollection(global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsInCollectionRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse> PUpsertFeed(global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse> PGetFeed(global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -8183,6 +8231,102 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedItemsInCollection, null, options, request);
       }
       /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse PUpsertFeed(global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PUpsertFeed(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse PUpsertFeed(global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PUpsertFeed, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse> PUpsertFeedAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PUpsertFeedAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse> PUpsertFeedAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PUpsertFeed, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse PGetFeed(global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PGetFeed(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse PGetFeed(global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PGetFeed, null, options, request);
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse> PGetFeedAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PGetFeedAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Yesod` `Porter`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse> PGetFeedAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PGetFeed, null, options, request);
+      }
+      /// <summary>
       /// `Hokma` `Normal`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -8451,6 +8595,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_AddFeedItemToCollection, serviceImpl.AddFeedItemToCollection)
           .AddMethod(__Method_RemoveFeedItemFromCollection, serviceImpl.RemoveFeedItemFromCollection)
           .AddMethod(__Method_ListFeedItemsInCollection, serviceImpl.ListFeedItemsInCollection)
+          .AddMethod(__Method_PUpsertFeed, serviceImpl.PUpsertFeed)
+          .AddMethod(__Method_PGetFeed, serviceImpl.PGetFeed)
           .AddMethod(__Method_CreateTag, serviceImpl.CreateTag)
           .AddMethod(__Method_UpdateTag, serviceImpl.UpdateTag)
           .AddMethod(__Method_ListTags, serviceImpl.ListTags).Build();
@@ -8574,6 +8720,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_AddFeedItemToCollection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.AddFeedItemToCollectionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.AddFeedItemToCollectionResponse>(serviceImpl.AddFeedItemToCollection));
       serviceBinder.AddMethod(__Method_RemoveFeedItemFromCollection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveFeedItemFromCollectionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveFeedItemFromCollectionResponse>(serviceImpl.RemoveFeedItemFromCollection));
       serviceBinder.AddMethod(__Method_ListFeedItemsInCollection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsInCollectionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListFeedItemsInCollectionResponse>(serviceImpl.ListFeedItemsInCollection));
+      serviceBinder.AddMethod(__Method_PUpsertFeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PUpsertFeedResponse>(serviceImpl.PUpsertFeed));
+      serviceBinder.AddMethod(__Method_PGetFeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.PGetFeedResponse>(serviceImpl.PGetFeed));
       serviceBinder.AddMethod(__Method_CreateTag, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.CreateTagResponse>(serviceImpl.CreateTag));
       serviceBinder.AddMethod(__Method_UpdateTag, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateTagRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateTagResponse>(serviceImpl.UpdateTag));
       serviceBinder.AddMethod(__Method_ListTags, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListTagsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListTagsResponse>(serviceImpl.ListTags));

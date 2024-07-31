@@ -108,11 +108,10 @@ proto.librarian.v1.FeatureFlag.prototype.toObject = function(opt_includeInstance
 proto.librarian.v1.FeatureFlag.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    region: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    configJsonSchema: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    configJsonSchema: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -155,21 +154,17 @@ proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader = function(msg, reade
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRegion(value);
+      msg.setName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setDescription(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
       msg.setConfigJsonSchema(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequireContext(value);
       break;
@@ -209,38 +204,31 @@ proto.librarian.v1.FeatureFlag.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getRegion();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getName();
+  f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getDescription();
+  f = message.getConfigJsonSchema();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getConfigJsonSchema();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
   f = message.getRequireContext();
   if (f) {
     writer.writeBool(
-      6,
+      5,
       f
     );
   }
@@ -266,10 +254,10 @@ proto.librarian.v1.FeatureFlag.prototype.setId = function(value) {
 
 
 /**
- * optional string region = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.librarian.v1.FeatureFlag.prototype.getRegion = function() {
+proto.librarian.v1.FeatureFlag.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -278,16 +266,16 @@ proto.librarian.v1.FeatureFlag.prototype.getRegion = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.FeatureFlag} returns this
  */
-proto.librarian.v1.FeatureFlag.prototype.setRegion = function(value) {
+proto.librarian.v1.FeatureFlag.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string name = 3;
+ * optional string description = 3;
  * @return {string}
  */
-proto.librarian.v1.FeatureFlag.prototype.getName = function() {
+proto.librarian.v1.FeatureFlag.prototype.getDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -296,16 +284,16 @@ proto.librarian.v1.FeatureFlag.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.FeatureFlag} returns this
  */
-proto.librarian.v1.FeatureFlag.prototype.setName = function(value) {
+proto.librarian.v1.FeatureFlag.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string description = 4;
+ * optional string config_json_schema = 4;
  * @return {string}
  */
-proto.librarian.v1.FeatureFlag.prototype.getDescription = function() {
+proto.librarian.v1.FeatureFlag.prototype.getConfigJsonSchema = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -314,35 +302,17 @@ proto.librarian.v1.FeatureFlag.prototype.getDescription = function() {
  * @param {string} value
  * @return {!proto.librarian.v1.FeatureFlag} returns this
  */
-proto.librarian.v1.FeatureFlag.prototype.setDescription = function(value) {
+proto.librarian.v1.FeatureFlag.prototype.setConfigJsonSchema = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string config_json_schema = 5;
- * @return {string}
- */
-proto.librarian.v1.FeatureFlag.prototype.getConfigJsonSchema = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.v1.FeatureFlag} returns this
- */
-proto.librarian.v1.FeatureFlag.prototype.setConfigJsonSchema = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional bool require_context = 6;
+ * optional bool require_context = 5;
  * @return {boolean}
  */
 proto.librarian.v1.FeatureFlag.prototype.getRequireContext = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
@@ -351,7 +321,7 @@ proto.librarian.v1.FeatureFlag.prototype.getRequireContext = function() {
  * @return {!proto.librarian.v1.FeatureFlag} returns this
  */
 proto.librarian.v1.FeatureFlag.prototype.setRequireContext = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
