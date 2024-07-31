@@ -10,6 +10,7 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
 service LibrarianPorterService {
   rpc GetPorterInformation(GetPorterInformationRequest) returns (GetPorterInformationResponse);
+  // Used to enable porter and heartbeat.
   rpc EnablePorter(EnablePorterRequest) returns (EnablePorterResponse);
 
   rpc EnableContext(EnableContextRequest) returns (EnableContextResponse);
@@ -31,6 +32,17 @@ service LibrarianPorterService {
   rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
   // `Yesod`
   rpc ExecFeedItemAction(ExecFeedItemActionRequest) returns (ExecFeedItemActionResponse);
+
+  // `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+  // without extra permissions.
+  rpc EnableFeedSetter(EnableFeedSetterRequest) returns (EnableFeedSetterResponse);
+  // `Yesod`
+  rpc DisableFeedSetter(DisableFeedSetterRequest) returns (DisableFeedSetterResponse);
+  // `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+  // without extra permissions.
+  rpc EnableFeedGetter(EnableFeedGetterRequest) returns (EnableFeedGetterResponse);
+  // `Yesod`
+  rpc DisableFeedGetter(DisableFeedGetterRequest) returns (DisableFeedGetterResponse);
 }
 
 message GetPorterInformationRequest {}
@@ -42,13 +54,17 @@ message GetPorterInformationResponse {
   // Global identifier. Same global name means same project. no format limit.
   // e.g. use project url "github.com/tuihub/porter-steam".
   string global_name = 3;
+  // Region is used to group porters,
+  // same porter in same region can be randomly selected.
+  // Leave empty to use default region.
+  string region = 4;
   // Supported features.
-  PorterFeatureSummary feature_summary = 4;
+  PorterFeatureSummary feature_summary = 5;
   // JSON schema for `FeatureRequest.context_json`.
   // Leave empty if not needed.
   // If needed, all feature requests should deliver `context_json`.
   // Can be used to configure third-party token, etc.
-  optional string context_json_schema = 5;
+  optional string context_json_schema = 6;
 }
 
 message PorterFeatureSummary {
@@ -60,6 +76,8 @@ message PorterFeatureSummary {
   repeated librarian.v1.FeatureFlag notify_destinations = 4;
   // WellKnownFeedItemAction
   repeated librarian.v1.FeatureFlag feed_item_actions = 5;
+  repeated librarian.v1.FeatureFlag feed_setters = 6;
+  repeated librarian.v1.FeatureFlag feed_getters = 7;
 }
 
 message EnablePorterRequest {
@@ -73,7 +91,12 @@ message EnablePorterRequest {
   // Enabler can send empty token as default, and resend request with token if needed.
   optional string refresh_token = 2;
 }
-message EnablePorterResponse {}
+message EnablePorterResponse {
+  // Used to request sephirah to sync data.
+  // To handle request, sephirah should send all `Enable*` requests to porter.
+  // Useful when porter is restarted.
+  bool need_full_sync = 1;
+}
 
 message EnableContextRequest {
   // Identifier of context.
@@ -148,3 +171,33 @@ message ExecFeedItemActionResponse {
   // Leave empty if item should be filtered out.
   optional librarian.v1.FeedItem item = 1;
 }
+
+message EnableFeedSetterRequest {
+  librarian.v1.InternalID id = 1;
+  // `PorterFeatureSummary.feed_setters`
+  librarian.v1.FeatureRequest setter = 2;
+  librarian.v1.InternalID feed_id = 3;
+}
+
+message EnableFeedSetterResponse {}
+
+message DisableFeedSetterRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DisableFeedSetterResponse {}
+
+message EnableFeedGetterRequest {
+  librarian.v1.InternalID id = 1;
+  // `PorterFeatureSummary.feed_getters`
+  librarian.v1.FeatureRequest getter = 2;
+  librarian.v1.InternalID feed_id = 3;
+}
+
+message EnableFeedGetterResponse {}
+
+message DisableFeedGetterRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DisableFeedGetterResponse {}

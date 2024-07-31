@@ -301,6 +301,11 @@ service LibrarianSephirahService {
   // `Yesod` `Normal`
   rpc ListFeedItemsInCollection(ListFeedItemsInCollectionRequest) returns (ListFeedItemsInCollectionResponse);
 
+  // `Yesod` `Porter`
+  rpc PUpsertFeed(PUpsertFeedRequest) returns (PUpsertFeedResponse);
+  // `Yesod` `Porter`
+  rpc PGetFeed(PGetFeedRequest) returns (PGetFeedResponse);
+
   // `Hokma` `Normal`
   rpc CreateTag(CreateTagRequest) returns (CreateTagResponse);
   // `Hokma` `Normal`
