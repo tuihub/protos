@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.17](https://github.com/tuihub/protos/compare/v0.4.16...v0.4.17) (2024-08-01)
+
+
+### Features
+
+* **porter:** support active feed sync ([f6f8bb4](https://github.com/tuihub/protos/commit/f6f8bb4cf245602cad5480ce63e30813550e2b59))
+
+
+### Bug Fixes
+
+* delete unused filter ([314832a](https://github.com/tuihub/protos/commit/314832aae7f3cb8a4b463b632f25b9911b6ba66f))
+* **deps:** update all non-major dependencies ([#153](https://github.com/tuihub/protos/issues/153)) ([c65c0c5](https://github.com/tuihub/protos/commit/c65c0c52eb14e257bdb25f1b16bb83f351e5a486))
+* **tiphereth:** update `Porter` ([72969e5](https://github.com/tuihub/protos/commit/72969e585dcca808b59261eaf15bc7021b3fb1e5))
+
 ## [0.4.16](https://github.com/tuihub/protos/compare/v0.4.15...v0.4.16) (2024-07-11)
 
 
