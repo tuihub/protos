@@ -1,73 +1,67 @@
-version: v1
+version: v2
 plugins:
   #Document
-  - name: doc
+  - local: protoc-gen-doc
     out: docs
     opt: docs/markdown.tmpl,protos.md
     strategy: all
 
   #Go
-  - name: go
+  - local: protoc-gen-go
     out: pkg
-    opt: 
-      - paths=source_relative
-  - name: go-grpc
+    opt: paths=source_relative
+  - local: protoc-gen-go-grpc
     out: pkg
-    opt:
-      - paths=source_relative
-  - name: go-errors
+    opt: paths=source_relative
+  - local: protoc-gen-go-errors
     out: pkg
-    opt:
-      - paths=source_relative
+    opt: paths=source_relative
 
   #JS
-  - plugin: buf.build/protocolbuffers/js:v3.21.2
+  - remote: buf.build/protocolbuffers/js:v3.21.2
+    out: node
     opt:
       - import_style=commonjs
       - binary
+  - local: node_modules/.bin/grpc_tools_node_protoc_plugin
     out: node
-  - name: js-grpc
-    path: node_modules/.bin/grpc_tools_node_protoc_plugin
     opt: grpc_js
-    out: node
 
   #TS
-  - name: ts
-    path: node_modules/.bin/protoc-gen-ts
-    opt: 
+  - local: node_modules/.bin/protoc-gen-ts
+    out: node
+    opt:
       - mode=grpc-js
       - service=grpc-node
-    out: node
 
   #Rust
-  - plugin: buf.build/community/neoeinstein-prost:v0.3.1
+  - remote: buf.build/community/neoeinstein-prost:v0.3.1
     out: src
     opt:
       - bytes=.
       - compile_well_known_types
       - extern_path=.google.protobuf=::pbjson_types
       - file_descriptor_set
-  - plugin: buf.build/community/neoeinstein-prost-serde:v0.3.0
+  - remote: buf.build/community/neoeinstein-prost-serde:v0.3.0
     out: src
-  - plugin: buf.build/community/neoeinstein-tonic:v0.4.0
+  - remote: buf.build/community/neoeinstein-tonic:v0.4.0
     out: src
     opt:
       - compile_well_known_types
       - extern_path=.google.protobuf=::pbjson_types
-  - name: prost-crate
+  - local: protoc-gen-prost-crate
     out: .
+    opt: gen_crate=Cargo.toml
     strategy: all
-    opt:
-      - gen_crate=Cargo.toml
 
   #CSharp
-  - name: csharp
+  - protoc_builtin: csharp
     out: Assets/src
     opt: base_namespace=
-  - plugin: buf.build/grpc/csharp:v1.65.0
+  - remote: buf.build/grpc/csharp:v1.65.0
     out: Assets/src
 
   #Dart
-  - name: dart
+  - local: protoc-gen-dart
     out: lib
     opt: grpc
