@@ -14023,6 +14023,206 @@ impl<'de> serde::Deserialize<'de> for ListPorterContextsResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.ListPorterContextsResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ListPorterGroupsRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPorterGroupsRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListPorterGroupsRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListPorterGroupsRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListPorterGroupsRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ListPorterGroupsRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(ListPorterGroupsRequest {
+                    paging: paging__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListPorterGroupsRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ListPorterGroupsResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if !self.porter_groups.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPorterGroupsResponse", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.porter_groups.is_empty() {
+            struct_ser.serialize_field("porterGroups", &self.porter_groups)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ListPorterGroupsResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "paging",
+            "porter_groups",
+            "porterGroups",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Paging,
+            PorterGroups,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "porterGroups" | "porter_groups" => Ok(GeneratedField::PorterGroups),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ListPorterGroupsResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ListPorterGroupsResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ListPorterGroupsResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut paging__ = None;
+                let mut porter_groups__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map_.next_value()?;
+                        }
+                        GeneratedField::PorterGroups => {
+                            if porter_groups__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("porterGroups"));
+                            }
+                            porter_groups__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(ListPorterGroupsResponse {
+                    paging: paging__,
+                    porter_groups: porter_groups__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ListPorterGroupsResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for ListPortersRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -18363,6 +18563,167 @@ impl<'de> serde::Deserialize<'de> for PorterContextStatus {
             }
         }
         deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PorterGroup {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.global_name.is_empty() {
+            len += 1;
+        }
+        if !self.regions.is_empty() {
+            len += 1;
+        }
+        if !self.context_json.is_empty() {
+            len += 1;
+        }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.description.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PorterGroup", len)?;
+        if !self.global_name.is_empty() {
+            struct_ser.serialize_field("globalName", &self.global_name)?;
+        }
+        if !self.regions.is_empty() {
+            struct_ser.serialize_field("regions", &self.regions)?;
+        }
+        if !self.context_json.is_empty() {
+            struct_ser.serialize_field("contextJson", &self.context_json)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for PorterGroup {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "global_name",
+            "globalName",
+            "regions",
+            "context_json",
+            "contextJson",
+            "name",
+            "description",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            GlobalName,
+            Regions,
+            ContextJson,
+            Name,
+            Description,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "globalName" | "global_name" => Ok(GeneratedField::GlobalName),
+                            "regions" => Ok(GeneratedField::Regions),
+                            "contextJson" | "context_json" => Ok(GeneratedField::ContextJson),
+                            "name" => Ok(GeneratedField::Name),
+                            "description" => Ok(GeneratedField::Description),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PorterGroup;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.PorterGroup")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PorterGroup, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut global_name__ = None;
+                let mut regions__ = None;
+                let mut context_json__ = None;
+                let mut name__ = None;
+                let mut description__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::GlobalName => {
+                            if global_name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("globalName"));
+                            }
+                            global_name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Regions => {
+                            if regions__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("regions"));
+                            }
+                            regions__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::ContextJson => {
+                            if context_json__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("contextJson"));
+                            }
+                            context_json__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(PorterGroup {
+                    global_name: global_name__.unwrap_or_default(),
+                    regions: regions__.unwrap_or_default(),
+                    context_json: context_json__.unwrap_or_default(),
+                    name: name__.unwrap_or_default(),
+                    description: description__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.PorterGroup", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for PresignedDownloadFileRequest {

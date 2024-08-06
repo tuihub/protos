@@ -1201,6 +1201,28 @@ function deserialize_librarian_sephirah_v1_ListPorterContextsResponse(buffer_arg
   return librarian_sephirah_v1_tiphereth_pb.ListPorterContextsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ListPorterGroupsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListPorterGroupsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListPorterGroupsRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ListPorterGroupsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ListPorterGroupsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ListPorterGroupsResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_ListPortersRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.ListPortersRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.ListPortersRequest');
@@ -2792,7 +2814,7 @@ listLinkAccounts: {
     responseSerialize: serialize_librarian_sephirah_v1_ListLinkAccountsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountsResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `Admin`
 listPorters: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorters',
     requestStream: false,
@@ -2815,6 +2837,18 @@ updatePorterStatus: {
     requestDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterStatusRequest,
     responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
+  },
+  // `Tiphereth` `Normal`
+listPorterGroups: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterGroups',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ListPorterGroupsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ListPorterGroupsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ListPorterGroupsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ListPorterGroupsResponse,
   },
   // `Tiphereth` `Normal`
 createPorterContext: {

@@ -642,7 +642,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `Admin`
 */
         pub async fn list_porters(
             &mut self,
@@ -702,6 +702,38 @@ pub mod librarian_sephirah_service_client {
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
                         "UpdatePorterStatus",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Tiphereth` `Normal`
+*/
+        pub async fn list_porter_groups(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ListPorterGroupsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListPorterGroupsResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterGroups",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ListPorterGroups",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -3641,8 +3673,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn list_feed_items_in_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::ListFeedItemsInCollectionRequest>,
@@ -4003,7 +4033,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListLinkAccountsResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `Admin`
 */
         async fn list_porters(
             &self,
@@ -4019,6 +4049,15 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<super::UpdatePorterStatusRequest>,
         ) -> std::result::Result<
             tonic::Response<super::UpdatePorterStatusResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `Normal`
+*/
+        async fn list_porter_groups(
+            &self,
+            request: tonic::Request<super::ListPorterGroupsRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ListPorterGroupsResponse>,
             tonic::Status,
         >;
         /** `Tiphereth` `Normal`
@@ -4886,8 +4925,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::RemoveFeedItemFromCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn list_feed_items_in_collection(
             &self,
             request: tonic::Request<super::ListFeedItemsInCollectionRequest>,
@@ -5945,6 +5982,56 @@ pub mod librarian_sephirah_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = UpdatePorterStatusSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterGroups" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListPorterGroupsSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::ListPorterGroupsRequest>
+                    for ListPorterGroupsSvc<T> {
+                        type Response = super::ListPorterGroupsResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ListPorterGroupsRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::list_porter_groups(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListPorterGroupsSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

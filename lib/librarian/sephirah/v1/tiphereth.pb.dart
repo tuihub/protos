@@ -1949,6 +1949,118 @@ class UpdatePorterStatusResponse extends $pb.GeneratedMessage {
   static UpdatePorterStatusResponse? _defaultInstance;
 }
 
+class ListPorterGroupsRequest extends $pb.GeneratedMessage {
+  factory ListPorterGroupsRequest({
+    $8.PagingRequest? paging,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    return $result;
+  }
+  ListPorterGroupsRequest._() : super();
+  factory ListPorterGroupsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPorterGroupsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPorterGroupsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPorterGroupsRequest clone() => ListPorterGroupsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPorterGroupsRequest copyWith(void Function(ListPorterGroupsRequest) updates) => super.copyWith((message) => updates(message as ListPorterGroupsRequest)) as ListPorterGroupsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPorterGroupsRequest create() => ListPorterGroupsRequest._();
+  ListPorterGroupsRequest createEmptyInstance() => create();
+  static $pb.PbList<ListPorterGroupsRequest> createRepeated() => $pb.PbList<ListPorterGroupsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListPorterGroupsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPorterGroupsRequest>(create);
+  static ListPorterGroupsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingRequest ensurePaging() => $_ensure(0);
+}
+
+class ListPorterGroupsResponse extends $pb.GeneratedMessage {
+  factory ListPorterGroupsResponse({
+    $8.PagingResponse? paging,
+    $core.Iterable<PorterGroup>? porterGroups,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (porterGroups != null) {
+      $result.porterGroups.addAll(porterGroups);
+    }
+    return $result;
+  }
+  ListPorterGroupsResponse._() : super();
+  factory ListPorterGroupsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListPorterGroupsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPorterGroupsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
+    ..pc<PorterGroup>(2, _omitFieldNames ? '' : 'porterGroups', $pb.PbFieldType.PM, subBuilder: PorterGroup.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListPorterGroupsResponse clone() => ListPorterGroupsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListPorterGroupsResponse copyWith(void Function(ListPorterGroupsResponse) updates) => super.copyWith((message) => updates(message as ListPorterGroupsResponse)) as ListPorterGroupsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListPorterGroupsResponse create() => ListPorterGroupsResponse._();
+  ListPorterGroupsResponse createEmptyInstance() => create();
+  static $pb.PbList<ListPorterGroupsResponse> createRepeated() => $pb.PbList<ListPorterGroupsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListPorterGroupsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListPorterGroupsResponse>(create);
+  static ListPorterGroupsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<PorterGroup> get porterGroups => $_getList(1);
+}
+
 class CreatePorterContextRequest extends $pb.GeneratedMessage {
   factory CreatePorterContextRequest({
     PorterContext? context,
@@ -2940,6 +3052,106 @@ class PorterContext extends $pb.GeneratedMessage {
   $core.bool hasHandleStatusMessage() => $_has(8);
   @$pb.TagNumber(9)
   void clearHandleStatusMessage() => clearField(9);
+}
+
+class PorterGroup extends $pb.GeneratedMessage {
+  factory PorterGroup({
+    $core.String? globalName,
+    $core.Iterable<$core.String>? regions,
+    $core.String? contextJson,
+    $core.String? name,
+    $core.String? description,
+  }) {
+    final $result = create();
+    if (globalName != null) {
+      $result.globalName = globalName;
+    }
+    if (regions != null) {
+      $result.regions.addAll(regions);
+    }
+    if (contextJson != null) {
+      $result.contextJson = contextJson;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    return $result;
+  }
+  PorterGroup._() : super();
+  factory PorterGroup.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PorterGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterGroup', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'globalName')
+    ..pPS(2, _omitFieldNames ? '' : 'regions')
+    ..aOS(3, _omitFieldNames ? '' : 'contextJson')
+    ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PorterGroup clone() => PorterGroup()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PorterGroup copyWith(void Function(PorterGroup) updates) => super.copyWith((message) => updates(message as PorterGroup)) as PorterGroup;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PorterGroup create() => PorterGroup._();
+  PorterGroup createEmptyInstance() => create();
+  static $pb.PbList<PorterGroup> createRepeated() => $pb.PbList<PorterGroup>();
+  @$core.pragma('dart2js:noInline')
+  static PorterGroup getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterGroup>(create);
+  static PorterGroup? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get globalName => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set globalName($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGlobalName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGlobalName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get regions => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get contextJson => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contextJson($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasContextJson() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContextJson() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get name => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set name($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get description => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set description($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDescription() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDescription() => clearField(5);
 }
 
 

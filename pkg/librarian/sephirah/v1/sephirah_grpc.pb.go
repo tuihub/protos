@@ -38,6 +38,7 @@ const (
 	LibrarianSephirahService_ListLinkAccounts_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts"
 	LibrarianSephirahService_ListPorters_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorters"
 	LibrarianSephirahService_UpdatePorterStatus_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus"
+	LibrarianSephirahService_ListPorterGroups_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterGroups"
 	LibrarianSephirahService_CreatePorterContext_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext"
 	LibrarianSephirahService_ListPorterContexts_FullMethodName            = "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts"
 	LibrarianSephirahService_UpdatePorterContext_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext"
@@ -196,10 +197,12 @@ type LibrarianSephirahServiceClient interface {
 	// `Tiphereth` `Normal` List third-party account binded to current user.
 	// Match ()<-[Equal]->(current user)
 	ListLinkAccounts(ctx context.Context, in *ListLinkAccountsRequest, opts ...grpc.CallOption) (*ListLinkAccountsResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `Admin`
 	ListPorters(ctx context.Context, in *ListPortersRequest, opts ...grpc.CallOption) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error)
+	// `Tiphereth` `Normal`
+	ListPorterGroups(ctx context.Context, in *ListPorterGroupsRequest, opts ...grpc.CallOption) (*ListPorterGroupsResponse, error)
 	// `Tiphereth` `Normal`
 	CreatePorterContext(ctx context.Context, in *CreatePorterContextRequest, opts ...grpc.CallOption) (*CreatePorterContextResponse, error)
 	// `Tiphereth` `Normal`
@@ -616,6 +619,16 @@ func (c *librarianSephirahServiceClient) UpdatePorterStatus(ctx context.Context,
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UpdatePorterStatusResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdatePorterStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListPorterGroups(ctx context.Context, in *ListPorterGroupsRequest, opts ...grpc.CallOption) (*ListPorterGroupsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListPorterGroupsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListPorterGroups_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1669,10 +1682,12 @@ type LibrarianSephirahServiceServer interface {
 	// `Tiphereth` `Normal` List third-party account binded to current user.
 	// Match ()<-[Equal]->(current user)
 	ListLinkAccounts(context.Context, *ListLinkAccountsRequest) (*ListLinkAccountsResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `Admin`
 	ListPorters(context.Context, *ListPortersRequest) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error)
+	// `Tiphereth` `Normal`
+	ListPorterGroups(context.Context, *ListPorterGroupsRequest) (*ListPorterGroupsResponse, error)
 	// `Tiphereth` `Normal`
 	CreatePorterContext(context.Context, *CreatePorterContextRequest) (*CreatePorterContextResponse, error)
 	// `Tiphereth` `Normal`
@@ -1952,6 +1967,9 @@ func (UnimplementedLibrarianSephirahServiceServer) ListPorters(context.Context, 
 }
 func (UnimplementedLibrarianSephirahServiceServer) UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePorterStatus not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListPorterGroups(context.Context, *ListPorterGroupsRequest) (*ListPorterGroupsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPorterGroups not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) CreatePorterContext(context.Context, *CreatePorterContextRequest) (*CreatePorterContextResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePorterContext not implemented")
@@ -2597,6 +2615,24 @@ func _LibrarianSephirahService_UpdatePorterStatus_Handler(srv interface{}, ctx c
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).UpdatePorterStatus(ctx, req.(*UpdatePorterStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListPorterGroups_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPorterGroupsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListPorterGroups(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListPorterGroups_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListPorterGroups(ctx, req.(*ListPorterGroupsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4385,6 +4421,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePorterStatus",
 			Handler:    _LibrarianSephirahService_UpdatePorterStatus_Handler,
+		},
+		{
+			MethodName: "ListPorterGroups",
+			Handler:    _LibrarianSephirahService_ListPorterGroups_Handler,
 		},
 		{
 			MethodName: "CreatePorterContext",

@@ -607,6 +607,34 @@ const UpdatePorterStatusResponse$json = {
 final $typed_data.Uint8List updatePorterStatusResponseDescriptor = $convert.base64Decode(
     'ChpVcGRhdGVQb3J0ZXJTdGF0dXNSZXNwb25zZQ==');
 
+@$core.Deprecated('Use listPorterGroupsRequestDescriptor instead')
+const ListPorterGroupsRequest$json = {
+  '1': 'ListPorterGroupsRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+  ],
+};
+
+/// Descriptor for `ListPorterGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPorterGroupsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0UG9ydGVyR3JvdXBzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udj'
+    'EuUGFnaW5nUmVxdWVzdFIGcGFnaW5n');
+
+@$core.Deprecated('Use listPorterGroupsResponseDescriptor instead')
+const ListPorterGroupsResponse$json = {
+  '1': 'ListPorterGroupsResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'porter_groups', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.PorterGroup', '10': 'porterGroups'},
+  ],
+};
+
+/// Descriptor for `ListPorterGroupsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listPorterGroupsResponseDescriptor = $convert.base64Decode(
+    'ChhMaXN0UG9ydGVyR3JvdXBzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLn'
+    'YxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSRwoNcG9ydGVyX2dyb3VwcxgCIAMoCzIiLmxpYnJh'
+    'cmlhbi5zZXBoaXJhaC52MS5Qb3J0ZXJHcm91cFIMcG9ydGVyR3JvdXBz');
+
 @$core.Deprecated('Use createPorterContextRequestDescriptor instead')
 const CreatePorterContextRequest$json = {
   '1': 'CreatePorterContextRequest',
@@ -804,4 +832,22 @@ final $typed_data.Uint8List porterContextDescriptor = $convert.base64Decode(
     '5kbGVfc3RhdHVzGAggASgOMjAubGlicmFyaWFuLnNlcGhpcmFoLnYxLlBvcnRlckNvbnRleHRI'
     'YW5kbGVTdGF0dXNSDGhhbmRsZVN0YXR1cxIyChVoYW5kbGVfc3RhdHVzX21lc3NhZ2UYCSABKA'
     'lSE2hhbmRsZVN0YXR1c01lc3NhZ2U=');
+
+@$core.Deprecated('Use porterGroupDescriptor instead')
+const PorterGroup$json = {
+  '1': 'PorterGroup',
+  '2': [
+    {'1': 'global_name', '3': 1, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'regions', '3': 2, '4': 3, '5': 9, '10': 'regions'},
+    {'1': 'context_json', '3': 3, '4': 1, '5': 9, '10': 'contextJson'},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `PorterGroup`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterGroupDescriptor = $convert.base64Decode(
+    'CgtQb3J0ZXJHcm91cBIfCgtnbG9iYWxfbmFtZRgBIAEoCVIKZ2xvYmFsTmFtZRIYCgdyZWdpb2'
+    '5zGAIgAygJUgdyZWdpb25zEiEKDGNvbnRleHRfanNvbhgDIAEoCVILY29udGV4dEpzb24SEgoE'
+    'bmFtZRgEIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24=');
 

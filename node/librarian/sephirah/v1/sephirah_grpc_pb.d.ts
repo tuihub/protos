@@ -33,6 +33,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   listLinkAccounts: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>;
   listPorters: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>;
   updatePorterStatus: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>;
+  listPorterGroups: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest, librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse>;
   createPorterContext: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest, librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse>;
   listPorterContexts: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.ListPorterContextsRequest, librarian_sephirah_v1_tiphereth_pb.ListPorterContextsResponse>;
   updatePorterContext: grpc.MethodDefinition<librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextResponse>;
@@ -154,6 +155,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   listLinkAccounts: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsRequest, librarian_sephirah_v1_tiphereth_pb.ListLinkAccountsResponse>;
   listPorters: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListPortersRequest, librarian_sephirah_v1_tiphereth_pb.ListPortersResponse>;
   updatePorterStatus: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>;
+  listPorterGroups: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest, librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse>;
   createPorterContext: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest, librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse>;
   listPorterContexts: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.ListPorterContextsRequest, librarian_sephirah_v1_tiphereth_pb.ListPorterContextsResponse>;
   updatePorterContext: grpc.handleUnaryCall<librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextRequest, librarian_sephirah_v1_tiphereth_pb.UpdatePorterContextResponse>;
@@ -311,6 +313,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   updatePorterStatus(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>): grpc.ClientUnaryCall;
   updatePorterStatus(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>): grpc.ClientUnaryCall;
   updatePorterStatus(argument: librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.UpdatePorterStatusResponse>): grpc.ClientUnaryCall;
+  listPorterGroups(argument: librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse>): grpc.ClientUnaryCall;
+  listPorterGroups(argument: librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse>): grpc.ClientUnaryCall;
+  listPorterGroups(argument: librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.ListPorterGroupsResponse>): grpc.ClientUnaryCall;
   createPorterContext(argument: librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse>): grpc.ClientUnaryCall;
   createPorterContext(argument: librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse>): grpc.ClientUnaryCall;
   createPorterContext(argument: librarian_sephirah_v1_tiphereth_pb.CreatePorterContextRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_tiphereth_pb.CreatePorterContextResponse>): grpc.ClientUnaryCall;

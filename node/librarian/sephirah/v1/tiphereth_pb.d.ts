@@ -832,6 +832,56 @@ export namespace UpdatePorterStatusResponse {
   }
 }
 
+export class ListPorterGroupsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPorterGroupsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPorterGroupsRequest): ListPorterGroupsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPorterGroupsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPorterGroupsRequest;
+  static deserializeBinaryFromReader(message: ListPorterGroupsRequest, reader: jspb.BinaryReader): ListPorterGroupsRequest;
+}
+
+export namespace ListPorterGroupsRequest {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+  }
+}
+
+export class ListPorterGroupsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  clearPorterGroupsList(): void;
+  getPorterGroupsList(): Array<PorterGroup>;
+  setPorterGroupsList(value: Array<PorterGroup>): void;
+  addPorterGroups(value?: PorterGroup, index?: number): PorterGroup;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListPorterGroupsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListPorterGroupsResponse): ListPorterGroupsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListPorterGroupsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListPorterGroupsResponse;
+  static deserializeBinaryFromReader(message: ListPorterGroupsResponse, reader: jspb.BinaryReader): ListPorterGroupsResponse;
+}
+
+export namespace ListPorterGroupsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    porterGroupsList: Array<PorterGroup.AsObject>,
+  }
+}
+
 export class CreatePorterContextRequest extends jspb.Message {
   hasContext(): boolean;
   clearContext(): void;
@@ -1201,6 +1251,44 @@ export namespace PorterContext {
     status: PorterContextStatusMap[keyof PorterContextStatusMap],
     handleStatus: PorterContextHandleStatusMap[keyof PorterContextHandleStatusMap],
     handleStatusMessage: string,
+  }
+}
+
+export class PorterGroup extends jspb.Message {
+  getGlobalName(): string;
+  setGlobalName(value: string): void;
+
+  clearRegionsList(): void;
+  getRegionsList(): Array<string>;
+  setRegionsList(value: Array<string>): void;
+  addRegions(value: string, index?: number): string;
+
+  getContextJson(): string;
+  setContextJson(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PorterGroup.AsObject;
+  static toObject(includeInstance: boolean, msg: PorterGroup): PorterGroup.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PorterGroup, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PorterGroup;
+  static deserializeBinaryFromReader(message: PorterGroup, reader: jspb.BinaryReader): PorterGroup;
+}
+
+export namespace PorterGroup {
+  export type AsObject = {
+    globalName: string,
+    regionsList: Array<string>,
+    contextJson: string,
+    name: string,
+    description: string,
   }
 }
 

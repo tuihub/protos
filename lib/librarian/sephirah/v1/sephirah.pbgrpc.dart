@@ -104,6 +104,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterStatus',
       ($1.UpdatePorterStatusRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.UpdatePorterStatusResponse.fromBuffer(value));
+  static final _$listPorterGroups = $grpc.ClientMethod<$1.ListPorterGroupsRequest, $1.ListPorterGroupsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterGroups',
+      ($1.ListPorterGroupsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.ListPorterGroupsResponse.fromBuffer(value));
   static final _$createPorterContext = $grpc.ClientMethod<$1.CreatePorterContextRequest, $1.CreatePorterContextResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext',
       ($1.CreatePorterContextRequest value) => value.writeToBuffer(),
@@ -573,6 +577,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.UpdatePorterStatusResponse> updatePorterStatus($1.UpdatePorterStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updatePorterStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.ListPorterGroupsResponse> listPorterGroups($1.ListPorterGroupsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listPorterGroups, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.CreatePorterContextResponse> createPorterContext($1.CreatePorterContextRequest request, {$grpc.CallOptions? options}) {
@@ -1102,6 +1110,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.UpdatePorterStatusRequest.fromBuffer(value),
         ($1.UpdatePorterStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ListPorterGroupsRequest, $1.ListPorterGroupsResponse>(
+        'ListPorterGroups',
+        listPorterGroups_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.ListPorterGroupsRequest.fromBuffer(value),
+        ($1.ListPorterGroupsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreatePorterContextRequest, $1.CreatePorterContextResponse>(
         'CreatePorterContext',
         createPorterContext_Pre,
@@ -1859,6 +1874,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return updatePorterStatus(call, await request);
   }
 
+  $async.Future<$1.ListPorterGroupsResponse> listPorterGroups_Pre($grpc.ServiceCall call, $async.Future<$1.ListPorterGroupsRequest> request) async {
+    return listPorterGroups(call, await request);
+  }
+
   $async.Future<$1.CreatePorterContextResponse> createPorterContext_Pre($grpc.ServiceCall call, $async.Future<$1.CreatePorterContextRequest> request) async {
     return createPorterContext(call, await request);
   }
@@ -2254,6 +2273,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.ListLinkAccountsResponse> listLinkAccounts($grpc.ServiceCall call, $1.ListLinkAccountsRequest request);
   $async.Future<$1.ListPortersResponse> listPorters($grpc.ServiceCall call, $1.ListPortersRequest request);
   $async.Future<$1.UpdatePorterStatusResponse> updatePorterStatus($grpc.ServiceCall call, $1.UpdatePorterStatusRequest request);
+  $async.Future<$1.ListPorterGroupsResponse> listPorterGroups($grpc.ServiceCall call, $1.ListPorterGroupsRequest request);
   $async.Future<$1.CreatePorterContextResponse> createPorterContext($grpc.ServiceCall call, $1.CreatePorterContextRequest request);
   $async.Future<$1.ListPorterContextsResponse> listPorterContexts($grpc.ServiceCall call, $1.ListPorterContextsRequest request);
   $async.Future<$1.UpdatePorterContextResponse> updatePorterContext($grpc.ServiceCall call, $1.UpdatePorterContextRequest request);
