@@ -82,6 +82,7 @@ class PorterConnectionStatus extends $pb.ProtobufEnum {
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_DISCONNECTED = PorterConnectionStatus._(2, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DISCONNECTED');
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_ACTIVE = PorterConnectionStatus._(3, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVE');
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_ACTIVATION_FAILED = PorterConnectionStatus._(4, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVATION_FAILED');
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_DOWNGRADED = PorterConnectionStatus._(5, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DOWNGRADED');
 
   static const $core.List<PorterConnectionStatus> values = <PorterConnectionStatus> [
     PORTER_CONNECTION_STATUS_UNSPECIFIED,
@@ -89,12 +90,51 @@ class PorterConnectionStatus extends $pb.ProtobufEnum {
     PORTER_CONNECTION_STATUS_DISCONNECTED,
     PORTER_CONNECTION_STATUS_ACTIVE,
     PORTER_CONNECTION_STATUS_ACTIVATION_FAILED,
+    PORTER_CONNECTION_STATUS_DOWNGRADED,
   ];
 
   static final $core.Map<$core.int, PorterConnectionStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static PorterConnectionStatus? valueOf($core.int value) => _byValue[value];
 
   const PorterConnectionStatus._($core.int v, $core.String n) : super(v, n);
+}
+
+class PorterContextStatus extends $pb.ProtobufEnum {
+  static const PorterContextStatus PORTER_CONTEXT_STATUS_UNSPECIFIED = PorterContextStatus._(0, _omitEnumNames ? '' : 'PORTER_CONTEXT_STATUS_UNSPECIFIED');
+  static const PorterContextStatus PORTER_CONTEXT_STATUS_ACTIVE = PorterContextStatus._(1, _omitEnumNames ? '' : 'PORTER_CONTEXT_STATUS_ACTIVE');
+  static const PorterContextStatus PORTER_CONTEXT_STATUS_DISABLED = PorterContextStatus._(2, _omitEnumNames ? '' : 'PORTER_CONTEXT_STATUS_DISABLED');
+
+  static const $core.List<PorterContextStatus> values = <PorterContextStatus> [
+    PORTER_CONTEXT_STATUS_UNSPECIFIED,
+    PORTER_CONTEXT_STATUS_ACTIVE,
+    PORTER_CONTEXT_STATUS_DISABLED,
+  ];
+
+  static final $core.Map<$core.int, PorterContextStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static PorterContextStatus? valueOf($core.int value) => _byValue[value];
+
+  const PorterContextStatus._($core.int v, $core.String n) : super(v, n);
+}
+
+class PorterContextHandleStatus extends $pb.ProtobufEnum {
+  static const PorterContextHandleStatus PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED = PorterContextHandleStatus._(0, _omitEnumNames ? '' : 'PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED');
+  static const PorterContextHandleStatus PORTER_CONTEXT_HANDLE_STATUS_ACTIVE = PorterContextHandleStatus._(1, _omitEnumNames ? '' : 'PORTER_CONTEXT_HANDLE_STATUS_ACTIVE');
+  static const PorterContextHandleStatus PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED = PorterContextHandleStatus._(2, _omitEnumNames ? '' : 'PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED');
+  static const PorterContextHandleStatus PORTER_CONTEXT_HANDLE_STATUS_QUEUEING = PorterContextHandleStatus._(3, _omitEnumNames ? '' : 'PORTER_CONTEXT_HANDLE_STATUS_QUEUEING');
+  static const PorterContextHandleStatus PORTER_CONTEXT_HANDLE_STATUS_BLOCKED = PorterContextHandleStatus._(4, _omitEnumNames ? '' : 'PORTER_CONTEXT_HANDLE_STATUS_BLOCKED');
+
+  static const $core.List<PorterContextHandleStatus> values = <PorterContextHandleStatus> [
+    PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED,
+    PORTER_CONTEXT_HANDLE_STATUS_ACTIVE,
+    PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED,
+    PORTER_CONTEXT_HANDLE_STATUS_QUEUEING,
+    PORTER_CONTEXT_HANDLE_STATUS_BLOCKED,
+  ];
+
+  static final $core.Map<$core.int, PorterContextHandleStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static PorterContextHandleStatus? valueOf($core.int value) => _byValue[value];
+
+  const PorterContextHandleStatus._($core.int v, $core.String n) : super(v, n);
 }
 
 

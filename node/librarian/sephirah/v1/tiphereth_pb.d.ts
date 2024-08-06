@@ -833,11 +833,6 @@ export namespace UpdatePorterStatusResponse {
 }
 
 export class CreatePorterContextRequest extends jspb.Message {
-  hasPorterId(): boolean;
-  clearPorterId(): void;
-  getPorterId(): librarian_v1_common_pb.InternalID | undefined;
-  setPorterId(value?: librarian_v1_common_pb.InternalID): void;
-
   hasContext(): boolean;
   clearContext(): void;
   getContext(): PorterContext | undefined;
@@ -855,7 +850,6 @@ export class CreatePorterContextRequest extends jspb.Message {
 
 export namespace CreatePorterContextRequest {
   export type AsObject = {
-    porterId?: librarian_v1_common_pb.InternalID.AsObject,
     context?: PorterContext.AsObject,
   }
 }
@@ -933,11 +927,6 @@ export namespace ListPorterContextsResponse {
 }
 
 export class UpdatePorterContextRequest extends jspb.Message {
-  hasPorterId(): boolean;
-  clearPorterId(): void;
-  getPorterId(): librarian_v1_common_pb.InternalID | undefined;
-  setPorterId(value?: librarian_v1_common_pb.InternalID): void;
-
   hasContext(): boolean;
   clearContext(): void;
   getContext(): PorterContext | undefined;
@@ -955,7 +944,6 @@ export class UpdatePorterContextRequest extends jspb.Message {
 
 export namespace UpdatePorterContextRequest {
   export type AsObject = {
-    porterId?: librarian_v1_common_pb.InternalID.AsObject,
     context?: PorterContext.AsObject,
   }
 }
@@ -973,48 +961,6 @@ export class UpdatePorterContextResponse extends jspb.Message {
 
 export namespace UpdatePorterContextResponse {
   export type AsObject = {
-  }
-}
-
-export class PorterContext extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): librarian_v1_common_pb.InternalID | undefined;
-  setId(value?: librarian_v1_common_pb.InternalID): void;
-
-  hasPorterId(): boolean;
-  clearPorterId(): void;
-  getPorterId(): librarian_v1_common_pb.InternalID | undefined;
-  setPorterId(value?: librarian_v1_common_pb.InternalID): void;
-
-  hasContextJson(): boolean;
-  clearContextJson(): void;
-  getContextJson(): string;
-  setContextJson(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PorterContext.AsObject;
-  static toObject(includeInstance: boolean, msg: PorterContext): PorterContext.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PorterContext, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PorterContext;
-  static deserializeBinaryFromReader(message: PorterContext, reader: jspb.BinaryReader): PorterContext;
-}
-
-export namespace PorterContext {
-  export type AsObject = {
-    id?: librarian_v1_common_pb.InternalID.AsObject,
-    porterId?: librarian_v1_common_pb.InternalID.AsObject,
-    contextJson: string,
-    name: string,
-    description: string,
   }
 }
 
@@ -1177,6 +1123,9 @@ export class Porter extends jspb.Message {
   getContextJsonSchema(): string;
   setContextJsonSchema(value: string): void;
 
+  getConnectionStatusMessage(): string;
+  setConnectionStatusMessage(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Porter.AsObject;
   static toObject(includeInstance: boolean, msg: Porter): Porter.AsObject;
@@ -1197,6 +1146,61 @@ export namespace Porter {
     status: UserStatusMap[keyof UserStatusMap],
     connectionStatus: PorterConnectionStatusMap[keyof PorterConnectionStatusMap],
     contextJsonSchema: string,
+    connectionStatusMessage: string,
+  }
+}
+
+export class PorterContext extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  getGlobalName(): string;
+  setGlobalName(value: string): void;
+
+  getRegion(): string;
+  setRegion(value: string): void;
+
+  getContextJson(): string;
+  setContextJson(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getStatus(): PorterContextStatusMap[keyof PorterContextStatusMap];
+  setStatus(value: PorterContextStatusMap[keyof PorterContextStatusMap]): void;
+
+  getHandleStatus(): PorterContextHandleStatusMap[keyof PorterContextHandleStatusMap];
+  setHandleStatus(value: PorterContextHandleStatusMap[keyof PorterContextHandleStatusMap]): void;
+
+  getHandleStatusMessage(): string;
+  setHandleStatusMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PorterContext.AsObject;
+  static toObject(includeInstance: boolean, msg: PorterContext): PorterContext.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PorterContext, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PorterContext;
+  static deserializeBinaryFromReader(message: PorterContext, reader: jspb.BinaryReader): PorterContext;
+}
+
+export namespace PorterContext {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    globalName: string,
+    region: string,
+    contextJson: string,
+    name: string,
+    description: string,
+    status: PorterContextStatusMap[keyof PorterContextStatusMap],
+    handleStatus: PorterContextHandleStatusMap[keyof PorterContextHandleStatusMap],
+    handleStatusMessage: string,
   }
 }
 
@@ -1236,7 +1240,26 @@ export interface PorterConnectionStatusMap {
   PORTER_CONNECTION_STATUS_DISCONNECTED: 2;
   PORTER_CONNECTION_STATUS_ACTIVE: 3;
   PORTER_CONNECTION_STATUS_ACTIVATION_FAILED: 4;
+  PORTER_CONNECTION_STATUS_DOWNGRADED: 5;
 }
 
 export const PorterConnectionStatus: PorterConnectionStatusMap;
+
+export interface PorterContextStatusMap {
+  PORTER_CONTEXT_STATUS_UNSPECIFIED: 0;
+  PORTER_CONTEXT_STATUS_ACTIVE: 1;
+  PORTER_CONTEXT_STATUS_DISABLED: 2;
+}
+
+export const PorterContextStatus: PorterContextStatusMap;
+
+export interface PorterContextHandleStatusMap {
+  PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED: 0;
+  PORTER_CONTEXT_HANDLE_STATUS_ACTIVE: 1;
+  PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED: 2;
+  PORTER_CONTEXT_HANDLE_STATUS_QUEUEING: 3;
+  PORTER_CONTEXT_HANDLE_STATUS_BLOCKED: 4;
+}
+
+export const PorterContextHandleStatus: PorterContextHandleStatusMap;
 

@@ -3299,16 +3299,10 @@ impl serde::Serialize for CreatePorterContextRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.porter_id.is_some() {
-            len += 1;
-        }
         if self.context.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.CreatePorterContextRequest", len)?;
-        if let Some(v) = self.porter_id.as_ref() {
-            struct_ser.serialize_field("porterId", v)?;
-        }
         if let Some(v) = self.context.as_ref() {
             struct_ser.serialize_field("context", v)?;
         }
@@ -3322,14 +3316,11 @@ impl<'de> serde::Deserialize<'de> for CreatePorterContextRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "porter_id",
-            "porterId",
             "context",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            PorterId,
             Context,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -3352,7 +3343,6 @@ impl<'de> serde::Deserialize<'de> for CreatePorterContextRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "porterId" | "porter_id" => Ok(GeneratedField::PorterId),
                             "context" => Ok(GeneratedField::Context),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -3373,16 +3363,9 @@ impl<'de> serde::Deserialize<'de> for CreatePorterContextRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut porter_id__ = None;
                 let mut context__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::PorterId => {
-                            if porter_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("porterId"));
-                            }
-                            porter_id__ = map_.next_value()?;
-                        }
                         GeneratedField::Context => {
                             if context__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("context"));
@@ -3392,7 +3375,6 @@ impl<'de> serde::Deserialize<'de> for CreatePorterContextRequest {
                     }
                 }
                 Ok(CreatePorterContextRequest {
-                    porter_id: porter_id__,
                     context: context__,
                 })
             }
@@ -17707,6 +17689,9 @@ impl serde::Serialize for Porter {
         if self.context_json_schema.is_some() {
             len += 1;
         }
+        if !self.connection_status_message.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.Porter", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -17736,6 +17721,9 @@ impl serde::Serialize for Porter {
         if let Some(v) = self.context_json_schema.as_ref() {
             struct_ser.serialize_field("contextJsonSchema", v)?;
         }
+        if !self.connection_status_message.is_empty() {
+            struct_ser.serialize_field("connectionStatusMessage", &self.connection_status_message)?;
+        }
         struct_ser.end()
     }
 }
@@ -17758,6 +17746,8 @@ impl<'de> serde::Deserialize<'de> for Porter {
             "connectionStatus",
             "context_json_schema",
             "contextJsonSchema",
+            "connection_status_message",
+            "connectionStatusMessage",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -17770,6 +17760,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
             Status,
             ConnectionStatus,
             ContextJsonSchema,
+            ConnectionStatusMessage,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -17799,6 +17790,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                             "status" => Ok(GeneratedField::Status),
                             "connectionStatus" | "connection_status" => Ok(GeneratedField::ConnectionStatus),
                             "contextJsonSchema" | "context_json_schema" => Ok(GeneratedField::ContextJsonSchema),
+                            "connectionStatusMessage" | "connection_status_message" => Ok(GeneratedField::ConnectionStatusMessage),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -17826,6 +17818,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                 let mut status__ = None;
                 let mut connection_status__ = None;
                 let mut context_json_schema__ = None;
+                let mut connection_status_message__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -17876,6 +17869,12 @@ impl<'de> serde::Deserialize<'de> for Porter {
                             }
                             context_json_schema__ = map_.next_value()?;
                         }
+                        GeneratedField::ConnectionStatusMessage => {
+                            if connection_status_message__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("connectionStatusMessage"));
+                            }
+                            connection_status_message__ = Some(map_.next_value()?);
+                        }
                     }
                 }
                 Ok(Porter {
@@ -17887,6 +17886,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                     status: status__.unwrap_or_default(),
                     connection_status: connection_status__.unwrap_or_default(),
                     context_json_schema: context_json_schema__,
+                    connection_status_message: connection_status_message__.unwrap_or_default(),
                 })
             }
         }
@@ -17905,6 +17905,7 @@ impl serde::Serialize for PorterConnectionStatus {
             Self::Disconnected => "PORTER_CONNECTION_STATUS_DISCONNECTED",
             Self::Active => "PORTER_CONNECTION_STATUS_ACTIVE",
             Self::ActivationFailed => "PORTER_CONNECTION_STATUS_ACTIVATION_FAILED",
+            Self::Downgraded => "PORTER_CONNECTION_STATUS_DOWNGRADED",
         };
         serializer.serialize_str(variant)
     }
@@ -17921,6 +17922,7 @@ impl<'de> serde::Deserialize<'de> for PorterConnectionStatus {
             "PORTER_CONNECTION_STATUS_DISCONNECTED",
             "PORTER_CONNECTION_STATUS_ACTIVE",
             "PORTER_CONNECTION_STATUS_ACTIVATION_FAILED",
+            "PORTER_CONNECTION_STATUS_DOWNGRADED",
         ];
 
         struct GeneratedVisitor;
@@ -17966,6 +17968,7 @@ impl<'de> serde::Deserialize<'de> for PorterConnectionStatus {
                     "PORTER_CONNECTION_STATUS_DISCONNECTED" => Ok(PorterConnectionStatus::Disconnected),
                     "PORTER_CONNECTION_STATUS_ACTIVE" => Ok(PorterConnectionStatus::Active),
                     "PORTER_CONNECTION_STATUS_ACTIVATION_FAILED" => Ok(PorterConnectionStatus::ActivationFailed),
+                    "PORTER_CONNECTION_STATUS_DOWNGRADED" => Ok(PorterConnectionStatus::Downgraded),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }
@@ -17984,33 +17987,61 @@ impl serde::Serialize for PorterContext {
         if self.id.is_some() {
             len += 1;
         }
-        if self.porter_id.is_some() {
+        if !self.global_name.is_empty() {
             len += 1;
         }
-        if self.context_json.is_some() {
+        if !self.region.is_empty() {
+            len += 1;
+        }
+        if !self.context_json.is_empty() {
             len += 1;
         }
         if !self.name.is_empty() {
             len += 1;
         }
         if !self.description.is_empty() {
+            len += 1;
+        }
+        if self.status != 0 {
+            len += 1;
+        }
+        if self.handle_status != 0 {
+            len += 1;
+        }
+        if !self.handle_status_message.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PorterContext", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
-        if let Some(v) = self.porter_id.as_ref() {
-            struct_ser.serialize_field("porterId", v)?;
+        if !self.global_name.is_empty() {
+            struct_ser.serialize_field("globalName", &self.global_name)?;
         }
-        if let Some(v) = self.context_json.as_ref() {
-            struct_ser.serialize_field("contextJson", v)?;
+        if !self.region.is_empty() {
+            struct_ser.serialize_field("region", &self.region)?;
+        }
+        if !self.context_json.is_empty() {
+            struct_ser.serialize_field("contextJson", &self.context_json)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
         }
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
+        }
+        if self.status != 0 {
+            let v = PorterContextStatus::try_from(self.status)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.status)))?;
+            struct_ser.serialize_field("status", &v)?;
+        }
+        if self.handle_status != 0 {
+            let v = PorterContextHandleStatus::try_from(self.handle_status)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.handle_status)))?;
+            struct_ser.serialize_field("handleStatus", &v)?;
+        }
+        if !self.handle_status_message.is_empty() {
+            struct_ser.serialize_field("handleStatusMessage", &self.handle_status_message)?;
         }
         struct_ser.end()
     }
@@ -18023,21 +18054,31 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
     {
         const FIELDS: &[&str] = &[
             "id",
-            "porter_id",
-            "porterId",
+            "global_name",
+            "globalName",
+            "region",
             "context_json",
             "contextJson",
             "name",
             "description",
+            "status",
+            "handle_status",
+            "handleStatus",
+            "handle_status_message",
+            "handleStatusMessage",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
-            PorterId,
+            GlobalName,
+            Region,
             ContextJson,
             Name,
             Description,
+            Status,
+            HandleStatus,
+            HandleStatusMessage,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -18060,10 +18101,14 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
-                            "porterId" | "porter_id" => Ok(GeneratedField::PorterId),
+                            "globalName" | "global_name" => Ok(GeneratedField::GlobalName),
+                            "region" => Ok(GeneratedField::Region),
                             "contextJson" | "context_json" => Ok(GeneratedField::ContextJson),
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
+                            "status" => Ok(GeneratedField::Status),
+                            "handleStatus" | "handle_status" => Ok(GeneratedField::HandleStatus),
+                            "handleStatusMessage" | "handle_status_message" => Ok(GeneratedField::HandleStatusMessage),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -18084,10 +18129,14 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
-                let mut porter_id__ = None;
+                let mut global_name__ = None;
+                let mut region__ = None;
                 let mut context_json__ = None;
                 let mut name__ = None;
                 let mut description__ = None;
+                let mut status__ = None;
+                let mut handle_status__ = None;
+                let mut handle_status_message__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -18096,17 +18145,23 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                             }
                             id__ = map_.next_value()?;
                         }
-                        GeneratedField::PorterId => {
-                            if porter_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("porterId"));
+                        GeneratedField::GlobalName => {
+                            if global_name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("globalName"));
                             }
-                            porter_id__ = map_.next_value()?;
+                            global_name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Region => {
+                            if region__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("region"));
+                            }
+                            region__ = Some(map_.next_value()?);
                         }
                         GeneratedField::ContextJson => {
                             if context_json__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("contextJson"));
                             }
-                            context_json__ = map_.next_value()?;
+                            context_json__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -18120,18 +18175,194 @@ impl<'de> serde::Deserialize<'de> for PorterContext {
                             }
                             description__ = Some(map_.next_value()?);
                         }
+                        GeneratedField::Status => {
+                            if status__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("status"));
+                            }
+                            status__ = Some(map_.next_value::<PorterContextStatus>()? as i32);
+                        }
+                        GeneratedField::HandleStatus => {
+                            if handle_status__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("handleStatus"));
+                            }
+                            handle_status__ = Some(map_.next_value::<PorterContextHandleStatus>()? as i32);
+                        }
+                        GeneratedField::HandleStatusMessage => {
+                            if handle_status_message__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("handleStatusMessage"));
+                            }
+                            handle_status_message__ = Some(map_.next_value()?);
+                        }
                     }
                 }
                 Ok(PorterContext {
                     id: id__,
-                    porter_id: porter_id__,
-                    context_json: context_json__,
+                    global_name: global_name__.unwrap_or_default(),
+                    region: region__.unwrap_or_default(),
+                    context_json: context_json__.unwrap_or_default(),
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
+                    status: status__.unwrap_or_default(),
+                    handle_status: handle_status__.unwrap_or_default(),
+                    handle_status_message: handle_status_message__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.PorterContext", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PorterContextHandleStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED",
+            Self::Active => "PORTER_CONTEXT_HANDLE_STATUS_ACTIVE",
+            Self::Downgraded => "PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED",
+            Self::Queueing => "PORTER_CONTEXT_HANDLE_STATUS_QUEUEING",
+            Self::Blocked => "PORTER_CONTEXT_HANDLE_STATUS_BLOCKED",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for PorterContextHandleStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED",
+            "PORTER_CONTEXT_HANDLE_STATUS_ACTIVE",
+            "PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED",
+            "PORTER_CONTEXT_HANDLE_STATUS_QUEUEING",
+            "PORTER_CONTEXT_HANDLE_STATUS_BLOCKED",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PorterContextHandleStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED" => Ok(PorterContextHandleStatus::Unspecified),
+                    "PORTER_CONTEXT_HANDLE_STATUS_ACTIVE" => Ok(PorterContextHandleStatus::Active),
+                    "PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED" => Ok(PorterContextHandleStatus::Downgraded),
+                    "PORTER_CONTEXT_HANDLE_STATUS_QUEUEING" => Ok(PorterContextHandleStatus::Queueing),
+                    "PORTER_CONTEXT_HANDLE_STATUS_BLOCKED" => Ok(PorterContextHandleStatus::Blocked),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for PorterContextStatus {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "PORTER_CONTEXT_STATUS_UNSPECIFIED",
+            Self::Active => "PORTER_CONTEXT_STATUS_ACTIVE",
+            Self::Disabled => "PORTER_CONTEXT_STATUS_DISABLED",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for PorterContextStatus {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "PORTER_CONTEXT_STATUS_UNSPECIFIED",
+            "PORTER_CONTEXT_STATUS_ACTIVE",
+            "PORTER_CONTEXT_STATUS_DISABLED",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = PorterContextStatus;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "PORTER_CONTEXT_STATUS_UNSPECIFIED" => Ok(PorterContextStatus::Unspecified),
+                    "PORTER_CONTEXT_STATUS_ACTIVE" => Ok(PorterContextStatus::Active),
+                    "PORTER_CONTEXT_STATUS_DISABLED" => Ok(PorterContextStatus::Disabled),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
     }
 }
 impl serde::Serialize for PresignedDownloadFileRequest {
@@ -26973,16 +27204,10 @@ impl serde::Serialize for UpdatePorterContextRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.porter_id.is_some() {
-            len += 1;
-        }
         if self.context.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UpdatePorterContextRequest", len)?;
-        if let Some(v) = self.porter_id.as_ref() {
-            struct_ser.serialize_field("porterId", v)?;
-        }
         if let Some(v) = self.context.as_ref() {
             struct_ser.serialize_field("context", v)?;
         }
@@ -26996,14 +27221,11 @@ impl<'de> serde::Deserialize<'de> for UpdatePorterContextRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "porter_id",
-            "porterId",
             "context",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            PorterId,
             Context,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -27026,7 +27248,6 @@ impl<'de> serde::Deserialize<'de> for UpdatePorterContextRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "porterId" | "porter_id" => Ok(GeneratedField::PorterId),
                             "context" => Ok(GeneratedField::Context),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -27047,16 +27268,9 @@ impl<'de> serde::Deserialize<'de> for UpdatePorterContextRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut porter_id__ = None;
                 let mut context__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::PorterId => {
-                            if porter_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("porterId"));
-                            }
-                            porter_id__ = map_.next_value()?;
-                        }
                         GeneratedField::Context => {
                             if context__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("context"));
@@ -27066,7 +27280,6 @@ impl<'de> serde::Deserialize<'de> for UpdatePorterContextRequest {
                     }
                 }
                 Ok(UpdatePorterContextRequest {
-                    porter_id: porter_id__,
                     context: context__,
                 })
             }

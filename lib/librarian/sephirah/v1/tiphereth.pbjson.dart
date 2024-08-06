@@ -76,6 +76,7 @@ const PorterConnectionStatus$json = {
     {'1': 'PORTER_CONNECTION_STATUS_DISCONNECTED', '2': 2},
     {'1': 'PORTER_CONNECTION_STATUS_ACTIVE', '2': 3},
     {'1': 'PORTER_CONNECTION_STATUS_ACTIVATION_FAILED', '2': 4},
+    {'1': 'PORTER_CONNECTION_STATUS_DOWNGRADED', '2': 5},
   ],
 };
 
@@ -85,7 +86,43 @@ final $typed_data.Uint8List porterConnectionStatusDescriptor = $convert.base64De
     'NQRUNJRklFRBAAEiYKIlBPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19DT05ORUNURUQQARIpCiVQ'
     'T1JURVJfQ09OTkVDVElPTl9TVEFUVVNfRElTQ09OTkVDVEVEEAISIwofUE9SVEVSX0NPTk5FQ1'
     'RJT05fU1RBVFVTX0FDVElWRRADEi4KKlBPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19BQ1RJVkFU'
-    'SU9OX0ZBSUxFRBAE');
+    'SU9OX0ZBSUxFRBAEEicKI1BPUlRFUl9DT05ORUNUSU9OX1NUQVRVU19ET1dOR1JBREVEEAU=');
+
+@$core.Deprecated('Use porterContextStatusDescriptor instead')
+const PorterContextStatus$json = {
+  '1': 'PorterContextStatus',
+  '2': [
+    {'1': 'PORTER_CONTEXT_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'PORTER_CONTEXT_STATUS_ACTIVE', '2': 1},
+    {'1': 'PORTER_CONTEXT_STATUS_DISABLED', '2': 2},
+  ],
+};
+
+/// Descriptor for `PorterContextStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List porterContextStatusDescriptor = $convert.base64Decode(
+    'ChNQb3J0ZXJDb250ZXh0U3RhdHVzEiUKIVBPUlRFUl9DT05URVhUX1NUQVRVU19VTlNQRUNJRk'
+    'lFRBAAEiAKHFBPUlRFUl9DT05URVhUX1NUQVRVU19BQ1RJVkUQARIiCh5QT1JURVJfQ09OVEVY'
+    'VF9TVEFUVVNfRElTQUJMRUQQAg==');
+
+@$core.Deprecated('Use porterContextHandleStatusDescriptor instead')
+const PorterContextHandleStatus$json = {
+  '1': 'PorterContextHandleStatus',
+  '2': [
+    {'1': 'PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'PORTER_CONTEXT_HANDLE_STATUS_ACTIVE', '2': 1},
+    {'1': 'PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED', '2': 2},
+    {'1': 'PORTER_CONTEXT_HANDLE_STATUS_QUEUEING', '2': 3},
+    {'1': 'PORTER_CONTEXT_HANDLE_STATUS_BLOCKED', '2': 4},
+  ],
+};
+
+/// Descriptor for `PorterContextHandleStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List porterContextHandleStatusDescriptor = $convert.base64Decode(
+    'ChlQb3J0ZXJDb250ZXh0SGFuZGxlU3RhdHVzEiwKKFBPUlRFUl9DT05URVhUX0hBTkRMRV9TVE'
+    'FUVVNfVU5TUEVDSUZJRUQQABInCiNQT1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX0FDVElW'
+    'RRABEisKJ1BPUlRFUl9DT05URVhUX0hBTkRMRV9TVEFUVVNfRE9XTkdSQURFRBACEikKJVBPUl'
+    'RFUl9DT05URVhUX0hBTkRMRV9TVEFUVVNfUVVFVUVJTkcQAxIoCiRQT1JURVJfQ09OVEVYVF9I'
+    'QU5ETEVfU1RBVFVTX0JMT0NLRUQQBA==');
 
 @$core.Deprecated('Use getTokenRequestDescriptor instead')
 const GetTokenRequest$json = {
@@ -574,16 +611,14 @@ final $typed_data.Uint8List updatePorterStatusResponseDescriptor = $convert.base
 const CreatePorterContextRequest$json = {
   '1': 'CreatePorterContextRequest',
   '2': [
-    {'1': 'porter_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
-    {'1': 'context', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.PorterContext', '10': 'context'},
+    {'1': 'context', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.PorterContext', '10': 'context'},
   ],
 };
 
 /// Descriptor for `CreatePorterContextRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createPorterContextRequestDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBI1Cglwb3J0ZXJfaWQYASABKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJRFIIcG9ydGVySWQSPgoHY29udGV4dBgCIAEoCzIkLmxpYnJhcmlh'
-    'bi5zZXBoaXJhaC52MS5Qb3J0ZXJDb250ZXh0Ugdjb250ZXh0');
+    'ChpDcmVhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBI+Cgdjb250ZXh0GAEgASgLMiQubGlicmFyaW'
+    'FuLnNlcGhpcmFoLnYxLlBvcnRlckNvbnRleHRSB2NvbnRleHQ=');
 
 @$core.Deprecated('Use createPorterContextResponseDescriptor instead')
 const CreatePorterContextResponse$json = {
@@ -630,16 +665,14 @@ final $typed_data.Uint8List listPorterContextsResponseDescriptor = $convert.base
 const UpdatePorterContextRequest$json = {
   '1': 'UpdatePorterContextRequest',
   '2': [
-    {'1': 'porter_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
-    {'1': 'context', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.PorterContext', '10': 'context'},
+    {'1': 'context', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.PorterContext', '10': 'context'},
   ],
 };
 
 /// Descriptor for `UpdatePorterContextRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updatePorterContextRequestDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBI1Cglwb3J0ZXJfaWQYASABKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJRFIIcG9ydGVySWQSPgoHY29udGV4dBgCIAEoCzIkLmxpYnJhcmlh'
-    'bi5zZXBoaXJhaC52MS5Qb3J0ZXJDb250ZXh0Ugdjb250ZXh0');
+    'ChpVcGRhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBI+Cgdjb250ZXh0GAEgASgLMiQubGlicmFyaW'
+    'FuLnNlcGhpcmFoLnYxLlBvcnRlckNvbnRleHRSB2NvbnRleHQ=');
 
 @$core.Deprecated('Use updatePorterContextResponseDescriptor instead')
 const UpdatePorterContextResponse$json = {
@@ -649,29 +682,6 @@ const UpdatePorterContextResponse$json = {
 /// Descriptor for `UpdatePorterContextResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List updatePorterContextResponseDescriptor = $convert.base64Decode(
     'ChtVcGRhdGVQb3J0ZXJDb250ZXh0UmVzcG9uc2U=');
-
-@$core.Deprecated('Use porterContextDescriptor instead')
-const PorterContext$json = {
-  '1': 'PorterContext',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'porter_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
-    {'1': 'context_json', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'contextJson', '17': true},
-    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
-  ],
-  '8': [
-    {'1': '_context_json'},
-  ],
-};
-
-/// Descriptor for `PorterContext`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List porterContextDescriptor = $convert.base64Decode(
-    'Cg1Qb3J0ZXJDb250ZXh0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAm'
-    'lkEjUKCXBvcnRlcl9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghwb3J0ZXJJ'
-    'ZBImCgxjb250ZXh0X2pzb24YAyABKAlIAFILY29udGV4dEpzb26IAQESEgoEbmFtZRgEIAEoCV'
-    'IEbmFtZRIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb25CDwoNX2NvbnRleHRfanNv'
-    'bg==');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {
@@ -749,6 +759,7 @@ const Porter$json = {
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
     {'1': 'connection_status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterConnectionStatus', '10': 'connectionStatus'},
     {'1': 'context_json_schema', '3': 8, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
+    {'1': 'connection_status_message', '3': 9, '4': 1, '5': 9, '10': 'connectionStatusMessage'},
   ],
   '8': [
     {'1': '_context_json_schema'},
@@ -763,6 +774,34 @@ final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
     '1hcnkSOQoGc3RhdHVzGAYgASgOMiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJTdGF0dXNS'
     'BnN0YXR1cxJaChFjb25uZWN0aW9uX3N0YXR1cxgHIAEoDjItLmxpYnJhcmlhbi5zZXBoaXJhaC'
     '52MS5Qb3J0ZXJDb25uZWN0aW9uU3RhdHVzUhBjb25uZWN0aW9uU3RhdHVzEjMKE2NvbnRleHRf'
-    'anNvbl9zY2hlbWEYCCABKAlIAFIRY29udGV4dEpzb25TY2hlbWGIAQFCFgoUX2NvbnRleHRfan'
-    'Nvbl9zY2hlbWE=');
+    'anNvbl9zY2hlbWEYCCABKAlIAFIRY29udGV4dEpzb25TY2hlbWGIAQESOgoZY29ubmVjdGlvbl'
+    '9zdGF0dXNfbWVzc2FnZRgJIAEoCVIXY29ubmVjdGlvblN0YXR1c01lc3NhZ2VCFgoUX2NvbnRl'
+    'eHRfanNvbl9zY2hlbWE=');
+
+@$core.Deprecated('Use porterContextDescriptor instead')
+const PorterContext$json = {
+  '1': 'PorterContext',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'region', '3': 3, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'context_json', '3': 4, '4': 1, '5': 9, '10': 'contextJson'},
+    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterContextStatus', '10': 'status'},
+    {'1': 'handle_status', '3': 8, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterContextHandleStatus', '10': 'handleStatus'},
+    {'1': 'handle_status_message', '3': 9, '4': 1, '5': 9, '10': 'handleStatusMessage'},
+  ],
+};
+
+/// Descriptor for `PorterContext`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterContextDescriptor = $convert.base64Decode(
+    'Cg1Qb3J0ZXJDb250ZXh0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAm'
+    'lkEh8KC2dsb2JhbF9uYW1lGAIgASgJUgpnbG9iYWxOYW1lEhYKBnJlZ2lvbhgDIAEoCVIGcmVn'
+    'aW9uEiEKDGNvbnRleHRfanNvbhgEIAEoCVILY29udGV4dEpzb24SEgoEbmFtZRgFIAEoCVIEbm'
+    'FtZRIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SQgoGc3RhdHVzGAcgASgOMiou'
+    'bGlicmFyaWFuLnNlcGhpcmFoLnYxLlBvcnRlckNvbnRleHRTdGF0dXNSBnN0YXR1cxJVCg1oYW'
+    '5kbGVfc3RhdHVzGAggASgOMjAubGlicmFyaWFuLnNlcGhpcmFoLnYxLlBvcnRlckNvbnRleHRI'
+    'YW5kbGVTdGF0dXNSDGhhbmRsZVN0YXR1cxIyChVoYW5kbGVfc3RhdHVzX21lc3NhZ2UYCSABKA'
+    'lSE2hhbmRsZVN0YXR1c01lc3NhZ2U=');
 

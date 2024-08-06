@@ -1951,13 +1951,9 @@ class UpdatePorterStatusResponse extends $pb.GeneratedMessage {
 
 class CreatePorterContextRequest extends $pb.GeneratedMessage {
   factory CreatePorterContextRequest({
-    $8.InternalID? porterId,
     PorterContext? context,
   }) {
     final $result = create();
-    if (porterId != null) {
-      $result.porterId = porterId;
-    }
     if (context != null) {
       $result.context = context;
     }
@@ -1968,8 +1964,7 @@ class CreatePorterContextRequest extends $pb.GeneratedMessage {
   factory CreatePorterContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreatePorterContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
-    ..aOM<PorterContext>(2, _omitFieldNames ? '' : 'context', subBuilder: PorterContext.create)
+    ..aOM<PorterContext>(1, _omitFieldNames ? '' : 'context', subBuilder: PorterContext.create)
     ..hasRequiredFields = false
   ;
 
@@ -1995,26 +1990,15 @@ class CreatePorterContextRequest extends $pb.GeneratedMessage {
   static CreatePorterContextRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.InternalID get porterId => $_getN(0);
+  PorterContext get context => $_getN(0);
   @$pb.TagNumber(1)
-  set porterId($8.InternalID v) { setField(1, v); }
+  set context(PorterContext v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPorterId() => $_has(0);
+  $core.bool hasContext() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPorterId() => clearField(1);
+  void clearContext() => clearField(1);
   @$pb.TagNumber(1)
-  $8.InternalID ensurePorterId() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  PorterContext get context => $_getN(1);
-  @$pb.TagNumber(2)
-  set context(PorterContext v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasContext() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearContext() => clearField(2);
-  @$pb.TagNumber(2)
-  PorterContext ensureContext() => $_ensure(1);
+  PorterContext ensureContext() => $_ensure(0);
 }
 
 class CreatePorterContextResponse extends $pb.GeneratedMessage {
@@ -2183,13 +2167,9 @@ class ListPorterContextsResponse extends $pb.GeneratedMessage {
 
 class UpdatePorterContextRequest extends $pb.GeneratedMessage {
   factory UpdatePorterContextRequest({
-    $8.InternalID? porterId,
     PorterContext? context,
   }) {
     final $result = create();
-    if (porterId != null) {
-      $result.porterId = porterId;
-    }
     if (context != null) {
       $result.context = context;
     }
@@ -2200,8 +2180,7 @@ class UpdatePorterContextRequest extends $pb.GeneratedMessage {
   factory UpdatePorterContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
-    ..aOM<PorterContext>(2, _omitFieldNames ? '' : 'context', subBuilder: PorterContext.create)
+    ..aOM<PorterContext>(1, _omitFieldNames ? '' : 'context', subBuilder: PorterContext.create)
     ..hasRequiredFields = false
   ;
 
@@ -2227,26 +2206,15 @@ class UpdatePorterContextRequest extends $pb.GeneratedMessage {
   static UpdatePorterContextRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.InternalID get porterId => $_getN(0);
+  PorterContext get context => $_getN(0);
   @$pb.TagNumber(1)
-  set porterId($8.InternalID v) { setField(1, v); }
+  set context(PorterContext v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPorterId() => $_has(0);
+  $core.bool hasContext() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPorterId() => clearField(1);
+  void clearContext() => clearField(1);
   @$pb.TagNumber(1)
-  $8.InternalID ensurePorterId() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  PorterContext get context => $_getN(1);
-  @$pb.TagNumber(2)
-  set context(PorterContext v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasContext() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearContext() => clearField(2);
-  @$pb.TagNumber(2)
-  PorterContext ensureContext() => $_ensure(1);
+  PorterContext ensureContext() => $_ensure(0);
 }
 
 class UpdatePorterContextResponse extends $pb.GeneratedMessage {
@@ -2279,116 +2247,6 @@ class UpdatePorterContextResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static UpdatePorterContextResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdatePorterContextResponse>(create);
   static UpdatePorterContextResponse? _defaultInstance;
-}
-
-class PorterContext extends $pb.GeneratedMessage {
-  factory PorterContext({
-    $8.InternalID? id,
-    $8.InternalID? porterId,
-    $core.String? contextJson,
-    $core.String? name,
-    $core.String? description,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (porterId != null) {
-      $result.porterId = porterId;
-    }
-    if (contextJson != null) {
-      $result.contextJson = contextJson;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    return $result;
-  }
-  PorterContext._() : super();
-  factory PorterContext.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PorterContext.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterContext', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'porterId', subBuilder: $8.InternalID.create)
-    ..aOS(3, _omitFieldNames ? '' : 'contextJson')
-    ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..aOS(5, _omitFieldNames ? '' : 'description')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  PorterContext clone() => PorterContext()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  PorterContext copyWith(void Function(PorterContext) updates) => super.copyWith((message) => updates(message as PorterContext)) as PorterContext;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static PorterContext create() => PorterContext._();
-  PorterContext createEmptyInstance() => create();
-  static $pb.PbList<PorterContext> createRepeated() => $pb.PbList<PorterContext>();
-  @$core.pragma('dart2js:noInline')
-  static PorterContext getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterContext>(create);
-  static PorterContext? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $8.InternalID get id => $_getN(0);
-  @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-  @$pb.TagNumber(1)
-  $8.InternalID ensureId() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $8.InternalID get porterId => $_getN(1);
-  @$pb.TagNumber(2)
-  set porterId($8.InternalID v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasPorterId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPorterId() => clearField(2);
-  @$pb.TagNumber(2)
-  $8.InternalID ensurePorterId() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.String get contextJson => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set contextJson($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasContextJson() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearContextJson() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get name => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set name($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasName() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearName() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearDescription() => clearField(5);
 }
 
 class User extends $pb.GeneratedMessage {
@@ -2761,6 +2619,7 @@ class Porter extends $pb.GeneratedMessage {
     UserStatus? status,
     PorterConnectionStatus? connectionStatus,
     $core.String? contextJsonSchema,
+    $core.String? connectionStatusMessage,
   }) {
     final $result = create();
     if (id != null) {
@@ -2787,6 +2646,9 @@ class Porter extends $pb.GeneratedMessage {
     if (contextJsonSchema != null) {
       $result.contextJsonSchema = contextJsonSchema;
     }
+    if (connectionStatusMessage != null) {
+      $result.connectionStatusMessage = connectionStatusMessage;
+    }
     return $result;
   }
   Porter._() : super();
@@ -2802,6 +2664,7 @@ class Porter extends $pb.GeneratedMessage {
     ..e<UserStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
     ..e<PorterConnectionStatus>(7, _omitFieldNames ? '' : 'connectionStatus', $pb.PbFieldType.OE, defaultOrMaker: PorterConnectionStatus.PORTER_CONNECTION_STATUS_UNSPECIFIED, valueOf: PorterConnectionStatus.valueOf, enumValues: PorterConnectionStatus.values)
     ..aOS(8, _omitFieldNames ? '' : 'contextJsonSchema')
+    ..aOS(9, _omitFieldNames ? '' : 'connectionStatusMessage')
     ..hasRequiredFields = false
   ;
 
@@ -2901,6 +2764,182 @@ class Porter extends $pb.GeneratedMessage {
   $core.bool hasContextJsonSchema() => $_has(7);
   @$pb.TagNumber(8)
   void clearContextJsonSchema() => clearField(8);
+
+  /// Only used in response
+  @$pb.TagNumber(9)
+  $core.String get connectionStatusMessage => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set connectionStatusMessage($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasConnectionStatusMessage() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearConnectionStatusMessage() => clearField(9);
+}
+
+class PorterContext extends $pb.GeneratedMessage {
+  factory PorterContext({
+    $8.InternalID? id,
+    $core.String? globalName,
+    $core.String? region,
+    $core.String? contextJson,
+    $core.String? name,
+    $core.String? description,
+    PorterContextStatus? status,
+    PorterContextHandleStatus? handleStatus,
+    $core.String? handleStatusMessage,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (globalName != null) {
+      $result.globalName = globalName;
+    }
+    if (region != null) {
+      $result.region = region;
+    }
+    if (contextJson != null) {
+      $result.contextJson = contextJson;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (handleStatus != null) {
+      $result.handleStatus = handleStatus;
+    }
+    if (handleStatusMessage != null) {
+      $result.handleStatusMessage = handleStatusMessage;
+    }
+    return $result;
+  }
+  PorterContext._() : super();
+  factory PorterContext.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PorterContext.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterContext', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'globalName')
+    ..aOS(3, _omitFieldNames ? '' : 'region')
+    ..aOS(4, _omitFieldNames ? '' : 'contextJson')
+    ..aOS(5, _omitFieldNames ? '' : 'name')
+    ..aOS(6, _omitFieldNames ? '' : 'description')
+    ..e<PorterContextStatus>(7, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: PorterContextStatus.PORTER_CONTEXT_STATUS_UNSPECIFIED, valueOf: PorterContextStatus.valueOf, enumValues: PorterContextStatus.values)
+    ..e<PorterContextHandleStatus>(8, _omitFieldNames ? '' : 'handleStatus', $pb.PbFieldType.OE, defaultOrMaker: PorterContextHandleStatus.PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED, valueOf: PorterContextHandleStatus.valueOf, enumValues: PorterContextHandleStatus.values)
+    ..aOS(9, _omitFieldNames ? '' : 'handleStatusMessage')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PorterContext clone() => PorterContext()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PorterContext copyWith(void Function(PorterContext) updates) => super.copyWith((message) => updates(message as PorterContext)) as PorterContext;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PorterContext create() => PorterContext._();
+  PorterContext createEmptyInstance() => create();
+  static $pb.PbList<PorterContext> createRepeated() => $pb.PbList<PorterContext>();
+  @$core.pragma('dart2js:noInline')
+  static PorterContext getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterContext>(create);
+  static PorterContext? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get globalName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set globalName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGlobalName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGlobalName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get region => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set region($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRegion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRegion() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get contextJson => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set contextJson($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasContextJson() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContextJson() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get name => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set name($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get description => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set description($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDescription() => clearField(6);
+
+  @$pb.TagNumber(7)
+  PorterContextStatus get status => $_getN(6);
+  @$pb.TagNumber(7)
+  set status(PorterContextStatus v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatus() => clearField(7);
+
+  /// Only used in response
+  @$pb.TagNumber(8)
+  PorterContextHandleStatus get handleStatus => $_getN(7);
+  @$pb.TagNumber(8)
+  set handleStatus(PorterContextHandleStatus v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasHandleStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHandleStatus() => clearField(8);
+
+  /// Only used in response
+  @$pb.TagNumber(9)
+  $core.String get handleStatusMessage => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set handleStatusMessage($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasHandleStatusMessage() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHandleStatusMessage() => clearField(9);
 }
 
 
