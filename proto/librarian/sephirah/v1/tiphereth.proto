@@ -154,8 +154,7 @@ message UpdatePorterStatusRequest {
 message UpdatePorterStatusResponse {}
 
 message CreatePorterContextRequest {
-  librarian.v1.InternalID porter_id = 1;
-  PorterContext context = 2;
+  PorterContext context = 1;
 }
 
 message CreatePorterContextResponse {
@@ -172,18 +171,9 @@ message ListPorterContextsResponse {
 }
 
 message UpdatePorterContextRequest {
-  librarian.v1.InternalID porter_id = 1;
-  PorterContext context = 2;
+  PorterContext context = 1;
 }
 message UpdatePorterContextResponse {}
-
-message PorterContext {
-  librarian.v1.InternalID id = 1;
-  librarian.v1.InternalID porter_id = 2;
-  optional string context_json = 3;
-  string name = 4;
-  string description = 5;
-}
 
 message User {
   librarian.v1.InternalID id = 1;
@@ -247,6 +237,8 @@ message Porter {
   PorterConnectionStatus connection_status = 7;
   // Only used in response
   optional string context_json_schema = 8;
+  // Only used in response
+  string connection_status_message = 9;
 }
 
 enum PorterConnectionStatus {
@@ -259,4 +251,38 @@ enum PorterConnectionStatus {
   PORTER_CONNECTION_STATUS_ACTIVE = 3;
   // Available but failed to activate
   PORTER_CONNECTION_STATUS_ACTIVATION_FAILED = 4;
+  // Active but downgraded
+  PORTER_CONNECTION_STATUS_DOWNGRADED = 5;
+}
+
+message PorterContext {
+  librarian.v1.InternalID id = 1;
+  string global_name = 2;
+  string region = 3;
+  string context_json = 4;
+  string name = 5;
+  string description = 6;
+  PorterContextStatus status = 7;
+  // Only used in response
+  PorterContextHandleStatus handle_status = 8;
+  // Only used in response
+  string handle_status_message = 9;
+}
+
+enum PorterContextStatus {
+  PORTER_CONTEXT_STATUS_UNSPECIFIED = 0;
+  PORTER_CONTEXT_STATUS_ACTIVE = 1;
+  PORTER_CONTEXT_STATUS_DISABLED = 2;
+}
+
+enum PorterContextHandleStatus {
+  PORTER_CONTEXT_HANDLE_STATUS_UNSPECIFIED = 0;
+  // Active and can be used
+  PORTER_CONTEXT_HANDLE_STATUS_ACTIVE = 1;
+  // Active but downgraded
+  PORTER_CONTEXT_HANDLE_STATUS_DOWNGRADED = 2;
+  // In queueing
+  PORTER_CONTEXT_HANDLE_STATUS_QUEUEING = 3;
+  // Blocked by some reason (e.g. no available resources)
+  PORTER_CONTEXT_HANDLE_STATUS_BLOCKED = 4;
 }

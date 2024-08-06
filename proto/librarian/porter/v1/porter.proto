@@ -92,10 +92,20 @@ message EnablePorterRequest {
   optional string refresh_token = 2;
 }
 message EnablePorterResponse {
-  // Used to request sephirah to sync data.
-  // To handle request, sephirah should send all `Enable*` requests to porter.
-  // Useful when porter is restarted.
-  bool need_full_sync = 1;
+  // Human-readable status message.
+  string status_message = 1;
+  // If true, enabler should resend request with `refresh_token`.
+  bool need_refresh_token = 2;
+  PorterEnablesSummary enables_summary = 3;
+}
+
+message PorterEnablesSummary {
+  // `EnableContextRequest.context_id`
+  repeated librarian.v1.InternalID context_ids = 1;
+  // `EnableFeedSetterRequest.setter_id`
+  repeated librarian.v1.InternalID feed_setter_ids = 2;
+  // `EnableFeedGetterRequest.getter_id`
+  repeated librarian.v1.InternalID feed_getter_ids = 3;
 }
 
 message EnableContextRequest {
@@ -173,7 +183,7 @@ message ExecFeedItemActionResponse {
 }
 
 message EnableFeedSetterRequest {
-  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID setter_id = 1;
   // `PorterFeatureSummary.feed_setters`
   librarian.v1.FeatureRequest setter = 2;
   librarian.v1.InternalID feed_id = 3;
@@ -182,13 +192,13 @@ message EnableFeedSetterRequest {
 message EnableFeedSetterResponse {}
 
 message DisableFeedSetterRequest {
-  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID setter_id = 1;
 }
 
 message DisableFeedSetterResponse {}
 
 message EnableFeedGetterRequest {
-  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID getter_id = 1;
   // `PorterFeatureSummary.feed_getters`
   librarian.v1.FeatureRequest getter = 2;
   librarian.v1.InternalID feed_id = 3;
@@ -197,7 +207,7 @@ message EnableFeedGetterRequest {
 message EnableFeedGetterResponse {}
 
 message DisableFeedGetterRequest {
-  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID getter_id = 1;
 }
 
 message DisableFeedGetterResponse {}
