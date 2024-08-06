@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.19](https://github.com/tuihub/protos/compare/v0.4.18...v0.4.19) (2024-08-06)
+
+
+### Features
+
+* add `ListPorterGroups` ([aac11cb](https://github.com/tuihub/protos/commit/aac11cb64a18552c2c119301e85bec4a3abd1ae0))
+
 ## [0.4.18](https://github.com/tuihub/protos/compare/v0.4.17...v0.4.18) (2024-08-06)
 
 
