@@ -76,10 +76,12 @@ service LibrarianSephirahService {
   // Match ()<-[Equal]->(current user)
   rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
 
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `Admin`
   rpc ListPorters(ListPortersRequest) returns (ListPortersResponse);
   // `Tiphereth` `Admin`
   rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
+  // `Tiphereth` `Normal`
+  rpc ListPorterGroups(ListPorterGroupsRequest) returns (ListPorterGroupsResponse);
   // `Tiphereth` `Normal`
   rpc CreatePorterContext(CreatePorterContextRequest) returns (CreatePorterContextResponse);
   // `Tiphereth` `Normal`
