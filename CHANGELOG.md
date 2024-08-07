@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.20](https://github.com/tuihub/protos/compare/v0.4.19...v0.4.20) (2024-08-07)
+
+
+### Features
+
+* add `PorterBinarySummary` ([aeb9c54](https://github.com/tuihub/protos/commit/aeb9c54278c6629d300d03a3422e7fe452f4a5c5))
+
 ## [0.4.19](https://github.com/tuihub/protos/compare/v0.4.18...v0.4.19) (2024-08-06)
 
 
