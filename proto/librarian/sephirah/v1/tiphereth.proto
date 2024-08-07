@@ -155,6 +155,8 @@ message UpdatePorterStatusResponse {}
 
 message ListPorterGroupsRequest {
   librarian.v1.PagingRequest paging = 1;
+  // Normal user can only list active porters
+  repeated UserStatus status_filter = 2;
 }
 message ListPorterGroupsResponse {
   librarian.v1.PagingResponse paging = 1;
@@ -236,9 +238,9 @@ enum UserStatus {
 
 message Porter {
   librarian.v1.InternalID id = 1;
-  string name = 2;
-  string version = 3;
-  string global_name = 4;
+  librarian.v1.PorterBinarySummary binary_summary = 2;
+  string global_name = 3;
+  string region = 4;
   string feature_summary = 5;
   UserStatus status = 6;
   // Only used in response
@@ -296,9 +298,8 @@ enum PorterContextHandleStatus {
 }
 
 message PorterGroup {
-  string global_name = 1;
-  repeated string regions = 2;
-  string context_json = 3;
-  string name = 4;
-  string description = 5;
+  librarian.v1.PorterBinarySummary binary_summary = 1;
+  string global_name = 2;
+  repeated string regions = 3;
+  optional string context_json_schema = 4;
 }

@@ -47,24 +47,21 @@ service LibrarianPorterService {
 
 message GetPorterInformationRequest {}
 message GetPorterInformationResponse {
-  // Human-readable name. no format limit.
-  string name = 1;
-  // Version of the porter. no format limit.
-  string version = 2;
+  librarian.v1.PorterBinarySummary binary_summary = 1;
   // Global identifier. Same global name means same project. no format limit.
   // e.g. use project url "github.com/tuihub/porter-steam".
-  string global_name = 3;
+  string global_name = 2;
   // Region is used to group porters,
   // same porter in same region can be randomly selected.
   // Leave empty to use default region.
-  string region = 4;
+  string region = 3;
   // Supported features.
-  PorterFeatureSummary feature_summary = 5;
+  PorterFeatureSummary feature_summary = 4;
   // JSON schema for `FeatureRequest.context_json`.
   // Leave empty if not needed.
   // If needed, all feature requests should deliver `context_json`.
   // Can be used to configure third-party token, etc.
-  optional string context_json_schema = 6;
+  optional string context_json_schema = 5;
 }
 
 message PorterFeatureSummary {

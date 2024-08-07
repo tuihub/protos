@@ -80,7 +80,7 @@ service LibrarianSephirahService {
   rpc ListPorters(ListPortersRequest) returns (ListPortersResponse);
   // `Tiphereth` `Admin`
   rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `Admin` `Normal limited`
   rpc ListPorterGroups(ListPorterGroupsRequest) returns (ListPorterGroupsResponse);
   // `Tiphereth` `Normal`
   rpc CreatePorterContext(CreatePorterContextRequest) returns (CreatePorterContextResponse);
