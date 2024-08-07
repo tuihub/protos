@@ -849,7 +849,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.ListPorterGroupsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListPorterGroupsRequest.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.ListPorterGroupsRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -6836,6 +6836,13 @@ proto.librarian.sephirah.v1.UpdatePorterStatusResponse.serializeBinaryToWriter =
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.ListPorterGroupsRequest.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -6867,7 +6874,8 @@ proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ListPorterGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
+    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+    statusFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6909,6 +6917,12 @@ proto.librarian.sephirah.v1.ListPorterGroupsRequest.deserializeBinaryFromReader 
       reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
       msg.setPaging(value);
       break;
+    case 2:
+      var values = /** @type {!Array<!proto.librarian.sephirah.v1.UserStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addStatusFilter(values[i]);
+      }
+      break;
     default:
       reader.skipField();
       break;
@@ -6944,6 +6958,13 @@ proto.librarian.sephirah.v1.ListPorterGroupsRequest.serializeBinaryToWriter = fu
       1,
       f,
       librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatusFilterList();
+  if (f.length > 0) {
+    writer.writePackedEnum(
+      2,
+      f
     );
   }
 };
@@ -6983,6 +7004,43 @@ proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.clearPaging = func
  */
 proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.hasPaging = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated UserStatus status_filter = 2;
+ * @return {!Array<!proto.librarian.sephirah.v1.UserStatus>}
+ */
+proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.getStatusFilterList = function() {
+  return /** @type {!Array<!proto.librarian.sephirah.v1.UserStatus>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.sephirah.v1.UserStatus>} value
+ * @return {!proto.librarian.sephirah.v1.ListPorterGroupsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.setStatusFilterList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.UserStatus} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.ListPorterGroupsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.addStatusFilter = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.ListPorterGroupsRequest} returns this
+ */
+proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.clearStatusFilterList = function() {
+  return this.setStatusFilterList([]);
 };
 
 
@@ -9103,9 +9161,9 @@ proto.librarian.sephirah.v1.Porter.prototype.toObject = function(opt_includeInst
 proto.librarian.sephirah.v1.Porter.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    globalName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
+    globalName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    region: jspb.Message.getFieldWithDefault(msg, 4, ""),
     featureSummary: jspb.Message.getFieldWithDefault(msg, 5, ""),
     status: jspb.Message.getFieldWithDefault(msg, 6, 0),
     connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0),
@@ -9153,16 +9211,17 @@ proto.librarian.sephirah.v1.Porter.deserializeBinaryFromReader = function(msg, r
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = new librarian_v1_common_pb.PorterBinarySummary;
+      reader.readMessage(value,librarian_v1_common_pb.PorterBinarySummary.deserializeBinaryFromReader);
+      msg.setBinarySummary(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVersion(value);
+      msg.setGlobalName(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGlobalName(value);
+      msg.setRegion(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -9221,21 +9280,22 @@ proto.librarian.sephirah.v1.Porter.serializeBinaryToWriter = function(message, w
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getBinarySummary();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      librarian_v1_common_pb.PorterBinarySummary.serializeBinaryToWriter
     );
   }
-  f = message.getVersion();
+  f = message.getGlobalName();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getGlobalName();
+  f = message.getRegion();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -9318,28 +9378,47 @@ proto.librarian.sephirah.v1.Porter.prototype.hasId = function() {
 
 
 /**
- * optional string name = 2;
- * @return {string}
+ * optional librarian.v1.PorterBinarySummary binary_summary = 2;
+ * @return {?proto.librarian.v1.PorterBinarySummary}
  */
-proto.librarian.sephirah.v1.Porter.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.librarian.sephirah.v1.Porter.prototype.getBinarySummary = function() {
+  return /** @type{?proto.librarian.v1.PorterBinarySummary} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PorterBinarySummary, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.PorterBinarySummary|undefined} value
+ * @return {!proto.librarian.sephirah.v1.Porter} returns this
+*/
+proto.librarian.sephirah.v1.Porter.prototype.setBinarySummary = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.Porter} returns this
  */
-proto.librarian.sephirah.v1.Porter.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.librarian.sephirah.v1.Porter.prototype.clearBinarySummary = function() {
+  return this.setBinarySummary(undefined);
 };
 
 
 /**
- * optional string version = 3;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.Porter.prototype.hasBinarySummary = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string global_name = 3;
  * @return {string}
  */
-proto.librarian.sephirah.v1.Porter.prototype.getVersion = function() {
+proto.librarian.sephirah.v1.Porter.prototype.getGlobalName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -9348,16 +9427,16 @@ proto.librarian.sephirah.v1.Porter.prototype.getVersion = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.Porter} returns this
  */
-proto.librarian.sephirah.v1.Porter.prototype.setVersion = function(value) {
+proto.librarian.sephirah.v1.Porter.prototype.setGlobalName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string global_name = 4;
+ * optional string region = 4;
  * @return {string}
  */
-proto.librarian.sephirah.v1.Porter.prototype.getGlobalName = function() {
+proto.librarian.sephirah.v1.Porter.prototype.getRegion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -9366,7 +9445,7 @@ proto.librarian.sephirah.v1.Porter.prototype.getGlobalName = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.Porter} returns this
  */
-proto.librarian.sephirah.v1.Porter.prototype.setGlobalName = function(value) {
+proto.librarian.sephirah.v1.Porter.prototype.setRegion = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -9876,7 +9955,7 @@ proto.librarian.sephirah.v1.PorterContext.prototype.setHandleStatusMessage = fun
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.PorterGroup.repeatedFields_ = [2];
+proto.librarian.sephirah.v1.PorterGroup.repeatedFields_ = [3];
 
 
 
@@ -9909,11 +9988,10 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.toObject = function(opt_includ
  */
 proto.librarian.sephirah.v1.PorterGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    globalName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    regionsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    contextJson: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, "")
+    binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
+    globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    regionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -9951,24 +10029,21 @@ proto.librarian.sephirah.v1.PorterGroup.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setGlobalName(value);
+      var value = new librarian_v1_common_pb.PorterBinarySummary;
+      reader.readMessage(value,librarian_v1_common_pb.PorterBinarySummary.deserializeBinaryFromReader);
+      msg.setBinarySummary(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addRegions(value);
+      msg.setGlobalName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setContextJson(value);
+      msg.addRegions(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setContextJsonSchema(value);
       break;
     default:
       reader.skipField();
@@ -9999,38 +10074,32 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.serializeBinary = function() {
  */
 proto.librarian.sephirah.v1.PorterGroup.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getBinarySummary();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_common_pb.PorterBinarySummary.serializeBinaryToWriter
+    );
+  }
   f = message.getGlobalName();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
   f = message.getRegionsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      2,
-      f
-    );
-  }
-  f = message.getContextJson();
-  if (f.length > 0) {
-    writer.writeString(
       3,
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -10038,11 +10107,48 @@ proto.librarian.sephirah.v1.PorterGroup.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional string global_name = 1;
+ * optional librarian.v1.PorterBinarySummary binary_summary = 1;
+ * @return {?proto.librarian.v1.PorterBinarySummary}
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.getBinarySummary = function() {
+  return /** @type{?proto.librarian.v1.PorterBinarySummary} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PorterBinarySummary, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.PorterBinarySummary|undefined} value
+ * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
+*/
+proto.librarian.sephirah.v1.PorterGroup.prototype.setBinarySummary = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.clearBinarySummary = function() {
+  return this.setBinarySummary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.hasBinarySummary = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string global_name = 2;
  * @return {string}
  */
 proto.librarian.sephirah.v1.PorterGroup.prototype.getGlobalName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -10051,16 +10157,16 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.getGlobalName = function() {
  * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
  */
 proto.librarian.sephirah.v1.PorterGroup.prototype.setGlobalName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * repeated string regions = 2;
+ * repeated string regions = 3;
  * @return {!Array<string>}
  */
 proto.librarian.sephirah.v1.PorterGroup.prototype.getRegionsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
@@ -10069,7 +10175,7 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.getRegionsList = function() {
  * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
  */
 proto.librarian.sephirah.v1.PorterGroup.prototype.setRegionsList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -10079,7 +10185,7 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.setRegionsList = function(valu
  * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
  */
 proto.librarian.sephirah.v1.PorterGroup.prototype.addRegions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
@@ -10093,28 +10199,10 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.clearRegionsList = function() 
 
 
 /**
- * optional string context_json = 3;
+ * optional string context_json_schema = 4;
  * @return {string}
  */
-proto.librarian.sephirah.v1.PorterGroup.prototype.getContextJson = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
- */
-proto.librarian.sephirah.v1.PorterGroup.prototype.setContextJson = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string name = 4;
- * @return {string}
- */
-proto.librarian.sephirah.v1.PorterGroup.prototype.getName = function() {
+proto.librarian.sephirah.v1.PorterGroup.prototype.getContextJsonSchema = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -10123,26 +10211,26 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
  */
-proto.librarian.sephirah.v1.PorterGroup.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.librarian.sephirah.v1.PorterGroup.prototype.setContextJsonSchema = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
- * optional string description = 5;
- * @return {string}
- */
-proto.librarian.sephirah.v1.PorterGroup.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
+ * Clears the field making it undefined.
  * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
  */
-proto.librarian.sephirah.v1.PorterGroup.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.librarian.sephirah.v1.PorterGroup.prototype.clearContextJsonSchema = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.hasContextJsonSchema = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

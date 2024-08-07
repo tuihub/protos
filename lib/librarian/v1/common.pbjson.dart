@@ -372,3 +372,23 @@ final $typed_data.Uint8List feedEnclosureDescriptor = $convert.base64Decode(
     'Cg1GZWVkRW5jbG9zdXJlEhAKA3VybBgBIAEoCVIDdXJsEhYKBmxlbmd0aBgCIAEoCVIGbGVuZ3'
     'RoEhIKBHR5cGUYAyABKAlSBHR5cGU=');
 
+@$core.Deprecated('Use porterBinarySummaryDescriptor instead')
+const PorterBinarySummary$json = {
+  '1': 'PorterBinarySummary',
+  '2': [
+    {'1': 'source_code_address', '3': 1, '4': 1, '5': 9, '10': 'sourceCodeAddress'},
+    {'1': 'build_version', '3': 2, '4': 1, '5': 9, '10': 'buildVersion'},
+    {'1': 'build_date', '3': 3, '4': 1, '5': 9, '10': 'buildDate'},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'version', '3': 5, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+  ],
+};
+
+/// Descriptor for `PorterBinarySummary`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterBinarySummaryDescriptor = $convert.base64Decode(
+    'ChNQb3J0ZXJCaW5hcnlTdW1tYXJ5Ei4KE3NvdXJjZV9jb2RlX2FkZHJlc3MYASABKAlSEXNvdX'
+    'JjZUNvZGVBZGRyZXNzEiMKDWJ1aWxkX3ZlcnNpb24YAiABKAlSDGJ1aWxkVmVyc2lvbhIdCgpi'
+    'dWlsZF9kYXRlGAMgASgJUglidWlsZERhdGUSEgoEbmFtZRgEIAEoCVIEbmFtZRIYCgd2ZXJzaW'
+    '9uGAUgASgJUgd2ZXJzaW9uEiAKC2Rlc2NyaXB0aW9uGAYgASgJUgtkZXNjcmlwdGlvbg==');
+

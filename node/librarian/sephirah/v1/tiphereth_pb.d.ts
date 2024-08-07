@@ -838,6 +838,11 @@ export class ListPorterGroupsRequest extends jspb.Message {
   getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
   setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
 
+  clearStatusFilterList(): void;
+  getStatusFilterList(): Array<UserStatusMap[keyof UserStatusMap]>;
+  setStatusFilterList(value: Array<UserStatusMap[keyof UserStatusMap]>): void;
+  addStatusFilter(value: UserStatusMap[keyof UserStatusMap], index?: number): UserStatusMap[keyof UserStatusMap];
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPorterGroupsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPorterGroupsRequest): ListPorterGroupsRequest.AsObject;
@@ -851,6 +856,7 @@ export class ListPorterGroupsRequest extends jspb.Message {
 export namespace ListPorterGroupsRequest {
   export type AsObject = {
     paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+    statusFilterList: Array<UserStatusMap[keyof UserStatusMap]>,
   }
 }
 
@@ -1150,14 +1156,16 @@ export class Porter extends jspb.Message {
   getId(): librarian_v1_common_pb.InternalID | undefined;
   setId(value?: librarian_v1_common_pb.InternalID): void;
 
-  getName(): string;
-  setName(value: string): void;
-
-  getVersion(): string;
-  setVersion(value: string): void;
+  hasBinarySummary(): boolean;
+  clearBinarySummary(): void;
+  getBinarySummary(): librarian_v1_common_pb.PorterBinarySummary | undefined;
+  setBinarySummary(value?: librarian_v1_common_pb.PorterBinarySummary): void;
 
   getGlobalName(): string;
   setGlobalName(value: string): void;
+
+  getRegion(): string;
+  setRegion(value: string): void;
 
   getFeatureSummary(): string;
   setFeatureSummary(value: string): void;
@@ -1189,9 +1197,9 @@ export class Porter extends jspb.Message {
 export namespace Porter {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
-    name: string,
-    version: string,
+    binarySummary?: librarian_v1_common_pb.PorterBinarySummary.AsObject,
     globalName: string,
+    region: string,
     featureSummary: string,
     status: UserStatusMap[keyof UserStatusMap],
     connectionStatus: PorterConnectionStatusMap[keyof PorterConnectionStatusMap],
@@ -1255,6 +1263,11 @@ export namespace PorterContext {
 }
 
 export class PorterGroup extends jspb.Message {
+  hasBinarySummary(): boolean;
+  clearBinarySummary(): void;
+  getBinarySummary(): librarian_v1_common_pb.PorterBinarySummary | undefined;
+  setBinarySummary(value?: librarian_v1_common_pb.PorterBinarySummary): void;
+
   getGlobalName(): string;
   setGlobalName(value: string): void;
 
@@ -1263,14 +1276,10 @@ export class PorterGroup extends jspb.Message {
   setRegionsList(value: Array<string>): void;
   addRegions(value: string, index?: number): string;
 
-  getContextJson(): string;
-  setContextJson(value: string): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
+  hasContextJsonSchema(): boolean;
+  clearContextJsonSchema(): void;
+  getContextJsonSchema(): string;
+  setContextJsonSchema(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PorterGroup.AsObject;
@@ -1284,11 +1293,10 @@ export class PorterGroup extends jspb.Message {
 
 export namespace PorterGroup {
   export type AsObject = {
+    binarySummary?: librarian_v1_common_pb.PorterBinarySummary.AsObject,
     globalName: string,
     regionsList: Array<string>,
-    contextJson: string,
-    name: string,
-    description: string,
+    contextJsonSchema: string,
   }
 }
 

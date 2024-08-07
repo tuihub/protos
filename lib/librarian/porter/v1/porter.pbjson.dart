@@ -26,12 +26,11 @@ final $typed_data.Uint8List getPorterInformationRequestDescriptor = $convert.bas
 const GetPorterInformationResponse$json = {
   '1': 'GetPorterInformationResponse',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'global_name', '3': 3, '4': 1, '5': 9, '10': 'globalName'},
-    {'1': 'region', '3': 4, '4': 1, '5': 9, '10': 'region'},
-    {'1': 'feature_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary', '10': 'featureSummary'},
-    {'1': 'context_json_schema', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
+    {'1': 'binary_summary', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
+    {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'region', '3': 3, '4': 1, '5': 9, '10': 'region'},
+    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary', '10': 'featureSummary'},
+    {'1': 'context_json_schema', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
   ],
   '8': [
     {'1': '_context_json_schema'},
@@ -40,12 +39,12 @@ const GetPorterInformationResponse$json = {
 
 /// Descriptor for `GetPorterInformationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getPorterInformationResponseDescriptor = $convert.base64Decode(
-    'ChxHZXRQb3J0ZXJJbmZvcm1hdGlvblJlc3BvbnNlEhIKBG5hbWUYASABKAlSBG5hbWUSGAoHdm'
-    'Vyc2lvbhgCIAEoCVIHdmVyc2lvbhIfCgtnbG9iYWxfbmFtZRgDIAEoCVIKZ2xvYmFsTmFtZRIW'
-    'CgZyZWdpb24YBCABKAlSBnJlZ2lvbhJSCg9mZWF0dXJlX3N1bW1hcnkYBSABKAsyKS5saWJyYX'
-    'JpYW4ucG9ydGVyLnYxLlBvcnRlckZlYXR1cmVTdW1tYXJ5Ug5mZWF0dXJlU3VtbWFyeRIzChNj'
-    'b250ZXh0X2pzb25fc2NoZW1hGAYgASgJSABSEWNvbnRleHRKc29uU2NoZW1hiAEBQhYKFF9jb2'
-    '50ZXh0X2pzb25fc2NoZW1h');
+    'ChxHZXRQb3J0ZXJJbmZvcm1hdGlvblJlc3BvbnNlEkgKDmJpbmFyeV9zdW1tYXJ5GAEgASgLMi'
+    'EubGlicmFyaWFuLnYxLlBvcnRlckJpbmFyeVN1bW1hcnlSDWJpbmFyeVN1bW1hcnkSHwoLZ2xv'
+    'YmFsX25hbWUYAiABKAlSCmdsb2JhbE5hbWUSFgoGcmVnaW9uGAMgASgJUgZyZWdpb24SUgoPZm'
+    'VhdHVyZV9zdW1tYXJ5GAQgASgLMikubGlicmFyaWFuLnBvcnRlci52MS5Qb3J0ZXJGZWF0dXJl'
+    'U3VtbWFyeVIOZmVhdHVyZVN1bW1hcnkSMwoTY29udGV4dF9qc29uX3NjaGVtYRgFIAEoCUgAUh'
+    'Fjb250ZXh0SnNvblNjaGVtYYgBAUIWChRfY29udGV4dF9qc29uX3NjaGVtYQ==');
 
 @$core.Deprecated('Use porterFeatureSummaryDescriptor instead')
 const PorterFeatureSummary$json = {

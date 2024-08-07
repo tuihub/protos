@@ -1952,10 +1952,14 @@ class UpdatePorterStatusResponse extends $pb.GeneratedMessage {
 class ListPorterGroupsRequest extends $pb.GeneratedMessage {
   factory ListPorterGroupsRequest({
     $8.PagingRequest? paging,
+    $core.Iterable<UserStatus>? statusFilter,
   }) {
     final $result = create();
     if (paging != null) {
       $result.paging = paging;
+    }
+    if (statusFilter != null) {
+      $result.statusFilter.addAll(statusFilter);
     }
     return $result;
   }
@@ -1965,6 +1969,7 @@ class ListPorterGroupsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPorterGroupsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<UserStatus>(2, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: UserStatus.valueOf, enumValues: UserStatus.values, defaultEnumValue: UserStatus.USER_STATUS_UNSPECIFIED)
     ..hasRequiredFields = false
   ;
 
@@ -1999,6 +2004,10 @@ class ListPorterGroupsRequest extends $pb.GeneratedMessage {
   void clearPaging() => clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
+
+  /// Normal user can only list active porters
+  @$pb.TagNumber(2)
+  $core.List<UserStatus> get statusFilter => $_getList(1);
 }
 
 class ListPorterGroupsResponse extends $pb.GeneratedMessage {
@@ -2724,9 +2733,9 @@ class DeviceInfo extends $pb.GeneratedMessage {
 class Porter extends $pb.GeneratedMessage {
   factory Porter({
     $8.InternalID? id,
-    $core.String? name,
-    $core.String? version,
+    $8.PorterBinarySummary? binarySummary,
     $core.String? globalName,
+    $core.String? region,
     $core.String? featureSummary,
     UserStatus? status,
     PorterConnectionStatus? connectionStatus,
@@ -2737,14 +2746,14 @@ class Porter extends $pb.GeneratedMessage {
     if (id != null) {
       $result.id = id;
     }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (version != null) {
-      $result.version = version;
+    if (binarySummary != null) {
+      $result.binarySummary = binarySummary;
     }
     if (globalName != null) {
       $result.globalName = globalName;
+    }
+    if (region != null) {
+      $result.region = region;
     }
     if (featureSummary != null) {
       $result.featureSummary = featureSummary;
@@ -2769,9 +2778,9 @@ class Porter extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Porter', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'version')
-    ..aOS(4, _omitFieldNames ? '' : 'globalName')
+    ..aOM<$8.PorterBinarySummary>(2, _omitFieldNames ? '' : 'binarySummary', subBuilder: $8.PorterBinarySummary.create)
+    ..aOS(3, _omitFieldNames ? '' : 'globalName')
+    ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOS(5, _omitFieldNames ? '' : 'featureSummary')
     ..e<UserStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
     ..e<PorterConnectionStatus>(7, _omitFieldNames ? '' : 'connectionStatus', $pb.PbFieldType.OE, defaultOrMaker: PorterConnectionStatus.PORTER_CONNECTION_STATUS_UNSPECIFIED, valueOf: PorterConnectionStatus.valueOf, enumValues: PorterConnectionStatus.values)
@@ -2813,31 +2822,33 @@ class Porter extends $pb.GeneratedMessage {
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $8.PorterBinarySummary get binarySummary => $_getN(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set binarySummary($8.PorterBinarySummary v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasBinarySummary() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearBinarySummary() => clearField(2);
+  @$pb.TagNumber(2)
+  $8.PorterBinarySummary ensureBinarySummary() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.String get version => $_getSZ(2);
+  $core.String get globalName => $_getSZ(2);
   @$pb.TagNumber(3)
-  set version($core.String v) { $_setString(2, v); }
+  set globalName($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasVersion() => $_has(2);
+  $core.bool hasGlobalName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearVersion() => clearField(3);
+  void clearGlobalName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get globalName => $_getSZ(3);
+  $core.String get region => $_getSZ(3);
   @$pb.TagNumber(4)
-  set globalName($core.String v) { $_setString(3, v); }
+  set region($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasGlobalName() => $_has(3);
+  $core.bool hasRegion() => $_has(3);
   @$pb.TagNumber(4)
-  void clearGlobalName() => clearField(4);
+  void clearRegion() => clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get featureSummary => $_getSZ(4);
@@ -3056,27 +3067,23 @@ class PorterContext extends $pb.GeneratedMessage {
 
 class PorterGroup extends $pb.GeneratedMessage {
   factory PorterGroup({
+    $8.PorterBinarySummary? binarySummary,
     $core.String? globalName,
     $core.Iterable<$core.String>? regions,
-    $core.String? contextJson,
-    $core.String? name,
-    $core.String? description,
+    $core.String? contextJsonSchema,
   }) {
     final $result = create();
+    if (binarySummary != null) {
+      $result.binarySummary = binarySummary;
+    }
     if (globalName != null) {
       $result.globalName = globalName;
     }
     if (regions != null) {
       $result.regions.addAll(regions);
     }
-    if (contextJson != null) {
-      $result.contextJson = contextJson;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (description != null) {
-      $result.description = description;
+    if (contextJsonSchema != null) {
+      $result.contextJsonSchema = contextJsonSchema;
     }
     return $result;
   }
@@ -3085,11 +3092,10 @@ class PorterGroup extends $pb.GeneratedMessage {
   factory PorterGroup.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterGroup', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'globalName')
-    ..pPS(2, _omitFieldNames ? '' : 'regions')
-    ..aOS(3, _omitFieldNames ? '' : 'contextJson')
-    ..aOS(4, _omitFieldNames ? '' : 'name')
-    ..aOS(5, _omitFieldNames ? '' : 'description')
+    ..aOM<$8.PorterBinarySummary>(1, _omitFieldNames ? '' : 'binarySummary', subBuilder: $8.PorterBinarySummary.create)
+    ..aOS(2, _omitFieldNames ? '' : 'globalName')
+    ..pPS(3, _omitFieldNames ? '' : 'regions')
+    ..aOS(4, _omitFieldNames ? '' : 'contextJsonSchema')
     ..hasRequiredFields = false
   ;
 
@@ -3115,43 +3121,36 @@ class PorterGroup extends $pb.GeneratedMessage {
   static PorterGroup? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get globalName => $_getSZ(0);
+  $8.PorterBinarySummary get binarySummary => $_getN(0);
   @$pb.TagNumber(1)
-  set globalName($core.String v) { $_setString(0, v); }
+  set binarySummary($8.PorterBinarySummary v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasGlobalName() => $_has(0);
+  $core.bool hasBinarySummary() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGlobalName() => clearField(1);
+  void clearBinarySummary() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PorterBinarySummary ensureBinarySummary() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get regions => $_getList(1);
+  $core.String get globalName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set globalName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGlobalName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGlobalName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get contextJson => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set contextJson($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasContextJson() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearContextJson() => clearField(3);
+  $core.List<$core.String> get regions => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get name => $_getSZ(3);
+  $core.String get contextJsonSchema => $_getSZ(3);
   @$pb.TagNumber(4)
-  set name($core.String v) { $_setString(3, v); }
+  set contextJsonSchema($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasName() => $_has(3);
+  $core.bool hasContextJsonSchema() => $_has(3);
   @$pb.TagNumber(4)
-  void clearName() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get description => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set description($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasDescription() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearDescription() => clearField(5);
+  void clearContextJsonSchema() => clearField(4);
 }
 
 

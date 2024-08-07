@@ -22,11 +22,10 @@ export namespace GetPorterInformationRequest {
 }
 
 export class GetPorterInformationResponse extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getVersion(): string;
-  setVersion(value: string): void;
+  hasBinarySummary(): boolean;
+  clearBinarySummary(): void;
+  getBinarySummary(): librarian_v1_common_pb.PorterBinarySummary | undefined;
+  setBinarySummary(value?: librarian_v1_common_pb.PorterBinarySummary): void;
 
   getGlobalName(): string;
   setGlobalName(value: string): void;
@@ -56,8 +55,7 @@ export class GetPorterInformationResponse extends jspb.Message {
 
 export namespace GetPorterInformationResponse {
   export type AsObject = {
-    name: string,
-    version: string,
+    binarySummary?: librarian_v1_common_pb.PorterBinarySummary.AsObject,
     globalName: string,
     region: string,
     featureSummary?: PorterFeatureSummary.AsObject,

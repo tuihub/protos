@@ -14,9 +14,9 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../v1/common.pb.dart' as $5;
-import '../../v1/common.pbenum.dart' as $5;
-import '../../v1/wellknown.pb.dart' as $4;
+import '../../v1/common.pb.dart' as $4;
+import '../../v1/common.pbenum.dart' as $4;
+import '../../v1/wellknown.pb.dart' as $5;
 
 class GetPorterInformationRequest extends $pb.GeneratedMessage {
   factory GetPorterInformationRequest() => create();
@@ -52,19 +52,15 @@ class GetPorterInformationRequest extends $pb.GeneratedMessage {
 
 class GetPorterInformationResponse extends $pb.GeneratedMessage {
   factory GetPorterInformationResponse({
-    $core.String? name,
-    $core.String? version,
+    $4.PorterBinarySummary? binarySummary,
     $core.String? globalName,
     $core.String? region,
     PorterFeatureSummary? featureSummary,
     $core.String? contextJsonSchema,
   }) {
     final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (version != null) {
-      $result.version = version;
+    if (binarySummary != null) {
+      $result.binarySummary = binarySummary;
     }
     if (globalName != null) {
       $result.globalName = globalName;
@@ -85,12 +81,11 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   factory GetPorterInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetPorterInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOS(2, _omitFieldNames ? '' : 'version')
-    ..aOS(3, _omitFieldNames ? '' : 'globalName')
-    ..aOS(4, _omitFieldNames ? '' : 'region')
-    ..aOM<PorterFeatureSummary>(5, _omitFieldNames ? '' : 'featureSummary', subBuilder: PorterFeatureSummary.create)
-    ..aOS(6, _omitFieldNames ? '' : 'contextJsonSchema')
+    ..aOM<$4.PorterBinarySummary>(1, _omitFieldNames ? '' : 'binarySummary', subBuilder: $4.PorterBinarySummary.create)
+    ..aOS(2, _omitFieldNames ? '' : 'globalName')
+    ..aOS(3, _omitFieldNames ? '' : 'region')
+    ..aOM<PorterFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: PorterFeatureSummary.create)
+    ..aOS(5, _omitFieldNames ? '' : 'contextJsonSchema')
     ..hasRequiredFields = false
   ;
 
@@ -115,84 +110,75 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   static GetPorterInformationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetPorterInformationResponse>(create);
   static GetPorterInformationResponse? _defaultInstance;
 
-  /// Human-readable name. no format limit.
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $4.PorterBinarySummary get binarySummary => $_getN(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set binarySummary($4.PorterBinarySummary v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasBinarySummary() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-
-  /// Version of the porter. no format limit.
-  @$pb.TagNumber(2)
-  $core.String get version => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set version($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasVersion() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearVersion() => clearField(2);
+  void clearBinarySummary() => clearField(1);
+  @$pb.TagNumber(1)
+  $4.PorterBinarySummary ensureBinarySummary() => $_ensure(0);
 
   /// Global identifier. Same global name means same project. no format limit.
   /// e.g. use project url "github.com/tuihub/porter-steam".
-  @$pb.TagNumber(3)
-  $core.String get globalName => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set globalName($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasGlobalName() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearGlobalName() => clearField(3);
+  @$pb.TagNumber(2)
+  $core.String get globalName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set globalName($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGlobalName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGlobalName() => clearField(2);
 
   /// Region is used to group porters,
   /// same porter in same region can be randomly selected.
   /// Leave empty to use default region.
-  @$pb.TagNumber(4)
-  $core.String get region => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set region($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasRegion() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearRegion() => clearField(4);
+  @$pb.TagNumber(3)
+  $core.String get region => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set region($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRegion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRegion() => clearField(3);
 
   /// Supported features.
-  @$pb.TagNumber(5)
-  PorterFeatureSummary get featureSummary => $_getN(4);
-  @$pb.TagNumber(5)
-  set featureSummary(PorterFeatureSummary v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasFeatureSummary() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearFeatureSummary() => clearField(5);
-  @$pb.TagNumber(5)
-  PorterFeatureSummary ensureFeatureSummary() => $_ensure(4);
+  @$pb.TagNumber(4)
+  PorterFeatureSummary get featureSummary => $_getN(3);
+  @$pb.TagNumber(4)
+  set featureSummary(PorterFeatureSummary v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFeatureSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFeatureSummary() => clearField(4);
+  @$pb.TagNumber(4)
+  PorterFeatureSummary ensureFeatureSummary() => $_ensure(3);
 
   /// JSON schema for `FeatureRequest.context_json`.
   /// Leave empty if not needed.
   /// If needed, all feature requests should deliver `context_json`.
   /// Can be used to configure third-party token, etc.
-  @$pb.TagNumber(6)
-  $core.String get contextJsonSchema => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set contextJsonSchema($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasContextJsonSchema() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearContextJsonSchema() => clearField(6);
+  @$pb.TagNumber(5)
+  $core.String get contextJsonSchema => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contextJsonSchema($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasContextJsonSchema() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContextJsonSchema() => clearField(5);
 }
 
 class PorterFeatureSummary extends $pb.GeneratedMessage {
   factory PorterFeatureSummary({
-    $core.Iterable<$4.FeatureFlag>? accountPlatforms,
-    $core.Iterable<$4.FeatureFlag>? appInfoSources,
-    $core.Iterable<$4.FeatureFlag>? feedSources,
-    $core.Iterable<$4.FeatureFlag>? notifyDestinations,
-    $core.Iterable<$4.FeatureFlag>? feedItemActions,
-    $core.Iterable<$4.FeatureFlag>? feedSetters,
-    $core.Iterable<$4.FeatureFlag>? feedGetters,
+    $core.Iterable<$5.FeatureFlag>? accountPlatforms,
+    $core.Iterable<$5.FeatureFlag>? appInfoSources,
+    $core.Iterable<$5.FeatureFlag>? feedSources,
+    $core.Iterable<$5.FeatureFlag>? notifyDestinations,
+    $core.Iterable<$5.FeatureFlag>? feedItemActions,
+    $core.Iterable<$5.FeatureFlag>? feedSetters,
+    $core.Iterable<$5.FeatureFlag>? feedGetters,
   }) {
     final $result = create();
     if (accountPlatforms != null) {
@@ -223,13 +209,13 @@ class PorterFeatureSummary extends $pb.GeneratedMessage {
   factory PorterFeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$4.FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
-    ..pc<$4.FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
-    ..pc<$4.FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
-    ..pc<$4.FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
-    ..pc<$4.FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
-    ..pc<$4.FeatureFlag>(6, _omitFieldNames ? '' : 'feedSetters', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
-    ..pc<$4.FeatureFlag>(7, _omitFieldNames ? '' : 'feedGetters', $pb.PbFieldType.PM, subBuilder: $4.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(6, _omitFieldNames ? '' : 'feedSetters', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
+    ..pc<$5.FeatureFlag>(7, _omitFieldNames ? '' : 'feedGetters', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
     ..hasRequiredFields = false
   ;
 
@@ -255,28 +241,28 @@ class PorterFeatureSummary extends $pb.GeneratedMessage {
   static PorterFeatureSummary? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.FeatureFlag> get accountPlatforms => $_getList(0);
+  $core.List<$5.FeatureFlag> get accountPlatforms => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<$4.FeatureFlag> get appInfoSources => $_getList(1);
+  $core.List<$5.FeatureFlag> get appInfoSources => $_getList(1);
 
   /// WellKnownFeedSource
   @$pb.TagNumber(3)
-  $core.List<$4.FeatureFlag> get feedSources => $_getList(2);
+  $core.List<$5.FeatureFlag> get feedSources => $_getList(2);
 
   /// WellKnownNotifyDestination
   @$pb.TagNumber(4)
-  $core.List<$4.FeatureFlag> get notifyDestinations => $_getList(3);
+  $core.List<$5.FeatureFlag> get notifyDestinations => $_getList(3);
 
   /// WellKnownFeedItemAction
   @$pb.TagNumber(5)
-  $core.List<$4.FeatureFlag> get feedItemActions => $_getList(4);
+  $core.List<$5.FeatureFlag> get feedItemActions => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<$4.FeatureFlag> get feedSetters => $_getList(5);
+  $core.List<$5.FeatureFlag> get feedSetters => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<$4.FeatureFlag> get feedGetters => $_getList(6);
+  $core.List<$5.FeatureFlag> get feedGetters => $_getList(6);
 }
 
 class EnablePorterRequest extends $pb.GeneratedMessage {
@@ -434,9 +420,9 @@ class EnablePorterResponse extends $pb.GeneratedMessage {
 
 class PorterEnablesSummary extends $pb.GeneratedMessage {
   factory PorterEnablesSummary({
-    $core.Iterable<$5.InternalID>? contextIds,
-    $core.Iterable<$5.InternalID>? feedSetterIds,
-    $core.Iterable<$5.InternalID>? feedGetterIds,
+    $core.Iterable<$4.InternalID>? contextIds,
+    $core.Iterable<$4.InternalID>? feedSetterIds,
+    $core.Iterable<$4.InternalID>? feedGetterIds,
   }) {
     final $result = create();
     if (contextIds != null) {
@@ -455,9 +441,9 @@ class PorterEnablesSummary extends $pb.GeneratedMessage {
   factory PorterEnablesSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterEnablesSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$5.InternalID>(1, _omitFieldNames ? '' : 'contextIds', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
-    ..pc<$5.InternalID>(2, _omitFieldNames ? '' : 'feedSetterIds', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
-    ..pc<$5.InternalID>(3, _omitFieldNames ? '' : 'feedGetterIds', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
+    ..pc<$4.InternalID>(1, _omitFieldNames ? '' : 'contextIds', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pc<$4.InternalID>(2, _omitFieldNames ? '' : 'feedSetterIds', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pc<$4.InternalID>(3, _omitFieldNames ? '' : 'feedGetterIds', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -484,20 +470,20 @@ class PorterEnablesSummary extends $pb.GeneratedMessage {
 
   /// `EnableContextRequest.context_id`
   @$pb.TagNumber(1)
-  $core.List<$5.InternalID> get contextIds => $_getList(0);
+  $core.List<$4.InternalID> get contextIds => $_getList(0);
 
   /// `EnableFeedSetterRequest.setter_id`
   @$pb.TagNumber(2)
-  $core.List<$5.InternalID> get feedSetterIds => $_getList(1);
+  $core.List<$4.InternalID> get feedSetterIds => $_getList(1);
 
   /// `EnableFeedGetterRequest.getter_id`
   @$pb.TagNumber(3)
-  $core.List<$5.InternalID> get feedGetterIds => $_getList(2);
+  $core.List<$4.InternalID> get feedGetterIds => $_getList(2);
 }
 
 class EnableContextRequest extends $pb.GeneratedMessage {
   factory EnableContextRequest({
-    $5.InternalID? contextId,
+    $4.InternalID? contextId,
     $core.String? contextJson,
   }) {
     final $result = create();
@@ -514,7 +500,7 @@ class EnableContextRequest extends $pb.GeneratedMessage {
   factory EnableContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $5.InternalID.create)
+    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $4.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'contextJson')
     ..hasRequiredFields = false
   ;
@@ -543,15 +529,15 @@ class EnableContextRequest extends $pb.GeneratedMessage {
   /// Identifier of context.
   /// New context can replace old context with same id.
   @$pb.TagNumber(1)
-  $5.InternalID get contextId => $_getN(0);
+  $4.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set contextId($5.InternalID v) { setField(1, v); }
+  set contextId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
   void clearContextId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureContextId() => $_ensure(0);
+  $4.InternalID ensureContextId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get contextJson => $_getSZ(1);
@@ -597,7 +583,7 @@ class EnableContextResponse extends $pb.GeneratedMessage {
 
 class DisableContextRequest extends $pb.GeneratedMessage {
   factory DisableContextRequest({
-    $5.InternalID? contextId,
+    $4.InternalID? contextId,
   }) {
     final $result = create();
     if (contextId != null) {
@@ -610,7 +596,7 @@ class DisableContextRequest extends $pb.GeneratedMessage {
   factory DisableContextRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableContextRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $5.InternalID.create)
+    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'contextId', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -636,15 +622,15 @@ class DisableContextRequest extends $pb.GeneratedMessage {
   static DisableContextRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.InternalID get contextId => $_getN(0);
+  $4.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set contextId($5.InternalID v) { setField(1, v); }
+  set contextId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
   void clearContextId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureContextId() => $_ensure(0);
+  $4.InternalID ensureContextId() => $_ensure(0);
 }
 
 class DisableContextResponse extends $pb.GeneratedMessage {
@@ -681,7 +667,7 @@ class DisableContextResponse extends $pb.GeneratedMessage {
 
 class PullAccountRequest extends $pb.GeneratedMessage {
   factory PullAccountRequest({
-    $5.AccountID? accountId,
+    $4.AccountID? accountId,
   }) {
     final $result = create();
     if (accountId != null) {
@@ -694,7 +680,7 @@ class PullAccountRequest extends $pb.GeneratedMessage {
   factory PullAccountRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.AccountID>(1, _omitFieldNames ? '' : 'accountId', subBuilder: $5.AccountID.create)
+    ..aOM<$4.AccountID>(1, _omitFieldNames ? '' : 'accountId', subBuilder: $4.AccountID.create)
     ..hasRequiredFields = false
   ;
 
@@ -720,20 +706,20 @@ class PullAccountRequest extends $pb.GeneratedMessage {
   static PullAccountRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.AccountID get accountId => $_getN(0);
+  $4.AccountID get accountId => $_getN(0);
   @$pb.TagNumber(1)
-  set accountId($5.AccountID v) { setField(1, v); }
+  set accountId($4.AccountID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(1)
   void clearAccountId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.AccountID ensureAccountId() => $_ensure(0);
+  $4.AccountID ensureAccountId() => $_ensure(0);
 }
 
 class PullAccountResponse extends $pb.GeneratedMessage {
   factory PullAccountResponse({
-    $5.Account? account,
+    $4.Account? account,
   }) {
     final $result = create();
     if (account != null) {
@@ -746,7 +732,7 @@ class PullAccountResponse extends $pb.GeneratedMessage {
   factory PullAccountResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.Account>(1, _omitFieldNames ? '' : 'account', subBuilder: $5.Account.create)
+    ..aOM<$4.Account>(1, _omitFieldNames ? '' : 'account', subBuilder: $4.Account.create)
     ..hasRequiredFields = false
   ;
 
@@ -772,20 +758,20 @@ class PullAccountResponse extends $pb.GeneratedMessage {
   static PullAccountResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.Account get account => $_getN(0);
+  $4.Account get account => $_getN(0);
   @$pb.TagNumber(1)
-  set account($5.Account v) { setField(1, v); }
+  set account($4.Account v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAccount() => $_has(0);
   @$pb.TagNumber(1)
   void clearAccount() => clearField(1);
   @$pb.TagNumber(1)
-  $5.Account ensureAccount() => $_ensure(0);
+  $4.Account ensureAccount() => $_ensure(0);
 }
 
 class PullAppInfoRequest extends $pb.GeneratedMessage {
   factory PullAppInfoRequest({
-    $5.AppInfoID? appInfoId,
+    $4.AppInfoID? appInfoId,
   }) {
     final $result = create();
     if (appInfoId != null) {
@@ -798,7 +784,7 @@ class PullAppInfoRequest extends $pb.GeneratedMessage {
   factory PullAppInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.AppInfoID>(1, _omitFieldNames ? '' : 'appInfoId', subBuilder: $5.AppInfoID.create)
+    ..aOM<$4.AppInfoID>(1, _omitFieldNames ? '' : 'appInfoId', subBuilder: $4.AppInfoID.create)
     ..hasRequiredFields = false
   ;
 
@@ -824,20 +810,20 @@ class PullAppInfoRequest extends $pb.GeneratedMessage {
   static PullAppInfoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.AppInfoID get appInfoId => $_getN(0);
+  $4.AppInfoID get appInfoId => $_getN(0);
   @$pb.TagNumber(1)
-  set appInfoId($5.AppInfoID v) { setField(1, v); }
+  set appInfoId($4.AppInfoID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppInfoId() => $_has(0);
   @$pb.TagNumber(1)
   void clearAppInfoId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.AppInfoID ensureAppInfoId() => $_ensure(0);
+  $4.AppInfoID ensureAppInfoId() => $_ensure(0);
 }
 
 class PullAppInfoResponse extends $pb.GeneratedMessage {
   factory PullAppInfoResponse({
-    $5.AppInfo? appInfo,
+    $4.AppInfo? appInfo,
   }) {
     final $result = create();
     if (appInfo != null) {
@@ -850,7 +836,7 @@ class PullAppInfoResponse extends $pb.GeneratedMessage {
   factory PullAppInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.AppInfo>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: $5.AppInfo.create)
+    ..aOM<$4.AppInfo>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: $4.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -876,21 +862,21 @@ class PullAppInfoResponse extends $pb.GeneratedMessage {
   static PullAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.AppInfo get appInfo => $_getN(0);
+  $4.AppInfo get appInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set appInfo($5.AppInfo v) { setField(1, v); }
+  set appInfo($4.AppInfo v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppInfo() => $_has(0);
   @$pb.TagNumber(1)
   void clearAppInfo() => clearField(1);
   @$pb.TagNumber(1)
-  $5.AppInfo ensureAppInfo() => $_ensure(0);
+  $4.AppInfo ensureAppInfo() => $_ensure(0);
 }
 
 class PullAccountAppInfoRelationRequest extends $pb.GeneratedMessage {
   factory PullAccountAppInfoRelationRequest({
-    $5.AccountAppRelationType? relationType,
-    $5.AccountID? accountId,
+    $4.AccountAppRelationType? relationType,
+    $4.AccountID? accountId,
   }) {
     final $result = create();
     if (relationType != null) {
@@ -906,8 +892,8 @@ class PullAccountAppInfoRelationRequest extends $pb.GeneratedMessage {
   factory PullAccountAppInfoRelationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountAppInfoRelationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..e<$5.AccountAppRelationType>(1, _omitFieldNames ? '' : 'relationType', $pb.PbFieldType.OE, defaultOrMaker: $5.AccountAppRelationType.ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED, valueOf: $5.AccountAppRelationType.valueOf, enumValues: $5.AccountAppRelationType.values)
-    ..aOM<$5.AccountID>(2, _omitFieldNames ? '' : 'accountId', subBuilder: $5.AccountID.create)
+    ..e<$4.AccountAppRelationType>(1, _omitFieldNames ? '' : 'relationType', $pb.PbFieldType.OE, defaultOrMaker: $4.AccountAppRelationType.ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED, valueOf: $4.AccountAppRelationType.valueOf, enumValues: $4.AccountAppRelationType.values)
+    ..aOM<$4.AccountID>(2, _omitFieldNames ? '' : 'accountId', subBuilder: $4.AccountID.create)
     ..hasRequiredFields = false
   ;
 
@@ -933,29 +919,29 @@ class PullAccountAppInfoRelationRequest extends $pb.GeneratedMessage {
   static PullAccountAppInfoRelationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.AccountAppRelationType get relationType => $_getN(0);
+  $4.AccountAppRelationType get relationType => $_getN(0);
   @$pb.TagNumber(1)
-  set relationType($5.AccountAppRelationType v) { setField(1, v); }
+  set relationType($4.AccountAppRelationType v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRelationType() => $_has(0);
   @$pb.TagNumber(1)
   void clearRelationType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $5.AccountID get accountId => $_getN(1);
+  $4.AccountID get accountId => $_getN(1);
   @$pb.TagNumber(2)
-  set accountId($5.AccountID v) { setField(2, v); }
+  set accountId($4.AccountID v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAccountId() => $_has(1);
   @$pb.TagNumber(2)
   void clearAccountId() => clearField(2);
   @$pb.TagNumber(2)
-  $5.AccountID ensureAccountId() => $_ensure(1);
+  $4.AccountID ensureAccountId() => $_ensure(1);
 }
 
 class PullAccountAppInfoRelationResponse extends $pb.GeneratedMessage {
   factory PullAccountAppInfoRelationResponse({
-    $core.Iterable<$5.AppInfo>? appInfos,
+    $core.Iterable<$4.AppInfo>? appInfos,
   }) {
     final $result = create();
     if (appInfos != null) {
@@ -968,7 +954,7 @@ class PullAccountAppInfoRelationResponse extends $pb.GeneratedMessage {
   factory PullAccountAppInfoRelationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullAccountAppInfoRelationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$5.AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $5.AppInfo.create)
+    ..pc<$4.AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $4.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -994,7 +980,7 @@ class PullAccountAppInfoRelationResponse extends $pb.GeneratedMessage {
   static PullAccountAppInfoRelationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$5.AppInfo> get appInfos => $_getList(0);
+  $core.List<$4.AppInfo> get appInfos => $_getList(0);
 }
 
 class SearchAppInfoRequest extends $pb.GeneratedMessage {
@@ -1049,7 +1035,7 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
 
 class SearchAppInfoResponse extends $pb.GeneratedMessage {
   factory SearchAppInfoResponse({
-    $core.Iterable<$5.AppInfo>? appInfos,
+    $core.Iterable<$4.AppInfo>? appInfos,
   }) {
     final $result = create();
     if (appInfos != null) {
@@ -1062,7 +1048,7 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
   factory SearchAppInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$5.AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $5.AppInfo.create)
+    ..pc<$4.AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $4.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -1088,12 +1074,12 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
   static SearchAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$5.AppInfo> get appInfos => $_getList(0);
+  $core.List<$4.AppInfo> get appInfos => $_getList(0);
 }
 
 class PullFeedRequest extends $pb.GeneratedMessage {
   factory PullFeedRequest({
-    $4.FeatureRequest? source,
+    $5.FeatureRequest? source,
   }) {
     final $result = create();
     if (source != null) {
@@ -1106,7 +1092,7 @@ class PullFeedRequest extends $pb.GeneratedMessage {
   factory PullFeedRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullFeedRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$4.FeatureRequest>(1, _omitFieldNames ? '' : 'source', subBuilder: $4.FeatureRequest.create)
+    ..aOM<$5.FeatureRequest>(1, _omitFieldNames ? '' : 'source', subBuilder: $5.FeatureRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1133,20 +1119,20 @@ class PullFeedRequest extends $pb.GeneratedMessage {
 
   /// `PorterFeatureSummary.feed_sources`
   @$pb.TagNumber(1)
-  $4.FeatureRequest get source => $_getN(0);
+  $5.FeatureRequest get source => $_getN(0);
   @$pb.TagNumber(1)
-  set source($4.FeatureRequest v) { setField(1, v); }
+  set source($5.FeatureRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
   void clearSource() => clearField(1);
   @$pb.TagNumber(1)
-  $4.FeatureRequest ensureSource() => $_ensure(0);
+  $5.FeatureRequest ensureSource() => $_ensure(0);
 }
 
 class PullFeedResponse extends $pb.GeneratedMessage {
   factory PullFeedResponse({
-    $5.Feed? data,
+    $4.Feed? data,
   }) {
     final $result = create();
     if (data != null) {
@@ -1159,7 +1145,7 @@ class PullFeedResponse extends $pb.GeneratedMessage {
   factory PullFeedResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PullFeedResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.Feed>(1, _omitFieldNames ? '' : 'data', subBuilder: $5.Feed.create)
+    ..aOM<$4.Feed>(1, _omitFieldNames ? '' : 'data', subBuilder: $4.Feed.create)
     ..hasRequiredFields = false
   ;
 
@@ -1185,21 +1171,21 @@ class PullFeedResponse extends $pb.GeneratedMessage {
   static PullFeedResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.Feed get data => $_getN(0);
+  $4.Feed get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($5.Feed v) { setField(1, v); }
+  set data($4.Feed v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
   void clearData() => clearField(1);
   @$pb.TagNumber(1)
-  $5.Feed ensureData() => $_ensure(0);
+  $4.Feed ensureData() => $_ensure(0);
 }
 
 class PushFeedItemsRequest extends $pb.GeneratedMessage {
   factory PushFeedItemsRequest({
-    $4.FeatureRequest? destination,
-    $core.Iterable<$5.FeedItem>? items,
+    $5.FeatureRequest? destination,
+    $core.Iterable<$4.FeedItem>? items,
   }) {
     final $result = create();
     if (destination != null) {
@@ -1215,8 +1201,8 @@ class PushFeedItemsRequest extends $pb.GeneratedMessage {
   factory PushFeedItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PushFeedItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$4.FeatureRequest>(1, _omitFieldNames ? '' : 'destination', subBuilder: $4.FeatureRequest.create)
-    ..pc<$5.FeedItem>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $5.FeedItem.create)
+    ..aOM<$5.FeatureRequest>(1, _omitFieldNames ? '' : 'destination', subBuilder: $5.FeatureRequest.create)
+    ..pc<$4.FeedItem>(2, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $4.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1243,18 +1229,18 @@ class PushFeedItemsRequest extends $pb.GeneratedMessage {
 
   /// `PorterFeatureSummary.notify_destinations`
   @$pb.TagNumber(1)
-  $4.FeatureRequest get destination => $_getN(0);
+  $5.FeatureRequest get destination => $_getN(0);
   @$pb.TagNumber(1)
-  set destination($4.FeatureRequest v) { setField(1, v); }
+  set destination($5.FeatureRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDestination() => $_has(0);
   @$pb.TagNumber(1)
   void clearDestination() => clearField(1);
   @$pb.TagNumber(1)
-  $4.FeatureRequest ensureDestination() => $_ensure(0);
+  $5.FeatureRequest ensureDestination() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$5.FeedItem> get items => $_getList(1);
+  $core.List<$4.FeedItem> get items => $_getList(1);
 }
 
 class PushFeedItemsResponse extends $pb.GeneratedMessage {
@@ -1291,8 +1277,8 @@ class PushFeedItemsResponse extends $pb.GeneratedMessage {
 
 class ExecFeedItemActionRequest extends $pb.GeneratedMessage {
   factory ExecFeedItemActionRequest({
-    $4.FeatureRequest? action,
-    $5.FeedItem? item,
+    $5.FeatureRequest? action,
+    $4.FeedItem? item,
   }) {
     final $result = create();
     if (action != null) {
@@ -1308,8 +1294,8 @@ class ExecFeedItemActionRequest extends $pb.GeneratedMessage {
   factory ExecFeedItemActionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExecFeedItemActionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$4.FeatureRequest>(1, _omitFieldNames ? '' : 'action', subBuilder: $4.FeatureRequest.create)
-    ..aOM<$5.FeedItem>(3, _omitFieldNames ? '' : 'item', subBuilder: $5.FeedItem.create)
+    ..aOM<$5.FeatureRequest>(1, _omitFieldNames ? '' : 'action', subBuilder: $5.FeatureRequest.create)
+    ..aOM<$4.FeedItem>(3, _omitFieldNames ? '' : 'item', subBuilder: $4.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1336,31 +1322,31 @@ class ExecFeedItemActionRequest extends $pb.GeneratedMessage {
 
   /// `PorterFeatureSummary.feed_item_actions`
   @$pb.TagNumber(1)
-  $4.FeatureRequest get action => $_getN(0);
+  $5.FeatureRequest get action => $_getN(0);
   @$pb.TagNumber(1)
-  set action($4.FeatureRequest v) { setField(1, v); }
+  set action($5.FeatureRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAction() => $_has(0);
   @$pb.TagNumber(1)
   void clearAction() => clearField(1);
   @$pb.TagNumber(1)
-  $4.FeatureRequest ensureAction() => $_ensure(0);
+  $5.FeatureRequest ensureAction() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $5.FeedItem get item => $_getN(1);
+  $4.FeedItem get item => $_getN(1);
   @$pb.TagNumber(3)
-  set item($5.FeedItem v) { setField(3, v); }
+  set item($4.FeedItem v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasItem() => $_has(1);
   @$pb.TagNumber(3)
   void clearItem() => clearField(3);
   @$pb.TagNumber(3)
-  $5.FeedItem ensureItem() => $_ensure(1);
+  $4.FeedItem ensureItem() => $_ensure(1);
 }
 
 class ExecFeedItemActionResponse extends $pb.GeneratedMessage {
   factory ExecFeedItemActionResponse({
-    $5.FeedItem? item,
+    $4.FeedItem? item,
   }) {
     final $result = create();
     if (item != null) {
@@ -1373,7 +1359,7 @@ class ExecFeedItemActionResponse extends $pb.GeneratedMessage {
   factory ExecFeedItemActionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ExecFeedItemActionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $5.FeedItem.create)
+    ..aOM<$4.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $4.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1401,22 +1387,22 @@ class ExecFeedItemActionResponse extends $pb.GeneratedMessage {
   /// Return the result of the action.
   /// Leave empty if item should be filtered out.
   @$pb.TagNumber(1)
-  $5.FeedItem get item => $_getN(0);
+  $4.FeedItem get item => $_getN(0);
   @$pb.TagNumber(1)
-  set item($5.FeedItem v) { setField(1, v); }
+  set item($4.FeedItem v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasItem() => $_has(0);
   @$pb.TagNumber(1)
   void clearItem() => clearField(1);
   @$pb.TagNumber(1)
-  $5.FeedItem ensureItem() => $_ensure(0);
+  $4.FeedItem ensureItem() => $_ensure(0);
 }
 
 class EnableFeedSetterRequest extends $pb.GeneratedMessage {
   factory EnableFeedSetterRequest({
-    $5.InternalID? setterId,
-    $4.FeatureRequest? setter,
-    $5.InternalID? feedId,
+    $4.InternalID? setterId,
+    $5.FeatureRequest? setter,
+    $4.InternalID? feedId,
   }) {
     final $result = create();
     if (setterId != null) {
@@ -1435,9 +1421,9 @@ class EnableFeedSetterRequest extends $pb.GeneratedMessage {
   factory EnableFeedSetterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableFeedSetterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'setterId', subBuilder: $5.InternalID.create)
-    ..aOM<$4.FeatureRequest>(2, _omitFieldNames ? '' : 'setter', subBuilder: $4.FeatureRequest.create)
-    ..aOM<$5.InternalID>(3, _omitFieldNames ? '' : 'feedId', subBuilder: $5.InternalID.create)
+    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'setterId', subBuilder: $4.InternalID.create)
+    ..aOM<$5.FeatureRequest>(2, _omitFieldNames ? '' : 'setter', subBuilder: $5.FeatureRequest.create)
+    ..aOM<$4.InternalID>(3, _omitFieldNames ? '' : 'feedId', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1463,38 +1449,38 @@ class EnableFeedSetterRequest extends $pb.GeneratedMessage {
   static EnableFeedSetterRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.InternalID get setterId => $_getN(0);
+  $4.InternalID get setterId => $_getN(0);
   @$pb.TagNumber(1)
-  set setterId($5.InternalID v) { setField(1, v); }
+  set setterId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSetterId() => $_has(0);
   @$pb.TagNumber(1)
   void clearSetterId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureSetterId() => $_ensure(0);
+  $4.InternalID ensureSetterId() => $_ensure(0);
 
   /// `PorterFeatureSummary.feed_setters`
   @$pb.TagNumber(2)
-  $4.FeatureRequest get setter => $_getN(1);
+  $5.FeatureRequest get setter => $_getN(1);
   @$pb.TagNumber(2)
-  set setter($4.FeatureRequest v) { setField(2, v); }
+  set setter($5.FeatureRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSetter() => $_has(1);
   @$pb.TagNumber(2)
   void clearSetter() => clearField(2);
   @$pb.TagNumber(2)
-  $4.FeatureRequest ensureSetter() => $_ensure(1);
+  $5.FeatureRequest ensureSetter() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $5.InternalID get feedId => $_getN(2);
+  $4.InternalID get feedId => $_getN(2);
   @$pb.TagNumber(3)
-  set feedId($5.InternalID v) { setField(3, v); }
+  set feedId($4.InternalID v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFeedId() => $_has(2);
   @$pb.TagNumber(3)
   void clearFeedId() => clearField(3);
   @$pb.TagNumber(3)
-  $5.InternalID ensureFeedId() => $_ensure(2);
+  $4.InternalID ensureFeedId() => $_ensure(2);
 }
 
 class EnableFeedSetterResponse extends $pb.GeneratedMessage {
@@ -1531,7 +1517,7 @@ class EnableFeedSetterResponse extends $pb.GeneratedMessage {
 
 class DisableFeedSetterRequest extends $pb.GeneratedMessage {
   factory DisableFeedSetterRequest({
-    $5.InternalID? setterId,
+    $4.InternalID? setterId,
   }) {
     final $result = create();
     if (setterId != null) {
@@ -1544,7 +1530,7 @@ class DisableFeedSetterRequest extends $pb.GeneratedMessage {
   factory DisableFeedSetterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableFeedSetterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'setterId', subBuilder: $5.InternalID.create)
+    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'setterId', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1570,15 +1556,15 @@ class DisableFeedSetterRequest extends $pb.GeneratedMessage {
   static DisableFeedSetterRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.InternalID get setterId => $_getN(0);
+  $4.InternalID get setterId => $_getN(0);
   @$pb.TagNumber(1)
-  set setterId($5.InternalID v) { setField(1, v); }
+  set setterId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSetterId() => $_has(0);
   @$pb.TagNumber(1)
   void clearSetterId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureSetterId() => $_ensure(0);
+  $4.InternalID ensureSetterId() => $_ensure(0);
 }
 
 class DisableFeedSetterResponse extends $pb.GeneratedMessage {
@@ -1615,9 +1601,9 @@ class DisableFeedSetterResponse extends $pb.GeneratedMessage {
 
 class EnableFeedGetterRequest extends $pb.GeneratedMessage {
   factory EnableFeedGetterRequest({
-    $5.InternalID? getterId,
-    $4.FeatureRequest? getter,
-    $5.InternalID? feedId,
+    $4.InternalID? getterId,
+    $5.FeatureRequest? getter,
+    $4.InternalID? feedId,
   }) {
     final $result = create();
     if (getterId != null) {
@@ -1636,9 +1622,9 @@ class EnableFeedGetterRequest extends $pb.GeneratedMessage {
   factory EnableFeedGetterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EnableFeedGetterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'getterId', subBuilder: $5.InternalID.create)
-    ..aOM<$4.FeatureRequest>(2, _omitFieldNames ? '' : 'getter', subBuilder: $4.FeatureRequest.create)
-    ..aOM<$5.InternalID>(3, _omitFieldNames ? '' : 'feedId', subBuilder: $5.InternalID.create)
+    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'getterId', subBuilder: $4.InternalID.create)
+    ..aOM<$5.FeatureRequest>(2, _omitFieldNames ? '' : 'getter', subBuilder: $5.FeatureRequest.create)
+    ..aOM<$4.InternalID>(3, _omitFieldNames ? '' : 'feedId', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1664,38 +1650,38 @@ class EnableFeedGetterRequest extends $pb.GeneratedMessage {
   static EnableFeedGetterRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.InternalID get getterId => $_getN(0);
+  $4.InternalID get getterId => $_getN(0);
   @$pb.TagNumber(1)
-  set getterId($5.InternalID v) { setField(1, v); }
+  set getterId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGetterId() => $_has(0);
   @$pb.TagNumber(1)
   void clearGetterId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureGetterId() => $_ensure(0);
+  $4.InternalID ensureGetterId() => $_ensure(0);
 
   /// `PorterFeatureSummary.feed_getters`
   @$pb.TagNumber(2)
-  $4.FeatureRequest get getter => $_getN(1);
+  $5.FeatureRequest get getter => $_getN(1);
   @$pb.TagNumber(2)
-  set getter($4.FeatureRequest v) { setField(2, v); }
+  set getter($5.FeatureRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGetter() => $_has(1);
   @$pb.TagNumber(2)
   void clearGetter() => clearField(2);
   @$pb.TagNumber(2)
-  $4.FeatureRequest ensureGetter() => $_ensure(1);
+  $5.FeatureRequest ensureGetter() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $5.InternalID get feedId => $_getN(2);
+  $4.InternalID get feedId => $_getN(2);
   @$pb.TagNumber(3)
-  set feedId($5.InternalID v) { setField(3, v); }
+  set feedId($4.InternalID v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFeedId() => $_has(2);
   @$pb.TagNumber(3)
   void clearFeedId() => clearField(3);
   @$pb.TagNumber(3)
-  $5.InternalID ensureFeedId() => $_ensure(2);
+  $4.InternalID ensureFeedId() => $_ensure(2);
 }
 
 class EnableFeedGetterResponse extends $pb.GeneratedMessage {
@@ -1732,7 +1718,7 @@ class EnableFeedGetterResponse extends $pb.GeneratedMessage {
 
 class DisableFeedGetterRequest extends $pb.GeneratedMessage {
   factory DisableFeedGetterRequest({
-    $5.InternalID? getterId,
+    $4.InternalID? getterId,
   }) {
     final $result = create();
     if (getterId != null) {
@@ -1745,7 +1731,7 @@ class DisableFeedGetterRequest extends $pb.GeneratedMessage {
   factory DisableFeedGetterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DisableFeedGetterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'getterId', subBuilder: $5.InternalID.create)
+    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'getterId', subBuilder: $4.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1771,15 +1757,15 @@ class DisableFeedGetterRequest extends $pb.GeneratedMessage {
   static DisableFeedGetterRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.InternalID get getterId => $_getN(0);
+  $4.InternalID get getterId => $_getN(0);
   @$pb.TagNumber(1)
-  set getterId($5.InternalID v) { setField(1, v); }
+  set getterId($4.InternalID v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGetterId() => $_has(0);
   @$pb.TagNumber(1)
   void clearGetterId() => clearField(1);
   @$pb.TagNumber(1)
-  $5.InternalID ensureGetterId() => $_ensure(0);
+  $4.InternalID ensureGetterId() => $_ensure(0);
 }
 
 class DisableFeedGetterResponse extends $pb.GeneratedMessage {

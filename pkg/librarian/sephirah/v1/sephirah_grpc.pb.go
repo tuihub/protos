@@ -201,7 +201,7 @@ type LibrarianSephirahServiceClient interface {
 	ListPorters(ctx context.Context, in *ListPortersRequest, opts ...grpc.CallOption) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(ctx context.Context, in *UpdatePorterStatusRequest, opts ...grpc.CallOption) (*UpdatePorterStatusResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `Admin` `Normal limited`
 	ListPorterGroups(ctx context.Context, in *ListPorterGroupsRequest, opts ...grpc.CallOption) (*ListPorterGroupsResponse, error)
 	// `Tiphereth` `Normal`
 	CreatePorterContext(ctx context.Context, in *CreatePorterContextRequest, opts ...grpc.CallOption) (*CreatePorterContextResponse, error)
@@ -1686,7 +1686,7 @@ type LibrarianSephirahServiceServer interface {
 	ListPorters(context.Context, *ListPortersRequest) (*ListPortersResponse, error)
 	// `Tiphereth` `Admin`
 	UpdatePorterStatus(context.Context, *UpdatePorterStatusRequest) (*UpdatePorterStatusResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `Admin` `Normal limited`
 	ListPorterGroups(context.Context, *ListPorterGroupsRequest) (*ListPorterGroupsResponse, error)
 	// `Tiphereth` `Normal`
 	CreatePorterContext(context.Context, *CreatePorterContextRequest) (*CreatePorterContextResponse, error)

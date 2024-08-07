@@ -706,7 +706,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         pub async fn list_porter_groups(
             &mut self,
@@ -4051,7 +4051,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdatePorterStatusResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `Admin` `Normal limited`
 */
         async fn list_porter_groups(
             &self,

@@ -1584,10 +1584,7 @@ impl serde::Serialize for GetPorterInformationResponse {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.name.is_empty() {
-            len += 1;
-        }
-        if !self.version.is_empty() {
+        if self.binary_summary.is_some() {
             len += 1;
         }
         if !self.global_name.is_empty() {
@@ -1603,11 +1600,8 @@ impl serde::Serialize for GetPorterInformationResponse {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.GetPorterInformationResponse", len)?;
-        if !self.name.is_empty() {
-            struct_ser.serialize_field("name", &self.name)?;
-        }
-        if !self.version.is_empty() {
-            struct_ser.serialize_field("version", &self.version)?;
+        if let Some(v) = self.binary_summary.as_ref() {
+            struct_ser.serialize_field("binarySummary", v)?;
         }
         if !self.global_name.is_empty() {
             struct_ser.serialize_field("globalName", &self.global_name)?;
@@ -1631,8 +1625,8 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "name",
-            "version",
+            "binary_summary",
+            "binarySummary",
             "global_name",
             "globalName",
             "region",
@@ -1644,8 +1638,7 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Name,
-            Version,
+            BinarySummary,
             GlobalName,
             Region,
             FeatureSummary,
@@ -1671,8 +1664,7 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
                         E: serde::de::Error,
                     {
                         match value {
-                            "name" => Ok(GeneratedField::Name),
-                            "version" => Ok(GeneratedField::Version),
+                            "binarySummary" | "binary_summary" => Ok(GeneratedField::BinarySummary),
                             "globalName" | "global_name" => Ok(GeneratedField::GlobalName),
                             "region" => Ok(GeneratedField::Region),
                             "featureSummary" | "feature_summary" => Ok(GeneratedField::FeatureSummary),
@@ -1696,25 +1688,18 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut name__ = None;
-                let mut version__ = None;
+                let mut binary_summary__ = None;
                 let mut global_name__ = None;
                 let mut region__ = None;
                 let mut feature_summary__ = None;
                 let mut context_json_schema__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::Name => {
-                            if name__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("name"));
+                        GeneratedField::BinarySummary => {
+                            if binary_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("binarySummary"));
                             }
-                            name__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::Version => {
-                            if version__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("version"));
-                            }
-                            version__ = Some(map_.next_value()?);
+                            binary_summary__ = map_.next_value()?;
                         }
                         GeneratedField::GlobalName => {
                             if global_name__.is_some() {
@@ -1743,8 +1728,7 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
                     }
                 }
                 Ok(GetPorterInformationResponse {
-                    name: name__.unwrap_or_default(),
-                    version: version__.unwrap_or_default(),
+                    binary_summary: binary_summary__,
                     global_name: global_name__.unwrap_or_default(),
                     region: region__.unwrap_or_default(),
                     feature_summary: feature_summary__,

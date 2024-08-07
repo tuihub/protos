@@ -612,13 +612,15 @@ const ListPorterGroupsRequest$json = {
   '1': 'ListPorterGroupsRequest',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'status_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'statusFilter'},
   ],
 };
 
 /// Descriptor for `ListPorterGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listPorterGroupsRequestDescriptor = $convert.base64Decode(
     'ChdMaXN0UG9ydGVyR3JvdXBzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udj'
-    'EuUGFnaW5nUmVxdWVzdFIGcGFnaW5n');
+    'EuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEkYKDXN0YXR1c19maWx0ZXIYAiADKA4yIS5saWJyYXJp'
+    'YW4uc2VwaGlyYWgudjEuVXNlclN0YXR1c1IMc3RhdHVzRmlsdGVy');
 
 @$core.Deprecated('Use listPorterGroupsResponseDescriptor instead')
 const ListPorterGroupsResponse$json = {
@@ -780,9 +782,9 @@ const Porter$json = {
   '1': 'Porter',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'global_name', '3': 4, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'binary_summary', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
+    {'1': 'global_name', '3': 3, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'region', '3': 4, '4': 1, '5': 9, '10': 'region'},
     {'1': 'feature_summary', '3': 5, '4': 1, '5': 9, '10': 'featureSummary'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
     {'1': 'connection_status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterConnectionStatus', '10': 'connectionStatus'},
@@ -796,15 +798,16 @@ const Porter$json = {
 
 /// Descriptor for `Porter`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
-    'CgZQb3J0ZXISKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbm'
-    'FtZRgCIAEoCVIEbmFtZRIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEh8KC2dsb2JhbF9uYW1l'
-    'GAQgASgJUgpnbG9iYWxOYW1lEicKD2ZlYXR1cmVfc3VtbWFyeRgFIAEoCVIOZmVhdHVyZVN1bW'
-    '1hcnkSOQoGc3RhdHVzGAYgASgOMiEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlVzZXJTdGF0dXNS'
-    'BnN0YXR1cxJaChFjb25uZWN0aW9uX3N0YXR1cxgHIAEoDjItLmxpYnJhcmlhbi5zZXBoaXJhaC'
-    '52MS5Qb3J0ZXJDb25uZWN0aW9uU3RhdHVzUhBjb25uZWN0aW9uU3RhdHVzEjMKE2NvbnRleHRf'
-    'anNvbl9zY2hlbWEYCCABKAlIAFIRY29udGV4dEpzb25TY2hlbWGIAQESOgoZY29ubmVjdGlvbl'
-    '9zdGF0dXNfbWVzc2FnZRgJIAEoCVIXY29ubmVjdGlvblN0YXR1c01lc3NhZ2VCFgoUX2NvbnRl'
-    'eHRfanNvbl9zY2hlbWE=');
+    'CgZQb3J0ZXISKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSSAoOYm'
+    'luYXJ5X3N1bW1hcnkYAiABKAsyIS5saWJyYXJpYW4udjEuUG9ydGVyQmluYXJ5U3VtbWFyeVIN'
+    'YmluYXJ5U3VtbWFyeRIfCgtnbG9iYWxfbmFtZRgDIAEoCVIKZ2xvYmFsTmFtZRIWCgZyZWdpb2'
+    '4YBCABKAlSBnJlZ2lvbhInCg9mZWF0dXJlX3N1bW1hcnkYBSABKAlSDmZlYXR1cmVTdW1tYXJ5'
+    'EjkKBnN0YXR1cxgGIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyU3RhdHVzUgZzdG'
+    'F0dXMSWgoRY29ubmVjdGlvbl9zdGF0dXMYByABKA4yLS5saWJyYXJpYW4uc2VwaGlyYWgudjEu'
+    'UG9ydGVyQ29ubmVjdGlvblN0YXR1c1IQY29ubmVjdGlvblN0YXR1cxIzChNjb250ZXh0X2pzb2'
+    '5fc2NoZW1hGAggASgJSABSEWNvbnRleHRKc29uU2NoZW1hiAEBEjoKGWNvbm5lY3Rpb25fc3Rh'
+    'dHVzX21lc3NhZ2UYCSABKAlSF2Nvbm5lY3Rpb25TdGF0dXNNZXNzYWdlQhYKFF9jb250ZXh0X2'
+    'pzb25fc2NoZW1h');
 
 @$core.Deprecated('Use porterContextDescriptor instead')
 const PorterContext$json = {
@@ -837,17 +840,21 @@ final $typed_data.Uint8List porterContextDescriptor = $convert.base64Decode(
 const PorterGroup$json = {
   '1': 'PorterGroup',
   '2': [
-    {'1': 'global_name', '3': 1, '4': 1, '5': 9, '10': 'globalName'},
-    {'1': 'regions', '3': 2, '4': 3, '5': 9, '10': 'regions'},
-    {'1': 'context_json', '3': 3, '4': 1, '5': 9, '10': 'contextJson'},
-    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'description', '3': 5, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'binary_summary', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
+    {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
+    {'1': 'regions', '3': 3, '4': 3, '5': 9, '10': 'regions'},
+    {'1': 'context_json_schema', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
+  ],
+  '8': [
+    {'1': '_context_json_schema'},
   ],
 };
 
 /// Descriptor for `PorterGroup`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List porterGroupDescriptor = $convert.base64Decode(
-    'CgtQb3J0ZXJHcm91cBIfCgtnbG9iYWxfbmFtZRgBIAEoCVIKZ2xvYmFsTmFtZRIYCgdyZWdpb2'
-    '5zGAIgAygJUgdyZWdpb25zEiEKDGNvbnRleHRfanNvbhgDIAEoCVILY29udGV4dEpzb24SEgoE'
-    'bmFtZRgEIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgFIAEoCVILZGVzY3JpcHRpb24=');
+    'CgtQb3J0ZXJHcm91cBJICg5iaW5hcnlfc3VtbWFyeRgBIAEoCzIhLmxpYnJhcmlhbi52MS5Qb3'
+    'J0ZXJCaW5hcnlTdW1tYXJ5Ug1iaW5hcnlTdW1tYXJ5Eh8KC2dsb2JhbF9uYW1lGAIgASgJUgpn'
+    'bG9iYWxOYW1lEhgKB3JlZ2lvbnMYAyADKAlSB3JlZ2lvbnMSMwoTY29udGV4dF9qc29uX3NjaG'
+    'VtYRgEIAEoCUgAUhFjb250ZXh0SnNvblNjaGVtYYgBAUIWChRfY29udGV4dF9qc29uX3NjaGVt'
+    'YQ==');
 

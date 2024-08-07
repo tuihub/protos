@@ -862,12 +862,11 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.toObject = func
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    globalName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    region: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
+    globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    region: jspb.Message.getFieldWithDefault(msg, 3, ""),
     featureSummary: (f = msg.getFeatureSummary()) && proto.librarian.porter.v1.PorterFeatureSummary.toObject(includeInstance, f),
-    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 6, "")
+    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -905,27 +904,24 @@ proto.librarian.porter.v1.GetPorterInformationResponse.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = new librarian_v1_common_pb.PorterBinarySummary;
+      reader.readMessage(value,librarian_v1_common_pb.PorterBinarySummary.deserializeBinaryFromReader);
+      msg.setBinarySummary(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVersion(value);
+      msg.setGlobalName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGlobalName(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
       msg.setRegion(value);
       break;
-    case 5:
+    case 4:
       var value = new proto.librarian.porter.v1.PorterFeatureSummary;
       reader.readMessage(value,proto.librarian.porter.v1.PorterFeatureSummary.deserializeBinaryFromReader);
       msg.setFeatureSummary(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setContextJsonSchema(value);
       break;
@@ -958,46 +954,40 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.serializeBinary
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getBinarySummary();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      librarian_v1_common_pb.PorterBinarySummary.serializeBinaryToWriter
     );
   }
-  f = message.getVersion();
+  f = message.getGlobalName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getGlobalName();
+  f = message.getRegion();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getRegion();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getFeatureSummary();
   if (f != null) {
     writer.writeMessage(
-      5,
+      4,
       f,
       proto.librarian.porter.v1.PorterFeatureSummary.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      6,
+      5,
       f
     );
   }
@@ -1005,28 +995,47 @@ proto.librarian.porter.v1.GetPorterInformationResponse.serializeBinaryToWriter =
 
 
 /**
- * optional string name = 1;
- * @return {string}
+ * optional librarian.v1.PorterBinarySummary binary_summary = 1;
+ * @return {?proto.librarian.v1.PorterBinarySummary}
  */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getBinarySummary = function() {
+  return /** @type{?proto.librarian.v1.PorterBinarySummary} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PorterBinarySummary, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.PorterBinarySummary|undefined} value
+ * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
+*/
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setBinarySummary = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
  */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.clearBinarySummary = function() {
+  return this.setBinarySummary(undefined);
 };
 
 
 /**
- * optional string version = 2;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.hasBinarySummary = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string global_name = 2;
  * @return {string}
  */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getVersion = function() {
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getGlobalName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1035,16 +1044,16 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getVersion = fu
  * @param {string} value
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
  */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setVersion = function(value) {
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setGlobalName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string global_name = 3;
+ * optional string region = 3;
  * @return {string}
  */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getGlobalName = function() {
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getRegion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1053,36 +1062,18 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getGlobalName =
  * @param {string} value
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
  */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setGlobalName = function(value) {
+proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setRegion = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string region = 4;
- * @return {string}
- */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getRegion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
- */
-proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setRegion = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional PorterFeatureSummary feature_summary = 5;
+ * optional PorterFeatureSummary feature_summary = 4;
  * @return {?proto.librarian.porter.v1.PorterFeatureSummary}
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getFeatureSummary = function() {
   return /** @type{?proto.librarian.porter.v1.PorterFeatureSummary} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.porter.v1.PorterFeatureSummary, 5));
+    jspb.Message.getWrapperField(this, proto.librarian.porter.v1.PorterFeatureSummary, 4));
 };
 
 
@@ -1091,7 +1082,7 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getFeatureSumma
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
 */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setFeatureSummary = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -1109,16 +1100,16 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.clearFeatureSum
  * @return {boolean}
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.hasFeatureSummary = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string context_json_schema = 6;
+ * optional string context_json_schema = 5;
  * @return {string}
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getContextJsonSchema = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1127,7 +1118,7 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.getContextJsonS
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setContextJsonSchema = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -1136,7 +1127,7 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.setContextJsonS
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse} returns this
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.clearContextJsonSchema = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -1145,7 +1136,7 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.clearContextJso
  * @return {boolean}
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.prototype.hasContextJsonSchema = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

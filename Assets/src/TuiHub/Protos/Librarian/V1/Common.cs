@@ -103,13 +103,17 @@ namespace TuiHub.Protos.Librarian.V1 {
             "CVIEbmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWwiMwoJRmVlZEltYWdlEhAK",
             "A3VybBgBIAEoCVIDdXJsEhQKBXRpdGxlGAIgASgJUgV0aXRsZSJNCg1GZWVk",
             "RW5jbG9zdXJlEhAKA3VybBgBIAEoCVIDdXJsEhYKBmxlbmd0aBgCIAEoCVIG",
-            "bGVuZ3RoEhIKBHR5cGUYAyABKAlSBHR5cGUqZgoWQWNjb3VudEFwcFJlbGF0",
-            "aW9uVHlwZRIpCiVBQ0NPVU5UX0FQUF9SRUxBVElPTl9UWVBFX1VOU1BFQ0lG",
-            "SUVEEAASIQodQUNDT1VOVF9BUFBfUkVMQVRJT05fVFlQRV9PV04QASo2CgdB",
-            "cHBUeXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVf",
-            "R0FNRRABQktaLGdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFy",
-            "aWFuL3YxO3YxqgIaVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uVjFiBnByb3Rv",
-            "Mw=="));
+            "bGVuZ3RoEhIKBHR5cGUYAyABKAlSBHR5cGUi2QEKE1BvcnRlckJpbmFyeVN1",
+            "bW1hcnkSLgoTc291cmNlX2NvZGVfYWRkcmVzcxgBIAEoCVIRc291cmNlQ29k",
+            "ZUFkZHJlc3MSIwoNYnVpbGRfdmVyc2lvbhgCIAEoCVIMYnVpbGRWZXJzaW9u",
+            "Eh0KCmJ1aWxkX2RhdGUYAyABKAlSCWJ1aWxkRGF0ZRISCgRuYW1lGAQgASgJ",
+            "UgRuYW1lEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb24SIAoLZGVzY3JpcHRp",
+            "b24YBiABKAlSC2Rlc2NyaXB0aW9uKmYKFkFjY291bnRBcHBSZWxhdGlvblR5",
+            "cGUSKQolQUNDT1VOVF9BUFBfUkVMQVRJT05fVFlQRV9VTlNQRUNJRklFRBAA",
+            "EiEKHUFDQ09VTlRfQVBQX1JFTEFUSU9OX1RZUEVfT1dOEAEqNgoHQXBwVHlw",
+            "ZRIYChRBUFBfVFlQRV9VTlNQRUNJRklFRBAAEhEKDUFQUF9UWVBFX0dBTUUQ",
+            "AUJLWixnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi92",
+            "MTt2MaoCGlR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.AccountAppRelationType), typeof(global::TuiHub.Protos.Librarian.V1.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -128,7 +132,8 @@ namespace TuiHub.Protos.Librarian.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Id", "Title", "Authors", "Description", "Content", "Guid", "Link", "Image", "Published", "PublishedParsed", "Updated", "UpdatedParsed", "Enclosures", "PublishPlatform", "ReadCount" }, new[]{ "PublishedParsed", "UpdatedParsed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedPerson), global::TuiHub.Protos.Librarian.V1.FeedPerson.Parser, new[]{ "Name", "Email" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedImage), global::TuiHub.Protos.Librarian.V1.FeedImage.Parser, new[]{ "Url", "Title" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedEnclosure), global::TuiHub.Protos.Librarian.V1.FeedEnclosure.Parser, new[]{ "Url", "Length", "Type" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedEnclosure), global::TuiHub.Protos.Librarian.V1.FeedEnclosure.Parser, new[]{ "Url", "Length", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.PorterBinarySummary), global::TuiHub.Protos.Librarian.V1.PorterBinarySummary.Parser, new[]{ "SourceCodeAddress", "BuildVersion", "BuildDate", "Name", "Version", "Description" }, null, null, null, null)
           }));
     }
     #endregion
@@ -5748,6 +5753,402 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 26: {
             Type = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class PorterBinarySummary : pb::IMessage<PorterBinarySummary>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PorterBinarySummary> _parser = new pb::MessageParser<PorterBinarySummary>(() => new PorterBinarySummary());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PorterBinarySummary> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PorterBinarySummary() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PorterBinarySummary(PorterBinarySummary other) : this() {
+      sourceCodeAddress_ = other.sourceCodeAddress_;
+      buildVersion_ = other.buildVersion_;
+      buildDate_ = other.buildDate_;
+      name_ = other.name_;
+      version_ = other.version_;
+      description_ = other.description_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PorterBinarySummary Clone() {
+      return new PorterBinarySummary(this);
+    }
+
+    /// <summary>Field number for the "source_code_address" field.</summary>
+    public const int SourceCodeAddressFieldNumber = 1;
+    private string sourceCodeAddress_ = "";
+    /// <summary>
+    /// Server source code address.
+    /// *Should* be a valid http address.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SourceCodeAddress {
+      get { return sourceCodeAddress_; }
+      set {
+        sourceCodeAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "build_version" field.</summary>
+    public const int BuildVersionFieldNumber = 2;
+    private string buildVersion_ = "";
+    /// <summary>
+    /// Binary build version.
+    /// The content *should* be a semantic version string similar to the one generated by `git describe`,
+    /// but rely on the actual implementation.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BuildVersion {
+      get { return buildVersion_; }
+      set {
+        buildVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "build_date" field.</summary>
+    public const int BuildDateFieldNumber = 3;
+    private string buildDate_ = "";
+    /// <summary>
+    /// Binary build date.
+    /// The content *should* be a date format that is human-readable.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BuildDate {
+      get { return buildDate_; }
+      set {
+        buildDate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 4;
+    private string name_ = "";
+    /// <summary>
+    /// Human-readable name. plain text.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "version" field.</summary>
+    public const int VersionFieldNumber = 5;
+    private string version_ = "";
+    /// <summary>
+    /// Human-readable version. plain text.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Version {
+      get { return version_; }
+      set {
+        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 6;
+    private string description_ = "";
+    /// <summary>
+    /// Human-readable description. plain text or markdown.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PorterBinarySummary);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PorterBinarySummary other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SourceCodeAddress != other.SourceCodeAddress) return false;
+      if (BuildVersion != other.BuildVersion) return false;
+      if (BuildDate != other.BuildDate) return false;
+      if (Name != other.Name) return false;
+      if (Version != other.Version) return false;
+      if (Description != other.Description) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SourceCodeAddress.Length != 0) hash ^= SourceCodeAddress.GetHashCode();
+      if (BuildVersion.Length != 0) hash ^= BuildVersion.GetHashCode();
+      if (BuildDate.Length != 0) hash ^= BuildDate.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SourceCodeAddress.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(SourceCodeAddress);
+      }
+      if (BuildVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BuildVersion);
+      }
+      if (BuildDate.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(BuildDate);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Name);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Version);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Description);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SourceCodeAddress.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(SourceCodeAddress);
+      }
+      if (BuildVersion.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BuildVersion);
+      }
+      if (BuildDate.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(BuildDate);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Name);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Version);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Description);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SourceCodeAddress.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SourceCodeAddress);
+      }
+      if (BuildVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BuildVersion);
+      }
+      if (BuildDate.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BuildDate);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Version.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PorterBinarySummary other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SourceCodeAddress.Length != 0) {
+        SourceCodeAddress = other.SourceCodeAddress;
+      }
+      if (other.BuildVersion.Length != 0) {
+        BuildVersion = other.BuildVersion;
+      }
+      if (other.BuildDate.Length != 0) {
+        BuildDate = other.BuildDate;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Version.Length != 0) {
+        Version = other.Version;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            SourceCodeAddress = input.ReadString();
+            break;
+          }
+          case 18: {
+            BuildVersion = input.ReadString();
+            break;
+          }
+          case 26: {
+            BuildDate = input.ReadString();
+            break;
+          }
+          case 34: {
+            Name = input.ReadString();
+            break;
+          }
+          case 42: {
+            Version = input.ReadString();
+            break;
+          }
+          case 50: {
+            Description = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            SourceCodeAddress = input.ReadString();
+            break;
+          }
+          case 18: {
+            BuildVersion = input.ReadString();
+            break;
+          }
+          case 26: {
+            BuildDate = input.ReadString();
+            break;
+          }
+          case 34: {
+            Name = input.ReadString();
+            break;
+          }
+          case 42: {
+            Version = input.ReadString();
+            break;
+          }
+          case 50: {
+            Description = input.ReadString();
             break;
           }
         }

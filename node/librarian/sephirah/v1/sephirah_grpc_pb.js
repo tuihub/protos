@@ -2838,7 +2838,7 @@ updatePorterStatus: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterStatusResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `Admin` `Normal limited`
 listPorterGroups: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterGroups',
     requestStream: false,

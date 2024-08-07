@@ -14034,9 +14034,19 @@ impl serde::Serialize for ListPorterGroupsRequest {
         if self.paging.is_some() {
             len += 1;
         }
+        if !self.status_filter.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListPorterGroupsRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
+        }
+        if !self.status_filter.is_empty() {
+            let v = self.status_filter.iter().cloned().map(|v| {
+                UserStatus::try_from(v)
+                    .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
+                }).collect::<Result<Vec<_>, _>>()?;
+            struct_ser.serialize_field("statusFilter", &v)?;
         }
         struct_ser.end()
     }
@@ -14049,11 +14059,14 @@ impl<'de> serde::Deserialize<'de> for ListPorterGroupsRequest {
     {
         const FIELDS: &[&str] = &[
             "paging",
+            "status_filter",
+            "statusFilter",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
+            StatusFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -14076,6 +14089,7 @@ impl<'de> serde::Deserialize<'de> for ListPorterGroupsRequest {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
+                            "statusFilter" | "status_filter" => Ok(GeneratedField::StatusFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -14096,6 +14110,7 @@ impl<'de> serde::Deserialize<'de> for ListPorterGroupsRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
+                let mut status_filter__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -14104,10 +14119,17 @@ impl<'de> serde::Deserialize<'de> for ListPorterGroupsRequest {
                             }
                             paging__ = map_.next_value()?;
                         }
+                        GeneratedField::StatusFilter => {
+                            if status_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("statusFilter"));
+                            }
+                            status_filter__ = Some(map_.next_value::<Vec<UserStatus>>()?.into_iter().map(|x| x as i32).collect());
+                        }
                     }
                 }
                 Ok(ListPorterGroupsRequest {
                     paging: paging__,
+                    status_filter: status_filter__.unwrap_or_default(),
                 })
             }
         }
@@ -17868,13 +17890,13 @@ impl serde::Serialize for Porter {
         if self.id.is_some() {
             len += 1;
         }
-        if !self.name.is_empty() {
-            len += 1;
-        }
-        if !self.version.is_empty() {
+        if self.binary_summary.is_some() {
             len += 1;
         }
         if !self.global_name.is_empty() {
+            len += 1;
+        }
+        if !self.region.is_empty() {
             len += 1;
         }
         if !self.feature_summary.is_empty() {
@@ -17896,14 +17918,14 @@ impl serde::Serialize for Porter {
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
         }
-        if !self.name.is_empty() {
-            struct_ser.serialize_field("name", &self.name)?;
-        }
-        if !self.version.is_empty() {
-            struct_ser.serialize_field("version", &self.version)?;
+        if let Some(v) = self.binary_summary.as_ref() {
+            struct_ser.serialize_field("binarySummary", v)?;
         }
         if !self.global_name.is_empty() {
             struct_ser.serialize_field("globalName", &self.global_name)?;
+        }
+        if !self.region.is_empty() {
+            struct_ser.serialize_field("region", &self.region)?;
         }
         if !self.feature_summary.is_empty() {
             struct_ser.serialize_field("featureSummary", &self.feature_summary)?;
@@ -17935,10 +17957,11 @@ impl<'de> serde::Deserialize<'de> for Porter {
     {
         const FIELDS: &[&str] = &[
             "id",
-            "name",
-            "version",
+            "binary_summary",
+            "binarySummary",
             "global_name",
             "globalName",
+            "region",
             "feature_summary",
             "featureSummary",
             "status",
@@ -17953,9 +17976,9 @@ impl<'de> serde::Deserialize<'de> for Porter {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
-            Name,
-            Version,
+            BinarySummary,
             GlobalName,
+            Region,
             FeatureSummary,
             Status,
             ConnectionStatus,
@@ -17983,9 +18006,9 @@ impl<'de> serde::Deserialize<'de> for Porter {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
-                            "name" => Ok(GeneratedField::Name),
-                            "version" => Ok(GeneratedField::Version),
+                            "binarySummary" | "binary_summary" => Ok(GeneratedField::BinarySummary),
                             "globalName" | "global_name" => Ok(GeneratedField::GlobalName),
+                            "region" => Ok(GeneratedField::Region),
                             "featureSummary" | "feature_summary" => Ok(GeneratedField::FeatureSummary),
                             "status" => Ok(GeneratedField::Status),
                             "connectionStatus" | "connection_status" => Ok(GeneratedField::ConnectionStatus),
@@ -18011,9 +18034,9 @@ impl<'de> serde::Deserialize<'de> for Porter {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
-                let mut name__ = None;
-                let mut version__ = None;
+                let mut binary_summary__ = None;
                 let mut global_name__ = None;
+                let mut region__ = None;
                 let mut feature_summary__ = None;
                 let mut status__ = None;
                 let mut connection_status__ = None;
@@ -18027,23 +18050,23 @@ impl<'de> serde::Deserialize<'de> for Porter {
                             }
                             id__ = map_.next_value()?;
                         }
-                        GeneratedField::Name => {
-                            if name__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("name"));
+                        GeneratedField::BinarySummary => {
+                            if binary_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("binarySummary"));
                             }
-                            name__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::Version => {
-                            if version__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("version"));
-                            }
-                            version__ = Some(map_.next_value()?);
+                            binary_summary__ = map_.next_value()?;
                         }
                         GeneratedField::GlobalName => {
                             if global_name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("globalName"));
                             }
                             global_name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Region => {
+                            if region__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("region"));
+                            }
+                            region__ = Some(map_.next_value()?);
                         }
                         GeneratedField::FeatureSummary => {
                             if feature_summary__.is_some() {
@@ -18079,9 +18102,9 @@ impl<'de> serde::Deserialize<'de> for Porter {
                 }
                 Ok(Porter {
                     id: id__,
-                    name: name__.unwrap_or_default(),
-                    version: version__.unwrap_or_default(),
+                    binary_summary: binary_summary__,
                     global_name: global_name__.unwrap_or_default(),
+                    region: region__.unwrap_or_default(),
                     feature_summary: feature_summary__.unwrap_or_default(),
                     status: status__.unwrap_or_default(),
                     connection_status: connection_status__.unwrap_or_default(),
@@ -18573,36 +18596,30 @@ impl serde::Serialize for PorterGroup {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.binary_summary.is_some() {
+            len += 1;
+        }
         if !self.global_name.is_empty() {
             len += 1;
         }
         if !self.regions.is_empty() {
             len += 1;
         }
-        if !self.context_json.is_empty() {
-            len += 1;
-        }
-        if !self.name.is_empty() {
-            len += 1;
-        }
-        if !self.description.is_empty() {
+        if self.context_json_schema.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PorterGroup", len)?;
+        if let Some(v) = self.binary_summary.as_ref() {
+            struct_ser.serialize_field("binarySummary", v)?;
+        }
         if !self.global_name.is_empty() {
             struct_ser.serialize_field("globalName", &self.global_name)?;
         }
         if !self.regions.is_empty() {
             struct_ser.serialize_field("regions", &self.regions)?;
         }
-        if !self.context_json.is_empty() {
-            struct_ser.serialize_field("contextJson", &self.context_json)?;
-        }
-        if !self.name.is_empty() {
-            struct_ser.serialize_field("name", &self.name)?;
-        }
-        if !self.description.is_empty() {
-            struct_ser.serialize_field("description", &self.description)?;
+        if let Some(v) = self.context_json_schema.as_ref() {
+            struct_ser.serialize_field("contextJsonSchema", v)?;
         }
         struct_ser.end()
     }
@@ -18614,22 +18631,21 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "binary_summary",
+            "binarySummary",
             "global_name",
             "globalName",
             "regions",
-            "context_json",
-            "contextJson",
-            "name",
-            "description",
+            "context_json_schema",
+            "contextJsonSchema",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            BinarySummary,
             GlobalName,
             Regions,
-            ContextJson,
-            Name,
-            Description,
+            ContextJsonSchema,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -18651,11 +18667,10 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                         E: serde::de::Error,
                     {
                         match value {
+                            "binarySummary" | "binary_summary" => Ok(GeneratedField::BinarySummary),
                             "globalName" | "global_name" => Ok(GeneratedField::GlobalName),
                             "regions" => Ok(GeneratedField::Regions),
-                            "contextJson" | "context_json" => Ok(GeneratedField::ContextJson),
-                            "name" => Ok(GeneratedField::Name),
-                            "description" => Ok(GeneratedField::Description),
+                            "contextJsonSchema" | "context_json_schema" => Ok(GeneratedField::ContextJsonSchema),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -18675,13 +18690,18 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut binary_summary__ = None;
                 let mut global_name__ = None;
                 let mut regions__ = None;
-                let mut context_json__ = None;
-                let mut name__ = None;
-                let mut description__ = None;
+                let mut context_json_schema__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
+                        GeneratedField::BinarySummary => {
+                            if binary_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("binarySummary"));
+                            }
+                            binary_summary__ = map_.next_value()?;
+                        }
                         GeneratedField::GlobalName => {
                             if global_name__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("globalName"));
@@ -18694,32 +18714,19 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                             }
                             regions__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::ContextJson => {
-                            if context_json__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("contextJson"));
+                        GeneratedField::ContextJsonSchema => {
+                            if context_json_schema__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("contextJsonSchema"));
                             }
-                            context_json__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::Name => {
-                            if name__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("name"));
-                            }
-                            name__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::Description => {
-                            if description__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("description"));
-                            }
-                            description__ = Some(map_.next_value()?);
+                            context_json_schema__ = map_.next_value()?;
                         }
                     }
                 }
                 Ok(PorterGroup {
+                    binary_summary: binary_summary__,
                     global_name: global_name__.unwrap_or_default(),
                     regions: regions__.unwrap_or_default(),
-                    context_json: context_json__.unwrap_or_default(),
-                    name: name__.unwrap_or_default(),
-                    description: description__.unwrap_or_default(),
+                    context_json_schema: context_json_schema__,
                 })
             }
         }

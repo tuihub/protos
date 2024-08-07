@@ -642,6 +642,46 @@ export namespace FeedEnclosure {
   }
 }
 
+export class PorterBinarySummary extends jspb.Message {
+  getSourceCodeAddress(): string;
+  setSourceCodeAddress(value: string): void;
+
+  getBuildVersion(): string;
+  setBuildVersion(value: string): void;
+
+  getBuildDate(): string;
+  setBuildDate(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PorterBinarySummary.AsObject;
+  static toObject(includeInstance: boolean, msg: PorterBinarySummary): PorterBinarySummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PorterBinarySummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PorterBinarySummary;
+  static deserializeBinaryFromReader(message: PorterBinarySummary, reader: jspb.BinaryReader): PorterBinarySummary;
+}
+
+export namespace PorterBinarySummary {
+  export type AsObject = {
+    sourceCodeAddress: string,
+    buildVersion: string,
+    buildDate: string,
+    name: string,
+    version: string,
+    description: string,
+  }
+}
+
 export interface AccountAppRelationTypeMap {
   ACCOUNT_APP_RELATION_TYPE_UNSPECIFIED: 0;
   ACCOUNT_APP_RELATION_TYPE_OWN: 1;
