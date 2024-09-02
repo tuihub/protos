@@ -55,13 +55,13 @@ final $typed_data.Uint8List newIDResponseDescriptor = $convert.base64Decode(
 const NewBatchIDsRequest$json = {
   '1': 'NewBatchIDsRequest',
   '2': [
-    {'1': 'num', '3': 1, '4': 1, '5': 5, '10': 'num'},
+    {'1': 'num', '3': 1, '4': 1, '5': 3, '10': 'num'},
   ],
 };
 
 /// Descriptor for `NewBatchIDsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List newBatchIDsRequestDescriptor = $convert.base64Decode(
-    'ChJOZXdCYXRjaElEc1JlcXVlc3QSEAoDbnVtGAEgASgFUgNudW0=');
+    'ChJOZXdCYXRjaElEc1JlcXVlc3QSEAoDbnVtGAEgASgDUgNudW0=');
 
 @$core.Deprecated('Use newBatchIDsResponseDescriptor instead')
 const NewBatchIDsResponse$json = {

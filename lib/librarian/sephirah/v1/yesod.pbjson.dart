@@ -309,7 +309,7 @@ const GroupFeedItemsRequest$json = {
     {'1': 'author_filter', '3': 3, '4': 3, '5': 9, '10': 'authorFilter'},
     {'1': 'publish_platform_filter', '3': 4, '4': 3, '5': 9, '10': 'publishPlatformFilter'},
     {'1': 'category_filter', '3': 5, '4': 3, '5': 9, '10': 'categoryFilter'},
-    {'1': 'group_size', '3': 7, '4': 1, '5': 5, '9': 0, '10': 'groupSize', '17': true},
+    {'1': 'group_size', '3': 7, '4': 1, '5': 3, '9': 0, '10': 'groupSize', '17': true},
   ],
   '8': [
     {'1': '_group_size'},
@@ -323,7 +323,7 @@ final $typed_data.Uint8List groupFeedItemsRequestDescriptor = $convert.base64Dec
     'bhI+Cg5mZWVkX2lkX2ZpbHRlchgCIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxmZW'
     'VkSWRGaWx0ZXISIwoNYXV0aG9yX2ZpbHRlchgDIAMoCVIMYXV0aG9yRmlsdGVyEjYKF3B1Ymxp'
     'c2hfcGxhdGZvcm1fZmlsdGVyGAQgAygJUhVwdWJsaXNoUGxhdGZvcm1GaWx0ZXISJwoPY2F0ZW'
-    'dvcnlfZmlsdGVyGAUgAygJUg5jYXRlZ29yeUZpbHRlchIiCgpncm91cF9zaXplGAcgASgFSABS'
+    'dvcnlfZmlsdGVyGAUgAygJUg5jYXRlZ29yeUZpbHRlchIiCgpncm91cF9zaXplGAcgASgDSABS'
     'CWdyb3VwU2l6ZYgBAUINCgtfZ3JvdXBfc2l6ZQ==');
 
 @$core.Deprecated('Use groupFeedItemsResponseDescriptor instead')

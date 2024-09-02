@@ -80,7 +80,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "ZWRJZEZpbHRlchIjCg1hdXRob3JfZmlsdGVyGAMgAygJUgxhdXRob3JGaWx0",
             "ZXISNgoXcHVibGlzaF9wbGF0Zm9ybV9maWx0ZXIYBCADKAlSFXB1Ymxpc2hQ",
             "bGF0Zm9ybUZpbHRlchInCg9jYXRlZ29yeV9maWx0ZXIYBSADKAlSDmNhdGVn",
-            "b3J5RmlsdGVyEiIKCmdyb3VwX3NpemUYByABKAVIAFIJZ3JvdXBTaXpliAEB",
+            "b3J5RmlsdGVyEiIKCmdyb3VwX3NpemUYByABKANIAFIJZ3JvdXBTaXpliAEB",
             "Qg0KC19ncm91cF9zaXplIvYBChZHcm91cEZlZWRJdGVtc1Jlc3BvbnNlElQK",
             "Bmdyb3VwcxgBIAMoCzI8LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Hcm91cEZl",
             "ZWRJdGVtc1Jlc3BvbnNlLkZlZWRJdGVtc0dyb3VwUgZncm91cHMahQEKDkZl",
@@ -4259,15 +4259,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "group_size" field.</summary>
     public const int GroupSizeFieldNumber = 7;
-    private readonly static int GroupSizeDefaultValue = 0;
+    private readonly static long GroupSizeDefaultValue = 0L;
 
-    private int groupSize_;
+    private long groupSize_;
     /// <summary>
     /// NULL means no limit
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int GroupSize {
+    public long GroupSize {
       get { if ((_hasBits0 & 1) != 0) { return groupSize_; } else { return GroupSizeDefaultValue; } }
       set {
         _hasBits0 |= 1;
@@ -4349,7 +4349,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       categoryFilter_.WriteTo(output, _repeated_categoryFilter_codec);
       if (HasGroupSize) {
         output.WriteRawTag(56);
-        output.WriteInt32(GroupSize);
+        output.WriteInt64(GroupSize);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4371,7 +4371,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       categoryFilter_.WriteTo(ref output, _repeated_categoryFilter_codec);
       if (HasGroupSize) {
         output.WriteRawTag(56);
-        output.WriteInt32(GroupSize);
+        output.WriteInt64(GroupSize);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -4391,7 +4391,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       size += publishPlatformFilter_.CalculateSize(_repeated_publishPlatformFilter_codec);
       size += categoryFilter_.CalculateSize(_repeated_categoryFilter_codec);
       if (HasGroupSize) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GroupSize);
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(GroupSize);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4457,7 +4457,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 56: {
-            GroupSize = input.ReadInt32();
+            GroupSize = input.ReadInt64();
             break;
           }
         }
@@ -4499,7 +4499,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 56: {
-            GroupSize = input.ReadInt32();
+            GroupSize = input.ReadInt64();
             break;
           }
         }

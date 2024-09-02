@@ -380,7 +380,9 @@ impl serde::Serialize for NewBatchIDsRequest {
         }
         let mut struct_ser = serializer.serialize_struct("librarian.searcher.v1.NewBatchIDsRequest", len)?;
         if self.num != 0 {
-            struct_ser.serialize_field("num", &self.num)?;
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("num", ToString::to_string(&self.num).as_str())?;
         }
         struct_ser.end()
     }

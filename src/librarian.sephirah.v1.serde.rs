@@ -9486,7 +9486,9 @@ impl serde::Serialize for GroupFeedItemsRequest {
             struct_ser.serialize_field("categoryFilter", &self.category_filter)?;
         }
         if let Some(v) = self.group_size.as_ref() {
-            struct_ser.serialize_field("groupSize", v)?;
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("groupSize", ToString::to_string(&v).as_str())?;
         }
         struct_ser.end()
     }

@@ -28,7 +28,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             "cmlhbi5zZWFyY2hlci52MRoZbGlicmFyaWFuL3YxL2NvbW1vbi5wcm90byIO",
             "CgxOZXdJRFJlcXVlc3QiOQoNTmV3SURSZXNwb25zZRIoCgJpZBgBIAEoCzIY",
             "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCImChJOZXdCYXRjaElEc1Jl",
-            "cXVlc3QSEAoDbnVtGAEgASgFUgNudW0iQQoTTmV3QmF0Y2hJRHNSZXNwb25z",
+            "cXVlc3QSEAoDbnVtGAEgASgDUgNudW0iQQoTTmV3QmF0Y2hJRHNSZXNwb25z",
             "ZRIqCgNpZHMYASADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIDaWRz",
             "IsMCChFEZXNjcmliZUlEUmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
             "bi52MS5JbnRlcm5hbElEUgJpZBIgCgtkZXNjcmlwdGlvbhgCIAEoCVILZGVz",
@@ -491,10 +491,10 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
 
     /// <summary>Field number for the "num" field.</summary>
     public const int NumFieldNumber = 1;
-    private int num_;
+    private long num_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Num {
+    public long Num {
       get { return num_; }
       set {
         num_ = value;
@@ -524,7 +524,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Num != 0) hash ^= Num.GetHashCode();
+      if (Num != 0L) hash ^= Num.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -543,9 +543,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Num != 0) {
+      if (Num != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt32(Num);
+        output.WriteInt64(Num);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -557,9 +557,9 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Num != 0) {
+      if (Num != 0L) {
         output.WriteRawTag(8);
-        output.WriteInt32(Num);
+        output.WriteInt64(Num);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -571,8 +571,8 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Num != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Num);
+      if (Num != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Num);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -586,7 +586,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
       if (other == null) {
         return;
       }
-      if (other.Num != 0) {
+      if (other.Num != 0L) {
         Num = other.Num;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -605,7 +605,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Num = input.ReadInt32();
+            Num = input.ReadInt64();
             break;
           }
         }
@@ -624,7 +624,7 @@ namespace TuiHub.Protos.Librarian.Searcher.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Num = input.ReadInt32();
+            Num = input.ReadInt64();
             break;
           }
         }

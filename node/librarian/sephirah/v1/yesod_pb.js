@@ -4520,7 +4520,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.deserializeBinaryFromReader = 
       msg.addCategoryFilter(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setGroupSize(value);
       break;
     default:
@@ -4591,7 +4591,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.serializeBinaryToWriter = func
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeInt64(
       7,
       f
     );
@@ -4786,7 +4786,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.clearCategoryFilterL
 
 
 /**
- * optional int32 group_size = 7;
+ * optional int64 group_size = 7;
  * @return {number}
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.getGroupSize = function() {

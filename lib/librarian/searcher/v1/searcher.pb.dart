@@ -105,7 +105,7 @@ class NewIDResponse extends $pb.GeneratedMessage {
 
 class NewBatchIDsRequest extends $pb.GeneratedMessage {
   factory NewBatchIDsRequest({
-    $core.int? num,
+    $fixnum.Int64? num,
   }) {
     final $result = create();
     if (num != null) {
@@ -118,7 +118,7 @@ class NewBatchIDsRequest extends $pb.GeneratedMessage {
   factory NewBatchIDsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NewBatchIDsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.searcher.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'num', $pb.PbFieldType.O3)
+    ..aInt64(1, _omitFieldNames ? '' : 'num')
     ..hasRequiredFields = false
   ;
 
@@ -144,9 +144,9 @@ class NewBatchIDsRequest extends $pb.GeneratedMessage {
   static NewBatchIDsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.int get num => $_getIZ(0);
+  $fixnum.Int64 get num => $_getI64(0);
   @$pb.TagNumber(1)
-  set num($core.int v) { $_setSignedInt32(0, v); }
+  set num($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasNum() => $_has(0);
   @$pb.TagNumber(1)

@@ -1033,7 +1033,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? authorFilter,
     $core.Iterable<$core.String>? publishPlatformFilter,
     $core.Iterable<$core.String>? categoryFilter,
-    $core.int? groupSize,
+    $fixnum.Int64? groupSize,
   }) {
     final $result = create();
     if (publishTimeAggregation != null) {
@@ -1066,7 +1066,7 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
     ..pPS(3, _omitFieldNames ? '' : 'authorFilter')
     ..pPS(4, _omitFieldNames ? '' : 'publishPlatformFilter')
     ..pPS(5, _omitFieldNames ? '' : 'categoryFilter')
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'groupSize', $pb.PbFieldType.O3)
+    ..aInt64(7, _omitFieldNames ? '' : 'groupSize')
     ..hasRequiredFields = false
   ;
 
@@ -1116,9 +1116,9 @@ class GroupFeedItemsRequest extends $pb.GeneratedMessage {
 
   /// NULL means no limit
   @$pb.TagNumber(7)
-  $core.int get groupSize => $_getIZ(5);
+  $fixnum.Int64 get groupSize => $_getI64(5);
   @$pb.TagNumber(7)
-  set groupSize($core.int v) { $_setSignedInt32(5, v); }
+  set groupSize($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(7)
   $core.bool hasGroupSize() => $_has(5);
   @$pb.TagNumber(7)

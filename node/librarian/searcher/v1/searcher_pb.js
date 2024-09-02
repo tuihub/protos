@@ -589,7 +589,7 @@ proto.librarian.searcher.v1.NewBatchIDsRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setNum(value);
       break;
     default:
@@ -623,7 +623,7 @@ proto.librarian.searcher.v1.NewBatchIDsRequest.serializeBinaryToWriter = functio
   var f = undefined;
   f = message.getNum();
   if (f !== 0) {
-    writer.writeInt32(
+    writer.writeInt64(
       1,
       f
     );
@@ -632,7 +632,7 @@ proto.librarian.searcher.v1.NewBatchIDsRequest.serializeBinaryToWriter = functio
 
 
 /**
- * optional int32 num = 1;
+ * optional int64 num = 1;
  * @return {number}
  */
 proto.librarian.searcher.v1.NewBatchIDsRequest.prototype.getNum = function() {
