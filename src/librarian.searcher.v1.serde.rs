@@ -1168,6 +1168,7 @@ impl serde::Serialize for search_id_response::Result {
         }
         if self.rank != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("rank", ToString::to_string(&self.rank).as_str())?;
         }
         struct_ser.end()

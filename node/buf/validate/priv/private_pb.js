@@ -107,7 +107,7 @@ proto.buf.validate.priv.FieldConstraints.prototype.toObject = function(opt_inclu
  */
 proto.buf.validate.priv.FieldConstraints.toObject = function(includeInstance, msg) {
   var f, obj = {
-    celList: jspb.Message.toObjectList(msg.getCelList(),
+celList: jspb.Message.toObjectList(msg.getCelList(),
     proto.buf.validate.priv.Constraint.toObject, includeInstance)
   };
 
@@ -260,9 +260,9 @@ proto.buf.validate.priv.Constraint.prototype.toObject = function(opt_includeInst
  */
 proto.buf.validate.priv.Constraint.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    expression: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+message: jspb.Message.getFieldWithDefault(msg, 2, ""),
+expression: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

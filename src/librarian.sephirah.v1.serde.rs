@@ -743,6 +743,7 @@ impl serde::Serialize for AppBinary {
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if !self.public_url.is_empty() {
@@ -750,6 +751,7 @@ impl serde::Serialize for AppBinary {
         }
         if !self.sha256.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
         }
         if !self.token_server_url.is_empty() {
@@ -930,10 +932,12 @@ impl serde::Serialize for app_binary::Chunk {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary.Chunk", len)?;
         if self.sequence != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sequence", ToString::to_string(&self.sequence).as_str())?;
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if !self.public_url.is_empty() {
@@ -941,6 +945,7 @@ impl serde::Serialize for app_binary::Chunk {
         }
         if !self.sha256.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
         }
         struct_ser.end()
@@ -4969,10 +4974,12 @@ impl serde::Serialize for DownloadFileRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadFileRequest", len)?;
         if self.start_chunk_number != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("startChunkNumber", ToString::to_string(&self.start_chunk_number).as_str())?;
         }
         if let Some(v) = self.end_chunk_number.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("endChunkNumber", ToString::to_string(&v).as_str())?;
         }
         struct_ser.end()
@@ -6235,6 +6242,7 @@ impl serde::Serialize for FeedItemDigest {
         }
         if self.read_count != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("readCount", ToString::to_string(&self.read_count).as_str())?;
         }
         struct_ser.end()
@@ -6463,10 +6471,12 @@ impl serde::Serialize for FileChunk {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.FileChunk", len)?;
         if self.chunk_number != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("chunkNumber", ToString::to_string(&self.chunk_number).as_str())?;
         }
         if !self.data.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("data", pbjson::private::base64::encode(&self.data).as_str())?;
         }
         struct_ser.end()
@@ -6596,6 +6606,7 @@ impl serde::Serialize for FileMetadata {
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if self.r#type != 0 {
@@ -6605,6 +6616,7 @@ impl serde::Serialize for FileMetadata {
         }
         if !self.sha256.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
         }
         if let Some(v) = self.create_time.as_ref() {
@@ -7200,10 +7212,12 @@ impl serde::Serialize for GetAppSaveFileCapacityDefaultResponse {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse", len)?;
         if self.count != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if self.strategy != 0 {
@@ -7443,10 +7457,12 @@ impl serde::Serialize for GetAppSaveFileCapacityResponse {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetAppSaveFileCapacityResponse", len)?;
         if self.count != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if self.strategy != 0 {
@@ -8234,10 +8250,12 @@ impl serde::Serialize for GetFileCapacityResponse {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetFileCapacityResponse", len)?;
         if self.limit_size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("limitSizeBytes", ToString::to_string(&self.limit_size_bytes).as_str())?;
         }
         if self.used_size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("usedSizeBytes", ToString::to_string(&self.used_size_bytes).as_str())?;
         }
         struct_ser.end()
@@ -10196,7 +10214,7 @@ impl serde::Serialize for ListAppInfosRequest {
             let v = self.type_filter.iter().cloned().map(|v| {
                 super::super::v1::AppType::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("typeFilter", &v)?;
         }
         if !self.id_filter.is_empty() {
@@ -11658,7 +11676,7 @@ impl serde::Serialize for ListFeedConfigsRequest {
             let v = self.status_filter.iter().cloned().map(|v| {
                 FeedConfigStatus::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("statusFilter", &v)?;
         }
         if !self.category_filter.is_empty() {
@@ -13613,7 +13631,7 @@ impl serde::Serialize for ListNotifyTargetsRequest {
             let v = self.status_filter.iter().cloned().map(|v| {
                 NotifyTargetStatus::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("statusFilter", &v)?;
         }
         struct_ser.end()
@@ -14045,7 +14063,7 @@ impl serde::Serialize for ListPorterGroupsRequest {
             let v = self.status_filter.iter().cloned().map(|v| {
                 UserStatus::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("statusFilter", &v)?;
         }
         struct_ser.end()
@@ -15124,21 +15142,21 @@ impl serde::Serialize for ListSystemNotificationsRequest {
             let v = self.type_filter.iter().cloned().map(|v| {
                 SystemNotificationType::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("typeFilter", &v)?;
         }
         if !self.level_filter.is_empty() {
             let v = self.level_filter.iter().cloned().map(|v| {
                 SystemNotificationLevel::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("levelFilter", &v)?;
         }
         if !self.status_filter.is_empty() {
             let v = self.status_filter.iter().cloned().map(|v| {
                 SystemNotificationStatus::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("statusFilter", &v)?;
         }
         struct_ser.end()
@@ -15783,14 +15801,14 @@ impl serde::Serialize for ListUsersRequest {
             let v = self.type_filter.iter().cloned().map(|v| {
                 UserType::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("typeFilter", &v)?;
         }
         if !self.status_filter.is_empty() {
             let v = self.status_filter.iter().cloned().map(|v| {
                 UserStatus::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("statusFilter", &v)?;
         }
         struct_ser.end()
@@ -20316,6 +20334,7 @@ impl serde::Serialize for register_user_response::ImageCaptcha {
         }
         if !self.image.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("image", pbjson::private::base64::encode(&self.image).as_str())?;
         }
         struct_ser.end()
@@ -22709,10 +22728,12 @@ impl serde::Serialize for SetAppSaveFileCapacityDefaultRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest", len)?;
         if self.count != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if self.strategy != 0 {
@@ -22935,10 +22956,12 @@ impl serde::Serialize for SetAppSaveFileCapacityRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SetAppSaveFileCapacityRequest", len)?;
         if self.count != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("count", ToString::to_string(&self.count).as_str())?;
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         if self.strategy != 0 {
@@ -23180,6 +23203,7 @@ impl serde::Serialize for SetFileCapacityRequest {
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
         struct_ser.end()
@@ -23780,6 +23804,7 @@ impl serde::Serialize for SimpleDownloadFileResponse {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SimpleDownloadFileResponse", len)?;
         if !self.data.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("data", pbjson::private::base64::encode(&self.data).as_str())?;
         }
         struct_ser.end()
@@ -23874,6 +23899,7 @@ impl serde::Serialize for SimpleUploadFileRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.SimpleUploadFileRequest", len)?;
         if !self.data.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("data", pbjson::private::base64::encode(&self.data).as_str())?;
         }
         struct_ser.end()
@@ -29196,6 +29222,7 @@ impl serde::Serialize for upload_file_response::ChunkStatus {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.UploadFileResponse.ChunkStatus", len)?;
         if self.chunk_number != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("chunkNumber", ToString::to_string(&self.chunk_number).as_str())?;
         }
         if self.status != 0 {

@@ -163,7 +163,7 @@ proto.librarian.miner.v1.RecognizeImageBinaryRequest.prototype.toObject = functi
  */
 proto.librarian.miner.v1.RecognizeImageBinaryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: msg.getData_asB64()
+data: msg.getData_asB64()
   };
 
   if (includeInstance) {
@@ -324,7 +324,7 @@ proto.librarian.miner.v1.RecognizeImageBinaryResponse.prototype.toObject = funct
  */
 proto.librarian.miner.v1.RecognizeImageBinaryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.librarian.miner.v1.RecognizeImageResult.toObject, includeInstance)
   };
 
@@ -477,7 +477,7 @@ proto.librarian.miner.v1.RecognizeImageURLRequest.prototype.toObject = function(
  */
 proto.librarian.miner.v1.RecognizeImageURLRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    url: jspb.Message.getFieldWithDefault(msg, 1, "")
+url: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -614,7 +614,7 @@ proto.librarian.miner.v1.RecognizeImageURLResponse.prototype.toObject = function
  */
 proto.librarian.miner.v1.RecognizeImageURLResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.librarian.miner.v1.RecognizeImageResult.toObject, includeInstance)
   };
 
@@ -767,8 +767,8 @@ proto.librarian.miner.v1.RecognizeImageResult.prototype.toObject = function(opt_
  */
 proto.librarian.miner.v1.RecognizeImageResult.toObject = function(includeInstance, msg) {
   var f, obj = {
-    confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    text: jspb.Message.getFieldWithDefault(msg, 2, "")
+confidence: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+text: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

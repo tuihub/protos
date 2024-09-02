@@ -862,11 +862,11 @@ proto.librarian.porter.v1.GetPorterInformationResponse.prototype.toObject = func
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
-    globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    region: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    featureSummary: (f = msg.getFeatureSummary()) && proto.librarian.porter.v1.PorterFeatureSummary.toObject(includeInstance, f),
-    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 5, "")
+binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
+globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+region: jspb.Message.getFieldWithDefault(msg, 3, ""),
+featureSummary: (f = msg.getFeatureSummary()) && proto.librarian.porter.v1.PorterFeatureSummary.toObject(includeInstance, f),
+contextJsonSchema: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1179,19 +1179,19 @@ proto.librarian.porter.v1.PorterFeatureSummary.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.PorterFeatureSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountPlatformsList: jspb.Message.toObjectList(msg.getAccountPlatformsList(),
+accountPlatformsList: jspb.Message.toObjectList(msg.getAccountPlatformsList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    appInfoSourcesList: jspb.Message.toObjectList(msg.getAppInfoSourcesList(),
+appInfoSourcesList: jspb.Message.toObjectList(msg.getAppInfoSourcesList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    feedSourcesList: jspb.Message.toObjectList(msg.getFeedSourcesList(),
+feedSourcesList: jspb.Message.toObjectList(msg.getFeedSourcesList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    notifyDestinationsList: jspb.Message.toObjectList(msg.getNotifyDestinationsList(),
+notifyDestinationsList: jspb.Message.toObjectList(msg.getNotifyDestinationsList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    feedItemActionsList: jspb.Message.toObjectList(msg.getFeedItemActionsList(),
+feedItemActionsList: jspb.Message.toObjectList(msg.getFeedItemActionsList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    feedSettersList: jspb.Message.toObjectList(msg.getFeedSettersList(),
+feedSettersList: jspb.Message.toObjectList(msg.getFeedSettersList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    feedGettersList: jspb.Message.toObjectList(msg.getFeedGettersList(),
+feedGettersList: jspb.Message.toObjectList(msg.getFeedGettersList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance)
   };
 
@@ -1650,8 +1650,8 @@ proto.librarian.porter.v1.EnablePorterRequest.prototype.toObject = function(opt_
  */
 proto.librarian.porter.v1.EnablePorterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sephirahId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+sephirahId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+refreshToken: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1828,9 +1828,9 @@ proto.librarian.porter.v1.EnablePorterResponse.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.EnablePorterResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    statusMessage: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    needRefreshToken: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enablesSummary: (f = msg.getEnablesSummary()) && proto.librarian.porter.v1.PorterEnablesSummary.toObject(includeInstance, f)
+statusMessage: jspb.Message.getFieldWithDefault(msg, 1, ""),
+needRefreshToken: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+enablesSummary: (f = msg.getEnablesSummary()) && proto.librarian.porter.v1.PorterEnablesSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2046,11 +2046,11 @@ proto.librarian.porter.v1.PorterEnablesSummary.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.PorterEnablesSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contextIdsList: jspb.Message.toObjectList(msg.getContextIdsList(),
+contextIdsList: jspb.Message.toObjectList(msg.getContextIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    feedSetterIdsList: jspb.Message.toObjectList(msg.getFeedSetterIdsList(),
+feedSetterIdsList: jspb.Message.toObjectList(msg.getFeedSetterIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    feedGetterIdsList: jspb.Message.toObjectList(msg.getFeedGetterIdsList(),
+feedGetterIdsList: jspb.Message.toObjectList(msg.getFeedGetterIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -2305,8 +2305,8 @@ proto.librarian.porter.v1.EnableContextRequest.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.EnableContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    contextJson: jspb.Message.getFieldWithDefault(msg, 2, "")
+contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+contextJson: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2587,7 +2587,7 @@ proto.librarian.porter.v1.DisableContextRequest.prototype.toObject = function(op
  */
 proto.librarian.porter.v1.DisableContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2839,7 +2839,7 @@ proto.librarian.porter.v1.PullAccountRequest.prototype.toObject = function(opt_i
  */
 proto.librarian.porter.v1.PullAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
+accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2990,7 +2990,7 @@ proto.librarian.porter.v1.PullAccountResponse.prototype.toObject = function(opt_
  */
 proto.librarian.porter.v1.PullAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    account: (f = msg.getAccount()) && librarian_v1_common_pb.Account.toObject(includeInstance, f)
+account: (f = msg.getAccount()) && librarian_v1_common_pb.Account.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3141,7 +3141,7 @@ proto.librarian.porter.v1.PullAppInfoRequest.prototype.toObject = function(opt_i
  */
 proto.librarian.porter.v1.PullAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.AppInfoID.toObject(includeInstance, f)
+appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.AppInfoID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3292,7 +3292,7 @@ proto.librarian.porter.v1.PullAppInfoResponse.prototype.toObject = function(opt_
  */
 proto.librarian.porter.v1.PullAppInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
+appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3443,8 +3443,8 @@ proto.librarian.porter.v1.PullAccountAppInfoRelationRequest.prototype.toObject =
  */
 proto.librarian.porter.v1.PullAccountAppInfoRelationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    relationType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
+relationType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3631,7 +3631,7 @@ proto.librarian.porter.v1.PullAccountAppInfoRelationResponse.prototype.toObject 
  */
 proto.librarian.porter.v1.PullAccountAppInfoRelationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -3784,7 +3784,7 @@ proto.librarian.porter.v1.SearchAppInfoRequest.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.SearchAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3921,7 +3921,7 @@ proto.librarian.porter.v1.SearchAppInfoResponse.prototype.toObject = function(op
  */
 proto.librarian.porter.v1.SearchAppInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -4074,7 +4074,7 @@ proto.librarian.porter.v1.PullFeedRequest.prototype.toObject = function(opt_incl
  */
 proto.librarian.porter.v1.PullFeedRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    source: (f = msg.getSource()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f)
+source: (f = msg.getSource()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4225,7 +4225,7 @@ proto.librarian.porter.v1.PullFeedResponse.prototype.toObject = function(opt_inc
  */
 proto.librarian.porter.v1.PullFeedResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f)
+data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4383,8 +4383,8 @@ proto.librarian.porter.v1.PushFeedItemsRequest.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.PushFeedItemsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    destination: (f = msg.getDestination()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+destination: (f = msg.getDestination()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     librarian_v1_common_pb.FeedItem.toObject, includeInstance)
   };
 
@@ -4688,8 +4688,8 @@ proto.librarian.porter.v1.ExecFeedItemActionRequest.prototype.toObject = functio
  */
 proto.librarian.porter.v1.ExecFeedItemActionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    action: (f = msg.getAction()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
-    item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeInstance, f)
+action: (f = msg.getAction()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4890,7 +4890,7 @@ proto.librarian.porter.v1.ExecFeedItemActionResponse.prototype.toObject = functi
  */
 proto.librarian.porter.v1.ExecFeedItemActionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeInstance, f)
+item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5041,9 +5041,9 @@ proto.librarian.porter.v1.EnableFeedSetterRequest.prototype.toObject = function(
  */
 proto.librarian.porter.v1.EnableFeedSetterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setterId: (f = msg.getSetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    setter: (f = msg.getSetter()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
-    feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+setterId: (f = msg.getSetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+setter: (f = msg.getSetter()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5395,7 +5395,7 @@ proto.librarian.porter.v1.DisableFeedSetterRequest.prototype.toObject = function
  */
 proto.librarian.porter.v1.DisableFeedSetterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setterId: (f = msg.getSetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+setterId: (f = msg.getSetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5647,9 +5647,9 @@ proto.librarian.porter.v1.EnableFeedGetterRequest.prototype.toObject = function(
  */
 proto.librarian.porter.v1.EnableFeedGetterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    getterId: (f = msg.getGetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    getter: (f = msg.getGetter()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
-    feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+getterId: (f = msg.getGetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+getter: (f = msg.getGetter()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6001,7 +6001,7 @@ proto.librarian.porter.v1.DisableFeedGetterRequest.prototype.toObject = function
  */
 proto.librarian.porter.v1.DisableFeedGetterRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    getterId: (f = msg.getGetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+getterId: (f = msg.getGetterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -2169,6 +2169,7 @@ impl serde::Serialize for FeedItem {
         }
         if self.read_count != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("readCount", ToString::to_string(&self.read_count).as_str())?;
         }
         struct_ser.end()
@@ -2529,6 +2530,7 @@ impl serde::Serialize for InternalId {
         let mut struct_ser = serializer.serialize_struct("librarian.v1.InternalID", len)?;
         if self.id != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
         }
         struct_ser.end()
@@ -2626,10 +2628,12 @@ impl serde::Serialize for PagingRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.v1.PagingRequest", len)?;
         if self.page_num != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("pageNum", ToString::to_string(&self.page_num).as_str())?;
         }
         if self.page_size != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("pageSize", ToString::to_string(&self.page_size).as_str())?;
         }
         struct_ser.end()
@@ -2739,6 +2743,7 @@ impl serde::Serialize for PagingResponse {
         let mut struct_ser = serializer.serialize_struct("librarian.v1.PagingResponse", len)?;
         if self.total_size != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("totalSize", ToString::to_string(&self.total_size).as_str())?;
         }
         struct_ser.end()

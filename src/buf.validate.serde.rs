@@ -243,18 +243,22 @@ impl serde::Serialize for BytesRules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.BytesRules", len)?;
         if let Some(v) = self.r#const.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("const", pbjson::private::base64::encode(&v).as_str())?;
         }
         if let Some(v) = self.len.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("len", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.min_len.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("minLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_len.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.pattern.as_ref() {
@@ -262,14 +266,17 @@ impl serde::Serialize for BytesRules {
         }
         if let Some(v) = self.prefix.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("prefix", pbjson::private::base64::encode(&v).as_str())?;
         }
         if let Some(v) = self.suffix.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("suffix", pbjson::private::base64::encode(&v).as_str())?;
         }
         if let Some(v) = self.contains.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("contains", pbjson::private::base64::encode(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -1866,22 +1873,27 @@ impl serde::Serialize for Fixed64Rules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.Fixed64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -2501,22 +2513,27 @@ impl serde::Serialize for Int64Rules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.Int64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -2781,10 +2798,12 @@ impl serde::Serialize for MapRules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.MapRules", len)?;
         if let Some(v) = self.min_pairs.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("minPairs", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_pairs.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxPairs", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.keys.as_ref() {
@@ -3130,10 +3149,12 @@ impl serde::Serialize for RepeatedRules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.RepeatedRules", len)?;
         if let Some(v) = self.min_items.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("minItems", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_items.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxItems", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.unique.as_ref() {
@@ -3499,22 +3520,27 @@ impl serde::Serialize for SFixed64Rules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.SFixed64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -3924,22 +3950,27 @@ impl serde::Serialize for SInt64Rules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.SInt64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {
@@ -4169,26 +4200,32 @@ impl serde::Serialize for StringRules {
         }
         if let Some(v) = self.len.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("len", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.min_len.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("minLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_len.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxLen", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.len_bytes.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lenBytes", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.min_bytes.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("minBytes", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.max_bytes.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxBytes", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.pattern.as_ref() {
@@ -5048,22 +5085,27 @@ impl serde::Serialize for UInt64Rules {
         let mut struct_ser = serializer.serialize_struct("buf.validate.UInt64Rules", len)?;
         if let Some(v) = self.r#const.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("const", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.lte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("lte", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gt.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gt", ToString::to_string(&v).as_str())?;
         }
         if let Some(v) = self.gte.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("gte", ToString::to_string(&v).as_str())?;
         }
         if !self.r#in.is_empty() {

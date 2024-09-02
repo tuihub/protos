@@ -107,11 +107,11 @@ proto.librarian.v1.FeatureFlag.prototype.toObject = function(opt_includeInstance
  */
 proto.librarian.v1.FeatureFlag.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    configJsonSchema: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+configJsonSchema: jspb.Message.getFieldWithDefault(msg, 4, ""),
+requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -357,10 +357,10 @@ proto.librarian.v1.FeatureRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.librarian.v1.FeatureRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    region: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    configJson: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+region: jspb.Message.getFieldWithDefault(msg, 2, ""),
+configJson: jspb.Message.getFieldWithDefault(msg, 3, ""),
+contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

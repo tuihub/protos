@@ -1119,7 +1119,7 @@ proto.librarian.sephirah.v1.CreateFeedConfigRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.CreateFeedConfigRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject(includeInstance, f)
+config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1270,7 +1270,7 @@ proto.librarian.sephirah.v1.CreateFeedConfigResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.CreateFeedConfigResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1421,7 +1421,7 @@ proto.librarian.sephirah.v1.UpdateFeedConfigRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.UpdateFeedConfigRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject(includeInstance, f)
+config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1680,11 +1680,11 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.ListFeedConfigsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    statusFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+statusFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1991,8 +1991,8 @@ proto.librarian.sephirah.v1.ListFeedConfigsResponse.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ListFeedConfigsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    feedsWithConfigList: jspb.Message.toObjectList(msg.getFeedsWithConfigList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+feedsWithConfigList: jspb.Message.toObjectList(msg.getFeedsWithConfigList(),
     proto.librarian.sephirah.v1.ListFeedConfigsResponse.FeedWithConfig.toObject, includeInstance)
   };
 
@@ -2120,8 +2120,8 @@ proto.librarian.sephirah.v1.ListFeedConfigsResponse.FeedWithConfig.prototype.toO
  */
 proto.librarian.sephirah.v1.ListFeedConfigsResponse.FeedWithConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    feed: (f = msg.getFeed()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f),
-    config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject(includeInstance, f)
+feed: (f = msg.getFeed()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f),
+config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2397,7 +2397,7 @@ proto.librarian.sephirah.v1.CreateFeedActionSetRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.CreateFeedActionSetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    actionSet: (f = msg.getActionSet()) && proto.librarian.sephirah.v1.FeedActionSet.toObject(includeInstance, f)
+actionSet: (f = msg.getActionSet()) && proto.librarian.sephirah.v1.FeedActionSet.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2548,7 +2548,7 @@ proto.librarian.sephirah.v1.CreateFeedActionSetResponse.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.CreateFeedActionSetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2699,7 +2699,7 @@ proto.librarian.sephirah.v1.UpdateFeedActionSetRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.UpdateFeedActionSetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    actionSet: (f = msg.getActionSet()) && proto.librarian.sephirah.v1.FeedActionSet.toObject(includeInstance, f)
+actionSet: (f = msg.getActionSet()) && proto.librarian.sephirah.v1.FeedActionSet.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2951,7 +2951,7 @@ proto.librarian.sephirah.v1.ListFeedActionSetsRequest.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.ListFeedActionSetsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3109,8 +3109,8 @@ proto.librarian.sephirah.v1.ListFeedActionSetsResponse.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.ListFeedActionSetsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
     proto.librarian.sephirah.v1.FeedActionSet.toObject, includeInstance)
   };
 
@@ -3421,7 +3421,7 @@ proto.librarian.sephirah.v1.ListFeedCategoriesResponse.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.ListFeedCategoriesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    categoriesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+categoriesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3678,7 +3678,7 @@ proto.librarian.sephirah.v1.ListFeedPlatformsResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.ListFeedPlatformsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    platformsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+platformsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3834,13 +3834,13 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.ListFeedItemsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    feedIdFilterList: jspb.Message.toObjectList(msg.getFeedIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+feedIdFilterList: jspb.Message.toObjectList(msg.getFeedIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
+authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4243,8 +4243,8 @@ proto.librarian.sephirah.v1.ListFeedItemsResponse.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.ListFeedItemsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.librarian.sephirah.v1.FeedItemDigest.toObject, includeInstance)
   };
 
@@ -4454,13 +4454,13 @@ proto.librarian.sephirah.v1.GroupFeedItemsRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.GroupFeedItemsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publishTimeAggregation: (f = msg.getPublishTimeAggregation()) && librarian_v1_common_pb.TimeAggregation.toObject(includeInstance, f),
-    feedIdFilterList: jspb.Message.toObjectList(msg.getFeedIdFilterList(),
+publishTimeAggregation: (f = msg.getPublishTimeAggregation()) && librarian_v1_common_pb.TimeAggregation.toObject(includeInstance, f),
+feedIdFilterList: jspb.Message.toObjectList(msg.getFeedIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    groupSize: jspb.Message.getFieldWithDefault(msg, 7, 0)
+authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+groupSize: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4860,7 +4860,7 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
+groupsList: jspb.Message.toObjectList(msg.getGroupsList(),
     proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.toObject, includeInstance)
   };
 
@@ -4982,8 +4982,8 @@ proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.prototype.toOb
  */
 proto.librarian.sephirah.v1.GroupFeedItemsResponse.FeedItemsGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.librarian.sephirah.v1.FeedItemDigest.toObject, includeInstance)
   };
 
@@ -5224,7 +5224,7 @@ proto.librarian.sephirah.v1.GetFeedItemRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.GetFeedItemRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5375,7 +5375,7 @@ proto.librarian.sephirah.v1.GetFeedItemResponse.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.GetFeedItemResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeInstance, f)
+item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5533,7 +5533,7 @@ proto.librarian.sephirah.v1.GetBatchFeedItemsRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.GetBatchFeedItemsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: jspb.Message.toObjectList(msg.getIdsList(),
+idsList: jspb.Message.toObjectList(msg.getIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -5693,7 +5693,7 @@ proto.librarian.sephirah.v1.GetBatchFeedItemsResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.GetBatchFeedItemsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     librarian_v1_common_pb.FeedItem.toObject, includeInstance)
   };
 
@@ -5846,7 +5846,7 @@ proto.librarian.sephirah.v1.ReadFeedItemRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.ReadFeedItemRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6098,8 +6098,8 @@ proto.librarian.sephirah.v1.PUpsertFeedRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.PUpsertFeedRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6401,7 +6401,7 @@ proto.librarian.sephirah.v1.PGetFeedRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.PGetFeedRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6552,7 +6552,7 @@ proto.librarian.sephirah.v1.PGetFeedResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.PGetFeedResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f)
+data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6703,7 +6703,7 @@ proto.librarian.sephirah.v1.CreateFeedItemCollectionRequest.prototype.toObject =
  */
 proto.librarian.sephirah.v1.CreateFeedItemCollectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    collection: (f = msg.getCollection()) && proto.librarian.sephirah.v1.FeedItemCollection.toObject(includeInstance, f)
+collection: (f = msg.getCollection()) && proto.librarian.sephirah.v1.FeedItemCollection.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6955,7 +6955,7 @@ proto.librarian.sephirah.v1.UpdateFeedItemCollectionRequest.prototype.toObject =
  */
 proto.librarian.sephirah.v1.UpdateFeedItemCollectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    collection: (f = msg.getCollection()) && proto.librarian.sephirah.v1.FeedItemCollection.toObject(includeInstance, f)
+collection: (f = msg.getCollection()) && proto.librarian.sephirah.v1.FeedItemCollection.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7214,10 +7214,10 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7474,8 +7474,8 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.prototype.toObject =
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    collectionsList: jspb.Message.toObjectList(msg.getCollectionsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+collectionsList: jspb.Message.toObjectList(msg.getCollectionsList(),
     proto.librarian.sephirah.v1.FeedItemCollection.toObject, includeInstance)
   };
 
@@ -7678,8 +7678,8 @@ proto.librarian.sephirah.v1.AddFeedItemToCollectionRequest.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.AddFeedItemToCollectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    feedItemId: (f = msg.getFeedItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    collectionId: (f = msg.getCollectionId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+feedItemId: (f = msg.getFeedItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+collectionId: (f = msg.getCollectionId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7981,8 +7981,8 @@ proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionRequest.prototype.toObje
  */
 proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    feedItemId: (f = msg.getFeedItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    collectionId: (f = msg.getCollectionId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+feedItemId: (f = msg.getFeedItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+collectionId: (f = msg.getCollectionId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8291,13 +8291,13 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.prototype.toObject 
  */
 proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    collectionIdFilterList: jspb.Message.toObjectList(msg.getCollectionIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+collectionIdFilterList: jspb.Message.toObjectList(msg.getCollectionIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
+authorFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+publishPlatformFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8700,8 +8700,8 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionResponse.prototype.toObject
  */
 proto.librarian.sephirah.v1.ListFeedItemsInCollectionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    itemsList: jspb.Message.toObjectList(msg.getItemsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+itemsList: jspb.Message.toObjectList(msg.getItemsList(),
     proto.librarian.sephirah.v1.FeedItemDigest.toObject, includeInstance)
   };
 
@@ -8911,19 +8911,19 @@ proto.librarian.sephirah.v1.FeedConfig.prototype.toObject = function(opt_include
  */
 proto.librarian.sephirah.v1.FeedConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    source: (f = msg.getSource()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
-    actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+source: (f = msg.getSource()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
-    category: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    hideItems: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    latestPullTime: (f = msg.getLatestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    latestPullStatus: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    latestPullMessage: jspb.Message.getFieldWithDefault(msg, 12, "")
+status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+pullInterval: (f = msg.getPullInterval()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+category: jspb.Message.getFieldWithDefault(msg, 8, ""),
+hideItems: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+latestPullTime: (f = msg.getLatestPullTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+latestPullStatus: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+latestPullMessage: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9521,10 +9521,10 @@ proto.librarian.sephirah.v1.FeedActionSet.prototype.toObject = function(opt_incl
  */
 proto.librarian.sephirah.v1.FeedActionSet.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    actionsList: jspb.Message.toObjectList(msg.getActionsList(),
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+actionsList: jspb.Message.toObjectList(msg.getActionsList(),
     librarian_v1_wellknown_pb.FeatureRequest.toObject, includeInstance)
   };
 
@@ -9792,18 +9792,18 @@ proto.librarian.sephirah.v1.FeedItemDigest.prototype.toObject = function(opt_inc
  */
 proto.librarian.sephirah.v1.FeedItemDigest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    itemId: (f = msg.getItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    avatarUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    authors: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    publishedParsedTime: (f = msg.getPublishedParsedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    title: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    shortDescription: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    publishPlatform: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    feedConfigName: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    feedAvatarUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    readCount: jspb.Message.getFieldWithDefault(msg, 12, 0)
+feedId: (f = msg.getFeedId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+itemId: (f = msg.getItemId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+avatarUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+authors: jspb.Message.getFieldWithDefault(msg, 4, ""),
+publishedParsedTime: (f = msg.getPublishedParsedTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+title: jspb.Message.getFieldWithDefault(msg, 6, ""),
+shortDescription: jspb.Message.getFieldWithDefault(msg, 7, ""),
+imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+publishPlatform: jspb.Message.getFieldWithDefault(msg, 9, ""),
+feedConfigName: jspb.Message.getFieldWithDefault(msg, 10, ""),
+feedAvatarUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
+readCount: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -10334,10 +10334,10 @@ proto.librarian.sephirah.v1.FeedItemCollection.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.FeedItemCollection.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 4, "")
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+category: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {

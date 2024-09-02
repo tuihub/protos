@@ -2330,7 +2330,7 @@ proto.librarian.sephirah.v1.CreateAppInfoRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.CreateAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
+appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2481,7 +2481,7 @@ proto.librarian.sephirah.v1.CreateAppInfoResponse.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.CreateAppInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2632,7 +2632,7 @@ proto.librarian.sephirah.v1.UpdateAppInfoRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.UpdateAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
+appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2891,13 +2891,13 @@ proto.librarian.sephirah.v1.ListAppInfosRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.ListAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    excludeInternal: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+excludeInternal: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+typeFilterList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    containDetails: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+containDetails: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -3262,8 +3262,8 @@ proto.librarian.sephirah.v1.ListAppInfosResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.ListAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -3473,9 +3473,9 @@ proto.librarian.sephirah.v1.SyncAppInfosRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.SyncAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfoIdsList: jspb.Message.toObjectList(msg.getAppInfoIdsList(),
+appInfoIdsList: jspb.Message.toObjectList(msg.getAppInfoIdsList(),
     librarian_v1_common_pb.AppInfoID.toObject, includeInstance),
-    waitData: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+waitData: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3681,7 +3681,7 @@ proto.librarian.sephirah.v1.SyncAppInfosResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.SyncAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -3834,8 +3834,8 @@ proto.librarian.sephirah.v1.MergeAppInfosRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.MergeAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    base: (f = msg.getBase()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f),
-    merged: (f = msg.getMerged()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+base: (f = msg.getBase()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f),
+merged: (f = msg.getMerged()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4137,7 +4137,7 @@ proto.librarian.sephirah.v1.PickAppInfoRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.PickAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    picked: (f = msg.getPicked()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+picked: (f = msg.getPicked()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4389,7 +4389,7 @@ proto.librarian.sephirah.v1.SyncAccountAppInfosRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.SyncAccountAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
+accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4641,8 +4641,8 @@ proto.librarian.sephirah.v1.SearchAppInfosRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.SearchAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    query: jspb.Message.getFieldWithDefault(msg, 2, "")
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+query: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -4829,8 +4829,8 @@ proto.librarian.sephirah.v1.SearchAppInfosResponse.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.SearchAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfoMixed.toObject, includeInstance)
   };
 
@@ -5040,9 +5040,9 @@ proto.librarian.sephirah.v1.SearchNewAppInfosRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.SearchNewAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+sourceFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5277,8 +5277,8 @@ proto.librarian.sephirah.v1.SearchNewAppInfosResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.SearchNewAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -5481,7 +5481,7 @@ proto.librarian.sephirah.v1.GetAppInfoRequest.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.GetAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5632,7 +5632,7 @@ proto.librarian.sephirah.v1.GetAppInfoResponse.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.GetAppInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
+appInfo: (f = msg.getAppInfo()) && librarian_v1_common_pb.AppInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5783,7 +5783,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.GetBoundAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5941,7 +5941,7 @@ proto.librarian.sephirah.v1.GetBoundAppInfosResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.GetBoundAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 
@@ -6094,7 +6094,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoRequest.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.PurchaseAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.AppInfoID.toObject(includeInstance, f)
+appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.AppInfoID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6245,7 +6245,7 @@ proto.librarian.sephirah.v1.PurchaseAppInfoResponse.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.PurchaseAppInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6396,7 +6396,7 @@ proto.librarian.sephirah.v1.GetPurchasedAppInfosRequest.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.GetPurchasedAppInfosRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    source: jspb.Message.getFieldWithDefault(msg, 1, "")
+source: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6551,7 +6551,7 @@ proto.librarian.sephirah.v1.GetPurchasedAppInfosResponse.prototype.toObject = fu
  */
 proto.librarian.sephirah.v1.GetPurchasedAppInfosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfoMixed.toObject, includeInstance)
   };
 
@@ -6704,7 +6704,7 @@ proto.librarian.sephirah.v1.CreateAppRequest.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.CreateAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    app: (f = msg.getApp()) && proto.librarian.sephirah.v1.App.toObject(includeInstance, f)
+app: (f = msg.getApp()) && proto.librarian.sephirah.v1.App.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6855,7 +6855,7 @@ proto.librarian.sephirah.v1.CreateAppResponse.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.CreateAppResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7006,7 +7006,7 @@ proto.librarian.sephirah.v1.UpdateAppRequest.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.UpdateAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    app: (f = msg.getApp()) && proto.librarian.sephirah.v1.App.toObject(includeInstance, f)
+app: (f = msg.getApp()) && proto.librarian.sephirah.v1.App.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7265,12 +7265,12 @@ proto.librarian.sephirah.v1.ListAppsRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.ListAppsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    ownerIdFilterList: jspb.Message.toObjectList(msg.getOwnerIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+ownerIdFilterList: jspb.Message.toObjectList(msg.getOwnerIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    assignedAppInfoIdFilterList: jspb.Message.toObjectList(msg.getAssignedAppInfoIdFilterList(),
+assignedAppInfoIdFilterList: jspb.Message.toObjectList(msg.getAssignedAppInfoIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -7582,8 +7582,8 @@ proto.librarian.sephirah.v1.ListAppsResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.ListAppsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    appsList: jspb.Message.toObjectList(msg.getAppsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+appsList: jspb.Message.toObjectList(msg.getAppsList(),
     proto.librarian.sephirah.v1.App.toObject, includeInstance)
   };
 
@@ -7793,7 +7793,7 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.ReportAppBinariesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appBinariesList: jspb.Message.toObjectList(msg.getAppBinariesList(),
+appBinariesList: jspb.Message.toObjectList(msg.getAppBinariesList(),
     proto.librarian.sephirah.v1.AppBinary.toObject, includeInstance)
   };
 
@@ -8047,8 +8047,8 @@ proto.librarian.sephirah.v1.AssignAppRequest.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.AssignAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8350,7 +8350,7 @@ proto.librarian.sephirah.v1.UnAssignAppRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.UnAssignAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8602,7 +8602,7 @@ proto.librarian.sephirah.v1.DownloadAppBinaryRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.DownloadAppBinaryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8753,8 +8753,8 @@ proto.librarian.sephirah.v1.DownloadAppBinaryResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.DownloadAppBinaryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appBinary: (f = msg.getAppBinary()) && proto.librarian.sephirah.v1.AppBinary.toObject(includeInstance, f),
-    token: jspb.Message.getFieldWithDefault(msg, 2, "")
+appBinary: (f = msg.getAppBinary()) && proto.librarian.sephirah.v1.AppBinary.toObject(includeInstance, f),
+token: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -8934,7 +8934,7 @@ proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.CreateAppInstRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInst: (f = msg.getAppInst()) && proto.librarian.sephirah.v1.AppInst.toObject(includeInstance, f)
+appInst: (f = msg.getAppInst()) && proto.librarian.sephirah.v1.AppInst.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9085,7 +9085,7 @@ proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.CreateAppInstResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9236,7 +9236,7 @@ proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.UpdateAppInstRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInst: (f = msg.getAppInst()) && proto.librarian.sephirah.v1.AppInst.toObject(includeInstance, f)
+appInst: (f = msg.getAppInst()) && proto.librarian.sephirah.v1.AppInst.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9495,12 +9495,12 @@ proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.ListAppInstsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    deviceIdFilterList: jspb.Message.toObjectList(msg.getDeviceIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+deviceIdFilterList: jspb.Message.toObjectList(msg.getDeviceIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    appIdFilterList: jspb.Message.toObjectList(msg.getAppIdFilterList(),
+appIdFilterList: jspb.Message.toObjectList(msg.getAppIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -9812,8 +9812,8 @@ proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.ListAppInstsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    appInstsList: jspb.Message.toObjectList(msg.getAppInstsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+appInstsList: jspb.Message.toObjectList(msg.getAppInstsList(),
     proto.librarian.sephirah.v1.AppInst.toObject, includeInstance)
   };
 
@@ -10016,8 +10016,8 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInstId: (f = msg.getAppInstId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
+appInstId: (f = msg.getAppInstId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10319,8 +10319,8 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInstId: (f = msg.getAppInstId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    timeAggregation: (f = msg.getTimeAggregation()) && librarian_v1_common_pb.TimeAggregation.toObject(includeInstance, f)
+appInstId: (f = msg.getAppInstId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+timeAggregation: (f = msg.getTimeAggregation()) && librarian_v1_common_pb.TimeAggregation.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10528,7 +10528,7 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    runTimeGroupsList: jspb.Message.toObjectList(msg.getRunTimeGroupsList(),
+runTimeGroupsList: jspb.Message.toObjectList(msg.getRunTimeGroupsList(),
     proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.toObject, includeInstance)
   };
 
@@ -10643,8 +10643,8 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.toObject =
  */
 proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
-    duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
+duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10883,8 +10883,8 @@ proto.librarian.sephirah.v1.UploadAppSaveFileRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.UploadAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileMetadata: (f = msg.getFileMetadata()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+fileMetadata: (f = msg.getFileMetadata()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11085,7 +11085,7 @@ proto.librarian.sephirah.v1.UploadAppSaveFileResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.UploadAppSaveFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uploadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+uploadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -11215,7 +11215,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.DownloadAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11366,7 +11366,7 @@ proto.librarian.sephirah.v1.DownloadAppSaveFileResponse.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.DownloadAppSaveFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    downloadToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+downloadToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -11496,7 +11496,7 @@ proto.librarian.sephirah.v1.ListAppSaveFilesRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -11654,7 +11654,7 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.toObject, includeInstance)
   };
 
@@ -11769,9 +11769,9 @@ proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.prototype.toObject =
  */
 proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    file: (f = msg.getFile()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
-    pinned: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+file: (f = msg.getFile()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
+pinned: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -12039,7 +12039,7 @@ proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.RemoveAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12291,7 +12291,7 @@ proto.librarian.sephirah.v1.PinAppSaveFileRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.PinAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12543,7 +12543,7 @@ proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.UnpinAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12821,11 +12821,11 @@ proto.librarian.sephirah.v1.SetAppSaveFileCapacityRequest.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.SetAppSaveFileCapacityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    count: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    strategy: jspb.Message.getFieldWithDefault(msg, 6, 0)
+user: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+count: jspb.Message.getFieldWithDefault(msg, 4, 0),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 5, 0),
+strategy: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -13236,10 +13236,10 @@ proto.librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest.prototype.toObj
  */
 proto.librarian.sephirah.v1.SetAppSaveFileCapacityDefaultRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    app: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    count: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    strategy: jspb.Message.getFieldWithDefault(msg, 6, 0)
+app: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+count: jspb.Message.getFieldWithDefault(msg, 4, 0),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 5, 0),
+strategy: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -13601,8 +13601,8 @@ proto.librarian.sephirah.v1.GetAppSaveFileCapacityRequest.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.GetAppSaveFileCapacityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+user: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -13800,9 +13800,9 @@ proto.librarian.sephirah.v1.GetAppSaveFileCapacityResponse.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.GetAppSaveFileCapacityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    strategy: jspb.Message.getFieldWithDefault(msg, 3, 0)
+count: jspb.Message.getFieldWithDefault(msg, 1, 0),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
+strategy: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -14015,7 +14015,7 @@ proto.librarian.sephirah.v1.GetAppSaveFileCapacityDefaultRequest.prototype.toObj
  */
 proto.librarian.sephirah.v1.GetAppSaveFileCapacityDefaultRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    app: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+app: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14163,9 +14163,9 @@ proto.librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse.prototype.toOb
  */
 proto.librarian.sephirah.v1.GetAppSaveFileCapacityDefaultResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    strategy: jspb.Message.getFieldWithDefault(msg, 3, 0)
+count: jspb.Message.getFieldWithDefault(msg, 1, 0),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
+strategy: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -14353,7 +14353,7 @@ proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.CreateSharedAppSaveRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sharedAppSave: (f = msg.getSharedAppSave()) && proto.librarian.sephirah.v1.SharedAppSave.toObject(includeInstance, f)
+sharedAppSave: (f = msg.getSharedAppSave()) && proto.librarian.sephirah.v1.SharedAppSave.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14504,7 +14504,7 @@ proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.CreateSharedAppSaveResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14655,7 +14655,7 @@ proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.UpdateSharedAppSaveRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sharedAppSave: (f = msg.getSharedAppSave()) && proto.librarian.sephirah.v1.SharedAppSave.toObject(includeInstance, f)
+sharedAppSave: (f = msg.getSharedAppSave()) && proto.librarian.sephirah.v1.SharedAppSave.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -14914,10 +14914,10 @@ proto.librarian.sephirah.v1.ListSharedAppSavesRequest.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.ListSharedAppSavesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    appInfoIdFilterList: jspb.Message.toObjectList(msg.getAppInfoIdFilterList(),
+appInfoIdFilterList: jspb.Message.toObjectList(msg.getAppInfoIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -15178,8 +15178,8 @@ proto.librarian.sephirah.v1.ListSharedAppSavesResponse.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.ListSharedAppSavesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    sharedAppSavesList: jspb.Message.toObjectList(msg.getSharedAppSavesList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+sharedAppSavesList: jspb.Message.toObjectList(msg.getSharedAppSavesList(),
     proto.librarian.sephirah.v1.SharedAppSave.toObject, includeInstance)
   };
 
@@ -15382,7 +15382,7 @@ proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.RemoveSharedAppSaveRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15634,7 +15634,7 @@ proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sharedAppSaveFile: (f = msg.getSharedAppSaveFile()) && proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(includeInstance, f)
+sharedAppSaveFile: (f = msg.getSharedAppSaveFile()) && proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15785,7 +15785,7 @@ proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.prototype.toObject =
  */
 proto.librarian.sephirah.v1.CreateSharedAppSaveFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15936,7 +15936,7 @@ proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sharedAppSaveFile: (f = msg.getSharedAppSaveFile()) && proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(includeInstance, f)
+sharedAppSaveFile: (f = msg.getSharedAppSaveFile()) && proto.librarian.sephirah.v1.SharedAppSaveFile.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16195,12 +16195,12 @@ proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.ListSharedAppSaveFilesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    sharedAppSaveIdFilterList: jspb.Message.toObjectList(msg.getSharedAppSaveIdFilterList(),
+sharedAppSaveIdFilterList: jspb.Message.toObjectList(msg.getSharedAppSaveIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    userIdFilterList: jspb.Message.toObjectList(msg.getUserIdFilterList(),
+userIdFilterList: jspb.Message.toObjectList(msg.getUserIdFilterList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -16512,8 +16512,8 @@ proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.ListSharedAppSaveFilesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    sharedAppSaveFilesList: jspb.Message.toObjectList(msg.getSharedAppSaveFilesList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+sharedAppSaveFilesList: jspb.Message.toObjectList(msg.getSharedAppSaveFilesList(),
     proto.librarian.sephirah.v1.SharedAppSaveFile.toObject, includeInstance)
   };
 
@@ -16716,7 +16716,7 @@ proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.RemoveSharedAppSaveFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17076,7 +17076,7 @@ proto.librarian.sephirah.v1.ListAppCategoriesResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.ListAppCategoriesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appCategoriesList: jspb.Message.toObjectList(msg.getAppCategoriesList(),
+appCategoriesList: jspb.Message.toObjectList(msg.getAppCategoriesList(),
     proto.librarian.sephirah.v1.AppCategory.toObject, includeInstance)
   };
 
@@ -17229,7 +17229,7 @@ proto.librarian.sephirah.v1.CreateAppCategoryRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.CreateAppCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appCategory: (f = msg.getAppCategory()) && proto.librarian.sephirah.v1.AppCategory.toObject(includeInstance, f)
+appCategory: (f = msg.getAppCategory()) && proto.librarian.sephirah.v1.AppCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17380,7 +17380,7 @@ proto.librarian.sephirah.v1.CreateAppCategoryResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.CreateAppCategoryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17531,7 +17531,7 @@ proto.librarian.sephirah.v1.UpdateAppCategoryRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.UpdateAppCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appCategory: (f = msg.getAppCategory()) && proto.librarian.sephirah.v1.AppCategory.toObject(includeInstance, f)
+appCategory: (f = msg.getAppCategory()) && proto.librarian.sephirah.v1.AppCategory.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17783,7 +17783,7 @@ proto.librarian.sephirah.v1.RemoveAppCategoryRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.RemoveAppCategoryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -18035,11 +18035,11 @@ proto.librarian.sephirah.v1.App.prototype.toObject = function(opt_includeInstanc
  */
 proto.librarian.sephirah.v1.App.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    assignedAppInfoId: (f = msg.getAssignedAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+assignedAppInfoId: (f = msg.getAssignedAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
   };
 
   if (includeInstance) {
@@ -18334,13 +18334,13 @@ proto.librarian.sephirah.v1.AppBinary.prototype.toObject = function(opt_includeI
  */
 proto.librarian.sephirah.v1.AppBinary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    publicUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    sha256: msg.getSha256_asB64(),
-    tokenServerUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    chunksList: jspb.Message.toObjectList(msg.getChunksList(),
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+publicUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+sha256: msg.getSha256_asB64(),
+tokenServerUrl: jspb.Message.getFieldWithDefault(msg, 6, ""),
+chunksList: jspb.Message.toObjectList(msg.getChunksList(),
     proto.librarian.sephirah.v1.AppBinary.Chunk.toObject, includeInstance)
   };
 
@@ -18523,10 +18523,10 @@ proto.librarian.sephirah.v1.AppBinary.Chunk.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.AppBinary.Chunk.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sequence: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    publicUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sha256: msg.getSha256_asB64()
+sequence: jspb.Message.getFieldWithDefault(msg, 1, 0),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
+publicUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+sha256: msg.getSha256_asB64()
   };
 
   if (includeInstance) {
@@ -18963,11 +18963,11 @@ proto.librarian.sephirah.v1.AppCategory.prototype.toObject = function(opt_includ
  */
 proto.librarian.sephirah.v1.AppCategory.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    appIdsList: jspb.Message.toObjectList(msg.getAppIdsList(),
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+appIdsList: jspb.Message.toObjectList(msg.getAppIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance),
-    appInfoIdsList: jspb.Message.toObjectList(msg.getAppInfoIdsList(),
+appInfoIdsList: jspb.Message.toObjectList(msg.getAppInfoIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -19250,9 +19250,9 @@ proto.librarian.sephirah.v1.AppInst.prototype.toObject = function(opt_includeIns
  */
 proto.librarian.sephirah.v1.AppInst.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19503,10 +19503,10 @@ proto.librarian.sephirah.v1.SharedAppSave.prototype.toObject = function(opt_incl
  */
 proto.librarian.sephirah.v1.SharedAppSave.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+appInfoId: (f = msg.getAppInfoId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -19765,13 +19765,13 @@ proto.librarian.sephirah.v1.SharedAppSaveFile.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.SharedAppSaveFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    sharedAppSaveId: (f = msg.getSharedAppSaveId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    fileMetadataId: (f = msg.getFileMetadataId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+sharedAppSaveId: (f = msg.getSharedAppSaveId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+fileMetadataId: (f = msg.getFileMetadataId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

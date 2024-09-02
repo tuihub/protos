@@ -80,12 +80,12 @@ proto.librarian.sephirah.v1.FileMetadata.prototype.toObject = function(opt_inclu
  */
 proto.librarian.sephirah.v1.FileMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sha256: msg.getSha256_asB64(),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0),
+type: jspb.Message.getFieldWithDefault(msg, 4, 0),
+sha256: msg.getSha256_asB64(),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

@@ -13,6 +13,7 @@ impl serde::Serialize for RecognizeImageBinaryRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.miner.v1.RecognizeImageBinaryRequest", len)?;
         if !self.data.is_empty() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("data", pbjson::private::base64::encode(&self.data).as_str())?;
         }
         struct_ser.end()

@@ -523,9 +523,9 @@ proto.librarian.sephirah.v1.SetFileCapacityRequest.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.SetFileCapacityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    fileType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0)
+userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+fileType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -835,8 +835,8 @@ proto.librarian.sephirah.v1.GetFileCapacityRequest.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.GetFileCapacityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    fileType: jspb.Message.getFieldWithDefault(msg, 2, 0)
+userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+fileType: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1016,8 +1016,8 @@ proto.librarian.sephirah.v1.GetFileCapacityResponse.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.GetFileCapacityResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    limitSizeBytes: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    usedSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0)
+limitSizeBytes: jspb.Message.getFieldWithDefault(msg, 1, 0),
+usedSizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1202,8 +1202,8 @@ proto.librarian.sephirah.v1.UploadFileRequest.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.UploadFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileChunk: (f = msg.getFileChunk()) && proto.librarian.sephirah.v1.FileChunk.toObject(includeInstance, f),
-    requireFileStatus: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+fileChunk: (f = msg.getFileChunk()) && proto.librarian.sephirah.v1.FileChunk.toObject(includeInstance, f),
+requireFileStatus: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1427,8 +1427,8 @@ proto.librarian.sephirah.v1.UploadFileResponse.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.UploadFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    chunkStatus: (f = msg.getChunkStatus()) && proto.librarian.sephirah.v1.UploadFileResponse.ChunkStatus.toObject(includeInstance, f),
-    fileStatus: (f = msg.getFileStatus()) && proto.librarian.sephirah.v1.UploadFileResponse.FileStatus.toObject(includeInstance, f)
+chunkStatus: (f = msg.getChunkStatus()) && proto.librarian.sephirah.v1.UploadFileResponse.ChunkStatus.toObject(includeInstance, f),
+fileStatus: (f = msg.getFileStatus()) && proto.librarian.sephirah.v1.UploadFileResponse.FileStatus.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1555,8 +1555,8 @@ proto.librarian.sephirah.v1.UploadFileResponse.ChunkStatus.prototype.toObject = 
  */
 proto.librarian.sephirah.v1.UploadFileResponse.ChunkStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    chunkNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 2, 0)
+chunkNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
+status: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1722,8 +1722,8 @@ proto.librarian.sephirah.v1.UploadFileResponse.FileStatus.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.UploadFileResponse.FileStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    missingChunkListList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 2, 0)
+missingChunkListList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+status: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1977,8 +1977,8 @@ proto.librarian.sephirah.v1.DownloadFileRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.DownloadFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    startChunkNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    endChunkNumber: jspb.Message.getFieldWithDefault(msg, 2, 0)
+startChunkNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
+endChunkNumber: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2155,7 +2155,7 @@ proto.librarian.sephirah.v1.DownloadFileResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.DownloadFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileChunk: (f = msg.getFileChunk()) && proto.librarian.sephirah.v1.FileChunk.toObject(includeInstance, f)
+fileChunk: (f = msg.getFileChunk()) && proto.librarian.sephirah.v1.FileChunk.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2306,7 +2306,7 @@ proto.librarian.sephirah.v1.SimpleUploadFileRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.SimpleUploadFileRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: msg.getData_asB64()
+data: msg.getData_asB64()
   };
 
   if (includeInstance) {
@@ -2460,7 +2460,7 @@ proto.librarian.sephirah.v1.SimpleUploadFileResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.SimpleUploadFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, 0)
+status: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2691,7 +2691,7 @@ proto.librarian.sephirah.v1.SimpleDownloadFileResponse.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.SimpleDownloadFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: msg.getData_asB64()
+data: msg.getData_asB64()
   };
 
   if (includeInstance) {
@@ -2946,7 +2946,7 @@ proto.librarian.sephirah.v1.PresignedUploadFileResponse.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.PresignedUploadFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uploadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+uploadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3076,7 +3076,7 @@ proto.librarian.sephirah.v1.PresignedUploadFileStatusRequest.prototype.toObject 
  */
 proto.librarian.sephirah.v1.PresignedUploadFileStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    status: jspb.Message.getFieldWithDefault(msg, 1, 0)
+status: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3408,7 +3408,7 @@ proto.librarian.sephirah.v1.PresignedDownloadFileResponse.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.PresignedDownloadFileResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
+downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3538,8 +3538,8 @@ proto.librarian.sephirah.v1.FileChunk.prototype.toObject = function(opt_includeI
  */
 proto.librarian.sephirah.v1.FileChunk.toObject = function(includeInstance, msg) {
   var f, obj = {
-    chunkNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    data: msg.getData_asB64()
+chunkNumber: jspb.Message.getFieldWithDefault(msg, 1, 0),
+data: msg.getData_asB64()
   };
 
   if (includeInstance) {

@@ -1082,6 +1082,7 @@ impl serde::Serialize for EnablePorterRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.EnablePorterRequest", len)?;
         if self.sephirah_id != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sephirahId", ToString::to_string(&self.sephirah_id).as_str())?;
         }
         if let Some(v) = self.refresh_token.as_ref() {

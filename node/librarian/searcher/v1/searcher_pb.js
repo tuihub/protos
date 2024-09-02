@@ -400,7 +400,7 @@ proto.librarian.searcher.v1.NewIDResponse.prototype.toObject = function(opt_incl
  */
 proto.librarian.searcher.v1.NewIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -551,7 +551,7 @@ proto.librarian.searcher.v1.NewBatchIDsRequest.prototype.toObject = function(opt
  */
 proto.librarian.searcher.v1.NewBatchIDsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    num: jspb.Message.getFieldWithDefault(msg, 1, 0)
+num: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -688,7 +688,7 @@ proto.librarian.searcher.v1.NewBatchIDsResponse.prototype.toObject = function(op
  */
 proto.librarian.searcher.v1.NewBatchIDsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: jspb.Message.toObjectList(msg.getIdsList(),
+idsList: jspb.Message.toObjectList(msg.getIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -841,10 +841,10 @@ proto.librarian.searcher.v1.DescribeIDRequest.prototype.toObject = function(opt_
  */
 proto.librarian.searcher.v1.DescribeIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    mode: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    index: jspb.Message.getFieldWithDefault(msg, 4, 0)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+mode: jspb.Message.getFieldWithDefault(msg, 3, 0),
+index: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1192,9 +1192,9 @@ proto.librarian.searcher.v1.SearchIDRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.searcher.v1.SearchIDRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    query: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    index: jspb.Message.getFieldWithDefault(msg, 3, 0)
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+query: jspb.Message.getFieldWithDefault(msg, 2, ""),
+index: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1410,8 +1410,8 @@ proto.librarian.searcher.v1.SearchIDResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.searcher.v1.SearchIDResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    resultList: jspb.Message.toObjectList(msg.getResultList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+resultList: jspb.Message.toObjectList(msg.getResultList(),
     proto.librarian.searcher.v1.SearchIDResponse.Result.toObject, includeInstance)
   };
 
@@ -1539,8 +1539,8 @@ proto.librarian.searcher.v1.SearchIDResponse.Result.prototype.toObject = functio
  */
 proto.librarian.searcher.v1.SearchIDResponse.Result.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    rank: jspb.Message.getFieldWithDefault(msg, 2, 0)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+rank: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1795,8 +1795,8 @@ proto.librarian.searcher.v1.SearchAppInfoRequest.prototype.toObject = function(o
  */
 proto.librarian.searcher.v1.SearchAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    source: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+source: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1980,7 +1980,7 @@ proto.librarian.searcher.v1.SearchAppInfoResponse.prototype.toObject = function(
  */
 proto.librarian.searcher.v1.SearchAppInfoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
+appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
     librarian_v1_common_pb.AppInfo.toObject, includeInstance)
   };
 

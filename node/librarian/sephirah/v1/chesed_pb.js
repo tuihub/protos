@@ -321,9 +321,9 @@ proto.librarian.sephirah.v1.UploadImageRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.UploadImageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileMetadata: (f = msg.getFileMetadata()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+fileMetadata: (f = msg.getFileMetadata()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -532,7 +532,7 @@ proto.librarian.sephirah.v1.UploadImageResponse.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.UploadImageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uploadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+uploadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -662,9 +662,9 @@ proto.librarian.sephirah.v1.UpdateImageRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.UpdateImageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -974,8 +974,8 @@ proto.librarian.sephirah.v1.ListImagesRequest.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.ListImagesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1183,8 +1183,8 @@ proto.librarian.sephirah.v1.ListImagesResponse.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.ListImagesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    idsList: jspb.Message.toObjectList(msg.getIdsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+idsList: jspb.Message.toObjectList(msg.getIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -1387,8 +1387,8 @@ proto.librarian.sephirah.v1.SearchImagesRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.SearchImagesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    keywords: jspb.Message.getFieldWithDefault(msg, 2, "")
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+keywords: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1575,8 +1575,8 @@ proto.librarian.sephirah.v1.SearchImagesResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.SearchImagesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    idsList: jspb.Message.toObjectList(msg.getIdsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+idsList: jspb.Message.toObjectList(msg.getIdsList(),
     librarian_v1_common_pb.InternalID.toObject, includeInstance)
   };
 
@@ -1779,7 +1779,7 @@ proto.librarian.sephirah.v1.GetImageRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.GetImageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1930,9 +1930,9 @@ proto.librarian.sephirah.v1.GetImageResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.GetImageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fileMetadata: (f = msg.getFileMetadata()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+fileMetadata: (f = msg.getFileMetadata()) && librarian_sephirah_v1_base_pb.FileMetadata.toObject(includeInstance, f),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2141,7 +2141,7 @@ proto.librarian.sephirah.v1.DownloadImageRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.DownloadImageRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2292,7 +2292,7 @@ proto.librarian.sephirah.v1.DownloadImageResponse.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.DownloadImageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    downloadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+downloadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

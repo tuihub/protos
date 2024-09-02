@@ -659,7 +659,7 @@ proto.librarian.mapper.v1.InsertVertexRequest.prototype.toObject = function(opt_
  */
 proto.librarian.mapper.v1.InsertVertexRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
+vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
     proto.librarian.mapper.v1.Vertex.toObject, includeInstance)
   };
 
@@ -920,7 +920,7 @@ proto.librarian.mapper.v1.DeleteVertexRequest.prototype.toObject = function(opt_
  */
 proto.librarian.mapper.v1.DeleteVertexRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vidListList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+vidListList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1179,7 +1179,7 @@ proto.librarian.mapper.v1.UpdateVertexRequest.prototype.toObject = function(opt_
  */
 proto.librarian.mapper.v1.UpdateVertexRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
+vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
     proto.librarian.mapper.v1.Vertex.toObject, includeInstance)
   };
 
@@ -1440,7 +1440,7 @@ proto.librarian.mapper.v1.InsertEdgeRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.mapper.v1.InsertEdgeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
+edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
     proto.librarian.mapper.v1.Edge.toObject, includeInstance)
   };
 
@@ -1701,7 +1701,7 @@ proto.librarian.mapper.v1.DeleteEdgeRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.mapper.v1.DeleteEdgeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
+edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
     proto.librarian.mapper.v1.Edge.toObject, includeInstance)
   };
 
@@ -1962,7 +1962,7 @@ proto.librarian.mapper.v1.UpdateEdgeRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.mapper.v1.UpdateEdgeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
+edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
     proto.librarian.mapper.v1.Edge.toObject, includeInstance)
   };
 
@@ -2223,13 +2223,13 @@ proto.librarian.mapper.v1.GoFromVertexRequest.prototype.toObject = function(opt_
  */
 proto.librarian.mapper.v1.GoFromVertexRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    edgeTypeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    edgeDirection: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    minStep: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    maxStep: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    limit: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    offset: jspb.Message.getFieldWithDefault(msg, 15, 0)
+srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+edgeTypeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+edgeDirection: jspb.Message.getFieldWithDefault(msg, 3, 0),
+minStep: jspb.Message.getFieldWithDefault(msg, 4, 0),
+maxStep: jspb.Message.getFieldWithDefault(msg, 5, 0),
+limit: jspb.Message.getFieldWithDefault(msg, 14, 0),
+offset: jspb.Message.getFieldWithDefault(msg, 15, 0)
   };
 
   if (includeInstance) {
@@ -2561,7 +2561,7 @@ proto.librarian.mapper.v1.GoFromVertexResponse.prototype.toObject = function(opt
  */
 proto.librarian.mapper.v1.GoFromVertexResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
+vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
     proto.librarian.mapper.v1.Vertex.toObject, includeInstance)
   };
 
@@ -2714,7 +2714,7 @@ proto.librarian.mapper.v1.FetchEqualVertexRequest.prototype.toObject = function(
  */
 proto.librarian.mapper.v1.FetchEqualVertexRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2851,7 +2851,7 @@ proto.librarian.mapper.v1.FetchEqualVertexResponse.prototype.toObject = function
  */
 proto.librarian.mapper.v1.FetchEqualVertexResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
+vertexListList: jspb.Message.toObjectList(msg.getVertexListList(),
     proto.librarian.mapper.v1.Vertex.toObject, includeInstance)
   };
 
@@ -3011,9 +3011,9 @@ proto.librarian.mapper.v1.FetchEqualVertexNeighborRequest.prototype.toObject = f
  */
 proto.librarian.mapper.v1.FetchEqualVertexNeighborRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    edgeTypeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    edgeDirection: jspb.Message.getFieldWithDefault(msg, 3, 0)
+srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+edgeTypeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+edgeDirection: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -3229,7 +3229,7 @@ proto.librarian.mapper.v1.FetchEqualVertexNeighborResponse.prototype.toObject = 
  */
 proto.librarian.mapper.v1.FetchEqualVertexNeighborResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
+edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
     proto.librarian.mapper.v1.Edge.toObject, includeInstance)
   };
 
@@ -3389,11 +3389,11 @@ proto.librarian.mapper.v1.FindPathRequest.prototype.toObject = function(opt_incl
  */
 proto.librarian.mapper.v1.FindPathRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    srcVidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    dstVidList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    edgeTypeFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    edgeDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    maxStep: jspb.Message.getFieldWithDefault(msg, 5, 0)
+srcVidList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+dstVidList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+edgeTypeFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+edgeDirection: jspb.Message.getFieldWithDefault(msg, 4, 0),
+maxStep: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -3709,7 +3709,7 @@ proto.librarian.mapper.v1.FindPathResponse.prototype.toObject = function(opt_inc
  */
 proto.librarian.mapper.v1.FindPathResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pathListList: jspb.Message.toObjectList(msg.getPathListList(),
+pathListList: jspb.Message.toObjectList(msg.getPathListList(),
     proto.librarian.mapper.v1.FindPathResponse.SinglePath.toObject, includeInstance)
   };
 
@@ -3831,7 +3831,7 @@ proto.librarian.mapper.v1.FindPathResponse.SinglePath.prototype.toObject = funct
  */
 proto.librarian.mapper.v1.FindPathResponse.SinglePath.toObject = function(includeInstance, msg) {
   var f, obj = {
-    edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
+edgeListList: jspb.Message.toObjectList(msg.getEdgeListList(),
     proto.librarian.mapper.v1.Edge.toObject, includeInstance)
   };
 
@@ -4022,9 +4022,9 @@ proto.librarian.mapper.v1.Vertex.prototype.toObject = function(opt_includeInstan
  */
 proto.librarian.mapper.v1.Vertex.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    prop: (f = msg.getProp()) && proto.librarian.mapper.v1.VertexProp.toObject(includeInstance, f)
+vid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+prop: (f = msg.getProp()) && proto.librarian.mapper.v1.VertexProp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4233,8 +4233,8 @@ proto.librarian.mapper.v1.VertexProp.prototype.toObject = function(opt_includeIn
  */
 proto.librarian.mapper.v1.VertexProp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.librarian.mapper.v1.VertexCommonProp.toObject(includeInstance, f),
-    additionalMap: (f = msg.getAdditionalMap()) ? f.toObject(includeInstance, undefined) : []
+common: (f = msg.getCommon()) && proto.librarian.mapper.v1.VertexCommonProp.toObject(includeInstance, f),
+additionalMap: (f = msg.getAdditionalMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -4418,9 +4418,9 @@ proto.librarian.mapper.v1.VertexCommonProp.prototype.toObject = function(opt_inc
  */
 proto.librarian.mapper.v1.VertexCommonProp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4671,10 +4671,10 @@ proto.librarian.mapper.v1.Edge.prototype.toObject = function(opt_includeInstance
  */
 proto.librarian.mapper.v1.Edge.toObject = function(includeInstance, msg) {
   var f, obj = {
-    srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    dstVid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    prop: (f = msg.getProp()) && proto.librarian.mapper.v1.EdgeProp.toObject(includeInstance, f)
+srcVid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+dstVid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+type: jspb.Message.getFieldWithDefault(msg, 3, 0),
+prop: (f = msg.getProp()) && proto.librarian.mapper.v1.EdgeProp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4912,8 +4912,8 @@ proto.librarian.mapper.v1.EdgeProp.prototype.toObject = function(opt_includeInst
  */
 proto.librarian.mapper.v1.EdgeProp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    common: (f = msg.getCommon()) && proto.librarian.mapper.v1.EdgeCommonProp.toObject(includeInstance, f),
-    additionalMap: (f = msg.getAdditionalMap()) ? f.toObject(includeInstance, undefined) : []
+common: (f = msg.getCommon()) && proto.librarian.mapper.v1.EdgeCommonProp.toObject(includeInstance, f),
+additionalMap: (f = msg.getAdditionalMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -5097,10 +5097,10 @@ proto.librarian.mapper.v1.EdgeCommonProp.prototype.toObject = function(opt_inclu
  */
 proto.librarian.mapper.v1.EdgeCommonProp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    rank: jspb.Message.getFieldWithDefault(msg, 4, 0)
+occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+updateTime: (f = msg.getUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+rank: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {

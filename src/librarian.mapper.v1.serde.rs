@@ -351,10 +351,12 @@ impl serde::Serialize for Edge {
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.Edge", len)?;
         if self.src_vid != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         if self.dst_vid != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("dstVid", ToString::to_string(&self.dst_vid).as_str())?;
         }
         if self.r#type != 0 {
@@ -512,6 +514,7 @@ impl serde::Serialize for EdgeCommonProp {
         }
         if let Some(v) = self.rank.as_ref() {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("rank", ToString::to_string(&v).as_str())?;
         }
         struct_ser.end()
@@ -933,13 +936,14 @@ impl serde::Serialize for FetchEqualVertexNeighborRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.FetchEqualVertexNeighborRequest", len)?;
         if self.src_vid != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         if !self.edge_type_filter.is_empty() {
             let v = self.edge_type_filter.iter().cloned().map(|v| {
                 EdgeType::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("edgeTypeFilter", &v)?;
         }
         if self.edge_direction != 0 {
@@ -1156,6 +1160,7 @@ impl serde::Serialize for FetchEqualVertexRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.FetchEqualVertexRequest", len)?;
         if self.src_vid != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         struct_ser.end()
@@ -1363,7 +1368,7 @@ impl serde::Serialize for FindPathRequest {
             let v = self.edge_type_filter.iter().cloned().map(|v| {
                 EdgeType::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("edgeTypeFilter", &v)?;
         }
         if self.edge_direction != 0 {
@@ -1373,6 +1378,7 @@ impl serde::Serialize for FindPathRequest {
         }
         if self.max_step != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxStep", ToString::to_string(&self.max_step).as_str())?;
         }
         struct_ser.end()
@@ -1724,13 +1730,14 @@ impl serde::Serialize for GoFromVertexRequest {
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.GoFromVertexRequest", len)?;
         if self.src_vid != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("srcVid", ToString::to_string(&self.src_vid).as_str())?;
         }
         if !self.edge_type_filter.is_empty() {
             let v = self.edge_type_filter.iter().cloned().map(|v| {
                 EdgeType::try_from(v)
                     .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", v)))
-                }).collect::<Result<Vec<_>, _>>()?;
+                }).collect::<std::result::Result<Vec<_>, _>>()?;
             struct_ser.serialize_field("edgeTypeFilter", &v)?;
         }
         if self.edge_direction != 0 {
@@ -1740,18 +1747,22 @@ impl serde::Serialize for GoFromVertexRequest {
         }
         if self.min_step != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("minStep", ToString::to_string(&self.min_step).as_str())?;
         }
         if self.max_step != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("maxStep", ToString::to_string(&self.max_step).as_str())?;
         }
         if self.limit != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("limit", ToString::to_string(&self.limit).as_str())?;
         }
         if self.offset != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("offset", ToString::to_string(&self.offset).as_str())?;
         }
         struct_ser.end()
@@ -2675,6 +2686,7 @@ impl serde::Serialize for Vertex {
         let mut struct_ser = serializer.serialize_struct("librarian.mapper.v1.Vertex", len)?;
         if self.vid != 0 {
             #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("vid", ToString::to_string(&self.vid).as_str())?;
         }
         if self.r#type != 0 {

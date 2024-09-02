@@ -119,9 +119,9 @@ proto.buf.validate.Constraint.prototype.toObject = function(opt_includeInstance)
  */
 proto.buf.validate.Constraint.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    expression: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+message: jspb.Message.getFieldWithDefault(msg, 2, ""),
+expression: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -316,7 +316,7 @@ proto.buf.validate.Violations.prototype.toObject = function(opt_includeInstance)
  */
 proto.buf.validate.Violations.toObject = function(includeInstance, msg) {
   var f, obj = {
-    violationsList: jspb.Message.toObjectList(msg.getViolationsList(),
+violationsList: jspb.Message.toObjectList(msg.getViolationsList(),
     proto.buf.validate.Violation.toObject, includeInstance)
   };
 
@@ -469,9 +469,9 @@ proto.buf.validate.Violation.prototype.toObject = function(opt_includeInstance) 
  */
 proto.buf.validate.Violation.toObject = function(includeInstance, msg) {
   var f, obj = {
-    fieldPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    constraintId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 3, "")
+fieldPath: jspb.Message.getFieldWithDefault(msg, 1, ""),
+constraintId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+message: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {

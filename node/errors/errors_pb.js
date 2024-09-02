@@ -79,10 +79,10 @@ proto.errors.Error.prototype.toObject = function(opt_includeInstance) {
  */
 proto.errors.Error.toObject = function(includeInstance, msg) {
   var f, obj = {
-    code: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    reason: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    message: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
+code: jspb.Message.getFieldWithDefault(msg, 1, 0),
+reason: jspb.Message.getFieldWithDefault(msg, 2, ""),
+message: jspb.Message.getFieldWithDefault(msg, 3, ""),
+metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {

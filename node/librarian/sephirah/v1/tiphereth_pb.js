@@ -1164,9 +1164,9 @@ proto.librarian.sephirah.v1.GetTokenRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.GetTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+username: jspb.Message.getFieldWithDefault(msg, 1, ""),
+password: jspb.Message.getFieldWithDefault(msg, 2, ""),
+deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1375,8 +1375,8 @@ proto.librarian.sephirah.v1.GetTokenResponse.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.GetTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1535,7 +1535,7 @@ proto.librarian.sephirah.v1.RefreshTokenRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.RefreshTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1686,8 +1686,8 @@ proto.librarian.sephirah.v1.RefreshTokenResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.RefreshTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1846,7 +1846,7 @@ proto.librarian.sephirah.v1.AcquireUserTokenRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.AcquireUserTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1997,7 +1997,7 @@ proto.librarian.sephirah.v1.AcquireUserTokenResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.AcquireUserTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+accessToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2127,9 +2127,9 @@ proto.librarian.sephirah.v1.RegisterUserRequest.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.RegisterUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    captcha: (f = msg.getCaptcha()) && proto.librarian.sephirah.v1.RegisterUserRequest.Captcha.toObject(includeInstance, f)
+username: jspb.Message.getFieldWithDefault(msg, 1, ""),
+password: jspb.Message.getFieldWithDefault(msg, 2, ""),
+captcha: (f = msg.getCaptcha()) && proto.librarian.sephirah.v1.RegisterUserRequest.Captcha.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2265,8 +2265,8 @@ proto.librarian.sephirah.v1.RegisterUserRequest.Captcha.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.RegisterUserRequest.Captcha.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 2, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+value: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2524,8 +2524,8 @@ proto.librarian.sephirah.v1.RegisterUserResponse.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.RegisterUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    captcha: (f = msg.getCaptcha()) && proto.librarian.sephirah.v1.RegisterUserResponse.ImageCaptcha.toObject(includeInstance, f),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+captcha: (f = msg.getCaptcha()) && proto.librarian.sephirah.v1.RegisterUserResponse.ImageCaptcha.toObject(includeInstance, f),
+refreshToken: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2650,8 +2650,8 @@ proto.librarian.sephirah.v1.RegisterUserResponse.ImageCaptcha.prototype.toObject
  */
 proto.librarian.sephirah.v1.RegisterUserResponse.ImageCaptcha.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    image: msg.getImage_asB64()
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+image: msg.getImage_asB64()
   };
 
   if (includeInstance) {
@@ -2907,7 +2907,7 @@ proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.RegisterDeviceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f)
+deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3058,7 +3058,7 @@ proto.librarian.sephirah.v1.RegisterDeviceResponse.prototype.toObject = function
  */
 proto.librarian.sephirah.v1.RegisterDeviceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3317,7 +3317,7 @@ proto.librarian.sephirah.v1.ListRegisteredDevicesResponse.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.ListRegisteredDevicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    devicesList: jspb.Message.toObjectList(msg.getDevicesList(),
+devicesList: jspb.Message.toObjectList(msg.getDevicesList(),
     proto.librarian.sephirah.v1.DeviceInfo.toObject, includeInstance)
   };
 
@@ -3578,7 +3578,7 @@ proto.librarian.sephirah.v1.ListUserSessionsResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.ListUserSessionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionsList: jspb.Message.toObjectList(msg.getSessionsList(),
+sessionsList: jspb.Message.toObjectList(msg.getSessionsList(),
     proto.librarian.sephirah.v1.UserSession.toObject, includeInstance)
   };
 
@@ -3731,7 +3731,7 @@ proto.librarian.sephirah.v1.DeleteUserSessionRequest.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.DeleteUserSessionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sessionId: (f = msg.getSessionId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+sessionId: (f = msg.getSessionId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3983,7 +3983,7 @@ proto.librarian.sephirah.v1.CreateUserRequest.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.CreateUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f)
+user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4134,7 +4134,7 @@ proto.librarian.sephirah.v1.CreateUserResponse.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.CreateUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4285,8 +4285,8 @@ proto.librarian.sephirah.v1.UpdateUserRequest.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.UpdateUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f),
-    password: jspb.Message.getFieldWithDefault(msg, 2, "")
+user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f),
+password: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4585,7 +4585,7 @@ proto.librarian.sephirah.v1.GetUserRequest.prototype.toObject = function(opt_inc
  */
 proto.librarian.sephirah.v1.GetUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4736,7 +4736,7 @@ proto.librarian.sephirah.v1.GetUserResponse.prototype.toObject = function(opt_in
  */
 proto.librarian.sephirah.v1.GetUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f)
+user: (f = msg.getUser()) && proto.librarian.sephirah.v1.User.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4894,9 +4894,9 @@ proto.librarian.sephirah.v1.ListUsersRequest.prototype.toObject = function(opt_i
  */
 proto.librarian.sephirah.v1.ListUsersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    typeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-    statusFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+typeFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+statusFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5154,8 +5154,8 @@ proto.librarian.sephirah.v1.ListUsersResponse.prototype.toObject = function(opt_
  */
 proto.librarian.sephirah.v1.ListUsersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    usersList: jspb.Message.toObjectList(msg.getUsersList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+usersList: jspb.Message.toObjectList(msg.getUsersList(),
     proto.librarian.sephirah.v1.User.toObject, includeInstance)
   };
 
@@ -5358,7 +5358,7 @@ proto.librarian.sephirah.v1.LinkAccountRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.LinkAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
+accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5509,7 +5509,7 @@ proto.librarian.sephirah.v1.LinkAccountResponse.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.LinkAccountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5660,7 +5660,7 @@ proto.librarian.sephirah.v1.UnLinkAccountRequest.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.UnLinkAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
+accountId: (f = msg.getAccountId()) && librarian_v1_common_pb.AccountID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5912,7 +5912,7 @@ proto.librarian.sephirah.v1.ListLinkAccountsRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ListLinkAccountsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6070,7 +6070,7 @@ proto.librarian.sephirah.v1.ListLinkAccountsResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.ListLinkAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountsList: jspb.Message.toObjectList(msg.getAccountsList(),
+accountsList: jspb.Message.toObjectList(msg.getAccountsList(),
     librarian_v1_common_pb.Account.toObject, includeInstance)
   };
 
@@ -6223,7 +6223,7 @@ proto.librarian.sephirah.v1.ListPortersRequest.prototype.toObject = function(opt
  */
 proto.librarian.sephirah.v1.ListPortersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6381,8 +6381,8 @@ proto.librarian.sephirah.v1.ListPortersResponse.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.ListPortersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    portersList: jspb.Message.toObjectList(msg.getPortersList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+portersList: jspb.Message.toObjectList(msg.getPortersList(),
     proto.librarian.sephirah.v1.Porter.toObject, includeInstance)
   };
 
@@ -6585,8 +6585,8 @@ proto.librarian.sephirah.v1.UpdatePorterStatusRequest.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.UpdatePorterStatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    porterId: (f = msg.getPorterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 2, 0)
+porterId: (f = msg.getPorterId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+status: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -6874,8 +6874,8 @@ proto.librarian.sephirah.v1.ListPorterGroupsRequest.prototype.toObject = functio
  */
 proto.librarian.sephirah.v1.ListPorterGroupsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-    statusFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
+statusFilterList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -7083,8 +7083,8 @@ proto.librarian.sephirah.v1.ListPorterGroupsResponse.prototype.toObject = functi
  */
 proto.librarian.sephirah.v1.ListPorterGroupsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    porterGroupsList: jspb.Message.toObjectList(msg.getPorterGroupsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+porterGroupsList: jspb.Message.toObjectList(msg.getPorterGroupsList(),
     proto.librarian.sephirah.v1.PorterGroup.toObject, includeInstance)
   };
 
@@ -7287,7 +7287,7 @@ proto.librarian.sephirah.v1.CreatePorterContextRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.CreatePorterContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: (f = msg.getContext()) && proto.librarian.sephirah.v1.PorterContext.toObject(includeInstance, f)
+context: (f = msg.getContext()) && proto.librarian.sephirah.v1.PorterContext.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7438,7 +7438,7 @@ proto.librarian.sephirah.v1.CreatePorterContextResponse.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.CreatePorterContextResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
+contextId: (f = msg.getContextId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7589,7 +7589,7 @@ proto.librarian.sephirah.v1.ListPorterContextsRequest.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.ListPorterContextsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7747,8 +7747,8 @@ proto.librarian.sephirah.v1.ListPorterContextsResponse.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.ListPorterContextsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-    contextsList: jspb.Message.toObjectList(msg.getContextsList(),
+paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
+contextsList: jspb.Message.toObjectList(msg.getContextsList(),
     proto.librarian.sephirah.v1.PorterContext.toObject, includeInstance)
   };
 
@@ -7951,7 +7951,7 @@ proto.librarian.sephirah.v1.UpdatePorterContextRequest.prototype.toObject = func
  */
 proto.librarian.sephirah.v1.UpdatePorterContextRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    context: (f = msg.getContext()) && proto.librarian.sephirah.v1.PorterContext.toObject(includeInstance, f)
+context: (f = msg.getContext()) && proto.librarian.sephirah.v1.PorterContext.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8203,11 +8203,11 @@ proto.librarian.sephirah.v1.User.prototype.toObject = function(opt_includeInstan
  */
 proto.librarian.sephirah.v1.User.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 5, 0)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+username: jspb.Message.getFieldWithDefault(msg, 2, ""),
+password: jspb.Message.getFieldWithDefault(msg, 3, ""),
+type: jspb.Message.getFieldWithDefault(msg, 4, 0),
+status: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -8474,11 +8474,11 @@ proto.librarian.sephirah.v1.UserSession.prototype.toObject = function(opt_includ
  */
 proto.librarian.sephirah.v1.UserSession.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f),
-    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    expireTime: (f = msg.getExpireTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+userId: (f = msg.getUserId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f),
+createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+expireTime: (f = msg.getExpireTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8829,13 +8829,13 @@ proto.librarian.sephirah.v1.DeviceInfo.prototype.toObject = function(opt_include
  */
 proto.librarian.sephirah.v1.DeviceInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    deviceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    systemType: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    systemVersion: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    clientName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    clientSourceCodeAddress: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    clientVersion: jspb.Message.getFieldWithDefault(msg, 7, "")
+deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+deviceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+systemType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+systemVersion: jspb.Message.getFieldWithDefault(msg, 4, ""),
+clientName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+clientSourceCodeAddress: jspb.Message.getFieldWithDefault(msg, 6, ""),
+clientVersion: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -9160,15 +9160,15 @@ proto.librarian.sephirah.v1.Porter.prototype.toObject = function(opt_includeInst
  */
 proto.librarian.sephirah.v1.Porter.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
-    globalName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    region: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    featureSummary: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    connectionStatusMessage: jspb.Message.getFieldWithDefault(msg, 9, "")
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
+globalName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+region: jspb.Message.getFieldWithDefault(msg, 4, ""),
+featureSummary: jspb.Message.getFieldWithDefault(msg, 5, ""),
+status: jspb.Message.getFieldWithDefault(msg, 6, 0),
+connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0),
+contextJsonSchema: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+connectionStatusMessage: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -9590,15 +9590,15 @@ proto.librarian.sephirah.v1.PorterContext.prototype.toObject = function(opt_incl
  */
 proto.librarian.sephirah.v1.PorterContext.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-    globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    region: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    contextJson: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    handleStatus: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    handleStatusMessage: jspb.Message.getFieldWithDefault(msg, 9, "")
+id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+region: jspb.Message.getFieldWithDefault(msg, 3, ""),
+contextJson: jspb.Message.getFieldWithDefault(msg, 4, ""),
+name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+status: jspb.Message.getFieldWithDefault(msg, 7, 0),
+handleStatus: jspb.Message.getFieldWithDefault(msg, 8, 0),
+handleStatusMessage: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -9988,10 +9988,10 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.toObject = function(opt_includ
  */
 proto.librarian.sephirah.v1.PorterGroup.toObject = function(includeInstance, msg) {
   var f, obj = {
-    binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
-    globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    regionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    contextJsonSchema: jspb.Message.getFieldWithDefault(msg, 4, "")
+binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
+globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+regionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+contextJsonSchema: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {

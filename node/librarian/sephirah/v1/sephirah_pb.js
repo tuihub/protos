@@ -248,7 +248,7 @@ proto.librarian.sephirah.v1.GetServerInformationRequest.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.GetServerInformationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    withStatusReport: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+withStatusReport: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -396,12 +396,12 @@ proto.librarian.sephirah.v1.GetServerInformationResponse.prototype.toObject = fu
  */
 proto.librarian.sephirah.v1.GetServerInformationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    serverBinarySummary: (f = msg.getServerBinarySummary()) && proto.librarian.sephirah.v1.ServerBinarySummary.toObject(includeInstance, f),
-    protocolSummary: (f = msg.getProtocolSummary()) && proto.librarian.sephirah.v1.ServerProtocolSummary.toObject(includeInstance, f),
-    currentTime: (f = msg.getCurrentTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    featureSummary: (f = msg.getFeatureSummary()) && proto.librarian.sephirah.v1.ServerFeatureSummary.toObject(includeInstance, f),
-    serverInstanceSummary: (f = msg.getServerInstanceSummary()) && proto.librarian.sephirah.v1.ServerInstanceSummary.toObject(includeInstance, f),
-    statusReport: jspb.Message.getFieldWithDefault(msg, 6, "")
+serverBinarySummary: (f = msg.getServerBinarySummary()) && proto.librarian.sephirah.v1.ServerBinarySummary.toObject(includeInstance, f),
+protocolSummary: (f = msg.getProtocolSummary()) && proto.librarian.sephirah.v1.ServerProtocolSummary.toObject(includeInstance, f),
+currentTime: (f = msg.getCurrentTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+featureSummary: (f = msg.getFeatureSummary()) && proto.librarian.sephirah.v1.ServerFeatureSummary.toObject(includeInstance, f),
+serverInstanceSummary: (f = msg.getServerInstanceSummary()) && proto.librarian.sephirah.v1.ServerInstanceSummary.toObject(includeInstance, f),
+statusReport: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -799,9 +799,9 @@ proto.librarian.sephirah.v1.ServerBinarySummary.prototype.toObject = function(op
  */
 proto.librarian.sephirah.v1.ServerBinarySummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceCodeAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    buildVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    buildDate: jspb.Message.getFieldWithDefault(msg, 3, "")
+sourceCodeAddress: jspb.Message.getFieldWithDefault(msg, 1, ""),
+buildVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
+buildDate: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -989,7 +989,7 @@ proto.librarian.sephirah.v1.ServerProtocolSummary.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.ServerProtocolSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    version: jspb.Message.getFieldWithDefault(msg, 1, "")
+version: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1126,15 +1126,15 @@ proto.librarian.sephirah.v1.ServerFeatureSummary.prototype.toObject = function(o
  */
 proto.librarian.sephirah.v1.ServerFeatureSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accountPlatformsList: jspb.Message.toObjectList(msg.getAccountPlatformsList(),
+accountPlatformsList: jspb.Message.toObjectList(msg.getAccountPlatformsList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    appInfoSourcesList: jspb.Message.toObjectList(msg.getAppInfoSourcesList(),
+appInfoSourcesList: jspb.Message.toObjectList(msg.getAppInfoSourcesList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    feedSourcesList: jspb.Message.toObjectList(msg.getFeedSourcesList(),
+feedSourcesList: jspb.Message.toObjectList(msg.getFeedSourcesList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    notifyDestinationsList: jspb.Message.toObjectList(msg.getNotifyDestinationsList(),
+notifyDestinationsList: jspb.Message.toObjectList(msg.getNotifyDestinationsList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance),
-    feedItemActionsList: jspb.Message.toObjectList(msg.getFeedItemActionsList(),
+feedItemActionsList: jspb.Message.toObjectList(msg.getFeedItemActionsList(),
     librarian_v1_wellknown_pb.FeatureFlag.toObject, includeInstance)
   };
 
@@ -1491,11 +1491,11 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.ServerInstanceSummary.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    websiteUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    logoUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    backgroundUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+description: jspb.Message.getFieldWithDefault(msg, 2, ""),
+websiteUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+logoUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+backgroundUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1842,9 +1842,9 @@ proto.librarian.sephirah.v1.ListenServerEventResponse.prototype.toObject = funct
  */
 proto.librarian.sephirah.v1.ListenServerEventResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    event: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    payload: jspb.Message.getFieldWithDefault(msg, 3, "")
+event: jspb.Message.getFieldWithDefault(msg, 1, 0),
+occurTime: (f = msg.getOccurTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+payload: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
