@@ -18,7 +18,7 @@ plugins:
     opt: paths=source_relative
 
   #JS
-  - remote: buf.build/protocolbuffers/js:v3.21.2
+  - remote: buf.build/protocolbuffers/js:v3.21.4
     out: node
     opt:
       - import_style=commonjs
@@ -35,16 +35,16 @@ plugins:
       - service=grpc-node
 
   #Rust
-  - remote: buf.build/community/neoeinstein-prost:v0.3.1
+  - remote: buf.build/community/neoeinstein-prost:v0.4.0
     out: src
     opt:
       - bytes=.
       - compile_well_known_types
       - extern_path=.google.protobuf=::pbjson_types
       - file_descriptor_set
-  - remote: buf.build/community/neoeinstein-prost-serde:v0.3.0
+  - remote: buf.build/community/neoeinstein-prost-serde:v0.3.1
     out: src
-  - remote: buf.build/community/neoeinstein-tonic:v0.4.0
+  - remote: buf.build/community/neoeinstein-tonic:v0.4.1
     out: src
     opt:
       - compile_well_known_types
@@ -58,7 +58,7 @@ plugins:
   - protoc_builtin: csharp
     out: Assets/src
     opt: base_namespace=
-  - remote: buf.build/grpc/csharp:v1.65.0
+  - remote: buf.build/grpc/csharp:v1.66.1
     out: Assets/src
 
   #Dart
