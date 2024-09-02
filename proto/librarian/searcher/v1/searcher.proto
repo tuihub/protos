@@ -30,7 +30,7 @@ message NewIDResponse {
 }
 
 message NewBatchIDsRequest {
-  int32 num = 1;
+  int64 num = 1;
 }
 message NewBatchIDsResponse {
   repeated librarian.v1.InternalID ids = 1;

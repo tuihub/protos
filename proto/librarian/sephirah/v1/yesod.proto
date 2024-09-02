@@ -92,7 +92,7 @@ message GroupFeedItemsRequest {
   repeated string publish_platform_filter = 4;
   repeated string category_filter = 5;
   // NULL means no limit
-  optional int32 group_size = 7;
+  optional int64 group_size = 7;
 }
 
 message GroupFeedItemsResponse {
