@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.21](https://github.com/tuihub/protos/compare/v0.4.20...v0.4.21) (2024-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency grpc to v4 ([#159](https://github.com/tuihub/protos/issues/159)) ([230d626](https://github.com/tuihub/protos/commit/230d62659a8c2eb18e3307e8af19f72846ff852d))
+* replace int32 with int64 ([209f600](https://github.com/tuihub/protos/commit/209f6009a48598c99f741c2bdc80a5c89fea4de7))
+
 ## [0.4.20](https://github.com/tuihub/protos/compare/v0.4.19...v0.4.20) (2024-08-07)
 
 
