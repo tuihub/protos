@@ -75,6 +75,64 @@ export namespace FeatureRequest {
   }
 }
 
+export class FeatureSummary extends jspb.Message {
+  clearAccountPlatformsList(): void;
+  getAccountPlatformsList(): Array<FeatureFlag>;
+  setAccountPlatformsList(value: Array<FeatureFlag>): void;
+  addAccountPlatforms(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  clearAppInfoSourcesList(): void;
+  getAppInfoSourcesList(): Array<FeatureFlag>;
+  setAppInfoSourcesList(value: Array<FeatureFlag>): void;
+  addAppInfoSources(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  clearFeedSourcesList(): void;
+  getFeedSourcesList(): Array<FeatureFlag>;
+  setFeedSourcesList(value: Array<FeatureFlag>): void;
+  addFeedSources(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  clearNotifyDestinationsList(): void;
+  getNotifyDestinationsList(): Array<FeatureFlag>;
+  setNotifyDestinationsList(value: Array<FeatureFlag>): void;
+  addNotifyDestinations(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  clearFeedItemActionsList(): void;
+  getFeedItemActionsList(): Array<FeatureFlag>;
+  setFeedItemActionsList(value: Array<FeatureFlag>): void;
+  addFeedItemActions(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  clearFeedSettersList(): void;
+  getFeedSettersList(): Array<FeatureFlag>;
+  setFeedSettersList(value: Array<FeatureFlag>): void;
+  addFeedSetters(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  clearFeedGettersList(): void;
+  getFeedGettersList(): Array<FeatureFlag>;
+  setFeedGettersList(value: Array<FeatureFlag>): void;
+  addFeedGetters(value?: FeatureFlag, index?: number): FeatureFlag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureSummary.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSummary): FeatureSummary.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FeatureSummary, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSummary;
+  static deserializeBinaryFromReader(message: FeatureSummary, reader: jspb.BinaryReader): FeatureSummary;
+}
+
+export namespace FeatureSummary {
+  export type AsObject = {
+    accountPlatformsList: Array<FeatureFlag.AsObject>,
+    appInfoSourcesList: Array<FeatureFlag.AsObject>,
+    feedSourcesList: Array<FeatureFlag.AsObject>,
+    notifyDestinationsList: Array<FeatureFlag.AsObject>,
+    feedItemActionsList: Array<FeatureFlag.AsObject>,
+    feedSettersList: Array<FeatureFlag.AsObject>,
+    feedGettersList: Array<FeatureFlag.AsObject>,
+  }
+}
+
   export const toString: jspb.ExtensionFieldInfo<string>;
 
 export interface WellKnownAccountPlatformMap {

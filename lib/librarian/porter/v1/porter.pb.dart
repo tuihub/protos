@@ -55,7 +55,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
     $4.PorterBinarySummary? binarySummary,
     $core.String? globalName,
     $core.String? region,
-    PorterFeatureSummary? featureSummary,
+    $5.FeatureSummary? featureSummary,
     $core.String? contextJsonSchema,
   }) {
     final $result = create();
@@ -84,7 +84,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
     ..aOM<$4.PorterBinarySummary>(1, _omitFieldNames ? '' : 'binarySummary', subBuilder: $4.PorterBinarySummary.create)
     ..aOS(2, _omitFieldNames ? '' : 'globalName')
     ..aOS(3, _omitFieldNames ? '' : 'region')
-    ..aOM<PorterFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: PorterFeatureSummary.create)
+    ..aOM<$5.FeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: $5.FeatureSummary.create)
     ..aOS(5, _omitFieldNames ? '' : 'contextJsonSchema')
     ..hasRequiredFields = false
   ;
@@ -146,15 +146,15 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
 
   /// Supported features.
   @$pb.TagNumber(4)
-  PorterFeatureSummary get featureSummary => $_getN(3);
+  $5.FeatureSummary get featureSummary => $_getN(3);
   @$pb.TagNumber(4)
-  set featureSummary(PorterFeatureSummary v) { setField(4, v); }
+  set featureSummary($5.FeatureSummary v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFeatureSummary() => $_has(3);
   @$pb.TagNumber(4)
   void clearFeatureSummary() => clearField(4);
   @$pb.TagNumber(4)
-  PorterFeatureSummary ensureFeatureSummary() => $_ensure(3);
+  $5.FeatureSummary ensureFeatureSummary() => $_ensure(3);
 
   /// JSON schema for `FeatureRequest.context_json`.
   /// Leave empty if not needed.
@@ -168,101 +168,6 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   $core.bool hasContextJsonSchema() => $_has(4);
   @$pb.TagNumber(5)
   void clearContextJsonSchema() => clearField(5);
-}
-
-class PorterFeatureSummary extends $pb.GeneratedMessage {
-  factory PorterFeatureSummary({
-    $core.Iterable<$5.FeatureFlag>? accountPlatforms,
-    $core.Iterable<$5.FeatureFlag>? appInfoSources,
-    $core.Iterable<$5.FeatureFlag>? feedSources,
-    $core.Iterable<$5.FeatureFlag>? notifyDestinations,
-    $core.Iterable<$5.FeatureFlag>? feedItemActions,
-    $core.Iterable<$5.FeatureFlag>? feedSetters,
-    $core.Iterable<$5.FeatureFlag>? feedGetters,
-  }) {
-    final $result = create();
-    if (accountPlatforms != null) {
-      $result.accountPlatforms.addAll(accountPlatforms);
-    }
-    if (appInfoSources != null) {
-      $result.appInfoSources.addAll(appInfoSources);
-    }
-    if (feedSources != null) {
-      $result.feedSources.addAll(feedSources);
-    }
-    if (notifyDestinations != null) {
-      $result.notifyDestinations.addAll(notifyDestinations);
-    }
-    if (feedItemActions != null) {
-      $result.feedItemActions.addAll(feedItemActions);
-    }
-    if (feedSetters != null) {
-      $result.feedSetters.addAll(feedSetters);
-    }
-    if (feedGetters != null) {
-      $result.feedGetters.addAll(feedGetters);
-    }
-    return $result;
-  }
-  PorterFeatureSummary._() : super();
-  factory PorterFeatureSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PorterFeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<$5.FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..pc<$5.FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..pc<$5.FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..pc<$5.FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..pc<$5.FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..pc<$5.FeatureFlag>(6, _omitFieldNames ? '' : 'feedSetters', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..pc<$5.FeatureFlag>(7, _omitFieldNames ? '' : 'feedGetters', $pb.PbFieldType.PM, subBuilder: $5.FeatureFlag.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  PorterFeatureSummary clone() => PorterFeatureSummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  PorterFeatureSummary copyWith(void Function(PorterFeatureSummary) updates) => super.copyWith((message) => updates(message as PorterFeatureSummary)) as PorterFeatureSummary;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static PorterFeatureSummary create() => PorterFeatureSummary._();
-  PorterFeatureSummary createEmptyInstance() => create();
-  static $pb.PbList<PorterFeatureSummary> createRepeated() => $pb.PbList<PorterFeatureSummary>();
-  @$core.pragma('dart2js:noInline')
-  static PorterFeatureSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterFeatureSummary>(create);
-  static PorterFeatureSummary? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$5.FeatureFlag> get accountPlatforms => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $core.List<$5.FeatureFlag> get appInfoSources => $_getList(1);
-
-  /// WellKnownFeedSource
-  @$pb.TagNumber(3)
-  $core.List<$5.FeatureFlag> get feedSources => $_getList(2);
-
-  /// WellKnownNotifyDestination
-  @$pb.TagNumber(4)
-  $core.List<$5.FeatureFlag> get notifyDestinations => $_getList(3);
-
-  /// WellKnownFeedItemAction
-  @$pb.TagNumber(5)
-  $core.List<$5.FeatureFlag> get feedItemActions => $_getList(4);
-
-  @$pb.TagNumber(6)
-  $core.List<$5.FeatureFlag> get feedSetters => $_getList(5);
-
-  @$pb.TagNumber(7)
-  $core.List<$5.FeatureFlag> get feedGetters => $_getList(6);
 }
 
 class EnablePorterRequest extends $pb.GeneratedMessage {

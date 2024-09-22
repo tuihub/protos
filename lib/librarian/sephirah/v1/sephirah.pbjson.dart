@@ -52,7 +52,7 @@ const GetServerInformationResponse$json = {
     {'1': 'server_binary_summary', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerBinarySummary', '10': 'serverBinarySummary'},
     {'1': 'protocol_summary', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerProtocolSummary', '10': 'protocolSummary'},
     {'1': 'current_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'currentTime'},
-    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerFeatureSummary', '9': 0, '10': 'featureSummary', '17': true},
+    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '9': 0, '10': 'featureSummary', '17': true},
     {'1': 'server_instance_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.ServerInstanceSummary', '10': 'serverInstanceSummary'},
     {'1': 'status_report', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'statusReport', '17': true},
   ],
@@ -69,11 +69,11 @@ final $typed_data.Uint8List getServerInformationResponseDescriptor = $convert.ba
     'ZXJCaW5hcnlTdW1tYXJ5ElcKEHByb3RvY29sX3N1bW1hcnkYAiABKAsyLC5saWJyYXJpYW4uc2'
     'VwaGlyYWgudjEuU2VydmVyUHJvdG9jb2xTdW1tYXJ5Ug9wcm90b2NvbFN1bW1hcnkSPQoMY3Vy'
     'cmVudF90aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY3VycmVudFRpbW'
-    'USWQoPZmVhdHVyZV9zdW1tYXJ5GAQgASgLMisubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNlcnZl'
-    'ckZlYXR1cmVTdW1tYXJ5SABSDmZlYXR1cmVTdW1tYXJ5iAEBEmQKF3NlcnZlcl9pbnN0YW5jZV'
-    '9zdW1tYXJ5GAUgASgLMiwubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNlcnZlckluc3RhbmNlU3Vt'
-    'bWFyeVIVc2VydmVySW5zdGFuY2VTdW1tYXJ5EigKDXN0YXR1c19yZXBvcnQYBiABKAlIAVIMc3'
-    'RhdHVzUmVwb3J0iAEBQhIKEF9mZWF0dXJlX3N1bW1hcnlCEAoOX3N0YXR1c19yZXBvcnQ=');
+    'USSgoPZmVhdHVyZV9zdW1tYXJ5GAQgASgLMhwubGlicmFyaWFuLnYxLkZlYXR1cmVTdW1tYXJ5'
+    'SABSDmZlYXR1cmVTdW1tYXJ5iAEBEmQKF3NlcnZlcl9pbnN0YW5jZV9zdW1tYXJ5GAUgASgLMi'
+    'wubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNlcnZlckluc3RhbmNlU3VtbWFyeVIVc2VydmVySW5z'
+    'dGFuY2VTdW1tYXJ5EigKDXN0YXR1c19yZXBvcnQYBiABKAlIAVIMc3RhdHVzUmVwb3J0iAEBQh'
+    'IKEF9mZWF0dXJlX3N1bW1hcnlCEAoOX3N0YXR1c19yZXBvcnQ=');
 
 @$core.Deprecated('Use serverBinarySummaryDescriptor instead')
 const ServerBinarySummary$json = {
@@ -102,28 +102,6 @@ const ServerProtocolSummary$json = {
 /// Descriptor for `ServerProtocolSummary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List serverProtocolSummaryDescriptor = $convert.base64Decode(
     'ChVTZXJ2ZXJQcm90b2NvbFN1bW1hcnkSGAoHdmVyc2lvbhgBIAEoCVIHdmVyc2lvbg==');
-
-@$core.Deprecated('Use serverFeatureSummaryDescriptor instead')
-const ServerFeatureSummary$json = {
-  '1': 'ServerFeatureSummary',
-  '2': [
-    {'1': 'account_platforms', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'accountPlatforms'},
-    {'1': 'app_info_sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'appInfoSources'},
-    {'1': 'feed_sources', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSources'},
-    {'1': 'notify_destinations', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifyDestinations'},
-    {'1': 'feed_item_actions', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedItemActions'},
-  ],
-};
-
-/// Descriptor for `ServerFeatureSummary`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serverFeatureSummaryDescriptor = $convert.base64Decode(
-    'ChRTZXJ2ZXJGZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZLmxpYn'
-    'Jhcmlhbi52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJDChBhcHBfaW5mb19zb3Vy'
-    'Y2VzGAIgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8Cg'
-    'xmZWVkX3NvdXJjZXMYAyADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3Vy'
-    'Y2VzEkoKE25vdGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZU'
-    'ZsYWdSEm5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9ucxgFIAMoCzIZLmxp'
-    'YnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1BY3Rpb25z');
 
 @$core.Deprecated('Use serverInstanceSummaryDescriptor instead')
 const ServerInstanceSummary$json = {

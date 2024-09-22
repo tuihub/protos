@@ -17919,7 +17919,7 @@ impl serde::Serialize for Porter {
         if !self.region.is_empty() {
             len += 1;
         }
-        if !self.feature_summary.is_empty() {
+        if self.feature_summary.is_some() {
             len += 1;
         }
         if self.status != 0 {
@@ -17947,8 +17947,8 @@ impl serde::Serialize for Porter {
         if !self.region.is_empty() {
             struct_ser.serialize_field("region", &self.region)?;
         }
-        if !self.feature_summary.is_empty() {
-            struct_ser.serialize_field("featureSummary", &self.feature_summary)?;
+        if let Some(v) = self.feature_summary.as_ref() {
+            struct_ser.serialize_field("featureSummary", v)?;
         }
         if self.status != 0 {
             let v = UserStatus::try_from(self.status)
@@ -18092,7 +18092,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                             if feature_summary__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("featureSummary"));
                             }
-                            feature_summary__ = Some(map_.next_value()?);
+                            feature_summary__ = map_.next_value()?;
                         }
                         GeneratedField::Status => {
                             if status__.is_some() {
@@ -18125,7 +18125,7 @@ impl<'de> serde::Deserialize<'de> for Porter {
                     binary_summary: binary_summary__,
                     global_name: global_name__.unwrap_or_default(),
                     region: region__.unwrap_or_default(),
-                    feature_summary: feature_summary__.unwrap_or_default(),
+                    feature_summary: feature_summary__,
                     status: status__.unwrap_or_default(),
                     connection_status: connection_status__.unwrap_or_default(),
                     context_json_schema: context_json_schema__,
@@ -18628,6 +18628,9 @@ impl serde::Serialize for PorterGroup {
         if self.context_json_schema.is_some() {
             len += 1;
         }
+        if self.feature_summary.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.PorterGroup", len)?;
         if let Some(v) = self.binary_summary.as_ref() {
             struct_ser.serialize_field("binarySummary", v)?;
@@ -18640,6 +18643,9 @@ impl serde::Serialize for PorterGroup {
         }
         if let Some(v) = self.context_json_schema.as_ref() {
             struct_ser.serialize_field("contextJsonSchema", v)?;
+        }
+        if let Some(v) = self.feature_summary.as_ref() {
+            struct_ser.serialize_field("featureSummary", v)?;
         }
         struct_ser.end()
     }
@@ -18658,6 +18664,8 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
             "regions",
             "context_json_schema",
             "contextJsonSchema",
+            "feature_summary",
+            "featureSummary",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -18666,6 +18674,7 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
             GlobalName,
             Regions,
             ContextJsonSchema,
+            FeatureSummary,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -18691,6 +18700,7 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                             "globalName" | "global_name" => Ok(GeneratedField::GlobalName),
                             "regions" => Ok(GeneratedField::Regions),
                             "contextJsonSchema" | "context_json_schema" => Ok(GeneratedField::ContextJsonSchema),
+                            "featureSummary" | "feature_summary" => Ok(GeneratedField::FeatureSummary),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -18714,6 +18724,7 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                 let mut global_name__ = None;
                 let mut regions__ = None;
                 let mut context_json_schema__ = None;
+                let mut feature_summary__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::BinarySummary => {
@@ -18740,6 +18751,12 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                             }
                             context_json_schema__ = map_.next_value()?;
                         }
+                        GeneratedField::FeatureSummary => {
+                            if feature_summary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("featureSummary"));
+                            }
+                            feature_summary__ = map_.next_value()?;
+                        }
                     }
                 }
                 Ok(PorterGroup {
@@ -18747,6 +18764,7 @@ impl<'de> serde::Deserialize<'de> for PorterGroup {
                     global_name: global_name__.unwrap_or_default(),
                     regions: regions__.unwrap_or_default(),
                     context_json_schema: context_json_schema__,
+                    feature_summary: feature_summary__,
                 })
             }
         }
@@ -22288,170 +22306,6 @@ impl<'de> serde::Deserialize<'de> for ServerEvent {
             }
         }
         deserializer.deserialize_any(GeneratedVisitor)
-    }
-}
-impl serde::Serialize for ServerFeatureSummary {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.account_platforms.is_empty() {
-            len += 1;
-        }
-        if !self.app_info_sources.is_empty() {
-            len += 1;
-        }
-        if !self.feed_sources.is_empty() {
-            len += 1;
-        }
-        if !self.notify_destinations.is_empty() {
-            len += 1;
-        }
-        if !self.feed_item_actions.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ServerFeatureSummary", len)?;
-        if !self.account_platforms.is_empty() {
-            struct_ser.serialize_field("accountPlatforms", &self.account_platforms)?;
-        }
-        if !self.app_info_sources.is_empty() {
-            struct_ser.serialize_field("appInfoSources", &self.app_info_sources)?;
-        }
-        if !self.feed_sources.is_empty() {
-            struct_ser.serialize_field("feedSources", &self.feed_sources)?;
-        }
-        if !self.notify_destinations.is_empty() {
-            struct_ser.serialize_field("notifyDestinations", &self.notify_destinations)?;
-        }
-        if !self.feed_item_actions.is_empty() {
-            struct_ser.serialize_field("feedItemActions", &self.feed_item_actions)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for ServerFeatureSummary {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "account_platforms",
-            "accountPlatforms",
-            "app_info_sources",
-            "appInfoSources",
-            "feed_sources",
-            "feedSources",
-            "notify_destinations",
-            "notifyDestinations",
-            "feed_item_actions",
-            "feedItemActions",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            AccountPlatforms,
-            AppInfoSources,
-            FeedSources,
-            NotifyDestinations,
-            FeedItemActions,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "accountPlatforms" | "account_platforms" => Ok(GeneratedField::AccountPlatforms),
-                            "appInfoSources" | "app_info_sources" => Ok(GeneratedField::AppInfoSources),
-                            "feedSources" | "feed_sources" => Ok(GeneratedField::FeedSources),
-                            "notifyDestinations" | "notify_destinations" => Ok(GeneratedField::NotifyDestinations),
-                            "feedItemActions" | "feed_item_actions" => Ok(GeneratedField::FeedItemActions),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = ServerFeatureSummary;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.ServerFeatureSummary")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ServerFeatureSummary, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut account_platforms__ = None;
-                let mut app_info_sources__ = None;
-                let mut feed_sources__ = None;
-                let mut notify_destinations__ = None;
-                let mut feed_item_actions__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::AccountPlatforms => {
-                            if account_platforms__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("accountPlatforms"));
-                            }
-                            account_platforms__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::AppInfoSources => {
-                            if app_info_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appInfoSources"));
-                            }
-                            app_info_sources__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::FeedSources => {
-                            if feed_sources__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("feedSources"));
-                            }
-                            feed_sources__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::NotifyDestinations => {
-                            if notify_destinations__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("notifyDestinations"));
-                            }
-                            notify_destinations__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::FeedItemActions => {
-                            if feed_item_actions__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("feedItemActions"));
-                            }
-                            feed_item_actions__ = Some(map_.next_value()?);
-                        }
-                    }
-                }
-                Ok(ServerFeatureSummary {
-                    account_platforms: account_platforms__.unwrap_or_default(),
-                    app_info_sources: app_info_sources__.unwrap_or_default(),
-                    feed_sources: feed_sources__.unwrap_or_default(),
-                    notify_destinations: notify_destinations__.unwrap_or_default(),
-                    feed_item_actions: feed_item_actions__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.ServerFeatureSummary", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ServerInstanceSummary {

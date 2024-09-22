@@ -86,6 +86,8 @@ pub mod librarian_sephirah_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        /** Allow anonymous call, use accessToken to get complete information
+*/
         pub async fn get_server_information(
             &mut self,
             request: impl tonic::IntoRequest<super::GetServerInformationRequest>,
@@ -3513,8 +3515,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn create_feed_item_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateFeedItemCollectionRequest>,
@@ -3545,8 +3545,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn update_feed_item_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateFeedItemCollectionRequest>,
@@ -3577,8 +3575,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn list_feed_item_collections(
             &mut self,
             request: impl tonic::IntoRequest<super::ListFeedItemCollectionsRequest>,
@@ -3609,8 +3605,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn add_feed_item_to_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::AddFeedItemToCollectionRequest>,
@@ -3641,8 +3635,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn remove_feed_item_from_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::RemoveFeedItemFromCollectionRequest>,
@@ -3862,6 +3854,8 @@ pub mod librarian_sephirah_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahService: Send + Sync + 'static {
+        /** Allow anonymous call, use accessToken to get complete information
+*/
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -4880,8 +4874,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ReadFeedItemResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn create_feed_item_collection(
             &self,
             request: tonic::Request<super::CreateFeedItemCollectionRequest>,
@@ -4889,8 +4881,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateFeedItemCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn update_feed_item_collection(
             &self,
             request: tonic::Request<super::UpdateFeedItemCollectionRequest>,
@@ -4898,8 +4888,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateFeedItemCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn list_feed_item_collections(
             &self,
             request: tonic::Request<super::ListFeedItemCollectionsRequest>,
@@ -4907,8 +4895,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedItemCollectionsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn add_feed_item_to_collection(
             &self,
             request: tonic::Request<super::AddFeedItemToCollectionRequest>,
@@ -4916,8 +4902,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::AddFeedItemToCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn remove_feed_item_from_collection(
             &self,
             request: tonic::Request<super::RemoveFeedItemFromCollectionRequest>,

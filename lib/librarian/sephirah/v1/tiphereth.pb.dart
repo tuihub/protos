@@ -15,6 +15,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
 import '../../v1/common.pb.dart' as $8;
+import '../../v1/wellknown.pb.dart' as $12;
 import 'tiphereth.pbenum.dart';
 
 export 'tiphereth.pbenum.dart';
@@ -2736,7 +2737,7 @@ class Porter extends $pb.GeneratedMessage {
     $8.PorterBinarySummary? binarySummary,
     $core.String? globalName,
     $core.String? region,
-    $core.String? featureSummary,
+    $12.FeatureSummary? featureSummary,
     UserStatus? status,
     PorterConnectionStatus? connectionStatus,
     $core.String? contextJsonSchema,
@@ -2781,7 +2782,7 @@ class Porter extends $pb.GeneratedMessage {
     ..aOM<$8.PorterBinarySummary>(2, _omitFieldNames ? '' : 'binarySummary', subBuilder: $8.PorterBinarySummary.create)
     ..aOS(3, _omitFieldNames ? '' : 'globalName')
     ..aOS(4, _omitFieldNames ? '' : 'region')
-    ..aOS(5, _omitFieldNames ? '' : 'featureSummary')
+    ..aOM<$12.FeatureSummary>(5, _omitFieldNames ? '' : 'featureSummary', subBuilder: $12.FeatureSummary.create)
     ..e<UserStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: UserStatus.USER_STATUS_UNSPECIFIED, valueOf: UserStatus.valueOf, enumValues: UserStatus.values)
     ..e<PorterConnectionStatus>(7, _omitFieldNames ? '' : 'connectionStatus', $pb.PbFieldType.OE, defaultOrMaker: PorterConnectionStatus.PORTER_CONNECTION_STATUS_UNSPECIFIED, valueOf: PorterConnectionStatus.valueOf, enumValues: PorterConnectionStatus.values)
     ..aOS(8, _omitFieldNames ? '' : 'contextJsonSchema')
@@ -2851,13 +2852,15 @@ class Porter extends $pb.GeneratedMessage {
   void clearRegion() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get featureSummary => $_getSZ(4);
+  $12.FeatureSummary get featureSummary => $_getN(4);
   @$pb.TagNumber(5)
-  set featureSummary($core.String v) { $_setString(4, v); }
+  set featureSummary($12.FeatureSummary v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasFeatureSummary() => $_has(4);
   @$pb.TagNumber(5)
   void clearFeatureSummary() => clearField(5);
+  @$pb.TagNumber(5)
+  $12.FeatureSummary ensureFeatureSummary() => $_ensure(4);
 
   @$pb.TagNumber(6)
   UserStatus get status => $_getN(5);
@@ -3071,6 +3074,7 @@ class PorterGroup extends $pb.GeneratedMessage {
     $core.String? globalName,
     $core.Iterable<$core.String>? regions,
     $core.String? contextJsonSchema,
+    $12.FeatureSummary? featureSummary,
   }) {
     final $result = create();
     if (binarySummary != null) {
@@ -3085,6 +3089,9 @@ class PorterGroup extends $pb.GeneratedMessage {
     if (contextJsonSchema != null) {
       $result.contextJsonSchema = contextJsonSchema;
     }
+    if (featureSummary != null) {
+      $result.featureSummary = featureSummary;
+    }
     return $result;
   }
   PorterGroup._() : super();
@@ -3096,6 +3103,7 @@ class PorterGroup extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'globalName')
     ..pPS(3, _omitFieldNames ? '' : 'regions')
     ..aOS(4, _omitFieldNames ? '' : 'contextJsonSchema')
+    ..aOM<$12.FeatureSummary>(5, _omitFieldNames ? '' : 'featureSummary', subBuilder: $12.FeatureSummary.create)
     ..hasRequiredFields = false
   ;
 
@@ -3151,6 +3159,17 @@ class PorterGroup extends $pb.GeneratedMessage {
   $core.bool hasContextJsonSchema() => $_has(3);
   @$pb.TagNumber(4)
   void clearContextJsonSchema() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $12.FeatureSummary get featureSummary => $_getN(4);
+  @$pb.TagNumber(5)
+  set featureSummary($12.FeatureSummary v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFeatureSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFeatureSummary() => clearField(5);
+  @$pb.TagNumber(5)
+  $12.FeatureSummary ensureFeatureSummary() => $_ensure(4);
 }
 
 

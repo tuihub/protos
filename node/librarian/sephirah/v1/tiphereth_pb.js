@@ -25,6 +25,8 @@ var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/time
 goog.object.extend(proto, google_protobuf_timestamp_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
+goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.AcquireUserTokenRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AcquireUserTokenResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreatePorterContextRequest', null, global);
@@ -9164,7 +9166,7 @@ id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInsta
 binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
 globalName: jspb.Message.getFieldWithDefault(msg, 3, ""),
 region: jspb.Message.getFieldWithDefault(msg, 4, ""),
-featureSummary: jspb.Message.getFieldWithDefault(msg, 5, ""),
+featureSummary: (f = msg.getFeatureSummary()) && librarian_v1_wellknown_pb.FeatureSummary.toObject(includeInstance, f),
 status: jspb.Message.getFieldWithDefault(msg, 6, 0),
 connectionStatus: jspb.Message.getFieldWithDefault(msg, 7, 0),
 contextJsonSchema: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
@@ -9224,7 +9226,8 @@ proto.librarian.sephirah.v1.Porter.deserializeBinaryFromReader = function(msg, r
       msg.setRegion(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new librarian_v1_wellknown_pb.FeatureSummary;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureSummary.deserializeBinaryFromReader);
       msg.setFeatureSummary(value);
       break;
     case 6:
@@ -9303,10 +9306,11 @@ proto.librarian.sephirah.v1.Porter.serializeBinaryToWriter = function(message, w
     );
   }
   f = message.getFeatureSummary();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureSummary.serializeBinaryToWriter
     );
   }
   f = message.getStatus();
@@ -9451,20 +9455,39 @@ proto.librarian.sephirah.v1.Porter.prototype.setRegion = function(value) {
 
 
 /**
- * optional string feature_summary = 5;
- * @return {string}
+ * optional librarian.v1.FeatureSummary feature_summary = 5;
+ * @return {?proto.librarian.v1.FeatureSummary}
  */
 proto.librarian.sephirah.v1.Porter.prototype.getFeatureSummary = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type{?proto.librarian.v1.FeatureSummary} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureSummary, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.FeatureSummary|undefined} value
+ * @return {!proto.librarian.sephirah.v1.Porter} returns this
+*/
+proto.librarian.sephirah.v1.Porter.prototype.setFeatureSummary = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.Porter} returns this
  */
-proto.librarian.sephirah.v1.Porter.prototype.setFeatureSummary = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.librarian.sephirah.v1.Porter.prototype.clearFeatureSummary = function() {
+  return this.setFeatureSummary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.Porter.prototype.hasFeatureSummary = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -9991,7 +10014,8 @@ proto.librarian.sephirah.v1.PorterGroup.toObject = function(includeInstance, msg
 binarySummary: (f = msg.getBinarySummary()) && librarian_v1_common_pb.PorterBinarySummary.toObject(includeInstance, f),
 globalName: jspb.Message.getFieldWithDefault(msg, 2, ""),
 regionsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-contextJsonSchema: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+contextJsonSchema: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+featureSummary: (f = msg.getFeatureSummary()) && librarian_v1_wellknown_pb.FeatureSummary.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10044,6 +10068,11 @@ proto.librarian.sephirah.v1.PorterGroup.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setContextJsonSchema(value);
+      break;
+    case 5:
+      var value = new librarian_v1_wellknown_pb.FeatureSummary;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureSummary.deserializeBinaryFromReader);
+      msg.setFeatureSummary(value);
       break;
     default:
       reader.skipField();
@@ -10101,6 +10130,14 @@ proto.librarian.sephirah.v1.PorterGroup.serializeBinaryToWriter = function(messa
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getFeatureSummary();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      librarian_v1_wellknown_pb.FeatureSummary.serializeBinaryToWriter
     );
   }
 };
@@ -10231,6 +10268,43 @@ proto.librarian.sephirah.v1.PorterGroup.prototype.clearContextJsonSchema = funct
  */
 proto.librarian.sephirah.v1.PorterGroup.prototype.hasContextJsonSchema = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional librarian.v1.FeatureSummary feature_summary = 5;
+ * @return {?proto.librarian.v1.FeatureSummary}
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.getFeatureSummary = function() {
+  return /** @type{?proto.librarian.v1.FeatureSummary} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureSummary, 5));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.FeatureSummary|undefined} value
+ * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
+*/
+proto.librarian.sephirah.v1.PorterGroup.prototype.setFeatureSummary = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.PorterGroup} returns this
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.clearFeatureSummary = function() {
+  return this.setFeatureSummary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.PorterGroup.prototype.hasFeatureSummary = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

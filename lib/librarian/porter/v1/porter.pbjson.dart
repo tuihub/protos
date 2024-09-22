@@ -29,7 +29,7 @@ const GetPorterInformationResponse$json = {
     {'1': 'binary_summary', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
     {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'region', '3': 3, '4': 1, '5': 9, '10': 'region'},
-    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.porter.v1.PorterFeatureSummary', '10': 'featureSummary'},
+    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '10': 'featureSummary'},
     {'1': 'context_json_schema', '3': 5, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
   ],
   '8': [
@@ -41,36 +41,10 @@ const GetPorterInformationResponse$json = {
 final $typed_data.Uint8List getPorterInformationResponseDescriptor = $convert.base64Decode(
     'ChxHZXRQb3J0ZXJJbmZvcm1hdGlvblJlc3BvbnNlEkgKDmJpbmFyeV9zdW1tYXJ5GAEgASgLMi'
     'EubGlicmFyaWFuLnYxLlBvcnRlckJpbmFyeVN1bW1hcnlSDWJpbmFyeVN1bW1hcnkSHwoLZ2xv'
-    'YmFsX25hbWUYAiABKAlSCmdsb2JhbE5hbWUSFgoGcmVnaW9uGAMgASgJUgZyZWdpb24SUgoPZm'
-    'VhdHVyZV9zdW1tYXJ5GAQgASgLMikubGlicmFyaWFuLnBvcnRlci52MS5Qb3J0ZXJGZWF0dXJl'
-    'U3VtbWFyeVIOZmVhdHVyZVN1bW1hcnkSMwoTY29udGV4dF9qc29uX3NjaGVtYRgFIAEoCUgAUh'
-    'Fjb250ZXh0SnNvblNjaGVtYYgBAUIWChRfY29udGV4dF9qc29uX3NjaGVtYQ==');
-
-@$core.Deprecated('Use porterFeatureSummaryDescriptor instead')
-const PorterFeatureSummary$json = {
-  '1': 'PorterFeatureSummary',
-  '2': [
-    {'1': 'account_platforms', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'accountPlatforms'},
-    {'1': 'app_info_sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'appInfoSources'},
-    {'1': 'feed_sources', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSources'},
-    {'1': 'notify_destinations', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifyDestinations'},
-    {'1': 'feed_item_actions', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedItemActions'},
-    {'1': 'feed_setters', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSetters'},
-    {'1': 'feed_getters', '3': 7, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedGetters'},
-  ],
-};
-
-/// Descriptor for `PorterFeatureSummary`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List porterFeatureSummaryDescriptor = $convert.base64Decode(
-    'ChRQb3J0ZXJGZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZLmxpYn'
-    'Jhcmlhbi52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJDChBhcHBfaW5mb19zb3Vy'
-    'Y2VzGAIgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8Cg'
-    'xmZWVkX3NvdXJjZXMYAyADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3Vy'
-    'Y2VzEkoKE25vdGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZU'
-    'ZsYWdSEm5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9ucxgFIAMoCzIZLmxp'
-    'YnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1BY3Rpb25zEjwKDGZlZWRfc2V0dGVycx'
-    'gGIAMoCzIZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1ILZmVlZFNldHRlcnMSPAoMZmVlZF9n'
-    'ZXR0ZXJzGAcgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUgtmZWVkR2V0dGVycw==');
+    'YmFsX25hbWUYAiABKAlSCmdsb2JhbE5hbWUSFgoGcmVnaW9uGAMgASgJUgZyZWdpb24SRQoPZm'
+    'VhdHVyZV9zdW1tYXJ5GAQgASgLMhwubGlicmFyaWFuLnYxLkZlYXR1cmVTdW1tYXJ5Ug5mZWF0'
+    'dXJlU3VtbWFyeRIzChNjb250ZXh0X2pzb25fc2NoZW1hGAUgASgJSABSEWNvbnRleHRKc29uU2'
+    'NoZW1hiAEBQhYKFF9jb250ZXh0X2pzb25fc2NoZW1h');
 
 @$core.Deprecated('Use enablePorterRequestDescriptor instead')
 const EnablePorterRequest$json = {

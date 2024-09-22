@@ -33,34 +33,46 @@ namespace TuiHub.Protos.Librarian.V1 {
             "ZUNvbnRleHQipgEKDkZlYXR1cmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIW",
             "CgZyZWdpb24YAiABKAlSBnJlZ2lvbhIfCgtjb25maWdfanNvbhgDIAEoCVIK",
             "Y29uZmlnSnNvbhI8Cgpjb250ZXh0X2lkGAQgASgLMhgubGlicmFyaWFuLnYx",
-            "LkludGVybmFsSURIAFIJY29udGV4dElkiAEBQg0KC19jb250ZXh0X2lkKn0K",
-            "GFdlbGxLbm93bkFjY291bnRQbGF0Zm9ybRIwCidXRUxMX0tOT1dOX0FDQ09V",
-            "TlRfUExBVEZPUk1fVU5TUEVDSUZJRUQQABoDwj4AEi8KIVdFTExfS05PV05f",
-            "QUNDT1VOVF9QTEFURk9STV9TVEVBTRABGgjCPgVzdGVhbSrbAQoWV2VsbEtu",
-            "b3duQXBwSW5mb1NvdXJjZRIvCiZXRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJD",
-            "RV9VTlNQRUNJRklFRBAAGgPCPgASLgogV0VMTF9LTk9XTl9BUFBfSU5GT19T",
-            "T1VSQ0VfU1RFQU0QAhoIwj4Fc3RlYW0SLAofV0VMTF9LTk9XTl9BUFBfSU5G",
-            "T19TT1VSQ0VfVk5EQhADGgfCPgR2bmRiEjIKIldFTExfS05PV05fQVBQX0lO",
-            "Rk9fU09VUkNFX0JBTkdVTUkQBBoKwj4HYmFuZ3VtaSpqChNXZWxsS25vd25G",
-            "ZWVkU291cmNlEisKIldFTExfS05PV05fRkVFRF9TT1VSQ0VfVU5TUEVDSUZJ",
-            "RUQQABoDwj4AEiYKGldFTExfS05PV05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+",
-            "A3JzcyqJAQoaV2VsbEtub3duTm90aWZ5RGVzdGluYXRpb24SMgopV0VMTF9L",
-            "Tk9XTl9OT1RJRllfREVTVElOQVRJT05fVU5TUEVDSUZJRUQQABoDwj4AEjcK",
-            "JldFTExfS05PV05fTk9USUZZX0RFU1RJTkFUSU9OX1RFTEVHUkFNEAEaC8I+",
-            "CHRlbGVncmFtKt8BChdXZWxsS25vd25GZWVkSXRlbUFjdGlvbhIwCidXRUxM",
-            "X0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fVU5TUEVDSUZJRUQQABoDwj4AEkEK",
-            "KldFTExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9LRVlXT1JEX0ZJTFRFUhAB",
-            "GhHCPg5rZXl3b3JkX2ZpbHRlchJPCjFXRUxMX0tOT1dOX0ZFRURfSVRFTV9B",
-            "Q1RJT05fREVTQ1JJUFRJT05fR0VORVJBVE9SEAIaGMI+FWRlc2NyaXB0aW9u",
-            "X2dlbmVyYXRvcjo/Cgl0b19zdHJpbmcSIS5nb29nbGUucHJvdG9idWYuRW51",
-            "bVZhbHVlT3B0aW9ucxjoByABKAlSCHRvU3RyaW5nQktaLGdpdGh1Yi5jb20v",
-            "dHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3YxO3YxqgIaVHVpSHViLlBy",
-            "b3Rvcy5MaWJyYXJpYW4uVjFiBnByb3RvMw=="));
+            "LkludGVybmFsSURIAFIJY29udGV4dElkiAEBQg0KC19jb250ZXh0X2lkIuoD",
+            "Cg5GZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZ",
+            "LmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJD",
+            "ChBhcHBfaW5mb19zb3VyY2VzGAIgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1",
+            "cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8CgxmZWVkX3NvdXJjZXMYAyADKAsy",
+            "GS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3VyY2VzEkoKE25v",
+            "dGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVy",
+            "ZUZsYWdSEm5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9u",
+            "cxgFIAMoCzIZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1B",
+            "Y3Rpb25zEjwKDGZlZWRfc2V0dGVycxgGIAMoCzIZLmxpYnJhcmlhbi52MS5G",
+            "ZWF0dXJlRmxhZ1ILZmVlZFNldHRlcnMSPAoMZmVlZF9nZXR0ZXJzGAcgAygL",
+            "MhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUgtmZWVkR2V0dGVycyp9ChhX",
+            "ZWxsS25vd25BY2NvdW50UGxhdGZvcm0SMAonV0VMTF9LTk9XTl9BQ0NPVU5U",
+            "X1BMQVRGT1JNX1VOU1BFQ0lGSUVEEAAaA8I+ABIvCiFXRUxMX0tOT1dOX0FD",
+            "Q09VTlRfUExBVEZPUk1fU1RFQU0QARoIwj4Fc3RlYW0q2wEKFldlbGxLbm93",
+            "bkFwcEluZm9Tb3VyY2USLwomV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0Vf",
+            "VU5TUEVDSUZJRUQQABoDwj4AEi4KIFdFTExfS05PV05fQVBQX0lORk9fU09V",
+            "UkNFX1NURUFNEAIaCMI+BXN0ZWFtEiwKH1dFTExfS05PV05fQVBQX0lORk9f",
+            "U09VUkNFX1ZOREIQAxoHwj4Edm5kYhIyCiJXRUxMX0tOT1dOX0FQUF9JTkZP",
+            "X1NPVVJDRV9CQU5HVU1JEAQaCsI+B2Jhbmd1bWkqagoTV2VsbEtub3duRmVl",
+            "ZFNvdXJjZRIrCiJXRUxMX0tOT1dOX0ZFRURfU09VUkNFX1VOU1BFQ0lGSUVE",
+            "EAAaA8I+ABImChpXRUxMX0tOT1dOX0ZFRURfU09VUkNFX1JTUxABGgbCPgNy",
+            "c3MqiQEKGldlbGxLbm93bk5vdGlmeURlc3RpbmF0aW9uEjIKKVdFTExfS05P",
+            "V05fTk9USUZZX0RFU1RJTkFUSU9OX1VOU1BFQ0lGSUVEEAAaA8I+ABI3CiZX",
+            "RUxMX0tOT1dOX05PVElGWV9ERVNUSU5BVElPTl9URUxFR1JBTRABGgvCPgh0",
+            "ZWxlZ3JhbSrfAQoXV2VsbEtub3duRmVlZEl0ZW1BY3Rpb24SMAonV0VMTF9L",
+            "Tk9XTl9GRUVEX0lURU1fQUNUSU9OX1VOU1BFQ0lGSUVEEAAaA8I+ABJBCipX",
+            "RUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fS0VZV09SRF9GSUxURVIQARoR",
+            "wj4Oa2V5d29yZF9maWx0ZXISTwoxV0VMTF9LTk9XTl9GRUVEX0lURU1fQUNU",
+            "SU9OX0RFU0NSSVBUSU9OX0dFTkVSQVRPUhACGhjCPhVkZXNjcmlwdGlvbl9n",
+            "ZW5lcmF0b3I6PwoJdG9fc3RyaW5nEiEuZ29vZ2xlLnByb3RvYnVmLkVudW1W",
+            "YWx1ZU9wdGlvbnMY6AcgASgJUgh0b1N0cmluZ0JLWixnaXRodWIuY29tL3R1",
+            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi92MTt2MaoCGlR1aUh1Yi5Qcm90",
+            "b3MuTGlicmFyaWFuLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedItemAction), }, new pb::Extension[] { WellknownExtensions.ToString_ }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Name", "Description", "ConfigJsonSchema", "RequireContext" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureRequest), global::TuiHub.Protos.Librarian.V1.FeatureRequest.Parser, new[]{ "Id", "Region", "ConfigJson", "ContextId" }, new[]{ "ContextId" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureRequest), global::TuiHub.Protos.Librarian.V1.FeatureRequest.Parser, new[]{ "Id", "Region", "ConfigJson", "ContextId" }, new[]{ "ContextId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureSummary), global::TuiHub.Protos.Librarian.V1.FeatureSummary.Parser, new[]{ "AccountPlatforms", "AppInfoSources", "FeedSources", "NotifyDestinations", "FeedItemActions", "FeedSetters", "FeedGetters" }, null, null, null, null)
           }));
     }
     #endregion
@@ -782,6 +794,355 @@ namespace TuiHub.Protos.Librarian.V1 {
               ContextId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
             input.ReadMessage(ContextId);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class FeatureSummary : pb::IMessage<FeatureSummary>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FeatureSummary> _parser = new pb::MessageParser<FeatureSummary>(() => new FeatureSummary());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FeatureSummary> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FeatureSummary() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FeatureSummary(FeatureSummary other) : this() {
+      accountPlatforms_ = other.accountPlatforms_.Clone();
+      appInfoSources_ = other.appInfoSources_.Clone();
+      feedSources_ = other.feedSources_.Clone();
+      notifyDestinations_ = other.notifyDestinations_.Clone();
+      feedItemActions_ = other.feedItemActions_.Clone();
+      feedSetters_ = other.feedSetters_.Clone();
+      feedGetters_ = other.feedGetters_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FeatureSummary Clone() {
+      return new FeatureSummary(this);
+    }
+
+    /// <summary>Field number for the "account_platforms" field.</summary>
+    public const int AccountPlatformsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_accountPlatforms_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> accountPlatforms_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    /// <summary>
+    /// WellKnownAccountPlatform
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> AccountPlatforms {
+      get { return accountPlatforms_; }
+    }
+
+    /// <summary>Field number for the "app_info_sources" field.</summary>
+    public const int AppInfoSourcesFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_appInfoSources_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> appInfoSources_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    /// <summary>
+    /// WellKnownAppInfoSource
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> AppInfoSources {
+      get { return appInfoSources_; }
+    }
+
+    /// <summary>Field number for the "feed_sources" field.</summary>
+    public const int FeedSourcesFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_feedSources_codec
+        = pb::FieldCodec.ForMessage(26, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> feedSources_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    /// <summary>
+    /// WellKnownFeedSource
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> FeedSources {
+      get { return feedSources_; }
+    }
+
+    /// <summary>Field number for the "notify_destinations" field.</summary>
+    public const int NotifyDestinationsFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_notifyDestinations_codec
+        = pb::FieldCodec.ForMessage(34, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> notifyDestinations_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    /// <summary>
+    /// WellKnownNotifyDestination
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> NotifyDestinations {
+      get { return notifyDestinations_; }
+    }
+
+    /// <summary>Field number for the "feed_item_actions" field.</summary>
+    public const int FeedItemActionsFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_feedItemActions_codec
+        = pb::FieldCodec.ForMessage(42, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> feedItemActions_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    /// <summary>
+    /// WellKnownFeedItemAction
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> FeedItemActions {
+      get { return feedItemActions_; }
+    }
+
+    /// <summary>Field number for the "feed_setters" field.</summary>
+    public const int FeedSettersFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_feedSetters_codec
+        = pb::FieldCodec.ForMessage(50, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> feedSetters_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> FeedSetters {
+      get { return feedSetters_; }
+    }
+
+    /// <summary>Field number for the "feed_getters" field.</summary>
+    public const int FeedGettersFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.FeatureFlag> _repeated_feedGetters_codec
+        = pb::FieldCodec.ForMessage(58, global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> feedGetters_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.FeatureFlag> FeedGetters {
+      get { return feedGetters_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FeatureSummary);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FeatureSummary other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!accountPlatforms_.Equals(other.accountPlatforms_)) return false;
+      if(!appInfoSources_.Equals(other.appInfoSources_)) return false;
+      if(!feedSources_.Equals(other.feedSources_)) return false;
+      if(!notifyDestinations_.Equals(other.notifyDestinations_)) return false;
+      if(!feedItemActions_.Equals(other.feedItemActions_)) return false;
+      if(!feedSetters_.Equals(other.feedSetters_)) return false;
+      if(!feedGetters_.Equals(other.feedGetters_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= accountPlatforms_.GetHashCode();
+      hash ^= appInfoSources_.GetHashCode();
+      hash ^= feedSources_.GetHashCode();
+      hash ^= notifyDestinations_.GetHashCode();
+      hash ^= feedItemActions_.GetHashCode();
+      hash ^= feedSetters_.GetHashCode();
+      hash ^= feedGetters_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      accountPlatforms_.WriteTo(output, _repeated_accountPlatforms_codec);
+      appInfoSources_.WriteTo(output, _repeated_appInfoSources_codec);
+      feedSources_.WriteTo(output, _repeated_feedSources_codec);
+      notifyDestinations_.WriteTo(output, _repeated_notifyDestinations_codec);
+      feedItemActions_.WriteTo(output, _repeated_feedItemActions_codec);
+      feedSetters_.WriteTo(output, _repeated_feedSetters_codec);
+      feedGetters_.WriteTo(output, _repeated_feedGetters_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      accountPlatforms_.WriteTo(ref output, _repeated_accountPlatforms_codec);
+      appInfoSources_.WriteTo(ref output, _repeated_appInfoSources_codec);
+      feedSources_.WriteTo(ref output, _repeated_feedSources_codec);
+      notifyDestinations_.WriteTo(ref output, _repeated_notifyDestinations_codec);
+      feedItemActions_.WriteTo(ref output, _repeated_feedItemActions_codec);
+      feedSetters_.WriteTo(ref output, _repeated_feedSetters_codec);
+      feedGetters_.WriteTo(ref output, _repeated_feedGetters_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += accountPlatforms_.CalculateSize(_repeated_accountPlatforms_codec);
+      size += appInfoSources_.CalculateSize(_repeated_appInfoSources_codec);
+      size += feedSources_.CalculateSize(_repeated_feedSources_codec);
+      size += notifyDestinations_.CalculateSize(_repeated_notifyDestinations_codec);
+      size += feedItemActions_.CalculateSize(_repeated_feedItemActions_codec);
+      size += feedSetters_.CalculateSize(_repeated_feedSetters_codec);
+      size += feedGetters_.CalculateSize(_repeated_feedGetters_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FeatureSummary other) {
+      if (other == null) {
+        return;
+      }
+      accountPlatforms_.Add(other.accountPlatforms_);
+      appInfoSources_.Add(other.appInfoSources_);
+      feedSources_.Add(other.feedSources_);
+      notifyDestinations_.Add(other.notifyDestinations_);
+      feedItemActions_.Add(other.feedItemActions_);
+      feedSetters_.Add(other.feedSetters_);
+      feedGetters_.Add(other.feedGetters_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            accountPlatforms_.AddEntriesFrom(input, _repeated_accountPlatforms_codec);
+            break;
+          }
+          case 18: {
+            appInfoSources_.AddEntriesFrom(input, _repeated_appInfoSources_codec);
+            break;
+          }
+          case 26: {
+            feedSources_.AddEntriesFrom(input, _repeated_feedSources_codec);
+            break;
+          }
+          case 34: {
+            notifyDestinations_.AddEntriesFrom(input, _repeated_notifyDestinations_codec);
+            break;
+          }
+          case 42: {
+            feedItemActions_.AddEntriesFrom(input, _repeated_feedItemActions_codec);
+            break;
+          }
+          case 50: {
+            feedSetters_.AddEntriesFrom(input, _repeated_feedSetters_codec);
+            break;
+          }
+          case 58: {
+            feedGetters_.AddEntriesFrom(input, _repeated_feedGetters_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            accountPlatforms_.AddEntriesFrom(ref input, _repeated_accountPlatforms_codec);
+            break;
+          }
+          case 18: {
+            appInfoSources_.AddEntriesFrom(ref input, _repeated_appInfoSources_codec);
+            break;
+          }
+          case 26: {
+            feedSources_.AddEntriesFrom(ref input, _repeated_feedSources_codec);
+            break;
+          }
+          case 34: {
+            notifyDestinations_.AddEntriesFrom(ref input, _repeated_notifyDestinations_codec);
+            break;
+          }
+          case 42: {
+            feedItemActions_.AddEntriesFrom(ref input, _repeated_feedItemActions_codec);
+            break;
+          }
+          case 50: {
+            feedSetters_.AddEntriesFrom(ref input, _repeated_feedSetters_codec);
+            break;
+          }
+          case 58: {
+            feedGetters_.AddEntriesFrom(ref input, _repeated_feedGetters_codec);
             break;
           }
         }

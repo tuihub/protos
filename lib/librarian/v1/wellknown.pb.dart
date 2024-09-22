@@ -230,6 +230,103 @@ class FeatureRequest extends $pb.GeneratedMessage {
   $2.InternalID ensureContextId() => $_ensure(3);
 }
 
+class FeatureSummary extends $pb.GeneratedMessage {
+  factory FeatureSummary({
+    $core.Iterable<FeatureFlag>? accountPlatforms,
+    $core.Iterable<FeatureFlag>? appInfoSources,
+    $core.Iterable<FeatureFlag>? feedSources,
+    $core.Iterable<FeatureFlag>? notifyDestinations,
+    $core.Iterable<FeatureFlag>? feedItemActions,
+    $core.Iterable<FeatureFlag>? feedSetters,
+    $core.Iterable<FeatureFlag>? feedGetters,
+  }) {
+    final $result = create();
+    if (accountPlatforms != null) {
+      $result.accountPlatforms.addAll(accountPlatforms);
+    }
+    if (appInfoSources != null) {
+      $result.appInfoSources.addAll(appInfoSources);
+    }
+    if (feedSources != null) {
+      $result.feedSources.addAll(feedSources);
+    }
+    if (notifyDestinations != null) {
+      $result.notifyDestinations.addAll(notifyDestinations);
+    }
+    if (feedItemActions != null) {
+      $result.feedItemActions.addAll(feedItemActions);
+    }
+    if (feedSetters != null) {
+      $result.feedSetters.addAll(feedSetters);
+    }
+    if (feedGetters != null) {
+      $result.feedGetters.addAll(feedGetters);
+    }
+    return $result;
+  }
+  FeatureSummary._() : super();
+  factory FeatureSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..pc<FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(6, _omitFieldNames ? '' : 'feedSetters', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(7, _omitFieldNames ? '' : 'feedGetters', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FeatureSummary clone() => FeatureSummary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FeatureSummary copyWith(void Function(FeatureSummary) updates) => super.copyWith((message) => updates(message as FeatureSummary)) as FeatureSummary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FeatureSummary create() => FeatureSummary._();
+  FeatureSummary createEmptyInstance() => create();
+  static $pb.PbList<FeatureSummary> createRepeated() => $pb.PbList<FeatureSummary>();
+  @$core.pragma('dart2js:noInline')
+  static FeatureSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeatureSummary>(create);
+  static FeatureSummary? _defaultInstance;
+
+  /// WellKnownAccountPlatform
+  @$pb.TagNumber(1)
+  $core.List<FeatureFlag> get accountPlatforms => $_getList(0);
+
+  /// WellKnownAppInfoSource
+  @$pb.TagNumber(2)
+  $core.List<FeatureFlag> get appInfoSources => $_getList(1);
+
+  /// WellKnownFeedSource
+  @$pb.TagNumber(3)
+  $core.List<FeatureFlag> get feedSources => $_getList(2);
+
+  /// WellKnownNotifyDestination
+  @$pb.TagNumber(4)
+  $core.List<FeatureFlag> get notifyDestinations => $_getList(3);
+
+  /// WellKnownFeedItemAction
+  @$pb.TagNumber(5)
+  $core.List<FeatureFlag> get feedItemActions => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<FeatureFlag> get feedSetters => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<FeatureFlag> get feedGetters => $_getList(6);
+}
+
 class Wellknown {
   static final toString_1000 = $pb.Extension<$core.String>(_omitMessageNames ? '' : 'google.protobuf.EnumValueOptions', _omitFieldNames ? '' : 'toString_1000', 1000, $pb.PbFieldType.OS);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {

@@ -74,7 +74,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ServerBinarySummary? serverBinarySummary,
     ServerProtocolSummary? protocolSummary,
     $9.Timestamp? currentTime,
-    ServerFeatureSummary? featureSummary,
+    $12.FeatureSummary? featureSummary,
     ServerInstanceSummary? serverInstanceSummary,
     $core.String? statusReport,
   }) {
@@ -107,7 +107,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
     ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
     ..aOM<$9.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $9.Timestamp.create)
-    ..aOM<ServerFeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: ServerFeatureSummary.create)
+    ..aOM<$12.FeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: $12.FeatureSummary.create)
     ..aOM<ServerInstanceSummary>(5, _omitFieldNames ? '' : 'serverInstanceSummary', subBuilder: ServerInstanceSummary.create)
     ..aOS(6, _omitFieldNames ? '' : 'statusReport')
     ..hasRequiredFields = false
@@ -173,15 +173,15 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
 
   /// Valid when accessToken is provided.
   @$pb.TagNumber(4)
-  ServerFeatureSummary get featureSummary => $_getN(3);
+  $12.FeatureSummary get featureSummary => $_getN(3);
   @$pb.TagNumber(4)
-  set featureSummary(ServerFeatureSummary v) { setField(4, v); }
+  set featureSummary($12.FeatureSummary v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFeatureSummary() => $_has(3);
   @$pb.TagNumber(4)
   void clearFeatureSummary() => clearField(4);
   @$pb.TagNumber(4)
-  ServerFeatureSummary ensureFeatureSummary() => $_ensure(3);
+  $12.FeatureSummary ensureFeatureSummary() => $_ensure(3);
 
   /// For showing to user, customizable by server owner.
   @$pb.TagNumber(5)
@@ -343,82 +343,6 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(0);
   @$pb.TagNumber(1)
   void clearVersion() => clearField(1);
-}
-
-class ServerFeatureSummary extends $pb.GeneratedMessage {
-  factory ServerFeatureSummary({
-    $core.Iterable<$12.FeatureFlag>? accountPlatforms,
-    $core.Iterable<$12.FeatureFlag>? appInfoSources,
-    $core.Iterable<$12.FeatureFlag>? feedSources,
-    $core.Iterable<$12.FeatureFlag>? notifyDestinations,
-    $core.Iterable<$12.FeatureFlag>? feedItemActions,
-  }) {
-    final $result = create();
-    if (accountPlatforms != null) {
-      $result.accountPlatforms.addAll(accountPlatforms);
-    }
-    if (appInfoSources != null) {
-      $result.appInfoSources.addAll(appInfoSources);
-    }
-    if (feedSources != null) {
-      $result.feedSources.addAll(feedSources);
-    }
-    if (notifyDestinations != null) {
-      $result.notifyDestinations.addAll(notifyDestinations);
-    }
-    if (feedItemActions != null) {
-      $result.feedItemActions.addAll(feedItemActions);
-    }
-    return $result;
-  }
-  ServerFeatureSummary._() : super();
-  factory ServerFeatureSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ServerFeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerFeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<$12.FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
-    ..pc<$12.FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
-    ..pc<$12.FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
-    ..pc<$12.FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
-    ..pc<$12.FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: $12.FeatureFlag.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ServerFeatureSummary clone() => ServerFeatureSummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ServerFeatureSummary copyWith(void Function(ServerFeatureSummary) updates) => super.copyWith((message) => updates(message as ServerFeatureSummary)) as ServerFeatureSummary;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ServerFeatureSummary create() => ServerFeatureSummary._();
-  ServerFeatureSummary createEmptyInstance() => create();
-  static $pb.PbList<ServerFeatureSummary> createRepeated() => $pb.PbList<ServerFeatureSummary>();
-  @$core.pragma('dart2js:noInline')
-  static ServerFeatureSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerFeatureSummary>(create);
-  static ServerFeatureSummary? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$12.FeatureFlag> get accountPlatforms => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $core.List<$12.FeatureFlag> get appInfoSources => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $core.List<$12.FeatureFlag> get feedSources => $_getList(2);
-
-  @$pb.TagNumber(4)
-  $core.List<$12.FeatureFlag> get notifyDestinations => $_getList(3);
-
-  @$pb.TagNumber(5)
-  $core.List<$12.FeatureFlag> get feedItemActions => $_getList(4);
 }
 
 class ServerInstanceSummary extends $pb.GeneratedMessage {

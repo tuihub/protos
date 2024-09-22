@@ -4,6 +4,7 @@
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_common_pb from "../../../librarian/v1/common_pb";
+import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
 export class GetTokenRequest extends jspb.Message {
   getUsername(): string;
@@ -1167,8 +1168,10 @@ export class Porter extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): void;
 
-  getFeatureSummary(): string;
-  setFeatureSummary(value: string): void;
+  hasFeatureSummary(): boolean;
+  clearFeatureSummary(): void;
+  getFeatureSummary(): librarian_v1_wellknown_pb.FeatureSummary | undefined;
+  setFeatureSummary(value?: librarian_v1_wellknown_pb.FeatureSummary): void;
 
   getStatus(): UserStatusMap[keyof UserStatusMap];
   setStatus(value: UserStatusMap[keyof UserStatusMap]): void;
@@ -1200,7 +1203,7 @@ export namespace Porter {
     binarySummary?: librarian_v1_common_pb.PorterBinarySummary.AsObject,
     globalName: string,
     region: string,
-    featureSummary: string,
+    featureSummary?: librarian_v1_wellknown_pb.FeatureSummary.AsObject,
     status: UserStatusMap[keyof UserStatusMap],
     connectionStatus: PorterConnectionStatusMap[keyof PorterConnectionStatusMap],
     contextJsonSchema: string,
@@ -1281,6 +1284,11 @@ export class PorterGroup extends jspb.Message {
   getContextJsonSchema(): string;
   setContextJsonSchema(value: string): void;
 
+  hasFeatureSummary(): boolean;
+  clearFeatureSummary(): void;
+  getFeatureSummary(): librarian_v1_wellknown_pb.FeatureSummary | undefined;
+  setFeatureSummary(value?: librarian_v1_wellknown_pb.FeatureSummary): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PorterGroup.AsObject;
   static toObject(includeInstance: boolean, msg: PorterGroup): PorterGroup.AsObject;
@@ -1297,6 +1305,7 @@ export namespace PorterGroup {
     globalName: string,
     regionsList: Array<string>,
     contextJsonSchema: string,
+    featureSummary?: librarian_v1_wellknown_pb.FeatureSummary.AsObject,
   }
 }
 

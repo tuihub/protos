@@ -35,8 +35,8 @@ export class GetPorterInformationResponse extends jspb.Message {
 
   hasFeatureSummary(): boolean;
   clearFeatureSummary(): void;
-  getFeatureSummary(): PorterFeatureSummary | undefined;
-  setFeatureSummary(value?: PorterFeatureSummary): void;
+  getFeatureSummary(): librarian_v1_wellknown_pb.FeatureSummary | undefined;
+  setFeatureSummary(value?: librarian_v1_wellknown_pb.FeatureSummary): void;
 
   hasContextJsonSchema(): boolean;
   clearContextJsonSchema(): void;
@@ -58,66 +58,8 @@ export namespace GetPorterInformationResponse {
     binarySummary?: librarian_v1_common_pb.PorterBinarySummary.AsObject,
     globalName: string,
     region: string,
-    featureSummary?: PorterFeatureSummary.AsObject,
+    featureSummary?: librarian_v1_wellknown_pb.FeatureSummary.AsObject,
     contextJsonSchema: string,
-  }
-}
-
-export class PorterFeatureSummary extends jspb.Message {
-  clearAccountPlatformsList(): void;
-  getAccountPlatformsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setAccountPlatformsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addAccountPlatforms(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearAppInfoSourcesList(): void;
-  getAppInfoSourcesList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setAppInfoSourcesList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addAppInfoSources(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearFeedSourcesList(): void;
-  getFeedSourcesList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setFeedSourcesList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addFeedSources(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearNotifyDestinationsList(): void;
-  getNotifyDestinationsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setNotifyDestinationsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addNotifyDestinations(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearFeedItemActionsList(): void;
-  getFeedItemActionsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setFeedItemActionsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addFeedItemActions(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearFeedSettersList(): void;
-  getFeedSettersList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setFeedSettersList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addFeedSetters(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearFeedGettersList(): void;
-  getFeedGettersList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setFeedGettersList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addFeedGetters(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PorterFeatureSummary.AsObject;
-  static toObject(includeInstance: boolean, msg: PorterFeatureSummary): PorterFeatureSummary.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PorterFeatureSummary, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PorterFeatureSummary;
-  static deserializeBinaryFromReader(message: PorterFeatureSummary, reader: jspb.BinaryReader): PorterFeatureSummary;
-}
-
-export namespace PorterFeatureSummary {
-  export type AsObject = {
-    accountPlatformsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    appInfoSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    feedSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    notifyDestinationsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    feedItemActionsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    feedSettersList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    feedGettersList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
   }
 }
 

@@ -785,7 +785,7 @@ const Porter$json = {
     {'1': 'binary_summary', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
     {'1': 'global_name', '3': 3, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'region', '3': 4, '4': 1, '5': 9, '10': 'region'},
-    {'1': 'feature_summary', '3': 5, '4': 1, '5': 9, '10': 'featureSummary'},
+    {'1': 'feature_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '10': 'featureSummary'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.UserStatus', '10': 'status'},
     {'1': 'connection_status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.PorterConnectionStatus', '10': 'connectionStatus'},
     {'1': 'context_json_schema', '3': 8, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
@@ -801,13 +801,13 @@ final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
     'CgZQb3J0ZXISKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSSAoOYm'
     'luYXJ5X3N1bW1hcnkYAiABKAsyIS5saWJyYXJpYW4udjEuUG9ydGVyQmluYXJ5U3VtbWFyeVIN'
     'YmluYXJ5U3VtbWFyeRIfCgtnbG9iYWxfbmFtZRgDIAEoCVIKZ2xvYmFsTmFtZRIWCgZyZWdpb2'
-    '4YBCABKAlSBnJlZ2lvbhInCg9mZWF0dXJlX3N1bW1hcnkYBSABKAlSDmZlYXR1cmVTdW1tYXJ5'
-    'EjkKBnN0YXR1cxgGIAEoDjIhLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5Vc2VyU3RhdHVzUgZzdG'
-    'F0dXMSWgoRY29ubmVjdGlvbl9zdGF0dXMYByABKA4yLS5saWJyYXJpYW4uc2VwaGlyYWgudjEu'
-    'UG9ydGVyQ29ubmVjdGlvblN0YXR1c1IQY29ubmVjdGlvblN0YXR1cxIzChNjb250ZXh0X2pzb2'
-    '5fc2NoZW1hGAggASgJSABSEWNvbnRleHRKc29uU2NoZW1hiAEBEjoKGWNvbm5lY3Rpb25fc3Rh'
-    'dHVzX21lc3NhZ2UYCSABKAlSF2Nvbm5lY3Rpb25TdGF0dXNNZXNzYWdlQhYKFF9jb250ZXh0X2'
-    'pzb25fc2NoZW1h');
+    '4YBCABKAlSBnJlZ2lvbhJFCg9mZWF0dXJlX3N1bW1hcnkYBSABKAsyHC5saWJyYXJpYW4udjEu'
+    'RmVhdHVyZVN1bW1hcnlSDmZlYXR1cmVTdW1tYXJ5EjkKBnN0YXR1cxgGIAEoDjIhLmxpYnJhcm'
+    'lhbi5zZXBoaXJhaC52MS5Vc2VyU3RhdHVzUgZzdGF0dXMSWgoRY29ubmVjdGlvbl9zdGF0dXMY'
+    'ByABKA4yLS5saWJyYXJpYW4uc2VwaGlyYWgudjEuUG9ydGVyQ29ubmVjdGlvblN0YXR1c1IQY2'
+    '9ubmVjdGlvblN0YXR1cxIzChNjb250ZXh0X2pzb25fc2NoZW1hGAggASgJSABSEWNvbnRleHRK'
+    'c29uU2NoZW1hiAEBEjoKGWNvbm5lY3Rpb25fc3RhdHVzX21lc3NhZ2UYCSABKAlSF2Nvbm5lY3'
+    'Rpb25TdGF0dXNNZXNzYWdlQhYKFF9jb250ZXh0X2pzb25fc2NoZW1h');
 
 @$core.Deprecated('Use porterContextDescriptor instead')
 const PorterContext$json = {
@@ -844,6 +844,7 @@ const PorterGroup$json = {
     {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'regions', '3': 3, '4': 3, '5': 9, '10': 'regions'},
     {'1': 'context_json_schema', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
+    {'1': 'feature_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '10': 'featureSummary'},
   ],
   '8': [
     {'1': '_context_json_schema'},
@@ -855,6 +856,7 @@ final $typed_data.Uint8List porterGroupDescriptor = $convert.base64Decode(
     'CgtQb3J0ZXJHcm91cBJICg5iaW5hcnlfc3VtbWFyeRgBIAEoCzIhLmxpYnJhcmlhbi52MS5Qb3'
     'J0ZXJCaW5hcnlTdW1tYXJ5Ug1iaW5hcnlTdW1tYXJ5Eh8KC2dsb2JhbF9uYW1lGAIgASgJUgpn'
     'bG9iYWxOYW1lEhgKB3JlZ2lvbnMYAyADKAlSB3JlZ2lvbnMSMwoTY29udGV4dF9qc29uX3NjaG'
-    'VtYRgEIAEoCUgAUhFjb250ZXh0SnNvblNjaGVtYYgBAUIWChRfY29udGV4dF9qc29uX3NjaGVt'
-    'YQ==');
+    'VtYRgEIAEoCUgAUhFjb250ZXh0SnNvblNjaGVtYYgBARJFCg9mZWF0dXJlX3N1bW1hcnkYBSAB'
+    'KAsyHC5saWJyYXJpYW4udjEuRmVhdHVyZVN1bW1hcnlSDmZlYXR1cmVTdW1tYXJ5QhYKFF9jb2'
+    '50ZXh0X2pzb25fc2NoZW1h');
 

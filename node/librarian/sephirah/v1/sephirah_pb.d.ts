@@ -52,8 +52,8 @@ export class GetServerInformationResponse extends jspb.Message {
 
   hasFeatureSummary(): boolean;
   clearFeatureSummary(): void;
-  getFeatureSummary(): ServerFeatureSummary | undefined;
-  setFeatureSummary(value?: ServerFeatureSummary): void;
+  getFeatureSummary(): librarian_v1_wellknown_pb.FeatureSummary | undefined;
+  setFeatureSummary(value?: librarian_v1_wellknown_pb.FeatureSummary): void;
 
   hasServerInstanceSummary(): boolean;
   clearServerInstanceSummary(): void;
@@ -80,7 +80,7 @@ export namespace GetServerInformationResponse {
     serverBinarySummary?: ServerBinarySummary.AsObject,
     protocolSummary?: ServerProtocolSummary.AsObject,
     currentTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    featureSummary?: ServerFeatureSummary.AsObject,
+    featureSummary?: librarian_v1_wellknown_pb.FeatureSummary.AsObject,
     serverInstanceSummary?: ServerInstanceSummary.AsObject,
     statusReport: string,
   }
@@ -131,52 +131,6 @@ export class ServerProtocolSummary extends jspb.Message {
 export namespace ServerProtocolSummary {
   export type AsObject = {
     version: string,
-  }
-}
-
-export class ServerFeatureSummary extends jspb.Message {
-  clearAccountPlatformsList(): void;
-  getAccountPlatformsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setAccountPlatformsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addAccountPlatforms(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearAppInfoSourcesList(): void;
-  getAppInfoSourcesList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setAppInfoSourcesList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addAppInfoSources(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearFeedSourcesList(): void;
-  getFeedSourcesList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setFeedSourcesList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addFeedSources(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearNotifyDestinationsList(): void;
-  getNotifyDestinationsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setNotifyDestinationsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addNotifyDestinations(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  clearFeedItemActionsList(): void;
-  getFeedItemActionsList(): Array<librarian_v1_wellknown_pb.FeatureFlag>;
-  setFeedItemActionsList(value: Array<librarian_v1_wellknown_pb.FeatureFlag>): void;
-  addFeedItemActions(value?: librarian_v1_wellknown_pb.FeatureFlag, index?: number): librarian_v1_wellknown_pb.FeatureFlag;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ServerFeatureSummary.AsObject;
-  static toObject(includeInstance: boolean, msg: ServerFeatureSummary): ServerFeatureSummary.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ServerFeatureSummary, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ServerFeatureSummary;
-  static deserializeBinaryFromReader(message: ServerFeatureSummary, reader: jspb.BinaryReader): ServerFeatureSummary;
-}
-
-export namespace ServerFeatureSummary {
-  export type AsObject = {
-    accountPlatformsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    appInfoSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    feedSourcesList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    notifyDestinationsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
-    feedItemActionsList: Array<librarian_v1_wellknown_pb.FeatureFlag.AsObject>,
   }
 }
 
