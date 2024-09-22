@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.22](https://github.com/tuihub/protos/compare/v0.4.21...v0.4.22) (2024-09-22)
+
+
+### Features
+
+* update `FeatureSummary` ([2db99fb](https://github.com/tuihub/protos/commit/2db99fb5c5374896589da5957a715ca14b9a05e5))
+
 ## [0.4.21](https://github.com/tuihub/protos/compare/v0.4.20...v0.4.21) (2024-09-02)
 
 
