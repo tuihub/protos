@@ -40,6 +40,21 @@ message FeatureRequest {
   optional InternalID context_id = 4;
 }
 
+message FeatureSummary {
+  // WellKnownAccountPlatform
+  repeated librarian.v1.FeatureFlag account_platforms = 1;
+  // WellKnownAppInfoSource
+  repeated librarian.v1.FeatureFlag app_info_sources = 2;
+  // WellKnownFeedSource
+  repeated librarian.v1.FeatureFlag feed_sources = 3;
+  // WellKnownNotifyDestination
+  repeated librarian.v1.FeatureFlag notify_destinations = 4;
+  // WellKnownFeedItemAction
+  repeated librarian.v1.FeatureFlag feed_item_actions = 5;
+  repeated librarian.v1.FeatureFlag feed_setters = 6;
+  repeated librarian.v1.FeatureFlag feed_getters = 7;
+}
+
 enum WellKnownAccountPlatform {
   WELL_KNOWN_ACCOUNT_PLATFORM_UNSPECIFIED = 0 [(to_string) = ""];
   WELL_KNOWN_ACCOUNT_PLATFORM_STEAM = 1 [(to_string) = "steam"];

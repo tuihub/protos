@@ -56,25 +56,12 @@ message GetPorterInformationResponse {
   // Leave empty to use default region.
   string region = 3;
   // Supported features.
-  PorterFeatureSummary feature_summary = 4;
+  librarian.v1.FeatureSummary feature_summary = 4;
   // JSON schema for `FeatureRequest.context_json`.
   // Leave empty if not needed.
   // If needed, all feature requests should deliver `context_json`.
   // Can be used to configure third-party token, etc.
   optional string context_json_schema = 5;
-}
-
-message PorterFeatureSummary {
-  repeated librarian.v1.FeatureFlag account_platforms = 1;
-  repeated librarian.v1.FeatureFlag app_info_sources = 2;
-  // WellKnownFeedSource
-  repeated librarian.v1.FeatureFlag feed_sources = 3;
-  // WellKnownNotifyDestination
-  repeated librarian.v1.FeatureFlag notify_destinations = 4;
-  // WellKnownFeedItemAction
-  repeated librarian.v1.FeatureFlag feed_item_actions = 5;
-  repeated librarian.v1.FeatureFlag feed_setters = 6;
-  repeated librarian.v1.FeatureFlag feed_getters = 7;
 }
 
 message EnablePorterRequest {
