@@ -21,6 +21,8 @@ export class FeatureFlag extends jspb.Message {
   getRequireContext(): boolean;
   setRequireContext(value: boolean): void;
 
+  getExtraMap(): jspb.Map<string, string>;
+  clearExtraMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureFlag.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureFlag): FeatureFlag.AsObject;
@@ -38,6 +40,7 @@ export namespace FeatureFlag {
     description: string,
     configJsonSchema: string,
     requireContext: boolean,
+    extraMap: Array<[string, string]>,
   }
 }
 

@@ -1346,6 +1346,9 @@ impl serde::Serialize for FeatureFlag {
         if self.require_context {
             len += 1;
         }
+        if !self.extra.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeatureFlag", len)?;
         if !self.id.is_empty() {
             struct_ser.serialize_field("id", &self.id)?;
@@ -1361,6 +1364,9 @@ impl serde::Serialize for FeatureFlag {
         }
         if self.require_context {
             struct_ser.serialize_field("requireContext", &self.require_context)?;
+        }
+        if !self.extra.is_empty() {
+            struct_ser.serialize_field("extra", &self.extra)?;
         }
         struct_ser.end()
     }
@@ -1379,6 +1385,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
             "configJsonSchema",
             "require_context",
             "requireContext",
+            "extra",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1388,6 +1395,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
             Description,
             ConfigJsonSchema,
             RequireContext,
+            Extra,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1414,6 +1422,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                             "description" => Ok(GeneratedField::Description),
                             "configJsonSchema" | "config_json_schema" => Ok(GeneratedField::ConfigJsonSchema),
                             "requireContext" | "require_context" => Ok(GeneratedField::RequireContext),
+                            "extra" => Ok(GeneratedField::Extra),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1438,6 +1447,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                 let mut description__ = None;
                 let mut config_json_schema__ = None;
                 let mut require_context__ = None;
+                let mut extra__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1470,6 +1480,14 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                             }
                             require_context__ = Some(map_.next_value()?);
                         }
+                        GeneratedField::Extra => {
+                            if extra__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("extra"));
+                            }
+                            extra__ = Some(
+                                map_.next_value::<std::collections::HashMap<_, _>>()?
+                            );
+                        }
                     }
                 }
                 Ok(FeatureFlag {
@@ -1478,6 +1496,7 @@ impl<'de> serde::Deserialize<'de> for FeatureFlag {
                     description: description__.unwrap_or_default(),
                     config_json_schema: config_json_schema__.unwrap_or_default(),
                     require_context: require_context__.unwrap_or_default(),
+                    extra: extra__.unwrap_or_default(),
                 })
             }
         }

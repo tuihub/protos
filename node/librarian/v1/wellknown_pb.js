@@ -133,7 +133,8 @@ id: jspb.Message.getFieldWithDefault(msg, 1, ""),
 name: jspb.Message.getFieldWithDefault(msg, 2, ""),
 description: jspb.Message.getFieldWithDefault(msg, 3, ""),
 configJsonSchema: jspb.Message.getFieldWithDefault(msg, 4, ""),
-requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+requireContext: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+extraMap: (f = msg.getExtraMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -189,6 +190,12 @@ proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader = function(msg, reade
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequireContext(value);
+      break;
+    case 6:
+      var value = msg.getExtraMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
       break;
     default:
       reader.skipField();
@@ -253,6 +260,10 @@ proto.librarian.v1.FeatureFlag.serializeBinaryToWriter = function(message, write
       5,
       f
     );
+  }
+  f = message.getExtraMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -344,6 +355,29 @@ proto.librarian.v1.FeatureFlag.prototype.getRequireContext = function() {
  */
 proto.librarian.v1.FeatureFlag.prototype.setRequireContext = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * map<string, string> extra = 6;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.librarian.v1.FeatureFlag.prototype.getExtraMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.librarian.v1.FeatureFlag} returns this
+ */
+proto.librarian.v1.FeatureFlag.prototype.clearExtraMap = function() {
+  this.getExtraMap().clear();
+  return this;
 };
 
 

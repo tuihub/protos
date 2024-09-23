@@ -102,7 +102,19 @@ const FeatureFlag$json = {
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'config_json_schema', '3': 4, '4': 1, '5': 9, '10': 'configJsonSchema'},
     {'1': 'require_context', '3': 5, '4': 1, '5': 8, '10': 'requireContext'},
+    {'1': 'extra', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag.ExtraEntry', '10': 'extra'},
   ],
+  '3': [FeatureFlag_ExtraEntry$json],
+};
+
+@$core.Deprecated('Use featureFlagDescriptor instead')
+const FeatureFlag_ExtraEntry$json = {
+  '1': 'ExtraEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `FeatureFlag`. Decode as a `google.protobuf.DescriptorProto`.
@@ -110,7 +122,9 @@ final $typed_data.Uint8List featureFlagDescriptor = $convert.base64Decode(
     'CgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZX'
     'NjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SLAoSY29uZmlnX2pzb25fc2NoZW1hGAQgASgJ'
     'UhBjb25maWdKc29uU2NoZW1hEicKD3JlcXVpcmVfY29udGV4dBgFIAEoCFIOcmVxdWlyZUNvbn'
-    'RleHQ=');
+    'RleHQSOgoFZXh0cmEYBiADKAsyJC5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWcuRXh0cmFFbnRy'
+    'eVIFZXh0cmEaOAoKRXh0cmFFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCV'
+    'IFdmFsdWU6AjgB');
 
 @$core.Deprecated('Use featureRequestDescriptor instead')
 const FeatureRequest$json = {

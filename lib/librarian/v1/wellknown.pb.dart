@@ -26,6 +26,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? configJsonSchema,
     $core.bool? requireContext,
+    $core.Map<$core.String, $core.String>? extra,
   }) {
     final $result = create();
     if (id != null) {
@@ -43,6 +44,9 @@ class FeatureFlag extends $pb.GeneratedMessage {
     if (requireContext != null) {
       $result.requireContext = requireContext;
     }
+    if (extra != null) {
+      $result.extra.addAll(extra);
+    }
     return $result;
   }
   FeatureFlag._() : super();
@@ -55,6 +59,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOS(4, _omitFieldNames ? '' : 'configJsonSchema')
     ..aOB(5, _omitFieldNames ? '' : 'requireContext')
+    ..m<$core.String, $core.String>(6, _omitFieldNames ? '' : 'extra', entryClassName: 'FeatureFlag.ExtraEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('librarian.v1'))
     ..hasRequiredFields = false
   ;
 
@@ -129,6 +134,10 @@ class FeatureFlag extends $pb.GeneratedMessage {
   $core.bool hasRequireContext() => $_has(4);
   @$pb.TagNumber(5)
   void clearRequireContext() => clearField(5);
+
+  /// Extra information
+  @$pb.TagNumber(6)
+  $core.Map<$core.String, $core.String> get extra => $_getMap(5);
 }
 
 /// FeatureRequest is used to deliver feature-related request parameters.

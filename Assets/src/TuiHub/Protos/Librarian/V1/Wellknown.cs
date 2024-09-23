@@ -26,51 +26,54 @@ namespace TuiHub.Protos.Librarian.V1 {
           string.Concat(
             "ChxsaWJyYXJpYW4vdjEvd2VsbGtub3duLnByb3RvEgxsaWJyYXJpYW4udjEa",
             "IGdvb2dsZS9wcm90b2J1Zi9kZXNjcmlwdG9yLnByb3RvGhlsaWJyYXJpYW4v",
-            "djEvY29tbW9uLnByb3RvIqoBCgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVIC",
+            "djEvY29tbW9uLnByb3RvIqACCgtGZWF0dXJlRmxhZxIOCgJpZBgBIAEoCVIC",
             "aWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVIL",
             "ZGVzY3JpcHRpb24SLAoSY29uZmlnX2pzb25fc2NoZW1hGAQgASgJUhBjb25m",
             "aWdKc29uU2NoZW1hEicKD3JlcXVpcmVfY29udGV4dBgFIAEoCFIOcmVxdWly",
-            "ZUNvbnRleHQipgEKDkZlYXR1cmVSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIW",
-            "CgZyZWdpb24YAiABKAlSBnJlZ2lvbhIfCgtjb25maWdfanNvbhgDIAEoCVIK",
-            "Y29uZmlnSnNvbhI8Cgpjb250ZXh0X2lkGAQgASgLMhgubGlicmFyaWFuLnYx",
-            "LkludGVybmFsSURIAFIJY29udGV4dElkiAEBQg0KC19jb250ZXh0X2lkIuoD",
-            "Cg5GZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZ",
-            "LmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJD",
-            "ChBhcHBfaW5mb19zb3VyY2VzGAIgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1",
-            "cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8CgxmZWVkX3NvdXJjZXMYAyADKAsy",
-            "GS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3VyY2VzEkoKE25v",
-            "dGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVy",
-            "ZUZsYWdSEm5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9u",
-            "cxgFIAMoCzIZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1B",
-            "Y3Rpb25zEjwKDGZlZWRfc2V0dGVycxgGIAMoCzIZLmxpYnJhcmlhbi52MS5G",
-            "ZWF0dXJlRmxhZ1ILZmVlZFNldHRlcnMSPAoMZmVlZF9nZXR0ZXJzGAcgAygL",
-            "MhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUgtmZWVkR2V0dGVycyp9ChhX",
-            "ZWxsS25vd25BY2NvdW50UGxhdGZvcm0SMAonV0VMTF9LTk9XTl9BQ0NPVU5U",
-            "X1BMQVRGT1JNX1VOU1BFQ0lGSUVEEAAaA8I+ABIvCiFXRUxMX0tOT1dOX0FD",
-            "Q09VTlRfUExBVEZPUk1fU1RFQU0QARoIwj4Fc3RlYW0q2wEKFldlbGxLbm93",
-            "bkFwcEluZm9Tb3VyY2USLwomV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0Vf",
-            "VU5TUEVDSUZJRUQQABoDwj4AEi4KIFdFTExfS05PV05fQVBQX0lORk9fU09V",
-            "UkNFX1NURUFNEAIaCMI+BXN0ZWFtEiwKH1dFTExfS05PV05fQVBQX0lORk9f",
-            "U09VUkNFX1ZOREIQAxoHwj4Edm5kYhIyCiJXRUxMX0tOT1dOX0FQUF9JTkZP",
-            "X1NPVVJDRV9CQU5HVU1JEAQaCsI+B2Jhbmd1bWkqagoTV2VsbEtub3duRmVl",
-            "ZFNvdXJjZRIrCiJXRUxMX0tOT1dOX0ZFRURfU09VUkNFX1VOU1BFQ0lGSUVE",
-            "EAAaA8I+ABImChpXRUxMX0tOT1dOX0ZFRURfU09VUkNFX1JTUxABGgbCPgNy",
-            "c3MqiQEKGldlbGxLbm93bk5vdGlmeURlc3RpbmF0aW9uEjIKKVdFTExfS05P",
-            "V05fTk9USUZZX0RFU1RJTkFUSU9OX1VOU1BFQ0lGSUVEEAAaA8I+ABI3CiZX",
-            "RUxMX0tOT1dOX05PVElGWV9ERVNUSU5BVElPTl9URUxFR1JBTRABGgvCPgh0",
-            "ZWxlZ3JhbSrfAQoXV2VsbEtub3duRmVlZEl0ZW1BY3Rpb24SMAonV0VMTF9L",
-            "Tk9XTl9GRUVEX0lURU1fQUNUSU9OX1VOU1BFQ0lGSUVEEAAaA8I+ABJBCipX",
-            "RUxMX0tOT1dOX0ZFRURfSVRFTV9BQ1RJT05fS0VZV09SRF9GSUxURVIQARoR",
-            "wj4Oa2V5d29yZF9maWx0ZXISTwoxV0VMTF9LTk9XTl9GRUVEX0lURU1fQUNU",
-            "SU9OX0RFU0NSSVBUSU9OX0dFTkVSQVRPUhACGhjCPhVkZXNjcmlwdGlvbl9n",
-            "ZW5lcmF0b3I6PwoJdG9fc3RyaW5nEiEuZ29vZ2xlLnByb3RvYnVmLkVudW1W",
-            "YWx1ZU9wdGlvbnMY6AcgASgJUgh0b1N0cmluZ0JLWixnaXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi92MTt2MaoCGlR1aUh1Yi5Qcm90",
-            "b3MuTGlicmFyaWFuLlYxYgZwcm90bzM="));
+            "ZUNvbnRleHQSOgoFZXh0cmEYBiADKAsyJC5saWJyYXJpYW4udjEuRmVhdHVy",
+            "ZUZsYWcuRXh0cmFFbnRyeVIFZXh0cmEaOAoKRXh0cmFFbnRyeRIQCgNrZXkY",
+            "ASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBIqYBCg5GZWF0",
+            "dXJlUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFgoGcmVnaW9uGAIgASgJUgZy",
+            "ZWdpb24SHwoLY29uZmlnX2pzb24YAyABKAlSCmNvbmZpZ0pzb24SPAoKY29u",
+            "dGV4dF9pZBgEIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSCWNv",
+            "bnRleHRJZIgBAUINCgtfY29udGV4dF9pZCLqAwoORmVhdHVyZVN1bW1hcnkS",
+            "RgoRYWNjb3VudF9wbGF0Zm9ybXMYASADKAsyGS5saWJyYXJpYW4udjEuRmVh",
+            "dHVyZUZsYWdSEGFjY291bnRQbGF0Zm9ybXMSQwoQYXBwX2luZm9fc291cmNl",
+            "cxgCIAMoCzIZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1IOYXBwSW5mb1Nv",
+            "dXJjZXMSPAoMZmVlZF9zb3VyY2VzGAMgAygLMhkubGlicmFyaWFuLnYxLkZl",
+            "YXR1cmVGbGFnUgtmZWVkU291cmNlcxJKChNub3RpZnlfZGVzdGluYXRpb25z",
+            "GAQgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUhJub3RpZnlEZXN0",
+            "aW5hdGlvbnMSRQoRZmVlZF9pdGVtX2FjdGlvbnMYBSADKAsyGS5saWJyYXJp",
+            "YW4udjEuRmVhdHVyZUZsYWdSD2ZlZWRJdGVtQWN0aW9ucxI8CgxmZWVkX3Nl",
+            "dHRlcnMYBiADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRT",
+            "ZXR0ZXJzEjwKDGZlZWRfZ2V0dGVycxgHIAMoCzIZLmxpYnJhcmlhbi52MS5G",
+            "ZWF0dXJlRmxhZ1ILZmVlZEdldHRlcnMqfQoYV2VsbEtub3duQWNjb3VudFBs",
+            "YXRmb3JtEjAKJ1dFTExfS05PV05fQUNDT1VOVF9QTEFURk9STV9VTlNQRUNJ",
+            "RklFRBAAGgPCPgASLwohV0VMTF9LTk9XTl9BQ0NPVU5UX1BMQVRGT1JNX1NU",
+            "RUFNEAEaCMI+BXN0ZWFtKtsBChZXZWxsS25vd25BcHBJbmZvU291cmNlEi8K",
+            "JldFTExfS05PV05fQVBQX0lORk9fU09VUkNFX1VOU1BFQ0lGSUVEEAAaA8I+",
+            "ABIuCiBXRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9TVEVBTRACGgjCPgVz",
+            "dGVhbRIsCh9XRUxMX0tOT1dOX0FQUF9JTkZPX1NPVVJDRV9WTkRCEAMaB8I+",
+            "BHZuZGISMgoiV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfQkFOR1VNSRAE",
+            "GgrCPgdiYW5ndW1pKmoKE1dlbGxLbm93bkZlZWRTb3VyY2USKwoiV0VMTF9L",
+            "Tk9XTl9GRUVEX1NPVVJDRV9VTlNQRUNJRklFRBAAGgPCPgASJgoaV0VMTF9L",
+            "Tk9XTl9GRUVEX1NPVVJDRV9SU1MQARoGwj4DcnNzKokBChpXZWxsS25vd25O",
+            "b3RpZnlEZXN0aW5hdGlvbhIyCilXRUxMX0tOT1dOX05PVElGWV9ERVNUSU5B",
+            "VElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJRllf",
+            "REVTVElOQVRJT05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0q3wEKF1dlbGxL",
+            "bm93bkZlZWRJdGVtQWN0aW9uEjAKJ1dFTExfS05PV05fRkVFRF9JVEVNX0FD",
+            "VElPTl9VTlNQRUNJRklFRBAAGgPCPgASQQoqV0VMTF9LTk9XTl9GRUVEX0lU",
+            "RU1fQUNUSU9OX0tFWVdPUkRfRklMVEVSEAEaEcI+DmtleXdvcmRfZmlsdGVy",
+            "Ek8KMVdFTExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9ERVNDUklQVElPTl9H",
+            "RU5FUkFUT1IQAhoYwj4VZGVzY3JpcHRpb25fZ2VuZXJhdG9yOj8KCXRvX3N0",
+            "cmluZxIhLmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVPcHRpb25zGOgHIAEo",
+            "CVIIdG9TdHJpbmdCS1osZ2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9s",
+            "aWJyYXJpYW4vdjE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5WMWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedItemAction), }, new pb::Extension[] { WellknownExtensions.ToString_ }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Name", "Description", "ConfigJsonSchema", "RequireContext" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureFlag), global::TuiHub.Protos.Librarian.V1.FeatureFlag.Parser, new[]{ "Id", "Name", "Description", "ConfigJsonSchema", "RequireContext", "Extra" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureRequest), global::TuiHub.Protos.Librarian.V1.FeatureRequest.Parser, new[]{ "Id", "Region", "ConfigJson", "ContextId" }, new[]{ "ContextId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeatureSummary), global::TuiHub.Protos.Librarian.V1.FeatureSummary.Parser, new[]{ "AccountPlatforms", "AppInfoSources", "FeedSources", "NotifyDestinations", "FeedItemActions", "FeedSetters", "FeedGetters" }, null, null, null, null)
           }));
@@ -165,6 +168,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       description_ = other.description_;
       configJsonSchema_ = other.configJsonSchema_;
       requireContext_ = other.requireContext_;
+      extra_ = other.extra_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -250,6 +254,20 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
+    /// <summary>Field number for the "extra" field.</summary>
+    public const int ExtraFieldNumber = 6;
+    private static readonly pbc::MapField<string, string>.Codec _map_extra_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 50);
+    private readonly pbc::MapField<string, string> extra_ = new pbc::MapField<string, string>();
+    /// <summary>
+    /// Extra information
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, string> Extra {
+      get { return extra_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -270,6 +288,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Description != other.Description) return false;
       if (ConfigJsonSchema != other.ConfigJsonSchema) return false;
       if (RequireContext != other.RequireContext) return false;
+      if (!Extra.Equals(other.Extra)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -282,6 +301,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ConfigJsonSchema.Length != 0) hash ^= ConfigJsonSchema.GetHashCode();
       if (RequireContext != false) hash ^= RequireContext.GetHashCode();
+      hash ^= Extra.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -320,6 +340,7 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(40);
         output.WriteBool(RequireContext);
       }
+      extra_.WriteTo(output, _map_extra_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -350,6 +371,7 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(40);
         output.WriteBool(RequireContext);
       }
+      extra_.WriteTo(ref output, _map_extra_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -375,6 +397,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (RequireContext != false) {
         size += 1 + 1;
       }
+      size += extra_.CalculateSize(_map_extra_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -402,6 +425,7 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (other.RequireContext != false) {
         RequireContext = other.RequireContext;
       }
+      extra_.MergeFrom(other.extra_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -437,6 +461,10 @@ namespace TuiHub.Protos.Librarian.V1 {
             RequireContext = input.ReadBool();
             break;
           }
+          case 50: {
+            extra_.AddEntriesFrom(input, _map_extra_codec);
+            break;
+          }
         }
       }
     #endif
@@ -470,6 +498,10 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 40: {
             RequireContext = input.ReadBool();
+            break;
+          }
+          case 50: {
+            extra_.AddEntriesFrom(ref input, _map_extra_codec);
             break;
           }
         }
