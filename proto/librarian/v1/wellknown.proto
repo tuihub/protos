@@ -26,6 +26,8 @@ message FeatureFlag {
   string config_json_schema = 4;
   // Require context to use this feature
   bool require_context = 5;
+  // Extra information
+  map<string, string> extra = 6;
 }
 
 // FeatureRequest is used to deliver feature-related request parameters.
