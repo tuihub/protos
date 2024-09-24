@@ -110,6 +110,7 @@ const (
 	LibrarianSephirahService_CreateNotifyFlow_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow"
 	LibrarianSephirahService_UpdateNotifyFlow_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow"
 	LibrarianSephirahService_ListNotifyFlows_FullMethodName               = "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows"
+	LibrarianSephirahService_PorterGetNotifyTargetItems_FullMethodName    = "/librarian.sephirah.v1.LibrarianSephirahService/PorterGetNotifyTargetItems"
 	LibrarianSephirahService_ListSystemNotifications_FullMethodName       = "/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications"
 	LibrarianSephirahService_UpdateSystemNotification_FullMethodName      = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSystemNotification"
 	LibrarianSephirahService_CreateFeedConfig_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig"
@@ -364,6 +365,8 @@ type LibrarianSephirahServiceClient interface {
 	UpdateNotifyFlow(ctx context.Context, in *UpdateNotifyFlowRequest, opts ...grpc.CallOption) (*UpdateNotifyFlowResponse, error)
 	// `Netzach` `Normal`
 	ListNotifyFlows(ctx context.Context, in *ListNotifyFlowsRequest, opts ...grpc.CallOption) (*ListNotifyFlowsResponse, error)
+	// `Netzach` `Porter`
+	PorterGetNotifyTargetItems(ctx context.Context, in *PorterGetNotifyTargetItemsRequest, opts ...grpc.CallOption) (*PorterGetNotifyTargetItemsResponse, error)
 	// `Netzach` `Admin` `Normal limited`
 	ListSystemNotifications(ctx context.Context, in *ListSystemNotificationsRequest, opts ...grpc.CallOption) (*ListSystemNotificationsResponse, error)
 	// `Netzach` `Normal`
@@ -1363,6 +1366,16 @@ func (c *librarianSephirahServiceClient) ListNotifyFlows(ctx context.Context, in
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) PorterGetNotifyTargetItems(ctx context.Context, in *PorterGetNotifyTargetItemsRequest, opts ...grpc.CallOption) (*PorterGetNotifyTargetItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PorterGetNotifyTargetItemsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_PorterGetNotifyTargetItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) ListSystemNotifications(ctx context.Context, in *ListSystemNotificationsRequest, opts ...grpc.CallOption) (*ListSystemNotificationsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListSystemNotificationsResponse)
@@ -1849,6 +1862,8 @@ type LibrarianSephirahServiceServer interface {
 	UpdateNotifyFlow(context.Context, *UpdateNotifyFlowRequest) (*UpdateNotifyFlowResponse, error)
 	// `Netzach` `Normal`
 	ListNotifyFlows(context.Context, *ListNotifyFlowsRequest) (*ListNotifyFlowsResponse, error)
+	// `Netzach` `Porter`
+	PorterGetNotifyTargetItems(context.Context, *PorterGetNotifyTargetItemsRequest) (*PorterGetNotifyTargetItemsResponse, error)
 	// `Netzach` `Admin` `Normal limited`
 	ListSystemNotifications(context.Context, *ListSystemNotificationsRequest) (*ListSystemNotificationsResponse, error)
 	// `Netzach` `Normal`
@@ -2183,6 +2198,9 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateNotifyFlow(context.Cont
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListNotifyFlows(context.Context, *ListNotifyFlowsRequest) (*ListNotifyFlowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListNotifyFlows not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) PorterGetNotifyTargetItems(context.Context, *PorterGetNotifyTargetItemsRequest) (*PorterGetNotifyTargetItemsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PorterGetNotifyTargetItems not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListSystemNotifications(context.Context, *ListSystemNotificationsRequest) (*ListSystemNotificationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListSystemNotifications not implemented")
@@ -3875,6 +3893,24 @@ func _LibrarianSephirahService_ListNotifyFlows_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_PorterGetNotifyTargetItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PorterGetNotifyTargetItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).PorterGetNotifyTargetItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_PorterGetNotifyTargetItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).PorterGetNotifyTargetItems(ctx, req.(*PorterGetNotifyTargetItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_ListSystemNotifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListSystemNotificationsRequest)
 	if err := dec(in); err != nil {
@@ -4693,6 +4729,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListNotifyFlows",
 			Handler:    _LibrarianSephirahService_ListNotifyFlows_Handler,
+		},
+		{
+			MethodName: "PorterGetNotifyTargetItems",
+			Handler:    _LibrarianSephirahService_PorterGetNotifyTargetItems_Handler,
 		},
 		{
 			MethodName: "ListSystemNotifications",

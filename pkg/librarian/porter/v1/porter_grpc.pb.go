@@ -28,12 +28,12 @@ const (
 	LibrarianPorterService_PullAccountAppInfoRelation_FullMethodName = "/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation"
 	LibrarianPorterService_SearchAppInfo_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/SearchAppInfo"
 	LibrarianPorterService_PullFeed_FullMethodName                   = "/librarian.porter.v1.LibrarianPorterService/PullFeed"
-	LibrarianPorterService_PushFeedItems_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
 	LibrarianPorterService_ExecFeedItemAction_FullMethodName         = "/librarian.porter.v1.LibrarianPorterService/ExecFeedItemAction"
 	LibrarianPorterService_EnableFeedSetter_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/EnableFeedSetter"
 	LibrarianPorterService_DisableFeedSetter_FullMethodName          = "/librarian.porter.v1.LibrarianPorterService/DisableFeedSetter"
 	LibrarianPorterService_EnableFeedGetter_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/EnableFeedGetter"
 	LibrarianPorterService_DisableFeedGetter_FullMethodName          = "/librarian.porter.v1.LibrarianPorterService/DisableFeedGetter"
+	LibrarianPorterService_PushFeedItems_FullMethodName              = "/librarian.porter.v1.LibrarianPorterService/PushFeedItems"
 )
 
 // LibrarianPorterServiceClient is the client API for LibrarianPorterService service.
@@ -56,8 +56,6 @@ type LibrarianPorterServiceClient interface {
 	// `Yesod`
 	PullFeed(ctx context.Context, in *PullFeedRequest, opts ...grpc.CallOption) (*PullFeedResponse, error)
 	// `Yesod`
-	PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error)
-	// `Yesod`
 	ExecFeedItemAction(ctx context.Context, in *ExecFeedItemActionRequest, opts ...grpc.CallOption) (*ExecFeedItemActionResponse, error)
 	// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
 	// without extra permissions.
@@ -69,6 +67,8 @@ type LibrarianPorterServiceClient interface {
 	EnableFeedGetter(ctx context.Context, in *EnableFeedGetterRequest, opts ...grpc.CallOption) (*EnableFeedGetterResponse, error)
 	// `Yesod`
 	DisableFeedGetter(ctx context.Context, in *DisableFeedGetterRequest, opts ...grpc.CallOption) (*DisableFeedGetterResponse, error)
+	// `Netzach`
+	PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error)
 }
 
 type librarianPorterServiceClient struct {
@@ -169,16 +169,6 @@ func (c *librarianPorterServiceClient) PullFeed(ctx context.Context, in *PullFee
 	return out, nil
 }
 
-func (c *librarianPorterServiceClient) PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(PushFeedItemsResponse)
-	err := c.cc.Invoke(ctx, LibrarianPorterService_PushFeedItems_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *librarianPorterServiceClient) ExecFeedItemAction(ctx context.Context, in *ExecFeedItemActionRequest, opts ...grpc.CallOption) (*ExecFeedItemActionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ExecFeedItemActionResponse)
@@ -229,6 +219,16 @@ func (c *librarianPorterServiceClient) DisableFeedGetter(ctx context.Context, in
 	return out, nil
 }
 
+func (c *librarianPorterServiceClient) PushFeedItems(ctx context.Context, in *PushFeedItemsRequest, opts ...grpc.CallOption) (*PushFeedItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PushFeedItemsResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_PushFeedItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LibrarianPorterServiceServer is the server API for LibrarianPorterService service.
 // All implementations must embed UnimplementedLibrarianPorterServiceServer
 // for forward compatibility.
@@ -249,8 +249,6 @@ type LibrarianPorterServiceServer interface {
 	// `Yesod`
 	PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error)
 	// `Yesod`
-	PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error)
-	// `Yesod`
 	ExecFeedItemAction(context.Context, *ExecFeedItemActionRequest) (*ExecFeedItemActionResponse, error)
 	// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
 	// without extra permissions.
@@ -262,6 +260,8 @@ type LibrarianPorterServiceServer interface {
 	EnableFeedGetter(context.Context, *EnableFeedGetterRequest) (*EnableFeedGetterResponse, error)
 	// `Yesod`
 	DisableFeedGetter(context.Context, *DisableFeedGetterRequest) (*DisableFeedGetterResponse, error)
+	// `Netzach`
+	PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error)
 	mustEmbedUnimplementedLibrarianPorterServiceServer()
 }
 
@@ -299,9 +299,6 @@ func (UnimplementedLibrarianPorterServiceServer) SearchAppInfo(context.Context, 
 func (UnimplementedLibrarianPorterServiceServer) PullFeed(context.Context, *PullFeedRequest) (*PullFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PullFeed not implemented")
 }
-func (UnimplementedLibrarianPorterServiceServer) PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PushFeedItems not implemented")
-}
 func (UnimplementedLibrarianPorterServiceServer) ExecFeedItemAction(context.Context, *ExecFeedItemActionRequest) (*ExecFeedItemActionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExecFeedItemAction not implemented")
 }
@@ -316,6 +313,9 @@ func (UnimplementedLibrarianPorterServiceServer) EnableFeedGetter(context.Contex
 }
 func (UnimplementedLibrarianPorterServiceServer) DisableFeedGetter(context.Context, *DisableFeedGetterRequest) (*DisableFeedGetterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DisableFeedGetter not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) PushFeedItems(context.Context, *PushFeedItemsRequest) (*PushFeedItemsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PushFeedItems not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) mustEmbedUnimplementedLibrarianPorterServiceServer() {
 }
@@ -501,24 +501,6 @@ func _LibrarianPorterService_PullFeed_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianPorterService_PushFeedItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PushFeedItemsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianPorterServiceServer).PushFeedItems(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianPorterService_PushFeedItems_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianPorterServiceServer).PushFeedItems(ctx, req.(*PushFeedItemsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _LibrarianPorterService_ExecFeedItemAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ExecFeedItemActionRequest)
 	if err := dec(in); err != nil {
@@ -609,6 +591,24 @@ func _LibrarianPorterService_DisableFeedGetter_Handler(srv interface{}, ctx cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianPorterService_PushFeedItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PushFeedItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).PushFeedItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_PushFeedItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).PushFeedItems(ctx, req.(*PushFeedItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LibrarianPorterService_ServiceDesc is the grpc.ServiceDesc for LibrarianPorterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -653,10 +653,6 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianPorterService_PullFeed_Handler,
 		},
 		{
-			MethodName: "PushFeedItems",
-			Handler:    _LibrarianPorterService_PushFeedItems_Handler,
-		},
-		{
 			MethodName: "ExecFeedItemAction",
 			Handler:    _LibrarianPorterService_ExecFeedItemAction_Handler,
 		},
@@ -675,6 +671,10 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DisableFeedGetter",
 			Handler:    _LibrarianPorterService_DisableFeedGetter_Handler,
+		},
+		{
+			MethodName: "PushFeedItems",
+			Handler:    _LibrarianPorterService_PushFeedItems_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

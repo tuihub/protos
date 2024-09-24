@@ -444,18 +444,6 @@ pullFeed: {
     responseDeserialize: deserialize_librarian_porter_v1_PullFeedResponse,
   },
   // `Yesod`
-pushFeedItems: {
-    path: '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_porter_v1_porter_pb.PushFeedItemsRequest,
-    responseType: librarian_porter_v1_porter_pb.PushFeedItemsResponse,
-    requestSerialize: serialize_librarian_porter_v1_PushFeedItemsRequest,
-    requestDeserialize: deserialize_librarian_porter_v1_PushFeedItemsRequest,
-    responseSerialize: serialize_librarian_porter_v1_PushFeedItemsResponse,
-    responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemsResponse,
-  },
-  // `Yesod`
 execFeedItemAction: {
     path: '/librarian.porter.v1.LibrarianPorterService/ExecFeedItemAction',
     requestStream: false,
@@ -516,6 +504,18 @@ disableFeedGetter: {
     requestDeserialize: deserialize_librarian_porter_v1_DisableFeedGetterRequest,
     responseSerialize: serialize_librarian_porter_v1_DisableFeedGetterResponse,
     responseDeserialize: deserialize_librarian_porter_v1_DisableFeedGetterResponse,
+  },
+  // `Netzach`
+pushFeedItems: {
+    path: '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_porter_pb.PushFeedItemsRequest,
+    responseType: librarian_porter_v1_porter_pb.PushFeedItemsResponse,
+    requestSerialize: serialize_librarian_porter_v1_PushFeedItemsRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_PushFeedItemsRequest,
+    responseSerialize: serialize_librarian_porter_v1_PushFeedItemsResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_PushFeedItemsResponse,
   },
 };
 

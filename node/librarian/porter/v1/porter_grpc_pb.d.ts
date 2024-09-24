@@ -16,12 +16,12 @@ interface ILibrarianPorterServiceService extends grpc.ServiceDefinition<grpc.Unt
   pullAccountAppInfoRelation: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>;
   searchAppInfo: grpc.MethodDefinition<librarian_porter_v1_porter_pb.SearchAppInfoRequest, librarian_porter_v1_porter_pb.SearchAppInfoResponse>;
   pullFeed: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
-  pushFeedItems: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
   execFeedItemAction: grpc.MethodDefinition<librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>;
   enableFeedSetter: grpc.MethodDefinition<librarian_porter_v1_porter_pb.EnableFeedSetterRequest, librarian_porter_v1_porter_pb.EnableFeedSetterResponse>;
   disableFeedSetter: grpc.MethodDefinition<librarian_porter_v1_porter_pb.DisableFeedSetterRequest, librarian_porter_v1_porter_pb.DisableFeedSetterResponse>;
   enableFeedGetter: grpc.MethodDefinition<librarian_porter_v1_porter_pb.EnableFeedGetterRequest, librarian_porter_v1_porter_pb.EnableFeedGetterResponse>;
   disableFeedGetter: grpc.MethodDefinition<librarian_porter_v1_porter_pb.DisableFeedGetterRequest, librarian_porter_v1_porter_pb.DisableFeedGetterResponse>;
+  pushFeedItems: grpc.MethodDefinition<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
 }
 
 export const LibrarianPorterServiceService: ILibrarianPorterServiceService;
@@ -36,12 +36,12 @@ export interface ILibrarianPorterServiceServer extends grpc.UntypedServiceImplem
   pullAccountAppInfoRelation: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullAccountAppInfoRelationRequest, librarian_porter_v1_porter_pb.PullAccountAppInfoRelationResponse>;
   searchAppInfo: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.SearchAppInfoRequest, librarian_porter_v1_porter_pb.SearchAppInfoResponse>;
   pullFeed: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PullFeedRequest, librarian_porter_v1_porter_pb.PullFeedResponse>;
-  pushFeedItems: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
   execFeedItemAction: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>;
   enableFeedSetter: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.EnableFeedSetterRequest, librarian_porter_v1_porter_pb.EnableFeedSetterResponse>;
   disableFeedSetter: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.DisableFeedSetterRequest, librarian_porter_v1_porter_pb.DisableFeedSetterResponse>;
   enableFeedGetter: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.EnableFeedGetterRequest, librarian_porter_v1_porter_pb.EnableFeedGetterResponse>;
   disableFeedGetter: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.DisableFeedGetterRequest, librarian_porter_v1_porter_pb.DisableFeedGetterResponse>;
+  pushFeedItems: grpc.handleUnaryCall<librarian_porter_v1_porter_pb.PushFeedItemsRequest, librarian_porter_v1_porter_pb.PushFeedItemsResponse>;
 }
 
 export class LibrarianPorterServiceClient extends grpc.Client {
@@ -73,9 +73,6 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
   pullFeed(argument: librarian_porter_v1_porter_pb.PullFeedRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PullFeedResponse>): grpc.ClientUnaryCall;
-  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
-  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
-  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
   execFeedItemAction(argument: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>): grpc.ClientUnaryCall;
   execFeedItemAction(argument: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>): grpc.ClientUnaryCall;
   execFeedItemAction(argument: librarian_porter_v1_porter_pb.ExecFeedItemActionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.ExecFeedItemActionResponse>): grpc.ClientUnaryCall;
@@ -91,4 +88,7 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   disableFeedGetter(argument: librarian_porter_v1_porter_pb.DisableFeedGetterRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.DisableFeedGetterResponse>): grpc.ClientUnaryCall;
   disableFeedGetter(argument: librarian_porter_v1_porter_pb.DisableFeedGetterRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.DisableFeedGetterResponse>): grpc.ClientUnaryCall;
   disableFeedGetter(argument: librarian_porter_v1_porter_pb.DisableFeedGetterRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.DisableFeedGetterResponse>): grpc.ClientUnaryCall;
+  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
+  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
+  pushFeedItems(argument: librarian_porter_v1_porter_pb.PushFeedItemsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_porter_pb.PushFeedItemsResponse>): grpc.ClientUnaryCall;
 }

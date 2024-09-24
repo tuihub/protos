@@ -288,6 +288,68 @@ export namespace ListNotifyFlowsResponse {
   }
 }
 
+export class PorterGetNotifyTargetItemsRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_common_pb.InternalID | undefined;
+  setId(value?: librarian_v1_common_pb.InternalID): void;
+
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingRequest): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PorterGetNotifyTargetItemsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PorterGetNotifyTargetItemsRequest): PorterGetNotifyTargetItemsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PorterGetNotifyTargetItemsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PorterGetNotifyTargetItemsRequest;
+  static deserializeBinaryFromReader(message: PorterGetNotifyTargetItemsRequest, reader: jspb.BinaryReader): PorterGetNotifyTargetItemsRequest;
+}
+
+export namespace PorterGetNotifyTargetItemsRequest {
+  export type AsObject = {
+    id?: librarian_v1_common_pb.InternalID.AsObject,
+    paging?: librarian_v1_common_pb.PagingRequest.AsObject,
+  }
+}
+
+export class PorterGetNotifyTargetItemsResponse extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_common_pb.PagingResponse | undefined;
+  setPaging(value?: librarian_v1_common_pb.PagingResponse): void;
+
+  hasDestination(): boolean;
+  clearDestination(): void;
+  getDestination(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setDestination(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
+  clearItemsList(): void;
+  getItemsList(): Array<librarian_v1_common_pb.FeedItem>;
+  setItemsList(value: Array<librarian_v1_common_pb.FeedItem>): void;
+  addItems(value?: librarian_v1_common_pb.FeedItem, index?: number): librarian_v1_common_pb.FeedItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PorterGetNotifyTargetItemsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PorterGetNotifyTargetItemsResponse): PorterGetNotifyTargetItemsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PorterGetNotifyTargetItemsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PorterGetNotifyTargetItemsResponse;
+  static deserializeBinaryFromReader(message: PorterGetNotifyTargetItemsResponse, reader: jspb.BinaryReader): PorterGetNotifyTargetItemsResponse;
+}
+
+export namespace PorterGetNotifyTargetItemsResponse {
+  export type AsObject = {
+    paging?: librarian_v1_common_pb.PagingResponse.AsObject,
+    destination?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
+    itemsList: Array<librarian_v1_common_pb.FeedItem.AsObject>,
+  }
+}
+
 export class NotifyTarget extends jspb.Message {
   hasId(): boolean;
   clearId(): void;

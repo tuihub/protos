@@ -256,6 +256,38 @@ final $typed_data.Uint8List listNotifyFlowsResponseDescriptor = $convert.base64D
     'EuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxI3CgVmbG93cxgCIAMoCzIhLmxpYnJhcmlhbi5zZXBo'
     'aXJhaC52MS5Ob3RpZnlGbG93UgVmbG93cw==');
 
+@$core.Deprecated('Use porterGetNotifyTargetItemsRequestDescriptor instead')
+const PorterGetNotifyTargetItemsRequest$json = {
+  '1': 'PorterGetNotifyTargetItemsRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'paging', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+  ],
+};
+
+/// Descriptor for `PorterGetNotifyTargetItemsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterGetNotifyTargetItemsRequestDescriptor = $convert.base64Decode(
+    'CiFQb3J0ZXJHZXROb3RpZnlUYXJnZXRJdGVtc1JlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYX'
+    'JpYW4udjEuSW50ZXJuYWxJRFICaWQSMwoGcGFnaW5nGAIgASgLMhsubGlicmFyaWFuLnYxLlBh'
+    'Z2luZ1JlcXVlc3RSBnBhZ2luZw==');
+
+@$core.Deprecated('Use porterGetNotifyTargetItemsResponseDescriptor instead')
+const PorterGetNotifyTargetItemsResponse$json = {
+  '1': 'PorterGetNotifyTargetItemsResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'destination', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'destination'},
+    {'1': 'items', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
+  ],
+};
+
+/// Descriptor for `PorterGetNotifyTargetItemsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List porterGetNotifyTargetItemsResponseDescriptor = $convert.base64Decode(
+    'CiJQb3J0ZXJHZXROb3RpZnlUYXJnZXRJdGVtc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLm'
+    'xpYnJhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEj4KC2Rlc3RpbmF0aW9uGAIgASgL'
+    'MhwubGlicmFyaWFuLnYxLkZlYXR1cmVSZXF1ZXN0UgtkZXN0aW5hdGlvbhIsCgVpdGVtcxgDIA'
+    'MoCzIWLmxpYnJhcmlhbi52MS5GZWVkSXRlbVIFaXRlbXM=');
+
 @$core.Deprecated('Use notifyTargetDescriptor instead')
 const NotifyTarget$json = {
   '1': 'NotifyTarget',

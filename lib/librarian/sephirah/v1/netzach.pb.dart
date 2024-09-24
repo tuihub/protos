@@ -644,6 +644,150 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   $core.List<NotifyFlow> get flows => $_getList(1);
 }
 
+class PorterGetNotifyTargetItemsRequest extends $pb.GeneratedMessage {
+  factory PorterGetNotifyTargetItemsRequest({
+    $8.InternalID? id,
+    $8.PagingRequest? paging,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    return $result;
+  }
+  PorterGetNotifyTargetItemsRequest._() : super();
+  factory PorterGetNotifyTargetItemsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PorterGetNotifyTargetItemsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterGetNotifyTargetItemsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..aOM<$8.PagingRequest>(2, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PorterGetNotifyTargetItemsRequest clone() => PorterGetNotifyTargetItemsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PorterGetNotifyTargetItemsRequest copyWith(void Function(PorterGetNotifyTargetItemsRequest) updates) => super.copyWith((message) => updates(message as PorterGetNotifyTargetItemsRequest)) as PorterGetNotifyTargetItemsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PorterGetNotifyTargetItemsRequest create() => PorterGetNotifyTargetItemsRequest._();
+  PorterGetNotifyTargetItemsRequest createEmptyInstance() => create();
+  static $pb.PbList<PorterGetNotifyTargetItemsRequest> createRepeated() => $pb.PbList<PorterGetNotifyTargetItemsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PorterGetNotifyTargetItemsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterGetNotifyTargetItemsRequest>(create);
+  static PorterGetNotifyTargetItemsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $8.PagingRequest get paging => $_getN(1);
+  @$pb.TagNumber(2)
+  set paging($8.PagingRequest v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPaging() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPaging() => clearField(2);
+  @$pb.TagNumber(2)
+  $8.PagingRequest ensurePaging() => $_ensure(1);
+}
+
+class PorterGetNotifyTargetItemsResponse extends $pb.GeneratedMessage {
+  factory PorterGetNotifyTargetItemsResponse({
+    $8.PagingResponse? paging,
+    $12.FeatureRequest? destination,
+    $core.Iterable<$8.FeedItem>? items,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (destination != null) {
+      $result.destination = destination;
+    }
+    if (items != null) {
+      $result.items.addAll(items);
+    }
+    return $result;
+  }
+  PorterGetNotifyTargetItemsResponse._() : super();
+  factory PorterGetNotifyTargetItemsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PorterGetNotifyTargetItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterGetNotifyTargetItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
+    ..aOM<$12.FeatureRequest>(2, _omitFieldNames ? '' : 'destination', subBuilder: $12.FeatureRequest.create)
+    ..pc<$8.FeedItem>(3, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $8.FeedItem.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PorterGetNotifyTargetItemsResponse clone() => PorterGetNotifyTargetItemsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PorterGetNotifyTargetItemsResponse copyWith(void Function(PorterGetNotifyTargetItemsResponse) updates) => super.copyWith((message) => updates(message as PorterGetNotifyTargetItemsResponse)) as PorterGetNotifyTargetItemsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PorterGetNotifyTargetItemsResponse create() => PorterGetNotifyTargetItemsResponse._();
+  PorterGetNotifyTargetItemsResponse createEmptyInstance() => create();
+  static $pb.PbList<PorterGetNotifyTargetItemsResponse> createRepeated() => $pb.PbList<PorterGetNotifyTargetItemsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PorterGetNotifyTargetItemsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterGetNotifyTargetItemsResponse>(create);
+  static PorterGetNotifyTargetItemsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $12.FeatureRequest get destination => $_getN(1);
+  @$pb.TagNumber(2)
+  set destination($12.FeatureRequest v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDestination() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDestination() => clearField(2);
+  @$pb.TagNumber(2)
+  $12.FeatureRequest ensureDestination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$8.FeedItem> get items => $_getList(2);
+}
+
 class NotifyTarget extends $pb.GeneratedMessage {
   factory NotifyTarget({
     $8.InternalID? id,

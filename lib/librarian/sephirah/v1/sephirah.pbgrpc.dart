@@ -392,6 +392,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows',
       ($5.ListNotifyFlowsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.ListNotifyFlowsResponse.fromBuffer(value));
+  static final _$porterGetNotifyTargetItems = $grpc.ClientMethod<$5.PorterGetNotifyTargetItemsRequest, $5.PorterGetNotifyTargetItemsResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/PorterGetNotifyTargetItems',
+      ($5.PorterGetNotifyTargetItemsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.PorterGetNotifyTargetItemsResponse.fromBuffer(value));
   static final _$listSystemNotifications = $grpc.ClientMethod<$5.ListSystemNotificationsRequest, $5.ListSystemNotificationsResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications',
       ($5.ListSystemNotificationsRequest value) => value.writeToBuffer(),
@@ -865,6 +869,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$5.ListNotifyFlowsResponse> listNotifyFlows($5.ListNotifyFlowsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listNotifyFlows, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$5.PorterGetNotifyTargetItemsResponse> porterGetNotifyTargetItems($5.PorterGetNotifyTargetItemsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$porterGetNotifyTargetItems, request, options: options);
   }
 
   $grpc.ResponseFuture<$5.ListSystemNotificationsResponse> listSystemNotifications($5.ListSystemNotificationsRequest request, {$grpc.CallOptions? options}) {
@@ -1614,6 +1622,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $5.ListNotifyFlowsRequest.fromBuffer(value),
         ($5.ListNotifyFlowsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$5.PorterGetNotifyTargetItemsRequest, $5.PorterGetNotifyTargetItemsResponse>(
+        'PorterGetNotifyTargetItems',
+        porterGetNotifyTargetItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $5.PorterGetNotifyTargetItemsRequest.fromBuffer(value),
+        ($5.PorterGetNotifyTargetItemsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$5.ListSystemNotificationsRequest, $5.ListSystemNotificationsResponse>(
         'ListSystemNotifications',
         listSystemNotifications_Pre,
@@ -2150,6 +2165,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return listNotifyFlows(call, await request);
   }
 
+  $async.Future<$5.PorterGetNotifyTargetItemsResponse> porterGetNotifyTargetItems_Pre($grpc.ServiceCall call, $async.Future<$5.PorterGetNotifyTargetItemsRequest> request) async {
+    return porterGetNotifyTargetItems(call, await request);
+  }
+
   $async.Future<$5.ListSystemNotificationsResponse> listSystemNotifications_Pre($grpc.ServiceCall call, $async.Future<$5.ListSystemNotificationsRequest> request) async {
     return listSystemNotifications(call, await request);
   }
@@ -2345,6 +2364,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$5.CreateNotifyFlowResponse> createNotifyFlow($grpc.ServiceCall call, $5.CreateNotifyFlowRequest request);
   $async.Future<$5.UpdateNotifyFlowResponse> updateNotifyFlow($grpc.ServiceCall call, $5.UpdateNotifyFlowRequest request);
   $async.Future<$5.ListNotifyFlowsResponse> listNotifyFlows($grpc.ServiceCall call, $5.ListNotifyFlowsRequest request);
+  $async.Future<$5.PorterGetNotifyTargetItemsResponse> porterGetNotifyTargetItems($grpc.ServiceCall call, $5.PorterGetNotifyTargetItemsRequest request);
   $async.Future<$5.ListSystemNotificationsResponse> listSystemNotifications($grpc.ServiceCall call, $5.ListSystemNotificationsRequest request);
   $async.Future<$5.UpdateSystemNotificationResponse> updateSystemNotification($grpc.ServiceCall call, $5.UpdateSystemNotificationRequest request);
   $async.Future<$6.CreateFeedConfigResponse> createFeedConfig($grpc.ServiceCall call, $6.CreateFeedConfigRequest request);

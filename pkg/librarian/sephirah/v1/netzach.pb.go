@@ -863,6 +863,124 @@ func (x *ListNotifyFlowsResponse) GetFlows() []*NotifyFlow {
 	return nil
 }
 
+type PorterGetNotifyTargetItemsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id     *v1.InternalID    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Paging *v1.PagingRequest `protobuf:"bytes,2,opt,name=paging,proto3" json:"paging,omitempty"`
+}
+
+func (x *PorterGetNotifyTargetItemsRequest) Reset() {
+	*x = PorterGetNotifyTargetItemsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PorterGetNotifyTargetItemsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PorterGetNotifyTargetItemsRequest) ProtoMessage() {}
+
+func (x *PorterGetNotifyTargetItemsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PorterGetNotifyTargetItemsRequest.ProtoReflect.Descriptor instead.
+func (*PorterGetNotifyTargetItemsRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *PorterGetNotifyTargetItemsRequest) GetId() *v1.InternalID {
+	if x != nil {
+		return x.Id
+	}
+	return nil
+}
+
+func (x *PorterGetNotifyTargetItemsRequest) GetPaging() *v1.PagingRequest {
+	if x != nil {
+		return x.Paging
+	}
+	return nil
+}
+
+type PorterGetNotifyTargetItemsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Paging      *v1.PagingResponse `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
+	Destination *v1.FeatureRequest `protobuf:"bytes,2,opt,name=destination,proto3" json:"destination,omitempty"`
+	Items       []*v1.FeedItem     `protobuf:"bytes,3,rep,name=items,proto3" json:"items,omitempty"`
+}
+
+func (x *PorterGetNotifyTargetItemsResponse) Reset() {
+	*x = PorterGetNotifyTargetItemsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PorterGetNotifyTargetItemsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PorterGetNotifyTargetItemsResponse) ProtoMessage() {}
+
+func (x *PorterGetNotifyTargetItemsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PorterGetNotifyTargetItemsResponse.ProtoReflect.Descriptor instead.
+func (*PorterGetNotifyTargetItemsResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *PorterGetNotifyTargetItemsResponse) GetPaging() *v1.PagingResponse {
+	if x != nil {
+		return x.Paging
+	}
+	return nil
+}
+
+func (x *PorterGetNotifyTargetItemsResponse) GetDestination() *v1.FeatureRequest {
+	if x != nil {
+		return x.Destination
+	}
+	return nil
+}
+
+func (x *PorterGetNotifyTargetItemsResponse) GetItems() []*v1.FeedItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 type NotifyTarget struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -879,7 +997,7 @@ type NotifyTarget struct {
 func (x *NotifyTarget) Reset() {
 	*x = NotifyTarget{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[12]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -892,7 +1010,7 @@ func (x *NotifyTarget) String() string {
 func (*NotifyTarget) ProtoMessage() {}
 
 func (x *NotifyTarget) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[12]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -905,7 +1023,7 @@ func (x *NotifyTarget) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyTarget.ProtoReflect.Descriptor instead.
 func (*NotifyTarget) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{12}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *NotifyTarget) GetId() *v1.InternalID {
@@ -959,7 +1077,7 @@ type NotifyFlow struct {
 func (x *NotifyFlow) Reset() {
 	*x = NotifyFlow{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[13]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -972,7 +1090,7 @@ func (x *NotifyFlow) String() string {
 func (*NotifyFlow) ProtoMessage() {}
 
 func (x *NotifyFlow) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[13]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -985,7 +1103,7 @@ func (x *NotifyFlow) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyFlow.ProtoReflect.Descriptor instead.
 func (*NotifyFlow) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{13}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *NotifyFlow) GetId() *v1.InternalID {
@@ -1043,7 +1161,7 @@ type NotifyFlowSource struct {
 func (x *NotifyFlowSource) Reset() {
 	*x = NotifyFlowSource{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[14]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1056,7 +1174,7 @@ func (x *NotifyFlowSource) String() string {
 func (*NotifyFlowSource) ProtoMessage() {}
 
 func (x *NotifyFlowSource) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[14]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1069,7 +1187,7 @@ func (x *NotifyFlowSource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyFlowSource.ProtoReflect.Descriptor instead.
 func (*NotifyFlowSource) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{14}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *NotifyFlowSource) GetFilter() *NotifyFilter {
@@ -1099,7 +1217,7 @@ type NotifyFlowTarget struct {
 func (x *NotifyFlowTarget) Reset() {
 	*x = NotifyFlowTarget{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[15]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1112,7 +1230,7 @@ func (x *NotifyFlowTarget) String() string {
 func (*NotifyFlowTarget) ProtoMessage() {}
 
 func (x *NotifyFlowTarget) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[15]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1125,7 +1243,7 @@ func (x *NotifyFlowTarget) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyFlowTarget.ProtoReflect.Descriptor instead.
 func (*NotifyFlowTarget) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{15}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *NotifyFlowTarget) GetFilter() *NotifyFilter {
@@ -1154,7 +1272,7 @@ type NotifyFilter struct {
 func (x *NotifyFilter) Reset() {
 	*x = NotifyFilter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[16]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1167,7 +1285,7 @@ func (x *NotifyFilter) String() string {
 func (*NotifyFilter) ProtoMessage() {}
 
 func (x *NotifyFilter) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[16]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1180,7 +1298,7 @@ func (x *NotifyFilter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NotifyFilter.ProtoReflect.Descriptor instead.
 func (*NotifyFilter) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{16}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *NotifyFilter) GetExcludeKeywords() []string {
@@ -1211,7 +1329,7 @@ type ListSystemNotificationsRequest struct {
 func (x *ListSystemNotificationsRequest) Reset() {
 	*x = ListSystemNotificationsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[17]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1224,7 +1342,7 @@ func (x *ListSystemNotificationsRequest) String() string {
 func (*ListSystemNotificationsRequest) ProtoMessage() {}
 
 func (x *ListSystemNotificationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[17]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1237,7 +1355,7 @@ func (x *ListSystemNotificationsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSystemNotificationsRequest.ProtoReflect.Descriptor instead.
 func (*ListSystemNotificationsRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{17}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ListSystemNotificationsRequest) GetPaging() *v1.PagingRequest {
@@ -1280,7 +1398,7 @@ type ListSystemNotificationsResponse struct {
 func (x *ListSystemNotificationsResponse) Reset() {
 	*x = ListSystemNotificationsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[18]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1293,7 +1411,7 @@ func (x *ListSystemNotificationsResponse) String() string {
 func (*ListSystemNotificationsResponse) ProtoMessage() {}
 
 func (x *ListSystemNotificationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[18]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1306,7 +1424,7 @@ func (x *ListSystemNotificationsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSystemNotificationsResponse.ProtoReflect.Descriptor instead.
 func (*ListSystemNotificationsResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{18}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ListSystemNotificationsResponse) GetPaging() *v1.PagingResponse {
@@ -1335,7 +1453,7 @@ type UpdateSystemNotificationRequest struct {
 func (x *UpdateSystemNotificationRequest) Reset() {
 	*x = UpdateSystemNotificationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[19]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1348,7 +1466,7 @@ func (x *UpdateSystemNotificationRequest) String() string {
 func (*UpdateSystemNotificationRequest) ProtoMessage() {}
 
 func (x *UpdateSystemNotificationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[19]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1361,7 +1479,7 @@ func (x *UpdateSystemNotificationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSystemNotificationRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSystemNotificationRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{19}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *UpdateSystemNotificationRequest) GetId() *v1.InternalID {
@@ -1387,7 +1505,7 @@ type UpdateSystemNotificationResponse struct {
 func (x *UpdateSystemNotificationResponse) Reset() {
 	*x = UpdateSystemNotificationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[20]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1400,7 +1518,7 @@ func (x *UpdateSystemNotificationResponse) String() string {
 func (*UpdateSystemNotificationResponse) ProtoMessage() {}
 
 func (x *UpdateSystemNotificationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[20]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1413,7 +1531,7 @@ func (x *UpdateSystemNotificationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSystemNotificationResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSystemNotificationResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{20}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{22}
 }
 
 type SystemNotification struct {
@@ -1435,7 +1553,7 @@ type SystemNotification struct {
 func (x *SystemNotification) Reset() {
 	*x = SystemNotification{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[21]
+		mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1448,7 +1566,7 @@ func (x *SystemNotification) String() string {
 func (*SystemNotification) ProtoMessage() {}
 
 func (x *SystemNotification) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[21]
+	mi := &file_librarian_sephirah_v1_netzach_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1461,7 +1579,7 @@ func (x *SystemNotification) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SystemNotification.ProtoReflect.Descriptor instead.
 func (*SystemNotification) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{21}
+	return file_librarian_sephirah_v1_netzach_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *SystemNotification) GetId() *v1.InternalID {
@@ -1606,7 +1724,28 @@ var file_librarian_sephirah_v1_netzach_proto_rawDesc = []byte{
 	0x6c, 0x6f, 0x77, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x21, 0x2e, 0x6c, 0x69, 0x62,
 	0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x73, 0x65, 0x70, 0x68, 0x69, 0x72, 0x61, 0x68, 0x2e,
 	0x76, 0x31, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x46, 0x6c, 0x6f, 0x77, 0x52, 0x05, 0x66,
-	0x6c, 0x6f, 0x77, 0x73, 0x22, 0xf1, 0x01, 0x0a, 0x0c, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x54,
+	0x6c, 0x6f, 0x77, 0x73, 0x22, 0x82, 0x01, 0x0a, 0x21, 0x50, 0x6f, 0x72, 0x74, 0x65, 0x72, 0x47,
+	0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x49, 0x74,
+	0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69,
+	0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44,
+	0x52, 0x02, 0x69, 0x64, 0x12, 0x33, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e,
+	0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x52, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x22, 0xc8, 0x01, 0x0a, 0x22, 0x50, 0x6f,
+	0x72, 0x74, 0x65, 0x72, 0x47, 0x65, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x54, 0x61, 0x72,
+	0x67, 0x65, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x34, 0x0a, 0x06, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1c, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e,
+	0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x06,
+	0x70, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x12, 0x3e, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x74, 0x69, 0x6e,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6c, 0x69,
+	0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x65, 0x61, 0x74, 0x75,
+	0x72, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x74, 0x69,
+	0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18,
+	0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61,
+	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x65, 0x65, 0x64, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x05, 0x69,
+	0x74, 0x65, 0x6d, 0x73, 0x22, 0xf1, 0x01, 0x0a, 0x0c, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x54,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x12, 0x28, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0b, 0x32, 0x18, 0x2e, 0x6c, 0x69, 0x62, 0x72, 0x61, 0x72, 0x69, 0x61, 0x6e, 0x2e, 0x76, 0x31,
 	0x2e, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x49, 0x44, 0x52, 0x02, 0x69, 0x64, 0x12,
@@ -1808,87 +1947,95 @@ func file_librarian_sephirah_v1_netzach_proto_rawDescGZIP() []byte {
 }
 
 var file_librarian_sephirah_v1_netzach_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_librarian_sephirah_v1_netzach_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_librarian_sephirah_v1_netzach_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_librarian_sephirah_v1_netzach_proto_goTypes = []any{
-	(NotifyTargetStatus)(0),                  // 0: librarian.sephirah.v1.NotifyTargetStatus
-	(NotifyFlowStatus)(0),                    // 1: librarian.sephirah.v1.NotifyFlowStatus
-	(SystemNotificationLevel)(0),             // 2: librarian.sephirah.v1.SystemNotificationLevel
-	(SystemNotificationType)(0),              // 3: librarian.sephirah.v1.SystemNotificationType
-	(SystemNotificationStatus)(0),            // 4: librarian.sephirah.v1.SystemNotificationStatus
-	(*CreateNotifyTargetRequest)(nil),        // 5: librarian.sephirah.v1.CreateNotifyTargetRequest
-	(*CreateNotifyTargetResponse)(nil),       // 6: librarian.sephirah.v1.CreateNotifyTargetResponse
-	(*UpdateNotifyTargetRequest)(nil),        // 7: librarian.sephirah.v1.UpdateNotifyTargetRequest
-	(*UpdateNotifyTargetResponse)(nil),       // 8: librarian.sephirah.v1.UpdateNotifyTargetResponse
-	(*ListNotifyTargetsRequest)(nil),         // 9: librarian.sephirah.v1.ListNotifyTargetsRequest
-	(*ListNotifyTargetsResponse)(nil),        // 10: librarian.sephirah.v1.ListNotifyTargetsResponse
-	(*CreateNotifyFlowRequest)(nil),          // 11: librarian.sephirah.v1.CreateNotifyFlowRequest
-	(*CreateNotifyFlowResponse)(nil),         // 12: librarian.sephirah.v1.CreateNotifyFlowResponse
-	(*UpdateNotifyFlowRequest)(nil),          // 13: librarian.sephirah.v1.UpdateNotifyFlowRequest
-	(*UpdateNotifyFlowResponse)(nil),         // 14: librarian.sephirah.v1.UpdateNotifyFlowResponse
-	(*ListNotifyFlowsRequest)(nil),           // 15: librarian.sephirah.v1.ListNotifyFlowsRequest
-	(*ListNotifyFlowsResponse)(nil),          // 16: librarian.sephirah.v1.ListNotifyFlowsResponse
-	(*NotifyTarget)(nil),                     // 17: librarian.sephirah.v1.NotifyTarget
-	(*NotifyFlow)(nil),                       // 18: librarian.sephirah.v1.NotifyFlow
-	(*NotifyFlowSource)(nil),                 // 19: librarian.sephirah.v1.NotifyFlowSource
-	(*NotifyFlowTarget)(nil),                 // 20: librarian.sephirah.v1.NotifyFlowTarget
-	(*NotifyFilter)(nil),                     // 21: librarian.sephirah.v1.NotifyFilter
-	(*ListSystemNotificationsRequest)(nil),   // 22: librarian.sephirah.v1.ListSystemNotificationsRequest
-	(*ListSystemNotificationsResponse)(nil),  // 23: librarian.sephirah.v1.ListSystemNotificationsResponse
-	(*UpdateSystemNotificationRequest)(nil),  // 24: librarian.sephirah.v1.UpdateSystemNotificationRequest
-	(*UpdateSystemNotificationResponse)(nil), // 25: librarian.sephirah.v1.UpdateSystemNotificationResponse
-	(*SystemNotification)(nil),               // 26: librarian.sephirah.v1.SystemNotification
-	(*v1.InternalID)(nil),                    // 27: librarian.v1.InternalID
-	(*v1.PagingRequest)(nil),                 // 28: librarian.v1.PagingRequest
-	(*v1.PagingResponse)(nil),                // 29: librarian.v1.PagingResponse
-	(*v1.FeatureRequest)(nil),                // 30: librarian.v1.FeatureRequest
-	(*timestamppb.Timestamp)(nil),            // 31: google.protobuf.Timestamp
+	(NotifyTargetStatus)(0),                    // 0: librarian.sephirah.v1.NotifyTargetStatus
+	(NotifyFlowStatus)(0),                      // 1: librarian.sephirah.v1.NotifyFlowStatus
+	(SystemNotificationLevel)(0),               // 2: librarian.sephirah.v1.SystemNotificationLevel
+	(SystemNotificationType)(0),                // 3: librarian.sephirah.v1.SystemNotificationType
+	(SystemNotificationStatus)(0),              // 4: librarian.sephirah.v1.SystemNotificationStatus
+	(*CreateNotifyTargetRequest)(nil),          // 5: librarian.sephirah.v1.CreateNotifyTargetRequest
+	(*CreateNotifyTargetResponse)(nil),         // 6: librarian.sephirah.v1.CreateNotifyTargetResponse
+	(*UpdateNotifyTargetRequest)(nil),          // 7: librarian.sephirah.v1.UpdateNotifyTargetRequest
+	(*UpdateNotifyTargetResponse)(nil),         // 8: librarian.sephirah.v1.UpdateNotifyTargetResponse
+	(*ListNotifyTargetsRequest)(nil),           // 9: librarian.sephirah.v1.ListNotifyTargetsRequest
+	(*ListNotifyTargetsResponse)(nil),          // 10: librarian.sephirah.v1.ListNotifyTargetsResponse
+	(*CreateNotifyFlowRequest)(nil),            // 11: librarian.sephirah.v1.CreateNotifyFlowRequest
+	(*CreateNotifyFlowResponse)(nil),           // 12: librarian.sephirah.v1.CreateNotifyFlowResponse
+	(*UpdateNotifyFlowRequest)(nil),            // 13: librarian.sephirah.v1.UpdateNotifyFlowRequest
+	(*UpdateNotifyFlowResponse)(nil),           // 14: librarian.sephirah.v1.UpdateNotifyFlowResponse
+	(*ListNotifyFlowsRequest)(nil),             // 15: librarian.sephirah.v1.ListNotifyFlowsRequest
+	(*ListNotifyFlowsResponse)(nil),            // 16: librarian.sephirah.v1.ListNotifyFlowsResponse
+	(*PorterGetNotifyTargetItemsRequest)(nil),  // 17: librarian.sephirah.v1.PorterGetNotifyTargetItemsRequest
+	(*PorterGetNotifyTargetItemsResponse)(nil), // 18: librarian.sephirah.v1.PorterGetNotifyTargetItemsResponse
+	(*NotifyTarget)(nil),                       // 19: librarian.sephirah.v1.NotifyTarget
+	(*NotifyFlow)(nil),                         // 20: librarian.sephirah.v1.NotifyFlow
+	(*NotifyFlowSource)(nil),                   // 21: librarian.sephirah.v1.NotifyFlowSource
+	(*NotifyFlowTarget)(nil),                   // 22: librarian.sephirah.v1.NotifyFlowTarget
+	(*NotifyFilter)(nil),                       // 23: librarian.sephirah.v1.NotifyFilter
+	(*ListSystemNotificationsRequest)(nil),     // 24: librarian.sephirah.v1.ListSystemNotificationsRequest
+	(*ListSystemNotificationsResponse)(nil),    // 25: librarian.sephirah.v1.ListSystemNotificationsResponse
+	(*UpdateSystemNotificationRequest)(nil),    // 26: librarian.sephirah.v1.UpdateSystemNotificationRequest
+	(*UpdateSystemNotificationResponse)(nil),   // 27: librarian.sephirah.v1.UpdateSystemNotificationResponse
+	(*SystemNotification)(nil),                 // 28: librarian.sephirah.v1.SystemNotification
+	(*v1.InternalID)(nil),                      // 29: librarian.v1.InternalID
+	(*v1.PagingRequest)(nil),                   // 30: librarian.v1.PagingRequest
+	(*v1.PagingResponse)(nil),                  // 31: librarian.v1.PagingResponse
+	(*v1.FeatureRequest)(nil),                  // 32: librarian.v1.FeatureRequest
+	(*v1.FeedItem)(nil),                        // 33: librarian.v1.FeedItem
+	(*timestamppb.Timestamp)(nil),              // 34: google.protobuf.Timestamp
 }
 var file_librarian_sephirah_v1_netzach_proto_depIdxs = []int32{
-	17, // 0: librarian.sephirah.v1.CreateNotifyTargetRequest.target:type_name -> librarian.sephirah.v1.NotifyTarget
-	27, // 1: librarian.sephirah.v1.CreateNotifyTargetResponse.id:type_name -> librarian.v1.InternalID
-	17, // 2: librarian.sephirah.v1.UpdateNotifyTargetRequest.target:type_name -> librarian.sephirah.v1.NotifyTarget
-	28, // 3: librarian.sephirah.v1.ListNotifyTargetsRequest.paging:type_name -> librarian.v1.PagingRequest
-	27, // 4: librarian.sephirah.v1.ListNotifyTargetsRequest.id_filter:type_name -> librarian.v1.InternalID
+	19, // 0: librarian.sephirah.v1.CreateNotifyTargetRequest.target:type_name -> librarian.sephirah.v1.NotifyTarget
+	29, // 1: librarian.sephirah.v1.CreateNotifyTargetResponse.id:type_name -> librarian.v1.InternalID
+	19, // 2: librarian.sephirah.v1.UpdateNotifyTargetRequest.target:type_name -> librarian.sephirah.v1.NotifyTarget
+	30, // 3: librarian.sephirah.v1.ListNotifyTargetsRequest.paging:type_name -> librarian.v1.PagingRequest
+	29, // 4: librarian.sephirah.v1.ListNotifyTargetsRequest.id_filter:type_name -> librarian.v1.InternalID
 	0,  // 5: librarian.sephirah.v1.ListNotifyTargetsRequest.status_filter:type_name -> librarian.sephirah.v1.NotifyTargetStatus
-	29, // 6: librarian.sephirah.v1.ListNotifyTargetsResponse.paging:type_name -> librarian.v1.PagingResponse
-	17, // 7: librarian.sephirah.v1.ListNotifyTargetsResponse.targets:type_name -> librarian.sephirah.v1.NotifyTarget
-	18, // 8: librarian.sephirah.v1.CreateNotifyFlowRequest.flow:type_name -> librarian.sephirah.v1.NotifyFlow
-	27, // 9: librarian.sephirah.v1.CreateNotifyFlowResponse.id:type_name -> librarian.v1.InternalID
-	18, // 10: librarian.sephirah.v1.UpdateNotifyFlowRequest.flow:type_name -> librarian.sephirah.v1.NotifyFlow
-	28, // 11: librarian.sephirah.v1.ListNotifyFlowsRequest.paging:type_name -> librarian.v1.PagingRequest
-	27, // 12: librarian.sephirah.v1.ListNotifyFlowsRequest.id_filter:type_name -> librarian.v1.InternalID
-	29, // 13: librarian.sephirah.v1.ListNotifyFlowsResponse.paging:type_name -> librarian.v1.PagingResponse
-	18, // 14: librarian.sephirah.v1.ListNotifyFlowsResponse.flows:type_name -> librarian.sephirah.v1.NotifyFlow
-	27, // 15: librarian.sephirah.v1.NotifyTarget.id:type_name -> librarian.v1.InternalID
-	30, // 16: librarian.sephirah.v1.NotifyTarget.destination:type_name -> librarian.v1.FeatureRequest
-	0,  // 17: librarian.sephirah.v1.NotifyTarget.status:type_name -> librarian.sephirah.v1.NotifyTargetStatus
-	27, // 18: librarian.sephirah.v1.NotifyFlow.id:type_name -> librarian.v1.InternalID
-	19, // 19: librarian.sephirah.v1.NotifyFlow.sources:type_name -> librarian.sephirah.v1.NotifyFlowSource
-	20, // 20: librarian.sephirah.v1.NotifyFlow.targets:type_name -> librarian.sephirah.v1.NotifyFlowTarget
-	1,  // 21: librarian.sephirah.v1.NotifyFlow.status:type_name -> librarian.sephirah.v1.NotifyFlowStatus
-	21, // 22: librarian.sephirah.v1.NotifyFlowSource.filter:type_name -> librarian.sephirah.v1.NotifyFilter
-	27, // 23: librarian.sephirah.v1.NotifyFlowSource.source_id:type_name -> librarian.v1.InternalID
-	21, // 24: librarian.sephirah.v1.NotifyFlowTarget.filter:type_name -> librarian.sephirah.v1.NotifyFilter
-	27, // 25: librarian.sephirah.v1.NotifyFlowTarget.target_id:type_name -> librarian.v1.InternalID
-	28, // 26: librarian.sephirah.v1.ListSystemNotificationsRequest.paging:type_name -> librarian.v1.PagingRequest
-	3,  // 27: librarian.sephirah.v1.ListSystemNotificationsRequest.type_filter:type_name -> librarian.sephirah.v1.SystemNotificationType
-	2,  // 28: librarian.sephirah.v1.ListSystemNotificationsRequest.level_filter:type_name -> librarian.sephirah.v1.SystemNotificationLevel
-	4,  // 29: librarian.sephirah.v1.ListSystemNotificationsRequest.status_filter:type_name -> librarian.sephirah.v1.SystemNotificationStatus
-	29, // 30: librarian.sephirah.v1.ListSystemNotificationsResponse.paging:type_name -> librarian.v1.PagingResponse
-	26, // 31: librarian.sephirah.v1.ListSystemNotificationsResponse.notifications:type_name -> librarian.sephirah.v1.SystemNotification
-	27, // 32: librarian.sephirah.v1.UpdateSystemNotificationRequest.id:type_name -> librarian.v1.InternalID
-	4,  // 33: librarian.sephirah.v1.UpdateSystemNotificationRequest.status:type_name -> librarian.sephirah.v1.SystemNotificationStatus
-	27, // 34: librarian.sephirah.v1.SystemNotification.id:type_name -> librarian.v1.InternalID
-	3,  // 35: librarian.sephirah.v1.SystemNotification.type:type_name -> librarian.sephirah.v1.SystemNotificationType
-	2,  // 36: librarian.sephirah.v1.SystemNotification.level:type_name -> librarian.sephirah.v1.SystemNotificationLevel
-	4,  // 37: librarian.sephirah.v1.SystemNotification.status:type_name -> librarian.sephirah.v1.SystemNotificationStatus
-	31, // 38: librarian.sephirah.v1.SystemNotification.create_time:type_name -> google.protobuf.Timestamp
-	31, // 39: librarian.sephirah.v1.SystemNotification.update_time:type_name -> google.protobuf.Timestamp
-	40, // [40:40] is the sub-list for method output_type
-	40, // [40:40] is the sub-list for method input_type
-	40, // [40:40] is the sub-list for extension type_name
-	40, // [40:40] is the sub-list for extension extendee
-	0,  // [0:40] is the sub-list for field type_name
+	31, // 6: librarian.sephirah.v1.ListNotifyTargetsResponse.paging:type_name -> librarian.v1.PagingResponse
+	19, // 7: librarian.sephirah.v1.ListNotifyTargetsResponse.targets:type_name -> librarian.sephirah.v1.NotifyTarget
+	20, // 8: librarian.sephirah.v1.CreateNotifyFlowRequest.flow:type_name -> librarian.sephirah.v1.NotifyFlow
+	29, // 9: librarian.sephirah.v1.CreateNotifyFlowResponse.id:type_name -> librarian.v1.InternalID
+	20, // 10: librarian.sephirah.v1.UpdateNotifyFlowRequest.flow:type_name -> librarian.sephirah.v1.NotifyFlow
+	30, // 11: librarian.sephirah.v1.ListNotifyFlowsRequest.paging:type_name -> librarian.v1.PagingRequest
+	29, // 12: librarian.sephirah.v1.ListNotifyFlowsRequest.id_filter:type_name -> librarian.v1.InternalID
+	31, // 13: librarian.sephirah.v1.ListNotifyFlowsResponse.paging:type_name -> librarian.v1.PagingResponse
+	20, // 14: librarian.sephirah.v1.ListNotifyFlowsResponse.flows:type_name -> librarian.sephirah.v1.NotifyFlow
+	29, // 15: librarian.sephirah.v1.PorterGetNotifyTargetItemsRequest.id:type_name -> librarian.v1.InternalID
+	30, // 16: librarian.sephirah.v1.PorterGetNotifyTargetItemsRequest.paging:type_name -> librarian.v1.PagingRequest
+	31, // 17: librarian.sephirah.v1.PorterGetNotifyTargetItemsResponse.paging:type_name -> librarian.v1.PagingResponse
+	32, // 18: librarian.sephirah.v1.PorterGetNotifyTargetItemsResponse.destination:type_name -> librarian.v1.FeatureRequest
+	33, // 19: librarian.sephirah.v1.PorterGetNotifyTargetItemsResponse.items:type_name -> librarian.v1.FeedItem
+	29, // 20: librarian.sephirah.v1.NotifyTarget.id:type_name -> librarian.v1.InternalID
+	32, // 21: librarian.sephirah.v1.NotifyTarget.destination:type_name -> librarian.v1.FeatureRequest
+	0,  // 22: librarian.sephirah.v1.NotifyTarget.status:type_name -> librarian.sephirah.v1.NotifyTargetStatus
+	29, // 23: librarian.sephirah.v1.NotifyFlow.id:type_name -> librarian.v1.InternalID
+	21, // 24: librarian.sephirah.v1.NotifyFlow.sources:type_name -> librarian.sephirah.v1.NotifyFlowSource
+	22, // 25: librarian.sephirah.v1.NotifyFlow.targets:type_name -> librarian.sephirah.v1.NotifyFlowTarget
+	1,  // 26: librarian.sephirah.v1.NotifyFlow.status:type_name -> librarian.sephirah.v1.NotifyFlowStatus
+	23, // 27: librarian.sephirah.v1.NotifyFlowSource.filter:type_name -> librarian.sephirah.v1.NotifyFilter
+	29, // 28: librarian.sephirah.v1.NotifyFlowSource.source_id:type_name -> librarian.v1.InternalID
+	23, // 29: librarian.sephirah.v1.NotifyFlowTarget.filter:type_name -> librarian.sephirah.v1.NotifyFilter
+	29, // 30: librarian.sephirah.v1.NotifyFlowTarget.target_id:type_name -> librarian.v1.InternalID
+	30, // 31: librarian.sephirah.v1.ListSystemNotificationsRequest.paging:type_name -> librarian.v1.PagingRequest
+	3,  // 32: librarian.sephirah.v1.ListSystemNotificationsRequest.type_filter:type_name -> librarian.sephirah.v1.SystemNotificationType
+	2,  // 33: librarian.sephirah.v1.ListSystemNotificationsRequest.level_filter:type_name -> librarian.sephirah.v1.SystemNotificationLevel
+	4,  // 34: librarian.sephirah.v1.ListSystemNotificationsRequest.status_filter:type_name -> librarian.sephirah.v1.SystemNotificationStatus
+	31, // 35: librarian.sephirah.v1.ListSystemNotificationsResponse.paging:type_name -> librarian.v1.PagingResponse
+	28, // 36: librarian.sephirah.v1.ListSystemNotificationsResponse.notifications:type_name -> librarian.sephirah.v1.SystemNotification
+	29, // 37: librarian.sephirah.v1.UpdateSystemNotificationRequest.id:type_name -> librarian.v1.InternalID
+	4,  // 38: librarian.sephirah.v1.UpdateSystemNotificationRequest.status:type_name -> librarian.sephirah.v1.SystemNotificationStatus
+	29, // 39: librarian.sephirah.v1.SystemNotification.id:type_name -> librarian.v1.InternalID
+	3,  // 40: librarian.sephirah.v1.SystemNotification.type:type_name -> librarian.sephirah.v1.SystemNotificationType
+	2,  // 41: librarian.sephirah.v1.SystemNotification.level:type_name -> librarian.sephirah.v1.SystemNotificationLevel
+	4,  // 42: librarian.sephirah.v1.SystemNotification.status:type_name -> librarian.sephirah.v1.SystemNotificationStatus
+	34, // 43: librarian.sephirah.v1.SystemNotification.create_time:type_name -> google.protobuf.Timestamp
+	34, // 44: librarian.sephirah.v1.SystemNotification.update_time:type_name -> google.protobuf.Timestamp
+	45, // [45:45] is the sub-list for method output_type
+	45, // [45:45] is the sub-list for method input_type
+	45, // [45:45] is the sub-list for extension type_name
+	45, // [45:45] is the sub-list for extension extendee
+	0,  // [0:45] is the sub-list for field type_name
 }
 
 func init() { file_librarian_sephirah_v1_netzach_proto_init() }
@@ -2042,7 +2189,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[12].Exporter = func(v any, i int) any {
-			switch v := v.(*NotifyTarget); i {
+			switch v := v.(*PorterGetNotifyTargetItemsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2054,7 +2201,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[13].Exporter = func(v any, i int) any {
-			switch v := v.(*NotifyFlow); i {
+			switch v := v.(*PorterGetNotifyTargetItemsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2066,7 +2213,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[14].Exporter = func(v any, i int) any {
-			switch v := v.(*NotifyFlowSource); i {
+			switch v := v.(*NotifyTarget); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2078,7 +2225,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[15].Exporter = func(v any, i int) any {
-			switch v := v.(*NotifyFlowTarget); i {
+			switch v := v.(*NotifyFlow); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2090,7 +2237,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[16].Exporter = func(v any, i int) any {
-			switch v := v.(*NotifyFilter); i {
+			switch v := v.(*NotifyFlowSource); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2102,7 +2249,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[17].Exporter = func(v any, i int) any {
-			switch v := v.(*ListSystemNotificationsRequest); i {
+			switch v := v.(*NotifyFlowTarget); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2114,7 +2261,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[18].Exporter = func(v any, i int) any {
-			switch v := v.(*ListSystemNotificationsResponse); i {
+			switch v := v.(*NotifyFilter); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2126,7 +2273,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[19].Exporter = func(v any, i int) any {
-			switch v := v.(*UpdateSystemNotificationRequest); i {
+			switch v := v.(*ListSystemNotificationsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2138,7 +2285,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[20].Exporter = func(v any, i int) any {
-			switch v := v.(*UpdateSystemNotificationResponse); i {
+			switch v := v.(*ListSystemNotificationsResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2150,6 +2297,30 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			}
 		}
 		file_librarian_sephirah_v1_netzach_proto_msgTypes[21].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateSystemNotificationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_netzach_proto_msgTypes[22].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateSystemNotificationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_librarian_sephirah_v1_netzach_proto_msgTypes[23].Exporter = func(v any, i int) any {
 			switch v := v.(*SystemNotification); i {
 			case 0:
 				return &v.state
@@ -2168,7 +2339,7 @@ func file_librarian_sephirah_v1_netzach_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_librarian_sephirah_v1_netzach_proto_rawDesc,
 			NumEnums:      5,
-			NumMessages:   22,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

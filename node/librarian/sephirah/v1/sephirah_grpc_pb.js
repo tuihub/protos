@@ -1531,6 +1531,28 @@ function deserialize_librarian_sephirah_v1_PinAppSaveFileResponse(buffer_arg) {
   return librarian_sephirah_v1_gebura_pb.PinAppSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PorterGetNotifyTargetItemsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsRequest(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.PorterGetNotifyTargetItemsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsResponse(buffer_arg) {
+  return librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_PresignedDownloadFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_binah_pb.PresignedDownloadFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.PresignedDownloadFileRequest');
@@ -3720,6 +3742,18 @@ listNotifyFlows: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
+  },
+  // `Netzach` `Porter`
+porterGetNotifyTargetItems: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/PorterGetNotifyTargetItems',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest,
+    responseType: librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_PorterGetNotifyTargetItemsResponse,
   },
   // `Netzach` `Admin` `Normal limited`
 listSystemNotifications: {

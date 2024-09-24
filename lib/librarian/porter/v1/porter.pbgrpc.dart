@@ -57,10 +57,6 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       '/librarian.porter.v1.LibrarianPorterService/PullFeed',
       ($0.PullFeedRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.PullFeedResponse.fromBuffer(value));
-  static final _$pushFeedItems = $grpc.ClientMethod<$0.PushFeedItemsRequest, $0.PushFeedItemsResponse>(
-      '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
-      ($0.PushFeedItemsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.PushFeedItemsResponse.fromBuffer(value));
   static final _$execFeedItemAction = $grpc.ClientMethod<$0.ExecFeedItemActionRequest, $0.ExecFeedItemActionResponse>(
       '/librarian.porter.v1.LibrarianPorterService/ExecFeedItemAction',
       ($0.ExecFeedItemActionRequest value) => value.writeToBuffer(),
@@ -81,6 +77,10 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       '/librarian.porter.v1.LibrarianPorterService/DisableFeedGetter',
       ($0.DisableFeedGetterRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.DisableFeedGetterResponse.fromBuffer(value));
+  static final _$pushFeedItems = $grpc.ClientMethod<$0.PushFeedItemsRequest, $0.PushFeedItemsResponse>(
+      '/librarian.porter.v1.LibrarianPorterService/PushFeedItems',
+      ($0.PushFeedItemsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.PushFeedItemsResponse.fromBuffer(value));
 
   LibrarianPorterServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -124,10 +124,6 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createUnaryCall(_$pullFeed, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.PushFeedItemsResponse> pushFeedItems($0.PushFeedItemsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$pushFeedItems, request, options: options);
-  }
-
   $grpc.ResponseFuture<$0.ExecFeedItemActionResponse> execFeedItemAction($0.ExecFeedItemActionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$execFeedItemAction, request, options: options);
   }
@@ -146,6 +142,10 @@ class LibrarianPorterServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.DisableFeedGetterResponse> disableFeedGetter($0.DisableFeedGetterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$disableFeedGetter, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PushFeedItemsResponse> pushFeedItems($0.PushFeedItemsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$pushFeedItems, request, options: options);
   }
 }
 
@@ -217,13 +217,6 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.PullFeedRequest.fromBuffer(value),
         ($0.PullFeedResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PushFeedItemsRequest, $0.PushFeedItemsResponse>(
-        'PushFeedItems',
-        pushFeedItems_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PushFeedItemsRequest.fromBuffer(value),
-        ($0.PushFeedItemsResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ExecFeedItemActionRequest, $0.ExecFeedItemActionResponse>(
         'ExecFeedItemAction',
         execFeedItemAction_Pre,
@@ -259,6 +252,13 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.DisableFeedGetterRequest.fromBuffer(value),
         ($0.DisableFeedGetterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PushFeedItemsRequest, $0.PushFeedItemsResponse>(
+        'PushFeedItems',
+        pushFeedItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PushFeedItemsRequest.fromBuffer(value),
+        ($0.PushFeedItemsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation_Pre($grpc.ServiceCall call, $async.Future<$0.GetPorterInformationRequest> request) async {
@@ -297,10 +297,6 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return pullFeed(call, await request);
   }
 
-  $async.Future<$0.PushFeedItemsResponse> pushFeedItems_Pre($grpc.ServiceCall call, $async.Future<$0.PushFeedItemsRequest> request) async {
-    return pushFeedItems(call, await request);
-  }
-
   $async.Future<$0.ExecFeedItemActionResponse> execFeedItemAction_Pre($grpc.ServiceCall call, $async.Future<$0.ExecFeedItemActionRequest> request) async {
     return execFeedItemAction(call, await request);
   }
@@ -321,6 +317,10 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
     return disableFeedGetter(call, await request);
   }
 
+  $async.Future<$0.PushFeedItemsResponse> pushFeedItems_Pre($grpc.ServiceCall call, $async.Future<$0.PushFeedItemsRequest> request) async {
+    return pushFeedItems(call, await request);
+  }
+
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation($grpc.ServiceCall call, $0.GetPorterInformationRequest request);
   $async.Future<$0.EnablePorterResponse> enablePorter($grpc.ServiceCall call, $0.EnablePorterRequest request);
   $async.Future<$0.EnableContextResponse> enableContext($grpc.ServiceCall call, $0.EnableContextRequest request);
@@ -330,10 +330,10 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
   $async.Future<$0.PullAccountAppInfoRelationResponse> pullAccountAppInfoRelation($grpc.ServiceCall call, $0.PullAccountAppInfoRelationRequest request);
   $async.Future<$0.SearchAppInfoResponse> searchAppInfo($grpc.ServiceCall call, $0.SearchAppInfoRequest request);
   $async.Future<$0.PullFeedResponse> pullFeed($grpc.ServiceCall call, $0.PullFeedRequest request);
-  $async.Future<$0.PushFeedItemsResponse> pushFeedItems($grpc.ServiceCall call, $0.PushFeedItemsRequest request);
   $async.Future<$0.ExecFeedItemActionResponse> execFeedItemAction($grpc.ServiceCall call, $0.ExecFeedItemActionRequest request);
   $async.Future<$0.EnableFeedSetterResponse> enableFeedSetter($grpc.ServiceCall call, $0.EnableFeedSetterRequest request);
   $async.Future<$0.DisableFeedSetterResponse> disableFeedSetter($grpc.ServiceCall call, $0.DisableFeedSetterRequest request);
   $async.Future<$0.EnableFeedGetterResponse> enableFeedGetter($grpc.ServiceCall call, $0.EnableFeedGetterRequest request);
   $async.Future<$0.DisableFeedGetterResponse> disableFeedGetter($grpc.ServiceCall call, $0.DisableFeedGetterRequest request);
+  $async.Future<$0.PushFeedItemsResponse> pushFeedItems($grpc.ServiceCall call, $0.PushFeedItemsRequest request);
 }

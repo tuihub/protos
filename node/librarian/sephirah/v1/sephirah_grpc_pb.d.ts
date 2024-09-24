@@ -105,6 +105,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   createNotifyFlow: grpc.MethodDefinition<librarian_sephirah_v1_netzach_pb.CreateNotifyFlowRequest, librarian_sephirah_v1_netzach_pb.CreateNotifyFlowResponse>;
   updateNotifyFlow: grpc.MethodDefinition<librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowRequest, librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowResponse>;
   listNotifyFlows: grpc.MethodDefinition<librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest, librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse>;
+  porterGetNotifyTargetItems: grpc.MethodDefinition<librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest, librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse>;
   listSystemNotifications: grpc.MethodDefinition<librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest, librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse>;
   updateSystemNotification: grpc.MethodDefinition<librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationRequest, librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationResponse>;
   createFeedConfig: grpc.MethodDefinition<librarian_sephirah_v1_yesod_pb.CreateFeedConfigRequest, librarian_sephirah_v1_yesod_pb.CreateFeedConfigResponse>;
@@ -227,6 +228,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   createNotifyFlow: grpc.handleUnaryCall<librarian_sephirah_v1_netzach_pb.CreateNotifyFlowRequest, librarian_sephirah_v1_netzach_pb.CreateNotifyFlowResponse>;
   updateNotifyFlow: grpc.handleUnaryCall<librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowRequest, librarian_sephirah_v1_netzach_pb.UpdateNotifyFlowResponse>;
   listNotifyFlows: grpc.handleUnaryCall<librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest, librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse>;
+  porterGetNotifyTargetItems: grpc.handleUnaryCall<librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest, librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse>;
   listSystemNotifications: grpc.handleUnaryCall<librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest, librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse>;
   updateSystemNotification: grpc.handleUnaryCall<librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationRequest, librarian_sephirah_v1_netzach_pb.UpdateSystemNotificationResponse>;
   createFeedConfig: grpc.handleUnaryCall<librarian_sephirah_v1_yesod_pb.CreateFeedConfigRequest, librarian_sephirah_v1_yesod_pb.CreateFeedConfigResponse>;
@@ -525,6 +527,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   listNotifyFlows(argument: librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse>): grpc.ClientUnaryCall;
   listNotifyFlows(argument: librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse>): grpc.ClientUnaryCall;
   listNotifyFlows(argument: librarian_sephirah_v1_netzach_pb.ListNotifyFlowsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.ListNotifyFlowsResponse>): grpc.ClientUnaryCall;
+  porterGetNotifyTargetItems(argument: librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse>): grpc.ClientUnaryCall;
+  porterGetNotifyTargetItems(argument: librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse>): grpc.ClientUnaryCall;
+  porterGetNotifyTargetItems(argument: librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.PorterGetNotifyTargetItemsResponse>): grpc.ClientUnaryCall;
   listSystemNotifications(argument: librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse>): grpc.ClientUnaryCall;
   listSystemNotifications(argument: librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse>): grpc.ClientUnaryCall;
   listSystemNotifications(argument: librarian_sephirah_v1_netzach_pb.ListSystemNotificationsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_netzach_pb.ListSystemNotificationsResponse>): grpc.ClientUnaryCall;
