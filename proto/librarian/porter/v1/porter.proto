@@ -29,8 +29,6 @@ service LibrarianPorterService {
   // `Yesod`
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
   // `Yesod`
-  rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
-  // `Yesod`
   rpc ExecFeedItemAction(ExecFeedItemActionRequest) returns (ExecFeedItemActionResponse);
 
   // `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
@@ -43,6 +41,9 @@ service LibrarianPorterService {
   rpc EnableFeedGetter(EnableFeedGetterRequest) returns (EnableFeedGetterResponse);
   // `Yesod`
   rpc DisableFeedGetter(DisableFeedGetterRequest) returns (DisableFeedGetterResponse);
+
+  // `Netzach`
+  rpc PushFeedItems(PushFeedItemsRequest) returns (PushFeedItemsResponse);
 }
 
 message GetPorterInformationRequest {}

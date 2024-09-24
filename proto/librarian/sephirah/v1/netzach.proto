@@ -53,6 +53,16 @@ message ListNotifyFlowsResponse {
   repeated NotifyFlow flows = 2;
 }
 
+message PorterGetNotifyTargetItemsRequest {
+  librarian.v1.InternalID id = 1;
+  librarian.v1.PagingRequest paging = 2;
+}
+message PorterGetNotifyTargetItemsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  librarian.v1.FeatureRequest destination = 2;
+  repeated librarian.v1.FeedItem items = 3;
+}
+
 message NotifyTarget {
   librarian.v1.InternalID id = 1;
   string name = 2;

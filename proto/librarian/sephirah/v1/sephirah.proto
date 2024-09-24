@@ -256,6 +256,9 @@ service LibrarianSephirahService {
   // `Netzach` `Normal`
   rpc ListNotifyFlows(ListNotifyFlowsRequest) returns (ListNotifyFlowsResponse);
 
+  // `Netzach` `Porter`
+  rpc PorterGetNotifyTargetItems(PorterGetNotifyTargetItemsRequest) returns (PorterGetNotifyTargetItemsResponse);
+
   // `Netzach` `Admin` `Normal limited`
   rpc ListSystemNotifications(ListSystemNotificationsRequest) returns (ListSystemNotificationsResponse);
   // `Netzach` `Normal`
