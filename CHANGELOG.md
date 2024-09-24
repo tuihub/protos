@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.23](https://github.com/tuihub/protos/compare/v0.4.22...v0.4.23) (2024-09-24)
+
+
+### Features
+
+* add `FeatureFlag.extra` ([978ac3a](https://github.com/tuihub/protos/commit/978ac3a0bdc24ed233c75713ff3d1fc82033eb34))
+* add `PorterGetNotifyTargetItems` ([464a66c](https://github.com/tuihub/protos/commit/464a66ce5fb2521ed937667eae716160268890c5))
+
 ## [0.4.22](https://github.com/tuihub/protos/compare/v0.4.21...v0.4.22) (2024-09-22)
 
 
