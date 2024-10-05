@@ -15,7 +15,7 @@ jobs:
           go-version: 'oldstable'
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@v4.0.4
 
       - name: Setup .NET environment
         uses: actions/setup-dotnet@v4
@@ -37,7 +37,7 @@ jobs:
         uses: arduino/setup-protoc@v2
 
       - name: Setup bufbuild  
-        uses: bufbuild/buf-setup-action@v1.39.0
+        uses: bufbuild/buf-setup-action@v1.44.0
 
       - name: Check
         run: make check
