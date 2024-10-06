@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.24](https://github.com/tuihub/protos/compare/v0.4.23...v0.4.24) (2024-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#162](https://github.com/tuihub/protos/issues/162)) ([fd21429](https://github.com/tuihub/protos/commit/fd21429e7601fab9a5e21faecf1554400c3a3f44))
+* **deps:** update rust crate tonic to v0.12.3 [security] ([#163](https://github.com/tuihub/protos/issues/163)) ([97671f4](https://github.com/tuihub/protos/commit/97671f48b875b775db0ce859ef86e7e51fa020c0))
+
 ## [0.4.23](https://github.com/tuihub/protos/compare/v0.4.22...v0.4.23) (2024-09-24)
 
 
