@@ -185,16 +185,9 @@ service LibrarianSephirahService {
   rpc DownloadAppBinary(DownloadAppBinaryRequest) returns (DownloadAppBinaryResponse);
 
   // `Gebura` `Normal`
-  rpc CreateAppInst(CreateAppInstRequest) returns (CreateAppInstResponse);
-  // `Gebura` `Normal`
-  rpc UpdateAppInst(UpdateAppInstRequest) returns (UpdateAppInstResponse);
-  // `Gebura` `Normal`
-  rpc ListAppInsts(ListAppInstsRequest) returns (ListAppInstsResponse);
-
-  // `Gebura` `Normal`
-  rpc AddAppInstRunTime(AddAppInstRunTimeRequest) returns (AddAppInstRunTimeResponse);
+  rpc AddAppRunTime(AddAppRunTimeRequest) returns (AddAppRunTimeResponse);
   // `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
-  rpc SumAppInstRunTime(SumAppInstRunTimeRequest) returns (SumAppInstRunTimeResponse);
+  rpc SumAppRunTime(SumAppRunTimeRequest) returns (SumAppRunTimeResponse);
 
   // `Gebura` `Normal`
   rpc UploadAppSaveFile(UploadAppSaveFileRequest) returns (UploadAppSaveFileResponse);

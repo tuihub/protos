@@ -185,45 +185,21 @@ message DownloadAppBinaryResponse {
   string token = 2;
 }
 
-message CreateAppInstRequest {
-  AppInst app_inst = 1;
+message AddAppRunTimeRequest {
+  librarian.v1.InternalID app_id = 1;
+  librarian.v1.InternalID device_id = 2;
+  librarian.v1.TimeRange time_range = 3;
 }
 
-message CreateAppInstResponse {
-  librarian.v1.InternalID id = 1;
-}
+message AddAppRunTimeResponse {}
 
-message UpdateAppInstRequest {
-  AppInst app_inst = 1;
-}
-
-message UpdateAppInstResponse {}
-
-message ListAppInstsRequest {
-  librarian.v1.PagingRequest paging = 1;
+message SumAppRunTimeRequest {
+  repeated librarian.v1.InternalID app_id_filter = 1;
   repeated librarian.v1.InternalID device_id_filter = 2;
-  repeated librarian.v1.InternalID id_filter = 3;
-  repeated librarian.v1.InternalID app_id_filter = 4;
+  librarian.v1.TimeAggregation time_aggregation = 3;
 }
 
-message ListAppInstsResponse {
-  librarian.v1.PagingResponse paging = 1;
-  repeated AppInst app_insts = 2;
-}
-
-message AddAppInstRunTimeRequest {
-  librarian.v1.InternalID app_inst_id = 1;
-  librarian.v1.TimeRange time_range = 2;
-}
-
-message AddAppInstRunTimeResponse {}
-
-message SumAppInstRunTimeRequest {
-  librarian.v1.InternalID app_inst_id = 1;
-  librarian.v1.TimeAggregation time_aggregation = 2;
-}
-
-message SumAppInstRunTimeResponse {
+message SumAppRunTimeResponse {
   message Group {
     librarian.v1.TimeRange time_range = 1;
     google.protobuf.Duration duration = 2;
@@ -468,12 +444,6 @@ message AppCategory {
   repeated librarian.v1.InternalID app_ids = 3;
   // Full update
   repeated librarian.v1.InternalID app_info_ids = 4;
-}
-
-message AppInst {
-  librarian.v1.InternalID id = 1;
-  librarian.v1.InternalID device_id = 2;
-  librarian.v1.InternalID app_id = 3;
 }
 
 message SharedAppSave {
