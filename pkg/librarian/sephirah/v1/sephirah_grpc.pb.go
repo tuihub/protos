@@ -77,11 +77,8 @@ const (
 	LibrarianSephirahService_UnAssignApp_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignApp"
 	LibrarianSephirahService_ReportAppBinaries_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppBinaries"
 	LibrarianSephirahService_DownloadAppBinary_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppBinary"
-	LibrarianSephirahService_CreateAppInst_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppInst"
-	LibrarianSephirahService_UpdateAppInst_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppInst"
-	LibrarianSephirahService_ListAppInsts_FullMethodName                  = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppInsts"
-	LibrarianSephirahService_AddAppInstRunTime_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppInstRunTime"
-	LibrarianSephirahService_SumAppInstRunTime_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppInstRunTime"
+	LibrarianSephirahService_AddAppRunTime_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppRunTime"
+	LibrarianSephirahService_SumAppRunTime_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppRunTime"
 	LibrarianSephirahService_UploadAppSaveFile_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/UploadAppSaveFile"
 	LibrarianSephirahService_DownloadAppSaveFile_FullMethodName           = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppSaveFile"
 	LibrarianSephirahService_ListAppSaveFiles_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppSaveFiles"
@@ -300,15 +297,9 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Normal`
 	DownloadAppBinary(ctx context.Context, in *DownloadAppBinaryRequest, opts ...grpc.CallOption) (*DownloadAppBinaryResponse, error)
 	// `Gebura` `Normal`
-	CreateAppInst(ctx context.Context, in *CreateAppInstRequest, opts ...grpc.CallOption) (*CreateAppInstResponse, error)
-	// `Gebura` `Normal`
-	UpdateAppInst(ctx context.Context, in *UpdateAppInstRequest, opts ...grpc.CallOption) (*UpdateAppInstResponse, error)
-	// `Gebura` `Normal`
-	ListAppInsts(ctx context.Context, in *ListAppInstsRequest, opts ...grpc.CallOption) (*ListAppInstsResponse, error)
-	// `Gebura` `Normal`
-	AddAppInstRunTime(ctx context.Context, in *AddAppInstRunTimeRequest, opts ...grpc.CallOption) (*AddAppInstRunTimeResponse, error)
+	AddAppRunTime(ctx context.Context, in *AddAppRunTimeRequest, opts ...grpc.CallOption) (*AddAppRunTimeResponse, error)
 	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
-	SumAppInstRunTime(ctx context.Context, in *SumAppInstRunTimeRequest, opts ...grpc.CallOption) (*SumAppInstRunTimeResponse, error)
+	SumAppRunTime(ctx context.Context, in *SumAppRunTimeRequest, opts ...grpc.CallOption) (*SumAppRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadAppSaveFile(ctx context.Context, in *UploadAppSaveFileRequest, opts ...grpc.CallOption) (*UploadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -1036,50 +1027,20 @@ func (c *librarianSephirahServiceClient) DownloadAppBinary(ctx context.Context, 
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) CreateAppInst(ctx context.Context, in *CreateAppInstRequest, opts ...grpc.CallOption) (*CreateAppInstResponse, error) {
+func (c *librarianSephirahServiceClient) AddAppRunTime(ctx context.Context, in *AddAppRunTimeRequest, opts ...grpc.CallOption) (*AddAppRunTimeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(CreateAppInstResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateAppInst_FullMethodName, in, out, cOpts...)
+	out := new(AddAppRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddAppRunTime_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) UpdateAppInst(ctx context.Context, in *UpdateAppInstRequest, opts ...grpc.CallOption) (*UpdateAppInstResponse, error) {
+func (c *librarianSephirahServiceClient) SumAppRunTime(ctx context.Context, in *SumAppRunTimeRequest, opts ...grpc.CallOption) (*SumAppRunTimeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UpdateAppInstResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateAppInst_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) ListAppInsts(ctx context.Context, in *ListAppInstsRequest, opts ...grpc.CallOption) (*ListAppInstsResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListAppInstsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListAppInsts_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) AddAppInstRunTime(ctx context.Context, in *AddAppInstRunTimeRequest, opts ...grpc.CallOption) (*AddAppInstRunTimeResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AddAppInstRunTimeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddAppInstRunTime_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) SumAppInstRunTime(ctx context.Context, in *SumAppInstRunTimeRequest, opts ...grpc.CallOption) (*SumAppInstRunTimeResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(SumAppInstRunTimeResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_SumAppInstRunTime_FullMethodName, in, out, cOpts...)
+	out := new(SumAppRunTimeResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_SumAppRunTime_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1797,15 +1758,9 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	DownloadAppBinary(context.Context, *DownloadAppBinaryRequest) (*DownloadAppBinaryResponse, error)
 	// `Gebura` `Normal`
-	CreateAppInst(context.Context, *CreateAppInstRequest) (*CreateAppInstResponse, error)
-	// `Gebura` `Normal`
-	UpdateAppInst(context.Context, *UpdateAppInstRequest) (*UpdateAppInstResponse, error)
-	// `Gebura` `Normal`
-	ListAppInsts(context.Context, *ListAppInstsRequest) (*ListAppInstsResponse, error)
-	// `Gebura` `Normal`
-	AddAppInstRunTime(context.Context, *AddAppInstRunTimeRequest) (*AddAppInstRunTimeResponse, error)
+	AddAppRunTime(context.Context, *AddAppRunTimeRequest) (*AddAppRunTimeResponse, error)
 	// `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
-	SumAppInstRunTime(context.Context, *SumAppInstRunTimeRequest) (*SumAppInstRunTimeResponse, error)
+	SumAppRunTime(context.Context, *SumAppRunTimeRequest) (*SumAppRunTimeResponse, error)
 	// `Gebura` `Normal`
 	UploadAppSaveFile(context.Context, *UploadAppSaveFileRequest) (*UploadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
@@ -2100,20 +2055,11 @@ func (UnimplementedLibrarianSephirahServiceServer) ReportAppBinaries(context.Con
 func (UnimplementedLibrarianSephirahServiceServer) DownloadAppBinary(context.Context, *DownloadAppBinaryRequest) (*DownloadAppBinaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DownloadAppBinary not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) CreateAppInst(context.Context, *CreateAppInstRequest) (*CreateAppInstResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateAppInst not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) AddAppRunTime(context.Context, *AddAppRunTimeRequest) (*AddAppRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddAppRunTime not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) UpdateAppInst(context.Context, *UpdateAppInstRequest) (*UpdateAppInstResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateAppInst not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) ListAppInsts(context.Context, *ListAppInstsRequest) (*ListAppInstsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListAppInsts not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) AddAppInstRunTime(context.Context, *AddAppInstRunTimeRequest) (*AddAppInstRunTimeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddAppInstRunTime not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) SumAppInstRunTime(context.Context, *SumAppInstRunTimeRequest) (*SumAppInstRunTimeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SumAppInstRunTime not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) SumAppRunTime(context.Context, *SumAppRunTimeRequest) (*SumAppRunTimeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SumAppRunTime not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) UploadAppSaveFile(context.Context, *UploadAppSaveFileRequest) (*UploadAppSaveFileResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadAppSaveFile not implemented")
@@ -3299,92 +3245,38 @@ func _LibrarianSephirahService_DownloadAppBinary_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_CreateAppInst_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateAppInstRequest)
+func _LibrarianSephirahService_AddAppRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddAppRunTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).CreateAppInst(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).AddAppRunTime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_CreateAppInst_FullMethodName,
+		FullMethod: LibrarianSephirahService_AddAppRunTime_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).CreateAppInst(ctx, req.(*CreateAppInstRequest))
+		return srv.(LibrarianSephirahServiceServer).AddAppRunTime(ctx, req.(*AddAppRunTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_UpdateAppInst_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateAppInstRequest)
+func _LibrarianSephirahService_SumAppRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SumAppRunTimeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UpdateAppInst(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).SumAppRunTime(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_UpdateAppInst_FullMethodName,
+		FullMethod: LibrarianSephirahService_SumAppRunTime_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UpdateAppInst(ctx, req.(*UpdateAppInstRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_ListAppInsts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListAppInstsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListAppInsts(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListAppInsts_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListAppInsts(ctx, req.(*ListAppInstsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_AddAppInstRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddAppInstRunTimeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).AddAppInstRunTime(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_AddAppInstRunTime_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).AddAppInstRunTime(ctx, req.(*AddAppInstRunTimeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_SumAppInstRunTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SumAppInstRunTimeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).SumAppInstRunTime(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_SumAppInstRunTime_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).SumAppInstRunTime(ctx, req.(*SumAppInstRunTimeRequest))
+		return srv.(LibrarianSephirahServiceServer).SumAppRunTime(ctx, req.(*SumAppRunTimeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4599,24 +4491,12 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_DownloadAppBinary_Handler,
 		},
 		{
-			MethodName: "CreateAppInst",
-			Handler:    _LibrarianSephirahService_CreateAppInst_Handler,
+			MethodName: "AddAppRunTime",
+			Handler:    _LibrarianSephirahService_AddAppRunTime_Handler,
 		},
 		{
-			MethodName: "UpdateAppInst",
-			Handler:    _LibrarianSephirahService_UpdateAppInst_Handler,
-		},
-		{
-			MethodName: "ListAppInsts",
-			Handler:    _LibrarianSephirahService_ListAppInsts_Handler,
-		},
-		{
-			MethodName: "AddAppInstRunTime",
-			Handler:    _LibrarianSephirahService_AddAppInstRunTime_Handler,
-		},
-		{
-			MethodName: "SumAppInstRunTime",
-			Handler:    _LibrarianSephirahService_SumAppInstRunTime_Handler,
+			MethodName: "SumAppRunTime",
+			Handler:    _LibrarianSephirahService_SumAppRunTime_Handler,
 		},
 		{
 			MethodName: "UploadAppSaveFile",

@@ -260,26 +260,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppBinary',
       ($4.DownloadAppBinaryRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.DownloadAppBinaryResponse.fromBuffer(value));
-  static final _$createAppInst = $grpc.ClientMethod<$4.CreateAppInstRequest, $4.CreateAppInstResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppInst',
-      ($4.CreateAppInstRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.CreateAppInstResponse.fromBuffer(value));
-  static final _$updateAppInst = $grpc.ClientMethod<$4.UpdateAppInstRequest, $4.UpdateAppInstResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppInst',
-      ($4.UpdateAppInstRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.UpdateAppInstResponse.fromBuffer(value));
-  static final _$listAppInsts = $grpc.ClientMethod<$4.ListAppInstsRequest, $4.ListAppInstsResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/ListAppInsts',
-      ($4.ListAppInstsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.ListAppInstsResponse.fromBuffer(value));
-  static final _$addAppInstRunTime = $grpc.ClientMethod<$4.AddAppInstRunTimeRequest, $4.AddAppInstRunTimeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/AddAppInstRunTime',
-      ($4.AddAppInstRunTimeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.AddAppInstRunTimeResponse.fromBuffer(value));
-  static final _$sumAppInstRunTime = $grpc.ClientMethod<$4.SumAppInstRunTimeRequest, $4.SumAppInstRunTimeResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/SumAppInstRunTime',
-      ($4.SumAppInstRunTimeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.SumAppInstRunTimeResponse.fromBuffer(value));
+  static final _$addAppRunTime = $grpc.ClientMethod<$4.AddAppRunTimeRequest, $4.AddAppRunTimeResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/AddAppRunTime',
+      ($4.AddAppRunTimeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.AddAppRunTimeResponse.fromBuffer(value));
+  static final _$sumAppRunTime = $grpc.ClientMethod<$4.SumAppRunTimeRequest, $4.SumAppRunTimeResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/SumAppRunTime',
+      ($4.SumAppRunTimeRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.SumAppRunTimeResponse.fromBuffer(value));
   static final _$uploadAppSaveFile = $grpc.ClientMethod<$4.UploadAppSaveFileRequest, $4.UploadAppSaveFileResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/UploadAppSaveFile',
       ($4.UploadAppSaveFileRequest value) => value.writeToBuffer(),
@@ -739,24 +727,12 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$downloadAppBinary, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.CreateAppInstResponse> createAppInst($4.CreateAppInstRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createAppInst, request, options: options);
+  $grpc.ResponseFuture<$4.AddAppRunTimeResponse> addAppRunTime($4.AddAppRunTimeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addAppRunTime, request, options: options);
   }
 
-  $grpc.ResponseFuture<$4.UpdateAppInstResponse> updateAppInst($4.UpdateAppInstRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateAppInst, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.ListAppInstsResponse> listAppInsts($4.ListAppInstsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listAppInsts, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.AddAppInstRunTimeResponse> addAppInstRunTime($4.AddAppInstRunTimeRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$addAppInstRunTime, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$4.SumAppInstRunTimeResponse> sumAppInstRunTime($4.SumAppInstRunTimeRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$sumAppInstRunTime, request, options: options);
+  $grpc.ResponseFuture<$4.SumAppRunTimeResponse> sumAppRunTime($4.SumAppRunTimeRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$sumAppRunTime, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.UploadAppSaveFileResponse> uploadAppSaveFile($4.UploadAppSaveFileRequest request, {$grpc.CallOptions? options}) {
@@ -1391,41 +1367,20 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.DownloadAppBinaryRequest.fromBuffer(value),
         ($4.DownloadAppBinaryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.CreateAppInstRequest, $4.CreateAppInstResponse>(
-        'CreateAppInst',
-        createAppInst_Pre,
+    $addMethod($grpc.ServiceMethod<$4.AddAppRunTimeRequest, $4.AddAppRunTimeResponse>(
+        'AddAppRunTime',
+        addAppRunTime_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.CreateAppInstRequest.fromBuffer(value),
-        ($4.CreateAppInstResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.UpdateAppInstRequest, $4.UpdateAppInstResponse>(
-        'UpdateAppInst',
-        updateAppInst_Pre,
+        ($core.List<$core.int> value) => $4.AddAppRunTimeRequest.fromBuffer(value),
+        ($4.AddAppRunTimeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.SumAppRunTimeRequest, $4.SumAppRunTimeResponse>(
+        'SumAppRunTime',
+        sumAppRunTime_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $4.UpdateAppInstRequest.fromBuffer(value),
-        ($4.UpdateAppInstResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.ListAppInstsRequest, $4.ListAppInstsResponse>(
-        'ListAppInsts',
-        listAppInsts_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.ListAppInstsRequest.fromBuffer(value),
-        ($4.ListAppInstsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.AddAppInstRunTimeRequest, $4.AddAppInstRunTimeResponse>(
-        'AddAppInstRunTime',
-        addAppInstRunTime_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.AddAppInstRunTimeRequest.fromBuffer(value),
-        ($4.AddAppInstRunTimeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$4.SumAppInstRunTimeRequest, $4.SumAppInstRunTimeResponse>(
-        'SumAppInstRunTime',
-        sumAppInstRunTime_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $4.SumAppInstRunTimeRequest.fromBuffer(value),
-        ($4.SumAppInstRunTimeResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $4.SumAppRunTimeRequest.fromBuffer(value),
+        ($4.SumAppRunTimeResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.UploadAppSaveFileRequest, $4.UploadAppSaveFileResponse>(
         'UploadAppSaveFile',
         uploadAppSaveFile_Pre,
@@ -2033,24 +1988,12 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return downloadAppBinary(call, await request);
   }
 
-  $async.Future<$4.CreateAppInstResponse> createAppInst_Pre($grpc.ServiceCall call, $async.Future<$4.CreateAppInstRequest> request) async {
-    return createAppInst(call, await request);
+  $async.Future<$4.AddAppRunTimeResponse> addAppRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.AddAppRunTimeRequest> request) async {
+    return addAppRunTime(call, await request);
   }
 
-  $async.Future<$4.UpdateAppInstResponse> updateAppInst_Pre($grpc.ServiceCall call, $async.Future<$4.UpdateAppInstRequest> request) async {
-    return updateAppInst(call, await request);
-  }
-
-  $async.Future<$4.ListAppInstsResponse> listAppInsts_Pre($grpc.ServiceCall call, $async.Future<$4.ListAppInstsRequest> request) async {
-    return listAppInsts(call, await request);
-  }
-
-  $async.Future<$4.AddAppInstRunTimeResponse> addAppInstRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.AddAppInstRunTimeRequest> request) async {
-    return addAppInstRunTime(call, await request);
-  }
-
-  $async.Future<$4.SumAppInstRunTimeResponse> sumAppInstRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.SumAppInstRunTimeRequest> request) async {
-    return sumAppInstRunTime(call, await request);
+  $async.Future<$4.SumAppRunTimeResponse> sumAppRunTime_Pre($grpc.ServiceCall call, $async.Future<$4.SumAppRunTimeRequest> request) async {
+    return sumAppRunTime(call, await request);
   }
 
   $async.Future<$4.UploadAppSaveFileResponse> uploadAppSaveFile_Pre($grpc.ServiceCall call, $async.Future<$4.UploadAppSaveFileRequest> request) async {
@@ -2331,11 +2274,8 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.UnAssignAppResponse> unAssignApp($grpc.ServiceCall call, $4.UnAssignAppRequest request);
   $async.Future<$4.ReportAppBinariesResponse> reportAppBinaries($grpc.ServiceCall call, $4.ReportAppBinariesRequest request);
   $async.Future<$4.DownloadAppBinaryResponse> downloadAppBinary($grpc.ServiceCall call, $4.DownloadAppBinaryRequest request);
-  $async.Future<$4.CreateAppInstResponse> createAppInst($grpc.ServiceCall call, $4.CreateAppInstRequest request);
-  $async.Future<$4.UpdateAppInstResponse> updateAppInst($grpc.ServiceCall call, $4.UpdateAppInstRequest request);
-  $async.Future<$4.ListAppInstsResponse> listAppInsts($grpc.ServiceCall call, $4.ListAppInstsRequest request);
-  $async.Future<$4.AddAppInstRunTimeResponse> addAppInstRunTime($grpc.ServiceCall call, $4.AddAppInstRunTimeRequest request);
-  $async.Future<$4.SumAppInstRunTimeResponse> sumAppInstRunTime($grpc.ServiceCall call, $4.SumAppInstRunTimeRequest request);
+  $async.Future<$4.AddAppRunTimeResponse> addAppRunTime($grpc.ServiceCall call, $4.AddAppRunTimeRequest request);
+  $async.Future<$4.SumAppRunTimeResponse> sumAppRunTime($grpc.ServiceCall call, $4.SumAppRunTimeRequest request);
   $async.Future<$4.UploadAppSaveFileResponse> uploadAppSaveFile($grpc.ServiceCall call, $4.UploadAppSaveFileRequest request);
   $async.Future<$4.DownloadAppSaveFileResponse> downloadAppSaveFile($grpc.ServiceCall call, $4.DownloadAppSaveFileRequest request);
   $async.Future<$4.ListAppSaveFilesResponse> listAppSaveFiles($grpc.ServiceCall call, $4.ListAppSaveFilesRequest request);

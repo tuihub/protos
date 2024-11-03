@@ -562,138 +562,61 @@ final $typed_data.Uint8List downloadAppBinaryResponseDescriptor = $convert.base6
     'JpYW4uc2VwaGlyYWgudjEuQXBwQmluYXJ5UglhcHBCaW5hcnkSFAoFdG9rZW4YAiABKAlSBXRv'
     'a2Vu');
 
-@$core.Deprecated('Use createAppInstRequestDescriptor instead')
-const CreateAppInstRequest$json = {
-  '1': 'CreateAppInstRequest',
+@$core.Deprecated('Use addAppRunTimeRequestDescriptor instead')
+const AddAppRunTimeRequest$json = {
+  '1': 'AddAppRunTimeRequest',
   '2': [
-    {'1': 'app_inst', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.AppInst', '10': 'appInst'},
+    {'1': 'app_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
+    {'1': 'time_range', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRange'},
   ],
 };
 
-/// Descriptor for `CreateAppInstRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createAppInstRequestDescriptor = $convert.base64Decode(
-    'ChRDcmVhdGVBcHBJbnN0UmVxdWVzdBI5CghhcHBfaW5zdBgBIAEoCzIeLmxpYnJhcmlhbi5zZX'
-    'BoaXJhaC52MS5BcHBJbnN0UgdhcHBJbnN0');
+/// Descriptor for `AddAppRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addAppRunTimeRequestDescriptor = $convert.base64Decode(
+    'ChRBZGRBcHBSdW5UaW1lUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW'
+    '50ZXJuYWxJRFIFYXBwSWQSNQoJZGV2aWNlX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVy'
+    'bmFsSURSCGRldmljZUlkEjYKCnRpbWVfcmFuZ2UYAyABKAsyFy5saWJyYXJpYW4udjEuVGltZV'
+    'JhbmdlUgl0aW1lUmFuZ2U=');
 
-@$core.Deprecated('Use createAppInstResponseDescriptor instead')
-const CreateAppInstResponse$json = {
-  '1': 'CreateAppInstResponse',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-  ],
+@$core.Deprecated('Use addAppRunTimeResponseDescriptor instead')
+const AddAppRunTimeResponse$json = {
+  '1': 'AddAppRunTimeResponse',
 };
 
-/// Descriptor for `CreateAppInstResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createAppInstResponseDescriptor = $convert.base64Decode(
-    'ChVDcmVhdGVBcHBJbnN0UmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZX'
-    'JuYWxJRFICaWQ=');
+/// Descriptor for `AddAppRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addAppRunTimeResponseDescriptor = $convert.base64Decode(
+    'ChVBZGRBcHBSdW5UaW1lUmVzcG9uc2U=');
 
-@$core.Deprecated('Use updateAppInstRequestDescriptor instead')
-const UpdateAppInstRequest$json = {
-  '1': 'UpdateAppInstRequest',
+@$core.Deprecated('Use sumAppRunTimeRequestDescriptor instead')
+const SumAppRunTimeRequest$json = {
+  '1': 'SumAppRunTimeRequest',
   '2': [
-    {'1': 'app_inst', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.AppInst', '10': 'appInst'},
-  ],
-};
-
-/// Descriptor for `UpdateAppInstRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateAppInstRequestDescriptor = $convert.base64Decode(
-    'ChRVcGRhdGVBcHBJbnN0UmVxdWVzdBI5CghhcHBfaW5zdBgBIAEoCzIeLmxpYnJhcmlhbi5zZX'
-    'BoaXJhaC52MS5BcHBJbnN0UgdhcHBJbnN0');
-
-@$core.Deprecated('Use updateAppInstResponseDescriptor instead')
-const UpdateAppInstResponse$json = {
-  '1': 'UpdateAppInstResponse',
-};
-
-/// Descriptor for `UpdateAppInstResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateAppInstResponseDescriptor = $convert.base64Decode(
-    'ChVVcGRhdGVBcHBJbnN0UmVzcG9uc2U=');
-
-@$core.Deprecated('Use listAppInstsRequestDescriptor instead')
-const ListAppInstsRequest$json = {
-  '1': 'ListAppInstsRequest',
-  '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'app_id_filter', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appIdFilter'},
     {'1': 'device_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceIdFilter'},
-    {'1': 'id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'app_id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appIdFilter'},
+    {'1': 'time_aggregation', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.TimeAggregation', '10': 'timeAggregation'},
   ],
 };
 
-/// Descriptor for `ListAppInstsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAppInstsRequestDescriptor = $convert.base64Decode(
-    'ChNMaXN0QXBwSW5zdHNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5QYW'
-    'dpbmdSZXF1ZXN0UgZwYWdpbmcSQgoQZGV2aWNlX2lkX2ZpbHRlchgCIAMoCzIYLmxpYnJhcmlh'
-    'bi52MS5JbnRlcm5hbElEUg5kZXZpY2VJZEZpbHRlchI1CglpZF9maWx0ZXIYAyADKAsyGC5saW'
-    'JyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISPAoNYXBwX2lkX2ZpbHRlchgEIAMoCzIY'
-    'LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgthcHBJZEZpbHRlcg==');
+/// Descriptor for `SumAppRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sumAppRunTimeRequestDescriptor = $convert.base64Decode(
+    'ChRTdW1BcHBSdW5UaW1lUmVxdWVzdBI8Cg1hcHBfaWRfZmlsdGVyGAEgAygLMhgubGlicmFyaW'
+    'FuLnYxLkludGVybmFsSURSC2FwcElkRmlsdGVyEkIKEGRldmljZV9pZF9maWx0ZXIYAiADKAsy'
+    'GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOZGV2aWNlSWRGaWx0ZXISSAoQdGltZV9hZ2dyZW'
+    'dhdGlvbhgDIAEoCzIdLmxpYnJhcmlhbi52MS5UaW1lQWdncmVnYXRpb25SD3RpbWVBZ2dyZWdh'
+    'dGlvbg==');
 
-@$core.Deprecated('Use listAppInstsResponseDescriptor instead')
-const ListAppInstsResponse$json = {
-  '1': 'ListAppInstsResponse',
+@$core.Deprecated('Use sumAppRunTimeResponseDescriptor instead')
+const SumAppRunTimeResponse$json = {
+  '1': 'SumAppRunTimeResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'app_insts', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppInst', '10': 'appInsts'},
+    {'1': 'run_time_groups', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SumAppRunTimeResponse.Group', '10': 'runTimeGroups'},
   ],
+  '3': [SumAppRunTimeResponse_Group$json],
 };
 
-/// Descriptor for `ListAppInstsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listAppInstsResponseDescriptor = $convert.base64Decode(
-    'ChRMaXN0QXBwSW5zdHNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUG'
-    'FnaW5nUmVzcG9uc2VSBnBhZ2luZxI7CglhcHBfaW5zdHMYAiADKAsyHi5saWJyYXJpYW4uc2Vw'
-    'aGlyYWgudjEuQXBwSW5zdFIIYXBwSW5zdHM=');
-
-@$core.Deprecated('Use addAppInstRunTimeRequestDescriptor instead')
-const AddAppInstRunTimeRequest$json = {
-  '1': 'AddAppInstRunTimeRequest',
-  '2': [
-    {'1': 'app_inst_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appInstId'},
-    {'1': 'time_range', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRange'},
-  ],
-};
-
-/// Descriptor for `AddAppInstRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addAppInstRunTimeRequestDescriptor = $convert.base64Decode(
-    'ChhBZGRBcHBJbnN0UnVuVGltZVJlcXVlc3QSOAoLYXBwX2luc3RfaWQYASABKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJRFIJYXBwSW5zdElkEjYKCnRpbWVfcmFuZ2UYAiABKAsyFy5saWJy'
-    'YXJpYW4udjEuVGltZVJhbmdlUgl0aW1lUmFuZ2U=');
-
-@$core.Deprecated('Use addAppInstRunTimeResponseDescriptor instead')
-const AddAppInstRunTimeResponse$json = {
-  '1': 'AddAppInstRunTimeResponse',
-};
-
-/// Descriptor for `AddAppInstRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addAppInstRunTimeResponseDescriptor = $convert.base64Decode(
-    'ChlBZGRBcHBJbnN0UnVuVGltZVJlc3BvbnNl');
-
-@$core.Deprecated('Use sumAppInstRunTimeRequestDescriptor instead')
-const SumAppInstRunTimeRequest$json = {
-  '1': 'SumAppInstRunTimeRequest',
-  '2': [
-    {'1': 'app_inst_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appInstId'},
-    {'1': 'time_aggregation', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.TimeAggregation', '10': 'timeAggregation'},
-  ],
-};
-
-/// Descriptor for `SumAppInstRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List sumAppInstRunTimeRequestDescriptor = $convert.base64Decode(
-    'ChhTdW1BcHBJbnN0UnVuVGltZVJlcXVlc3QSOAoLYXBwX2luc3RfaWQYASABKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJRFIJYXBwSW5zdElkEkgKEHRpbWVfYWdncmVnYXRpb24YAiABKAsy'
-    'HS5saWJyYXJpYW4udjEuVGltZUFnZ3JlZ2F0aW9uUg90aW1lQWdncmVnYXRpb24=');
-
-@$core.Deprecated('Use sumAppInstRunTimeResponseDescriptor instead')
-const SumAppInstRunTimeResponse$json = {
-  '1': 'SumAppInstRunTimeResponse',
-  '2': [
-    {'1': 'run_time_groups', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group', '10': 'runTimeGroups'},
-  ],
-  '3': [SumAppInstRunTimeResponse_Group$json],
-};
-
-@$core.Deprecated('Use sumAppInstRunTimeResponseDescriptor instead')
-const SumAppInstRunTimeResponse_Group$json = {
+@$core.Deprecated('Use sumAppRunTimeResponseDescriptor instead')
+const SumAppRunTimeResponse_Group$json = {
   '1': 'Group',
   '2': [
     {'1': 'time_range', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRange'},
@@ -701,13 +624,13 @@ const SumAppInstRunTimeResponse_Group$json = {
   ],
 };
 
-/// Descriptor for `SumAppInstRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List sumAppInstRunTimeResponseDescriptor = $convert.base64Decode(
-    'ChlTdW1BcHBJbnN0UnVuVGltZVJlc3BvbnNlEl4KD3J1bl90aW1lX2dyb3VwcxgBIAMoCzI2Lm'
-    'xpYnJhcmlhbi5zZXBoaXJhaC52MS5TdW1BcHBJbnN0UnVuVGltZVJlc3BvbnNlLkdyb3VwUg1y'
-    'dW5UaW1lR3JvdXBzGnYKBUdyb3VwEjYKCnRpbWVfcmFuZ2UYASABKAsyFy5saWJyYXJpYW4udj'
-    'EuVGltZVJhbmdlUgl0aW1lUmFuZ2USNQoIZHVyYXRpb24YAiABKAsyGS5nb29nbGUucHJvdG9i'
-    'dWYuRHVyYXRpb25SCGR1cmF0aW9u');
+/// Descriptor for `SumAppRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sumAppRunTimeResponseDescriptor = $convert.base64Decode(
+    'ChVTdW1BcHBSdW5UaW1lUmVzcG9uc2USWgoPcnVuX3RpbWVfZ3JvdXBzGAEgAygLMjIubGlicm'
+    'FyaWFuLnNlcGhpcmFoLnYxLlN1bUFwcFJ1blRpbWVSZXNwb25zZS5Hcm91cFINcnVuVGltZUdy'
+    'b3Vwcxp2CgVHcm91cBI2Cgp0aW1lX3JhbmdlGAEgASgLMhcubGlicmFyaWFuLnYxLlRpbWVSYW'
+    '5nZVIJdGltZVJhbmdlEjUKCGR1cmF0aW9uGAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0'
+    'aW9uUghkdXJhdGlvbg==');
 
 @$core.Deprecated('Use uploadAppSaveFileRequestDescriptor instead')
 const UploadAppSaveFileRequest$json = {
@@ -1377,22 +1300,6 @@ final $typed_data.Uint8List appCategoryDescriptor = $convert.base64Decode(
     'ISCgRuYW1lGAIgASgJUgRuYW1lEjEKB2FwcF9pZHMYAyADKAsyGC5saWJyYXJpYW4udjEuSW50'
     'ZXJuYWxJRFIGYXBwSWRzEjoKDGFwcF9pbmZvX2lkcxgEIAMoCzIYLmxpYnJhcmlhbi52MS5Jbn'
     'Rlcm5hbElEUgphcHBJbmZvSWRz');
-
-@$core.Deprecated('Use appInstDescriptor instead')
-const AppInst$json = {
-  '1': 'AppInst',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'device_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
-    {'1': 'app_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appId'},
-  ],
-};
-
-/// Descriptor for `AppInst`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List appInstDescriptor = $convert.base64Decode(
-    'CgdBcHBJbnN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEjUKCW'
-    'RldmljZV9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUghkZXZpY2VJZBIvCgZh'
-    'cHBfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQ=');
 
 @$core.Deprecated('Use sharedAppSaveDescriptor instead')
 const SharedAppSave$json = {

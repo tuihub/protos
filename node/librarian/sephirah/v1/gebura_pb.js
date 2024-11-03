@@ -27,13 +27,12 @@ var librarian_sephirah_v1_base_pb = require('../../../librarian/sephirah/v1/base
 goog.object.extend(proto, librarian_sephirah_v1_base_pb);
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 goog.object.extend(proto, librarian_v1_common_pb);
-goog.exportSymbol('proto.librarian.sephirah.v1.AddAppInstRunTimeRequest', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.AddAppInstRunTimeResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.AddAppRunTimeRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.AddAppRunTimeResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.App', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AppBinary', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AppBinary.Chunk', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AppCategory', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.AppInst', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AppSaveFileCapacityStrategy', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AssignAppRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.AssignAppResponse', null, global);
@@ -41,8 +40,6 @@ goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppCategoryRequest', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppCategoryResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppInfoRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppInfoResponse', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppInstRequest', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppInstResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateAppResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.CreateSharedAppSaveFileRequest', null, global);
@@ -69,8 +66,6 @@ goog.exportSymbol('proto.librarian.sephirah.v1.ListAppCategoriesRequest', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppCategoriesResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppInfosRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppInfosResponse', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.ListAppInstsRequest', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.ListAppInstsResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppSaveFilesRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppSaveFilesResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.ListAppSaveFilesResponse.Result', null, global);
@@ -110,9 +105,9 @@ goog.exportSymbol('proto.librarian.sephirah.v1.SetAppSaveFileCapacityRequest.Ent
 goog.exportSymbol('proto.librarian.sephirah.v1.SetAppSaveFileCapacityResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SharedAppSave', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SharedAppSaveFile', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.SumAppInstRunTimeRequest', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.SumAppInstRunTimeResponse', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.SumAppRunTimeRequest', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.SumAppRunTimeResponse', null, global);
+goog.exportSymbol('proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SyncAccountAppInfosRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SyncAccountAppInfosResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.SyncAppInfosRequest', null, global);
@@ -125,8 +120,6 @@ goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppCategoryRequest', null, 
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppCategoryResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppInfoRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppInfoResponse', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppInstRequest', null, global);
-goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppInstResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateAppResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.UpdateSharedAppSaveFileRequest', null, global);
@@ -985,16 +978,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.librarian.sephirah.v1.CreateAppInstRequest = function(opt_data) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.librarian.sephirah.v1.CreateAppInstRequest, jspb.Message);
+goog.inherits(proto.librarian.sephirah.v1.AddAppRunTimeRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.librarian.sephirah.v1.CreateAppInstRequest.displayName = 'proto.librarian.sephirah.v1.CreateAppInstRequest';
+  proto.librarian.sephirah.v1.AddAppRunTimeRequest.displayName = 'proto.librarian.sephirah.v1.AddAppRunTimeRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1006,16 +999,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.librarian.sephirah.v1.CreateAppInstResponse = function(opt_data) {
+proto.librarian.sephirah.v1.AddAppRunTimeResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.librarian.sephirah.v1.CreateAppInstResponse, jspb.Message);
+goog.inherits(proto.librarian.sephirah.v1.AddAppRunTimeResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.librarian.sephirah.v1.CreateAppInstResponse.displayName = 'proto.librarian.sephirah.v1.CreateAppInstResponse';
+  proto.librarian.sephirah.v1.AddAppRunTimeResponse.displayName = 'proto.librarian.sephirah.v1.AddAppRunTimeResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1027,184 +1020,58 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.librarian.sephirah.v1.UpdateAppInstRequest = function(opt_data) {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.SumAppRunTimeRequest.repeatedFields_, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.SumAppRunTimeRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.SumAppRunTimeRequest.displayName = 'proto.librarian.sephirah.v1.SumAppRunTimeRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.SumAppRunTimeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.SumAppRunTimeResponse.repeatedFields_, null);
+};
+goog.inherits(proto.librarian.sephirah.v1.SumAppRunTimeResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.librarian.sephirah.v1.SumAppRunTimeResponse.displayName = 'proto.librarian.sephirah.v1.SumAppRunTimeResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.librarian.sephirah.v1.UpdateAppInstRequest, jspb.Message);
+goog.inherits(proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.librarian.sephirah.v1.UpdateAppInstRequest.displayName = 'proto.librarian.sephirah.v1.UpdateAppInstRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.UpdateAppInstResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.UpdateAppInstResponse.displayName = 'proto.librarian.sephirah.v1.UpdateAppInstResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListAppInstsRequest.repeatedFields_, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.ListAppInstsRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.ListAppInstsRequest.displayName = 'proto.librarian.sephirah.v1.ListAppInstsRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.ListAppInstsResponse.repeatedFields_, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.ListAppInstsResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.ListAppInstsResponse.displayName = 'proto.librarian.sephirah.v1.ListAppInstsResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.AddAppInstRunTimeRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.displayName = 'proto.librarian.sephirah.v1.AddAppInstRunTimeRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.AddAppInstRunTimeResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.displayName = 'proto.librarian.sephirah.v1.AddAppInstRunTimeResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.SumAppInstRunTimeRequest, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.displayName = 'proto.librarian.sephirah.v1.SumAppInstRunTimeRequest';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.repeatedFields_, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.SumAppInstRunTimeResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.displayName = 'proto.librarian.sephirah.v1.SumAppInstRunTimeResponse';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.displayName = 'proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group';
+  proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.displayName = 'proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2234,27 +2101,6 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.librarian.sephirah.v1.AppCategory.displayName = 'proto.librarian.sephirah.v1.AppCategory';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.librarian.sephirah.v1.AppInst = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.librarian.sephirah.v1.AppInst, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.librarian.sephirah.v1.AppInst.displayName = 'proto.librarian.sephirah.v1.AppInst';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -8918,8 +8764,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.CreateAppInstRequest.toObject(opt_includeInstance, this);
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.AddAppRunTimeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -8928,1095 +8774,14 @@ proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.toObject = function(o
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.CreateAppInstRequest} msg The msg instance to transform.
+ * @param {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.CreateAppInstRequest.toObject = function(includeInstance, msg) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-appInst: (f = msg.getAppInst()) && proto.librarian.sephirah.v1.AppInst.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.CreateAppInstRequest}
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.CreateAppInstRequest;
-  return proto.librarian.sephirah.v1.CreateAppInstRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.CreateAppInstRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.CreateAppInstRequest}
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.librarian.sephirah.v1.AppInst;
-      reader.readMessage(value,proto.librarian.sephirah.v1.AppInst.deserializeBinaryFromReader);
-      msg.setAppInst(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.CreateAppInstRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.CreateAppInstRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getAppInst();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      proto.librarian.sephirah.v1.AppInst.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional AppInst app_inst = 1;
- * @return {?proto.librarian.sephirah.v1.AppInst}
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.getAppInst = function() {
-  return /** @type{?proto.librarian.sephirah.v1.AppInst} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.AppInst, 1));
-};
-
-
-/**
- * @param {?proto.librarian.sephirah.v1.AppInst|undefined} value
- * @return {!proto.librarian.sephirah.v1.CreateAppInstRequest} returns this
-*/
-proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.setAppInst = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.CreateAppInstRequest} returns this
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.clearAppInst = function() {
-  return this.setAppInst(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.CreateAppInstRequest.prototype.hasAppInst = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.CreateAppInstResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.CreateAppInstResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.CreateAppInstResponse}
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.CreateAppInstResponse;
-  return proto.librarian.sephirah.v1.CreateAppInstResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.CreateAppInstResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.CreateAppInstResponse}
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.CreateAppInstResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.CreateAppInstResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional librarian.v1.InternalID id = 1;
- * @return {?proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.getId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
-};
-
-
-/**
- * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.CreateAppInstResponse} returns this
-*/
-proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.setId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.CreateAppInstResponse} returns this
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.clearId = function() {
-  return this.setId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.CreateAppInstResponse.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.UpdateAppInstRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.UpdateAppInstRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-appInst: (f = msg.getAppInst()) && proto.librarian.sephirah.v1.AppInst.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.UpdateAppInstRequest}
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.UpdateAppInstRequest;
-  return proto.librarian.sephirah.v1.UpdateAppInstRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.UpdateAppInstRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.UpdateAppInstRequest}
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.librarian.sephirah.v1.AppInst;
-      reader.readMessage(value,proto.librarian.sephirah.v1.AppInst.deserializeBinaryFromReader);
-      msg.setAppInst(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.UpdateAppInstRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.UpdateAppInstRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getAppInst();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      proto.librarian.sephirah.v1.AppInst.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional AppInst app_inst = 1;
- * @return {?proto.librarian.sephirah.v1.AppInst}
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.getAppInst = function() {
-  return /** @type{?proto.librarian.sephirah.v1.AppInst} */ (
-    jspb.Message.getWrapperField(this, proto.librarian.sephirah.v1.AppInst, 1));
-};
-
-
-/**
- * @param {?proto.librarian.sephirah.v1.AppInst|undefined} value
- * @return {!proto.librarian.sephirah.v1.UpdateAppInstRequest} returns this
-*/
-proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.setAppInst = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.UpdateAppInstRequest} returns this
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.clearAppInst = function() {
-  return this.setAppInst(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.UpdateAppInstRequest.prototype.hasAppInst = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.UpdateAppInstResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.UpdateAppInstResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.UpdateAppInstResponse}
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.UpdateAppInstResponse;
-  return proto.librarian.sephirah.v1.UpdateAppInstResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.UpdateAppInstResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.UpdateAppInstResponse}
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.UpdateAppInstResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.UpdateAppInstResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.UpdateAppInstResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.repeatedFields_ = [2,3,4];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.ListAppInstsRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.ListAppInstsRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingRequest.toObject(includeInstance, f),
-deviceIdFilterList: jspb.Message.toObjectList(msg.getDeviceIdFilterList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance),
-idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance),
-appIdFilterList: jspb.Message.toObjectList(msg.getAppIdFilterList(),
-    librarian_v1_common_pb.InternalID.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.ListAppInstsRequest;
-  return proto.librarian.sephirah.v1.ListAppInstsRequest.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.ListAppInstsRequest} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new librarian_v1_common_pb.PagingRequest;
-      reader.readMessage(value,librarian_v1_common_pb.PagingRequest.deserializeBinaryFromReader);
-      msg.setPaging(value);
-      break;
-    case 2:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addDeviceIdFilter(value);
-      break;
-    case 3:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addIdFilter(value);
-      break;
-    case 4:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.addAppIdFilter(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.ListAppInstsRequest.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.ListAppInstsRequest} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getPaging();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      librarian_v1_common_pb.PagingRequest.serializeBinaryToWriter
-    );
-  }
-  f = message.getDeviceIdFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getIdFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      3,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getAppIdFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      4,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional librarian.v1.PagingRequest paging = 1;
- * @return {?proto.librarian.v1.PagingRequest}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.getPaging = function() {
-  return /** @type{?proto.librarian.v1.PagingRequest} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingRequest, 1));
-};
-
-
-/**
- * @param {?proto.librarian.v1.PagingRequest|undefined} value
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.setPaging = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.clearPaging = function() {
-  return this.setPaging(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.hasPaging = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * repeated librarian.v1.InternalID device_id_filter = 2;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.getDeviceIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.setDeviceIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.addDeviceIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.clearDeviceIdFilterList = function() {
-  return this.setDeviceIdFilterList([]);
-};
-
-
-/**
- * repeated librarian.v1.InternalID id_filter = 3;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.getIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 3));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.setIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.addIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.clearIdFilterList = function() {
-  return this.setIdFilterList([]);
-};
-
-
-/**
- * repeated librarian.v1.InternalID app_id_filter = 4;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.getAppIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 4));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
-*/
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.setAppIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.addAppIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsRequest} returns this
- */
-proto.librarian.sephirah.v1.ListAppInstsRequest.prototype.clearAppIdFilterList = function() {
-  return this.setAppIdFilterList([]);
-};
-
-
-
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.repeatedFields_ = [2];
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.ListAppInstsResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.ListAppInstsResponse} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-paging: (f = msg.getPaging()) && librarian_v1_common_pb.PagingResponse.toObject(includeInstance, f),
-appInstsList: jspb.Message.toObjectList(msg.getAppInstsList(),
-    proto.librarian.sephirah.v1.AppInst.toObject, includeInstance)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsResponse}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.ListAppInstsResponse;
-  return proto.librarian.sephirah.v1.ListAppInstsResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.ListAppInstsResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsResponse}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new librarian_v1_common_pb.PagingResponse;
-      reader.readMessage(value,librarian_v1_common_pb.PagingResponse.deserializeBinaryFromReader);
-      msg.setPaging(value);
-      break;
-    case 2:
-      var value = new proto.librarian.sephirah.v1.AppInst;
-      reader.readMessage(value,proto.librarian.sephirah.v1.AppInst.deserializeBinaryFromReader);
-      msg.addAppInsts(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.ListAppInstsResponse.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.ListAppInstsResponse} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getPaging();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      librarian_v1_common_pb.PagingResponse.serializeBinaryToWriter
-    );
-  }
-  f = message.getAppInstsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.librarian.sephirah.v1.AppInst.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional librarian.v1.PagingResponse paging = 1;
- * @return {?proto.librarian.v1.PagingResponse}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.getPaging = function() {
-  return /** @type{?proto.librarian.v1.PagingResponse} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.PagingResponse, 1));
-};
-
-
-/**
- * @param {?proto.librarian.v1.PagingResponse|undefined} value
- * @return {!proto.librarian.sephirah.v1.ListAppInstsResponse} returns this
-*/
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.setPaging = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsResponse} returns this
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.clearPaging = function() {
-  return this.setPaging(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.hasPaging = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * repeated AppInst app_insts = 2;
- * @return {!Array<!proto.librarian.sephirah.v1.AppInst>}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.getAppInstsList = function() {
-  return /** @type{!Array<!proto.librarian.sephirah.v1.AppInst>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.AppInst, 2));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.sephirah.v1.AppInst>} value
- * @return {!proto.librarian.sephirah.v1.ListAppInstsResponse} returns this
-*/
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.setAppInstsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
-};
-
-
-/**
- * @param {!proto.librarian.sephirah.v1.AppInst=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.AppInst}
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.addAppInsts = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.AppInst, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.ListAppInstsResponse} returns this
- */
-proto.librarian.sephirah.v1.ListAppInstsResponse.prototype.clearAppInstsList = function() {
-  return this.setAppInstsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
-appInstId: (f = msg.getAppInstId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
 timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f)
   };
 
@@ -10031,23 +8796,23 @@ timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest}
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.deserializeBinary = function(bytes) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.AddAppInstRunTimeRequest;
-  return proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.librarian.sephirah.v1.AddAppRunTimeRequest;
+  return proto.librarian.sephirah.v1.AddAppRunTimeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} msg The message object to deserialize into.
+ * @param {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest}
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10057,9 +8822,14 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.deserializeBinaryFromReader
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setAppInstId(value);
+      msg.setAppId(value);
       break;
     case 2:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.setDeviceId(value);
+      break;
+    case 3:
       var value = new librarian_v1_common_pb.TimeRange;
       reader.readMessage(value,librarian_v1_common_pb.TimeRange.deserializeBinaryFromReader);
       msg.setTimeRange(value);
@@ -10077,9 +8847,9 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.deserializeBinaryFromReader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.serializeBinary = function() {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.serializeBinaryToWriter(this, writer);
+  proto.librarian.sephirah.v1.AddAppRunTimeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10087,13 +8857,13 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.serializeBinary =
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} message
+ * @param {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppInstId();
+  f = message.getAppId();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -10101,10 +8871,18 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.serializeBinaryToWriter = f
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getTimeRange();
+  f = message.getDeviceId();
   if (f != null) {
     writer.writeMessage(
       2,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getTimeRange();
+  if (f != null) {
+    writer.writeMessage(
+      3,
       f,
       librarian_v1_common_pb.TimeRange.serializeBinaryToWriter
     );
@@ -10113,10 +8891,10 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.serializeBinaryToWriter = f
 
 
 /**
- * optional librarian.v1.InternalID app_inst_id = 1;
+ * optional librarian.v1.InternalID app_id = 1;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.getAppInstId = function() {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.getAppId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
@@ -10124,19 +8902,19 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.getAppInstId = fu
 
 /**
  * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} returns this
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} returns this
 */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.setAppInstId = function(value) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.setAppId = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} returns this
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} returns this
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.clearAppInstId = function() {
-  return this.setAppInstId(undefined);
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.clearAppId = function() {
+  return this.setAppId(undefined);
 };
 
 
@@ -10144,35 +8922,72 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.clearAppInstId = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.hasAppInstId = function() {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.hasAppId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional librarian.v1.TimeRange time_range = 2;
- * @return {?proto.librarian.v1.TimeRange}
+ * optional librarian.v1.InternalID device_id = 2;
+ * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.getTimeRange = function() {
-  return /** @type{?proto.librarian.v1.TimeRange} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 2));
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.getDeviceId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 2));
 };
 
 
 /**
- * @param {?proto.librarian.v1.TimeRange|undefined} value
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} returns this
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} returns this
 */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.setTimeRange = function(value) {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.setDeviceId = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeRequest} returns this
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} returns this
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.clearTimeRange = function() {
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.clearDeviceId = function() {
+  return this.setDeviceId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.hasDeviceId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional librarian.v1.TimeRange time_range = 3;
+ * @return {?proto.librarian.v1.TimeRange}
+ */
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.getTimeRange = function() {
+  return /** @type{?proto.librarian.v1.TimeRange} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 3));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.TimeRange|undefined} value
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} returns this
+*/
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.setTimeRange = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeRequest} returns this
+ */
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.clearTimeRange = function() {
   return this.setTimeRange(undefined);
 };
 
@@ -10181,8 +8996,8 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.clearTimeRange = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeRequest.prototype.hasTimeRange = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.librarian.sephirah.v1.AddAppRunTimeRequest.prototype.hasTimeRange = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -10202,8 +9017,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.toObject(opt_includeInstance, this);
+proto.librarian.sephirah.v1.AddAppRunTimeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.AddAppRunTimeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -10212,11 +9027,11 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.prototype.toObject = funct
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.AddAppInstRunTimeResponse} msg The msg instance to transform.
+ * @param {!proto.librarian.sephirah.v1.AddAppRunTimeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.toObject = function(includeInstance, msg) {
+proto.librarian.sephirah.v1.AddAppRunTimeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -10232,23 +9047,23 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.toObject = function(includ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeResponse}
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeResponse}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.deserializeBinary = function(bytes) {
+proto.librarian.sephirah.v1.AddAppRunTimeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.AddAppInstRunTimeResponse;
-  return proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.librarian.sephirah.v1.AddAppRunTimeResponse;
+  return proto.librarian.sephirah.v1.AddAppRunTimeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.AddAppInstRunTimeResponse} msg The message object to deserialize into.
+ * @param {!proto.librarian.sephirah.v1.AddAppRunTimeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.AddAppInstRunTimeResponse}
+ * @return {!proto.librarian.sephirah.v1.AddAppRunTimeResponse}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.librarian.sephirah.v1.AddAppRunTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10268,9 +9083,9 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.deserializeBinaryFromReade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.prototype.serializeBinary = function() {
+proto.librarian.sephirah.v1.AddAppRunTimeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.serializeBinaryToWriter(this, writer);
+  proto.librarian.sephirah.v1.AddAppRunTimeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10278,15 +9093,22 @@ proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.prototype.serializeBinary 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.AddAppInstRunTimeResponse} message
+ * @param {!proto.librarian.sephirah.v1.AddAppRunTimeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.AddAppInstRunTimeResponse.serializeBinaryToWriter = function(message, writer) {
+proto.librarian.sephirah.v1.AddAppRunTimeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
 
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.repeatedFields_ = [1,2];
 
 
 
@@ -10303,8 +9125,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.toObject(opt_includeInstance, this);
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.SumAppRunTimeRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -10313,13 +9135,16 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.toObject = functi
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} msg The msg instance to transform.
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.toObject = function(includeInstance, msg) {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-appInstId: (f = msg.getAppInstId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
+appIdFilterList: jspb.Message.toObjectList(msg.getAppIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
+deviceIdFilterList: jspb.Message.toObjectList(msg.getDeviceIdFilterList(),
+    librarian_v1_common_pb.InternalID.toObject, includeInstance),
 timeAggregation: (f = msg.getTimeAggregation()) && librarian_v1_common_pb.TimeAggregation.toObject(includeInstance, f)
   };
 
@@ -10334,23 +9159,23 @@ timeAggregation: (f = msg.getTimeAggregation()) && librarian_v1_common_pb.TimeAg
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.deserializeBinary = function(bytes) {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.SumAppInstRunTimeRequest;
-  return proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.librarian.sephirah.v1.SumAppRunTimeRequest;
+  return proto.librarian.sephirah.v1.SumAppRunTimeRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} msg The message object to deserialize into.
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10360,9 +9185,14 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.deserializeBinaryFromReader
     case 1:
       var value = new librarian_v1_common_pb.InternalID;
       reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setAppInstId(value);
+      msg.addAppIdFilter(value);
       break;
     case 2:
+      var value = new librarian_v1_common_pb.InternalID;
+      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
+      msg.addDeviceIdFilter(value);
+      break;
+    case 3:
       var value = new librarian_v1_common_pb.TimeAggregation;
       reader.readMessage(value,librarian_v1_common_pb.TimeAggregation.deserializeBinaryFromReader);
       msg.setTimeAggregation(value);
@@ -10380,9 +9210,9 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.deserializeBinaryFromReader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.serializeBinary = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.serializeBinaryToWriter(this, writer);
+  proto.librarian.sephirah.v1.SumAppRunTimeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10390,16 +9220,24 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.serializeBinary =
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} message
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.serializeBinaryToWriter = function(message, writer) {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAppInstId();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getAppIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
+      f,
+      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
+    );
+  }
+  f = message.getDeviceIdFilterList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
       f,
       librarian_v1_common_pb.InternalID.serializeBinaryToWriter
     );
@@ -10407,7 +9245,7 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.serializeBinaryToWriter = f
   f = message.getTimeAggregation();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       librarian_v1_common_pb.TimeAggregation.serializeBinaryToWriter
     );
@@ -10416,66 +9254,105 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.serializeBinaryToWriter = f
 
 
 /**
- * optional librarian.v1.InternalID app_inst_id = 1;
- * @return {?proto.librarian.v1.InternalID}
+ * repeated librarian.v1.InternalID app_id_filter = 1;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.getAppInstId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.getAppIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 1));
 };
 
 
 /**
- * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} returns this
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} returns this
 */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.setAppInstId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.setAppIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} returns this
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.clearAppInstId = function() {
-  return this.setAppInstId(undefined);
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.addAppIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.v1.InternalID, opt_index);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} returns this
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.hasAppInstId = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.clearAppIdFilterList = function() {
+  return this.setAppIdFilterList([]);
 };
 
 
 /**
- * optional librarian.v1.TimeAggregation time_aggregation = 2;
+ * repeated librarian.v1.InternalID device_id_filter = 2;
+ * @return {!Array<!proto.librarian.v1.InternalID>}
+ */
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.getDeviceIdFilterList = function() {
+  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
+    jspb.Message.getRepeatedWrapperField(this, librarian_v1_common_pb.InternalID, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.InternalID>} value
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} returns this
+*/
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.setDeviceIdFilterList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.InternalID=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.InternalID}
+ */
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.addDeviceIdFilter = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.v1.InternalID, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} returns this
+ */
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.clearDeviceIdFilterList = function() {
+  return this.setDeviceIdFilterList([]);
+};
+
+
+/**
+ * optional librarian.v1.TimeAggregation time_aggregation = 3;
  * @return {?proto.librarian.v1.TimeAggregation}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.getTimeAggregation = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.getTimeAggregation = function() {
   return /** @type{?proto.librarian.v1.TimeAggregation} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeAggregation, 2));
+    jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeAggregation, 3));
 };
 
 
 /**
  * @param {?proto.librarian.v1.TimeAggregation|undefined} value
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} returns this
 */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.setTimeAggregation = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.setTimeAggregation = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeRequest} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeRequest} returns this
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.clearTimeAggregation = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.clearTimeAggregation = function() {
   return this.setTimeAggregation(undefined);
 };
 
@@ -10484,8 +9361,8 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.clearTimeAggregat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.hasTimeAggregation = function() {
-  return jspb.Message.getField(this, 2) != null;
+proto.librarian.sephirah.v1.SumAppRunTimeRequest.prototype.hasTimeAggregation = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -10495,7 +9372,7 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeRequest.prototype.hasTimeAggregatio
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.repeatedFields_ = [1];
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.repeatedFields_ = [1];
 
 
 
@@ -10512,8 +9389,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.toObject(opt_includeInstance, this);
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.SumAppRunTimeResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -10522,14 +9399,14 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.toObject = funct
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse} msg The msg instance to transform.
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.toObject = function(includeInstance, msg) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 runTimeGroupsList: jspb.Message.toObjectList(msg.getRunTimeGroupsList(),
-    proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.toObject, includeInstance)
+    proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -10543,23 +9420,23 @@ runTimeGroupsList: jspb.Message.toObjectList(msg.getRunTimeGroupsList(),
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.deserializeBinary = function(bytes) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.SumAppInstRunTimeResponse;
-  return proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.librarian.sephirah.v1.SumAppRunTimeResponse;
+  return proto.librarian.sephirah.v1.SumAppRunTimeResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse} msg The message object to deserialize into.
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10567,8 +9444,8 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group;
-      reader.readMessage(value,proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.deserializeBinaryFromReader);
+      var value = new proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group;
+      reader.readMessage(value,proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.deserializeBinaryFromReader);
       msg.addRunTimeGroups(value);
       break;
     default:
@@ -10584,9 +9461,9 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.deserializeBinaryFromReade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.serializeBinary = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.serializeBinaryToWriter(this, writer);
+  proto.librarian.sephirah.v1.SumAppRunTimeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10594,18 +9471,18 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.serializeBinary 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse} message
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.serializeBinaryToWriter = function(message, writer) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRunTimeGroupsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.serializeBinaryToWriter
+      proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.serializeBinaryToWriter
     );
   }
 };
@@ -10627,8 +9504,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.toObject(opt_includeInstance, this);
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.toObject = function(opt_includeInstance) {
+  return proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.toObject(opt_includeInstance, this);
 };
 
 
@@ -10637,11 +9514,11 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.toObject =
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} msg The msg instance to transform.
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.toObject = function(includeInstance, msg) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.toObject = function(includeInstance, msg) {
   var f, obj = {
 timeRange: (f = msg.getTimeRange()) && librarian_v1_common_pb.TimeRange.toObject(includeInstance, f),
 duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
@@ -10658,23 +9535,23 @@ duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObje
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.deserializeBinary = function(bytes) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group;
-  return proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group;
+  return proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} msg The message object to deserialize into.
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.deserializeBinaryFromReader = function(msg, reader) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -10704,9 +9581,9 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.deserializeBinaryFro
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.serializeBinary = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.serializeBinaryToWriter(this, writer);
+  proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -10714,11 +9591,11 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.serializeB
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} message
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.serializeBinaryToWriter = function(message, writer) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimeRange();
   if (f != null) {
@@ -10743,7 +9620,7 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.serializeBinaryToWri
  * optional librarian.v1.TimeRange time_range = 1;
  * @return {?proto.librarian.v1.TimeRange}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.getTimeRange = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.getTimeRange = function() {
   return /** @type{?proto.librarian.v1.TimeRange} */ (
     jspb.Message.getWrapperField(this, librarian_v1_common_pb.TimeRange, 1));
 };
@@ -10751,18 +9628,18 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.getTimeRan
 
 /**
  * @param {?proto.librarian.v1.TimeRange|undefined} value
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} returns this
 */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.setTimeRange = function(value) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.setTimeRange = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} returns this
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.clearTimeRange = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.clearTimeRange = function() {
   return this.setTimeRange(undefined);
 };
 
@@ -10771,7 +9648,7 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.clearTimeR
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.hasTimeRange = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.hasTimeRange = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -10780,7 +9657,7 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.hasTimeRan
  * optional google.protobuf.Duration duration = 2;
  * @return {?proto.google.protobuf.Duration}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.getDuration = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.getDuration = function() {
   return /** @type{?proto.google.protobuf.Duration} */ (
     jspb.Message.getWrapperField(this, google_protobuf_duration_pb.Duration, 2));
 };
@@ -10788,18 +9665,18 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.getDuratio
 
 /**
  * @param {?proto.google.protobuf.Duration|undefined} value
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} returns this
 */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.setDuration = function(value) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.setDuration = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group} returns this
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.clearDuration = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.clearDuration = function() {
   return this.setDuration(undefined);
 };
 
@@ -10808,45 +9685,45 @@ proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.clearDurat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group.prototype.hasDuration = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group.prototype.hasDuration = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
  * repeated Group run_time_groups = 1;
- * @return {!Array<!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group>}
+ * @return {!Array<!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group>}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.getRunTimeGroupsList = function() {
-  return /** @type{!Array<!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group, 1));
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.prototype.getRunTimeGroupsList = function() {
+  return /** @type{!Array<!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group, 1));
 };
 
 
 /**
- * @param {!Array<!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group>} value
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse} returns this
+ * @param {!Array<!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group>} value
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse} returns this
 */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.setRunTimeGroupsList = function(value) {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.prototype.setRunTimeGroupsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group=} opt_value
+ * @param {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group=} opt_value
  * @param {number=} opt_index
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group}
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group}
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.addRunTimeGroups = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.Group, opt_index);
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.prototype.addRunTimeGroups = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.librarian.sephirah.v1.SumAppRunTimeResponse.Group, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.SumAppInstRunTimeResponse} returns this
+ * @return {!proto.librarian.sephirah.v1.SumAppRunTimeResponse} returns this
  */
-proto.librarian.sephirah.v1.SumAppInstRunTimeResponse.prototype.clearRunTimeGroupsList = function() {
+proto.librarian.sephirah.v1.SumAppRunTimeResponse.prototype.clearRunTimeGroupsList = function() {
   return this.setRunTimeGroupsList([]);
 };
 
@@ -19215,259 +18092,6 @@ proto.librarian.sephirah.v1.AppCategory.prototype.addAppInfoIds = function(opt_v
  */
 proto.librarian.sephirah.v1.AppCategory.prototype.clearAppInfoIdsList = function() {
   return this.setAppInfoIdsList([]);
-};
-
-
-
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * Optional fields that are not set will be set to undefined.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
- * @param {boolean=} opt_includeInstance Deprecated. whether to include the
- *     JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.toObject = function(opt_includeInstance) {
-  return proto.librarian.sephirah.v1.AppInst.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Deprecated. Whether to include
- *     the JSPB instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.librarian.sephirah.v1.AppInst} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.AppInst.toObject = function(includeInstance, msg) {
-  var f, obj = {
-id: (f = msg.getId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-deviceId: (f = msg.getDeviceId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-appId: (f = msg.getAppId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.librarian.sephirah.v1.AppInst}
- */
-proto.librarian.sephirah.v1.AppInst.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.librarian.sephirah.v1.AppInst;
-  return proto.librarian.sephirah.v1.AppInst.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.librarian.sephirah.v1.AppInst} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.librarian.sephirah.v1.AppInst}
- */
-proto.librarian.sephirah.v1.AppInst.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setId(value);
-      break;
-    case 2:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setDeviceId(value);
-      break;
-    case 3:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setAppId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.librarian.sephirah.v1.AppInst.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.librarian.sephirah.v1.AppInst} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.librarian.sephirah.v1.AppInst.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getId();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getDeviceId();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getAppId();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * optional librarian.v1.InternalID id = 1;
- * @return {?proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.getId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 1));
-};
-
-
-/**
- * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.AppInst} returns this
-*/
-proto.librarian.sephirah.v1.AppInst.prototype.setId = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.AppInst} returns this
- */
-proto.librarian.sephirah.v1.AppInst.prototype.clearId = function() {
-  return this.setId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.hasId = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional librarian.v1.InternalID device_id = 2;
- * @return {?proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.getDeviceId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 2));
-};
-
-
-/**
- * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.AppInst} returns this
-*/
-proto.librarian.sephirah.v1.AppInst.prototype.setDeviceId = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.AppInst} returns this
- */
-proto.librarian.sephirah.v1.AppInst.prototype.clearDeviceId = function() {
-  return this.setDeviceId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.hasDeviceId = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional librarian.v1.InternalID app_id = 3;
- * @return {?proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.getAppId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 3));
-};
-
-
-/**
- * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.AppInst} returns this
-*/
-proto.librarian.sephirah.v1.AppInst.prototype.setAppId = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.AppInst} returns this
- */
-proto.librarian.sephirah.v1.AppInst.prototype.clearAppId = function() {
-  return this.setAppId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.AppInst.prototype.hasAppId = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
