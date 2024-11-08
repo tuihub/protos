@@ -5,10 +5,10 @@ go 1.21
 toolchain go1.22.5
 
 require (
-	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.34.2-20240717164558-a6c49f84cc0f.2
-	github.com/go-kratos/kratos/v2 v2.8.0
-	google.golang.org/grpc v1.67.1
-	google.golang.org/protobuf v1.34.2
+	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.35.1-20240920164238-5a7b106cbb87.1
+	github.com/go-kratos/kratos/v2 v2.8.2
+	google.golang.org/grpc v1.68.0
+	google.golang.org/protobuf v1.35.1
 )
 
 require (
