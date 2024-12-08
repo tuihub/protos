@@ -1,13 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     "schedule:monthly",
     ":timezone(Asia/Singapore)",
     ":dependencyDashboard"
   ],
-  "postUpdateOptions": ["gomodTidy", "npmDedupe"],
-  "labels": ["renovate"],
+  "postUpdateOptions": [
+    "gomodTidy",
+    "npmDedupe"
+  ],
+  "labels": [
+    "renovate"
+  ],
   "prBodyNotes": [
     "{{#if isMajor}}:warning: MAJOR MAJOR MAJOR :warning:{{/if}}"
   ],
@@ -18,22 +23,25 @@
   "packageRules": [
     {
       "description": "Automatically group and merge minor and patch-level updates",
-      "matchPackagePatterns": [
-        "*"
-      ],
       "matchUpdateTypes": [
         "minor",
         "patch",
         "digest"
       ],
-      "stabilityDays": 1,
+      "minimumReleaseAge": "1 day",
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": [
+        "*"
+      ]
     },
     {
       "description": "Opt-out minimum Go and Dart version updates",
-      "matchDatasources": ["golang-version", "dart-version"],
+      "matchDatasources": [
+        "golang-version",
+        "dart-version"
+      ],
       "enabled": false
     }
   ],
