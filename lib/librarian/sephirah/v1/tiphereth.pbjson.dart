@@ -277,13 +277,18 @@ const RegisterDeviceRequest$json = {
   '1': 'RegisterDeviceRequest',
   '2': [
     {'1': 'device_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.DeviceInfo', '10': 'deviceInfo'},
+    {'1': 'client_local_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'clientLocalId', '17': true},
+  ],
+  '8': [
+    {'1': '_client_local_id'},
   ],
 };
 
 /// Descriptor for `RegisterDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List registerDeviceRequestDescriptor = $convert.base64Decode(
     'ChVSZWdpc3RlckRldmljZVJlcXVlc3QSQgoLZGV2aWNlX2luZm8YASABKAsyIS5saWJyYXJpYW'
-    '4uc2VwaGlyYWgudjEuRGV2aWNlSW5mb1IKZGV2aWNlSW5mbw==');
+    '4uc2VwaGlyYWgudjEuRGV2aWNlSW5mb1IKZGV2aWNlSW5mbxIrCg9jbGllbnRfbG9jYWxfaWQY'
+    'AiABKAlIAFINY2xpZW50TG9jYWxJZIgBAUISChBfY2xpZW50X2xvY2FsX2lk');
 
 @$core.Deprecated('Use registerDeviceResponseDescriptor instead')
 const RegisterDeviceResponse$json = {

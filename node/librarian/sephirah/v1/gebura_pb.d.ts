@@ -727,6 +727,11 @@ export class ListAppsRequest extends jspb.Message {
   setAssignedAppInfoIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
   addAssignedAppInfoIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
 
+  clearDeviceIdFilterList(): void;
+  getDeviceIdFilterList(): Array<librarian_v1_common_pb.InternalID>;
+  setDeviceIdFilterList(value: Array<librarian_v1_common_pb.InternalID>): void;
+  addDeviceIdFilter(value?: librarian_v1_common_pb.InternalID, index?: number): librarian_v1_common_pb.InternalID;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAppsRequest): ListAppsRequest.AsObject;
@@ -743,6 +748,7 @@ export namespace ListAppsRequest {
     ownerIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     idFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
     assignedAppInfoIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
+    deviceIdFilterList: Array<librarian_v1_common_pb.InternalID.AsObject>,
   }
 }
 
@@ -2139,6 +2145,11 @@ export class App extends jspb.Message {
   getAssignedAppInfoId(): librarian_v1_common_pb.InternalID | undefined;
   setAssignedAppInfoId(value?: librarian_v1_common_pb.InternalID): void;
 
+  hasDeviceId(): boolean;
+  clearDeviceId(): void;
+  getDeviceId(): librarian_v1_common_pb.InternalID | undefined;
+  setDeviceId(value?: librarian_v1_common_pb.InternalID): void;
+
   getPublic(): boolean;
   setPublic(value: boolean): void;
 
@@ -2158,6 +2169,7 @@ export namespace App {
     name: string,
     description: string,
     assignedAppInfoId?: librarian_v1_common_pb.InternalID.AsObject,
+    deviceId?: librarian_v1_common_pb.InternalID.AsObject,
     pb_public: boolean,
   }
 }

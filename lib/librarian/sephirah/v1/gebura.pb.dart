@@ -1610,6 +1610,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     $core.Iterable<$8.InternalID>? ownerIdFilter,
     $core.Iterable<$8.InternalID>? idFilter,
     $core.Iterable<$8.InternalID>? assignedAppInfoIdFilter,
+    $core.Iterable<$8.InternalID>? deviceIdFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -1624,6 +1625,9 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     if (assignedAppInfoIdFilter != null) {
       $result.assignedAppInfoIdFilter.addAll(assignedAppInfoIdFilter);
     }
+    if (deviceIdFilter != null) {
+      $result.deviceIdFilter.addAll(deviceIdFilter);
+    }
     return $result;
   }
   ListAppsRequest._() : super();
@@ -1635,6 +1639,7 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'ownerIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pc<$8.InternalID>(4, _omitFieldNames ? '' : 'assignedAppInfoIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(5, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1680,6 +1685,9 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<$8.InternalID> get assignedAppInfoIdFilter => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<$8.InternalID> get deviceIdFilter => $_getList(4);
 }
 
 class ListAppsResponse extends $pb.GeneratedMessage {
@@ -4830,6 +4838,7 @@ class App extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? description,
     $8.InternalID? assignedAppInfoId,
+    $8.InternalID? deviceId,
     $core.bool? public,
   }) {
     final $result = create();
@@ -4845,6 +4854,9 @@ class App extends $pb.GeneratedMessage {
     if (assignedAppInfoId != null) {
       $result.assignedAppInfoId = assignedAppInfoId;
     }
+    if (deviceId != null) {
+      $result.deviceId = deviceId;
+    }
     if (public != null) {
       $result.public = public;
     }
@@ -4859,6 +4871,7 @@ class App extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOM<$8.InternalID>(4, _omitFieldNames ? '' : 'assignedAppInfoId', subBuilder: $8.InternalID.create)
+    ..aOM<$8.InternalID>(5, _omitFieldNames ? '' : 'deviceId', subBuilder: $8.InternalID.create)
     ..aOB(10, _omitFieldNames ? '' : 'public')
     ..hasRequiredFields = false
   ;
@@ -4926,13 +4939,24 @@ class App extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $8.InternalID ensureAssignedAppInfoId() => $_ensure(3);
 
+  @$pb.TagNumber(5)
+  $8.InternalID get deviceId => $_getN(4);
+  @$pb.TagNumber(5)
+  set deviceId($8.InternalID v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasDeviceId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeviceId() => clearField(5);
+  @$pb.TagNumber(5)
+  $8.InternalID ensureDeviceId() => $_ensure(4);
+
   /// false by default
   @$pb.TagNumber(10)
-  $core.bool get public => $_getBF(4);
+  $core.bool get public => $_getBF(5);
   @$pb.TagNumber(10)
-  set public($core.bool v) { $_setBool(4, v); }
+  set public($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(10)
-  $core.bool hasPublic() => $_has(4);
+  $core.bool hasPublic() => $_has(5);
   @$pb.TagNumber(10)
   void clearPublic() => clearField(10);
 }

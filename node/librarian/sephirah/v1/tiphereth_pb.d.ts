@@ -269,6 +269,11 @@ export class RegisterDeviceRequest extends jspb.Message {
   getDeviceInfo(): DeviceInfo | undefined;
   setDeviceInfo(value?: DeviceInfo): void;
 
+  hasClientLocalId(): boolean;
+  clearClientLocalId(): void;
+  getClientLocalId(): string;
+  setClientLocalId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RegisterDeviceRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RegisterDeviceRequest): RegisterDeviceRequest.AsObject;
@@ -282,6 +287,7 @@ export class RegisterDeviceRequest extends jspb.Message {
 export namespace RegisterDeviceRequest {
   export type AsObject = {
     deviceInfo?: DeviceInfo.AsObject,
+    clientLocalId: string,
   }
 }
 

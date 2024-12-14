@@ -2909,7 +2909,8 @@ proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.toObject = function(
  */
 proto.librarian.sephirah.v1.RegisterDeviceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f)
+deviceInfo: (f = msg.getDeviceInfo()) && proto.librarian.sephirah.v1.DeviceInfo.toObject(includeInstance, f),
+clientLocalId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2951,6 +2952,10 @@ proto.librarian.sephirah.v1.RegisterDeviceRequest.deserializeBinaryFromReader = 
       reader.readMessage(value,proto.librarian.sephirah.v1.DeviceInfo.deserializeBinaryFromReader);
       msg.setDeviceInfo(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClientLocalId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2986,6 +2991,13 @@ proto.librarian.sephirah.v1.RegisterDeviceRequest.serializeBinaryToWriter = func
       1,
       f,
       proto.librarian.sephirah.v1.DeviceInfo.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -3025,6 +3037,42 @@ proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.clearDeviceInfo = fu
  */
 proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.hasDeviceInfo = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string client_local_id = 2;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.getClientLocalId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.RegisterDeviceRequest} returns this
+ */
+proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.setClientLocalId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.RegisterDeviceRequest} returns this
+ */
+proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.clearClientLocalId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.RegisterDeviceRequest.prototype.hasClientLocalId = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

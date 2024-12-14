@@ -681,10 +681,14 @@ class RegisterUserResponse extends $pb.GeneratedMessage {
 class RegisterDeviceRequest extends $pb.GeneratedMessage {
   factory RegisterDeviceRequest({
     DeviceInfo? deviceInfo,
+    $core.String? clientLocalId,
   }) {
     final $result = create();
     if (deviceInfo != null) {
       $result.deviceInfo = deviceInfo;
+    }
+    if (clientLocalId != null) {
+      $result.clientLocalId = clientLocalId;
     }
     return $result;
   }
@@ -694,6 +698,7 @@ class RegisterDeviceRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterDeviceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<DeviceInfo>(1, _omitFieldNames ? '' : 'deviceInfo', subBuilder: DeviceInfo.create)
+    ..aOS(2, _omitFieldNames ? '' : 'clientLocalId')
     ..hasRequiredFields = false
   ;
 
@@ -728,6 +733,16 @@ class RegisterDeviceRequest extends $pb.GeneratedMessage {
   void clearDeviceInfo() => clearField(1);
   @$pb.TagNumber(1)
   DeviceInfo ensureDeviceInfo() => $_ensure(0);
+
+  /// Client locally generated id, same local id will be treated as same device
+  @$pb.TagNumber(2)
+  $core.String get clientLocalId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientLocalId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasClientLocalId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientLocalId() => clearField(2);
 }
 
 class RegisterDeviceResponse extends $pb.GeneratedMessage {

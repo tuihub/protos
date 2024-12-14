@@ -583,6 +583,9 @@ impl serde::Serialize for App {
         if self.assigned_app_info_id.is_some() {
             len += 1;
         }
+        if self.device_id.is_some() {
+            len += 1;
+        }
         if self.public {
             len += 1;
         }
@@ -598,6 +601,9 @@ impl serde::Serialize for App {
         }
         if let Some(v) = self.assigned_app_info_id.as_ref() {
             struct_ser.serialize_field("assignedAppInfoId", v)?;
+        }
+        if let Some(v) = self.device_id.as_ref() {
+            struct_ser.serialize_field("deviceId", v)?;
         }
         if self.public {
             struct_ser.serialize_field("public", &self.public)?;
@@ -617,6 +623,8 @@ impl<'de> serde::Deserialize<'de> for App {
             "description",
             "assigned_app_info_id",
             "assignedAppInfoId",
+            "device_id",
+            "deviceId",
             "public",
         ];
 
@@ -626,6 +634,7 @@ impl<'de> serde::Deserialize<'de> for App {
             Name,
             Description,
             AssignedAppInfoId,
+            DeviceId,
             Public,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -652,6 +661,7 @@ impl<'de> serde::Deserialize<'de> for App {
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "assignedAppInfoId" | "assigned_app_info_id" => Ok(GeneratedField::AssignedAppInfoId),
+                            "deviceId" | "device_id" => Ok(GeneratedField::DeviceId),
                             "public" => Ok(GeneratedField::Public),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -676,6 +686,7 @@ impl<'de> serde::Deserialize<'de> for App {
                 let mut name__ = None;
                 let mut description__ = None;
                 let mut assigned_app_info_id__ = None;
+                let mut device_id__ = None;
                 let mut public__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
@@ -703,6 +714,12 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             assigned_app_info_id__ = map_.next_value()?;
                         }
+                        GeneratedField::DeviceId => {
+                            if device_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceId"));
+                            }
+                            device_id__ = map_.next_value()?;
+                        }
                         GeneratedField::Public => {
                             if public__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("public"));
@@ -716,6 +733,7 @@ impl<'de> serde::Deserialize<'de> for App {
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
                     assigned_app_info_id: assigned_app_info_id__,
+                    device_id: device_id__,
                     public: public__.unwrap_or_default(),
                 })
             }
@@ -10506,6 +10524,9 @@ impl serde::Serialize for ListAppsRequest {
         if !self.assigned_app_info_id_filter.is_empty() {
             len += 1;
         }
+        if !self.device_id_filter.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListAppsRequest", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
@@ -10518,6 +10539,9 @@ impl serde::Serialize for ListAppsRequest {
         }
         if !self.assigned_app_info_id_filter.is_empty() {
             struct_ser.serialize_field("assignedAppInfoIdFilter", &self.assigned_app_info_id_filter)?;
+        }
+        if !self.device_id_filter.is_empty() {
+            struct_ser.serialize_field("deviceIdFilter", &self.device_id_filter)?;
         }
         struct_ser.end()
     }
@@ -10536,6 +10560,8 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
             "idFilter",
             "assigned_app_info_id_filter",
             "assignedAppInfoIdFilter",
+            "device_id_filter",
+            "deviceIdFilter",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -10544,6 +10570,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
             OwnerIdFilter,
             IdFilter,
             AssignedAppInfoIdFilter,
+            DeviceIdFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -10569,6 +10596,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                             "ownerIdFilter" | "owner_id_filter" => Ok(GeneratedField::OwnerIdFilter),
                             "idFilter" | "id_filter" => Ok(GeneratedField::IdFilter),
                             "assignedAppInfoIdFilter" | "assigned_app_info_id_filter" => Ok(GeneratedField::AssignedAppInfoIdFilter),
+                            "deviceIdFilter" | "device_id_filter" => Ok(GeneratedField::DeviceIdFilter),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -10592,6 +10620,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                 let mut owner_id_filter__ = None;
                 let mut id_filter__ = None;
                 let mut assigned_app_info_id_filter__ = None;
+                let mut device_id_filter__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -10618,6 +10647,12 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                             }
                             assigned_app_info_id_filter__ = Some(map_.next_value()?);
                         }
+                        GeneratedField::DeviceIdFilter => {
+                            if device_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceIdFilter"));
+                            }
+                            device_id_filter__ = Some(map_.next_value()?);
+                        }
                     }
                 }
                 Ok(ListAppsRequest {
@@ -10625,6 +10660,7 @@ impl<'de> serde::Deserialize<'de> for ListAppsRequest {
                     owner_id_filter: owner_id_filter__.unwrap_or_default(),
                     id_filter: id_filter__.unwrap_or_default(),
                     assigned_app_info_id_filter: assigned_app_info_id_filter__.unwrap_or_default(),
+                    device_id_filter: device_id_filter__.unwrap_or_default(),
                 })
             }
         }
@@ -19506,9 +19542,15 @@ impl serde::Serialize for RegisterDeviceRequest {
         if self.device_info.is_some() {
             len += 1;
         }
+        if self.client_local_id.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RegisterDeviceRequest", len)?;
         if let Some(v) = self.device_info.as_ref() {
             struct_ser.serialize_field("deviceInfo", v)?;
+        }
+        if let Some(v) = self.client_local_id.as_ref() {
+            struct_ser.serialize_field("clientLocalId", v)?;
         }
         struct_ser.end()
     }
@@ -19522,11 +19564,14 @@ impl<'de> serde::Deserialize<'de> for RegisterDeviceRequest {
         const FIELDS: &[&str] = &[
             "device_info",
             "deviceInfo",
+            "client_local_id",
+            "clientLocalId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             DeviceInfo,
+            ClientLocalId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -19549,6 +19594,7 @@ impl<'de> serde::Deserialize<'de> for RegisterDeviceRequest {
                     {
                         match value {
                             "deviceInfo" | "device_info" => Ok(GeneratedField::DeviceInfo),
+                            "clientLocalId" | "client_local_id" => Ok(GeneratedField::ClientLocalId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -19569,6 +19615,7 @@ impl<'de> serde::Deserialize<'de> for RegisterDeviceRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut device_info__ = None;
+                let mut client_local_id__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::DeviceInfo => {
@@ -19577,10 +19624,17 @@ impl<'de> serde::Deserialize<'de> for RegisterDeviceRequest {
                             }
                             device_info__ = map_.next_value()?;
                         }
+                        GeneratedField::ClientLocalId => {
+                            if client_local_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("clientLocalId"));
+                            }
+                            client_local_id__ = map_.next_value()?;
+                        }
                     }
                 }
                 Ok(RegisterDeviceRequest {
                     device_info: device_info__,
+                    client_local_id: client_local_id__,
                 })
             }
         }

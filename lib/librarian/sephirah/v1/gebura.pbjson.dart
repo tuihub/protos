@@ -439,6 +439,7 @@ const ListAppsRequest$json = {
     {'1': 'owner_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ownerIdFilter'},
     {'1': 'id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
     {'1': 'assigned_app_info_id_filter', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'assignedAppInfoIdFilter'},
+    {'1': 'device_id_filter', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceIdFilter'},
   ],
 };
 
@@ -449,7 +450,8 @@ final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
     'SW50ZXJuYWxJRFINb3duZXJJZEZpbHRlchI1CglpZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW'
     '4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISVgobYXNzaWduZWRfYXBwX2luZm9faWRfZmlsdGVy'
     'GAQgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSF2Fzc2lnbmVkQXBwSW5mb0lkRmlsdG'
-    'Vy');
+    'VyEkIKEGRldmljZV9pZF9maWx0ZXIYBSADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIO'
+    'ZGV2aWNlSWRGaWx0ZXI=');
 
 @$core.Deprecated('Use listAppsResponseDescriptor instead')
 const ListAppsResponse$json = {
@@ -1231,10 +1233,12 @@ const App$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'assigned_app_info_id', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'assignedAppInfoId', '17': true},
+    {'1': 'device_id', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 1, '10': 'deviceId', '17': true},
     {'1': 'public', '3': 10, '4': 1, '5': 8, '10': 'public'},
   ],
   '8': [
     {'1': '_assigned_app_info_id'},
+    {'1': '_device_id'},
   ],
 };
 
@@ -1243,8 +1247,9 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZR'
     'gCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24STgoUYXNzaWdu'
     'ZWRfYXBwX2luZm9faWQYBCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUhFhc3NpZ2'
-    '5lZEFwcEluZm9JZIgBARIWCgZwdWJsaWMYCiABKAhSBnB1YmxpY0IXChVfYXNzaWduZWRfYXBw'
-    'X2luZm9faWQ=');
+    '5lZEFwcEluZm9JZIgBARI6CglkZXZpY2VfaWQYBSABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu'
+    'YWxJREgBUghkZXZpY2VJZIgBARIWCgZwdWJsaWMYCiABKAhSBnB1YmxpY0IXChVfYXNzaWduZW'
+    'RfYXBwX2luZm9faWRCDAoKX2RldmljZV9pZA==');
 
 @$core.Deprecated('Use appBinaryDescriptor instead')
 const AppBinary$json = {
