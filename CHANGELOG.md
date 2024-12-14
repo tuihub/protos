@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.24](https://github.com/tuihub/protos/compare/v0.4.23...v0.4.24) (2024-12-14)
+
+
+### Features
+
+* **gebura:** remove AppInst ([51fc077](https://github.com/tuihub/protos/commit/51fc07786740a0172a4ae1256724824bbb59ad9b))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#162](https://github.com/tuihub/protos/issues/162)) ([fd21429](https://github.com/tuihub/protos/commit/fd21429e7601fab9a5e21faecf1554400c3a3f44))
+* **deps:** update all non-major dependencies ([#165](https://github.com/tuihub/protos/issues/165)) ([94a8a5e](https://github.com/tuihub/protos/commit/94a8a5efd05d0a3510335a98f94f91b6ce6dbe29))
+* **deps:** update rust crate tonic to v0.12.3 [security] ([#163](https://github.com/tuihub/protos/issues/163)) ([97671f4](https://github.com/tuihub/protos/commit/97671f48b875b775db0ce859ef86e7e51fa020c0))
+* update device id ([70de340](https://github.com/tuihub/protos/commit/70de3405868c5929a17c4fa771e57409aea54893))
+
 ## [0.4.23](https://github.com/tuihub/protos/compare/v0.4.22...v0.4.23) (2024-09-24)
 
 
