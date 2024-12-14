@@ -67,6 +67,8 @@ message RegisterUserResponse {
 
 message RegisterDeviceRequest {
   DeviceInfo device_info = 1;
+  // Client locally generated id, same local id will be treated as same device
+  optional string client_local_id = 2;
 }
 message RegisterDeviceResponse {
   librarian.v1.InternalID device_id = 1;

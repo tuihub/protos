@@ -149,6 +149,7 @@ message ListAppsRequest {
   repeated librarian.v1.InternalID owner_id_filter = 2;
   repeated librarian.v1.InternalID id_filter = 3;
   repeated librarian.v1.InternalID assigned_app_info_id_filter = 4;
+  repeated librarian.v1.InternalID device_id_filter = 5;
 }
 
 message ListAppsResponse {
@@ -415,6 +416,7 @@ message App {
   // Only used in response
   // Available when assigned to an app
   optional librarian.v1.InternalID assigned_app_info_id = 4;
+  optional librarian.v1.InternalID device_id = 5;
 
   // false by default
   bool public = 10;
