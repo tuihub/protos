@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.25](https://github.com/tuihub/protos/compare/v0.4.24...v0.4.25) (2024-12-21)
+
+
+### Features
+
+* delete mapper & searcher ([e543f28](https://github.com/tuihub/protos/commit/e543f2814a572f2a70a7568fe348b8db87239b42))
+
 ## [0.4.24](https://github.com/tuihub/protos/compare/v0.4.23...v0.4.24) (2024-12-14)
 
 
