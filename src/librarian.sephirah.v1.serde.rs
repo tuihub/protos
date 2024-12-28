@@ -752,27 +752,33 @@ impl serde::Serialize for AppBinary {
         if self.id.is_some() {
             len += 1;
         }
+        if self.sentinel_id.is_some() {
+            len += 1;
+        }
         if !self.name.is_empty() {
             len += 1;
         }
         if self.size_bytes != 0 {
             len += 1;
         }
-        if !self.public_url.is_empty() {
+        if self.need_token {
             len += 1;
         }
-        if !self.sha256.is_empty() {
+        if self.dl_base_url.is_some() {
             len += 1;
         }
-        if !self.token_server_url.is_empty() {
+        if !self.sentinel_generated_id.is_empty() {
             len += 1;
         }
-        if !self.chunks.is_empty() {
+        if !self.files.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
+        }
+        if let Some(v) = self.sentinel_id.as_ref() {
+            struct_ser.serialize_field("sentinelId", v)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -782,19 +788,17 @@ impl serde::Serialize for AppBinary {
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
         }
-        if !self.public_url.is_empty() {
-            struct_ser.serialize_field("publicUrl", &self.public_url)?;
+        if self.need_token {
+            struct_ser.serialize_field("needToken", &self.need_token)?;
         }
-        if !self.sha256.is_empty() {
-            #[allow(clippy::needless_borrow)]
-            #[allow(clippy::needless_borrows_for_generic_args)]
-            struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
+        if let Some(v) = self.dl_base_url.as_ref() {
+            struct_ser.serialize_field("dlBaseUrl", v)?;
         }
-        if !self.token_server_url.is_empty() {
-            struct_ser.serialize_field("tokenServerUrl", &self.token_server_url)?;
+        if !self.sentinel_generated_id.is_empty() {
+            struct_ser.serialize_field("sentinelGeneratedId", &self.sentinel_generated_id)?;
         }
-        if !self.chunks.is_empty() {
-            struct_ser.serialize_field("chunks", &self.chunks)?;
+        if !self.files.is_empty() {
+            struct_ser.serialize_field("files", &self.files)?;
         }
         struct_ser.end()
     }
@@ -807,26 +811,30 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
     {
         const FIELDS: &[&str] = &[
             "id",
+            "sentinel_id",
+            "sentinelId",
             "name",
             "size_bytes",
             "sizeBytes",
-            "public_url",
-            "publicUrl",
-            "sha256",
-            "token_server_url",
-            "tokenServerUrl",
-            "chunks",
+            "need_token",
+            "needToken",
+            "dl_base_url",
+            "dlBaseUrl",
+            "sentinel_generated_id",
+            "sentinelGeneratedId",
+            "files",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
+            SentinelId,
             Name,
             SizeBytes,
-            PublicUrl,
-            Sha256,
-            TokenServerUrl,
-            Chunks,
+            NeedToken,
+            DlBaseUrl,
+            SentinelGeneratedId,
+            Files,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -849,12 +857,13 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
+                            "sentinelId" | "sentinel_id" => Ok(GeneratedField::SentinelId),
                             "name" => Ok(GeneratedField::Name),
                             "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
-                            "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
-                            "sha256" => Ok(GeneratedField::Sha256),
-                            "tokenServerUrl" | "token_server_url" => Ok(GeneratedField::TokenServerUrl),
-                            "chunks" => Ok(GeneratedField::Chunks),
+                            "needToken" | "need_token" => Ok(GeneratedField::NeedToken),
+                            "dlBaseUrl" | "dl_base_url" => Ok(GeneratedField::DlBaseUrl),
+                            "sentinelGeneratedId" | "sentinel_generated_id" => Ok(GeneratedField::SentinelGeneratedId),
+                            "files" => Ok(GeneratedField::Files),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -875,12 +884,13 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
+                let mut sentinel_id__ = None;
                 let mut name__ = None;
                 let mut size_bytes__ = None;
-                let mut public_url__ = None;
-                let mut sha256__ = None;
-                let mut token_server_url__ = None;
-                let mut chunks__ = None;
+                let mut need_token__ = None;
+                let mut dl_base_url__ = None;
+                let mut sentinel_generated_id__ = None;
+                let mut files__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -888,6 +898,12 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
                             id__ = map_.next_value()?;
+                        }
+                        GeneratedField::SentinelId => {
+                            if sentinel_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelId"));
+                            }
+                            sentinel_id__ = map_.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -903,11 +919,171 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::PublicUrl => {
-                            if public_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("publicUrl"));
+                        GeneratedField::NeedToken => {
+                            if need_token__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("needToken"));
                             }
-                            public_url__ = Some(map_.next_value()?);
+                            need_token__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::DlBaseUrl => {
+                            if dl_base_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("dlBaseUrl"));
+                            }
+                            dl_base_url__ = map_.next_value()?;
+                        }
+                        GeneratedField::SentinelGeneratedId => {
+                            if sentinel_generated_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelGeneratedId"));
+                            }
+                            sentinel_generated_id__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Files => {
+                            if files__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("files"));
+                            }
+                            files__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(AppBinary {
+                    id: id__,
+                    sentinel_id: sentinel_id__,
+                    name: name__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    need_token: need_token__.unwrap_or_default(),
+                    dl_base_url: dl_base_url__,
+                    sentinel_generated_id: sentinel_generated_id__.unwrap_or_default(),
+                    files: files__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinary", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppBinaryFile {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if !self.sha256.is_empty() {
+            len += 1;
+        }
+        if !self.server_file_path.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinaryFile", len)?;
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if self.size_bytes != 0 {
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if !self.sha256.is_empty() {
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
+        }
+        if !self.server_file_path.is_empty() {
+            struct_ser.serialize_field("serverFilePath", &self.server_file_path)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppBinaryFile {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "name",
+            "size_bytes",
+            "sizeBytes",
+            "sha256",
+            "server_file_path",
+            "serverFilePath",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Name,
+            SizeBytes,
+            Sha256,
+            ServerFilePath,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "name" => Ok(GeneratedField::Name),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "sha256" => Ok(GeneratedField::Sha256),
+                            "serverFilePath" | "server_file_path" => Ok(GeneratedField::ServerFilePath),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppBinaryFile;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.AppBinaryFile")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<AppBinaryFile, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut name__ = None;
+                let mut size_bytes__ = None;
+                let mut sha256__ = None;
+                let mut server_file_path__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::Sha256 => {
                             if sha256__.is_some() {
@@ -917,35 +1093,26 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                                 Some(map_.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::TokenServerUrl => {
-                            if token_server_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("tokenServerUrl"));
+                        GeneratedField::ServerFilePath => {
+                            if server_file_path__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("serverFilePath"));
                             }
-                            token_server_url__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::Chunks => {
-                            if chunks__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("chunks"));
-                            }
-                            chunks__ = Some(map_.next_value()?);
+                            server_file_path__ = Some(map_.next_value()?);
                         }
                     }
                 }
-                Ok(AppBinary {
-                    id: id__,
+                Ok(AppBinaryFile {
                     name: name__.unwrap_or_default(),
                     size_bytes: size_bytes__.unwrap_or_default(),
-                    public_url: public_url__.unwrap_or_default(),
                     sha256: sha256__.unwrap_or_default(),
-                    token_server_url: token_server_url__.unwrap_or_default(),
-                    chunks: chunks__.unwrap_or_default(),
+                    server_file_path: server_file_path__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinary", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinaryFile", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for app_binary::Chunk {
+impl serde::Serialize for AppBinaryFileChunk {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
     where
@@ -953,31 +1120,25 @@ impl serde::Serialize for app_binary::Chunk {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.sequence != 0 {
+        if self.offset_bytes != 0 {
             len += 1;
         }
         if self.size_bytes != 0 {
-            len += 1;
-        }
-        if !self.public_url.is_empty() {
             len += 1;
         }
         if !self.sha256.is_empty() {
             len += 1;
         }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary.Chunk", len)?;
-        if self.sequence != 0 {
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinaryFileChunk", len)?;
+        if self.offset_bytes != 0 {
             #[allow(clippy::needless_borrow)]
             #[allow(clippy::needless_borrows_for_generic_args)]
-            struct_ser.serialize_field("sequence", ToString::to_string(&self.sequence).as_str())?;
+            struct_ser.serialize_field("offsetBytes", ToString::to_string(&self.offset_bytes).as_str())?;
         }
         if self.size_bytes != 0 {
             #[allow(clippy::needless_borrow)]
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
-        }
-        if !self.public_url.is_empty() {
-            struct_ser.serialize_field("publicUrl", &self.public_url)?;
         }
         if !self.sha256.is_empty() {
             #[allow(clippy::needless_borrow)]
@@ -987,26 +1148,24 @@ impl serde::Serialize for app_binary::Chunk {
         struct_ser.end()
     }
 }
-impl<'de> serde::Deserialize<'de> for app_binary::Chunk {
+impl<'de> serde::Deserialize<'de> for AppBinaryFileChunk {
     #[allow(deprecated)]
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "sequence",
+            "offset_bytes",
+            "offsetBytes",
             "size_bytes",
             "sizeBytes",
-            "public_url",
-            "publicUrl",
             "sha256",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Sequence,
+            OffsetBytes,
             SizeBytes,
-            PublicUrl,
             Sha256,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -1029,9 +1188,8 @@ impl<'de> serde::Deserialize<'de> for app_binary::Chunk {
                         E: serde::de::Error,
                     {
                         match value {
-                            "sequence" => Ok(GeneratedField::Sequence),
+                            "offsetBytes" | "offset_bytes" => Ok(GeneratedField::OffsetBytes),
                             "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
-                            "publicUrl" | "public_url" => Ok(GeneratedField::PublicUrl),
                             "sha256" => Ok(GeneratedField::Sha256),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -1042,27 +1200,26 @@ impl<'de> serde::Deserialize<'de> for app_binary::Chunk {
         }
         struct GeneratedVisitor;
         impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = app_binary::Chunk;
+            type Value = AppBinaryFileChunk;
 
             fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.AppBinary.Chunk")
+                formatter.write_str("struct librarian.sephirah.v1.AppBinaryFileChunk")
             }
 
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<app_binary::Chunk, V::Error>
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<AppBinaryFileChunk, V::Error>
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut sequence__ = None;
+                let mut offset_bytes__ = None;
                 let mut size_bytes__ = None;
-                let mut public_url__ = None;
                 let mut sha256__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::Sequence => {
-                            if sequence__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sequence"));
+                        GeneratedField::OffsetBytes => {
+                            if offset_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("offsetBytes"));
                             }
-                            sequence__ = 
+                            offset_bytes__ = 
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
@@ -1074,12 +1231,6 @@ impl<'de> serde::Deserialize<'de> for app_binary::Chunk {
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::PublicUrl => {
-                            if public_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("publicUrl"));
-                            }
-                            public_url__ = Some(map_.next_value()?);
-                        }
                         GeneratedField::Sha256 => {
                             if sha256__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("sha256"));
@@ -1090,15 +1241,14 @@ impl<'de> serde::Deserialize<'de> for app_binary::Chunk {
                         }
                     }
                 }
-                Ok(app_binary::Chunk {
-                    sequence: sequence__.unwrap_or_default(),
+                Ok(AppBinaryFileChunk {
+                    offset_bytes: offset_bytes__.unwrap_or_default(),
                     size_bytes: size_bytes__.unwrap_or_default(),
-                    public_url: public_url__.unwrap_or_default(),
                     sha256: sha256__.unwrap_or_default(),
                 })
             }
         }
-        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinary.Chunk", FIELDS, GeneratedVisitor)
+        deserializer.deserialize_struct("librarian.sephirah.v1.AppBinaryFileChunk", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for AppCategory {

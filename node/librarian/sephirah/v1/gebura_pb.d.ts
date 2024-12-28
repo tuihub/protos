@@ -2180,27 +2180,32 @@ export class AppBinary extends jspb.Message {
   getId(): librarian_v1_common_pb.InternalID | undefined;
   setId(value?: librarian_v1_common_pb.InternalID): void;
 
+  hasSentinelId(): boolean;
+  clearSentinelId(): void;
+  getSentinelId(): librarian_v1_common_pb.InternalID | undefined;
+  setSentinelId(value?: librarian_v1_common_pb.InternalID): void;
+
   getName(): string;
   setName(value: string): void;
 
   getSizeBytes(): number;
   setSizeBytes(value: number): void;
 
-  getPublicUrl(): string;
-  setPublicUrl(value: string): void;
+  getNeedToken(): boolean;
+  setNeedToken(value: boolean): void;
 
-  getSha256(): Uint8Array | string;
-  getSha256_asU8(): Uint8Array;
-  getSha256_asB64(): string;
-  setSha256(value: Uint8Array | string): void;
+  hasDlBaseUrl(): boolean;
+  clearDlBaseUrl(): void;
+  getDlBaseUrl(): string;
+  setDlBaseUrl(value: string): void;
 
-  getTokenServerUrl(): string;
-  setTokenServerUrl(value: string): void;
+  getSentinelGeneratedId(): string;
+  setSentinelGeneratedId(value: string): void;
 
-  clearChunksList(): void;
-  getChunksList(): Array<AppBinary.Chunk>;
-  setChunksList(value: Array<AppBinary.Chunk>): void;
-  addChunks(value?: AppBinary.Chunk, index?: number): AppBinary.Chunk;
+  clearFilesList(): void;
+  getFilesList(): Array<AppBinaryFile>;
+  setFilesList(value: Array<AppBinaryFile>): void;
+  addFiles(value?: AppBinaryFile, index?: number): AppBinaryFile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppBinary.AsObject;
@@ -2215,46 +2220,77 @@ export class AppBinary extends jspb.Message {
 export namespace AppBinary {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
+    sentinelId?: librarian_v1_common_pb.InternalID.AsObject,
     name: string,
     sizeBytes: number,
-    publicUrl: string,
+    needToken: boolean,
+    dlBaseUrl: string,
+    sentinelGeneratedId: string,
+    filesList: Array<AppBinaryFile.AsObject>,
+  }
+}
+
+export class AppBinaryFile extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
+
+  getSha256(): Uint8Array | string;
+  getSha256_asU8(): Uint8Array;
+  getSha256_asB64(): string;
+  setSha256(value: Uint8Array | string): void;
+
+  getServerFilePath(): string;
+  setServerFilePath(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppBinaryFile.AsObject;
+  static toObject(includeInstance: boolean, msg: AppBinaryFile): AppBinaryFile.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppBinaryFile, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppBinaryFile;
+  static deserializeBinaryFromReader(message: AppBinaryFile, reader: jspb.BinaryReader): AppBinaryFile;
+}
+
+export namespace AppBinaryFile {
+  export type AsObject = {
+    name: string,
+    sizeBytes: number,
     sha256: Uint8Array | string,
-    tokenServerUrl: string,
-    chunksList: Array<AppBinary.Chunk.AsObject>,
+    serverFilePath: string,
   }
+}
 
-  export class Chunk extends jspb.Message {
-    getSequence(): number;
-    setSequence(value: number): void;
+export class AppBinaryFileChunk extends jspb.Message {
+  getOffsetBytes(): number;
+  setOffsetBytes(value: number): void;
 
-    getSizeBytes(): number;
-    setSizeBytes(value: number): void;
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
 
-    getPublicUrl(): string;
-    setPublicUrl(value: string): void;
+  getSha256(): Uint8Array | string;
+  getSha256_asU8(): Uint8Array;
+  getSha256_asB64(): string;
+  setSha256(value: Uint8Array | string): void;
 
-    getSha256(): Uint8Array | string;
-    getSha256_asU8(): Uint8Array;
-    getSha256_asB64(): string;
-    setSha256(value: Uint8Array | string): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppBinaryFileChunk.AsObject;
+  static toObject(includeInstance: boolean, msg: AppBinaryFileChunk): AppBinaryFileChunk.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AppBinaryFileChunk, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppBinaryFileChunk;
+  static deserializeBinaryFromReader(message: AppBinaryFileChunk, reader: jspb.BinaryReader): AppBinaryFileChunk;
+}
 
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Chunk.AsObject;
-    static toObject(includeInstance: boolean, msg: Chunk): Chunk.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Chunk, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Chunk;
-    static deserializeBinaryFromReader(message: Chunk, reader: jspb.BinaryReader): Chunk;
-  }
-
-  export namespace Chunk {
-    export type AsObject = {
-      sequence: number,
-      sizeBytes: number,
-      publicUrl: string,
-      sha256: Uint8Array | string,
-    }
+export namespace AppBinaryFileChunk {
+  export type AsObject = {
+    offsetBytes: number,
+    sizeBytes: number,
+    sha256: Uint8Array | string,
   }
 }
 

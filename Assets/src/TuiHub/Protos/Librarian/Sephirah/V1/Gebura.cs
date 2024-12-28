@@ -225,39 +225,44 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "SABSEWFzc2lnbmVkQXBwSW5mb0lkiAEBEjoKCWRldmljZV9pZBgFIAEoCzIY",
             "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElESAFSCGRldmljZUlkiAEBEhYKBnB1",
             "YmxpYxgKIAEoCFIGcHVibGljQhcKFV9hc3NpZ25lZF9hcHBfaW5mb19pZEIM",
-            "CgpfZGV2aWNlX2lkIoQDCglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJy",
-            "YXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRId",
-            "CgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0ZXMSHQoKcHVibGljX3VybBgE",
-            "IAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgFIAEoDFIGc2hhMjU2EigKEHRv",
-            "a2VuX3NlcnZlcl91cmwYBiABKAlSDnRva2VuU2VydmVyVXJsEj4KBmNodW5r",
-            "cxgHIAMoCzImLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnkuQ2h1",
-            "bmtSBmNodW5rcxp5CgVDaHVuaxIaCghzZXF1ZW5jZRgBIAEoA1IIc2VxdWVu",
-            "Y2USHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEh0KCnB1YmxpY191",
-            "cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYYBCABKAxSBnNoYTI1NiK6",
-            "AQoLQXBwQ2F0ZWdvcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIxCgdhcHBfaWRzGAMg",
-            "AygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBmFwcElkcxI6CgxhcHBf",
-            "aW5mb19pZHMYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKYXBw",
-            "SW5mb0lkcyKpAQoNU2hhcmVkQXBwU2F2ZRIoCgJpZBgBIAEoCzIYLmxpYnJh",
-            "cmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAK",
-            "C2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhI4CgthcHBfaW5mb19p",
-            "ZBgEIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUglhcHBJbmZvSWQi",
-            "2gIKEVNoYXJlZEFwcFNhdmVGaWxlEigKAmlkGAEgASgLMhgubGlicmFyaWFu",
-            "LnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVz",
-            "Y3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhYKBnB1YmxpYxgEIAEoCFIG",
-            "cHVibGljEkUKEnNoYXJlZF9hcHBfc2F2ZV9pZBgFIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUg9zaGFyZWRBcHBTYXZlSWQSQgoQZmlsZV9tZXRh",
-            "ZGF0YV9pZBgGIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg5maWxl",
-            "TWV0YWRhdGFJZBI2Cgd1c2VyX2lkGAcgASgLMhgubGlicmFyaWFuLnYxLklu",
-            "dGVybmFsSURIAFIGdXNlcklkiAEBQgoKCF91c2VyX2lkKu4BChtBcHBTYXZl",
-            "RmlsZUNhcGFjaXR5U3RyYXRlZ3kSLworQVBQX1NBVkVfRklMRV9DQVBBQ0lU",
-            "WV9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEigKJEFQUF9TQVZFX0ZJTEVfQ0FQ",
-            "QUNJVFlfU1RSQVRFR1lfRkFJTBABEjEKLUFQUF9TQVZFX0ZJTEVfQ0FQQUNJ",
-            "VFlfU1RSQVRFR1lfREVMRVRFX09MREVTVBACEkEKPUFQUF9TQVZFX0ZJTEVf",
-            "Q0FQQUNJVFlfU1RSQVRFR1lfREVMRVRFX09MREVTVF9VTlRJTF9TQVRJU0ZJ",
-            "RUQQA0JdWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlh",
-            "bi9zZXBoaXJhaC92MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNl",
-            "cGhpcmFoLlYxYgZwcm90bzM="));
+            "CgpfZGV2aWNlX2lkIucCCglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFICaWQSOQoLc2VudGluZWxfaWQYAiABKAsy",
+            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKc2VudGluZWxJZBISCgRuYW1l",
+            "GAMgASgJUgRuYW1lEh0KCnNpemVfYnl0ZXMYBCABKANSCXNpemVCeXRlcxId",
+            "CgpuZWVkX3Rva2VuGAUgASgIUgluZWVkVG9rZW4SIwoLZGxfYmFzZV91cmwY",
+            "BiABKAlIAFIJZGxCYXNlVXJsiAEBEjIKFXNlbnRpbmVsX2dlbmVyYXRlZF9p",
+            "ZBgJIAEoCVITc2VudGluZWxHZW5lcmF0ZWRJZBI6CgVmaWxlcxgKIAMoCzIk",
+            "LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnlGaWxlUgVmaWxlc0IO",
+            "CgxfZGxfYmFzZV91cmwihAEKDUFwcEJpbmFyeUZpbGUSEgoEbmFtZRgBIAEo",
+            "CVIEbmFtZRIdCgpzaXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMSFgoGc2hh",
+            "MjU2GAMgASgMUgZzaGEyNTYSKAoQc2VydmVyX2ZpbGVfcGF0aBgEIAEoCVIO",
+            "c2VydmVyRmlsZVBhdGgibgoSQXBwQmluYXJ5RmlsZUNodW5rEiEKDG9mZnNl",
+            "dF9ieXRlcxgBIAEoA1ILb2Zmc2V0Qnl0ZXMSHQoKc2l6ZV9ieXRlcxgCIAEo",
+            "A1IJc2l6ZUJ5dGVzEhYKBnNoYTI1NhgDIAEoDFIGc2hhMjU2IroBCgtBcHBD",
+            "YXRlZ29yeRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
+            "UgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEjEKB2FwcF9pZHMYAyADKAsyGC5s",
+            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGYXBwSWRzEjoKDGFwcF9pbmZvX2lk",
+            "cxgEIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgphcHBJbmZvSWRz",
+            "IqkBCg1TaGFyZWRBcHBTYXZlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3Jp",
+            "cHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjgKC2FwcF9pbmZvX2lkGAQgASgL",
+            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCWFwcEluZm9JZCLaAgoRU2hh",
+            "cmVkQXBwU2F2ZUZpbGUSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
+            "ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlv",
+            "bhgDIAEoCVILZGVzY3JpcHRpb24SFgoGcHVibGljGAQgASgIUgZwdWJsaWMS",
+            "RQoSc2hhcmVkX2FwcF9zYXZlX2lkGAUgASgLMhgubGlicmFyaWFuLnYxLklu",
+            "dGVybmFsSURSD3NoYXJlZEFwcFNhdmVJZBJCChBmaWxlX21ldGFkYXRhX2lk",
+            "GAYgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDmZpbGVNZXRhZGF0",
+            "YUlkEjYKB3VzZXJfaWQYByABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
+            "REgAUgZ1c2VySWSIAQFCCgoIX3VzZXJfaWQq7gEKG0FwcFNhdmVGaWxlQ2Fw",
+            "YWNpdHlTdHJhdGVneRIvCitBUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFU",
+            "RUdZX1VOU1BFQ0lGSUVEEAASKAokQVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9T",
+            "VFJBVEVHWV9GQUlMEAESMQotQVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9TVFJB",
+            "VEVHWV9ERUxFVEVfT0xERVNUEAISQQo9QVBQX1NBVkVfRklMRV9DQVBBQ0lU",
+            "WV9TVFJBVEVHWV9ERUxFVEVfT0xERVNUX1VOVElMX1NBVElTRklFRBADQl1a",
+            "NWdpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhp",
+            "cmFoL3YxO3YxqgIjVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWgu",
+            "VjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -350,7 +355,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.App), global::TuiHub.Protos.Librarian.Sephirah.V1.App.Parser, new[]{ "Id", "Name", "Description", "AssignedAppInfoId", "DeviceId", "Public" }, new[]{ "AssignedAppInfoId", "DeviceId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Parser, new[]{ "Id", "Name", "SizeBytes", "PublicUrl", "Sha256", "TokenServerUrl", "Chunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk.Parser, new[]{ "Sequence", "SizeBytes", "PublicUrl", "Sha256" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Parser, new[]{ "Id", "SentinelId", "Name", "SizeBytes", "NeedToken", "DlBaseUrl", "SentinelGeneratedId", "Files" }, new[]{ "DlBaseUrl" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile.Parser, new[]{ "Name", "SizeBytes", "Sha256", "ServerFilePath" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFileChunk), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFileChunk.Parser, new[]{ "OffsetBytes", "SizeBytes", "Sha256" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory), global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory.Parser, new[]{ "Id", "Name", "AppIds", "AppInfoIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SharedAppSave), global::TuiHub.Protos.Librarian.Sephirah.V1.SharedAppSave.Parser, new[]{ "Id", "Name", "Description", "AppInfoId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SharedAppSaveFile), global::TuiHub.Protos.Librarian.Sephirah.V1.SharedAppSaveFile.Parser, new[]{ "Id", "Name", "Description", "Public", "SharedAppSaveId", "FileMetadataId", "UserId" }, new[]{ "UserId" }, null, null, null)
@@ -19320,12 +19327,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AppBinary(AppBinary other) : this() {
       id_ = other.id_ != null ? other.id_.Clone() : null;
+      sentinelId_ = other.sentinelId_ != null ? other.sentinelId_.Clone() : null;
       name_ = other.name_;
       sizeBytes_ = other.sizeBytes_;
-      publicUrl_ = other.publicUrl_;
-      sha256_ = other.sha256_;
-      tokenServerUrl_ = other.tokenServerUrl_;
-      chunks_ = other.chunks_.Clone();
+      needToken_ = other.needToken_;
+      dlBaseUrl_ = other.dlBaseUrl_;
+      sentinelGeneratedId_ = other.sentinelGeneratedId_;
+      files_ = other.files_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -19347,8 +19355,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "sentinel_id" field.</summary>
+    public const int SentinelIdFieldNumber = 2;
+    private global::TuiHub.Protos.Librarian.V1.InternalID sentinelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID SentinelId {
+      get { return sentinelId_; }
+      set {
+        sentinelId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
+    public const int NameFieldNumber = 3;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19360,7 +19380,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "size_bytes" field.</summary>
-    public const int SizeBytesFieldNumber = 3;
+    public const int SizeBytesFieldNumber = 4;
     private long sizeBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19371,51 +19391,68 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "public_url" field.</summary>
-    public const int PublicUrlFieldNumber = 4;
-    private string publicUrl_ = "";
+    /// <summary>Field number for the "need_token" field.</summary>
+    public const int NeedTokenFieldNumber = 5;
+    private bool needToken_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PublicUrl {
-      get { return publicUrl_; }
+    public bool NeedToken {
+      get { return needToken_; }
       set {
-        publicUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        needToken_ = value;
       }
     }
 
-    /// <summary>Field number for the "sha256" field.</summary>
-    public const int Sha256FieldNumber = 5;
-    private pb::ByteString sha256_ = pb::ByteString.Empty;
+    /// <summary>Field number for the "dl_base_url" field.</summary>
+    public const int DlBaseUrlFieldNumber = 6;
+    private readonly static string DlBaseUrlDefaultValue = "";
+
+    private string dlBaseUrl_;
+    /// <summary>
+    /// valid when need_token is false
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString Sha256 {
-      get { return sha256_; }
+    public string DlBaseUrl {
+      get { return dlBaseUrl_ ?? DlBaseUrlDefaultValue; }
       set {
-        sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        dlBaseUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "dl_base_url" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasDlBaseUrl {
+      get { return dlBaseUrl_ != null; }
+    }
+    /// <summary>Clears the value of the "dl_base_url" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDlBaseUrl() {
+      dlBaseUrl_ = null;
+    }
+
+    /// <summary>Field number for the "sentinel_generated_id" field.</summary>
+    public const int SentinelGeneratedIdFieldNumber = 9;
+    private string sentinelGeneratedId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SentinelGeneratedId {
+      get { return sentinelGeneratedId_; }
+      set {
+        sentinelGeneratedId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "token_server_url" field.</summary>
-    public const int TokenServerUrlFieldNumber = 6;
-    private string tokenServerUrl_ = "";
+    /// <summary>Field number for the "files" field.</summary>
+    public const int FilesFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile> _repeated_files_codec
+        = pb::FieldCodec.ForMessage(82, global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile> files_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string TokenServerUrl {
-      get { return tokenServerUrl_; }
-      set {
-        tokenServerUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "chunks" field.</summary>
-    public const int ChunksFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk> _repeated_chunks_codec
-        = pb::FieldCodec.ForMessage(58, global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk> chunks_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Types.Chunk> Chunks {
-      get { return chunks_; }
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile> Files {
+      get { return files_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19434,12 +19471,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return true;
       }
       if (!object.Equals(Id, other.Id)) return false;
+      if (!object.Equals(SentinelId, other.SentinelId)) return false;
       if (Name != other.Name) return false;
       if (SizeBytes != other.SizeBytes) return false;
-      if (PublicUrl != other.PublicUrl) return false;
-      if (Sha256 != other.Sha256) return false;
-      if (TokenServerUrl != other.TokenServerUrl) return false;
-      if(!chunks_.Equals(other.chunks_)) return false;
+      if (NeedToken != other.NeedToken) return false;
+      if (DlBaseUrl != other.DlBaseUrl) return false;
+      if (SentinelGeneratedId != other.SentinelGeneratedId) return false;
+      if(!files_.Equals(other.files_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -19448,12 +19486,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
+      if (sentinelId_ != null) hash ^= SentinelId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
-      if (PublicUrl.Length != 0) hash ^= PublicUrl.GetHashCode();
-      if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
-      if (TokenServerUrl.Length != 0) hash ^= TokenServerUrl.GetHashCode();
-      hash ^= chunks_.GetHashCode();
+      if (NeedToken != false) hash ^= NeedToken.GetHashCode();
+      if (HasDlBaseUrl) hash ^= DlBaseUrl.GetHashCode();
+      if (SentinelGeneratedId.Length != 0) hash ^= SentinelGeneratedId.GetHashCode();
+      hash ^= files_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -19476,27 +19515,31 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (Name.Length != 0) {
+      if (sentinelId_ != null) {
         output.WriteRawTag(18);
+        output.WriteMessage(SentinelId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Name);
       }
       if (SizeBytes != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt64(SizeBytes);
       }
-      if (PublicUrl.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(PublicUrl);
+      if (NeedToken != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(NeedToken);
       }
-      if (Sha256.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteBytes(Sha256);
-      }
-      if (TokenServerUrl.Length != 0) {
+      if (HasDlBaseUrl) {
         output.WriteRawTag(50);
-        output.WriteString(TokenServerUrl);
+        output.WriteString(DlBaseUrl);
       }
-      chunks_.WriteTo(output, _repeated_chunks_codec);
+      if (SentinelGeneratedId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(SentinelGeneratedId);
+      }
+      files_.WriteTo(output, _repeated_files_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -19511,27 +19554,31 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (Name.Length != 0) {
+      if (sentinelId_ != null) {
         output.WriteRawTag(18);
+        output.WriteMessage(SentinelId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Name);
       }
       if (SizeBytes != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt64(SizeBytes);
       }
-      if (PublicUrl.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(PublicUrl);
+      if (NeedToken != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(NeedToken);
       }
-      if (Sha256.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteBytes(Sha256);
-      }
-      if (TokenServerUrl.Length != 0) {
+      if (HasDlBaseUrl) {
         output.WriteRawTag(50);
-        output.WriteString(TokenServerUrl);
+        output.WriteString(DlBaseUrl);
       }
-      chunks_.WriteTo(ref output, _repeated_chunks_codec);
+      if (SentinelGeneratedId.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(SentinelGeneratedId);
+      }
+      files_.WriteTo(ref output, _repeated_files_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -19545,22 +19592,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
+      if (sentinelId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SentinelId);
+      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       if (SizeBytes != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
       }
-      if (PublicUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PublicUrl);
+      if (NeedToken != false) {
+        size += 1 + 1;
       }
-      if (Sha256.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
+      if (HasDlBaseUrl) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DlBaseUrl);
       }
-      if (TokenServerUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TokenServerUrl);
+      if (SentinelGeneratedId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SentinelGeneratedId);
       }
-      size += chunks_.CalculateSize(_repeated_chunks_codec);
+      size += files_.CalculateSize(_repeated_files_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -19579,22 +19629,28 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         Id.MergeFrom(other.Id);
       }
+      if (other.sentinelId_ != null) {
+        if (sentinelId_ == null) {
+          SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        SentinelId.MergeFrom(other.SentinelId);
+      }
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
       if (other.SizeBytes != 0L) {
         SizeBytes = other.SizeBytes;
       }
-      if (other.PublicUrl.Length != 0) {
-        PublicUrl = other.PublicUrl;
+      if (other.NeedToken != false) {
+        NeedToken = other.NeedToken;
       }
-      if (other.Sha256.Length != 0) {
-        Sha256 = other.Sha256;
+      if (other.HasDlBaseUrl) {
+        DlBaseUrl = other.DlBaseUrl;
       }
-      if (other.TokenServerUrl.Length != 0) {
-        TokenServerUrl = other.TokenServerUrl;
+      if (other.SentinelGeneratedId.Length != 0) {
+        SentinelGeneratedId = other.SentinelGeneratedId;
       }
-      chunks_.Add(other.chunks_);
+      files_.Add(other.files_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -19618,27 +19674,34 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
+            if (sentinelId_ == null) {
+              SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(SentinelId);
+            break;
+          }
+          case 26: {
             Name = input.ReadString();
             break;
           }
-          case 24: {
+          case 32: {
             SizeBytes = input.ReadInt64();
             break;
           }
-          case 34: {
-            PublicUrl = input.ReadString();
-            break;
-          }
-          case 42: {
-            Sha256 = input.ReadBytes();
+          case 40: {
+            NeedToken = input.ReadBool();
             break;
           }
           case 50: {
-            TokenServerUrl = input.ReadString();
+            DlBaseUrl = input.ReadString();
             break;
           }
-          case 58: {
-            chunks_.AddEntriesFrom(input, _repeated_chunks_codec);
+          case 74: {
+            SentinelGeneratedId = input.ReadString();
+            break;
+          }
+          case 82: {
+            files_.AddEntriesFrom(input, _repeated_files_codec);
             break;
           }
         }
@@ -19664,27 +19727,34 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
+            if (sentinelId_ == null) {
+              SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(SentinelId);
+            break;
+          }
+          case 26: {
             Name = input.ReadString();
             break;
           }
-          case 24: {
+          case 32: {
             SizeBytes = input.ReadInt64();
             break;
           }
-          case 34: {
-            PublicUrl = input.ReadString();
-            break;
-          }
-          case 42: {
-            Sha256 = input.ReadBytes();
+          case 40: {
+            NeedToken = input.ReadBool();
             break;
           }
           case 50: {
-            TokenServerUrl = input.ReadString();
+            DlBaseUrl = input.ReadString();
             break;
           }
-          case 58: {
-            chunks_.AddEntriesFrom(ref input, _repeated_chunks_codec);
+          case 74: {
+            SentinelGeneratedId = input.ReadString();
+            break;
+          }
+          case 82: {
+            files_.AddEntriesFrom(ref input, _repeated_files_codec);
             break;
           }
         }
@@ -19692,316 +19762,571 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
     #endif
 
-    #region Nested types
-    /// <summary>Container for nested types declared in the AppBinary message type.</summary>
+  }
+
+  public sealed partial class AppBinaryFile : pb::IMessage<AppBinaryFile>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AppBinaryFile> _parser = new pb::MessageParser<AppBinaryFile>(() => new AppBinaryFile());
+    private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static partial class Types {
-      public sealed partial class Chunk : pb::IMessage<Chunk>
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          , pb::IBufferMessage
-      #endif
-      {
-        private static readonly pb::MessageParser<Chunk> _parser = new pb::MessageParser<Chunk>(() => new Chunk());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<Chunk> Parser { get { return _parser; } }
+    public static pb::MessageParser<AppBinaryFile> Parser { get { return _parser; } }
 
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Descriptor.NestedTypes[0]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public Chunk() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public Chunk(Chunk other) : this() {
-          sequence_ = other.sequence_;
-          sizeBytes_ = other.sizeBytes_;
-          publicUrl_ = other.publicUrl_;
-          sha256_ = other.sha256_;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public Chunk Clone() {
-          return new Chunk(this);
-        }
-
-        /// <summary>Field number for the "sequence" field.</summary>
-        public const int SequenceFieldNumber = 1;
-        private long sequence_;
-        /// <summary>
-        /// Starts from 1
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public long Sequence {
-          get { return sequence_; }
-          set {
-            sequence_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "size_bytes" field.</summary>
-        public const int SizeBytesFieldNumber = 2;
-        private long sizeBytes_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public long SizeBytes {
-          get { return sizeBytes_; }
-          set {
-            sizeBytes_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "public_url" field.</summary>
-        public const int PublicUrlFieldNumber = 3;
-        private string publicUrl_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public string PublicUrl {
-          get { return publicUrl_; }
-          set {
-            publicUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        /// <summary>Field number for the "sha256" field.</summary>
-        public const int Sha256FieldNumber = 4;
-        private pb::ByteString sha256_ = pb::ByteString.Empty;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pb::ByteString Sha256 {
-          get { return sha256_; }
-          set {
-            sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override bool Equals(object other) {
-          return Equals(other as Chunk);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(Chunk other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (Sequence != other.Sequence) return false;
-          if (SizeBytes != other.SizeBytes) return false;
-          if (PublicUrl != other.PublicUrl) return false;
-          if (Sha256 != other.Sha256) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (Sequence != 0L) hash ^= Sequence.GetHashCode();
-          if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
-          if (PublicUrl.Length != 0) hash ^= PublicUrl.GetHashCode();
-          if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void WriteTo(pb::CodedOutputStream output) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          output.WriteRawMessage(this);
-        #else
-          if (Sequence != 0L) {
-            output.WriteRawTag(8);
-            output.WriteInt64(Sequence);
-          }
-          if (SizeBytes != 0L) {
-            output.WriteRawTag(16);
-            output.WriteInt64(SizeBytes);
-          }
-          if (PublicUrl.Length != 0) {
-            output.WriteRawTag(26);
-            output.WriteString(PublicUrl);
-          }
-          if (Sha256.Length != 0) {
-            output.WriteRawTag(34);
-            output.WriteBytes(Sha256);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Sequence != 0L) {
-            output.WriteRawTag(8);
-            output.WriteInt64(Sequence);
-          }
-          if (SizeBytes != 0L) {
-            output.WriteRawTag(16);
-            output.WriteInt64(SizeBytes);
-          }
-          if (PublicUrl.Length != 0) {
-            output.WriteRawTag(26);
-            output.WriteString(PublicUrl);
-          }
-          if (Sha256.Length != 0) {
-            output.WriteRawTag(34);
-            output.WriteBytes(Sha256);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(ref output);
-          }
-        }
-        #endif
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int CalculateSize() {
-          int size = 0;
-          if (Sequence != 0L) {
-            size += 1 + pb::CodedOutputStream.ComputeInt64Size(Sequence);
-          }
-          if (SizeBytes != 0L) {
-            size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
-          }
-          if (PublicUrl.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(PublicUrl);
-          }
-          if (Sha256.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(Chunk other) {
-          if (other == null) {
-            return;
-          }
-          if (other.Sequence != 0L) {
-            Sequence = other.Sequence;
-          }
-          if (other.SizeBytes != 0L) {
-            SizeBytes = other.SizeBytes;
-          }
-          if (other.PublicUrl.Length != 0) {
-            PublicUrl = other.PublicUrl;
-          }
-          if (other.Sha256.Length != 0) {
-            Sha256 = other.Sha256;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(pb::CodedInputStream input) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          input.ReadRawMessage(this);
-        #else
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 8: {
-                Sequence = input.ReadInt64();
-                break;
-              }
-              case 16: {
-                SizeBytes = input.ReadInt64();
-                break;
-              }
-              case 26: {
-                PublicUrl = input.ReadString();
-                break;
-              }
-              case 34: {
-                Sha256 = input.ReadBytes();
-                break;
-              }
-            }
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-                break;
-              case 8: {
-                Sequence = input.ReadInt64();
-                break;
-              }
-              case 16: {
-                SizeBytes = input.ReadInt64();
-                break;
-              }
-              case 26: {
-                PublicUrl = input.ReadString();
-                break;
-              }
-              case 34: {
-                Sha256 = input.ReadBytes();
-                break;
-              }
-            }
-          }
-        }
-        #endif
-
-      }
-
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[90]; }
     }
-    #endregion
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AppBinaryFile() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AppBinaryFile(AppBinaryFile other) : this() {
+      name_ = other.name_;
+      sizeBytes_ = other.sizeBytes_;
+      sha256_ = other.sha256_;
+      serverFilePath_ = other.serverFilePath_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AppBinaryFile Clone() {
+      return new AppBinaryFile(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "size_bytes" field.</summary>
+    public const int SizeBytesFieldNumber = 2;
+    private long sizeBytes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long SizeBytes {
+      get { return sizeBytes_; }
+      set {
+        sizeBytes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sha256" field.</summary>
+    public const int Sha256FieldNumber = 3;
+    private pb::ByteString sha256_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString Sha256 {
+      get { return sha256_; }
+      set {
+        sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "server_file_path" field.</summary>
+    public const int ServerFilePathFieldNumber = 4;
+    private string serverFilePath_ = "";
+    /// <summary>
+    /// should be path-joined when AppBinary.need_token is false
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ServerFilePath {
+      get { return serverFilePath_; }
+      set {
+        serverFilePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AppBinaryFile);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AppBinaryFile other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (SizeBytes != other.SizeBytes) return false;
+      if (Sha256 != other.Sha256) return false;
+      if (ServerFilePath != other.ServerFilePath) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
+      if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
+      if (ServerFilePath.Length != 0) hash ^= ServerFilePath.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (SizeBytes != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Sha256);
+      }
+      if (ServerFilePath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ServerFilePath);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (SizeBytes != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Sha256);
+      }
+      if (ServerFilePath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ServerFilePath);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (SizeBytes != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
+      }
+      if (ServerFilePath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ServerFilePath);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AppBinaryFile other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.SizeBytes != 0L) {
+        SizeBytes = other.SizeBytes;
+      }
+      if (other.Sha256.Length != 0) {
+        Sha256 = other.Sha256;
+      }
+      if (other.ServerFilePath.Length != 0) {
+        ServerFilePath = other.ServerFilePath;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            SizeBytes = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Sha256 = input.ReadBytes();
+            break;
+          }
+          case 34: {
+            ServerFilePath = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            SizeBytes = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Sha256 = input.ReadBytes();
+            break;
+          }
+          case 34: {
+            ServerFilePath = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AppBinaryFileChunk : pb::IMessage<AppBinaryFileChunk>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AppBinaryFileChunk> _parser = new pb::MessageParser<AppBinaryFileChunk>(() => new AppBinaryFileChunk());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AppBinaryFileChunk> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[91]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AppBinaryFileChunk() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AppBinaryFileChunk(AppBinaryFileChunk other) : this() {
+      offsetBytes_ = other.offsetBytes_;
+      sizeBytes_ = other.sizeBytes_;
+      sha256_ = other.sha256_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AppBinaryFileChunk Clone() {
+      return new AppBinaryFileChunk(this);
+    }
+
+    /// <summary>Field number for the "offset_bytes" field.</summary>
+    public const int OffsetBytesFieldNumber = 1;
+    private long offsetBytes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long OffsetBytes {
+      get { return offsetBytes_; }
+      set {
+        offsetBytes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "size_bytes" field.</summary>
+    public const int SizeBytesFieldNumber = 2;
+    private long sizeBytes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long SizeBytes {
+      get { return sizeBytes_; }
+      set {
+        sizeBytes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sha256" field.</summary>
+    public const int Sha256FieldNumber = 3;
+    private pb::ByteString sha256_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString Sha256 {
+      get { return sha256_; }
+      set {
+        sha256_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AppBinaryFileChunk);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AppBinaryFileChunk other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OffsetBytes != other.OffsetBytes) return false;
+      if (SizeBytes != other.SizeBytes) return false;
+      if (Sha256 != other.Sha256) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OffsetBytes != 0L) hash ^= OffsetBytes.GetHashCode();
+      if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
+      if (Sha256.Length != 0) hash ^= Sha256.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (OffsetBytes != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(OffsetBytes);
+      }
+      if (SizeBytes != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Sha256);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (OffsetBytes != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(OffsetBytes);
+      }
+      if (SizeBytes != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Sha256);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (OffsetBytes != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(OffsetBytes);
+      }
+      if (SizeBytes != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
+      }
+      if (Sha256.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Sha256);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AppBinaryFileChunk other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OffsetBytes != 0L) {
+        OffsetBytes = other.OffsetBytes;
+      }
+      if (other.SizeBytes != 0L) {
+        SizeBytes = other.SizeBytes;
+      }
+      if (other.Sha256.Length != 0) {
+        Sha256 = other.Sha256;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            OffsetBytes = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            SizeBytes = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Sha256 = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            OffsetBytes = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            SizeBytes = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Sha256 = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
@@ -20019,7 +20344,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[90]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[92]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20312,7 +20637,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[91]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[93]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20630,7 +20955,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[92]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[94]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

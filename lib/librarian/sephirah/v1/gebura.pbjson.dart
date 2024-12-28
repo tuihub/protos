@@ -1256,37 +1256,60 @@ const AppBinary$json = {
   '1': 'AppBinary',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
-    {'1': 'public_url', '3': 4, '4': 1, '5': 9, '10': 'publicUrl'},
-    {'1': 'sha256', '3': 5, '4': 1, '5': 12, '10': 'sha256'},
-    {'1': 'token_server_url', '3': 6, '4': 1, '5': 9, '10': 'tokenServerUrl'},
-    {'1': 'chunks', '3': 7, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinary.Chunk', '10': 'chunks'},
+    {'1': 'sentinel_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 4, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'need_token', '3': 5, '4': 1, '5': 8, '10': 'needToken'},
+    {'1': 'dl_base_url', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'dlBaseUrl', '17': true},
+    {'1': 'sentinel_generated_id', '3': 9, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
+    {'1': 'files', '3': 10, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinaryFile', '10': 'files'},
   ],
-  '3': [AppBinary_Chunk$json],
-};
-
-@$core.Deprecated('Use appBinaryDescriptor instead')
-const AppBinary_Chunk$json = {
-  '1': 'Chunk',
-  '2': [
-    {'1': 'sequence', '3': 1, '4': 1, '5': 3, '10': 'sequence'},
-    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
-    {'1': 'public_url', '3': 3, '4': 1, '5': 9, '10': 'publicUrl'},
-    {'1': 'sha256', '3': 4, '4': 1, '5': 12, '10': 'sha256'},
+  '8': [
+    {'1': '_dl_base_url'},
   ],
 };
 
 /// Descriptor for `AppBinary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appBinaryDescriptor = $convert.base64Decode(
-    'CglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEg'
-    'oEbmFtZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0ZXMSHQoKcHVi'
-    'bGljX3VybBgEIAEoCVIJcHVibGljVXJsEhYKBnNoYTI1NhgFIAEoDFIGc2hhMjU2EigKEHRva2'
-    'VuX3NlcnZlcl91cmwYBiABKAlSDnRva2VuU2VydmVyVXJsEj4KBmNodW5rcxgHIAMoCzImLmxp'
-    'YnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnkuQ2h1bmtSBmNodW5rcxp5CgVDaHVuaxIaCg'
-    'hzZXF1ZW5jZRgBIAEoA1IIc2VxdWVuY2USHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVz'
-    'Eh0KCnB1YmxpY191cmwYAyABKAlSCXB1YmxpY1VybBIWCgZzaGEyNTYYBCABKAxSBnNoYTI1Ng'
-    '==');
+    'CglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSOQ'
+    'oLc2VudGluZWxfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKc2VudGluZWxJ'
+    'ZBISCgRuYW1lGAMgASgJUgRuYW1lEh0KCnNpemVfYnl0ZXMYBCABKANSCXNpemVCeXRlcxIdCg'
+    'puZWVkX3Rva2VuGAUgASgIUgluZWVkVG9rZW4SIwoLZGxfYmFzZV91cmwYBiABKAlIAFIJZGxC'
+    'YXNlVXJsiAEBEjIKFXNlbnRpbmVsX2dlbmVyYXRlZF9pZBgJIAEoCVITc2VudGluZWxHZW5lcm'
+    'F0ZWRJZBI6CgVmaWxlcxgKIAMoCzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnlG'
+    'aWxlUgVmaWxlc0IOCgxfZGxfYmFzZV91cmw=');
+
+@$core.Deprecated('Use appBinaryFileDescriptor instead')
+const AppBinaryFile$json = {
+  '1': 'AppBinaryFile',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'sha256', '3': 3, '4': 1, '5': 12, '10': 'sha256'},
+    {'1': 'server_file_path', '3': 4, '4': 1, '5': 9, '10': 'serverFilePath'},
+  ],
+};
+
+/// Descriptor for `AppBinaryFile`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appBinaryFileDescriptor = $convert.base64Decode(
+    'Cg1BcHBCaW5hcnlGaWxlEhIKBG5hbWUYASABKAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgCIAEoA1'
+    'IJc2l6ZUJ5dGVzEhYKBnNoYTI1NhgDIAEoDFIGc2hhMjU2EigKEHNlcnZlcl9maWxlX3BhdGgY'
+    'BCABKAlSDnNlcnZlckZpbGVQYXRo');
+
+@$core.Deprecated('Use appBinaryFileChunkDescriptor instead')
+const AppBinaryFileChunk$json = {
+  '1': 'AppBinaryFileChunk',
+  '2': [
+    {'1': 'offset_bytes', '3': 1, '4': 1, '5': 3, '10': 'offsetBytes'},
+    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'sha256', '3': 3, '4': 1, '5': 12, '10': 'sha256'},
+  ],
+};
+
+/// Descriptor for `AppBinaryFileChunk`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appBinaryFileChunkDescriptor = $convert.base64Decode(
+    'ChJBcHBCaW5hcnlGaWxlQ2h1bmsSIQoMb2Zmc2V0X2J5dGVzGAEgASgDUgtvZmZzZXRCeXRlcx'
+    'IdCgpzaXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMSFgoGc2hhMjU2GAMgASgMUgZzaGEyNTY=');
 
 @$core.Deprecated('Use appCategoryDescriptor instead')
 const AppCategory$json = {
