@@ -424,19 +424,28 @@ message App {
 
 message AppBinary {
   librarian.v1.InternalID id = 1;
-  string name = 2;
-  int64 size_bytes = 3;
-  string public_url = 4;
-  bytes sha256 = 5;
-  string token_server_url = 6;
-  repeated Chunk chunks = 7;
-  message Chunk {
-    // Starts from 1
-    int64 sequence = 1;
-    int64 size_bytes = 2;
-    string public_url = 3;
-    bytes sha256 = 4;
-  }
+  librarian.v1.InternalID sentinel_id = 2;
+  string name = 3;
+  int64 size_bytes = 4;
+  bool need_token = 5;
+  // valid when need_token is false
+  optional string dl_base_url = 6;
+  string sentinel_generated_id = 9;
+  repeated AppBinaryFile files = 10;
+}
+
+message AppBinaryFile {
+  string name = 1;
+  int64 size_bytes = 2;
+  bytes sha256 = 3;
+  // should be path-joined when AppBinary.need_token is false
+  string server_file_path = 4;
+}
+
+message AppBinaryFileChunk {
+  int64 offset_bytes = 1;
+  int64 size_bytes = 2;
+  bytes sha256 = 3;
 }
 
 message AppCategory {
