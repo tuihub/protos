@@ -179,6 +179,8 @@ service LibrarianSephirahService {
   rpc UnAssignApp(UnAssignAppRequest) returns (UnAssignAppResponse);
 
   // `Gebura` `Sentinel`
+  rpc ReportSentinelInformation(ReportSentinelInformationRequest) returns (ReportSentinelInformationResponse);
+  // `Gebura` `Sentinel`
   // Full update, changes are handled by librarian
   rpc ReportAppBinaries(ReportAppBinariesRequest) returns (ReportAppBinariesResponse);
   // `Gebura` `Normal`
