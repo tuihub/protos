@@ -32,5 +32,22 @@ class AppSaveFileCapacityStrategy extends $pb.ProtobufEnum {
   const AppSaveFileCapacityStrategy._($core.int v, $core.String n) : super(v, n);
 }
 
+class ReportSentinelInformationRequest_ServerScheme extends $pb.ProtobufEnum {
+  static const ReportSentinelInformationRequest_ServerScheme SERVER_SCHEME_UNSPECIFIED = ReportSentinelInformationRequest_ServerScheme._(0, _omitEnumNames ? '' : 'SERVER_SCHEME_UNSPECIFIED');
+  static const ReportSentinelInformationRequest_ServerScheme SERVER_SCHEME_HTTP = ReportSentinelInformationRequest_ServerScheme._(1, _omitEnumNames ? '' : 'SERVER_SCHEME_HTTP');
+  static const ReportSentinelInformationRequest_ServerScheme SERVER_SCHEME_HTTPS = ReportSentinelInformationRequest_ServerScheme._(2, _omitEnumNames ? '' : 'SERVER_SCHEME_HTTPS');
+
+  static const $core.List<ReportSentinelInformationRequest_ServerScheme> values = <ReportSentinelInformationRequest_ServerScheme> [
+    SERVER_SCHEME_UNSPECIFIED,
+    SERVER_SCHEME_HTTP,
+    SERVER_SCHEME_HTTPS,
+  ];
+
+  static final $core.Map<$core.int, ReportSentinelInformationRequest_ServerScheme> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ReportSentinelInformationRequest_ServerScheme? valueOf($core.int value) => _byValue[value];
+
+  const ReportSentinelInformationRequest_ServerScheme._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

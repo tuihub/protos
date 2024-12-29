@@ -1817,6 +1817,28 @@ function deserialize_librarian_sephirah_v1_ReportAppBinariesResponse(buffer_arg)
   return librarian_sephirah_v1_gebura_pb.ReportAppBinariesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_ReportSentinelInformationRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ReportSentinelInformationRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ReportSentinelInformationRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_ReportSentinelInformationResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.ReportSentinelInformationResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_ReportSentinelInformationResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_SearchAppInfosRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.SearchAppInfosRequest');
@@ -3255,6 +3277,18 @@ unAssignApp: {
     requestDeserialize: deserialize_librarian_sephirah_v1_UnAssignAppRequest,
     responseSerialize: serialize_librarian_sephirah_v1_UnAssignAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UnAssignAppResponse,
+  },
+  // `Gebura` `Sentinel`
+reportSentinelInformation: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/ReportSentinelInformation',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_ReportSentinelInformationRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_ReportSentinelInformationRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_ReportSentinelInformationResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_ReportSentinelInformationResponse,
   },
   // `Gebura` `Sentinel`
 // Full update, changes are handled by librarian

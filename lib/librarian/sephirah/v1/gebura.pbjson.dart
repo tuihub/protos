@@ -468,6 +468,59 @@ final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
     'dSZXNwb25zZVIGcGFnaW5nEi4KBGFwcHMYAiADKAsyGi5saWJyYXJpYW4uc2VwaGlyYWgudjEu'
     'QXBwUgRhcHBz');
 
+@$core.Deprecated('Use reportSentinelInformationRequestDescriptor instead')
+const ReportSentinelInformationRequest$json = {
+  '1': 'ReportSentinelInformationRequest',
+  '2': [
+    {'1': 'hostnames', '3': 1, '4': 3, '5': 9, '10': 'hostnames'},
+    {'1': 'scheme', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.ReportSentinelInformationRequest.ServerScheme', '10': 'scheme'},
+    {'1': 'get_token_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenPath'},
+    {'1': 'libraries', '3': 4, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ReportSentinelInformationRequest.SentinelLibrary', '10': 'libraries'},
+  ],
+  '3': [ReportSentinelInformationRequest_SentinelLibrary$json],
+  '4': [ReportSentinelInformationRequest_ServerScheme$json],
+};
+
+@$core.Deprecated('Use reportSentinelInformationRequestDescriptor instead')
+const ReportSentinelInformationRequest_SentinelLibrary$json = {
+  '1': 'SentinelLibrary',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+    {'1': 'base_path', '3': 2, '4': 1, '5': 9, '10': 'basePath'},
+  ],
+};
+
+@$core.Deprecated('Use reportSentinelInformationRequestDescriptor instead')
+const ReportSentinelInformationRequest_ServerScheme$json = {
+  '1': 'ServerScheme',
+  '2': [
+    {'1': 'SERVER_SCHEME_UNSPECIFIED', '2': 0},
+    {'1': 'SERVER_SCHEME_HTTP', '2': 1},
+    {'1': 'SERVER_SCHEME_HTTPS', '2': 2},
+  ],
+};
+
+/// Descriptor for `ReportSentinelInformationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportSentinelInformationRequestDescriptor = $convert.base64Decode(
+    'CiBSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVxdWVzdBIcCglob3N0bmFtZXMYASADKAlSCW'
+    'hvc3RuYW1lcxJcCgZzY2hlbWUYAiABKA4yRC5saWJyYXJpYW4uc2VwaGlyYWgudjEuUmVwb3J0'
+    'U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VydmVyU2NoZW1lUgZzY2hlbWUSJAoOZ2V0X3'
+    'Rva2VuX3BhdGgYAyABKAlSDGdldFRva2VuUGF0aBJlCglsaWJyYXJpZXMYBCADKAsyRy5saWJy'
+    'YXJpYW4uc2VwaGlyYWgudjEuUmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VudG'
+    'luZWxMaWJyYXJ5UglsaWJyYXJpZXMaPgoPU2VudGluZWxMaWJyYXJ5Eg4KAmlkGAEgASgDUgJp'
+    'ZBIbCgliYXNlX3BhdGgYAiABKAlSCGJhc2VQYXRoIl4KDFNlcnZlclNjaGVtZRIdChlTRVJWRV'
+    'JfU0NIRU1FX1VOU1BFQ0lGSUVEEAASFgoSU0VSVkVSX1NDSEVNRV9IVFRQEAESFwoTU0VSVkVS'
+    'X1NDSEVNRV9IVFRQUxAC');
+
+@$core.Deprecated('Use reportSentinelInformationResponseDescriptor instead')
+const ReportSentinelInformationResponse$json = {
+  '1': 'ReportSentinelInformationResponse',
+};
+
+/// Descriptor for `ReportSentinelInformationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reportSentinelInformationResponseDescriptor = $convert.base64Decode(
+    'CiFSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVzcG9uc2U=');
+
 @$core.Deprecated('Use reportAppBinariesRequestDescriptor instead')
 const ReportAppBinariesRequest$json = {
   '1': 'ReportAppBinariesRequest',
@@ -1257,15 +1310,12 @@ const AppBinary$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'sentinel_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
-    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'size_bytes', '3': 4, '4': 1, '5': 3, '10': 'sizeBytes'},
-    {'1': 'need_token', '3': 5, '4': 1, '5': 8, '10': 'needToken'},
-    {'1': 'dl_base_url', '3': 6, '4': 1, '5': 9, '9': 0, '10': 'dlBaseUrl', '17': true},
-    {'1': 'sentinel_generated_id', '3': 9, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
+    {'1': 'sentinel_library_id', '3': 3, '4': 1, '5': 3, '10': 'sentinelLibraryId'},
+    {'1': 'sentinel_generated_id', '3': 4, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
+    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 6, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'need_token', '3': 7, '4': 1, '5': 8, '10': 'needToken'},
     {'1': 'files', '3': 10, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinaryFile', '10': 'files'},
-  ],
-  '8': [
-    {'1': '_dl_base_url'},
   ],
 };
 
@@ -1273,11 +1323,11 @@ const AppBinary$json = {
 final $typed_data.Uint8List appBinaryDescriptor = $convert.base64Decode(
     'CglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSOQ'
     'oLc2VudGluZWxfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKc2VudGluZWxJ'
-    'ZBISCgRuYW1lGAMgASgJUgRuYW1lEh0KCnNpemVfYnl0ZXMYBCABKANSCXNpemVCeXRlcxIdCg'
-    'puZWVkX3Rva2VuGAUgASgIUgluZWVkVG9rZW4SIwoLZGxfYmFzZV91cmwYBiABKAlIAFIJZGxC'
-    'YXNlVXJsiAEBEjIKFXNlbnRpbmVsX2dlbmVyYXRlZF9pZBgJIAEoCVITc2VudGluZWxHZW5lcm'
-    'F0ZWRJZBI6CgVmaWxlcxgKIAMoCzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnlG'
-    'aWxlUgVmaWxlc0IOCgxfZGxfYmFzZV91cmw=');
+    'ZBIuChNzZW50aW5lbF9saWJyYXJ5X2lkGAMgASgDUhFzZW50aW5lbExpYnJhcnlJZBIyChVzZW'
+    '50aW5lbF9nZW5lcmF0ZWRfaWQYBCABKAlSE3NlbnRpbmVsR2VuZXJhdGVkSWQSEgoEbmFtZRgF'
+    'IAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAYgASgDUglzaXplQnl0ZXMSHQoKbmVlZF90b2tlbh'
+    'gHIAEoCFIJbmVlZFRva2VuEjoKBWZpbGVzGAogAygLMiQubGlicmFyaWFuLnNlcGhpcmFoLnYx'
+    'LkFwcEJpbmFyeUZpbGVSBWZpbGVz');
 
 @$core.Deprecated('Use appBinaryFileDescriptor instead')
 const AppBinaryFile$json = {

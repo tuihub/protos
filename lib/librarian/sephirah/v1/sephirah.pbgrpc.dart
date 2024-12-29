@@ -252,6 +252,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.LibrarianSephirahService/UnAssignApp',
       ($4.UnAssignAppRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.UnAssignAppResponse.fromBuffer(value));
+  static final _$reportSentinelInformation = $grpc.ClientMethod<$4.ReportSentinelInformationRequest, $4.ReportSentinelInformationResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/ReportSentinelInformation',
+      ($4.ReportSentinelInformationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.ReportSentinelInformationResponse.fromBuffer(value));
   static final _$reportAppBinaries = $grpc.ClientMethod<$4.ReportAppBinariesRequest, $4.ReportAppBinariesResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/ReportAppBinaries',
       ($4.ReportAppBinariesRequest value) => value.writeToBuffer(),
@@ -717,6 +721,10 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$4.UnAssignAppResponse> unAssignApp($4.UnAssignAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$unAssignApp, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.ReportSentinelInformationResponse> reportSentinelInformation($4.ReportSentinelInformationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$reportSentinelInformation, request, options: options);
   }
 
   $grpc.ResponseFuture<$4.ReportAppBinariesResponse> reportAppBinaries($4.ReportAppBinariesRequest request, {$grpc.CallOptions? options}) {
@@ -1353,6 +1361,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.UnAssignAppRequest.fromBuffer(value),
         ($4.UnAssignAppResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.ReportSentinelInformationRequest, $4.ReportSentinelInformationResponse>(
+        'ReportSentinelInformation',
+        reportSentinelInformation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.ReportSentinelInformationRequest.fromBuffer(value),
+        ($4.ReportSentinelInformationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.ReportAppBinariesRequest, $4.ReportAppBinariesResponse>(
         'ReportAppBinaries',
         reportAppBinaries_Pre,
@@ -1980,6 +1995,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return unAssignApp(call, await request);
   }
 
+  $async.Future<$4.ReportSentinelInformationResponse> reportSentinelInformation_Pre($grpc.ServiceCall call, $async.Future<$4.ReportSentinelInformationRequest> request) async {
+    return reportSentinelInformation(call, await request);
+  }
+
   $async.Future<$4.ReportAppBinariesResponse> reportAppBinaries_Pre($grpc.ServiceCall call, $async.Future<$4.ReportAppBinariesRequest> request) async {
     return reportAppBinaries(call, await request);
   }
@@ -2272,6 +2291,7 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.ListAppsResponse> listApps($grpc.ServiceCall call, $4.ListAppsRequest request);
   $async.Future<$4.AssignAppResponse> assignApp($grpc.ServiceCall call, $4.AssignAppRequest request);
   $async.Future<$4.UnAssignAppResponse> unAssignApp($grpc.ServiceCall call, $4.UnAssignAppRequest request);
+  $async.Future<$4.ReportSentinelInformationResponse> reportSentinelInformation($grpc.ServiceCall call, $4.ReportSentinelInformationRequest request);
   $async.Future<$4.ReportAppBinariesResponse> reportAppBinaries($grpc.ServiceCall call, $4.ReportAppBinariesRequest request);
   $async.Future<$4.DownloadAppBinaryResponse> downloadAppBinary($grpc.ServiceCall call, $4.DownloadAppBinaryRequest request);
   $async.Future<$4.AddAppRunTimeResponse> addAppRunTime($grpc.ServiceCall call, $4.AddAppRunTimeRequest request);

@@ -1750,6 +1750,182 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   $core.List<App> get apps => $_getList(1);
 }
 
+class ReportSentinelInformationRequest_SentinelLibrary extends $pb.GeneratedMessage {
+  factory ReportSentinelInformationRequest_SentinelLibrary({
+    $fixnum.Int64? id,
+    $core.String? basePath,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (basePath != null) {
+      $result.basePath = basePath;
+    }
+    return $result;
+  }
+  ReportSentinelInformationRequest_SentinelLibrary._() : super();
+  factory ReportSentinelInformationRequest_SentinelLibrary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportSentinelInformationRequest_SentinelLibrary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest.SentinelLibrary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'basePath')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportSentinelInformationRequest_SentinelLibrary clone() => ReportSentinelInformationRequest_SentinelLibrary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportSentinelInformationRequest_SentinelLibrary copyWith(void Function(ReportSentinelInformationRequest_SentinelLibrary) updates) => super.copyWith((message) => updates(message as ReportSentinelInformationRequest_SentinelLibrary)) as ReportSentinelInformationRequest_SentinelLibrary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportSentinelInformationRequest_SentinelLibrary create() => ReportSentinelInformationRequest_SentinelLibrary._();
+  ReportSentinelInformationRequest_SentinelLibrary createEmptyInstance() => create();
+  static $pb.PbList<ReportSentinelInformationRequest_SentinelLibrary> createRepeated() => $pb.PbList<ReportSentinelInformationRequest_SentinelLibrary>();
+  @$core.pragma('dart2js:noInline')
+  static ReportSentinelInformationRequest_SentinelLibrary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportSentinelInformationRequest_SentinelLibrary>(create);
+  static ReportSentinelInformationRequest_SentinelLibrary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get basePath => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set basePath($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBasePath() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBasePath() => clearField(2);
+}
+
+class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
+  factory ReportSentinelInformationRequest({
+    $core.Iterable<$core.String>? hostnames,
+    ReportSentinelInformationRequest_ServerScheme? scheme,
+    $core.String? getTokenPath,
+    $core.Iterable<ReportSentinelInformationRequest_SentinelLibrary>? libraries,
+  }) {
+    final $result = create();
+    if (hostnames != null) {
+      $result.hostnames.addAll(hostnames);
+    }
+    if (scheme != null) {
+      $result.scheme = scheme;
+    }
+    if (getTokenPath != null) {
+      $result.getTokenPath = getTokenPath;
+    }
+    if (libraries != null) {
+      $result.libraries.addAll(libraries);
+    }
+    return $result;
+  }
+  ReportSentinelInformationRequest._() : super();
+  factory ReportSentinelInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportSentinelInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'hostnames')
+    ..e<ReportSentinelInformationRequest_ServerScheme>(2, _omitFieldNames ? '' : 'scheme', $pb.PbFieldType.OE, defaultOrMaker: ReportSentinelInformationRequest_ServerScheme.SERVER_SCHEME_UNSPECIFIED, valueOf: ReportSentinelInformationRequest_ServerScheme.valueOf, enumValues: ReportSentinelInformationRequest_ServerScheme.values)
+    ..aOS(3, _omitFieldNames ? '' : 'getTokenPath')
+    ..pc<ReportSentinelInformationRequest_SentinelLibrary>(4, _omitFieldNames ? '' : 'libraries', $pb.PbFieldType.PM, subBuilder: ReportSentinelInformationRequest_SentinelLibrary.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportSentinelInformationRequest clone() => ReportSentinelInformationRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportSentinelInformationRequest copyWith(void Function(ReportSentinelInformationRequest) updates) => super.copyWith((message) => updates(message as ReportSentinelInformationRequest)) as ReportSentinelInformationRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportSentinelInformationRequest create() => ReportSentinelInformationRequest._();
+  ReportSentinelInformationRequest createEmptyInstance() => create();
+  static $pb.PbList<ReportSentinelInformationRequest> createRepeated() => $pb.PbList<ReportSentinelInformationRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ReportSentinelInformationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportSentinelInformationRequest>(create);
+  static ReportSentinelInformationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get hostnames => $_getList(0);
+
+  @$pb.TagNumber(2)
+  ReportSentinelInformationRequest_ServerScheme get scheme => $_getN(1);
+  @$pb.TagNumber(2)
+  set scheme(ReportSentinelInformationRequest_ServerScheme v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasScheme() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScheme() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get getTokenPath => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set getTokenPath($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasGetTokenPath() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGetTokenPath() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<ReportSentinelInformationRequest_SentinelLibrary> get libraries => $_getList(3);
+}
+
+class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
+  factory ReportSentinelInformationResponse() => create();
+  ReportSentinelInformationResponse._() : super();
+  factory ReportSentinelInformationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportSentinelInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportSentinelInformationResponse clone() => ReportSentinelInformationResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportSentinelInformationResponse copyWith(void Function(ReportSentinelInformationResponse) updates) => super.copyWith((message) => updates(message as ReportSentinelInformationResponse)) as ReportSentinelInformationResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportSentinelInformationResponse create() => ReportSentinelInformationResponse._();
+  ReportSentinelInformationResponse createEmptyInstance() => create();
+  static $pb.PbList<ReportSentinelInformationResponse> createRepeated() => $pb.PbList<ReportSentinelInformationResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ReportSentinelInformationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportSentinelInformationResponse>(create);
+  static ReportSentinelInformationResponse? _defaultInstance;
+}
+
 class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   factory ReportAppBinariesRequest({
     $core.Iterable<AppBinary>? appBinaries,
@@ -4965,11 +5141,11 @@ class AppBinary extends $pb.GeneratedMessage {
   factory AppBinary({
     $8.InternalID? id,
     $8.InternalID? sentinelId,
+    $fixnum.Int64? sentinelLibraryId,
+    $core.String? sentinelGeneratedId,
     $core.String? name,
     $fixnum.Int64? sizeBytes,
     $core.bool? needToken,
-    $core.String? dlBaseUrl,
-    $core.String? sentinelGeneratedId,
     $core.Iterable<AppBinaryFile>? files,
   }) {
     final $result = create();
@@ -4979,6 +5155,12 @@ class AppBinary extends $pb.GeneratedMessage {
     if (sentinelId != null) {
       $result.sentinelId = sentinelId;
     }
+    if (sentinelLibraryId != null) {
+      $result.sentinelLibraryId = sentinelLibraryId;
+    }
+    if (sentinelGeneratedId != null) {
+      $result.sentinelGeneratedId = sentinelGeneratedId;
+    }
     if (name != null) {
       $result.name = name;
     }
@@ -4987,12 +5169,6 @@ class AppBinary extends $pb.GeneratedMessage {
     }
     if (needToken != null) {
       $result.needToken = needToken;
-    }
-    if (dlBaseUrl != null) {
-      $result.dlBaseUrl = dlBaseUrl;
-    }
-    if (sentinelGeneratedId != null) {
-      $result.sentinelGeneratedId = sentinelGeneratedId;
     }
     if (files != null) {
       $result.files.addAll(files);
@@ -5006,11 +5182,11 @@ class AppBinary extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sentinelId', subBuilder: $8.InternalID.create)
-    ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aInt64(4, _omitFieldNames ? '' : 'sizeBytes')
-    ..aOB(5, _omitFieldNames ? '' : 'needToken')
-    ..aOS(6, _omitFieldNames ? '' : 'dlBaseUrl')
-    ..aOS(9, _omitFieldNames ? '' : 'sentinelGeneratedId')
+    ..aInt64(3, _omitFieldNames ? '' : 'sentinelLibraryId')
+    ..aOS(4, _omitFieldNames ? '' : 'sentinelGeneratedId')
+    ..aOS(5, _omitFieldNames ? '' : 'name')
+    ..aInt64(6, _omitFieldNames ? '' : 'sizeBytes')
+    ..aOB(7, _omitFieldNames ? '' : 'needToken')
     ..pc<AppBinaryFile>(10, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: AppBinaryFile.create)
     ..hasRequiredFields = false
   ;
@@ -5059,50 +5235,49 @@ class AppBinary extends $pb.GeneratedMessage {
   $8.InternalID ensureSentinelId() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
+  $fixnum.Int64 get sentinelLibraryId => $_getI64(2);
   @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
+  set sentinelLibraryId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
+  $core.bool hasSentinelLibraryId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearSentinelLibraryId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $fixnum.Int64 get sizeBytes => $_getI64(3);
+  $core.String get sentinelGeneratedId => $_getSZ(3);
   @$pb.TagNumber(4)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(3, v); }
+  set sentinelGeneratedId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasSizeBytes() => $_has(3);
+  $core.bool hasSentinelGeneratedId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSizeBytes() => clearField(4);
+  void clearSentinelGeneratedId() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get needToken => $_getBF(4);
+  $core.String get name => $_getSZ(4);
   @$pb.TagNumber(5)
-  set needToken($core.bool v) { $_setBool(4, v); }
+  set name($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasNeedToken() => $_has(4);
+  $core.bool hasName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearNeedToken() => clearField(5);
+  void clearName() => clearField(5);
 
-  /// valid when need_token is false
   @$pb.TagNumber(6)
-  $core.String get dlBaseUrl => $_getSZ(5);
+  $fixnum.Int64 get sizeBytes => $_getI64(5);
   @$pb.TagNumber(6)
-  set dlBaseUrl($core.String v) { $_setString(5, v); }
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasDlBaseUrl() => $_has(5);
+  $core.bool hasSizeBytes() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDlBaseUrl() => clearField(6);
+  void clearSizeBytes() => clearField(6);
 
-  @$pb.TagNumber(9)
-  $core.String get sentinelGeneratedId => $_getSZ(6);
-  @$pb.TagNumber(9)
-  set sentinelGeneratedId($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasSentinelGeneratedId() => $_has(6);
-  @$pb.TagNumber(9)
-  void clearSentinelGeneratedId() => clearField(9);
+  @$pb.TagNumber(7)
+  $core.bool get needToken => $_getBF(6);
+  @$pb.TagNumber(7)
+  set needToken($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasNeedToken() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNeedToken() => clearField(7);
 
   @$pb.TagNumber(10)
   $core.List<AppBinaryFile> get files => $_getList(7);

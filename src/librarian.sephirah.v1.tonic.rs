@@ -1915,6 +1915,38 @@ pub mod librarian_sephirah_service_client {
             self.inner.unary(req, path, codec).await
         }
         /** `Gebura` `Sentinel`
+*/
+        pub async fn report_sentinel_information(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ReportSentinelInformationRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ReportSentinelInformationResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/ReportSentinelInformation",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "ReportSentinelInformation",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Gebura` `Sentinel`
  Full update, changes are handled by librarian
 */
         pub async fn report_app_binaries(
@@ -4359,6 +4391,15 @@ pub mod librarian_sephirah_service_server {
             request: tonic::Request<super::UnAssignAppRequest>,
         ) -> std::result::Result<
             tonic::Response<super::UnAssignAppResponse>,
+            tonic::Status,
+        >;
+        /** `Gebura` `Sentinel`
+*/
+        async fn report_sentinel_information(
+            &self,
+            request: tonic::Request<super::ReportSentinelInformationRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ReportSentinelInformationResponse>,
             tonic::Status,
         >;
         /** `Gebura` `Sentinel`
@@ -7696,6 +7737,60 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UnAssignAppSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/ReportSentinelInformation" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReportSentinelInformationSvc<T: LibrarianSephirahService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<
+                        super::ReportSentinelInformationRequest,
+                    > for ReportSentinelInformationSvc<T> {
+                        type Response = super::ReportSentinelInformationResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<
+                                super::ReportSentinelInformationRequest,
+                            >,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::report_sentinel_information(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ReportSentinelInformationSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

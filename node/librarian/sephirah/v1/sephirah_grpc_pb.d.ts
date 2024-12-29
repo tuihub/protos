@@ -70,6 +70,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   listApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ListAppsRequest, librarian_sephirah_v1_gebura_pb.ListAppsResponse>;
   assignApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.AssignAppRequest, librarian_sephirah_v1_gebura_pb.AssignAppResponse>;
   unAssignApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.UnAssignAppRequest, librarian_sephirah_v1_gebura_pb.UnAssignAppResponse>;
+  reportSentinelInformation: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest, librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse>;
   reportAppBinaries: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ReportAppBinariesRequest, librarian_sephirah_v1_gebura_pb.ReportAppBinariesResponse>;
   downloadAppBinary: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.DownloadAppBinaryRequest, librarian_sephirah_v1_gebura_pb.DownloadAppBinaryResponse>;
   addAppRunTime: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.AddAppRunTimeRequest, librarian_sephirah_v1_gebura_pb.AddAppRunTimeResponse>;
@@ -190,6 +191,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   listApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListAppsRequest, librarian_sephirah_v1_gebura_pb.ListAppsResponse>;
   assignApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.AssignAppRequest, librarian_sephirah_v1_gebura_pb.AssignAppResponse>;
   unAssignApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UnAssignAppRequest, librarian_sephirah_v1_gebura_pb.UnAssignAppResponse>;
+  reportSentinelInformation: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest, librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse>;
   reportAppBinaries: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ReportAppBinariesRequest, librarian_sephirah_v1_gebura_pb.ReportAppBinariesResponse>;
   downloadAppBinary: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.DownloadAppBinaryRequest, librarian_sephirah_v1_gebura_pb.DownloadAppBinaryResponse>;
   addAppRunTime: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.AddAppRunTimeRequest, librarian_sephirah_v1_gebura_pb.AddAppRunTimeResponse>;
@@ -416,6 +418,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   unAssignApp(argument: librarian_sephirah_v1_gebura_pb.UnAssignAppRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnAssignAppResponse>): grpc.ClientUnaryCall;
   unAssignApp(argument: librarian_sephirah_v1_gebura_pb.UnAssignAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnAssignAppResponse>): grpc.ClientUnaryCall;
   unAssignApp(argument: librarian_sephirah_v1_gebura_pb.UnAssignAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.UnAssignAppResponse>): grpc.ClientUnaryCall;
+  reportSentinelInformation(argument: librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse>): grpc.ClientUnaryCall;
+  reportSentinelInformation(argument: librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse>): grpc.ClientUnaryCall;
+  reportSentinelInformation(argument: librarian_sephirah_v1_gebura_pb.ReportSentinelInformationRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportSentinelInformationResponse>): grpc.ClientUnaryCall;
   reportAppBinaries(argument: librarian_sephirah_v1_gebura_pb.ReportAppBinariesRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportAppBinariesResponse>): grpc.ClientUnaryCall;
   reportAppBinaries(argument: librarian_sephirah_v1_gebura_pb.ReportAppBinariesRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportAppBinariesResponse>): grpc.ClientUnaryCall;
   reportAppBinaries(argument: librarian_sephirah_v1_gebura_pb.ReportAppBinariesRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ReportAppBinariesResponse>): grpc.ClientUnaryCall;

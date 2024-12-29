@@ -75,6 +75,7 @@ const (
 	LibrarianSephirahService_ListApps_FullMethodName                      = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
 	LibrarianSephirahService_AssignApp_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/AssignApp"
 	LibrarianSephirahService_UnAssignApp_FullMethodName                   = "/librarian.sephirah.v1.LibrarianSephirahService/UnAssignApp"
+	LibrarianSephirahService_ReportSentinelInformation_FullMethodName     = "/librarian.sephirah.v1.LibrarianSephirahService/ReportSentinelInformation"
 	LibrarianSephirahService_ReportAppBinaries_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/ReportAppBinaries"
 	LibrarianSephirahService_DownloadAppBinary_FullMethodName             = "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppBinary"
 	LibrarianSephirahService_AddAppRunTime_FullMethodName                 = "/librarian.sephirah.v1.LibrarianSephirahService/AddAppRunTime"
@@ -291,6 +292,8 @@ type LibrarianSephirahServiceClient interface {
 	AssignApp(ctx context.Context, in *AssignAppRequest, opts ...grpc.CallOption) (*AssignAppResponse, error)
 	// `Gebura` `Normal`
 	UnAssignApp(ctx context.Context, in *UnAssignAppRequest, opts ...grpc.CallOption) (*UnAssignAppResponse, error)
+	// `Gebura` `Sentinel`
+	ReportSentinelInformation(ctx context.Context, in *ReportSentinelInformationRequest, opts ...grpc.CallOption) (*ReportSentinelInformationResponse, error)
 	// `Gebura` `Sentinel`
 	// Full update, changes are handled by librarian
 	ReportAppBinaries(ctx context.Context, in *ReportAppBinariesRequest, opts ...grpc.CallOption) (*ReportAppBinariesResponse, error)
@@ -1001,6 +1004,16 @@ func (c *librarianSephirahServiceClient) UnAssignApp(ctx context.Context, in *Un
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UnAssignAppResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_UnAssignApp_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ReportSentinelInformation(ctx context.Context, in *ReportSentinelInformationRequest, opts ...grpc.CallOption) (*ReportSentinelInformationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportSentinelInformationResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ReportSentinelInformation_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1753,6 +1766,8 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	UnAssignApp(context.Context, *UnAssignAppRequest) (*UnAssignAppResponse, error)
 	// `Gebura` `Sentinel`
+	ReportSentinelInformation(context.Context, *ReportSentinelInformationRequest) (*ReportSentinelInformationResponse, error)
+	// `Gebura` `Sentinel`
 	// Full update, changes are handled by librarian
 	ReportAppBinaries(context.Context, *ReportAppBinariesRequest) (*ReportAppBinariesResponse, error)
 	// `Gebura` `Normal`
@@ -2048,6 +2063,9 @@ func (UnimplementedLibrarianSephirahServiceServer) AssignApp(context.Context, *A
 }
 func (UnimplementedLibrarianSephirahServiceServer) UnAssignApp(context.Context, *UnAssignAppRequest) (*UnAssignAppResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UnAssignApp not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ReportSentinelInformation(context.Context, *ReportSentinelInformationRequest) (*ReportSentinelInformationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReportSentinelInformation not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ReportAppBinaries(context.Context, *ReportAppBinariesRequest) (*ReportAppBinariesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReportAppBinaries not implemented")
@@ -3205,6 +3223,24 @@ func _LibrarianSephirahService_UnAssignApp_Handler(srv interface{}, ctx context.
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).UnAssignApp(ctx, req.(*UnAssignAppRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ReportSentinelInformation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportSentinelInformationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ReportSentinelInformation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ReportSentinelInformation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ReportSentinelInformation(ctx, req.(*ReportSentinelInformationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -4481,6 +4517,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UnAssignApp",
 			Handler:    _LibrarianSephirahService_UnAssignApp_Handler,
+		},
+		{
+			MethodName: "ReportSentinelInformation",
+			Handler:    _LibrarianSephirahService_ReportSentinelInformation_Handler,
 		},
 		{
 			MethodName: "ReportAppBinaries",
