@@ -443,20 +443,11 @@ message App {
 message AppBinary {
   librarian.v1.InternalID id = 1;
   librarian.v1.InternalID sentinel_id = 2;
-<<<<<<< HEAD
   int64 sentinel_library_id = 3;
   string sentinel_generated_id = 4;
   string name = 5;
   int64 size_bytes = 6;
   bool need_token = 7;
-=======
-  string name = 3;
-  int64 size_bytes = 4;
-  bool need_token = 5;
-  // valid when need_token is false
-  optional string dl_base_url = 6;
-  string sentinel_generated_id = 9;
->>>>>>> 36e1daf (feat(gebura): add sentinel related fields to AppBinary)
   repeated AppBinaryFile files = 10;
 }
 
