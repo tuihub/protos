@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.26](https://github.com/tuihub/protos/compare/v0.4.25...v0.4.26) (2024-12-29)
+
+
+### Features
+
+* **gebura:** add sentinel related fields to AppBinary ([36e1daf](https://github.com/tuihub/protos/commit/36e1daf2edb2a810921b188a18985426ddee7823))
+
 ## [0.4.25](https://github.com/tuihub/protos/compare/v0.4.24...v0.4.25) (2024-12-21)
 
 
