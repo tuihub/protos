@@ -181,9 +181,8 @@ message ReportAppBinariesRequest {
   repeated SentinelAppBinary sentinel_app_binaries = 1;
   message SentinelAppBinary {
     AppBinary app_binary = 1;
-    librarian.v1.InternalID sentinel_id = 2;
-    int64 sentinel_library_id = 3;
-    string sentinel_generated_id = 4;
+    int64 sentinel_library_id = 2;
+    string sentinel_generated_id = 3;
   }
 }
 
