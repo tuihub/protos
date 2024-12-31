@@ -789,8 +789,11 @@ export class ReportSentinelInformationRequest extends jspb.Message {
   getScheme(): ReportSentinelInformationRequest.ServerSchemeMap[keyof ReportSentinelInformationRequest.ServerSchemeMap];
   setScheme(value: ReportSentinelInformationRequest.ServerSchemeMap[keyof ReportSentinelInformationRequest.ServerSchemeMap]): void;
 
-  getGetTokenPath(): string;
-  setGetTokenPath(value: string): void;
+  getGetTokenUrlPath(): string;
+  setGetTokenUrlPath(value: string): void;
+
+  getDownloadFileUrlPath(): string;
+  setDownloadFileUrlPath(value: string): void;
 
   clearLibrariesList(): void;
   getLibrariesList(): Array<ReportSentinelInformationRequest.SentinelLibrary>;
@@ -811,7 +814,8 @@ export namespace ReportSentinelInformationRequest {
   export type AsObject = {
     hostnamesList: Array<string>,
     scheme: ReportSentinelInformationRequest.ServerSchemeMap[keyof ReportSentinelInformationRequest.ServerSchemeMap],
-    getTokenPath: string,
+    getTokenUrlPath: string,
+    downloadFileUrlPath: string,
     librariesList: Array<ReportSentinelInformationRequest.SentinelLibrary.AsObject>,
   }
 
@@ -819,8 +823,8 @@ export namespace ReportSentinelInformationRequest {
     getId(): number;
     setId(value: number): void;
 
-    getBasePath(): string;
-    setBasePath(value: string): void;
+    getDownloadBasePath(): string;
+    setDownloadBasePath(value: string): void;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SentinelLibrary.AsObject;
@@ -835,7 +839,7 @@ export namespace ReportSentinelInformationRequest {
   export namespace SentinelLibrary {
     export type AsObject = {
       id: number,
-      basePath: string,
+      downloadBasePath: string,
     }
   }
 
@@ -865,10 +869,10 @@ export namespace ReportSentinelInformationResponse {
 }
 
 export class ReportAppBinariesRequest extends jspb.Message {
-  clearAppBinariesList(): void;
-  getAppBinariesList(): Array<AppBinary>;
-  setAppBinariesList(value: Array<AppBinary>): void;
-  addAppBinaries(value?: AppBinary, index?: number): AppBinary;
+  clearSentinelAppBinariesList(): void;
+  getSentinelAppBinariesList(): Array<ReportAppBinariesRequest.SentinelAppBinary>;
+  setSentinelAppBinariesList(value: Array<ReportAppBinariesRequest.SentinelAppBinary>): void;
+  addSentinelAppBinaries(value?: ReportAppBinariesRequest.SentinelAppBinary, index?: number): ReportAppBinariesRequest.SentinelAppBinary;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportAppBinariesRequest.AsObject;
@@ -882,7 +886,43 @@ export class ReportAppBinariesRequest extends jspb.Message {
 
 export namespace ReportAppBinariesRequest {
   export type AsObject = {
-    appBinariesList: Array<AppBinary.AsObject>,
+    sentinelAppBinariesList: Array<ReportAppBinariesRequest.SentinelAppBinary.AsObject>,
+  }
+
+  export class SentinelAppBinary extends jspb.Message {
+    hasAppBinary(): boolean;
+    clearAppBinary(): void;
+    getAppBinary(): AppBinary | undefined;
+    setAppBinary(value?: AppBinary): void;
+
+    hasSentinelId(): boolean;
+    clearSentinelId(): void;
+    getSentinelId(): librarian_v1_common_pb.InternalID | undefined;
+    setSentinelId(value?: librarian_v1_common_pb.InternalID): void;
+
+    getSentinelLibraryId(): number;
+    setSentinelLibraryId(value: number): void;
+
+    getSentinelGeneratedId(): string;
+    setSentinelGeneratedId(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SentinelAppBinary.AsObject;
+    static toObject(includeInstance: boolean, msg: SentinelAppBinary): SentinelAppBinary.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SentinelAppBinary, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SentinelAppBinary;
+    static deserializeBinaryFromReader(message: SentinelAppBinary, reader: jspb.BinaryReader): SentinelAppBinary;
+  }
+
+  export namespace SentinelAppBinary {
+    export type AsObject = {
+      appBinary?: AppBinary.AsObject,
+      sentinelId?: librarian_v1_common_pb.InternalID.AsObject,
+      sentinelLibraryId: number,
+      sentinelGeneratedId: string,
+    }
   }
 }
 
@@ -1012,6 +1052,11 @@ export class DownloadAppBinaryResponse extends jspb.Message {
   getAppBinary(): AppBinary | undefined;
   setAppBinary(value?: AppBinary): void;
 
+  getDownloadUrl(): string;
+  setDownloadUrl(value: string): void;
+
+  hasToken(): boolean;
+  clearToken(): void;
   getToken(): string;
   setToken(value: string): void;
 
@@ -1028,6 +1073,7 @@ export class DownloadAppBinaryResponse extends jspb.Message {
 export namespace DownloadAppBinaryResponse {
   export type AsObject = {
     appBinary?: AppBinary.AsObject,
+    downloadUrl: string,
     token: string,
   }
 }
@@ -2264,17 +2310,6 @@ export class AppBinary extends jspb.Message {
   getId(): librarian_v1_common_pb.InternalID | undefined;
   setId(value?: librarian_v1_common_pb.InternalID): void;
 
-  hasSentinelId(): boolean;
-  clearSentinelId(): void;
-  getSentinelId(): librarian_v1_common_pb.InternalID | undefined;
-  setSentinelId(value?: librarian_v1_common_pb.InternalID): void;
-
-  getSentinelLibraryId(): number;
-  setSentinelLibraryId(value: number): void;
-
-  getSentinelGeneratedId(): string;
-  setSentinelGeneratedId(value: string): void;
-
   getName(): string;
   setName(value: string): void;
 
@@ -2302,9 +2337,6 @@ export class AppBinary extends jspb.Message {
 export namespace AppBinary {
   export type AsObject = {
     id?: librarian_v1_common_pb.InternalID.AsObject,
-    sentinelId?: librarian_v1_common_pb.InternalID.AsObject,
-    sentinelLibraryId: number,
-    sentinelGeneratedId: string,
     name: string,
     sizeBytes: number,
     needToken: boolean,

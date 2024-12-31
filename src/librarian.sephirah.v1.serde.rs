@@ -752,15 +752,6 @@ impl serde::Serialize for AppBinary {
         if self.id.is_some() {
             len += 1;
         }
-        if self.sentinel_id.is_some() {
-            len += 1;
-        }
-        if self.sentinel_library_id != 0 {
-            len += 1;
-        }
-        if !self.sentinel_generated_id.is_empty() {
-            len += 1;
-        }
         if !self.name.is_empty() {
             len += 1;
         }
@@ -776,17 +767,6 @@ impl serde::Serialize for AppBinary {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinary", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
-        }
-        if let Some(v) = self.sentinel_id.as_ref() {
-            struct_ser.serialize_field("sentinelId", v)?;
-        }
-        if self.sentinel_library_id != 0 {
-            #[allow(clippy::needless_borrow)]
-            #[allow(clippy::needless_borrows_for_generic_args)]
-            struct_ser.serialize_field("sentinelLibraryId", ToString::to_string(&self.sentinel_library_id).as_str())?;
-        }
-        if !self.sentinel_generated_id.is_empty() {
-            struct_ser.serialize_field("sentinelGeneratedId", &self.sentinel_generated_id)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -813,12 +793,6 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
     {
         const FIELDS: &[&str] = &[
             "id",
-            "sentinel_id",
-            "sentinelId",
-            "sentinel_library_id",
-            "sentinelLibraryId",
-            "sentinel_generated_id",
-            "sentinelGeneratedId",
             "name",
             "size_bytes",
             "sizeBytes",
@@ -830,9 +804,6 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
-            SentinelId,
-            SentinelLibraryId,
-            SentinelGeneratedId,
             Name,
             SizeBytes,
             NeedToken,
@@ -859,9 +830,6 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
-                            "sentinelId" | "sentinel_id" => Ok(GeneratedField::SentinelId),
-                            "sentinelLibraryId" | "sentinel_library_id" => Ok(GeneratedField::SentinelLibraryId),
-                            "sentinelGeneratedId" | "sentinel_generated_id" => Ok(GeneratedField::SentinelGeneratedId),
                             "name" => Ok(GeneratedField::Name),
                             "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
                             "needToken" | "need_token" => Ok(GeneratedField::NeedToken),
@@ -886,9 +854,6 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
-                let mut sentinel_id__ = None;
-                let mut sentinel_library_id__ = None;
-                let mut sentinel_generated_id__ = None;
                 let mut name__ = None;
                 let mut size_bytes__ = None;
                 let mut need_token__ = None;
@@ -900,26 +865,6 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                                 return Err(serde::de::Error::duplicate_field("id"));
                             }
                             id__ = map_.next_value()?;
-                        }
-                        GeneratedField::SentinelId => {
-                            if sentinel_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sentinelId"));
-                            }
-                            sentinel_id__ = map_.next_value()?;
-                        }
-                        GeneratedField::SentinelLibraryId => {
-                            if sentinel_library_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sentinelLibraryId"));
-                            }
-                            sentinel_library_id__ = 
-                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
-                            ;
-                        }
-                        GeneratedField::SentinelGeneratedId => {
-                            if sentinel_generated_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sentinelGeneratedId"));
-                            }
-                            sentinel_generated_id__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -951,9 +896,6 @@ impl<'de> serde::Deserialize<'de> for AppBinary {
                 }
                 Ok(AppBinary {
                     id: id__,
-                    sentinel_id: sentinel_id__,
-                    sentinel_library_id: sentinel_library_id__.unwrap_or_default(),
-                    sentinel_generated_id: sentinel_generated_id__.unwrap_or_default(),
                     name: name__.unwrap_or_default(),
                     size_bytes: size_bytes__.unwrap_or_default(),
                     need_token: need_token__.unwrap_or_default(),
@@ -4556,15 +4498,21 @@ impl serde::Serialize for DownloadAppBinaryResponse {
         if self.app_binary.is_some() {
             len += 1;
         }
-        if !self.token.is_empty() {
+        if !self.download_url.is_empty() {
+            len += 1;
+        }
+        if self.token.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DownloadAppBinaryResponse", len)?;
         if let Some(v) = self.app_binary.as_ref() {
             struct_ser.serialize_field("appBinary", v)?;
         }
-        if !self.token.is_empty() {
-            struct_ser.serialize_field("token", &self.token)?;
+        if !self.download_url.is_empty() {
+            struct_ser.serialize_field("downloadUrl", &self.download_url)?;
+        }
+        if let Some(v) = self.token.as_ref() {
+            struct_ser.serialize_field("token", v)?;
         }
         struct_ser.end()
     }
@@ -4578,12 +4526,15 @@ impl<'de> serde::Deserialize<'de> for DownloadAppBinaryResponse {
         const FIELDS: &[&str] = &[
             "app_binary",
             "appBinary",
+            "download_url",
+            "downloadUrl",
             "token",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             AppBinary,
+            DownloadUrl,
             Token,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -4607,6 +4558,7 @@ impl<'de> serde::Deserialize<'de> for DownloadAppBinaryResponse {
                     {
                         match value {
                             "appBinary" | "app_binary" => Ok(GeneratedField::AppBinary),
+                            "downloadUrl" | "download_url" => Ok(GeneratedField::DownloadUrl),
                             "token" => Ok(GeneratedField::Token),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -4628,6 +4580,7 @@ impl<'de> serde::Deserialize<'de> for DownloadAppBinaryResponse {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_binary__ = None;
+                let mut download_url__ = None;
                 let mut token__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
@@ -4637,17 +4590,24 @@ impl<'de> serde::Deserialize<'de> for DownloadAppBinaryResponse {
                             }
                             app_binary__ = map_.next_value()?;
                         }
+                        GeneratedField::DownloadUrl => {
+                            if download_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("downloadUrl"));
+                            }
+                            download_url__ = Some(map_.next_value()?);
+                        }
                         GeneratedField::Token => {
                             if token__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("token"));
                             }
-                            token__ = Some(map_.next_value()?);
+                            token__ = map_.next_value()?;
                         }
                     }
                 }
                 Ok(DownloadAppBinaryResponse {
                     app_binary: app_binary__,
-                    token: token__.unwrap_or_default(),
+                    download_url: download_url__.unwrap_or_default(),
+                    token: token__,
                 })
             }
         }
@@ -21178,12 +21138,12 @@ impl serde::Serialize for ReportAppBinariesRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.app_binaries.is_empty() {
+        if !self.sentinel_app_binaries.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest", len)?;
-        if !self.app_binaries.is_empty() {
-            struct_ser.serialize_field("appBinaries", &self.app_binaries)?;
+        if !self.sentinel_app_binaries.is_empty() {
+            struct_ser.serialize_field("sentinelAppBinaries", &self.sentinel_app_binaries)?;
         }
         struct_ser.end()
     }
@@ -21195,13 +21155,13 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "app_binaries",
-            "appBinaries",
+            "sentinel_app_binaries",
+            "sentinelAppBinaries",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            AppBinaries,
+            SentinelAppBinaries,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -21223,7 +21183,7 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "appBinaries" | "app_binaries" => Ok(GeneratedField::AppBinaries),
+                            "sentinelAppBinaries" | "sentinel_app_binaries" => Ok(GeneratedField::SentinelAppBinaries),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -21243,23 +21203,173 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut app_binaries__ = None;
+                let mut sentinel_app_binaries__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::AppBinaries => {
-                            if app_binaries__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appBinaries"));
+                        GeneratedField::SentinelAppBinaries => {
+                            if sentinel_app_binaries__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelAppBinaries"));
                             }
-                            app_binaries__ = Some(map_.next_value()?);
+                            sentinel_app_binaries__ = Some(map_.next_value()?);
                         }
                     }
                 }
                 Ok(ReportAppBinariesRequest {
-                    app_binaries: app_binaries__.unwrap_or_default(),
+                    sentinel_app_binaries: sentinel_app_binaries__.unwrap_or_default(),
                 })
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for report_app_binaries_request::SentinelAppBinary {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_binary.is_some() {
+            len += 1;
+        }
+        if self.sentinel_id.is_some() {
+            len += 1;
+        }
+        if self.sentinel_library_id != 0 {
+            len += 1;
+        }
+        if !self.sentinel_generated_id.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary", len)?;
+        if let Some(v) = self.app_binary.as_ref() {
+            struct_ser.serialize_field("appBinary", v)?;
+        }
+        if let Some(v) = self.sentinel_id.as_ref() {
+            struct_ser.serialize_field("sentinelId", v)?;
+        }
+        if self.sentinel_library_id != 0 {
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("sentinelLibraryId", ToString::to_string(&self.sentinel_library_id).as_str())?;
+        }
+        if !self.sentinel_generated_id.is_empty() {
+            struct_ser.serialize_field("sentinelGeneratedId", &self.sentinel_generated_id)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBinary {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_binary",
+            "appBinary",
+            "sentinel_id",
+            "sentinelId",
+            "sentinel_library_id",
+            "sentinelLibraryId",
+            "sentinel_generated_id",
+            "sentinelGeneratedId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppBinary,
+            SentinelId,
+            SentinelLibraryId,
+            SentinelGeneratedId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appBinary" | "app_binary" => Ok(GeneratedField::AppBinary),
+                            "sentinelId" | "sentinel_id" => Ok(GeneratedField::SentinelId),
+                            "sentinelLibraryId" | "sentinel_library_id" => Ok(GeneratedField::SentinelLibraryId),
+                            "sentinelGeneratedId" | "sentinel_generated_id" => Ok(GeneratedField::SentinelGeneratedId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = report_app_binaries_request::SentinelAppBinary;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<report_app_binaries_request::SentinelAppBinary, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_binary__ = None;
+                let mut sentinel_id__ = None;
+                let mut sentinel_library_id__ = None;
+                let mut sentinel_generated_id__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::AppBinary => {
+                            if app_binary__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appBinary"));
+                            }
+                            app_binary__ = map_.next_value()?;
+                        }
+                        GeneratedField::SentinelId => {
+                            if sentinel_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelId"));
+                            }
+                            sentinel_id__ = map_.next_value()?;
+                        }
+                        GeneratedField::SentinelLibraryId => {
+                            if sentinel_library_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelLibraryId"));
+                            }
+                            sentinel_library_id__ = 
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::SentinelGeneratedId => {
+                            if sentinel_generated_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sentinelGeneratedId"));
+                            }
+                            sentinel_generated_id__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(report_app_binaries_request::SentinelAppBinary {
+                    app_binary: app_binary__,
+                    sentinel_id: sentinel_id__,
+                    sentinel_library_id: sentinel_library_id__.unwrap_or_default(),
+                    sentinel_generated_id: sentinel_generated_id__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for ReportAppBinariesResponse {
@@ -21347,7 +21457,10 @@ impl serde::Serialize for ReportSentinelInformationRequest {
         if self.scheme != 0 {
             len += 1;
         }
-        if !self.get_token_path.is_empty() {
+        if !self.get_token_url_path.is_empty() {
+            len += 1;
+        }
+        if !self.download_file_url_path.is_empty() {
             len += 1;
         }
         if !self.libraries.is_empty() {
@@ -21362,8 +21475,11 @@ impl serde::Serialize for ReportSentinelInformationRequest {
                 .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.scheme)))?;
             struct_ser.serialize_field("scheme", &v)?;
         }
-        if !self.get_token_path.is_empty() {
-            struct_ser.serialize_field("getTokenPath", &self.get_token_path)?;
+        if !self.get_token_url_path.is_empty() {
+            struct_ser.serialize_field("getTokenUrlPath", &self.get_token_url_path)?;
+        }
+        if !self.download_file_url_path.is_empty() {
+            struct_ser.serialize_field("downloadFileUrlPath", &self.download_file_url_path)?;
         }
         if !self.libraries.is_empty() {
             struct_ser.serialize_field("libraries", &self.libraries)?;
@@ -21380,8 +21496,10 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
         const FIELDS: &[&str] = &[
             "hostnames",
             "scheme",
-            "get_token_path",
-            "getTokenPath",
+            "get_token_url_path",
+            "getTokenUrlPath",
+            "download_file_url_path",
+            "downloadFileUrlPath",
             "libraries",
         ];
 
@@ -21389,7 +21507,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
         enum GeneratedField {
             Hostnames,
             Scheme,
-            GetTokenPath,
+            GetTokenUrlPath,
+            DownloadFileUrlPath,
             Libraries,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -21414,7 +21533,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                         match value {
                             "hostnames" => Ok(GeneratedField::Hostnames),
                             "scheme" => Ok(GeneratedField::Scheme),
-                            "getTokenPath" | "get_token_path" => Ok(GeneratedField::GetTokenPath),
+                            "getTokenUrlPath" | "get_token_url_path" => Ok(GeneratedField::GetTokenUrlPath),
+                            "downloadFileUrlPath" | "download_file_url_path" => Ok(GeneratedField::DownloadFileUrlPath),
                             "libraries" => Ok(GeneratedField::Libraries),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -21437,7 +21557,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
             {
                 let mut hostnames__ = None;
                 let mut scheme__ = None;
-                let mut get_token_path__ = None;
+                let mut get_token_url_path__ = None;
+                let mut download_file_url_path__ = None;
                 let mut libraries__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
@@ -21453,11 +21574,17 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                             }
                             scheme__ = Some(map_.next_value::<report_sentinel_information_request::ServerScheme>()? as i32);
                         }
-                        GeneratedField::GetTokenPath => {
-                            if get_token_path__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("getTokenPath"));
+                        GeneratedField::GetTokenUrlPath => {
+                            if get_token_url_path__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("getTokenUrlPath"));
                             }
-                            get_token_path__ = Some(map_.next_value()?);
+                            get_token_url_path__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::DownloadFileUrlPath => {
+                            if download_file_url_path__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("downloadFileUrlPath"));
+                            }
+                            download_file_url_path__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Libraries => {
                             if libraries__.is_some() {
@@ -21470,7 +21597,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                 Ok(ReportSentinelInformationRequest {
                     hostnames: hostnames__.unwrap_or_default(),
                     scheme: scheme__.unwrap_or_default(),
-                    get_token_path: get_token_path__.unwrap_or_default(),
+                    get_token_url_path: get_token_url_path__.unwrap_or_default(),
+                    download_file_url_path: download_file_url_path__.unwrap_or_default(),
                     libraries: libraries__.unwrap_or_default(),
                 })
             }
@@ -21489,7 +21617,7 @@ impl serde::Serialize for report_sentinel_information_request::SentinelLibrary {
         if self.id != 0 {
             len += 1;
         }
-        if !self.base_path.is_empty() {
+        if !self.download_base_path.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportSentinelInformationRequest.SentinelLibrary", len)?;
@@ -21498,8 +21626,8 @@ impl serde::Serialize for report_sentinel_information_request::SentinelLibrary {
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("id", ToString::to_string(&self.id).as_str())?;
         }
-        if !self.base_path.is_empty() {
-            struct_ser.serialize_field("basePath", &self.base_path)?;
+        if !self.download_base_path.is_empty() {
+            struct_ser.serialize_field("downloadBasePath", &self.download_base_path)?;
         }
         struct_ser.end()
     }
@@ -21512,14 +21640,14 @@ impl<'de> serde::Deserialize<'de> for report_sentinel_information_request::Senti
     {
         const FIELDS: &[&str] = &[
             "id",
-            "base_path",
-            "basePath",
+            "download_base_path",
+            "downloadBasePath",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Id,
-            BasePath,
+            DownloadBasePath,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -21542,7 +21670,7 @@ impl<'de> serde::Deserialize<'de> for report_sentinel_information_request::Senti
                     {
                         match value {
                             "id" => Ok(GeneratedField::Id),
-                            "basePath" | "base_path" => Ok(GeneratedField::BasePath),
+                            "downloadBasePath" | "download_base_path" => Ok(GeneratedField::DownloadBasePath),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -21563,7 +21691,7 @@ impl<'de> serde::Deserialize<'de> for report_sentinel_information_request::Senti
                     V: serde::de::MapAccess<'de>,
             {
                 let mut id__ = None;
-                let mut base_path__ = None;
+                let mut download_base_path__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -21574,17 +21702,17 @@ impl<'de> serde::Deserialize<'de> for report_sentinel_information_request::Senti
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::BasePath => {
-                            if base_path__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("basePath"));
+                        GeneratedField::DownloadBasePath => {
+                            if download_base_path__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("downloadBasePath"));
                             }
-                            base_path__ = Some(map_.next_value()?);
+                            download_base_path__ = Some(map_.next_value()?);
                         }
                     }
                 }
                 Ok(report_sentinel_information_request::SentinelLibrary {
                     id: id__.unwrap_or_default(),
-                    base_path: base_path__.unwrap_or_default(),
+                    download_base_path: download_base_path__.unwrap_or_default(),
                 })
             }
         }

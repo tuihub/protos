@@ -474,8 +474,9 @@ const ReportSentinelInformationRequest$json = {
   '2': [
     {'1': 'hostnames', '3': 1, '4': 3, '5': 9, '10': 'hostnames'},
     {'1': 'scheme', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.ReportSentinelInformationRequest.ServerScheme', '10': 'scheme'},
-    {'1': 'get_token_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenPath'},
-    {'1': 'libraries', '3': 4, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ReportSentinelInformationRequest.SentinelLibrary', '10': 'libraries'},
+    {'1': 'get_token_url_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenUrlPath'},
+    {'1': 'download_file_url_path', '3': 4, '4': 1, '5': 9, '10': 'downloadFileUrlPath'},
+    {'1': 'libraries', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ReportSentinelInformationRequest.SentinelLibrary', '10': 'libraries'},
   ],
   '3': [ReportSentinelInformationRequest_SentinelLibrary$json],
   '4': [ReportSentinelInformationRequest_ServerScheme$json],
@@ -486,7 +487,7 @@ const ReportSentinelInformationRequest_SentinelLibrary$json = {
   '1': 'SentinelLibrary',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
-    {'1': 'base_path', '3': 2, '4': 1, '5': 9, '10': 'basePath'},
+    {'1': 'download_base_path', '3': 2, '4': 1, '5': 9, '10': 'downloadBasePath'},
   ],
 };
 
@@ -504,13 +505,14 @@ const ReportSentinelInformationRequest_ServerScheme$json = {
 final $typed_data.Uint8List reportSentinelInformationRequestDescriptor = $convert.base64Decode(
     'CiBSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVxdWVzdBIcCglob3N0bmFtZXMYASADKAlSCW'
     'hvc3RuYW1lcxJcCgZzY2hlbWUYAiABKA4yRC5saWJyYXJpYW4uc2VwaGlyYWgudjEuUmVwb3J0'
-    'U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VydmVyU2NoZW1lUgZzY2hlbWUSJAoOZ2V0X3'
-    'Rva2VuX3BhdGgYAyABKAlSDGdldFRva2VuUGF0aBJlCglsaWJyYXJpZXMYBCADKAsyRy5saWJy'
-    'YXJpYW4uc2VwaGlyYWgudjEuUmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VudG'
-    'luZWxMaWJyYXJ5UglsaWJyYXJpZXMaPgoPU2VudGluZWxMaWJyYXJ5Eg4KAmlkGAEgASgDUgJp'
-    'ZBIbCgliYXNlX3BhdGgYAiABKAlSCGJhc2VQYXRoIl4KDFNlcnZlclNjaGVtZRIdChlTRVJWRV'
-    'JfU0NIRU1FX1VOU1BFQ0lGSUVEEAASFgoSU0VSVkVSX1NDSEVNRV9IVFRQEAESFwoTU0VSVkVS'
-    'X1NDSEVNRV9IVFRQUxAC');
+    'U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VydmVyU2NoZW1lUgZzY2hlbWUSKwoSZ2V0X3'
+    'Rva2VuX3VybF9wYXRoGAMgASgJUg9nZXRUb2tlblVybFBhdGgSMwoWZG93bmxvYWRfZmlsZV91'
+    'cmxfcGF0aBgEIAEoCVITZG93bmxvYWRGaWxlVXJsUGF0aBJlCglsaWJyYXJpZXMYBSADKAsyRy'
+    '5saWJyYXJpYW4uc2VwaGlyYWgudjEuUmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3Qu'
+    'U2VudGluZWxMaWJyYXJ5UglsaWJyYXJpZXMaTwoPU2VudGluZWxMaWJyYXJ5Eg4KAmlkGAEgAS'
+    'gDUgJpZBIsChJkb3dubG9hZF9iYXNlX3BhdGgYAiABKAlSEGRvd25sb2FkQmFzZVBhdGgiXgoM'
+    'U2VydmVyU2NoZW1lEh0KGVNFUlZFUl9TQ0hFTUVfVU5TUEVDSUZJRUQQABIWChJTRVJWRVJfU0'
+    'NIRU1FX0hUVFAQARIXChNTRVJWRVJfU0NIRU1FX0hUVFBTEAI=');
 
 @$core.Deprecated('Use reportSentinelInformationResponseDescriptor instead')
 const ReportSentinelInformationResponse$json = {
@@ -525,14 +527,32 @@ final $typed_data.Uint8List reportSentinelInformationResponseDescriptor = $conve
 const ReportAppBinariesRequest$json = {
   '1': 'ReportAppBinariesRequest',
   '2': [
-    {'1': 'app_binaries', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinary', '10': 'appBinaries'},
+    {'1': 'sentinel_app_binaries', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary', '10': 'sentinelAppBinaries'},
+  ],
+  '3': [ReportAppBinariesRequest_SentinelAppBinary$json],
+};
+
+@$core.Deprecated('Use reportAppBinariesRequestDescriptor instead')
+const ReportAppBinariesRequest_SentinelAppBinary$json = {
+  '1': 'SentinelAppBinary',
+  '2': [
+    {'1': 'app_binary', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.AppBinary', '10': 'appBinary'},
+    {'1': 'sentinel_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
+    {'1': 'sentinel_library_id', '3': 3, '4': 1, '5': 3, '10': 'sentinelLibraryId'},
+    {'1': 'sentinel_generated_id', '3': 4, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
   ],
 };
 
 /// Descriptor for `ReportAppBinariesRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reportAppBinariesRequestDescriptor = $convert.base64Decode(
-    'ChhSZXBvcnRBcHBCaW5hcmllc1JlcXVlc3QSQwoMYXBwX2JpbmFyaWVzGAEgAygLMiAubGlicm'
-    'FyaWFuLnNlcGhpcmFoLnYxLkFwcEJpbmFyeVILYXBwQmluYXJpZXM=');
+    'ChhSZXBvcnRBcHBCaW5hcmllc1JlcXVlc3QSdQoVc2VudGluZWxfYXBwX2JpbmFyaWVzGAEgAy'
+    'gLMkEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlJlcG9ydEFwcEJpbmFyaWVzUmVxdWVzdC5TZW50'
+    'aW5lbEFwcEJpbmFyeVITc2VudGluZWxBcHBCaW5hcmllcxrzAQoRU2VudGluZWxBcHBCaW5hcn'
+    'kSPwoKYXBwX2JpbmFyeRgBIAEoCzIgLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnlS'
+    'CWFwcEJpbmFyeRI5CgtzZW50aW5lbF9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
+    'lEUgpzZW50aW5lbElkEi4KE3NlbnRpbmVsX2xpYnJhcnlfaWQYAyABKANSEXNlbnRpbmVsTGli'
+    'cmFyeUlkEjIKFXNlbnRpbmVsX2dlbmVyYXRlZF9pZBgEIAEoCVITc2VudGluZWxHZW5lcmF0ZW'
+    'RJZA==');
 
 @$core.Deprecated('Use reportAppBinariesResponseDescriptor instead')
 const ReportAppBinariesResponse$json = {
@@ -607,15 +627,19 @@ const DownloadAppBinaryResponse$json = {
   '1': 'DownloadAppBinaryResponse',
   '2': [
     {'1': 'app_binary', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.AppBinary', '10': 'appBinary'},
-    {'1': 'token', '3': 2, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'download_url', '3': 2, '4': 1, '5': 9, '10': 'downloadUrl'},
+    {'1': 'token', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'token', '17': true},
+  ],
+  '8': [
+    {'1': '_token'},
   ],
 };
 
 /// Descriptor for `DownloadAppBinaryResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List downloadAppBinaryResponseDescriptor = $convert.base64Decode(
     'ChlEb3dubG9hZEFwcEJpbmFyeVJlc3BvbnNlEj8KCmFwcF9iaW5hcnkYASABKAsyIC5saWJyYX'
-    'JpYW4uc2VwaGlyYWgudjEuQXBwQmluYXJ5UglhcHBCaW5hcnkSFAoFdG9rZW4YAiABKAlSBXRv'
-    'a2Vu');
+    'JpYW4uc2VwaGlyYWgudjEuQXBwQmluYXJ5UglhcHBCaW5hcnkSIQoMZG93bmxvYWRfdXJsGAIg'
+    'ASgJUgtkb3dubG9hZFVybBIZCgV0b2tlbhgDIAEoCUgAUgV0b2tlbogBAUIICgZfdG9rZW4=');
 
 @$core.Deprecated('Use addAppRunTimeRequestDescriptor instead')
 const AddAppRunTimeRequest$json = {
@@ -1309,25 +1333,19 @@ const AppBinary$json = {
   '1': 'AppBinary',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'sentinel_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
-    {'1': 'sentinel_library_id', '3': 3, '4': 1, '5': 3, '10': 'sentinelLibraryId'},
-    {'1': 'sentinel_generated_id', '3': 4, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
-    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'size_bytes', '3': 6, '4': 1, '5': 3, '10': 'sizeBytes'},
-    {'1': 'need_token', '3': 7, '4': 1, '5': 8, '10': 'needToken'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'need_token', '3': 4, '4': 1, '5': 8, '10': 'needToken'},
     {'1': 'files', '3': 10, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinaryFile', '10': 'files'},
   ],
 };
 
 /// Descriptor for `AppBinary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appBinaryDescriptor = $convert.base64Decode(
-    'CglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSOQ'
-    'oLc2VudGluZWxfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKc2VudGluZWxJ'
-    'ZBIuChNzZW50aW5lbF9saWJyYXJ5X2lkGAMgASgDUhFzZW50aW5lbExpYnJhcnlJZBIyChVzZW'
-    '50aW5lbF9nZW5lcmF0ZWRfaWQYBCABKAlSE3NlbnRpbmVsR2VuZXJhdGVkSWQSEgoEbmFtZRgF'
-    'IAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAYgASgDUglzaXplQnl0ZXMSHQoKbmVlZF90b2tlbh'
-    'gHIAEoCFIJbmVlZFRva2VuEjoKBWZpbGVzGAogAygLMiQubGlicmFyaWFuLnNlcGhpcmFoLnYx'
-    'LkFwcEJpbmFyeUZpbGVSBWZpbGVz');
+    'CglBcHBCaW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEg'
+    'oEbmFtZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0ZXMSHQoKbmVl'
+    'ZF90b2tlbhgEIAEoCFIJbmVlZFRva2VuEjoKBWZpbGVzGAogAygLMiQubGlicmFyaWFuLnNlcG'
+    'hpcmFoLnYxLkFwcEJpbmFyeUZpbGVSBWZpbGVz');
 
 @$core.Deprecated('Use appBinaryFileDescriptor instead')
 const AppBinaryFile$json = {

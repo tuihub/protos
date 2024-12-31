@@ -1753,14 +1753,14 @@ class ListAppsResponse extends $pb.GeneratedMessage {
 class ReportSentinelInformationRequest_SentinelLibrary extends $pb.GeneratedMessage {
   factory ReportSentinelInformationRequest_SentinelLibrary({
     $fixnum.Int64? id,
-    $core.String? basePath,
+    $core.String? downloadBasePath,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
-    if (basePath != null) {
-      $result.basePath = basePath;
+    if (downloadBasePath != null) {
+      $result.downloadBasePath = downloadBasePath;
     }
     return $result;
   }
@@ -1770,7 +1770,7 @@ class ReportSentinelInformationRequest_SentinelLibrary extends $pb.GeneratedMess
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest.SentinelLibrary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'basePath')
+    ..aOS(2, _omitFieldNames ? '' : 'downloadBasePath')
     ..hasRequiredFields = false
   ;
 
@@ -1805,20 +1805,21 @@ class ReportSentinelInformationRequest_SentinelLibrary extends $pb.GeneratedMess
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get basePath => $_getSZ(1);
+  $core.String get downloadBasePath => $_getSZ(1);
   @$pb.TagNumber(2)
-  set basePath($core.String v) { $_setString(1, v); }
+  set downloadBasePath($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasBasePath() => $_has(1);
+  $core.bool hasDownloadBasePath() => $_has(1);
   @$pb.TagNumber(2)
-  void clearBasePath() => clearField(2);
+  void clearDownloadBasePath() => clearField(2);
 }
 
 class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   factory ReportSentinelInformationRequest({
     $core.Iterable<$core.String>? hostnames,
     ReportSentinelInformationRequest_ServerScheme? scheme,
-    $core.String? getTokenPath,
+    $core.String? getTokenUrlPath,
+    $core.String? downloadFileUrlPath,
     $core.Iterable<ReportSentinelInformationRequest_SentinelLibrary>? libraries,
   }) {
     final $result = create();
@@ -1828,8 +1829,11 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
     if (scheme != null) {
       $result.scheme = scheme;
     }
-    if (getTokenPath != null) {
-      $result.getTokenPath = getTokenPath;
+    if (getTokenUrlPath != null) {
+      $result.getTokenUrlPath = getTokenUrlPath;
+    }
+    if (downloadFileUrlPath != null) {
+      $result.downloadFileUrlPath = downloadFileUrlPath;
     }
     if (libraries != null) {
       $result.libraries.addAll(libraries);
@@ -1843,8 +1847,9 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'hostnames')
     ..e<ReportSentinelInformationRequest_ServerScheme>(2, _omitFieldNames ? '' : 'scheme', $pb.PbFieldType.OE, defaultOrMaker: ReportSentinelInformationRequest_ServerScheme.SERVER_SCHEME_UNSPECIFIED, valueOf: ReportSentinelInformationRequest_ServerScheme.valueOf, enumValues: ReportSentinelInformationRequest_ServerScheme.values)
-    ..aOS(3, _omitFieldNames ? '' : 'getTokenPath')
-    ..pc<ReportSentinelInformationRequest_SentinelLibrary>(4, _omitFieldNames ? '' : 'libraries', $pb.PbFieldType.PM, subBuilder: ReportSentinelInformationRequest_SentinelLibrary.create)
+    ..aOS(3, _omitFieldNames ? '' : 'getTokenUrlPath')
+    ..aOS(4, _omitFieldNames ? '' : 'downloadFileUrlPath')
+    ..pc<ReportSentinelInformationRequest_SentinelLibrary>(5, _omitFieldNames ? '' : 'libraries', $pb.PbFieldType.PM, subBuilder: ReportSentinelInformationRequest_SentinelLibrary.create)
     ..hasRequiredFields = false
   ;
 
@@ -1881,17 +1886,27 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearScheme() => clearField(2);
 
+  /// valid when need_token is true
   @$pb.TagNumber(3)
-  $core.String get getTokenPath => $_getSZ(2);
+  $core.String get getTokenUrlPath => $_getSZ(2);
   @$pb.TagNumber(3)
-  set getTokenPath($core.String v) { $_setString(2, v); }
+  set getTokenUrlPath($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasGetTokenPath() => $_has(2);
+  $core.bool hasGetTokenUrlPath() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGetTokenPath() => clearField(3);
+  void clearGetTokenUrlPath() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<ReportSentinelInformationRequest_SentinelLibrary> get libraries => $_getList(3);
+  $core.String get downloadFileUrlPath => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set downloadFileUrlPath($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDownloadFileUrlPath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDownloadFileUrlPath() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<ReportSentinelInformationRequest_SentinelLibrary> get libraries => $_getList(4);
 }
 
 class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
@@ -1926,13 +1941,109 @@ class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
   static ReportSentinelInformationResponse? _defaultInstance;
 }
 
-class ReportAppBinariesRequest extends $pb.GeneratedMessage {
-  factory ReportAppBinariesRequest({
-    $core.Iterable<AppBinary>? appBinaries,
+class ReportAppBinariesRequest_SentinelAppBinary extends $pb.GeneratedMessage {
+  factory ReportAppBinariesRequest_SentinelAppBinary({
+    AppBinary? appBinary,
+    $8.InternalID? sentinelId,
+    $fixnum.Int64? sentinelLibraryId,
+    $core.String? sentinelGeneratedId,
   }) {
     final $result = create();
-    if (appBinaries != null) {
-      $result.appBinaries.addAll(appBinaries);
+    if (appBinary != null) {
+      $result.appBinary = appBinary;
+    }
+    if (sentinelId != null) {
+      $result.sentinelId = sentinelId;
+    }
+    if (sentinelLibraryId != null) {
+      $result.sentinelLibraryId = sentinelLibraryId;
+    }
+    if (sentinelGeneratedId != null) {
+      $result.sentinelGeneratedId = sentinelGeneratedId;
+    }
+    return $result;
+  }
+  ReportAppBinariesRequest_SentinelAppBinary._() : super();
+  factory ReportAppBinariesRequest_SentinelAppBinary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ReportAppBinariesRequest_SentinelAppBinary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportAppBinariesRequest.SentinelAppBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
+    ..aOM<AppBinary>(1, _omitFieldNames ? '' : 'appBinary', subBuilder: AppBinary.create)
+    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sentinelId', subBuilder: $8.InternalID.create)
+    ..aInt64(3, _omitFieldNames ? '' : 'sentinelLibraryId')
+    ..aOS(4, _omitFieldNames ? '' : 'sentinelGeneratedId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ReportAppBinariesRequest_SentinelAppBinary clone() => ReportAppBinariesRequest_SentinelAppBinary()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ReportAppBinariesRequest_SentinelAppBinary copyWith(void Function(ReportAppBinariesRequest_SentinelAppBinary) updates) => super.copyWith((message) => updates(message as ReportAppBinariesRequest_SentinelAppBinary)) as ReportAppBinariesRequest_SentinelAppBinary;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportAppBinariesRequest_SentinelAppBinary create() => ReportAppBinariesRequest_SentinelAppBinary._();
+  ReportAppBinariesRequest_SentinelAppBinary createEmptyInstance() => create();
+  static $pb.PbList<ReportAppBinariesRequest_SentinelAppBinary> createRepeated() => $pb.PbList<ReportAppBinariesRequest_SentinelAppBinary>();
+  @$core.pragma('dart2js:noInline')
+  static ReportAppBinariesRequest_SentinelAppBinary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ReportAppBinariesRequest_SentinelAppBinary>(create);
+  static ReportAppBinariesRequest_SentinelAppBinary? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AppBinary get appBinary => $_getN(0);
+  @$pb.TagNumber(1)
+  set appBinary(AppBinary v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppBinary() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppBinary() => clearField(1);
+  @$pb.TagNumber(1)
+  AppBinary ensureAppBinary() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $8.InternalID get sentinelId => $_getN(1);
+  @$pb.TagNumber(2)
+  set sentinelId($8.InternalID v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSentinelId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSentinelId() => clearField(2);
+  @$pb.TagNumber(2)
+  $8.InternalID ensureSentinelId() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get sentinelLibraryId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set sentinelLibraryId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSentinelLibraryId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSentinelLibraryId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sentinelGeneratedId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sentinelGeneratedId($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSentinelGeneratedId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSentinelGeneratedId() => clearField(4);
+}
+
+class ReportAppBinariesRequest extends $pb.GeneratedMessage {
+  factory ReportAppBinariesRequest({
+    $core.Iterable<ReportAppBinariesRequest_SentinelAppBinary>? sentinelAppBinaries,
+  }) {
+    final $result = create();
+    if (sentinelAppBinaries != null) {
+      $result.sentinelAppBinaries.addAll(sentinelAppBinaries);
     }
     return $result;
   }
@@ -1941,7 +2052,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   factory ReportAppBinariesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportAppBinariesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
-    ..pc<AppBinary>(1, _omitFieldNames ? '' : 'appBinaries', $pb.PbFieldType.PM, subBuilder: AppBinary.create)
+    ..pc<ReportAppBinariesRequest_SentinelAppBinary>(1, _omitFieldNames ? '' : 'sentinelAppBinaries', $pb.PbFieldType.PM, subBuilder: ReportAppBinariesRequest_SentinelAppBinary.create)
     ..hasRequiredFields = false
   ;
 
@@ -1967,7 +2078,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   static ReportAppBinariesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<AppBinary> get appBinaries => $_getList(0);
+  $core.List<ReportAppBinariesRequest_SentinelAppBinary> get sentinelAppBinaries => $_getList(0);
 }
 
 class ReportAppBinariesResponse extends $pb.GeneratedMessage {
@@ -2242,11 +2353,15 @@ class DownloadAppBinaryRequest extends $pb.GeneratedMessage {
 class DownloadAppBinaryResponse extends $pb.GeneratedMessage {
   factory DownloadAppBinaryResponse({
     AppBinary? appBinary,
+    $core.String? downloadUrl,
     $core.String? token,
   }) {
     final $result = create();
     if (appBinary != null) {
       $result.appBinary = appBinary;
+    }
+    if (downloadUrl != null) {
+      $result.downloadUrl = downloadUrl;
     }
     if (token != null) {
       $result.token = token;
@@ -2259,7 +2374,8 @@ class DownloadAppBinaryResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadAppBinaryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<AppBinary>(1, _omitFieldNames ? '' : 'appBinary', subBuilder: AppBinary.create)
-    ..aOS(2, _omitFieldNames ? '' : 'token')
+    ..aOS(2, _omitFieldNames ? '' : 'downloadUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
@@ -2295,14 +2411,25 @@ class DownloadAppBinaryResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   AppBinary ensureAppBinary() => $_ensure(0);
 
+  /// base url to be path-joined when need_token is false
   @$pb.TagNumber(2)
-  $core.String get token => $_getSZ(1);
+  $core.String get downloadUrl => $_getSZ(1);
   @$pb.TagNumber(2)
-  set token($core.String v) { $_setString(1, v); }
+  set downloadUrl($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasToken() => $_has(1);
+  $core.bool hasDownloadUrl() => $_has(1);
   @$pb.TagNumber(2)
-  void clearToken() => clearField(2);
+  void clearDownloadUrl() => clearField(2);
+
+  /// valid when need_token is true
+  @$pb.TagNumber(3)
+  $core.String get token => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set token($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearToken() => clearField(3);
 }
 
 class AddAppRunTimeRequest extends $pb.GeneratedMessage {
@@ -5140,9 +5267,6 @@ class App extends $pb.GeneratedMessage {
 class AppBinary extends $pb.GeneratedMessage {
   factory AppBinary({
     $8.InternalID? id,
-    $8.InternalID? sentinelId,
-    $fixnum.Int64? sentinelLibraryId,
-    $core.String? sentinelGeneratedId,
     $core.String? name,
     $fixnum.Int64? sizeBytes,
     $core.bool? needToken,
@@ -5151,15 +5275,6 @@ class AppBinary extends $pb.GeneratedMessage {
     final $result = create();
     if (id != null) {
       $result.id = id;
-    }
-    if (sentinelId != null) {
-      $result.sentinelId = sentinelId;
-    }
-    if (sentinelLibraryId != null) {
-      $result.sentinelLibraryId = sentinelLibraryId;
-    }
-    if (sentinelGeneratedId != null) {
-      $result.sentinelGeneratedId = sentinelGeneratedId;
     }
     if (name != null) {
       $result.name = name;
@@ -5181,12 +5296,9 @@ class AppBinary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sentinelId', subBuilder: $8.InternalID.create)
-    ..aInt64(3, _omitFieldNames ? '' : 'sentinelLibraryId')
-    ..aOS(4, _omitFieldNames ? '' : 'sentinelGeneratedId')
-    ..aOS(5, _omitFieldNames ? '' : 'name')
-    ..aInt64(6, _omitFieldNames ? '' : 'sizeBytes')
-    ..aOB(7, _omitFieldNames ? '' : 'needToken')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
+    ..aOB(4, _omitFieldNames ? '' : 'needToken')
     ..pc<AppBinaryFile>(10, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: AppBinaryFile.create)
     ..hasRequiredFields = false
   ;
@@ -5224,63 +5336,34 @@ class AppBinary extends $pb.GeneratedMessage {
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $8.InternalID get sentinelId => $_getN(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set sentinelId($8.InternalID v) { setField(2, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSentinelId() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSentinelId() => clearField(2);
-  @$pb.TagNumber(2)
-  $8.InternalID ensureSentinelId() => $_ensure(1);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get sentinelLibraryId => $_getI64(2);
+  $fixnum.Int64 get sizeBytes => $_getI64(2);
   @$pb.TagNumber(3)
-  set sentinelLibraryId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSentinelLibraryId() => $_has(2);
+  $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSentinelLibraryId() => clearField(3);
+  void clearSizeBytes() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get sentinelGeneratedId => $_getSZ(3);
+  $core.bool get needToken => $_getBF(3);
   @$pb.TagNumber(4)
-  set sentinelGeneratedId($core.String v) { $_setString(3, v); }
+  set needToken($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasSentinelGeneratedId() => $_has(3);
+  $core.bool hasNeedToken() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSentinelGeneratedId() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get name => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set name($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasName() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearName() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $fixnum.Int64 get sizeBytes => $_getI64(5);
-  @$pb.TagNumber(6)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasSizeBytes() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearSizeBytes() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.bool get needToken => $_getBF(6);
-  @$pb.TagNumber(7)
-  set needToken($core.bool v) { $_setBool(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasNeedToken() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearNeedToken() => clearField(7);
+  void clearNeedToken() => clearField(4);
 
   @$pb.TagNumber(10)
-  $core.List<AppBinaryFile> get files => $_getList(7);
+  $core.List<AppBinaryFile> get files => $_getList(4);
 }
 
 class AppBinaryFile extends $pb.GeneratedMessage {
@@ -5365,7 +5448,7 @@ class AppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSha256() => clearField(3);
 
-  /// should be path-joined when AppBinary.need_token is false
+  /// should be path-joined to download_url when need_token is false
   @$pb.TagNumber(4)
   $core.String get serverFilePath => $_getSZ(3);
   @$pb.TagNumber(4)

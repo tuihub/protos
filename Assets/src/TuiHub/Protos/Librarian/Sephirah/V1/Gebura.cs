@@ -95,185 +95,191 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg5kZXZpY2VJZEZpbHRlciJ4ChBM",
             "aXN0QXBwc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi52",
             "MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEi4KBGFwcHMYAiADKAsyGi5saWJy",
-            "YXJpYW4uc2VwaGlyYWgudjEuQXBwUgRhcHBzIssDCiBSZXBvcnRTZW50aW5l",
+            "YXJpYW4uc2VwaGlyYWgudjEuQXBwUgRhcHBzIpgECiBSZXBvcnRTZW50aW5l",
             "bEluZm9ybWF0aW9uUmVxdWVzdBIcCglob3N0bmFtZXMYASADKAlSCWhvc3Ru",
             "YW1lcxJcCgZzY2hlbWUYAiABKA4yRC5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
             "UmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VydmVyU2NoZW1l",
-            "UgZzY2hlbWUSJAoOZ2V0X3Rva2VuX3BhdGgYAyABKAlSDGdldFRva2VuUGF0",
-            "aBJlCglsaWJyYXJpZXMYBCADKAsyRy5saWJyYXJpYW4uc2VwaGlyYWgudjEu",
-            "UmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVlc3QuU2VudGluZWxMaWJy",
-            "YXJ5UglsaWJyYXJpZXMaPgoPU2VudGluZWxMaWJyYXJ5Eg4KAmlkGAEgASgD",
-            "UgJpZBIbCgliYXNlX3BhdGgYAiABKAlSCGJhc2VQYXRoIl4KDFNlcnZlclNj",
-            "aGVtZRIdChlTRVJWRVJfU0NIRU1FX1VOU1BFQ0lGSUVEEAASFgoSU0VSVkVS",
-            "X1NDSEVNRV9IVFRQEAESFwoTU0VSVkVSX1NDSEVNRV9IVFRQUxACIiMKIVJl",
-            "cG9ydFNlbnRpbmVsSW5mb3JtYXRpb25SZXNwb25zZSJfChhSZXBvcnRBcHBC",
-            "aW5hcmllc1JlcXVlc3QSQwoMYXBwX2JpbmFyaWVzGAEgAygLMiAubGlicmFy",
-            "aWFuLnNlcGhpcmFoLnYxLkFwcEJpbmFyeVILYXBwQmluYXJpZXMiGwoZUmVw",
-            "b3J0QXBwQmluYXJpZXNSZXNwb25zZSJ9ChBBc3NpZ25BcHBSZXF1ZXN0EjgK",
-            "C2FwcF9pbmZvX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
-            "CWFwcEluZm9JZBIvCgZhcHBfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFIFYXBwSWQiEwoRQXNzaWduQXBwUmVzcG9uc2UiRQoSVW5Bc3Np",
-            "Z25BcHBSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5J",
-            "bnRlcm5hbElEUgVhcHBJZCIVChNVbkFzc2lnbkFwcFJlc3BvbnNlIkQKGERv",
-            "d25sb2FkQXBwQmluYXJ5UmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgJpZCJyChlEb3dubG9hZEFwcEJpbmFyeVJlc3Bv",
-            "bnNlEj8KCmFwcF9iaW5hcnkYASABKAsyIC5saWJyYXJpYW4uc2VwaGlyYWgu",
-            "djEuQXBwQmluYXJ5UglhcHBCaW5hcnkSFAoFdG9rZW4YAiABKAlSBXRva2Vu",
-            "IrYBChRBZGRBcHBSdW5UaW1lUmVxdWVzdBIvCgZhcHBfaWQYASABKAsyGC5s",
-            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIFYXBwSWQSNQoJZGV2aWNlX2lkGAIg",
-            "ASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCGRldmljZUlkEjYKCnRp",
-            "bWVfcmFuZ2UYAyABKAsyFy5saWJyYXJpYW4udjEuVGltZVJhbmdlUgl0aW1l",
-            "UmFuZ2UiFwoVQWRkQXBwUnVuVGltZVJlc3BvbnNlIuIBChRTdW1BcHBSdW5U",
-            "aW1lUmVxdWVzdBI8Cg1hcHBfaWRfZmlsdGVyGAEgAygLMhgubGlicmFyaWFu",
-            "LnYxLkludGVybmFsSURSC2FwcElkRmlsdGVyEkIKEGRldmljZV9pZF9maWx0",
-            "ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOZGV2aWNlSWRG",
-            "aWx0ZXISSAoQdGltZV9hZ2dyZWdhdGlvbhgDIAEoCzIdLmxpYnJhcmlhbi52",
-            "MS5UaW1lQWdncmVnYXRpb25SD3RpbWVBZ2dyZWdhdGlvbiLrAQoVU3VtQXBw",
-            "UnVuVGltZVJlc3BvbnNlEloKD3J1bl90aW1lX2dyb3VwcxgBIAMoCzIyLmxp",
-            "YnJhcmlhbi5zZXBoaXJhaC52MS5TdW1BcHBSdW5UaW1lUmVzcG9uc2UuR3Jv",
-            "dXBSDXJ1blRpbWVHcm91cHMadgoFR3JvdXASNgoKdGltZV9yYW5nZRgBIAEo",
-            "CzIXLmxpYnJhcmlhbi52MS5UaW1lUmFuZ2VSCXRpbWVSYW5nZRI1CghkdXJh",
-            "dGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIIZHVyYXRp",
-            "b24ilQEKGFVwbG9hZEFwcFNhdmVGaWxlUmVxdWVzdBJICg1maWxlX21ldGFk",
-            "YXRhGAEgASgLMiMubGlicmFyaWFuLnNlcGhpcmFoLnYxLkZpbGVNZXRhZGF0",
-            "YVIMZmlsZU1ldGFkYXRhEi8KBmFwcF9pZBgCIAEoCzIYLmxpYnJhcmlhbi52",
-            "MS5JbnRlcm5hbElEUgVhcHBJZCI+ChlVcGxvYWRBcHBTYXZlRmlsZVJlc3Bv",
-            "bnNlEiEKDHVwbG9hZF90b2tlbhgBIAEoCVILdXBsb2FkVG9rZW4iRgoaRG93",
-            "bmxvYWRBcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJp",
-            "YW4udjEuSW50ZXJuYWxJRFICaWQiRAobRG93bmxvYWRBcHBTYXZlRmlsZVJl",
-            "c3BvbnNlEiUKDmRvd25sb2FkX3Rva2VuGAIgASgJUg1kb3dubG9hZFRva2Vu",
-            "IkoKF0xpc3RBcHBTYXZlRmlsZXNSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIY",
-            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgVhcHBJZCLyAQoYTGlzdEFwcFNh",
-            "dmVGaWxlc1Jlc3BvbnNlElAKB3Jlc3VsdHMYASADKAsyNi5saWJyYXJpYW4u",
-            "c2VwaGlyYWgudjEuTGlzdEFwcFNhdmVGaWxlc1Jlc3BvbnNlLlJlc3VsdFIH",
-            "cmVzdWx0cxqDAQoGUmVzdWx0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
-            "LkludGVybmFsSURSAmlkEjcKBGZpbGUYAiABKAsyIy5saWJyYXJpYW4uc2Vw",
-            "aGlyYWgudjEuRmlsZU1ldGFkYXRhUgRmaWxlEhYKBnBpbm5lZBgDIAEoCFIG",
-            "cGlubmVkIkQKGFJlbW92ZUFwcFNhdmVGaWxlUmVxdWVzdBIoCgJpZBgBIAEo",
-            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIbChlSZW1vdmVBcHBT",
-            "YXZlRmlsZVJlc3BvbnNlIkEKFVBpbkFwcFNhdmVGaWxlUmVxdWVzdBIoCgJp",
-            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIYChZQaW5B",
-            "cHBTYXZlRmlsZVJlc3BvbnNlIkMKF1VucGluQXBwU2F2ZUZpbGVSZXF1ZXN0",
-            "EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIhoK",
-            "GFVucGluQXBwU2F2ZUZpbGVSZXNwb25zZSL3AQodU2V0QXBwU2F2ZUZpbGVD",
-            "YXBhY2l0eVJlcXVlc3QSFAoEdXNlchgBIAEoCEgAUgR1c2VyEjEKBmFwcF9p",
-            "ZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSBWFwcElkEhQK",
-            "BWNvdW50GAQgASgDUgVjb3VudBIdCgpzaXplX2J5dGVzGAUgASgDUglzaXpl",
-            "Qnl0ZXMSTgoIc3RyYXRlZ3kYBiABKA4yMi5saWJyYXJpYW4uc2VwaGlyYWgu",
-            "djEuQXBwU2F2ZUZpbGVDYXBhY2l0eVN0cmF0ZWd5UghzdHJhdGVneUIICgZl",
-            "bnRpdHkiIAoeU2V0QXBwU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNlIskBCiRT",
-            "ZXRBcHBTYXZlRmlsZUNhcGFjaXR5RGVmYXVsdFJlcXVlc3QSEgoDYXBwGAEg",
-            "ASgISABSA2FwcBIUCgVjb3VudBgEIAEoA1IFY291bnQSHQoKc2l6ZV9ieXRl",
-            "cxgFIAEoA1IJc2l6ZUJ5dGVzEk4KCHN0cmF0ZWd5GAYgASgOMjIubGlicmFy",
-            "aWFuLnNlcGhpcmFoLnYxLkFwcFNhdmVGaWxlQ2FwYWNpdHlTdHJhdGVneVII",
-            "c3RyYXRlZ3lCCAoGZW50aXR5IicKJVNldEFwcFNhdmVGaWxlQ2FwYWNpdHlE",
-            "ZWZhdWx0UmVzcG9uc2UicgodR2V0QXBwU2F2ZUZpbGVDYXBhY2l0eVJlcXVl",
-            "c3QSFAoEdXNlchgBIAEoCEgAUgR1c2VyEjEKBmFwcF9pZBgCIAEoCzIYLmxp",
-            "YnJhcmlhbi52MS5JbnRlcm5hbElESABSBWFwcElkQggKBmVudGl0eSKlAQoe",
-            "R2V0QXBwU2F2ZUZpbGVDYXBhY2l0eVJlc3BvbnNlEhQKBWNvdW50GAEgASgD",
-            "UgVjb3VudBIdCgpzaXplX2J5dGVzGAIgASgDUglzaXplQnl0ZXMSTgoIc3Ry",
-            "YXRlZ3kYAyABKA4yMi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwU2F2ZUZp",
-            "bGVDYXBhY2l0eVN0cmF0ZWd5UghzdHJhdGVneSJECiRHZXRBcHBTYXZlRmls",
-            "ZUNhcGFjaXR5RGVmYXVsdFJlcXVlc3QSEgoDYXBwGAEgASgISABSA2FwcEII",
-            "CgZlbnRpdHkirAEKJUdldEFwcFNhdmVGaWxlQ2FwYWNpdHlEZWZhdWx0UmVz",
+            "UgZzY2hlbWUSKwoSZ2V0X3Rva2VuX3VybF9wYXRoGAMgASgJUg9nZXRUb2tl",
+            "blVybFBhdGgSMwoWZG93bmxvYWRfZmlsZV91cmxfcGF0aBgEIAEoCVITZG93",
+            "bmxvYWRGaWxlVXJsUGF0aBJlCglsaWJyYXJpZXMYBSADKAsyRy5saWJyYXJp",
+            "YW4uc2VwaGlyYWgudjEuUmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVl",
+            "c3QuU2VudGluZWxMaWJyYXJ5UglsaWJyYXJpZXMaTwoPU2VudGluZWxMaWJy",
+            "YXJ5Eg4KAmlkGAEgASgDUgJpZBIsChJkb3dubG9hZF9iYXNlX3BhdGgYAiAB",
+            "KAlSEGRvd25sb2FkQmFzZVBhdGgiXgoMU2VydmVyU2NoZW1lEh0KGVNFUlZF",
+            "Ul9TQ0hFTUVfVU5TUEVDSUZJRUQQABIWChJTRVJWRVJfU0NIRU1FX0hUVFAQ",
+            "ARIXChNTRVJWRVJfU0NIRU1FX0hUVFBTEAIiIwohUmVwb3J0U2VudGluZWxJ",
+            "bmZvcm1hdGlvblJlc3BvbnNlIocDChhSZXBvcnRBcHBCaW5hcmllc1JlcXVl",
+            "c3QSdQoVc2VudGluZWxfYXBwX2JpbmFyaWVzGAEgAygLMkEubGlicmFyaWFu",
+            "LnNlcGhpcmFoLnYxLlJlcG9ydEFwcEJpbmFyaWVzUmVxdWVzdC5TZW50aW5l",
+            "bEFwcEJpbmFyeVITc2VudGluZWxBcHBCaW5hcmllcxrzAQoRU2VudGluZWxB",
+            "cHBCaW5hcnkSPwoKYXBwX2JpbmFyeRgBIAEoCzIgLmxpYnJhcmlhbi5zZXBo",
+            "aXJhaC52MS5BcHBCaW5hcnlSCWFwcEJpbmFyeRI5CgtzZW50aW5lbF9pZBgC",
+            "IAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgpzZW50aW5lbElkEi4K",
+            "E3NlbnRpbmVsX2xpYnJhcnlfaWQYAyABKANSEXNlbnRpbmVsTGlicmFyeUlk",
+            "EjIKFXNlbnRpbmVsX2dlbmVyYXRlZF9pZBgEIAEoCVITc2VudGluZWxHZW5l",
+            "cmF0ZWRJZCIbChlSZXBvcnRBcHBCaW5hcmllc1Jlc3BvbnNlIn0KEEFzc2ln",
+            "bkFwcFJlcXVlc3QSOAoLYXBwX2luZm9faWQYASABKAsyGC5saWJyYXJpYW4u",
+            "djEuSW50ZXJuYWxJRFIJYXBwSW5mb0lkEi8KBmFwcF9pZBgCIAEoCzIYLmxp",
+            "YnJhcmlhbi52MS5JbnRlcm5hbElEUgVhcHBJZCITChFBc3NpZ25BcHBSZXNw",
+            "b25zZSJFChJVbkFzc2lnbkFwcFJlcXVlc3QSLwoGYXBwX2lkGAEgASgLMhgu",
+            "bGlicmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkIhUKE1VuQXNzaWduQXBw",
+            "UmVzcG9uc2UiRAoYRG93bmxvYWRBcHBCaW5hcnlSZXF1ZXN0EigKAmlkGAEg",
+            "ASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkIqQBChlEb3dubG9h",
+            "ZEFwcEJpbmFyeVJlc3BvbnNlEj8KCmFwcF9iaW5hcnkYASABKAsyIC5saWJy",
+            "YXJpYW4uc2VwaGlyYWgudjEuQXBwQmluYXJ5UglhcHBCaW5hcnkSIQoMZG93",
+            "bmxvYWRfdXJsGAIgASgJUgtkb3dubG9hZFVybBIZCgV0b2tlbhgDIAEoCUgA",
+            "UgV0b2tlbogBAUIICgZfdG9rZW4itgEKFEFkZEFwcFJ1blRpbWVSZXF1ZXN0",
+            "Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgVh",
+            "cHBJZBI1CglkZXZpY2VfaWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
+            "YWxJRFIIZGV2aWNlSWQSNgoKdGltZV9yYW5nZRgDIAEoCzIXLmxpYnJhcmlh",
+            "bi52MS5UaW1lUmFuZ2VSCXRpbWVSYW5nZSIXChVBZGRBcHBSdW5UaW1lUmVz",
+            "cG9uc2Ui4gEKFFN1bUFwcFJ1blRpbWVSZXF1ZXN0EjwKDWFwcF9pZF9maWx0",
+            "ZXIYASADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFILYXBwSWRGaWx0",
+            "ZXISQgoQZGV2aWNlX2lkX2ZpbHRlchgCIAMoCzIYLmxpYnJhcmlhbi52MS5J",
+            "bnRlcm5hbElEUg5kZXZpY2VJZEZpbHRlchJIChB0aW1lX2FnZ3JlZ2F0aW9u",
+            "GAMgASgLMh0ubGlicmFyaWFuLnYxLlRpbWVBZ2dyZWdhdGlvblIPdGltZUFn",
+            "Z3JlZ2F0aW9uIusBChVTdW1BcHBSdW5UaW1lUmVzcG9uc2USWgoPcnVuX3Rp",
+            "bWVfZ3JvdXBzGAEgAygLMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLlN1bUFw",
+            "cFJ1blRpbWVSZXNwb25zZS5Hcm91cFINcnVuVGltZUdyb3Vwcxp2CgVHcm91",
+            "cBI2Cgp0aW1lX3JhbmdlGAEgASgLMhcubGlicmFyaWFuLnYxLlRpbWVSYW5n",
+            "ZVIJdGltZVJhbmdlEjUKCGR1cmF0aW9uGAIgASgLMhkuZ29vZ2xlLnByb3Rv",
+            "YnVmLkR1cmF0aW9uUghkdXJhdGlvbiKVAQoYVXBsb2FkQXBwU2F2ZUZpbGVS",
+            "ZXF1ZXN0EkgKDWZpbGVfbWV0YWRhdGEYASABKAsyIy5saWJyYXJpYW4uc2Vw",
+            "aGlyYWgudjEuRmlsZU1ldGFkYXRhUgxmaWxlTWV0YWRhdGESLwoGYXBwX2lk",
+            "GAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBWFwcElkIj4KGVVw",
+            "bG9hZEFwcFNhdmVGaWxlUmVzcG9uc2USIQoMdXBsb2FkX3Rva2VuGAEgASgJ",
+            "Ugt1cGxvYWRUb2tlbiJGChpEb3dubG9hZEFwcFNhdmVGaWxlUmVxdWVzdBIo",
+            "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCJEChtE",
+            "b3dubG9hZEFwcFNhdmVGaWxlUmVzcG9uc2USJQoOZG93bmxvYWRfdG9rZW4Y",
+            "AiABKAlSDWRvd25sb2FkVG9rZW4iSgoXTGlzdEFwcFNhdmVGaWxlc1JlcXVl",
+            "c3QSLwoGYXBwX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
+            "BWFwcElkIvIBChhMaXN0QXBwU2F2ZUZpbGVzUmVzcG9uc2USUAoHcmVzdWx0",
+            "cxgBIAMoCzI2LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5MaXN0QXBwU2F2ZUZp",
+            "bGVzUmVzcG9uc2UuUmVzdWx0UgdyZXN1bHRzGoMBCgZSZXN1bHQSKAoCaWQY",
+            "ASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSNwoEZmlsZRgC",
+            "IAEoCzIjLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5GaWxlTWV0YWRhdGFSBGZp",
+            "bGUSFgoGcGlubmVkGAMgASgIUgZwaW5uZWQiRAoYUmVtb3ZlQXBwU2F2ZUZp",
+            "bGVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFs",
+            "SURSAmlkIhsKGVJlbW92ZUFwcFNhdmVGaWxlUmVzcG9uc2UiQQoVUGluQXBw",
+            "U2F2ZUZpbGVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLklu",
+            "dGVybmFsSURSAmlkIhgKFlBpbkFwcFNhdmVGaWxlUmVzcG9uc2UiQwoXVW5w",
+            "aW5BcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4u",
+            "djEuSW50ZXJuYWxJRFICaWQiGgoYVW5waW5BcHBTYXZlRmlsZVJlc3BvbnNl",
+            "IvcBCh1TZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVxdWVzdBIUCgR1c2VyGAEg",
+            "ASgISABSBHVzZXISMQoGYXBwX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLklu",
+            "dGVybmFsSURIAFIFYXBwSWQSFAoFY291bnQYBCABKANSBWNvdW50Eh0KCnNp",
+            "emVfYnl0ZXMYBSABKANSCXNpemVCeXRlcxJOCghzdHJhdGVneRgGIAEoDjIy",
+            "LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBTYXZlRmlsZUNhcGFjaXR5U3Ry",
+            "YXRlZ3lSCHN0cmF0ZWd5QggKBmVudGl0eSIgCh5TZXRBcHBTYXZlRmlsZUNh",
+            "cGFjaXR5UmVzcG9uc2UiyQEKJFNldEFwcFNhdmVGaWxlQ2FwYWNpdHlEZWZh",
+            "dWx0UmVxdWVzdBISCgNhcHAYASABKAhIAFIDYXBwEhQKBWNvdW50GAQgASgD",
+            "UgVjb3VudBIdCgpzaXplX2J5dGVzGAUgASgDUglzaXplQnl0ZXMSTgoIc3Ry",
+            "YXRlZ3kYBiABKA4yMi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwU2F2ZUZp",
+            "bGVDYXBhY2l0eVN0cmF0ZWd5UghzdHJhdGVneUIICgZlbnRpdHkiJwolU2V0",
+            "QXBwU2F2ZUZpbGVDYXBhY2l0eURlZmF1bHRSZXNwb25zZSJyCh1HZXRBcHBT",
+            "YXZlRmlsZUNhcGFjaXR5UmVxdWVzdBIUCgR1c2VyGAEgASgISABSBHVzZXIS",
+            "MQoGYXBwX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIF",
+            "YXBwSWRCCAoGZW50aXR5IqUBCh5HZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVz",
             "cG9uc2USFAoFY291bnQYASABKANSBWNvdW50Eh0KCnNpemVfYnl0ZXMYAiAB",
             "KANSCXNpemVCeXRlcxJOCghzdHJhdGVneRgDIAEoDjIyLmxpYnJhcmlhbi5z",
             "ZXBoaXJhaC52MS5BcHBTYXZlRmlsZUNhcGFjaXR5U3RyYXRlZ3lSCHN0cmF0",
-            "ZWd5ImoKGkNyZWF0ZVNoYXJlZEFwcFNhdmVSZXF1ZXN0EkwKD3NoYXJlZF9h",
-            "cHBfc2F2ZRgBIAEoCzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TaGFyZWRB",
-            "cHBTYXZlUg1zaGFyZWRBcHBTYXZlIkcKG0NyZWF0ZVNoYXJlZEFwcFNhdmVS",
-            "ZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
-            "UgJpZCJqChpVcGRhdGVTaGFyZWRBcHBTYXZlUmVxdWVzdBJMCg9zaGFyZWRf",
-            "YXBwX3NhdmUYASABKAsyJC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hhcmVk",
-            "QXBwU2F2ZVINc2hhcmVkQXBwU2F2ZSIdChtVcGRhdGVTaGFyZWRBcHBTYXZl",
-            "UmVzcG9uc2UizgEKGUxpc3RTaGFyZWRBcHBTYXZlc1JlcXVlc3QSMwoGcGFn",
-            "aW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2lu",
-            "ZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJ",
-            "RFIIaWRGaWx0ZXISRQoSYXBwX2luZm9faWRfZmlsdGVyGAMgAygLMhgubGli",
-            "cmFyaWFuLnYxLkludGVybmFsSURSD2FwcEluZm9JZEZpbHRlciKiAQoaTGlz",
-            "dFNoYXJlZEFwcFNhdmVzUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGli",
-            "cmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSTgoQc2hhcmVkX2Fw",
-            "cF9zYXZlcxgCIAMoCzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5TaGFyZWRB",
-            "cHBTYXZlUg5zaGFyZWRBcHBTYXZlcyJGChpSZW1vdmVTaGFyZWRBcHBTYXZl",
-            "UmVxdWVzdBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
-            "UgJpZCIdChtSZW1vdmVTaGFyZWRBcHBTYXZlUmVzcG9uc2UiewoeQ3JlYXRl",
-            "U2hhcmVkQXBwU2F2ZUZpbGVSZXF1ZXN0ElkKFHNoYXJlZF9hcHBfc2F2ZV9m",
-            "aWxlGAEgASgLMigubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNh",
-            "dmVGaWxlUhFzaGFyZWRBcHBTYXZlRmlsZSJLCh9DcmVhdGVTaGFyZWRBcHBT",
-            "YXZlRmlsZVJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLklu",
-            "dGVybmFsSURSAmlkInsKHlVwZGF0ZVNoYXJlZEFwcFNhdmVGaWxlUmVxdWVz",
-            "dBJZChRzaGFyZWRfYXBwX3NhdmVfZmlsZRgBIAEoCzIoLmxpYnJhcmlhbi5z",
-            "ZXBoaXJhaC52MS5TaGFyZWRBcHBTYXZlRmlsZVIRc2hhcmVkQXBwU2F2ZUZp",
-            "bGUiIQofVXBkYXRlU2hhcmVkQXBwU2F2ZUZpbGVSZXNwb25zZSKfAgodTGlz",
-            "dFNoYXJlZEFwcFNhdmVGaWxlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsu",
-            "bGlicmFyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0",
-            "ZXIYAiADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXIS",
-            "UgoZc2hhcmVkX2FwcF9zYXZlX2lkX2ZpbHRlchgDIAMoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUhVzaGFyZWRBcHBTYXZlSWRGaWx0ZXISPgoOdXNl",
-            "cl9pZF9maWx0ZXIYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIM",
-            "dXNlcklkRmlsdGVyIrMBCh5MaXN0U2hhcmVkQXBwU2F2ZUZpbGVzUmVzcG9u",
-            "c2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFuLnYxLlBhZ2luZ1Jlc3Bv",
-            "bnNlUgZwYWdpbmcSWwoVc2hhcmVkX2FwcF9zYXZlX2ZpbGVzGAIgAygLMigu",
-            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVGaWxlUhJzaGFy",
-            "ZWRBcHBTYXZlRmlsZXMiSgoeUmVtb3ZlU2hhcmVkQXBwU2F2ZUZpbGVSZXF1",
-            "ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlk",
-            "IiEKH1JlbW92ZVNoYXJlZEFwcFNhdmVGaWxlUmVzcG9uc2UiGgoYTGlzdEFw",
-            "cENhdGVnb3JpZXNSZXF1ZXN0ImYKGUxpc3RBcHBDYXRlZ29yaWVzUmVzcG9u",
-            "c2USSQoOYXBwX2NhdGVnb3JpZXMYASADKAsyIi5saWJyYXJpYW4uc2VwaGly",
-            "YWgudjEuQXBwQ2F0ZWdvcnlSDWFwcENhdGVnb3JpZXMiYQoYQ3JlYXRlQXBw",
-            "Q2F0ZWdvcnlSZXF1ZXN0EkUKDGFwcF9jYXRlZ29yeRgBIAEoCzIiLmxpYnJh",
-            "cmlhbi5zZXBoaXJhaC52MS5BcHBDYXRlZ29yeVILYXBwQ2F0ZWdvcnkiRQoZ",
-            "Q3JlYXRlQXBwQ2F0ZWdvcnlSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJh",
-            "cmlhbi52MS5JbnRlcm5hbElEUgJpZCJhChhVcGRhdGVBcHBDYXRlZ29yeVJl",
-            "cXVlc3QSRQoMYXBwX2NhdGVnb3J5GAEgASgLMiIubGlicmFyaWFuLnNlcGhp",
-            "cmFoLnYxLkFwcENhdGVnb3J5UgthcHBDYXRlZ29yeSIbChlVcGRhdGVBcHBD",
-            "YXRlZ29yeVJlc3BvbnNlIkQKGFJlbW92ZUFwcENhdGVnb3J5UmVxdWVzdBIo",
-            "CgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZCIbChlS",
-            "ZW1vdmVBcHBDYXRlZ29yeVJlc3BvbnNlIrACCgNBcHASKAoCaWQYASABKAsy",
-            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIE",
-            "bmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24STgoUYXNz",
-            "aWduZWRfYXBwX2luZm9faWQYBCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJREgAUhFhc3NpZ25lZEFwcEluZm9JZIgBARI6CglkZXZpY2VfaWQYBSAB",
-            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgBUghkZXZpY2VJZIgBARIW",
-            "CgZwdWJsaWMYCiABKAhSBnB1YmxpY0IXChVfYXNzaWduZWRfYXBwX2luZm9f",
-            "aWRCDAoKX2RldmljZV9pZCLiAgoJQXBwQmluYXJ5EigKAmlkGAEgASgLMhgu",
-            "bGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEjkKC3NlbnRpbmVsX2lkGAIg",
-            "ASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCnNlbnRpbmVsSWQSLgoT",
-            "c2VudGluZWxfbGlicmFyeV9pZBgDIAEoA1IRc2VudGluZWxMaWJyYXJ5SWQS",
-            "MgoVc2VudGluZWxfZ2VuZXJhdGVkX2lkGAQgASgJUhNzZW50aW5lbEdlbmVy",
-            "YXRlZElkEhIKBG5hbWUYBSABKAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgGIAEo",
-            "A1IJc2l6ZUJ5dGVzEh0KCm5lZWRfdG9rZW4YByABKAhSCW5lZWRUb2tlbhI6",
-            "CgVmaWxlcxgKIAMoCzIkLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5h",
-            "cnlGaWxlUgVmaWxlcyKEAQoNQXBwQmluYXJ5RmlsZRISCgRuYW1lGAEgASgJ",
-            "UgRuYW1lEh0KCnNpemVfYnl0ZXMYAiABKANSCXNpemVCeXRlcxIWCgZzaGEy",
-            "NTYYAyABKAxSBnNoYTI1NhIoChBzZXJ2ZXJfZmlsZV9wYXRoGAQgASgJUg5z",
-            "ZXJ2ZXJGaWxlUGF0aCJuChJBcHBCaW5hcnlGaWxlQ2h1bmsSIQoMb2Zmc2V0",
-            "X2J5dGVzGAEgASgDUgtvZmZzZXRCeXRlcxIdCgpzaXplX2J5dGVzGAIgASgD",
-            "UglzaXplQnl0ZXMSFgoGc2hhMjU2GAMgASgMUgZzaGEyNTYiugEKC0FwcENh",
-            "dGVnb3J5EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
-            "AmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSMQoHYXBwX2lkcxgDIAMoCzIYLmxp",
-            "YnJhcmlhbi52MS5JbnRlcm5hbElEUgZhcHBJZHMSOgoMYXBwX2luZm9faWRz",
-            "GAQgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCmFwcEluZm9JZHMi",
-            "qQEKDVNoYXJlZEFwcFNhdmUSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEu",
-            "SW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlw",
-            "dGlvbhgDIAEoCVILZGVzY3JpcHRpb24SOAoLYXBwX2luZm9faWQYBCABKAsy",
-            "GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIJYXBwSW5mb0lkItoCChFTaGFy",
-            "ZWRBcHBTYXZlRmlsZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRl",
+            "ZWd5IkQKJEdldEFwcFNhdmVGaWxlQ2FwYWNpdHlEZWZhdWx0UmVxdWVzdBIS",
+            "CgNhcHAYASABKAhIAFIDYXBwQggKBmVudGl0eSKsAQolR2V0QXBwU2F2ZUZp",
+            "bGVDYXBhY2l0eURlZmF1bHRSZXNwb25zZRIUCgVjb3VudBgBIAEoA1IFY291",
+            "bnQSHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEk4KCHN0cmF0ZWd5",
+            "GAMgASgOMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcFNhdmVGaWxlQ2Fw",
+            "YWNpdHlTdHJhdGVneVIIc3RyYXRlZ3kiagoaQ3JlYXRlU2hhcmVkQXBwU2F2",
+            "ZVJlcXVlc3QSTAoPc2hhcmVkX2FwcF9zYXZlGAEgASgLMiQubGlicmFyaWFu",
+            "LnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVSDXNoYXJlZEFwcFNhdmUiRwob",
+            "Q3JlYXRlU2hhcmVkQXBwU2F2ZVJlc3BvbnNlEigKAmlkGAEgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSAmlkImoKGlVwZGF0ZVNoYXJlZEFwcFNh",
+            "dmVSZXF1ZXN0EkwKD3NoYXJlZF9hcHBfc2F2ZRgBIAEoCzIkLmxpYnJhcmlh",
+            "bi5zZXBoaXJhaC52MS5TaGFyZWRBcHBTYXZlUg1zaGFyZWRBcHBTYXZlIh0K",
+            "G1VwZGF0ZVNoYXJlZEFwcFNhdmVSZXNwb25zZSLOAQoZTGlzdFNoYXJlZEFw",
+            "cFNhdmVzUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEu",
+            "UGFnaW5nUmVxdWVzdFIGcGFnaW5nEjUKCWlkX2ZpbHRlchgCIAMoCzIYLmxp",
+            "YnJhcmlhbi52MS5JbnRlcm5hbElEUghpZEZpbHRlchJFChJhcHBfaW5mb19p",
+            "ZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIPYXBw",
+            "SW5mb0lkRmlsdGVyIqIBChpMaXN0U2hhcmVkQXBwU2F2ZXNSZXNwb25zZRI0",
+            "CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW4udjEuUGFnaW5nUmVzcG9uc2VS",
+            "BnBhZ2luZxJOChBzaGFyZWRfYXBwX3NhdmVzGAIgAygLMiQubGlicmFyaWFu",
+            "LnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVSDnNoYXJlZEFwcFNhdmVzIkYK",
+            "GlJlbW92ZVNoYXJlZEFwcFNhdmVSZXF1ZXN0EigKAmlkGAEgASgLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSAmlkIh0KG1JlbW92ZVNoYXJlZEFwcFNh",
+            "dmVSZXNwb25zZSJ7Ch5DcmVhdGVTaGFyZWRBcHBTYXZlRmlsZVJlcXVlc3QS",
+            "WQoUc2hhcmVkX2FwcF9zYXZlX2ZpbGUYASABKAsyKC5saWJyYXJpYW4uc2Vw",
+            "aGlyYWgudjEuU2hhcmVkQXBwU2F2ZUZpbGVSEXNoYXJlZEFwcFNhdmVGaWxl",
+            "IksKH0NyZWF0ZVNoYXJlZEFwcFNhdmVGaWxlUmVzcG9uc2USKAoCaWQYASAB",
+            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQiewoeVXBkYXRlU2hh",
+            "cmVkQXBwU2F2ZUZpbGVSZXF1ZXN0ElkKFHNoYXJlZF9hcHBfc2F2ZV9maWxl",
+            "GAEgASgLMigubGlicmFyaWFuLnNlcGhpcmFoLnYxLlNoYXJlZEFwcFNhdmVG",
+            "aWxlUhFzaGFyZWRBcHBTYXZlRmlsZSIhCh9VcGRhdGVTaGFyZWRBcHBTYXZl",
+            "RmlsZVJlc3BvbnNlIp8CCh1MaXN0U2hhcmVkQXBwU2F2ZUZpbGVzUmVxdWVz",
+            "dBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udjEuUGFnaW5nUmVxdWVz",
+            "dFIGcGFnaW5nEjUKCWlkX2ZpbHRlchgCIAMoCzIYLmxpYnJhcmlhbi52MS5J",
+            "bnRlcm5hbElEUghpZEZpbHRlchJSChlzaGFyZWRfYXBwX3NhdmVfaWRfZmls",
+            "dGVyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSFXNoYXJlZEFw",
+            "cFNhdmVJZEZpbHRlchI+Cg51c2VyX2lkX2ZpbHRlchgEIAMoCzIYLmxpYnJh",
+            "cmlhbi52MS5JbnRlcm5hbElEUgx1c2VySWRGaWx0ZXIiswEKHkxpc3RTaGFy",
+            "ZWRBcHBTYXZlRmlsZXNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJy",
+            "YXJpYW4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJbChVzaGFyZWRfYXBw",
+            "X3NhdmVfZmlsZXMYAiADKAsyKC5saWJyYXJpYW4uc2VwaGlyYWgudjEuU2hh",
+            "cmVkQXBwU2F2ZUZpbGVSEnNoYXJlZEFwcFNhdmVGaWxlcyJKCh5SZW1vdmVT",
+            "aGFyZWRBcHBTYXZlRmlsZVJlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJp",
+            "YW4udjEuSW50ZXJuYWxJRFICaWQiIQofUmVtb3ZlU2hhcmVkQXBwU2F2ZUZp",
+            "bGVSZXNwb25zZSIaChhMaXN0QXBwQ2F0ZWdvcmllc1JlcXVlc3QiZgoZTGlz",
+            "dEFwcENhdGVnb3JpZXNSZXNwb25zZRJJCg5hcHBfY2F0ZWdvcmllcxgBIAMo",
+            "CzIiLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBDYXRlZ29yeVINYXBwQ2F0",
+            "ZWdvcmllcyJhChhDcmVhdGVBcHBDYXRlZ29yeVJlcXVlc3QSRQoMYXBwX2Nh",
+            "dGVnb3J5GAEgASgLMiIubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcENhdGVn",
+            "b3J5UgthcHBDYXRlZ29yeSJFChlDcmVhdGVBcHBDYXRlZ29yeVJlc3BvbnNl",
+            "EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkImEK",
+            "GFVwZGF0ZUFwcENhdGVnb3J5UmVxdWVzdBJFCgxhcHBfY2F0ZWdvcnkYASAB",
+            "KAsyIi5saWJyYXJpYW4uc2VwaGlyYWgudjEuQXBwQ2F0ZWdvcnlSC2FwcENh",
+            "dGVnb3J5IhsKGVVwZGF0ZUFwcENhdGVnb3J5UmVzcG9uc2UiRAoYUmVtb3Zl",
+            "QXBwQ2F0ZWdvcnlSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYx",
+            "LkludGVybmFsSURSAmlkIhsKGVJlbW92ZUFwcENhdGVnb3J5UmVzcG9uc2Ui",
+            "sAIKA0FwcBIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
+            "UgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJ",
+            "UgtkZXNjcmlwdGlvbhJOChRhc3NpZ25lZF9hcHBfaW5mb19pZBgEIAEoCzIY",
+            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSEWFzc2lnbmVkQXBwSW5mb0lk",
+            "iAEBEjoKCWRldmljZV9pZBgFIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
+            "bElESAFSCGRldmljZUlkiAEBEhYKBnB1YmxpYxgKIAEoCFIGcHVibGljQhcK",
+            "FV9hc3NpZ25lZF9hcHBfaW5mb19pZEIMCgpfZGV2aWNlX2lkIsMBCglBcHBC",
+            "aW5hcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIC",
+            "aWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglz",
+            "aXplQnl0ZXMSHQoKbmVlZF90b2tlbhgEIAEoCFIJbmVlZFRva2VuEjoKBWZp",
+            "bGVzGAogAygLMiQubGlicmFyaWFuLnNlcGhpcmFoLnYxLkFwcEJpbmFyeUZp",
+            "bGVSBWZpbGVzIoQBCg1BcHBCaW5hcnlGaWxlEhIKBG5hbWUYASABKAlSBG5h",
+            "bWUSHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEhYKBnNoYTI1NhgD",
+            "IAEoDFIGc2hhMjU2EigKEHNlcnZlcl9maWxlX3BhdGgYBCABKAlSDnNlcnZl",
+            "ckZpbGVQYXRoIm4KEkFwcEJpbmFyeUZpbGVDaHVuaxIhCgxvZmZzZXRfYnl0",
+            "ZXMYASABKANSC29mZnNldEJ5dGVzEh0KCnNpemVfYnl0ZXMYAiABKANSCXNp",
+            "emVCeXRlcxIWCgZzaGEyNTYYAyABKAxSBnNoYTI1NiK6AQoLQXBwQ2F0ZWdv",
+            "cnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQS",
+            "EgoEbmFtZRgCIAEoCVIEbmFtZRIxCgdhcHBfaWRzGAMgAygLMhgubGlicmFy",
+            "aWFuLnYxLkludGVybmFsSURSBmFwcElkcxI6CgxhcHBfaW5mb19pZHMYBCAD",
+            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKYXBwSW5mb0lkcyKpAQoN",
+            "U2hhcmVkQXBwU2F2ZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRl",
             "cm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
-            "GAMgASgJUgtkZXNjcmlwdGlvbhIWCgZwdWJsaWMYBCABKAhSBnB1YmxpYxJF",
-            "ChJzaGFyZWRfYXBwX3NhdmVfaWQYBSABKAsyGC5saWJyYXJpYW4udjEuSW50",
-            "ZXJuYWxJRFIPc2hhcmVkQXBwU2F2ZUlkEkIKEGZpbGVfbWV0YWRhdGFfaWQY",
-            "BiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOZmlsZU1ldGFkYXRh",
-            "SWQSNgoHdXNlcl9pZBgHIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
-            "SABSBnVzZXJJZIgBAUIKCghfdXNlcl9pZCruAQobQXBwU2F2ZUZpbGVDYXBh",
-            "Y2l0eVN0cmF0ZWd5Ei8KK0FQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRF",
-            "R1lfVU5TUEVDSUZJRUQQABIoCiRBUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NU",
-            "UkFURUdZX0ZBSUwQARIxCi1BUFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFU",
-            "RUdZX0RFTEVURV9PTERFU1QQAhJBCj1BUFBfU0FWRV9GSUxFX0NBUEFDSVRZ",
-            "X1NUUkFURUdZX0RFTEVURV9PTERFU1RfVU5USUxfU0FUSVNGSUVEEANCXVo1",
-            "Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGly",
-            "YWgvdjE7djGqAiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5W",
-            "MWIGcHJvdG8z"));
+            "GAMgASgJUgtkZXNjcmlwdGlvbhI4CgthcHBfaW5mb19pZBgEIAEoCzIYLmxp",
+            "YnJhcmlhbi52MS5JbnRlcm5hbElEUglhcHBJbmZvSWQi2gIKEVNoYXJlZEFw",
+            "cFNhdmVGaWxlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFs",
+            "SURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyAB",
+            "KAlSC2Rlc2NyaXB0aW9uEhYKBnB1YmxpYxgEIAEoCFIGcHVibGljEkUKEnNo",
+            "YXJlZF9hcHBfc2F2ZV9pZBgFIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5h",
+            "bElEUg9zaGFyZWRBcHBTYXZlSWQSQgoQZmlsZV9tZXRhZGF0YV9pZBgGIAEo",
+            "CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUg5maWxlTWV0YWRhdGFJZBI2",
+            "Cgd1c2VyX2lkGAcgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIG",
+            "dXNlcklkiAEBQgoKCF91c2VyX2lkKu4BChtBcHBTYXZlRmlsZUNhcGFjaXR5",
+            "U3RyYXRlZ3kSLworQVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9TVFJBVEVHWV9V",
+            "TlNQRUNJRklFRBAAEigKJEFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRF",
+            "R1lfRkFJTBABEjEKLUFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lf",
+            "REVMRVRFX09MREVTVBACEkEKPUFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RS",
+            "QVRFR1lfREVMRVRFX09MREVTVF9VTlRJTF9TQVRJU0ZJRUQQA0JdWjVnaXRo",
+            "dWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92",
+            "MTt2MaoCI1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -309,16 +315,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsRequest.Parser, new[]{ "Paging", "OwnerIdFilter", "IdFilter", "AssignedAppInfoIdFilter", "DeviceIdFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsResponse.Parser, new[]{ "Paging", "Apps" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Parser, new[]{ "Hostnames", "Scheme", "GetTokenPath", "Libraries" }, null, new[]{ typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.ServerScheme) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary.Parser, new[]{ "Id", "BasePath" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Parser, new[]{ "Hostnames", "Scheme", "GetTokenUrlPath", "DownloadFileUrlPath", "Libraries" }, null, new[]{ typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.ServerScheme) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary.Parser, new[]{ "Id", "DownloadBasePath" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Parser, new[]{ "AppBinaries" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Parser, new[]{ "SentinelAppBinaries" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary.Parser, new[]{ "AppBinary", "SentinelId", "SentinelLibraryId", "SentinelGeneratedId" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AssignAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.AssignAppRequest.Parser, new[]{ "AppInfoId", "AppId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AssignAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.AssignAppResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppRequest.Parser, new[]{ "AppId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnAssignAppResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppBinaryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppBinaryRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppBinaryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppBinaryResponse.Parser, new[]{ "AppBinary", "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppBinaryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppBinaryResponse.Parser, new[]{ "AppBinary", "DownloadUrl", "Token" }, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppRunTimeRequest.Parser, new[]{ "AppId", "DeviceId", "TimeRange" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.AddAppRunTimeResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeRequest.Parser, new[]{ "AppIdFilter", "DeviceIdFilter", "TimeAggregation" }, null, null, null, null),
@@ -368,7 +374,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.RemoveAppCategoryResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.App), global::TuiHub.Protos.Librarian.Sephirah.V1.App.Parser, new[]{ "Id", "Name", "Description", "AssignedAppInfoId", "DeviceId", "Public" }, new[]{ "AssignedAppInfoId", "DeviceId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Parser, new[]{ "Id", "SentinelId", "SentinelLibraryId", "SentinelGeneratedId", "Name", "SizeBytes", "NeedToken", "Files" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Parser, new[]{ "Id", "Name", "SizeBytes", "NeedToken", "Files" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFile.Parser, new[]{ "Name", "SizeBytes", "Sha256", "ServerFilePath" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFileChunk), global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinaryFileChunk.Parser, new[]{ "OffsetBytes", "SizeBytes", "Sha256" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory), global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory.Parser, new[]{ "Id", "Name", "AppIds", "AppInfoIds" }, null, null, null, null),
@@ -7057,7 +7063,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public ReportSentinelInformationRequest(ReportSentinelInformationRequest other) : this() {
       hostnames_ = other.hostnames_.Clone();
       scheme_ = other.scheme_;
-      getTokenPath_ = other.getTokenPath_;
+      getTokenUrlPath_ = other.getTokenUrlPath_;
+      downloadFileUrlPath_ = other.downloadFileUrlPath_;
       libraries_ = other.libraries_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -7091,22 +7098,37 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "get_token_path" field.</summary>
-    public const int GetTokenPathFieldNumber = 3;
-    private string getTokenPath_ = "";
+    /// <summary>Field number for the "get_token_url_path" field.</summary>
+    public const int GetTokenUrlPathFieldNumber = 3;
+    private string getTokenUrlPath_ = "";
+    /// <summary>
+    /// valid when need_token is true
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string GetTokenPath {
-      get { return getTokenPath_; }
+    public string GetTokenUrlPath {
+      get { return getTokenUrlPath_; }
       set {
-        getTokenPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        getTokenUrlPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "download_file_url_path" field.</summary>
+    public const int DownloadFileUrlPathFieldNumber = 4;
+    private string downloadFileUrlPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DownloadFileUrlPath {
+      get { return downloadFileUrlPath_; }
+      set {
+        downloadFileUrlPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "libraries" field.</summary>
-    public const int LibrariesFieldNumber = 4;
+    public const int LibrariesFieldNumber = 5;
     private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary> _repeated_libraries_codec
-        = pb::FieldCodec.ForMessage(34, global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary.Parser);
+        = pb::FieldCodec.ForMessage(42, global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary.Parser);
     private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary> libraries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.SentinelLibrary>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7131,7 +7153,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if(!hostnames_.Equals(other.hostnames_)) return false;
       if (Scheme != other.Scheme) return false;
-      if (GetTokenPath != other.GetTokenPath) return false;
+      if (GetTokenUrlPath != other.GetTokenUrlPath) return false;
+      if (DownloadFileUrlPath != other.DownloadFileUrlPath) return false;
       if(!libraries_.Equals(other.libraries_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -7142,7 +7165,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       hash ^= hostnames_.GetHashCode();
       if (Scheme != global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.ServerScheme.Unspecified) hash ^= Scheme.GetHashCode();
-      if (GetTokenPath.Length != 0) hash ^= GetTokenPath.GetHashCode();
+      if (GetTokenUrlPath.Length != 0) hash ^= GetTokenUrlPath.GetHashCode();
+      if (DownloadFileUrlPath.Length != 0) hash ^= DownloadFileUrlPath.GetHashCode();
       hash ^= libraries_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -7167,9 +7191,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(16);
         output.WriteEnum((int) Scheme);
       }
-      if (GetTokenPath.Length != 0) {
+      if (GetTokenUrlPath.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(GetTokenPath);
+        output.WriteString(GetTokenUrlPath);
+      }
+      if (DownloadFileUrlPath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DownloadFileUrlPath);
       }
       libraries_.WriteTo(output, _repeated_libraries_codec);
       if (_unknownFields != null) {
@@ -7187,9 +7215,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(16);
         output.WriteEnum((int) Scheme);
       }
-      if (GetTokenPath.Length != 0) {
+      if (GetTokenUrlPath.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(GetTokenPath);
+        output.WriteString(GetTokenUrlPath);
+      }
+      if (DownloadFileUrlPath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(DownloadFileUrlPath);
       }
       libraries_.WriteTo(ref output, _repeated_libraries_codec);
       if (_unknownFields != null) {
@@ -7206,8 +7238,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Scheme != global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.ServerScheme.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Scheme);
       }
-      if (GetTokenPath.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(GetTokenPath);
+      if (GetTokenUrlPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GetTokenUrlPath);
+      }
+      if (DownloadFileUrlPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DownloadFileUrlPath);
       }
       size += libraries_.CalculateSize(_repeated_libraries_codec);
       if (_unknownFields != null) {
@@ -7226,8 +7261,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Scheme != global::TuiHub.Protos.Librarian.Sephirah.V1.ReportSentinelInformationRequest.Types.ServerScheme.Unspecified) {
         Scheme = other.Scheme;
       }
-      if (other.GetTokenPath.Length != 0) {
-        GetTokenPath = other.GetTokenPath;
+      if (other.GetTokenUrlPath.Length != 0) {
+        GetTokenUrlPath = other.GetTokenUrlPath;
+      }
+      if (other.DownloadFileUrlPath.Length != 0) {
+        DownloadFileUrlPath = other.DownloadFileUrlPath;
       }
       libraries_.Add(other.libraries_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -7254,10 +7292,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 26: {
-            GetTokenPath = input.ReadString();
+            GetTokenUrlPath = input.ReadString();
             break;
           }
           case 34: {
+            DownloadFileUrlPath = input.ReadString();
+            break;
+          }
+          case 42: {
             libraries_.AddEntriesFrom(input, _repeated_libraries_codec);
             break;
           }
@@ -7285,10 +7327,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 26: {
-            GetTokenPath = input.ReadString();
+            GetTokenUrlPath = input.ReadString();
             break;
           }
           case 34: {
+            DownloadFileUrlPath = input.ReadString();
+            break;
+          }
+          case 42: {
             libraries_.AddEntriesFrom(ref input, _repeated_libraries_codec);
             break;
           }
@@ -7343,7 +7389,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SentinelLibrary(SentinelLibrary other) : this() {
           id_ = other.id_;
-          basePath_ = other.basePath_;
+          downloadBasePath_ = other.downloadBasePath_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -7365,15 +7411,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           }
         }
 
-        /// <summary>Field number for the "base_path" field.</summary>
-        public const int BasePathFieldNumber = 2;
-        private string basePath_ = "";
+        /// <summary>Field number for the "download_base_path" field.</summary>
+        public const int DownloadBasePathFieldNumber = 2;
+        private string downloadBasePath_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public string BasePath {
-          get { return basePath_; }
+        public string DownloadBasePath {
+          get { return downloadBasePath_; }
           set {
-            basePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            downloadBasePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
@@ -7393,7 +7439,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             return true;
           }
           if (Id != other.Id) return false;
-          if (BasePath != other.BasePath) return false;
+          if (DownloadBasePath != other.DownloadBasePath) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -7402,7 +7448,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         public override int GetHashCode() {
           int hash = 1;
           if (Id != 0L) hash ^= Id.GetHashCode();
-          if (BasePath.Length != 0) hash ^= BasePath.GetHashCode();
+          if (DownloadBasePath.Length != 0) hash ^= DownloadBasePath.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -7425,9 +7471,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             output.WriteRawTag(8);
             output.WriteInt64(Id);
           }
-          if (BasePath.Length != 0) {
+          if (DownloadBasePath.Length != 0) {
             output.WriteRawTag(18);
-            output.WriteString(BasePath);
+            output.WriteString(DownloadBasePath);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -7443,9 +7489,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             output.WriteRawTag(8);
             output.WriteInt64(Id);
           }
-          if (BasePath.Length != 0) {
+          if (DownloadBasePath.Length != 0) {
             output.WriteRawTag(18);
-            output.WriteString(BasePath);
+            output.WriteString(DownloadBasePath);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -7460,8 +7506,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           if (Id != 0L) {
             size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
           }
-          if (BasePath.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(BasePath);
+          if (DownloadBasePath.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(DownloadBasePath);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -7478,8 +7524,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           if (other.Id != 0L) {
             Id = other.Id;
           }
-          if (other.BasePath.Length != 0) {
-            BasePath = other.BasePath;
+          if (other.DownloadBasePath.Length != 0) {
+            DownloadBasePath = other.DownloadBasePath;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -7501,7 +7547,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
                 break;
               }
               case 18: {
-                BasePath = input.ReadString();
+                DownloadBasePath = input.ReadString();
                 break;
               }
             }
@@ -7524,7 +7570,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
                 break;
               }
               case 18: {
-                BasePath = input.ReadString();
+                DownloadBasePath = input.ReadString();
                 break;
               }
             }
@@ -7725,7 +7771,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReportAppBinariesRequest(ReportAppBinariesRequest other) : this() {
-      appBinaries_ = other.appBinaries_.Clone();
+      sentinelAppBinaries_ = other.sentinelAppBinaries_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -7735,15 +7781,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       return new ReportAppBinariesRequest(this);
     }
 
-    /// <summary>Field number for the "app_binaries" field.</summary>
-    public const int AppBinariesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary> _repeated_appBinaries_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary> appBinaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary>();
+    /// <summary>Field number for the "sentinel_app_binaries" field.</summary>
+    public const int SentinelAppBinariesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary> _repeated_sentinelAppBinaries_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary> sentinelAppBinaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary> AppBinaries {
-      get { return appBinaries_; }
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Types.SentinelAppBinary> SentinelAppBinaries {
+      get { return sentinelAppBinaries_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7761,7 +7807,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!appBinaries_.Equals(other.appBinaries_)) return false;
+      if(!sentinelAppBinaries_.Equals(other.sentinelAppBinaries_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -7769,7 +7815,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= appBinaries_.GetHashCode();
+      hash ^= sentinelAppBinaries_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -7788,7 +7834,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      appBinaries_.WriteTo(output, _repeated_appBinaries_codec);
+      sentinelAppBinaries_.WriteTo(output, _repeated_sentinelAppBinaries_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7799,7 +7845,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      appBinaries_.WriteTo(ref output, _repeated_appBinaries_codec);
+      sentinelAppBinaries_.WriteTo(ref output, _repeated_sentinelAppBinaries_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -7810,7 +7856,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += appBinaries_.CalculateSize(_repeated_appBinaries_codec);
+      size += sentinelAppBinaries_.CalculateSize(_repeated_sentinelAppBinaries_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -7823,7 +7869,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      appBinaries_.Add(other.appBinaries_);
+      sentinelAppBinaries_.Add(other.sentinelAppBinaries_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -7840,7 +7886,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            appBinaries_.AddEntriesFrom(input, _repeated_appBinaries_codec);
+            sentinelAppBinaries_.AddEntriesFrom(input, _repeated_sentinelAppBinaries_codec);
             break;
           }
         }
@@ -7859,13 +7905,339 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            appBinaries_.AddEntriesFrom(ref input, _repeated_appBinaries_codec);
+            sentinelAppBinaries_.AddEntriesFrom(ref input, _repeated_sentinelAppBinaries_codec);
             break;
           }
         }
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ReportAppBinariesRequest message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class SentinelAppBinary : pb::IMessage<SentinelAppBinary>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<SentinelAppBinary> _parser = new pb::MessageParser<SentinelAppBinary>(() => new SentinelAppBinary());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<SentinelAppBinary> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TuiHub.Protos.Librarian.Sephirah.V1.ReportAppBinariesRequest.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public SentinelAppBinary() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public SentinelAppBinary(SentinelAppBinary other) : this() {
+          appBinary_ = other.appBinary_ != null ? other.appBinary_.Clone() : null;
+          sentinelId_ = other.sentinelId_ != null ? other.sentinelId_.Clone() : null;
+          sentinelLibraryId_ = other.sentinelLibraryId_;
+          sentinelGeneratedId_ = other.sentinelGeneratedId_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public SentinelAppBinary Clone() {
+          return new SentinelAppBinary(this);
+        }
+
+        /// <summary>Field number for the "app_binary" field.</summary>
+        public const int AppBinaryFieldNumber = 1;
+        private global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary appBinary_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary AppBinary {
+          get { return appBinary_; }
+          set {
+            appBinary_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "sentinel_id" field.</summary>
+        public const int SentinelIdFieldNumber = 2;
+        private global::TuiHub.Protos.Librarian.V1.InternalID sentinelId_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::TuiHub.Protos.Librarian.V1.InternalID SentinelId {
+          get { return sentinelId_; }
+          set {
+            sentinelId_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "sentinel_library_id" field.</summary>
+        public const int SentinelLibraryIdFieldNumber = 3;
+        private long sentinelLibraryId_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public long SentinelLibraryId {
+          get { return sentinelLibraryId_; }
+          set {
+            sentinelLibraryId_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "sentinel_generated_id" field.</summary>
+        public const int SentinelGeneratedIdFieldNumber = 4;
+        private string sentinelGeneratedId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string SentinelGeneratedId {
+          get { return sentinelGeneratedId_; }
+          set {
+            sentinelGeneratedId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as SentinelAppBinary);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(SentinelAppBinary other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(AppBinary, other.AppBinary)) return false;
+          if (!object.Equals(SentinelId, other.SentinelId)) return false;
+          if (SentinelLibraryId != other.SentinelLibraryId) return false;
+          if (SentinelGeneratedId != other.SentinelGeneratedId) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (appBinary_ != null) hash ^= AppBinary.GetHashCode();
+          if (sentinelId_ != null) hash ^= SentinelId.GetHashCode();
+          if (SentinelLibraryId != 0L) hash ^= SentinelLibraryId.GetHashCode();
+          if (SentinelGeneratedId.Length != 0) hash ^= SentinelGeneratedId.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (appBinary_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(AppBinary);
+          }
+          if (sentinelId_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(SentinelId);
+          }
+          if (SentinelLibraryId != 0L) {
+            output.WriteRawTag(24);
+            output.WriteInt64(SentinelLibraryId);
+          }
+          if (SentinelGeneratedId.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(SentinelGeneratedId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (appBinary_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(AppBinary);
+          }
+          if (sentinelId_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(SentinelId);
+          }
+          if (SentinelLibraryId != 0L) {
+            output.WriteRawTag(24);
+            output.WriteInt64(SentinelLibraryId);
+          }
+          if (SentinelGeneratedId.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(SentinelGeneratedId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (appBinary_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(AppBinary);
+          }
+          if (sentinelId_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(SentinelId);
+          }
+          if (SentinelLibraryId != 0L) {
+            size += 1 + pb::CodedOutputStream.ComputeInt64Size(SentinelLibraryId);
+          }
+          if (SentinelGeneratedId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(SentinelGeneratedId);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(SentinelAppBinary other) {
+          if (other == null) {
+            return;
+          }
+          if (other.appBinary_ != null) {
+            if (appBinary_ == null) {
+              AppBinary = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary();
+            }
+            AppBinary.MergeFrom(other.AppBinary);
+          }
+          if (other.sentinelId_ != null) {
+            if (sentinelId_ == null) {
+              SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            SentinelId.MergeFrom(other.SentinelId);
+          }
+          if (other.SentinelLibraryId != 0L) {
+            SentinelLibraryId = other.SentinelLibraryId;
+          }
+          if (other.SentinelGeneratedId.Length != 0) {
+            SentinelGeneratedId = other.SentinelGeneratedId;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (appBinary_ == null) {
+                  AppBinary = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary();
+                }
+                input.ReadMessage(AppBinary);
+                break;
+              }
+              case 18: {
+                if (sentinelId_ == null) {
+                  SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+                }
+                input.ReadMessage(SentinelId);
+                break;
+              }
+              case 24: {
+                SentinelLibraryId = input.ReadInt64();
+                break;
+              }
+              case 34: {
+                SentinelGeneratedId = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (appBinary_ == null) {
+                  AppBinary = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppBinary();
+                }
+                input.ReadMessage(AppBinary);
+                break;
+              }
+              case 18: {
+                if (sentinelId_ == null) {
+                  SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+                }
+                input.ReadMessage(SentinelId);
+                break;
+              }
+              case 24: {
+                SentinelLibraryId = input.ReadInt64();
+                break;
+              }
+              case 34: {
+                SentinelGeneratedId = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
 
   }
 
@@ -9003,6 +9375,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DownloadAppBinaryResponse(DownloadAppBinaryResponse other) : this() {
       appBinary_ = other.appBinary_ != null ? other.appBinary_.Clone() : null;
+      downloadUrl_ = other.downloadUrl_;
       token_ = other.token_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -9025,16 +9398,48 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
+    /// <summary>Field number for the "download_url" field.</summary>
+    public const int DownloadUrlFieldNumber = 2;
+    private string downloadUrl_ = "";
+    /// <summary>
+    /// base url to be path-joined when need_token is false
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DownloadUrl {
+      get { return downloadUrl_; }
+      set {
+        downloadUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "token" field.</summary>
-    public const int TokenFieldNumber = 2;
-    private string token_ = "";
+    public const int TokenFieldNumber = 3;
+    private readonly static string TokenDefaultValue = "";
+
+    private string token_;
+    /// <summary>
+    /// valid when need_token is true
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
-      get { return token_; }
+      get { return token_ ?? TokenDefaultValue; }
       set {
         token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Gets whether the "token" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasToken {
+      get { return token_ != null; }
+    }
+    /// <summary>Clears the value of the "token" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearToken() {
+      token_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9053,6 +9458,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return true;
       }
       if (!object.Equals(AppBinary, other.AppBinary)) return false;
+      if (DownloadUrl != other.DownloadUrl) return false;
       if (Token != other.Token) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -9062,7 +9468,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (appBinary_ != null) hash ^= AppBinary.GetHashCode();
-      if (Token.Length != 0) hash ^= Token.GetHashCode();
+      if (DownloadUrl.Length != 0) hash ^= DownloadUrl.GetHashCode();
+      if (HasToken) hash ^= Token.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -9085,8 +9492,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(AppBinary);
       }
-      if (Token.Length != 0) {
+      if (DownloadUrl.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(DownloadUrl);
+      }
+      if (HasToken) {
+        output.WriteRawTag(26);
         output.WriteString(Token);
       }
       if (_unknownFields != null) {
@@ -9103,8 +9514,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(AppBinary);
       }
-      if (Token.Length != 0) {
+      if (DownloadUrl.Length != 0) {
         output.WriteRawTag(18);
+        output.WriteString(DownloadUrl);
+      }
+      if (HasToken) {
+        output.WriteRawTag(26);
         output.WriteString(Token);
       }
       if (_unknownFields != null) {
@@ -9120,7 +9535,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (appBinary_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(AppBinary);
       }
-      if (Token.Length != 0) {
+      if (DownloadUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DownloadUrl);
+      }
+      if (HasToken) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
       }
       if (_unknownFields != null) {
@@ -9141,7 +9559,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         AppBinary.MergeFrom(other.AppBinary);
       }
-      if (other.Token.Length != 0) {
+      if (other.DownloadUrl.Length != 0) {
+        DownloadUrl = other.DownloadUrl;
+      }
+      if (other.HasToken) {
         Token = other.Token;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -9167,6 +9588,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
+            DownloadUrl = input.ReadString();
+            break;
+          }
+          case 26: {
             Token = input.ReadString();
             break;
           }
@@ -9193,6 +9618,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
+            DownloadUrl = input.ReadString();
+            break;
+          }
+          case 26: {
             Token = input.ReadString();
             break;
           }
@@ -20010,9 +20439,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AppBinary(AppBinary other) : this() {
       id_ = other.id_ != null ? other.id_.Clone() : null;
-      sentinelId_ = other.sentinelId_ != null ? other.sentinelId_.Clone() : null;
-      sentinelLibraryId_ = other.sentinelLibraryId_;
-      sentinelGeneratedId_ = other.sentinelGeneratedId_;
       name_ = other.name_;
       sizeBytes_ = other.sizeBytes_;
       needToken_ = other.needToken_;
@@ -20038,44 +20464,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
     }
 
-    /// <summary>Field number for the "sentinel_id" field.</summary>
-    public const int SentinelIdFieldNumber = 2;
-    private global::TuiHub.Protos.Librarian.V1.InternalID sentinelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID SentinelId {
-      get { return sentinelId_; }
-      set {
-        sentinelId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sentinel_library_id" field.</summary>
-    public const int SentinelLibraryIdFieldNumber = 3;
-    private long sentinelLibraryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long SentinelLibraryId {
-      get { return sentinelLibraryId_; }
-      set {
-        sentinelLibraryId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sentinel_generated_id" field.</summary>
-    public const int SentinelGeneratedIdFieldNumber = 4;
-    private string sentinelGeneratedId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string SentinelGeneratedId {
-      get { return sentinelGeneratedId_; }
-      set {
-        sentinelGeneratedId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 5;
+    public const int NameFieldNumber = 2;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20087,7 +20477,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "size_bytes" field.</summary>
-    public const int SizeBytesFieldNumber = 6;
+    public const int SizeBytesFieldNumber = 3;
     private long sizeBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20099,7 +20489,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     }
 
     /// <summary>Field number for the "need_token" field.</summary>
-    public const int NeedTokenFieldNumber = 7;
+    public const int NeedTokenFieldNumber = 4;
     private bool needToken_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20137,9 +20527,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return true;
       }
       if (!object.Equals(Id, other.Id)) return false;
-      if (!object.Equals(SentinelId, other.SentinelId)) return false;
-      if (SentinelLibraryId != other.SentinelLibraryId) return false;
-      if (SentinelGeneratedId != other.SentinelGeneratedId) return false;
       if (Name != other.Name) return false;
       if (SizeBytes != other.SizeBytes) return false;
       if (NeedToken != other.NeedToken) return false;
@@ -20152,9 +20539,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
-      if (sentinelId_ != null) hash ^= SentinelId.GetHashCode();
-      if (SentinelLibraryId != 0L) hash ^= SentinelLibraryId.GetHashCode();
-      if (SentinelGeneratedId.Length != 0) hash ^= SentinelGeneratedId.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
       if (NeedToken != false) hash ^= NeedToken.GetHashCode();
@@ -20181,28 +20565,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (sentinelId_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(SentinelId);
-      }
-      if (SentinelLibraryId != 0L) {
-        output.WriteRawTag(24);
-        output.WriteInt64(SentinelLibraryId);
-      }
-      if (SentinelGeneratedId.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(SentinelGeneratedId);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (SizeBytes != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteInt64(SizeBytes);
       }
       if (NeedToken != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteBool(NeedToken);
       }
       files_.WriteTo(output, _repeated_files_codec);
@@ -20220,28 +20592,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (sentinelId_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(SentinelId);
-      }
-      if (SentinelLibraryId != 0L) {
-        output.WriteRawTag(24);
-        output.WriteInt64(SentinelLibraryId);
-      }
-      if (SentinelGeneratedId.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(SentinelGeneratedId);
-      }
       if (Name.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(18);
         output.WriteString(Name);
       }
       if (SizeBytes != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteInt64(SizeBytes);
       }
       if (NeedToken != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteBool(NeedToken);
       }
       files_.WriteTo(ref output, _repeated_files_codec);
@@ -20257,15 +20617,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int size = 0;
       if (id_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
-      }
-      if (sentinelId_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SentinelId);
-      }
-      if (SentinelLibraryId != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SentinelLibraryId);
-      }
-      if (SentinelGeneratedId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(SentinelGeneratedId);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -20294,18 +20645,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
         Id.MergeFrom(other.Id);
-      }
-      if (other.sentinelId_ != null) {
-        if (sentinelId_ == null) {
-          SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
-        }
-        SentinelId.MergeFrom(other.SentinelId);
-      }
-      if (other.SentinelLibraryId != 0L) {
-        SentinelLibraryId = other.SentinelLibraryId;
-      }
-      if (other.SentinelGeneratedId.Length != 0) {
-        SentinelGeneratedId = other.SentinelGeneratedId;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -20340,29 +20679,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
-            if (sentinelId_ == null) {
-              SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
-            }
-            input.ReadMessage(SentinelId);
-            break;
-          }
-          case 24: {
-            SentinelLibraryId = input.ReadInt64();
-            break;
-          }
-          case 34: {
-            SentinelGeneratedId = input.ReadString();
-            break;
-          }
-          case 42: {
             Name = input.ReadString();
             break;
           }
-          case 48: {
+          case 24: {
             SizeBytes = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 32: {
             NeedToken = input.ReadBool();
             break;
           }
@@ -20393,29 +20717,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 18: {
-            if (sentinelId_ == null) {
-              SentinelId = new global::TuiHub.Protos.Librarian.V1.InternalID();
-            }
-            input.ReadMessage(SentinelId);
-            break;
-          }
-          case 24: {
-            SentinelLibraryId = input.ReadInt64();
-            break;
-          }
-          case 34: {
-            SentinelGeneratedId = input.ReadString();
-            break;
-          }
-          case 42: {
             Name = input.ReadString();
             break;
           }
-          case 48: {
+          case 24: {
             SizeBytes = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 32: {
             NeedToken = input.ReadBool();
             break;
           }
@@ -20517,7 +20826,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public const int ServerFilePathFieldNumber = 4;
     private string serverFilePath_ = "";
     /// <summary>
-    /// should be path-joined when AppBinary.need_token is false
+    /// should be path-joined to download_url when need_token is false
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
