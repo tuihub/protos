@@ -160,11 +160,13 @@ message ListAppsResponse {
 message ReportSentinelInformationRequest {
   repeated string hostnames = 1;
   ServerScheme scheme = 2;
-  string get_token_path = 3;
-  repeated SentinelLibrary libraries = 4;
+  // valid when need_token is true
+  string get_token_url_path = 3;
+  string download_file_url_path = 4;
+  repeated SentinelLibrary libraries = 5;
   message SentinelLibrary {
     int64 id = 1;
-    string base_path = 2;
+    string download_base_path = 2;
   }
   enum ServerScheme {
     SERVER_SCHEME_UNSPECIFIED = 0;
@@ -176,7 +178,13 @@ message ReportSentinelInformationRequest {
 message ReportSentinelInformationResponse {}
 
 message ReportAppBinariesRequest {
-  repeated AppBinary app_binaries = 1;
+  repeated SentinelAppBinary sentinel_app_binaries = 1;
+  message SentinelAppBinary {
+    AppBinary app_binary = 1;
+    librarian.v1.InternalID sentinel_id = 2;
+    int64 sentinel_library_id = 3;
+    string sentinel_generated_id = 4;
+  }
 }
 
 message ReportAppBinariesResponse {}
@@ -201,7 +209,10 @@ message DownloadAppBinaryRequest {
 
 message DownloadAppBinaryResponse {
   AppBinary app_binary = 1;
-  string token = 2;
+  // base url to be path-joined when need_token is false
+  string download_url = 2;
+  // valid when need_token is true
+  optional string token = 3;
 }
 
 message AddAppRunTimeRequest {
@@ -442,12 +453,9 @@ message App {
 
 message AppBinary {
   librarian.v1.InternalID id = 1;
-  librarian.v1.InternalID sentinel_id = 2;
-  int64 sentinel_library_id = 3;
-  string sentinel_generated_id = 4;
-  string name = 5;
-  int64 size_bytes = 6;
-  bool need_token = 7;
+  string name = 2;
+  int64 size_bytes = 3;
+  bool need_token = 4;
   repeated AppBinaryFile files = 10;
 }
 
@@ -455,7 +463,7 @@ message AppBinaryFile {
   string name = 1;
   int64 size_bytes = 2;
   bytes sha256 = 3;
-  // should be path-joined when AppBinary.need_token is false
+  // should be path-joined to download_url when need_token is false
   string server_file_path = 4;
 }
 
