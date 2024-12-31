@@ -8488,9 +8488,8 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype
 proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.toObject = function(includeInstance, msg) {
   var f, obj = {
 appBinary: (f = msg.getAppBinary()) && proto.librarian.sephirah.v1.AppBinary.toObject(includeInstance, f),
-sentinelId: (f = msg.getSentinelId()) && librarian_v1_common_pb.InternalID.toObject(includeInstance, f),
-sentinelLibraryId: jspb.Message.getFieldWithDefault(msg, 3, 0),
-sentinelGeneratedId: jspb.Message.getFieldWithDefault(msg, 4, "")
+sentinelLibraryId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+sentinelGeneratedId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -8533,15 +8532,10 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.deseriali
       msg.setAppBinary(value);
       break;
     case 2:
-      var value = new librarian_v1_common_pb.InternalID;
-      reader.readMessage(value,librarian_v1_common_pb.InternalID.deserializeBinaryFromReader);
-      msg.setSentinelId(value);
-      break;
-    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSentinelLibraryId(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setSentinelGeneratedId(value);
       break;
@@ -8582,25 +8576,17 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.serialize
       proto.librarian.sephirah.v1.AppBinary.serializeBinaryToWriter
     );
   }
-  f = message.getSentinelId();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      librarian_v1_common_pb.InternalID.serializeBinaryToWriter
-    );
-  }
   f = message.getSentinelLibraryId();
   if (f !== 0) {
     writer.writeInt64(
-      3,
+      2,
       f
     );
   }
   f = message.getSentinelGeneratedId();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
@@ -8645,48 +8631,11 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype
 
 
 /**
- * optional librarian.v1.InternalID sentinel_id = 2;
- * @return {?proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.getSentinelId = function() {
-  return /** @type{?proto.librarian.v1.InternalID} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_common_pb.InternalID, 2));
-};
-
-
-/**
- * @param {?proto.librarian.v1.InternalID|undefined} value
- * @return {!proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary} returns this
-*/
-proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.setSentinelId = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary} returns this
- */
-proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.clearSentinelId = function() {
-  return this.setSentinelId(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.hasSentinelId = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int64 sentinel_library_id = 3;
+ * optional int64 sentinel_library_id = 2;
  * @return {number}
  */
 proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.getSentinelLibraryId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -8695,16 +8644,16 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype
  * @return {!proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary} returns this
  */
 proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.setSentinelLibraryId = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional string sentinel_generated_id = 4;
+ * optional string sentinel_generated_id = 3;
  * @return {string}
  */
 proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.getSentinelGeneratedId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -8713,7 +8662,7 @@ proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype
  * @return {!proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary} returns this
  */
 proto.librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary.prototype.setSentinelGeneratedId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

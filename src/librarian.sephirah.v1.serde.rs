@@ -21250,9 +21250,6 @@ impl serde::Serialize for report_app_binaries_request::SentinelAppBinary {
         if self.app_binary.is_some() {
             len += 1;
         }
-        if self.sentinel_id.is_some() {
-            len += 1;
-        }
         if self.sentinel_library_id != 0 {
             len += 1;
         }
@@ -21262,9 +21259,6 @@ impl serde::Serialize for report_app_binaries_request::SentinelAppBinary {
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ReportAppBinariesRequest.SentinelAppBinary", len)?;
         if let Some(v) = self.app_binary.as_ref() {
             struct_ser.serialize_field("appBinary", v)?;
-        }
-        if let Some(v) = self.sentinel_id.as_ref() {
-            struct_ser.serialize_field("sentinelId", v)?;
         }
         if self.sentinel_library_id != 0 {
             #[allow(clippy::needless_borrow)]
@@ -21286,8 +21280,6 @@ impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBi
         const FIELDS: &[&str] = &[
             "app_binary",
             "appBinary",
-            "sentinel_id",
-            "sentinelId",
             "sentinel_library_id",
             "sentinelLibraryId",
             "sentinel_generated_id",
@@ -21297,7 +21289,6 @@ impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBi
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             AppBinary,
-            SentinelId,
             SentinelLibraryId,
             SentinelGeneratedId,
         }
@@ -21322,7 +21313,6 @@ impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBi
                     {
                         match value {
                             "appBinary" | "app_binary" => Ok(GeneratedField::AppBinary),
-                            "sentinelId" | "sentinel_id" => Ok(GeneratedField::SentinelId),
                             "sentinelLibraryId" | "sentinel_library_id" => Ok(GeneratedField::SentinelLibraryId),
                             "sentinelGeneratedId" | "sentinel_generated_id" => Ok(GeneratedField::SentinelGeneratedId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -21345,7 +21335,6 @@ impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBi
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_binary__ = None;
-                let mut sentinel_id__ = None;
                 let mut sentinel_library_id__ = None;
                 let mut sentinel_generated_id__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -21355,12 +21344,6 @@ impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBi
                                 return Err(serde::de::Error::duplicate_field("appBinary"));
                             }
                             app_binary__ = map_.next_value()?;
-                        }
-                        GeneratedField::SentinelId => {
-                            if sentinel_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sentinelId"));
-                            }
-                            sentinel_id__ = map_.next_value()?;
                         }
                         GeneratedField::SentinelLibraryId => {
                             if sentinel_library_id__.is_some() {
@@ -21380,7 +21363,6 @@ impl<'de> serde::Deserialize<'de> for report_app_binaries_request::SentinelAppBi
                 }
                 Ok(report_app_binaries_request::SentinelAppBinary {
                     app_binary: app_binary__,
-                    sentinel_id: sentinel_id__,
                     sentinel_library_id: sentinel_library_id__.unwrap_or_default(),
                     sentinel_generated_id: sentinel_generated_id__.unwrap_or_default(),
                 })

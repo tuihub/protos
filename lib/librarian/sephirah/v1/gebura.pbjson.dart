@@ -537,9 +537,8 @@ const ReportAppBinariesRequest_SentinelAppBinary$json = {
   '1': 'SentinelAppBinary',
   '2': [
     {'1': 'app_binary', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.AppBinary', '10': 'appBinary'},
-    {'1': 'sentinel_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
-    {'1': 'sentinel_library_id', '3': 3, '4': 1, '5': 3, '10': 'sentinelLibraryId'},
-    {'1': 'sentinel_generated_id', '3': 4, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
+    {'1': 'sentinel_library_id', '3': 2, '4': 1, '5': 3, '10': 'sentinelLibraryId'},
+    {'1': 'sentinel_generated_id', '3': 3, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
   ],
 };
 
@@ -547,12 +546,10 @@ const ReportAppBinariesRequest_SentinelAppBinary$json = {
 final $typed_data.Uint8List reportAppBinariesRequestDescriptor = $convert.base64Decode(
     'ChhSZXBvcnRBcHBCaW5hcmllc1JlcXVlc3QSdQoVc2VudGluZWxfYXBwX2JpbmFyaWVzGAEgAy'
     'gLMkEubGlicmFyaWFuLnNlcGhpcmFoLnYxLlJlcG9ydEFwcEJpbmFyaWVzUmVxdWVzdC5TZW50'
-    'aW5lbEFwcEJpbmFyeVITc2VudGluZWxBcHBCaW5hcmllcxrzAQoRU2VudGluZWxBcHBCaW5hcn'
+    'aW5lbEFwcEJpbmFyeVITc2VudGluZWxBcHBCaW5hcmllcxq4AQoRU2VudGluZWxBcHBCaW5hcn'
     'kSPwoKYXBwX2JpbmFyeRgBIAEoCzIgLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5BcHBCaW5hcnlS'
-    'CWFwcEJpbmFyeRI5CgtzZW50aW5lbF9pZBgCIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
-    'lEUgpzZW50aW5lbElkEi4KE3NlbnRpbmVsX2xpYnJhcnlfaWQYAyABKANSEXNlbnRpbmVsTGli'
-    'cmFyeUlkEjIKFXNlbnRpbmVsX2dlbmVyYXRlZF9pZBgEIAEoCVITc2VudGluZWxHZW5lcmF0ZW'
-    'RJZA==');
+    'CWFwcEJpbmFyeRIuChNzZW50aW5lbF9saWJyYXJ5X2lkGAIgASgDUhFzZW50aW5lbExpYnJhcn'
+    'lJZBIyChVzZW50aW5lbF9nZW5lcmF0ZWRfaWQYAyABKAlSE3NlbnRpbmVsR2VuZXJhdGVkSWQ=');
 
 @$core.Deprecated('Use reportAppBinariesResponseDescriptor instead')
 const ReportAppBinariesResponse$json = {

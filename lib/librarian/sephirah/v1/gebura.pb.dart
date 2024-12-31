@@ -1944,16 +1944,12 @@ class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
 class ReportAppBinariesRequest_SentinelAppBinary extends $pb.GeneratedMessage {
   factory ReportAppBinariesRequest_SentinelAppBinary({
     AppBinary? appBinary,
-    $8.InternalID? sentinelId,
     $fixnum.Int64? sentinelLibraryId,
     $core.String? sentinelGeneratedId,
   }) {
     final $result = create();
     if (appBinary != null) {
       $result.appBinary = appBinary;
-    }
-    if (sentinelId != null) {
-      $result.sentinelId = sentinelId;
     }
     if (sentinelLibraryId != null) {
       $result.sentinelLibraryId = sentinelLibraryId;
@@ -1969,9 +1965,8 @@ class ReportAppBinariesRequest_SentinelAppBinary extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportAppBinariesRequest.SentinelAppBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1'), createEmptyInstance: create)
     ..aOM<AppBinary>(1, _omitFieldNames ? '' : 'appBinary', subBuilder: AppBinary.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sentinelId', subBuilder: $8.InternalID.create)
-    ..aInt64(3, _omitFieldNames ? '' : 'sentinelLibraryId')
-    ..aOS(4, _omitFieldNames ? '' : 'sentinelGeneratedId')
+    ..aInt64(2, _omitFieldNames ? '' : 'sentinelLibraryId')
+    ..aOS(3, _omitFieldNames ? '' : 'sentinelGeneratedId')
     ..hasRequiredFields = false
   ;
 
@@ -2008,33 +2003,22 @@ class ReportAppBinariesRequest_SentinelAppBinary extends $pb.GeneratedMessage {
   AppBinary ensureAppBinary() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $8.InternalID get sentinelId => $_getN(1);
+  $fixnum.Int64 get sentinelLibraryId => $_getI64(1);
   @$pb.TagNumber(2)
-  set sentinelId($8.InternalID v) { setField(2, v); }
+  set sentinelLibraryId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSentinelId() => $_has(1);
+  $core.bool hasSentinelLibraryId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSentinelId() => clearField(2);
-  @$pb.TagNumber(2)
-  $8.InternalID ensureSentinelId() => $_ensure(1);
+  void clearSentinelLibraryId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get sentinelLibraryId => $_getI64(2);
+  $core.String get sentinelGeneratedId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set sentinelLibraryId($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sentinelGeneratedId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSentinelLibraryId() => $_has(2);
+  $core.bool hasSentinelGeneratedId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSentinelLibraryId() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get sentinelGeneratedId => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set sentinelGeneratedId($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasSentinelGeneratedId() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearSentinelGeneratedId() => clearField(4);
+  void clearSentinelGeneratedId() => clearField(3);
 }
 
 class ReportAppBinariesRequest extends $pb.GeneratedMessage {

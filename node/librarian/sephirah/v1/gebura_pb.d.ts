@@ -895,11 +895,6 @@ export namespace ReportAppBinariesRequest {
     getAppBinary(): AppBinary | undefined;
     setAppBinary(value?: AppBinary): void;
 
-    hasSentinelId(): boolean;
-    clearSentinelId(): void;
-    getSentinelId(): librarian_v1_common_pb.InternalID | undefined;
-    setSentinelId(value?: librarian_v1_common_pb.InternalID): void;
-
     getSentinelLibraryId(): number;
     setSentinelLibraryId(value: number): void;
 
@@ -919,7 +914,6 @@ export namespace ReportAppBinariesRequest {
   export namespace SentinelAppBinary {
     export type AsObject = {
       appBinary?: AppBinary.AsObject,
-      sentinelId?: librarian_v1_common_pb.InternalID.AsObject,
       sentinelLibraryId: number,
       sentinelGeneratedId: string,
     }
