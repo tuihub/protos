@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.27](https://github.com/tuihub/protos/compare/v0.4.26...v0.4.27) (2024-12-31)
+
+
+### Bug Fixes
+
+* **gebura:** refactor AppBinary ([cd81850](https://github.com/tuihub/protos/commit/cd8185032da765a0a3feadf7e8387634a95c22da))
+
 ## [0.4.26](https://github.com/tuihub/protos/compare/v0.4.25...v0.4.26) (2024-12-29)
 
 
