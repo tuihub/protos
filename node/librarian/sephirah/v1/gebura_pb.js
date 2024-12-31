@@ -2161,7 +2161,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.librarian.sephirah.v1.AppBinaryFile = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.librarian.sephirah.v1.AppBinaryFile.repeatedFields_, null);
 };
 goog.inherits(proto.librarian.sephirah.v1.AppBinaryFile, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -18568,6 +18568,13 @@ proto.librarian.sephirah.v1.AppBinary.prototype.clearFilesList = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.librarian.sephirah.v1.AppBinaryFile.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -18602,7 +18609,9 @@ proto.librarian.sephirah.v1.AppBinaryFile.toObject = function(includeInstance, m
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
 sha256: msg.getSha256_asB64(),
-serverFilePath: jspb.Message.getFieldWithDefault(msg, 4, "")
+serverFilePath: jspb.Message.getFieldWithDefault(msg, 4, ""),
+chunksList: jspb.Message.toObjectList(msg.getChunksList(),
+    proto.librarian.sephirah.v1.AppBinaryFileChunk.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -18654,6 +18663,11 @@ proto.librarian.sephirah.v1.AppBinaryFile.deserializeBinaryFromReader = function
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setServerFilePath(value);
+      break;
+    case 5:
+      var value = new proto.librarian.sephirah.v1.AppBinaryFileChunk;
+      reader.readMessage(value,proto.librarian.sephirah.v1.AppBinaryFileChunk.deserializeBinaryFromReader);
+      msg.addChunks(value);
       break;
     default:
       reader.skipField();
@@ -18710,6 +18724,14 @@ proto.librarian.sephirah.v1.AppBinaryFile.serializeBinaryToWriter = function(mes
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getChunksList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.librarian.sephirah.v1.AppBinaryFileChunk.serializeBinaryToWriter
     );
   }
 };
@@ -18808,6 +18830,44 @@ proto.librarian.sephirah.v1.AppBinaryFile.prototype.getServerFilePath = function
  */
 proto.librarian.sephirah.v1.AppBinaryFile.prototype.setServerFilePath = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * repeated AppBinaryFileChunk chunks = 5;
+ * @return {!Array<!proto.librarian.sephirah.v1.AppBinaryFileChunk>}
+ */
+proto.librarian.sephirah.v1.AppBinaryFile.prototype.getChunksList = function() {
+  return /** @type{!Array<!proto.librarian.sephirah.v1.AppBinaryFileChunk>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.AppBinaryFileChunk, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.sephirah.v1.AppBinaryFileChunk>} value
+ * @return {!proto.librarian.sephirah.v1.AppBinaryFile} returns this
+*/
+proto.librarian.sephirah.v1.AppBinaryFile.prototype.setChunksList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.librarian.sephirah.v1.AppBinaryFileChunk=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.sephirah.v1.AppBinaryFileChunk}
+ */
+proto.librarian.sephirah.v1.AppBinaryFile.prototype.addChunks = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.librarian.sephirah.v1.AppBinaryFileChunk, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.sephirah.v1.AppBinaryFile} returns this
+ */
+proto.librarian.sephirah.v1.AppBinaryFile.prototype.clearChunksList = function() {
+  return this.setChunksList([]);
 };
 
 

@@ -1355,6 +1355,7 @@ const AppBinaryFile$json = {
     {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
     {'1': 'sha256', '3': 3, '4': 1, '5': 12, '10': 'sha256'},
     {'1': 'server_file_path', '3': 4, '4': 1, '5': 9, '10': 'serverFilePath'},
+    {'1': 'chunks', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.AppBinaryFileChunk', '10': 'chunks'},
   ],
 };
 
@@ -1362,7 +1363,8 @@ const AppBinaryFile$json = {
 final $typed_data.Uint8List appBinaryFileDescriptor = $convert.base64Decode(
     'Cg1BcHBCaW5hcnlGaWxlEhIKBG5hbWUYASABKAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgCIAEoA1'
     'IJc2l6ZUJ5dGVzEhYKBnNoYTI1NhgDIAEoDFIGc2hhMjU2EigKEHNlcnZlcl9maWxlX3BhdGgY'
-    'BCABKAlSDnNlcnZlckZpbGVQYXRo');
+    'BCABKAlSDnNlcnZlckZpbGVQYXRoEkEKBmNodW5rcxgFIAMoCzIpLmxpYnJhcmlhbi5zZXBoaX'
+    'JhaC52MS5BcHBCaW5hcnlGaWxlQ2h1bmtSBmNodW5rcw==');
 
 @$core.Deprecated('Use appBinaryFileChunkDescriptor instead')
 const AppBinaryFileChunk$json = {

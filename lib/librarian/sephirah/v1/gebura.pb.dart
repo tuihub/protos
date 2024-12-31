@@ -5372,6 +5372,7 @@ class AppBinaryFile extends $pb.GeneratedMessage {
     $fixnum.Int64? sizeBytes,
     $core.List<$core.int>? sha256,
     $core.String? serverFilePath,
+    $core.Iterable<AppBinaryFileChunk>? chunks,
   }) {
     final $result = create();
     if (name != null) {
@@ -5386,6 +5387,9 @@ class AppBinaryFile extends $pb.GeneratedMessage {
     if (serverFilePath != null) {
       $result.serverFilePath = serverFilePath;
     }
+    if (chunks != null) {
+      $result.chunks.addAll(chunks);
+    }
     return $result;
   }
   AppBinaryFile._() : super();
@@ -5397,6 +5401,7 @@ class AppBinaryFile extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
     ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
     ..aOS(4, _omitFieldNames ? '' : 'serverFilePath')
+    ..pc<AppBinaryFileChunk>(5, _omitFieldNames ? '' : 'chunks', $pb.PbFieldType.PM, subBuilder: AppBinaryFileChunk.create)
     ..hasRequiredFields = false
   ;
 
@@ -5457,6 +5462,9 @@ class AppBinaryFile extends $pb.GeneratedMessage {
   $core.bool hasServerFilePath() => $_has(3);
   @$pb.TagNumber(4)
   void clearServerFilePath() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<AppBinaryFileChunk> get chunks => $_getList(4);
 }
 
 class AppBinaryFileChunk extends $pb.GeneratedMessage {

@@ -2359,6 +2359,11 @@ export class AppBinaryFile extends jspb.Message {
   getServerFilePath(): string;
   setServerFilePath(value: string): void;
 
+  clearChunksList(): void;
+  getChunksList(): Array<AppBinaryFileChunk>;
+  setChunksList(value: Array<AppBinaryFileChunk>): void;
+  addChunks(value?: AppBinaryFileChunk, index?: number): AppBinaryFileChunk;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppBinaryFile.AsObject;
   static toObject(includeInstance: boolean, msg: AppBinaryFile): AppBinaryFile.AsObject;
@@ -2375,6 +2380,7 @@ export namespace AppBinaryFile {
     sizeBytes: number,
     sha256: Uint8Array | string,
     serverFilePath: string,
+    chunksList: Array<AppBinaryFileChunk.AsObject>,
   }
 }
 

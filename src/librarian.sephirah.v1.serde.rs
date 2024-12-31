@@ -926,6 +926,9 @@ impl serde::Serialize for AppBinaryFile {
         if !self.server_file_path.is_empty() {
             len += 1;
         }
+        if !self.chunks.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.AppBinaryFile", len)?;
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -943,6 +946,9 @@ impl serde::Serialize for AppBinaryFile {
         if !self.server_file_path.is_empty() {
             struct_ser.serialize_field("serverFilePath", &self.server_file_path)?;
         }
+        if !self.chunks.is_empty() {
+            struct_ser.serialize_field("chunks", &self.chunks)?;
+        }
         struct_ser.end()
     }
 }
@@ -959,6 +965,7 @@ impl<'de> serde::Deserialize<'de> for AppBinaryFile {
             "sha256",
             "server_file_path",
             "serverFilePath",
+            "chunks",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -967,6 +974,7 @@ impl<'de> serde::Deserialize<'de> for AppBinaryFile {
             SizeBytes,
             Sha256,
             ServerFilePath,
+            Chunks,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -992,6 +1000,7 @@ impl<'de> serde::Deserialize<'de> for AppBinaryFile {
                             "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
                             "sha256" => Ok(GeneratedField::Sha256),
                             "serverFilePath" | "server_file_path" => Ok(GeneratedField::ServerFilePath),
+                            "chunks" => Ok(GeneratedField::Chunks),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1015,6 +1024,7 @@ impl<'de> serde::Deserialize<'de> for AppBinaryFile {
                 let mut size_bytes__ = None;
                 let mut sha256__ = None;
                 let mut server_file_path__ = None;
+                let mut chunks__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Name => {
@@ -1045,6 +1055,12 @@ impl<'de> serde::Deserialize<'de> for AppBinaryFile {
                             }
                             server_file_path__ = Some(map_.next_value()?);
                         }
+                        GeneratedField::Chunks => {
+                            if chunks__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("chunks"));
+                            }
+                            chunks__ = Some(map_.next_value()?);
+                        }
                     }
                 }
                 Ok(AppBinaryFile {
@@ -1052,6 +1068,7 @@ impl<'de> serde::Deserialize<'de> for AppBinaryFile {
                     size_bytes: size_bytes__.unwrap_or_default(),
                     sha256: sha256__.unwrap_or_default(),
                     server_file_path: server_file_path__.unwrap_or_default(),
+                    chunks: chunks__.unwrap_or_default(),
                 })
             }
         }
