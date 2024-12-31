@@ -465,6 +465,7 @@ message AppBinaryFile {
   bytes sha256 = 3;
   // should be path-joined to download_url when need_token is false
   string server_file_path = 4;
+  repeated AppBinaryFileChunk chunks = 5;
 }
 
 message AppBinaryFileChunk {
