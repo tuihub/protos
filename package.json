@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/tuihub/protos#readme",
   "dependencies": {
-    "@grpc/grpc-js": "^1.12.4",
+    "@grpc/grpc-js": "^1.12.5",
     "google-protobuf": "^3.21.4",
     "grpc-tools": "^1.12.4",
     "ts-protoc-gen": "^0.15.0"
