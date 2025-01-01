@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.28](https://github.com/tuihub/protos/compare/v0.4.27...v0.4.28) (2025-01-01)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#171](https://github.com/tuihub/protos/issues/171)) ([6a78002](https://github.com/tuihub/protos/commit/6a7800287ab7736d1eb05795ed3be74af149380c))
+* **gebura:** add chunks for AppBinaryFile ([afb6847](https://github.com/tuihub/protos/commit/afb684765aad16187557f6774237f755aea75b2d))
+
 ## [0.4.27](https://github.com/tuihub/protos/compare/v0.4.26...v0.4.27) (2024-12-31)
 
 
