@@ -76,4 +76,4 @@ var LibrarianMinerServiceService = exports.LibrarianMinerServiceService = {
   },
 };
 
-exports.LibrarianMinerServiceClient = grpc.makeGenericClientConstructor(LibrarianMinerServiceService);
+exports.LibrarianMinerServiceClient = grpc.makeGenericClientConstructor(LibrarianMinerServiceService, 'LibrarianMinerService');

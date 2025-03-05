@@ -519,4 +519,4 @@ pushFeedItems: {
   },
 };
 
-exports.LibrarianPorterServiceClient = grpc.makeGenericClientConstructor(LibrarianPorterServiceService);
+exports.LibrarianPorterServiceClient = grpc.makeGenericClientConstructor(LibrarianPorterServiceService, 'LibrarianPorterService');

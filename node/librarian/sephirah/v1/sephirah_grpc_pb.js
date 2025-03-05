@@ -4001,4 +4001,4 @@ listTags: {
   },
 };
 
-exports.LibrarianSephirahServiceClient = grpc.makeGenericClientConstructor(LibrarianSephirahServiceService);
+exports.LibrarianSephirahServiceClient = grpc.makeGenericClientConstructor(LibrarianSephirahServiceService, 'LibrarianSephirahService');
