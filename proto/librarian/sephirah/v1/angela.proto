@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1;
+
+import "google/protobuf/timestamp.proto";
+import "librarian/sephirah/v1/binah.proto";
+import "librarian/sephirah/v1/chesed.proto";
+import "librarian/sephirah/v1/gebura.proto";
+import "librarian/sephirah/v1/hokma.proto";
+import "librarian/sephirah/v1/netzach.proto";
+import "librarian/sephirah/v1/tiphereth.proto";
+import "librarian/sephirah/v1/yesod.proto";
+import "librarian/v1/wellknown.proto";
+import "librarian/sephirah/v1/base.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+
+/*
+ * Angela provides the admin control interface
+ */
+service LibrarianAngelaService {
+  // Allow anonymous call, use accessToken to get complete information
+  rpc GetServerInformation(GetServerInformationRequest) returns (GetServerInformationResponse);
+  // `Tiphereth` Login via password and get two token
+  rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
+  // `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+
+  // `Tiphereth`
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  // `Tiphereth`
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+  // `Tiphereth`
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+
+  // `Tiphereth`
+  rpc ListPorters(ListPortersRequest) returns (ListPortersResponse);
+  // `Tiphereth`
+  rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
+  // `Tiphereth`
+  rpc ListPorterGroups(ListPorterGroupsRequest) returns (ListPorterGroupsResponse);
+
+  // `Binah`
+  rpc SetFileCapacity(SetFileCapacityRequest) returns (SetFileCapacityResponse);
+
+  // `Gebura`
+  rpc CreateAppInfo(CreateAppInfoRequest) returns (CreateAppInfoResponse);
+  // `Gebura`
+  rpc UpdateAppInfo(UpdateAppInfoRequest) returns (UpdateAppInfoResponse);
+  // `Gebura` Used to manage app info
+  rpc ListAppInfos(ListAppInfosRequest) returns (ListAppInfosResponse);
+  // `Gebura` Merge two app infos
+  rpc MergeAppInfos(MergeAppInfosRequest) returns (MergeAppInfosResponse);
+  // `Gebura` Pick one app info out from merged
+  rpc PickAppInfo(PickAppInfoRequest) returns (PickAppInfoResponse);
+}

@@ -17,8 +17,6 @@ message SetFileCapacityRequest {
 message SetFileCapacityResponse {}
 
 message GetFileCapacityRequest {
-  // Only admin can get the file capacity of other users
-  optional librarian.v1.InternalID user_id = 1;
   FileType file_type = 2;
 }
 

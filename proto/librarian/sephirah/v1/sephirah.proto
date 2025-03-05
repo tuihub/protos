@@ -10,7 +10,7 @@ import "librarian/sephirah/v1/hokma.proto";
 import "librarian/sephirah/v1/netzach.proto";
 import "librarian/sephirah/v1/tiphereth.proto";
 import "librarian/sephirah/v1/yesod.proto";
-import "librarian/v1/wellknown.proto";
+import "librarian/sephirah/v1/base.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
@@ -36,12 +36,14 @@ service LibrarianSephirahService {
   rpc ListenServerEvent(ListenServerEventRequest) returns (stream ListenServerEventResponse);
   // `Tiphereth` `Normal` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
-  // `Tiphereth` `Normal` `Sentinel` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  // `Tiphereth` `Normal` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
   // `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
   // This token can be used to perform actions on behalf of the user.
   rpc AcquireUserToken(AcquireUserTokenRequest) returns (AcquireUserTokenResponse);
 
+  // `Tiphereth`
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
   // `Tiphereth` Self register as a new normal user
   rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
   // `Tiphereth` `Normal` Client should register device after the first login
@@ -57,30 +59,14 @@ service LibrarianSephirahService {
   // NOTE2: Delete session will not affect device registration.
   rpc DeleteUserSession(DeleteUserSessionRequest) returns (DeleteUserSessionResponse);
 
-  // `Tiphereth` `Admin` `Normal limited`
-  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-  // `Tiphereth` `Admin` `Normal limited`
-  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
-  // `Tiphereth` `Admin` `Normal limited`
-  rpc GetUser(GetUserRequest) returns (GetUserResponse);
-  // `Tiphereth` `Admin` `Normal limited`
-  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
-
   // `Tiphereth` `Normal` Bind third-party account to current user.
-  // Create (account)<-[Equal]->(current user)
   rpc LinkAccount(LinkAccountRequest) returns (LinkAccountResponse);
   // `Tiphereth` `Normal` Unbind third-party account from current user.
-  // Delete (account)<-[Equal]->(current user)
   rpc UnLinkAccount(UnLinkAccountRequest) returns (UnLinkAccountResponse);
   // `Tiphereth` `Normal` List third-party account binded to current user.
-  // Match ()<-[Equal]->(current user)
   rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
 
-  // `Tiphereth` `Admin`
-  rpc ListPorters(ListPortersRequest) returns (ListPortersResponse);
-  // `Tiphereth` `Admin`
-  rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
-  // `Tiphereth` `Admin` `Normal limited`
+  // `Tiphereth` `Normal limited`
   rpc ListPorterGroups(ListPorterGroupsRequest) returns (ListPorterGroupsResponse);
   // `Tiphereth` `Normal`
   rpc CreatePorterContext(CreatePorterContextRequest) returns (CreatePorterContextResponse);
@@ -89,9 +75,7 @@ service LibrarianSephirahService {
   // `Tiphereth` `Normal` Set porter context.
   rpc UpdatePorterContext(UpdatePorterContextRequest) returns (UpdatePorterContextResponse);
 
-  // `Binah` `Admin`
-  rpc SetFileCapacity(SetFileCapacityRequest) returns (SetFileCapacityResponse);
-  // `Binah` `Admin` `Normal limited`
+  // `Binah` `Normal`
   rpc GetFileCapacity(GetFileCapacityRequest) returns (GetFileCapacityResponse);
   // `Binah` `upload_token`
   rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
@@ -127,17 +111,6 @@ service LibrarianSephirahService {
   rpc GetImage(GetImageRequest) returns (GetImageResponse);
   // `Chesed` `Normal`
   rpc DownloadImage(DownloadImageRequest) returns (DownloadImageResponse);
-
-  // `Gebura` `Admin`
-  rpc CreateAppInfo(CreateAppInfoRequest) returns (CreateAppInfoResponse);
-  // `Gebura` `Admin`
-  rpc UpdateAppInfo(UpdateAppInfoRequest) returns (UpdateAppInfoResponse);
-  // `Gebura` `Admin` Used to manage app info
-  rpc ListAppInfos(ListAppInfosRequest) returns (ListAppInfosResponse);
-  // `Gebura` `Admin` Merge two app infos
-  rpc MergeAppInfos(MergeAppInfosRequest) returns (MergeAppInfosResponse);
-  // `Gebura` `Admin` Pick one app info out from merged
-  rpc PickAppInfo(PickAppInfoRequest) returns (PickAppInfoResponse);
 
   // `Gebura` `Normal` Asynchronous update app infos.
   // Request on INTERNAL app info applies to all bound external app infos.
@@ -178,11 +151,6 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc UnAssignApp(UnAssignAppRequest) returns (UnAssignAppResponse);
 
-  // `Gebura` `Sentinel`
-  rpc ReportSentinelInformation(ReportSentinelInformationRequest) returns (ReportSentinelInformationResponse);
-  // `Gebura` `Sentinel`
-  // Full update, changes are handled by librarian
-  rpc ReportAppBinaries(ReportAppBinariesRequest) returns (ReportAppBinariesResponse);
   // `Gebura` `Normal`
   rpc DownloadAppBinary(DownloadAppBinaryRequest) returns (DownloadAppBinaryResponse);
 
@@ -312,54 +280,6 @@ service LibrarianSephirahService {
   rpc UpdateTag(UpdateTagRequest) returns (UpdateTagResponse);
   // `Hokma` `Normal`
   rpc ListTags(ListTagsRequest) returns (ListTagsResponse);
-}
-
-message GetServerInformationRequest {
-  optional bool with_status_report = 1;
-}
-message GetServerInformationResponse {
-  // For manual inspection only, the client may display but should not parse the response.
-  ServerBinarySummary server_binary_summary = 1;
-  // For manual inspection only, the client may display but should not parse the response.
-  ServerProtocolSummary protocol_summary = 2;
-  // The time that server received the request,
-  // note that there is a transmission delay between server and client.
-  google.protobuf.Timestamp current_time = 3;
-  // Valid when accessToken is provided.
-  optional librarian.v1.FeatureSummary feature_summary = 4;
-  // For showing to user, customizable by server owner.
-  ServerInstanceSummary server_instance_summary = 5;
-  // Plain text status report for manual inspection.
-  // Content is specific to server implementation.
-  optional string status_report = 6;
-}
-
-message ServerBinarySummary {
-  // Server source code address.
-  // *Should* be a valid http address.
-  string source_code_address = 1;
-  // Binary build version.
-  // The content *should* be a semantic version string similar to the one generated by `git describe`,
-  // but rely on the actual implementation of the server.
-  string build_version = 2;
-  // Binary build date.
-  // The content *should* be a date format that is human-readable.
-  string build_date = 3;
-}
-
-message ServerProtocolSummary {
-  // Protocol version used by server.
-  // The content *must* be a semantic version string generated by `git describe`,
-  // and if the server is built for production, it *must* be a valid version tag.
-  string version = 1;
-}
-
-message ServerInstanceSummary {
-  string name = 1;
-  string description = 2;
-  string website_url = 3;
-  string logo_url = 4;
-  string background_url = 5;
 }
 
 message ListenServerEventRequest {}

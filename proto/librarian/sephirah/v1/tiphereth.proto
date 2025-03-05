@@ -188,6 +188,11 @@ message UpdatePorterContextRequest {
 }
 message UpdatePorterContextResponse {}
 
+message DeletePorterContextRequest {
+  librarian.v1.InternalID context_id = 1;
+}
+message DeletePorterContextResponse {}
+
 message User {
   librarian.v1.InternalID id = 1;
   string username = 2;
