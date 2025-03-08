@@ -8,10 +8,7 @@ import "librarian/v1/wellknown.proto";
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
-message GetServerInformationRequest {
-  optional bool with_status_report = 1;
-}
-message GetServerInformationResponse {
+message ServerInformation {
   // For manual inspection only, the client may display but should not parse the response.
   ServerBinarySummary server_binary_summary = 1;
   // For manual inspection only, the client may display but should not parse the response.

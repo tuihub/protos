@@ -106,21 +106,6 @@ message ReadFeedItemRequest {
 }
 message ReadFeedItemResponse {}
 
-message PUpsertFeedRequest {
-  librarian.v1.InternalID id = 1;
-  librarian.v1.Feed data = 2;
-}
-
-message PUpsertFeedResponse {}
-
-message PGetFeedRequest {
-  librarian.v1.InternalID id = 1;
-}
-
-message PGetFeedResponse {
-  librarian.v1.Feed data = 1;
-}
-
 message CreateFeedItemCollectionRequest {
   FeedItemCollection collection = 1;
 }

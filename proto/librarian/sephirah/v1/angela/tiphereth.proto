@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package librarian.sephirah.v1.angela;
 
+import "google/protobuf/timestamp.proto";
 import "librarian/sephirah/v1/sephirah/tiphereth.proto";
 import "librarian/v1/wellknown.proto";
 
@@ -73,3 +74,51 @@ message DeletePorterRequest {
   librarian.v1.InternalID porter_id = 1;
 }
 message DeletePorterResponse {}
+
+message CreateSentinelRequest {
+  Sentinel sentinel = 1;
+}
+message CreateSentinelResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message ListSentinelsRequest {
+  librarian.v1.PagingRequest paging = 1;
+}
+message ListSentinelsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated Sentinel sentinels = 2;
+}
+
+message GetSentinelTokenRequest {
+  librarian.v1.InternalID sentinel_id = 1;
+  google.protobuf.Timestamp expiration_time = 2;
+}
+message GetSentinelTokenResponse {
+  string refresh_token = 1;
+}
+
+message UpdateSentinelRequest {
+  Sentinel sentinel = 1;
+}
+message UpdateSentinelResponse {}
+
+message DeleteSentinelRequest {
+  librarian.v1.InternalID sentinel_id = 1;
+}
+message DeleteSentinelResponse {}
+
+message Sentinel {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+  librarian.v1.InternalID create_user_id = 4;
+  repeated string allowed_ips = 5;
+  SentinelStatus status = 6;
+}
+
+enum SentinelStatus {
+  SENTINEL_STATUS_UNSPECIFIED = 0;
+  SENTINEL_STATUS_ACTIVE = 1;
+  SENTINEL_STATUS_BLOCKED = 2;
+}

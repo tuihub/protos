@@ -16,7 +16,7 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
  */
 service LibrarianAngelaService {
   // Allow anonymous call, use accessToken to get complete information
-  rpc GetServerInformation(sephirah.GetServerInformationRequest) returns (sephirah.GetServerInformationResponse);
+  rpc GetServerInformation(GetServerInformationRequest) returns (GetServerInformationResponse);
 
   rpc GetServerConfig(GetServerConfigRequest) returns (GetServerConfigResponse);
   rpc UpdateServerConfig(UpdateServerConfigRequest) returns (UpdateServerConfigResponse);
@@ -39,6 +39,17 @@ service LibrarianAngelaService {
   rpc UpdatePorterStatus(UpdatePorterStatusRequest) returns (UpdatePorterStatusResponse);
   // `Tiphereth` Delete porter, only when porter is disabled
   rpc DeletePorter(DeletePorterRequest) returns (DeletePorterResponse);
+
+  // `Tiphereth`
+  rpc CreateSentinel(CreateSentinelRequest) returns (CreateSentinelResponse);
+  // `Tiphereth`
+  rpc GetSentinelToken(GetSentinelTokenRequest) returns (GetSentinelTokenResponse);
+  // `Tiphereth`
+  rpc UpdateSentinel(UpdateSentinelRequest) returns (UpdateSentinelResponse);
+  // `Tiphereth`
+  rpc ListSentinels(ListSentinelsRequest) returns (ListSentinelsResponse);
+  // `Tiphereth`
+  rpc DeleteSentinel(DeleteSentinelRequest) returns (DeleteSentinelResponse);
 
   // `Binah`
   rpc ListStorageCapacityUsage(ListStorageCapacityUsageRequest) returns (ListStorageCapacityUsageResponse);
@@ -86,6 +97,13 @@ service LibrarianAngelaService {
   rpc ListStoreAppSaveFiles(ListStoreAppSaveFilesRequest) returns (ListStoreAppSaveFilesResponse);
   // `Gebura`
   rpc DeleteStoreAppSaveFile(DeleteStoreAppSaveFileRequest) returns (DeleteStoreAppSaveFileResponse);
+}
+
+message GetServerInformationRequest {
+  optional bool with_status_report = 1;
+}
+message GetServerInformationResponse {
+  sephirah.ServerInformation server_information = 1;
 }
 
 message GetServerConfigRequest {}

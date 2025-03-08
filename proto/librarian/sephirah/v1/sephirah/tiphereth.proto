@@ -34,14 +34,6 @@ message RefreshTokenResponse {
   string refresh_token = 2;
 }
 
-message AcquireUserTokenRequest {
-  librarian.v1.InternalID user_id = 1;
-}
-
-message AcquireUserTokenResponse {
-  string access_token = 1;
-}
-
 message RegisterUserRequest {
   string username = 1;
   string password = 2;

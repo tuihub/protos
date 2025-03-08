@@ -36,11 +36,8 @@ service LibrarianSephirahService {
 
   // `Tiphereth` `Normal` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
-  // `Tiphereth` `Normal` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  // `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
-  // `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
-  // This token can be used to perform actions on behalf of the user.
-  rpc AcquireUserToken(AcquireUserTokenRequest) returns (AcquireUserTokenResponse);
 
   // `Tiphereth`
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
@@ -190,10 +187,7 @@ service LibrarianSephirahService {
   // `Netzach` `Normal`
   rpc ListNotifyFlows(ListNotifyFlowsRequest) returns (ListNotifyFlowsResponse);
 
-  // `Netzach` `Porter`
-  rpc PorterGetNotifyTargetItems(PorterGetNotifyTargetItemsRequest) returns (PorterGetNotifyTargetItemsResponse);
-
-  // `Netzach` `Admin` `Normal limited`
+  // `Netzach` `Normal`
   rpc ListSystemNotifications(ListSystemNotificationsRequest) returns (ListSystemNotificationsResponse);
   // `Netzach` `Normal`
   rpc UpdateSystemNotification(UpdateSystemNotificationRequest) returns (UpdateSystemNotificationResponse);
@@ -237,11 +231,13 @@ service LibrarianSephirahService {
   rpc RemoveFeedItemFromCollection(RemoveFeedItemFromCollectionRequest) returns (RemoveFeedItemFromCollectionResponse);
   // `Yesod` `Normal`
   rpc ListFeedItemsInCollection(ListFeedItemsInCollectionRequest) returns (ListFeedItemsInCollectionResponse);
+}
 
-  // `Yesod` `Porter`
-  rpc PUpsertFeed(PUpsertFeedRequest) returns (PUpsertFeedResponse);
-  // `Yesod` `Porter`
-  rpc PGetFeed(PGetFeedRequest) returns (PGetFeedResponse);
+message GetServerInformationRequest {
+  optional bool with_status_report = 1;
+}
+message GetServerInformationResponse {
+  ServerInformation server_information = 1;
 }
 
 message ListenServerEventRequest {}
