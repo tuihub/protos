@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1;
+package librarian.sephirah.v1.sephirah;
 
 import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1;
+package librarian.sephirah.v1.sephirah;
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
@@ -83,24 +83,6 @@ message ListFeedItemsRequest {
 message ListFeedItemsResponse {
   librarian.v1.PagingResponse paging = 1;
   repeated FeedItemDigest items = 2;
-}
-
-message GroupFeedItemsRequest {
-  librarian.v1.TimeAggregation publish_time_aggregation = 1;
-  repeated librarian.v1.InternalID feed_id_filter = 2;
-  repeated string author_filter = 3;
-  repeated string publish_platform_filter = 4;
-  repeated string category_filter = 5;
-  // NULL means no limit
-  optional int64 group_size = 7;
-}
-
-message GroupFeedItemsResponse {
-  message FeedItemsGroup {
-    librarian.v1.TimeRange time_range = 1;
-    repeated FeedItemDigest items = 2;
-  }
-  repeated FeedItemsGroup groups = 1;
 }
 
 message GetFeedItemRequest {

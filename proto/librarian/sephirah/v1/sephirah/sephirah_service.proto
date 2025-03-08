@@ -1,16 +1,15 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1;
+package librarian.sephirah.v1.sephirah;
 
 import "google/protobuf/timestamp.proto";
-import "librarian/sephirah/v1/binah.proto";
-import "librarian/sephirah/v1/chesed.proto";
-import "librarian/sephirah/v1/gebura.proto";
-import "librarian/sephirah/v1/hokma.proto";
-import "librarian/sephirah/v1/netzach.proto";
-import "librarian/sephirah/v1/tiphereth.proto";
-import "librarian/sephirah/v1/yesod.proto";
-import "librarian/sephirah/v1/base.proto";
+import "librarian/sephirah/v1/sephirah/base.proto";
+import "librarian/sephirah/v1/sephirah/binah.proto";
+import "librarian/sephirah/v1/sephirah/chesed.proto";
+import "librarian/sephirah/v1/sephirah/gebura.proto";
+import "librarian/sephirah/v1/sephirah/netzach.proto";
+import "librarian/sephirah/v1/sephirah/tiphereth.proto";
+import "librarian/sephirah/v1/sephirah/yesod.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
@@ -34,6 +33,7 @@ service LibrarianSephirahService {
   // Server can close the stream at any time, client should reconnect if needed **with backoff**.
   // Only used to improve real-time experience, no guarantee of delivery.
   rpc ListenServerEvent(ListenServerEventRequest) returns (stream ListenServerEventResponse);
+
   // `Tiphereth` `Normal` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
   // `Tiphereth` `Normal` `Porter` Use valid refresh_token and get two new token, a refresh_token can only be used once
@@ -46,6 +46,8 @@ service LibrarianSephirahService {
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
   // `Tiphereth` Self register as a new normal user
   rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
+  // `Tiphereth` `Normal` Update self user info
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
   // `Tiphereth` `Normal` Client should register device after the first login
   // and store the device_id locally.
   // The server could add extra limits to non-registered device
@@ -66,8 +68,8 @@ service LibrarianSephirahService {
   // `Tiphereth` `Normal` List third-party account binded to current user.
   rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
 
-  // `Tiphereth` `Normal limited`
-  rpc ListPorterGroups(ListPorterGroupsRequest) returns (ListPorterGroupsResponse);
+  // `Tiphereth` `Normal`
+  rpc ListPorterDigests(ListPorterDigestsRequest) returns (ListPorterDigestsResponse);
   // `Tiphereth` `Normal`
   rpc CreatePorterContext(CreatePorterContextRequest) returns (CreatePorterContextResponse);
   // `Tiphereth` `Normal`
@@ -76,7 +78,7 @@ service LibrarianSephirahService {
   rpc UpdatePorterContext(UpdatePorterContextRequest) returns (UpdatePorterContextResponse);
 
   // `Binah` `Normal`
-  rpc GetFileCapacity(GetFileCapacityRequest) returns (GetFileCapacityResponse);
+  rpc GetStorageCapacityUsage(GetStorageCapacityUsageRequest) returns (GetStorageCapacityUsageResponse);
   // `Binah` `upload_token`
   rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
   // `Binah` `download_token`
@@ -112,52 +114,42 @@ service LibrarianSephirahService {
   // `Chesed` `Normal`
   rpc DownloadImage(DownloadImageRequest) returns (DownloadImageResponse);
 
-  // `Gebura` `Normal` Asynchronous update app infos.
-  // Request on INTERNAL app info applies to all bound external app infos.
-  // Create an INTERNAL app info when requested external app info does not exist
-  // Server should implement a sync rate limit to prevent abuse,
-  // when rate limit reached, return without real sync.
-  rpc SyncAppInfos(SyncAppInfosRequest) returns (SyncAppInfosResponse);
-  // `Gebura` `Normal` Asynchronously update app infos associated with an account.
-  // Create an INTERNAL app info when associated external app info does not exist.
-  // Server should implement a sync rate limit to prevent abuse,
-  // when rate limit reached, return without real sync.
-  rpc SyncAccountAppInfos(SyncAccountAppInfosRequest) returns (SyncAccountAppInfosResponse);
-  // `Gebura` `Normal` Search app infos that already exist in server
-  rpc SearchAppInfos(SearchAppInfosRequest) returns (SearchAppInfosResponse);
-  // `Gebura` `Normal` Search new app infos from external
-  rpc SearchNewAppInfos(SearchNewAppInfosRequest) returns (SearchNewAppInfosResponse);
-  // `Gebura` `Normal` Flattened app info, data priority is 1.INTERNAL, 2.STEAM.
-  // e.g. `id` will always from INTERNAL, `description` may from STEAM if it is empty in INTERNAL
-  rpc GetAppInfo(GetAppInfoRequest) returns (GetAppInfoResponse);
-  // `Gebura` `Normal` Original bound apps info of required app
-  rpc GetBoundAppInfos(GetBoundAppInfosRequest) returns (GetBoundAppInfosResponse);
   // `Gebura` `Normal`
-  rpc PurchaseAppInfo(PurchaseAppInfoRequest) returns (PurchaseAppInfoResponse);
+  rpc SearchStoreApps(SearchStoreAppsRequest) returns (SearchStoreAppsResponse);
   // `Gebura` `Normal`
-  // Default get user purchased apps
-  // Use `source` to get purchase info from bound account
-  // only support steam
-  rpc GetPurchasedAppInfos(GetPurchasedAppInfosRequest) returns (GetPurchasedAppInfosResponse);
+  rpc GetStoreAppSummary(GetStoreAppSummaryRequest) returns (GetStoreAppSummaryResponse);
+  // `Gebura` `Normal`
+  rpc AcquireStoreApp(AcquireStoreAppRequest) returns (AcquireStoreAppResponse);
 
+  // `Gebura` `Normal`
+  rpc ListStoreAppBinaries(ListStoreAppBinariesRequest) returns (ListStoreAppBinariesResponse);
+  // `Gebura` `Normal`
+  rpc ListStoreAppBinaryFiles(ListStoreAppBinaryFilesRequest) returns (ListStoreAppBinaryFilesResponse);
+  // `Gebura` `Normal`
+  rpc DownloadStoreAppBinary(DownloadStoreAppBinaryRequest) returns (DownloadStoreAppBinaryResponse);
+
+  // `Gebura` `Normal`
+  rpc ListStoreAppSaveFiles(ListStoreAppSaveFilesRequest) returns (ListStoreAppSaveFilesResponse);
+  // `Gebura` `Normal`
+  rpc DownloadStoreAppSaveFile(DownloadStoreAppSaveFileRequest) returns (DownloadStoreAppSaveFileResponse);
+
+  // `Gebura` `Normal` Search app infos
+  rpc SearchAppInfos(SearchAppInfosRequest) returns (SearchAppInfosResponse);
   // `Gebura` `Normal`
   rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);
   // `Gebura` `Normal`
   rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
   // `Gebura` `Normal`
   rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
-  // `Gebura` `Normal`
-  rpc AssignApp(AssignAppRequest) returns (AssignAppResponse);
-  // `Gebura` `Normal`
-  rpc UnAssignApp(UnAssignAppRequest) returns (UnAssignAppResponse);
 
   // `Gebura` `Normal`
-  rpc DownloadAppBinary(DownloadAppBinaryRequest) returns (DownloadAppBinaryResponse);
-
+  rpc BatchCreateAppRunTime(BatchCreateAppRunTimeRequest) returns (BatchCreateAppRunTimeResponse);
   // `Gebura` `Normal`
-  rpc AddAppRunTime(AddAppRunTimeRequest) returns (AddAppRunTimeResponse);
-  // `Gebura` `Normal` Only support AGGREGATION_TYPE_OVERALL
   rpc SumAppRunTime(SumAppRunTimeRequest) returns (SumAppRunTimeResponse);
+  // `Gebura` `Normal`
+  rpc ListAppRunTimes(ListAppRunTimesRequest) returns (ListAppRunTimesResponse);
+  // `Gebura` `Normal`
+  rpc DeleteAppRunTime(DeleteAppRunTimeRequest) returns (DeleteAppRunTimeResponse);
 
   // `Gebura` `Normal`
   rpc UploadAppSaveFile(UploadAppSaveFileRequest) returns (UploadAppSaveFileResponse);
@@ -166,36 +158,15 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc ListAppSaveFiles(ListAppSaveFilesRequest) returns (ListAppSaveFilesResponse);
   // `Gebura` `Normal`
-  rpc RemoveAppSaveFile(RemoveAppSaveFileRequest) returns (RemoveAppSaveFileResponse);
+  rpc DeleteAppSaveFile(DeleteAppSaveFileRequest) returns (DeleteAppSaveFileResponse);
   // `Gebura` `Normal`
   rpc PinAppSaveFile(PinAppSaveFileRequest) returns (PinAppSaveFileResponse);
   // `Gebura` `Normal`
   rpc UnpinAppSaveFile(UnpinAppSaveFileRequest) returns (UnpinAppSaveFileResponse);
   // `Gebura` `Normal`
-  rpc SetAppSaveFileCapacity(SetAppSaveFileCapacityRequest) returns (SetAppSaveFileCapacityResponse);
-  // `Gebura` `Normal`
   rpc GetAppSaveFileCapacity(GetAppSaveFileCapacityRequest) returns (GetAppSaveFileCapacityResponse);
   // `Gebura` `Normal`
-  rpc SetAppSaveFileCapacityDefault(SetAppSaveFileCapacityDefaultRequest) returns (SetAppSaveFileCapacityDefaultResponse);
-  // `Gebura` `Normal`
-  rpc GetAppSaveFileCapacityDefault(GetAppSaveFileCapacityDefaultRequest) returns (GetAppSaveFileCapacityDefaultResponse);
-
-  // `Gebura` `Admin`
-  rpc CreateSharedAppSave(CreateSharedAppSaveRequest) returns (CreateSharedAppSaveResponse);
-  // `Gebura` `Admin`
-  rpc UpdateSharedAppSave(UpdateSharedAppSaveRequest) returns (UpdateSharedAppSaveResponse);
-  // `Gebura` `Normal`
-  rpc ListSharedAppSaves(ListSharedAppSavesRequest) returns (ListSharedAppSavesResponse);
-  // `Gebura` `Admin`
-  rpc RemoveSharedAppSave(RemoveSharedAppSaveRequest) returns (RemoveSharedAppSaveResponse);
-  // `Gebura` `Admin` `Normal limited`
-  rpc CreateSharedAppSaveFile(CreateSharedAppSaveFileRequest) returns (CreateSharedAppSaveFileResponse);
-  // `Gebura` `Admin` `Normal limited`
-  rpc UpdateSharedAppSaveFile(UpdateSharedAppSaveFileRequest) returns (UpdateSharedAppSaveFileResponse);
-  // `Gebura` `Normal`
-  rpc ListSharedAppSaveFiles(ListSharedAppSaveFilesRequest) returns (ListSharedAppSaveFilesResponse);
-  // `Gebura` `Admin` `Normal limited`
-  rpc RemoveSharedAppSaveFile(RemoveSharedAppSaveFileRequest) returns (RemoveSharedAppSaveFileResponse);
+  rpc SetAppSaveFileCapacity(SetAppSaveFileCapacityRequest) returns (SetAppSaveFileCapacityResponse);
 
   // `Gebura` `Normal`
   rpc ListAppCategories(ListAppCategoriesRequest) returns (ListAppCategoriesResponse);
@@ -204,7 +175,7 @@ service LibrarianSephirahService {
   // `Gebura` `Normal`
   rpc UpdateAppCategory(UpdateAppCategoryRequest) returns (UpdateAppCategoryResponse);
   // `Gebura` `Normal`
-  rpc RemoveAppCategory(RemoveAppCategoryRequest) returns (RemoveAppCategoryResponse);
+  rpc DeleteAppCategory(DeleteAppCategoryRequest) returns (DeleteAppCategoryResponse);
 
   // `Netzach` `Normal`
   rpc CreateNotifyTarget(CreateNotifyTargetRequest) returns (CreateNotifyTargetResponse);
@@ -248,8 +219,6 @@ service LibrarianSephirahService {
   // `Yesod` `Normal`
   rpc ListFeedItems(ListFeedItemsRequest) returns (ListFeedItemsResponse);
   // `Yesod` `Normal`
-  rpc GroupFeedItems(GroupFeedItemsRequest) returns (GroupFeedItemsResponse);
-  // `Yesod` `Normal`
   rpc GetFeedItem(GetFeedItemRequest) returns (GetFeedItemResponse);
   // `Yesod` `Normal`
   rpc GetBatchFeedItems(GetBatchFeedItemsRequest) returns (GetBatchFeedItemsResponse);
@@ -273,13 +242,6 @@ service LibrarianSephirahService {
   rpc PUpsertFeed(PUpsertFeedRequest) returns (PUpsertFeedResponse);
   // `Yesod` `Porter`
   rpc PGetFeed(PGetFeedRequest) returns (PGetFeedResponse);
-
-  // `Hokma` `Normal`
-  rpc CreateTag(CreateTagRequest) returns (CreateTagResponse);
-  // `Hokma` `Normal`
-  rpc UpdateTag(UpdateTagRequest) returns (UpdateTagResponse);
-  // `Hokma` `Normal`
-  rpc ListTags(ListTagsRequest) returns (ListTagsResponse);
 }
 
 message ListenServerEventRequest {}
