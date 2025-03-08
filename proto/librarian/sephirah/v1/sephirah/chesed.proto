@@ -1,15 +1,14 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1;
+package librarian.sephirah.v1.sephirah;
 
-import "librarian/sephirah/v1/base.proto";
-import "librarian/v1/common.proto";
+import "librarian/v1/wellknown.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 message UploadImageRequest {
-  FileMetadata file_metadata = 1;
+  librarian.v1.FileMetadata file_metadata = 1;
   string name = 2;
   string description = 3;
 }
@@ -51,7 +50,7 @@ message GetImageRequest {
 }
 
 message GetImageResponse {
-  FileMetadata file_metadata = 1;
+  librarian.v1.FileMetadata file_metadata = 1;
   string name = 2;
   string description = 3;
 }

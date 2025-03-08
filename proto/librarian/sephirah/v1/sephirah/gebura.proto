@@ -1,0 +1,429 @@
+syntax = "proto3";
+
+package librarian.sephirah.v1.sephirah;
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "librarian/v1/wellknown.proto";
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+
+message SearchStoreAppsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  string name_like = 2;
+}
+message SearchStoreAppsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated StoreAppDigest app_infos = 2;
+}
+
+message GetStoreAppSummaryRequest {
+  librarian.v1.InternalID store_app_id = 1;
+  // default 0 means do not response binaries
+  int64 app_binary_limit = 2;
+  // default 0 means do not response save files
+  int64 app_save_file_limit = 3;
+  // default 0 means do not response acquired users
+  int64 acquired_user_limit = 4;
+}
+
+message GetStoreAppSummaryResponse {
+  StoreAppSummary store_app = 1;
+}
+
+message AcquireStoreAppRequest {
+  librarian.v1.InternalID store_app_id = 1;
+}
+
+message AcquireStoreAppResponse {
+  // When acquired, server will create a new App with the same info and set the creator_device_id to the user's device id
+  librarian.v1.InternalID app_id = 1;
+}
+
+message ListStoreAppBinariesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  librarian.v1.InternalID app_id = 2;
+}
+
+message ListStoreAppBinariesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated StoreAppBinary binaries = 2;
+}
+
+message ListStoreAppBinaryFilesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  librarian.v1.InternalID app_binary_id = 2;
+}
+
+message ListStoreAppBinaryFilesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated StoreAppBinaryFile binary_files = 2;
+}
+
+message DownloadStoreAppBinaryRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DownloadStoreAppBinaryResponse {
+  string download_base_url = 1;
+  // valid when need_token is true
+  optional string token = 2;
+  repeated string download_base_url_alternatives = 3;
+}
+
+message ListStoreAppSaveFilesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  librarian.v1.InternalID app_id = 2;
+}
+
+message ListStoreAppSaveFilesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated StoreAppSaveFile save_files = 2;
+}
+
+message DownloadStoreAppSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+message DownloadStoreAppSaveFileResponse {
+  string download_token = 1;
+}
+
+message SearchAppInfosRequest {
+  librarian.v1.PagingRequest paging = 1;
+  string name_like = 2;
+  repeated string source_filter = 3;
+}
+message SearchAppInfosResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated AppInfo app_infos = 2;
+}
+
+message CreateAppRequest {
+  App app = 1;
+}
+
+message CreateAppResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateAppRequest {
+  App app = 1;
+}
+
+message UpdateAppResponse {}
+
+message ListAppsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  // List owned apps by default.
+  // Used to get other's **public** apps.
+  repeated librarian.v1.InternalID owner_id_filter = 2;
+  repeated librarian.v1.InternalID id_filter = 3;
+  repeated librarian.v1.InternalID device_id_filter = 5;
+}
+
+message ListAppsResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated App apps = 2;
+}
+
+message BatchCreateAppRunTimeRequest {
+  repeated AppRunTime app_run_times = 1;
+}
+
+message BatchCreateAppRunTimeResponse {}
+
+message SumAppRunTimeRequest {
+  repeated librarian.v1.InternalID app_id_filter = 1;
+  repeated librarian.v1.InternalID device_id_filter = 2;
+  repeated librarian.v1.TimeRange time_ranges_filter = 3;
+}
+
+message SumAppRunTimeResponse {
+  message Group {
+    librarian.v1.TimeRange time_range = 1;
+    google.protobuf.Duration run_time_sum = 2;
+  }
+  repeated Group run_time_groups = 1;
+}
+
+message ListAppRunTimesRequest {
+  librarian.v1.PagingRequest paging = 1;
+  repeated librarian.v1.InternalID app_id_filter = 2;
+  repeated librarian.v1.InternalID device_id_filter = 3;
+  librarian.v1.TimeRange time_range_cross = 4;
+}
+
+message ListAppRunTimesResponse {
+  librarian.v1.PagingResponse paging = 1;
+  repeated AppRunTime app_run_times = 2;
+}
+
+message DeleteAppRunTimeRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DeleteAppRunTimeResponse {}
+
+message AppRunTime {
+  librarian.v1.InternalID id = 1;
+  librarian.v1.InternalID app_id = 2;
+  librarian.v1.InternalID device_id = 3;
+  librarian.v1.TimeRange run_time = 4;
+}
+
+message UploadAppSaveFileRequest {
+  librarian.v1.FileMetadata file_metadata = 1;
+  librarian.v1.InternalID app_id = 2;
+}
+
+message UploadAppSaveFileResponse {
+  string upload_token = 1;
+}
+
+message DownloadAppSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DownloadAppSaveFileResponse {
+  string download_token = 2;
+}
+
+message ListAppSaveFilesRequest {
+  librarian.v1.InternalID app_id = 1;
+}
+
+message ListAppSaveFilesResponse {
+  message Result {
+    librarian.v1.InternalID id = 1;
+    librarian.v1.FileMetadata file = 2;
+    bool pinned = 3;
+  }
+  repeated Result results = 1;
+}
+
+message DeleteAppSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DeleteAppSaveFileResponse {}
+
+message PinAppSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message PinAppSaveFileResponse {}
+
+message UnpinAppSaveFileRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message UnpinAppSaveFileResponse {}
+
+message GetAppSaveFileCapacityRequest {
+  librarian.v1.InternalID app_id = 1;
+}
+
+message GetAppSaveFileCapacityResponse {
+  uint64 count = 1;
+  uint64 count_max = 2;
+  uint64 size_bytes = 3;
+  uint64 size_bytes_max = 4;
+  AppSaveFileCapacityStrategy strategy = 5;
+}
+
+message SetAppSaveFileCapacityRequest {
+  librarian.v1.InternalID app_id = 1;
+  int64 count = 2;
+  int64 size_bytes = 3;
+  AppSaveFileCapacityStrategy strategy = 4;
+  // apply to all apps
+  bool apply_to_all = 5;
+}
+
+message SetAppSaveFileCapacityResponse {}
+
+enum AppSaveFileCapacityStrategy {
+  APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED = 0;
+  // fail to save new file when reach limit
+  APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL = 1;
+  // delete the oldest file and save new file
+  // check if delete the oldest file can't satisfy the limit, do not delete and fail to save new file
+  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL = 2;
+  // delete files until the limit is satisfied
+  // check if delete all files can't satisfy the limit, do not delete and fail to save new file
+  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED = 3;
+}
+
+message ListAppCategoriesRequest {}
+
+message ListAppCategoriesResponse {
+  repeated AppCategory app_categories = 1;
+}
+
+message CreateAppCategoryRequest {
+  AppCategory app_category = 1;
+}
+
+message CreateAppCategoryResponse {
+  librarian.v1.InternalID id = 1;
+}
+
+message UpdateAppCategoryRequest {
+  AppCategory app_category = 1;
+}
+
+message UpdateAppCategoryResponse {}
+
+message DeleteAppCategoryRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DeleteAppCategoryResponse {}
+
+message AppInfo {
+  // WellKnownAppInfoSource
+  string source = 1;
+  string source_app_id = 2;
+  optional string source_url = 3;
+
+  string name = 10;
+  AppType type = 11;
+  string description = 12;
+  string icon_image_url = 13;
+  librarian.v1.InternalID icon_image_id = 14;
+  // must be horizontal, usually 16:9
+  string background_image_url = 15;
+  librarian.v1.InternalID background_image_id = 16;
+  // must be vertical, usually 3:4
+  string cover_image_url = 17;
+  librarian.v1.InternalID cover_image_id = 18;
+  repeated string tags = 19;
+  repeated string alt_names = 20;
+  string developer = 21;
+  string publisher = 22;
+}
+
+message StoreAppSummary {
+  StoreApp store_app = 1;
+  int64 app_binary_count = 2;
+  repeated StoreAppBinary binaries = 3;
+  int64 app_save_file_count = 4;
+  repeated StoreAppSaveFile save_files = 5;
+  int64 acquired_count = 6;
+  repeated librarian.v1.InternalID acquired_user_ids = 7;
+}
+
+message StoreApp {
+  librarian.v1.InternalID id = 1;
+
+  // map of WellKnownAppInfoSource to source_app_id
+  map<string, string> bound_app_source = 5;
+  // false by default, public store app makes it visible in store
+  bool public = 6;
+
+  string name = 20;
+  AppType type = 21;
+  string description = 22;
+  // must be horizontal, usually 16:9
+  librarian.v1.InternalID icon_image_id = 23;
+  librarian.v1.InternalID background_image_id = 24;
+  // must be vertical, usually 3:4
+  librarian.v1.InternalID cover_image_id = 25;
+  repeated string tags = 26;
+  repeated string alt_names = 27;
+  string developer = 28;
+  string publisher = 29;
+}
+
+message StoreAppDigest {
+  librarian.v1.InternalID id = 1;
+
+  string name = 20;
+  AppType type = 21;
+  string short_description = 22;
+  // must be vertical, usually 3:4
+  librarian.v1.InternalID cover_image_id = 25;
+  repeated string tags = 26;
+}
+
+message StoreAppBinary {
+  librarian.v1.InternalID id = 1;
+  bool public = 2;
+  int64 size_bytes = 3;
+
+  string name = 10;
+  string description = 11;
+  string version = 12;
+}
+
+message StoreAppBinaryFile {
+  librarian.v1.InternalID id = 1;
+  librarian.v1.FileMetadata file = 2;
+  string download_path = 3;
+}
+
+message StoreAppSaveFile {
+  librarian.v1.InternalID id = 1;
+  string name = 2;
+  string description = 3;
+  bool public = 4;
+  optional librarian.v1.FileMetadata file = 5;
+}
+
+message App {
+  librarian.v1.InternalID id = 1;
+
+  // version number is used to check if the app is updated
+  // set by server and always increase when updated
+  uint64 version_number = 2;
+  google.protobuf.Timestamp version_update_time = 3;
+  // set by server and can't be updated
+  librarian.v1.InternalID creator_device_id = 4;
+  // map of WellKnownAppInfoSource to source_app_id
+  map<string, string> bound_app_source = 5;
+  // false by default, public app makes it visible to others
+  bool public = 6;
+  // set by server and can't be updated
+  // when created by user, leave it empty
+  // when created by store, set it to the store app id
+  optional librarian.v1.InternalID bound_store_app = 7;
+  // only valid when bound_store_app is set, default is false
+  // if not stop, the app is managed by the store and can't be updated by user
+  // if stop, user can get full control of the app, but the bound relationship can't be removed
+  optional bool stop_store_managing = 8;
+
+  string name = 20;
+  AppType type = 21;
+  string description = 22;
+  string icon_image_url = 23;
+  // must be horizontal, usually 16:9
+  librarian.v1.InternalID icon_image_id = 24;
+  string background_image_url = 25;
+  librarian.v1.InternalID background_image_id = 26;
+  // must be vertical, usually 3:4
+  string cover_image_url = 27;
+  librarian.v1.InternalID cover_image_id = 28;
+  repeated string tags = 29;
+  repeated string alt_names = 30;
+  string developer = 31;
+  string publisher = 32;
+}
+
+enum AppType {
+  APP_TYPE_UNSPECIFIED = 0;
+  APP_TYPE_GAME = 1;
+}
+
+message AppCategory {
+  librarian.v1.InternalID id = 1;
+
+  // version number is used to check if the app is updated
+  // set by server and always increase when updated
+  uint64 version_number = 2;
+  google.protobuf.Timestamp version_update_time = 3;
+
+  string name = 10;
+  // Full update
+  repeated librarian.v1.InternalID app_ids = 11;
+}

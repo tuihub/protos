@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package librarian.porter.v1;
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
+
+message GetAccountRequest {
+  // WellKnownAccountPlatform
+  string platform = 1;
+  string platform_account_id = 2;
+}
+message GetAccountResponse {
+  Account account = 1;
+}
+
+message Account {
+  // WellKnownPlatform
+  string platform = 1;
+  string platform_account_id = 2;
+  string name = 3;
+  string profile_url = 4;
+  string avatar_url = 5;
+}
