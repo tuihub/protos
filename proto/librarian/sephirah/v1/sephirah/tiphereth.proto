@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1;
+package librarian.sephirah.v1.sephirah;
 
 import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
@@ -32,14 +32,6 @@ message RefreshTokenRequest {
 message RefreshTokenResponse {
   string access_token = 1;
   string refresh_token = 2;
-}
-
-message AcquireUserTokenRequest {
-  librarian.v1.InternalID user_id = 1;
-}
-
-message AcquireUserTokenResponse {
-  string access_token = 1;
 }
 
 message RegisterUserRequest {
@@ -89,16 +81,9 @@ message DeleteUserSessionRequest {
 }
 message DeleteUserSessionResponse {}
 
-message CreateUserRequest {
-  User user = 1;
-}
-message CreateUserResponse {
-  librarian.v1.InternalID id = 1;
-}
-
 message UpdateUserRequest {
   User user = 1;
-  // Original password. Required if new password is not empty string
+  // Original password. Required if new password is not empty
   optional string password = 2;
 }
 message UpdateUserResponse {}
@@ -112,25 +97,18 @@ message GetUserResponse {
   User user = 1;
 }
 
-message ListUsersRequest {
-  librarian.v1.PagingRequest paging = 1;
-  repeated UserType type_filter = 2;
-  repeated UserStatus status_filter = 3;
-}
-message ListUsersResponse {
-  librarian.v1.PagingResponse paging = 1;
-  // self will not contained in the list
-  repeated User users = 2;
-}
-
 message LinkAccountRequest {
-  librarian.v1.AccountID account_id = 1;
+  // WellKnownAccountPlatform
+  string platform = 1;
+  string platform_account_id = 2;
 }
 message LinkAccountResponse {
   librarian.v1.InternalID account_id = 1;
 }
 message UnLinkAccountRequest {
-  librarian.v1.AccountID account_id = 1;
+  // WellKnownAccountPlatform
+  string platform = 1;
+  string platform_account_id = 2;
 }
 message UnLinkAccountResponse {}
 
@@ -139,31 +117,17 @@ message ListLinkAccountsRequest {
   optional librarian.v1.InternalID user_id = 1;
 }
 message ListLinkAccountsResponse {
-  repeated librarian.v1.Account accounts = 1;
+  repeated Account accounts = 1;
 }
 
-message ListPortersRequest {
-  librarian.v1.PagingRequest paging = 1;
-}
-message ListPortersResponse {
-  librarian.v1.PagingResponse paging = 1;
-  repeated Porter porters = 2;
-}
-
-message UpdatePorterStatusRequest {
-  librarian.v1.InternalID porter_id = 1;
-  UserStatus status = 2;
-}
-message UpdatePorterStatusResponse {}
-
-message ListPorterGroupsRequest {
+message ListPorterDigestsRequest {
   librarian.v1.PagingRequest paging = 1;
   // Normal user can only list active porters
   repeated UserStatus status_filter = 2;
 }
-message ListPorterGroupsResponse {
+message ListPorterDigestsResponse {
   librarian.v1.PagingResponse paging = 1;
-  repeated PorterGroup porter_groups = 2;
+  repeated PorterDigest porter_groups = 2;
 }
 
 message CreatePorterContextRequest {
@@ -187,6 +151,22 @@ message UpdatePorterContextRequest {
   PorterContext context = 1;
 }
 message UpdatePorterContextResponse {}
+
+message DeletePorterContextRequest {
+  librarian.v1.InternalID context_id = 1;
+}
+message DeletePorterContextResponse {}
+
+message Account {
+  librarian.v1.InternalID id = 1;
+  // WellKnownPlatform
+  string platform = 2;
+  string platform_account_id = 3;
+  string name = 4;
+  string profile_url = 5;
+  string avatar_url = 6;
+  google.protobuf.Timestamp latest_update_time = 7;
+}
 
 message User {
   librarian.v1.InternalID id = 1;
@@ -300,7 +280,7 @@ enum PorterContextHandleStatus {
   PORTER_CONTEXT_HANDLE_STATUS_BLOCKED = 4;
 }
 
-message PorterGroup {
+message PorterDigest {
   librarian.v1.PorterBinarySummary binary_summary = 1;
   string global_name = 2;
   repeated string regions = 3;

@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package librarian.porter.v1;
+
+option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
+
+message SearchAppInfoRequest {
+  string name_like = 1;
+}
+
+message SearchAppInfoResponse {
+  repeated AppInfo app_infos = 1;
+}
+
+message GetAppInfoRequest {
+  // WellKnownAppInfoSource
+  string source = 1;
+  string source_app_id = 2;
+}
+message GetAppInfoResponse {
+  AppInfo app_info = 1;
+}
+
+message ParseRawAppInfoRequest {
+  // WellKnownAppInfoSource
+  string source = 1;
+  string source_app_id = 2;
+  string raw_data_json = 3;
+}
+
+message ParseRawAppInfoResponse {
+  AppInfo app_info = 1;
+}
+
+message AppInfo {
+  // WellKnownAppInfoSource
+  string source = 1;
+  string source_app_id = 2;
+  optional string source_url = 3;
+
+  // original data in json format
+  string raw_data_json = 4;
+  optional AppInfoDetails details = 5;
+
+  string name = 6;
+  AppType type = 7;
+  string short_description = 8;
+  string icon_image_url = 9;
+  // must be horizontal, usually 16:9
+  string background_image_url = 10;
+  // must be vertical, usually 3:4
+  string cover_image_url = 11;
+  repeated string tags = 12;
+  repeated string alt_names = 13;
+}
+
+message AppInfoDetails {
+  string description = 1;
+  string release_date = 2;
+  string developer = 3;
+  string publisher = 4;
+  string version = 5;
+  repeated string image_urls = 6;
+}
+
+enum AppType {
+  APP_TYPE_UNSPECIFIED = 0;
+  APP_TYPE_GAME = 1;
+}

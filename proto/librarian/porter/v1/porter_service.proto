@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package librarian.porter.v1;
 
+import "librarian/porter/v1/gebura.proto";
+import "librarian/porter/v1/tiphereth.proto";
 import "librarian/v1/common.proto";
 import "librarian/v1/wellknown.proto";
 
@@ -17,14 +19,14 @@ service LibrarianPorterService {
   rpc DisableContext(DisableContextRequest) returns (DisableContextResponse);
 
   // `Tiphereth`
-  rpc PullAccount(PullAccountRequest) returns (PullAccountResponse);
+  rpc GetAccount(GetAccountRequest) returns (GetAccountResponse);
 
   // `Gebura`
-  rpc PullAppInfo(PullAppInfoRequest) returns (PullAppInfoResponse);
-  // `Gebura`
-  rpc PullAccountAppInfoRelation(PullAccountAppInfoRelationRequest) returns (PullAccountAppInfoRelationResponse);
-  // `Gebura`
   rpc SearchAppInfo(SearchAppInfoRequest) returns (SearchAppInfoResponse);
+  // `Gebura` Get app info from source.
+  rpc GetAppInfo(GetAppInfoRequest) returns (GetAppInfoResponse);
+  // `Gebura` Parse app info from json.
+  rpc ParseRawAppInfo(ParseRawAppInfoRequest) returns (ParseRawAppInfoResponse);
 
   // `Yesod`
   rpc PullFeed(PullFeedRequest) returns (PullFeedResponse);
@@ -105,38 +107,6 @@ message DisableContextRequest {
   librarian.v1.InternalID context_id = 1;
 }
 message DisableContextResponse {}
-
-message PullAccountRequest {
-  librarian.v1.AccountID account_id = 1;
-}
-message PullAccountResponse {
-  librarian.v1.Account account = 1;
-}
-
-message PullAppInfoRequest {
-  librarian.v1.AppInfoID app_info_id = 1;
-}
-
-message PullAppInfoResponse {
-  librarian.v1.AppInfo app_info = 1;
-}
-
-message PullAccountAppInfoRelationRequest {
-  librarian.v1.AccountAppRelationType relation_type = 1;
-  librarian.v1.AccountID account_id = 2;
-}
-
-message PullAccountAppInfoRelationResponse {
-  repeated librarian.v1.AppInfo app_infos = 1;
-}
-
-message SearchAppInfoRequest {
-  string name = 1;
-}
-
-message SearchAppInfoResponse {
-  repeated librarian.v1.AppInfo app_infos = 1;
-}
 
 message PullFeedRequest {
   // `PorterFeatureSummary.feed_sources`

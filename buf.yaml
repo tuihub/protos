@@ -5,10 +5,9 @@ deps:
   - buf.build/bufbuild/protovalidate
 lint:
   use:
-    - DEFAULT
+    - STANDARD
   except:
-    - FIELD_NOT_REQUIRED
-    - PACKAGE_NO_IMPORT_CYCLE
+    - PACKAGE_VERSION_SUFFIX
   ignore_only:
     PACKAGE_VERSION_SUFFIX:
       - proto/errors/errors.proto
