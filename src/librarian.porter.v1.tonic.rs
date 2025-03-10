@@ -206,11 +206,11 @@ pub mod librarian_porter_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn pull_account(
+        pub async fn get_account(
             &mut self,
-            request: impl tonic::IntoRequest<super::PullAccountRequest>,
+            request: impl tonic::IntoRequest<super::GetAccountRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PullAccountResponse>,
+            tonic::Response<super::GetAccountResponse>,
             tonic::Status,
         > {
             self.inner
@@ -224,74 +224,14 @@ pub mod librarian_porter_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullAccount",
+                "/librarian.porter.v1.LibrarianPorterService/GetAccount",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.porter.v1.LibrarianPorterService",
-                        "PullAccount",
-                    ),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn pull_app_info(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PullAppInfoRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PullAppInfoResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullAppInfo",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.porter.v1.LibrarianPorterService",
-                        "PullAppInfo",
-                    ),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn pull_account_app_info_relation(
-            &mut self,
-            request: impl tonic::IntoRequest<super::PullAccountAppInfoRelationRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PullAccountAppInfoRelationResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.porter.v1.LibrarianPorterService",
-                        "PullAccountAppInfoRelation",
+                        "GetAccount",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -322,6 +262,66 @@ pub mod librarian_porter_service_client {
                     GrpcMethod::new(
                         "librarian.porter.v1.LibrarianPorterService",
                         "SearchAppInfo",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn get_app_info(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetAppInfoRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::GetAppInfoResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/GetAppInfo",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "GetAppInfo",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn parse_raw_app_info(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ParseRawAppInfoRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ParseRawAppInfoResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.porter.v1.LibrarianPorterService/ParseRawAppInfo",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.porter.v1.LibrarianPorterService",
+                        "ParseRawAppInfo",
                     ),
                 );
             self.inner.unary(req, path, codec).await
@@ -573,25 +573,11 @@ pub mod librarian_porter_service_server {
             tonic::Response<super::DisableContextResponse>,
             tonic::Status,
         >;
-        async fn pull_account(
+        async fn get_account(
             &self,
-            request: tonic::Request<super::PullAccountRequest>,
+            request: tonic::Request<super::GetAccountRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::PullAccountResponse>,
-            tonic::Status,
-        >;
-        async fn pull_app_info(
-            &self,
-            request: tonic::Request<super::PullAppInfoRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PullAppInfoResponse>,
-            tonic::Status,
-        >;
-        async fn pull_account_app_info_relation(
-            &self,
-            request: tonic::Request<super::PullAccountAppInfoRelationRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::PullAccountAppInfoRelationResponse>,
+            tonic::Response<super::GetAccountResponse>,
             tonic::Status,
         >;
         async fn search_app_info(
@@ -599,6 +585,20 @@ pub mod librarian_porter_service_server {
             request: tonic::Request<super::SearchAppInfoRequest>,
         ) -> std::result::Result<
             tonic::Response<super::SearchAppInfoResponse>,
+            tonic::Status,
+        >;
+        async fn get_app_info(
+            &self,
+            request: tonic::Request<super::GetAppInfoRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::GetAppInfoResponse>,
+            tonic::Status,
+        >;
+        async fn parse_raw_app_info(
+            &self,
+            request: tonic::Request<super::ParseRawAppInfoRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ParseRawAppInfoResponse>,
             tonic::Status,
         >;
         async fn pull_feed(
@@ -926,25 +926,25 @@ pub mod librarian_porter_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.porter.v1.LibrarianPorterService/PullAccount" => {
+                "/librarian.porter.v1.LibrarianPorterService/GetAccount" => {
                     #[allow(non_camel_case_types)]
-                    struct PullAccountSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    struct GetAccountSvc<T: LibrarianPorterService>(pub Arc<T>);
                     impl<
                         T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PullAccountRequest>
-                    for PullAccountSvc<T> {
-                        type Response = super::PullAccountResponse;
+                    > tonic::server::UnaryService<super::GetAccountRequest>
+                    for GetAccountSvc<T> {
+                        type Response = super::GetAccountResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::PullAccountRequest>,
+                            request: tonic::Request<super::GetAccountRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as LibrarianPorterService>::pull_account(&inner, request)
+                                <T as LibrarianPorterService>::get_account(&inner, request)
                                     .await
                             };
                             Box::pin(fut)
@@ -956,110 +956,7 @@ pub mod librarian_porter_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = PullAccountSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.porter.v1.LibrarianPorterService/PullAppInfo" => {
-                    #[allow(non_camel_case_types)]
-                    struct PullAppInfoSvc<T: LibrarianPorterService>(pub Arc<T>);
-                    impl<
-                        T: LibrarianPorterService,
-                    > tonic::server::UnaryService<super::PullAppInfoRequest>
-                    for PullAppInfoSvc<T> {
-                        type Response = super::PullAppInfoResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::PullAppInfoRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as LibrarianPorterService>::pull_app_info(
-                                        &inner,
-                                        request,
-                                    )
-                                    .await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = PullAppInfoSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.porter.v1.LibrarianPorterService/PullAccountAppInfoRelation" => {
-                    #[allow(non_camel_case_types)]
-                    struct PullAccountAppInfoRelationSvc<T: LibrarianPorterService>(
-                        pub Arc<T>,
-                    );
-                    impl<
-                        T: LibrarianPorterService,
-                    > tonic::server::UnaryService<
-                        super::PullAccountAppInfoRelationRequest,
-                    > for PullAccountAppInfoRelationSvc<T> {
-                        type Response = super::PullAccountAppInfoRelationResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<
-                                super::PullAccountAppInfoRelationRequest,
-                            >,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as LibrarianPorterService>::pull_account_app_info_relation(
-                                        &inner,
-                                        request,
-                                    )
-                                    .await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = PullAccountAppInfoRelationSvc(inner);
+                        let method = GetAccountSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1109,6 +1006,101 @@ pub mod librarian_porter_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SearchAppInfoSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/GetAppInfo" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetAppInfoSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::GetAppInfoRequest>
+                    for GetAppInfoSvc<T> {
+                        type Response = super::GetAppInfoResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetAppInfoRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianPorterService>::get_app_info(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = GetAppInfoSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.porter.v1.LibrarianPorterService/ParseRawAppInfo" => {
+                    #[allow(non_camel_case_types)]
+                    struct ParseRawAppInfoSvc<T: LibrarianPorterService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianPorterService,
+                    > tonic::server::UnaryService<super::ParseRawAppInfoRequest>
+                    for ParseRawAppInfoSvc<T> {
+                        type Response = super::ParseRawAppInfoResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ParseRawAppInfoRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianPorterService>::parse_raw_app_info(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ParseRawAppInfoSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

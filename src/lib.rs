@@ -42,6 +42,30 @@ pub mod librarian {
         pub mod v1 {
             include!("librarian.sephirah.v1.rs");
             // @@protoc_insertion_point(librarian.sephirah.v1)
+            #[cfg(feature = "librarian-sephirah-v1-angela")]
+            // @@protoc_insertion_point(attribute:librarian.sephirah.v1.angela)
+            pub mod angela {
+                include!("librarian.sephirah.v1.angela.rs");
+                // @@protoc_insertion_point(librarian.sephirah.v1.angela)
+            }
+            #[cfg(feature = "librarian-sephirah-v1-porter")]
+            // @@protoc_insertion_point(attribute:librarian.sephirah.v1.porter)
+            pub mod porter {
+                include!("librarian.sephirah.v1.porter.rs");
+                // @@protoc_insertion_point(librarian.sephirah.v1.porter)
+            }
+            #[cfg(feature = "librarian-sephirah-v1-sentinel")]
+            // @@protoc_insertion_point(attribute:librarian.sephirah.v1.sentinel)
+            pub mod sentinel {
+                include!("librarian.sephirah.v1.sentinel.rs");
+                // @@protoc_insertion_point(librarian.sephirah.v1.sentinel)
+            }
+            #[cfg(feature = "librarian-sephirah-v1-sephirah")]
+            // @@protoc_insertion_point(attribute:librarian.sephirah.v1.sephirah)
+            pub mod sephirah {
+                include!("librarian.sephirah.v1.sephirah.rs");
+                // @@protoc_insertion_point(librarian.sephirah.v1.sephirah)
+            }
         }
     }
     #[cfg(feature = "librarian-v1")]

@@ -13,6 +13,21 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use fileTypeDescriptor instead')
+const FileType$json = {
+  '1': 'FileType',
+  '2': [
+    {'1': 'FILE_TYPE_UNSPECIFIED', '2': 0},
+    {'1': 'FILE_TYPE_GEBURA_SAVE', '2': 1},
+    {'1': 'FILE_TYPE_CHESED_IMAGE', '2': 2},
+  ],
+};
+
+/// Descriptor for `FileType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List fileTypeDescriptor = $convert.base64Decode(
+    'CghGaWxlVHlwZRIZChVGSUxFX1RZUEVfVU5TUEVDSUZJRUQQABIZChVGSUxFX1RZUEVfR0VCVV'
+    'JBX1NBVkUQARIaChZGSUxFX1RZUEVfQ0hFU0VEX0lNQUdFEAI=');
+
 @$core.Deprecated('Use wellKnownAccountPlatformDescriptor instead')
 const WellKnownAccountPlatform$json = {
   '1': 'WellKnownAccountPlatform',
@@ -92,6 +107,94 @@ final $typed_data.Uint8List wellKnownFeedItemActionDescriptor = $convert.base64D
     'T1JEX0ZJTFRFUhABGhHCPg5rZXl3b3JkX2ZpbHRlchJPCjFXRUxMX0tOT1dOX0ZFRURfSVRFTV'
     '9BQ1RJT05fREVTQ1JJUFRJT05fR0VORVJBVE9SEAIaGMI+FWRlc2NyaXB0aW9uX2dlbmVyYXRv'
     'cg==');
+
+@$core.Deprecated('Use pagingRequestDescriptor instead')
+const PagingRequest$json = {
+  '1': 'PagingRequest',
+  '2': [
+    {'1': 'page_num', '3': 1, '4': 1, '5': 3, '8': {}, '10': 'pageNum'},
+    {'1': 'page_size', '3': 2, '4': 1, '5': 3, '8': {}, '10': 'pageSize'},
+  ],
+};
+
+/// Descriptor for `PagingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pagingRequestDescriptor = $convert.base64Decode(
+    'Cg1QYWdpbmdSZXF1ZXN0EiMKCHBhZ2VfbnVtGAEgASgDQgj69xgEIgIgAFIHcGFnZU51bRIlCg'
+    'lwYWdlX3NpemUYAiABKANCCPr3GAQiAiAAUghwYWdlU2l6ZQ==');
+
+@$core.Deprecated('Use pagingResponseDescriptor instead')
+const PagingResponse$json = {
+  '1': 'PagingResponse',
+  '2': [
+    {'1': 'total_size', '3': 1, '4': 1, '5': 3, '8': {}, '10': 'totalSize'},
+  ],
+};
+
+/// Descriptor for `PagingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode(
+    'Cg5QYWdpbmdSZXNwb25zZRInCgp0b3RhbF9zaXplGAEgASgDQgj69xgEIgIoAFIJdG90YWxTaX'
+    'pl');
+
+@$core.Deprecated('Use timeRangeDescriptor instead')
+const TimeRange$json = {
+  '1': 'TimeRange',
+  '2': [
+    {'1': 'start_time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
+    {'1': 'duration', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '8': {}, '10': 'duration'},
+  ],
+};
+
+/// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode(
+    'CglUaW1lUmFuZ2USOQoKc3RhcnRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3'
+    'RhbXBSCXN0YXJ0VGltZRJACghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJh'
+    'dGlvbkIJ+vcYBaoBAjIAUghkdXJhdGlvbg==');
+
+@$core.Deprecated('Use internalIDDescriptor instead')
+const InternalID$json = {
+  '1': 'InternalID',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `InternalID`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List internalIDDescriptor = $convert.base64Decode(
+    'CgpJbnRlcm5hbElEEg4KAmlkGAEgASgDUgJpZA==');
+
+@$core.Deprecated('Use i18NStringDescriptor instead')
+const I18NString$json = {
+  '1': 'I18NString',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `I18NString`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List i18NStringDescriptor = $convert.base64Decode(
+    'CgpJMThOU3RyaW5nEhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZQ==');
+
+@$core.Deprecated('Use fileMetadataDescriptor instead')
+const FileMetadata$json = {
+  '1': 'FileMetadata',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.v1.FileType', '10': 'type'},
+    {'1': 'sha256', '3': 5, '4': 1, '5': 12, '10': 'sha256'},
+    {'1': 'create_time', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
+  ],
+};
+
+/// Descriptor for `FileMetadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fileMetadataDescriptor = $convert.base64Decode(
+    'CgxGaWxlTWV0YWRhdGESKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaW'
+    'QSEgoEbmFtZRgCIAEoCVIEbmFtZRIdCgpzaXplX2J5dGVzGAMgASgDUglzaXplQnl0ZXMSKgoE'
+    'dHlwZRgEIAEoDjIWLmxpYnJhcmlhbi52MS5GaWxlVHlwZVIEdHlwZRIWCgZzaGEyNTYYBSABKA'
+    'xSBnNoYTI1NhI7CgtjcmVhdGVfdGltZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
+    'bXBSCmNyZWF0ZVRpbWU=');
 
 @$core.Deprecated('Use featureFlagDescriptor instead')
 const FeatureFlag$json = {

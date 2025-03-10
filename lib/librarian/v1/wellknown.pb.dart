@@ -11,11 +11,445 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'common.pb.dart' as $2;
+import '../../google/protobuf/duration.pb.dart' as $1;
+import '../../google/protobuf/timestamp.pb.dart' as $0;
+import 'wellknown.pbenum.dart';
 
 export 'wellknown.pbenum.dart';
+
+class PagingRequest extends $pb.GeneratedMessage {
+  factory PagingRequest({
+    $fixnum.Int64? pageNum,
+    $fixnum.Int64? pageSize,
+  }) {
+    final $result = create();
+    if (pageNum != null) {
+      $result.pageNum = pageNum;
+    }
+    if (pageSize != null) {
+      $result.pageSize = pageSize;
+    }
+    return $result;
+  }
+  PagingRequest._() : super();
+  factory PagingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PagingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PagingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'pageNum')
+    ..aInt64(2, _omitFieldNames ? '' : 'pageSize')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PagingRequest clone() => PagingRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PagingRequest copyWith(void Function(PagingRequest) updates) => super.copyWith((message) => updates(message as PagingRequest)) as PagingRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PagingRequest create() => PagingRequest._();
+  PagingRequest createEmptyInstance() => create();
+  static $pb.PbList<PagingRequest> createRepeated() => $pb.PbList<PagingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PagingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PagingRequest>(create);
+  static PagingRequest? _defaultInstance;
+
+  /// start from 1, not 0
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get pageNum => $_getI64(0);
+  @$pb.TagNumber(1)
+  set pageNum($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPageNum() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPageNum() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get pageSize => $_getI64(1);
+  @$pb.TagNumber(2)
+  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPageSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageSize() => clearField(2);
+}
+
+class PagingResponse extends $pb.GeneratedMessage {
+  factory PagingResponse({
+    $fixnum.Int64? totalSize,
+  }) {
+    final $result = create();
+    if (totalSize != null) {
+      $result.totalSize = totalSize;
+    }
+    return $result;
+  }
+  PagingResponse._() : super();
+  factory PagingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PagingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PagingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'totalSize')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PagingResponse clone() => PagingResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PagingResponse copyWith(void Function(PagingResponse) updates) => super.copyWith((message) => updates(message as PagingResponse)) as PagingResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PagingResponse create() => PagingResponse._();
+  PagingResponse createEmptyInstance() => create();
+  static $pb.PbList<PagingResponse> createRepeated() => $pb.PbList<PagingResponse>();
+  @$core.pragma('dart2js:noInline')
+  static PagingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PagingResponse>(create);
+  static PagingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get totalSize => $_getI64(0);
+  @$pb.TagNumber(1)
+  set totalSize($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTotalSize() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTotalSize() => clearField(1);
+}
+
+/// half-open e.g.
+/// {
+///   start_time: "2023.01.01 00:00",
+///   duration: "1d"
+/// }
+/// means the whole day of 2023.1.1;
+/// or [2023.01.01 00:00 , 2023.01.02 00:00)
+class TimeRange extends $pb.GeneratedMessage {
+  factory TimeRange({
+    $0.Timestamp? startTime,
+    $1.Duration? duration,
+  }) {
+    final $result = create();
+    if (startTime != null) {
+      $result.startTime = startTime;
+    }
+    if (duration != null) {
+      $result.duration = duration;
+    }
+    return $result;
+  }
+  TimeRange._() : super();
+  factory TimeRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory TimeRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOM<$0.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $1.Duration.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  TimeRange clone() => TimeRange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  TimeRange copyWith(void Function(TimeRange) updates) => super.copyWith((message) => updates(message as TimeRange)) as TimeRange;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TimeRange create() => TimeRange._();
+  TimeRange createEmptyInstance() => create();
+  static $pb.PbList<TimeRange> createRepeated() => $pb.PbList<TimeRange>();
+  @$core.pragma('dart2js:noInline')
+  static TimeRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeRange>(create);
+  static TimeRange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.Timestamp get startTime => $_getN(0);
+  @$pb.TagNumber(1)
+  set startTime($0.Timestamp v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasStartTime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStartTime() => clearField(1);
+  @$pb.TagNumber(1)
+  $0.Timestamp ensureStartTime() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $1.Duration get duration => $_getN(1);
+  @$pb.TagNumber(2)
+  set duration($1.Duration v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDuration() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDuration() => clearField(2);
+  @$pb.TagNumber(2)
+  $1.Duration ensureDuration() => $_ensure(1);
+}
+
+/// A globally unique identifier
+class InternalID extends $pb.GeneratedMessage {
+  factory InternalID({
+    $fixnum.Int64? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  InternalID._() : super();
+  factory InternalID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InternalID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InternalID', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aInt64(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  InternalID clone() => InternalID()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  InternalID copyWith(void Function(InternalID) updates) => super.copyWith((message) => updates(message as InternalID)) as InternalID;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InternalID create() => InternalID._();
+  InternalID createEmptyInstance() => create();
+  static $pb.PbList<InternalID> createRepeated() => $pb.PbList<InternalID>();
+  @$core.pragma('dart2js:noInline')
+  static InternalID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InternalID>(create);
+  static InternalID? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class I18NString extends $pb.GeneratedMessage {
+  factory I18NString({
+    $core.String? key,
+    $core.String? value,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    if (value != null) {
+      $result.value = value;
+    }
+    return $result;
+  }
+  I18NString._() : super();
+  factory I18NString.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory I18NString.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'I18NString', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  I18NString clone() => I18NString()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  I18NString copyWith(void Function(I18NString) updates) => super.copyWith((message) => updates(message as I18NString)) as I18NString;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static I18NString create() => I18NString._();
+  I18NString createEmptyInstance() => create();
+  static $pb.PbList<I18NString> createRepeated() => $pb.PbList<I18NString>();
+  @$core.pragma('dart2js:noInline')
+  static I18NString getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<I18NString>(create);
+  static I18NString? _defaultInstance;
+
+  /// The key of the string. MUST only contain a-zA-Z0-9_.-
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => clearField(1);
+
+  /// The default value of the string.
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => clearField(2);
+}
+
+class FileMetadata extends $pb.GeneratedMessage {
+  factory FileMetadata({
+    InternalID? id,
+    $core.String? name,
+    $fixnum.Int64? sizeBytes,
+    FileType? type,
+    $core.List<$core.int>? sha256,
+    $0.Timestamp? createTime,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (sizeBytes != null) {
+      $result.sizeBytes = sizeBytes;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (sha256 != null) {
+      $result.sha256 = sha256;
+    }
+    if (createTime != null) {
+      $result.createTime = createTime;
+    }
+    return $result;
+  }
+  FileMetadata._() : super();
+  factory FileMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FileMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FileMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+    ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
+    ..e<FileType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
+    ..aOM<$0.Timestamp>(6, _omitFieldNames ? '' : 'createTime', subBuilder: $0.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FileMetadata clone() => FileMetadata()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FileMetadata copyWith(void Function(FileMetadata) updates) => super.copyWith((message) => updates(message as FileMetadata)) as FileMetadata;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileMetadata create() => FileMetadata._();
+  FileMetadata createEmptyInstance() => create();
+  static $pb.PbList<FileMetadata> createRepeated() => $pb.PbList<FileMetadata>();
+  @$core.pragma('dart2js:noInline')
+  static FileMetadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileMetadata>(create);
+  static FileMetadata? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id(InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get sizeBytes => $_getI64(2);
+  @$pb.TagNumber(3)
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSizeBytes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSizeBytes() => clearField(3);
+
+  @$pb.TagNumber(4)
+  FileType get type => $_getN(3);
+  @$pb.TagNumber(4)
+  set type(FileType v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.int> get sha256 => $_getN(4);
+  @$pb.TagNumber(5)
+  set sha256($core.List<$core.int> v) { $_setBytes(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSha256() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSha256() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $0.Timestamp get createTime => $_getN(5);
+  @$pb.TagNumber(6)
+  set createTime($0.Timestamp v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCreateTime() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreateTime() => clearField(6);
+  @$pb.TagNumber(6)
+  $0.Timestamp ensureCreateTime() => $_ensure(5);
+}
 
 /// FeatureFlag is used to identify features.
 /// It will also be sent to clients for UI display.
@@ -146,7 +580,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? region,
     $core.String? configJson,
-    $2.InternalID? contextId,
+    InternalID? contextId,
   }) {
     final $result = create();
     if (id != null) {
@@ -171,7 +605,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'region')
     ..aOS(3, _omitFieldNames ? '' : 'configJson')
-    ..aOM<$2.InternalID>(4, _omitFieldNames ? '' : 'contextId', subBuilder: $2.InternalID.create)
+    ..aOM<InternalID>(4, _omitFieldNames ? '' : 'contextId', subBuilder: InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -228,15 +662,15 @@ class FeatureRequest extends $pb.GeneratedMessage {
 
   /// Require if feature needs context
   @$pb.TagNumber(4)
-  $2.InternalID get contextId => $_getN(3);
+  InternalID get contextId => $_getN(3);
   @$pb.TagNumber(4)
-  set contextId($2.InternalID v) { setField(4, v); }
+  set contextId(InternalID v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasContextId() => $_has(3);
   @$pb.TagNumber(4)
   void clearContextId() => clearField(4);
   @$pb.TagNumber(4)
-  $2.InternalID ensureContextId() => $_ensure(3);
+  InternalID ensureContextId() => $_ensure(3);
 }
 
 class FeatureSummary extends $pb.GeneratedMessage {

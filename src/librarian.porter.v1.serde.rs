@@ -1,4 +1,720 @@
 // @generated
+impl serde::Serialize for Account {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.platform.is_empty() {
+            len += 1;
+        }
+        if !self.platform_account_id.is_empty() {
+            len += 1;
+        }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if !self.profile_url.is_empty() {
+            len += 1;
+        }
+        if !self.avatar_url.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.Account", len)?;
+        if !self.platform.is_empty() {
+            struct_ser.serialize_field("platform", &self.platform)?;
+        }
+        if !self.platform_account_id.is_empty() {
+            struct_ser.serialize_field("platformAccountId", &self.platform_account_id)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if !self.profile_url.is_empty() {
+            struct_ser.serialize_field("profileUrl", &self.profile_url)?;
+        }
+        if !self.avatar_url.is_empty() {
+            struct_ser.serialize_field("avatarUrl", &self.avatar_url)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for Account {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "platform",
+            "platform_account_id",
+            "platformAccountId",
+            "name",
+            "profile_url",
+            "profileUrl",
+            "avatar_url",
+            "avatarUrl",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Platform,
+            PlatformAccountId,
+            Name,
+            ProfileUrl,
+            AvatarUrl,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "platform" => Ok(GeneratedField::Platform),
+                            "platformAccountId" | "platform_account_id" => Ok(GeneratedField::PlatformAccountId),
+                            "name" => Ok(GeneratedField::Name),
+                            "profileUrl" | "profile_url" => Ok(GeneratedField::ProfileUrl),
+                            "avatarUrl" | "avatar_url" => Ok(GeneratedField::AvatarUrl),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = Account;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.Account")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<Account, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut platform__ = None;
+                let mut platform_account_id__ = None;
+                let mut name__ = None;
+                let mut profile_url__ = None;
+                let mut avatar_url__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Platform => {
+                            if platform__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("platform"));
+                            }
+                            platform__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::PlatformAccountId => {
+                            if platform_account_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("platformAccountId"));
+                            }
+                            platform_account_id__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::ProfileUrl => {
+                            if profile_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("profileUrl"));
+                            }
+                            profile_url__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::AvatarUrl => {
+                            if avatar_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("avatarUrl"));
+                            }
+                            avatar_url__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(Account {
+                    platform: platform__.unwrap_or_default(),
+                    platform_account_id: platform_account_id__.unwrap_or_default(),
+                    name: name__.unwrap_or_default(),
+                    profile_url: profile_url__.unwrap_or_default(),
+                    avatar_url: avatar_url__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.Account", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppInfo {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.source.is_empty() {
+            len += 1;
+        }
+        if !self.source_app_id.is_empty() {
+            len += 1;
+        }
+        if self.source_url.is_some() {
+            len += 1;
+        }
+        if !self.raw_data_json.is_empty() {
+            len += 1;
+        }
+        if self.details.is_some() {
+            len += 1;
+        }
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if self.r#type != 0 {
+            len += 1;
+        }
+        if !self.short_description.is_empty() {
+            len += 1;
+        }
+        if !self.icon_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.background_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.cover_image_url.is_empty() {
+            len += 1;
+        }
+        if !self.tags.is_empty() {
+            len += 1;
+        }
+        if !self.alt_names.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.AppInfo", len)?;
+        if !self.source.is_empty() {
+            struct_ser.serialize_field("source", &self.source)?;
+        }
+        if !self.source_app_id.is_empty() {
+            struct_ser.serialize_field("sourceAppId", &self.source_app_id)?;
+        }
+        if let Some(v) = self.source_url.as_ref() {
+            struct_ser.serialize_field("sourceUrl", v)?;
+        }
+        if !self.raw_data_json.is_empty() {
+            struct_ser.serialize_field("rawDataJson", &self.raw_data_json)?;
+        }
+        if let Some(v) = self.details.as_ref() {
+            struct_ser.serialize_field("details", v)?;
+        }
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if self.r#type != 0 {
+            let v = AppType::try_from(self.r#type)
+                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.r#type)))?;
+            struct_ser.serialize_field("type", &v)?;
+        }
+        if !self.short_description.is_empty() {
+            struct_ser.serialize_field("shortDescription", &self.short_description)?;
+        }
+        if !self.icon_image_url.is_empty() {
+            struct_ser.serialize_field("iconImageUrl", &self.icon_image_url)?;
+        }
+        if !self.background_image_url.is_empty() {
+            struct_ser.serialize_field("backgroundImageUrl", &self.background_image_url)?;
+        }
+        if !self.cover_image_url.is_empty() {
+            struct_ser.serialize_field("coverImageUrl", &self.cover_image_url)?;
+        }
+        if !self.tags.is_empty() {
+            struct_ser.serialize_field("tags", &self.tags)?;
+        }
+        if !self.alt_names.is_empty() {
+            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppInfo {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "source",
+            "source_app_id",
+            "sourceAppId",
+            "source_url",
+            "sourceUrl",
+            "raw_data_json",
+            "rawDataJson",
+            "details",
+            "name",
+            "type",
+            "short_description",
+            "shortDescription",
+            "icon_image_url",
+            "iconImageUrl",
+            "background_image_url",
+            "backgroundImageUrl",
+            "cover_image_url",
+            "coverImageUrl",
+            "tags",
+            "alt_names",
+            "altNames",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Source,
+            SourceAppId,
+            SourceUrl,
+            RawDataJson,
+            Details,
+            Name,
+            Type,
+            ShortDescription,
+            IconImageUrl,
+            BackgroundImageUrl,
+            CoverImageUrl,
+            Tags,
+            AltNames,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "source" => Ok(GeneratedField::Source),
+                            "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
+                            "sourceUrl" | "source_url" => Ok(GeneratedField::SourceUrl),
+                            "rawDataJson" | "raw_data_json" => Ok(GeneratedField::RawDataJson),
+                            "details" => Ok(GeneratedField::Details),
+                            "name" => Ok(GeneratedField::Name),
+                            "type" => Ok(GeneratedField::Type),
+                            "shortDescription" | "short_description" => Ok(GeneratedField::ShortDescription),
+                            "iconImageUrl" | "icon_image_url" => Ok(GeneratedField::IconImageUrl),
+                            "backgroundImageUrl" | "background_image_url" => Ok(GeneratedField::BackgroundImageUrl),
+                            "coverImageUrl" | "cover_image_url" => Ok(GeneratedField::CoverImageUrl),
+                            "tags" => Ok(GeneratedField::Tags),
+                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppInfo;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.AppInfo")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<AppInfo, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut source__ = None;
+                let mut source_app_id__ = None;
+                let mut source_url__ = None;
+                let mut raw_data_json__ = None;
+                let mut details__ = None;
+                let mut name__ = None;
+                let mut r#type__ = None;
+                let mut short_description__ = None;
+                let mut icon_image_url__ = None;
+                let mut background_image_url__ = None;
+                let mut cover_image_url__ = None;
+                let mut tags__ = None;
+                let mut alt_names__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Source => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("source"));
+                            }
+                            source__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::SourceAppId => {
+                            if source_app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceAppId"));
+                            }
+                            source_app_id__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::SourceUrl => {
+                            if source_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceUrl"));
+                            }
+                            source_url__ = map_.next_value()?;
+                        }
+                        GeneratedField::RawDataJson => {
+                            if raw_data_json__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("rawDataJson"));
+                            }
+                            raw_data_json__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Details => {
+                            if details__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("details"));
+                            }
+                            details__ = map_.next_value()?;
+                        }
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
+                            }
+                            name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Type => {
+                            if r#type__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("type"));
+                            }
+                            r#type__ = Some(map_.next_value::<AppType>()? as i32);
+                        }
+                        GeneratedField::ShortDescription => {
+                            if short_description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("shortDescription"));
+                            }
+                            short_description__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::IconImageUrl => {
+                            if icon_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("iconImageUrl"));
+                            }
+                            icon_image_url__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::BackgroundImageUrl => {
+                            if background_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("backgroundImageUrl"));
+                            }
+                            background_image_url__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::CoverImageUrl => {
+                            if cover_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("coverImageUrl"));
+                            }
+                            cover_image_url__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Tags => {
+                            if tags__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tags"));
+                            }
+                            tags__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::AltNames => {
+                            if alt_names__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("altNames"));
+                            }
+                            alt_names__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(AppInfo {
+                    source: source__.unwrap_or_default(),
+                    source_app_id: source_app_id__.unwrap_or_default(),
+                    source_url: source_url__,
+                    raw_data_json: raw_data_json__.unwrap_or_default(),
+                    details: details__,
+                    name: name__.unwrap_or_default(),
+                    r#type: r#type__.unwrap_or_default(),
+                    short_description: short_description__.unwrap_or_default(),
+                    icon_image_url: icon_image_url__.unwrap_or_default(),
+                    background_image_url: background_image_url__.unwrap_or_default(),
+                    cover_image_url: cover_image_url__.unwrap_or_default(),
+                    tags: tags__.unwrap_or_default(),
+                    alt_names: alt_names__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.AppInfo", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppInfoDetails {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.description.is_empty() {
+            len += 1;
+        }
+        if !self.release_date.is_empty() {
+            len += 1;
+        }
+        if !self.developer.is_empty() {
+            len += 1;
+        }
+        if !self.publisher.is_empty() {
+            len += 1;
+        }
+        if !self.version.is_empty() {
+            len += 1;
+        }
+        if !self.image_urls.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.AppInfoDetails", len)?;
+        if !self.description.is_empty() {
+            struct_ser.serialize_field("description", &self.description)?;
+        }
+        if !self.release_date.is_empty() {
+            struct_ser.serialize_field("releaseDate", &self.release_date)?;
+        }
+        if !self.developer.is_empty() {
+            struct_ser.serialize_field("developer", &self.developer)?;
+        }
+        if !self.publisher.is_empty() {
+            struct_ser.serialize_field("publisher", &self.publisher)?;
+        }
+        if !self.version.is_empty() {
+            struct_ser.serialize_field("version", &self.version)?;
+        }
+        if !self.image_urls.is_empty() {
+            struct_ser.serialize_field("imageUrls", &self.image_urls)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppInfoDetails {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "description",
+            "release_date",
+            "releaseDate",
+            "developer",
+            "publisher",
+            "version",
+            "image_urls",
+            "imageUrls",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Description,
+            ReleaseDate,
+            Developer,
+            Publisher,
+            Version,
+            ImageUrls,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "description" => Ok(GeneratedField::Description),
+                            "releaseDate" | "release_date" => Ok(GeneratedField::ReleaseDate),
+                            "developer" => Ok(GeneratedField::Developer),
+                            "publisher" => Ok(GeneratedField::Publisher),
+                            "version" => Ok(GeneratedField::Version),
+                            "imageUrls" | "image_urls" => Ok(GeneratedField::ImageUrls),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppInfoDetails;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.AppInfoDetails")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<AppInfoDetails, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut description__ = None;
+                let mut release_date__ = None;
+                let mut developer__ = None;
+                let mut publisher__ = None;
+                let mut version__ = None;
+                let mut image_urls__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Description => {
+                            if description__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("description"));
+                            }
+                            description__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::ReleaseDate => {
+                            if release_date__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("releaseDate"));
+                            }
+                            release_date__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Developer => {
+                            if developer__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("developer"));
+                            }
+                            developer__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Publisher => {
+                            if publisher__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("publisher"));
+                            }
+                            publisher__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::Version => {
+                            if version__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("version"));
+                            }
+                            version__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::ImageUrls => {
+                            if image_urls__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("imageUrls"));
+                            }
+                            image_urls__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(AppInfoDetails {
+                    description: description__.unwrap_or_default(),
+                    release_date: release_date__.unwrap_or_default(),
+                    developer: developer__.unwrap_or_default(),
+                    publisher: publisher__.unwrap_or_default(),
+                    version: version__.unwrap_or_default(),
+                    image_urls: image_urls__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.AppInfoDetails", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for AppType {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "APP_TYPE_UNSPECIFIED",
+            Self::Game => "APP_TYPE_GAME",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for AppType {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "APP_TYPE_UNSPECIFIED",
+            "APP_TYPE_GAME",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = AppType;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "APP_TYPE_UNSPECIFIED" => Ok(AppType::Unspecified),
+                    "APP_TYPE_GAME" => Ok(AppType::Game),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
 impl serde::Serialize for DisableContextRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -1506,6 +2222,407 @@ impl<'de> serde::Deserialize<'de> for ExecFeedItemActionResponse {
         deserializer.deserialize_struct("librarian.porter.v1.ExecFeedItemActionResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for GetAccountRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.platform.is_empty() {
+            len += 1;
+        }
+        if !self.platform_account_id.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.GetAccountRequest", len)?;
+        if !self.platform.is_empty() {
+            struct_ser.serialize_field("platform", &self.platform)?;
+        }
+        if !self.platform_account_id.is_empty() {
+            struct_ser.serialize_field("platformAccountId", &self.platform_account_id)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAccountRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "platform",
+            "platform_account_id",
+            "platformAccountId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Platform,
+            PlatformAccountId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "platform" => Ok(GeneratedField::Platform),
+                            "platformAccountId" | "platform_account_id" => Ok(GeneratedField::PlatformAccountId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAccountRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.GetAccountRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetAccountRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut platform__ = None;
+                let mut platform_account_id__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Platform => {
+                            if platform__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("platform"));
+                            }
+                            platform__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::PlatformAccountId => {
+                            if platform_account_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("platformAccountId"));
+                            }
+                            platform_account_id__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(GetAccountRequest {
+                    platform: platform__.unwrap_or_default(),
+                    platform_account_id: platform_account_id__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.GetAccountRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAccountResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.account.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.GetAccountResponse", len)?;
+        if let Some(v) = self.account.as_ref() {
+            struct_ser.serialize_field("account", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAccountResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "account",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Account,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "account" => Ok(GeneratedField::Account),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAccountResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.GetAccountResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetAccountResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut account__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Account => {
+                            if account__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("account"));
+                            }
+                            account__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetAccountResponse {
+                    account: account__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.GetAccountResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppInfoRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.source.is_empty() {
+            len += 1;
+        }
+        if !self.source_app_id.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.GetAppInfoRequest", len)?;
+        if !self.source.is_empty() {
+            struct_ser.serialize_field("source", &self.source)?;
+        }
+        if !self.source_app_id.is_empty() {
+            struct_ser.serialize_field("sourceAppId", &self.source_app_id)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppInfoRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "source",
+            "source_app_id",
+            "sourceAppId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Source,
+            SourceAppId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "source" => Ok(GeneratedField::Source),
+                            "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppInfoRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.GetAppInfoRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetAppInfoRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut source__ = None;
+                let mut source_app_id__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Source => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("source"));
+                            }
+                            source__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::SourceAppId => {
+                            if source_app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceAppId"));
+                            }
+                            source_app_id__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(GetAppInfoRequest {
+                    source: source__.unwrap_or_default(),
+                    source_app_id: source_app_id__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.GetAppInfoRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetAppInfoResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_info.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.GetAppInfoResponse", len)?;
+        if let Some(v) = self.app_info.as_ref() {
+            struct_ser.serialize_field("appInfo", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetAppInfoResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_info",
+            "appInfo",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInfo,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInfo" | "app_info" => Ok(GeneratedField::AppInfo),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetAppInfoResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.GetAppInfoResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetAppInfoResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_info__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::AppInfo => {
+                            if app_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfo"));
+                            }
+                            app_info__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetAppInfoResponse {
+                    app_info: app_info__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.GetAppInfoResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for GetPorterInformationRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -1740,6 +2857,225 @@ impl<'de> serde::Deserialize<'de> for GetPorterInformationResponse {
         deserializer.deserialize_struct("librarian.porter.v1.GetPorterInformationResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for ParseRawAppInfoRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if !self.source.is_empty() {
+            len += 1;
+        }
+        if !self.source_app_id.is_empty() {
+            len += 1;
+        }
+        if !self.raw_data_json.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.ParseRawAppInfoRequest", len)?;
+        if !self.source.is_empty() {
+            struct_ser.serialize_field("source", &self.source)?;
+        }
+        if !self.source_app_id.is_empty() {
+            struct_ser.serialize_field("sourceAppId", &self.source_app_id)?;
+        }
+        if !self.raw_data_json.is_empty() {
+            struct_ser.serialize_field("rawDataJson", &self.raw_data_json)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ParseRawAppInfoRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "source",
+            "source_app_id",
+            "sourceAppId",
+            "raw_data_json",
+            "rawDataJson",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            Source,
+            SourceAppId,
+            RawDataJson,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "source" => Ok(GeneratedField::Source),
+                            "sourceAppId" | "source_app_id" => Ok(GeneratedField::SourceAppId),
+                            "rawDataJson" | "raw_data_json" => Ok(GeneratedField::RawDataJson),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ParseRawAppInfoRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.ParseRawAppInfoRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ParseRawAppInfoRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut source__ = None;
+                let mut source_app_id__ = None;
+                let mut raw_data_json__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Source => {
+                            if source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("source"));
+                            }
+                            source__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::SourceAppId => {
+                            if source_app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sourceAppId"));
+                            }
+                            source_app_id__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::RawDataJson => {
+                            if raw_data_json__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("rawDataJson"));
+                            }
+                            raw_data_json__ = Some(map_.next_value()?);
+                        }
+                    }
+                }
+                Ok(ParseRawAppInfoRequest {
+                    source: source__.unwrap_or_default(),
+                    source_app_id: source_app_id__.unwrap_or_default(),
+                    raw_data_json: raw_data_json__.unwrap_or_default(),
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.ParseRawAppInfoRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for ParseRawAppInfoResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.app_info.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.ParseRawAppInfoResponse", len)?;
+        if let Some(v) = self.app_info.as_ref() {
+            struct_ser.serialize_field("appInfo", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for ParseRawAppInfoResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "app_info",
+            "appInfo",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            AppInfo,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "appInfo" | "app_info" => Ok(GeneratedField::AppInfo),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = ParseRawAppInfoResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.porter.v1.ParseRawAppInfoResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<ParseRawAppInfoResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut app_info__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::AppInfo => {
+                            if app_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appInfo"));
+                            }
+                            app_info__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(ParseRawAppInfoResponse {
+                    app_info: app_info__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.porter.v1.ParseRawAppInfoResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for PorterEnablesSummary {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -1866,577 +3202,6 @@ impl<'de> serde::Deserialize<'de> for PorterEnablesSummary {
             }
         }
         deserializer.deserialize_struct("librarian.porter.v1.PorterEnablesSummary", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for PullAccountAppInfoRelationRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.relation_type != 0 {
-            len += 1;
-        }
-        if self.account_id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAccountAppInfoRelationRequest", len)?;
-        if self.relation_type != 0 {
-            let v = super::super::v1::AccountAppRelationType::try_from(self.relation_type)
-                .map_err(|_| serde::ser::Error::custom(format!("Invalid variant {}", self.relation_type)))?;
-            struct_ser.serialize_field("relationType", &v)?;
-        }
-        if let Some(v) = self.account_id.as_ref() {
-            struct_ser.serialize_field("accountId", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PullAccountAppInfoRelationRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "relation_type",
-            "relationType",
-            "account_id",
-            "accountId",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            RelationType,
-            AccountId,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "relationType" | "relation_type" => Ok(GeneratedField::RelationType),
-                            "accountId" | "account_id" => Ok(GeneratedField::AccountId),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PullAccountAppInfoRelationRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PullAccountAppInfoRelationRequest")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountAppInfoRelationRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut relation_type__ = None;
-                let mut account_id__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::RelationType => {
-                            if relation_type__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("relationType"));
-                            }
-                            relation_type__ = Some(map_.next_value::<super::super::v1::AccountAppRelationType>()? as i32);
-                        }
-                        GeneratedField::AccountId => {
-                            if account_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("accountId"));
-                            }
-                            account_id__ = map_.next_value()?;
-                        }
-                    }
-                }
-                Ok(PullAccountAppInfoRelationRequest {
-                    relation_type: relation_type__.unwrap_or_default(),
-                    account_id: account_id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PullAccountAppInfoRelationRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for PullAccountAppInfoRelationResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if !self.app_infos.is_empty() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAccountAppInfoRelationResponse", len)?;
-        if !self.app_infos.is_empty() {
-            struct_ser.serialize_field("appInfos", &self.app_infos)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PullAccountAppInfoRelationResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "app_infos",
-            "appInfos",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            AppInfos,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "appInfos" | "app_infos" => Ok(GeneratedField::AppInfos),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PullAccountAppInfoRelationResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PullAccountAppInfoRelationResponse")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountAppInfoRelationResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut app_infos__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::AppInfos => {
-                            if app_infos__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appInfos"));
-                            }
-                            app_infos__ = Some(map_.next_value()?);
-                        }
-                    }
-                }
-                Ok(PullAccountAppInfoRelationResponse {
-                    app_infos: app_infos__.unwrap_or_default(),
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PullAccountAppInfoRelationResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for PullAccountRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.account_id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAccountRequest", len)?;
-        if let Some(v) = self.account_id.as_ref() {
-            struct_ser.serialize_field("accountId", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PullAccountRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "account_id",
-            "accountId",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            AccountId,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "accountId" | "account_id" => Ok(GeneratedField::AccountId),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PullAccountRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PullAccountRequest")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut account_id__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::AccountId => {
-                            if account_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("accountId"));
-                            }
-                            account_id__ = map_.next_value()?;
-                        }
-                    }
-                }
-                Ok(PullAccountRequest {
-                    account_id: account_id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PullAccountRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for PullAccountResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.account.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAccountResponse", len)?;
-        if let Some(v) = self.account.as_ref() {
-            struct_ser.serialize_field("account", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PullAccountResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "account",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            Account,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "account" => Ok(GeneratedField::Account),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PullAccountResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PullAccountResponse")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAccountResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut account__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::Account => {
-                            if account__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("account"));
-                            }
-                            account__ = map_.next_value()?;
-                        }
-                    }
-                }
-                Ok(PullAccountResponse {
-                    account: account__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PullAccountResponse", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for PullAppInfoRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.app_info_id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAppInfoRequest", len)?;
-        if let Some(v) = self.app_info_id.as_ref() {
-            struct_ser.serialize_field("appInfoId", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PullAppInfoRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "app_info_id",
-            "appInfoId",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            AppInfoId,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "appInfoId" | "app_info_id" => Ok(GeneratedField::AppInfoId),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PullAppInfoRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PullAppInfoRequest")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAppInfoRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut app_info_id__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::AppInfoId => {
-                            if app_info_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appInfoId"));
-                            }
-                            app_info_id__ = map_.next_value()?;
-                        }
-                    }
-                }
-                Ok(PullAppInfoRequest {
-                    app_info_id: app_info_id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PullAppInfoRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for PullAppInfoResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.app_info.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.PullAppInfoResponse", len)?;
-        if let Some(v) = self.app_info.as_ref() {
-            struct_ser.serialize_field("appInfo", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for PullAppInfoResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "app_info",
-            "appInfo",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            AppInfo,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "appInfo" | "app_info" => Ok(GeneratedField::AppInfo),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = PullAppInfoResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.porter.v1.PullAppInfoResponse")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<PullAppInfoResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut app_info__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::AppInfo => {
-                            if app_info__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("appInfo"));
-                            }
-                            app_info__ = map_.next_value()?;
-                        }
-                    }
-                }
-                Ok(PullAppInfoResponse {
-                    app_info: app_info__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.porter.v1.PullAppInfoResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for PullFeedRequest {
@@ -2808,12 +3573,12 @@ impl serde::Serialize for SearchAppInfoRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.name.is_empty() {
+        if !self.name_like.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.SearchAppInfoRequest", len)?;
-        if !self.name.is_empty() {
-            struct_ser.serialize_field("name", &self.name)?;
+        if !self.name_like.is_empty() {
+            struct_ser.serialize_field("nameLike", &self.name_like)?;
         }
         struct_ser.end()
     }
@@ -2825,12 +3590,13 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "name",
+            "name_like",
+            "nameLike",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Name,
+            NameLike,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -2852,7 +3618,7 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "name" => Ok(GeneratedField::Name),
+                            "nameLike" | "name_like" => Ok(GeneratedField::NameLike),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -2872,19 +3638,19 @@ impl<'de> serde::Deserialize<'de> for SearchAppInfoRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut name__ = None;
+                let mut name_like__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::Name => {
-                            if name__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("name"));
+                        GeneratedField::NameLike => {
+                            if name_like__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("nameLike"));
                             }
-                            name__ = Some(map_.next_value()?);
+                            name_like__ = Some(map_.next_value()?);
                         }
                     }
                 }
                 Ok(SearchAppInfoRequest {
-                    name: name__.unwrap_or_default(),
+                    name_like: name_like__.unwrap_or_default(),
                 })
             }
         }
