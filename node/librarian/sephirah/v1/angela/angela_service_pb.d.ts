@@ -2,9 +2,9 @@
 // file: librarian/sephirah/v1/angela/angela_service.proto
 
 import * as jspb from "google-protobuf";
-import * as librarian_sephirah_v1_angela_binah_angela_pb from "../../../../librarian/sephirah/v1/angela/binah_angela_pb";
-import * as librarian_sephirah_v1_angela_gebura_angela_pb from "../../../../librarian/sephirah/v1/angela/gebura_angela_pb";
-import * as librarian_sephirah_v1_angela_tiphereth_angela_pb from "../../../../librarian/sephirah/v1/angela/tiphereth_angela_pb";
+import * as librarian_sephirah_v1_angela_binah_pb from "../../../../librarian/sephirah/v1/angela/binah_pb";
+import * as librarian_sephirah_v1_angela_gebura_pb from "../../../../librarian/sephirah/v1/angela/gebura_pb";
+import * as librarian_sephirah_v1_angela_tiphereth_pb from "../../../../librarian/sephirah/v1/angela/tiphereth_pb";
 import * as librarian_sephirah_v1_sephirah_base_pb from "../../../../librarian/sephirah/v1/sephirah/base_pb";
 import * as librarian_v1_wellknown_pb from "../../../../librarian/v1/wellknown_pb";
 

@@ -16,9 +16,9 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'angela_service.pb.dart' as $0;
-import 'binah_angela.pb.dart' as $2;
-import 'gebura_angela.pb.dart' as $3;
-import 'tiphereth_angela.pb.dart' as $1;
+import 'binah.pb.dart' as $2;
+import 'gebura.pb.dart' as $3;
+import 'tiphereth.pb.dart' as $1;
 
 export 'angela_service.pb.dart';
 

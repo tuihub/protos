@@ -1,5 +1,5 @@
 // package: librarian.sephirah.v1.angela
-// file: librarian/sephirah/v1/angela/binah_angela.proto
+// file: librarian/sephirah/v1/angela/binah.proto
 
 import * as jspb from "google-protobuf";
 import * as librarian_sephirah_v1_sephirah_binah_pb from "../../../../librarian/sephirah/v1/sephirah/binah_pb";

@@ -21,12 +21,12 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var librarian_sephirah_v1_angela_binah_angela_pb = require('../../../../librarian/sephirah/v1/angela/binah_angela_pb.js');
-goog.object.extend(proto, librarian_sephirah_v1_angela_binah_angela_pb);
-var librarian_sephirah_v1_angela_gebura_angela_pb = require('../../../../librarian/sephirah/v1/angela/gebura_angela_pb.js');
-goog.object.extend(proto, librarian_sephirah_v1_angela_gebura_angela_pb);
-var librarian_sephirah_v1_angela_tiphereth_angela_pb = require('../../../../librarian/sephirah/v1/angela/tiphereth_angela_pb.js');
-goog.object.extend(proto, librarian_sephirah_v1_angela_tiphereth_angela_pb);
+var librarian_sephirah_v1_angela_binah_pb = require('../../../../librarian/sephirah/v1/angela/binah_pb.js');
+goog.object.extend(proto, librarian_sephirah_v1_angela_binah_pb);
+var librarian_sephirah_v1_angela_gebura_pb = require('../../../../librarian/sephirah/v1/angela/gebura_pb.js');
+goog.object.extend(proto, librarian_sephirah_v1_angela_gebura_pb);
+var librarian_sephirah_v1_angela_tiphereth_pb = require('../../../../librarian/sephirah/v1/angela/tiphereth_pb.js');
+goog.object.extend(proto, librarian_sephirah_v1_angela_tiphereth_pb);
 var librarian_sephirah_v1_sephirah_base_pb = require('../../../../librarian/sephirah/v1/sephirah/base_pb.js');
 goog.object.extend(proto, librarian_sephirah_v1_sephirah_base_pb);
 var librarian_v1_wellknown_pb = require('../../../../librarian/v1/wellknown_pb.js');

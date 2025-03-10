@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/angela/binah_angela.proto
+//  source: librarian/sephirah/v1/angela/binah.proto
 //
 // @dart = 2.12
 

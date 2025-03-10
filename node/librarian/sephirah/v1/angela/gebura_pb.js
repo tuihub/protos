@@ -1,4 +1,4 @@
-// source: librarian/sephirah/v1/angela/gebura_angela.proto
+// source: librarian/sephirah/v1/angela/gebura.proto
 /**
  * @fileoverview
  * @enhanceable

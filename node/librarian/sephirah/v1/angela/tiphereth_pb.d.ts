@@ -1,5 +1,5 @@
 // package: librarian.sephirah.v1.angela
-// file: librarian/sephirah/v1/angela/tiphereth_angela.proto
+// file: librarian/sephirah/v1/angela/tiphereth.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";

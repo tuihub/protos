@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/angela/tiphereth_angela.proto
+//  source: librarian/sephirah/v1/angela/tiphereth.proto
 //
 // @dart = 2.12
 
@@ -17,9 +17,9 @@ import '../../../../google/protobuf/timestamp.pb.dart' as $8;
 import '../../../v1/wellknown.pb.dart' as $4;
 import '../sephirah/tiphereth.pb.dart' as $7;
 import '../sephirah/tiphereth.pbenum.dart' as $7;
-import 'tiphereth_angela.pbenum.dart';
+import 'tiphereth.pbenum.dart';
 
-export 'tiphereth_angela.pbenum.dart';
+export 'tiphereth.pbenum.dart';
 
 class GetTokenRequest extends $pb.GeneratedMessage {
   factory GetTokenRequest({

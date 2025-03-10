@@ -1,4 +1,4 @@
-// source: librarian/sephirah/v1/angela/tiphereth_angela.proto
+// source: librarian/sephirah/v1/angela/tiphereth.proto
 /**
  * @fileoverview
  * @enhanceable
