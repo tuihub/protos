@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.5.0](https://github.com/tuihub/protos/compare/v0.4.28...v0.5.0) (2025-03-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* redesign api
+
+### Features
+
+* redesign api ([e7b355d](https://github.com/tuihub/protos/commit/e7b355dfbc706ef7d480bd012657e8f68c5fd6c2))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#172](https://github.com/tuihub/protos/issues/172)) ([29197ce](https://github.com/tuihub/protos/commit/29197cedee08f96cf4222debe018113c259e57b7))
+
 ## [0.4.28](https://github.com/tuihub/protos/compare/v0.4.27...v0.4.28) (2025-01-01)
 
 
