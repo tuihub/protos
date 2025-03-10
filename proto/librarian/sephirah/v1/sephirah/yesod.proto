@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 import "librarian/v1/common.proto";
 import "librarian/v1/wellknown.proto";
 
-option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
+option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1.Sephirah";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 message CreateFeedConfigRequest {
